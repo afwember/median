@@ -34,19 +34,23 @@
 ## Layout
 
 ```
-canon/      The GDD. Source of truth.
-book/       Contents and the Phase 2 production plan.
-log/        Decisions as they lock; questions as they arise.
-prompts/    Illustration prompts, one per plate.
-              _superseded/  kept as a record of approaches that failed, and why.
+canon/          The GDD. Source of truth.
+book/           Contents, production plan, and the Phase 2 brief.
+log/            Decisions as they lock; questions as they arise.
+prompts/        Illustration prompts, one per plate.
+                  _superseded/  approaches that failed, and why.
+archive/        Superseded material, kept for history.
+                  gdd/ · threads/ · planning/  — nothing here is canon.
 art/
-  plates/   Finished information-design plates.
-  keyart/   Part openers and full-page artwork.
-  legacy/   Five decks and three loose images predating this pass,
-            plus the v0.4 planning documents they were made against.
-            Source material only — see the warning below.
-wip/        Working iterations. Not tracked by git.
+  plates/       Finished information-design plates.
+  keyart/       Part openers and full-page artwork.
+  legacy/       The five source decks as compiled PDFs.
+  Art Archive/  The same material as loose source images, by version,
+                plus v0-4 experiments and a v99 reference library.
+wip/            Working iterations. Not tracked by git.
 ```
+
+**`art/Art Archive/v99 - References`** is the visual reference library — RPG sourcebook spreads, character cards, printed-book samples. It is the clearest existing statement of what this book is aiming at, and it is the material Stage 2c should be argued from.
 
 ### A standing warning about `art/legacy/`
 
@@ -69,3 +73,11 @@ These have each been earned by getting something wrong.
 **Any upscale is a re-generation.** It preserves art and corrupts type, and it silently drifts detail. Re-check canon after one, every time.
 
 **Log design gaps; do not solve them.** Phase 2 is production, not a second design thread. Gaps go to `log/art_raised_questions.md`.
+
+---
+
+## A note on repository size
+
+Around 310MB, which is comfortably inside GitHub's recommended limit and needs no action. Roughly 240MB is the loose source imagery and 78MB the same material compiled as PDFs — some duplication, already committed, and not worth unpicking since git keeps history either way.
+
+What matters going forward: **finished assets go in `art/plates` and `art/keyart`; iterations stay in `wip/`.** Fifty plates each committed five times is where a repository actually gets into trouble, and the ignore rules exist to prevent exactly that.

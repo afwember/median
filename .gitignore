@@ -1,0 +1,50 @@
+# ============================================================
+#  IGNORED — anything matching these never enters the repo
+# ============================================================
+
+# --- Working folders (any level) -----------------------------
+wip/
+**/wip/
+**/_wip/
+**/scratch/
+**/drafts/
+
+# --- Working files, wherever they sit ------------------------
+# Catches iterations saved outside wip/ by accident.
+*_wip.*
+*_draft.*
+*_scratch.*
+*_iter*.*
+*_test.*
+*-old.*
+*_old.*
+* copy.*
+* copy [0-9].*
+
+# --- Large working formats -----------------------------------
+# Layered source files balloon a repo fast. Export a flat final
+# into art/ and keep the layered original in wip/.
+*.psd
+*.psb
+*.ai
+*.tif
+*.tiff
+
+# --- macOS clutter -------------------------------------------
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# --- Office / Keynote lock files ------------------------------
+~$*
+.~lock.*
+
+# ============================================================
+#  NOT ignored, deliberately:
+#    art/plates/     finished plates
+#    art/keyart/     part openers and full-page artwork
+#    art/legacy/     the 52 source assets (committed once,
+#                    never edited, so they cost 78MB one time)
+# ============================================================

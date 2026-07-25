@@ -436,6 +436,23 @@ Every reference inside a prompt is to **"the image attached to this message,"** 
 
 The general form: **a prompt may only refer to things the model can actually see.** Filenames, folder paths and document names are all invisible to it.
 
+### P2-49 — Two registers, stacked: photoreal windows on an aged document · **LOCKED**
+*2026-07-25, correcting P2-45's house style after three test plates came back flat.*
+
+The Laws, Game Day and Economy plates were all canon-clean, structurally correct, and **lifeless next to the earlier v0.2-era work.** Diagnosis, in order of importance:
+
+**1. The register collapsed from two to one.** The richest earlier plates are **photoreal images composited onto an aged paper document** — a photograph and an artifact, stacked, so each panel is a *window punched through the page* into a real place. The three test plates are **drawings on paper**: one register, more unified, far flatter. Coherence was traded for depth without the trade being noticed.
+
+**2. No hero.** Every strong earlier panel has one subject, large and close, dominating its frame. The test plates distribute weight evenly — many small objects, five small scenes, one modest spot illustration. Nothing commands a panel, so nothing has presence.
+
+**3. The value range collapsed.** Earlier images run from near-black interiors to glowing highlights. The test plates sit in a narrow mid band, and the cause is partly structural: cream images inside cream panels on cream paper average to light-mid. **Images must go genuinely dark inside their frames even though the page around them stays pale.**
+
+**The prompt caused it, in two specific ways.** The house style said *"watercolour and ink, painterly, visible confident linework"* — lighter than the actual reference plate, which is closer to photoreal. The words drifted from the image, and each new plate drifted further because the words were doing more work than the reference. Separately, an instruction to cut back botanical corners as "too seasonal" stripped the woven vine-and-branch density that gave the earlier frames their richness. Over-corrected into austerity.
+
+**The house style now leads with the two-register idea** and mandates a hero subject, full value range, layered depth with foreground framing, and restored botanical ornament in the document layer.
+
+**General lesson worth keeping:** a verbal style description will out-argue an attached reference image unless the words are actually accurate. *"Follow the image where they differ"* is not enough of a safeguard — the description has to be right on its own terms.
+
 ### P2-38 — Folklore is the book's connective tissue · **WORKING**
 
 *Proposed, following from P2-36.*

@@ -427,6 +427,15 @@ One stretch of median, three overlays: rabbit sightlines and escape lanes and bu
 
 Makes the species asymmetry **spatial rather than tabular**, and is the strongest companion to the completed Three Species plate. Second plate of Part I.
 
+### P2-48 — Prompts never name a file · **LOCKED**
+*2026-07-25, from a broken run.*
+
+Every reference inside a prompt is to **"the image attached to this message,"** with filenames explicitly disregarded. Naming a specific plate broke a generation: the file had since been renamed, the model went hunting for a name that no longer existed, and the correct attached image was ignored.
+
+**This extends to the notes at the top of each prompt file.** Those are written for the human, but they are read by the model along with everything else when the file is dragged in — so a note reading *"attach the Three Species plate"* becomes an instruction the model will try and fail to follow. Notes now say *"attach the current reference plate as the first image."*
+
+The general form: **a prompt may only refer to things the model can actually see.** Filenames, folder paths and document names are all invisible to it.
+
 ### P2-38 — Folklore is the book's connective tissue · **WORKING**
 
 *Proposed, following from P2-36.*

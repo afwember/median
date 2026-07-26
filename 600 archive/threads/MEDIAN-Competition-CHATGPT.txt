@@ -1,0 +1,140 @@
+ASA: Search for similar games out there.
+
+CHATGPT:I found no direct twin. MEDIAN sits at the intersection of several existing clusters, but the highway-median civilization, permanent home, low-population named citizens, expedition dramaturgy, and non-industrial animal material culture remain a distinctive combination.
+Closest videogame comparables
+Game
+Meaningful overlap
+Where MEDIAN separates
+Whiskerwood
+The closest surface-level competitor: mouse colony building, vertical and underground construction, individual colonist attributes, climate, maintenance, healthcare, and animal civilization. Released into Early Access in November 2025.
+Whiskerwood embraces automation, steam power, factories, forty commodities, cat overlords, rebellion, and eventual combat. It is precisely the industrial mouse civilization MEDIAN refuses to become.
+Luminids
+Potentially the closest developing conceptual neighbor: a colony of small creatures with personalities, needs, bonds, memories, and personal stories; build from above, then enter first-person exploration. Seasons leave visible marks.
+A gentle, fantastical sandbox with broad civilization progression rather than a specific ecological situation, expedition danger, or named-animal society. Worth watching closely.
+The Wandering Village
+A beloved settlement in a hostile-but-beautiful environment, limited space, changing biomes, environmental threats, and scouting/foraging missions for rare resources and artifacts.
+The entire village travels; individual citizens are secondary, and the game leans toward production-chain optimization. MEDIAN’s emotional thesis depends on one permanent place.
+Ratopia
+Animal city-builder with individually characterized citizens and expeditions into a wider world.
+Its center is personal wealth, taxation, policy, class, and large-scale city economics—almost the inverse of MEDIAN’s pooled economy and low population.
+Winter Burrow
+Mouse-scale survival, rebuilding a ruined burrow, gathering resources, crafting tools, meeting outsiders, and making home feel safe against a dangerous exterior. Probably the strongest tonal-audience overlap.
+One protagonist and one home rather than a colony simulation; intentionally cozy and personal rather than civic and systemic.
+Grimshire
+Anthropomorphic village, catastrophic flight from an earlier home, seasonal survival, food spoilage and preservation, community projects, relationships, and limited villager permadeath.
+Primarily a farming/life simulation centered on the player character, not a colony builder with expeditions.
+Hawthorn
+Small anthropomorphic protagonist, village construction, recruitable NPCs, exploration, seasonal traditions, and a world larger than the player.
+Cozy fantasy RPG and village-life sandbox; much more traditionally anthropomorphic and player-avatar-centered.
+Timberborn
+Animal colony building, species-specific architecture, verticality, seasonal ecological hazards, scavenging human ruins.
+Large-population engineering and automation fantasy, culminating in machinery and bots.
+Small Saga
+Rodents interpreting the modern human world through their own mythology; animal-scale urban infrastructure; multi-species society.
+Linear, combat-heavy party RPG with medievalized animal politics and weapons. No colony layer.
+Rain World
+Perhaps the closest model for animal vulnerability: a small creature relying on stealth and ecological knowledge within vast industrial remains and an autonomous predator ecosystem.
+Solitary, nomadic, punishing action-survival. Almost no sanctuary-building or persistent community.
+Strong structural ancestors
+Three non-animal games may be more mechanically relevant than most animal games.
+This War of Mine has the closest fundamental rhythm. During the day, named civilians maintain a shelter; at night, one leaves on a dangerous scavenging mission and brings resources and consequences home. It is essentially sanctuary → exposure → return under another theme. MEDIAN makes that rhythm less relentlessly bleak and gives the home a constructive civic future.
+RimWorld is the clearest precedent for player attachment to a small group of individually tracked colonists. It models relationships, moods, injuries, chronic conditions, prosthetics, environmental events, and caravans as ingredients in an emergent story generator. MEDIAN’s distinction is restraint: fewer citizens, less combat, clearer dramaturgy, and a deliberate Record rather than stories arising from unrestricted simulation.
+Wildermyth is the nearest precedent for citizens becoming histories. Its heroes acquire relationships, permanent transformations, maiming, children, old age, memory, and eventual legendary status. MEDIAN’s Tales, Distinctions, After-names, and memorial archive occupy related territory, but Wildermyth is a tactical heroic RPG rather than a colony game.
+TTRPG and physical-game precedents
+Here the overlap becomes more direct.
+The Warren is the unavoidable TTRPG comparator. It explicitly presents intelligent rabbits confronting predators, seasons, humans, and other rabbits; describes itself as a game of survival and community; draws on Watership Down; and follows changing generations. A MEDIAN TTRPG would need to distinguish itself through the shared colony, highway ecology, scrap material culture, multiple species campaigns, Crossing, Records, and the domestic/expedition cycle.
+Bunnies & Burrows is the historical predecessor: intelligent rabbits dealing with natural hazards and larger creatures. It is less threatening as a direct contemporary comparison, but historically important.
+Mouse Guard RPG uses patrols and missions through animal territories and offers extensive setting material. Its medieval institutions, weapons, heroic duties, and mission structure are exactly where MEDIAN would diverge.
+For cards, Earthborne Rangers is the strongest formal precedent. It is a cooperative customizable campaign card game in which a character’s deck reflects personal history and accumulates equipment, skills, and memories while exploring a living open world. That supports the earlier conclusion that MEDIAN fits a cooperative persistent campaign game better than a competitive rarity-driven TCG.
+Aftermath is also relevant: cooperative small-animal expeditions through abandoned human-scale environments affect the state of a home colony. Everdell, Creature Comforts, and Root occupy the woodland-animal tabletop shelf aesthetically, but their underlying purposes—engine building, seasonal worker placement, and asymmetric warfare—are much farther away.
+Competitive conclusion
+The comparisons most likely to arise are:
+Whiskerwood for the screenshot, This War of Mine for the loop, RimWorld for the citizens, Wildermyth for personal history, and Rain World for animal-scale danger.
+But none supplies MEDIAN’s complete proposition.
+Its most defensible distinguishing features are:
+	•	a real and immediately recognizable highway-median ecology;
+	•	one permanent, emotionally central colony;
+	•	animal civilization without medievalism or industrialization;
+	•	traffic functioning as weather and boundary;
+	•	low population with every citizen remembered;
+	•	action Crossing separated from resolution-based Encounters;
+	•	exposure opening both heroic and harmful outcomes;
+	•	folklore functioning as tutorial and cultural memory;
+	•	a corridor civilization culminating in a plausible animal metropolis.
+The largest resemblance risk is currently Whiskerwood. The best defense is not to avoid mice or colony building; it is to foreground what Whiskerwood cannot be mistaken for: wet asphalt, live traffic, three species, intimate population, ecological scrap culture, and sanctuary/exposure/return.
+
+ASA: Search for milleu matches - Animals near roads, and anything explicitly highway-riparian
+
+CHATGPT:  The search reinforces my earlier impression: I cannot find a game or fiction that treats an active highway median as a permanent animal homeland in the way MEDIAN does. The nearest matches each possess one part of the milieu, but none unite habitation, active traffic, longitudinal travel, animal civilization and road ecology.
+Closest milieu relatives
+Work
+What matches MEDIAN
+Important difference
+The Animals of Farthing Wood
+The strongest fictional relative. A mixed community of ordinary British animals, displaced by human development, must interpret roads as lethal terrain. Its motorway crossing even uses the central reservation as temporary refuge; different species require different crossing methods, and the hedgehogs’ instinctive response becomes fatal. Series overview, motorway episode synopsis
+The motorway is one terrible episode in a migration toward safety. MEDIAN begins where Farthing Wood would never consider remaining: on the island between carriageways.
+A Search for Safe Passage
+An unusually direct match: woodland animals form a council to find food and mates without crossing the “Human Highway.” It consciously combines animal society with real wildlife-crossing design. Author’s account, synopsis
+Educational conservation fable rather than an inhabited roadside civilization.
+Over the Hedge
+Probably the closest match for permanent edge ecology: an animal community awakens to find its surviving woodland divided from a new human development, then builds an economy around human food and discarded material. The humans remain active, incomprehensible and dangerous. Universal synopsis
+Suburban comedy and consumption satire. The hedge is a border to raid across, not a surrounding environmental system.
+Frogger / Crossy Road
+The ancestral games for “traffic as moving environmental hazard.” Frogger explicitly juxtaposes a dangerous road with a fast-moving river—almost the inverse of MEDIAN’s animals understanding the road as a river. Konami’s Frogger description, Crossy Road
+They isolate the crossing moment and discard everything before and after it: no ecology, memory, community or home.
+Why Did the Wildlife Cross the Road?
+The most literal small-game comparison I found. Players construct bridges from progressively better materials so animals can cross major roads; different animals’ ecological effects unlock building resources. Game page
+A conservation puzzle prototype about repairing fragmentation, not living inside it.
+Endling: Extinction Is Forever
+Animal-scale survival through an actively damaged human environment: shelter by day, forage and travel by night, protect named young, read danger indirectly. Official PlayStation page
+Much more apocalyptic and accusatory. MEDIAN’s road is terrible, beautiful and sustaining at once.
+Way to the Woods
+A deer and fawn moving through immense abandoned roads, stations and urban infrastructure creates the right scale contrast and sense of animal vulnerability. Xbox preview
+Humanity and traffic are gone; infrastructure has become picturesque ruin rather than living weather.
+Tokyo Jungle
+Animals turn human infrastructure into territory, hunting ground and migration geography. Streets become an ecosystem rather than scenery. Game overview
+Again post-human, and structured around feral competition rather than small communal adaptation.
+NUTS
+Not a road match, but a strong presentational relative: maps, observation stations, surveillance and the gradual discovery of squirrel routes through a threatened environment. Steam page
+Human field research rather than the animals’ own naturalist knowledge.
+Farthing Wood is therefore the nearest narrative ancestor, Over the Hedge the nearest edge-economy ancestor, and Frogger the nearest kinetic ancestor. MEDIAN’s actual combination remains conspicuously unoccupied.
+The real ecology is closer than the fiction
+This was the most striking search result. MEDIAN’s premise is not merely a fanciful use of unlikely ground; there is a substantial scientific literature describing roadsides in almost exactly the paradoxical language of your world.
+Road ecology recognizes that a road can simultaneously be:
+	•	a lethal surface;
+	•	a barrier dividing populations;
+	•	a longitudinal corridor;
+	•	an edge habitat;
+	•	a refuge in an otherwise intensively managed landscape;
+	•	a source of noise, light, salt, pollution, runoff and invasive species.
+That full constellation falls within the formal field of road ecology or transportation ecology. UC Davis Road Ecology Center
+The species-specific findings are remarkably MEDIAN-like:
+	•	Wood mice frequently use road verges and tend to move parallel to the road, while avoiding crossing the paved surface. Verge vegetation partially repairs the connectivity that the road itself destroys. That is essentially MEDIAN’s longitudinal/transverse distinction appearing in field data. Wood-mouse movement study
+	•	A separate wood-mouse study found that verges contain important microhabitats and function as movement corridors, although the road still reduces overall connectivity. Connectivity study
+	•	Small-mammal abundance can be higher in interstate rights-of-way than in adjacent habitat, particularly for mice, voles and shrews. The same attractive habitat can increase exposure to traffic mortality. USGS study
+	•	There is even a European study titled “Motorway verges: Paradise for prey species? A case study with the European rabbit.” Study record
+	•	Vegetated medians have been documented as small-mammal foraging habitat, while broader transportation research explicitly notes that they may act as temporary refugia during crossings. Vegetated-median study, median report
+	•	Median barriers can also trap or confuse wildlife which has crossed the first carriageway but cannot complete the journey. The median is thus not simply “safe” or “unsafe”; it is contingent sanctuary—which feels extremely consonant with MEDIAN. Median-barrier study
+	•	Arboreal species really do receive their own infrastructural crossing solution: artificial canopy bridges have been used for squirrels, opossums and monkeys above roads. Smithsonian’s Reconecta project
+Is “highway-riparian” the right term?
+It does not appear to be an established scientific phrase. The recognized terms are:
+	•	road ecology
+	•	road corridor ecology
+	•	road-verge habitat
+	•	right-of-way habitat
+	•	linear habitat or linear corridor
+	•	road-effect zone
+	•	habitat fragmentation
+	•	ecological trap
+	•	landscape permeability
+	•	permeable highway
+	•	crossing ecology
+But highway-riparian is an excellent authored concept for the sourcebook. It names something those clinical terms do not: the imaginative experience of treating parallel traffic flows as a river system, with banks, islands, currents, floods, spume, seasonal conditions, deposited material and settlements oriented longitudinally along its course.
+The metaphor is not ecologically arbitrary. Highway agencies themselves describe road corridors as altering or blocking animal movement, surface water, subsurface hydrology and other natural flows; they also recognize that animals move parallel to roads through corridor habitat. FHWA road-corridor ecology
+I would therefore distinguish:
+Road ecology is the real science beneath the setting. Highway-riparian is MEDIAN’s name for the civilization and imaginative geography that might arise inside it.
+The deepest difference from all the comparisons is that MEDIAN does not ask, “How can animals cross the road?” It asks:
+What kind of culture forms when the road cannot be escaped, defeated or allowed to disappear—when it is the river beside which history itself is lived?
+That appears to be MEDIAN’s genuinely original territory. The essential nonfiction companion is Ben Goldfarb’s Crossings, a broad and highly readable account of roads as forces reshaping animal movement, behavior, habitat and evolution. Official book page
+
+

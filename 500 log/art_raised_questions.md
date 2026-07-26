@@ -17,7 +17,11 @@ Design gaps the artwork exposes. **Logged, not solved by the art pass.** This do
 
 → P2-15. Lands in §6.3 and §35.1; closes the Appendix D "Unnamed in fiction" item.
 
-### Q-2 — What does a Presence look like when it is never counted? · **ANSWERED**
+### Q-2 — What does a Presence look like when it is never counted? · **ANSWERED — and now closed in canon**
+
+*Settled by V5-12 in the v0.4.5 pass: adversary numbers are free to depict. The artwork may show whatever number makes a compelling picture, and the fiction may name one. The count was always flavour, and flavour is the illustrator's to choose.*
+
+*Original answer and reasoning below.*
 *Raised by: The Encounter Frame plate · GDD §25.3*
 
 **Contested encounter plates show a roughly equal opposing party** — comparable apparent mass to the player's party, composed so as not to invite counting, never captioned with a number. Mass, not count, expressed as a staging convention rather than a diagram.

@@ -484,7 +484,7 @@ Mice permit the densest settlement, but they remain named individuals — not an
 
 ### 4.5 Seasonal and environmental personalization
 
-Small, flavorful seasonal or environmental quirks personalize species and Guests. The first concrete instance: the **Snake Guest takes a movement penalty in Winter**, replacing older, vaguer "seasonal dormancy" language with a specific mechanical effect. This is a template and an open design avenue — the team should look for similar small quirks for the core species — but no further instances are locked.
+Small, flavorful seasonal or environmental quirks personalize species and Guests. The first concrete instance: the **Snake Guest takes a movement penalty in Winter**. This is a template and an open design avenue — the team should look for similar small quirks for the core species — but no further instances are locked.
 
 The Guest roster's own situational trade-offs are handled systematically rather than as one-off quirks; see the option-opener template in Section 20.1.
 
@@ -685,7 +685,7 @@ The corridor is not only medians and margins. Two things exist beyond the chain 
 
 **ARTWORK — The Eight Biomes, as establishing shots**
 
-Eight biomes are canon. There is no separate scrub/briar biome; that flavor folds into the Wooded Median. Biomes differ on **visuals, resource mix, and natural cover** — *not* on highway danger, which is governed entirely by lane count. Each biome is a whole-Reach property under the unified-Reach rule.
+Eight biomes are canon. They differ on **visuals, resource mix, and natural cover** — *not* on highway danger, which is governed entirely by lane count. Each biome is a whole-Reach property under the unified-Reach rule.
 
 - **Thin Grass Ribbon:** little building room, excellent sightlines, high wind exposure. Resource-poor.
 - **Wooded Median:** trees enable squirrel infrastructure and shade, but conceal predators. Strong Durable sustenance; canopy and root Anchor Points.
@@ -861,7 +861,7 @@ Eight Roles, each distinct, non-overlapping, and with **fixed, static output** �
 
 **A Role's effect is identical no matter who holds it.** Assignments always produce visible action in the colony; the player watches the work happen rather than reading it off a menu.
 
-*(Open working detail: whether a newly-born or newly-unassigned citizen defaults to Forager is not yet locked.)*
+A newly-born or newly-unassigned citizen defaults to **Forager**.
 
 **The base-building layer never grows anyone.** A hard rule governs the relationship between domestic work and citizen development: the base-building layer is **personality-blind and never accesses individual growth.** All citizen development, without exception, happens through **expedition participation** (Section 25.5). This resolves the tension between static, legible Roles and the desire for citizens to feel like continuing, invested-in presences: the investment is real, but it is earned in the field, not at a workbench.
 
@@ -1256,7 +1256,7 @@ When several Ambient Guests live at home, the player may select one effect for a
 
 Not every animal met in the field is a candidate for the colony. Some are simply threats.
 
-**The Rat is not a citizen in any form** — neither Active nor Ambient. It exists only as **antagonist fauna** in contested encounters and Base Defense. *(An earlier art asset depicting a rat citizen, "Grist," was a misdepiction of what should have been a mouse.)*
+**The Rat is not a citizen in any form** — neither Active nor Ambient. It exists only as **antagonist fauna** in contested encounters and Base Defense.
 
 **The raccoon sits alongside the Rat as recurring antagonist fauna** — larger, cannier, and a more serious threat at both contested nodes and Base Defense — but differs from it in the one way that matters: **the raccoon is recruitable and the Rat is not.** The raccoon can be met as an enemy, met again as a neutral, and eventually brought home (Sections 26.2, 20.1). The pair exists to make that distinction legible: **antagonist status in MEDIAN is a position an animal currently occupies, not always a fixed nature.**
 
@@ -1429,7 +1429,6 @@ After a successful outbound crossing and a resolved Field run, the player choose
 - **20% — automatic with a swing:** the party gets home automatically, but with a swing that can break positive *or* negative — a bonus find, or lost cargo, a minor wound, gained fear.
 - **10% — forced manual re-crossing:** changing traffic, Road Work, predator pressure, weather, fatigue, or a narrative event forces the player back into the crossing action.
 
-*(This 70/20/10 split supersedes the earlier 80/10/10 hypothesis.)*
 
 ---
 
@@ -1555,8 +1554,6 @@ Five Approaches:
 
 An encounter carries a **Presence value per available Approach.** The same weasels are formidable against Contest, moderate against Evade, and simply unavailable to Parley. This is what makes Approach a real decision rather than a reskin.
 
-**Why not pairings.** Individual-versus-individual resolution would require generating adversary rosters, would immediately raise "does a five-mouse party face five weasels," would demand per-citizen encounter state, and would drift toward the tactical combat this design rejects by name (Section 1.2). The legibility it buys is recovered on the back end instead, at no such cost.
-
 ### 25.4 Resolution
 
 Conflict of every kind — expedition contest, Base Defense, Road Work onset — resolves through **augmented passive resolution**: a stat comparison, modified, then finalized with a bounded RNG roll. Never in real time, never a twitch test. This is the same engine behind all three; it is not three systems.
@@ -1624,7 +1621,7 @@ The engine can use hidden probability, but **the fiction always explains the res
 
 Encounter length is generated by closeness (Section 25.1), so the "epic" encounter needs no separate mechanism — it is an encounter that refused to resolve twice.
 
-**Length is never rolled for.** It is the one place randomness feels least earned. A free extra round is a gift; a costly one is arbitrary. Closeness is the honest trigger.
+**Length is never rolled for.** Closeness is the honest trigger.
 
 **Retained as an override:** a **Special Artifact** or **Tool** may grant an extra Turn outright, inserting a decision where a round would otherwise have resolved cleanly. It cannot breach the three-round cap.
 
@@ -1832,7 +1829,7 @@ Same engine, same rhythm, **no new register.** What differs is what the nodes co
 
 **Raccoons are the Metropolis's historic founding species.** The current population is genuinely multi-species — other species arrived and settled later, and today they are the majority — but raccoons retain outsized **cultural and traditional standing** as a consequence of having been first.
 
-**This is heritage weight, not authority.** All Metropolis species are explicitly equal. There is no raccoon hierarchy, no raccoon rule, no political control, and no faction system attached. Founding priority buys respect and a set of customs, and nothing else. **This guardrail is stated in the text deliberately**, because "founding species" is exactly the kind of lore detail that drifts into politics if left unattended.
+**This is heritage weight, not authority.** All Metropolis species are explicitly equal. There is no raccoon hierarchy, no raccoon rule, no political control, and no faction system attached. Founding priority buys respect and a set of customs, and nothing else.
 
 Its most concrete expression is a single figure: the multi-species tavern and trade hub at the heart of the Metropolis has a **bartender**, and the bartender is a **Raccoon.** Subtle raccoon-heritage nods in Metropolis architecture and decor are available as a Phase 2 art detail and are not further specified here.
 
@@ -1901,8 +1898,6 @@ The tier system expresses increasing security, spatial reach, institutional capa
 **Capabilities:** durable anchored construction, outpost logistics, Ambient Guest assignment to outposts, adaptive equipment, advanced Role use, larger expedition choices, third Guest slot of each type, higher building rungs.
 **Pressures:** regional relationships, Road Work at multiple nodes, preparing a corridor connection.
 
-**Tier III must not be named for or structurally dependent on the Rest-Stop Metropolis.** The Metropolis's own history and mythology is worldbuilding and creates no dependency here.
-
 ### Tier IV — Sovereign Network
 
 **Fantasy:** the Home Median becomes the protected heart of a connected corridor community.
@@ -1954,7 +1949,7 @@ The overlay's building-function data is the **text expansion** of the base view'
 
 ### 32.3 Character Records and the Village Roster
 
-The **Village Roster** is the index screen for the colony's people: every citizen, listed, leading into an individual's **Likeness** and **Tale** (Section 21.2). It is visually skinned as being *at the species hub* — the **Warren**, **Den**, or **Burrow**, using the campaign's actual species-specific hub name and never a generic "Town Center" placeholder.
+The **Village Roster** is the index screen for the colony's people: every citizen, listed, leading into an individual's **Likeness** and **Tale** (Section 21.2). It is visually skinned as being *at the species hub* — the **Warren**, **Den**, or **Burrow**, using the campaign's actual species-specific hub name.
 
 An individual Record combines portrait, both name fields, descriptive aptitude bands, current condition, bonds and Hearth membership, assigned Role, equipment slots, earned Distinctions and Maimings, and a concise chronological history. The player can understand why a citizen is suitable without seeing raw hidden attributes.
 
@@ -2060,7 +2055,6 @@ The layer has four applications and one ownership policy.
 
 > **IMAGEGEN — ownership and evaluation.** Generated images become available as exportable PNGs or a campaign scrapbook. Cost, latency, moderation, privacy, API authentication, service continuity, reproducibility, and save-file portability must be evaluated separately.
 
-*(In a future full GDD these blocks become sidebars. They are marked inline here so the optional layer is never mistaken for core specification.)*
 
 ---
 
@@ -2325,7 +2319,7 @@ No new decisions, no changed rules, no restructuring. **The decision count stand
 
 A single editorial sweep across all thirty-eight sections, removing passages in which the document argued with its own earlier drafts. The governing rule: **a reader should not be able to tell from the body what previous versions said.** Rationale, negation and revision-history belong in Appendix B.
 
-Twenty-six passages were removed or restated. The pattern took four forms:
+Thirty-seven passages were removed or restated across two sweeps. The pattern took four forms:
 
 | Form | Example removed | Handling |
 |---|---|---|

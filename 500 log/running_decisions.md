@@ -453,6 +453,21 @@ The Laws, Game Day and Economy plates were all canon-clean, structurally correct
 
 **General lesson worth keeping:** a verbal style description will out-argue an attached reference image unless the words are actually accurate. *"Follow the image where they differ"* is not enough of a safeguard — the description has to be right on its own terms.
 
+### P2-50 — Style probes and hero generations are different things · **LOCKED**
+*2026-07-26.*
+
+The pass runs in two phases, divided by a milestone.
+
+**Phase 1 — Style development.** Everything produced so far. Plates are **probes**: they exist to test register, palette, composition, density, page architecture and legibility. They are judged on those and on nothing else. **Canon compliance is not required and its absence is not a defect.** A probe may show bare animals under a since-reversed rule, invented gear, or content that never made it into the document — none of that matters, because the probe is asserting a *look*, not a *fact*.
+
+**The milestone — Style Lock.** The point at which the identity is settled: ground, palette, grid, typography, panel forms, page furniture, and the device kit. After it, the style stops being the question.
+
+**Phase 2 — Hero generation.** Plates become **artifacts** destined for the book. From here canon compliance is enforced on every plate, every string is checked against the GDD, and the disposition and open-item flags in the Production Plan start doing real work.
+
+**Why this matters enough to log.** Without the distinction, every reversal in the design log would appear to invalidate finished artwork, and a future session would waste effort "correcting" probes that were never claiming to be correct. It also means **probes belong in `wip/`**, not in `art/plates/` — that folder is for artifacts, and the ignore rules already keep `wip/` out of the repository.
+
+**Practical consequence:** the canon-check step in the working rules formally begins at Style Lock. Before it, the only checks that matter are aesthetic.
+
 ### P2-38 — Folklore is the book's connective tissue · **WORKING**
 
 *Proposed, following from P2-36.*

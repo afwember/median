@@ -228,7 +228,7 @@
 - ▣ ○ **Scale Language** · HARVEST — everyday objects at true scale becoming terrain
 - ▣ ○ **Art & Audio Style Guide** · DIAGRAM — *blocked on all of Stage 2c*
 
-**34. The optional generative layer** — *deliberately unplated; canon requires it never become load-bearing*
+**34. The optional generative layer** — *dissolved per V5-63. An early sidebar in the front matter, ~9 **CREATED VISUAL** sidebars distributed to the moments they describe, and the procedure in new Appendix G. No plate; canon requires it never become load-bearing.*
 
 **35. Campaign onboarding** · 35.1 The Founding Escape · 35.2 Tutorial sequence
 
@@ -269,6 +269,7 @@
 - **D** — Open items *(four closed in v0.4.3)*
 - **E** — Per-family building upgrade-name ladders · **unwritten; gates the Structures plate**
 - **F** — Folk place-name component banks · **unwritten; gates the Names plate**
+- **G** — The generative layer in practice · **new, per V5-63.** The reference-and-amend procedure, written from working practice rather than specified programmatically
 
 ---
 

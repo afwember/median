@@ -203,6 +203,13 @@ Table — Rabbit carry 10 / food 10 / 1 animal. Squirrel 20 / 10 / 1 animal. Woo
 Every body-unit eats 10. Carry runs 10 : 12 : 20.
 DO: Published stat values are correct and unchanged. The mouse pair's 12 is the species' advantage; do not adjust carry to make the quantum exact.
 
+**C-08b · Speed is quantified** — *state (backend) + show (player-facing)* · §4.4, Appendix H · SRC editorial, 2026-07-26
+STATE: Speed is an integer on the same frame as Carry and Food.
+SHOW: The player meets it as a descriptive band, never as a figure.
+DO: §4.4 calls Speed one of three *economically-relevant dials* and then gives it words where the other two get integers — *Fastest · Standard · Standard*. It is the only unquantified dial, and both the Crossing (§24.1) and Evade resolution (§26.4) already depend on it. Quantify it.
+**Nothing new is added.** Appendix H exists precisely for what stands in place of a number where the interface declines to show one, and C-51's rule decides which side of the line Speed falls on: it feeds hidden resolution, so it stays **descriptive** to the player. This finishes the stat frame and gives a stubbed appendix its first real content.
+DO NOT: set the values. Actual figures for three core species and the Guest roster are a numbers pass, logged with the other deferred tuning.
+
 **C-09 · Aggregate and consequence** — *state, as a table* · §4.4 · SRC V5-2
 STATE: Resolves by body-unit — carry capacity, party size and composition, Party Score, cooperative lifting, food upkeep. Resolves by individual animal — wounds, maiming, tharn, exposure, death, bonds, Hearths, Records.
 A rabbit colony loses a whole unit at a time; a mouse colony loses half of one. A Standard item carried by two mice splits or drops if either goes down.
@@ -421,6 +428,13 @@ STATE: When a citizen goes tharn the frame centres on them by name, and the next
 SAY: **We do not leave what we can carry.**
 DO: Do not observe that the dramaturgy falls out of the timing rule, or that this needs no new machinery. The proverb is deliberately ambiguous between cargo and citizen, which is the choice the Turn actually presents.
 
+**C-60b · Forced Withdrawal** — *state + show* · §19.2, §26.4 · SRC editorial, 2026-07-26
+STATE: When a citizen goes tharn and sending a rescuer would leave nobody still in the encounter, the encounter ends there. The one still standing brings them out. The node is unresolved and both come home.
+SHOW: An under-strength run where exactly this happens, and the two citizens involved come out of it bonded.
+DO: **Not a new interrupt — Withdraw firing without being chosen.** Withdraw is already permanently available and never removable (§26.2); here it becomes mandatory, which satisfies restraint by using a system rather than by claiming to. Rating is **Failed**, with the debrief carrying the nuance — add no fifth grade. Exposure cuts party-wide as any Withdraw does, so nobody is maimed by this and nobody dies: the rule that untended tharn does not kill under normal play is preserved exactly. The tharn citizen's cargo drops, as §19.2 already provides.
+**The trigger is the absence of a third body, not a party size or a Tier** — so it also fires for a three-unit party that has already lost someone to a pin, a wound or an earlier tharn.
+DO NOT: coin a name for it in the fiction. The Chronicle describes what happened; it does not need a term. And do not state that the bond forms — §18.1 already makes leading a companion out of tharn a bond-forming event, so the worked example simply shows it.
+
 **C-61 · Fear memory has a trigger** — *state, one clause* · §19.2 · SRC V5-11
 STATE: A fear memory is tied to the species that caused it.
 
@@ -450,6 +464,27 @@ DO: Delete the passage stating that Guests wear less. Add nothing in its place. 
 **C-68 · Ambient Guests can be hurt** — *state* · §21.2 · SRC V5-49
 STATE: Ambient Guests are threatened during Base Defense, Road Work onset and catastrophe as core citizens are.
 DO: Remove the downside-free-investment phrasing. Do not write the sentence about furniture.
+
+**C-66b · The Guest template gains a third property** — *state, as the roster's governing shape* · §21.1 · SRC editorial, 2026-07-26
+STATE: Every Active Guest carries three things.
+
+| | |
+|---|---|
+| **A benefit that travels** | Something the Guest does anywhere, on any ground. |
+| **An affinity** | A node type where the Guest is extraordinary, and what it opens there. |
+| **A complication** | Something the Guest **does** that costs the party. |
+
+Affinity attaches to **node types**, which already exist — water hazards, sealed human containers, Margin pockets, Anchor Point nodes (§25.3).
+
+DO: Replace the two-column *opens / closes* table. **The affinity benefit is an option-opener, never a multiplier**, and the travelling benefit is the substantial one — otherwise the Launcher becomes a matching puzzle, which §28.2 forbids by name. Note that for several Guests the present *opens* is actually an affinity: the Raccoon's sealed containers and the Mink's water rescue both are, so seven travelling benefits need authoring.
+**A complication names something the Guest does, never an absence of benefit.** *Little value away from water* is a scope limit wearing a costume, and it contradicts §21.1's own zero-exceptions rule that no recruit is ever dead weight outside its specialty.
+Spread the complications across Approaches and the Turn. Three of the current six land on Evade.
+**Worked example — the Mink.** Travels: retrieval from places nothing else reaches. Affinity, water hazards: rescue from water, culverts and drainage. Complication: **she does not wait to be sent** — at a water node she goes, and the forced Turn resolves without the player choosing who rescues.
+DO NOT: author the other six here. The roster pass already deferred in Appendix D takes them, and canon already calls the present pairs working sketches.
+
+**C-66c · Guests carry odd numbers** — *state, in the roster* · §21.1 · SRC editorial, 2026-07-26
+STATE: A Guest's nominal carry is 10, and most Guests are not 10. Raccoon 14. Mink 12.
+DO: V5-4a already permits this — *larger Guests may exceed it and smaller ones fall short* — and nobody has used it. The core species hold the tidy figures; outsiders do not, which is most of the point. Non-round party totals are harmless, since cooperative carrying uses combined capacity with no per-item bookkeeping (§14). Exact values for the remaining five belong to the roster pass.
 
 **C-69 · The sky is answered by a Guest** — *state, brief* · §21.2 · SRC V5-41
 STATE: **Owl** — night-weighted perimeter detection; the night Sky-watch. **Songbird** — home morale, and the day Sky-watch: songbirds mob raptors and give alarm calls.
@@ -486,6 +521,10 @@ DO: Remove *chosen* as a category.
 **C-77 · A place's second name** — *state, one clause* · §23.2 · SRC V5-54
 STATE: A place's event-conferred second name is its After-name.
 
+**C-77b · After-names attach to places, never to Reaches** — *state, one clause* · §23.2 · SRC editorial, 2026-07-26
+STATE: A node earns an After-name from what happened there. The Home Median earns one by being inhabited, and that After-name is the colony's name. A Reach earns none.
+DO: The player's single naming act is the Home Median's After-name. No other Reach receives one, Held or otherwise. Nodes within a Reach continue to earn event-conferred names as §23.2 already describes. Do not state the principle that distinguishes them.
+
 **C-78 · Three colony registers** — *state, as a table* · §23.3 · SRC V4-16, V5-54
 STATE: At founding the player is offered one candidate from each register — **Grounded** describes the place, **Aspirational** hopes, **Tribute** remembers the Ancestral Warren, Den or Burrow. Each reroll keeps the shape.
 DO: Do not explain that this is more legible than three from one pool.
@@ -508,8 +547,13 @@ DO: The aerial exception is logged, not a sentence in §25. Do not write the asy
 ## §26 · Encounters
 
 **C-82 · Encounter length** — *state, as a table* · §26.1 · SRC V5-9
-STATE: Contested — 2 rounds, 1 Turn, the common case. 3 rounds, 2 Turns, when the second round stays close; rare. Uncontested — the frame opens and the node is described; it may resolve at once. Three rounds is the ceiling.
+STATE: Contested — 2 rounds, 1 Turn, the common case. 3 rounds, 2 Turns, when the second stays close; rare. 4 rounds, 3 Turns, when the third stays close; rarest. Uncontested — the frame opens and the node is described; it may resolve at once. Four rounds is the ceiling.
 DO: Remove the one-round row and the "common case" label. Correct the §26.8 guardrail to *most contested encounters have one Turn*. Do not write the sentence about animation.
+
+**C-82b · Four rounds, rarely** — *state, in the table* · §26.1, §26.8 · SRC editorial, 2026-07-26
+STATE: A contested encounter may run to a fourth round when the third still lands close. Four rounds carry three Turns. It is the rarest length in the game, and where both the worst and the best outcomes live.
+DO: Raise the ceiling from three to four in §26.1's table, §26.8's guardrail, and the Appendix A entry. **The close window narrows each round** — wide after Round 1, tighter after Round 2, tighter again after Round 3 — which is what makes four rare without a trigger and keeps *length is never rolled for* true. Appendix D's deferred *close window* becomes three values rather than one. Tharn's window becomes Rounds 1 to 3, on the unchanged rule that it cannot fire on a final round.
+DO NOT: introduce a probability trigger. Appendix B already records a low-probability roll as rejected on record for exactly this. Do not explain that the tail widens, or that Withdraw gains teeth at the third Turn — both are consequences a player meets, not sentences the book writes.
 
 **C-83 · Change Approach** — *state, as a Turn row* · §26.4 · SRC V5-16
 STATE: The party may change Approach at a Turn, to an Approach that was available at entry. The new Presence applies fresh and exposure does not reset.
@@ -535,8 +579,13 @@ DO: Do not state that recognition requires a name.
 ## §28 · Expeditions
 
 **C-88 · Party size** — *state, as a table* · §28 · SRC V5-4
-STATE: Three to five body-units. Rabbit 3 animals, range 3–5, carry 30 / 50. Squirrel 3, 3–5, 60 / 100. Wood Mouse 6, 6–10, 36 / 60. The Launcher offers the Standard Party by default.
+STATE: Three to five body-units is the tuned band; two is legal and worse. Rabbit 3 animals, range 3–5, carry 30 / 50. Squirrel 3, 3–5, 60 / 100. Wood Mouse 6, 6–10, 36 / 60. The Launcher offers the Standard Party by default.
 DO: Do not compute proportional-commitment percentages in the body; the ceilings they rest on are not canon.
+
+**C-88b · The under-strength party** — *state, one clause + show* · §28 · SRC editorial, 2026-07-26
+STATE: Two body-units is a legal party. Three to five is the tuned band, and the Standard Party is what the Launcher offers.
+SHOW: An under-strength run in which a citizen goes tharn and there is no third body to send.
+DO: Remove the floor rather than adding an exemption — a two-unit party is legal for every species, and mice reach it at four animals. **Write no penalty.** The existing numbers already are one: less carry, a lower Party Score, and fewer bodies across which to spread exposure. The real cost is the one V5-4 already names — tharn's *who rescues, not whether* needs a third body still holding the line, so **a two-unit party has given up the rescue before it leaves**, and a tharn there ends the run outright (C-60b). State that in a clause and let the worked example carry the rest.
 
 **C-89 · Margin Raids from outposts** — *state* · §28.1, §29.2 · SRC V5-37
 STATE: A Held Reach with a Staging Post can run Margin Raids of its own.
@@ -632,7 +681,7 @@ Structural — thirty-eight sections · §§35–38 unchanged · no reference re
 
 Terminology — no *Character Record* · no *Edge Effect* · no *undiscovered / discovered-but-expedition-only / outposted* · `body-unit` lowercase throughout.
 
-Substance — contested encounters always carry a Turn · body-units used for capacity, party size, food and score, and never for harm · Guests depicted as core citizens are · no core citizen bare by rule at home · the §34 guarantee present verbatim and unshortened · nine CREATED VISUAL panels · every worked example uses a story-colony citizen where one fits.
+Substance — every Active Guest carries a travelling benefit, an affinity and a complication, and no complication names an absence · contested encounters always carry a Turn · four rounds is the ceiling and appears in §26.1, §26.8 and Appendix A alike · body-units used for capacity, party size, food and score, and never for harm · Guests depicted as core citizens are · no core citizen bare by rule at home · the §34 guarantee present verbatim and unshortened · nine CREATED VISUAL panels · every worked example uses a story-colony citizen where one fits.
 
 Voice — grep the body for: version numbers · *earlier · formerly · superseded · supersedes · replaced · no longer · retired · rejected* · *There is no… · There are no…* · *must not be* · *Why not* · *this document* · *no new system · no new machinery · without adding · at no cost · costs nothing* · *already exists · already does · already carries* · *worth stating* · *which is the point* · *reaching for*. Each hit is guilty until argued innocent.
 

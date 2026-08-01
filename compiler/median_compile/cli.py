@@ -451,18 +451,28 @@ def extract_cmd(
             raise typer.Exit(1)
         chunks.extend(json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line)
 
+    providers_cfg0 = (cfg.model_dump().get("providers") or {}).get("extraction", {})
+    ceiling = max_tokens or providers_cfg0.get("max_output_tokens") or ex.DEFAULT_MAX_OUTPUT_TOKENS
     if dry_run:
-        est = ex.estimate(chunks)
+        est = ex.estimate(chunks, ceiling)
         table = Table(show_header=False)
         table.add_column("k")
         table.add_column("v", justify="right")
         for k, v in est.items():
             table.add_row(k.replace("_", " "), f"{v:,}" if isinstance(v, int) else str(v))
         console.print(table)
+        if est["chunks_over_ceiling"]:
+            console.print(
+                f"[red]{est['chunks_over_ceiling']} chunk(s) project past the "
+                f"{ceiling:,}-token ceiling and will truncate.[/red] Lower "
+                f"chunking.target_tokens to ~{ex.SAFE_CHUNK_TOKENS:,} and re-chunk."
+            )
         console.print(
-            f"[dim]estimate only — records/1k and output/record are seeded guesses "
-            f"refined after the pilot. Prompt v{ex.PROMPT_VERSION}, "
-            f"schema v{rc.RECORD_SCHEMA_VERSION}, {len(namespaces)} namespaces.[/dim]"
+            f"[dim]coefficients calibrated on a real call "
+            f"({ex.RECORDS_PER_1K_TOKENS} records/1k input, "
+            f"{ex.OUTPUT_TOKENS_PER_RECORD} tokens/record). Pricing is a config "
+            f"value — check it matches your model. Prompt v{ex.PROMPT_VERSION}, "
+            f"schema v{rc.SPAN_SCHEMA_VERSION}, {len(namespaces)} namespaces.[/dim]"
         )
         return
 
@@ -488,15 +498,13 @@ def extract_cmd(
             console.print(f"[red]provider unavailable[/red] {exc}")
             raise typer.Exit(1)
 
-    providers_cfg = (cfg.model_dump().get("providers") or {}).get("extraction", {})
-    ceiling = max_tokens or providers_cfg.get("max_output_tokens") or ex.DEFAULT_MAX_OUTPUT_TOKENS
     cache_dir = build.dir / ".cache" / "extract"
     meta = {e.id: e for e in todo}
     results: dict[str, ex.ExtractResult] = {}
 
     with rec.record(
         build, "extract", "extract",
-        {"prompt": ex.PROMPT_VERSION, "schema": rc.RECORD_SCHEMA_VERSION,
+        {"prompt": ex.PROMPT_VERSION, "schema": rc.SPAN_SCHEMA_VERSION,
          "provider": provider.name, "model": provider.model},
     ) as run:
         for c in chunks:
@@ -514,6 +522,18 @@ def extract_cmd(
                     max_tokens=ceiling,
                 )
             except ex.ExtractionError as exc:
+                # A failed call is still a charged call. Recording it as free
+                # under-reports spend, which is how $2.16 showed as $0.00.
+                res.calls.append(
+                    ex.Call(
+                        call_id="", provider=provider.name, model=provider.model,
+                        task="extract", source=c["source"], chunk=c["id"],
+                        input_hash=c["sha256"], prompt_version=ex.PROMPT_VERSION,
+                        schema_version=rc.SPAN_SCHEMA_VERSION,
+                        input_tokens=c["tokens"] + ex.PER_CALL_OVERHEAD_TOKENS,
+                        output_tokens=ceiling, status="error", notes=str(exc)[:200],
+                    )
+                )
                 res.errors.append(str(exc))
                 console.print(f"\n  [red]{exc}[/red]")
                 continue
@@ -522,11 +542,19 @@ def extract_cmd(
                 + (" [dim](cached)[/dim]" if call.cached else "")
             )
             res.calls.append(call)
+            spans = []
             for item in raw:
                 try:
-                    res.records.append(rc.AtomicRecord.model_validate(item))
+                    spans.append(rc.SpanRecord.model_validate(item))
                 except Exception as exc:  # noqa: BLE001
                     res.errors.append(f"{c['id']}: schema — {str(exc)[:160]}")
+            lean = (build.lean / f"{c['source']}.md").read_text(encoding="utf-8")
+            blocks = {b.coord: b.text for b in ck.parse_blocks(lean)}
+            hydrated, herrs = rc.hydrate(
+                spans, blocks, c["source"], start_number=len(res.records) + 1
+            )
+            res.records.extend(hydrated)
+            res.errors.extend(herrs)
 
         table = Table(show_header=True, header_style="bold")
         for col in ("id", "chunks", "records", "cached", "in tok", "out tok", "errors"):

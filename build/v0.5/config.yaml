@@ -3,8 +3,8 @@ versions:
   normalizer_full: '1.0'
   lean_ruleset: '1.0'
   chunker: '1.0'
-  extraction_prompt: '1.0'
-  record_schema: '1.0'
+  extraction_prompt: '2.0'
+  record_schema: '2.0'
   judgment_prompt: '1.0'
   probe: '1.0'
 human_gates:
@@ -13,8 +13,8 @@ human_gates:
   architecture: true
   release: true
 chunking:
-  target_tokens: 10000
-  max_tokens: 14000
+  target_tokens: 5500
+  max_tokens: 7000
   overlap_tokens: 400
   respect_headings: true
   seam_fraction: 0.9
@@ -23,6 +23,9 @@ providers:
     provider: anthropic
     model: ${ANTHROPIC_EXTRACTION_MODEL}
     max_output_tokens: 32000
+    pricing:
+      input_per_mtok: 5.0
+      output_per_mtok: 25.0
   judgment:
     provider: openai
     model: ${OPENAI_JUDGMENT_MODEL}

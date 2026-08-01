@@ -260,3 +260,116 @@ def json_schema() -> dict:
     schema = AtomicRecord.model_json_schema()
     schema["$id"] = f"median-record-{RECORD_SCHEMA_VERSION}"
     return schema
+
+
+# ---------------------------------------------------------------------------
+# Schema 2.0 — the model emits a span, the compiler reconstitutes the record
+# ---------------------------------------------------------------------------
+
+SPAN_SCHEMA_VERSION = "2.0"
+
+
+class SpanRecord(BaseModel):
+    """What extraction actually returns under prompt 2.0.
+
+    Measured against a real v1.0 call, `quote` was 33% of every record and
+    `id`/`src`/`terms`/`deps` another 14% — all of it either text the compiler
+    already holds or values it can assign. v1.0 also omitted `src` on all 218
+    observed records, which would have failed validation corpus-wide. Asking
+    for less is both cheaper and harder to get wrong.
+    """
+
+    model_config = {"extra": "forbid"}
+
+    loc: str
+    q0: str
+    q1: str
+    claim: str
+    type: ContentType
+    weight: Weight
+    status: Status
+    owner: str
+    flags: list[str] = Field(default_factory=list)
+
+    @field_validator("flags")
+    @classmethod
+    def _known_flags(cls, v: list[str]) -> list[str]:
+        unknown = set(v) - FLAGS
+        if unknown:
+            raise ValueError(f"unknown flag(s): {sorted(unknown)}")
+        return v
+
+
+class SpanUnresolvable(ValueError):
+    """The span markers do not locate a passage in the cited block."""
+
+
+def resolve_span(block: str, q0: str, q1: str) -> str:
+    """Recover the full quotation between two verbatim markers.
+
+    Whitespace-insensitive on both markers, because Markdown wrapping is not
+    semantic. Nothing else is relaxed: if a marker was paraphrased rather than
+    copied, this fails loudly rather than inventing a quotation.
+    """
+    flat = normalize_ws(block)
+    a, b = normalize_ws(q0), normalize_ws(q1)
+    i = flat.find(a)
+    if i < 0:
+        raise SpanUnresolvable(f"q0 not found in block: {q0[:50]!r}")
+    j = flat.find(b, i)
+    if j < 0:
+        # Tolerate q1 appearing before q0 only if it is the same marker.
+        raise SpanUnresolvable(f"q1 not found at or after q0: {q1[:50]!r}")
+    return flat[i : j + len(b)]
+
+
+def hydrate(
+    spans: list[SpanRecord],
+    blocks: dict[str, str],
+    source_id: str,
+    start_number: int = 1,
+    lexicon: set[str] | None = None,
+) -> tuple[list[AtomicRecord], list[str]]:
+    """Turn span records into full atomic records. Deterministic.
+
+    IDs are assigned here, in document order, so the model can neither reuse
+    nor renumber them. `src` comes from the ID. `quote` is reconstituted from
+    the block. `terms` are found by scanning the resolved quotation.
+    """
+    out: list[AtomicRecord] = []
+    errors: list[str] = []
+    n = start_number
+
+    for s in spans:
+        block = blocks.get(s.loc)
+        if block is None:
+            errors.append(f"{source_id}:{n:04d}: coordinate {s.loc!r} is not a block")
+            n += 1
+            continue
+        try:
+            quote = resolve_span(block, s.q0, s.q1)
+        except SpanUnresolvable as exc:
+            errors.append(f"{source_id}:{n:04d} at {s.loc}: {exc}")
+            n += 1
+            continue
+
+        terms = sorted(t for t in (lexicon or set()) if t in quote)
+        out.append(
+            AtomicRecord(
+                id=f"{source_id}:{n:04d}",
+                src=source_id,
+                loc=s.loc,
+                quote=quote,
+                claim=s.claim,
+                type=s.type,
+                weight=s.weight,
+                status=s.status,
+                owner=s.owner,
+                terms=terms,
+                deps=[],
+                flags=s.flags,
+            )
+        )
+        n += 1
+
+    return out, errors

@@ -24,7 +24,7 @@ from typing import Protocol
 
 from .records import AtomicRecord, RECORD_SCHEMA_VERSION
 
-PROMPT_VERSION = "1.0"
+PROMPT_VERSION = "2.0"
 
 
 class ExtractionError(RuntimeError):
@@ -38,23 +38,39 @@ class Truncated(ExtractionError):
 class MalformedResponse(ExtractionError):
     """The response parsed as text but is not a valid records payload."""
 
-#: Published Claude pricing, USD per million tokens. Used only for the
-#: dry-run estimate; the call log records actual token counts.
+#: USD per million tokens. A configuration value, not a fact: override in
+#: config.yaml under providers.extraction.pricing to match the model actually
+#: in use. Affects the estimate only; the call log records real token counts.
+#: Derived from a real spend: 36k input + 76k output cost $2.16, which matches
+#: $5/$25 and rules out the $3/$15 I originally assumed. Verify against your
+#: own console pricing and override in config.yaml if the model changes.
 PRICING = {
-    "input_per_mtok": 3.00,
-    "output_per_mtok": 15.00,
+    "input_per_mtok": 5.00,
+    "output_per_mtok": 25.00,
 }
 
-#: Records per 1k input tokens, observed. Seeded from nothing — refined after
-#: the pilot. Only affects the cost estimate, never behaviour.
-RECORDS_PER_1K_TOKENS = 4.0
-OUTPUT_TOKENS_PER_RECORD = 180
+#: Calibrated against the first real call: SPEC_HOME:C001, 9,449 input tokens,
+#: 89 owned blocks, 193 projected records. My seeded guesses were 4.0 and 180,
+#: which under-costed the corpus by 6.6x. Extraction output is dense JSON and
+#: tokenizes at roughly 1.9 chars/token, not the 4.0 that prose does.
+RECORDS_PER_1K_TOKENS = 20.4
+#: 283 under schema 1.0. Schema 2.0 drops quote/id/src/terms/deps, measured at
+#: 47% of the v1.0 record, leaving ~169.
+OUTPUT_TOKENS_PER_RECORD = 169
+
+#: Output tokens a chunk of a given size will produce. Used to size chunks so
+#: a call fits under the ceiling rather than discovering it does not.
+OUTPUT_EXPANSION = RECORDS_PER_1K_TOKENS * OUTPUT_TOKENS_PER_RECORD / 1000  # ~5.8x
 
 #: Output ceiling per call. The first real run truncated at 12,000: a 9k-token
 #: chunk yields on the order of 100 records, and at ~180 tokens each that is
 #: 18k of output. Set well clear of the observed need — this is a ceiling, not
 #: a spend, and unused headroom costs nothing.
 DEFAULT_MAX_OUTPUT_TOKENS = 32_000
+
+#: Chunk size that keeps projected output comfortably under the ceiling.
+#: 9.4k in produced ~55k out and truncated at 32k. 3.5k in projects to ~20k.
+SAFE_CHUNK_TOKENS = 5_500
 
 
 class Provider(Protocol):
@@ -94,21 +110,19 @@ class FakeProvider:
             body = blocks.get(coord, "")
             if not body or body.lstrip().startswith("#"):
                 continue
-            quote = " ".join(body.split())[:200]
+            words = body.split()
+            if len(words) < 6:
+                continue
             records.append(
                 {
-                    "id": f"{source_id}:{n:04d}",
-                    "src": source_id,
                     "loc": coord,
-                    "quote": quote,
+                    "q0": " ".join(words[:4]),
+                    "q1": " ".join(words[-3:]),
                     "claim": f"Fake claim for {coord}.",
                     "type": "REQ",
                     "weight": "STATE",
                     "status": "canonical",
                     "owner": "meta",
-                    "terms": [],
-                    "deps": [],
-                    "flags": [],
                 }
             )
             n += 1
@@ -214,21 +228,29 @@ def build_user_prompt(
     )
 
 
-def estimate(chunks: list[dict]) -> dict:
-    """Cost estimate for a dry run. Deliberately rough and clearly labelled."""
+#: Prompt plus 86 namespace descriptions, sent with every call.
+PER_CALL_OVERHEAD_TOKENS = 3_000
+
+
+def estimate(chunks: list[dict], ceiling: int = DEFAULT_MAX_OUTPUT_TOKENS) -> dict:
+    """Cost estimate for a dry run, from coefficients observed in a real call."""
     in_tok = sum(c["tokens"] for c in chunks)
+    billed_in = in_tok + PER_CALL_OVERHEAD_TOKENS * len(chunks)
     est_records = int(in_tok / 1000 * RECORDS_PER_1K_TOKENS)
     out_tok = est_records * OUTPUT_TOKENS_PER_RECORD
+    wont_fit = [c["id"] for c in chunks if c["tokens"] * OUTPUT_EXPANSION > ceiling]
     return {
         "chunks": len(chunks),
-        "input_tokens": in_tok,
+        "chunk_tokens": in_tok,
+        "billed_input_tokens": billed_in,
         "est_records": est_records,
         "est_output_tokens": out_tok,
         "est_cost_usd": round(
-            in_tok / 1e6 * PRICING["input_per_mtok"]
+            billed_in / 1e6 * PRICING["input_per_mtok"]
             + out_tok / 1e6 * PRICING["output_per_mtok"],
             2,
         ),
+        "chunks_over_ceiling": len(wont_fit),
     }
 
 

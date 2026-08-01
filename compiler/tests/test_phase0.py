@@ -703,3 +703,76 @@ def test_a_good_response_caches_and_replays_free(tmp_path):
 def test_default_ceiling_clears_observed_need():
     """12,000 truncated a real 9k-token chunk. The default must be well above."""
     assert ex.DEFAULT_MAX_OUTPUT_TOKENS >= 24_000
+
+
+# --------------------------------------------------------------------------
+# Schema 2.0 — span records, hydrated by the compiler
+# --------------------------------------------------------------------------
+
+BLOCK = (
+    "Each present and available Citizen contributes one unit of Role Capacity, "
+    "except while Away, in which case they contribute none."
+)
+
+
+def _span(**kw):
+    base = dict(
+        loc="4.2¶3", q0="Each present and available Citizen",
+        q1="they contribute none.", claim="X.", type="REQ",
+        weight="STATE", status="canonical", owner="home.dwell.roles",
+    )
+    base.update(kw)
+    return rc.SpanRecord(**base)
+
+
+def test_span_resolves_to_the_full_quotation():
+    assert rc.resolve_span(BLOCK, "Each present and available", "contribute none.") == BLOCK
+
+
+def test_span_is_whitespace_insensitive_only():
+    assert rc.resolve_span(BLOCK, "Each  present\nand available", "contribute  none.")
+
+
+def test_a_paraphrased_marker_fails_loudly():
+    """The whole point: the compiler must not invent a quotation."""
+    with pytest.raises(rc.SpanUnresolvable, match="q0 not found"):
+        rc.resolve_span(BLOCK, "Every available Citizen provides", "contribute none.")
+
+
+def test_q1_before_q0_is_rejected():
+    with pytest.raises(rc.SpanUnresolvable, match="q1 not found"):
+        rc.resolve_span(BLOCK, "except while Away", "Each present")
+
+
+def test_hydrate_assigns_ids_and_derives_src():
+    """v1.0 omitted `src` on all 218 observed records. Now it cannot."""
+    recs, errs = rc.hydrate([_span(), _span()], {"4.2¶3": BLOCK}, "SPEC_HOME", 7)
+    assert not errs
+    assert [r.id for r in recs] == ["SPEC_HOME:0007", "SPEC_HOME:0008"]
+    assert all(r.src == "SPEC_HOME" for r in recs)
+
+
+def test_hydrated_quote_is_grounded_by_construction():
+    recs, _ = rc.hydrate([_span()], {"4.2¶3": BLOCK}, "SPEC_HOME")
+    assert rc.quote_is_grounded(recs[0].quote, BLOCK)
+
+
+def test_hydrate_finds_terms_from_the_lexicon():
+    recs, _ = rc.hydrate(
+        [_span()], {"4.2¶3": BLOCK}, "SPEC_HOME", lexicon={"Citizen", "Role Capacity", "Reach"}
+    )
+    assert recs[0].terms == ["Citizen", "Role Capacity"]
+
+
+def test_unresolvable_span_becomes_an_error_not_a_record():
+    recs, errs = rc.hydrate(
+        [_span(q0="not in the block at all")], {"4.2¶3": BLOCK}, "SPEC_HOME"
+    )
+    assert not recs and errs
+
+
+def test_span_record_rejects_the_dropped_fields():
+    """quote/id/src/terms/deps are the compiler's to supply, not the model's."""
+    for extra in ("quote", "id", "src", "terms", "deps"):
+        with pytest.raises(ValidationError):
+            _span(**{extra: "x"})

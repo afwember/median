@@ -838,3 +838,40 @@ def test_paraphrase_still_fails_after_table_tolerance():
     """Tolerating markup must not become tolerating invention."""
     with pytest.raises(rc.SpanUnresolvable):
         rc.resolve_span(TABLE_BLOCK, "Entropy spiral causes", "arrive daily")
+
+
+def test_split_claim_dropped_when_span_ends_mid_block():
+    """27 of 45 SPEC_CROSS records flagged split_claim on spans that ended
+    mid-block, where the claim provably cannot continue anywhere."""
+    block = "First rule here. Second rule here. Third rule ends the block."
+    s = rc.SpanRecord(
+        loc="1¶1", q0="First rule here.", q1="First rule here.", claim="X.",
+        type="REQ", weight="STATE", status="canonical", owner="home.dwell",
+        flags=["split_claim"],
+    )
+    recs, errs = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    assert recs[0].flags == []
+    assert any("dropped split_claim" in e for e in errs)
+
+
+def test_split_claim_kept_when_span_reaches_the_block_end():
+    """A genuinely truncated rule must keep the flag for Phase 5."""
+    block = "A Citizen contributes one unit of Capacity, except"
+    s = rc.SpanRecord(
+        loc="1¶1", q0="A Citizen contributes", q1="Capacity, except", claim="X.",
+        type="REQ", weight="STATE", status="canonical", owner="home.dwell",
+        flags=["split_claim"],
+    )
+    recs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    assert recs[0].flags == ["split_claim"]
+
+
+def test_other_flags_survive_the_correction():
+    block = "First rule here. Second rule ends the block."
+    s = rc.SpanRecord(
+        loc="1¶1", q0="First rule here.", q1="First rule here.", claim="X.",
+        type="REQ", weight="STATE", status="canonical", owner="home.dwell",
+        flags=["split_claim", "table_derived"],
+    )
+    recs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    assert recs[0].flags == ["table_derived"]

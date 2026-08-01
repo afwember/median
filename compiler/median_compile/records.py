@@ -362,6 +362,15 @@ def resolve_span(block: str, q0: str, q1: str) -> str:
     return normalize_ws(block[start:end])
 
 
+def _ends_block(quote: str, block: str) -> bool:
+    """Does the quotation reach the end of its block?
+
+    Only then can a claim plausibly continue into the next one.
+    """
+    b, q = normalize_ws(block), normalize_ws(quote)
+    return bool(q) and b.endswith(q[-40:] if len(q) > 40 else q)
+
+
 def hydrate(
     spans: list[SpanRecord],
     blocks: dict[str, str],
@@ -377,6 +386,7 @@ def hydrate(
     """
     out: list[AtomicRecord] = []
     errors: list[str] = []
+    corrected: list[str] = []
     n = start_number
 
     for s in spans:
@@ -392,6 +402,16 @@ def hydrate(
             n += 1
             continue
 
+        flags = list(s.flags)
+        # A span that ends before the end of its block cannot continue into
+        # another block. Extraction applied split_claim to 27 such records on
+        # SPEC_CROSS, reading it as "this block holds other claims too" — the
+        # ordinary case. Dropping it here keeps the flag meaningful for Phase 5,
+        # which uses it to find genuinely truncated rules.
+        if "split_claim" in flags and not _ends_block(quote, block):
+            flags.remove("split_claim")
+            corrected.append(f"{source_id}:{n:04d}")
+
         terms = sorted(t for t in (lexicon or set()) if t in quote)
         out.append(
             AtomicRecord(
@@ -406,9 +426,14 @@ def hydrate(
                 owner=s.owner,
                 terms=terms,
                 deps=[],
-                flags=s.flags,
+                flags=flags,
             )
         )
         n += 1
 
+    if corrected:
+        errors.append(
+            f"{source_id}: dropped split_claim from {len(corrected)} record(s) "
+            "whose span ends mid-block (advisory, not a failure)"
+        )
     return out, errors

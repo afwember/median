@@ -424,6 +424,7 @@ def extract_cmd(
     fake: Annotated[bool, typer.Option("--fake", help="Deterministic provider, no network.")] = False,
     max_tokens: Annotated[Optional[int], typer.Option(help="Override output ceiling.")] = None,
     model: Annotated[Optional[str], typer.Option(help="Override the extraction model.")] = None,
+    thinking: Annotated[Optional[int], typer.Option(help="Extended-thinking budget; 0 disables.")] = None,
 ) -> None:
     """Phase 4 — Claude extraction, Pass A. Bounded, cached, schema-constrained."""
     build, entries = _load(build_dir)
@@ -501,7 +502,11 @@ def extract_cmd(
             provider = AnthropicProvider(
                 model=resolved,
                 on_progress=_tick,
-                thinking_tokens=int(providers_cfg0.get("thinking_tokens") or 0),
+                thinking_tokens=(
+                    thinking
+                    if thinking is not None
+                    else int(providers_cfg0.get("thinking_tokens") or 0)
+                ),
             )
         except ProviderUnavailable as exc:
             console.print(f"[red]provider unavailable[/red] {exc}")

@@ -1,0 +1,229 @@
+# MEDIAN v0.5 — Namespace rulings ledger
+#
+# Append-only. Every change to `owner_namespaces.yaml` has an entry here saying
+# who ruled, on what evidence, and what moved. The namespace tree is the
+# primary lever for Phase 7 conflict clustering, and `owner` has no validation
+# that would catch a plausible-but-wrong value — so the tree's provenance has
+# to be as auditable as the records'.
+#
+# Status values:
+#   ruled   Asa has decided; the tree reflects it
+#   open    a gap or ambiguity found, awaiting a ruling
+#   noted   an observation recorded so it is not rediscovered
+#
+# WORKFLOW (Asa, 1 August 2026). Namespace decisions are checked per source,
+# not per corpus:
+#
+#   extract <SOURCE>  ->  review <SOURCE>  ->  rulings appended here
+#                                          ->  owner_namespaces.yaml amended
+#
+# Reviewing after each spec means a bad namespace is caught after one document
+# instead of after twenty-one. See `median-compile review --source <ID>`.
+
+version: "0.5"
+
+rulings:
+
+  # ======================= ARCHITECTURE ==================================
+
+  - id: R001
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: A rule belongs to a system; Registers are accumulations of systems
+    effect: >-
+      Containers derived mechanically (any namespace with children). Owning a
+      record to one is a validation error.
+
+  - id: R002
+    date: 2026-08-01
+    by: Claude
+    status: ruled
+    subject: A branch may define itself
+    evidence: >-
+      8 of 56 bare away.crossing records define the register as a whole and
+      belong to no leaf; 48 are a genuine missing system.
+    effect: Flag `branch_charter` added; the container error exempts it.
+
+  - id: R003
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: A Register is a UI type
+    detail: >-
+      Mode is how the game is played; a Register is the camera and interaction
+      grammar the player looks through; systems cluster under registers; rules
+      belong to systems. Gives the camera test — which camera is live when
+      this rule operates.
+    effect: >-
+      Tree rebuilt. Cameras recorded in the `registers:` block so extraction
+      reads the criterion rather than inferring it.
+
+  - id: R004
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: The Citizen is a subject, not an owner
+    detail: ~80% of rules concern Citizens.
+    effect: subject/system seam documented; `citizen.*` holds only unit-defining claims.
+
+  - id: R005
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: The world's two axes
+    detail: >-
+      Cross-section is a transverse slice of one Median Reach — Sound Wall,
+      Margin, Highway, Median, Highway, Margin, Sound Wall. The corridor is a
+      longitudinal chain of Median Reach units.
+    effect: Split into world.reach and world.corridor.
+
+  - id: R006
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: away.corridor should not exist
+    detail: The world is only ever explored by the Player in Away Mode.
+    effect: Removed; material folded into world.corridor.
+
+  - id: R007
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: Crossing systems
+    detail: phases, species_experience, adversity. Staging is a phase, not a system beside them.
+    effect: Three systems added under away.crossing.
+
+  - id: R008
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: The Turn lives with MEET
+    detail: >-
+      An Encounter is comprised of Turns. Encounter, MEET and Encounter MEET
+      are one thing. Rounds are deprecated terminology and may still appear.
+    effect: >-
+      meet.turn added. Makes "Crossing itself does not acquire turn structure"
+      legible as a refusal of another register's unit.
+
+  - id: R009
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: Species Spatial lives in DWELL
+    effect: >-
+      species.spatial -> home.dwell.species_spatial. Species differentiation
+      expresses once per register; top-level `species` keeps only the doctrine.
+
+  - id: R010
+    date: 2026-08-01
+    by: Claude
+    status: ruled
+    subject: Presentation is not a domain
+    evidence: >-
+      All 25 records that landed on ui.* in the two pilots were register rules.
+      ui.turn's name attracted ten Dawn-ledger records because "turn" was
+      ambiguous; none was about a Turn.
+    effect: ui, ui.turn and ui.numerals removed.
+
+  - id: R011
+    date: 2026-08-01
+    by: Claude
+    status: ruled
+    subject: Encounter origin is a parameter, not a system
+    evidence: >-
+      28 records on meet.home_origin are eligibility masks, Weakness selection
+      and spend grammar — MEET machinery parameterised by entry point.
+    effect: >-
+      meet.home_origin and meet.field_origin removed; replaced by meet.turn,
+      meet.eligibility, meet.choice, meet.structure.
+
+  # ======================= OPEN — WHOLE TERRITORIES ======================
+  #
+  # Found by mapping all 21 compile-disposition sources against the tree and
+  # asking which spec has nowhere to put its records. Four do.
+
+  - id: R012
+    status: open
+    subject: Progression and Discovery has no namespace
+    evidence: >-
+      SPEC_PROG is "Discovery, Time, Movement and Civic Progression
+      Specification". Discovery has no owner anywhere in the tree. Civic
+      progression is only partly covered by population.tiers. Campaign-scale
+      time is split between world.time and home.seasonal with no node for the
+      arc itself.
+    question: >-
+      Is this one domain or several? Discovery of the corridor, civic
+      advancement over a campaign, and the passage of campaign time may be one
+      system or three. It persists across cameras, so it is a domain, not a
+      register system.
+
+  - id: R013
+    status: open
+    subject: Philosophy and pillars have no namespace — and would land badly
+    evidence: >-
+      PHIL_ARCH (given top authority) and PHIL_SPEC have no owner but `meta`,
+      which is voice `process` by default. That would silently mark MEDIAN's
+      philosophical core as internal-only material that never reaches the
+      reader — the opposite of its authority.
+    question: >-
+      A domain for the game's thesis, pillars, tone and themes — material that
+      is voice `world` and belongs in the book. `meta` is about making the
+      document; this is about what the game is.
+    severity: >-
+      Highest of the four. A wrong owner here misfiles the most authoritative
+      source in the corpus, and misfiles it as unpublishable.
+
+  - id: R014
+    status: open
+    subject: Manifestations have no namespace
+    evidence: MANI_SPEC and MANI_BOARD (board game manifestation).
+    question: >-
+      Other-medium expressions of MEDIAN. Asa ruled these become Appendixes
+      rather than audit material, so this may be book architecture rather than
+      a game domain.
+
+  - id: R015
+    status: open
+    subject: Market position has no namespace
+    evidence: RSCH_MKT, "Market Position and Comparative Landscape".
+    question: Appendix material, per Asa. Same question as R014.
+
+  # ======================= OPEN — PLACEMENT ==============================
+
+  - id: R016
+    status: open
+    subject: home.seasonal
+    question: >-
+      The seasonal loop is lived at Home but bears on Away, so the camera test
+      does not place it. A DWELL system, or a domain?
+
+  - id: R017
+    status: open
+    subject: away.launch and away.homecoming
+    question: >-
+      Seams between Modes with no camera of their own. Mode-level nodes, or do
+      they belong with register.switch?
+
+  - id: R018
+    status: open
+    subject: world as a domain
+    question: >-
+      Biome was ruled a Field system, but the Reach cross-section is read
+      through both the TRAVEL camera and the Crossing overlay. Does the ground
+      stay a domain that registers observe, or decompose per register the way
+      species did?
+
+  # ======================= NOTED =========================================
+
+  - id: R019
+    date: 2026-08-01
+    by: Claude
+    status: noted
+    subject: Every ruling invalidates the whole extraction cache
+    detail: >-
+      The namespace vocabulary is hashed into the extraction cache key, because
+      it demonstrably changes the answer. So any amendment here re-prices every
+      source already extracted. Per-source review therefore implies two corpus
+      passes, not twenty-one: a discovery pass that finds the territory, and an
+      authoritative pass against the frozen vocabulary.

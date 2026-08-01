@@ -1300,3 +1300,43 @@ def test_the_live_prompt_documents_every_flag_it_may_emit():
     compiler_assigned = {"span_end_inferred", "manual"}
     for flag in rc.FLAGS - compiler_assigned:
         assert flag in body, f"{flag} is emittable but undocumented in the prompt"
+
+
+# --------------------------------------------------------------------------
+# Namespace rulings ledger — 1 August 2026
+#
+# The tree is the primary lever for Phase 7 clustering and `owner` has no
+# validation that would catch a plausible-but-wrong value, so the tree's
+# provenance must be as auditable as the records'.
+# --------------------------------------------------------------------------
+
+
+def _rulings():
+    import yaml
+    p = Path(__file__).parents[2] / "build/v0.5/architecture/namespace_rulings.yaml"
+    return yaml.safe_load(p.read_text(encoding="utf-8"))["rulings"]
+
+
+def test_every_ruling_has_a_status_we_recognise():
+    for r in _rulings():
+        assert r["status"] in {"ruled", "open", "noted"}, r["id"]
+
+
+def test_ruling_ids_are_unique_and_sequential():
+    ids = [r["id"] for r in _rulings()]
+    assert len(set(ids)) == len(ids)
+    assert ids == sorted(ids), "append-only: ids must stay in order"
+
+
+def test_a_settled_ruling_records_who_settled_it():
+    """An unattributed ruling is not provenance."""
+    for r in _rulings():
+        if r["status"] == "ruled":
+            assert r.get("by"), f"{r['id']} is ruled but nobody is named"
+            assert r.get("date"), f"{r['id']} is ruled but undated"
+
+
+def test_open_rulings_ask_something():
+    for r in _rulings():
+        if r["status"] == "open":
+            assert r.get("question"), f"{r['id']} is open but asks nothing"

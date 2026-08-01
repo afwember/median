@@ -721,6 +721,128 @@ def compare_cmd(
         console.print("  [green]none[/green]")
 
 
+@app.command("review")
+def review_cmd(
+    build_dir: BuildArg,
+    source: Annotated[str, typer.Option("--source", help="Source id to review.")],
+    label: Annotated[str, typer.Option(help="Run label, or '-' for the unlabelled file.")] = "-",
+    write: Annotated[bool, typer.Option(help="Write the sheet to review/<SOURCE>.md.")] = True,
+) -> None:
+    """Phase 4.5 — put one source's namespace decisions in front of a human.
+
+    Asa's instrument, 1 August 2026. Extraction assigns an owner to every
+    record, and nothing downstream checks whether the assignment was sane;
+    `owner` has no validation that would catch a plausible-but-wrong value.
+    Reviewing per source rather than per corpus means a bad namespace is
+    caught after one document instead of after twenty-one.
+
+    The sheet surfaces four things, in descending order of how much they
+    usually mean:
+
+      needs a ruling   flagged owner_unclear, or owning to a container
+      first use        namespaces this source is the first to touch, which is
+                       where a wrong node hides — nobody has disagreed yet
+      singletons       used exactly once. Either real precision or a stray
+      distribution     everything else, for shape
+    """
+    build = Build(build_dir)
+    rec_dir = build.dir / "records"
+    ns_path = build.dir / "architecture" / "owner_namespaces.yaml"
+    namespaces = rc.load_namespaces(ns_path)
+    containers = rc.load_containers(ns_path)
+
+    def load(path: Path) -> list[dict]:
+        return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x]
+
+    name = f"{source}.jsonl" if label == "-" else f"{source}.{label}.jsonl"
+    path = rec_dir / name
+    if not path.exists():
+        console.print(f"[red]missing[/red] {name} — extract it first")
+        raise typer.Exit(1)
+    mine = load(path)
+
+    others: dict[str, int] = {}
+    for p in sorted(rec_dir.glob("*.jsonl")):
+        if p.name == name:
+            continue
+        for r in load(p):
+            others[r["owner"]] = others.get(r["owner"], 0) + 1
+
+    counts: dict[str, int] = {}
+    for r in mine:
+        counts[r["owner"]] = counts.get(r["owner"], 0) + 1
+
+    needs = [
+        r for r in mine
+        if "owner_unclear" in r.get("flags", [])
+        or (r["owner"] in containers and "branch_charter" not in r.get("flags", []))
+        or r["owner"] not in namespaces
+    ]
+    first_use = sorted(o for o in counts if o not in others)
+    singletons = sorted(o for o, n in counts.items() if n == 1)
+
+    lines: list[str] = [
+        f"# Namespace review — {source}",
+        "",
+        f"{len(mine)} records · {len(counts)} namespaces used · "
+        f"{len(needs)} needing a ruling · {len(first_use)} first used here",
+        "",
+    ]
+
+    lines += ["## Needs a ruling", ""]
+    if needs:
+        for r in needs[:80]:
+            why = (
+                "not a namespace" if r["owner"] not in namespaces
+                else "container" if r["owner"] in containers
+                else "owner_unclear"
+            )
+            lines.append(f"- `{r['id']}` **{r['owner']}** ({why}) — {r['claim']}")
+    else:
+        lines.append("None.")
+    lines.append("")
+
+    lines += ["## First used by this source", ""]
+    lines += [f"- `{o}` — {counts[o]} record(s)" for o in first_use] or ["None."]
+    lines.append("")
+
+    lines += ["## Used exactly once", ""]
+    lines += [
+        f"- `{o}` — {next(r['claim'] for r in mine if r['owner'] == o)}"
+        for o in singletons
+    ] or ["None."]
+    lines.append("")
+
+    lines += ["## Distribution", ""]
+    for o, n in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])):
+        mark = " ⟵ container" if o in containers else ""
+        lines.append(f"- `{o}` {n}{mark}")
+    lines.append("")
+
+    sheet = "\n".join(lines)
+
+    table = Table(show_header=True, header_style="bold")
+    for col in ("", "count"):
+        table.add_column(col, justify="right")
+    table.add_row("records", str(len(mine)))
+    table.add_row("namespaces used", str(len(counts)))
+    table.add_row("[yellow]needing a ruling[/yellow]", str(len(needs)))
+    table.add_row("first used here", str(len(first_use)))
+    table.add_row("used exactly once", str(len(singletons)))
+    console.print(table)
+
+    if first_use:
+        console.print("\n[bold]first used by this source[/bold]")
+        for o in first_use:
+            console.print(f"  {o}  [dim]{counts[o]}[/dim]")
+
+    if write:
+        out = build.dir / "review" / f"{source}.md"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(sheet, encoding="utf-8")
+        console.print(f"\nsheet written to [cyan]{out.relative_to(build.dir.parent.parent)}[/cyan]")
+
+
 @app.command("log")
 def log_cmd(
     build_dir: BuildArg,

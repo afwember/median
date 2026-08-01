@@ -1130,3 +1130,28 @@ def test_same_effort_hits_the_same_key():
     a = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", "high")
     b = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", "high")
     assert a == b
+
+
+def test_no_register_child_repeats_its_register():
+    """The five Registers are Noun:VERB pairs — Crossing IS RISK, Field IS
+    TRAVEL. A child named for the verb nests the register inside itself.
+    v0.3 had away.crossing.risk and away.field.travel; extraction at high
+    effort refused the former outright while effort-off used it 7 times."""
+    import yaml
+    path = Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    doc = yaml.safe_load(path.read_text(encoding="utf-8"))
+    ns = rc.load_namespaces(path)
+    for node, pair in (doc.get("registers") or {}).items():
+        verb = pair["verb"].lower()
+        noun = pair["noun"].lower()
+        for banned in (f"{node}.{verb}", f"{node}.{noun}"):
+            assert banned not in ns, f"{banned} nests {node} inside itself"
+
+
+def test_every_declared_register_exists():
+    import yaml
+    path = Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    doc = yaml.safe_load(path.read_text(encoding="utf-8"))
+    ns = rc.load_namespaces(path)
+    for node in (doc.get("registers") or {}):
+        assert node in ns, f"declared register {node} is not in the tree"

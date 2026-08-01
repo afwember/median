@@ -29,14 +29,38 @@
 #     it flags `owner_unclear` and a human assigns it.
 #   - Namespaces are permanent once frozen, like source IDs.
 
-version: "0.3"
+version: "0.4"
 status: draft
 frozen: false
+
+# THE FIVE REGISTERS are Noun:VERB pairs (Asa, 1 August 2026). The two names
+# denote the same thing: Crossing IS RISK, Field IS TRAVEL.
+#
+#   Colony:DWELL      Encounter:MEET      Field:TRAVEL
+#   Crossing:RISK     Embody:EMBODY
+#
+# A register's namespace node therefore already carries its verb. `away.field`
+# IS travel; `away.crossing` IS risk. A child node named for the verb is the
+# register nested inside itself, and v0.3 had two of them —
+# `away.crossing.risk` and `away.field.travel`. Extraction at high effort
+# refused `away.crossing.risk` outright, 0 uses in 115 records, while effort-off
+# used it 7 times. Eight of twenty-eight owner disagreements between the two
+# runs came from this alone.
+#
+# A register child must name a distinguishable PART of the register, never a
+# synonym for it.
 
 architecture:
   home: [dwell, embody]
   away: [field, crossing]
   universal: [meet]
+
+registers:
+  home.dwell:     {noun: Colony,    verb: DWELL}
+  home.embody:    {noun: Embody,    verb: EMBODY}
+  away.field:     {noun: Field,     verb: TRAVEL}
+  away.crossing:  {noun: Crossing,  verb: RISK}
+  meet:           {noun: Encounter, verb: MEET}
 
 # DISAMBIGUATION — the seams extraction is most likely to get wrong
 #
@@ -88,15 +112,19 @@ namespaces:
     corridor: Corridor progression, Held Reaches, outposts, the Metropolis arc.
 
     field:
-      _: FIELD register generally — travel and the corridor between crossings.
-      travel: TRAVEL, route texture, pace, multi-day journeys.
+      _: >-
+        Field:TRAVEL register — travelling the corridor between crossings.
+        The register IS travel; route texture, pace and multi-day journeys
+        belong here, not in a child node.
       nodes: Nodes, Reaches, what a place in the field is.
       stopover: Stopovers, refuge, Rest, Care, Watch, Store.
       salvage: Salvage, foraging, what the field yields.
 
     crossing:
-      _: CROSSING register generally — the carriageway and the act of crossing.
-      risk: RISK, the crossing action, commitment and exposure.
+      _: >-
+        Crossing:RISK register — the carriageway and the act of crossing.
+        The register IS risk; the crossing action, commitment and exposure
+        belong here, not in a child node.
       traffic: Traffic readability during a crossing, timing, lanes.
       return_logic: Crossing-specific return and abort rules.
 

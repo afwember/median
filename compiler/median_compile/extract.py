@@ -196,16 +196,16 @@ def cache_key(
     schema_version: str,
     provider: str,
     model: str,
-    thinking_tokens: int = 0,
+    effort: str | None = None,
 ) -> str:
     """Everything that can change the answer belongs in the key.
 
-    thinking_tokens included because it does: without it, an A/B of thinking
-    on against thinking off silently serves the cached run and compares a
-    result with itself.
+    Reasoning effort included because it does: without it, an A/B of effort on
+    against effort off silently serves the cached run and compares a result
+    with itself.
     """
     raw = "|".join(
-        [chunk_sha, prompt_version, schema_version, provider, model, str(thinking_tokens)]
+        [chunk_sha, prompt_version, schema_version, provider, model, effort or "none"]
     )
     return hashlib.sha256(raw.encode()).hexdigest()[:32]
 
@@ -296,7 +296,7 @@ def extract_chunk(
         RECORD_SCHEMA_VERSION,
         provider.name,
         provider.model,
-        getattr(provider, "thinking_tokens", 0),
+        getattr(provider, "effort", None),
     )
     cache_path = cache_dir / f"{key}.json"
 

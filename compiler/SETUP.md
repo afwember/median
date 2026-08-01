@@ -149,6 +149,24 @@ schema, provider and model versions. Run the same command twice and the second
 costs $0.00 — the `cached` column will show it. Tokens are spent again only
 when something genuinely changed.
 
+### Reasoning effort
+
+This model uses *adaptive* thinking with an effort dial, not a token budget.
+`providers.extraction.effort` in `config.yaml` takes `low`, `medium`, `high`,
+`xhigh`, `max`, or `null` to disable reasoning entirely. `--effort` overrides
+it per run; `--effort off` disables.
+
+Reasoning bills at the output rate, which is the dominant cost here, so it is
+off by default. Turn it up deliberately, and measure:
+
+```bash
+median-compile extract build/v0.5 --source SPEC_CROSS --effort high --label high
+median-compile compare build/v0.5 SPEC_CROSS --a - --b high
+```
+
+`--label` writes to a separate records file so both runs coexist, and `compare`
+diffs them per block on owner, voice, type and status.
+
 ### If a call fails
 
 **`response hit the N-token output ceiling`** — a chunk produced more records

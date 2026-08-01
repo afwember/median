@@ -1118,14 +1118,15 @@ def test_no_manual_file_is_not_an_error(tmp_path):
     assert rc.load_manual(tmp_path / "absent.yaml") == {}
 
 
-def test_thinking_budget_changes_the_cache_key():
+def test_effort_changes_the_cache_key():
     """Without this the A/B silently compares a result with itself."""
-    off = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", 0)
-    on = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", 4000)
-    assert off != on
+    off = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", None)
+    high = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", "high")
+    low = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", "low")
+    assert len({off, high, low}) == 3
 
 
-def test_same_thinking_budget_hits_the_same_key():
-    a = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", 4000)
-    b = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", 4000)
+def test_same_effort_hits_the_same_key():
+    a = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", "high")
+    b = ex.cache_key("sha", "3.0", "3.0", "anthropic", "m", "high")
     assert a == b

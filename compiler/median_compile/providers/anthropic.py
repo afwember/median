@@ -27,9 +27,11 @@ class AnthropicProvider:
     #: Called with the character count of each streamed fragment. Lets the CLI
     #: show that a multi-minute call is alive.
     on_progress: Optional[Callable[[int], None]] = None
-    #: Extended-thinking budget in tokens, or 0 for off. Thinking tokens bill
-    #: at the OUTPUT rate, which is the dominant cost here, so this is opt-in.
-    thinking_tokens: int = 0
+    #: Reasoning effort: low, medium, high, xhigh, max — or None to disable
+    #: thinking entirely. This model uses adaptive thinking with an effort
+    #: dial, not a token budget; `thinking.type.enabled` is rejected outright.
+    #: Reasoning bills at the OUTPUT rate, which dominates cost here.
+    effort: Optional[str] = None
     _client: object = field(default=None, repr=False)
 
     def __post_init__(self) -> None:
@@ -55,21 +57,22 @@ class AnthropicProvider:
         range. Streaming also means a multi-minute call can report progress
         instead of looking hung.
         """
-        # Thinking must be turned OFF explicitly, not merely left unset. The
+        # Thinking must be turned OFF explicitly, not merely left unset: the
         # first Sonnet runs came back with blocks={'thinking': 1, 'text': 1}
-        # and roughly 1 character of text per output token — about half the
-        # billed output was reasoning that text_stream never yields and the
-        # records do not need. Extraction is bounded, schema-constrained
-        # decomposition; it does not need a scratchpad.
-        kwargs: dict = {
-            "thinking": (
-                {"type": "enabled", "budget_tokens": self.thinking_tokens}
-                if self.thinking_tokens
-                else {"type": "disabled"}
-            )
-        }
-        if self.thinking_tokens:
-            max_tokens = max(max_tokens, self.thinking_tokens + 8_000)
+        # and about half the billed output was reasoning the records never saw.
+        #
+        # When it IS wanted, this model wants adaptive thinking plus an effort
+        # dial. `thinking.type.enabled` with a token budget is rejected: that
+        # is the older interface.
+        if self.effort:
+            kwargs: dict = {
+                # `omitted` keeps the reasoning out of the stream. It is still
+                # generated and still billed; we simply have no use for it.
+                "thinking": {"type": "adaptive", "display": "omitted"},
+                "output_config": {"effort": self.effort},
+            }
+        else:
+            kwargs = {"thinking": {"type": "disabled"}}
 
         parts: list[str] = []
         with self._client.messages.stream(  # type: ignore[union-attr]

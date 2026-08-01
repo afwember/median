@@ -424,7 +424,7 @@ def extract_cmd(
     fake: Annotated[bool, typer.Option("--fake", help="Deterministic provider, no network.")] = False,
     max_tokens: Annotated[Optional[int], typer.Option(help="Override output ceiling.")] = None,
     model: Annotated[Optional[str], typer.Option(help="Override the extraction model.")] = None,
-    thinking: Annotated[Optional[int], typer.Option(help="Extended-thinking budget; 0 disables.")] = None,
+    effort: Annotated[Optional[str], typer.Option(help="Reasoning effort: low|medium|high|xhigh|max, or 'off'.")] = None,
     label: Annotated[Optional[str], typer.Option(help="Write records to <SOURCE>.<label>.jsonl for comparison.")] = None,
 ) -> None:
     """Phase 4 — Claude extraction, Pass A. Bounded, cached, schema-constrained."""
@@ -503,10 +503,10 @@ def extract_cmd(
             provider = AnthropicProvider(
                 model=resolved,
                 on_progress=_tick,
-                thinking_tokens=(
-                    thinking
-                    if thinking is not None
-                    else int(providers_cfg0.get("thinking_tokens") or 0)
+                effort=(
+                    (None if effort == "off" else effort)
+                    if effort is not None
+                    else (providers_cfg0.get("effort") or None)
                 ),
             )
         except ProviderUnavailable as exc:

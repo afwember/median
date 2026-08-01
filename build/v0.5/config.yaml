@@ -23,10 +23,10 @@ providers:
     provider: anthropic
     model: claude-sonnet-5
     max_output_tokens: 48000
-    thinking_tokens: 0
     pricing:
       input_per_mtok: 3.0
       output_per_mtok: 15.0
+    effort: null
   judgment:
     provider: openai
     model: ${OPENAI_JUDGMENT_MODEL}

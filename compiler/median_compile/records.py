@@ -41,8 +41,29 @@ class ContentType(str, Enum):
     HISTORY = "HISTORY"  # version archaeology or rejected alternative
 
 
+class Voice(str, Enum):
+    """The lantern test — the only part of publication weight that is knowable
+    from the passage alone.
+
+    Extraction can see whether a sentence describes MEDIAN or describes the
+    act of designing MEDIAN. It cannot see whether the finished book will state
+    it, show it, or keep it internal: SAY comes from the Stage 9 harvest and
+    SHOW from Stage 10 Section Contracts, neither of which exists yet.
+
+    Asked for the full STATE/SHOW/SAY/SILENT vocabulary, extraction produced a
+    noisy restatement of `type`: across 297 pilot records it marked 8 GUARDs
+    and 10 OPENs as SILENT — conflating "not yet settled", which is `status`,
+    with "not published", which is weight.
+    """
+
+    world = "world"      # describes MEDIAN
+    process = "process"  # describes designing MEDIAN
+
+
 class Weight(str, Enum):
-    """Publication weight, kept separate from content type (spec §A7)."""
+    """Publication weight. Assigned after the architecture is frozen, never at
+    extraction. Retained here because the Migration Ledger and Section
+    Contracts need the vocabulary."""
 
     STATE = "STATE"    # the GDD states this as fact about the world
     SHOW = "SHOW"      # the game must show it; not necessarily stated
@@ -85,7 +106,9 @@ class AtomicRecord(BaseModel):
     quote: str
     claim: str
     type: ContentType
-    weight: Weight
+    voice: Voice
+    #: Assigned at Stage 9/10, not here. None until then.
+    weight: Weight | None = None
     status: Status
     owner: str
     terms: list[str] = Field(default_factory=list)
@@ -235,11 +258,11 @@ def validate_records(
             errors.append(f"{r.id}: an EXAMPLE may not be status canonical")
         if r.type is ContentType.OPEN and r.status is not Status.unresolved:
             errors.append(f"{r.id}: an OPEN record must be status unresolved")
-        if r.weight is Weight.STATE and r.status in {
-            Status.rejected,
-            Status.historical,
-        }:
-            errors.append(f"{r.id}: {r.status.value} material may not carry weight STATE")
+        if r.weight is not None:
+            errors.append(
+                f"{r.id}: weight is assigned after the architecture is frozen, "
+                "not at extraction"
+            )
 
     return errors
 
@@ -266,7 +289,7 @@ def json_schema() -> dict:
 # Schema 2.0 — the model emits a span, the compiler reconstitutes the record
 # ---------------------------------------------------------------------------
 
-SPAN_SCHEMA_VERSION = "2.0"
+SPAN_SCHEMA_VERSION = "3.0"
 
 
 class SpanRecord(BaseModel):
@@ -286,7 +309,7 @@ class SpanRecord(BaseModel):
     q1: str
     claim: str
     type: ContentType
-    weight: Weight
+    voice: Voice
     status: Status
     owner: str
     flags: list[str] = Field(default_factory=list)
@@ -421,7 +444,7 @@ def hydrate(
                 quote=quote,
                 claim=s.claim,
                 type=s.type,
-                weight=s.weight,
+                voice=s.voice,
                 status=s.status,
                 owner=s.owner,
                 terms=terms,

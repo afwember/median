@@ -555,7 +555,7 @@ def test_extraction_may_not_invent_a_namespace():
     r = rc.AtomicRecord(
         id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
         quote="alpha beta", claim="Alpha beta.", type="REQ",
-        weight="STATE", status="canonical", owner="home.invented.thing",
+        voice="world", status="canonical", owner="home.invented.thing",
     )
     errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_HOME")
     assert any("not a registered namespace" in e for e in errs)
@@ -565,7 +565,7 @@ def test_owner_unclear_flag_excuses_an_unknown_namespace():
     r = rc.AtomicRecord(
         id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
         quote="alpha beta", claim="Alpha beta.", type="REQ",
-        weight="STATE", status="canonical", owner="home",
+        voice="world", status="canonical", owner="home",
         flags=["owner_unclear"],
     )
     errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_HOME")
@@ -577,7 +577,7 @@ def test_quote_must_be_grounded_in_the_block():
     r = rc.AtomicRecord(
         id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
         quote="a sentence that is not in the source", claim="X.", type="REQ",
-        weight="STATE", status="canonical", owner="home.dwell",
+        voice="world", status="canonical", owner="home.dwell",
     )
     errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_HOME")
     assert any("not present verbatim" in e for e in errs)
@@ -587,7 +587,7 @@ def test_grounding_ignores_whitespace_only():
     r = rc.AtomicRecord(
         id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
         quote="Each  Citizen\ncontributes one unit.", claim="X.", type="REQ",
-        weight="STATE", status="canonical", owner="home.dwell",
+        voice="world", status="canonical", owner="home.dwell",
     )
     block = "Each Citizen contributes one unit."
     errs = rc.validate_records([r], {"1¶1": block}, {"home.dwell"}, "SPEC_HOME")
@@ -719,7 +719,7 @@ def _span(**kw):
     base = dict(
         loc="4.2¶3", q0="Each present and available Citizen",
         q1="they contribute none.", claim="X.", type="REQ",
-        weight="STATE", status="canonical", owner="home.dwell.roles",
+        voice="world", status="canonical", owner="home.dwell.roles",
     )
     base.update(kw)
     return rc.SpanRecord(**base)
@@ -846,7 +846,7 @@ def test_split_claim_dropped_when_span_ends_mid_block():
     block = "First rule here. Second rule here. Third rule ends the block."
     s = rc.SpanRecord(
         loc="1¶1", q0="First rule here.", q1="First rule here.", claim="X.",
-        type="REQ", weight="STATE", status="canonical", owner="home.dwell",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
         flags=["split_claim"],
     )
     recs, errs = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
@@ -859,7 +859,7 @@ def test_split_claim_kept_when_span_reaches_the_block_end():
     block = "A Citizen contributes one unit of Capacity, except"
     s = rc.SpanRecord(
         loc="1¶1", q0="A Citizen contributes", q1="Capacity, except", claim="X.",
-        type="REQ", weight="STATE", status="canonical", owner="home.dwell",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
         flags=["split_claim"],
     )
     recs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
@@ -870,8 +870,54 @@ def test_other_flags_survive_the_correction():
     block = "First rule here. Second rule ends the block."
     s = rc.SpanRecord(
         loc="1¶1", q0="First rule here.", q1="First rule here.", claim="X.",
-        type="REQ", weight="STATE", status="canonical", owner="home.dwell",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
         flags=["split_claim", "table_derived"],
     )
     recs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
     assert recs[0].flags == ["table_derived"]
+
+
+# --------------------------------------------------------------------------
+# Schema 3.0 — voice replaces weight at extraction
+# --------------------------------------------------------------------------
+
+
+def test_extraction_asks_only_the_lantern_test():
+    """STATE/SHOW/SAY/SILENT depends on an architecture that does not exist at
+    extraction. SAY is a Stage 9 harvest; SHOW comes from Section Contracts."""
+    with pytest.raises(ValidationError):
+        rc.SpanRecord(
+            loc="1¶1", q0="a", q1="b", claim="X.", type="REQ",
+            weight="STATE", status="canonical", owner="home.dwell",
+        )
+
+
+@pytest.mark.parametrize("voice", ["world", "process"])
+def test_voice_accepts_both_values(voice):
+    r = rc.SpanRecord(
+        loc="1¶1", q0="a", q1="b", claim="X.", type="REQ",
+        voice=voice, status="canonical", owner="home.dwell",
+    )
+    assert r.voice.value == voice
+
+
+def test_hydrated_record_carries_voice_and_no_weight():
+    block = "A Citizen contributes one unit."
+    s = rc.SpanRecord(
+        loc="1¶1", q0="A Citizen contributes", q1="one unit.", claim="X.",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
+    )
+    recs, errs = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    assert not errs
+    assert recs[0].voice is rc.Voice.world
+    assert recs[0].weight is None, "weight is assigned after architecture freeze"
+
+
+def test_weight_set_at_extraction_is_an_error():
+    r = rc.AtomicRecord(
+        id="SPEC_X:0001", src="SPEC_X", loc="1¶1", quote="alpha beta",
+        claim="X.", type="REQ", voice="world", weight="STATE",
+        status="canonical", owner="home.dwell",
+    )
+    errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_X")
+    assert any("after the architecture is frozen" in e for e in errs)

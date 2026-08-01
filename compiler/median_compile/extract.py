@@ -24,7 +24,7 @@ from typing import Protocol
 
 from .records import AtomicRecord, RECORD_SCHEMA_VERSION
 
-PROMPT_VERSION = "2.1"
+PROMPT_VERSION = "3.0"
 
 
 class ExtractionError(RuntimeError):
@@ -120,7 +120,7 @@ class FakeProvider:
                     "q1": " ".join(words[-3:]),
                     "claim": f"Fake claim for {coord}.",
                     "type": "REQ",
-                    "weight": "STATE",
+                    "voice": "world",
                     "status": "canonical",
                     "owner": "meta",
                 }

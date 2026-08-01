@@ -1,0 +1,20 @@
+edition: '0.5'
+versions:
+  normalizer_full: '1.0'
+  lean_ruleset: '1.0'
+  chunker: '1.0'
+  extraction_prompt: '1.0'
+  record_schema: '1.0'
+  judgment_prompt: '1.0'
+  probe: '1.0'
+human_gates:
+  conflict_rulings: true
+  terminology: true
+  architecture: true
+  release: true
+chunking:
+  target_tokens: 10000
+  max_tokens: 14000
+  overlap_tokens: 400
+  respect_headings: true
+  seam_fraction: 0.9

@@ -48,3 +48,12 @@ wip/
 #    art/legacy/     the 52 source assets (committed once,
 #                    never edited, so they cost 78MB one time)
 # ============================================================
+
+# Compiler build artifacts (regenerable). sources.yaml and reports are tracked.
+build/*/sources/normalized_full/
+build/*/sources/normalized_lean/
+build/*/.media/
+build/*/chunks/
+__pycache__/
+*.pyc
+.pytest_cache/

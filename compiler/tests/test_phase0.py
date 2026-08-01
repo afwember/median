@@ -1336,10 +1336,18 @@ def test_a_settled_ruling_records_who_settled_it():
             assert r.get("date"), f"{r['id']} is ruled but undated"
 
 
-def test_open_rulings_ask_something():
+def test_open_rulings_say_what_is_unresolved():
+    """An open ruling either asks a question or names a conflict.
+
+    Broadened 1 August 2026: reconciling the terminology registry produced open
+    entries whose content is "these two authorities disagree, here is how",
+    which states the unresolved thing without phrasing it as a question.
+    """
     for r in _rulings():
         if r["status"] == "open":
-            assert r.get("question"), f"{r['id']} is open but asks nothing"
+            assert r.get("question") or r.get("conflict"), (
+                f"{r['id']} is open but names neither a question nor a conflict"
+            )
 
 
 # --------------------------------------------------------------------------

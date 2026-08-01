@@ -287,3 +287,142 @@ rulings:
       PHIL_ARCH states binding doctrines for Citizenship, Home, Away, Memory,
       Objects, Care and Presentation. Do those belong to philosophy, or to the
       domains they bind with philosophy as their source rather than their owner?
+
+  # ======================= REGISTRY RECONCILIATION =======================
+  #
+  # 1 August 2026. Asa supplied MEDIAN_v0.5.0_Provisional_Namespace_and_
+  # Terminology_Registry_v0.1.docx, commissioned from the ChatGPT thread where
+  # the spec documents were authored. 266 terminology records with per-term
+  # owner attribution and status. It declares itself a COMPILATION AID with no
+  # independent canon authority — owning specifications and explicit human
+  # rulings lead it. It is therefore not a canon source, but it is a second
+  # independent reading of the same corpus, which makes it a validation
+  # instrument: where it agrees with our tree, that is corroboration; where it
+  # disagrees, one of us is wrong.
+  #
+  # Parsed to architecture/terminology_registry.json, 266/266 records.
+  #
+  # CORROBORATED, no action:
+  #   Turn is MEET's unit          "One resolved choice within a MEET" (ACT.TURN)
+  #   Launch is a Home MEET        "The Home MEET and commitment" (AWAY.LAUNCH)
+  #   Homecoming is a MEET View    (AWAY.HOMECOMING, AWAY.HOMECOMING_MEET)
+  #   EMBODY is Home-only          (REG.EMBODY)
+  #   Encounter Register is dead   listed as a Deprecated Register name
+  #
+  # That last one is worth noting: "Colony Register", "Field Register",
+  # "Crossing Register" and "Encounter Register" are all deprecated names. Our
+  # namespace uses none of them.
+
+  - id: R023
+    status: open
+    priority: highest
+    subject: Encounter and MEET may not be identical
+    conflict: >-
+      R008 records Asa's ruling that "Encounter, MEET and Encounter MEET are
+      three names for one thing", and that is written into prompt 3.2 and the
+      meet description. The registry says the opposite: ACT.ENCOUNTER is "a
+      bounded authored situation resolved through MEET", status Settled, with
+      the explicit note "Do not use Encounter as the name of the Register; the
+      Register is MEET." Its collision table adds: "Encounter is an authored
+      content unit. MEET is the Register/operator."
+    reconciliation: >-
+      These may both be true of different things. Asa was describing how the
+      spec documents USE the words — interchangeably — which is a fact about
+      the corpus and useful to extraction. The registry is prescribing how the
+      finished book SHOULD use them. If so, extraction should be told the
+      sources conflate them while the lexicon keeps them distinct.
+    why_it_matters: >-
+      The registry's own acceptance test reads "No false synonym collapses
+      Mode, Register, View, world place, content unit or manifestation
+      mechanic." Prompt 3.2 currently instructs a model to do exactly that.
+
+  - id: R024
+    status: open
+    priority: high
+    subject: Is a Register a camera, or a mode of attention?
+    conflict: >-
+      R003 built the tree on "a Register is a UI type" and the camera test.
+      The registry's ARCH.REGISTER reads "A distinct form of play with
+      characteristic action, decision, pace and indicative camera or
+      presentation", and its status note says in terms: "A Register is a mode
+      of attention, not merely a camera."
+    reconciliation: >-
+      The camera may be the reliable INDICATOR of a register without being its
+      DEFINITION, in which case the camera test survives intact as a
+      discriminator and only the framing needs softening. Attention and camera
+      co-vary by design. But this is the load-bearing claim of the whole tree
+      and should be settled deliberately rather than assumed.
+
+  - id: R025
+    status: open
+    priority: high
+    subject: View is an architecture class the tree does not have
+    detail: >-
+      ARCH.VIEW — "A particular presentation inside a Register that does not
+      alter the player's fundamental relation to subject, time and control."
+      Settled, with the note "Launch, Homecoming, Stopover and Staging are
+      Views or connectors, not Registers."
+    question: >-
+      Mode / Register / View is a three-level presentation hierarchy; the tree
+      has two. For OWNERSHIP a View's rules can sit with its Register, which is
+      what meet.launch and away.crossing.phases already do. But an acceptance
+      test explicitly forbids collapsing the Register/View distinction, and if
+      Views must be recoverable, the tree needs to mark them.
+
+  - id: R026
+    status: open
+    priority: medium
+    subject: items.focus is probably wrong
+    conflict: >-
+      Our `items.focus` reads "Choosing what to carry — Focus and expedition
+      equipment selection." The registry's AWAY.FOCUS is a "[MEET presentation
+      mechanic] — the situational selection of the Citizen whose camera,
+      principal action and speech carry the scene", paired with AWAY.FRAMING.
+      SPEC_ITEMS section 6.3 is titled "Framing and Focus", which supports the
+      registry reading. ACT.APPROACH adds "The Approach exists before Tool,
+      Supply or Focus expression."
+    effect_if_ruled: >-
+      items.focus moves to meet.focus, and meet gains `approach` and probably
+      `framing`. Equipment selection at launch is already meet.launch.
+
+  - id: R027
+    status: open
+    priority: medium
+    subject: Exposure is a Citizen state, not a Crossing system
+    conflict: >-
+      We added `away.crossing.exposure` from SPEC_AWAY 7.4 "Exposure doctrine".
+      The registry classes AWAY.EXPOSURE as a "[Citizen state] — accumulated
+      personal pressure and possibility created through Away danger", grouped
+      with Fear Memory, Distinction, Maiming, After-name and Tharn, all of
+      which are lasting Citizen changes.
+    effect_if_ruled: >-
+      Exposure survives a camera change, so by our own test it is a domain, not
+      a register system — `citizen.change` or a sibling. What stays in Crossing
+      is the doctrine of how a crossing GENERATES exposure.
+
+  - id: R028
+    status: open
+    priority: medium
+    subject: Weather may be a World condition rather than a DWELL system
+    conflict: >-
+      R016 placed Weather Pressures in DWELL. The registry classes ENV.WEATHER
+      and ENV.SEASON identically, both "[World condition]", siblings.
+    reconciliation: >-
+      Possibly a scope distinction: Weather as a world condition belongs to
+      world, while the PRESSURE it puts on the colony is DWELL's. That is the
+      same shape as the season/pressure/Encounter seam already recorded, and
+      Asa's phrasing was "Weather Pressures", not "Weather".
+
+  - id: R029
+    date: 2026-08-01
+    by: Claude
+    status: noted
+    subject: The registry is the Phase 6 lexicon seed
+    detail: >-
+      266 terms with canonical form, class, definition, owning source and
+      status, plus 27 deprecated entries and a collision table with 16
+      normalization rules. Phase 6 was going to derive a lexicon from the
+      records; it should start from this instead and use the records to check
+      it. The deprecated entries are independently valuable — they name the
+      v0.4.6 language that must not be revived, which is a check no amount of
+      reading the v0.5 specs would produce.

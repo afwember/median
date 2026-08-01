@@ -91,6 +91,7 @@ FLAGS = {
     "split_claim",          # the claim continues outside this block
     "table_derived",        # extracted from a table row rather than prose
     "non_state_marker",     # source explicitly marks this as not STATE
+    "span_end_inferred",    # q1 was approximate; the endpoint was located by suffix
     "internal_supersession",  # a later passage in the same source overrides
 }
 
@@ -448,6 +449,45 @@ def _ends_block(quote: str, block: str) -> bool:
     return bool(q) and b.endswith(q[-40:] if len(q) > 40 else q)
 
 
+#: Fewest words, and fewest characters, a q1 suffix may shrink to before the
+#: match stops being trustworthy. Below this a fragment like "day." could land
+#: almost anywhere in the block.
+_MIN_SUFFIX_WORDS = 2
+_MIN_SUFFIX_CHARS = 8
+
+
+def resolve_span_with_fallback(block: str, q0: str, q1: str) -> tuple[str, bool]:
+    """Resolve a span, retrying with progressively shorter tails of `q1`.
+
+    Extraction sometimes reconstructs the closing marker instead of copying it,
+    dropping a word from the middle: it wrote "or two Citizens in one day."
+    where the source says "or by two Citizens in one day." The final words are
+    still verbatim and still in the right place, so the endpoint is locatable
+    without inventing anything.
+
+    Returns the quotation and whether the endpoint was inferred. An inferred
+    endpoint is flagged on the record; it is not silently accepted.
+    """
+    try:
+        return resolve_span(block, q0, q1), False
+    except SpanUnresolvable as exact_failure:
+        if "q0 not found" in str(exact_failure):
+            raise  # the location itself is wrong; a shorter tail cannot help
+
+    words = normalize_ws(q1).split()
+    for take in range(len(words) - 1, _MIN_SUFFIX_WORDS - 1, -1):
+        tail = " ".join(words[-take:])
+        if len(tail) < _MIN_SUFFIX_CHARS:
+            break
+        try:
+            return resolve_span(block, q0, tail), True
+        except SpanUnresolvable:
+            continue
+    raise SpanUnresolvable(
+        f"q1 not found at or after q0, and no trustworthy tail of it either: {q1[:50]!r}"
+    )
+
+
 def hydrate(
     spans: list[SpanRecord],
     blocks: dict[str, str],
@@ -477,13 +517,15 @@ def hydrate(
             n += 1
             continue
         try:
-            quote = resolve_span(block, s.q0, s.q1)
+            quote, inferred = resolve_span_with_fallback(block, s.q0, s.q1)
         except SpanUnresolvable as exc:
             errors.append(f"{source_id}:{n:04d} at {s.loc}: {exc}")
             n += 1
             continue
 
         flags = list(s.flags)
+        if inferred and "span_end_inferred" not in flags:
+            flags.append("span_end_inferred")
         # A span that ends before the end of its block cannot continue into
         # another block. Extraction applied split_claim to 27 such records on
         # SPEC_CROSS, reading it as "this block holds other claims too" — the

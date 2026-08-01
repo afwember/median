@@ -984,3 +984,61 @@ def test_ids_do_not_collide_across_chunks_with_failures():
     b, _, _ = rc.hydrate([ok], {"1¶1": block}, "SPEC_X", nxt)
     ids = [r.id for r in a + b]
     assert len(ids) == len(set(ids)), f"duplicate ids: {ids}"
+
+
+# --------------------------------------------------------------------------
+# Approximate q1 — the model reconstructs the closing marker
+# --------------------------------------------------------------------------
+
+DROPPED_WORD = (
+    "Projects are measured in integer Citizen-Days. A Project costing 2 "
+    "Citizen-Days may be completed by one available Citizen in two game days "
+    "or by two Citizens in one day."
+)
+
+
+def test_dropped_word_in_q1_is_recovered_by_suffix():
+    """Model wrote 'or two Citizens in one day.'; source says 'or by two ...'."""
+    quote, inferred = rc.resolve_span_with_fallback(
+        DROPPED_WORD, "Projects are measured in integer", "or two Citizens in one day."
+    )
+    assert inferred is True
+    assert quote.endswith("in one day.")
+
+
+def test_an_inferred_endpoint_is_flagged_not_hidden():
+    s = rc.SpanRecord(
+        loc="1¶1", q0="Projects are measured in integer",
+        q1="or two Citizens in one day.", claim="X.", type="REQ",
+        voice="world", status="canonical", owner="home.dwell.projects",
+    )
+    recs, errs, _ = rc.hydrate([s], {"1¶1": DROPPED_WORD}, "SPEC_X")
+    assert not errs
+    assert "span_end_inferred" in recs[0].flags
+
+
+def test_exact_q1_is_not_flagged():
+    quote, inferred = rc.resolve_span_with_fallback(
+        DROPPED_WORD, "Projects are measured", "in one day."
+    )
+    assert inferred is False
+
+
+def test_a_wrong_q0_is_never_rescued_by_a_shorter_tail():
+    """If the location is wrong, no amount of tail-shortening helps — and
+    pretending otherwise would attach a real quote to the wrong claim."""
+    with pytest.raises(rc.SpanUnresolvable, match="q0 not found"):
+        rc.resolve_span_with_fallback(DROPPED_WORD, "Supplies are prepared by", "one day.")
+
+
+def test_a_tail_too_short_to_trust_is_refused():
+    block = "One day the Citizen departs. Another day they return."
+    with pytest.raises(rc.SpanUnresolvable):
+        rc.resolve_span_with_fallback(block, "One day", "xx yy.")
+
+
+def test_inflection_change_is_still_refused():
+    """'inhabits it' for 'inhabit it' is a rewrite, not a dropped word."""
+    block = "The player is asked to notice the Citizens who inhabit it."
+    with pytest.raises(rc.SpanUnresolvable):
+        rc.resolve_span_with_fallback(block, "The player is asked", "who inhabits it.")

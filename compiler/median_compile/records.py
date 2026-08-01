@@ -148,6 +148,30 @@ def load_namespaces(path: Path) -> set[str]:
     return out
 
 
+def load_namespace_descriptions(path: Path) -> dict[str, str]:
+    """Dotted namespace -> its one-line description.
+
+    Extraction receives these, not bare names. With 86 namespaces and seams as
+    fine as `items.supplies` (using a Supply) against `economy.recipes` (making
+    one), a bare list asks the model to guess. The descriptions cost roughly
+    1.3k tokens per call and buy the accuracy of the field that Phase 7
+    clusters on.
+    """
+    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    out: dict[str, str] = {}
+
+    def walk(node: dict, prefix: str) -> None:
+        for key, value in node.items():
+            name = prefix if key == "_" else (f"{prefix}.{key}" if prefix else key)
+            if isinstance(value, dict):
+                walk(value, name)
+            elif name:
+                out[name] = " ".join(str(value).split())
+
+    walk(doc.get("namespaces") or {}, "")
+    return out
+
+
 def namespace_mode(owner: str) -> str | None:
     """Which Mode a namespace belongs to, or None if cross-cutting.
 

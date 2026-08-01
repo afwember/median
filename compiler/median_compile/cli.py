@@ -419,7 +419,9 @@ def extract_cmd(
     if not ns_path.exists():
         console.print(f"[red]missing[/red] {ns_path.name}; namespaces must be ruled first")
         raise typer.Exit(1)
-    namespaces = sorted(rc.load_namespaces(ns_path))
+    ns_desc = rc.load_namespace_descriptions(ns_path)
+    namespaces = sorted(ns_desc)
+    ns_lines = [f"  {n} — {ns_desc[n]}" for n in namespaces]
 
     todo = [
         e for e in sorted(entries, key=lambda x: (x.processing_order, x.id))
@@ -492,7 +494,7 @@ def extract_cmd(
                 {"source_class": e.source_class.value,
                  "wording_fidelity": e.wording_fidelity.value,
                  "notes": e.notes},
-                namespaces, start, system_prompt, provider, cache_dir,
+                ns_lines, start, system_prompt, provider, cache_dir,
             )
             res.calls.append(call)
             for item in raw:

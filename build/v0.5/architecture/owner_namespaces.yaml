@@ -29,7 +29,7 @@
 #     it flags `owner_unclear` and a human assigns it.
 #   - Namespaces are permanent once frozen, like source IDs.
 
-version: "0.2"
+version: "0.3"
 status: draft
 frozen: false
 
@@ -37,6 +37,23 @@ architecture:
   home: [dwell, embody]
   away: [field, crossing]
   universal: [meet]
+
+# DISAMBIGUATION — the seams extraction is most likely to get wrong
+#
+# use vs. make (Asa's ruling, 1 August 2026)
+#   `items.*`         is about USING the item unit
+#   `economy.recipes` is about BUILDING the item unit
+#
+#   "A Crafter prepares Supplies from Flexible Scrap"      -> economy.recipes
+#   "A Supply is consumed when its effect is applied"      -> items.supplies
+#   "Tool recipes require a Workbench"                     -> economy.recipes
+#   "A standing Tool is assigned to a Role, not a Citizen" -> items.tools
+#   "Winter Cultivation yields Perishable Sustenance"      -> economy.sustenance
+#   "Provisioning is a Home Role with a Dawn order"        -> home.dwell.provisioning
+#
+#   The rule generalises: who does it and where it happens at Home is
+#   `home.dwell.*`; what is produced and by what recipe is `economy.*`; what
+#   the resulting object does in a Citizen's hands is `items.*`.
 
 namespaces:
 
@@ -122,20 +139,24 @@ namespaces:
     spatial: Species spatial placement identities and topology.
     dialect: Deep Laws expressed through species phrasing.
 
+  # MAKING an item unit. See the use/make seam under `disambiguation`.
   economy:
-    _: Resources, stocks, and material logistics.
-    sustenance: Perishable and Durable Sustenance, cultivation, winter.
-    scrap: Flexible and Rigid Scrap, materials.
+    _: Resources, stocks, and material logistics — the supply side.
+    sustenance: Perishable and Durable Sustenance; cultivation; winter growing.
+    scrap: Flexible and Rigid Scrap as materials.
     carrying: Weight ladder, cooperative carrying, party-scale carry.
-    recipes: Functional recipe classes and recipe grammar.
+    recipes: >-
+      Making item units. Recipe classes, recipe grammar, inputs, costs, who
+      may produce what, and where production happens.
 
+  # USING an item unit. See the use/make seam under `disambiguation`.
   items:
-    _: Personal items and equipment generally.
-    tools: Tool classes, assignment, Render Tools, latent martial utility.
-    supplies: Supply classes, general utility, contextual effects, synergy.
-    keepsakes: Keepsakes, provenance, inheritance, Exposure.
-    artifacts: Colony and Carried Artifacts, Place of Pride.
-    focus: Focus and expedition equipment selection.
+    _: Personal items and equipment in use.
+    tools: Using a Tool — classes, assignment, Render permissions, latent martial utility.
+    supplies: Using a Supply — general utility, contextual effects, synergy, consumption.
+    keepsakes: Holding a Keepsake — provenance, inheritance, Exposure.
+    artifacts: Holding an Artifact — Colony and Carried, Place of Pride.
+    focus: Choosing what to carry — Focus and expedition equipment selection.
 
   world:
     _: Corridor geography and the ground the game happens on.

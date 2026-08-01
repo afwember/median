@@ -590,3 +590,24 @@ def test_grounding_ignores_whitespace_only():
     block = "Each Citizen contributes one unit."
     errs = rc.validate_records([r], {"1¶1": block}, {"home.dwell"}, "SPEC_HOME")
     assert not errs
+
+
+def test_namespace_descriptions_are_loaded_for_the_prompt():
+    """Bare names ask the model to guess; descriptions carry the seams."""
+    d = rc.load_namespace_descriptions(
+        Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    )
+    assert "using a supply" in d["items.supplies"].lower()
+    assert "making item units" in d["economy.recipes"].lower()
+    assert set(d) == rc.load_namespaces(
+        Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    )
+
+
+def test_use_make_seam_is_stated_in_the_prompt():
+    """Asa's ruling: items.* is using the unit, economy.recipes is building it."""
+    prompt = (
+        Path(__file__).parents[1] / "prompts" / "extract-1.0.md"
+    ).read_text(encoding="utf-8")
+    assert "use/make seam" in prompt
+    assert "economy.recipes" in prompt and "items.supplies" in prompt

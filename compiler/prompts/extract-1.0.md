@@ -77,9 +77,22 @@ commentary.
 **`status`** — `canonical` · `provisional` · `example` · `rationale` ·
 `historical` · `tuning` · `unresolved` · `superseded` · `rejected`.
 
-**`owner`** — one namespace from the supplied list, exactly as written. If none
+**`owner`** — one namespace from the supplied list, exactly as written. Each
+namespace arrives with a one-line description of what it owns; use it. If none
 fits, use your best guess **and** add the flag `owner_unclear`. Never invent a
 namespace.
+
+> **The use/make seam.** `items.*` covers *using* an item unit;
+> `economy.recipes` covers *making* one. "A Crafter prepares Supplies from
+> Flexible Scrap" is `economy.recipes`. "A Supply is consumed when its effect
+> is applied" is `items.supplies`. More generally: who does it and where it
+> happens at Home is `home.dwell.*`, what is produced and by what recipe is
+> `economy.*`, and what the object does in a Citizen's hands is `items.*`.
+
+> **Mode and Register are in the name.** Home Mode contains DWELL and EMBODY;
+> Away Mode contains FIELD and CROSSING; MEET is universal and reachable from
+> either Mode. A Home rule about Roles is `home.dwell.roles`, not `home`.
+> Prefer the most specific namespace that is clearly correct.
 
 **`terms`** — capitalised MEDIAN system terms appearing in the quote
 (`Citizen`, `Capacity`, `Reach`). Ordinary words are not terms.

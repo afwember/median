@@ -55,12 +55,20 @@ class AnthropicProvider:
         range. Streaming also means a multi-minute call can report progress
         instead of looking hung.
         """
-        kwargs: dict = {}
+        # Thinking must be turned OFF explicitly, not merely left unset. The
+        # first Sonnet runs came back with blocks={'thinking': 1, 'text': 1}
+        # and roughly 1 character of text per output token — about half the
+        # billed output was reasoning that text_stream never yields and the
+        # records do not need. Extraction is bounded, schema-constrained
+        # decomposition; it does not need a scratchpad.
+        kwargs: dict = {
+            "thinking": (
+                {"type": "enabled", "budget_tokens": self.thinking_tokens}
+                if self.thinking_tokens
+                else {"type": "disabled"}
+            )
+        }
         if self.thinking_tokens:
-            kwargs["thinking"] = {
-                "type": "enabled",
-                "budget_tokens": self.thinking_tokens,
-            }
             max_tokens = max(max_tokens, self.thinking_tokens + 8_000)
 
         parts: list[str] = []

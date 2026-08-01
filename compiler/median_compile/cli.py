@@ -574,6 +574,23 @@ def extract_cmd(
             res.records.extend(hydrated)
             res.errors.extend(herrs)
 
+        # Hand-authored records for blocks extraction could not resolve.
+        manual = rc.load_manual(build.dir / "records" / "manual.yaml")
+        for sid, spans in manual.items():
+            if sid not in results:
+                continue
+            lean = (build.lean / f"{sid}.md").read_text(encoding="utf-8")
+            blocks = {b.coord: b.text for b in ck.parse_blocks(lean)}
+            hydrated, herrs, next_id[sid] = rc.hydrate(
+                spans, blocks, sid, start_number=next_id.get(sid, 1)
+            )
+            results[sid].records.extend(hydrated)
+            results[sid].errors.extend(herrs)
+            if hydrated:
+                console.print(
+                    f"  [dim]{sid}[/dim] [cyan]+{len(hydrated)} manual[/cyan]"
+                )
+
         table = Table(show_header=True, header_style="bold")
         for col in ("id", "chunks", "records", "cached", "in tok", "out tok", "errors"):
             table.add_column(col, justify="right")

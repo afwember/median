@@ -92,6 +92,7 @@ FLAGS = {
     "table_derived",        # extracted from a table row rather than prose
     "non_state_marker",     # source explicitly marks this as not STATE
     "span_end_inferred",    # q1 was approximate; the endpoint was located by suffix
+    "manual",               # authored by hand, not by extraction
     "internal_supersession",  # a later passage in the same source overrides
 }
 
@@ -454,6 +455,29 @@ def _ends_block(quote: str, block: str) -> bool:
 #: almost anywhere in the block.
 _MIN_SUFFIX_WORDS = 2
 _MIN_SUFFIX_CHARS = 8
+
+
+def load_manual(path: Path) -> dict[str, list["SpanRecord"]]:
+    """Human-authored span records, keyed by source.
+
+    Extraction fails on a block occasionally — a paraphrased marker, an
+    inflection changed. Coverage shows the hole, but there was no way to fill
+    it. These records hydrate exactly like extracted ones, are grounded against
+    the source the same way, and carry the `manual` flag so they are never
+    mistaken for machine output.
+    """
+    if not path.exists():
+        return {}
+    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    out: dict[str, list[SpanRecord]] = {}
+    for row in doc.get("records") or []:
+        row = dict(row)
+        src = row.pop("source")
+        row.setdefault("flags", [])
+        if "manual" not in row["flags"]:
+            row["flags"] = [*row["flags"], "manual"]
+        out.setdefault(src, []).append(SpanRecord.model_validate(row))
+    return out
 
 
 def resolve_span_with_fallback(block: str, q0: str, q1: str) -> tuple[str, bool]:

@@ -1042,3 +1042,77 @@ def test_inflection_change_is_still_refused():
     block = "The player is asked to notice the Citizens who inhabit it."
     with pytest.raises(rc.SpanUnresolvable):
         rc.resolve_span_with_fallback(block, "The player is asked", "who inhabits it.")
+
+
+# --------------------------------------------------------------------------
+# Manual records — filling a hole extraction left
+# --------------------------------------------------------------------------
+
+
+def _manual_file(tmp_path, body):
+    p = tmp_path / "manual.yaml"
+    p.write_text(body, encoding="utf-8")
+    return p
+
+
+def test_manual_records_load_and_carry_the_flag(tmp_path):
+    p = _manual_file(tmp_path, """
+records:
+  - source: SPEC_HOME
+    loc: "2¶2"
+    q0: "The player is not"
+    q1: "inhabit it."
+    claim: "The player's task is a home, not a factory."
+    type: REQ
+    voice: world
+    status: canonical
+    owner: home.dwell
+""")
+    got = rc.load_manual(p)
+    assert list(got) == ["SPEC_HOME"]
+    assert "manual" in got["SPEC_HOME"][0].flags
+
+
+def test_a_manual_record_is_grounded_like_any_other(tmp_path):
+    """Hand-authoring is not an exception to the grounding rule."""
+    p = _manual_file(tmp_path, """
+records:
+  - source: SPEC_HOME
+    loc: "2¶2"
+    q0: "A marker that is not in the block"
+    q1: "inhabit it."
+    claim: "X."
+    type: REQ
+    voice: world
+    status: canonical
+    owner: home.dwell
+""")
+    spans = rc.load_manual(p)["SPEC_HOME"]
+    block = "The player is not asked to maximize a factory. Notice the Citizens who inhabit it."
+    recs, errs, _ = rc.hydrate(spans, {"2¶2": block}, "SPEC_HOME")
+    assert not recs and errs, "an ungrounded manual record must fail like any other"
+
+
+def test_manual_records_hydrate_with_a_real_quote(tmp_path):
+    p = _manual_file(tmp_path, """
+records:
+  - source: SPEC_HOME
+    loc: "2¶2"
+    q0: "The player is not"
+    q1: "inhabit it."
+    claim: "The player's task is a home, not a factory."
+    type: REQ
+    voice: world
+    status: canonical
+    owner: home.dwell
+""")
+    block = "The player is not asked to maximize a factory. Notice the Citizens who inhabit it."
+    recs, errs, nxt = rc.hydrate(rc.load_manual(p)["SPEC_HOME"], {"2¶2": block}, "SPEC_HOME", 267)
+    assert not errs
+    assert recs[0].id == "SPEC_HOME:0267"
+    assert recs[0].quote == block
+    assert "manual" in recs[0].flags
+
+
+def test_no_manual_file_is_not_an_error(tmp_path):
+    assert rc.load_manual(tmp_path / "absent.yaml") == {}

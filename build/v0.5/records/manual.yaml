@@ -1,0 +1,46 @@
+# Hand-authored atomic records — MEDIAN v0.5
+#
+# Extraction fails on a block occasionally: a paraphrased span marker, an
+# inflection changed, a passage the model declined. The coverage ledger shows
+# the hole; this file fills it.
+#
+# These are NOT exceptions to the rules. They hydrate exactly like extracted
+# records — the span is resolved against the source, the quotation is
+# reconstituted from the block, and an unresolvable marker fails here too. The
+# only difference is authorship, which the `manual` flag records permanently.
+#
+# Fields are the same as extraction's, plus `source`. Write q0 and q1 by
+# copying from `build/v0.5/sources/normalized_lean/<SOURCE>.md`, exactly.
+#
+# Manual records are appended after the extracted ones for their source, so
+# adding one never renumbers anything already assigned.
+
+records:
+
+  # ---------------------------------------------------------------------
+  # SPEC_HOME 2¶2 — the canonical statement of the player's task.
+  #
+  # Extraction wanted the whole block and had the claim right, but wrote
+  # "who inhabits it." where the source says "who inhabit it." — an
+  # inflection change, not a dropped word, so the suffix fallback correctly
+  # refused it. The block was left with zero records.
+  #
+  # Asa's ruling, 1 August 2026: one record, not two. The negation here is
+  # rhetorical support for the positive claim — "not a factory" exists to
+  # establish "a home" — rather than a separate enforceable prohibition.
+  # ---------------------------------------------------------------------
+  - source: SPEC_HOME
+    loc: "2¶2"
+    q0: "The player is not asked to maximize a factory."
+    q1: "the Citizens who inhabit it."
+    claim: >-
+      The player's task is not to maximize a factory but to establish a home
+      that is materially sound, seasonally prepared, socially coherent, and
+      able to continue ordinary life while selected Citizens travel into
+      danger; success is a functioning colony with enough margin to remain
+      stable, pursue chosen ambitions, and let the player notice the Citizens
+      who inhabit it.
+    type: REQ
+    voice: world
+    status: canonical
+    owner: home.dwell

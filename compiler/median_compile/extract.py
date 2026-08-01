@@ -191,9 +191,22 @@ class ExtractResult:
 
 
 def cache_key(
-    chunk_sha: str, prompt_version: str, schema_version: str, provider: str, model: str
+    chunk_sha: str,
+    prompt_version: str,
+    schema_version: str,
+    provider: str,
+    model: str,
+    thinking_tokens: int = 0,
 ) -> str:
-    raw = "|".join([chunk_sha, prompt_version, schema_version, provider, model])
+    """Everything that can change the answer belongs in the key.
+
+    thinking_tokens included because it does: without it, an A/B of thinking
+    on against thinking off silently serves the cached run and compares a
+    result with itself.
+    """
+    raw = "|".join(
+        [chunk_sha, prompt_version, schema_version, provider, model, str(thinking_tokens)]
+    )
     return hashlib.sha256(raw.encode()).hexdigest()[:32]
 
 
@@ -278,7 +291,12 @@ def extract_chunk(
 ) -> tuple[list[dict], Call]:
     user = build_user_prompt(chunk, source_meta, namespaces, start_number)
     key = cache_key(
-        chunk["sha256"], PROMPT_VERSION, RECORD_SCHEMA_VERSION, provider.name, provider.model
+        chunk["sha256"],
+        PROMPT_VERSION,
+        RECORD_SCHEMA_VERSION,
+        provider.name,
+        provider.model,
+        getattr(provider, "thinking_tokens", 0),
     )
     cache_path = cache_dir / f"{key}.json"
 

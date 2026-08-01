@@ -425,6 +425,7 @@ def extract_cmd(
     max_tokens: Annotated[Optional[int], typer.Option(help="Override output ceiling.")] = None,
     model: Annotated[Optional[str], typer.Option(help="Override the extraction model.")] = None,
     thinking: Annotated[Optional[int], typer.Option(help="Extended-thinking budget; 0 disables.")] = None,
+    label: Annotated[Optional[str], typer.Option(help="Write records to <SOURCE>.<label>.jsonl for comparison.")] = None,
 ) -> None:
     """Phase 4 — Claude extraction, Pass A. Bounded, cached, schema-constrained."""
     build, entries = _load(build_dir)
@@ -602,7 +603,8 @@ def extract_cmd(
             res.errors.extend(
                 rc.validate_records(res.records, blocks, set(namespaces), sid)
             )
-            out = build.dir / "records" / f"{sid}.jsonl"
+            name = f"{sid}.{label}.jsonl" if label else f"{sid}.jsonl"
+            out = build.dir / "records" / name
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(
                 "".join(r.model_dump_json() + "\n" for r in res.records), encoding="utf-8"
@@ -643,6 +645,74 @@ def extract_cmd(
         f"[green]wrote[/green] {total_records} records  ·  ${cost:.2f} spent  ·  "
         f"prompt v{ex.PROMPT_VERSION}  ·  {total_errors} validation error(s)"
     )
+
+
+@app.command("compare")
+def compare_cmd(
+    build_dir: BuildArg,
+    source: Annotated[str, typer.Argument(help="Source id, e.g. SPEC_CROSS")],
+    a: Annotated[str, typer.Option(help="Baseline label, or '-' for the unlabelled file.")] = "-",
+    b: Annotated[str, typer.Option(help="Comparison label.")] = "thinking",
+) -> None:
+    """Diff two extraction runs of one source on the fields that matter.
+
+    Agreement is measured per block: for each coordinate, how the two runs
+    classified it. A model change that leaves `owner` and `voice` alone is
+    cheap to adopt; one that moves them is not, because neither field has a
+    validation that would catch a plausible-but-wrong value.
+    """
+    build = Build(build_dir)
+
+    def load(lbl: str) -> list[dict]:
+        name = f"{source}.jsonl" if lbl == "-" else f"{source}.{lbl}.jsonl"
+        path = build.dir / "records" / name
+        if not path.exists():
+            console.print(f"[red]missing[/red] {name}")
+            raise typer.Exit(1)
+        return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x]
+
+    ra, rb = load(a), load(b)
+    console.print(f"[bold]{a}[/bold] {len(ra)} records   [bold]{b}[/bold] {len(rb)} records\n")
+
+    def by_block(rs):
+        d: dict[str, list[dict]] = {}
+        for r in rs:
+            d.setdefault(r["loc"], []).append(r)
+        return d
+
+    ba, bb = by_block(ra), by_block(rb)
+    shared = sorted(set(ba) & set(bb))
+    console.print(
+        f"blocks: {len(ba)} vs {len(bb)}, {len(shared)} in common, "
+        f"{len(set(ba) ^ set(bb))} in only one"
+    )
+
+    table = Table(show_header=True, header_style="bold")
+    for col in ("field", "agree", "differ", "rate"):
+        table.add_column(col, justify="right")
+    for field in ("owner", "voice", "type", "status"):
+        agree = differ = 0
+        for loc in shared:
+            va = {r[field] for r in ba[loc]}
+            vb = {r[field] for r in bb[loc]}
+            if va == vb:
+                agree += 1
+            else:
+                differ += 1
+        total = agree + differ
+        table.add_row(field, str(agree), str(differ), f"{agree/total:.0%}" if total else "-")
+    console.print(table)
+
+    console.print("\n[bold]owner disagreements[/bold]")
+    shown = 0
+    for loc in shared:
+        va = sorted({r["owner"] for r in ba[loc]})
+        vb = sorted({r["owner"] for r in bb[loc]})
+        if va != vb and shown < 12:
+            console.print(f"  {loc:10} {a}: {','.join(va)}   [cyan]{b}: {','.join(vb)}[/cyan]")
+            shown += 1
+    if not shown:
+        console.print("  [green]none[/green]")
 
 
 @app.command("log")

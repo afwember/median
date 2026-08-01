@@ -24,7 +24,7 @@ from typing import Protocol
 
 from .records import AtomicRecord, RECORD_SCHEMA_VERSION
 
-PROMPT_VERSION = "3.0"
+PROMPT_VERSION = "3.1"
 
 
 class ExtractionError(RuntimeError):
@@ -197,17 +197,44 @@ def cache_key(
     provider: str,
     model: str,
     effort: str | None = None,
+    namespace_sha: str = "",
 ) -> str:
     """Everything that can change the answer belongs in the key.
 
     Reasoning effort included because it does: without it, an A/B of effort on
     against effort off silently serves the cached run and compares a result
     with itself.
+
+    The namespace vocabulary is included for the same reason, and the omission
+    was live until 1 August 2026. The whole list is injected into every user
+    prompt, so renaming a namespace changes what the model can answer — that is
+    the entire finding behind removing `away.crossing.risk`. Without the
+    vocabulary in the key, editing `owner_namespaces.yaml` and re-running would
+    serve the pre-edit records, report `cached` and $0.00, and look like the
+    model had agreed with the change.
     """
     raw = "|".join(
-        [chunk_sha, prompt_version, schema_version, provider, model, effort or "none"]
+        [
+            chunk_sha,
+            prompt_version,
+            schema_version,
+            provider,
+            model,
+            effort or "none",
+            namespace_sha or "none",
+        ]
     )
     return hashlib.sha256(raw.encode()).hexdigest()[:32]
+
+
+def namespace_sha(namespaces: list[str]) -> str:
+    """Hash the rendered namespace block exactly as the prompt will carry it.
+
+    Rendered, not raw YAML: comments and key order in the source file do not
+    change the answer, and must not invalidate a cache that cost real money.
+    Descriptions do change the answer, and are included.
+    """
+    return hashlib.sha256("\n".join(namespaces).encode()).hexdigest()[:16]
 
 
 def build_user_prompt(
@@ -297,6 +324,7 @@ def extract_chunk(
         provider.name,
         provider.model,
         getattr(provider, "effort", None),
+        namespace_sha(namespaces),
     )
     cache_path = cache_dir / f"{key}.json"
 

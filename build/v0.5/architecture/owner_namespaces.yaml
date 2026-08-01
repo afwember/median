@@ -78,6 +78,51 @@ registers:
 #   The rule generalises: who does it and where it happens at Home is
 #   `home.dwell.*`; what is produced and by what recipe is `economy.*`; what
 #   the resulting object does in a Citizen's hands is `items.*`.
+#
+# subject vs. system (Asa's ruling, 1 August 2026)
+#   The Citizen is the base person unit of MEDIAN and roughly 80% of rules
+#   concern Citizens. That makes `citizen` an attractor: almost any rule can be
+#   restated as a rule about Citizens, and a namespace that can own almost
+#   anything is worthless for conflict clustering, because two records sharing
+#   it are not candidates for comparison.
+#
+#   A rule is owned by the system that GOVERNS it, not by the subject it acts
+#   upon. `citizen.*` holds only claims about the Citizen unit itself.
+#
+#   "A Citizen is a named colony member with one equal Home share" -> citizen
+#   "A Citizen carries weight up the cooperative ladder"           -> economy.carrying
+#   "A Citizen occupies one Role at a time"                        -> home.dwell.roles
+#   "A Citizen's fear memory persists after a Crossing"            -> citizen.change
+#   "A wounded Citizen cannot join an expedition"                  -> away.launch
+#   "Bodily adversity attaches to individual Citizens"             -> away.crossing.*
+#
+#   The test: remove the word Citizen and ask what the rule is about. If
+#   nothing is left, it is `citizen.*`. If a system is left, it owns the rule.
+#
+# transverse vs. longitudinal (Asa's ruling, 1 August 2026)
+#   `world.reach`     is the cross-section — one slice across the road
+#   `world.corridor`  is the chain — Median Reach units end to end
+#
+#   "Sound Wall, Margin, Highway, Median, Highway, Margin, Sound Wall" -> world.reach
+#   "The Margin is the vegetated strip between wall and hardtop"       -> world.reach
+#   "A corridor is a chain of Median Reaches"                          -> world.corridor
+#   "Service crossovers join one Reach to the next"                    -> world.corridor
+#
+#   v0.4 had a single `world.corridor` described as "Cross-section, Margins,
+#   Sound Walls, service crossovers", which is both axes in one node. A rule
+#   about what a Margin *is* and a rule about how Reaches *chain* are not
+#   candidates for comparison, and a shared owner would have made them so.
+#
+# the ground vs. the advance
+#   `world.corridor`  is the terrain — what the chain is
+#   `away.corridor`   is the expedition's progress along it — Held Reaches,
+#                     outposts, the Metropolis arc
+#
+#   These share a segment name, which is the condition that produced the
+#   `away.crossing.risk` failure. Here the two really are different things, so
+#   the seam is stated rather than the node removed. If it still confuses
+#   extraction, the fix is to rename `away.corridor` — Asa's call, not the
+#   compiler's.
 
 namespaces:
 
@@ -142,8 +187,14 @@ namespaces:
     topology: Register/View doctrine; what each register is and is not.
     switch: Mode-switch doctrine and transitions between Home and Away.
 
+  # THE CITIZEN IS A SUBJECT, NOT AN OWNER. See the subject/system seam under
+  # DISAMBIGUATION. Roughly 80% of MEDIAN rules concern Citizens; almost none
+  # of them are owned here.
   citizen:
-    _: The Citizen subject generally.
+    _: >-
+      The Citizen unit itself — what a Citizen is, and what is true of every
+      Citizen regardless of what they are doing. Not a home for rules that
+      merely act on Citizens; those belong to the system that governs them.
     record: Citizen Record schema and what is tracked.
     change: Lasting change — fear memory, Distinctions, After-names.
     harm: Harm, wounds, Maiming, tharn.
@@ -186,9 +237,18 @@ namespaces:
     artifacts: Holding an Artifact — Colony and Carried, Place of Pride.
     focus: Choosing what to carry — Focus and expedition equipment selection.
 
+  # The corridor has two axes and v0.4 had one node for both. See the
+  # transverse/longitudinal seam under DISAMBIGUATION.
   world:
-    _: Corridor geography and the ground the game happens on.
-    corridor: Cross-section, Margins, Sound Walls, service crossovers.
+    _: The ground the game happens on, across both axes of the corridor.
+    reach: >-
+      The Median Reach in transverse section — the slice across the road:
+      Sound Wall, Margin, Highway, Median, Highway, Margin, Sound Wall. The
+      anatomy of one Reach and what each band of it is.
+    corridor: >-
+      The corridor in longitudinal section — the chain of Median Reach units
+      laid end to end. Sequence, continuity, and the service crossovers that
+      join one Reach to the next.
     biomes: Biome roster and Anchor Points.
     time: Day structure, traffic cycles, Road Work.
     ecology: Ecological influences, predators, drainage, sound.

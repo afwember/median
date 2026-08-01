@@ -92,6 +92,7 @@ FLAGS = {
     "table_derived",        # extracted from a table row rather than prose
     "non_state_marker",     # source explicitly marks this as not STATE
     "span_end_inferred",    # q1 was approximate; the endpoint was located by suffix
+    "branch_charter",       # defines a container as a whole; no leaf can own it
     "manual",               # authored by hand, not by extraction
     "internal_supersession",  # a later passage in the same source overrides
 }
@@ -206,6 +207,13 @@ def load_containers(path: Path) -> set[str]:
     is not an owner. Leaves are systems; branches are shelves.
 
     Mechanical rather than listed, so it stays true as the tree changes.
+
+    One exception, added the same day after measuring it: a branch may own a
+    claim that defines the branch as a whole. "Crossing is a short,
+    high-attention threshold Register" belongs to no leaf, and inventing one to
+    hold it would be worse than the gap. Such records carry `branch_charter`.
+    Of 56 bare `away.crossing` records, 8 were charter and 48 were a genuine
+    missing system; treating both as errors would have buried the 48.
     """
     doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     out: set[str] = set()
@@ -285,10 +293,22 @@ def validate_records(
                 "(flag owner_unclear instead of inventing one)"
             )
 
-        if containers and r.owner in containers and "owner_unclear" not in r.flags:
+        if (
+            containers
+            and r.owner in containers
+            and not {"owner_unclear", "branch_charter"} & set(r.flags)
+        ):
             errors.append(
                 f"{r.id}: owner {r.owner!r} accumulates systems rather than being "
-                "one; name the system or flag owner_unclear"
+                "one; name the system, or flag branch_charter if the claim "
+                "defines the branch as a whole, or owner_unclear if no system fits"
+            )
+
+        if "branch_charter" in r.flags and not (containers and r.owner in containers):
+            errors.append(
+                f"{r.id}: branch_charter on {r.owner!r}, which is a leaf. A leaf "
+                "is a system and owns claims outright; charter is what a branch "
+                "says about itself."
             )
 
         if r.type is ContentType.EXAMPLE and r.status is Status.canonical:

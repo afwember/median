@@ -1187,3 +1187,116 @@ def test_owner_unclear_excuses_a_container():
         [r], {"1¶1": "alpha beta"}, {"away.crossing"}, "SPEC_X", {"away.crossing"}
     )
     assert not any("accumulates systems" in e for e in errs)
+
+
+# --------------------------------------------------------------------------
+# Charter vs. starvation — 1 August 2026
+#
+# Owning to a container was made an error outright, which was too broad. Of 56
+# bare `away.crossing` records, 8 defined the register as a whole and belonged
+# to no leaf; 48 were a genuine missing system. Erroring on both would have
+# buried the 48 under false positives across nineteen containers.
+# --------------------------------------------------------------------------
+
+
+def _rec(**kw):
+    base = dict(
+        id="SPEC_X:0001", src="SPEC_X", loc="1¶1", quote="alpha beta",
+        claim="X.", type="REQ", voice="world", status="canonical",
+        owner="away.crossing",
+    )
+    base.update(kw)
+    return rc.AtomicRecord(**base)
+
+
+def _errs(r, containers={"away.crossing"}, namespaces={"away.crossing", "economy.carrying"}):
+    return rc.validate_records(
+        [r], {"1¶1": "alpha beta"}, namespaces, "SPEC_X", containers
+    )
+
+
+def test_branch_charter_excuses_a_container():
+    """A register may define itself. No leaf can hold "Crossing is a Register"."""
+    assert not any(
+        "accumulates systems" in e for e in _errs(_rec(flags=["branch_charter"]))
+    )
+
+
+def test_branch_charter_on_a_leaf_is_an_error():
+    """A leaf is a system; it owns claims outright. Charter is a branch's self-description."""
+    errs = _errs(_rec(owner="economy.carrying", flags=["branch_charter"]))
+    assert any("is a leaf" in e for e in errs)
+
+
+def test_branch_charter_is_a_known_flag():
+    assert "branch_charter" in rc.FLAGS
+
+
+# --------------------------------------------------------------------------
+# Cache key — the namespace vocabulary changes the answer
+#
+# The whole namespace list is injected into every user prompt, so renaming a
+# namespace changes what the model can say. It was absent from the cache key
+# until 1 August 2026, which meant editing owner_namespaces.yaml and re-running
+# would serve the pre-edit records, report cached and $0.00, and read as
+# agreement with the change.
+# --------------------------------------------------------------------------
+
+
+def test_renaming_a_namespace_invalidates_the_cache():
+    from median_compile import extract as ex
+    a = ["  away.crossing — the carriageway", "  economy.carrying — the weight ladder"]
+    b = ["  away.crossing.risk — the carriageway", "  economy.carrying — the weight ladder"]
+    args = ("sha", ex.PROMPT_VERSION, "3.0", "anthropic", "m", "high")
+    assert ex.cache_key(*args, ex.namespace_sha(a)) != ex.cache_key(*args, ex.namespace_sha(b))
+
+
+def test_rewording_a_namespace_description_invalidates_the_cache():
+    """Descriptions steer ownership as much as names do."""
+    from median_compile import extract as ex
+    a = ["  world.corridor — cross-section, Margins, Sound Walls"]
+    b = ["  world.corridor — the chain of Median Reach units end to end"]
+    args = ("sha", ex.PROMPT_VERSION, "3.0", "anthropic", "m", "high")
+    assert ex.cache_key(*args, ex.namespace_sha(a)) != ex.cache_key(*args, ex.namespace_sha(b))
+
+
+def test_identical_vocabulary_still_hits_the_cache():
+    from median_compile import extract as ex
+    a = ["  away.crossing — the carriageway"]
+    args = ("sha", ex.PROMPT_VERSION, "3.0", "anthropic", "m", "high")
+    assert ex.cache_key(*args, ex.namespace_sha(a)) == ex.cache_key(*args, ex.namespace_sha(list(a)))
+
+
+# --------------------------------------------------------------------------
+# Prompt integrity
+#
+# extract-3.0.md replaced `weight` with `voice` in its header and its worked
+# example but left the `weight` field specification in the body. The span
+# schema forbids unknown fields, so a model following the body would have
+# produced an unparseable response.
+# --------------------------------------------------------------------------
+
+
+def test_the_live_prompt_exists():
+    from median_compile import extract as ex
+    p = Path(__file__).parents[1] / "prompts" / f"extract-{ex.PROMPT_VERSION}.md"
+    assert p.exists(), f"PROMPT_VERSION points at a missing file: {p.name}"
+
+
+def test_the_live_prompt_asks_only_for_fields_the_schema_accepts():
+    from median_compile import extract as ex
+    p = Path(__file__).parents[1] / "prompts" / f"extract-{ex.PROMPT_VERSION}.md"
+    body = p.read_text(encoding="utf-8").split("## Task", 1)[1]
+    allowed = set(rc.SpanRecord.model_fields)
+    asked = set(re.findall(r"^\*\*`(\w+)`\*\*", body, re.M))
+    assert asked <= allowed, f"prompt specifies fields the schema forbids: {asked - allowed}"
+
+
+def test_the_live_prompt_documents_every_flag_it_may_emit():
+    """Flags the compiler assigns are excluded; flags the model raises are not."""
+    from median_compile import extract as ex
+    p = Path(__file__).parents[1] / "prompts" / f"extract-{ex.PROMPT_VERSION}.md"
+    body = p.read_text(encoding="utf-8")
+    compiler_assigned = {"span_end_inferred", "manual"}
+    for flag in rc.FLAGS - compiler_assigned:
+        assert flag in body, f"{flag} is emittable but undocumented in the prompt"

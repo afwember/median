@@ -11,7 +11,8 @@ SDK; both are checked with a clear message rather than an import traceback.
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import Callable, Optional
 
 
 class ProviderUnavailable(RuntimeError):
@@ -23,7 +24,10 @@ class AnthropicProvider:
     model: str
     name: str = "anthropic"
     api_key_env: str = "ANTHROPIC_API_KEY"
-    _client: object | None = None
+    #: Called with the character count of each streamed fragment. Lets the CLI
+    #: show that a multi-minute call is alive.
+    on_progress: Optional[Callable[[int], None]] = None
+    _client: object = field(default=None, repr=False)
 
     def __post_init__(self) -> None:
         key = os.environ.get(self.api_key_env)
@@ -41,20 +45,31 @@ class AnthropicProvider:
         self._client = anthropic.Anthropic(api_key=key)
 
     def complete(self, system: str, user: str, max_tokens: int) -> tuple[str, dict]:
-        resp = self._client.messages.create(  # type: ignore[union-attr]
+        """Always streams.
+
+        The SDK refuses a non-streaming request whose `max_tokens` implies it
+        could run past ten minutes, and extraction ceilings are well into that
+        range. Streaming also means a multi-minute call can report progress
+        instead of looking hung.
+        """
+        parts: list[str] = []
+        with self._client.messages.stream(  # type: ignore[union-attr]
             model=self.model,
             max_tokens=max_tokens,
             system=system,
             messages=[{"role": "user", "content": user}],
-        )
-        text = "".join(
-            block.text for block in resp.content if getattr(block, "type", "") == "text"
-        )
+        ) as stream:
+            for text in stream.text_stream:
+                parts.append(text)
+                if self.on_progress is not None:
+                    self.on_progress(len(text))
+            final = stream.get_final_message()
+
         # stop_reason is the difference between "the model finished" and "we cut
         # it off mid-sentence". Without it, truncation surfaces as an
         # unintelligible JSON parse error several frames away from the cause.
-        return text, {
-            "input_tokens": resp.usage.input_tokens,
-            "output_tokens": resp.usage.output_tokens,
-            "stop_reason": getattr(resp, "stop_reason", None),
+        return "".join(parts), {
+            "input_tokens": final.usage.input_tokens,
+            "output_tokens": final.usage.output_tokens,
+            "stop_reason": getattr(final, "stop_reason", None),
         }

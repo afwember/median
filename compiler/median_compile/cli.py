@@ -52,6 +52,17 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+_streamed = {"chars": 0}
+
+
+def _tick(n: int) -> None:
+    """Progress heartbeat during a streamed call, roughly every 2k characters."""
+    _streamed["chars"] += n
+    if _streamed["chars"] >= 2000:
+        _streamed["chars"] = 0
+        console.print(".", end="")
+
+
 def _report_validation(v: mf.Validation) -> None:
     for w in v.warnings:
         console.print(f"[yellow]warn[/yellow]  {w}")
@@ -472,7 +483,7 @@ def extract_cmd(
             )
             raise typer.Exit(1)
         try:
-            provider = AnthropicProvider(model=model)
+            provider = AnthropicProvider(model=model, on_progress=_tick)
         except ProviderUnavailable as exc:
             console.print(f"[red]provider unavailable[/red] {exc}")
             raise typer.Exit(1)
@@ -492,6 +503,7 @@ def extract_cmd(
             e = meta[c["source"]]
             res = results.setdefault(c["source"], ex.ExtractResult(source_id=c["source"]))
             start = len(res.records) + 1
+            console.print(f"  [dim]{c['id']}[/dim] ", end="")
             try:
                 raw, call = ex.extract_chunk(
                     c,
@@ -503,8 +515,12 @@ def extract_cmd(
                 )
             except ex.ExtractionError as exc:
                 res.errors.append(str(exc))
-                console.print(f"  [red]{exc}[/red]")
+                console.print(f"\n  [red]{exc}[/red]")
                 continue
+            console.print(
+                f" [green]{len(raw)} records[/green]"
+                + (" [dim](cached)[/dim]" if call.cached else "")
+            )
             res.calls.append(call)
             for item in raw:
                 try:

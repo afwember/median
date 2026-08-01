@@ -157,8 +157,17 @@ than the ceiling allowed. The raw text is kept in
 `providers.extraction.max_output_tokens` in `config.yaml`, or pass
 `--max-tokens 48000`. The default is 32,000.
 
+**`Streaming is required for operations that may take longer than 10 minutes`**
+— fixed as of 1 August 2026. The SDK refuses a non-streaming request whose
+output ceiling implies it could run past ten minutes, which a 32,000-token
+ceiling does. The provider now always streams. `git pull` and retry.
+
 A failed call is never cached as a success, so re-running retries it. Chunks
 that already succeeded stay cached and cost nothing on the retry.
+
+Extraction prints a dot every couple of thousand characters as the response
+streams in, then the record count for each chunk. A chunk taking two or three
+minutes is normal.
 
 To see what a call would look like without an API key at all:
 

@@ -1155,3 +1155,35 @@ def test_every_declared_register_exists():
     ns = rc.load_namespaces(path)
     for node in (doc.get("registers") or {}):
         assert node in ns, f"declared register {node} is not in the tree"
+
+
+def test_a_branch_is_a_container_and_a_leaf_is_a_system():
+    """Asa's ruling: a rule belongs to a system; registers accumulate systems."""
+    path = Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    containers = rc.load_containers(path)
+    assert "away.crossing" in containers, "a register accumulates systems"
+    assert "economy.carrying" not in containers, "a leaf is a system"
+
+
+def test_owning_to_a_container_is_an_error_unless_flagged():
+    r = rc.AtomicRecord(
+        id="SPEC_X:0001", src="SPEC_X", loc="1¶1", quote="alpha beta",
+        claim="X.", type="REQ", voice="world", status="canonical",
+        owner="away.crossing",
+    )
+    errs = rc.validate_records(
+        [r], {"1¶1": "alpha beta"}, {"away.crossing"}, "SPEC_X", {"away.crossing"}
+    )
+    assert any("accumulates systems" in e for e in errs)
+
+
+def test_owner_unclear_excuses_a_container():
+    r = rc.AtomicRecord(
+        id="SPEC_X:0001", src="SPEC_X", loc="1¶1", quote="alpha beta",
+        claim="X.", type="REQ", voice="world", status="canonical",
+        owner="away.crossing", flags=["owner_unclear"],
+    )
+    errs = rc.validate_records(
+        [r], {"1¶1": "alpha beta"}, {"away.crossing"}, "SPEC_X", {"away.crossing"}
+    )
+    assert not any("accumulates systems" in e for e in errs)

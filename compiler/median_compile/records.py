@@ -197,6 +197,34 @@ def load_namespace_descriptions(path: Path) -> dict[str, str]:
     return out
 
 
+def load_containers(path: Path) -> set[str]:
+    """Namespaces that accumulate systems rather than being one.
+
+    Asa's ruling, 1 August 2026: "a rule belongs to a system. Registers are
+    accumulations of systems." A namespace with children is therefore a
+    container, and owning a record to it says only "somewhere in here" — which
+    is not an owner. Leaves are systems; branches are shelves.
+
+    Mechanical rather than listed, so it stays true as the tree changes.
+    """
+    doc = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    out: set[str] = set()
+
+    def walk(node: dict, prefix: str) -> None:
+        children = [k for k in node if k != "_"]
+        if prefix and children:
+            out.add(prefix)
+        for key, value in node.items():
+            if key == "_":
+                continue
+            name = f"{prefix}.{key}" if prefix else key
+            if isinstance(value, dict):
+                walk(value, name)
+
+    walk(doc.get("namespaces") or {}, "")
+    return out
+
+
 def namespace_mode(owner: str) -> str | None:
     """Which Mode a namespace belongs to, or None if cross-cutting.
 
@@ -228,6 +256,7 @@ def validate_records(
     blocks: dict[str, str],
     namespaces: set[str],
     source_id: str,
+    containers: set[str] | None = None,
 ) -> list[str]:
     """Structural checks that do not need a model. Compiler spec §5.6."""
     errors: list[str] = []
@@ -254,6 +283,12 @@ def validate_records(
             errors.append(
                 f"{r.id}: owner {r.owner!r} is not a registered namespace "
                 "(flag owner_unclear instead of inventing one)"
+            )
+
+        if containers and r.owner in containers and "owner_unclear" not in r.flags:
+            errors.append(
+                f"{r.id}: owner {r.owner!r} accumulates systems rather than being "
+                "one; name the system or flag owner_unclear"
             )
 
         if r.type is ContentType.EXAMPLE and r.status is Status.canonical:

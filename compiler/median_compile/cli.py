@@ -435,8 +435,12 @@ def extract_cmd(
         console.print(f"[red]missing[/red] {ns_path.name}; namespaces must be ruled first")
         raise typer.Exit(1)
     ns_desc = rc.load_namespace_descriptions(ns_path)
+    containers = rc.load_containers(ns_path)
     namespaces = sorted(ns_desc)
-    ns_lines = [f"  {n} — {ns_desc[n]}" for n in namespaces]
+    ns_lines = [
+        f"  {n}{' [container]' if n in containers else ''} — {ns_desc[n]}"
+        for n in namespaces
+    ]
 
     todo = [
         e for e in sorted(entries, key=lambda x: (x.processing_order, x.id))
@@ -601,7 +605,9 @@ def extract_cmd(
             lean = (build.lean / f"{sid}.md").read_text(encoding="utf-8")
             blocks = {b.coord: b.text for b in ck.parse_blocks(lean)}
             res.errors.extend(
-                rc.validate_records(res.records, blocks, set(namespaces), sid)
+                rc.validate_records(
+                    res.records, blocks, set(namespaces), sid, containers
+                )
             )
             name = f"{sid}.{label}.jsonl" if label else f"{sid}.jsonl"
             out = build.dir / "records" / name

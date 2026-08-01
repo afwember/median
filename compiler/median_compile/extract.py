@@ -24,7 +24,7 @@ from typing import Protocol
 
 from .records import AtomicRecord, RECORD_SCHEMA_VERSION
 
-PROMPT_VERSION = "3.2"
+PROMPT_VERSION = "3.3"
 
 
 class ExtractionError(RuntimeError):

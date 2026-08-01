@@ -1,5 +1,5 @@
 # MEDIAN extraction — Pass A
-# prompt_version: 3.2
+# prompt_version: 3.3
 # schema_version: 3.0
 #
 # Frozen artifact. Changing this file invalidates every record produced with a
@@ -46,6 +46,13 @@
 #   - The subject/system seam. The Citizen is MEDIAN's base person unit and
 #     roughly 80% of rules concern Citizens, which makes `citizen` an attractor
 #     that would swallow the corpus.
+#
+# v3.3: 3.2 told the model that Encounter and MEET were two names for one
+#   thing. They are not, and the instruction would have destroyed a live
+#   distinction: Encounter is an authored content unit, MEET is the Register
+#   that resolves it. "Encounter Register" is deprecated terminology. Corrected
+#   below, with the register/situation grammar stated so the same collapse
+#   cannot happen for Crossing/RISK either.
 #   - The transverse/longitudinal seam, after `world.corridor` was found to
 #     conflate the cross-section of one Reach with the chain of Reaches.
 
@@ -143,6 +150,17 @@ your best guess **and** add the flag `owner_unclear`. Never invent a namespace.
 > Away Mode contains FIELD and CROSSING; MEET is universal, reachable from
 > either Mode. A Home rule about Roles is `home.dwell.roles`, not `home`.
 > Prefer the most specific namespace that is clearly correct.
+
+> **A register is a verb; its noun is the situation.** In each Noun:VERB pair
+> the noun names the world situation and the verb names the register that
+> resolves it — Colony:DWELL, Field:TRAVEL, Crossing:RISK, Encounter:MEET,
+> Embody:EMBODY. These are not synonyms.
+>
+> An **Encounter** is an authored content unit; **MEET** is the register that
+> resolves it. A **Crossing** is a world situation; **RISK** is the form of
+> play. Preserve the distinction the source makes. "Encounter Register",
+> "Crossing Register", "Colony Register" and "Field Register" are deprecated
+> names — if a source uses one, record what it says and do not repair it.
 
 > **The subject/system seam.** A rule is owned by the system that *governs* it,
 > never by the subject it acts upon. The Citizen is MEDIAN's base person unit

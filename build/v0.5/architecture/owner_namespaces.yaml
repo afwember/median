@@ -181,10 +181,45 @@ registers:
 #   Cross-register legibility doctrine, if a later spec states any, is doctrine
 #   and belongs in `register.*`, not in a domain of its own.
 #
-# the Encounter and the Turn (Asa, 1 August 2026)
-#   Encounter, MEET, and Encounter MEET are three names for one thing. An
-#   Encounter is comprised of Turns. Rounds are deprecated terminology and may
-#   still appear in older specs; record them and let Phase 8 rule.
+# the Encounter and the Turn (Asa, 1 August 2026, corrected the same day)
+#   AN ENCOUNTER IS NOT THE MEET REGISTER. Encounter is an authored content
+#   unit — a bounded situation. MEET is the Register that resolves it. An
+#   Encounter is comprised of Turns, and a Turn is one resolved choice within
+#   a MEET.
+#
+#   Asa's first ruling was that Encounter, MEET and Encounter MEET were three
+#   names for one thing; he corrected it against the terminology registry the
+#   same day as "conflating out of hasty simplicity". "Encounter Register" is
+#   listed there as a DEPRECATED register name, alongside Colony Register,
+#   Field Register and Crossing Register.
+#
+#   This resolves the Noun:VERB scheme rather than straining it. In every
+#   pair, the NOUN names the world situation or subject and the VERB names the
+#   register that resolves it:
+#
+#     Colony:DWELL      you dwell in the Colony
+#     Field:TRAVEL      you travel the Field
+#     Crossing:RISK     you risk the Crossing
+#     Encounter:MEET    you meet through an Encounter
+#     Embody:EMBODY     the one pair where noun and verb coincide
+#
+#   Which is exactly why "Crossing Register" and "Encounter Register" are
+#   deprecated: each names a register by its noun. The register is the verb.
+#
+#   Rounds are deprecated terminology for Turns and may still appear in older
+#   specs; record them and let Phase 8 rule.
+#
+# View (Asa, 1 August 2026)
+#   The registry treats View as an architecture class — "a particular
+#   presentation inside a Register". Asa's ruling: it is most likely either a
+#   deprecated way of naming the camera-angle quality of a Register, or an
+#   information pane such as a Citizen View. Game-utility language, not one of
+#   the main modes of interaction.
+#
+#   So the tree does NOT gain a View level. A passage about a View is owned by
+#   the Register whose presentation it describes — which is what R010 already
+#   established when `ui` dissolved. "Citizen View at Home" (SPEC_ITEMS 2.1)
+#   is a DWELL information pane, not a register.
 #
 #   The Turn therefore lives with MEET, not with any Home cycle. This is what
 #   makes the Crossing guard legible: "Crossing itself does not acquire turn
@@ -403,11 +438,13 @@ namespaces:
   meet:
     _: >-
       Encounter:MEET — presentational front over a rendered backplate. The
-      universal situational resolver, reachable from either Mode. Encounter,
-      MEET and Encounter MEET are one thing.
+      universal situational resolver, reachable from either Mode. MEET is the
+      Register; an Encounter is the authored content unit it resolves. Do not
+      write "the Encounter Register" — that name is deprecated.
     turn: >-
-      The Turn as MEET's unit of resolution — an Encounter is comprised of
-      Turns. Rounds are deprecated terminology for the same idea.
+      The Turn as MEET's unit of resolution — one resolved choice within a
+      MEET, and an Encounter is comprised of Turns. Rounds are deprecated
+      terminology for the same idea.
     eligibility: >-
       Which Roles, Citizens and stakes an Encounter may draw on. Eligibility
       masks per Encounter family, Big and Small Weakness selection, and how
@@ -434,7 +471,8 @@ namespaces:
     # Encounters, and they are what physically moves the game between Modes and
     # Registers. `register.switch` states the doctrine; these three perform it.
     launch: >-
-      Home.Encounter.Launch — selected by the player from inside DWELL. Forms
+      Home.Encounter.Launch — a specific instance of MEET (Asa), selected by
+      the player from inside DWELL. Forms
       the Expedition party, and on close shifts the game from Home Mode to Away
       Mode, resolving into the Field Register. Owns the launch interface,
       party formation, legible Home subtraction, preparation guardrails, and

@@ -314,7 +314,9 @@ rulings:
   # namespace uses none of them.
 
   - id: R023
-    status: open
+    date: 2026-08-01
+    by: Asa
+    status: ruled
     priority: highest
     subject: Encounter and MEET may not be identical
     conflict: >-
@@ -334,7 +336,18 @@ rulings:
     why_it_matters: >-
       The registry's own acceptance test reads "No false synonym collapses
       Mode, Register, View, world place, content unit or manifestation
-      mechanic." Prompt 3.2 currently instructs a model to do exactly that.
+      mechanic." Prompt 3.2 instructed a model to do exactly that.
+    ruling: >-
+      Asa, 1 August 2026: "ChatGPT version of Encounter/MEET is correct; I was
+      conflating out of hasty simplicity." R008's lexicon claim is retracted;
+      its placement of the Turn stands and is corroborated.
+    effect: >-
+      Prompt 3.3 states the register/situation grammar: in each Noun:VERB pair
+      the noun names the world situation and the verb names the register that
+      resolves it. This also explains why Encounter Register, Crossing
+      Register, Colony Register and Field Register are all deprecated — each
+      names a register by its noun. Home.Encounter.Launch is a specific
+      instance of MEET.
 
   - id: R024
     status: open
@@ -354,9 +367,11 @@ rulings:
       and should be settled deliberately rather than assumed.
 
   - id: R025
-    status: open
+    date: 2026-08-01
+    by: Asa
+    status: ruled
     priority: high
-    subject: View is an architecture class the tree does not have
+    subject: View is not an architecture level
     detail: >-
       ARCH.VIEW — "A particular presentation inside a Register that does not
       alter the player's fundamental relation to subject, time and control."
@@ -368,6 +383,16 @@ rulings:
       what meet.launch and away.crossing.phases already do. But an acceptance
       test explicitly forbids collapsing the Register/View distinction, and if
       Views must be recoverable, the tree needs to mark them.
+    ruling: >-
+      Asa, 1 August 2026: View most likely means either a deprecated way of
+      naming the camera-angle quality of a Register, or an information pane
+      such as a Citizen View. Game-utility language, not one of the main modes
+      of interaction.
+    effect: >-
+      No View level is added. A passage about a View is owned by the Register
+      whose presentation it describes, which is what R010 established when `ui`
+      dissolved. "Citizen View at Home" (SPEC_ITEMS 2.1) is a DWELL
+      information pane.
 
   - id: R026
     status: open

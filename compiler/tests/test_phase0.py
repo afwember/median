@@ -472,3 +472,121 @@ def test_errored_runs_do_not_count_as_provenance(build):
             run.inputs = {"A": "1"}
             raise RuntimeError("failed midway")
     assert rec.accumulated_inputs(build, "chunk") == {}
+
+
+def test_chunk_text_carries_coordinate_anchors():
+    """Extraction must report the `loc` of every record.
+
+    If the chunk handed to the model has no `<!--@coord-->` markers, that is
+    impossible — the model cannot cite what it cannot see. This was only
+    caught when Pass A returned zero records against the fake provider.
+    """
+    text = "<!--@1-->\n# H\n\n<!--@1¶1-->\nalpha\n\n<!--@1¶2-->\nbeta\n"
+    r = ck.chunk(text, "X")
+    body = r.chunks[0].text
+    for coord in r.chunks[0].owned:
+        assert f"<!--@{coord}-->" in body, f"{coord} unciteable in chunk text"
+
+
+def test_context_blocks_are_also_anchored():
+    text = "\n\n".join(f"<!--@1¶{i}-->\n{'word ' * 200}" for i in range(1, 60))
+    r = ck.chunk(text, "X", target_tokens=1000, max_tokens=1500, overlap_tokens=400)
+    later = [c for c in r.chunks if c.context]
+    assert later, "test needs a chunk with carried context"
+    for c in later:
+        for coord in c.context:
+            assert f"<!--@{coord}-->" in c.text
+
+
+# --------------------------------------------------------------------------
+# Namespaces — Mode / Register architecture
+# --------------------------------------------------------------------------
+
+from pathlib import Path  # noqa: E402
+
+from median_compile import records as rc  # noqa: E402
+
+
+def test_namespace_tree_nests_to_three_levels(tmp_path):
+    p = tmp_path / "ns.yaml"
+    p.write_text(
+        "namespaces:\n"
+        "  home:\n"
+        "    _: Home Mode\n"
+        "    dwell:\n"
+        "      _: DWELL\n"
+        "      roles: Roles\n"
+        "  meet:\n"
+        "    _: MEET\n",
+        encoding="utf-8",
+    )
+    assert rc.load_namespaces(p) == {"home", "home.dwell", "home.dwell.roles", "meet"}
+
+
+@pytest.mark.parametrize(
+    "owner,mode",
+    [
+        ("home.dwell.roles", "home"),
+        ("home.embody.access", "home"),
+        ("away.field.travel", "away"),
+        ("away.crossing.risk", "away"),
+        ("meet.choice", "universal"),
+        ("items.tools", None),
+        ("citizen.record", None),
+    ],
+)
+def test_mode_is_derivable_from_owner(owner, mode):
+    """Home encompasses DWELL and EMBODY; Away encompasses FIELD and CROSSING;
+    MEET is universal. The owner string must carry that without a lookup."""
+    assert rc.namespace_mode(owner) == mode
+
+
+def test_all_five_registers_are_present():
+    ns = rc.load_namespaces(
+        Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    )
+    for register in ("home.dwell", "home.embody", "away.field", "away.crossing", "meet"):
+        assert register in ns, f"{register} missing from the namespace tree"
+
+
+def test_extraction_may_not_invent_a_namespace():
+    r = rc.AtomicRecord(
+        id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
+        quote="alpha beta", claim="Alpha beta.", type="REQ",
+        weight="STATE", status="canonical", owner="home.invented.thing",
+    )
+    errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_HOME")
+    assert any("not a registered namespace" in e for e in errs)
+
+
+def test_owner_unclear_flag_excuses_an_unknown_namespace():
+    r = rc.AtomicRecord(
+        id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
+        quote="alpha beta", claim="Alpha beta.", type="REQ",
+        weight="STATE", status="canonical", owner="home",
+        flags=["owner_unclear"],
+    )
+    errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_HOME")
+    assert not any("namespace" in e for e in errs)
+
+
+def test_quote_must_be_grounded_in_the_block():
+    """A claim without a locatable quotation is an assertion, not a fact."""
+    r = rc.AtomicRecord(
+        id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
+        quote="a sentence that is not in the source", claim="X.", type="REQ",
+        weight="STATE", status="canonical", owner="home.dwell",
+    )
+    errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_HOME")
+    assert any("not present verbatim" in e for e in errs)
+
+
+def test_grounding_ignores_whitespace_only():
+    r = rc.AtomicRecord(
+        id="SPEC_HOME:0001", src="SPEC_HOME", loc="1¶1",
+        quote="Each  Citizen\ncontributes one unit.", claim="X.", type="REQ",
+        weight="STATE", status="canonical", owner="home.dwell",
+    )
+    block = "Each Citizen contributes one unit."
+    errs = rc.validate_records([r], {"1¶1": block}, {"home.dwell"}, "SPEC_HOME")
+    assert not errs

@@ -57,3 +57,5 @@ build/*/chunks/
 __pycache__/
 *.pyc
 .pytest_cache/
+build/*/.cache/
+.venv/

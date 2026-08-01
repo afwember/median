@@ -5,12 +5,25 @@ description = "Phase-gated compiler for the MEDIAN GDD"
 requires-python = ">=3.10"
 dependencies = ["typer>=0.12", "pydantic>=2.7", "rich>=13.7", "pyyaml>=6.0", "typing-extensions>=4.9"]
 
+[project.optional-dependencies]
+# Only Phase 4 onward needs a provider SDK. Phases 0-3 are deterministic and
+# must install and run without it.
+extract = ["anthropic>=0.40"]
+dev = ["pytest>=8.0"]
+
 [project.scripts]
 median-compile = "median_compile.cli:app"
 
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
+
+# `prompts/` and `schemas/` sit alongside `median_compile/`, so setuptools'
+# flat-layout auto-discovery sees three top-level candidates and refuses to
+# guess. They are versioned artifacts read from the repository at runtime, not
+# importable packages, so the package list is declared explicitly instead.
+[tool.setuptools]
+packages = ["median_compile", "median_compile.providers"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

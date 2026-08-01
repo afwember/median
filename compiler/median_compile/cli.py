@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 from pathlib import Path
 from typing import Optional
 
@@ -22,7 +23,9 @@ from . import lean as ln
 from . import manifest as mf
 from . import normalize as nz
 from . import probe as pb
+from . import extract as ex
 from . import record as rec
+from . import records as rc
 from .config import Build
 from .models import Disposition
 
@@ -399,6 +402,156 @@ def chunk_cmd(
     console.print(
         f"[green]ok[/green] {total_chunks} chunks from {len(todo)} sources  ·  "
         f"chunker v{ck.CHUNKER_VERSION}  ·  every block owned exactly once"
+    )
+
+
+@app.command("extract")
+def extract_cmd(
+    build_dir: BuildArg,
+    source: Annotated[Optional[str], typer.Option(help="Source id. Omit for all.")] = None,
+    dry_run: Annotated[bool, typer.Option("--dry-run", help="Estimate only; no calls.")] = False,
+    fake: Annotated[bool, typer.Option("--fake", help="Deterministic provider, no network.")] = False,
+) -> None:
+    """Phase 4 — Claude extraction, Pass A. Bounded, cached, schema-constrained."""
+    build, entries = _load(build_dir)
+    cfg = build.load_config()
+    ns_path = build.dir / "architecture" / "owner_namespaces.yaml"
+    if not ns_path.exists():
+        console.print(f"[red]missing[/red] {ns_path.name}; namespaces must be ruled first")
+        raise typer.Exit(1)
+    namespaces = sorted(rc.load_namespaces(ns_path))
+
+    todo = [
+        e for e in sorted(entries, key=lambda x: (x.processing_order, x.id))
+        if e.disposition is Disposition.compile and (source is None or e.id == source)
+    ]
+    if not todo:
+        console.print("[red]no matching compiled sources[/red]")
+        raise typer.Exit(1)
+
+    chunks: list[dict] = []
+    for e in todo:
+        path = build.dir / "chunks" / f"{e.id}.jsonl"
+        if not path.exists():
+            console.print(f"[red]missing[/red] {path.name}; run chunk first")
+            raise typer.Exit(1)
+        chunks.extend(json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line)
+
+    if dry_run:
+        est = ex.estimate(chunks)
+        table = Table(show_header=False)
+        table.add_column("k")
+        table.add_column("v", justify="right")
+        for k, v in est.items():
+            table.add_row(k.replace("_", " "), f"{v:,}" if isinstance(v, int) else str(v))
+        console.print(table)
+        console.print(
+            f"[dim]estimate only — records/1k and output/record are seeded guesses "
+            f"refined after the pilot. Prompt v{ex.PROMPT_VERSION}, "
+            f"schema v{rc.RECORD_SCHEMA_VERSION}, {len(namespaces)} namespaces.[/dim]"
+        )
+        return
+
+    prompt_path = build.repo / "compiler" / "prompts" / f"extract-{ex.PROMPT_VERSION}.md"
+    system_prompt = prompt_path.read_text(encoding="utf-8")
+
+    if fake:
+        provider = ex.FakeProvider()
+    else:
+        from .providers.anthropic import AnthropicProvider, ProviderUnavailable
+
+        model = (cfg.model_dump().get("providers") or {}).get("extraction", {}).get("model")
+        model = model or os.environ.get("ANTHROPIC_EXTRACTION_MODEL", "")
+        if not model:
+            console.print(
+                "[red]no extraction model configured[/red] — set providers.extraction.model "
+                "in config.yaml or ANTHROPIC_EXTRACTION_MODEL"
+            )
+            raise typer.Exit(1)
+        try:
+            provider = AnthropicProvider(model=model)
+        except ProviderUnavailable as exc:
+            console.print(f"[red]provider unavailable[/red] {exc}")
+            raise typer.Exit(1)
+
+    cache_dir = build.dir / ".cache" / "extract"
+    meta = {e.id: e for e in todo}
+    results: dict[str, ex.ExtractResult] = {}
+
+    with rec.record(
+        build, "extract", "extract",
+        {"prompt": ex.PROMPT_VERSION, "schema": rc.RECORD_SCHEMA_VERSION,
+         "provider": provider.name, "model": provider.model},
+    ) as run:
+        for c in chunks:
+            e = meta[c["source"]]
+            res = results.setdefault(c["source"], ex.ExtractResult(source_id=c["source"]))
+            start = len(res.records) + 1
+            raw, call = ex.extract_chunk(
+                c,
+                {"source_class": e.source_class.value,
+                 "wording_fidelity": e.wording_fidelity.value,
+                 "notes": e.notes},
+                namespaces, start, system_prompt, provider, cache_dir,
+            )
+            res.calls.append(call)
+            for item in raw:
+                try:
+                    res.records.append(rc.AtomicRecord.model_validate(item))
+                except Exception as exc:  # noqa: BLE001
+                    res.errors.append(f"{c['id']}: schema — {str(exc)[:160]}")
+
+        table = Table(show_header=True, header_style="bold")
+        for col in ("id", "chunks", "records", "cached", "in tok", "out tok", "errors"):
+            table.add_column(col, justify="right")
+
+        total_records = total_errors = 0
+        for sid, res in results.items():
+            lean = (build.lean / f"{sid}.md").read_text(encoding="utf-8")
+            blocks = {b.coord: b.text for b in ck.parse_blocks(lean)}
+            res.errors.extend(
+                rc.validate_records(res.records, blocks, set(namespaces), sid)
+            )
+            out = build.dir / "records" / f"{sid}.jsonl"
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(
+                "".join(r.model_dump_json() + "\n" for r in res.records), encoding="utf-8"
+            )
+            total_records += len(res.records)
+            total_errors += len(res.errors)
+            table.add_row(
+                sid, str(len(res.calls)), str(len(res.records)),
+                str(sum(c.cached for c in res.calls)),
+                f"{res.input_tokens:,}", f"{res.output_tokens:,}",
+                str(len(res.errors)) if res.errors else "-",
+            )
+
+        calls_log = build.logs / "calls.jsonl"
+        with calls_log.open("a", encoding="utf-8") as fh:
+            for res in results.values():
+                for c in res.calls:
+                    fh.write(json.dumps(c.__dict__, ensure_ascii=False) + "\n")
+
+        run.metrics = {
+            "sources": len(results),
+            "chunks": len(chunks),
+            "records": total_records,
+            "errors": total_errors,
+            "input_tokens": sum(r.input_tokens for r in results.values()),
+            "output_tokens": sum(r.output_tokens for r in results.values()),
+            "cost_usd": round(sum(r.cost for r in results.values()), 2),
+        }
+        if total_errors:
+            run.status = "error"
+
+    console.print(table)
+    for res in results.values():
+        for err in res.errors[:10]:
+            console.print(f"  [red]{err}[/red]")
+    cost = sum(r.cost for r in results.values())
+    console.print(
+        f"[green]wrote[/green] {total_records} records  ·  ${cost:.2f} spent  ·  "
+        f"prompt v{ex.PROMPT_VERSION}  ·  {total_errors} validation error(s)"
     )
 
 

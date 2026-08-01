@@ -143,7 +143,10 @@ def _emit(
     owned: list[Block],
     context: list[Block],
 ) -> Chunk:
-    body = "\n\n".join(b.text for b in context + owned)
+    # Re-attach the coordinate anchor to every block. Without it the chunk is
+    # unciteable: extraction is required to report the `loc` each record came
+    # from, and it can only do that if the marker is in front of it.
+    body = "\n\n".join(f"<!--@{b.coord}-->\n{b.text}" for b in context + owned)
     return Chunk(
         id=f"{source_id}:C{n:03d}",
         source=source_id,

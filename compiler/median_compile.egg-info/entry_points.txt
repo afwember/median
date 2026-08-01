@@ -1,0 +1,2 @@
+[console_scripts]
+median-compile = median_compile.cli:app

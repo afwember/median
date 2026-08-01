@@ -1,0 +1,171 @@
+# MEDIAN v0.5 — Owner namespace vocabulary
+#
+# DRAFT v0.2 — 1 August 2026 — FOR ASA'S RULING BEFORE EXTRACTION FREEZES
+#
+# The `owner` field on every atomic record names the system that owns the
+# claim. It is the primary lever for Phase 7 conflict clustering: two records
+# with the same owner are candidates for comparison.
+#
+# ARCHITECTURE (Asa's ruling, 1 August 2026)
+#
+#   Home Mode  encompasses  DWELL and EMBODY
+#   Away Mode  encompasses  FIELD and CROSSING
+#   MEET       is universal — reachable from either Mode
+#
+# The namespace tree mirrors that, because a conflict between two DWELL rules
+# is a different kind of event from a conflict between a DWELL rule and a
+# FIELD rule, and the owner string should make that visible without a lookup.
+#
+# SHAPE
+#   Register-bound:  <mode>.<register>.<subsystem>   home.dwell.roles
+#   Mode-level:      <mode>.<subsystem>              away.homecoming
+#   Universal:       meet.<subsystem>                meet.choice
+#   Cross-cutting:   <domain>.<subsystem>            items.tools
+#
+# RULES
+#   - Lowercase ASCII, dot-separated, underscores within a segment.
+#   - Maximum three levels.
+#   - A record must name an existing namespace. Extraction may not invent one;
+#     it flags `owner_unclear` and a human assigns it.
+#   - Namespaces are permanent once frozen, like source IDs.
+
+version: "0.2"
+status: draft
+frozen: false
+
+architecture:
+  home: [dwell, embody]
+  away: [field, crossing]
+  universal: [meet]
+
+namespaces:
+
+  # ======================= HOME MODE =====================================
+  home:
+    _: Home Mode generally — the colony at home, across both its registers.
+    seasonal: Seasonal loop and the year as it is lived at Home.
+
+    dwell:
+      _: DWELL register generally — colony stewardship and domestic operation.
+      roles: Role architecture, assignment, Capacity, equal civic shares.
+      practices: Standing Practices and the functions Places support.
+      places: Place families, Residences, spatial grammar, Gathering Place.
+      projects: Projects, Citizen-Days, Construction Queue, concurrency.
+      conditions: Global Conditions, diffuse wear, structural abstraction.
+      dawn: Dawn adjudication, daily economy, turn order.
+      deficiency: The hidden Deficiency ledger and shortfall pressure.
+      equilibrium: Quiet Equilibrium and successful stillness.
+      provisioning: Provisioning Roles, preservation, supply preparation.
+
+    embody:
+      _: EMBODY register generally — inhabiting a single Citizen.
+      access: Global Home availability, access conditions, the state ladder.
+      presence: Practice and Presence architecture, the dramaturgical cycle.
+      memory_access: How EMBODY retrieves or leaves prior events.
+
+  # ======================= AWAY MODE =====================================
+  away:
+    _: Away Mode generally — expedition across both its registers.
+    launch: Expedition launch, party formation, the outward bracket.
+    homecoming: Return logic, Homecoming, what comes back and how.
+    corridor: Corridor progression, Held Reaches, outposts, the Metropolis arc.
+
+    field:
+      _: FIELD register generally — travel and the corridor between crossings.
+      travel: TRAVEL, route texture, pace, multi-day journeys.
+      nodes: Nodes, Reaches, what a place in the field is.
+      stopover: Stopovers, refuge, Rest, Care, Watch, Store.
+      salvage: Salvage, foraging, what the field yields.
+
+    crossing:
+      _: CROSSING register generally — the carriageway and the act of crossing.
+      risk: RISK, the crossing action, commitment and exposure.
+      traffic: Traffic readability during a crossing, timing, lanes.
+      return_logic: Crossing-specific return and abort rules.
+
+  # ======================= UNIVERSAL =====================================
+  meet:
+    _: MEET register generally. Universal — reachable from either Mode.
+    home_origin: Colony Encounters, the transaction of shortfall.
+    field_origin: Away encounters, Field Cards, sparse encounter texture.
+    choice: Choice Events, Telegraph / Impact / Persistence / Aftermath.
+    structure: Encounter grammar shared across origins; option architecture.
+
+  # ======================= CROSS-CUTTING =================================
+  register:
+    _: Cross-register architecture — the five-Register canon as a whole.
+    topology: Register/View doctrine; what each register is and is not.
+    switch: Mode-switch doctrine and transitions between Home and Away.
+
+  citizen:
+    _: The Citizen subject generally.
+    record: Citizen Record schema and what is tracked.
+    change: Lasting change — fear memory, Distinctions, After-names.
+    harm: Harm, wounds, Maiming, tharn.
+    bonds: Bonds, Hearths, relationships.
+    naming: Given Names, After-names, naming grammar.
+
+  population:
+    _: Population doctrine, counts, presence states.
+    growth: Growth, birth, arrival.
+    tiers: Colony Tiers and Tier proofs.
+    scale: Scale, species density, target population bands.
+
+  guest:
+    _: Guest Citizens generally.
+    recruitment: How Guests arrive and are recruited.
+    contract: Guest species contracts, roster, permissions.
+    hospitality: Hospitality, visible difference, found family.
+
+  species:
+    _: Core species traits and differentiation.
+    spatial: Species spatial placement identities and topology.
+    dialect: Deep Laws expressed through species phrasing.
+
+  economy:
+    _: Resources, stocks, and material logistics.
+    sustenance: Perishable and Durable Sustenance, cultivation, winter.
+    scrap: Flexible and Rigid Scrap, materials.
+    carrying: Weight ladder, cooperative carrying, party-scale carry.
+    recipes: Functional recipe classes and recipe grammar.
+
+  items:
+    _: Personal items and equipment generally.
+    tools: Tool classes, assignment, Render Tools, latent martial utility.
+    supplies: Supply classes, general utility, contextual effects, synergy.
+    keepsakes: Keepsakes, provenance, inheritance, Exposure.
+    artifacts: Colony and Carried Artifacts, Place of Pride.
+    focus: Focus and expedition equipment selection.
+
+  world:
+    _: Corridor geography and the ground the game happens on.
+    corridor: Cross-section, Margins, Sound Walls, service crossovers.
+    biomes: Biome roster and Anchor Points.
+    time: Day structure, traffic cycles, Road Work.
+    ecology: Ecological influences, predators, drainage, sound.
+
+  culture:
+    _: Folklore, Laws, Sayings, and world-facing culture.
+    laws: Laws as functional tutorialization; Deep Laws.
+    sayings: Sayings as non-instructional folklore.
+    literacy: Literacy scope constraint and written culture.
+
+  memory:
+    _: Campaign Memory generally.
+    chronicle: The Colony's selective civic history.
+    tale: Citizen Tales, prior-life tales, interstitial material.
+    keepsake_memory: Memorial continuity and remembered material.
+
+  ui:
+    _: Information architecture and player legibility.
+    turn: Turn interface; supply synergy surfacing.
+    numerals: Numerical restraint; what is shown and what is not.
+
+  art:
+    _: Art and audio direction carrying mechanical consequence.
+
+  meta:
+    _: Process and doctrine. Weight SILENT by default.
+    doctrine: Document doctrine, precedence, scope, supersession statements.
+    acceptance: Acceptance tests, non-goals, complexity guards.
+    open: Explicitly deferred and provisional items.

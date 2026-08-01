@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: median-compile
+Version: 0.1.0
+Summary: Phase-gated compiler for the MEDIAN GDD
+Requires-Python: >=3.10
+Requires-Dist: typer>=0.12
+Requires-Dist: pydantic>=2.7
+Requires-Dist: rich>=13.7
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: typing-extensions>=4.9
+Provides-Extra: extract
+Requires-Dist: anthropic>=0.40; extra == "extract"
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"

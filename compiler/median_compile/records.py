@@ -93,6 +93,7 @@ FLAGS = {
     "non_state_marker",     # source explicitly marks this as not STATE
     "span_end_inferred",    # q1 was approximate; the endpoint was located by suffix
     "branch_charter",       # defines a container as a whole; no leaf can own it
+    "cites_pillar",         # leans on a Design Pillar as justification
     "manual",               # authored by hand, not by extraction
     "internal_supersession",  # a later passage in the same source overrides
 }
@@ -302,6 +303,13 @@ def validate_records(
                 f"{r.id}: owner {r.owner!r} accumulates systems rather than being "
                 "one; name the system, or flag branch_charter if the claim "
                 "defines the branch as a whole, or owner_unclear if no system fits"
+            )
+
+        if "cites_pillar" in r.flags and r.owner == "philosophy.pillars":
+            errors.append(
+                f"{r.id}: cites_pillar on philosophy.pillars. Stating a Pillar "
+                "is not citing one; the flag marks a rule that rests on a "
+                "Pillar it does not itself state."
             )
 
         if "branch_charter" in r.flags and not (containers and r.owner in containers):

@@ -1340,3 +1340,49 @@ def test_open_rulings_ask_something():
     for r in _rulings():
         if r["status"] == "open":
             assert r.get("question"), f"{r['id']} is open but asks nothing"
+
+
+# --------------------------------------------------------------------------
+# Design Pillars — 1 August 2026
+#
+# Asa: "many many rules across all the docs use the Pillars as justification."
+# That makes philosophy.pillars an attractor of the kind the Citizen ruling
+# guarded against. Stating a Pillar owns to it; resting on one does not.
+# --------------------------------------------------------------------------
+
+
+def test_cites_pillar_is_a_known_flag():
+    assert "cites_pillar" in rc.FLAGS
+
+
+def test_citing_a_pillar_on_the_pillar_node_is_an_error():
+    r = _rec(owner="population.scale", flags=["cites_pillar"])
+    assert not any("cites_pillar" in e for e in _errs(
+        r, containers={"philosophy"}, namespaces={"population.scale", "philosophy.pillars"}
+    ))
+    r2 = _rec(owner="philosophy.pillars", flags=["cites_pillar"])
+    errs = _errs(r2, containers={"philosophy"},
+                 namespaces={"population.scale", "philosophy.pillars"})
+    assert any("Stating a Pillar is not citing one" in e for e in errs)
+
+
+def test_the_eight_pillars_are_named_in_the_vocabulary():
+    """A model cannot flag a citation of something the prompt never names."""
+    path = Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    desc = rc.load_namespace_descriptions(path)["philosophy.pillars"]
+    for pillar in (
+        "Attachment-forward", "Named Citizens", "Ledger and legible",
+        "Consequence without disposability", "Conservation of Systems",
+        "Game Logic",
+    ):
+        assert pillar in desc, f"Pillar not named in the vocabulary: {pillar}"
+
+
+def test_the_three_bridging_encounters_are_meet_systems():
+    """Launch, Homecoming and Stopover move the game between Modes (Asa)."""
+    path = Path(__file__).parents[2] / "build/v0.5/architecture/owner_namespaces.yaml"
+    ns = rc.load_namespaces(path)
+    for n in ("meet.launch", "meet.homecoming", "meet.stopover"):
+        assert n in ns
+    for gone in ("away.launch", "away.homecoming", "away.field.stopover"):
+        assert gone not in ns, f"{gone} is not a system; it is an Encounter"

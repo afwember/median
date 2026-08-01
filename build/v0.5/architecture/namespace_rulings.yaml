@@ -159,7 +159,9 @@ rulings:
       register system.
 
   - id: R013
-    status: open
+    date: 2026-08-01
+    by: Asa
+    status: ruled
     subject: Philosophy and pillars have no namespace — and would land badly
     evidence: >-
       PHIL_ARCH (given top authority) and PHIL_SPEC have no owner but `meta`,
@@ -173,6 +175,10 @@ rulings:
     severity: >-
       Highest of the four. A wrong owner here misfiles the most authoritative
       source in the corpus, and misfiles it as unpublishable.
+    effect: >-
+      `philosophy` added as a fourth Kingdom. Asa: philosophy is not world, it
+      is its own Kingdom; PHIL_ARCH composes the opening chapters with many
+      STATE verbatim inclusions.
 
   - id: R014
     status: open
@@ -192,18 +198,34 @@ rulings:
   # ======================= OPEN — PLACEMENT ==============================
 
   - id: R016
-    status: open
-    subject: home.seasonal
-    question: >-
-      The seasonal loop is lived at Home but bears on Away, so the camera test
-      does not place it. A DWELL system, or a domain?
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: Seasons belong to World; Weather Pressures to DWELL
+    effect: >-
+      home.seasonal removed; world.seasons and home.dwell.weather added. Cuts
+      a three-way seam: the season is the world's, the pressure on the colony
+      is DWELL's, the Encounter a pressure becomes is MEET's.
+    note: >-
+      SPEC_PROG 5.1 is titled "No separate seasonal or weather economy", which
+      sits against this. Recorded, not resolved — Phase 8's.
 
   - id: R017
-    status: open
-    subject: away.launch and away.homecoming
-    question: >-
-      Seams between Modes with no camera of their own. Mode-level nodes, or do
-      they belong with register.switch?
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: Launch, Homecoming and Stopover are MEET Encounters
+    detail: >-
+      Home.Encounter.Launch is selected from inside DWELL, forms the party,
+      and on close shifts Home -> Away resolving into Field.
+      Home.Encounter.Homecoming opens when a party in Away.Field reaches the
+      Colony, does colony-wide accounting, and resolves back into DWELL.
+      Away.Encounter.Stopover is the same shape at an Outpost, resolving back
+      into Field, and concerns expedition accounting only.
+    effect: >-
+      away.launch, away.homecoming and away.field.stopover removed; meet.launch,
+      meet.homecoming and meet.stopover added. register.switch states the
+      doctrine; these three perform it.
 
   - id: R018
     status: open
@@ -227,3 +249,41 @@ rulings:
       source already extracted. Per-source review therefore implies two corpus
       passes, not twenty-one: a discovery pass that finds the territory, and an
       authoritative pass against the frozen vocabulary.
+
+  - id: R020
+    date: 2026-08-01
+    by: Asa
+    status: ruled
+    subject: Thesis and Pillars are two classes
+    detail: >-
+      Attachment-forward is the top-line principle and belongs to Thesis.
+      Pillars are the named principles that support it — "Named Citizens"
+      supports Attachment-forward. Many rules across all the docs cite Pillars
+      as justification.
+    effect: >-
+      philosophy collapsed from nine sibling systems to thesis, pillars and
+      binding. Seven of the nine were individual Pillars listed as though each
+      were its own system. PHIL_ARCH's eight Pillars are enumerated in the
+      `philosophy.pillars` description so extraction can recognise a citation.
+
+  - id: R021
+    date: 2026-08-01
+    by: Claude
+    status: ruled
+    subject: Citing a Pillar is not stating one
+    evidence: >-
+      If every rule justified by a Pillar owned to philosophy.pillars, that
+      node would swallow the corpus and cluster nothing — the same failure the
+      Citizen subject/system ruling guarded against.
+    effect: >-
+      Flag `cites_pillar` added, with a validation error for using it on
+      philosophy.pillars itself. A Pillar that changes invalidates every rule
+      resting on it, and the flag is how those are found.
+
+  - id: R022
+    status: open
+    subject: philosophy.binding
+    question: >-
+      PHIL_ARCH states binding doctrines for Citizenship, Home, Away, Memory,
+      Objects, Care and Presentation. Do those belong to philosophy, or to the
+      domains they bind with philosophy as their source rather than their owner?

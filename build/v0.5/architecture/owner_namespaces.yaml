@@ -198,6 +198,40 @@ registers:
 #   from. Splitting by origin clusters Home encounters against Field encounters
 #   when what Phase 7 needs is eligibility rules against eligibility rules.
 #
+# stating a Pillar vs. citing one (Asa, 1 August 2026)
+#   "Many many rules across all the docs use the Pillars as justification."
+#   That makes Pillars an attractor of exactly the kind the Citizen ruling
+#   guarded against: if every rule justified by a Pillar owned to
+#   `philosophy.pillars`, that node would swallow the corpus and cluster
+#   nothing.
+#
+#   A record owns to `philosophy.pillars` only when it STATES a Pillar. A
+#   record that leans on one is owned by its own system and flagged
+#   `cites_pillar`.
+#
+#   "Named Citizens, low population, durable identity"        -> philosophy.pillars
+#   "Population is capped low so that Citizens stay named"    -> population.scale
+#                                                                + cites_pillar
+#   "Conservation of Systems"                                 -> philosophy.pillars
+#   "No separate weather economy; weather uses Conditions"    -> home.dwell.weather
+#                                                                + cites_pillar
+#
+#   The flag is not bookkeeping. A Pillar that changes invalidates every rule
+#   resting on it, and without the flag there is no way to find them.
+#
+# the three bridging Encounters (Asa, 1 August 2026)
+#   Launch, Homecoming and Stopover are MEET Encounters, not mode-level
+#   systems. They are the mechanism by which the game changes Mode.
+#
+#   `meet.launch`      DWELL -> Away Mode, resolving into Field
+#   `meet.homecoming`  Away.Field -> Home Mode, resolving into DWELL
+#   `meet.stopover`    inside Away at an Outpost, resolving back into Field
+#
+#   Homecoming and Stopover differ only in scope: Homecoming does colony-wide
+#   accounting, Stopover does expedition accounting only. That is the seam.
+#   `register.switch` states the doctrine of mode-switching; these three are
+#   the Encounters that perform it.
+#
 # the ground and the advance (Asa, 1 August 2026)
 #   The world is only ever explored by the Player in Away Mode, so there is no
 #   vantage from which the ground and the advance along it come apart. v0.4 had
@@ -228,36 +262,43 @@ namespaces:
   # inclusions. Systems below take their names from PHIL_ARCH's and PHIL_SPEC's
   # own section headings. PROVISIONAL.
 
+  # Two classes, per Asa, 1 August 2026: Thesis and Pillars. v0.6 had nine
+  # sibling systems here, which was one level too fine — seven of them were
+  # individual Pillars listed as though each were its own system.
   philosophy:
     _: >-
       What MEDIAN is, and what every major system must continue to serve.
       Voice `world` — this is book material, not process commentary.
+
     thesis: >-
-      The core philosophical thesis. A civilization where nobody else would
-      call home; the successful resting state; emotional design following
-      logical satisfaction.
-    attachment: >-
-      The attachment-forward base builder — the four anchors of attachment and
-      the attachment chain.
-    game_logic: >-
-      Game Logic creates Attachment Space, and the corollary that every
-      substantial module must do Game Logic work.
-    unity: >-
-      One world, two Modes, five Registers. Unity of world as the precondition
-      for attachment; Modes say where life is, Registers say how the player
-      meets it.
-    conservation: >-
-      Conservation of Systems — the constraint against proliferating parallel
-      economies.
-    mode_growth: Home grows the Colony; Away grows the Citizen.
-    consequence: Consequence without disposability.
-    crunch: >-
-      Two scales of crunch — Home Roles as civic responsibilities, and
-      individuality without productivity ratings.
+      The top-line principles. Attachment-forward is THE top-line principle;
+      Pillars exist to support it. Also the framing statements around it — a
+      civilization where nobody else would call home, the four anchors of
+      attachment and the attachment chain, the successful resting state,
+      emotional design following logical satisfaction, and the two scales of
+      crunch.
+
+    pillars: >-
+      The Design Pillars — the named principles that rules across every source
+      cite as justification. PHIL_ARCH enumerates eight, under "What every
+      major system must continue to serve":
+        1 Attachment-forward base-building
+        2 Named Citizens, low population, durable identity
+        3 Ledger and legible
+        4 Home grows the Colony; Away grows the Citizen
+        5 Consequence without disposability
+        6 Conservation of Systems
+        7 One world, two Modes, five Registers
+        8 Game Logic creates Attachment Space
+      This namespace owns the STATEMENT of a Pillar. A rule elsewhere that
+      leans on one is owned by its own system and flagged `cites_pillar` — see
+      the flag, and the note on why the distinction matters.
+
     binding: >-
-      Binding doctrines within particular domains — the per-domain statements
-      PHIL_ARCH makes about Citizenship, Home, Away, Memory, Objects, Care and
-      Presentation, where they constrain rather than describe.
+      Binding doctrines within particular domains — what PHIL_ARCH constrains
+      about Citizenship, Home, Away, Memory, Objects, Care and Presentation.
+      PROVISIONAL: these may belong to the domains they bind, with philosophy
+      as their source rather than their owner.
 
   # ======================= REGISTERS — play ==============================
 
@@ -317,13 +358,6 @@ namespaces:
   away:
     _: Away Mode generally — expedition across both its registers.
 
-    # OPEN (1 August 2026): launch and homecoming are the seams between Modes
-    # and have no camera of their own, so the camera test does not place them
-    # as register systems. Left at Mode level pending a ruling; they may belong
-    # with `register.switch`.
-    launch: Expedition launch, party formation, the outward bracket.
-    homecoming: Return logic, Homecoming, what comes back and how.
-
     field:
       _: >-
         Field:TRAVEL — top-down or 2.5d camera. Moving the party through the
@@ -331,7 +365,6 @@ namespaces:
         pace and multi-day journeys belong here, not in a child node.
       nodes: Nodes, Reaches, what a place in the field is.
       biome: Biome as encountered in travel — what a biome does to a journey.
-      stopover: Stopovers, refuge, Rest, Care, Watch, Store.
       salvage: Salvage, foraging, what the field yields.
       party: >-
         Party representation and core Field state — how the expedition is shown
@@ -395,6 +428,28 @@ namespaces:
     defense: >-
       Base defense and Home-origin MEET. PROVISIONAL, from PASS_047 §11; may
       belong with `eligibility`.
+
+    # THE THREE BRIDGING ENCOUNTERS (Asa, 1 August 2026). Launch, Homecoming
+    # and Stopover are not mode-level systems and not Field systems — they are
+    # Encounters, and they are what physically moves the game between Modes and
+    # Registers. `register.switch` states the doctrine; these three perform it.
+    launch: >-
+      Home.Encounter.Launch — selected by the player from inside DWELL. Forms
+      the Expedition party, and on close shifts the game from Home Mode to Away
+      Mode, resolving into the Field Register. Owns the launch interface,
+      party formation, legible Home subtraction, preparation guardrails, and
+      execution or cancellation.
+    homecoming: >-
+      Home.Encounter.Homecoming — opens when a party in Away.Field reaches the
+      Colony, and on close shifts the game back to Home Mode, resolving into
+      DWELL. Owns colony-wide Away accounting: Cargo into colony-wide store,
+      Keepsake distribution for the deceased, wounded Citizens into healing.
+    stopover: >-
+      Away.Encounter.Stopover — the same shape as Homecoming but occurring
+      inside Away Mode at an Outpost, and resolving back into Field rather
+      than into DWELL. Concerns EXPEDITION accounting only — Cargo, Tool
+      repair, Rest, Care, Watch, Store — never colony-wide matters. The
+      Outpost as a place on the corridor is `world.outposts`.
 
   # ======================= DOMAINS — persistence =========================
   # A rule belongs here if it holds whatever camera is live.

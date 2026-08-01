@@ -1,5 +1,5 @@
 # MEDIAN extraction — Pass A
-# prompt_version: 3.1
+# prompt_version: 3.2
 # schema_version: 3.0
 #
 # Frozen artifact. Changing this file invalidates every record produced with a
@@ -163,7 +163,21 @@ your best guess **and** add the flag `owner_unclear`. Never invent a namespace.
 **`flags`** — omit entirely when empty. Otherwise any of:
 `possible_collision`, `owner_unclear`, `claim_exceeds_quote`, `split_claim`,
 `table_derived`, `non_state_marker`, `internal_supersession`,
-`branch_charter`.
+`branch_charter`, `cites_pillar`.
+
+> **`cites_pillar` marks a rule that leans on a Design Pillar.** MEDIAN has
+> eight named Pillars — Attachment-forward base-building; Named Citizens, low
+> population, durable identity; Ledger and legible; Home grows the Colony and
+> Away grows the Citizen; Consequence without disposability; Conservation of
+> Systems; One world, two Modes, five Registers; Game Logic creates Attachment
+> Space. Rules across every source cite them as justification.
+>
+> A record that *states* a Pillar owns to `philosophy.pillars` and is not
+> flagged. A record that *rests* on one is owned by its own system and flagged
+> `cites_pillar`. "Population is capped low so Citizens stay named" is
+> `population.scale` + `cites_pillar`, not `philosophy.pillars`. A Pillar that
+> changes invalidates everything resting on it, and the flag is how those are
+> found.
 
 > **A branch is a shelf; a leaf is a system.** Namespaces marked `[container]`
 > in the list have children, and owning a record to one usually says only

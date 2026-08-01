@@ -451,3 +451,34 @@ rulings:
       it. The deprecated entries are independently valuable — they name the
       v0.4.6 language that must not be revived, which is a check no amount of
       reading the v0.5 specs would produce.
+
+  - id: R030
+    date: 2026-08-01
+    by: Claude
+    status: noted
+    subject: The terminology registry does not cover SPEC_CROSS
+    evidence: >-
+      Its source-owner codes are PHIL, HOME, EMB, ECO, MAN, MKT, AWAY, 4S, POP,
+      GUEST2, BSA01-11, BSA12-22, PHIL-ARCH, APP-PLAN, GDD046. There is no
+      Crossing code. Four Crossing terms appear in 266, all sourced from AWAY,
+      BSA12-22 or deprecated v0.4.6 language. The registry names the gap
+      itself and lists Crossing/RISK taxonomy as open work before lexicon
+      freeze.
+    consequence: >-
+      The register where the namespace is weakest — 48 claims with no system —
+      is the one the second authority does not cover. Commissioned as item 1 of
+      500 log/SOL_COMMISSION_BRIEF_v0.1.md.
+
+  - id: R031
+    date: 2026-08-01
+    by: Claude
+    status: noted
+    subject: Precedence policy is weaker than the corpus warrants
+    detail: >-
+      The naming scheme's rule 8 says date alone does not determine authority.
+      That is correct as a guard but insufficient as a policy: Asa has
+      confirmed that later documents in the three-day v0.5 push knowingly
+      replaced earlier v0.5 decisions. Deliberate supersession and accidental
+      drift look identical from the documents alone, and only the authoring
+      thread can tell them apart. Commissioned as item 2 of the brief.
+    blocks: Phase 8

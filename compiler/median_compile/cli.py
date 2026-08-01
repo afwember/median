@@ -515,6 +515,9 @@ def extract_cmd(
     cache_dir = build.dir / ".cache" / "extract"
     meta = {e.id: e for e in todo}
     results: dict[str, ex.ExtractResult] = {}
+    #: Next free record number per source. Tracked separately from the record
+    #: count because a failed span still consumes its ID.
+    next_id: dict[str, int] = {}
 
     with rec.record(
         build, "extract", "extract",
@@ -564,8 +567,9 @@ def extract_cmd(
                     res.errors.append(f"{c['id']}: schema — {str(exc)[:160]}")
             lean = (build.lean / f"{c['source']}.md").read_text(encoding="utf-8")
             blocks = {b.coord: b.text for b in ck.parse_blocks(lean)}
-            hydrated, herrs = rc.hydrate(
-                spans, blocks, c["source"], start_number=len(res.records) + 1
+            hydrated, herrs, next_id[c["source"]] = rc.hydrate(
+                spans, blocks, c["source"],
+                start_number=next_id.get(c["source"], 1),
             )
             res.records.extend(hydrated)
             res.errors.extend(herrs)

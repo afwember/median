@@ -746,26 +746,26 @@ def test_q1_before_q0_is_rejected():
 
 def test_hydrate_assigns_ids_and_derives_src():
     """v1.0 omitted `src` on all 218 observed records. Now it cannot."""
-    recs, errs = rc.hydrate([_span(), _span()], {"4.2¶3": BLOCK}, "SPEC_HOME", 7)
+    recs, errs, _ = rc.hydrate([_span(), _span()], {"4.2¶3": BLOCK}, "SPEC_HOME", 7)
     assert not errs
     assert [r.id for r in recs] == ["SPEC_HOME:0007", "SPEC_HOME:0008"]
     assert all(r.src == "SPEC_HOME" for r in recs)
 
 
 def test_hydrated_quote_is_grounded_by_construction():
-    recs, _ = rc.hydrate([_span()], {"4.2¶3": BLOCK}, "SPEC_HOME")
+    recs, _, _ = rc.hydrate([_span()], {"4.2¶3": BLOCK}, "SPEC_HOME")
     assert rc.quote_is_grounded(recs[0].quote, BLOCK)
 
 
 def test_hydrate_finds_terms_from_the_lexicon():
-    recs, _ = rc.hydrate(
+    recs, _, _ = rc.hydrate(
         [_span()], {"4.2¶3": BLOCK}, "SPEC_HOME", lexicon={"Citizen", "Role Capacity", "Reach"}
     )
     assert recs[0].terms == ["Citizen", "Role Capacity"]
 
 
 def test_unresolvable_span_becomes_an_error_not_a_record():
-    recs, errs = rc.hydrate(
+    recs, errs, _ = rc.hydrate(
         [_span(q0="not in the block at all")], {"4.2¶3": BLOCK}, "SPEC_HOME"
     )
     assert not recs and errs
@@ -849,7 +849,7 @@ def test_split_claim_dropped_when_span_ends_mid_block():
         type="REQ", voice="world", status="canonical", owner="home.dwell",
         flags=["split_claim"],
     )
-    recs, errs = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    recs, errs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
     assert recs[0].flags == []
     assert any("dropped split_claim" in e for e in errs)
 
@@ -862,7 +862,7 @@ def test_split_claim_kept_when_span_reaches_the_block_end():
         type="REQ", voice="world", status="canonical", owner="home.dwell",
         flags=["split_claim"],
     )
-    recs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    recs, _, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
     assert recs[0].flags == ["split_claim"]
 
 
@@ -873,7 +873,7 @@ def test_other_flags_survive_the_correction():
         type="REQ", voice="world", status="canonical", owner="home.dwell",
         flags=["split_claim", "table_derived"],
     )
-    recs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    recs, _, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
     assert recs[0].flags == ["table_derived"]
 
 
@@ -907,7 +907,7 @@ def test_hydrated_record_carries_voice_and_no_weight():
         loc="1¶1", q0="A Citizen contributes", q1="one unit.", claim="X.",
         type="REQ", voice="world", status="canonical", owner="home.dwell",
     )
-    recs, errs = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
+    recs, errs, _ = rc.hydrate([s], {"1¶1": block}, "SPEC_X")
     assert not errs
     assert recs[0].voice is rc.Voice.world
     assert recs[0].weight is None, "weight is assigned after architecture freeze"
@@ -921,3 +921,66 @@ def test_weight_set_at_extraction_is_an_error():
     )
     errs = rc.validate_records([r], {"1¶1": "alpha beta"}, {"home.dwell"}, "SPEC_X")
     assert any("after the architecture is frozen" in e for e in errs)
+
+
+# --------------------------------------------------------------------------
+# Typography folding — seven span failures across the v3.0 pilots
+# --------------------------------------------------------------------------
+
+
+def test_curly_apostrophe_matches_a_straight_one():
+    """Source: "Crow’s own result". Model wrote: "Crow's own result"."""
+    block = "Crow’s own result is independent of the ground party’s result."
+    got = rc.resolve_span(block, "Crow's own result", "party's result.")
+    assert "Crow’s" in got, "the stored quote must keep the source's own typography"
+
+
+def test_html_entities_match_their_characters():
+    """Source: "Stabilize -&gt; inhabit". Model wrote: "Stabilize -> inhabit"."""
+    block = "<em>Stabilize -&gt; inhabit -&gt; desire something more</em>"
+    got = rc.resolve_span(block, "Stabilize -> inhabit", "something more")
+    assert "-&gt;" in got
+
+
+def test_em_dash_and_ellipsis_fold():
+    block = "The party commits — fully — and the run resolves…"
+    assert rc.resolve_span(block, "The party commits - fully", "run resolves...")
+
+
+def test_folding_does_not_excuse_a_paraphrase():
+    block = "Crow’s own result is independent."
+    with pytest.raises(rc.SpanUnresolvable):
+        rc.resolve_span(block, "Crow decides the outcome", "independent.")
+
+
+def test_hydrate_reports_the_next_free_id():
+    """A failed span still consumes its ID. Restarting from the record count
+    reissued numbers and produced five duplicate IDs on SPEC_HOME."""
+    block = "A Citizen contributes one unit."
+    ok = rc.SpanRecord(
+        loc="1¶1", q0="A Citizen contributes", q1="one unit.", claim="X.",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
+    )
+    bad = rc.SpanRecord(
+        loc="1¶1", q0="not in the block", q1="one unit.", claim="X.",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
+    )
+    recs, errs, nxt = rc.hydrate([ok, bad, ok], {"1¶1": block}, "SPEC_X", 1)
+    assert len(recs) == 2 and len(errs) == 1
+    assert nxt == 4, "three spans consumed IDs 1-3, so the next chunk starts at 4"
+
+
+def test_ids_do_not_collide_across_chunks_with_failures():
+    block = "A Citizen contributes one unit."
+    ok = rc.SpanRecord(
+        loc="1¶1", q0="A Citizen contributes", q1="one unit.", claim="X.",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
+    )
+    bad = rc.SpanRecord(
+        loc="1¶1", q0="absent marker", q1="one unit.", claim="X.",
+        type="REQ", voice="world", status="canonical", owner="home.dwell",
+    )
+    a, _, nxt = rc.hydrate([ok, bad], {"1¶1": block}, "SPEC_X", 1)
+    b, _, _ = rc.hydrate([ok], {"1¶1": block}, "SPEC_X", nxt)
+    ids = [r.id for r in a + b]
+    assert len(ids) == len(set(ids)), f"duplicate ids: {ids}"

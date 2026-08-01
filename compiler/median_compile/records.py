@@ -331,33 +331,89 @@ class SpanUnresolvable(ValueError):
 #: literal text is "| **Risk** | **Failure mode** |" with padding. A model
 #: quoting the row semantically produces markers that are not verbatim
 #: substrings. All 34 span failures in the first Sonnet run were this.
-_TABLE_FURNITURE = re.compile(r"[|*]+")
+_TABLE_FURNITURE = "|*"
+
+#: Typography the model silently normalises and the source does not. Curly
+#: apostrophes (U+2019) and HTML entities left by the DOCX conversion caused
+#: seven span failures across the two v3.0 pilots: the source holds
+#: "Crow’s own result" and "-&gt;", the model writes "Crow's own result" and
+#: "->". None of this is semantic, so none of it should decide whether a
+#: quotation is grounded.
+_FOLD = {
+    "\u2018": "'", "\u2019": "'", "\u201a": "'", "\u201b": "'",
+    "\u201c": '"', "\u201d": '"', "\u201e": '"',
+    "\u2013": "-", "\u2014": "-", "\u2212": "-", "\u2010": "-", "\u2011": "-",
+    "\u00a0": " ", "\u2009": " ", "\u202f": " ", "\u200b": "",
+    "\u2026": "...",
+}
+
+_ENTITIES = {
+    "&gt;": ">", "&lt;": "<", "&amp;": "&", "&quot;": '"',
+    "&apos;": "'", "&nbsp;": " ", "&#39;": "'", "&#8217;": "'",
+}
 
 
-def _project(text: str) -> tuple[str, list[int]]:
-    """Flatten table markup, keeping a map back to original offsets.
+def _project(text: str) -> tuple[str, list[int], list[int]]:
+    """Fold away everything non-semantic, keeping a map back to the original.
 
-    Matching happens on the projection so a semantically-quoted table row
-    resolves; the quotation returned is sliced from the ORIGINAL text, so it
-    stays verbatim, pipes and all.
+    Matching happens on the projection, so a table row quoted across cells, or
+    a passage whose curly quotes the model straightened, still resolves. The
+    quotation returned is sliced from the ORIGINAL text and stays verbatim.
+
+    Returns the projected string plus, per projected character, the start and
+    end offsets it came from. Entities fold several source characters into one,
+    so a single index is not enough.
     """
     out: list[str] = []
-    index: list[int] = []
+    starts: list[int] = []
+    ends: list[int] = []
     prev_space = True
-    for i, ch in enumerate(text):
-        c = " " if _TABLE_FURNITURE.match(ch) or ch.isspace() else ch
-        if c == " ":
+    i = 0
+    n = len(text)
+
+    while i < n:
+        # HTML entities first: they are several characters standing for one.
+        matched = None
+        if text[i] == "&":
+            for ent, rep in _ENTITIES.items():
+                if text.startswith(ent, i):
+                    matched = (ent, rep)
+                    break
+        if matched:
+            ent, rep = matched
+            span_end = i + len(ent)
+            for ch in rep:
+                out.append(ch)
+                starts.append(i)
+                ends.append(span_end)
+            prev_space = rep.endswith(" ")
+            i = span_end
+            continue
+
+        ch = _FOLD.get(text[i], text[i])
+        if not ch:  # zero-width
+            i += 1
+            continue
+        if ch in _TABLE_FURNITURE or ch.isspace():
+            ch = " "
+        if ch == " ":
             if prev_space:
+                i += 1
                 continue
             prev_space = True
         else:
             prev_space = False
-        out.append(c)
-        index.append(i)
+        for c in ch:  # ellipsis folds to three characters
+            out.append(c)
+            starts.append(i)
+            ends.append(i + 1)
+        i += 1
+
     while out and out[-1] == " ":
         out.pop()
-        index.pop()
-    return "".join(out), index
+        starts.pop()
+        ends.pop()
+    return "".join(out), starts, ends
 
 
 def resolve_span(block: str, q0: str, q1: str) -> str:
@@ -367,9 +423,9 @@ def resolve_span(block: str, q0: str, q1: str) -> str:
     semantic. Nothing else is relaxed: a paraphrased marker still fails loudly
     rather than producing an invented quotation.
     """
-    proj, index = _project(block)
-    a, _ = _project(q0)
-    b, _ = _project(q1)
+    proj, starts, ends = _project(block)
+    a, _, _ = _project(q0)
+    b, _, _ = _project(q1)
     if not a or not b:
         raise SpanUnresolvable("empty span marker")
 
@@ -380,9 +436,7 @@ def resolve_span(block: str, q0: str, q1: str) -> str:
     if j < 0:
         raise SpanUnresolvable(f"q1 not found at or after q0: {q1[:50]!r}")
 
-    start = index[i]
-    end = index[j + len(b) - 1] + 1
-    return normalize_ws(block[start:end])
+    return normalize_ws(block[starts[i] : ends[j + len(b) - 1]])
 
 
 def _ends_block(quote: str, block: str) -> bool:
@@ -400,12 +454,16 @@ def hydrate(
     source_id: str,
     start_number: int = 1,
     lexicon: set[str] | None = None,
-) -> tuple[list[AtomicRecord], list[str]]:
+) -> tuple[list[AtomicRecord], list[str], int]:
     """Turn span records into full atomic records. Deterministic.
 
     IDs are assigned here, in document order, so the model can neither reuse
     nor renumber them. `src` comes from the ID. `quote` is reconstituted from
     the block. `terms` are found by scanning the resolved quotation.
+
+    Returns the next free record number as well as the records. A failed span
+    still consumes its ID, so a caller that restarts from the record count
+    reissues numbers — which produced five duplicate IDs on SPEC_HOME.
     """
     out: list[AtomicRecord] = []
     errors: list[str] = []
@@ -459,4 +517,4 @@ def hydrate(
             f"{source_id}: dropped split_claim from {len(corrected)} record(s) "
             "whose span ends mid-block (advisory, not a failure)"
         )
-    return out, errors
+    return out, errors, n

@@ -27,6 +27,9 @@ class AnthropicProvider:
     #: Called with the character count of each streamed fragment. Lets the CLI
     #: show that a multi-minute call is alive.
     on_progress: Optional[Callable[[int], None]] = None
+    #: Extended-thinking budget in tokens, or 0 for off. Thinking tokens bill
+    #: at the OUTPUT rate, which is the dominant cost here, so this is opt-in.
+    thinking_tokens: int = 0
     _client: object = field(default=None, repr=False)
 
     def __post_init__(self) -> None:
@@ -52,12 +55,21 @@ class AnthropicProvider:
         range. Streaming also means a multi-minute call can report progress
         instead of looking hung.
         """
+        kwargs: dict = {}
+        if self.thinking_tokens:
+            kwargs["thinking"] = {
+                "type": "enabled",
+                "budget_tokens": self.thinking_tokens,
+            }
+            max_tokens = max(max_tokens, self.thinking_tokens + 8_000)
+
         parts: list[str] = []
         with self._client.messages.stream(  # type: ignore[union-attr]
             model=self.model,
             max_tokens=max_tokens,
             system=system,
             messages=[{"role": "user", "content": user}],
+            **kwargs,
         ) as stream:
             for text in stream.text_stream:
                 parts.append(text)

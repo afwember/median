@@ -776,3 +776,34 @@ def test_span_record_rejects_the_dropped_fields():
     for extra in ("quote", "id", "src", "terms", "deps"):
         with pytest.raises(ValidationError):
             _span(**{extra: "x"})
+
+
+def test_env_refs_in_config_are_expanded(tmp_path, monkeypatch):
+    """config.yaml ships ${ANTHROPIC_EXTRACTION_MODEL} per the spec's rule that
+    model IDs are configuration. Unexpanded, that literal was sent as a model
+    name."""
+    from median_compile.config import expand_env
+
+    monkeypatch.setenv("ANTHROPIC_EXTRACTION_MODEL", "claude-sonnet-5")
+    got = expand_env({"providers": {"extraction": {"model": "${ANTHROPIC_EXTRACTION_MODEL}"}}})
+    assert got["providers"]["extraction"]["model"] == "claude-sonnet-5"
+
+
+def test_missing_env_ref_expands_to_empty_not_the_literal():
+    from median_compile.config import expand_env
+
+    assert expand_env("${DEFINITELY_NOT_SET_12345}") == ""
+
+
+def test_cache_key_separates_models():
+    """Sonnet output must not be served from the Opus cache, or the comparison
+    is meaningless."""
+    a = ex.cache_key("sha", "2.0", "2.0", "anthropic", "claude-opus-5")
+    b = ex.cache_key("sha", "2.0", "2.0", "anthropic", "claude-sonnet-5")
+    assert a != b
+
+
+def test_cache_key_separates_prompt_versions():
+    a = ex.cache_key("sha", "1.0", "2.0", "anthropic", "m")
+    b = ex.cache_key("sha", "2.0", "2.0", "anthropic", "m")
+    assert a != b

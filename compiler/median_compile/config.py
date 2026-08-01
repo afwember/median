@@ -4,8 +4,29 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import os
+import re
+
 import yaml
 from pydantic import BaseModel
+
+_ENV_REF = re.compile(r"\$\{([A-Z_][A-Z0-9_]*)\}")
+
+
+def expand_env(value):
+    """Expand ${VAR} references in loaded config.
+
+    config.yaml ships `model: "${ANTHROPIC_EXTRACTION_MODEL}"` per the compiler
+    spec's rule that model IDs are configuration, not code. Without expansion
+    that literal string was passed to the API as a model name.
+    """
+    if isinstance(value, str):
+        return _ENV_REF.sub(lambda m: os.environ.get(m.group(1), ""), value).strip()
+    if isinstance(value, dict):
+        return {k: expand_env(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [expand_env(v) for v in value]
+    return value
 
 DEFAULT_CONFIG = {
     "edition": "0.5",
@@ -45,7 +66,10 @@ class Versions(BaseModel):
 
 
 class Config(BaseModel):
+    model_config = {"extra": "allow"}
+
     edition: str = "0.5"
+    providers: dict = {}
     versions: Versions = Versions()
     human_gates: dict = {}
     chunking: dict = {}
@@ -129,7 +153,7 @@ class Build:
         if not self.config_yaml.exists():
             return Config()
         raw = yaml.safe_load(self.config_yaml.read_text(encoding="utf-8")) or {}
-        return Config.model_validate(raw)
+        return Config.model_validate(expand_env(raw))
 
     def resolve(self, rel: str) -> Path:
         """Resolve a source path recorded relative to the repository root."""

@@ -423,6 +423,7 @@ def extract_cmd(
     dry_run: Annotated[bool, typer.Option("--dry-run", help="Estimate only; no calls.")] = False,
     fake: Annotated[bool, typer.Option("--fake", help="Deterministic provider, no network.")] = False,
     max_tokens: Annotated[Optional[int], typer.Option(help="Override output ceiling.")] = None,
+    model: Annotated[Optional[str], typer.Option(help="Override the extraction model.")] = None,
 ) -> None:
     """Phase 4 — Claude extraction, Pass A. Bounded, cached, schema-constrained."""
     build, entries = _load(build_dir)
@@ -451,7 +452,10 @@ def extract_cmd(
             raise typer.Exit(1)
         chunks.extend(json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line)
 
-    providers_cfg0 = (cfg.model_dump().get("providers") or {}).get("extraction", {})
+    providers_cfg0 = (cfg.providers or {}).get("extraction", {})
+    pricing = providers_cfg0.get("pricing") or {}
+    if pricing:
+        ex.PRICING.update(pricing)
     ceiling = max_tokens or providers_cfg0.get("max_output_tokens") or ex.DEFAULT_MAX_OUTPUT_TOKENS
     if dry_run:
         est = ex.estimate(chunks, ceiling)
@@ -484,16 +488,21 @@ def extract_cmd(
     else:
         from .providers.anthropic import AnthropicProvider, ProviderUnavailable
 
-        model = (cfg.model_dump().get("providers") or {}).get("extraction", {}).get("model")
-        model = model or os.environ.get("ANTHROPIC_EXTRACTION_MODEL", "")
-        if not model:
+        resolved = model or providers_cfg0.get("model") or os.environ.get(
+            "ANTHROPIC_EXTRACTION_MODEL", ""
+        )
+        if not resolved:
             console.print(
                 "[red]no extraction model configured[/red] — set providers.extraction.model "
                 "in config.yaml or ANTHROPIC_EXTRACTION_MODEL"
             )
             raise typer.Exit(1)
         try:
-            provider = AnthropicProvider(model=model, on_progress=_tick)
+            provider = AnthropicProvider(
+                model=resolved,
+                on_progress=_tick,
+                thinking_tokens=int(providers_cfg0.get("thinking_tokens") or 0),
+            )
         except ProviderUnavailable as exc:
             console.print(f"[red]provider unavailable[/red] {exc}")
             raise typer.Exit(1)

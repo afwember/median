@@ -21,11 +21,12 @@ chunking:
 providers:
   extraction:
     provider: anthropic
-    model: ${ANTHROPIC_EXTRACTION_MODEL}
+    model: claude-sonnet-5
     max_output_tokens: 32000
+    thinking_tokens: 0
     pricing:
-      input_per_mtok: 5.0
-      output_per_mtok: 25.0
+      input_per_mtok: 3.0
+      output_per_mtok: 15.0
   judgment:
     provider: openai
     model: ${OPENAI_JUDGMENT_MODEL}

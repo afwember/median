@@ -149,6 +149,17 @@ schema, provider and model versions. Run the same command twice and the second
 costs $0.00 — the `cached` column will show it. Tokens are spent again only
 when something genuinely changed.
 
+### If a call fails
+
+**`response hit the N-token output ceiling`** — a chunk produced more records
+than the ceiling allowed. The raw text is kept in
+`build/v0.5/.cache/extract/<key>.raw.txt` so nothing is lost. Raise
+`providers.extraction.max_output_tokens` in `config.yaml`, or pass
+`--max-tokens 48000`. The default is 32,000.
+
+A failed call is never cached as a success, so re-running retries it. Chunks
+that already succeeded stay cached and cost nothing on the retry.
+
 To see what a call would look like without an API key at all:
 
 ```bash

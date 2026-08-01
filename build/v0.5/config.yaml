@@ -18,3 +18,12 @@ chunking:
   overlap_tokens: 400
   respect_headings: true
   seam_fraction: 0.9
+providers:
+  extraction:
+    provider: anthropic
+    model: ${ANTHROPIC_EXTRACTION_MODEL}
+    max_output_tokens: 32000
+  judgment:
+    provider: openai
+    model: ${OPENAI_JUDGMENT_MODEL}
+    reasoning_effort: high

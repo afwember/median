@@ -26,6 +26,18 @@ from .records import AtomicRecord, RECORD_SCHEMA_VERSION
 
 PROMPT_VERSION = "1.0"
 
+
+class ExtractionError(RuntimeError):
+    """A call completed but its result is unusable. The raw text is kept."""
+
+
+class Truncated(ExtractionError):
+    """The model hit the output ceiling; the JSON is cut off mid-token."""
+
+
+class MalformedResponse(ExtractionError):
+    """The response parsed as text but is not a valid records payload."""
+
 #: Published Claude pricing, USD per million tokens. Used only for the
 #: dry-run estimate; the call log records actual token counts.
 PRICING = {
@@ -37,6 +49,12 @@ PRICING = {
 #: the pilot. Only affects the cost estimate, never behaviour.
 RECORDS_PER_1K_TOKENS = 4.0
 OUTPUT_TOKENS_PER_RECORD = 180
+
+#: Output ceiling per call. The first real run truncated at 12,000: a 9k-token
+#: chunk yields on the order of 100 records, and at ~180 tokens each that is
+#: 18k of output. Set well clear of the observed need — this is a ceiling, not
+#: a spend, and unused headroom costs nothing.
+DEFAULT_MAX_OUTPUT_TOKENS = 32_000
 
 
 class Provider(Protocol):
@@ -234,7 +252,7 @@ def extract_chunk(
     system_prompt: str,
     provider: Provider,
     cache_dir: Path,
-    max_tokens: int = 12_000,
+    max_tokens: int = DEFAULT_MAX_OUTPUT_TOKENS,
 ) -> tuple[list[dict], Call]:
     user = build_user_prompt(chunk, source_meta, namespaces, start_number)
     key = cache_key(
@@ -262,9 +280,30 @@ def extract_chunk(
         return payload["records"], call
 
     text, usage = provider.complete(system_prompt, user, max_tokens)
-    raw = parse_response(text)
 
+    # Persist the raw response BEFORE parsing. A paid call must never be lost
+    # to a parse failure: the first real extraction run hit the output ceiling,
+    # crashed in json.loads, and threw away tokens that had already been
+    # charged. The raw file is also what makes a truncation diagnosable.
     cache_dir.mkdir(parents=True, exist_ok=True)
+    (cache_dir / f"{key}.raw.txt").write_text(text, encoding="utf-8")
+
+    if usage.get("stop_reason") == "max_tokens":
+        raise Truncated(
+            f"{chunk['id']}: response hit the {max_tokens:,}-token output ceiling "
+            f"and is incomplete. The raw text is kept at {key}.raw.txt. Raise "
+            "providers.extraction.max_output_tokens in config.yaml, or lower "
+            "chunking.target_tokens so each call produces fewer records."
+        )
+
+    try:
+        raw = parse_response(text)
+    except (json.JSONDecodeError, ValueError) as exc:
+        raise MalformedResponse(
+            f"{chunk['id']}: response was not valid record JSON ({exc}). "
+            f"Raw text kept at {key}.raw.txt."
+        ) from exc
+
     cache_path.write_text(
         json.dumps({"records": raw, "usage": usage}, ensure_ascii=False, indent=1),
         encoding="utf-8",

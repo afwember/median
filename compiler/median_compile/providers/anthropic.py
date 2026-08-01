@@ -50,7 +50,11 @@ class AnthropicProvider:
         text = "".join(
             block.text for block in resp.content if getattr(block, "type", "") == "text"
         )
+        # stop_reason is the difference between "the model finished" and "we cut
+        # it off mid-sentence". Without it, truncation surfaces as an
+        # unintelligible JSON parse error several frames away from the cause.
         return text, {
             "input_tokens": resp.usage.input_tokens,
             "output_tokens": resp.usage.output_tokens,
+            "stop_reason": getattr(resp, "stop_reason", None),
         }

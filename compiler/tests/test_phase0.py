@@ -7,6 +7,8 @@ normalization pipeline may be frozen and tagged.
 
 from __future__ import annotations
 
+import dataclasses
+import json
 import re
 
 import pytest
@@ -611,3 +613,93 @@ def test_use_make_seam_is_stated_in_the_prompt():
     ).read_text(encoding="utf-8")
     assert "use/make seam" in prompt
     assert "economy.recipes" in prompt and "items.supplies" in prompt
+
+
+# --------------------------------------------------------------------------
+# Extraction failure handling — a paid call must never be lost
+# --------------------------------------------------------------------------
+
+from median_compile import extract as ex  # noqa: E402
+
+
+@dataclasses.dataclass
+class _StubProvider:
+    text: str
+    stop_reason: str = "end_turn"
+    name: str = "stub"
+    model: str = "stub-1"
+
+    def complete(self, system, user, max_tokens):
+        return self.text, {
+            "input_tokens": 100,
+            "output_tokens": 200,
+            "stop_reason": self.stop_reason,
+        }
+
+
+_CHUNK = {
+    "id": "SPEC_HOME:C001",
+    "source": "SPEC_HOME",
+    "sha256": "abc123",
+    "owned": ["1¶1"],
+    "context": [],
+    "heading_path": [],
+    "text": "<!--@1¶1-->\nalpha beta",
+    "tokens": 10,
+}
+
+
+def test_truncated_response_is_named_not_a_json_traceback(tmp_path):
+    """The first real run died in json.loads with no hint of the cause."""
+    truncated = '{"records": [{"id": "SPEC_HOME:0001", "quote": "unterminat'
+    with pytest.raises(ex.Truncated, match="output ceiling"):
+        ex.extract_chunk(
+            _CHUNK, {}, [], 1, "sys",
+            _StubProvider(truncated, stop_reason="max_tokens"),
+            tmp_path, max_tokens=12_000,
+        )
+
+
+def test_raw_response_survives_a_truncation(tmp_path):
+    """Tokens are charged before parsing. Losing the text wastes the money."""
+    with pytest.raises(ex.Truncated):
+        ex.extract_chunk(
+            _CHUNK, {}, [], 1, "sys",
+            _StubProvider('{"records": [trunc', stop_reason="max_tokens"),
+            tmp_path,
+        )
+    raws = list(tmp_path.glob("*.raw.txt"))
+    assert raws, "the raw response must be kept for diagnosis"
+    assert "trunc" in raws[0].read_text()
+
+
+def test_malformed_json_is_named_and_kept(tmp_path):
+    with pytest.raises(ex.MalformedResponse, match="not valid record JSON"):
+        ex.extract_chunk(
+            _CHUNK, {}, [], 1, "sys", _StubProvider("I'm afraid I can't do that"),
+            tmp_path,
+        )
+    assert list(tmp_path.glob("*.raw.txt"))
+
+
+def test_a_failed_call_is_not_cached_as_success(tmp_path):
+    """A bad response must not poison the cache and suppress a later retry."""
+    with pytest.raises(ex.ExtractionError):
+        ex.extract_chunk(
+            _CHUNK, {}, [], 1, "sys", _StubProvider("nonsense"), tmp_path
+        )
+    assert not [p for p in tmp_path.glob("*.json")]
+
+
+def test_a_good_response_caches_and_replays_free(tmp_path):
+    payload = json.dumps({"records": [{"id": "SPEC_HOME:0001"}]})
+    p = _StubProvider(payload)
+    raw, call = ex.extract_chunk(_CHUNK, {}, [], 1, "sys", p, tmp_path)
+    assert call.cached is False and raw
+    raw2, call2 = ex.extract_chunk(_CHUNK, {}, [], 1, "sys", p, tmp_path)
+    assert call2.cached is True and raw2 == raw
+
+
+def test_default_ceiling_clears_observed_need():
+    """12,000 truncated a real 9k-token chunk. The default must be well above."""
+    assert ex.DEFAULT_MAX_OUTPUT_TOKENS >= 24_000

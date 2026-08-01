@@ -411,6 +411,7 @@ def extract_cmd(
     source: Annotated[Optional[str], typer.Option(help="Source id. Omit for all.")] = None,
     dry_run: Annotated[bool, typer.Option("--dry-run", help="Estimate only; no calls.")] = False,
     fake: Annotated[bool, typer.Option("--fake", help="Deterministic provider, no network.")] = False,
+    max_tokens: Annotated[Optional[int], typer.Option(help="Override output ceiling.")] = None,
 ) -> None:
     """Phase 4 — Claude extraction, Pass A. Bounded, cached, schema-constrained."""
     build, entries = _load(build_dir)
@@ -476,6 +477,8 @@ def extract_cmd(
             console.print(f"[red]provider unavailable[/red] {exc}")
             raise typer.Exit(1)
 
+    providers_cfg = (cfg.model_dump().get("providers") or {}).get("extraction", {})
+    ceiling = max_tokens or providers_cfg.get("max_output_tokens") or ex.DEFAULT_MAX_OUTPUT_TOKENS
     cache_dir = build.dir / ".cache" / "extract"
     meta = {e.id: e for e in todo}
     results: dict[str, ex.ExtractResult] = {}
@@ -489,13 +492,19 @@ def extract_cmd(
             e = meta[c["source"]]
             res = results.setdefault(c["source"], ex.ExtractResult(source_id=c["source"]))
             start = len(res.records) + 1
-            raw, call = ex.extract_chunk(
-                c,
-                {"source_class": e.source_class.value,
-                 "wording_fidelity": e.wording_fidelity.value,
-                 "notes": e.notes},
-                ns_lines, start, system_prompt, provider, cache_dir,
-            )
+            try:
+                raw, call = ex.extract_chunk(
+                    c,
+                    {"source_class": e.source_class.value,
+                     "wording_fidelity": e.wording_fidelity.value,
+                     "notes": e.notes},
+                    ns_lines, start, system_prompt, provider, cache_dir,
+                    max_tokens=ceiling,
+                )
+            except ex.ExtractionError as exc:
+                res.errors.append(str(exc))
+                console.print(f"  [red]{exc}[/red]")
+                continue
             res.calls.append(call)
             for item in raw:
                 try:

@@ -343,5 +343,21 @@ def extract_chunk(
         input_tokens=usage.get("input_tokens", 0),
         output_tokens=usage.get("output_tokens", 0),
         status="ok",
+        notes=_usage_note(usage),
     )
     return raw, call
+
+
+def _usage_note(usage: dict) -> str:
+    """Flag output tokens that did not become text.
+
+    Text runs about 2 characters per token. A response billed far above that
+    is spending tokens on blocks the text stream never yields.
+    """
+    out = usage.get("output_tokens") or 0
+    chars = usage.get("text_chars") or 0
+    kinds = usage.get("block_types") or {}
+    note = f"blocks={kinds}" if kinds else ""
+    if out and chars and chars / out < 1.4:
+        note += f" UNSEEN_OUTPUT chars/token={chars/out:.2f}"
+    return note.strip()

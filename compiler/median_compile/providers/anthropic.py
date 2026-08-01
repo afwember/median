@@ -77,6 +77,13 @@ class AnthropicProvider:
                     self.on_progress(len(text))
             final = stream.get_final_message()
 
+        # Which block types came back. A response billed for far more output
+        # tokens than its text contains is spending them on thinking blocks
+        # that `text_stream` never yields — generated, charged, discarded.
+        kinds: dict[str, int] = {}
+        for blk in getattr(final, "content", []) or []:
+            kinds[getattr(blk, "type", "?")] = kinds.get(getattr(blk, "type", "?"), 0) + 1
+
         # stop_reason is the difference between "the model finished" and "we cut
         # it off mid-sentence". Without it, truncation surfaces as an
         # unintelligible JSON parse error several frames away from the cause.
@@ -84,4 +91,6 @@ class AnthropicProvider:
             "input_tokens": final.usage.input_tokens,
             "output_tokens": final.usage.output_tokens,
             "stop_reason": getattr(final, "stop_reason", None),
+            "block_types": kinds,
+            "text_chars": sum(len(p) for p in parts),
         }

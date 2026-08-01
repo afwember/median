@@ -304,23 +304,62 @@ class SpanUnresolvable(ValueError):
     """The span markers do not locate a passage in the cited block."""
 
 
-def resolve_span(block: str, q0: str, q1: str) -> str:
-    """Recover the full quotation between two verbatim markers.
+#: Markdown table furniture. A row reads as "Risk | Failure mode", but the
+#: literal text is "| **Risk** | **Failure mode** |" with padding. A model
+#: quoting the row semantically produces markers that are not verbatim
+#: substrings. All 34 span failures in the first Sonnet run were this.
+_TABLE_FURNITURE = re.compile(r"[|*]+")
 
-    Whitespace-insensitive on both markers, because Markdown wrapping is not
-    semantic. Nothing else is relaxed: if a marker was paraphrased rather than
-    copied, this fails loudly rather than inventing a quotation.
+
+def _project(text: str) -> tuple[str, list[int]]:
+    """Flatten table markup, keeping a map back to original offsets.
+
+    Matching happens on the projection so a semantically-quoted table row
+    resolves; the quotation returned is sliced from the ORIGINAL text, so it
+    stays verbatim, pipes and all.
     """
-    flat = normalize_ws(block)
-    a, b = normalize_ws(q0), normalize_ws(q1)
-    i = flat.find(a)
+    out: list[str] = []
+    index: list[int] = []
+    prev_space = True
+    for i, ch in enumerate(text):
+        c = " " if _TABLE_FURNITURE.match(ch) or ch.isspace() else ch
+        if c == " ":
+            if prev_space:
+                continue
+            prev_space = True
+        else:
+            prev_space = False
+        out.append(c)
+        index.append(i)
+    while out and out[-1] == " ":
+        out.pop()
+        index.pop()
+    return "".join(out), index
+
+
+def resolve_span(block: str, q0: str, q1: str) -> str:
+    """Recover the full quotation between two markers.
+
+    Insensitive to whitespace and Markdown table furniture, because neither is
+    semantic. Nothing else is relaxed: a paraphrased marker still fails loudly
+    rather than producing an invented quotation.
+    """
+    proj, index = _project(block)
+    a, _ = _project(q0)
+    b, _ = _project(q1)
+    if not a or not b:
+        raise SpanUnresolvable("empty span marker")
+
+    i = proj.find(a)
     if i < 0:
         raise SpanUnresolvable(f"q0 not found in block: {q0[:50]!r}")
-    j = flat.find(b, i)
+    j = proj.find(b, i)
     if j < 0:
-        # Tolerate q1 appearing before q0 only if it is the same marker.
         raise SpanUnresolvable(f"q1 not found at or after q0: {q1[:50]!r}")
-    return flat[i : j + len(b)]
+
+    start = index[i]
+    end = index[j + len(b) - 1] + 1
+    return normalize_ws(block[start:end])
 
 
 def hydrate(

@@ -22,7 +22,7 @@ providers:
   extraction:
     provider: anthropic
     model: claude-sonnet-5
-    max_output_tokens: 32000
+    max_output_tokens: 48000
     thinking_tokens: 0
     pricing:
       input_per_mtok: 3.0

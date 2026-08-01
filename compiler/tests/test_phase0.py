@@ -807,3 +807,34 @@ def test_cache_key_separates_prompt_versions():
     a = ex.cache_key("sha", "1.0", "2.0", "anthropic", "m")
     b = ex.cache_key("sha", "2.0", "2.0", "anthropic", "m")
     assert a != b
+
+
+TABLE_BLOCK = (
+    "| **Risk**              | **Failure mode**                          |\n"
+    "| --------------------- | ----------------------------------------- |\n"
+    "| Entropy treadmill     | Deficiency-driven Encounters arrive daily |"
+)
+
+
+def test_table_row_span_resolves_across_cells():
+    """All 34 failures in the first Sonnet run were this: a row quoted
+    semantically, whose markers are not verbatim substrings because of pipes."""
+    got = rc.resolve_span(TABLE_BLOCK, "Entropy treadmill Deficiency-driven", "arrive daily")
+    assert "Entropy treadmill" in got and "arrive daily" in got
+
+
+def test_resolved_table_quote_is_real_source_text():
+    got = rc.resolve_span(TABLE_BLOCK, "Entropy treadmill", "arrive daily")
+    assert rc.normalize_ws(got) in rc.normalize_ws(TABLE_BLOCK)
+
+
+def test_bold_markers_do_not_block_a_span():
+    got = rc.resolve_span("| **Named Citizen** | **occupies** | **Role** |",
+                          "Named Citizen occupies", "Role")
+    assert "Named Citizen" in got
+
+
+def test_paraphrase_still_fails_after_table_tolerance():
+    """Tolerating markup must not become tolerating invention."""
+    with pytest.raises(rc.SpanUnresolvable):
+        rc.resolve_span(TABLE_BLOCK, "Entropy spiral causes", "arrive daily")

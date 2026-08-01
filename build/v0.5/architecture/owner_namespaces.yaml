@@ -1,6 +1,15 @@
 # MEDIAN v0.5 — Owner namespace vocabulary
 #
-# DRAFT v0.5 — 1 August 2026 — rebuilt on Asa's register-as-UI-type model
+# DRAFT v0.6 — 1 August 2026 — provisional FULL tree
+#
+# v0.6 extends v0.5 from the two compiled pilots to all 21 sources, by reading
+# every source's heading structure out of `sources/normalized_full/`. No model
+# was used and no tokens were spent: Phase 1 already normalized the corpus, and
+# a spec's own section headings name its territory better than a guess would.
+#
+# Everything added this way is PROVISIONAL and marked. It says "SPEC_PROG has
+# eleven sections and four of them have nowhere to go", which is a fact about
+# coverage. It does not say the names are right — those are Asa's.
 #
 # The `owner` field on every atomic record names the system that owns the
 # claim. It is the primary lever for Phase 7 conflict clustering: two records
@@ -32,9 +41,17 @@
 # while the highway overlay is up, so it is a Crossing rule — not a UI rule.
 #
 # ==========================================================================
-# TWO KINGDOMS
+# FOUR KINGDOMS
 # ==========================================================================
 #
+#   PHILOSOPHY owns THE THESIS. What MEDIAN is and what every system must
+#                              serve. Asa's ruling, 1 August 2026: philosophy
+#                              is not world — it is its own Kingdom. PHIL_ARCH
+#                              composes the opening chapters, with many STATE
+#                              verbatim inclusions, so this material is voice
+#                              `world` and publishable. Filing it under `meta`
+#                              would have marked the corpus's most authoritative
+#                              source as never reaching the reader.
 #   REGISTERS own PLAY.       What the player does through a given camera.
 #   DOMAINS   own PERSISTENCE. Units, stocks and ledgers that outlive any
 #                              camera — the Citizen, Sustenance, the Chronicle.
@@ -60,13 +77,15 @@
 #
 # WHAT IS AND IS NOT FROZEN. The ARCHITECTURE above is settled and should not
 # move: two Modes, five Registers defined as UI types, the camera test, the
-# two kingdoms. The SYSTEM INVENTORY below is not settled and cannot be, since
-# 2 of ~18 v0.5 specs have been read. Systems will be added as specs are
-# compiled. That is safe precisely because a missing system surfaces as an
-# `owner_unclear` flag on a record rather than as a silent wrong assignment —
-# extraction can run against an incomplete inventory without corrupting it.
+# four kingdoms. The SYSTEM INVENTORY is provisional. v0.6 covers all 21
+# sources at the level of their section headings, which is enough for a record
+# to have somewhere to go, but only 2 of ~18 specs have actually been read.
+# Names will change as specs are compiled and reviewed. That is safe precisely
+# because a missing or wrong system surfaces as an `owner_unclear` flag on a
+# record rather than as a silent wrong assignment — extraction can run against
+# a provisional inventory without corrupting it.
 
-version: "0.5"
+version: "0.6"
 status: draft
 frozen: false
 
@@ -203,15 +222,47 @@ registers:
 
 namespaces:
 
+  # ======================= PHILOSOPHY — the thesis =======================
+  # Asa, 1 August 2026: philosophy is a Kingdom, not part of World. PHIL_ARCH
+  # is what the opening chapters are composed of, with many STATE verbatim
+  # inclusions. Systems below take their names from PHIL_ARCH's and PHIL_SPEC's
+  # own section headings. PROVISIONAL.
+
+  philosophy:
+    _: >-
+      What MEDIAN is, and what every major system must continue to serve.
+      Voice `world` — this is book material, not process commentary.
+    thesis: >-
+      The core philosophical thesis. A civilization where nobody else would
+      call home; the successful resting state; emotional design following
+      logical satisfaction.
+    attachment: >-
+      The attachment-forward base builder — the four anchors of attachment and
+      the attachment chain.
+    game_logic: >-
+      Game Logic creates Attachment Space, and the corollary that every
+      substantial module must do Game Logic work.
+    unity: >-
+      One world, two Modes, five Registers. Unity of world as the precondition
+      for attachment; Modes say where life is, Registers say how the player
+      meets it.
+    conservation: >-
+      Conservation of Systems — the constraint against proliferating parallel
+      economies.
+    mode_growth: Home grows the Colony; Away grows the Citizen.
+    consequence: Consequence without disposability.
+    crunch: >-
+      Two scales of crunch — Home Roles as civic responsibilities, and
+      individuality without productivity ratings.
+    binding: >-
+      Binding doctrines within particular domains — the per-domain statements
+      PHIL_ARCH makes about Citizenship, Home, Away, Memory, Objects, Care and
+      Presentation, where they constrain rather than describe.
+
   # ======================= REGISTERS — play ==============================
 
   home:
     _: Home Mode generally — the colony at home, across both its registers.
-
-    # OPEN (1 August 2026): the seasonal loop is lived at Home but bears on
-    # Away, so the camera test does not obviously place it. Left at Mode level
-    # pending a ruling; it may be a DWELL system or a domain.
-    seasonal: Seasonal loop and the year as it is lived at Home.
 
     dwell:
       _: >-
@@ -235,6 +286,18 @@ namespaces:
         Species identity expressed through settlement topology — the placement
         verbs JOIN, GATHER and CONNECT, and the Manor House, Court and Web
         images they form.
+      weather: >-
+        Weather Pressures at Home (Asa, 1 August 2026) — Heavy Winds, Flash
+        flood, Winter shortage and Predator pressure as pressure on the colony.
+        The season they occur in is `world.seasons`; the Encounter a pressure
+        becomes is `meet.*`; the pressure itself is DWELL's.
+      attention: >-
+        DWELL attention states — Open and Called, and the attention threshold
+        at which native information gives way to MEET. PROVISIONAL, from
+        PASS_047 §4 and §9.
+      beautification: >-
+        Beautification and non-Project civic acts. PROVISIONAL, from
+        PASS_OVER §2.6-2.7.
 
     embody:
       _: >-
@@ -243,6 +306,13 @@ namespaces:
       access: Global Home availability, access conditions, the state ladder.
       presence: Practice and Presence architecture, the dramaturgical cycle.
       memory_access: How EMBODY retrieves or leaves prior events.
+      families: >-
+        EMBODY Mode Families and the guided-experience constraint — guided
+        experience, not free roam. PROVISIONAL, from SPEC_EMBOD §6 and §9.
+      species_embodiment: >-
+        Species spatial identity as inhabited — Mouse protected continuity,
+        Rabbit shared social ground, Squirrel maintained reachability.
+        PROVISIONAL, from SPEC_EMBOD §7.
 
   away:
     _: Away Mode generally — expedition across both its registers.
@@ -263,6 +333,16 @@ namespaces:
       biome: Biome as encountered in travel — what a biome does to a journey.
       stopover: Stopovers, refuge, Rest, Care, Watch, Store.
       salvage: Salvage, foraging, what the field yields.
+      party: >-
+        Party representation and core Field state — how the expedition is shown
+        and tracked while travelling. PROVISIONAL, from SPEC_AWAY §8.1-8.2.
+      pace: >-
+        Species movement and party pace — Rabbit pro-rated speed, Core Species
+        determining party pace, mixed-party interpretation. PROVISIONAL, from
+        SPEC_PROG §8 and SPEC_SPECIES §4.
+      turn_back: >-
+        Turn-back authority and route texture — the player's power to abandon a
+        route mid-journey. PROVISIONAL, from SPEC_AWAY §8.3-8.5.
 
     crossing:
       _: >-
@@ -283,6 +363,9 @@ namespaces:
         attaching to individual Citizens, and how the two resolve.
       traffic: Traffic readability during a crossing, timing, lanes.
       return_logic: Crossing-specific return and abort rules.
+      exposure: >-
+        Exposure doctrine and the consequence ladder — what a crossing costs
+        and how badly. PROVISIONAL, from SPEC_AWAY §7.3-7.4.
 
   meet:
     _: >-
@@ -296,10 +379,22 @@ namespaces:
       Which Roles, Citizens and stakes an Encounter may draw on. Eligibility
       masks per Encounter family, Big and Small Weakness selection, and how
       Role strength elsewhere in the colony shapes what is offered.
-    choice: Choice Events; Telegraph, Impact, Persistence, Aftermath.
+    choice: Choice Events and persistent situations.
     structure: >-
       Encounter grammar shared across origins — the three-choice silhouette,
       option architecture, and the spend/refusal transaction.
+    event_time: >-
+      Event time — Telegraph, Impact, Persistence, Aftermath. PROVISIONAL,
+      from PASS_047 §10.
+    composition: >-
+      Participant scale and relational scene composition — how many are in the
+      scene and how they stand to one another. PROVISIONAL, from PASS_047 §6.
+    backdrop: >-
+      Spatial fidelity and Encounter backdrops — the rendered backplate the
+      presentational front sits over. PROVISIONAL, from PASS_047 §12.
+    defense: >-
+      Base defense and Home-origin MEET. PROVISIONAL, from PASS_047 §11; may
+      belong with `eligibility`.
 
   # ======================= DOMAINS — persistence =========================
   # A rule belongs here if it holds whatever camera is live.
@@ -317,22 +412,41 @@ namespaces:
 
   population:
     _: Population doctrine, counts, presence states.
-    growth: Growth, birth, arrival.
-    tiers: Colony Tiers and Tier proofs.
-    scale: Scale, species density, target population bands.
+    growth: The three growth paths; birth and arrival generally.
+    wanderers: >-
+      Wanderers as early adult growth — arrival routes, the Wanderer MEET and
+      acceptance, what arrives with one. PROVISIONAL, from SPEC_POP §7.
+    hearth: >-
+      Hearths as lineage unit, the Nursery as a Place, and the Nesting Season
+      sequence. PROVISIONAL, from SPEC_POP §8.
+    maturity: >-
+      Young Citizens, dependence and maturity. PROVISIONAL, from SPEC_POP §9.
+    scale: Scale, species density, target population bands, overcrowding.
 
   guest:
     _: Guest Citizens generally.
     recruitment: How Guests arrive and are recruited.
-    contract: Guest species contracts, roster, permissions.
+    contract: Guest species contracts, roster, permissions, the two Guest types.
     hospitality: Hospitality, visible difference, found family.
+    signature: >-
+      The Signature function — equivalent but not equal, and why Signature and
+      ordinary Capacity do not stack into aptitude. PROVISIONAL, from
+      SPEC_GUEST §6.
 
   species:
     _: >-
       The doctrine of species differentiation — that the same population and
       functions must produce visibly different colonies and expeditions. How
       that difference expresses is owned by the register it expresses in.
+    traits: >-
+      The Core Species mechanical traits as units — Mouse Distributed Body,
+      Squirrel Strained Carry and the Jostle procedure, Rabbit Pro-Rated Field
+      Speed — and comparative species power. PROVISIONAL, from SPEC_SPECIES.
     dialect: Deep Laws expressed through species phrasing.
+    premise: >-
+      Ecological premise beneath each species — bodily premise and the cultural
+      translation into the Surface Manor, Thicket Court and Web. PROVISIONAL,
+      from SPEC_ECOL §5-8.
 
   economy:
     _: Resources, stocks, and material logistics — the supply side.
@@ -342,6 +456,9 @@ namespaces:
     recipes: >-
       Making item units. Recipe classes, recipe grammar, inputs, costs, who
       may produce what, and where production happens.
+    stock: >-
+      Cargo and Colony Stock — where material sits and how it moves between
+      party and colony. PROVISIONAL, from PASS_OVER §4.3.
 
   items:
     _: Personal items and equipment in use.
@@ -350,6 +467,12 @@ namespaces:
     keepsakes: Holding a Keepsake — provenance, inheritance, Exposure.
     artifacts: Holding an Artifact — Colony and Carried, Place of Pride.
     focus: Choosing what to carry — Focus and expedition equipment selection.
+    render: >-
+      RENDER — the permission by which an item is put to use. PROVISIONAL,
+      from PASS_OVER §4 and SPEC_ITEMS §3.4.
+    strain: >-
+      Tool Strain, Damage and Carry — how equipment degrades in use.
+      PROVISIONAL, from SPEC_ITEMS §3.3.
 
   # OPEN (1 August 2026): the ground is observed through both the TRAVEL camera
   # and the Crossing overlay, which is the case for a domain. But Biome was
@@ -364,10 +487,24 @@ namespaces:
     corridor: >-
       The corridor in longitudinal section — the chain of Median Reach units
       laid end to end. Sequence, continuity, and the service crossovers that
-      join one Reach to the next. Also progression along the chain: Held
-      Reaches, outposts, and the Metropolis arc.
-    time: Day structure, traffic cycles, Road Work.
-    ecology: Ecological influences, predators, drainage, sound.
+      join one Reach to the next.
+    outposts: >-
+      Outposts, Held Reaches, the Away hierarchy and the Rest-Stop Metropolis
+      as places on the chain. PROVISIONAL, from PASS_OVER §3.3-3.7.
+    seasons: >-
+      Seasons and the year (Asa, 1 August 2026). The season is a property of
+      the world, not of Home. Note SPEC_PROG §5.1 states there is no separate
+      seasonal economy — record it and let Phase 8 rule.
+    day_band: >-
+      The four playable Day Bands, time of day, traffic cycles and Road Work.
+      PROVISIONAL, from SPEC_PROG §5-6.
+    cadence: >-
+      The shared calendar — Home day cadence and Away time cadence, and how
+      the two stay in step. PROVISIONAL, from SPEC_PROG §6-7.
+    ecology: >-
+      Shared ecology of highway medians — the island-sanctuary paradox,
+      infrastructure as naturalized terrain, noise as climate and signal,
+      resource gradients, water, drainage, predators.
 
   culture:
     _: Folklore, Laws, Sayings, and world-facing culture.
@@ -377,9 +514,37 @@ namespaces:
 
   memory:
     _: Campaign Memory generally.
-    chronicle: The Colony's selective civic history.
+    chronicle: >-
+      The Colony's selective civic history, the Homecoming write sequence and
+      the canonical narrative minimum.
     tale: Citizen Tales, prior-life tales, interstitial material.
     keepsake_memory: Memorial continuity and remembered material.
+    distinctions: >-
+      Distinctions and After-names as earned record. PROVISIONAL, from
+      PASS_OVER §1.4; may belong with `citizen.change`.
+
+  # PROVISIONAL — R012. SPEC_PROG is "Discovery, Time, Movement and Civic
+  # Progression" and four of its eleven sections had nowhere to go. Discovery
+  # had no owner anywhere in the tree.
+  progression:
+    _: >-
+      How a campaign advances — what becomes known, what becomes possible, and
+      what ends it. Persists across cameras, so a domain.
+    discovery: >-
+      Discovery, Nodes and knowledge — TRAVEL reveals the Field, Nodes become
+      meaningful through MEET, lasting outcomes are direct.
+    advancement: >-
+      Tier advancement and advanced Practices — learning an advanced Practice
+      and the progression chain.
+    proofs: >-
+      Tier proofs and recognition — the five proofs, readiness, the recognition
+      MEET, and what recognition does not do.
+    corridor_arc: >-
+      Corridor progression as campaign arc — how far the colony has reached and
+      what that unlocks. Seam with `world.corridor`, which is the ground.
+    victory: >-
+      The win condition and what ending a campaign means. PROVISIONAL, from
+      PASS_OVER §3.8.
 
   art:
     _: Art and audio direction carrying mechanical consequence.
@@ -392,6 +557,41 @@ namespaces:
       any legibility doctrine that holds across every camera.
     topology: Register/View doctrine; what each register is and is not.
     switch: Mode-switch doctrine and transitions between Home and Away.
+    world_state: >-
+      One world state across five Registers — the guarantee that the registers
+      are views of one simulation. PROVISIONAL, from PASS_047 §7.
+    numerals: >-
+      Personal information and numerical restraint held across every camera —
+      what is never shown anywhere. The register-specific case of what a given
+      overlay hides belongs to that register.
+
+  # PROVISIONAL — R014. Asa ruled Manifestations become an Appendix rather
+  # than audit material, so this may be book architecture rather than a domain.
+  manifestation:
+    _: >-
+      MEDIAN in media other than the primary one. The four canonical
+      manifestations and the hierarchy between them.
+    invariants: >-
+      Cross-manifestation canon — foundational invariants, what may change by
+      medium, register translation doctrine, the universal cycle.
+    tabletop: The tabletop roleplaying manifestation.
+    board: The board game manifestation.
+
+  # PROVISIONAL — R015. Appendix material, per Asa.
+  market:
+    _: Market identity and comparative landscape.
+    identity: Genre language, audience intersection, product position.
+    distinctiveness: The v0.5.0 distinctiveness stack.
+    comparison: Comparison classes, rules, and named neighbours.
+
+  book:
+    _: >-
+      The architecture of the published document itself — what goes in the
+      body, what goes in an appendix, and how the two are kept in step.
+    appendix: >-
+      Appendix doctrine, the published appendix suite, entry schema, and
+      body-to-appendix routing rules. PROVISIONAL, from APDX_PLAN.
+    lexicon: Canonical usage, naming and compound forms.
 
   meta:
     _: Process and doctrine. Voice `process` by default.

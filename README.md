@@ -1,83 +1,37 @@
 # MEDIAN
 
-**An atmospheric animal colony-builder set on highway median strips** — "Age of Empires minus combat, with the heart of *Watership Down*." The player guides one small civilization of rabbits, squirrels, or wood mice, builds a permanent low-population colony in the green island between carriageways, and risks named citizens on expeditions across live traffic and along a corridor of changing median biomes.
+**MEDIAN** is an atmospheric animal colony-builder set on highway median strips. Players guide a small civilization of rabbits, squirrels, or wood mice: establishing a persistent colony, crossing live traffic, exploring a changing corridor, and bringing discoveries home.
 
-*Conceived by Asa Wember, July 2026, after observing highway medians from a bus between Washington, DC and New York.*
+The project’s primary deliverable is an illustrated, system-complete sourcebook. It is conceived by Asa Wember.
 
-**This repository is the working home of an illustrated concept book** — a complete, art-heavy sourcebook in the tradition of Classic Traveller, AD&D 2E, Star Wars D6 and *Mouse Guard*. Not a production design document for a game in development. The book is the deliverable.
+## Current work
 
----
+MEDIAN v0.5.0 is being assembled from a substantial set of system specifications developed after the v0.4.6 Game Design Document. The current effort is building a source-preserving atomic evidence corpus before MSID mapping, cross-source reconciliation, comparison with the v0.4.6 baseline, and final compilation.
 
-## Where things stand
+Completed legacy extractions are being retained where their source quotations remain verifiable; the extraction process itself is being simplified and rebuilt with stronger boundaries and auditability.
 
-| | |
-|---|---|
-| **Canon** | `canon/MEDIAN_GDD_v0.4.3.md` — 93 settled design decisions |
-| **Book plan** | 49 plates · 8 part openers · in-part artwork · 5 worked examples |
-| **Complete** | 1 plate — *The Three Species* |
-| **Format** | 16:9 landscape, desktop-first, three-column text grid |
-| **Blocking** | Stage 2c — palette, typography, grid, page furniture |
-| **Next** | *The Median Read Three Ways*, then the rest of Part I |
+Current status:
 
----
+- Gates 1–3 are complete: process diagnosis, target-process definition, and legacy-extraction reuse review.
+- Gate 4—source identity correction and repository cleanup—is in progress.
+- External model extraction is paused until the Gate 5 implementation passes offline verification.
+- MEDIAN v0.5.1 material is isolated under `m051/` and excluded from the v0.5.0 compile.
 
-## How to read this repository
+## Repository map
 
-**Start with `canon/`.** The GDD is the single source of truth. Where anything in this repository disagrees with it, the GDD wins and the other document changes.
+```text
+m050/docs/                 Current v0.5.0 sources and the v0.4.6 baseline
+m050/extraction/           Accepted evidence, audits, and progress tracking
+m050/extraction/progress/  Human-readable trackers and compile cost ledger
+m050/archive/              Historical sources, retired processes, and immutable receipts
+m051/                      Post-v0.5.0 development; excluded from the current compile
 
-**`book/Contents.md` is the map.** It merges the GDD's structure with the illustration programme — every plate, opener and worked example placed against the sections it draws from, with its editorial claim and status.
-
-**`log/` is why, not what.** `running_decisions.md` records production decisions as they lock, numbered P2-1 upward, including reversals and the reasoning behind them. `art_raised_questions.md` records design gaps the artwork exposes — logged, deliberately not solved, feeding a future canon pass.
-
----
-
-## Layout
-
-```
-canon/          The GDD. Source of truth.
-book/           Contents, production plan, and the Phase 2 brief.
-log/            Decisions as they lock; questions as they arise.
-prompts/        Illustration prompts, one per plate.
-                  _superseded/  approaches that failed, and why.
-archive/        Superseded material, kept for history.
-                  gdd/ · threads/ · planning/  — nothing here is canon.
-art/
-  plates/       Finished information-design plates.
-  keyart/       Part openers and full-page artwork.
-  legacy/       The five source decks as compiled PDFs.
-  Art Archive/  The same material as loose source images, by version,
-                plus v0-4 experiments and a v99 reference library.
-wip/            Working iterations. Not tracked by git.
+100 canon/ – 600 archive/  Earlier project organization and sourcebook-production history
+300 art/                   Illustration assets and visual development
 ```
 
-**`art/Art Archive/v99 - References`** is the visual reference library — RPG sourcebook spreads, character cards, printed-book samples. It is the clearest existing statement of what this book is aiming at, and it is the material Stage 2c should be argued from.
+Start with the two workbooks and cost ledger in `m050/extraction/progress/`. The controlling process description and source-disposition manifest are in `m050/extraction/audit/`.
 
-### A standing warning about `art/legacy/`
+## Core rule
 
-Those 52 assets were produced without canon rigor. **Their text is improvised and carries no authority** — labels, callouts, taxonomies and any concept a plate appears to assert are unverified, and most of it did not survive checking. Several assert things canon explicitly rejects: rats and raccoons as colony citizens, pheromone routing, canopy routes that bypass traffic, a standalone currency, industrial tiers.
-
-**Mine them for pictures and arrangement. Take nothing from them as fact.**
-
----
-
-## Working rules
-
-These have each been earned by getting something wrong.
-
-**A decision is not done until the log entry and every affected document land in the same commit.** Twice, a settled decision lived only in the log while a plan file still stated the reverse. One commit per decision makes that visible.
-
-**All plate copy is written fresh from the GDD.** Never carried over from a legacy asset, never invented to fill a gap.
-
-**Specify every string in an illustration prompt.** Generated text renders cleanly where the prompt supplies it verbatim, and turns to gibberish where the model is left to invent. This is the single most useful production finding in the project.
-
-**Any upscale is a re-generation.** It preserves art and corrupts type, and it silently drifts detail. Re-check canon after one, every time.
-
-**Log design gaps; do not solve them.** Phase 2 is production, not a second design thread. Gaps go to `log/art_raised_questions.md`.
-
----
-
-## A note on repository size
-
-Around 310MB, which is comfortably inside GitHub's recommended limit and needs no action. Roughly 240MB is the loose source imagery and 78MB the same material compiled as PDFs — some duplication, already committed, and not worth unpicking since git keeps history either way.
-
-What matters going forward: **finished assets go in `art/plates` and `art/keyart`; iterations stay in `wip/`.** Fifty plates each committed five times is where a repository actually gets into trouble, and the ignore rules exist to prevent exactly that.
+A filename, title, or document’s internal claim of authority does not establish its identity or precedence. Sources are classified from their contents and genealogy; extraction preserves their testimony, and authority is resolved only during reconciliation.

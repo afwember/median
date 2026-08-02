@@ -1,0 +1,40 @@
+{
+  "report_version": "M050-CROSSING-ACCEPTANCE-0.1",
+  "status": "ACCEPTED_EXTRACTION_CANDIDATE_READY_FOR_CORPUS_RECONCILIATION",
+  "source_id": "M050-SRC-CROSSING-001",
+  "source_sha256": "07da7d919942ec7c1d7c0a995fe548bedc29b7214d1f9ded652329f6bf7db8a0",
+  "candidate_atoms": 121,
+  "distinct_source_spans": 121,
+  "source_blocks": 107,
+  "covered_source_blocks": 88,
+  "intentionally_unextracted_heading_or_metadata_blocks": 19,
+  "substantive_unextracted_blocks": [],
+  "table_row_evidence_errors": 0,
+  "schema_errors": 0,
+  "semantic_guard_errors": 0,
+  "composition": {
+    "full_run_atoms_retained": 117,
+    "superseded_4\u00b62_atoms": 3,
+    "species_table_retest_atoms": 3,
+    "capacity_table_retest_atoms": 1
+  },
+  "inputs": [
+    {
+      "path": "m050/extraction/runs/m050-crossing-direct-v08-20260802/reports/crossing-full/crossing_full.candidate.jsonl",
+      "sha256": "487911f2a85be4bc37ba13ba7d2c283303062c643a244292fc5e4e6d97480c8b"
+    },
+    {
+      "path": "m050/extraction/runs/m050-crossing-species-table-retest-v10-20260802/reports/crossing-table-retest/crossing_table_retest.candidate.jsonl",
+      "sha256": "df63bd08def74cdea3271d8ee337aca2884142ea836975b2c291360a16c7e706"
+    },
+    {
+      "path": "m050/extraction/runs/m050-crossing-table-retest-v09-20260802/reports/crossing-table-retest/crossing_table_retest.candidate.jsonl",
+      "sha256": "5fcd02ee6cb4e3cd56bdfaa3cd3c02cf51974cd0af47133c17062af36a49c68a"
+    }
+  ],
+  "candidate_path": "m050/extraction/accepted/crossing/M050_Crossing_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "56d939ed85d26695a161ddaf8d5957e8e8d6d422eb2e329fba73262039b0ca20",
+  "approval": true,
+  "batch_release": true,
+  "note": "Accepted as source-bounded extraction output; cross-source authority reconciliation remains a later compile stage."
+}

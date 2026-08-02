@@ -1,0 +1,89 @@
+schema_version: M050-EXTRACTION-GATE-4-OPERATIONS-DISPOSITION-0.1
+title: MEDIAN v0.5.0 Gate 4 Operations Currentness Disposition
+created: 2026-08-02
+status: EXECUTED_RECOVERABLE_ARCHIVE_MOVE
+archive_root: m050/archive/v0.5.0-orig/gate-4-drift-retirement-20260802/docs-operations
+deletion_authorized: false
+deletions_performed: 0
+
+source_inventory:
+  root: m050/docs/operations
+  files_before: 31
+  directory_snapshots:
+    - path: m050/docs/operations/extraction
+      files: 14
+      bytes: 307200
+      ordered_file_hash_digest: dc45bfe41f60735d68aa9e6db896e2357ebad38866a43e4ef3fff6a2123c3c98
+    - path: m050/docs/operations/migration
+      files: 7
+      bytes: 167936
+      ordered_file_hash_digest: 46c8cec9fac3d7f07b4da293199f21be6dc2fdc3a6cd57854bb2c67cbb7edc79
+    - path: m050/docs/operations/prompts
+      files: 9
+      bytes: 65536
+      ordered_file_hash_digest: a4405afe87dfc85d50c2bde44095989a1b1de9a3ee18e981bd9a2eaaefa09233
+    - path: m050/docs/operations/schemas
+      files: 0
+      bytes: 0
+      ordered_file_hash_digest: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+retained_current:
+  - old_path: m050/docs/operations/extraction/M050_Compile_Cost_Entries_v0_1_MEDIANv0_5_0.csv
+    new_path: m050/docs/operations/costs/M050_Compile_Cost_Entries_v0_1_MEDIANv0_5_0.csv
+    sha256: c77a15a0be4c9a84a62d4f6c1d915f299924c7687934fe99f94c1fba7afbb4c2
+    reason: Append-only provider-neutral cost evidence remains live for the recovered compile.
+  - old_path: m050/docs/operations/extraction/M050_Compile_Cost_Ledger_v0_1_MEDIANv0_5_0.md
+    new_path: m050/extraction/progress/M050_Compile_Cost_Ledger_v0_1_MEDIANv0_5_0.md
+    sha256: b6b1efc024894ba9a469d26d1bb111d027fb2437fed782f4eb20ee732a8bc0d5
+    reason: Human-readable cost ledger remains live for the recovered compile.
+
+archived_noncurrent:
+  extraction:
+    reason: Superseded overloaded atom process, source-specific calibration controls, and pilot artifacts.
+    files:
+      - M050_Atomic_Extraction_Atom_Schema_v0_1_MEDIANv0_5_0.json
+      - M050_Atomic_Extraction_Model_Proposal_Schema_v0_1_MEDIANv0_5_0.json
+      - M050_Atomic_Extraction_Model_Proposal_Schema_v0_2_MEDIANv0_5_0.json
+      - M050_Atomic_Extraction_Model_Proposal_Schema_v0_3_MEDIANv0_5_0.json
+      - M050_Atomic_Extraction_Model_Proposal_Schema_v0_4_MEDIANv0_5_0.json
+      - M050_Atomic_Extraction_Runbook_and_Handoff_Packet_v0_1_MEDIANv0_5_0.md
+      - M050_Canonical_Extraction_Source_Registry_v0_1_MEDIANv0_5_0.yaml
+      - M050_Claude_Atomic_Extraction_Operations_Thread_Provisioning_Guide_v0_1_MEDIANv0_5_0.md
+      - M050_Claude_Atomic_Extraction_Thread_Bootstrap_Prompt_v0_1_MEDIANv0_5_0.md
+      - M050_Crossing_Atomic_Extraction_Pilot_Atoms_v0_2_MEDIANv0_5_0.jsonl
+      - M050_Crossing_Atomic_Extraction_Pilot_v0_2_MEDIANv0_5_0.md
+      - M050_Crossing_Provider_Comparison_Plan_v0_1_MEDIANv0_5_0.md
+  migration:
+    reason: Completed or superseded repository-migration controls; historical evidence only.
+    files:
+      - .DS_Store
+      - M050_Claude_Repository_Rename_Operator_Prompt_v0_1_MEDIANv0_5_0.md
+      - M050_File_Nomenclature_Migration_Ledger_v0_1_MEDIANv0_5_0.md
+      - M050_Legacy_Corpus_Equivalence_and_Migration_Map_v0_1_MEDIANv0_5_0.md
+      - M050_Legacy_Rename_Map_v0_1_MEDIANv0_5_0.json
+      - MEDIAN_v0.5.0_Authoring_Thread_Recovery_Packet_v0.1.md
+      - m050_corpus_migrate.py
+  prompts:
+    reason: Nine superseded prompt versions from the abandoned extraction design.
+    files:
+      - M050_Atomic_Extraction_Model_Prompt_v0_1_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_2_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_3_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_4_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_5_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_6_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_7_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_8_MEDIANv0_5_0.md
+      - M050_Atomic_Extraction_Model_Prompt_v0_12_MEDIANv0_5_0.md
+  empty_directories:
+    - schemas
+  root_metadata:
+    - file: .DS_Store
+      sha256: 4dfa8eaca46db5d3f8cac716903f654e248acb594e0f287559ccbcd31e61217f
+      reason: Finder metadata is not an operational control.
+
+postcondition:
+  allowed_live_files_under_operations:
+    - m050/docs/operations/costs/M050_Compile_Cost_Entries_v0_1_MEDIANv0_5_0.csv
+    - m050/extraction/progress/M050_Compile_Cost_Ledger_v0_1_MEDIANv0_5_0.md
+  note: Gate 5 may add new controls only after they pass the recovered-process verification gate.

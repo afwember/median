@@ -1,0 +1,71 @@
+{
+  "report_version": "M050-MSID-ACCEPTANCE-0.1",
+  "status": "FULL_MSID_ACCEPTED_CANDIDATE_WITH_REVIEW_QUEUE",
+  "source_id": "M050-SRC-MSID-GRAMMAR-001",
+  "source_sha256": "9ca2e250720f7ea3acc4e74c7921cbf6f22686155077c78ef445557ac5f742b4",
+  "run_id": "m050-msid-direct-v24-20260802",
+  "model": "claude-sonnet-5",
+  "effort": "low",
+  "chunks": 30,
+  "external_model_calls": 26,
+  "locally_excluded_change_record_chunks": 4,
+  "candidate_atoms": 273,
+  "distinct_source_spans": 273,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "duplicate_spans": 0,
+  "uncovered_substantive_blocks": 0,
+  "operator_mapping_errors": 0,
+  "record_status_counts": {
+    "canonical": 210,
+    "example": 32,
+    "provisional": 11,
+    "review_required": 10,
+    "historical": 4,
+    "working": 3,
+    "excluded": 3
+  },
+  "msid_status_counts": {
+    "canonical": 241,
+    "provisional": 16,
+    "rejected": 8,
+    "review_required": 5,
+    "alias": 3
+  },
+  "review_required_atoms": 10,
+  "review_required_atom_ids": [
+    "ATOM-MSID-DIRECT-0075",
+    "ATOM-MSID-DIRECT-0145",
+    "ATOM-MSID-DIRECT-0226",
+    "ATOM-MSID-DIRECT-0246",
+    "ATOM-MSID-DIRECT-0247",
+    "ATOM-MSID-DIRECT-0248",
+    "ATOM-MSID-DIRECT-0249",
+    "ATOM-MSID-DIRECT-0250",
+    "ATOM-MSID-DIRECT-0251",
+    "ATOM-MSID-DIRECT-0252"
+  ],
+  "review_queue_scope": "The queue preserves two future-path adjudications, the source's seven explicit open grammar decisions, and one internal Observe-phase wording conflict. No unsettled item was silently canonicalized.",
+  "internal_source_conflict": {
+    "atom_id": "ATOM-MSID-DIRECT-0226",
+    "summary": "A change-record example says Observe is one of Crossing's phases, while section 6.1 says Observe is an action inside Planning and rejects Observe as a Phase name.",
+    "disposition": "Retained verbatim and marked review_required; section 6.1 remains the operative positive ruling within this source."
+  },
+  "excluded_orthography_atoms": 3,
+  "excluded_orthography_disposition": "Retained as excluded records and attributed to the Authorial Grammar rather than treated as MSID authority.",
+  "input": {
+    "path": "m050/extraction/runs/m050-msid-direct-v24-20260802/reports/msid-full/msid_full.candidate.jsonl",
+    "sha256": "52a0c551d59cf0811cf038ae651984f10994b8722ddb762c28da7658125acd42"
+  },
+  "run_report": {
+    "path": "m050/extraction/runs/m050-msid-direct-v24-20260802/reports/msid-full/msid_full.report.json",
+    "sha256": "01aa397660ea2d28e57117c169cd8bfb940d17ff970c70f9bd0a15031932caed"
+  },
+  "candidate_path": "m050/extraction/accepted/msid/M050_MSID_Grammar_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "52a0c551d59cf0811cf038ae651984f10994b8722ddb762c28da7658125acd42",
+  "actual_document_extraction_cost_usd": 1.159700,
+  "approval": true,
+  "reviewed_by": "ChatGPT Sol",
+  "reviewed_at": "2026-08-02",
+  "note": "Accepted as source-bounded extraction output. Review-required, provisional, rejected, alias, historical, and excluded records remain visible for later corpus reconciliation."
+}

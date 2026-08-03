@@ -7,6 +7,7 @@ import re
 from typing import Any
 
 from .canonical import canonical_json_bytes, content_id, sha256_bytes, sha256_file
+from .bindings import repository_file
 from .errors import ContractError, IntegrityError
 from .normalization import locate_quote
 from .schema import validate_artifact
@@ -17,14 +18,8 @@ LINE_LOCATION = re.compile(r"^L(?P<start>[0-9]{5})-L(?P<end>[0-9]{5})$")
 
 
 def _repo_path(repo_root: Path, relative: str) -> Path:
-    target = (repo_root / relative).resolve()
-    try:
-        target.relative_to(repo_root.resolve())
-    except ValueError as exc:
-        raise IntegrityError(f"legacy replay binding escapes repository: {relative}") from exc
-    if relative == "m051" or relative.startswith("m051/"):
-        raise IntegrityError(f"m051 input is prohibited: {relative}")
-    if not target.is_file():
+    target = repository_file(repo_root, relative)
+    if target is None:
         raise IntegrityError(f"legacy replay binding is not a file: {relative}")
     return target
 

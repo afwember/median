@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from .canonical import canonical_json_bytes, content_id, sha256_bytes, sha256_file
+from .bindings import repository_file
 from .errors import ContractError, IntegrityError
 from .legacy import (
     build_legacy_replay,
@@ -22,14 +23,8 @@ COMPOUND_DISPOSITION_VERSION = "M050-LEGACY-COMPOUND-DISPOSITION-0.1"
 
 
 def _repo_file(repo_root: Path, relative: str) -> Path:
-    path = (repo_root / relative).resolve()
-    try:
-        path.relative_to(repo_root)
-    except ValueError as exc:
-        raise IntegrityError(f"repair binding escapes repository: {relative}") from exc
-    if relative == "m051" or relative.startswith("m051/"):
-        raise IntegrityError(f"m051 input is prohibited: {relative}")
-    if not path.is_file():
+    path = repository_file(repo_root, relative)
+    if path is None:
         raise IntegrityError(f"repair binding is not a file: {relative}")
     return path
 

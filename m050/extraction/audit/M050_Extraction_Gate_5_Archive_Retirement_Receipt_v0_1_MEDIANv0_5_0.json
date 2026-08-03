@@ -1,0 +1,54 @@
+{
+  "schema_version": "M050-GATE-5-ARCHIVE-RETIREMENT-RECEIPT-0.1",
+  "title": "MEDIAN v0.5.0 Gate 5 Archive Retirement Receipt",
+  "created": "2026-08-03",
+  "status": "ARCHIVE_RETIRED_EVIDENCE_RELOCATED",
+  "authority": "Asa Wember",
+  "author_decision": "Retire m050 archive YES",
+  "decision_context": "The author confirmed that the recovered archive represents an old method and directed its retirement after the active evidence subset was identified.",
+  "predecessor": {
+    "path": "m050/extraction/audit/M050_Extraction_Gate_5_Layer_E_Legacy_Migration_Receipt_v0_1_MEDIANv0_5_0.json",
+    "sha256": "59bac33f2f24721ad293bb55c676d94c74755800155f184efe9ed04a1a70fa26"
+  },
+  "bindings": {
+    "active_control_index": {
+      "path": "m050/extraction/control/M050_Active_Control_Index_v0_8_MEDIANv0_5_0.json",
+      "sha256": "2f8bd9c2889d64304e0ac092caa7d31750385ec25290f21ee2633e0c851298d8"
+    },
+    "relocation_manifest": {
+      "path": "m050/extraction/evidence/legacy/M050_Legacy_Evidence_Relocation_Manifest_v0_1_MEDIANv0_5_0.json",
+      "sha256": "53c9a83b3bbe541b575f40f70b1c81bba68af9f50b93d7c48c6fb7a6b05e1d09"
+    }
+  },
+  "retirement": {
+    "archive_root": "m050/archive",
+    "retired_files": 9921,
+    "retired_bytes": 251364403,
+    "relocated_evidence_files": 12,
+    "unlisted_archive_inputs_permitted": false,
+    "historical_original_paths_preserved_as_identifiers": true,
+    "historical_artifacts_modified": 0
+  },
+  "preserved_gate_5_state": {
+    "legacy_records": 913,
+    "mechanically_valid_layer_e_candidates": 913,
+    "source_blocks_dispositioned": 2464,
+    "accepted_evidence_records": 0,
+    "semantic_reviews_performed": 0,
+    "provider_calls": 0,
+    "google_sheets_interactions": 0
+  },
+  "verification": {
+    "engine_files": 48,
+    "engine_digest": "d01f01045b5cdb4c01eb4aa2b008270c33c0ce946d4d0bd7f551141dbfda11e7",
+    "gate_5_guard_sha256": "216e2de5a437c945f3399bcb6c07cf43350be9966b80c92c0148e8fbf4d36190",
+    "relocated_evidence_files": 12,
+    "relocated_evidence_hash_mismatches": 0,
+    "retired_archive_present": false,
+    "offline_recovery_bundle_verified": true
+  },
+  "next_authorized_activity": "Continue deterministic semantic-review bundle design from the 913 preserved Layer E candidates. Do not revive retired archive workers, prompts, or runbooks as active authority.",
+  "provider_call_authorized": false,
+  "google_sheets_interaction_authorized": false,
+  "gate_5_complete": false
+}

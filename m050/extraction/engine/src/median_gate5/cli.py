@@ -360,7 +360,11 @@ def _reconstruct_human_rulings(args: argparse.Namespace) -> int:
     require_input_paths(
         repo_root,
         supplied.values(),
-        [Path("m050/extraction/control"), Path("m050/extraction/replay"), Path("m050/archive")],
+        [
+            Path("m050/extraction/control"),
+            Path("m050/extraction/replay"),
+            Path("m050/extraction/evidence/legacy"),
+        ],
     )
     resolved = {
         key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()

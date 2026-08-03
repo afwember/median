@@ -1,0 +1,93 @@
+{
+  "report_version": "M050-HUMAN-RULINGS-ACCEPTANCE-0.1",
+  "status": "FULL_HUMAN_RULINGS_ACCEPTED_CANDIDATE_WITH_REVIEW_QUEUE",
+  "source_id": "M050-SRC-HUMAN-RULINGS-001",
+  "source_sha256": "17cc3fdc30721912fd0aab7366c51166b3ba079dc87eb4f9ba8b407bf1d608f1",
+  "run_id": "m050-human-rulings-direct-v13-20260802",
+  "model": "claude-sonnet-5",
+  "effort": "low",
+  "chunks": 47,
+  "accepted_external_response_chunks": 44,
+  "paid_requests_total": 46,
+  "locally_excluded_furniture_chunks": 1,
+  "locally_excluded_change_record_chunks": 2,
+  "candidate_atoms": 173,
+  "distinct_source_spans": 173,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "duplicate_spans": 0,
+  "uncovered_substantive_claims": 0,
+  "operator_mapping_errors": 0,
+  "record_status_counts": {
+    "canonical": 165,
+    "review_required": 6,
+    "historical": 1,
+    "provisional": 1
+  },
+  "msid_status_counts": {
+    "canonical": 160,
+    "review_required": 10,
+    "rejected": 2,
+    "deprecated": 1
+  },
+  "review_required_atoms": 6,
+  "review_required_atom_ids": [
+    "ATOM-HUMAN-RULINGS-DIRECT-0005",
+    "ATOM-HUMAN-RULINGS-DIRECT-0161",
+    "ATOM-HUMAN-RULINGS-DIRECT-0162",
+    "ATOM-HUMAN-RULINGS-DIRECT-0164",
+    "ATOM-HUMAN-RULINGS-DIRECT-0165",
+    "ATOM-HUMAN-RULINGS-DIRECT-0166"
+  ],
+  "msid_review_required_atom_ids": [
+    "ATOM-HUMAN-RULINGS-DIRECT-0087",
+    "ATOM-HUMAN-RULINGS-DIRECT-0088",
+    "ATOM-HUMAN-RULINGS-DIRECT-0089",
+    "ATOM-HUMAN-RULINGS-DIRECT-0090",
+    "ATOM-HUMAN-RULINGS-DIRECT-0091",
+    "ATOM-HUMAN-RULINGS-DIRECT-0161",
+    "ATOM-HUMAN-RULINGS-DIRECT-0162",
+    "ATOM-HUMAN-RULINGS-DIRECT-0164",
+    "ATOM-HUMAN-RULINGS-DIRECT-0165",
+    "ATOM-HUMAN-RULINGS-DIRECT-0166"
+  ],
+  "review_queue_scope": "The queue preserves pending BSA decision carriers, the unresolved Narrative/Memory branch, unsettled Entity ID syntax, and pending-ingestion families. Recognition and memory rulings remain canonical records while their final MSID branch stays review-required. No incomplete decision was silently canonicalized.",
+  "provisional_record": {
+    "atom_id": "ATOM-HUMAN-RULINGS-DIRECT-0112",
+    "summary": "Italics may identify mechanics-teaching Narrative snippets when the treatment does not carry competing meanings.",
+    "disposition": "Retained as an explicitly provisional authorial-grammar example."
+  },
+  "noncanonical_identifier_dispositions": [
+    {
+      "atom_id": "ATOM-HUMAN-RULINGS-DIRECT-0048",
+      "identifier": "Architecture.Register.Travel",
+      "msid_status": "deprecated"
+    },
+    {
+      "atom_id": "ATOM-HUMAN-RULINGS-DIRECT-0068",
+      "identifier": "Architecture.Register.Risk",
+      "msid_status": "rejected"
+    },
+    {
+      "atom_id": "ATOM-HUMAN-RULINGS-DIRECT-0146",
+      "identifier": "Home.Colony.Colony",
+      "msid_status": "rejected"
+    }
+  ],
+  "semantic_containment_note": "The Entity-ID do-not-infer example Citizen#R002 is contained by the accepted atom stating that exact Entity ID syntax, prefixes, uniqueness rules, and campaign scope remain undesigned; it is not promoted as a separate identifier rule.",
+  "input": {
+    "path": "m050/extraction/runs/m050-human-rulings-direct-v13-20260802/reports/human_rulings-full/human_rulings_full.candidate.jsonl",
+    "sha256": "2e5818604fa346a17b3c84edf77de13c25b0a3b413626037f63b273bba212b3c"
+  },
+  "run_report": {
+    "path": "m050/extraction/runs/m050-human-rulings-direct-v13-20260802/reports/human_rulings-full/human_rulings_full.report.json",
+    "sha256": "6e9e667236b879d9850323a8378888f78dc67aa89403addaa4a04d44243d1c32"
+  },
+  "candidate_path": "m050/extraction/accepted/human_rulings/M050_Human_Rulings_Ledger_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "2e5818604fa346a17b3c84edf77de13c25b0a3b413626037f63b273bba212b3c",
+  "actual_document_extraction_cost_usd": 0.946822,
+  "approval": true,
+  "reviewed_by": "ChatGPT Sol",
+  "reviewed_at": "2026-08-02",
+  "note": "Accepted as source-bounded extraction output. Canonical, review-required, provisional, historical, deprecated, and rejected records remain visible for later corpus reconciliation."
+}

@@ -7,21 +7,14 @@ from typing import Any, Iterable
 import yaml
 
 from .canonical import content_id, sha256_file
+from .bindings import repository_file
 from .errors import ContractError
 from .schema import validate_artifact
 from .states import IDENTITY_CARD_TRANSITIONS
 
 
 def _repo_file(repo_root: Path, supplied: str) -> Path | None:
-    base = repo_root.resolve()
-    target = (base / supplied).resolve()
-    try:
-        target.relative_to(base)
-    except ValueError:
-        return None
-    if target == (base / "m051").resolve() or (base / "m051").resolve() in target.parents:
-        return None
-    return target
+    return repository_file(repo_root, supplied)
 
 
 def _binding_errors(repo_root: Path, binding: dict[str, Any]) -> list[str]:

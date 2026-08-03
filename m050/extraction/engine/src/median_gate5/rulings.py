@@ -11,6 +11,7 @@ from typing import Any
 import yaml
 
 from .canonical import canonical_json_bytes, content_id, sha256_bytes, sha256_file
+from .bindings import repository_file
 from .errors import ContractError, IntegrityError
 from .legacy import canonical_jsonl_bytes, select_occurrence
 from .schema import validate_artifact
@@ -283,12 +284,8 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def _bound_file(repo_root: Path, binding: dict[str, Any]) -> Path:
-    path = (repo_root / binding.get("path", "")).resolve()
-    try:
-        path.relative_to(repo_root)
-    except ValueError as exc:
-        raise IntegrityError("Human Rulings binding escapes the repository") from exc
-    if not path.is_file() or sha256_file(path) != binding.get("sha256"):
+    path = repository_file(repo_root, binding.get("path", ""))
+    if path is None or sha256_file(path) != binding.get("sha256"):
         raise IntegrityError(f"Human Rulings binding is missing or changed: {binding.get('path', '')}")
     return path
 

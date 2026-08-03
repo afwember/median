@@ -7,6 +7,7 @@ import re
 from typing import Any
 
 from .canonical import canonical_json_bytes, content_id, sha256_bytes, sha256_file
+from .bindings import repository_file
 from .errors import ContractError, IntegrityError
 from .legacy import canonical_jsonl_bytes, overlapping_blocks
 from .risk import classify_review_risk
@@ -46,14 +47,8 @@ def is_compound_review_quote(text: str) -> bool:
 
 def _repo_file(repo_root: Path, binding: dict[str, Any]) -> Path:
     relative = binding.get("path", "")
-    target = (repo_root / relative).resolve()
-    try:
-        target.relative_to(repo_root)
-    except ValueError as exc:
-        raise IntegrityError(f"migration binding escapes repository: {relative}") from exc
-    if relative == "m051" or relative.startswith("m051/"):
-        raise IntegrityError(f"m051 input is prohibited: {relative}")
-    if not target.is_file():
+    target = repository_file(repo_root, relative)
+    if target is None:
         raise IntegrityError(f"migration binding is not a file: {relative}")
     if sha256_file(target) != binding.get("sha256"):
         raise IntegrityError(f"migration binding hash mismatch: {relative}")

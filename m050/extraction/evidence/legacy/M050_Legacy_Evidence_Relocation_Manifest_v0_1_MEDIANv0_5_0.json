@@ -1,0 +1,99 @@
+{
+  "schema_version": "M050-LEGACY-EVIDENCE-RELOCATION-MANIFEST-0.1",
+  "title": "MEDIAN v0.5.0 Legacy Evidence Relocation Manifest",
+  "created": "2026-08-03",
+  "status": "ACTIVE_ARCHIVE_RETIRED",
+  "authority": "Asa Wember",
+  "author_decision": "Retire m050 archive; preserve only the compact evidence required by the better Gate 5 method.",
+  "resolution_policy": {
+    "original_paths_remain_historical_identifiers": true,
+    "relocated_bytes_must_match_original_sha256": true,
+    "unlisted_archive_paths_are_active_inputs": false,
+    "m051_inputs_allowed": false
+  },
+  "retired_archive_snapshot": {
+    "root": "m050/archive",
+    "file_count_excluding_ds_store": 9921,
+    "total_bytes": 251364403,
+    "ordered_path_and_sha256_digest": "9b99f81366b13da1829bea688d4510aee3540c677f25218ebacc0fe0121011e1",
+    "offline_recovery_bundle": {
+      "path": "/Users/ambulatoryworld/Documents/Codex/median-support/MEDIAN_Pre_Archive_Art_Rewrite_2026-08-03.bundle",
+      "sha256": "d97bdabb8bf3ea26702637af1ee2eaa78d0b6963804a72b5db9a3b02aedbaab2",
+      "repository_tracked": false
+    }
+  },
+  "relocations": [
+    {
+      "original_path": "m050/archive/v0.5.0-orig/gate-4-drift-retirement-20260802/accepted-legacy/human_rulings/M050_Human_Rulings_Ledger_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "relocated_path": "m050/extraction/evidence/legacy/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "sha256": "c2e142816fcb5f0eda4c68cd822f577f8f78938cf40213537d33a76e556fb24e",
+      "role": "legacy_acceptance_report"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/gate-4-drift-retirement-20260802/accepted-legacy/human_rulings/M050_Human_Rulings_Ledger_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "relocated_path": "m050/extraction/evidence/legacy/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "sha256": "2e5818604fa346a17b3c84edf77de13c25b0a3b413626037f63b273bba212b3c",
+      "role": "legacy_candidate"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/gate-4-drift-retirement-20260802/accepted-legacy/human_rulings/partitioned/M050_Human_Rulings_Ledger_Partitioned_Extraction_Acceptance_Report_v0_2_MEDIANv0_5_0.json",
+      "relocated_path": "m050/extraction/evidence/legacy/accepted/human-rulings/partitioned/M050_Human_Rulings_Ledger_Partitioned_Extraction_Acceptance_Report_v0_2_MEDIANv0_5_0.json",
+      "sha256": "f47e37407f20abe400b95ebf0496de81b2046dd7558da3c94d9beebc5101aaff",
+      "role": "historical_partition_rejection_evidence"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/gate-4-source-identity-migration-20260802/M050_Gate_4_Source_Identity_Migration_Receipt_v0_1_MEDIANv0_5_0.yaml",
+      "relocated_path": "m050/extraction/evidence/legacy/receipts/M050_Gate_4_Source_Identity_Migration_Receipt_v0_1_MEDIANv0_5_0.yaml",
+      "sha256": "4cf2115fe384a91158e2c0fd89318d3f5bda8189021fd9e7f8c86978cd8e332e",
+      "role": "gate_4_source_identity_migration_receipt"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/gate-4-source-identity-migration-20260802/pre-reference-rewrite/v0.5/governance/M050_Human_Rulings_Ledger_v0_4_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/sources/M050_Human_Rulings_Ledger_Pre_Reference_Rewrite_v0_4_MEDIANv0_5_0.md",
+      "sha256": "17cc3fdc30721912fd0aab7366c51166b3ba079dc87eb4f9ba8b407bf1d608f1",
+      "role": "legacy_extraction_source"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/gate-4-source-identity-migration-20260802/pre-reference-rewrite/v0.5/governance/M050_MSID_Grammar_v0_5_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/sources/M050_MSID_Grammar_Gate_4_Migration_Snapshot_v0_5_MEDIANv0_5_0.md",
+      "sha256": "9ca2e250720f7ea3acc4e74c7921cbf6f22686155077c78ef445557ac5f742b4",
+      "role": "gate_4_migration_snapshot"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/governance/M050_Governing_Philosophy_and_Architecture_v1_0_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/predecessors/M050_Governing_Philosophy_and_Architecture_v1_0_MEDIANv0_5_0.md",
+      "sha256": "64b5d17f48ed55ee8c5a1d8fa9dc325a611abe67a2dcc9a42df6bdeb9f973ac1",
+      "role": "archived_v1_0_predecessor"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/governance/M050_Governing_Philosophy_and_Architecture_v1_1_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/predecessors/M050_Governing_Philosophy_and_Architecture_v1_1_MEDIANv0_5_0.md",
+      "sha256": "7b9354ef37a437d8120a75a6e03a1419629183565c28f34b06d673e4cdba6e64",
+      "role": "archived_v1_1_predecessor"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/governance/M050_Governing_Philosophy_and_Architecture_v1_2_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/predecessors/M050_Governing_Philosophy_and_Architecture_v1_2_MEDIANv0_5_0.md",
+      "sha256": "fc83cfc18f5189694605056bbbb82a19292fa9830bb977435bc572b3199d1cb8",
+      "role": "direct_archived_v1_2_predecessor"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/governance/M050_Human_Rulings_Ledger_v0_1_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/predecessors/M050_Human_Rulings_Ledger_v0_1_MEDIANv0_5_0.md",
+      "sha256": "65e1a01b3915cf563512819e98637db6fc512e42e6686daa5b36815d1761b423",
+      "role": "archived_ledger_predecessor"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/provenance/markdown/M050_Early_v0_5_Philosophical_Specification_v1_0_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/predecessors/M050_Early_v0_5_Philosophical_Specification_v1_0_MEDIANv0_5_0.md",
+      "sha256": "3d6e283c56935459049dab8faff5a906d2e1c09c48513c5020dbf6af53d3c8cf",
+      "role": "merged_early_philosophy_source"
+    },
+    {
+      "original_path": "m050/archive/v0.5.0-orig/provenance/markdown/M050_Philosophical_Architecture_v2_0_MEDIANv0_5_0.md",
+      "relocated_path": "m050/extraction/evidence/legacy/predecessors/M050_Philosophical_Architecture_v2_0_MEDIANv0_5_0.md",
+      "sha256": "5826c7997769bf8a43aa6fb7ce4a6f0c0c7d6a4ec57dbfc8efd2d31580651b54",
+      "role": "merged_architecture_source"
+    }
+  ]
+}

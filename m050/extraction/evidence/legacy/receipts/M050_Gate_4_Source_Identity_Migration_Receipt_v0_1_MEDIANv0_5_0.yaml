@@ -1,0 +1,93 @@
+schema_version: M050-GATE-4-SOURCE-IDENTITY-MIGRATION-RECEIPT-0.1
+created: 2026-08-02
+status: EXECUTED
+deletions_performed: 0
+originals_preserved: true
+
+migrations:
+  - old_path: m050/docs/v0.5/companions/M050_Augments_Plan_v0_1_MEDIANv0_5_0.md
+    old_sha256: daa34f836c7a385245bb6e9cfb9cb372249a871290915df707c8f90ec709c8ab
+    old_source_id: M050-SRC-AUGMENTS-001
+    new_path: m050/docs/v0.5/companions/M050_Sourcebook_Visual_Narrative_and_Infographic_Augments_Plan_v0_1_MEDIANv0_5_0.md
+    new_sha256: daa34f836c7a385245bb6e9cfb9cb372249a871290915df707c8f90ec709c8ab
+    new_source_id: M050-SRC-SOURCEBOOK-AUGMENTS-001
+    reason: The durable filename now states the kinds of Sourcebook augment actually planned.
+
+  - old_path: m050/docs/v0.5/companions/M050_Market_Position_and_Comparative_Landscape_Specification_v1_1_MEDIANv0_5_0.md
+    old_sha256: 2fa77ef31a920ed1dbd77b4036b67a8ae63995af3d12c6de5c170ab8ce16ced7
+    old_source_id: M050-SRC-MARKET-001
+    new_path: m050/docs/v0.5/companions/M050_Market_Position_Comparative_Landscape_and_Resemblance_Risk_Research_v1_1_MEDIANv0_5_0.md
+    new_sha256: 2fa77ef31a920ed1dbd77b4036b67a8ae63995af3d12c6de5c170ab8ce16ced7
+    new_source_id: M050-SRC-MARKET-001
+    reason: The document is research and positioning analysis, not a game-system specification.
+
+  - old_path: m050/docs/v0.5/provenance/M050_Baseline_Disposition_Ledger_Checkpoint_2026_07_30_MEDIANv0_5_0.md
+    old_sha256: 964c7b3416769f33dc668c8330f32f8633d91cc3d4a2998f1d2ae2df3ed83537
+    old_source_id: M050-SRC-BASELINE-DISPOSITION-001
+    new_path: m050/docs/v0.5/provenance/M050_v0_4_7_Development_Rulings_Ledger_BSA_01_to_11A_Checkpoint_2026_07_30_MEDIANv0_5_0.md
+    new_sha256: fc81ff3a7c7e2f26d28950bd4564f50b7fece93ca2569871b0a9b26657514bce
+    new_source_id: M050-SRC-047-DEVELOPMENT-RULINGS-001
+    reason: The ledger records v0.4.7 development-return rulings through BSA-11A, not dispositions against the v0.4.6 GDD baseline.
+
+  - old_path: m050/docs/v0.5/provenance/M050_Baseline_Survivorship_Audit_v0_1_MEDIANv0_5_0.md
+    old_sha256: efb1aeec6fa8d99d962402937c047ee8d918ca0db04ec7b22fade5f80bc4bf29
+    old_source_id: M050-SRC-BSA-001
+    new_path: m050/docs/v0.5/provenance/M050_v0_4_7_Development_Survivorship_Review_v0_1_MEDIANv0_5_0.md
+    new_sha256: cd32434225e48618689f73f697ec21c17514514f3bea28ea0de552318a58257b
+    new_source_id: M050-SRC-047-SURVIVORSHIP-REVIEW-001
+    reason: Human-confirmed genealogy identifies this as a v0.4.7 development survivorship review, despite its model-authored self-description.
+
+  - old_path: m050/docs/v0.5/provenance/MEDIAN_GDD_v0.4.6.md
+    old_sha256: 17ca73c256287fc134be4e8662c9dca64f97a6360d69d1561facc33d8e248966
+    old_source_id: M050-SRC-GDD-046-001
+    new_path: m050/docs/baseline/M046_MEDIAN_Game_Design_Document_v0_4_6.md
+    new_sha256: 17ca73c256287fc134be4e8662c9dca64f97a6360d69d1561facc33d8e248966
+    new_source_id: M050-SRC-GDD-046-001
+    reason: The actual v0.4.6 baseline is not itself an M050 document and does not belong inside the v0.5 source directory.
+
+  - old_path: m050/docs/v0.5/specifications/M050_FourSeven_Decisions_Specification_v1_0_MEDIANv0_5_0.md
+    old_sha256: ce97ae1522e88cc7408723bfa8f2e8f10dcad6ec54d156cf7f179c1dae4aff3e
+    old_source_id: M050-SRC-FOURSEVEN-001
+    new_path: m050/docs/v0.5/specifications/M050_v0_4_7_Cross_System_Attention_Persistence_and_World_State_Carryforward_v1_0_MEDIANv0_5_0.md
+    new_sha256: fd5b72fe751dd39fa9a72c739b9047c98901b7ad9bea5bcff80adbc7ab819c81
+    new_source_id: M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001
+    reason: The former working label stated origin but not the durable cross-system content identity.
+
+  - old_path: m050/docs/v0.5/specifications/M050_Home_Loop_Rework_Specification_v0_4_7_MEDIANv0_5_0.md
+    old_sha256: be1470bd5bef30aa5be96b9ced0b0e522f4ea9ace3bc25824819f3c8ee580ee5
+    old_source_id: M050-SRC-HOME-001
+    new_path: m050/docs/v0.5/specifications/M050_Home_Mode_Colony_and_DWELL_Specification_v1_0_MEDIANv0_5_0.md
+    new_sha256: 08a45719b0c1eaa403006b3a104d12aa8a4f1f3a9d85abd867f9396d187146fa
+    new_source_id: M050-SRC-HOME-001
+    reason: This is the first actual v0.5 source and governs the broader Home, Colony, and DWELL architecture.
+
+  - old_path: m050/docs/v0.5/specifications/M050_Manifestations_Specification_v1_0_MEDIANv0_5_0.md
+    old_sha256: 0680ff94ce63f8431b72f96746e347701020b02882828deba444f2e99441f85f
+    old_source_id: M050-SRC-MANIFESTATIONS-001
+    new_path: m050/docs/v0.5/specifications/M050_Computer_TTRPG_Card_and_Mobile_Manifestation_Framework_v1_0_MEDIANv0_5_0.md
+    new_sha256: 5229912716d57d76e705558694e26abb15a68c9cb6c73cd4527caa6aa62f6198
+    new_source_id: M050-SRC-FOUR-MANIFESTATION-FRAMEWORK-001
+    reason: The document covers four named forms and predates the separately developed board-game form.
+
+  - old_path: m050/docs/v0.5/specifications/M050_Overarching_Systems_Specification_v1_0_MEDIANv0_5_0.md
+    old_sha256: f0821088e4a2f7d3d4f3fae65c3aec7777567486c3a9f321aa9b68c5544ba3df
+    old_source_id: M050-SRC-OVERARCHING-001
+    new_path: m050/docs/v0.5/specifications/M050_v0_4_6_GDD_Coverage_Gap_Development_v1_0_MEDIANv0_5_0.md
+    new_sha256: 15af505d60383e5c47215b7c21b9016eb56e29920e71373d3c0f0c09ad95a225
+    new_source_id: M050-SRC-GDD-COVERAGE-GAP-001
+    reason: The source is late development prompted by unaddressed v0.4.6 GDD subjects, not a global systems owner.
+
+retired_controls:
+  - old_path: m050/docs/v0.5/governance/M050_Active_Corpus_and_Authority_Manifest_v0_2_MEDIANv0_5_0.md
+    sha256: c42dd6005efd5ea63028c2e5ab57a4e841bec8efedba1412ccd0793139166bff
+    old_source_id: M050-SRC-AUTHORITY-MANIFEST-001
+    disposition: archived_for_gate_5_rebuild
+  - old_path: m050/docs/v0.5/governance/M050_Active_Owner_Conformance_Directive_v0_1_MEDIANv0_5_0.md
+    sha256: a8f3328a8f4838d101752105ab3d3ac793a7266381f2c5c7368604c7f48787d9
+    old_source_id: M050-SRC-CONFORM-001
+    disposition: archived_for_deterministic_reconciliation_rule_recovery
+
+archive_locations:
+  exact_originals: m050/archive/v0.5.0-orig/gate-4-source-identity-migration-20260802/pre-migration-sources
+  full_pre_reference_rewrite_snapshot: m050/archive/v0.5.0-orig/gate-4-source-identity-migration-20260802/pre-reference-rewrite
+  legacy_runs_and_controls: m050/archive/v0.5.0-orig/gate-4-drift-retirement-20260802

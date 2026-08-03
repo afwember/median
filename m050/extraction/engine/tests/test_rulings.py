@@ -8,7 +8,7 @@ REPO_ROOT = Path(__file__).resolve().parents[4]
 CARD_PATH = REPO_ROOT / "m050/extraction/control/source-identities/cards/M050_Human_Rulings_Source_Identity_Card_v0_4_MEDIANv0_5_0.json"
 REPLAY_LEDGER_PATH = REPO_ROOT / "m050/extraction/replay/M050_Human_Rulings_Legacy_Replay_Ledger_v0_1_MEDIANv0_5_0.jsonl"
 REPLAY_REPORT_PATH = REPO_ROOT / "m050/extraction/replay/M050_Human_Rulings_Legacy_Replay_Report_v0_1_MEDIANv0_5_0.json"
-MIGRATION_RECEIPT_PATH = REPO_ROOT / "m050/archive/v0.5.0-orig/gate-4-source-identity-migration-20260802/M050_Gate_4_Source_Identity_Migration_Receipt_v0_1_MEDIANv0_5_0.yaml"
+MIGRATION_RECEIPT_PATH = REPO_ROOT / "m050/extraction/evidence/legacy/receipts/M050_Gate_4_Source_Identity_Migration_Receipt_v0_1_MEDIANv0_5_0.yaml"
 ACTIVE_SOURCE_PATH = REPO_ROOT / "m050/docs/v0.5/governance/M050_Human_Rulings_Ledger_v0_4_MEDIANv0_5_0.md"
 
 

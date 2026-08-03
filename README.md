@@ -22,14 +22,13 @@ Current status:
 
 ```text
 m050/docs/                 Current v0.5.0 sources and the v0.4.6 baseline
-m050/extraction/           Accepted evidence, audits, and progress tracking
+m050/extraction/           Accepted evidence, audits, progress, and compact legacy evidence
 m050/extraction/engine/    Gate 5 schemas, deterministic tooling, and offline regression suite
 m050/extraction/progress/  Human-readable trackers and compile cost ledger
-m050/archive/              Historical sources, retired processes, and immutable receipts
 m051/                      Post-v0.5.0 development; excluded from the current compile
 
 100 canon/ – 600 archive/  Earlier project organization and sourcebook-production history
-300 art/                   Illustration assets and visual development
+300 art/                   Splash image plus thumbnail-backed external artwork manifest
 ```
 
 Start with the two workbooks and cost ledger in `m050/extraction/progress/`. The active control index and frozen-corpus manifest are in `m050/extraction/control/`; the process decisions and Gate receipts are in `m050/extraction/audit/`.

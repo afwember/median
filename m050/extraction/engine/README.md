@@ -25,6 +25,87 @@ The lock file is authoritative for the local environment. Provider SDKs are deli
 
 Running the package without a provider extra must never import a provider SDK, read API credentials, or access the network. A provider response can be captured and replayed, but a positive-cost work order and explicit author authorization are required before any future send operation.
 
+## Source-agnostic extraction machine
+
+The provider-eligible controller is `m050/tools/m050_extraction_machine_v0_1.py`. Source behavior is supplied by a hash-bound JSON configuration; the controller contains no Authorial Grammar, Home, or other source-specific extraction policy.
+
+Its normal sequence is:
+
+```sh
+.venv/bin/python m050/tools/m050_extraction_machine_v0_1.py scaffold \
+  --repo-root . --source-id SOURCE_ID --source-path SOURCE.md \
+  --identity-card APPROVED_CARD --identity-approval-receipt APPROVAL.json \
+  --allowed-stream STREAM --output-block-manifest NEW_MANIFEST.json \
+  --output-disposition-ledger NEW_DISPOSITIONS.jsonl \
+  --output-chunk-plan NEW_PLAN.json --output-prompt NEW_PROMPT.md \
+  --output-response-schema NEW_SCHEMA.json --output-config NEW_CONFIG.json
+
+.venv/bin/python m050/tools/m050_extraction_machine_v0_1.py prepare \
+  --repo-root . --config SOURCE_CONFIG.json --chunk C0001 --output CALL_PACKET.json
+
+.venv/bin/python m050/tools/m050_extraction_machine_v0_1.py preflight \
+  --packet CALL_PACKET.json --spend-envelope SPEND.json \
+  --lifecycle-receipt RELEASE.json --run-ledger RUN.jsonl
+
+.venv/bin/python m050/tools/m050_extraction_machine_v0_1.py send \
+  --packet CALL_PACKET.json --expected-packet-sha256 FILE_SHA256 \
+  --spend-envelope SPEND.json --successor-spend-envelope SPEND_NEXT.json \
+  --lifecycle-receipt RELEASE.json --run-ledger RUN.jsonl \
+  --api-key-file KEY_FILE --raw-response RAW.json --outcome OUTCOME.json
+
+.venv/bin/python m050/tools/m050_extraction_machine_v0_1.py review \
+  --run-ledger RUN.jsonl --outcome OUTCOME.json --result passed \
+  --reviewer REVIEWER --reason REVIEW_FINDING
+```
+
+`scaffold` is a zero-provider-call onboarding step. It requires an exactly
+approved content/provenance identity card and produces conservative draft
+dispositions, a heading- and table-aware chunk plan, a source-bound prompt and
+schema, and a provider-disabled configuration. Those drafts still require
+source review and bounded pilot calibration; scaffolding never authorizes a
+pilot or full-source run.
+
+`send` is fail-closed: exact lifecycle bindings and a cumulative money-only envelope are both required; the cache-write ceiling must fit; the raw response and compact outcome are preserved; and another call is blocked until the outcome receives a passing substantive review. Explicit one-hour Claude caching must produce cache creation or cache-read telemetry on the first live call.
+
+The two independent authorization inputs have deliberately small shapes. They
+must be created only from Asa Wember's explicit authorization; these examples
+describe the machine contract but grant nothing:
+
+```json
+{
+  "state": "source_run_authorized",
+  "authority": "Asa Wember",
+  "provider_call_limit": 5,
+  "authorized_chunk_ids": ["C0001", "C0002", "C0003", "C0004", "C0005"],
+  "execution_cadence": "sequential_one_call_review",
+  "revoked": false,
+  "binding": {
+    "source_id": "SOURCE_ID",
+    "configuration_sha256": "CONFIG_SHA256",
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "cache_ttl": "1h"
+  }
+}
+```
+
+```json
+{
+  "authority": "Asa Wember",
+  "scope": "provider_spend_only",
+  "active": true,
+  "authorized_usd": "2.00",
+  "spent_usd": "0.00"
+}
+```
+
+The spend envelope contains no day, shift, or timer. The machine debits exact
+usage into an append-only successor envelope and stops only when the next
+conservative call ceiling will not fit, or when an independent decision/defect
+gate stops it. A successful but malformed provider response consumes the call,
+halts the run, and deactivates the successor envelope so it cannot be retried
+without reconciliation.
+
 ## Deterministic legacy replay
 
 `replay-legacy` reads one approved identity card and its bound immutable legacy

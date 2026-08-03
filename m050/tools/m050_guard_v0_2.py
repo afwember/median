@@ -15,11 +15,13 @@ import sys
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 LEGACY_GUARD = REPO_ROOT / "m050/tools/m050_guard.py"
-ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_6_MEDIANv0_5_0.json"
+ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_7_MEDIANv0_5_0.json"
+REPAIR_ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_6_MEDIANv0_5_0.json"
 IDENTITY_APPROVAL_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json"
 LEGACY_REPLAY_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json"
 HUMAN_RULINGS_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Human_Rulings_Reconstruction_Receipt_v0_1_MEDIANv0_5_0.json"
 REPAIR_CLOSURE_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Repair_Closure_Receipt_v0_1_MEDIANv0_5_0.json"
+MIGRATION_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Layer_E_Legacy_Migration_Receipt_v0_1_MEDIANv0_5_0.json"
 ENGINE_ROOT = REPO_ROOT / "m050/extraction/engine"
 LOCK_PATH = ENGINE_ROOT / "requirements.lock"
 SCHEMA_PATH = ENGINE_ROOT / "src/median_gate5/schemas/gate5-artifacts.schema.json"
@@ -66,7 +68,7 @@ def validate_active_index(errors: list[str]) -> None:
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"active control index cannot be read: {exc}")
         return
-    if index.get("execution_state") != "GATE_5_LEGACY_MECHANICAL_REPAIR_OVERLAY_COMPLETE":
+    if index.get("execution_state") != "GATE_5_LAYER_E_LEGACY_MIGRATION_CANDIDATES_COMPLETE":
         errors.append("active control index has unexpected execution state")
     if index.get("provider_call_authorized") is not False:
         errors.append("active control index does not explicitly prohibit provider calls")
@@ -79,6 +81,18 @@ def validate_active_index(errors: list[str]) -> None:
         or overlay.get("unresolved_grounding_or_coordinate_repairs") != 0
     ):
         errors.append("active control index has an unexpected repair state")
+    migration = index.get("migration_state", {})
+    if (
+        migration.get("legacy_records") != 913
+        or migration.get("mechanically_valid_candidates") != 913
+        or migration.get("accepted_evidence_records") != 0
+        or migration.get("retrospective_block_ledgers") != 4
+        or migration.get("source_blocks_accounted") != 2464
+        or migration.get("gate_3_multi_sentence_review_records") != 123
+        or migration.get("cross_block_structural_compounds") != 17
+        or migration.get("unified_compound_review_records") != 139
+    ):
+        errors.append("active control index has an unexpected Layer E migration state")
     for control in index.get("current_controls", []):
         relative = control.get("path")
         if not isinstance(relative, str) or not relative:
@@ -453,20 +467,20 @@ def validate_repair_closure(errors: list[str]) -> int:
         errors.append("legacy repair closure must record zero calls and zero cost")
     active_binding = receipt.get("active_control_index", {})
     if (
-        active_binding.get("path") != str(ACTIVE_INDEX.relative_to(REPO_ROOT))
-        or active_binding.get("sha256") != sha256_file(ACTIVE_INDEX)
+        active_binding.get("path") != str(REPAIR_ACTIVE_INDEX.relative_to(REPO_ROOT))
+        or active_binding.get("sha256") != sha256_file(REPAIR_ACTIVE_INDEX)
     ):
         errors.append("legacy repair closure active-control binding mismatch")
     verification = receipt.get("verification", {})
-    snapshot_files, snapshot_digest = engine_snapshot()
-    if (
-        verification.get("engine_files") != snapshot_files
-        or verification.get("engine_digest") != snapshot_digest
-        or verification.get("artifact_schema_sha256") != sha256_file(SCHEMA_PATH)
-        or verification.get("regression_manifest_sha256") != sha256_file(REGRESSION_PATH)
-        or verification.get("gate_5_guard_sha256") != sha256_file(pathlib.Path(__file__))
+    for key in (
+        "engine_digest",
+        "artifact_schema_sha256",
+        "regression_manifest_sha256",
+        "gate_5_guard_sha256",
     ):
-        errors.append("legacy repair closure verification snapshot mismatch")
+        value = verification.get(key)
+        if not isinstance(value, str) or not re.fullmatch(r"[0-9a-f]{64}", value):
+            errors.append(f"legacy repair closure has invalid historical verification hash: {key}")
 
     artifacts = receipt.get("artifacts", {})
     paths: dict[str, pathlib.Path] = {}
@@ -598,6 +612,194 @@ def validate_repair_closure(errors: list[str]) -> int:
     return len(compound_ids) + 7
 
 
+def validate_layer_e_migration(errors: list[str]) -> tuple[int, int, int]:
+    try:
+        receipt = json.loads(MIGRATION_RECEIPT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"Layer E migration receipt cannot be read: {exc}")
+        return 0, 0, 0
+    if receipt.get("status") != "LAYER_E_LEGACY_MIGRATION_CANDIDATES_COMPLETE":
+        errors.append("Layer E migration receipt has unexpected status")
+    if receipt.get("provider_call_authorized") is not False:
+        errors.append("Layer E migration receipt does not prohibit provider calls")
+    if receipt.get("google_sheets_interactions") != 0:
+        errors.append("Layer E migration receipt violates the Google Sheets pause")
+    if receipt.get("external_model_calls") != 0 or receipt.get("accounted_cost_cents") != 0:
+        errors.append("Layer E migration must record zero calls and zero cost")
+    active_binding = receipt.get("active_control_index", {})
+    if (
+        active_binding.get("path") != str(ACTIVE_INDEX.relative_to(REPO_ROOT))
+        or active_binding.get("sha256") != sha256_file(ACTIVE_INDEX)
+    ):
+        errors.append("Layer E migration active-control binding mismatch")
+
+    artifacts = receipt.get("artifacts", {})
+    required = (
+        "migration_candidates",
+        "compound_review_inventory",
+        "transition_control",
+        "migration_report",
+        "crossing_block_ledger",
+        "human_rulings_block_ledger",
+        "msid_block_ledger",
+        "pa_block_ledger",
+        "human_readable_report",
+    )
+    paths: dict[str, pathlib.Path] = {}
+    for key in required:
+        binding = artifacts.get(key, {})
+        path = REPO_ROOT / binding.get("path", "")
+        paths[key] = path
+        if not path.is_file():
+            errors.append(f"missing Layer E migration artifact: {key}")
+        elif sha256_file(path) != binding.get("sha256"):
+            errors.append(f"Layer E migration artifact hash mismatch: {key}")
+    if not all(path.is_file() for path in paths.values()):
+        return 0, 0, 0
+    try:
+        report = json.loads(paths["migration_report"].read_text(encoding="utf-8"))
+        transition = json.loads(paths["transition_control"].read_text(encoding="utf-8"))
+        candidates = [
+            json.loads(line)
+            for line in paths["migration_candidates"].read_text(encoding="utf-8").splitlines()
+        ]
+        inventory = [
+            json.loads(line)
+            for line in paths["compound_review_inventory"].read_text(encoding="utf-8").splitlines()
+        ]
+    except json.JSONDecodeError as exc:
+        errors.append(f"invalid Layer E migration JSON: {exc}")
+        return 0, 0, 0
+
+    report_body = {
+        key: value
+        for key, value in report.items()
+        if key not in {"schema_version", "migration_report_id"}
+    }
+    if report.get("migration_report_id") != content_id("lemr", report_body):
+        errors.append("Layer E migration report content ID mismatch")
+    transition_body = {
+        key: value
+        for key, value in transition.items()
+        if key not in {"schema_version", "transition_control_id"}
+    }
+    if transition.get("transition_control_id") != content_id("lemtc", transition_body):
+        errors.append("Layer E migration transition control content ID mismatch")
+    if (
+        transition.get("initial_state") != "mechanically_valid"
+        or transition.get("permitted_next_state") != "semantic_review_pending"
+        or transition.get("direct_acceptance_from_mechanically_valid_prohibited") is not True
+        or transition.get("mapping_authorized") is not False
+        or transition.get("reconciliation_authorized") is not False
+        or transition.get("compilation_authorized") is not False
+    ):
+        errors.append("Layer E migration transition boundary mismatch")
+
+    legacy_ids: set[str] = set()
+    repair_records = 0
+    for candidate in candidates:
+        body = {
+            key: value
+            for key, value in candidate.items()
+            if key not in {"schema_version", "migration_candidate_id"}
+        }
+        if candidate.get("migration_candidate_id") != content_id("lemc", body):
+            errors.append("Layer E migration candidate content ID mismatch")
+            break
+        legacy_id = candidate.get("legacy_record_id")
+        if not isinstance(legacy_id, str) or legacy_id in legacy_ids:
+            errors.append("Layer E migration candidates contain duplicate or invalid legacy IDs")
+            break
+        legacy_ids.add(legacy_id)
+        if candidate.get("repair_disposition_ids"):
+            repair_records += 1
+        if (
+            candidate.get("state") != "mechanically_valid"
+            or candidate.get("acceptance_state") != "not_accepted"
+            or candidate.get("review_state") != "pending"
+            or candidate.get("legacy_semantic_fields_imported") is not False
+            or candidate.get("normalized_claim") is not None
+            or candidate.get("assigned_stream") is not None
+            or candidate.get("mapping_state") != "not_started"
+            or candidate.get("reconciliation_state") != "not_started"
+            or candidate.get("acceptance_receipt_id") is not None
+        ):
+            errors.append(f"Layer E migration candidate crosses the acceptance boundary: {legacy_id}")
+            break
+    if len(candidates) != 913 or len(legacy_ids) != 913 or repair_records != 24:
+        errors.append("Layer E migration candidate coverage mismatch")
+
+    gate_3 = 0
+    cross_block = 0
+    overlap = 0
+    inventory_ids: set[str] = set()
+    for record in inventory:
+        reasons = set(record.get("review_reasons", []))
+        gate_3 += "gate_3_multi_sentence_indicator" in reasons
+        cross_block += "cross_block_structural_compound" in reasons
+        overlap += reasons == {
+            "gate_3_multi_sentence_indicator",
+            "cross_block_structural_compound",
+        }
+        legacy_id = record.get("legacy_record_id")
+        if not isinstance(legacy_id, str) or legacy_id in inventory_ids:
+            errors.append("compound review inventory contains duplicate or invalid legacy IDs")
+            break
+        inventory_ids.add(legacy_id)
+    if len(inventory) != 139 or len(inventory_ids) != 139 or gate_3 != 123 or cross_block != 17 or overlap != 1:
+        errors.append("unified compound review inventory coverage mismatch")
+
+    block_count = 0
+    block_ids: set[str] = set()
+    for key in (
+        "crossing_block_ledger",
+        "human_rulings_block_ledger",
+        "msid_block_ledger",
+        "pa_block_ledger",
+    ):
+        try:
+            ledger = [json.loads(line) for line in paths[key].read_text(encoding="utf-8").splitlines()]
+        except json.JSONDecodeError as exc:
+            errors.append(f"invalid retrospective block ledger {key}: {exc}")
+            continue
+        block_count += len(ledger)
+        for record in ledger:
+            block_id = record.get("block_id")
+            if not isinstance(block_id, str) or block_id in block_ids:
+                errors.append("retrospective block ledgers contain duplicate or invalid block IDs")
+                break
+            block_ids.add(block_id)
+            if not record.get("terminal_disposition"):
+                errors.append(f"retrospective block lacks terminal disposition: {block_id}")
+                break
+    if block_count != 2464 or len(block_ids) != 2464:
+        errors.append("retrospective block ledger coverage mismatch")
+    if (
+        report.get("passed") is not True
+        or report.get("migration_candidate_count") != 913
+        or report.get("compound_review_count") != 139
+        or report.get("gate_3_multi_sentence_review_count") != 123
+        or report.get("cross_block_structural_compound_count") != 17
+        or report.get("accepted_evidence_records") != 0
+        or report.get("semantic_reviews_performed") != 0
+        or report.get("provider_calls") != 0
+        or report.get("google_sheets_interactions") != 0
+    ):
+        errors.append("Layer E migration report metadata mismatch")
+
+    verification = receipt.get("verification", {})
+    snapshot_files, snapshot_digest = engine_snapshot()
+    if (
+        verification.get("engine_files") != snapshot_files
+        or verification.get("engine_digest") != snapshot_digest
+        or verification.get("artifact_schema_sha256") != sha256_file(SCHEMA_PATH)
+        or verification.get("regression_manifest_sha256") != sha256_file(REGRESSION_PATH)
+        or verification.get("gate_5_guard_sha256") != sha256_file(pathlib.Path(__file__))
+    ):
+        errors.append("Layer E migration verification snapshot mismatch")
+    return len(legacy_ids), len(inventory_ids), len(block_ids)
+
+
 def validate_lock(errors: list[str]) -> None:
     if not LOCK_PATH.is_file():
         errors.append("Gate 5 requirements lock is missing")
@@ -699,6 +901,7 @@ def main() -> int:
     replay_records, replay_queue = validate_legacy_replay(errors)
     ruling_sections, ruling_fields, ruling_coordinates = validate_human_rulings_reconstruction(errors)
     mechanically_dispositioned = validate_repair_closure(errors)
+    migration_candidates, compound_review_records, retrospective_blocks = validate_layer_e_migration(errors)
     validate_lock(errors)
     json_controls = validate_json_controls(errors)
     validate_offline_imports(errors)
@@ -724,6 +927,9 @@ def main() -> int:
     print(f"- reconstructed Human Rulings fields: {ruling_fields}")
     print(f"- Human Rulings legacy coordinates: {ruling_coordinates}")
     print(f"- mechanically dispositioned replay queue: {mechanically_dispositioned}/24")
+    print(f"- mechanically valid Layer E migration candidates: {migration_candidates}/913")
+    print(f"- unified compound review records: {compound_review_records}/139")
+    print(f"- retrospectively dispositioned source blocks: {retrospective_blocks}/2464")
     print("- unresolved grounding or coordinate repairs: 0")
     print("- offline provider imports: 0")
     print("- provider calls: prohibited")

@@ -12,6 +12,7 @@ from .canonical import content_id, sha256_file, write_new_bytes, write_new_json
 from .errors import ContractError, Gate5Error
 from .identity import identity_card_errors, transition_identity_card
 from .legacy import build_legacy_replay
+from .migration import build_layer_e_legacy_migration
 from .rulings import build_human_rulings_reconstruction
 from .repairs import (
     build_compound_dispositions,
@@ -565,6 +566,67 @@ def _bundle(args: argparse.Namespace) -> int:
     return 0 if not artifact["orphaned_mapped_evidence"] else 1
 
 
+def _migrate_legacy_layer_e(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    closure_path = (repo_root / args.repair_closure).resolve()
+    output_arguments = {
+        "candidates": args.output_candidates,
+        "compound_inventory": args.output_compound_inventory,
+        "report": args.output_report,
+        "M050-SRC-CROSSING-001": args.output_crossing_block_ledger,
+        "M050-SRC-HUMAN-RULINGS-001": args.output_human_rulings_block_ledger,
+        "M050-SRC-MSID-GRAMMAR-001": args.output_msid_block_ledger,
+        "M050-SRC-PA-001": args.output_pa_block_ledger,
+    }
+    require_input_paths(
+        repo_root,
+        [Path(args.repair_closure)],
+        [Path("m050/extraction/repairs")],
+    )
+    outputs = {
+        key: require_new_output_path(repo_root, Path(value))
+        for key, value in output_arguments.items()
+    }
+    closure = _read_json(closure_path)
+    block_paths = {
+        source_id: str(outputs[source_id].relative_to(repo_root))
+        for source_id in (
+            "M050-SRC-CROSSING-001",
+            "M050-SRC-HUMAN-RULINGS-001",
+            "M050-SRC-MSID-GRAMMAR-001",
+            "M050-SRC-PA-001",
+        )
+    }
+    candidates, compounds, block_ledgers, report = build_layer_e_legacy_migration(
+        repo_root=repo_root,
+        repair_closure=closure,
+        repair_closure_path=closure_path,
+        candidate_relative_path=str(outputs["candidates"].relative_to(repo_root)),
+        compound_relative_path=str(outputs["compound_inventory"].relative_to(repo_root)),
+        block_ledger_relative_paths=block_paths,
+    )
+    write_new_bytes(outputs["candidates"], candidates)
+    write_new_bytes(outputs["compound_inventory"], compounds)
+    for source_id, data in block_ledgers.items():
+        write_new_bytes(outputs[source_id], data)
+    write_new_json(outputs["report"], report)
+    print(
+        json.dumps(
+            {
+                "migration_report_id": report["migration_report_id"],
+                "passed": report["passed"],
+                "migration_candidates": report["migration_candidate_count"],
+                "accepted_evidence_records": report["accepted_evidence_records"],
+                "compound_review_records": report["compound_review_count"],
+                "retrospective_block_ledgers": report["retrospective_block_ledgers"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="median-gate5")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -694,6 +756,21 @@ def build_parser() -> argparse.ArgumentParser:
     closure.add_argument("--occurrence-resolution", required=True)
     closure.add_argument("--output", required=True)
     closure.set_defaults(func=_verify_repair_closure)
+
+    migrate = subparsers.add_parser(
+        "migrate-legacy-layer-e",
+        help="build 913 mechanically valid, unaccepted Layer E migration candidates",
+    )
+    migrate.add_argument("--repo-root", default=".")
+    migrate.add_argument("--repair-closure", required=True)
+    migrate.add_argument("--output-candidates", required=True)
+    migrate.add_argument("--output-compound-inventory", required=True)
+    migrate.add_argument("--output-crossing-block-ledger", required=True)
+    migrate.add_argument("--output-human-rulings-block-ledger", required=True)
+    migrate.add_argument("--output-msid-block-ledger", required=True)
+    migrate.add_argument("--output-pa-block-ledger", required=True)
+    migrate.add_argument("--output-report", required=True)
+    migrate.set_defaults(func=_migrate_legacy_layer_e)
 
     bundle = subparsers.add_parser("bundle")
     bundle.add_argument("--repo-root", default=".")

@@ -42,3 +42,16 @@ It never edits or promotes a legacy record.
   --output-ledger NEW_REPLAY_LEDGER.jsonl \
   --output-report NEW_REPLAY_REPORT.json
 ```
+
+## Deterministic Layer E legacy migration
+
+`migrate-legacy-layer-e` consumes the passed mechanical-repair closure and
+produces 913 content-addressed Layer E migration candidates, four retrospective
+block/exclusion ledgers, and one unified compound-review inventory. Candidates
+stop at `mechanically_valid`: legacy semantic fields remain labeled legacy
+proposals, while claim normalization, stream assignment, mapping,
+reconciliation, semantic review, and acceptance remain unset.
+
+The review inventory preserves both the 123 Gate 3 multi-sentence flags and
+all 17 later cross-block structural compounds. One record overlaps, yielding
+139 unique review records without changing either source queue.

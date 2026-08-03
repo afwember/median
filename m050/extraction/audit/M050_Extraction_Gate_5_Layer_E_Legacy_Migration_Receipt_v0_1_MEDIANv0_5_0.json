@@ -1,0 +1,96 @@
+{
+  "schema_version": "M050-GATE-5-LAYER-E-LEGACY-MIGRATION-RECEIPT-0.1",
+  "title": "MEDIAN v0.5.0 Gate 5 Layer E Legacy Migration Receipt",
+  "created": "2026-08-03",
+  "status": "LAYER_E_LEGACY_MIGRATION_CANDIDATES_COMPLETE",
+  "predecessor": {
+    "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Repair_Closure_Receipt_v0_1_MEDIANv0_5_0.json",
+    "sha256": "1d5b2b2a1eec5ecff831db07a26dc1ac7279aea2f7e67f08da412254a2ddd847"
+  },
+  "active_control_index": {
+    "path": "m050/extraction/control/M050_Active_Control_Index_v0_7_MEDIANv0_5_0.json",
+    "sha256": "394934776135fbcd5e3fe1c6053400e67e8930cc5a119e5a61ff23d76aa46226"
+  },
+  "migration_report_id": "lemr_ac224daf7c1e74ba16d667f3",
+  "transition_control_id": "lemtc_6372ea8161a1c101daca16bf",
+  "artifacts": {
+    "migration_candidates": {
+      "path": "m050/extraction/migration/M050_Layer_E_Legacy_Migration_Candidates_v0_1_MEDIANv0_5_0.jsonl",
+      "sha256": "b0ac5cbc3dc9d082b06880206258100014c507d94ae0c49f5456787112f3bad8"
+    },
+    "compound_review_inventory": {
+      "path": "m050/extraction/migration/M050_Legacy_Compound_Review_Inventory_v0_1_MEDIANv0_5_0.jsonl",
+      "sha256": "ef8e61bd2e272195d9969b841b2f41cdd9707b87d499acfd58d8fa6a736fd651"
+    },
+    "transition_control": {
+      "path": "m050/extraction/migration/M050_Layer_E_Legacy_Migration_Transition_Control_v0_1_MEDIANv0_5_0.json",
+      "sha256": "aa3b04c96b505acbfed1a42bd3777888114c76e43cafe9f2db1c0dd95adf1ee4"
+    },
+    "migration_report": {
+      "path": "m050/extraction/migration/M050_Layer_E_Legacy_Migration_Report_v0_1_MEDIANv0_5_0.json",
+      "sha256": "b91c68f6de2b33fe78d205aacc561ed597cfaceaa9c612f9b07c036d872bc395"
+    },
+    "crossing_block_ledger": {
+      "path": "m050/extraction/migration/block-dispositions/M050_Crossing_Retrospective_Block_and_Exclusion_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+      "sha256": "6b92b7ac92a4f8f9671d35106f3463299bf08a1350385c3b658d1fb700b12ce8"
+    },
+    "human_rulings_block_ledger": {
+      "path": "m050/extraction/migration/block-dispositions/M050_Human_Rulings_Retrospective_Block_and_Exclusion_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+      "sha256": "60e263ac63f487e45db841faffa61a7b99d34c3a144e17bcc0e57dd7ca89c109"
+    },
+    "msid_block_ledger": {
+      "path": "m050/extraction/migration/block-dispositions/M050_MSID_Grammar_Retrospective_Block_and_Exclusion_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+      "sha256": "40030bfcc5ac19eb855240ed5f82bacb0a06a7e8cf9a20f8beff2217b1b13a94"
+    },
+    "pa_block_ledger": {
+      "path": "m050/extraction/migration/block-dispositions/M050_Governing_Philosophy_and_Architecture_Retrospective_Block_and_Exclusion_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+      "sha256": "986df33dad1e506ea1cef4c95c2e19c7d19ae1264ed6efd9d1525c16e5b2a784"
+    },
+    "human_readable_report": {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Layer_E_Legacy_Migration_Report_v0_1_MEDIANv0_5_0.md",
+      "sha256": "1ccc98296a85b91004f2cf04fee380a046aec573814e3cc2806252533294acc8"
+    }
+  },
+  "coverage": {
+    "legacy_records": 913,
+    "mechanically_valid_candidates": 913,
+    "distinct_legacy_record_ids": 913,
+    "repair_lineage_records": 24,
+    "legacy_only_grounding_records": 6,
+    "retrospective_block_ledgers": 4,
+    "source_blocks_accounted": 2464,
+    "gate_3_multi_sentence_review_records": 123,
+    "cross_block_structural_compounds": 17,
+    "compound_queue_overlap": 1,
+    "unified_compound_review_records": 139
+  },
+  "review_boundary": {
+    "tier_1_candidates_pending_review": 18,
+    "tier_2_candidates_pending_review": 858,
+    "tier_3_candidates_pending_sampling": 37,
+    "semantic_reviews_performed": 0,
+    "accepted_evidence_records": 0,
+    "legacy_semantic_fields_imported": 0,
+    "mapping_records_created": 0,
+    "reconciliation_records_created": 0,
+    "compilation_records_created": 0,
+    "permitted_next_state": "semantic_review_pending",
+    "direct_acceptance_prohibited": true
+  },
+  "verification": {
+    "offline_tests": 81,
+    "offline_test_result": "PASS",
+    "regression_cases": 47,
+    "engine_files": 68,
+    "engine_digest": "52df2ab229978823d845b18966e6ae27539c479701a541e535370655f68b1395",
+    "artifact_schema_sha256": "2f8504fa9ae3362233db820428a8fce8170f72d3e2459b2be84268c0a45c96f9",
+    "regression_manifest_sha256": "897603338587f8e721a7a73957be7fab1d9a986abb64f0e6b0ced4b2cb323b86",
+    "gate_5_guard_sha256": "c0cb6b26850b52e3872bf0b119e2778eafe3e03b29acfe07244775a051a0c53d"
+  },
+  "next_authorized_activity": "Design and build deterministic semantic-review bundles and human-effort projections without performing semantic acceptance or downstream mapping, reconciliation, or compilation.",
+  "external_model_calls": 0,
+  "accounted_cost_cents": 0,
+  "google_sheets_interactions": 0,
+  "provider_call_authorized": false,
+  "gate_5_complete": false
+}

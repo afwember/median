@@ -5,9 +5,12 @@ import json
 from pathlib import Path
 import sys
 
+import yaml
+
 from .bundles import build_reconciliation_bundles, orphaned_mapped_evidence
 from .canonical import content_id, sha256_file, write_new_json
 from .errors import ContractError, Gate5Error
+from .identity import identity_card_errors
 from .runtime import runtime_errors, runtime_report
 from .schema import validate_artifact
 from .scope import require_input_paths, require_new_output_path
@@ -37,6 +40,59 @@ def _read_json(path: Path) -> dict:
     if not isinstance(value, dict):
         raise ContractError(f"JSON root must be an object: {path}")
     return value
+
+
+def _read_yaml(path: Path) -> dict:
+    value = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ContractError(f"YAML root must be an object: {path}")
+    return value
+
+
+def _profile(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    supplied = {
+        "card": Path(args.card),
+        "block_manifest": Path(args.block_manifest),
+        "frozen_manifest": Path(args.frozen_manifest),
+        "source_disposition": Path(args.source_disposition),
+        "reuse_disposition": Path(args.reuse_disposition),
+    }
+    require_input_paths(
+        repo_root,
+        supplied.values(),
+        [Path("m050/extraction/control"), Path("m050/extraction/audit")],
+    )
+    resolved = {
+        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
+        for key, path in supplied.items()
+    }
+    card = _read_json(resolved["card"])
+    block_manifest = _read_json(resolved["block_manifest"])
+    frozen_manifest = _read_json(resolved["frozen_manifest"])
+    source_disposition = _read_yaml(resolved["source_disposition"])
+    reuse_disposition = _read_yaml(resolved["reuse_disposition"])
+    errors = identity_card_errors(
+        repo_root,
+        card,
+        block_manifest,
+        frozen_manifest,
+        source_disposition,
+        reuse_disposition,
+    )
+    report = {
+        "schema_version": "M050-IDENTITY-CARD-VALIDATION-0.1",
+        "card_id": card["card_id"],
+        "source_id": card["source_id"],
+        "passed": not errors,
+        "errors": errors,
+    }
+    if args.output:
+        output = require_new_output_path(repo_root, Path(args.output))
+        write_new_json(output, report)
+    else:
+        print(json.dumps(report, indent=2, sort_keys=True))
+    return 0 if not errors else 1
 
 
 def _block(args: argparse.Namespace) -> int:
@@ -202,6 +258,16 @@ def build_parser() -> argparse.ArgumentParser:
     block.add_argument("--source-path", required=True)
     block.add_argument("--output", required=True)
     block.set_defaults(func=_block)
+
+    profile = subparsers.add_parser("profile", help="validate a source identity card")
+    profile.add_argument("--repo-root", default=".")
+    profile.add_argument("--card", required=True)
+    profile.add_argument("--block-manifest", required=True)
+    profile.add_argument("--frozen-manifest", required=True)
+    profile.add_argument("--source-disposition", required=True)
+    profile.add_argument("--reuse-disposition", required=True)
+    profile.add_argument("--output")
+    profile.set_defaults(func=_profile)
 
     plan = subparsers.add_parser("plan", help="create a dual-limit chunk plan")
     plan.add_argument("--repo-root", default=".")

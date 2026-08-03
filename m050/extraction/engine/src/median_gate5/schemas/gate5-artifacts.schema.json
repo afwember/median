@@ -45,6 +45,133 @@
         "supersedes_card_id": {"type": ["string", "null"]}
       }
     },
+    "artifact_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "role"],
+      "properties": {
+        "path": {"$ref": "#/$defs/nonempty_string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"$ref": "#/$defs/nonempty_string"}
+      }
+    },
+    "identity_role_assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "scope", "allowed_streams", "supporting_block_ids"],
+      "properties": {
+        "role": {"$ref": "#/$defs/nonempty_string"},
+        "scope": {"$ref": "#/$defs/nonempty_string"},
+        "allowed_streams": {"$ref": "#/$defs/string_array"},
+        "supporting_block_ids": {"$ref": "#/$defs/nonempty_string_array"}
+      }
+    },
+    "identity_status_region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "status", "block_ids", "handling"],
+      "properties": {
+        "label": {"$ref": "#/$defs/nonempty_string"},
+        "status": {"enum": ["active", "mixed", "provisional", "open", "historical", "silent", "process_only", "change_record"]},
+        "block_ids": {"$ref": "#/$defs/nonempty_string_array"},
+        "handling": {"$ref": "#/$defs/nonempty_string"}
+      }
+    },
+    "identity_predecessor_coverage_warning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "coverage_status", "warning", "extraction_effect"],
+      "properties": {
+        "subject": {"$ref": "#/$defs/nonempty_string"},
+        "coverage_status": {
+          "enum": [
+            "no_direct_predecessor_identified",
+            "direct_predecessor_incomplete",
+            "merged_partial_coverage",
+            "named_predecessor_unavailable",
+            "identical_migration_snapshot",
+            "coverage_unknown"
+          ]
+        },
+        "warning": {"$ref": "#/$defs/nonempty_string"},
+        "extraction_effect": {"const": "warning_only_no_extraction_influence"}
+      }
+    },
+    "legacy_extraction_binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lineage_summary", "source_bindings", "candidate", "acceptance_report",
+        "record_count", "distinct_source_locations", "likely_compound_review_flags",
+        "evidence_status", "reuse_disposition"
+      ],
+      "properties": {
+        "lineage_summary": {"$ref": "#/$defs/nonempty_string"},
+        "source_bindings": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact_binding"}},
+        "candidate": {"$ref": "#/$defs/artifact_binding"},
+        "acceptance_report": {"$ref": "#/$defs/artifact_binding"},
+        "record_count": {"type": "integer", "minimum": 1},
+        "distinct_source_locations": {"type": "integer", "minimum": 1},
+        "likely_compound_review_flags": {"type": "integer", "minimum": 0},
+        "evidence_status": {"enum": ["immutable_legacy_candidate", "archived_legacy_candidate"]},
+        "reuse_disposition": {"$ref": "#/$defs/nonempty_string"},
+        "partition_warning": {"type": ["string", "null"]}
+      }
+    },
+    "identity_migration_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eligibility", "paid_reextraction_required", "mandatory_repairs", "prerequisites"],
+      "properties": {
+        "eligibility": {"enum": ["eligible_after_offline_repairs", "human_ruling_reconstruction_required", "blocked"]},
+        "paid_reextraction_required": {"type": "boolean"},
+        "mandatory_repairs": {"$ref": "#/$defs/nonempty_string_array"},
+        "prerequisites": {"$ref": "#/$defs/nonempty_string_array"}
+      }
+    },
+    "source_identity_card_v0_2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "card_id", "version", "status", "source_id",
+        "source_path", "source_sha256", "frozen_manifest_binding",
+        "block_manifest_binding", "source_disposition_binding",
+        "reuse_disposition_binding", "genealogy_summary", "predecessor_bindings",
+        "predecessor_coverage_warnings",
+        "roles", "allowed_streams", "authority_boundary", "mixed_status_regions",
+        "supporting_block_ids", "exclusions", "legacy_extraction", "migration",
+        "supersedes_card_id"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-SOURCE-IDENTITY-CARD-0.2"},
+        "card_id": {"pattern": "^sic_[0-9a-f]{24}$", "type": "string"},
+        "version": {"type": "integer", "minimum": 1},
+        "status": {"enum": ["draft", "reviewed", "approved", "challenged", "superseded"]},
+        "source_id": {"$ref": "#/$defs/nonempty_string"},
+        "source_path": {"$ref": "#/$defs/nonempty_string"},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "frozen_manifest_binding": {"$ref": "#/$defs/artifact_binding"},
+        "block_manifest_binding": {"$ref": "#/$defs/artifact_binding"},
+        "source_disposition_binding": {"$ref": "#/$defs/artifact_binding"},
+        "reuse_disposition_binding": {"$ref": "#/$defs/artifact_binding"},
+        "genealogy_summary": {"$ref": "#/$defs/nonempty_string"},
+        "predecessor_bindings": {"type": "array", "items": {"$ref": "#/$defs/artifact_binding"}},
+        "predecessor_coverage_warnings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/identity_predecessor_coverage_warning"}
+        },
+        "roles": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/identity_role_assignment"}},
+        "allowed_streams": {"$ref": "#/$defs/nonempty_string_array"},
+        "authority_boundary": {"$ref": "#/$defs/nonempty_string"},
+        "mixed_status_regions": {"type": "array", "items": {"$ref": "#/$defs/identity_status_region"}},
+        "supporting_block_ids": {"$ref": "#/$defs/nonempty_string_array"},
+        "exclusions": {"type": "array", "items": {"$ref": "#/$defs/exclusion_record"}},
+        "legacy_extraction": {"$ref": "#/$defs/legacy_extraction_binding"},
+        "migration": {"$ref": "#/$defs/identity_migration_disposition"},
+        "supersedes_card_id": {"type": ["string", "null"]}
+      }
+    },
     "source_profile": {
       "type": "object",
       "additionalProperties": false,

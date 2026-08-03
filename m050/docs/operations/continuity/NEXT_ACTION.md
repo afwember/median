@@ -2,25 +2,26 @@
 
 Action date: 2026-08-03
 
-Transition: verified Mac Mini baseline to Gate 5 offline continuation
+Transition: mechanically validated identity-card drafts to author review
 
 ## Preconditions
 
-1. commit and push the verified post-update continuity record;
+1. confirm the identity-card draft checkpoint is committed and pushed;
 2. confirm local `HEAD` and `origin/main` are identical and the worktree is
    clean;
-3. re-read the Gate 5 Milestone 1 report and technical contract;
-4. verify the frozen corpus and accepted artifacts remain unchanged;
-5. keep all work offline and source-preserving.
+3. read the legacy source identity review brief;
+4. verify the four cards and all four block manifests still pass the bound
+   control validator;
+5. keep all review and follow-on work offline and source-preserving.
 
 ## Authorized transition
 
-Begin Gate 5 Milestone 2 with versioned source identity cards for the four
-legacy accepted sources. Each card must bind the source to its canonical path,
-content hash, source role, extraction lineage, accepted evidence, and applicable
-authority boundary before replay or migration changes are attempted.
+Review the four draft source identity judgments for Crossing, Human Rulings,
+MSID Grammar, and Governing Philosophy and Architecture. The author may approve,
+challenge, or revise each card. Mechanical validation is complete, but it does
+not substitute for this human identity and authority decision.
 
-After identity-card review, the planned offline sequence is:
+After author approval versions the cards, the planned offline sequence is:
 
 1. deterministic replay of preserved legacy responses;
 2. migration of the 913 grounded legacy records into Layer E candidates without
@@ -33,7 +34,8 @@ After identity-card review, the planned offline sequence is:
 
 ## Stop conditions
 
-Stop before any provider request, positive-cost work order, modification of
-legacy evidence, source-identity ambiguity, corpus drift, or transition beyond
-the artifact/state contracts. Those require evidence review and, for paid work,
-new explicit author authorization.
+Stop before deterministic replay if any identity judgment is challenged or
+ambiguous. Also stop before any provider request, positive-cost work order,
+modification of legacy evidence, corpus drift, or transition beyond the
+artifact/state contracts. Those require evidence review and, for paid work, new
+explicit author authorization.

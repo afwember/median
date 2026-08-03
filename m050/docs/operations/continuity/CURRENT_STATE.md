@@ -22,12 +22,15 @@ a self-referential hash into the file.
 - Gate 5 is in progress.
 - Gate 5 Foundation Milestone 1 passed as an offline implementation milestone;
   it is not Gate 5 completion and does not authorize provider calls.
+- Gate 5 Milestone 2 draft preparation is complete: four content-derived legacy
+  source identity cards and their deterministic block manifests pass mechanical
+  validation and await author review. No legacy replay or migration has begun.
 - The source-independent engine, artifact contracts, lifecycle controls,
   deterministic tooling, locked runtime, and regression suite are implemented.
 - The repository-local environment uses Python 3.12.7 with pip 26.2,
   setuptools 83.0.0, wheel 0.47.0, and pytest 9.1.1.
 - The latest security check found no known third-party Python vulnerabilities;
-  `pip check` passed and all 53 Gate 5 tests passed.
+  `pip check` passed and the current offline Gate 5 suite passes all 57 tests.
 - No paid model or provider work is currently authorized.
 
 Detailed Gate 5 evidence:
@@ -35,6 +38,8 @@ Detailed Gate 5 evidence:
 - `m050/extraction/audit/M050_Extraction_Gate_5_Foundation_Milestone_1_Report_v0_1_MEDIANv0_5_0.md`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Foundation_Milestone_1_Receipt_v0_1_MEDIANv0_5_0.json`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Technical_Contract_v0_1_MEDIANv0_5_0.md`
+- `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Card_Review_Brief_v0_1_MEDIANv0_5_0.md`
+- `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Draft_Validation_v0_1_MEDIANv0_5_0.json`
 
 ## Remote operating state
 
@@ -80,6 +85,6 @@ audit data.
 
 ## Known pending transition
 
-The host migration and controlled update are complete. The next project work is
-the offline Gate 5 continuation in `NEXT_ACTION.md`. No paid model or provider
-request is authorized.
+The host migration and controlled update are complete. The next project action
+is author review of the four draft legacy source identity cards as specified in
+`NEXT_ACTION.md`. No paid model or provider request is authorized.

@@ -1,0 +1,73 @@
+{
+  "schema_version": "M050-GATE-5-LEGACY-SOURCE-IDENTITY-DRAFT-VALIDATION-0.1",
+  "title": "MEDIAN v0.5.0 Gate 5 Legacy Source Identity Draft Validation",
+  "created": "2026-08-03",
+  "status": "DRAFT_SET_VALIDATED_AWAITING_AUTHOR_REVIEW",
+  "external_model_calls": 0,
+  "accounted_cost_cents": 0,
+  "cards": [
+    {
+      "source_id": "M050-SRC-CROSSING-001",
+      "card_id": "sic_2f778cc69b903d96b5110880",
+      "path": "m050/extraction/control/source-identities/cards/M050_Crossing_Source_Identity_Card_v0_2_MEDIANv0_5_0.json",
+      "sha256": "8801e7a9af99278dbf0fed010319a9efaed113c07cced41a7b06cbf2fbdd0ecc",
+      "block_manifest_id": "bm_5be7837e9e1deea85925b296",
+      "blocks": 309,
+      "claim_bearing_blocks": 187,
+      "validation": "PASS"
+    },
+    {
+      "source_id": "M050-SRC-PA-001",
+      "card_id": "sic_4ebae0d04f4f87bbeda85dc8",
+      "path": "m050/extraction/control/source-identities/cards/M050_Governing_Philosophy_and_Architecture_Source_Identity_Card_v0_2_MEDIANv0_5_0.json",
+      "sha256": "8b285756727d4eaffedda9401ada534044e2d5ae6816c59d59c0a0c0932c63f8",
+      "block_manifest_id": "bm_97c0f0e70ffda592a198dd24",
+      "blocks": 771,
+      "claim_bearing_blocks": 399,
+      "validation": "PASS"
+    },
+    {
+      "source_id": "M050-SRC-HUMAN-RULINGS-001",
+      "card_id": "sic_67e95dc41cc9a8afd82374d3",
+      "path": "m050/extraction/control/source-identities/cards/M050_Human_Rulings_Source_Identity_Card_v0_2_MEDIANv0_5_0.json",
+      "sha256": "b678ed9047794cf865c452f2290154dd1458776a5ea448db1661045baff65556",
+      "block_manifest_id": "bm_65119061ccd8a3a9488a6ed4",
+      "blocks": 632,
+      "claim_bearing_blocks": 442,
+      "validation": "PASS"
+    },
+    {
+      "source_id": "M050-SRC-MSID-GRAMMAR-001",
+      "card_id": "sic_a0a0f6d999310bcad4d531cc",
+      "path": "m050/extraction/control/source-identities/cards/M050_MSID_Grammar_Source_Identity_Card_v0_2_MEDIANv0_5_0.json",
+      "sha256": "af5da2b6025d96cc2b6009b8578c25bee12bf173c505dfd18efd2a5feb070bbb",
+      "block_manifest_id": "bm_79cf588b172634e8e979dc90",
+      "blocks": 752,
+      "claim_bearing_blocks": 335,
+      "validation": "PASS"
+    }
+  ],
+  "aggregate": {
+    "cards": 4,
+    "cards_passed": 4,
+    "blocks": 2464,
+    "claim_bearing_blocks": 1363,
+    "legacy_records": 913,
+    "legacy_compound_review_flags": 123
+  },
+  "verification": {
+    "identity_tests": 4,
+    "full_offline_tests": 57,
+    "gate_4_guard": "PASS",
+    "gate_5_guard": "PASS",
+    "frozen_source_files": 33,
+    "immutable_accepted_artifacts": 6,
+    "sealed_archive_files": 9921,
+    "provider_imports": 0,
+    "provider_calls": "PROHIBITED"
+  },
+  "author_review_required": true,
+  "deterministic_replay_authorized_after_review": true,
+  "provider_call_authorized": false,
+  "gate_5_complete": false
+}

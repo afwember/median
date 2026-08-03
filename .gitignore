@@ -57,5 +57,6 @@ build/*/chunks/
 __pycache__/
 *.pyc
 .pytest_cache/
+*.egg-info/
 build/*/.cache/
 .venv/

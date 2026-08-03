@@ -1,0 +1,41 @@
+{
+  "schema_version": "M050-GATE5-REGRESSION-MANIFEST-0.1",
+  "cases": [
+    {"case_id": "REG-CANON-001", "risk": "nondeterministic content IDs", "expected": "pass", "test_path": "tests/test_canonical.py", "test_name": "test_canonical_json_and_id_are_order_independent"},
+    {"case_id": "REG-IMMUT-001", "risk": "accepted artifact overwrite", "expected": "fail_closed", "test_path": "tests/test_canonical.py", "test_name": "test_append_writer_refuses_overwrite"},
+    {"case_id": "REG-IMMUT-002", "risk": "silent manifest mutation", "expected": "fail_closed", "test_path": "tests/test_canonical.py", "test_name": "test_manifest_fails_closed"},
+    {"case_id": "REG-AUTH-001", "risk": "provider authorization without author", "expected": "fail_closed", "test_path": "tests/test_states.py", "test_name": "test_positive_work_order_requires_author"},
+    {"case_id": "REG-AUTH-002", "risk": "ruling confirmation without author", "expected": "fail_closed", "test_path": "tests/test_states.py", "test_name": "test_ruling_confirmation_requires_author"},
+    {"case_id": "REG-STATE-001", "risk": "artifact skips required lifecycle stages", "expected": "fail_closed", "test_path": "tests/test_states.py", "test_name": "test_invalid_transition_fails_closed"},
+    {"case_id": "REG-NORM-001", "risk": "NFD and line-ending mismatch", "expected": "pass", "test_path": "tests/test_normalization.py", "test_name": "test_structural_normalization_is_named_and_conservative"},
+    {"case_id": "REG-NORM-002", "risk": "typographic quote, dash, space, and ligature mismatch", "expected": "pass_with_receipt", "test_path": "tests/test_normalization.py", "test_name": "test_locator_recovers_exact_raw_span"},
+    {"case_id": "REG-NORM-003", "risk": "ambiguous normalized quotation", "expected": "fail_closed", "test_path": "tests/test_normalization.py", "test_name": "test_ambiguous_normalized_match_is_rejected"},
+    {"case_id": "REG-NORM-004", "risk": "missing or reconstructed quotation", "expected": "fail_closed", "test_path": "tests/test_normalization.py", "test_name": "test_non_contiguous_or_missing_quote_is_rejected"},
+    {"case_id": "REG-BLOCK-001", "risk": "source text lost during structural parsing", "expected": "pass", "test_path": "tests/test_structure_validation.py", "test_name": "test_parser_preserves_complete_source_and_table_rows"},
+    {"case_id": "REG-CHUNK-001", "risk": "status boundary or dual limit crossed", "expected": "pass", "test_path": "tests/test_structure_validation.py", "test_name": "test_chunk_plan_honors_status_boundary_and_limits"},
+    {"case_id": "REG-CHUNK-002", "risk": "single oversized block silently admitted", "expected": "fail_closed", "test_path": "tests/test_structure_validation.py", "test_name": "test_oversized_block_fails_closed"},
+    {"case_id": "REG-COVER-001", "risk": "multi-claim block under-extracted", "expected": "review_required", "test_path": "tests/test_structure_validation.py", "test_name": "test_disposition_completeness_and_under_extraction_signal"},
+    {"case_id": "REG-COVER-002", "risk": "missing or duplicate block disposition", "expected": "fail_closed", "test_path": "tests/test_structure_validation.py", "test_name": "test_duplicate_and_missing_dispositions_fail"},
+    {"case_id": "REG-STALE-001", "risk": "downstream records remain active after upstream change", "expected": "pass", "test_path": "tests/test_dependencies_bundles_review.py", "test_name": "test_staleness_walks_all_descendants_and_survives_cycle"},
+    {"case_id": "REG-BUNDLE-001", "risk": "mapped or exceptional evidence omitted from reconciliation", "expected": "review_required", "test_path": "tests/test_dependencies_bundles_review.py", "test_name": "test_bundle_builder_accounts_for_exceptional_mapping_states"},
+    {"case_id": "REG-REVIEW-001", "risk": "nonreproducible or non-risk-weighted sampling", "expected": "pass", "test_path": "tests/test_dependencies_bundles_review.py", "test_name": "test_tier3_sampling_is_deterministic_and_risk_weighted"},
+    {"case_id": "REG-SCHEMA-001", "risk": "invalid schema contract", "expected": "pass", "test_path": "tests/test_schema_runtime.py", "test_name": "test_complete_schema_is_valid"},
+    {"case_id": "REG-SCHEMA-002", "risk": "uncontrolled fields accepted", "expected": "fail_closed", "test_path": "tests/test_schema_runtime.py", "test_name": "test_schema_rejects_uncontrolled_extra_fields"},
+    {"case_id": "REG-RUNTIME-001", "risk": "offline core reads credentials or imports provider", "expected": "fail_closed", "test_path": "tests/test_schema_runtime.py", "test_name": "test_runtime_is_isolated_and_credentials_are_not_opened"},
+    {"case_id": "REG-RUNTIME-002", "risk": "installed dependencies drift from lock", "expected": "fail_closed", "test_path": "tests/test_schema_runtime.py", "test_name": "test_lock_parser_and_agreement"},
+    {"case_id": "REG-RECEIPT-001", "risk": "receipt deletion, reordering, or overwrite", "expected": "fail_closed", "test_path": "tests/test_receipts_scope_risk_evidence.py", "test_name": "test_receipt_chain_and_append_only_paths"},
+    {"case_id": "REG-SCOPE-001", "risk": "v0.5.1 or out-of-scope path contamination", "expected": "fail_closed", "test_path": "tests/test_receipts_scope_risk_evidence.py", "test_name": "test_path_allowlist_and_m051_exclusion"},
+    {"case_id": "REG-SCOPE-002", "risk": "artifact output escapes or overwrites the authorized record tree", "expected": "fail_closed", "test_path": "tests/test_receipts_scope_risk_evidence.py", "test_name": "test_output_path_cannot_escape_or_overwrite"},
+    {"case_id": "REG-COST-001", "risk": "offline work order carries positive spend", "expected": "fail_closed", "test_path": "tests/test_receipts_scope_risk_evidence.py", "test_name": "test_offline_work_order_must_be_zero_cost"},
+    {"case_id": "REG-COST-002", "risk": "fractional-cent provider charge is rounded down", "expected": "pass", "test_path": "tests/test_costs.py", "test_name": "test_provider_costs_round_up_to_whole_cents"},
+    {"case_id": "REG-RISK-001", "risk": "high-risk evidence receives routine review", "expected": "pass", "test_path": "tests/test_receipts_scope_risk_evidence.py", "test_name": "test_risk_tiers_and_exclusion_audit"},
+    {"case_id": "REG-EVID-001", "risk": "model controls accepted evidence identity", "expected": "pass", "test_path": "tests/test_receipts_scope_risk_evidence.py", "test_name": "test_evidence_ids_are_local_and_content_derived"},
+    {"case_id": "REG-WORK-001", "risk": "work order source or hash drift", "expected": "fail_closed", "test_path": "tests/test_workorders_capture.py", "test_name": "test_offline_work_order_verifies_exact_source_and_scope"},
+    {"case_id": "REG-WORK-002", "risk": "future input or output path escape", "expected": "fail_closed", "test_path": "tests/test_workorders_capture.py", "test_name": "test_work_order_rejects_future_source_and_output_escape"},
+    {"case_id": "REG-WORK-003", "risk": "provider work begins without author receipt", "expected": "fail_closed", "test_path": "tests/test_workorders_capture.py", "test_name": "test_provider_work_order_requires_authorization_receipt"},
+    {"case_id": "REG-CAPTURE-001", "risk": "raw response overwrite, truncation, or invalid root", "expected": "fail_closed", "test_path": "tests/test_workorders_capture.py", "test_name": "test_capture_is_append_only_and_parser_fails_closed"}
+    ,{"case_id": "REG-CLI-001", "risk": "offline artifact sequence cannot complete", "expected": "pass", "test_path": "tests/test_cli.py", "test_name": "test_offline_cli_block_plan_validate_round_trip"}
+    ,{"case_id": "REG-CLI-002", "risk": "CLI overwrites an existing artifact", "expected": "fail_closed", "test_path": "tests/test_cli.py", "test_name": "test_cli_refuses_artifact_overwrite"}
+    ,{"case_id": "REG-CLI-003", "risk": "CLI writes outside the authorized extraction tree", "expected": "fail_closed", "test_path": "tests/test_cli.py", "test_name": "test_cli_rejects_output_escape"}
+  ]
+}

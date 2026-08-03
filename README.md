@@ -13,8 +13,9 @@ Completed legacy extractions are being retained where their source quotations re
 Current status:
 
 - Gates 1–4 are complete: process diagnosis, target-process definition, legacy-extraction reuse review, source identity correction, and repository cleanup.
+- Gate 5 is in progress. Its locked Mac Mini runtime, artifact contracts, source-independent offline engine foundation, and regression suite are implemented and verified.
 - The v0.5.0 corpus is frozen by exact path and hash; only Codex changes the repository under explicit author direction.
-- External model extraction is paused until the Gate 5 implementation passes offline verification.
+- External model extraction remains paused until Gate 5 completes and the author separately approves an exact positive-cost work order.
 - MEDIAN v0.5.1 material is isolated under `m051/` and excluded from the v0.5.0 compile.
 
 ## Repository map
@@ -22,6 +23,7 @@ Current status:
 ```text
 m050/docs/                 Current v0.5.0 sources and the v0.4.6 baseline
 m050/extraction/           Accepted evidence, audits, and progress tracking
+m050/extraction/engine/    Gate 5 schemas, deterministic tooling, and offline regression suite
 m050/extraction/progress/  Human-readable trackers and compile cost ledger
 m050/archive/              Historical sources, retired processes, and immutable receipts
 m051/                      Post-v0.5.0 development; excluded from the current compile

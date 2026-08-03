@@ -15,16 +15,17 @@ source of operational truth.
 ## Required cold start
 
 1. Confirm that root `AGENTS.override.md` is absent.
-2. Read `m050/extraction/control/M050_Active_Control_Index_v0_22_MEDIANv0_5_0.json` completely.
+2. Read `m050/extraction/control/M050_Active_Control_Index_v0_23_MEDIANv0_5_0.json` completely.
 3. Read `m050/extraction/control/M050_Current_State_Checkpoint_v0_13_MEDIANv0_5_0.md` completely.
 4. Read `m050/extraction/control/M050_Compile_Source_Processing_Order_v0_1_MEDIANv0_5_0.json` completely.
 5. Read `m050/extraction/control/M050_Source_Atomization_Pilot_Calibration_Protocol_v0_1_MEDIANv0_5_0.md` completely.
-6. Read `m050/extraction/control/M050_Compile_Execution_Standard_v0_2_MEDIANv0_5_0.md` completely.
-7. Run `.venv/bin/python m050/tools/m050_guard_v0_17.py --with-tests` before control/code checkpoints, provider-enabled configuration release, whole-source acceptance, and commit/push. Routine append-only provider capture uses the execution standard's focused preflight and validation.
-8. Report the exact `24 / 22 / 4 / 18 = 14 + 4` corpus vector; the next source; the accepted-pilot boundary; the source-run and spend-envelope boundary; the required cadence and halt conditions; all prohibited later stages; the next authorized transition; and whether local `HEAD` equals `origin/main`.
+6. Read `m050/extraction/control/M050_Compile_Execution_Standard_v0_3_MEDIANv0_5_0.md` completely.
+7. Read root `STATUS.md` completely and verify it is a derived mirror of the active index and checkpoint, not execution authority.
+8. Run `.venv/bin/python m050/tools/m050_guard_v0_18.py --with-tests` before control/code checkpoints, provider-enabled configuration release, whole-source acceptance, and commit/push. Routine append-only provider capture uses the execution standard's focused preflight and validation.
+9. Report the exact `24 / 22 / 4 / 18 = 14 + 4` corpus vector; the next source; the accepted-pilot boundary; the source-run and spend-envelope boundary; the required cadence and halt conditions; all prohibited later stages; the next authorized transition; whether `STATUS.md` is current; and whether local `HEAD` equals `origin/main`.
 
 The paste-ready successor-thread audit is
-`m050/extraction/control/M050_New_Task_Bootstrap_v0_12_MEDIANv0_5_0.md`.
+`m050/extraction/control/M050_New_Task_Bootstrap_v0_13_MEDIANv0_5_0.md`.
 
 ## Mandatory source-by-source calibration
 
@@ -57,6 +58,7 @@ The paste-ready successor-thread audit is
 - Claude caching is mandatory for eligible sequential runs: one-hour stable-prefix caching, cache-aware accounting, and a halt when both cache-creation and cache-read telemetry are zero.
 - Chunk count is a generated result, never a manifest input or preservation target. Calibrate acceptable provider-eligible target blocks per chunk, then re-apportion the complete source at that quantization with the generic `replan` workflow before freezing a new pilot.
 - A semantic lead-in and its dependent list, table, code, quotation, or titled structural body form an indivisible semantic group. If such a group exceeds a calibrated token or target-block limit, halt and report the incompatibility; never split it or invent a workaround.
+- `STATUS.md` is a concise, derived human dashboard and never execution authority. Refresh it after every accepted or rejected chunk, lifecycle halt, authorization or spend change, source milestone, and before every commit or push. Derive it from the active index, checkpoint, and spend record; its final nonblank line must show cumulative provider cost rounded upward to the cent. The active guard must reject a stale or contradictory dashboard.
 - Keep user-facing execution reports concise: decisions, defects, spend exhaustion, milestones, and completion.
 
 ## Current Authorial Grammar quantized-pilot boundary

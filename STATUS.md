@@ -1,10 +1,11 @@
 # MEDIAN v0.5.0
 
-<!-- Refresh these fields before every push. -->
+<!-- Derived dashboard only; active controls and receipts remain authoritative. -->
 
-**STATUS:** Extraction machine offline-ready; waiting for full-source authorization<br>
-**PHASE:** Atomic extraction — reusable execution release<br>
+**STATUS:** Pure-label C0003 pilot frozen; awaiting exact one-call authorization<br>
+**PHASE:** Atomic extraction — source calibration<br>
 **SOURCE:** Authorial Grammar — 1 / 22<br>
-**CHUNK:** 0 / 5<br>
-**NOW:** Pilot 001-R6 accepted; reusable machine verified; one authoritative `AGENTS.md` and read-only successor bootstrap active<br>
-**NEXT:** Cold-start the successor thread; then separately authorize the Authorial full-source lifecycle receipt and cumulative spend envelope
+**CHUNK:** C0003 / 13 — C0001/C0002 accepted; C0003 rejected and recalibrated<br>
+**NOW:** C0003 frozen at a $0.120852 cache-miss ceiling; no provider call authorized<br>
+**NEXT:** Asa Wember may authorize exactly one bound C0003 pilot call under a $0.13 cap<br>
+**TOTAL COST:** $0.42 cumulative provider spend

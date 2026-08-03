@@ -66,6 +66,34 @@ After a material status or cost change:
 The Gate 5 foundation checkpoint published during this migration is
 `62148e77d605566795f50ecad30f348f5c65213c`.
 
+## Mac Mini remote baseline
+
+The following baseline was established and verified on 2026-08-03:
+
+- Chrome Remote Desktop provides the primary unattended desktop path and was
+  tested successfully from both a laptop and an iPhone over cellular data.
+- macOS Screen Sharing remains the independent Mac-to-Mac fallback.
+- Google Chrome `151.0.7922.72` and Chrome Remote Desktop Host
+  `151.0.7922` were installed from Google-signed, Apple-notarized packages.
+- automatic login targets the dedicated `ambulatoryworld` account;
+- `/Users/ambulatoryworld/Library/LaunchAgents/com.median.open-chatgpt.plist`
+  opens `/Applications/ChatGPT Classic.app` at login;
+- system sleep is disabled on AC power, wake for network access is enabled,
+  and automatic restart after power loss is enabled;
+- FileVault is disabled by explicit operator decision to permit unattended
+  cold-boot recovery. Physical possession of the Mini therefore permits
+  substantially easier access to its local data and saved sessions;
+- Apple Command Line Tools `26.6` are installed;
+- the MEDIAN environment uses Python `3.12.7`; patched build/test tooling is
+  `pip 26.2`, `setuptools 83.0.0`, `wheel 0.47.0`, and `pytest 9.1.1`;
+- the post-update Python vulnerability audit reported no known third-party
+  package vulnerabilities, and all 53 Gate 5 engine tests passed.
+
+macOS Tahoe `26.6` was identified as a recommended restart-required update. It
+must be installed through a controlled restart, followed by laptop, cellular
+iPhone, automatic-login, Chrome Remote Desktop, and ChatGPT-startup checks
+before the KVM is removed from emergency availability.
+
 ## Cost and security boundaries
 
 Remote operations must use only free or already-included capabilities. No paid

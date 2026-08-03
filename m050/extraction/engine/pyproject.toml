@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools==75.6.0"]
+requires = ["setuptools==83.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest==8.3.4"]
+dev = ["pytest==9.1.1"]
 provider-openai = ["openai==2.43.0"]
 provider-anthropic = ["anthropic==0.40.0"]
 

@@ -1,0 +1,44 @@
+name: Publish compile status issue
+
+on:
+  push:
+    branches: [main]
+    paths: [STATUS.md]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Create or update compile status issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          title='MEDIAN v0.5.0 Compile Status'
+          mapfile -t issues < <(
+            gh issue list \
+              --state open \
+              --limit 1000 \
+              --search 'MEDIAN v0.5.0 Compile Status in:title' \
+              --json number,title \
+              --jq '.[] | select(.title == "MEDIAN v0.5.0 Compile Status") | .number'
+          )
+
+          if (( ${#issues[@]} > 1 )); then
+            echo "Refusing to update multiple exact-title open issues." >&2
+            exit 1
+          elif (( ${#issues[@]} == 0 )); then
+            gh issue create --title "$title" --body-file STATUS.md
+          else
+            gh issue edit "${issues[0]}" --body-file STATUS.md
+          fi

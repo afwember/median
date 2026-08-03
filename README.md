@@ -1,5 +1,7 @@
 # MEDIAN
 
+[Current compile status](STATUS.md)
+
 **MEDIAN** is an atmospheric animal colony-builder set on highway median strips. Players guide a small civilization of rabbits, squirrels, or wood mice: establishing a persistent colony, crossing live traffic, exploring a changing corridor, and bringing discoveries home.
 
 The project’s primary deliverable is an illustrated, system-complete sourcebook. It is conceived by Asa Wember.

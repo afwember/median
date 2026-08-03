@@ -92,10 +92,13 @@ The following baseline was established and verified on 2026-08-03:
 - the post-update Python vulnerability audit reported no known third-party
   package vulnerabilities, and all 53 Gate 5 engine tests passed.
 
-macOS Tahoe `26.6` was identified as a recommended restart-required update. It
-must be installed through a controlled restart, followed by laptop, cellular
-iPhone, automatic-login, Chrome Remote Desktop, and ChatGPT-startup checks
-before the KVM is removed from emergency availability.
+macOS Tahoe `26.6` build `25G72` was installed through a controlled restart on
+2026-08-03. The Mini booted at 01:31 EDT; automatic login completed, the ChatGPT
+startup agent returned success, Chrome Remote Desktop remained available, all
+required power settings persisted, Python dependency consistency passed, Git
+remained clean and aligned with `origin/main`, and all 53 Gate 5 tests passed.
+The KVM is no longer required for routine operation and remains emergency
+recovery equipment only.
 
 ## Cost and security boundaries
 

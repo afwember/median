@@ -10,9 +10,11 @@ Branch: `main`
 
 Verified predecessor checkpoint: `35e29d8d740eb0335620212680d370165088eab9`
 
-This file describes the pre-macOS-26.6-restart checkpoint. The commit containing
-this file is the continuity-package checkpoint; verify its exact hash with
-`git rev-parse HEAD` rather than copying a self-referential hash into the file.
+This file describes the verified post-macOS-26.6-restart state. Pre-update
+continuity checkpoint `68857afd9d02e33ff30622042dcac8c13ce38450` is the
+recovery baseline. The commit containing this revision is the post-update
+checkpoint; verify its exact hash with `git rev-parse HEAD` rather than copying
+a self-referential hash into the file.
 
 ## Project state
 
@@ -39,9 +41,9 @@ Detailed Gate 5 evidence:
 - Chrome Remote Desktop is the primary unattended path and was verified from a
   laptop and an iPhone over cellular data.
 - macOS Screen Sharing is the independent Mac-to-Mac fallback.
-- A KVM is retained as temporary recovery insurance for the first controlled
-  operating-system update; it is not expected to be needed after a successful
-  post-reboot remote-access test.
+- The first controlled operating-system update reboot completed and remote
+  operation returned. The KVM can now be removed from routine availability;
+  retain it only as emergency recovery equipment.
 - Automatic login targets `ambulatoryworld`.
 - LaunchAgent `com.median.open-chatgpt` opens
   `/Applications/ChatGPT Classic.app` at login.
@@ -50,9 +52,10 @@ Detailed Gate 5 evidence:
 - FileVault is disabled by explicit author decision to permit unattended cold
   boot. This increases physical-access exposure to local data and saved
   sessions.
-- macOS 26.4 build 25E246 is running. Apple recorded the macOS 26.6 download as
-  finished at 2026-08-03 01:18 EDT. It is ready for a controlled installation
-  and restart but has not yet been installed.
+- macOS 26.6 build 25G72 is running. The system booted at 2026-08-03 01:31 EDT;
+  automatic login, ChatGPT startup, remote access, power controls, repository
+  alignment, Python dependency consistency, and all 53 Gate 5 tests passed in
+  the post-reboot check.
 
 Full infrastructure record:
 `m050/docs/operations/M050_Remote_Operations_and_Status_Sync_v0_1_MEDIANv0_5_0.md`.
@@ -77,7 +80,6 @@ audit data.
 
 ## Known pending transition
 
-The next state-changing operation is the macOS 26.6 installation and restart.
-It must remain the final operation of the session. Do not begin new project
-work, paid provider work, or another configuration change before following
-`NEXT_ACTION.md`.
+The host migration and controlled update are complete. The next project work is
+the offline Gate 5 continuation in `NEXT_ACTION.md`. No paid model or provider
+request is authorized.

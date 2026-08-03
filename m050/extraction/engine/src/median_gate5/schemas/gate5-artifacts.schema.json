@@ -872,6 +872,254 @@
         "passed": {"const": true}
       }
     },
+    "legacy_compound_source_span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start", "end", "start_line", "end_line", "first_block_offset",
+        "last_block_end_offset"
+      ],
+      "properties": {
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 1},
+        "start_line": {"type": "integer", "minimum": 1},
+        "end_line": {"type": "integer", "minimum": 1},
+        "first_block_offset": {"type": "integer", "minimum": 0},
+        "last_block_end_offset": {"type": "integer", "minimum": 0}
+      }
+    },
+    "legacy_compound_structural_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unique_exact_source_span", "contiguous_raw_quotation",
+        "replay_block_sequence_exact", "consecutive_non_whitespace_blocks",
+        "contiguous_block_partition", "homogeneous_block_type",
+        "shared_parent_heading", "shared_status_context",
+        "all_blocks_locally_eligible", "interior_blocks_fully_covered"
+      ],
+      "properties": {
+        "unique_exact_source_span": {"const": true},
+        "contiguous_raw_quotation": {"const": true},
+        "replay_block_sequence_exact": {"const": true},
+        "consecutive_non_whitespace_blocks": {"const": true},
+        "contiguous_block_partition": {"const": true},
+        "homogeneous_block_type": {"const": true},
+        "shared_parent_heading": {"const": true},
+        "shared_status_context": {"const": true},
+        "all_blocks_locally_eligible": {"const": true},
+        "interior_blocks_fully_covered": {"const": true}
+      }
+    },
+    "legacy_compound_disposition_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "compound_disposition_id", "legacy_record_id",
+        "replay_record_id", "source_id", "source_sha256", "source_location",
+        "quote_sha256", "legacy_candidate_record_sha256", "source_span",
+        "ordered_block_ids", "ordered_block_ordinals", "block_type",
+        "parent_heading", "status_context", "structural_checks",
+        "boundary_resolution", "preservation_disposition", "migration_state",
+        "review_requirement", "risk_tier", "semantic_review_performed",
+        "legacy_record_modified", "split_performed"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-LEGACY-COMPOUND-DISPOSITION-RECORD-0.1"},
+        "compound_disposition_id": {"type": "string", "pattern": "^lcd_[0-9a-f]{24}$"},
+        "legacy_record_id": {"$ref": "#/$defs/nonempty_string"},
+        "replay_record_id": {"type": "string", "pattern": "^lrr_[0-9a-f]{24}$"},
+        "source_id": {"$ref": "#/$defs/nonempty_string"},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "source_location": {"$ref": "#/$defs/nonempty_string"},
+        "quote_sha256": {"$ref": "#/$defs/sha256"},
+        "legacy_candidate_record_sha256": {"$ref": "#/$defs/sha256"},
+        "source_span": {"$ref": "#/$defs/legacy_compound_source_span"},
+        "ordered_block_ids": {"$ref": "#/$defs/nonempty_string_array"},
+        "ordered_block_ordinals": {
+          "type": "array", "minItems": 2, "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 1}
+        },
+        "block_type": {"enum": ["list_item", "table_row"]},
+        "parent_heading": {"$ref": "#/$defs/nonempty_string"},
+        "status_context": {"$ref": "#/$defs/string_array"},
+        "structural_checks": {"$ref": "#/$defs/legacy_compound_structural_checks"},
+        "boundary_resolution": {"const": "contiguous_same_section_homogeneous_block_sequence"},
+        "preservation_disposition": {"const": "preserve_as_one_indivisible_legacy_compound"},
+        "migration_state": {"const": "mechanically_valid_pending_tier_2_semantic_review"},
+        "review_requirement": {"const": "exhaustive_independent_semantic_review_in_compound_bundle"},
+        "risk_tier": {"const": 2},
+        "semantic_review_performed": {"const": false},
+        "legacy_record_modified": {"const": false},
+        "split_performed": {"const": false}
+      }
+    },
+    "legacy_compound_source_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id", "cross_block_records", "mechanically_valid_compounds",
+        "tier_2_review_required"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/nonempty_string"},
+        "cross_block_records": {"type": "integer", "minimum": 0},
+        "mechanically_valid_compounds": {"type": "integer", "minimum": 0},
+        "tier_2_review_required": {"type": "integer", "minimum": 0}
+      }
+    },
+    "legacy_compound_disposition_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "compound_report_id", "compound_disposition_version",
+        "replay_milestone", "ledger", "record_count",
+        "distinct_legacy_record_ids", "source_summaries", "disposition_counts",
+        "all_exact_contiguous", "all_block_sequences_exact",
+        "all_preserved_as_indivisible_compounds", "tier_2_semantic_review_required",
+        "semantic_reviews_performed", "legacy_records_modified_or_split",
+        "provider_calls", "accounted_cost_cents", "passed"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-LEGACY-COMPOUND-DISPOSITION-REPORT-0.1"},
+        "compound_report_id": {"type": "string", "pattern": "^lcdr_[0-9a-f]{24}$"},
+        "compound_disposition_version": {"const": "M050-LEGACY-COMPOUND-DISPOSITION-0.1"},
+        "replay_milestone": {"$ref": "#/$defs/artifact_binding"},
+        "ledger": {"$ref": "#/$defs/artifact_binding"},
+        "record_count": {"const": 17},
+        "distinct_legacy_record_ids": {"const": 17},
+        "source_summaries": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {"$ref": "#/$defs/legacy_compound_source_summary"}
+        },
+        "disposition_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "all_exact_contiguous": {"const": true},
+        "all_block_sequences_exact": {"const": true},
+        "all_preserved_as_indivisible_compounds": {"const": true},
+        "tier_2_semantic_review_required": {"const": 17},
+        "semantic_reviews_performed": {"const": 0},
+        "legacy_records_modified_or_split": {"const": 0},
+        "provider_calls": {"const": 0},
+        "accounted_cost_cents": {"const": 0},
+        "passed": {"const": true}
+      }
+    },
+    "legacy_occurrence_selected_span": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "start_line", "end_line"],
+      "properties": {
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 1},
+        "start_line": {"type": "integer", "minimum": 1},
+        "end_line": {"type": "integer", "minimum": 1}
+      }
+    },
+    "legacy_occurrence_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "occurrence_resolution_id", "legacy_record_id",
+        "replay_record_id", "source_id", "source_sha256", "source_location",
+        "quote_sha256", "legacy_candidate_record_sha256",
+        "original_occurrence_count", "pinned_range_occurrence_count",
+        "pinned_range_whole_line_occurrence_count", "selected_span",
+        "selected_block_id", "selected_block_ordinal", "selected_block_type",
+        "parent_heading", "selection_rule", "resolution_disposition",
+        "migration_state", "review_requirement", "risk_tier",
+        "semantic_review_performed", "legacy_record_modified",
+        "replay_record_modified", "provider_calls", "accounted_cost_cents"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-LEGACY-OCCURRENCE-RESOLUTION-0.1"},
+        "occurrence_resolution_id": {"type": "string", "pattern": "^lor_[0-9a-f]{24}$"},
+        "legacy_record_id": {"const": "ATOM-MSID-DIRECT-0062"},
+        "replay_record_id": {"type": "string", "pattern": "^lrr_[0-9a-f]{24}$"},
+        "source_id": {"const": "M050-SRC-MSID-GRAMMAR-001"},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "source_location": {"const": "L00287-L00290"},
+        "quote_sha256": {"$ref": "#/$defs/sha256"},
+        "legacy_candidate_record_sha256": {"$ref": "#/$defs/sha256"},
+        "original_occurrence_count": {"const": 38},
+        "pinned_range_occurrence_count": {"const": 2},
+        "pinned_range_whole_line_occurrence_count": {"const": 1},
+        "selected_span": {"$ref": "#/$defs/legacy_occurrence_selected_span"},
+        "selected_block_id": {"$ref": "#/$defs/nonempty_string"},
+        "selected_block_ordinal": {"type": "integer", "minimum": 1},
+        "selected_block_type": {"const": "code_fence"},
+        "parent_heading": {"$ref": "#/$defs/nonempty_string"},
+        "selection_rule": {"const": "unique_exact_whole_line_match_within_pinned_source_line_range"},
+        "resolution_disposition": {"const": "exact_occurrence_resolved_without_replay_mutation"},
+        "migration_state": {"const": "mechanically_valid_pending_tier_2_ontology_review"},
+        "review_requirement": {"const": "exhaustive_independent_semantic_review_in_ontology_bundle"},
+        "risk_tier": {"const": 2},
+        "semantic_review_performed": {"const": false},
+        "legacy_record_modified": {"const": false},
+        "replay_record_modified": {"const": false},
+        "provider_calls": {"const": 0},
+        "accounted_cost_cents": {"const": 0}
+      }
+    },
+    "legacy_replay_reproducibility_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id", "records", "raw_repair_queue_records",
+        "ledger_byte_identical", "report_byte_identical"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/nonempty_string"},
+        "records": {"type": "integer", "minimum": 1},
+        "raw_repair_queue_records": {"type": "integer", "minimum": 0},
+        "ledger_byte_identical": {"const": true},
+        "report_byte_identical": {"const": true}
+      }
+    },
+    "legacy_repair_closure_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "repair_closure_id", "replay_milestone",
+        "human_rulings_reconstruction_report", "compound_disposition_report",
+        "occurrence_resolution", "reproducibility", "legacy_record_count",
+        "raw_replay_queue_count", "reference_rewrite_repairs",
+        "cross_block_compound_repairs", "ambiguous_occurrence_repairs",
+        "mechanically_dispositioned_queue_count",
+        "unresolved_grounding_or_coordinate_repairs",
+        "replay_ledgers_byte_identical", "replay_reports_byte_identical",
+        "mechanical_repair_overlay_complete", "semantic_acceptance_performed",
+        "layer_e_migration_started", "legacy_or_replay_records_modified",
+        "provider_calls", "accounted_cost_cents", "passed"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-LEGACY-REPAIR-CLOSURE-REPORT-0.1"},
+        "repair_closure_id": {"type": "string", "pattern": "^lrc_[0-9a-f]{24}$"},
+        "replay_milestone": {"$ref": "#/$defs/artifact_binding"},
+        "human_rulings_reconstruction_report": {"$ref": "#/$defs/artifact_binding"},
+        "compound_disposition_report": {"$ref": "#/$defs/artifact_binding"},
+        "occurrence_resolution": {"$ref": "#/$defs/artifact_binding"},
+        "reproducibility": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {"$ref": "#/$defs/legacy_replay_reproducibility_entry"}
+        },
+        "legacy_record_count": {"const": 913},
+        "raw_replay_queue_count": {"const": 24},
+        "reference_rewrite_repairs": {"const": 6},
+        "cross_block_compound_repairs": {"const": 17},
+        "ambiguous_occurrence_repairs": {"const": 1},
+        "mechanically_dispositioned_queue_count": {"const": 24},
+        "unresolved_grounding_or_coordinate_repairs": {"const": 0},
+        "replay_ledgers_byte_identical": {"const": 4},
+        "replay_reports_byte_identical": {"const": 4},
+        "mechanical_repair_overlay_complete": {"const": true},
+        "semantic_acceptance_performed": {"const": false},
+        "layer_e_migration_started": {"const": false},
+        "legacy_or_replay_records_modified": {"const": 0},
+        "provider_calls": {"const": 0},
+        "accounted_cost_cents": {"const": 0},
+        "passed": {"const": true}
+      }
+    },
     "transition_receipt": {
       "type": "object",
       "additionalProperties": false,

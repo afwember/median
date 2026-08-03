@@ -1,0 +1,123 @@
+{
+  "schema_version": "M050-ACTIVE-CONTROL-INDEX-0.6",
+  "title": "MEDIAN v0.5.0 Active Control Index",
+  "status": "ACTIVE",
+  "updated": "2026-08-03",
+  "supersedes": {
+    "path": "m050/extraction/control/M050_Active_Control_Index_v0_5_MEDIANv0_5_0.json",
+    "sha256": "95a4c35b8abafc69d7be704a392c5aa270d21b85b3c3044c3819c843f541032d"
+  },
+  "execution_state": "GATE_5_LEGACY_MECHANICAL_REPAIR_OVERLAY_COMPLETE",
+  "author_root_of_authority": "Asa Wember",
+  "repository_writer": "One explicitly authorized Codex task at a time",
+  "current_controls": [
+    {
+      "path": "m050/extraction/control/M050_Frozen_Corpus_Manifest_v0_1_MEDIANv0_5_0.json",
+      "role": "Exact frozen source, accepted-evidence, archive, and version snapshot"
+    },
+    {
+      "path": "m050/extraction/control/M050_Repository_Write_Authority_and_Freeze_Policy_v0_1_MEDIANv0_5_0.md",
+      "role": "Author authority, sole-writer discipline, and frozen-source policy"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
+      "role": "Content-derived source identities, processing dispositions, and stream eligibility"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_3_Reuse_Disposition_v0_1_MEDIANv0_5_0.yaml",
+      "role": "Machine-readable disposition of the four completed legacy extractions"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_4_Completion_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable Gate 4 completion state"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Technical_Contract_v0_1_MEDIANv0_5_0.md",
+      "role": "Approved offline Gate 5 artifact, transition, review, dependency, and pass contract"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Author-attributed approval and exact approved-card hashes"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable deterministic replay hashes and immutable 24-record raw queue"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Human_Rulings_Reconstruction_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable Human Rulings reconstruction bindings and coverage"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Repair_Closure_Report_v0_1_MEDIANv0_5_0.md",
+      "role": "Human-readable 24-record mechanical repair and replay reproducibility result"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Repair_Closure_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable repair artifact hashes, exact queue coverage, and transition boundary"
+    },
+    {
+      "path": "m050/extraction/control/source-identities/cards/",
+      "role": "Approved legacy source identities and authority boundaries"
+    },
+    {
+      "path": "m050/extraction/control/source-identities/blocks/",
+      "role": "Deterministic structural block registries bound by approved source identity cards"
+    },
+    {
+      "path": "m050/extraction/replay/",
+      "role": "Immutable deterministic legacy replay ledgers and content-addressed reports"
+    },
+    {
+      "path": "m050/extraction/reconstruction/human-rulings/",
+      "role": "Immutable Human Rulings registry, coordinates, rewrites, and reconstruction report"
+    },
+    {
+      "path": "m050/extraction/repairs/",
+      "role": "Immutable compound dispositions, occurrence resolution, and repair closure report"
+    },
+    {
+      "path": "m050/extraction/engine/",
+      "role": "Source-independent Gate 5 engine, schemas, pinned environment, and offline regression suite"
+    },
+    {
+      "path": "m050/tools/m050_guard.py",
+      "role": "Immutable Gate 4 frozen-corpus and accepted-evidence integrity guard"
+    },
+    {
+      "path": "m050/tools/m050_guard_v0_2.py",
+      "role": "Gate 4 integrity plus active Gate 5 identity, replay, repair, offline-import, and regression guard"
+    }
+  ],
+  "current_progress_and_cost_records": [
+    "m050/extraction/progress/M050_Compile_Progress_and_Stage_Guide_v0_1_MEDIANv0_5_0.xlsx",
+    "m050/extraction/progress/M050_Document_Processing_Tracker_v0_1_MEDIANv0_5_0.xlsx",
+    "m050/extraction/progress/M050_Compile_Cost_Ledger_v0_1_MEDIANv0_5_0.md",
+    "m050/docs/operations/costs/M050_Compile_Cost_Entries_v0_1_MEDIANv0_5_0.csv"
+  ],
+  "historical_only": [
+    "Everything under m050/archive/ except exact legacy artifacts and Gate 4 receipts explicitly hash-bound by active controls",
+    "Active Control Index v0.1 through v0.5 are immutable predecessor snapshots",
+    "Draft and reviewed identity-card revisions remain immutable transition history; approved v0.4 files are active",
+    "All old prompts, proposal schemas, source-specific workers, registries, runbooks, and execution lanes",
+    "All prior conversational work orders and thread bootstrap prompts"
+  ],
+  "repair_state": {
+    "raw_replay_queue_records": 24,
+    "reference_rewrite_records_dispositioned": 6,
+    "cross_block_compound_records_dispositioned": 17,
+    "ambiguous_occurrence_records_dispositioned": 1,
+    "mechanically_dispositioned_queue_records": 24,
+    "unresolved_grounding_or_coordinate_repairs": 0,
+    "legacy_or_replay_records_modified": 0
+  },
+  "review_state": {
+    "semantic_acceptance_performed": false,
+    "tier_2_compound_records_pending_review": 17,
+    "tier_2_occurrence_record_pending_review": 1,
+    "broader_likely_compound_review_flags": 123,
+    "layer_e_migration_started": false
+  },
+  "next_authorized_activity": "Design and build deterministic Layer E migration candidates and transition rules while retaining every legacy ID, quote, coordinate, repair disposition, risk tier, and pending-review state. Do not convert legacy semantic labels into accepted evidence or bypass Tier 1/Tier 2 review. Retrospective block/exclusion ledgers and the full compound-review inventory remain required.",
+  "google_sheets_interaction_authorized": false,
+  "provider_call_authorized": false
+}

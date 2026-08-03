@@ -30,11 +30,12 @@ a self-referential hash into the file.
   and there are zero grounding failures. Layer E migration has not begun.
 - Replay exposed a bounded 24-record repair queue: 17 cross-block compounds,
   six Human Rulings active-to-legacy reference rewrites, and one ambiguous MSID
-  occurrence. Human Rulings reconstruction has now resolved the six reference
-  rewrites, leaving an 18-record repair overlay: 17 cross-block compounds and
-  one ambiguous MSID occurrence. The raw replay artifacts remain unchanged and
-  continue to show the original 24-record queue until all repairs are complete
-  and all four replays are repeated.
+  occurrence. All 24 now have explicit mechanical dispositions: six reference
+  rewrites, 17 preserved indivisible compounds, and one pinned exact whole-line
+  occurrence. The raw replay artifacts remain unchanged and still show the
+  original queue by design. Rebuilding all four replays produced byte-identical
+  ledgers and reports, and there are zero unresolved grounding or coordinate
+  repairs.
 - Human Rulings reconstruction accounts for all 41 historical ruling sections,
   all 348 labeled ruling fields, and all 173 accepted legacy records. Of those,
   137 records are ruling-field bounded, 36 are bound to explicit non-ruling
@@ -46,8 +47,7 @@ a self-referential hash into the file.
 - The repository-local environment uses Python 3.12.7 with pip 26.2,
   setuptools 83.0.0, wheel 0.47.0, and pytest 9.1.1.
 - The latest security check found no known third-party Python vulnerabilities;
-  `pip check` passed and the current offline Gate 5 suite passes its standing
-  regression tests.
+  `pip check` passed and the current offline Gate 5 suite passes all 77 tests.
 - No paid model or provider work is currently authorized.
 
 Detailed Gate 5 evidence:
@@ -62,7 +62,9 @@ Detailed Gate 5 evidence:
 - `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Human_Rulings_Reconstruction_Report_v0_1_MEDIANv0_5_0.md`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Human_Rulings_Reconstruction_Receipt_v0_1_MEDIANv0_5_0.json`
-- `m050/extraction/control/M050_Active_Control_Index_v0_5_MEDIANv0_5_0.json`
+- `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Repair_Closure_Report_v0_1_MEDIANv0_5_0.md`
+- `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Repair_Closure_Receipt_v0_1_MEDIANv0_5_0.json`
+- `m050/extraction/control/M050_Active_Control_Index_v0_6_MEDIANv0_5_0.json`
 
 ## Remote operating state
 
@@ -111,8 +113,8 @@ audit data.
 ## Known pending transition
 
 The host migration, controlled update, source identity approval, legacy replay,
-and Human Rulings reconstruction are complete. The next project action is to
-prepare explicit source-preserving dispositions for all 17 cross-block legacy
-records, then resolve the one ambiguous MSID occurrence and repeat all four
-replays, as specified in `NEXT_ACTION.md`. No paid model or provider request is
-authorized.
+Human Rulings reconstruction, and the 24-record mechanical repair overlay are
+complete. The next project action is deterministic Layer E migration-candidate
+design and construction, preserving all risk and pending-review states, as
+specified in `NEXT_ACTION.md`. No semantic acceptance, paid model, or provider
+request is authorized.

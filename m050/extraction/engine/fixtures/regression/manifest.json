@@ -41,5 +41,12 @@
     ,{"case_id": "REG-HR-002", "risk": "historical ruling or labeled field is omitted", "expected": "pass", "test_path": "tests/test_rulings.py", "test_name": "test_active_ledger_has_complete_41_ruling_and_348_field_topology"}
     ,{"case_id": "REG-HR-003", "risk": "legacy atom lacks ruling, field, region, or reference-rewrite coordinates", "expected": "pass_with_receipt", "test_path": "tests/test_rulings.py", "test_name": "test_reconstruction_links_all_atoms_and_resolves_six_reference_rewrites"}
     ,{"case_id": "REG-HR-004", "risk": "ruling reconstruction changes between identical builds", "expected": "pass", "test_path": "tests/test_rulings.py", "test_name": "test_reconstruction_is_byte_deterministic"}
+    ,{"case_id": "REG-COMPOUND-001", "risk": "cross-block legacy record is split, modified, or loses source coordinates", "expected": "review_required", "test_path": "tests/test_repairs.py", "test_name": "test_all_17_cross_block_records_are_preserved_as_indivisible_compounds"}
+    ,{"case_id": "REG-COMPOUND-002", "risk": "compound disposition changes between identical builds", "expected": "pass", "test_path": "tests/test_repairs.py", "test_name": "test_compound_disposition_is_byte_deterministic"}
+    ,{"case_id": "REG-COMPOUND-003", "risk": "compound repair proceeds after replay aggregate drift", "expected": "fail_closed", "test_path": "tests/test_repairs.py", "test_name": "test_compound_disposition_fails_closed_on_replay_aggregate_drift"}
+    ,{"case_id": "REG-OCCURRENCE-001", "risk": "prefix occurrence is selected instead of the pinned exact whole line", "expected": "pass_with_receipt", "test_path": "tests/test_repairs.py", "test_name": "test_ambiguous_msid_occurrence_resolves_to_unique_whole_line_in_pinned_range"}
+    ,{"case_id": "REG-OCCURRENCE-002", "risk": "pinned occurrence resolution changes between identical builds", "expected": "pass", "test_path": "tests/test_repairs.py", "test_name": "test_ambiguous_occurrence_resolution_is_deterministic"}
+    ,{"case_id": "REG-REPAIR-001", "risk": "mechanical repair overlay omits a raw queue record or changes replay bytes", "expected": "pass_with_receipt", "test_path": "tests/test_repairs.py", "test_name": "test_repair_closure_exactly_covers_queue_and_replays_byte_identically"}
+    ,{"case_id": "REG-REPAIR-002", "risk": "repair closure changes between identical builds", "expected": "pass", "test_path": "tests/test_repairs.py", "test_name": "test_repair_closure_is_deterministic"}
   ]
 }

@@ -13,6 +13,11 @@ from .errors import ContractError, Gate5Error
 from .identity import identity_card_errors, transition_identity_card
 from .legacy import build_legacy_replay
 from .rulings import build_human_rulings_reconstruction
+from .repairs import (
+    build_compound_dispositions,
+    build_occurrence_resolution,
+    build_repair_closure,
+)
 from .runtime import runtime_errors, runtime_report
 from .schema import validate_artifact
 from .scope import require_input_paths, require_new_output_path
@@ -405,6 +410,139 @@ def _reconstruct_human_rulings(args: argparse.Namespace) -> int:
     return 0 if report["passed"] else 1
 
 
+def _dispose_compounds(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    milestone_supplied = Path(args.replay_milestone)
+    require_input_paths(
+        repo_root,
+        [milestone_supplied],
+        [Path("m050/extraction/audit")],
+    )
+    milestone_path = (
+        (repo_root / milestone_supplied).resolve()
+        if not milestone_supplied.is_absolute()
+        else milestone_supplied.resolve()
+    )
+    ledger_output = require_new_output_path(repo_root, Path(args.output_ledger))
+    report_output = require_new_output_path(repo_root, Path(args.output_report))
+    if ledger_output == report_output:
+        raise ContractError("compound disposition ledger and report outputs must differ")
+    ledger_bytes, report = build_compound_dispositions(
+        repo_root=repo_root,
+        replay_milestone=_read_json(milestone_path),
+        replay_milestone_path=milestone_path,
+        ledger_relative_path=str(ledger_output.relative_to(repo_root)),
+    )
+    write_new_bytes(ledger_output, ledger_bytes)
+    write_new_json(report_output, report)
+    print(
+        json.dumps(
+            {
+                "compound_report_id": report["compound_report_id"],
+                "passed": report["passed"],
+                "records": report["record_count"],
+                "preserved_as_indivisible_compounds": report[
+                    "tier_2_semantic_review_required"
+                ],
+                "semantic_reviews_performed": report["semantic_reviews_performed"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0 if report["passed"] else 1
+
+
+def _resolve_legacy_occurrence(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    milestone_supplied = Path(args.replay_milestone)
+    require_input_paths(
+        repo_root,
+        [milestone_supplied],
+        [Path("m050/extraction/audit")],
+    )
+    milestone_path = (
+        (repo_root / milestone_supplied).resolve()
+        if not milestone_supplied.is_absolute()
+        else milestone_supplied.resolve()
+    )
+    output = require_new_output_path(repo_root, Path(args.output))
+    resolution = build_occurrence_resolution(
+        repo_root=repo_root,
+        replay_milestone=_read_json(milestone_path),
+        replay_milestone_path=milestone_path,
+    )
+    write_new_json(output, resolution)
+    print(
+        json.dumps(
+            {
+                "occurrence_resolution_id": resolution["occurrence_resolution_id"],
+                "legacy_record_id": resolution["legacy_record_id"],
+                "selected_line": resolution["selected_span"]["start_line"],
+                "selected_block_id": resolution["selected_block_id"],
+                "resolution_disposition": resolution["resolution_disposition"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
+def _verify_repair_closure(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    supplied = {
+        "replay_milestone": Path(args.replay_milestone),
+        "human_report": Path(args.human_report),
+        "compound_report": Path(args.compound_report),
+        "occurrence_resolution": Path(args.occurrence_resolution),
+    }
+    require_input_paths(
+        repo_root,
+        supplied.values(),
+        [Path("m050/extraction/audit"), Path("m050/extraction/reconstruction"), Path("m050/extraction/repairs")],
+    )
+    resolved = {
+        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
+        for key, path in supplied.items()
+    }
+    output = require_new_output_path(repo_root, Path(args.output))
+    closure = build_repair_closure(
+        repo_root=repo_root,
+        replay_milestone=_read_json(resolved["replay_milestone"]),
+        replay_milestone_path=resolved["replay_milestone"],
+        human_reconstruction_report_path=resolved["human_report"],
+        compound_report_path=resolved["compound_report"],
+        occurrence_resolution_path=resolved["occurrence_resolution"],
+    )
+    write_new_json(output, closure)
+    print(
+        json.dumps(
+            {
+                "repair_closure_id": closure["repair_closure_id"],
+                "passed": closure["passed"],
+                "legacy_records": closure["legacy_record_count"],
+                "raw_replay_queue": closure["raw_replay_queue_count"],
+                "mechanically_dispositioned": closure[
+                    "mechanically_dispositioned_queue_count"
+                ],
+                "unresolved_grounding_or_coordinate_repairs": closure[
+                    "unresolved_grounding_or_coordinate_repairs"
+                ],
+                "byte_identical_replay_ledgers": closure[
+                    "replay_ledgers_byte_identical"
+                ],
+                "byte_identical_replay_reports": closure[
+                    "replay_reports_byte_identical"
+                ],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0 if closure["passed"] else 1
+
+
 def _bundle(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root).resolve()
     mapping_value = json.loads(Path(args.mappings).read_text(encoding="utf-8"))
@@ -525,6 +663,37 @@ def build_parser() -> argparse.ArgumentParser:
     reconstruct.add_argument("--output-rewrite-map", required=True)
     reconstruct.add_argument("--output-report", required=True)
     reconstruct.set_defaults(func=_reconstruct_human_rulings)
+
+    compounds = subparsers.add_parser(
+        "dispose-cross-block-compounds",
+        help="preserve and disposition all replay quotations crossing block boundaries",
+    )
+    compounds.add_argument("--repo-root", default=".")
+    compounds.add_argument("--replay-milestone", required=True)
+    compounds.add_argument("--output-ledger", required=True)
+    compounds.add_argument("--output-report", required=True)
+    compounds.set_defaults(func=_dispose_compounds)
+
+    occurrence = subparsers.add_parser(
+        "resolve-legacy-occurrence",
+        help="resolve the pinned exact whole-line match for the replay occurrence exception",
+    )
+    occurrence.add_argument("--repo-root", default=".")
+    occurrence.add_argument("--replay-milestone", required=True)
+    occurrence.add_argument("--output", required=True)
+    occurrence.set_defaults(func=_resolve_legacy_occurrence)
+
+    closure = subparsers.add_parser(
+        "verify-repair-closure",
+        help="prove complete repair-overlay coverage and byte-identical legacy replay",
+    )
+    closure.add_argument("--repo-root", default=".")
+    closure.add_argument("--replay-milestone", required=True)
+    closure.add_argument("--human-report", required=True)
+    closure.add_argument("--compound-report", required=True)
+    closure.add_argument("--occurrence-resolution", required=True)
+    closure.add_argument("--output", required=True)
+    closure.set_defaults(func=_verify_repair_closure)
 
     bundle = subparsers.add_parser("bundle")
     bundle.add_argument("--repo-root", default=".")

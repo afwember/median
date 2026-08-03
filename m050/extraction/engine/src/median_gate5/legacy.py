@@ -64,6 +64,9 @@ def _occurrences(text: str, quotation: str) -> list[tuple[int, int]]:
         start = index + 1
 
 
+exact_occurrences = _occurrences
+
+
 def _line_bounds(text: str, location: str) -> tuple[int, int] | None:
     match = LINE_LOCATION.fullmatch(location)
     if not match:
@@ -76,6 +79,9 @@ def _line_bounds(text: str, location: str) -> tuple[int, int] | None:
     return sum(len(line) for line in lines[: start_line - 1]), sum(
         len(line) for line in lines[:end_line]
     )
+
+
+line_bounds = _line_bounds
 
 
 def select_occurrence(
@@ -111,6 +117,9 @@ def _overlapping_blocks(
         and block["start"] < end
         and block["end"] > start
     ]
+
+
+overlapping_blocks = _overlapping_blocks
 
 
 def replay_record(

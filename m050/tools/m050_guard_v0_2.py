@@ -15,10 +15,11 @@ import sys
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 LEGACY_GUARD = REPO_ROOT / "m050/tools/m050_guard.py"
-ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_5_MEDIANv0_5_0.json"
+ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_6_MEDIANv0_5_0.json"
 IDENTITY_APPROVAL_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json"
 LEGACY_REPLAY_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json"
 HUMAN_RULINGS_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Human_Rulings_Reconstruction_Receipt_v0_1_MEDIANv0_5_0.json"
+REPAIR_CLOSURE_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Repair_Closure_Receipt_v0_1_MEDIANv0_5_0.json"
 ENGINE_ROOT = REPO_ROOT / "m050/extraction/engine"
 LOCK_PATH = ENGINE_ROOT / "requirements.lock"
 SCHEMA_PATH = ENGINE_ROOT / "src/median_gate5/schemas/gate5-artifacts.schema.json"
@@ -65,19 +66,19 @@ def validate_active_index(errors: list[str]) -> None:
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"active control index cannot be read: {exc}")
         return
-    if index.get("execution_state") != "GATE_5_HUMAN_RULINGS_RECONSTRUCTION_PASSED_REPAIR_OVERLAY_ACTIVE":
+    if index.get("execution_state") != "GATE_5_LEGACY_MECHANICAL_REPAIR_OVERLAY_COMPLETE":
         errors.append("active control index has unexpected execution state")
     if index.get("provider_call_authorized") is not False:
         errors.append("active control index does not explicitly prohibit provider calls")
     if index.get("google_sheets_interaction_authorized") is not False:
         errors.append("active control index does not preserve the Google Sheets pause")
-    overlay = index.get("repair_overlay", {})
+    overlay = index.get("repair_state", {})
     if (
         overlay.get("raw_replay_queue_records") != 24
-        or overlay.get("human_rulings_reference_rewrite_records_resolved") != 6
-        or overlay.get("remaining_repair_records") != 18
+        or overlay.get("mechanically_dispositioned_queue_records") != 24
+        or overlay.get("unresolved_grounding_or_coordinate_repairs") != 0
     ):
-        errors.append("active control index has an unexpected repair overlay")
+        errors.append("active control index has an unexpected repair state")
     for control in index.get("current_controls", []):
         relative = control.get("path")
         if not isinstance(relative, str) or not relative:
@@ -436,6 +437,167 @@ def validate_human_rulings_reconstruction(errors: list[str]) -> tuple[int, int, 
     return len(sections), field_count, len(coordinates)
 
 
+def validate_repair_closure(errors: list[str]) -> int:
+    try:
+        receipt = json.loads(REPAIR_CLOSURE_RECEIPT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"legacy repair closure receipt cannot be read: {exc}")
+        return 0
+    if receipt.get("status") != "LEGACY_MECHANICAL_REPAIR_OVERLAY_COMPLETE":
+        errors.append("legacy repair closure receipt has unexpected status")
+    if receipt.get("provider_call_authorized") is not False:
+        errors.append("legacy repair closure receipt does not prohibit provider calls")
+    if receipt.get("google_sheets_interactions") != 0:
+        errors.append("legacy repair closure receipt violates the Google Sheets pause")
+    if receipt.get("external_model_calls") != 0 or receipt.get("accounted_cost_cents") != 0:
+        errors.append("legacy repair closure must record zero calls and zero cost")
+    active_binding = receipt.get("active_control_index", {})
+    if (
+        active_binding.get("path") != str(ACTIVE_INDEX.relative_to(REPO_ROOT))
+        or active_binding.get("sha256") != sha256_file(ACTIVE_INDEX)
+    ):
+        errors.append("legacy repair closure active-control binding mismatch")
+    verification = receipt.get("verification", {})
+    snapshot_files, snapshot_digest = engine_snapshot()
+    if (
+        verification.get("engine_files") != snapshot_files
+        or verification.get("engine_digest") != snapshot_digest
+        or verification.get("artifact_schema_sha256") != sha256_file(SCHEMA_PATH)
+        or verification.get("regression_manifest_sha256") != sha256_file(REGRESSION_PATH)
+        or verification.get("gate_5_guard_sha256") != sha256_file(pathlib.Path(__file__))
+    ):
+        errors.append("legacy repair closure verification snapshot mismatch")
+
+    artifacts = receipt.get("artifacts", {})
+    paths: dict[str, pathlib.Path] = {}
+    for key in (
+        "compound_disposition_ledger",
+        "compound_disposition_report",
+        "occurrence_resolution",
+        "repair_closure_report",
+        "human_readable_report",
+    ):
+        binding = artifacts.get(key, {})
+        path = REPO_ROOT / binding.get("path", "")
+        paths[key] = path
+        if not path.is_file():
+            errors.append(f"missing legacy repair closure artifact: {key}")
+        elif sha256_file(path) != binding.get("sha256"):
+            errors.append(f"legacy repair closure artifact hash mismatch: {key}")
+    if not all(path.is_file() for path in paths.values()):
+        return 0
+    try:
+        compound_report = json.loads(paths["compound_disposition_report"].read_text(encoding="utf-8"))
+        occurrence = json.loads(paths["occurrence_resolution"].read_text(encoding="utf-8"))
+        closure = json.loads(paths["repair_closure_report"].read_text(encoding="utf-8"))
+        compound_records = [
+            json.loads(line)
+            for line in paths["compound_disposition_ledger"].read_text(encoding="utf-8").splitlines()
+        ]
+    except json.JSONDecodeError as exc:
+        errors.append(f"invalid legacy repair closure JSON: {exc}")
+        return 0
+
+    for value, id_key, prefix, label in (
+        (compound_report, "compound_report_id", "lcdr", "compound report"),
+        (occurrence, "occurrence_resolution_id", "lor", "occurrence resolution"),
+        (closure, "repair_closure_id", "lrc", "repair closure"),
+    ):
+        body = {key: item for key, item in value.items() if key not in {"schema_version", id_key}}
+        if value.get(id_key) != content_id(prefix, body):
+            errors.append(f"legacy {label} content ID mismatch")
+
+    compound_ids: set[str] = set()
+    for record in compound_records:
+        body = {
+            key: value
+            for key, value in record.items()
+            if key not in {"schema_version", "compound_disposition_id"}
+        }
+        if record.get("compound_disposition_id") != content_id("lcd", body):
+            errors.append("legacy compound disposition content ID mismatch")
+            break
+        record_id = record.get("legacy_record_id")
+        if not isinstance(record_id, str) or record_id in compound_ids:
+            errors.append("legacy compound disposition has duplicate or invalid record IDs")
+            break
+        compound_ids.add(record_id)
+        checks = record.get("structural_checks", {})
+        if not checks or not all(value is True for value in checks.values()):
+            errors.append(f"legacy compound structural checks did not all pass: {record_id}")
+            break
+        if (
+            record.get("preservation_disposition")
+            != "preserve_as_one_indivisible_legacy_compound"
+            or record.get("risk_tier") != 2
+            or record.get("semantic_review_performed") is not False
+            or record.get("legacy_record_modified") is not False
+            or record.get("split_performed") is not False
+        ):
+            errors.append(f"legacy compound disposition metadata mismatch: {record_id}")
+            break
+    if len(compound_records) != 17 or len(compound_ids) != 17:
+        errors.append("legacy compound disposition coverage mismatch")
+    if (
+        compound_report.get("record_count") != 17
+        or compound_report.get("tier_2_semantic_review_required") != 17
+        or compound_report.get("semantic_reviews_performed") != 0
+        or compound_report.get("legacy_records_modified_or_split") != 0
+        or compound_report.get("passed") is not True
+    ):
+        errors.append("legacy compound report metadata mismatch")
+    ledger_binding = compound_report.get("ledger", {})
+    receipt_ledger = artifacts.get("compound_disposition_ledger", {})
+    if (
+        ledger_binding.get("path") != receipt_ledger.get("path")
+        or ledger_binding.get("sha256") != receipt_ledger.get("sha256")
+    ):
+        errors.append("legacy compound report ledger binding mismatch")
+
+    if (
+        occurrence.get("legacy_record_id") != "ATOM-MSID-DIRECT-0062"
+        or occurrence.get("original_occurrence_count") != 38
+        or occurrence.get("pinned_range_occurrence_count") != 2
+        or occurrence.get("pinned_range_whole_line_occurrence_count") != 1
+        or occurrence.get("selected_span", {}).get("start_line") != 288
+        or occurrence.get("selected_span", {}).get("end_line") != 288
+        or occurrence.get("risk_tier") != 2
+        or occurrence.get("semantic_review_performed") is not False
+        or occurrence.get("legacy_record_modified") is not False
+        or occurrence.get("replay_record_modified") is not False
+    ):
+        errors.append("legacy occurrence resolution metadata mismatch")
+
+    coverage = receipt.get("coverage", {})
+    if (
+        closure.get("passed") is not True
+        or closure.get("legacy_record_count") != 913
+        or closure.get("raw_replay_queue_count") != 24
+        or closure.get("mechanically_dispositioned_queue_count") != 24
+        or closure.get("unresolved_grounding_or_coordinate_repairs") != 0
+        or closure.get("replay_ledgers_byte_identical") != 4
+        or closure.get("replay_reports_byte_identical") != 4
+        or closure.get("semantic_acceptance_performed") is not False
+        or closure.get("layer_e_migration_started") is not False
+        or closure.get("legacy_or_replay_records_modified") != 0
+        or coverage.get("mechanically_dispositioned_queue_records") != 24
+        or coverage.get("unresolved_grounding_or_coordinate_repairs") != 0
+    ):
+        errors.append("legacy repair closure coverage mismatch")
+    closure_compound = closure.get("compound_disposition_report", {})
+    receipt_compound = artifacts.get("compound_disposition_report", {})
+    closure_occurrence = closure.get("occurrence_resolution", {})
+    receipt_occurrence = artifacts.get("occurrence_resolution", {})
+    if (
+        closure_compound.get("path") != receipt_compound.get("path")
+        or closure_compound.get("sha256") != receipt_compound.get("sha256")
+        or closure_occurrence.get("path") != receipt_occurrence.get("path")
+        or closure_occurrence.get("sha256") != receipt_occurrence.get("sha256")
+    ):
+        errors.append("legacy repair closure artifact binding mismatch")
+    return len(compound_ids) + 7
+
+
 def validate_lock(errors: list[str]) -> None:
     if not LOCK_PATH.is_file():
         errors.append("Gate 5 requirements lock is missing")
@@ -536,6 +698,7 @@ def main() -> int:
     approved_identity_cards = validate_identity_approval(errors)
     replay_records, replay_queue = validate_legacy_replay(errors)
     ruling_sections, ruling_fields, ruling_coordinates = validate_human_rulings_reconstruction(errors)
+    mechanically_dispositioned = validate_repair_closure(errors)
     validate_lock(errors)
     json_controls = validate_json_controls(errors)
     validate_offline_imports(errors)
@@ -560,7 +723,8 @@ def main() -> int:
     print(f"- reconstructed Human Rulings sections: {ruling_sections}")
     print(f"- reconstructed Human Rulings fields: {ruling_fields}")
     print(f"- Human Rulings legacy coordinates: {ruling_coordinates}")
-    print("- repair overlay remaining: 18")
+    print(f"- mechanically dispositioned replay queue: {mechanically_dispositioned}/24")
+    print("- unresolved grounding or coordinate repairs: 0")
     print("- offline provider imports: 0")
     print("- provider calls: prohibited")
     if args.with_tests:

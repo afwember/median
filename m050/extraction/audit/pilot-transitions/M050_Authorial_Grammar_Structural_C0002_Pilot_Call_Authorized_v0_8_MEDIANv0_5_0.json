@@ -1,0 +1,34 @@
+{
+  "schema_version": "M050-PILOT-TRANSITION-0.1",
+  "receipt_id": "M050-AUTHGRAM-STRUCTURAL-C0002-PILOT-CALL-AUTHORIZED-008",
+  "date": "2026-08-03",
+  "prior_state": "pilot_frozen",
+  "state": "pilot_call_authorized",
+  "authority": "Asa Wember",
+  "authorization_statement": "I authorize exactly one bound Anthropic structural recalibration pilot call for C0002 under a $0.11 call cap, including transmission of its bounded Authorial Grammar source text.",
+  "freeze_proposal": {
+    "path": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Structural_C0002_Pilot_Freeze_Proposal_v0_8_MEDIANv0_5_0.json",
+    "sha256": "7464f10e694bf5d5ce649ff831cf6507dbcdfd34bf306c792f83b6f8923c5e6a"
+  },
+  "provider_call_limit": 1,
+  "authorized_chunk_ids": [
+    "C0002"
+  ],
+  "approved_cost_cap_usd": "0.11",
+  "external_source_transmission_authorized": true,
+  "revoked": false,
+  "binding": {
+    "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+    "configuration_sha256": "2e1e85c9e5f035a7bf5c7ca80437f1b53f5fb7cd1da103d7af88d6d94408bbbe",
+    "pilot_payload_sha256": "5cd0c91d570d7ca885cd61693735c3c0ede85ba657358495412b120c19f2a59c",
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "cache_ttl": "1h"
+  },
+  "limits": {
+    "retry_authorized": false,
+    "full_source_authorized": false,
+    "next_chunk_authorized": false,
+    "pilot_acceptance_releases_full_source": false
+  }
+}

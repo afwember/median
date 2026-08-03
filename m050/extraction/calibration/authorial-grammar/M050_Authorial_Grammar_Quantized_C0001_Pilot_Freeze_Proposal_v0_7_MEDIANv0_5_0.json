@@ -1,0 +1,58 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-AUTHGRAM-QUANTIZED-C0001-PILOT-FREEZE-007",
+  "state": "awaiting_exact_one_call_authorization",
+  "machine_state": "pilot_frozen",
+  "correction": "Re-apportion the complete source at 20 provider-eligible target blocks per chunk; chunk count is a generated result, not a preserved input.",
+  "authority": {
+    "offline_recalibration_authorized": true,
+    "provider_call_authorized": false,
+    "requested_provider_call_limit": 1,
+    "requested_cost_cap_usd": "0.11",
+    "external_transmission_for_this_binding_authorized": false
+  },
+  "binding": {
+    "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+    "source_sha256": "7d23ef2ccbff0c6594975c03cf405d838a3cc3f712ea6faf942581a72c9284ff",
+    "identity_card_sha256": "983ca763a907d3465c14215bed7f165f712b903567b5bbe54f6e50f6717e10b4",
+    "source_profile_sha256": "82cde773092c761d2e2b2556473513a68fa3ef396cfe07b07ef3926a4d22880b",
+    "configuration_sha256": "b012943a2639cb8b45331f95526ed5e0544ac089459c517cb52fec26a425fa59",
+    "chunk_plan_sha256": "91d10986714f848ee2ce34628b896f2668e64e5a8c4a28c9a3cc77aaba78e1be",
+    "pilot_chunk_id": "C0001",
+    "pilot_payload_sha256": "f906bc1247a940719c0455a135d7b0ee2fe16f975803d4b1f688971398fd23e3",
+    "prompt_sha256": "6cc8ef6866940d9dbb23913f57a9ab9e519ba55b951b556e72d8baf54f312098",
+    "schema_sha256": "0a190a2db1b012fce4f90a33039a4ce106f1584b831a499f8dc565c5d43fee33",
+    "controller_sha256": "7d88e86c797c1ce0c85b0867ce183c2d28a61f0404892d5e8c34ff864065c362",
+    "engine_module_sha256": "2a976331594964b4f3c6fda1c5bd1fd9ce57dc8f7abb6d9c495c8aaeec452510",
+    "validator_sha256": "2a976331594964b4f3c6fda1c5bd1fd9ce57dc8f7abb6d9c495c8aaeec452510",
+    "normalization_spec_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
+    "exclusion_policy_sha256": "904a25bba3e96a18be67bd7a58a78f0692ace38a48a8bf8287ae94087bad3c92",
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 6000,
+    "cache_ttl": "1h"
+  },
+  "pilot": {
+    "required_target_disposition_count": 20,
+    "cache_miss_call_ceiling_usd": "0.108244",
+    "requested_provider_call_limit": 1,
+    "authorized_provider_call_limit": 0,
+    "requested_cost_cap_usd": "0.11"
+  },
+  "offline_verification": {
+    "complete_source_reapportioned": true,
+    "generated_chunk_count": 12,
+    "all_chunks_prepared": true,
+    "all_chunks_fake_validated": true,
+    "offline_tests_passed": 116,
+    "provider_calls": 0
+  },
+  "spend_reconciliation": {
+    "original_authorized_usd": "2.00",
+    "spent_usd": "0.081618",
+    "remaining_usd": "1.918382",
+    "current_envelope_active": false,
+    "new_money_requested_usd": "0.00"
+  },
+  "next_required_author_statement": "I authorize exactly one bound Anthropic recalibration pilot call for quantized C0001 under a $0.11 call cap, including transmission of its bounded Authorial Grammar source text, and reactivate the reconciled remaining $1.918382 of the original cumulative $2.00 envelope."
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "M050-CURRENT-STATE-CHECKPOINT-0.12",
+  "status": "AUTHORIAL_GRAMMAR_LEAN_TABLE_C0003_PILOT_REJECTED_CONTEXT_LEADINS",
+  "date": "2026-08-03",
+  "supersedes": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_11_MEDIANv0_5_0.json", "sha256": "d1ee33118fc954c21ddef5f1561d2c281f19667753412935374841cf0c140c0a"},
+  "corpus_vector": {"registered_sources": 24, "atomic_compile_exclusions": 2, "compile_scope_sources": 22, "atomized_legacy_seed_sources": 4, "outstanding_compile_scope_sources": 18, "outstanding_pre_reconciliation_sources": 14, "outstanding_later_or_conditional_sources": 4},
+  "next_source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_state": "pilot_rejected_waiting_author_calibration_direction",
+  "accepted_evidence": {"new_plan_chunk_ids": ["C0001", "C0002"], "rejected_chunk_id": "C0003", "whole_source_candidate_complete": false},
+  "pilot_result": {
+    "mechanical_validation_passed": true,
+    "substantive_review_passed": false,
+    "table_header_and_delimiter_behavior_passed": true,
+    "table_body_evidence_preserved": true,
+    "failure_kind": "context_only_example_leadin_metadata_atoms",
+    "failed_block_ids": ["B00101", "B00105"],
+    "dependent_context_only_block_ids": ["B00103", "B00107"],
+    "cache_creation_input_tokens": 2698,
+    "exact_cost_usd": "0.067362"
+  },
+  "spend": {"cumulative_spent_usd": "0.419817", "active_money_only_remaining_usd": "1.580183", "money_authority_is_lifecycle_authority": false},
+  "authority_boundary": {"repository_writes_authorized": false, "offline_calibration_change_authorized": false, "provider_call_authorized": false, "retry_authorized": false, "full_source_authorized": false, "google_sheets_authorized": false, "semantic_acceptance_authorized": false, "mapping_authorized": false, "reconciliation_authorized": false, "compiled_prose_authorized": false},
+  "artifacts": {
+    "agents_contract": {"path": "AGENTS.md", "sha256": "92ba304eba3a9b999b2c5a8f6f524398da5f950d8b70ba68dd7e6fd2be5bd2b7"},
+    "active_control_index": {"path": "m050/extraction/control/M050_Active_Control_Index_v0_21_MEDIANv0_5_0.json", "sha256": "37c77889c2766b32ce1262dc2badce94bb6bfe52698f157b6ba73dbcf92322ec"},
+    "checkpoint_report": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_12_MEDIANv0_5_0.md", "sha256": "d803976b376b1b7dde12bf4de16f5660b6e482181ad889842d9ded76c6d9c323"},
+    "new_task_bootstrap": {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_11_MEDIANv0_5_0.md", "sha256": "e686bf75aa7be0aae4f40c3222655d2e47639cc9b9211caa8d13990ee40605f6"},
+    "pilot_rejection": {"path": "m050/extraction/audit/pilot-transitions/M050_Authorial_Grammar_Lean_Table_C0003_Pilot_Rejected_v0_9_MEDIANv0_5_0.json", "sha256": "46707ae101ba80b0c64d5de1221c258d8748fdd554d517203c6ce03288410e9c"},
+    "active_spend_envelope": {"path": "m050/extraction/audit/spend-envelopes/M050_Provider_Spend_Envelope_001_After_Lean_Table_C0003_Pilot_v0_8_MEDIANv0_5_0.json", "sha256": "ae9fcf6b8b358f83f09c0b550b117d4b07d52a00182dd91b033cc6e2a6d41ed0"},
+    "active_guard": {"path": "m050/tools/m050_guard_v0_16.py", "sha256": "d1efae9f5fa55691c9311efda33bd0364de511d02fc147399d60639f39245dfe"}
+  },
+  "next_authorized_transition": "No activity is authorized. The next possible activity is author review and explicit offline recalibration direction for lead-ins whose dependent bodies are context_only."
+}

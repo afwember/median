@@ -18,6 +18,11 @@ from .validation import validate_atoms, validate_block_dispositions
 SUPPORTED_CACHE_TTLS = {"5m", "1h"}
 SUPPORTED_LIFECYCLE_STATES = {"pilot_call_authorized", "source_run_authorized"}
 HEADING_LEVEL = re.compile(r"^ {0,3}(#{1,6})(?:\s+|$)")
+TABLE_DELIMITER_CELL = re.compile(r"^:?-{3,}:?$")
+PURE_STRUCTURAL_LABEL = re.compile(
+    r"^(?:examples?|prefer|preferred|avoid|not|correct|incorrect):$",
+    re.IGNORECASE,
+)
 
 
 def _decimal(value: Any, field: str) -> Decimal:
@@ -99,7 +104,11 @@ def build_chunk_payload(
         if disposition == "context_only":
             context_blocks.append(_block_record(block))
         elif disposition in {"eligible", "review_required"}:
-            target_blocks.append(_block_record(block))
+            record = _block_record(block)
+            if PURE_STRUCTURAL_LABEL.fullmatch(block.get("text", "").strip()):
+                record["structural_role"] = "pure_example_or_polarity_label"
+                record["required_disposition"] = "no_substantive_claim"
+            target_blocks.append(record)
         elif disposition == "excluded":
             excluded_block_ids.append(block_id)
         else:
@@ -155,11 +164,14 @@ def plan_source_chunks(
     dispositions: list[dict[str, Any]],
     *,
     max_input_tokens: int,
-    max_target_blocks: int,
+    target_blocks_per_chunk: int,
+    quantization_basis: str,
 ) -> dict[str, Any]:
-    """Plan bounded chunks while keeping tables intact and repeating heading context."""
-    if max_input_tokens < 1 or max_target_blocks < 1:
+    """Re-apportion a complete source at one calibrated target-block quantization."""
+    if max_input_tokens < 1 or target_blocks_per_chunk < 1:
         raise ContractError("chunk limits must be positive")
+    if not quantization_basis.strip():
+        raise ContractError("chunk quantization requires a calibration basis")
     blocks = manifest.get("blocks", [])
     blocks_by_id = {block.get("block_id"): block for block in blocks}
     if None in blocks_by_id or len(blocks_by_id) != len(blocks):
@@ -170,19 +182,87 @@ def plan_source_chunks(
     }:
         raise ContractError("chunk planning requires exactly one disposition per block")
 
+    def disposition(block: dict[str, Any]) -> str:
+        return by_disposition[block["block_id"]]["disposition"]
+
+    def is_semantic_lead_in(block: dict[str, Any]) -> bool:
+        return (
+            block.get("block_type") in {"paragraph", "list_item"}
+            and disposition(block) != "excluded"
+            and block.get("text", "").rstrip().endswith(":")
+        )
+
+    def dependent_body_kind(block: dict[str, Any]) -> str | None:
+        block_type = block.get("block_type")
+        if block_type in {"list_item", "table_row", "code_fence"}:
+            return block_type
+        if block_type == "paragraph" and block.get("text", "").lstrip().startswith(">"):
+            return "quotation"
+        return None
+
+    def after_whitespace(start: int) -> int:
+        cursor = start
+        while cursor < len(blocks) and blocks[cursor].get("block_type") == "whitespace":
+            cursor += 1
+        return cursor
+
+    def dependent_body_end(start: int, kind: str) -> int:
+        if kind == "code_fence":
+            return start + 1
+        cursor = start + 1
+        while cursor < len(blocks):
+            if dependent_body_kind(blocks[cursor]) == kind:
+                cursor += 1
+                continue
+            if blocks[cursor].get("block_type") == "whitespace":
+                next_body = after_whitespace(cursor)
+                if next_body < len(blocks) and dependent_body_kind(blocks[next_body]) == kind:
+                    cursor = next_body
+                    continue
+            break
+        return cursor
+
     groups: list[list[dict[str, Any]]] = []
     index = 0
     while index < len(blocks):
         block = blocks[index]
-        if block.get("block_type") == "table_row":
-            end = index + 1
-            while end < len(blocks) and blocks[end].get("block_type") == "table_row":
-                end += 1
+        if is_semantic_lead_in(block):
+            body_start = after_whitespace(index + 1)
+            # A title-bearing lead-in may bind a heading and the structural body
+            # immediately beneath it (for example, a titled reference table).
+            if body_start < len(blocks) and blocks[body_start].get("block_type") == "heading":
+                after_heading = after_whitespace(body_start + 1)
+                heading_body_kind = (
+                    dependent_body_kind(blocks[after_heading])
+                    if after_heading < len(blocks)
+                    else None
+                )
+                if heading_body_kind is not None:
+                    end = dependent_body_end(after_heading, heading_body_kind)
+                    groups.append(blocks[index:end])
+                    index = end
+                    continue
+                groups.append(blocks[index : body_start + 1])
+                index = body_start + 1
+                continue
+            body_kind = (
+                dependent_body_kind(blocks[body_start])
+                if body_start < len(blocks)
+                else None
+            )
+            if body_kind is not None:
+                end = dependent_body_end(body_start, body_kind)
+                groups.append(blocks[index:end])
+                index = end
+                continue
+        body_kind = dependent_body_kind(block)
+        if body_kind is not None:
+            end = dependent_body_end(index, body_kind)
             groups.append(blocks[index:end])
             index = end
-        else:
-            groups.append([block])
-            index += 1
+            continue
+        groups.append([block])
+        index += 1
 
     chunks: list[dict[str, Any]] = []
     current: list[dict[str, Any]] = []
@@ -223,11 +303,11 @@ def plan_source_chunks(
 
     for group in groups:
         group_tokens, group_targets = measures(group)
-        if group_tokens > max_input_tokens or group_targets > max_target_blocks:
+        if group_tokens > max_input_tokens or group_targets > target_blocks_per_chunk:
             raise ContractError(f"indivisible structural group exceeds chunk limits: {group[0]['block_id']}")
         would_exceed = current and (
             current_tokens + group_tokens > max_input_tokens
-            or current_targets + group_targets > max_target_blocks
+            or current_targets + group_targets > target_blocks_per_chunk
         )
         if would_exceed:
             flush()
@@ -266,7 +346,13 @@ def plan_source_chunks(
         "source_id": manifest.get("source_id"),
         "source_sha256": manifest.get("source_sha256"),
         "max_input_tokens": max_input_tokens,
-        "max_target_blocks": max_target_blocks,
+        "quantization": {
+            "unit": "provider_eligible_target_blocks",
+            "target_blocks_per_chunk": target_blocks_per_chunk,
+            "basis": quantization_basis,
+            "generated_chunk_count": len(chunks),
+            "chunk_count_is_input": False,
+        },
         "chunks": chunks,
     }
 
@@ -444,7 +530,18 @@ def validate_extraction_response(
     proposal_ids: list[str] = []
     review_required = 0
     conditional_errors = 0
+    table_structure_errors = 0
+    required_disposition_errors = 0
     by_id = {block["block_id"]: block for block in targets}
+    structural_table_ids: set[str] = set()
+    for index, block in enumerate(targets):
+        if block.get("block_type") != "table_row":
+            continue
+        cells = [cell.strip() for cell in block.get("text", "").strip().strip("|").split("|")]
+        if cells and all(TABLE_DELIMITER_CELL.fullmatch(cell) for cell in cells):
+            structural_table_ids.add(block["block_id"])
+            if index > 0 and targets[index - 1].get("block_type") == "table_row":
+                structural_table_ids.add(targets[index - 1]["block_id"])
     for disposition in dispositions:
         block_id = disposition.get("block_id")
         kind = disposition.get("kind")
@@ -461,6 +558,17 @@ def validate_extraction_response(
             errors.append(f"non-atoms disposition carries atoms: {block_id}")
         if kind == "review_required":
             review_required += 1
+        if block_id in structural_table_ids and kind != "no_substantive_claim":
+            table_structure_errors += 1
+            errors.append(
+                f"structural table header/delimiter must be no_substantive_claim: {block_id}"
+            )
+        required_kind = by_id.get(block_id, {}).get("required_disposition")
+        if required_kind and kind != required_kind:
+            required_disposition_errors += 1
+            errors.append(
+                f"payload-required disposition {required_kind} not satisfied: {block_id}"
+            )
         block = by_id.get(block_id, {})
         required_statuses = {
             str(marker).split(":", 1)[-1].strip().upper()
@@ -498,6 +606,8 @@ def validate_extraction_response(
             "schema_errors": len(schema_errors),
             "coverage_errors": 0 if coverage["passed"] else 1,
             "conditional_atoms_errors": conditional_errors,
+            "table_structure_errors": table_structure_errors,
+            "required_disposition_errors": required_disposition_errors,
             "grounding_errors": sum(
                 not result["passed"] for result in grounding["atom_results"]
             ),

@@ -1,0 +1,35 @@
+{
+  "schema_version": "M050-CURRENT-STATE-CHECKPOINT-0.11",
+  "status": "AUTHORIAL_GRAMMAR_LEAN_TABLE_C0003_PILOT_FROZEN",
+  "date": "2026-08-03",
+  "supersedes": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_10_MEDIANv0_5_0.json", "sha256": "4cd81269a05e2d1194f694277c48e08b4896ac9637c39f21a03563fb6590ce62"},
+  "corpus_vector": {"registered_sources": 24, "atomic_compile_exclusions": 2, "compile_scope_sources": 22, "atomized_legacy_seed_sources": 4, "outstanding_compile_scope_sources": 18, "outstanding_pre_reconciliation_sources": 14, "outstanding_later_or_conditional_sources": 4},
+  "next_source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_state": "lean_table_c0003_pilot_frozen_waiting_exact_one_call_authorization",
+  "accepted_evidence": {"new_plan_chunk_ids": ["C0001", "C0002"], "rejected_chunk_id": "C0003", "whole_source_candidate_complete": false},
+  "recalibration": {
+    "scope": "all_markdown_tables",
+    "header_and_delimiter_required_disposition": "no_substantive_claim",
+    "table_body_rows_eligible": true,
+    "prompt_and_validator_enforced": true,
+    "source_specific_block_patch": false,
+    "chunk_plan_changed": false,
+    "accepted_c0001_c0002_replays_passed": true,
+    "rejected_c0003_replay_table_structure_errors": 1,
+    "offline_tests_passed": 121
+  },
+  "frozen_pilot": {"chunk_id": "C0003", "target_blocks": 19, "cache_miss_call_ceiling_usd": "0.122044", "requested_cost_cap_usd": "0.13", "provider_call_authorized": false},
+  "spend": {"cumulative_spent_usd": "0.352455", "active_money_only_remaining_usd": "1.647545", "money_authority_is_lifecycle_authority": false},
+  "authority_boundary": {"repository_writes_authorized": false, "provider_call_authorized": false, "retry_authorized": false, "full_source_authorized": false, "google_sheets_authorized": false, "semantic_acceptance_authorized": false, "mapping_authorized": false, "reconciliation_authorized": false, "compiled_prose_authorized": false},
+  "artifacts": {
+    "agents_contract": {"path": "AGENTS.md", "sha256": "f70ceb363850c81d5608490f6c71b3b53dc2220eccad381cf9a53773b7587818"},
+    "active_control_index": {"path": "m050/extraction/control/M050_Active_Control_Index_v0_20_MEDIANv0_5_0.json", "sha256": "bb1f9faab6ece054974ffcffaad35bcc5c30143956c8456ffaeaf33a348265ba"},
+    "checkpoint_report": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_11_MEDIANv0_5_0.md", "sha256": "59697e0fa7620ab7d08ed4f71748d43ed7ef49b596ce94a1bc1caec79eafed69"},
+    "new_task_bootstrap": {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_10_MEDIANv0_5_0.md", "sha256": "5ee8e85f22b778cda010e6dd9835d3205da17764a18e8ae5ed6af570ff099b1b"},
+    "lean_table_config": {"path": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_4_MEDIANv0_5_0.json", "sha256": "c234e496358bada3ee4b0175810857c3431bf3e6274e4ef4fa6c930eed035273"},
+    "pilot_freeze": {"path": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Lean_Table_C0003_Pilot_Freeze_Proposal_v0_9_MEDIANv0_5_0.json", "sha256": "43dac56caf13e61994a9a5e78387dfad4504aabbc395f88beb3205c3444fe615"},
+    "compatibility_receipt": {"path": "m050/extraction/audit/M050_Authorial_Grammar_Lean_Table_Recalibration_Compatibility_Receipt_v0_4_MEDIANv0_5_0.json", "sha256": "77b651c2509e2180ca329d32329c51a6d5cf08f490d2eed2ab2195e2734d404e"},
+    "active_guard": {"path": "m050/tools/m050_guard_v0_15.py", "sha256": "e43942b044f4552f9c693b407ef0318ff9eae1e92a95fe06c80cbece9ca56129"}
+  },
+  "next_authorized_transition": "No activity is currently authorized. The next possible transition is an exact one-call C0003 Anthropic lean-table pilot authorization under a $0.13 cap."
+}

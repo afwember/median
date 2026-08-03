@@ -1,0 +1,85 @@
+{
+  "schema_version": "M050-CURRENT-STATE-CHECKPOINT-0.6",
+  "status": "AUTHORIAL_GRAMMAR_QUANTIZED_C0001_PILOT_ACCEPTED_WAITING_FULL_SOURCE_RELEASE",
+  "date": "2026-08-03",
+  "supersedes": {
+    "path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_5_MEDIANv0_5_0.json",
+    "sha256": "64c5d7e7312ec61731d6f0cb0a236812ee63c5b3af2416481e80ca14cb43d324"
+  },
+  "corpus_vector": {
+    "registered_sources": 24,
+    "atomic_compile_exclusions": 2,
+    "compile_scope_sources": 22,
+    "atomized_legacy_seed_sources": 4,
+    "outstanding_compile_scope_sources": 18,
+    "outstanding_pre_reconciliation_sources": 14,
+    "outstanding_later_or_conditional_sources": 4
+  },
+  "next_source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_state": "quantized_pilot_accepted_waiting_full_source_release",
+  "quantization": {
+    "unit": "provider_eligible_target_blocks",
+    "target_blocks_per_chunk": 20,
+    "chunk_count_is_input": false,
+    "generated_chunk_count": 12,
+    "accepted_pilot_chunk": "C0001",
+    "remaining_chunks": ["C0002", "C0003", "C0004", "C0005", "C0006", "C0007", "C0008", "C0009", "C0010", "C0011", "C0012"]
+  },
+  "accepted_pilot": {
+    "target_blocks": 20,
+    "mechanical_validation_passed": true,
+    "substantive_review_passed": true,
+    "output_tokens": 4876,
+    "cache_read_input_tokens": 2545,
+    "exact_cost_usd": "0.055813",
+    "result": "perfect_for_release_for_20_target_block_quantization"
+  },
+  "review_gate": {
+    "decision_required_needs_explicit_substantive_review": true,
+    "mechanically_valid_decision_required_outcome_may_pass_after_review": true,
+    "mechanically_invalid_outcome_may_pass": false,
+    "preserved_pilot_ledger_states": ["call_captured", "review_passed"],
+    "offline_tests": 118
+  },
+  "spend": {
+    "original_failed_call_usd": "0.081618",
+    "accepted_quantized_pilot_usd": "0.055813",
+    "cumulative_spent_usd": "0.137431",
+    "active_money_only_remaining_usd": "1.862569",
+    "money_authority_is_lifecycle_authority": false
+  },
+  "root_contract": {
+    "path": "AGENTS.md",
+    "sole_active": true,
+    "agents_override_present": false,
+    "bootstrap_path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_5_MEDIANv0_5_0.md"
+  },
+  "authority_boundary": {
+    "repository_writes_authorized": false,
+    "additional_provider_calls_authorized": false,
+    "full_source_authorized": false,
+    "google_sheets_authorized": false,
+    "semantic_acceptance_authorized": false,
+    "mapping_authorized": false,
+    "reconciliation_authorized": false,
+    "compiled_prose_authorized": false
+  },
+  "artifacts": {
+    "agents_contract": {"path": "AGENTS.md", "sha256": "0ea727acae95a8e11612fc197178fce5030db3e2187e61bc68410e090b349943"},
+    "active_control_index": {"path": "m050/extraction/control/M050_Active_Control_Index_v0_15_MEDIANv0_5_0.json", "sha256": "900bda2a5d55861bed514737e91ae7bf15cc68dd513b9b65f7d9bfe91aebf5af"},
+    "checkpoint_report": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_6_MEDIANv0_5_0.md", "sha256": "b0bb1053e884bb4a32a0b794f7acca3d6e8cbc273da1b9dcfe764d64b690497d"},
+    "new_task_bootstrap": {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_5_MEDIANv0_5_0.md", "sha256": "2b47d67ebf6ea33d73369643fcd38c6afeae85c1cd3cf42b64112904f1d07219"},
+    "execution_standard": {"path": "m050/extraction/control/M050_Compile_Execution_Standard_v0_2_MEDIANv0_5_0.md", "sha256": "751654e287621893f9f83fca7ebea4b3722e89cd29dcad1387a4388fd84bd905"},
+    "authorial_configuration": {"path": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_2_MEDIANv0_5_0.json", "sha256": "b012943a2639cb8b45331f95526ed5e0544ac089459c517cb52fec26a425fa59"},
+    "authorial_chunk_plan": {"path": "m050/extraction/control/M050_Authorial_Grammar_Section_Aware_Chunk_Plan_v0_2_MEDIANv0_5_0.json", "sha256": "91d10986714f848ee2ce34628b896f2668e64e5a8c4a28c9a3cc77aaba78e1be"},
+    "accepted_quantized_pilot": {"path": "m050/extraction/audit/pilot-transitions/M050_Authorial_Grammar_Quantized_C0001_Pilot_Accepted_v0_7_MEDIANv0_5_0.json", "sha256": "9bf424e2c28ac045b98b28be6e21be7b26f2a21088b408866e2a27338d5fd63c"},
+    "review_gate_compatibility": {"path": "m050/extraction/audit/M050_Authorial_Grammar_Quantized_C0001_Review_Gate_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json", "sha256": "8d7056411c94ac9c4adda76aeb47c9f250c67f903fb321a9711dfa6148791988"},
+    "active_spend_envelope": {"path": "m050/extraction/audit/spend-envelopes/M050_Provider_Spend_Envelope_001_After_Quantized_C0001_v0_3_MEDIANv0_5_0.json", "sha256": "04b7e712d26e620a94156f9df94427371341da376d5d5764643cc730c8841829"},
+    "reviewed_pilot_ledger": {"path": "m050/extraction/runs/authorial-grammar-quantized-pilot/M050_Authorial_Grammar_Quantized_Pilot_Run_Ledger_v0_7_MEDIANv0_5_0.jsonl", "sha256": "88445c80c332929f98338c244fcf384cca048928731cf6e804a6c34c55548050"},
+    "controller": {"path": "m050/tools/m050_extraction_machine_v0_1.py", "sha256": "2643b041c83a16ed22b3e7079cd96601885e687ad578c1527f235698e5e1df9f"},
+    "engine_module": {"path": "m050/extraction/engine/src/median_gate5/extraction_machine.py", "sha256": "2a976331594964b4f3c6fda1c5bd1fd9ce57dc8f7abb6d9c495c8aaeec452510"},
+    "engine_tests": {"path": "m050/extraction/engine/tests/test_extraction_machine.py", "sha256": "159803b15753c7c4cd3eecc1b7687e626af07ae7789d59b61cb5b69366075d9f"},
+    "active_guard": {"path": "m050/tools/m050_guard_v0_10.py", "sha256": "88a71c7061c9caaafbe0d415cfc7ffb86a1747f6ccf307cf672bb5287a0f0ac1"}
+  },
+  "next_authorized_transition": "Asa Wember may separately authorize the exact remaining Authorial Grammar source sequence C0002 through C0012 under sequential one-call/review cadence. The active $1.862569 money-only envelope does not release that lifecycle."
+}

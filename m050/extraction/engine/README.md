@@ -35,10 +35,19 @@ Its normal sequence is:
 .venv/bin/python m050/tools/m050_extraction_machine_v0_1.py scaffold \
   --repo-root . --source-id SOURCE_ID --source-path SOURCE.md \
   --identity-card APPROVED_CARD --identity-approval-receipt APPROVAL.json \
-  --allowed-stream STREAM --output-block-manifest NEW_MANIFEST.json \
+  --allowed-stream STREAM --target-blocks-per-chunk PROVISIONAL_QUANTIZATION \
+  --output-block-manifest NEW_MANIFEST.json \
   --output-disposition-ledger NEW_DISPOSITIONS.jsonl \
   --output-chunk-plan NEW_PLAN.json --output-prompt NEW_PROMPT.md \
   --output-response-schema NEW_SCHEMA.json --output-config NEW_CONFIG.json
+
+.venv/bin/python m050/tools/m050_extraction_machine_v0_1.py replan \
+  --repo-root . --block-manifest APPROVED_MANIFEST.json \
+  --disposition-ledger APPROVED_DISPOSITIONS.jsonl \
+  --target-blocks-per-chunk CALIBRATED_QUANTIZATION \
+  --calibration-basis CALIBRATION_FINDING \
+  --predecessor-chunk-plan PRIOR_PLAN.json \
+  --output-chunk-plan REAPPORTIONED_PLAN.json
 
 .venv/bin/python m050/tools/m050_extraction_machine_v0_1.py prepare \
   --repo-root . --config SOURCE_CONFIG.json --chunk C0001 --output CALL_PACKET.json
@@ -64,6 +73,16 @@ dispositions, a heading- and table-aware chunk plan, a source-bound prompt and
 schema, and a provider-disabled configuration. Those drafts still require
 source review and bounded pilot calibration; scaffolding never authorizes a
 pilot or full-source run.
+
+Chunk count is always an output, never an input or a manifest property. A
+source begins with an explicit provisional target-block quantization. Once
+pilot evidence establishes the acceptable provider-eligible target blocks per
+chunk, `replan` re-apportions the complete source at that quantization while
+preserving source order, repeated heading context, and indivisible semantic
+lead-in/body groups (lists, tables, code examples, quotations, and titled
+structural bodies). An indivisible group that exceeds a calibrated limit halts
+planning instead of being split. Future sources must not retain a
+pre-calibration chunk count merely to preserve identifiers.
 
 `send` is fail-closed: exact lifecycle bindings and a cumulative money-only envelope are both required; the cache-write ceiling must fit; the raw response and compact outcome are preserved; and another call is blocked until the outcome receives a passing substantive review. Explicit one-hour Claude caching must produce cache creation or cache-read telemetry on the first live call.
 

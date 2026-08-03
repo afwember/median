@@ -1,0 +1,62 @@
+{
+  "schema_version": "M050-CURRENT-STATE-CHECKPOINT-0.10",
+  "status": "AUTHORIAL_GRAMMAR_STRUCTURAL_SOURCE_RUN_HALTED_C0003_LAYOUT_ATOM",
+  "date": "2026-08-03",
+  "supersedes": {
+    "path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_9_MEDIANv0_5_0.json",
+    "sha256": "704a50d5d1ee9cf9e81b7831ce43b2d58768f6ad34c749d6c36d1ae242003506"
+  },
+  "corpus_vector": {
+    "registered_sources": 24,
+    "atomic_compile_exclusions": 2,
+    "compile_scope_sources": 22,
+    "atomized_legacy_seed_sources": 4,
+    "outstanding_compile_scope_sources": 18,
+    "outstanding_pre_reconciliation_sources": 14,
+    "outstanding_later_or_conditional_sources": 4
+  },
+  "next_source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_state": "source_run_halted_waiting_author_calibration_direction",
+  "accepted_evidence": {
+    "new_plan_chunk_ids": ["C0001", "C0002"],
+    "rejected_chunk_id": "C0003",
+    "whole_source_candidate_complete": false
+  },
+  "failed_run": {
+    "failure_kind": "nonsemantic_layout_metadata_atom",
+    "failed_block_id": "M050-SRC-AUTHORIAL-GRAMMAR-001__B00071_b781543c70dd",
+    "mechanical_validation_passed": true,
+    "substantive_review_passed": false,
+    "remaining_release_revoked": true,
+    "uncalled_chunk_ids": ["C0004", "C0005", "C0006", "C0007", "C0008", "C0009", "C0010", "C0011", "C0012", "C0013"]
+  },
+  "spend": {
+    "source_run_spent_usd": "0.097858",
+    "cumulative_spent_usd": "0.352455",
+    "active_money_only_remaining_usd": "1.647545",
+    "money_authority_is_lifecycle_authority": false
+  },
+  "authority_boundary": {
+    "repository_writes_authorized": false,
+    "offline_calibration_change_authorized": false,
+    "retry_authorized": false,
+    "additional_provider_calls_authorized": false,
+    "full_source_authorized": false,
+    "google_sheets_authorized": false,
+    "semantic_acceptance_authorized": false,
+    "mapping_authorized": false,
+    "reconciliation_authorized": false,
+    "compiled_prose_authorized": false
+  },
+  "artifacts": {
+    "agents_contract": {"path": "AGENTS.md", "sha256": "c87251de0cc4052bd66e24a819875473df8f42c9661b14e55604b8d963066b0d"},
+    "active_control_index": {"path": "m050/extraction/control/M050_Active_Control_Index_v0_19_MEDIANv0_5_0.json", "sha256": "7abdd3c170d68f1dfdabfc3ef43faf996ea748b6290f43d5f006cdc7041f0b31"},
+    "checkpoint_report": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_10_MEDIANv0_5_0.md", "sha256": "21826c63d34bbf52fdc7eb68fc97cdd491d2629c5be73599f09ac30f41092ac1"},
+    "new_task_bootstrap": {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_9_MEDIANv0_5_0.md", "sha256": "ff178b67fad6fb841c30f2496ee4de3ec403c747fe009d2132414435b1601547"},
+    "halt_receipt": {"path": "m050/extraction/audit/source-run-transitions/M050_Authorial_Grammar_Structural_Source_Run_Halted_After_C0003_v0_5_MEDIANv0_5_0.json", "sha256": "a3251116e601f41e3ae1aebf931580b4c61509f88af35a4ff7d6df59080c13a4"},
+    "reviewed_run_ledger": {"path": "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_Source_Run_Ledger_v0_4_MEDIANv0_5_0.jsonl", "sha256": "106b3e51198bb5cc430e39caf1334561733a7269d44b0ed12fe4be825adb28fa"},
+    "active_spend_envelope": {"path": "m050/extraction/audit/spend-envelopes/M050_Provider_Spend_Envelope_001_After_Structural_C0003_v0_7_MEDIANv0_5_0.json", "sha256": "c1a9d34087176295825b464b079130bc6dbce7173ff86167635975ac9f817181"},
+    "active_guard": {"path": "m050/tools/m050_guard_v0_14.py", "sha256": "629e85ffc94bb2b85068bcaff744007f621af42266304f70ad6dd812157c79af"}
+  },
+  "next_authorized_transition": "No activity is currently authorized. The next possible activity is Asa Wember's review and explicit selection of a new offline calibration path for the B00071 nonsemantic layout-metadata atom defect."
+}

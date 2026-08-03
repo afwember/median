@@ -15,16 +15,16 @@ source of operational truth.
 ## Required cold start
 
 1. Confirm that root `AGENTS.override.md` is absent.
-2. Read `m050/extraction/control/M050_Active_Control_Index_v0_13_MEDIANv0_5_0.json` completely.
-3. Read `m050/extraction/control/M050_Current_State_Checkpoint_v0_4_MEDIANv0_5_0.md` completely.
+2. Read `m050/extraction/control/M050_Active_Control_Index_v0_22_MEDIANv0_5_0.json` completely.
+3. Read `m050/extraction/control/M050_Current_State_Checkpoint_v0_13_MEDIANv0_5_0.md` completely.
 4. Read `m050/extraction/control/M050_Compile_Source_Processing_Order_v0_1_MEDIANv0_5_0.json` completely.
 5. Read `m050/extraction/control/M050_Source_Atomization_Pilot_Calibration_Protocol_v0_1_MEDIANv0_5_0.md` completely.
-6. Read `m050/extraction/control/M050_Compile_Execution_Standard_v0_1_MEDIANv0_5_0.md` completely.
-7. Run `.venv/bin/python m050/tools/m050_guard_v0_8.py --with-tests` before control/code checkpoints, provider-enabled configuration release, whole-source acceptance, and commit/push. Routine append-only provider capture uses the execution standard's focused preflight and validation.
+6. Read `m050/extraction/control/M050_Compile_Execution_Standard_v0_2_MEDIANv0_5_0.md` completely.
+7. Run `.venv/bin/python m050/tools/m050_guard_v0_17.py --with-tests` before control/code checkpoints, provider-enabled configuration release, whole-source acceptance, and commit/push. Routine append-only provider capture uses the execution standard's focused preflight and validation.
 8. Report the exact `24 / 22 / 4 / 18 = 14 + 4` corpus vector; the next source; the accepted-pilot boundary; the source-run and spend-envelope boundary; the required cadence and halt conditions; all prohibited later stages; the next authorized transition; and whether local `HEAD` equals `origin/main`.
 
 The paste-ready successor-thread audit is
-`m050/extraction/control/M050_New_Task_Bootstrap_v0_3_MEDIANv0_5_0.md`.
+`m050/extraction/control/M050_New_Task_Bootstrap_v0_12_MEDIANv0_5_0.md`.
 
 ## Mandatory source-by-source calibration
 
@@ -55,4 +55,28 @@ The paste-ready successor-thread audit is
 - Use the source-agnostic extraction machine and lean evidence policy. Do not create a source-specific provider worker or file-per-transition family when declarative configuration and the chained run ledger suffice.
 - Use its zero-call `scaffold` workflow after identity-card approval to draft the next source's manifest, dispositions, chunk plan, prompt, schema, and provider-disabled configuration. Scaffolding is preparation, never pilot or run authority.
 - Claude caching is mandatory for eligible sequential runs: one-hour stable-prefix caching, cache-aware accounting, and a halt when both cache-creation and cache-read telemetry are zero.
+- Chunk count is a generated result, never a manifest input or preservation target. Calibrate acceptable provider-eligible target blocks per chunk, then re-apportion the complete source at that quantization with the generic `replan` workflow before freezing a new pilot.
+- A semantic lead-in and its dependent list, table, code, quotation, or titled structural body form an indivisible semantic group. If such a group exceeds a calibrated token or target-block limit, halt and report the incompatibility; never split it or invent a workaround.
 - Keep user-facing execution reports concise: decisions, defects, spend exhaustion, milestones, and completion.
+
+## Current Authorial Grammar quantized-pilot boundary
+
+- The first full-source C0001 attempt halted after Anthropic returned `max_tokens` at the bound 6,000-token output limit. The rejected response and exact $0.081618 cost remain preserved.
+- The prior five-call release remains revoked.
+- Accepted R6 completed 27 dispositions in 5,665 output tokens; failed C0001 completed 23 before truncation. The accepted quantization is 20 provider-eligible targets per chunk.
+- The quantized C0001 pilot completed cleanly at 4,876 output tokens, passed mechanical and substantive review, and is accepted as perfect-for-release for the 20-target quantization.
+- The old-plan remaining-source run halted at C0002 because the quantizer split an ownership list from its semantic lead-in. B00047 and B00048 were returned `review_required`; the run failed substantive review and its release remains revoked.
+- The generic planner now preserves indivisible semantic groups. Re-apportioning the complete source at 20 targets generated 13 chunks. All 51 detected lead-in/body groups remain within one chunk, all 13 chunks prepare and fake-validate, and the 120-test engine suite passes.
+- New-plan C0002 (B00041-B00068, 18 targets) returned cleanly, used a 2,545-token cache read, passed mechanical and substantive review with no defect, and is accepted as perfect-for-release for the structurally grouped 20-target quantization. Exact cost was $0.054311.
+- Cumulative provider spend is $0.254597. The active money-only envelope has $1.745403 remaining but grants no lifecycle authority.
+- The old-plan accepted C0001 remains calibration evidence only and does not accept new-plan C0001; do not silently project it as new-plan completion.
+- The authorized remaining-source run accepted new-plan C0001, then halted at C0003. B00071, the structural table header `Construction | Meaning | Example`, was incorrectly emitted as an atom about the table's columns. That is layout metadata, not an Authorial Grammar rule, and violates the lean evidence policy.
+- The C0003 defect revoked the remaining release. C0004-C0013 were not called. Do not silently delete the rejected atom, retry, or modify the prompt, schema, or exclusion policy without a newly authorized calibration path.
+- Source-run spend was $0.097858. Cumulative provider spend is $0.352455; the active money-only envelope has $1.647545 remaining but grants no lifecycle authority.
+- The approved offline recalibration is complete. The generic prompt and validator now require every Markdown table header and delimiter row to be `no_substantive_claim`; substantive body rows remain eligible. This is not a B00071-specific patch.
+- The structural plan remains 13 chunks. C0001 and C0002 pass compatibility replay; captured C0003 fails exactly one new table-structure check. The engine suite passes 121 tests.
+- The lean-table C0003 pilot fixed B00071-B00073 as intended but was rejected because B00101 `Prefer:` and B00105 `Not:` became atoms merely stating that context-only examples follow. Their dependent blocks B00103 and B00107 are `context_only`; the labels are structural metadata, not authorial rules.
+- The call created 2,698 one-hour cache tokens and cost $0.067362. Cumulative spend is $0.419817; the active money-only balance is $1.580183.
+- Offline recalibration now marks all 14 pure example/polarity labels in bound payloads as requiring `no_substantive_claim`, with validator enforcement. Substantive colon-ended sentence lead-ins remain eligible; this is not a block-specific patch.
+- C0001/C0002 pass newly bound replay; captured C0003 fails exactly B00101/B00105 under the new rule. All 13 chunks fake-validate and 122 tests pass.
+- C0003 is frozen for a new pilot with a $0.120852 cache-miss ceiling. No provider call is authorized; spend remains $0.419817 with $1.580183 money-only balance.

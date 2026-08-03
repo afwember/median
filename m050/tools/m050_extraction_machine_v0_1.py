@@ -306,7 +306,8 @@ def command_scaffold(args: argparse.Namespace) -> int:
         manifest,
         dispositions,
         max_input_tokens=args.max_input_tokens,
-        max_target_blocks=args.max_target_blocks,
+        target_blocks_per_chunk=args.target_blocks_per_chunk,
+        quantization_basis="provisional_pre_pilot_scaffold",
     )
     prompt = build_generic_source_prompt(
         args.source_id,
@@ -376,6 +377,34 @@ def command_scaffold(args: argparse.Namespace) -> int:
         "chunks": len(plan["chunks"]),
         "status": config["status"],
         "provider_calls_authorized": False,
+    }, sort_keys=True))
+    return 0
+
+
+def command_replan(args: argparse.Namespace) -> int:
+    """Re-apportion a complete approved source after quantization calibration."""
+    repo_root = Path(args.repo_root).resolve()
+    manifest_path = repo_file(repo_root, args.block_manifest)
+    disposition_path = repo_file(repo_root, args.disposition_ledger)
+    output = new_repo_output(repo_root, args.output_chunk_plan)
+    manifest = read_json(manifest_path)
+    dispositions = read_jsonl(disposition_path)
+    plan = plan_source_chunks(
+        manifest,
+        dispositions,
+        max_input_tokens=args.max_input_tokens,
+        target_blocks_per_chunk=args.target_blocks_per_chunk,
+        quantization_basis=args.calibration_basis,
+    )
+    plan["status"] = "OFFLINE_RECALIBRATION_REQUIRES_PILOT"
+    plan["predecessor_chunk_plan"] = args.predecessor_chunk_plan
+    write_new_json(output, plan)
+    print(json.dumps({
+        "source_id": plan["source_id"],
+        "target_blocks_per_chunk": args.target_blocks_per_chunk,
+        "generated_chunk_count": len(plan["chunks"]),
+        "chunk_count_is_input": False,
+        "output_sha256": sha256_file(output),
     }, sort_keys=True))
     return 0
 
@@ -650,8 +679,8 @@ def command_review(args: argparse.Namespace) -> int:
         raise IntegrityError("review outcome does not match the pending ledger event")
     if args.result == "passed":
         validation = outcome.get("mechanical_validation", {})
-        if validation.get("passed") is not True or validation.get("decision_required") is True:
-            raise ContractError("substantive review cannot pass a mechanically blocked outcome")
+        if validation.get("passed") is not True:
+            raise ContractError("substantive review cannot pass a mechanically invalid outcome")
         state = "review_passed"
     else:
         state = "review_failed"
@@ -695,7 +724,7 @@ def build_parser() -> argparse.ArgumentParser:
     scaffold.add_argument("--identity-approval-receipt", required=True)
     scaffold.add_argument("--allowed-stream", action="append", required=True)
     scaffold.add_argument("--max-input-tokens", type=int, default=12000)
-    scaffold.add_argument("--max-target-blocks", type=int, default=50)
+    scaffold.add_argument("--target-blocks-per-chunk", type=int, required=True)
     scaffold.add_argument("--model", default="claude-sonnet-5")
     scaffold.add_argument("--reasoning-effort", default="low")
     scaffold.add_argument("--maximum-output-tokens", type=int, default=6000)
@@ -706,6 +735,17 @@ def build_parser() -> argparse.ArgumentParser:
     scaffold.add_argument("--output-response-schema", required=True)
     scaffold.add_argument("--output-config", required=True)
     scaffold.set_defaults(func=command_scaffold)
+
+    replan = sub.add_parser("replan")
+    replan.add_argument("--repo-root", default=".")
+    replan.add_argument("--block-manifest", required=True)
+    replan.add_argument("--disposition-ledger", required=True)
+    replan.add_argument("--max-input-tokens", type=int, default=12000)
+    replan.add_argument("--target-blocks-per-chunk", type=int, required=True)
+    replan.add_argument("--calibration-basis", required=True)
+    replan.add_argument("--predecessor-chunk-plan", required=True)
+    replan.add_argument("--output-chunk-plan", required=True)
+    replan.set_defaults(func=command_replan)
 
     replay = sub.add_parser("replay")
     replay.add_argument("--packet", required=True)

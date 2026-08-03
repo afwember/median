@@ -1,0 +1,58 @@
+{
+  "schema_version": "M050-PILOT-TRANSITION-0.1",
+  "receipt_id": "M050-AUTHGRAM-QUANTIZED-C0001-PILOT-ACCEPTED-007",
+  "date": "2026-08-03",
+  "prior_state": "pilot_response_captured",
+  "state": "pilot_accepted",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "chunk_id": "C0001",
+  "authorization_receipt_sha256": "6e1f22ba101ecd0c4629ded999965a7620360692ff2b1a6e3f1f1a2d257f8b0b",
+  "packet_sha256": "95162b84b397da45d9767fde39d82d662a4b8b2adf369f0b17731395de6d2f32",
+  "raw_response_sha256": "7ce43baa03b952af0fc93a6af885ef381f3bb89fe7e84d35280f2b92cb69591d",
+  "outcome_sha256": "1984594602787f40e8f62c49b5cfcd3fdda042e2fc9099c27e86cbff99e92d2f",
+  "reviewed_run_ledger_sha256": "88445c80c332929f98338c244fcf384cca048928731cf6e804a6c34c55548050",
+  "review_gate_compatibility_sha256": "8d7056411c94ac9c4adda76aeb47c9f250c67f903fb321a9711dfa6148791988",
+  "mechanical_validation": {
+    "passed": true,
+    "schema_errors": 0,
+    "coverage_errors": 0,
+    "grounding_errors": 0,
+    "conditional_atoms_errors": 0,
+    "review_required_blocks": 0
+  },
+  "substantive_review": {
+    "passed": true,
+    "target_blocks_reviewed": 20,
+    "ownership_correct": true,
+    "status_correct": true,
+    "authority_scope_correct": true,
+    "qualifiers_preserved": true,
+    "identifiers_supported": true,
+    "table_roles_correct": true,
+    "source_firewall_intact": true,
+    "unresolved_defects": 0,
+    "low_yield_finding": "B00016's three sentences form one dependent semantic-typography principle and are completely preserved by one atom."
+  },
+  "provider": {
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "stop_reason": "end_turn",
+    "output_tokens": 4876,
+    "cache_read_input_tokens": 2545,
+    "cache_effective": true
+  },
+  "spend": {
+    "exact_call_cost_usd": "0.055813",
+    "display_call_cost_usd_rounded_up": "0.06",
+    "cumulative_spent_usd": "0.137431",
+    "cumulative_remaining_usd": "1.862569",
+    "successor_envelope_sha256": "04b7e712d26e620a94156f9df94427371341da376d5d5764643cc730c8841829"
+  },
+  "pilot_result": "perfect_for_release_for_20_target_block_quantization",
+  "authorization_consumed": true,
+  "additional_provider_calls_authorized": 0,
+  "full_source_execution_authorized": false,
+  "whole_document_candidate_accepted": false,
+  "layer_e_semantic_acceptance": false,
+  "next_authorized_transition": "Asa Wember may separately authorize an exact full-source sequence for the remaining quantized chunks C0002 through C0012 under sequential one-call/review cadence. The active money-only envelope has $1.862569 remaining but grants no lifecycle authority."
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "M050-CURRENT-STATE-CHECKPOINT-0.8",
+  "status": "AUTHORIAL_GRAMMAR_STRUCTURAL_RECALIBRATION_PILOT_FROZEN",
+  "date": "2026-08-03",
+  "supersedes": {
+    "path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_7_MEDIANv0_5_0.json",
+    "sha256": "c4ea407c9136711e89c36b5f8debe24d75117bff4f9323858a17a65e036a141b"
+  },
+  "corpus_vector": {
+    "registered_sources": 24,
+    "atomic_compile_exclusions": 2,
+    "compile_scope_sources": 22,
+    "atomized_legacy_seed_sources": 4,
+    "outstanding_compile_scope_sources": 18,
+    "outstanding_pre_reconciliation_sources": 14,
+    "outstanding_later_or_conditional_sources": 4
+  },
+  "next_source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_state": "structural_recalibration_pilot_frozen_waiting_exact_one_call_authorization",
+  "accepted_evidence": {
+    "old_plan_chunk_id": "C0001",
+    "scope": "accepted_quantized_calibration_pilot_only",
+    "new_plan_chunk_accepted": false,
+    "whole_source_candidate_complete": false
+  },
+  "preserved_failed_run": {
+    "old_plan_chunk_id": "C0002",
+    "defect": "semantic_context_split",
+    "remaining_source_release_revoked": true,
+    "provider_calls_consumed": 1
+  },
+  "structural_recalibration": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 13,
+    "chunk_count_is_input": false,
+    "semantic_group_policy": "lead_in_and_dependent_body_indivisible",
+    "semantic_group_oversize_policy": "halt_without_splitting",
+    "semantic_lead_in_body_groups_audited": 51,
+    "cross_chunk_semantic_group_violations": 0,
+    "all_chunks_prepared": true,
+    "all_chunks_fake_validated": true,
+    "offline_tests_passed": 120
+  },
+  "frozen_pilot": {
+    "new_plan_chunk_id": "C0002",
+    "source_block_span": "B00041-B00068",
+    "target_blocks": 18,
+    "cache_miss_call_ceiling_usd": "0.105248",
+    "provider_call_authorized": false
+  },
+  "spend": {
+    "cumulative_spent_usd": "0.200286",
+    "active_money_only_remaining_usd": "1.799714",
+    "money_authority_is_lifecycle_authority": false
+  },
+  "root_contract": {
+    "path": "AGENTS.md",
+    "sole_active": true,
+    "agents_override_present": false,
+    "bootstrap_path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_7_MEDIANv0_5_0.md"
+  },
+  "authority_boundary": {
+    "repository_writes_authorized": false,
+    "additional_provider_calls_authorized": false,
+    "full_source_authorized": false,
+    "google_sheets_authorized": false,
+    "semantic_acceptance_authorized": false,
+    "mapping_authorized": false,
+    "reconciliation_authorized": false,
+    "compiled_prose_authorized": false
+  },
+  "artifacts": {
+    "agents_contract": {"path": "AGENTS.md", "sha256": "cd1ae4d86dbcf03605f1c02f6d6f7f37b271e6c28b56baf7529c3e4b7ebe9d61"},
+    "active_control_index": {"path": "m050/extraction/control/M050_Active_Control_Index_v0_17_MEDIANv0_5_0.json", "sha256": "c7fb2bf1a432262a06e6d267d9e13609a47ce14f52f499aff3649d3c2af11723"},
+    "checkpoint_report": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_8_MEDIANv0_5_0.md", "sha256": "5812f6db808cae63d903c85dafccf62e59e0c9fdb58adddd24d0e52a6e7aa8ec"},
+    "new_task_bootstrap": {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_7_MEDIANv0_5_0.md", "sha256": "bc40fb577434ebb3ca6e3e79acd178b52d814e0ceae4767feef3890c24e0b738"},
+    "structural_config": {"path": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_3_MEDIANv0_5_0.json", "sha256": "2e1e85c9e5f035a7bf5c7ca80437f1b53f5fb7cd1da103d7af88d6d94408bbbe"},
+    "structural_plan": {"path": "m050/extraction/control/M050_Authorial_Grammar_Section_Aware_Chunk_Plan_v0_3_MEDIANv0_5_0.json", "sha256": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d"},
+    "structural_compatibility": {"path": "m050/extraction/audit/M050_Authorial_Grammar_Structural_Recalibration_Compatibility_Receipt_v0_3_MEDIANv0_5_0.json", "sha256": "e578ab2fdd397f13f63da17bc41fb62b95e58b07add243db02d7c95deebbe651"},
+    "pilot_freeze": {"path": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Structural_C0002_Pilot_Freeze_Proposal_v0_8_MEDIANv0_5_0.json", "sha256": "7464f10e694bf5d5ce649ff831cf6507dbcdfd34bf306c792f83b6f8923c5e6a"},
+    "pilot_packet": {"path": "m050/extraction/runs/authorial-grammar-structural-pilot/M050_Authorial_Grammar_Structural_C0002_Call_Packet_v0_8_MEDIANv0_5_0.json", "sha256": "a7d9a4bb75fa9e5901cfb02404beaa9f3dd80cc0698c32ebe7ec23b1310c1a9d"},
+    "active_spend_envelope": {"path": "m050/extraction/audit/spend-envelopes/M050_Provider_Spend_Envelope_001_After_C0002_v0_4_MEDIANv0_5_0.json", "sha256": "1079363885ae90c4e99f48d66cfc72428f5cd3be7ddeec12da8f18705749df33"},
+    "controller": {"path": "m050/tools/m050_extraction_machine_v0_1.py", "sha256": "2643b041c83a16ed22b3e7079cd96601885e687ad578c1527f235698e5e1df9f"},
+    "engine_module": {"path": "m050/extraction/engine/src/median_gate5/extraction_machine.py", "sha256": "657bd6c3fd846f56b097dceb45c57ce5aa1d65476b359a0aea3c86ca2d903fae"},
+    "engine_tests": {"path": "m050/extraction/engine/tests/test_extraction_machine.py", "sha256": "839e1345a31c6b9aa38bc0dad33092c9ed58c6545916569f39258a74fc71ffbe"},
+    "active_guard": {"path": "m050/tools/m050_guard_v0_12.py", "sha256": "43ec89e0d8e5a1b20a8f9f733e5e06d31ff49446fab1f4632e0a553426ae0821"}
+  },
+  "next_authorized_transition": "No activity is currently authorized. The next possible transition is Asa Wember's exact authorization of one bound Anthropic structural-recalibration pilot call for new-plan C0002 under a $0.11 call cap, including transmission of its bounded Authorial Grammar source text."
+}

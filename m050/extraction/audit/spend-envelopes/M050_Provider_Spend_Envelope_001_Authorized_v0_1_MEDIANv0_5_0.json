@@ -1,0 +1,16 @@
+{
+  "schema_version": "M050-PROVIDER-SPEND-ENVELOPE-0.1",
+  "envelope_id": "M050-PROVIDER-SPEND-ENVELOPE-001",
+  "date": "2026-08-03",
+  "authority": "Asa Wember",
+  "authorization_basis": "Explicit author instruction to proceed after confirmation of the separate cumulative $2.00 provider-spend boundary.",
+  "scope": "provider_spend_only",
+  "active": true,
+  "authorized_usd": "2.00",
+  "spent_usd": "0.00",
+  "remaining_usd": "2.00",
+  "source_selection_authority": false,
+  "lifecycle_authority": false,
+  "cadence_change_authority": false,
+  "defect_waiver_authority": false
+}

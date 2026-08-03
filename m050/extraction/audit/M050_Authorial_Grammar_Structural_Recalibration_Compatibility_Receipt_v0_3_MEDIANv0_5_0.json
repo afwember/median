@@ -1,0 +1,46 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-AUTHGRAM-STRUCTURAL-RECALIBRATION-COMPATIBILITY-003",
+  "date": "2026-08-03",
+  "status": "OFFLINE_STRUCTURAL_RECALIBRATION_VERIFIED_PILOT_REQUIRED",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "trigger": {
+    "halt_receipt": "m050/extraction/audit/source-run-transitions/M050_Authorial_Grammar_Quantized_Source_Run_Halted_After_C0002_v0_3_MEDIANv0_5_0.json",
+    "defect": "semantic_context_split",
+    "affected_governing_lead_in": "M050-SRC-AUTHORIAL-GRAMMAR-001__B00041_e3be986fb6c3"
+  },
+  "binding": {
+    "configuration_sha256": "2e1e85c9e5f035a7bf5c7ca80437f1b53f5fb7cd1da103d7af88d6d94408bbbe",
+    "chunk_plan_sha256": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",
+    "controller_sha256": "2643b041c83a16ed22b3e7079cd96601885e687ad578c1527f235698e5e1df9f",
+    "engine_module_sha256": "657bd6c3fd846f56b097dceb45c57ce5aa1d65476b359a0aea3c86ca2d903fae",
+    "engine_tests_sha256": "839e1345a31c6b9aa38bc0dad33092c9ed58c6545916569f39258a74fc71ffbe",
+    "pilot_freeze_sha256": "7464f10e694bf5d5ce649ff831cf6507dbcdfd34bf306c792f83b6f8923c5e6a"
+  },
+  "offline_verification": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 13,
+    "chunk_count_is_input": false,
+    "semantic_group_policy": "lead_in_and_dependent_body_indivisible",
+    "semantic_lead_in_body_groups_audited": 51,
+    "cross_chunk_semantic_group_violations": 0,
+    "all_chunks_prepared": true,
+    "all_chunks_fake_validated": true,
+    "offline_tests_passed": 120,
+    "oversize_group_policy": "halt_without_splitting"
+  },
+  "pilot": {
+    "selected_chunk_id": "C0002",
+    "source_block_span": "B00041-B00068",
+    "required_target_disposition_count": 18,
+    "cache_miss_call_ceiling_usd": "0.105248"
+  },
+  "authority_boundary": {
+    "provider_calls_authorized": 0,
+    "full_source_run_authorized": false,
+    "semantic_acceptance_authorized": false,
+    "mapping_authorized": false,
+    "reconciliation_authorized": false,
+    "compiled_prose_authorized": false
+  }
+}

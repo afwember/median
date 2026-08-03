@@ -1,0 +1,55 @@
+{
+  "schema_version": "M050-SOURCE-RUN-TRANSITION-0.1",
+  "receipt_id": "M050-AUTHGRAM-STRUCTURAL-SOURCE-RUN-HALTED-C0003-005",
+  "date": "2026-08-03",
+  "prior_state": "source_run_in_progress",
+  "state": "source_run_halted",
+  "authority": "machine_enforced_defect_control",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "authorization_receipt_sha256": "ecde6511b28d15263f5bb6a296ab0c97bb5231dfa5e671ccfe06d57a52e5a0fb",
+  "accepted_during_run_chunk_ids": [
+    "C0001"
+  ],
+  "failed_chunk_id": "C0003",
+  "provider_calls_consumed_under_release": 2,
+  "uncalled_chunk_ids": [
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013"
+  ],
+  "additional_provider_calls_authorized": 0,
+  "release_revoked": true,
+  "defect": {
+    "kind": "nonsemantic_layout_metadata_atom",
+    "finding": "B00071 is the structural table header '| Construction | Meaning | Example |'. The provider emitted an atom stating that the table has those columns. This is layout metadata, not an Authorial Grammar rule, and conflicts with the lean evidence policy and the no_substantive_claim treatment of equivalent headers.",
+    "affected_block_ids": [
+      "M050-SRC-AUTHORIAL-GRAMMAR-001__B00071_b781543c70dd"
+    ],
+    "mechanical_validation_passed": true,
+    "substantive_review_passed": false,
+    "rejected_atom_normalized_claim": "A table with columns Construction, Meaning, Example presents grammatical conventions."
+  },
+  "artifacts": {
+    "accepted_c0001_outcome_sha256": "59b13c4fffd52a8b01e71cafa7bbff94319e65e6822dbb8245cbdc24b5d6c623",
+    "rejected_c0003_outcome_sha256": "f48de68d42261e193b129044ed5986e045ce30d52dd61687c5d46da2dd38701f",
+    "reviewed_run_ledger_sha256": "106b3e51198bb5cc430e39caf1334561733a7269d44b0ed12fe4be825adb28fa",
+    "successor_spend_envelope_sha256": "c1a9d34087176295825b464b079130bc6dbce7173ff86167635975ac9f817181"
+  },
+  "spend": {
+    "c0001_exact_usd": "0.042259",
+    "c0003_exact_usd": "0.055599",
+    "run_spent_usd": "0.097858",
+    "cumulative_spent_usd": "0.352455",
+    "active_money_only_remaining_usd": "1.647545",
+    "money_envelope_grants_lifecycle_authority": false
+  },
+  "required_next_state": "offline_calibration",
+  "next_authorized_activity": "Author review of the C0003 nonsemantic layout-metadata atom defect. No retry, prompt/schema/exclusion-policy change, or additional provider call is authorized."
+}

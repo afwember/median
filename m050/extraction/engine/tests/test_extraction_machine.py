@@ -32,7 +32,7 @@ from median_gate5.extraction_machine import (
 ROOT = Path(__file__).parents[4]
 AUTHGRAM = ROOT / "m050/extraction/calibration/authorial-grammar"
 MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
-AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
+AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_5_MEDIANv0_5_0.json"
 CROSSING_MANIFEST = ROOT / "m050/extraction/control/source-identities/blocks/M050_Crossing_Block_Manifest_v0_1_MEDIANv0_5_0.json"
 
 
@@ -174,6 +174,130 @@ def test_generic_validator_fails_closed_for_source_stream_and_coverage_drift():
     assert any("source_id" in error for error in report["errors"])
     assert any("stream" in error for error in report["errors"])
     assert any("ground" in error for error in report["errors"])
+
+
+def test_validator_requires_table_headers_and_delimiters_to_be_non_substantive():
+    payload = {
+        "source_id": "S1",
+        "target_blocks": [
+            {"block_id": "B1", "block_type": "table_row", "text": "| Construction | Meaning | Example |\n", "status_markers": []},
+            {"block_id": "B2", "block_type": "table_row", "text": "|---|:---:|---:|\n", "status_markers": []},
+            {"block_id": "B3", "block_type": "table_row", "text": "| Bare singular | Archetypal body | Mouse builds. |\n", "status_markers": []},
+        ],
+        "context_blocks": [],
+        "excluded_block_ids": [],
+    }
+    schema = build_generic_response_schema("S1", ["allowed"])
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+        "proposal_set_id": "table-test",
+        "request_id": "table-test",
+        "source_id": "S1",
+        "dispositions": [
+            {
+                "block_id": "B1",
+                "kind": "atoms",
+                "atoms": [{
+                    "proposal_id": "P1", "source_id": "S1", "block_id": "B1",
+                    "exact_source_text": "| Construction | Meaning | Example |",
+                    "normalized_claim": "The table has three columns.",
+                    "claim_kind": "layout", "stream": "allowed",
+                }],
+            },
+            {"block_id": "B2", "kind": "no_substantive_claim", "atoms": []},
+            {
+                "block_id": "B3",
+                "kind": "atoms",
+                "atoms": [{
+                    "proposal_id": "P2", "source_id": "S1", "block_id": "B3",
+                    "exact_source_text": "| Bare singular | Archetypal body | Mouse builds. |",
+                    "normalized_claim": "Bare singular denotes an archetypal body.",
+                    "claim_kind": "rule", "stream": "allowed",
+                }],
+            },
+        ],
+    }
+    rejected = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert rejected["passed"] is False
+    assert rejected["checks"]["table_structure_errors"] == 1
+    assert any("structural table header" in error for error in rejected["errors"])
+
+    response["dispositions"][0] = {
+        "block_id": "B1", "kind": "no_substantive_claim", "atoms": []
+    }
+    accepted = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert accepted["passed"] is True
+    assert accepted["checks"]["table_structure_errors"] == 0
+
+
+def test_payload_marks_pure_structural_labels_and_validator_enforces_nonclaim():
+    manifest = {
+        "source_id": "S1", "source_sha256": "c" * 64,
+        "blocks": [
+            {"block_id": "B1", "block_type": "paragraph", "text": "Prefer:\n", "status_markers": []},
+            {"block_id": "B2", "block_type": "code_fence", "text": "```text\nGood example.\n```\n", "status_markers": []},
+            {"block_id": "B3", "block_type": "paragraph", "text": "Plural nouns take plural agreement:\n", "status_markers": []},
+        ],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [
+            {"block_id": "B1", "disposition": "eligible"},
+            {"block_id": "B2", "disposition": "context_only"},
+            {"block_id": "B3", "disposition": "eligible"},
+        ],
+        {"chunk_id": "C0001", "block_ids": ["B1", "B2", "B3"]},
+    )
+    targets = {block["block_id"]: block for block in payload["target_blocks"]}
+    assert targets["B1"]["structural_role"] == "pure_example_or_polarity_label"
+    assert targets["B1"]["required_disposition"] == "no_substantive_claim"
+    assert "required_disposition" not in targets["B3"]
+
+    schema = build_generic_response_schema("S1", ["allowed"])
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+        "proposal_set_id": "label-test", "request_id": "label-test", "source_id": "S1",
+        "dispositions": [
+            {
+                "block_id": "B1", "kind": "atoms",
+                "atoms": [{
+                    "proposal_id": "P1", "source_id": "S1", "block_id": "B1",
+                    "exact_source_text": "Prefer:",
+                    "normalized_claim": "A preferred example follows.",
+                    "claim_kind": "layout", "stream": "allowed",
+                }],
+            },
+            {
+                "block_id": "B3", "kind": "atoms",
+                "atoms": [{
+                    "proposal_id": "P2", "source_id": "S1", "block_id": "B3",
+                    "exact_source_text": "Plural nouns take plural agreement:",
+                    "normalized_claim": "Plural nouns take plural agreement.",
+                    "claim_kind": "rule", "stream": "allowed",
+                }],
+            },
+        ],
+    }
+    rejected = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert rejected["passed"] is False
+    assert rejected["checks"]["required_disposition_errors"] == 1
+    response["dispositions"][0] = {
+        "block_id": "B1", "kind": "no_substantive_claim", "atoms": []
+    }
+    accepted = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert accepted["passed"] is True
 
 
 def test_cache_aware_cost_accounting_matches_uncached_r6_and_cached_examples():
@@ -376,14 +500,16 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
     tool = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(tool)
 
-    all_ids = []
     target_ids = []
     context_ids = []
     excluded_ids = []
     stable_systems = []
     packets = []
-    for ordinal in range(1, 6):
-        packet = tool.build_packet(ROOT, AUTHGRAM_CONFIG, f"C{ordinal:04d}")
+    config = _json(AUTHGRAM_CONFIG)
+    plan = _json(ROOT / config["artifacts"]["chunk_plan"])
+    chunk_ids = [chunk["chunk_id"] for chunk in plan["chunks"]]
+    for chunk_id in chunk_ids:
+        packet = tool.build_packet(ROOT, AUTHGRAM_CONFIG, chunk_id)
         packets.append(packet)
         assert packet["source_id"] == "M050-SRC-AUTHORIAL-GRAMMAR-001"
         assert packet["binding"]["cache_ttl"] == "1h"
@@ -397,13 +523,17 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
         target_ids.extend(chunk_targets)
         context_ids.extend(chunk_context)
         excluded_ids.extend(chunk_excluded)
-        all_ids.extend(chunk_targets + chunk_context + chunk_excluded)
         stable_systems.append(packet["provider_request"]["system"])
 
-    assert len(all_ids) == len(set(all_ids)) == 590
-    assert len(target_ids) == 228
-    assert len(context_ids) == 82
-    assert len(excluded_ids) == 280
+    manifest = _json(ROOT / config["artifacts"]["block_manifest"])
+    primary_ids = [block_id for chunk in plan["chunks"] for block_id in chunk["block_ids"]]
+    assert primary_ids == [block["block_id"] for block in manifest["blocks"]]
+    assert len(target_ids) == len(set(target_ids)) == 228
+    assert len(excluded_ids) == len(set(excluded_ids)) == 280
+    assert all(len(packet["payload"]["target_blocks"]) <= 20 for packet in packets)
+    assert plan["quantization"]["generated_chunk_count"] == len(chunk_ids) == 13
+    assert plan["quantization"]["chunk_count_is_input"] is False
+    assert context_ids
     assert all(system == stable_systems[0] for system in stable_systems)
     assert stable_systems[0][-1]["cache_control"] == {
         "type": "ephemeral",
@@ -413,8 +543,8 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
     lifecycle = {
         "state": "source_run_authorized",
         "authority": "Asa Wember",
-        "provider_call_limit": 5,
-        "authorized_chunk_ids": [f"C{ordinal:04d}" for ordinal in range(1, 6)],
+        "provider_call_limit": len(chunk_ids),
+        "authorized_chunk_ids": chunk_ids,
         "execution_cadence": "sequential_one_call_review",
         "revoked": False,
         "binding": {
@@ -447,12 +577,20 @@ def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
         manifest,
         dispositions,
         max_input_tokens=1800,
-        max_target_blocks=60,
+        target_blocks_per_chunk=60,
+        quantization_basis="offline test calibration",
     )
     primary = [block_id for chunk in plan["chunks"] for block_id in chunk["block_ids"]]
     assert primary == [block["block_id"] for block in manifest["blocks"]]
     assert all(chunk["estimated_input_tokens"] <= 1800 for chunk in plan["chunks"])
     assert all(chunk["target_blocks"] <= 60 for chunk in plan["chunks"])
+    assert plan["quantization"] == {
+        "unit": "provider_eligible_target_blocks",
+        "target_blocks_per_chunk": 60,
+        "basis": "offline test calibration",
+        "generated_chunk_count": len(plan["chunks"]),
+        "chunk_count_is_input": False,
+    }
 
     schema = build_generic_response_schema(
         manifest["source_id"], ["evidence_game_semantic"]
@@ -493,6 +631,104 @@ def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
     assert report["decision_required"] is True
 
 
+def _structural_manifest():
+    block_types_and_text = [
+        ("heading", "# Structural examples\n"),
+        ("paragraph", "The rules are:\n"),
+        ("whitespace", "\n"),
+        ("list_item", "- first;\n"),
+        ("list_item", "- second.\n"),
+        ("paragraph", "The matrix is:\n"),
+        ("whitespace", "\n"),
+        ("table_row", "| A | B |\n"),
+        ("table_row", "|---|---|\n"),
+        ("table_row", "| one | two |\n"),
+        ("paragraph", "Example:\n"),
+        ("whitespace", "\n"),
+        ("code_fence", "```text\none\n```\n"),
+        ("paragraph", "In-world rendering:\n"),
+        ("whitespace", "\n"),
+        ("paragraph", "> One voice.\n"),
+        ("whitespace", "\n"),
+        ("paragraph", "> The same voice.\n"),
+        ("paragraph", "The plate is titled:\n"),
+        ("whitespace", "\n"),
+        ("heading", "## THE PLATE\n"),
+        ("whitespace", "\n"),
+        ("table_row", "| Label | Value |\n"),
+        ("table_row", "|---|---|\n"),
+        ("table_row", "| alpha | beta |\n"),
+    ]
+    return {
+        "source_id": "M050-SRC-STRUCTURAL-TEST-001",
+        "source_sha256": "b" * 64,
+        "blocks": [
+            {
+                "block_id": f"B{index:04d}",
+                "block_type": block_type,
+                "text": block_text,
+                "status_markers": [],
+            }
+            for index, (block_type, block_text) in enumerate(block_types_and_text, 1)
+        ],
+    }
+
+
+def _structural_dispositions(manifest):
+    return [
+        {
+            "block_id": block["block_id"],
+            "disposition": (
+                "excluded"
+                if block["block_type"] == "whitespace"
+                else "context_only"
+                if block["block_type"] == "heading"
+                else "eligible"
+            ),
+        }
+        for block in manifest["blocks"]
+    ]
+
+
+def test_chunk_planning_keeps_semantic_lead_ins_and_dependent_bodies_indivisible():
+    manifest = _structural_manifest()
+    plan = plan_source_chunks(
+        manifest,
+        _structural_dispositions(manifest),
+        max_input_tokens=1800,
+        target_blocks_per_chunk=4,
+        quantization_basis="structural grouping test",
+    )
+    chunk_for = {
+        block_id: chunk["chunk_id"]
+        for chunk in plan["chunks"]
+        for block_id in chunk["block_ids"]
+    }
+    for group in (
+        range(2, 6),
+        range(6, 11),
+        range(11, 14),
+        range(14, 19),
+        range(19, 26),
+    ):
+        assert len({chunk_for[f"B{index:04d}"] for index in group}) == 1
+    assert [block_id for chunk in plan["chunks"] for block_id in chunk["block_ids"]] == [
+        block["block_id"] for block in manifest["blocks"]
+    ]
+
+
+def test_chunk_planning_fails_when_complete_semantic_group_exceeds_quantization():
+    manifest = _structural_manifest()
+    with pytest.raises(ContractError, match="indivisible structural group exceeds chunk limits: B0006"):
+        plan_source_chunks(
+            manifest,
+            _structural_dispositions(manifest),
+            max_input_tokens=1800,
+            target_blocks_per_chunk=3,
+            quantization_basis="structural grouping test",
+        )
+
+
 def test_scaffold_command_writes_provider_disabled_source_package(tmp_path):
     spec = importlib.util.spec_from_file_location("m050_extraction_machine_scaffold", MACHINE_TOOL)
     assert spec is not None and spec.loader is not None
@@ -529,7 +765,7 @@ def test_scaffold_command_writes_provider_disabled_source_package(tmp_path):
         identity_approval_receipt="m050/extraction/audit/card-approved.json",
         allowed_stream=["evidence_game_semantic"],
         max_input_tokens=12000,
-        max_target_blocks=50,
+        target_blocks_per_chunk=50,
         model="claude-sonnet-5",
         reasoning_effort="low",
         maximum_output_tokens=6000,
@@ -550,6 +786,46 @@ def test_scaffold_command_writes_provider_disabled_source_package(tmp_path):
         "identity_card", "identity_approval_receipt", "block_manifest",
         "disposition_ledger", "chunk_plan", "prompt", "response_schema",
     }
+
+
+def test_replan_reapportions_complete_source_from_calibrated_quantization(tmp_path):
+    spec = importlib.util.spec_from_file_location("m050_extraction_machine_replan", MACHINE_TOOL)
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+    output = tmp_path / "replanned.json"
+    args = SimpleNamespace(
+        repo_root=str(ROOT),
+        block_manifest="m050/extraction/control/source-identities/blocks/M050_Authorial_Grammar_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+        disposition_ledger="m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+        max_input_tokens=1800,
+        target_blocks_per_chunk=20,
+        calibration_basis="23 complete dispositions exhausted 6000 output tokens; quantized to 20",
+        predecessor_chunk_plan="historical-plan.json",
+        output_chunk_plan=str(output.relative_to(ROOT)) if output.is_relative_to(ROOT) else "m050/extraction/control/replanned.json",
+    )
+    if not output.is_relative_to(ROOT):
+        repo = tmp_path / "repo"
+        repo.mkdir()
+        manifest_source = ROOT / args.block_manifest
+        disposition_source = ROOT / args.disposition_ledger
+        manifest_target = repo / args.block_manifest
+        disposition_target = repo / args.disposition_ledger
+        manifest_target.parent.mkdir(parents=True)
+        disposition_target.parent.mkdir(parents=True)
+        manifest_target.write_bytes(manifest_source.read_bytes())
+        disposition_target.write_bytes(disposition_source.read_bytes())
+        args.repo_root = str(repo)
+        args.output_chunk_plan = "m050/extraction/control/replanned.json"
+        output = repo / args.output_chunk_plan
+    assert tool.command_replan(args) == 0
+    plan = _json(output)
+    assert plan["quantization"]["target_blocks_per_chunk"] == 20
+    assert plan["quantization"]["chunk_count_is_input"] is False
+    assert all(chunk["target_blocks"] <= 20 for chunk in plan["chunks"])
+    assert [block_id for chunk in plan["chunks"] for block_id in chunk["block_ids"]] == [
+        block["block_id"] for block in _json(Path(args.repo_root) / args.block_manifest)["blocks"]
+    ]
 
 
 def test_send_consumes_call_and_halts_on_malformed_success_response(tmp_path, monkeypatch):
@@ -620,4 +896,63 @@ def test_send_consumes_call_and_halts_on_malformed_success_response(tmp_path, mo
     successor = _json(successor_path)
     assert successor["active"] is False
     assert successor["halt_reason"] == "invalid_provider_response_cost_reconciliation_required"
+    assert read_run_ledger(ledger_path)[-1]["state"] == "call_captured"
+
+
+def test_substantive_review_resolves_decision_required_outcome(tmp_path):
+    spec = importlib.util.spec_from_file_location("m050_extraction_machine_review", MACHINE_TOOL)
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+    outcome_path = tmp_path / "outcome.json"
+    ledger_path = tmp_path / "run.jsonl"
+    outcome_path.write_text(json.dumps({
+        "source_id": "S1",
+        "chunk_id": "C0001",
+        "mechanical_validation": {"passed": True, "decision_required": True},
+    }), encoding="utf-8")
+    append_run_ledger_event(ledger_path, {
+        "state": "call_captured",
+        "source_id": "S1",
+        "chunk_id": "C0001",
+        "outcome_sha256": hashlib.sha256(outcome_path.read_bytes()).hexdigest(),
+    })
+    args = SimpleNamespace(
+        run_ledger=str(ledger_path),
+        outcome=str(outcome_path),
+        result="passed",
+        reviewer="source reviewer",
+        reason="Decision-required finding reviewed and resolved.",
+    )
+    assert tool.command_review(args) == 0
+    assert read_run_ledger(ledger_path)[-1]["state"] == "review_passed"
+
+
+def test_substantive_review_cannot_pass_mechanically_invalid_outcome(tmp_path):
+    spec = importlib.util.spec_from_file_location("m050_extraction_machine_review_invalid", MACHINE_TOOL)
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+    outcome_path = tmp_path / "outcome.json"
+    ledger_path = tmp_path / "run.jsonl"
+    outcome_path.write_text(json.dumps({
+        "source_id": "S1",
+        "chunk_id": "C0001",
+        "mechanical_validation": {"passed": False, "decision_required": True},
+    }), encoding="utf-8")
+    append_run_ledger_event(ledger_path, {
+        "state": "call_captured",
+        "source_id": "S1",
+        "chunk_id": "C0001",
+        "outcome_sha256": hashlib.sha256(outcome_path.read_bytes()).hexdigest(),
+    })
+    args = SimpleNamespace(
+        run_ledger=str(ledger_path),
+        outcome=str(outcome_path),
+        result="passed",
+        reviewer="source reviewer",
+        reason="Must remain blocked.",
+    )
+    with pytest.raises(ContractError, match="mechanically invalid"):
+        tool.command_review(args)
     assert read_run_ledger(ledger_path)[-1]["state"] == "call_captured"

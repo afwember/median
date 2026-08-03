@@ -1,0 +1,39 @@
+{
+  "schema_version": "M050-REVIEW-GATE-COMPATIBILITY-0.1",
+  "receipt_id": "M050-AUTHGRAM-QUANTIZED-C0001-REVIEW-GATE-COMPATIBILITY-001",
+  "date": "2026-08-03",
+  "status": "OFFLINE_REVIEW_GATE_REPAIR_VERIFIED",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "chunk_id": "C0001",
+  "defect": "The review command treated decision_required=true as mechanical invalidity and made substantive resolution impossible even when mechanical_validation.passed=true.",
+  "repair": "A passing substantive decision now requires mechanical_validation.passed=true. decision_required remains the signal that explicit review is necessary, while mechanically invalid outcomes remain impossible to pass.",
+  "controller": {
+    "pre_repair_sha256": "7d88e86c797c1ce0c85b0867ce183c2d28a61f0404892d5e8c34ff864065c362",
+    "post_repair_sha256": "2643b041c83a16ed22b3e7079cd96601885e687ad578c1527f235698e5e1df9f"
+  },
+  "preserved_capture": {
+    "raw_response_sha256": "7ce43baa03b952af0fc93a6af885ef381f3bb89fe7e84d35280f2b92cb69591d",
+    "outcome_sha256": "1984594602787f40e8f62c49b5cfcd3fdda042e2fc9099c27e86cbff99e92d2f",
+    "pre_review_ledger_sha256": "ee8d377e0829941a159ab2b19d4075a9961184d96293dd6e21cc10dc5f754831",
+    "mechanical_validation_passed": true,
+    "decision_required": true,
+    "mechanical_errors": 0,
+    "low_yield_review_blocks": [
+      "M050-SRC-AUTHORIAL-GRAMMAR-001__B00016_42d0df03812a"
+    ]
+  },
+  "verification": {
+    "positive_regression": "mechanically valid decision-required outcome accepts an explicit passing substantive review",
+    "negative_regression": "mechanically invalid outcome remains blocked from passing substantive review",
+    "focused_tests_passed": 19,
+    "complete_tests_passed": 118,
+    "provider_calls": 0,
+    "spend_usd": "0.00"
+  },
+  "compatibility_finding": "The repair changes only the post-capture review transition. It does not alter the provider request, source payload, response schema, raw response, structured proposal, mechanical validation, cost, cache accounting, or substantive source comparison.",
+  "authority_boundary": {
+    "saved_outcome_may_receive_pending_substantive_review": true,
+    "additional_provider_calls_authorized": 0,
+    "full_source_release_authorized": false
+  }
+}

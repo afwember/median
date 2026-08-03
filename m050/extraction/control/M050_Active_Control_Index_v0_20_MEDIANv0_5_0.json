@@ -1,0 +1,76 @@
+{
+  "schema_version": "M050-ACTIVE-CONTROL-INDEX-0.20",
+  "title": "MEDIAN v0.5.0 Active Control Index",
+  "status": "ACTIVE",
+  "updated": "2026-08-03",
+  "supersedes": {
+    "path": "m050/extraction/control/M050_Active_Control_Index_v0_19_MEDIANv0_5_0.json",
+    "sha256": "7abdd3c170d68f1dfdabfc3ef43faf996ea748b6290f43d5f006cdc7041f0b31",
+    "reason": "Record generic lean-table prompt/validator recalibration, compatibility replays, and frozen C0003 pilot"
+  },
+  "execution_state": "AUTHORIAL_GRAMMAR_LEAN_TABLE_C0003_PILOT_FROZEN",
+  "corpus_state": {
+    "registered_sources": 24,
+    "atomic_compile_exclusions": 2,
+    "compile_scope_sources": 22,
+    "atomized_legacy_seed_sources": 4,
+    "outstanding_compile_scope_sources": 18,
+    "outstanding_pre_reconciliation_sources": 14,
+    "outstanding_later_or_conditional_sources": 4,
+    "whole_corpus_atomization_complete": false
+  },
+  "calibration_state": {
+    "currently_selected_source": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+    "accepted_chunk_ids": ["C0001", "C0002"],
+    "rejected_chunk_id": "C0003",
+    "method": "generic_lean_table_prompt_and_validator",
+    "table_header_disposition": "no_substantive_claim",
+    "table_delimiter_disposition": "no_substantive_claim",
+    "table_body_rows_eligible": true,
+    "source_specific_block_patch": false,
+    "chunk_plan_changed": false,
+    "accepted_replays_passed": true,
+    "rejected_replay_table_structure_errors": 1,
+    "pilot_chunk_id": "C0003",
+    "pilot_cache_miss_ceiling_usd": "0.122044",
+    "current_state": "pilot_frozen_waiting_exact_one_call_authorization",
+    "provider_calls_authorized": 0
+  },
+  "execution_machine": {
+    "configuration": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_4_MEDIANv0_5_0.json",
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 13,
+    "claude_cache_ttl": "1h",
+    "cache_telemetry_required": true,
+    "spend_envelope_active": true,
+    "cumulative_spent_usd": "0.352455",
+    "remaining_usd": "1.647545",
+    "offline_tests_passed": 121
+  },
+  "transition_boundary": {
+    "repository_writes_authorized": false,
+    "pilot_provider_call_authorized": false,
+    "retry_authorized": false,
+    "full_source_run_authorized": false,
+    "semantic_acceptance_authorized": false,
+    "mapping_authorized": false,
+    "reconciliation_authorized": false,
+    "compiled_prose_authorized": false,
+    "provider_call_authorized": false,
+    "google_sheets_interaction_authorized": false
+  },
+  "current_controls": [
+    {"path": "AGENTS.md", "role": "Sole root contract"},
+    {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_10_MEDIANv0_5_0.md", "role": "Read-only successor audit"},
+    {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_11_MEDIANv0_5_0.md", "role": "Lean-table pilot checkpoint"},
+    {"path": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_4_MEDIANv0_5_0.json", "role": "Provider-disabled lean-table configuration"},
+    {"path": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Lean_Table_C0003_Pilot_Freeze_Proposal_v0_9_MEDIANv0_5_0.json", "role": "Frozen C0003 pilot"},
+    {"path": "m050/extraction/audit/M050_Authorial_Grammar_Lean_Table_Recalibration_Compatibility_Receipt_v0_4_MEDIANv0_5_0.json", "role": "Offline compatibility replays"},
+    {"path": "m050/extraction/audit/spend-envelopes/M050_Provider_Spend_Envelope_001_After_Structural_C0003_v0_7_MEDIANv0_5_0.json", "role": "Active money-only balance"},
+    {"path": "m050/tools/m050_guard_v0_15.py", "role": "Active lean-table guard"}
+  ],
+  "next_authorized_activity": "No activity is currently authorized. The next possible transition is an exact one-call C0003 Anthropic lean-table pilot authorization under a $0.13 cap.",
+  "provider_call_authorized": false,
+  "google_sheets_interaction_authorized": false,
+  "gate_5_complete": false
+}

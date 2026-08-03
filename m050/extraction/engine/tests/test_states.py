@@ -33,6 +33,15 @@ def test_ruling_confirmation_requires_author():
         receipt("ruling", "drafted_by_codex", "author_confirmed")
 
 
+def test_identity_approval_requires_author():
+    with pytest.raises(ContractError, match="author authority"):
+        receipt("identity_card", "reviewed", "approved")
+    result = receipt(
+        "identity_card", "reviewed", "approved", authority="Asa Wember"
+    )
+    validate_artifact("transition_receipt", result)
+
+
 def test_invalid_transition_fails_closed():
     with pytest.raises(ContractError, match="prohibited"):
         receipt("evidence", "proposed", "accepted")

@@ -10,10 +10,11 @@ import yaml
 from .bundles import build_reconciliation_bundles, orphaned_mapped_evidence
 from .canonical import content_id, sha256_file, write_new_json
 from .errors import ContractError, Gate5Error
-from .identity import identity_card_errors
+from .identity import identity_card_errors, transition_identity_card
 from .runtime import runtime_errors, runtime_report
 from .schema import validate_artifact
 from .scope import require_input_paths, require_new_output_path
+from .states import transition_receipt
 from .structure import Block, parse_markdown, plan_chunks
 from .validation import validate_atoms, validate_block_dispositions
 from .workorders import verify_work_order
@@ -93,6 +94,90 @@ def _profile(args: argparse.Namespace) -> int:
     else:
         print(json.dumps(report, indent=2, sort_keys=True))
     return 0 if not errors else 1
+
+
+def _profile_transition(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    supplied = {
+        "card": Path(args.card),
+        "block_manifest": Path(args.block_manifest),
+        "frozen_manifest": Path(args.frozen_manifest),
+        "source_disposition": Path(args.source_disposition),
+        "reuse_disposition": Path(args.reuse_disposition),
+    }
+    if args.predecessor_receipt:
+        supplied["predecessor_receipt"] = Path(args.predecessor_receipt)
+    require_input_paths(
+        repo_root,
+        supplied.values(),
+        [Path("m050/extraction/control"), Path("m050/extraction/audit")],
+    )
+    resolved = {
+        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
+        for key, path in supplied.items()
+    }
+    card = _read_json(resolved["card"])
+    block_manifest = _read_json(resolved["block_manifest"])
+    frozen_manifest = _read_json(resolved["frozen_manifest"])
+    source_disposition = _read_yaml(resolved["source_disposition"])
+    reuse_disposition = _read_yaml(resolved["reuse_disposition"])
+    errors = identity_card_errors(
+        repo_root,
+        card,
+        block_manifest,
+        frozen_manifest,
+        source_disposition,
+        reuse_disposition,
+    )
+    if errors:
+        raise ContractError("identity card failed pre-transition validation: " + "; ".join(errors))
+    transitioned = transition_identity_card(card, args.new_status)
+    transitioned_errors = identity_card_errors(
+        repo_root,
+        transitioned,
+        block_manifest,
+        frozen_manifest,
+        source_disposition,
+        reuse_disposition,
+    )
+    if transitioned_errors:
+        raise ContractError(
+            "transitioned identity card failed validation: " + "; ".join(transitioned_errors)
+        )
+    predecessor_hash = (
+        sha256_file(resolved["predecessor_receipt"])
+        if "predecessor_receipt" in resolved
+        else None
+    )
+    receipt = transition_receipt(
+        machine="identity_card",
+        artifact_id=transitioned["card_id"],
+        prior_state=card["status"],
+        new_state=transitioned["status"],
+        authority=args.authority,
+        reason=args.reason,
+        tool_version="median-gate5-0.1.0",
+        predecessor_receipt_hash=predecessor_hash,
+        timestamp=args.timestamp,
+    )
+    validate_artifact("transition_receipt", receipt)
+    card_output = require_new_output_path(repo_root, Path(args.output_card))
+    receipt_output = require_new_output_path(repo_root, Path(args.output_receipt))
+    write_new_json(card_output, transitioned)
+    write_new_json(receipt_output, receipt)
+    print(
+        json.dumps(
+            {
+                "card_id": transitioned["card_id"],
+                "receipt_id": receipt["receipt_id"],
+                "status": transitioned["status"],
+                "source_id": transitioned["source_id"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
 
 
 def _block(args: argparse.Namespace) -> int:
@@ -268,6 +353,24 @@ def build_parser() -> argparse.ArgumentParser:
     profile.add_argument("--reuse-disposition", required=True)
     profile.add_argument("--output")
     profile.set_defaults(func=_profile)
+
+    profile_transition = subparsers.add_parser(
+        "profile-transition", help="issue a new identity-card state revision and receipt"
+    )
+    profile_transition.add_argument("--repo-root", default=".")
+    profile_transition.add_argument("--card", required=True)
+    profile_transition.add_argument("--block-manifest", required=True)
+    profile_transition.add_argument("--frozen-manifest", required=True)
+    profile_transition.add_argument("--source-disposition", required=True)
+    profile_transition.add_argument("--reuse-disposition", required=True)
+    profile_transition.add_argument("--new-status", required=True, choices=["reviewed", "approved"])
+    profile_transition.add_argument("--authority", required=True)
+    profile_transition.add_argument("--reason", required=True)
+    profile_transition.add_argument("--timestamp")
+    profile_transition.add_argument("--predecessor-receipt")
+    profile_transition.add_argument("--output-card", required=True)
+    profile_transition.add_argument("--output-receipt", required=True)
+    profile_transition.set_defaults(func=_profile_transition)
 
     plan = subparsers.add_parser("plan", help="create a dual-limit chunk plan")
     plan.add_argument("--repo-root", default=".")

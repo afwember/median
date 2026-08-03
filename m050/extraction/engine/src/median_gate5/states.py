@@ -125,6 +125,7 @@ STATE_MACHINES = {
 }
 
 AUTHOR_ONLY_TRANSITIONS = {
+    ("identity_card", "reviewed", "approved"),
     ("work_order", "awaiting_authorization", "authorized"),
     ("ruling", "drafted_by_codex", "author_confirmed"),
 }

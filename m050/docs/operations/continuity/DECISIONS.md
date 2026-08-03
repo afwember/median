@@ -49,3 +49,13 @@ handoff. It does not replace domain rulings recorded in Gate evidence.
 - A future task must bootstrap from `HANDOFF.md`, verify live state, and consult
   the historical transcript only for a specific unresolved question.
 - Context summaries are navigation aids, not authoritative project records.
+
+## Gate 5 source identities
+
+- On 2026-08-03, Asa Wember decided: "approve all four" legacy source identity
+  cards (Crossing, Governing Philosophy and Architecture, Human Rulings, and
+  MSID Grammar).
+- Preserve the draft, reviewed, and approved revisions and their linked
+  receipts. The approved revisions are the active source-identity controls.
+- This decision authorizes deterministic offline replay of the four preserved
+  legacy response sets. It does not authorize a provider call or any paid work.

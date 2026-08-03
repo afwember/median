@@ -8,7 +8,7 @@ Repository: `https://github.com/afwember/median`
 
 Branch: `main`
 
-Verified predecessor checkpoint: `35e29d8d740eb0335620212680d370165088eab9`
+Verified predecessor checkpoint: `5fd78805d8d4c2763d02241a56ce598b0c8e51b9`
 
 This file describes the verified post-macOS-26.6-restart state. Pre-update
 continuity checkpoint `68857afd9d02e33ff30622042dcac8c13ce38450` is the
@@ -22,15 +22,16 @@ a self-referential hash into the file.
 - Gate 5 is in progress.
 - Gate 5 Foundation Milestone 1 passed as an offline implementation milestone;
   it is not Gate 5 completion and does not authorize provider calls.
-- Gate 5 Milestone 2 draft preparation is complete: four content-derived legacy
-  source identity cards and their deterministic block manifests pass mechanical
-  validation and await author review. No legacy replay or migration has begun.
+- Gate 5 Milestone 2 identity approval is complete: Asa Wember approved all
+  four legacy source identity cards. Immutable draft, reviewed, and approved
+  revisions plus linked transition receipts are preserved. Deterministic legacy
+  replay and migration have not begun.
 - The source-independent engine, artifact contracts, lifecycle controls,
   deterministic tooling, locked runtime, and regression suite are implemented.
 - The repository-local environment uses Python 3.12.7 with pip 26.2,
   setuptools 83.0.0, wheel 0.47.0, and pytest 9.1.1.
 - The latest security check found no known third-party Python vulnerabilities;
-  `pip check` passed and the current offline Gate 5 suite passes all 57 tests.
+  `pip check` passed and the current offline Gate 5 suite passes all 61 tests.
 - No paid model or provider work is currently authorized.
 
 Detailed Gate 5 evidence:
@@ -40,6 +41,8 @@ Detailed Gate 5 evidence:
 - `m050/extraction/audit/M050_Extraction_Gate_5_Technical_Contract_v0_1_MEDIANv0_5_0.md`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Card_Review_Brief_v0_1_MEDIANv0_5_0.md`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Draft_Validation_v0_1_MEDIANv0_5_0.json`
+- `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json`
+- `m050/extraction/control/M050_Active_Control_Index_v0_3_MEDIANv0_5_0.json`
 
 ## Remote operating state
 
@@ -85,6 +88,7 @@ audit data.
 
 ## Known pending transition
 
-The host migration and controlled update are complete. The next project action
-is author review of the four draft legacy source identity cards as specified in
-`NEXT_ACTION.md`. No paid model or provider request is authorized.
+The host migration, controlled update, and legacy source identity approval are
+complete. The next project action is deterministic offline replay of the four
+preserved legacy response sets as specified in `NEXT_ACTION.md`. No paid model
+or provider request is authorized.

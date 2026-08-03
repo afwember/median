@@ -3,10 +3,12 @@ from pathlib import Path
 import subprocess
 import sys
 
+import pytest
 import yaml
 
 from median_gate5.canonical import content_id, sha256_file
-from median_gate5.identity import identity_card_errors
+from median_gate5.errors import ContractError
+from median_gate5.identity import identity_card_errors, transition_identity_card
 from median_gate5.structure import parse_markdown
 
 
@@ -180,6 +182,25 @@ def test_v02_identity_card_rejects_unbound_supplied_control(tmp_path):
     assert any("supplied control does not match bound artifact" in error for error in errors)
 
 
+def test_identity_card_transition_is_versioned_and_content_addressed(tmp_path):
+    card, *_ = identity_fixture(tmp_path)
+    reviewed = transition_identity_card(card, "reviewed")
+    approved = transition_identity_card(reviewed, "approved")
+    assert reviewed["version"] == 2
+    assert reviewed["supersedes_card_id"] == card["card_id"]
+    assert approved["version"] == 3
+    assert approved["supersedes_card_id"] == reviewed["card_id"]
+    for transitioned in (reviewed, approved):
+        body = {key: value for key, value in transitioned.items() if key != "card_id"}
+        assert transitioned["card_id"] == content_id("sic", body)
+
+
+def test_identity_card_transition_rejects_skipped_review(tmp_path):
+    card, *_ = identity_fixture(tmp_path)
+    with pytest.raises(ContractError, match="draft -> approved"):
+        transition_identity_card(card, "approved")
+
+
 def test_profile_cli_validates_identity_card(tmp_path):
     card, block_manifest, frozen_manifest, source_disposition, reuse_disposition = identity_fixture(tmp_path)
     card_path = tmp_path / "m050/extraction/control/card.json"
@@ -214,3 +235,90 @@ def test_profile_cli_validates_identity_card(tmp_path):
     )
     assert result.returncode == 0, result.stderr
     assert json.loads(result.stdout)["passed"] is True
+
+
+def test_profile_transition_cli_writes_review_and_author_approval_chain(tmp_path):
+    card, _, _, source_disposition, reuse_disposition = identity_fixture(tmp_path)
+    card_path = tmp_path / "m050/extraction/control/card.json"
+    source_disposition_path = tmp_path / "m050/extraction/audit/source-disposition.yaml"
+    reuse_disposition_path = tmp_path / "m050/extraction/audit/reuse-disposition.yaml"
+    reviewed_path = tmp_path / "m050/extraction/control/cards/reviewed.json"
+    reviewed_receipt_path = tmp_path / "m050/extraction/audit/reviewed-receipt.json"
+    approved_path = tmp_path / "m050/extraction/control/cards/approved.json"
+    approved_receipt_path = tmp_path / "m050/extraction/audit/approved-receipt.json"
+    _write_json(card_path, card)
+    source_disposition_path.write_text(yaml.safe_dump(source_disposition), encoding="utf-8")
+    reuse_disposition_path.write_text(yaml.safe_dump(reuse_disposition), encoding="utf-8")
+
+    common = [
+        sys.executable,
+        "-m",
+        "median_gate5.cli",
+        "profile-transition",
+        "--repo-root",
+        str(tmp_path),
+        "--block-manifest",
+        str(tmp_path / "m050/extraction/control/blocks/source.json"),
+        "--frozen-manifest",
+        str(tmp_path / "m050/extraction/control/frozen.json"),
+        "--source-disposition",
+        str(source_disposition_path),
+        "--reuse-disposition",
+        str(reuse_disposition_path),
+        "--reason",
+        'Author decision: "approve all four".',
+    ]
+    reviewed_result = subprocess.run(
+        [
+            *common,
+            "--card",
+            str(card_path),
+            "--new-status",
+            "reviewed",
+            "--authority",
+            "Codex",
+            "--timestamp",
+            "2026-08-03T04:00:00Z",
+            "--output-card",
+            str(reviewed_path),
+            "--output-receipt",
+            str(reviewed_receipt_path),
+        ],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert reviewed_result.returncode == 0, reviewed_result.stderr
+    reviewed = json.loads(reviewed_path.read_text(encoding="utf-8"))
+    assert reviewed["status"] == "reviewed"
+    assert reviewed["supersedes_card_id"] == card["card_id"]
+
+    approved_result = subprocess.run(
+        [
+            *common,
+            "--card",
+            str(reviewed_path),
+            "--new-status",
+            "approved",
+            "--authority",
+            "Asa Wember",
+            "--timestamp",
+            "2026-08-03T04:00:01Z",
+            "--predecessor-receipt",
+            str(reviewed_receipt_path),
+            "--output-card",
+            str(approved_path),
+            "--output-receipt",
+            str(approved_receipt_path),
+        ],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    assert approved_result.returncode == 0, approved_result.stderr
+    approved = json.loads(approved_path.read_text(encoding="utf-8"))
+    approved_receipt = json.loads(approved_receipt_path.read_text(encoding="utf-8"))
+    assert approved["status"] == "approved"
+    assert approved["supersedes_card_id"] == reviewed["card_id"]
+    assert approved_receipt["authority"] == "Asa Wember"
+    assert approved_receipt["predecessor_receipt_hash"] == sha256_file(reviewed_receipt_path)

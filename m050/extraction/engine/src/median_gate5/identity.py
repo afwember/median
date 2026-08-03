@@ -7,7 +7,9 @@ from typing import Any, Iterable
 import yaml
 
 from .canonical import content_id, sha256_file
+from .errors import ContractError
 from .schema import validate_artifact
+from .states import IDENTITY_CARD_TRANSITIONS
 
 
 def _repo_file(repo_root: Path, supplied: str) -> Path | None:
@@ -179,3 +181,17 @@ def identity_card_errors(
     ) != (card["source_path"], card["source_sha256"]):
         errors.append("legacy lineage must contain one exact active_frozen_source binding")
     return errors
+
+
+def transition_identity_card(card: dict[str, Any], new_status: str) -> dict[str, Any]:
+    validate_artifact("source_identity_card_v0_2", card)
+    prior_status = card["status"]
+    if new_status not in IDENTITY_CARD_TRANSITIONS.get(prior_status, frozenset()):
+        raise ContractError(f"prohibited identity card transition: {prior_status} -> {new_status}")
+    body = {key: value for key, value in card.items() if key != "card_id"}
+    body["version"] = card["version"] + 1
+    body["status"] = new_status
+    body["supersedes_card_id"] = card["card_id"]
+    transitioned = {"card_id": content_id("sic", body), **body}
+    validate_artifact("source_identity_card_v0_2", transitioned)
+    return transitioned

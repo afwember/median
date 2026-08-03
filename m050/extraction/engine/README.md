@@ -55,3 +55,29 @@ reconciliation, semantic review, and acceptance remain unset.
 The review inventory preserves both the 123 Gate 3 multi-sentence flags and
 all 17 later cross-block structural compounds. One record overlaps, yielding
 139 unique review records without changing either source queue.
+
+## Deterministic legacy semantic-review planning
+
+`plan-legacy-semantic-review` consumes the completed Layer E migration receipt
+and creates section-coherent review bundles, uncovered-block coverage bundles,
+and one append-only state-transition receipt per candidate. It moves queue
+state only from `mechanically_valid` to `semantic_review_pending`; it performs
+no semantic review or acceptance.
+
+The planner preserves all 913 candidates and 139 compound-review records,
+queues all 518 eligible blocks lacking a legacy candidate, pins the Tier 3
+sample seed and membership, and produces lower, expected, and upper
+human-effort projections. Bundle limits are deterministic: at most 12 members
+and 12,000 source-text characters.
+
+```sh
+.venv/bin/python -m median_gate5.cli plan-legacy-semantic-review \
+  --repo-root . \
+  --migration-receipt MIGRATION_RECEIPT.json \
+  --effective-date YYYY-MM-DD \
+  --tier3-seed PINNED_SEED \
+  --output-candidate-bundles NEW_CANDIDATE_BUNDLES.jsonl \
+  --output-coverage-bundles NEW_COVERAGE_BUNDLES.jsonl \
+  --output-transitions NEW_TRANSITIONS.jsonl \
+  --output-report NEW_REPORT.json
+```

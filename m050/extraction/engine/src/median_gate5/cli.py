@@ -13,6 +13,7 @@ from .errors import ContractError, Gate5Error
 from .identity import identity_card_errors, transition_identity_card
 from .legacy import build_legacy_replay
 from .migration import build_layer_e_legacy_migration
+from .review_planning import build_legacy_semantic_review_plan
 from .rulings import build_human_rulings_reconstruction
 from .repairs import (
     build_compound_dispositions,
@@ -631,6 +632,65 @@ def _migrate_legacy_layer_e(args: argparse.Namespace) -> int:
     return 0
 
 
+def _plan_legacy_semantic_review(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    receipt_supplied = Path(args.migration_receipt)
+    require_input_paths(
+        repo_root,
+        [receipt_supplied],
+        [Path("m050/extraction/audit")],
+    )
+    receipt_path = (
+        (repo_root / receipt_supplied).resolve()
+        if not receipt_supplied.is_absolute()
+        else receipt_supplied.resolve()
+    )
+    outputs = {
+        "candidate_bundles": require_new_output_path(
+            repo_root, Path(args.output_candidate_bundles)
+        ),
+        "coverage_bundles": require_new_output_path(
+            repo_root, Path(args.output_coverage_bundles)
+        ),
+        "transitions": require_new_output_path(repo_root, Path(args.output_transitions)),
+        "report": require_new_output_path(repo_root, Path(args.output_report)),
+    }
+    if len(set(outputs.values())) != len(outputs):
+        raise ContractError("legacy semantic-review plan outputs must be distinct")
+    candidate_bytes, coverage_bytes, transition_bytes, report = (
+        build_legacy_semantic_review_plan(
+            repo_root=repo_root,
+            migration_receipt_path=receipt_path,
+            candidate_bundle_relative_path=str(outputs["candidate_bundles"].relative_to(repo_root)),
+            coverage_bundle_relative_path=str(outputs["coverage_bundles"].relative_to(repo_root)),
+            transition_relative_path=str(outputs["transitions"].relative_to(repo_root)),
+            effective_date=args.effective_date,
+            tier3_seed=args.tier3_seed,
+        )
+    )
+    write_new_bytes(outputs["candidate_bundles"], candidate_bytes)
+    write_new_bytes(outputs["coverage_bundles"], coverage_bytes)
+    write_new_bytes(outputs["transitions"], transition_bytes)
+    write_new_json(outputs["report"], report)
+    print(
+        json.dumps(
+            {
+                "review_plan_id": report["review_plan_id"],
+                "passed": report["passed"],
+                "candidates": report["candidate_records"],
+                "candidate_bundles": report["candidate_review_bundle_count"],
+                "uncovered_blocks": report["uncovered_blocks"],
+                "coverage_bundles": report["uncovered_block_review_bundle_count"],
+                "semantic_reviews_performed": report["semantic_reviews_performed"],
+                "expected_human_minutes": report["human_effort_projection"]["scenarios"]["expected"]["total_minutes"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="median-gate5")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -775,6 +835,20 @@ def build_parser() -> argparse.ArgumentParser:
     migrate.add_argument("--output-pa-block-ledger", required=True)
     migrate.add_argument("--output-report", required=True)
     migrate.set_defaults(func=_migrate_legacy_layer_e)
+
+    review_plan = subparsers.add_parser(
+        "plan-legacy-semantic-review",
+        help="build deterministic review bundles, transition receipts, and human-effort projections",
+    )
+    review_plan.add_argument("--repo-root", default=".")
+    review_plan.add_argument("--migration-receipt", required=True)
+    review_plan.add_argument("--effective-date", required=True)
+    review_plan.add_argument("--tier3-seed", required=True)
+    review_plan.add_argument("--output-candidate-bundles", required=True)
+    review_plan.add_argument("--output-coverage-bundles", required=True)
+    review_plan.add_argument("--output-transitions", required=True)
+    review_plan.add_argument("--output-report", required=True)
+    review_plan.set_defaults(func=_plan_legacy_semantic_review)
 
     bundle = subparsers.add_parser("bundle")
     bundle.add_argument("--repo-root", default=".")

@@ -1,0 +1,19 @@
+{
+  "schema_version": "M050-PILOT-TRANSITION-0.1",
+  "receipt_id": "M050-AUTHGRAM-PILOT-001-R5-RESPONSE-CAPTURED-001",
+  "date": "2026-08-03",
+  "prior_state": "pilot_call_authorized",
+  "state": "pilot_response_captured",
+  "authorization_receipt_sha256": "60729e26501bf82d7529a47ea3cb650422c8e7ae3528af63ad1cf656f1491e67",
+  "transport_receipt_sha256": "51e9dc85832f9c30186542776c644b7b1a6a6dcfc92e7ad4e840f2779902cea3",
+  "request_sha256": "8624aba29b7c9e0158f683cc1667acfd47e58dd5f324263ab8c149739a847973",
+  "raw_response_sha256": "9e34d163a3e003a7af7b4ee9eefad15bdbe3c6e866bf74ae7cc8efe1122b6f0f",
+  "provider_request_id": "req_011CdgNZWka4dJzDhuNFwnxw",
+  "http_status": 400,
+  "provider_calls_attempted": 1,
+  "authorization_consumed": true,
+  "usage_receipt_present": false,
+  "accounted_cost_cents": 0,
+  "response_disposition": "invalid_request_error_preserved_before_evaluation",
+  "scope_limit": "No retry or additional provider call is authorized."
+}

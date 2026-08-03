@@ -1,0 +1,98 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-AUTHGRAM-PILOT-001-R4-FREEZE-PROPOSAL-001",
+  "state": "awaiting_exact_one_call_authorization",
+  "machine_state": "offline_dry_run",
+  "historical_calibration_input": "Asa Wember: It settled into 6000 token chunks regularly yesterday",
+  "superseded_uncalled_proposal": {
+    "pilot_id": "M050-AUTHGRAM-PILOT-001-R3",
+    "withdrawal_receipt": "m050/extraction/audit/pilot-transitions/M050_Authorial_Grammar_Pilot_001_R3_Freeze_Proposal_Withdrawn_v0_3_MEDIANv0_5_0.json"
+  },
+  "authority": {
+    "approved_cost_cap_cents": 15,
+    "provider_call_authorized": false,
+    "external_transmission_for_this_binding_authorized": false
+  },
+  "binding": {
+    "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+    "source_sha256": "7d23ef2ccbff0c6594975c03cf405d838a3cc3f712ea6faf942581a72c9284ff",
+    "gate_2_disposition": "source_bounded_atomic_extraction",
+    "output_streams": ["evidence_authorial_rule"],
+    "output_streams_sha256": "10deed86884433969212928d4e1b72816ac03a93451b2d46884165ed6fb8af74",
+    "identity_card_sha256": "983ca763a907d3465c14215bed7f165f712b903567b5bbe54f6e50f6717e10b4",
+    "source_profile_sha256": "82cde773092c761d2e2b2556473513a68fa3ef396cfe07b07ef3926a4d22880b",
+    "pilot_chunk_id": "M050-AUTHGRAM-PILOT-001-R4",
+    "pilot_chunk_sha256": "d075ac829df9cbf31d2f8ea870ac982531108989c30a4b1d1f9d54ab222cfb8c",
+    "prompt_sha256": "3833be2222cf0e2506cb7c44c4f1909865b46355c9cb998c21feab51ece077a3",
+    "schema_sha256": "32f0a8f80cf6a168d2f506039e766a249194e233100c96a6e07b70fbb66e73a7",
+    "chunker_sha256": "b1ca85a93f2e0c12938b5f1f0c6740158f795fc2f525576f8b80b55b1463c9cd",
+    "engine_digest": "36947e7bb5aad8db9144a6997a0481ccf20ac3f9913f8a847e75e616c5018810",
+    "validator_sha256": "adf6e01b15d6b74efab9d5904a8db0d3e7106999869f843b8eb1da045cfa0716",
+    "normalization_spec_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
+    "exclusion_policy_sha256": "904a25bba3e96a18be67bd7a58a78f0692ace38a48a8bf8287ae94087bad3c92",
+    "request_renderer_sha256": "69a196c0f553362079caef189be9f8526b07eb85481e9f0e114165ff4f6270b5",
+    "request_sha256": "03184b8cd7a43119a52147882cdc4284838731966652d893c6a14dab792cf921",
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "thinking": {"type": "adaptive"},
+    "structured_output": "output_config.format.json_schema",
+    "sampling_overrides": "none",
+    "tools": "none",
+    "prompt_extractable_source_ids": ["M050-SRC-AUTHORIAL-GRAMMAR-001"],
+    "foreign_evidence_record_count": 0,
+    "media_disposition": "publication_only"
+  },
+  "pilot": {
+    "ordinal_range": [77, 170],
+    "eligible_blocks": 27,
+    "context_only_blocks": 19,
+    "representative_regimes": [
+      "Initial Caps for Defined Nouns",
+      "ALL CAPS for experiential verbs and Core-Species operators"
+    ],
+    "deferred_to_separate_calibration": [
+      "MSID display",
+      "Defined Text Treatments and PROVISIONAL status",
+      "checklist, lint, Phonebook plate, and convention ledger"
+    ],
+    "maximum_output_tokens": 6000,
+    "requested_provider_call_limit": 1,
+    "authorized_provider_call_limit": 0,
+    "approved_cost_cap_cents": 15
+  },
+  "cost_forecast": {
+    "renderer_input_forecast_tokens": 5192,
+    "calibrated_input_ceiling_tokens": 7200,
+    "bound_output_ceiling_tokens": 6000,
+    "input_usd_per_million_tokens": 2,
+    "output_usd_per_million_tokens": 10,
+    "forecast_maximum_usd": 0.0744,
+    "approved_cost_cap_usd": 0.15,
+    "forecast_within_cap": true
+  },
+  "pilot_acceptance_criteria": {
+    "raw_response_and_usage_preserved_before_evaluation": true,
+    "mechanical_errors_required": {
+      "schema_errors": 0,
+      "grounding_errors": 0,
+      "coverage_errors": 0,
+      "atomicity_errors": 0,
+      "truncation_errors": 0,
+      "table_structure_errors": 0
+    },
+    "substantive_gate_all_true": [
+      "source_comparison_complete",
+      "ownership_correct",
+      "status_correct",
+      "authority_scope_correct",
+      "qualifiers_preserved",
+      "identifiers_supported_by_source",
+      "all_required_reference_items_recovered",
+      "source_firewall_intact",
+      "no_unresolved_defects"
+    ],
+    "failure_disposition": "immutable rejection and return to offline calibration",
+    "scope_limit": "Acceptance covers only the represented regimes and does not authorize other regimes or the remainder of Authorial Grammar."
+  },
+  "next_required_author_statement": "I authorize exactly one bound Anthropic call for M050-AUTHGRAM-PILOT-001-R4 under the approved 15-cent cap, including transmission of its bounded Authorial Grammar source text."
+}

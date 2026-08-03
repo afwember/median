@@ -1,0 +1,23 @@
+{
+  "schema_version": "M050-PILOT-TRANSITION-0.1",
+  "receipt_id": "M050-AUTHGRAM-PILOT-001-R2-RETURNED-OFFLINE-001",
+  "date": "2026-08-03",
+  "prior_state": "pilot_rejected",
+  "state": "offline_dry_run",
+  "rejection_receipt_sha256": "bf1c0d48d42ce94577408cc90ab4c784eb77d5a3aeb9716916b8173094796948",
+  "reason": "Pilot 001-R2 reached its 8000-token output limit and returned truncated invalid JSON.",
+  "frozen_binding_invalidated": true,
+  "provider_calls_authorized": 0,
+  "provider_retry_authorized": false,
+  "author_cost_ceiling_for_next_proposal_cents": 15,
+  "next_authorized_activity": "Offline preparation of a newly hash-bound pilot request whose forecast does not exceed 15 cents.",
+  "prohibited_without_new_exact_receipt": [
+    "provider call",
+    "full-source execution",
+    "semantic acceptance",
+    "mapping",
+    "reconciliation",
+    "compiled prose",
+    "Google Sheets interaction"
+  ]
+}

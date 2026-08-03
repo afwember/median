@@ -2,9 +2,9 @@
 
 <!-- Refresh these fields before every push. -->
 
-**STATUS:** Recalibration required<br>
-**PHASE:** Atomic extraction — pilot<br>
+**STATUS:** Waiting for full-source authorization<br>
+**PHASE:** Atomic extraction — source release<br>
 **SOURCE:** Authorial Grammar — 1 / 22<br>
 **CHUNK:** 0 / 5<br>
-**NOW:** Pilot 001-R5 rejected; schema unsupported<br>
-**NEXT:** Replace exact-count schema offline
+**NOW:** Pilot 001-R6 accepted; cost 6.984¢<br>
+**NEXT:** Authorize full-source call limit + cost cap

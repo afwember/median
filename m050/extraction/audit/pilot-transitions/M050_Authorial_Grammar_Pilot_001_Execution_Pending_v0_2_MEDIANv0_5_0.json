@@ -1,0 +1,17 @@
+{
+  "schema_version": "M050-PILOT-EXECUTION-STATUS-0.1",
+  "status_id": "M050-AUTHGRAM-PILOT-001-EXECUTION-PENDING-002",
+  "date": "2026-08-03",
+  "state": "pilot_call_authorized",
+  "pilot_id": "M050-AUTHGRAM-PILOT-001",
+  "request_sha256": "7eb25fc06ab0a7e49241d1db1724348cea03c20d43e34c10b0a1caad20f79bcc",
+  "submission_attempted": false,
+  "authorization_consumed": false,
+  "provider_calls": 0,
+  "accounted_cost_cents": 0,
+  "google_sheets_interactions": 0,
+  "credential_state": "Anthropic key located in median-support and kept outside the repository",
+  "execution_gate": "denied_before_process_launch",
+  "blocker": "External-transmission approval must explicitly acknowledge that the bounded Pilot 001 payload sends Authorial Grammar repository source text to Anthropic.",
+  "scope_preserved": "No raw response or transport receipt exists; the authorization remains unconsumed and limited to the exact Pilot 001 request and 10-cent cap."
+}

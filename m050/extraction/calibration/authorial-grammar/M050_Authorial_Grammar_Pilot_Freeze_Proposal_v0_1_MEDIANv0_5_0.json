@@ -1,0 +1,169 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-AUTHGRAM-PILOT-FREEZE-PROPOSAL-001",
+  "state": "awaiting_author_approved_cost_cap",
+  "machine_state_before": "offline_dry_run",
+  "machine_state_after": "offline_dry_run",
+  "authority": {
+    "offline_freeze_preparation": "Asa Wember: proceed",
+    "model_effort_confirmation": "Asa Wember: claude-sonnet-5 low",
+    "provider_call_authorized": false,
+    "spend_authorized": false,
+    "cost_cap_approved": false
+  },
+  "phase_model_routing": {
+    "atomic_extraction": {
+      "model": "claude-sonnet-5",
+      "reasoning_effort": "low"
+    },
+    "post_atomic_extraction": {
+      "model": "gpt-5.6-sol",
+      "state": "reserved_not_activated",
+      "note": "This reservation is not an authorization for Layer E semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+    }
+  },
+  "shared_binding": {
+    "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+    "source_sha256": "7d23ef2ccbff0c6594975c03cf405d838a3cc3f712ea6faf942581a72c9284ff",
+    "gate_2_disposition": "source_bounded_atomic_extraction",
+    "output_streams": [
+      "evidence_authorial_rule"
+    ],
+    "output_streams_sha256": "10deed86884433969212928d4e1b72816ac03a93451b2d46884165ed6fb8af74",
+    "identity_card_sha256": "983ca763a907d3465c14215bed7f165f712b903567b5bbe54f6e50f6717e10b4",
+    "source_profile_sha256": "82cde773092c761d2e2b2556473513a68fa3ef396cfe07b07ef3926a4d22880b",
+    "prompt_sha256": "3833be2222cf0e2506cb7c44c4f1909865b46355c9cb998c21feab51ece077a3",
+    "schema_sha256": "f5bf0ac439b11f975216ee0ac7e59e4886079efcf4f0ed2e3fb5627826b160a7",
+    "chunker_sha256": "b1ca85a93f2e0c12938b5f1f0c6740158f795fc2f525576f8b80b55b1463c9cd",
+    "chunk_plan_sha256": "ef3aa26a3c2020a52ee452a6706dd83604e5d3145af56380df64155da8a5adb2",
+    "block_manifest_sha256": "cf1d0291cf7cb9fb3d959cb45f3477d69f5987d7d93c4f79b89dfe743eea0cca",
+    "block_disposition_ledger_sha256": "a365b4260d8cb7820742e4ab879c3d6336f643989139c700401ee887cf960b6c",
+    "engine_digest": "36947e7bb5aad8db9144a6997a0481ccf20ac3f9913f8a847e75e616c5018810",
+    "validator_sha256": "caace05225dd4e9e5ef32c04ceef8b8611813a0d92646abe6fc9efda3bc7dbf5",
+    "normalization_spec_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
+    "exclusion_policy_sha256": "904a25bba3e96a18be67bd7a58a78f0692ace38a48a8bf8287ae94087bad3c92",
+    "request_renderer_sha256": "69a196c0f553362079caef189be9f8526b07eb85481e9f0e114165ff4f6270b5",
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "thinking": {
+      "type": "adaptive"
+    },
+    "structured_output": "output_config.format.json_schema",
+    "sampling_overrides": "none",
+    "tools": "none",
+    "execution_cadence": "sequential_one_call_review",
+    "prompt_extractable_source_ids": [
+      "M050-SRC-AUTHORIAL-GRAMMAR-001"
+    ],
+    "foreign_evidence_record_count": 0,
+    "media_disposition": {
+      "media_id": "M050-AUTHORIAL-GRAMMAR-MEDIA-001",
+      "reference": "planned one-page Phonebook appendix plate",
+      "state": "publication_only"
+    }
+  },
+  "pilot_candidates": [
+    {
+      "pilot_chunk_id": "M050-AUTHGRAM-PILOT-001",
+      "ordinal_range": [77, 212],
+      "representative_regimes": [
+        "Initial Caps for Defined Nouns",
+        "ALL CAPS for experiential verbs and Core-Species operators",
+        "MSID display as authorial presentation rather than path validation"
+      ],
+      "pilot_chunk_sha256": "0953b1afdaa531322e1173f5a196c6d69e50c06e6860e379376c854496843746",
+      "request_sha256": "7eb25fc06ab0a7e49241d1db1724348cea03c20d43e34c10b0a1caad20f79bcc",
+      "eligible_blocks": 42,
+      "context_only_blocks": 26,
+      "conservative_input_token_forecast": 6961,
+      "maximum_output_tokens": 8000,
+      "requested_provider_call_limit": 1,
+      "authorized_provider_call_limit": 0,
+      "proposed_cost_cap_cents": 10,
+      "approved_cost_cap_cents": null
+    },
+    {
+      "pilot_chunk_id": "M050-AUTHGRAM-PILOT-002",
+      "ordinal_range": [367, 441],
+      "representative_regimes": [
+        "defined text treatments",
+        "emergent grammar",
+        "PROVISIONAL status preservation"
+      ],
+      "pilot_chunk_sha256": "c7398412e50c4a49db2d1de654053d449134b130bf8da85f5397dba78ca8daa0",
+      "request_sha256": "1981219c6b3b1594e9cc5e0b9d7028812ff463c59316777a00a342cab541a612",
+      "eligible_blocks": 36,
+      "context_only_blocks": 9,
+      "conservative_input_token_forecast": 5044,
+      "maximum_output_tokens": 8000,
+      "requested_provider_call_limit": 1,
+      "authorized_provider_call_limit": 0,
+      "proposed_cost_cap_cents": 10,
+      "approved_cost_cap_cents": null
+    },
+    {
+      "pilot_chunk_id": "M050-AUTHGRAM-PILOT-003",
+      "ordinal_range": [496, 576],
+      "representative_regimes": [
+        "authoring checklist",
+        "machine-checkable lint examples",
+        "publication-only Phonebook plate reference",
+        "current convention ledger"
+      ],
+      "pilot_chunk_sha256": "bbd95c8c35c14add97bdb9bbd7f700f556ab6a995736e74bfd1b5df647465519",
+      "request_sha256": "ab44e1f56c27a3a397c8b188a88db420cda2c875bd35e6454ee18000d6e2c541",
+      "eligible_blocks": 48,
+      "context_only_blocks": 5,
+      "conservative_input_token_forecast": 5698,
+      "maximum_output_tokens": 8000,
+      "requested_provider_call_limit": 1,
+      "authorized_provider_call_limit": 0,
+      "proposed_cost_cap_cents": 10,
+      "approved_cost_cap_cents": null
+    }
+  ],
+  "pricing_basis": {
+    "basis_date": "2026-08-03",
+    "input_usd_per_million_tokens": 2,
+    "output_usd_per_million_tokens": 10,
+    "basis": "Anthropic introductory Claude Sonnet 5 API pricing through 2026-08-31",
+    "rounding": "Each pilot's forecast maximum is rounded upward to a whole cent.",
+    "warning": "The forecast does not authorize spend and must be superseded if pricing changes before authorization."
+  },
+  "pilot_acceptance_criteria": {
+    "raw_capture": [
+      "preserve raw provider response before evaluation",
+      "preserve provider usage and cost receipt before evaluation",
+      "record evaluation against the exact frozen binding"
+    ],
+    "mechanical_gate_exact_zero": [
+      "schema_errors",
+      "grounding_errors",
+      "coverage_errors",
+      "atomicity_errors",
+      "truncation_errors",
+      "table_structure_errors"
+    ],
+    "substantive_gate_all_true": [
+      "source_comparison_complete",
+      "ownership_correct",
+      "status_correct",
+      "authority_scope_correct",
+      "qualifiers_preserved",
+      "identifiers_supported_by_source",
+      "all_required_reference_items_recovered",
+      "source_firewall_intact",
+      "no_unresolved_defects"
+    ],
+    "failure_disposition": "immutable pilot rejection; preserve output; revise offline; require fresh exact authority for another bounded pilot",
+    "scope_limit": "Pilot acceptance authorizes neither another pilot nor the remainder of Authorial Grammar."
+  },
+  "blocked_until_exact_author_receipt": {
+    "pilot_frozen_transition": true,
+    "required_approval": "Approve the 10-cent cost cap for one named pilot contract.",
+    "pilot_call_authorization_separate": true,
+    "provider_calls": 0,
+    "spend_cents": 0,
+    "google_sheets_interactions": 0
+  }
+}

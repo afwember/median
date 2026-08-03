@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "conditional_atoms_errors": 0,
+    "coverage_errors": 0,
+    "grounding_errors": 0,
+    "low_yield_review_blocks": [],
+    "schema_errors": 0
+  },
+  "errors": [],
+  "passed": true
+}

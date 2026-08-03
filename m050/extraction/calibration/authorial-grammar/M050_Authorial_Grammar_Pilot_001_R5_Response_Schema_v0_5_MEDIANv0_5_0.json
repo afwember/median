@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "M050-AUTHORIAL-GRAMMAR-PILOT-001-R5-RESPONSE-0.5",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "proposal_set_id", "request_id", "source_id", "dispositions"],
+  "properties": {
+    "schema_version": {"const": "M050-EVIDENCE-PROPOSAL-0.1"},
+    "proposal_set_id": {"type": "string", "minLength": 1},
+    "request_id": {"type": "string", "minLength": 1},
+    "source_id": {"const": "M050-SRC-AUTHORIAL-GRAMMAR-001"},
+    "dispositions": {
+      "type": "array",
+      "minItems": 27,
+      "maxItems": 27,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["block_id", "kind", "atoms"],
+        "properties": {
+          "block_id": {"type": "string", "pattern": "^M050-SRC-AUTHORIAL-GRAMMAR-001__B[0-9]{5}_[0-9a-f]{12}$"},
+          "kind": {"enum": ["atoms", "no_substantive_claim", "review_required"]},
+          "reason_code": {"type": "string"},
+          "atoms": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["proposal_id", "source_id", "block_id", "exact_source_text", "normalized_claim", "claim_kind", "stream"],
+              "properties": {
+                "proposal_id": {"type": "string", "minLength": 1},
+                "source_id": {"const": "M050-SRC-AUTHORIAL-GRAMMAR-001"},
+                "block_id": {"type": "string", "pattern": "^M050-SRC-AUTHORIAL-GRAMMAR-001__B[0-9]{5}_[0-9a-f]{12}$"},
+                "exact_source_text": {"type": "string", "minLength": 1},
+                "normalized_claim": {"type": "string", "minLength": 1},
+                "claim_kind": {"type": "string", "minLength": 1},
+                "stream": {"const": "evidence_authorial_rule"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

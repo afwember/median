@@ -1,0 +1,26 @@
+{
+  "schema_version": "M050-PILOT-TRANSITION-0.1",
+  "receipt_id": "M050-AUTHGRAM-PILOT-001-R5-REJECTED-001",
+  "date": "2026-08-03",
+  "prior_state": "pilot_response_captured",
+  "state": "pilot_rejected",
+  "response_captured_receipt_sha256": "3ecc8c0c3773bf1291ef8e37706b5cfdd6336eda2dd21352f1f230cf70435a47",
+  "request_sha256": "8624aba29b7c9e0158f683cc1667acfd47e58dd5f324263ab8c149739a847973",
+  "raw_response_sha256": "9e34d163a3e003a7af7b4ee9eefad15bdbe3c6e866bf74ae7cc8efe1122b6f0f",
+  "provider_request_id": "req_011CdgNZWka4dJzDhuNFwnxw",
+  "rejection_class": "provider_schema_contract_incompatibility",
+  "exact_provider_error": "For 'array' type, 'minItems' values other than 0 or 1 are not supported",
+  "defect": "Anthropic structured outputs do not support using minItems 27 to force exact disposition coverage.",
+  "mechanical_gate": {
+    "request_accepted_by_provider": false,
+    "provider_response_candidate_present": false,
+    "pilot_acceptable": false
+  },
+  "immutable_disposition": "rejected",
+  "required_correction": "Remove unsupported exact-count array constraints and encode the 27 required targets as fixed named object properties or another provider-supported schema shape, while retaining deterministic coverage validation.",
+  "authorization_consumed": true,
+  "retry_authorized": false,
+  "additional_provider_calls_authorized": 0,
+  "accounted_cost_cents": 0,
+  "google_sheets_interactions": 0
+}

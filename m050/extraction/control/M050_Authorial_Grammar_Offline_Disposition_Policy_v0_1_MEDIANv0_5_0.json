@@ -1,0 +1,40 @@
+{
+  "schema_version": "M050-OFFLINE-DISPOSITION-POLICY-0.1",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_path": "m050/docs/v0.5/governance/M050_Authorial_Grammar_Orthography_and_Prose_Style_Guide_v0_1_MEDIANv0_5_0.md",
+  "source_sha256": "7d23ef2ccbff0c6594975c03cf405d838a3cc3f712ea6faf942581a72c9284ff",
+  "gate_2_disposition": "source_bounded_atomic_extraction",
+  "allowed_streams": ["evidence_authorial_rule"],
+  "identity_card": {
+    "path": "m050/extraction/control/source-identities/cards/M050_Authorial_Grammar_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "sha256": "983ca763a907d3465c14215bed7f165f712b903567b5bbe54f6e50f6717e10b4",
+    "state": "approved"
+  },
+  "identity_approval_receipt": {
+    "path": "m050/extraction/audit/identity-transitions/M050_Authorial_Grammar_Content_Provenance_Identity_Card_Approved_Transition_v0_1_MEDIANv0_5_0.json",
+    "sha256": "ee71ef2f017c1e8f66b6c48f5c6384a998b6c85345fddddf988e9645b74a132a"
+  },
+  "block_manifest": {
+    "path": "m050/extraction/control/source-identities/blocks/M050_Authorial_Grammar_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+    "sha256": "cf1d0291cf7cb9fb3d959cb45f3477d69f5987d7d93c4f79b89dfe743eea0cca"
+  },
+  "chunk_plan": {
+    "path": "m050/extraction/control/M050_Authorial_Grammar_Section_Aware_Chunk_Plan_v0_1_MEDIANv0_5_0.json",
+    "sha256": "ef3aa26a3c2020a52ee452a6706dd83604e5d3145af56380df64155da8a5adb2"
+  },
+  "document_furniture_through_ordinal": 15,
+  "exact_document_furniture": ["---"],
+  "excluded_region_heading": "# Change Record",
+  "eligible_code_fence_ordinals": [85, 121, 133, 147, 179, 219, 223, 323, 331, 341, 383, 519, 523],
+  "other_code_fence_disposition": "context_only",
+  "media_dispositions": [
+    {
+      "media_id": "M050-AUTHORIAL-GRAMMAR-MEDIA-001",
+      "reference": "planned one-page Phonebook appendix plate",
+      "state": "publication_only",
+      "handling": "No embedded asset exists; preserve only the authorial rule that the plate is derived and non-independent."
+    }
+  ],
+  "prompt_extractable_source_ids": ["M050-SRC-AUTHORIAL-GRAMMAR-001"],
+  "foreign_evidence_record_count": 0
+}

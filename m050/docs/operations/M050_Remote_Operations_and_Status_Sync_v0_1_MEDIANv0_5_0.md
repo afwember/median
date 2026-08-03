@@ -6,6 +6,9 @@ Primary host: dedicated M4 Mac Mini
 Repository: `https://github.com/afwember/median`  
 Live status workbook: `https://docs.google.com/spreadsheets/d/1dCSzZNDzAHy9yIRPXRRvSL_9z9fP2CC18GNK2hPspXQ/edit`
 
+Canonical restart, compaction, and task-handoff entry point:
+`m050/docs/operations/continuity/README.md`.
+
 ## Operating model
 
 The Google Sheet is the phone-readable operational view. Git remains the

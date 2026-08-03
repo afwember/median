@@ -34,6 +34,11 @@ m051/                      Post-v0.5.0 development; excluded from the current co
 
 Start with the two workbooks and cost ledger in `m050/extraction/progress/`. The active control index and frozen-corpus manifest are in `m050/extraction/control/`; the process decisions and Gate receipts are in `m050/extraction/audit/`.
 
+For recovery after a restart, context compaction, or task handoff, start with
+`m050/docs/operations/continuity/README.md`. That compact continuity package
+records the current operating state, next transition, durable author decisions,
+and verification procedure without requiring the historical task transcript.
+
 ## Core rule
 
 A filename, title, or document’s internal claim of authority does not establish its identity or precedence. Sources are classified from their contents and genealogy; extraction preserves their testimony, and authority is resolved only during reconciliation.

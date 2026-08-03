@@ -1,0 +1,57 @@
+{
+  "schema_version": "M050-EXTRACTION-GATE-4-COMPLETION-RECEIPT-0.1",
+  "title": "MEDIAN v0.5.0 Extraction Gate 4 Completion Receipt",
+  "created": "2026-08-02",
+  "status": "GATE_4_PASSED",
+  "external_model_calls": 0,
+  "freeze": {
+    "git_commit": "b171b179e1bf2540880e9fc562400836e3f2be79",
+    "manifest_path": "m050/extraction/control/M050_Frozen_Corpus_Manifest_v0_1_MEDIANv0_5_0.json",
+    "manifest_sha256": "98ad9e63af025e9953a04719a246fcf2959faea471d81276b31b7c21e5a1b91d",
+    "registered_sources": 24,
+    "source_assets": 9,
+    "frozen_files": 33,
+    "gate_2_source_triplets_verified": true
+  },
+  "immutable_accepted_evidence": {
+    "files": 6,
+    "sets": 3,
+    "all_hashes_verified": true
+  },
+  "archive_snapshot": {
+    "root": "m050/archive",
+    "file_count_excluding_ds_store": 9921,
+    "total_bytes": 251364403,
+    "ordered_path_and_sha256_digest": "9b99f81366b13da1829bea688d4510aee3540c677f25218ebacc0fe0121011e1",
+    "spreadsheet_build_artifacts_archived": 13,
+    "misleading_legacy_originals_archived": 14,
+    "generated_cache_files_excluded": 51,
+    "all_sealed_files_present_in_git_index": true
+  },
+  "active_tree_checks": {
+    "retired_identity_filename_matches": 0,
+    "repository_root_outputs_directory_present": false,
+    "m051_files": 1,
+    "m051_input_to_m050_allowed": false,
+    "m051_file_sha256": "78c17b5fec10c4908965bda2c26550409d365928c28d7fdd9020eb6f2a576140"
+  },
+  "control_hashes": {
+    "write_authority_policy": "c57fda4b719b02fd6982971980a2837c0855cb65ad59cf528a994565ef506c07",
+    "active_control_index": "056bc2ae583442c1d870c28d5de71f917694bec63327c2b82fd646df87eb0c28",
+    "gate_2_source_disposition": "f460dd7c3ebf2df9344ee58aa8f650c3314af436b7684bf6cd2bf674fef5bf63",
+    "gate_2_target_process": "0c1c5674d7edf8626af1d0d470dc650b09cd2a885dda01a26919c4e2720e8caf",
+    "gate_3_reuse_disposition": "7afef98cb6d3434371652cb4ebe957c77806d2164ef7eeeb91603c400e556ec5",
+    "integrity_guard": "4d3d13fed2c9bd055325fa758ee60559e8cdb6d17118660d7c83c5609d51afaf"
+  },
+  "progress_and_cost_hashes": {
+    "compile_progress_and_stage_guide": "bafa11c110d75ca1ccca5bdbee527f3ce1d8d71f18fdb7381a67aea6c439ed7d",
+    "document_processing_tracker": "7a05dbcfeadf7a012a8ea00987ab6138a35d9b6c71cb70df82e44ef69cfa778c",
+    "compile_cost_ledger_markdown": "6d2ee6f8e8ad82226fadd780e3b32f88d73e442e97fabd9776ce43a19f5cef1a",
+    "compile_cost_entries_csv": "5e6657dd557f2df984dc8193ee0389f8d6572276a215601ac4b279f600cb20ec"
+  },
+  "guard": {
+    "command": "python3 m050/tools/m050_guard.py",
+    "result": "PASS"
+  },
+  "next_authorized_activity": "Discuss and specify Gate 5 extraction architecture; no provider call is authorized."
+}

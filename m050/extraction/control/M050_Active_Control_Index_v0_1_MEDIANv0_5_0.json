@@ -1,0 +1,56 @@
+{
+  "schema_version": "M050-ACTIVE-CONTROL-INDEX-0.1",
+  "title": "MEDIAN v0.5.0 Active Control Index",
+  "status": "ACTIVE",
+  "updated": "2026-08-02",
+  "execution_state": "FROZEN_NO_PROVIDER_CALLS",
+  "author_root_of_authority": "Asa Wember",
+  "repository_writer": "One explicitly authorized Codex task at a time",
+  "current_controls": [
+    {
+      "path": "m050/extraction/control/M050_Frozen_Corpus_Manifest_v0_1_MEDIANv0_5_0.json",
+      "role": "Exact frozen source, accepted-evidence, archive, and version snapshot"
+    },
+    {
+      "path": "m050/extraction/control/M050_Repository_Write_Authority_and_Freeze_Policy_v0_1_MEDIANv0_5_0.md",
+      "role": "Author authority, sole-writer discipline, and frozen-source policy"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
+      "role": "Content-derived source identities, processing dispositions, and stream eligibility"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_2_Target_Process_and_Error_Correction_v0_1_MEDIANv0_5_0.md",
+      "role": "Conceptual target architecture and correction hierarchy; subject to Gate 5 hardening before execution"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_3_Reuse_Disposition_v0_1_MEDIANv0_5_0.yaml",
+      "role": "Machine-readable disposition of the four completed legacy extractions"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_4_Completion_Report_v0_1_MEDIANv0_5_0.md",
+      "role": "Human-readable Gate 4 result, boundaries, and next permitted activity"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_4_Completion_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable Gate 4 completion state"
+    },
+    {
+      "path": "m050/tools/m050_guard.py",
+      "role": "Deterministic frozen-corpus and immutable-evidence integrity guard"
+    }
+  ],
+  "current_progress_and_cost_records": [
+    "m050/extraction/progress/M050_Compile_Progress_and_Stage_Guide_v0_1_MEDIANv0_5_0.xlsx",
+    "m050/extraction/progress/M050_Document_Processing_Tracker_v0_1_MEDIANv0_5_0.xlsx",
+    "m050/extraction/progress/M050_Compile_Cost_Ledger_v0_1_MEDIANv0_5_0.md",
+    "m050/docs/operations/costs/M050_Compile_Cost_Entries_v0_1_MEDIANv0_5_0.csv"
+  ],
+  "historical_only": [
+    "Everything under m050/archive/",
+    "All old prompts, proposal schemas, source-specific workers, registries, runbooks, and execution lanes",
+    "All prior conversational work orders and thread bootstrap prompts"
+  ],
+  "next_authorized_activity": "Discuss and specify Gate 5 extraction architecture. No implementation or provider call is authorized by this index.",
+  "provider_call_authorized": false
+}

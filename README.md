@@ -12,8 +12,8 @@ Completed legacy extractions are being retained where their source quotations re
 
 Current status:
 
-- Gates 1–3 are complete: process diagnosis, target-process definition, and legacy-extraction reuse review.
-- Gate 4—source identity correction and repository cleanup—is in progress.
+- Gates 1–4 are complete: process diagnosis, target-process definition, legacy-extraction reuse review, source identity correction, and repository cleanup.
+- The v0.5.0 corpus is frozen by exact path and hash; only Codex changes the repository under explicit author direction.
 - External model extraction is paused until the Gate 5 implementation passes offline verification.
 - MEDIAN v0.5.1 material is isolated under `m051/` and excluded from the v0.5.0 compile.
 
@@ -30,7 +30,7 @@ m051/                      Post-v0.5.0 development; excluded from the current co
 300 art/                   Illustration assets and visual development
 ```
 
-Start with the two workbooks and cost ledger in `m050/extraction/progress/`. The controlling process description and source-disposition manifest are in `m050/extraction/audit/`.
+Start with the two workbooks and cost ledger in `m050/extraction/progress/`. The active control index and frozen-corpus manifest are in `m050/extraction/control/`; the process decisions and Gate receipts are in `m050/extraction/audit/`.
 
 ## Core rule
 

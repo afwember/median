@@ -6,8 +6,8 @@ Primary host: dedicated M4 Mac Mini
 Repository: `https://github.com/afwember/median`  
 Live status workbook: `https://docs.google.com/spreadsheets/d/1dCSzZNDzAHy9yIRPXRRvSL_9z9fP2CC18GNK2hPspXQ/edit`
 
-Canonical restart, compaction, and task-handoff entry point:
-`m050/docs/operations/continuity/README.md`.
+Canonical repository and task-handoff entry points are root `AGENTS.md` and
+`m050/extraction/control/M050_New_Task_Bootstrap_v0_3_MEDIANv0_5_0.md`.
 
 ## Operating model
 

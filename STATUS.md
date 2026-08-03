@@ -6,5 +6,5 @@
 **PHASE:** Atomic extraction — reusable execution release<br>
 **SOURCE:** Authorial Grammar — 1 / 22<br>
 **CHUNK:** 0 / 5<br>
-**NOW:** Pilot 001-R6 accepted; generic five-chunk plan, zero-call next-source scaffold, one-hour cache, spend envelope, and chained review ledger verified offline<br>
-**NEXT:** Review machine checkpoint; separately authorize the Authorial full-source lifecycle receipt and cumulative spend envelope
+**NOW:** Pilot 001-R6 accepted; reusable machine verified; one authoritative `AGENTS.md` and read-only successor bootstrap active<br>
+**NEXT:** Cold-start the successor thread; then separately authorize the Authorial full-source lifecycle receipt and cumulative spend envelope

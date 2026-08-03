@@ -37,5 +37,9 @@
     ,{"case_id": "REG-CLI-001", "risk": "offline artifact sequence cannot complete", "expected": "pass", "test_path": "tests/test_cli.py", "test_name": "test_offline_cli_block_plan_validate_round_trip"}
     ,{"case_id": "REG-CLI-002", "risk": "CLI overwrites an existing artifact", "expected": "fail_closed", "test_path": "tests/test_cli.py", "test_name": "test_cli_refuses_artifact_overwrite"}
     ,{"case_id": "REG-CLI-003", "risk": "CLI writes outside the authorized extraction tree", "expected": "fail_closed", "test_path": "tests/test_cli.py", "test_name": "test_cli_rejects_output_escape"}
+    ,{"case_id": "REG-HR-001", "risk": "multiline exact-human field payload is discarded", "expected": "pass", "test_path": "tests/test_rulings.py", "test_name": "test_parser_preserves_multiline_labeled_field_payload"}
+    ,{"case_id": "REG-HR-002", "risk": "historical ruling or labeled field is omitted", "expected": "pass", "test_path": "tests/test_rulings.py", "test_name": "test_active_ledger_has_complete_41_ruling_and_348_field_topology"}
+    ,{"case_id": "REG-HR-003", "risk": "legacy atom lacks ruling, field, region, or reference-rewrite coordinates", "expected": "pass_with_receipt", "test_path": "tests/test_rulings.py", "test_name": "test_reconstruction_links_all_atoms_and_resolves_six_reference_rewrites"}
+    ,{"case_id": "REG-HR-004", "risk": "ruling reconstruction changes between identical builds", "expected": "pass", "test_path": "tests/test_rulings.py", "test_name": "test_reconstruction_is_byte_deterministic"}
   ]
 }

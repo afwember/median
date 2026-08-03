@@ -78,7 +78,7 @@ def _line_bounds(text: str, location: str) -> tuple[int, int] | None:
     )
 
 
-def _select_occurrence(
+def select_occurrence(
     text: str, quotation: str, location: str
 ) -> tuple[tuple[int, int] | None, int, bool]:
     matches = _occurrences(text, quotation)
@@ -94,6 +94,10 @@ def _select_occurrence(
         if len(bounded) == 1:
             return bounded[0], len(matches), True
     return None, len(matches), False
+
+
+# Kept as a private alias for compatibility with the first replay implementation.
+_select_occurrence = select_occurrence
 
 
 def _overlapping_blocks(

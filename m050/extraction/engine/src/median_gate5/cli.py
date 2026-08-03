@@ -12,6 +12,7 @@ from .canonical import content_id, sha256_file, write_new_bytes, write_new_json
 from .errors import ContractError, Gate5Error
 from .identity import identity_card_errors, transition_identity_card
 from .legacy import build_legacy_replay
+from .rulings import build_human_rulings_reconstruction
 from .runtime import runtime_errors, runtime_report
 from .schema import validate_artifact
 from .scope import require_input_paths, require_new_output_path
@@ -342,6 +343,68 @@ def _replay_legacy(args: argparse.Namespace) -> int:
     return 0 if report["passed"] else 1
 
 
+def _reconstruct_human_rulings(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    supplied = {
+        "card": Path(args.card),
+        "replay_ledger": Path(args.replay_ledger),
+        "replay_report": Path(args.replay_report),
+        "migration_receipt": Path(args.migration_receipt),
+    }
+    require_input_paths(
+        repo_root,
+        supplied.values(),
+        [Path("m050/extraction/control"), Path("m050/extraction/replay"), Path("m050/archive")],
+    )
+    resolved = {
+        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
+        for key, path in supplied.items()
+    }
+    outputs = {
+        "registry": require_new_output_path(repo_root, Path(args.output_registry)),
+        "coordinate_ledger": require_new_output_path(repo_root, Path(args.output_coordinate_ledger)),
+        "rewrite_map": require_new_output_path(repo_root, Path(args.output_rewrite_map)),
+        "report": require_new_output_path(repo_root, Path(args.output_report)),
+    }
+    if len(set(outputs.values())) != len(outputs):
+        raise ContractError("Human Rulings reconstruction outputs must be distinct")
+    card = _read_json(resolved["card"])
+    replay_report = _read_json(resolved["replay_report"])
+    registry, coordinate_bytes, rewrite_map, report = build_human_rulings_reconstruction(
+        repo_root=repo_root,
+        card=card,
+        card_path=resolved["card"],
+        replay_ledger_path=resolved["replay_ledger"],
+        replay_report=replay_report,
+        replay_report_path=resolved["replay_report"],
+        migration_receipt_path=resolved["migration_receipt"],
+        registry_relative_path=str(outputs["registry"].relative_to(repo_root)),
+        coordinate_ledger_relative_path=str(outputs["coordinate_ledger"].relative_to(repo_root)),
+        rewrite_map_relative_path=str(outputs["rewrite_map"].relative_to(repo_root)),
+    )
+    write_new_json(outputs["registry"], registry)
+    write_new_bytes(outputs["coordinate_ledger"], coordinate_bytes)
+    write_new_json(outputs["rewrite_map"], rewrite_map)
+    write_new_json(outputs["report"], report)
+    print(
+        json.dumps(
+            {
+                "source_id": report["source_id"],
+                "reconstruction_id": report["reconstruction_id"],
+                "passed": report["passed"],
+                "rulings": report["ruling_count"],
+                "fields": report["field_count"],
+                "legacy_records": report["legacy_record_count"],
+                "reference_rewrites": report["reference_rewrite_count"],
+                "legacy_only_records_resolved": report["legacy_only_record_count"],
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0 if report["passed"] else 1
+
+
 def _bundle(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root).resolve()
     mapping_value = json.loads(Path(args.mappings).read_text(encoding="utf-8"))
@@ -447,6 +510,21 @@ def build_parser() -> argparse.ArgumentParser:
     replay.add_argument("--output-ledger", required=True)
     replay.add_argument("--output-report", required=True)
     replay.set_defaults(func=_replay_legacy)
+
+    reconstruct = subparsers.add_parser(
+        "reconstruct-human-rulings",
+        help="reconstruct the 41 historical rulings and bind all legacy atoms to coordinates",
+    )
+    reconstruct.add_argument("--repo-root", default=".")
+    reconstruct.add_argument("--card", required=True)
+    reconstruct.add_argument("--replay-ledger", required=True)
+    reconstruct.add_argument("--replay-report", required=True)
+    reconstruct.add_argument("--migration-receipt", required=True)
+    reconstruct.add_argument("--output-registry", required=True)
+    reconstruct.add_argument("--output-coordinate-ledger", required=True)
+    reconstruct.add_argument("--output-rewrite-map", required=True)
+    reconstruct.add_argument("--output-report", required=True)
+    reconstruct.set_defaults(func=_reconstruct_human_rulings)
 
     bundle = subparsers.add_parser("bundle")
     bundle.add_argument("--repo-root", default=".")

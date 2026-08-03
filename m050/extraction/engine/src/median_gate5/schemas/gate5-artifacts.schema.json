@@ -646,6 +646,232 @@
         "accounted_cost_cents": {"const": 0}
       }
     },
+    "human_rulings_coordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_role", "source_sha256", "start", "end", "start_line",
+        "end_line", "section_id", "section_kind", "ruling_id", "field_labels"
+      ],
+      "properties": {
+        "source_role": {"enum": ["active_frozen_source", "legacy_extraction_source"]},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 1},
+        "start_line": {"type": "integer", "minimum": 1},
+        "end_line": {"type": "integer", "minimum": 1},
+        "section_id": {"$ref": "#/$defs/nonempty_string"},
+        "section_kind": {"enum": ["ruling", "open_item", "document_region"]},
+        "ruling_id": {"type": ["string", "null"]},
+        "field_labels": {"$ref": "#/$defs/string_array"}
+      }
+    },
+    "human_rulings_field_registry_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field_id", "ordinal", "label", "value", "start", "end",
+        "value_start", "value_end", "start_line", "end_line", "raw_sha256",
+        "value_sha256"
+      ],
+      "properties": {
+        "field_id": {"type": "string", "pattern": "^hrf_[0-9a-f]{24}$"},
+        "ordinal": {"type": "integer", "minimum": 1},
+        "label": {"$ref": "#/$defs/nonempty_string"},
+        "value": {"$ref": "#/$defs/nonempty_string"},
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 1},
+        "value_start": {"type": "integer", "minimum": 0},
+        "value_end": {"type": "integer", "minimum": 1},
+        "start_line": {"type": "integer", "minimum": 1},
+        "end_line": {"type": "integer", "minimum": 1},
+        "raw_sha256": {"$ref": "#/$defs/sha256"},
+        "value_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "human_rulings_section_registry_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registry_section_id", "section_id", "section_kind", "title", "heading",
+        "start", "end", "start_line", "end_line", "raw_sha256", "fields"
+      ],
+      "properties": {
+        "registry_section_id": {"type": "string", "pattern": "^hrs_[0-9a-f]{24}$"},
+        "section_id": {"type": "string", "pattern": "^HR-[A-Z0-9-]+$"},
+        "section_kind": {"const": "ruling"},
+        "title": {"$ref": "#/$defs/nonempty_string"},
+        "heading": {"$ref": "#/$defs/nonempty_string"},
+        "start": {"type": "integer", "minimum": 0},
+        "end": {"type": "integer", "minimum": 1},
+        "start_line": {"type": "integer", "minimum": 1},
+        "end_line": {"type": "integer", "minimum": 1},
+        "raw_sha256": {"$ref": "#/$defs/sha256"},
+        "fields": {
+          "type": "array", "minItems": 8,
+          "items": {"$ref": "#/$defs/human_rulings_field_registry_entry"}
+        }
+      }
+    },
+    "human_rulings_section_registry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "registry_id", "reconstruction_version", "source_id",
+        "active_source", "legacy_source", "ruling_count", "open_item_count",
+        "field_count", "ruling_ids", "sections"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-HUMAN-RULINGS-SECTION-REGISTRY-0.1"},
+        "registry_id": {"type": "string", "pattern": "^hrr_[0-9a-f]{24}$"},
+        "reconstruction_version": {"const": "M050-HUMAN-RULINGS-RECONSTRUCTION-0.1"},
+        "source_id": {"const": "M050-SRC-HUMAN-RULINGS-001"},
+        "active_source": {"$ref": "#/$defs/artifact_binding"},
+        "legacy_source": {"$ref": "#/$defs/artifact_binding"},
+        "ruling_count": {"const": 41},
+        "open_item_count": {"const": 2},
+        "field_count": {"type": "integer", "minimum": 328},
+        "ruling_ids": {
+          "type": "array", "minItems": 41, "maxItems": 41, "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^HR-[A-Z0-9-]+$"}
+        },
+        "sections": {
+          "type": "array", "minItems": 41, "maxItems": 41,
+          "items": {"$ref": "#/$defs/human_rulings_section_registry_entry"}
+        }
+      }
+    },
+    "human_rulings_atom_coordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "coordinate_record_id", "legacy_record_id",
+        "replay_record_id", "source_id", "quote_sha256", "coordinate_status",
+        "legacy_coordinate", "active_coordinate", "reference_rewrite_ids",
+        "compound_record_preserved", "replay_migration_disposition"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-HUMAN-RULINGS-ATOM-COORDINATE-0.1"},
+        "coordinate_record_id": {"type": "string", "pattern": "^hrc_[0-9a-f]{24}$"},
+        "legacy_record_id": {"$ref": "#/$defs/nonempty_string"},
+        "replay_record_id": {"type": "string", "pattern": "^lrr_[0-9a-f]{24}$"},
+        "source_id": {"const": "M050-SRC-HUMAN-RULINGS-001"},
+        "quote_sha256": {"$ref": "#/$defs/sha256"},
+        "coordinate_status": {"enum": ["active_exact", "active_reference_rewrite"]},
+        "legacy_coordinate": {"$ref": "#/$defs/human_rulings_coordinate"},
+        "active_coordinate": {
+          "oneOf": [
+            {"$ref": "#/$defs/human_rulings_coordinate"},
+            {"type": "null"}
+          ]
+        },
+        "reference_rewrite_ids": {
+          "type": "array", "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^hrrw_[0-9a-f]{24}$"}
+        },
+        "compound_record_preserved": {"type": "boolean"},
+        "replay_migration_disposition": {
+          "enum": [
+            "eligible", "boundary_review_required", "occurrence_review_required",
+            "active_to_legacy_reference_rewrite_required", "grounding_failure"
+          ]
+        }
+      }
+    },
+    "human_rulings_reference_rewrite_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rewrite_id", "rewrite_kind", "legacy_text", "active_text",
+        "legacy_line_sha256", "active_line_sha256", "legacy_coordinate",
+        "active_coordinate", "covered_legacy_record_ids",
+        "resolved_legacy_only_record_ids"
+      ],
+      "properties": {
+        "rewrite_id": {"type": "string", "pattern": "^hrrw_[0-9a-f]{24}$"},
+        "rewrite_kind": {"const": "gate_4_source_identity_reference_rewrite"},
+        "legacy_text": {"$ref": "#/$defs/nonempty_string"},
+        "active_text": {"$ref": "#/$defs/nonempty_string"},
+        "legacy_line_sha256": {"$ref": "#/$defs/sha256"},
+        "active_line_sha256": {"$ref": "#/$defs/sha256"},
+        "legacy_coordinate": {"$ref": "#/$defs/human_rulings_coordinate"},
+        "active_coordinate": {"$ref": "#/$defs/human_rulings_coordinate"},
+        "covered_legacy_record_ids": {"$ref": "#/$defs/string_array"},
+        "resolved_legacy_only_record_ids": {"$ref": "#/$defs/string_array"}
+      }
+    },
+    "human_rulings_reference_rewrite_map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "rewrite_map_id", "reconstruction_version", "source_id",
+        "legacy_source", "active_source", "migration_receipt", "rewrite_count",
+        "legacy_only_record_count", "legacy_only_record_ids", "rewrites"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-HUMAN-RULINGS-REFERENCE-REWRITE-MAP-0.1"},
+        "rewrite_map_id": {"type": "string", "pattern": "^hrrm_[0-9a-f]{24}$"},
+        "reconstruction_version": {"const": "M050-HUMAN-RULINGS-RECONSTRUCTION-0.1"},
+        "source_id": {"const": "M050-SRC-HUMAN-RULINGS-001"},
+        "legacy_source": {"$ref": "#/$defs/artifact_binding"},
+        "active_source": {"$ref": "#/$defs/artifact_binding"},
+        "migration_receipt": {"$ref": "#/$defs/artifact_binding"},
+        "rewrite_count": {"type": "integer", "minimum": 1},
+        "legacy_only_record_count": {"const": 6},
+        "legacy_only_record_ids": {
+          "type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true,
+          "items": {"$ref": "#/$defs/nonempty_string"}
+        },
+        "rewrites": {
+          "type": "array", "minItems": 1,
+          "items": {"$ref": "#/$defs/human_rulings_reference_rewrite_entry"}
+        }
+      }
+    },
+    "human_rulings_reconstruction_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "reconstruction_id", "reconstruction_version", "source_id",
+        "identity_card", "replay_report", "migration_receipt", "registry",
+        "coordinate_ledger", "reference_rewrite_map", "ruling_count", "field_count",
+        "legacy_record_count", "ruling_linked_record_count", "document_region_record_count",
+        "field_linked_record_count", "coordinate_status_counts", "reference_rewrite_count",
+        "legacy_only_record_count", "complete_ruling_coverage",
+        "complete_legacy_record_coverage", "complete_reference_rewrite_coverage",
+        "exact_human_wording_preserved", "legacy_records_modified_or_split",
+        "provider_calls", "accounted_cost_cents", "passed"
+      ],
+      "properties": {
+        "schema_version": {"const": "M050-HUMAN-RULINGS-RECONSTRUCTION-REPORT-0.1"},
+        "reconstruction_id": {"type": "string", "pattern": "^hrrp_[0-9a-f]{24}$"},
+        "reconstruction_version": {"const": "M050-HUMAN-RULINGS-RECONSTRUCTION-0.1"},
+        "source_id": {"const": "M050-SRC-HUMAN-RULINGS-001"},
+        "identity_card": {"$ref": "#/$defs/artifact_binding"},
+        "replay_report": {"$ref": "#/$defs/artifact_binding"},
+        "migration_receipt": {"$ref": "#/$defs/artifact_binding"},
+        "registry": {"$ref": "#/$defs/artifact_binding"},
+        "coordinate_ledger": {"$ref": "#/$defs/artifact_binding"},
+        "reference_rewrite_map": {"$ref": "#/$defs/artifact_binding"},
+        "ruling_count": {"const": 41},
+        "field_count": {"type": "integer", "minimum": 328},
+        "legacy_record_count": {"const": 173},
+        "ruling_linked_record_count": {"type": "integer", "minimum": 1},
+        "document_region_record_count": {"type": "integer", "minimum": 1},
+        "field_linked_record_count": {"type": "integer", "minimum": 1},
+        "coordinate_status_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "reference_rewrite_count": {"type": "integer", "minimum": 1},
+        "legacy_only_record_count": {"const": 6},
+        "complete_ruling_coverage": {"const": true},
+        "complete_legacy_record_coverage": {"const": true},
+        "complete_reference_rewrite_coverage": {"const": true},
+        "exact_human_wording_preserved": {"const": true},
+        "legacy_records_modified_or_split": {"const": 0},
+        "provider_calls": {"const": 0},
+        "accounted_cost_cents": {"const": 0},
+        "passed": {"const": true}
+      }
+    },
     "transition_receipt": {
       "type": "object",
       "additionalProperties": false,

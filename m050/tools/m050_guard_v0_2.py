@@ -15,9 +15,10 @@ import sys
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 LEGACY_GUARD = REPO_ROOT / "m050/tools/m050_guard.py"
-ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_4_MEDIANv0_5_0.json"
+ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_5_MEDIANv0_5_0.json"
 IDENTITY_APPROVAL_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json"
 LEGACY_REPLAY_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json"
+HUMAN_RULINGS_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Human_Rulings_Reconstruction_Receipt_v0_1_MEDIANv0_5_0.json"
 ENGINE_ROOT = REPO_ROOT / "m050/extraction/engine"
 LOCK_PATH = ENGINE_ROOT / "requirements.lock"
 SCHEMA_PATH = ENGINE_ROOT / "src/median_gate5/schemas/gate5-artifacts.schema.json"
@@ -64,10 +65,19 @@ def validate_active_index(errors: list[str]) -> None:
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"active control index cannot be read: {exc}")
         return
-    if index.get("execution_state") != "GATE_5_LEGACY_REPLAY_PASSED_REPAIR_QUEUE_ACTIVE":
+    if index.get("execution_state") != "GATE_5_HUMAN_RULINGS_RECONSTRUCTION_PASSED_REPAIR_OVERLAY_ACTIVE":
         errors.append("active control index has unexpected execution state")
     if index.get("provider_call_authorized") is not False:
         errors.append("active control index does not explicitly prohibit provider calls")
+    if index.get("google_sheets_interaction_authorized") is not False:
+        errors.append("active control index does not preserve the Google Sheets pause")
+    overlay = index.get("repair_overlay", {})
+    if (
+        overlay.get("raw_replay_queue_records") != 24
+        or overlay.get("human_rulings_reference_rewrite_records_resolved") != 6
+        or overlay.get("remaining_repair_records") != 18
+    ):
+        errors.append("active control index has an unexpected repair overlay")
     for control in index.get("current_controls", []):
         relative = control.get("path")
         if not isinstance(relative, str) or not relative:
@@ -273,6 +283,159 @@ def validate_legacy_replay(errors: list[str]) -> tuple[int, int]:
     return total_records, total_queue
 
 
+def validate_human_rulings_reconstruction(errors: list[str]) -> tuple[int, int, int]:
+    try:
+        receipt = json.loads(HUMAN_RULINGS_RECEIPT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"Human Rulings reconstruction receipt cannot be read: {exc}")
+        return 0, 0, 0
+    if receipt.get("status") != "HUMAN_RULINGS_RECONSTRUCTION_PASSED":
+        errors.append("Human Rulings reconstruction receipt has unexpected status")
+    if receipt.get("provider_call_authorized") is not False:
+        errors.append("Human Rulings reconstruction receipt does not prohibit provider calls")
+    if receipt.get("google_sheets_interactions") != 0:
+        errors.append("Human Rulings reconstruction receipt violates the Google Sheets pause")
+    if receipt.get("external_model_calls") != 0 or receipt.get("accounted_cost_cents") != 0:
+        errors.append("Human Rulings reconstruction must record zero calls and zero cost")
+
+    artifacts = receipt.get("artifacts", {})
+    loaded: dict[str, tuple[pathlib.Path, object]] = {}
+    for key in (
+        "section_and_field_registry",
+        "legacy_atom_coordinate_ledger",
+        "reference_rewrite_map",
+        "machine_reconstruction_report",
+        "human_readable_report",
+    ):
+        binding = artifacts.get(key, {})
+        path = REPO_ROOT / binding.get("path", "")
+        if not path.is_file():
+            errors.append(f"missing Human Rulings artifact: {key}")
+            continue
+        if sha256_file(path) != binding.get("sha256"):
+            errors.append(f"Human Rulings artifact hash mismatch: {key}")
+        if path.suffix == ".json":
+            try:
+                loaded[key] = (path, json.loads(path.read_text(encoding="utf-8")))
+            except json.JSONDecodeError as exc:
+                errors.append(f"invalid Human Rulings JSON artifact {key}: {exc}")
+        else:
+            loaded[key] = (path, None)
+
+    registry_value = loaded.get("section_and_field_registry")
+    rewrite_value = loaded.get("reference_rewrite_map")
+    report_value = loaded.get("machine_reconstruction_report")
+    coordinate_binding = artifacts.get("legacy_atom_coordinate_ledger", {})
+    coordinate_path = REPO_ROOT / coordinate_binding.get("path", "")
+    if not registry_value or not rewrite_value or not report_value or not coordinate_path.is_file():
+        return 0, 0, 0
+    registry = registry_value[1]
+    rewrite_map = rewrite_value[1]
+    report = report_value[1]
+    if not isinstance(registry, dict) or not isinstance(rewrite_map, dict) or not isinstance(report, dict):
+        errors.append("Human Rulings reconstruction JSON roots must be objects")
+        return 0, 0, 0
+
+    for value, id_key, prefix, label in (
+        (registry, "registry_id", "hrr", "registry"),
+        (rewrite_map, "rewrite_map_id", "hrrm", "rewrite map"),
+        (report, "reconstruction_id", "hrrp", "reconstruction report"),
+    ):
+        body = {key: item for key, item in value.items() if key not in {"schema_version", id_key}}
+        if value.get(id_key) != content_id(prefix, body):
+            errors.append(f"Human Rulings {label} content ID mismatch")
+
+    sections = registry.get("sections", [])
+    field_count = sum(len(section.get("fields", [])) for section in sections)
+    if registry.get("ruling_count") != 41 or len(sections) != 41 or field_count != 348:
+        errors.append("Human Rulings registry coverage mismatch")
+    ruling_ids = [section.get("section_id") for section in sections]
+    if len(ruling_ids) != len(set(ruling_ids)):
+        errors.append("Human Rulings registry contains duplicate ruling IDs")
+    for section in sections:
+        for field in section.get("fields", []):
+            body = {key: item for key, item in field.items() if key != "field_id"}
+            if field.get("field_id") != content_id("hrf", body):
+                errors.append("Human Rulings field content ID mismatch")
+                break
+
+    coordinates: list[dict] = []
+    try:
+        for line in coordinate_path.read_text(encoding="utf-8").splitlines():
+            coordinates.append(json.loads(line))
+    except json.JSONDecodeError as exc:
+        errors.append(f"invalid Human Rulings coordinate ledger: {exc}")
+        return len(sections), field_count, 0
+    record_ids: set[str] = set()
+    reference_rewrite_records = 0
+    for coordinate in coordinates:
+        body = {
+            key: value
+            for key, value in coordinate.items()
+            if key not in {"schema_version", "coordinate_record_id"}
+        }
+        if coordinate.get("coordinate_record_id") != content_id("hrc", body):
+            errors.append("Human Rulings coordinate content ID mismatch")
+            break
+        record_id = coordinate.get("legacy_record_id")
+        if not isinstance(record_id, str) or record_id in record_ids:
+            errors.append("Human Rulings coordinate ledger has duplicate or invalid record IDs")
+            break
+        record_ids.add(record_id)
+        legacy_coordinate = coordinate.get("legacy_coordinate", {})
+        if legacy_coordinate.get("ruling_id") and not legacy_coordinate.get("field_labels"):
+            errors.append(f"Human Rulings atom lacks its labeled-field link: {record_id}")
+            break
+        if coordinate.get("coordinate_status") == "active_reference_rewrite":
+            reference_rewrite_records += 1
+            if coordinate.get("active_coordinate") is not None or not coordinate.get("reference_rewrite_ids"):
+                errors.append(f"invalid reference-rewrite coordinate: {record_id}")
+                break
+    if len(coordinates) != 173 or len(record_ids) != 173 or reference_rewrite_records != 6:
+        errors.append("Human Rulings legacy-coordinate coverage mismatch")
+
+    rewrites = rewrite_map.get("rewrites", [])
+    rewrite_ids = {rewrite.get("rewrite_id") for rewrite in rewrites}
+    for rewrite in rewrites:
+        body = {key: value for key, value in rewrite.items() if key != "rewrite_id"}
+        if rewrite.get("rewrite_id") != content_id("hrrw", body):
+            errors.append("Human Rulings reference rewrite content ID mismatch")
+            break
+    if (
+        rewrite_map.get("rewrite_count") != 24
+        or len(rewrites) != 24
+        or len(rewrite_ids) != 24
+        or rewrite_map.get("legacy_only_record_count") != 6
+        or len(rewrite_map.get("legacy_only_record_ids", [])) != 6
+    ):
+        errors.append("Human Rulings reference-rewrite coverage mismatch")
+
+    for key in ("registry", "coordinate_ledger", "reference_rewrite_map"):
+        report_binding = report.get(key, {})
+        artifact_key = {
+            "registry": "section_and_field_registry",
+            "coordinate_ledger": "legacy_atom_coordinate_ledger",
+            "reference_rewrite_map": "reference_rewrite_map",
+        }[key]
+        receipt_binding = artifacts.get(artifact_key, {})
+        if (
+            report_binding.get("path") != receipt_binding.get("path")
+            or report_binding.get("sha256") != receipt_binding.get("sha256")
+        ):
+            errors.append(f"Human Rulings report binding mismatch: {key}")
+    if (
+        report.get("passed") is not True
+        or report.get("ruling_count") != 41
+        or report.get("field_count") != 348
+        or report.get("legacy_record_count") != 173
+        or report.get("legacy_only_record_count") != 6
+        or report.get("provider_calls") != 0
+        or report.get("accounted_cost_cents") != 0
+    ):
+        errors.append("Human Rulings reconstruction report metadata mismatch")
+    return len(sections), field_count, len(coordinates)
+
+
 def validate_lock(errors: list[str]) -> None:
     if not LOCK_PATH.is_file():
         errors.append("Gate 5 requirements lock is missing")
@@ -372,6 +535,7 @@ def main() -> int:
     validate_active_index(errors)
     approved_identity_cards = validate_identity_approval(errors)
     replay_records, replay_queue = validate_legacy_replay(errors)
+    ruling_sections, ruling_fields, ruling_coordinates = validate_human_rulings_reconstruction(errors)
     validate_lock(errors)
     json_controls = validate_json_controls(errors)
     validate_offline_imports(errors)
@@ -393,6 +557,10 @@ def main() -> int:
     print(f"- approved identity cards: {approved_identity_cards}")
     print(f"- replayed legacy records: {replay_records}")
     print(f"- replay repair queue: {replay_queue}")
+    print(f"- reconstructed Human Rulings sections: {ruling_sections}")
+    print(f"- reconstructed Human Rulings fields: {ruling_fields}")
+    print(f"- Human Rulings legacy coordinates: {ruling_coordinates}")
+    print("- repair overlay remaining: 18")
     print("- offline provider imports: 0")
     print("- provider calls: prohibited")
     if args.with_tests:

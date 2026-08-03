@@ -49,6 +49,10 @@ handoff. It does not replace domain rulings recorded in Gate evidence.
 - A future task must bootstrap from `HANDOFF.md`, verify live state, and consult
   the historical transcript only for a specific unresolved question.
 - Context summaries are navigation aids, not authoritative project records.
+- Google Sheets interaction is paused until the author defines a smaller-footprint
+  policy. Do not read, write, inspect metadata, or verify the Sheet in the
+  interim; local repository evidence and Git checkpoints are sufficient while
+  the author is operating from the laptop.
 
 ## Gate 5 source identities
 

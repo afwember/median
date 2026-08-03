@@ -15,8 +15,9 @@ import sys
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 LEGACY_GUARD = REPO_ROOT / "m050/tools/m050_guard.py"
-ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_3_MEDIANv0_5_0.json"
+ACTIVE_INDEX = REPO_ROOT / "m050/extraction/control/M050_Active_Control_Index_v0_4_MEDIANv0_5_0.json"
 IDENTITY_APPROVAL_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json"
+LEGACY_REPLAY_RECEIPT = REPO_ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json"
 ENGINE_ROOT = REPO_ROOT / "m050/extraction/engine"
 LOCK_PATH = ENGINE_ROOT / "requirements.lock"
 SCHEMA_PATH = ENGINE_ROOT / "src/median_gate5/schemas/gate5-artifacts.schema.json"
@@ -63,7 +64,7 @@ def validate_active_index(errors: list[str]) -> None:
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"active control index cannot be read: {exc}")
         return
-    if index.get("execution_state") != "GATE_5_LEGACY_IDENTITIES_APPROVED_REPLAY_AUTHORIZED":
+    if index.get("execution_state") != "GATE_5_LEGACY_REPLAY_PASSED_REPAIR_QUEUE_ACTIVE":
         errors.append("active control index has unexpected execution state")
     if index.get("provider_call_authorized") is not False:
         errors.append("active control index does not explicitly prohibit provider calls")
@@ -160,6 +161,116 @@ def validate_identity_approval(errors: list[str]) -> int:
         if approval.get("predecessor_receipt_hash") != reviewed.get("sha256"):
             errors.append(f"approval receipt predecessor hash mismatch: {source_id}")
     return len(seen_sources)
+
+
+def validate_legacy_replay(errors: list[str]) -> tuple[int, int]:
+    try:
+        milestone = json.loads(LEGACY_REPLAY_RECEIPT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"legacy replay milestone receipt cannot be read: {exc}")
+        return 0, 0
+    if milestone.get("status") != "DETERMINISTIC_REPLAY_PASSED_REPAIR_QUEUE_REQUIRED":
+        errors.append("legacy replay milestone receipt has unexpected status")
+    if milestone.get("provider_call_authorized") is not False:
+        errors.append("legacy replay milestone receipt does not prohibit provider calls")
+    if milestone.get("external_model_calls") != 0 or milestone.get("accounted_cost_cents") != 0:
+        errors.append("legacy replay milestone must record zero calls and zero cost")
+    sources = milestone.get("sources", [])
+    if not isinstance(sources, list) or len(sources) != 4:
+        errors.append("legacy replay milestone must bind exactly four source reports")
+        return 0, 0
+    total_records = 0
+    total_queue = 0
+    seen_sources: set[str] = set()
+    for entry in sources:
+        source_id = entry.get("source_id")
+        if not isinstance(source_id, str) or source_id in seen_sources:
+            errors.append(f"invalid or duplicate replay source ID: {source_id}")
+            continue
+        seen_sources.add(source_id)
+        bound_values: dict[str, tuple[pathlib.Path, dict]] = {}
+        for key in ("ledger", "report"):
+            binding = entry.get(key, {})
+            path = REPO_ROOT / binding.get("path", "")
+            if not path.is_file():
+                errors.append(f"missing legacy replay {key}: {source_id}")
+                continue
+            if sha256_file(path) != binding.get("sha256"):
+                errors.append(f"legacy replay {key} hash mismatch: {source_id}")
+            bound_values[key] = (path, binding)
+        if "ledger" not in bound_values or "report" not in bound_values:
+            continue
+        report_path, _ = bound_values["report"]
+        try:
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"invalid legacy replay report for {source_id}: {exc}")
+            continue
+        report_body = {
+            key: value
+            for key, value in report.items()
+            if key not in {"schema_version", "replay_id"}
+        }
+        if report.get("replay_id") != entry.get("replay_id") or report.get(
+            "replay_id"
+        ) != content_id("lr", report_body):
+            errors.append(f"legacy replay report content ID mismatch: {source_id}")
+        if (
+            report.get("source_id") != source_id
+            or report.get("passed") is not True
+            or report.get("migration_ready") is not False
+            or report.get("provider_calls") != 0
+            or report.get("accounted_cost_cents") != 0
+        ):
+            errors.append(f"legacy replay report metadata mismatch: {source_id}")
+        ledger_path, ledger_binding = bound_values["ledger"]
+        ledger_records: list[dict] = []
+        try:
+            for line in ledger_path.read_text(encoding="utf-8").splitlines():
+                ledger_records.append(json.loads(line))
+        except json.JSONDecodeError as exc:
+            errors.append(f"invalid legacy replay ledger for {source_id}: {exc}")
+            continue
+        if report.get("ledger", {}).get("sha256") != ledger_binding.get("sha256"):
+            errors.append(f"legacy replay report ledger binding mismatch: {source_id}")
+        if len(ledger_records) != report.get("record_count") or len(ledger_records) != entry.get(
+            "records"
+        ):
+            errors.append(f"legacy replay record count mismatch: {source_id}")
+        record_ids: set[str] = set()
+        for record in ledger_records:
+            record_body = {
+                key: value
+                for key, value in record.items()
+                if key not in {"schema_version", "replay_record_id"}
+            }
+            if record.get("replay_record_id") != content_id("lrr", record_body):
+                errors.append(f"legacy replay record content ID mismatch: {source_id}")
+                break
+            if record.get("source_id") != source_id:
+                errors.append(f"legacy replay record source mismatch: {source_id}")
+                break
+            legacy_id = record.get("legacy_record_id")
+            if not isinstance(legacy_id, str) or legacy_id in record_ids:
+                errors.append(f"invalid or duplicate legacy replay record ID: {source_id}")
+                break
+            record_ids.add(legacy_id)
+        queue = report.get("review_queue_ids", [])
+        failures = report.get("grounding_failure_ids", [])
+        if failures:
+            errors.append(f"legacy replay contains grounding failures: {source_id}")
+        if len(queue) != entry.get("repair_queue"):
+            errors.append(f"legacy replay repair queue count mismatch: {source_id}")
+        total_records += len(ledger_records)
+        total_queue += len(queue)
+    aggregate = milestone.get("aggregate", {})
+    if total_records != 913 or total_records != aggregate.get("records"):
+        errors.append("legacy replay aggregate record count mismatch")
+    if total_queue != 24 or total_queue != aggregate.get("repair_queue_records"):
+        errors.append("legacy replay aggregate repair queue count mismatch")
+    if aggregate.get("grounding_failures") != 0:
+        errors.append("legacy replay aggregate contains grounding failures")
+    return total_records, total_queue
 
 
 def validate_lock(errors: list[str]) -> None:
@@ -260,6 +371,7 @@ def main() -> int:
     errors: list[str] = []
     validate_active_index(errors)
     approved_identity_cards = validate_identity_approval(errors)
+    replay_records, replay_queue = validate_legacy_replay(errors)
     validate_lock(errors)
     json_controls = validate_json_controls(errors)
     validate_offline_imports(errors)
@@ -279,6 +391,8 @@ def main() -> int:
     print(f"- engine digest: {digest}")
     print(f"- parsed JSON controls: {json_controls}")
     print(f"- approved identity cards: {approved_identity_cards}")
+    print(f"- replayed legacy records: {replay_records}")
+    print(f"- replay repair queue: {replay_queue}")
     print("- offline provider imports: 0")
     print("- provider calls: prohibited")
     if args.with_tests:

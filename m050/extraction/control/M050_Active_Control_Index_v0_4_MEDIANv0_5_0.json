@@ -1,0 +1,122 @@
+{
+  "schema_version": "M050-ACTIVE-CONTROL-INDEX-0.4",
+  "title": "MEDIAN v0.5.0 Active Control Index",
+  "status": "ACTIVE",
+  "updated": "2026-08-03",
+  "supersedes": {
+    "path": "m050/extraction/control/M050_Active_Control_Index_v0_3_MEDIANv0_5_0.json",
+    "sha256": "77c08fe4cf13cad5491ebd8a16e611cbd5cda25c8c6584b86d6d903241d9760b"
+  },
+  "execution_state": "GATE_5_LEGACY_REPLAY_PASSED_REPAIR_QUEUE_ACTIVE",
+  "author_root_of_authority": "Asa Wember",
+  "repository_writer": "One explicitly authorized Codex task at a time",
+  "current_controls": [
+    {
+      "path": "m050/extraction/control/M050_Frozen_Corpus_Manifest_v0_1_MEDIANv0_5_0.json",
+      "role": "Exact frozen source, accepted-evidence, archive, and version snapshot"
+    },
+    {
+      "path": "m050/extraction/control/M050_Repository_Write_Authority_and_Freeze_Policy_v0_1_MEDIANv0_5_0.md",
+      "role": "Author authority, sole-writer discipline, and frozen-source policy"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
+      "role": "Content-derived source identities, processing dispositions, and stream eligibility"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_2_Target_Process_and_Error_Correction_v0_1_MEDIANv0_5_0.md",
+      "role": "Conceptual target architecture and correction hierarchy as hardened by the Gate 5 contract"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_3_Reuse_Disposition_v0_1_MEDIANv0_5_0.yaml",
+      "role": "Machine-readable disposition of the four completed legacy extractions"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_4_Completion_Report_v0_1_MEDIANv0_5_0.md",
+      "role": "Human-readable Gate 4 result and frozen migration boundary"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_4_Completion_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable Gate 4 completion state"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Technical_Contract_v0_1_MEDIANv0_5_0.md",
+      "role": "Approved offline Gate 5 artifact, transition, review, dependency, and pass contract"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Runtime_Preflight_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable locked-runtime and credential-permission preflight"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Foundation_Milestone_1_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable hashes and verification result for the offline foundation milestone"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Author-attributed approval and exact approved-card hashes"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Report_v0_1_MEDIANv0_5_0.md",
+      "role": "Human-readable deterministic replay result and 24-record repair boundary"
+    },
+    {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json",
+      "role": "Machine-readable replay hashes, counts, reproducibility result, and migration stop state"
+    },
+    {
+      "path": "m050/extraction/control/source-identities/cards/M050_Crossing_Source_Identity_Card_v0_4_MEDIANv0_5_0.json",
+      "role": "Approved Crossing source identity and authority boundary"
+    },
+    {
+      "path": "m050/extraction/control/source-identities/cards/M050_Governing_Philosophy_and_Architecture_Source_Identity_Card_v0_4_MEDIANv0_5_0.json",
+      "role": "Approved Governing Philosophy and Architecture source identity and authority boundary"
+    },
+    {
+      "path": "m050/extraction/control/source-identities/cards/M050_Human_Rulings_Source_Identity_Card_v0_4_MEDIANv0_5_0.json",
+      "role": "Approved Human Rulings source identity and authority boundary"
+    },
+    {
+      "path": "m050/extraction/control/source-identities/cards/M050_MSID_Grammar_Source_Identity_Card_v0_4_MEDIANv0_5_0.json",
+      "role": "Approved MSID Grammar source identity and authority boundary"
+    },
+    {
+      "path": "m050/extraction/control/source-identities/blocks/",
+      "role": "Deterministic structural block registries bound by the approved source identity cards"
+    },
+    {
+      "path": "m050/extraction/audit/identity-transitions/",
+      "role": "Immutable reviewed and author-approved identity-card transition receipts"
+    },
+    {
+      "path": "m050/extraction/replay/",
+      "role": "Immutable deterministic legacy replay ledgers and content-addressed reports"
+    },
+    {
+      "path": "m050/extraction/engine/",
+      "role": "Source-independent Gate 5 engine, schemas, pinned environment, and offline regression suite"
+    },
+    {
+      "path": "m050/tools/m050_guard.py",
+      "role": "Immutable Gate 4 frozen-corpus and accepted-evidence integrity guard"
+    },
+    {
+      "path": "m050/tools/m050_guard_v0_2.py",
+      "role": "Gate 4 integrity plus active Gate 5 controls, approved identities, replay evidence, offline imports, and regression guard"
+    }
+  ],
+  "current_progress_and_cost_records": [
+    "m050/extraction/progress/M050_Compile_Progress_and_Stage_Guide_v0_1_MEDIANv0_5_0.xlsx",
+    "m050/extraction/progress/M050_Document_Processing_Tracker_v0_1_MEDIANv0_5_0.xlsx",
+    "m050/extraction/progress/M050_Compile_Cost_Ledger_v0_1_MEDIANv0_5_0.md",
+    "m050/docs/operations/costs/M050_Compile_Cost_Entries_v0_1_MEDIANv0_5_0.csv"
+  ],
+  "historical_only": [
+    "Everything under m050/archive/ except exact legacy artifacts explicitly hash-bound by an approved identity card",
+    "Active Control Index v0.1 is the immutable Gate 4 snapshot; v0.2 is the Gate 5 foundation snapshot; v0.3 is the identity-approval snapshot",
+    "Draft and reviewed identity-card revisions remain immutable transition history; approved v0.4 files are active",
+    "All old prompts, proposal schemas, source-specific workers, registries, runbooks, and execution lanes",
+    "All prior conversational work orders and thread bootstrap prompts"
+  ],
+  "next_authorized_activity": "Resolve the 24-record deterministic replay repair queue: 17 cross-block compounds, six Human Rulings active-to-legacy reference rewrites, and one ambiguous MSID occurrence. Re-run deterministic replay before Layer E migration. No provider call, production mapping, reconciliation, or compilation is authorized.",
+  "provider_call_authorized": false
+}

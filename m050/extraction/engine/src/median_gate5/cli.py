@@ -8,9 +8,10 @@ import sys
 import yaml
 
 from .bundles import build_reconciliation_bundles, orphaned_mapped_evidence
-from .canonical import content_id, sha256_file, write_new_json
+from .canonical import content_id, sha256_file, write_new_bytes, write_new_json
 from .errors import ContractError, Gate5Error
 from .identity import identity_card_errors, transition_identity_card
+from .legacy import build_legacy_replay
 from .runtime import runtime_errors, runtime_report
 from .schema import validate_artifact
 from .scope import require_input_paths, require_new_output_path
@@ -297,6 +298,50 @@ def _validate_proposal(args: argparse.Namespace) -> int:
     return 0 if report["passed"] else 1
 
 
+def _replay_legacy(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
+    supplied = [Path(args.card), Path(args.block_manifest)]
+    require_input_paths(
+        repo_root,
+        supplied,
+        [Path("m050/extraction/control")],
+    )
+    card_path = (repo_root / supplied[0]).resolve() if not supplied[0].is_absolute() else supplied[0].resolve()
+    block_path = (repo_root / supplied[1]).resolve() if not supplied[1].is_absolute() else supplied[1].resolve()
+    ledger_output = require_new_output_path(repo_root, Path(args.output_ledger))
+    report_output = require_new_output_path(repo_root, Path(args.output_report))
+    if ledger_output == report_output:
+        raise ContractError("legacy replay ledger and report outputs must differ")
+    card = _read_json(card_path)
+    block_manifest = _read_json(block_path)
+    ledger_bytes, report = build_legacy_replay(
+        repo_root=repo_root,
+        card=card,
+        card_path=card_path,
+        block_manifest=block_manifest,
+        block_manifest_path=block_path,
+        ledger_relative_path=str(ledger_output.relative_to(repo_root)),
+    )
+    write_new_bytes(ledger_output, ledger_bytes)
+    write_new_json(report_output, report)
+    print(
+        json.dumps(
+            {
+                "source_id": report["source_id"],
+                "replay_id": report["replay_id"],
+                "passed": report["passed"],
+                "migration_ready": report["migration_ready"],
+                "records": report["record_count"],
+                "review_queue": len(report["review_queue_ids"]),
+                "grounding_failures": len(report["grounding_failure_ids"]),
+            },
+            indent=2,
+            sort_keys=True,
+        )
+    )
+    return 0 if report["passed"] else 1
+
+
 def _bundle(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root).resolve()
     mapping_value = json.loads(Path(args.mappings).read_text(encoding="utf-8"))
@@ -392,6 +437,16 @@ def build_parser() -> argparse.ArgumentParser:
     proposal.add_argument("--proposal", required=True)
     proposal.add_argument("--output", required=True)
     proposal.set_defaults(func=_validate_proposal)
+
+    replay = subparsers.add_parser(
+        "replay-legacy", help="replay one immutable legacy candidate against approved controls"
+    )
+    replay.add_argument("--repo-root", default=".")
+    replay.add_argument("--card", required=True)
+    replay.add_argument("--block-manifest", required=True)
+    replay.add_argument("--output-ledger", required=True)
+    replay.add_argument("--output-report", required=True)
+    replay.set_defaults(func=_replay_legacy)
 
     bundle = subparsers.add_parser("bundle")
     bundle.add_argument("--repo-root", default=".")

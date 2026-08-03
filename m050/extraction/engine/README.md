@@ -24,3 +24,21 @@ The lock file is authoritative for the local environment. Provider SDKs are deli
 ## Safety boundary
 
 Running the package without a provider extra must never import a provider SDK, read API credentials, or access the network. A provider response can be captured and replayed, but a positive-cost work order and explicit author authorization are required before any future send operation.
+
+## Deterministic legacy replay
+
+`replay-legacy` reads one approved identity card and its bound immutable legacy
+candidate, acceptance report, sources, and block manifest. It writes an
+append-only record ledger and content-addressed report. Replay classifies
+single-block grounding, line-location disambiguation, cross-block compounds,
+legacy-source-only Human Rulings quotations, ambiguity, and grounding failures.
+It never edits or promotes a legacy record.
+
+```sh
+.venv/bin/python -m median_gate5.cli replay-legacy \
+  --repo-root . \
+  --card APPROVED_CARD.json \
+  --block-manifest BOUND_BLOCK_MANIFEST.json \
+  --output-ledger NEW_REPLAY_LEDGER.jsonl \
+  --output-report NEW_REPLAY_REPORT.json
+```

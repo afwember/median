@@ -8,7 +8,7 @@ Repository: `https://github.com/afwember/median`
 
 Branch: `main`
 
-Verified predecessor checkpoint: `5fd78805d8d4c2763d02241a56ce598b0c8e51b9`
+Verified predecessor checkpoint: `afac46242b0bbd86530197c8a4fd26f21afdc75d`
 
 This file describes the verified post-macOS-26.6-restart state. Pre-update
 continuity checkpoint `68857afd9d02e33ff30622042dcac8c13ce38450` is the
@@ -24,14 +24,20 @@ a self-referential hash into the file.
   it is not Gate 5 completion and does not authorize provider calls.
 - Gate 5 Milestone 2 identity approval is complete: Asa Wember approved all
   four legacy source identity cards. Immutable draft, reviewed, and approved
-  revisions plus linked transition receipts are preserved. Deterministic legacy
-  replay and migration have not begun.
+  revisions plus linked transition receipts are preserved.
+- Deterministic legacy replay is complete for all 913 records. Repeated builds
+  produced byte-identical ledgers and reports, all quotations remain grounded,
+  and there are zero grounding failures. Layer E migration has not begun.
+- Replay exposed a bounded 24-record repair queue: 17 cross-block compounds,
+  six Human Rulings active-to-legacy reference rewrites, and one ambiguous MSID
+  occurrence. The other 889 records have one deterministic active-source block
+  binding but have not been promoted.
 - The source-independent engine, artifact contracts, lifecycle controls,
   deterministic tooling, locked runtime, and regression suite are implemented.
 - The repository-local environment uses Python 3.12.7 with pip 26.2,
   setuptools 83.0.0, wheel 0.47.0, and pytest 9.1.1.
 - The latest security check found no known third-party Python vulnerabilities;
-  `pip check` passed and the current offline Gate 5 suite passes all 61 tests.
+  `pip check` passed and the current offline Gate 5 suite passes all 66 tests.
 - No paid model or provider work is currently authorized.
 
 Detailed Gate 5 evidence:
@@ -42,7 +48,9 @@ Detailed Gate 5 evidence:
 - `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Card_Review_Brief_v0_1_MEDIANv0_5_0.md`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Draft_Validation_v0_1_MEDIANv0_5_0.json`
 - `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Source_Identity_Approval_Receipt_v0_1_MEDIANv0_5_0.json`
-- `m050/extraction/control/M050_Active_Control_Index_v0_3_MEDIANv0_5_0.json`
+- `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Report_v0_1_MEDIANv0_5_0.md`
+- `m050/extraction/audit/M050_Extraction_Gate_5_Legacy_Replay_Milestone_Receipt_v0_1_MEDIANv0_5_0.json`
+- `m050/extraction/control/M050_Active_Control_Index_v0_4_MEDIANv0_5_0.json`
 
 ## Remote operating state
 
@@ -79,8 +87,10 @@ Tabs:
 - `Document Status`
 - `Cost Tracking`
 
-The Sheet is the phone-readable operational view; Git remains authoritative for
-technical state and exact audit evidence. At the migration checkpoint it held
+The Sheet is a phone-readable operational view; Git remains authoritative for
+technical state and exact audit evidence. All Google Sheets reads, writes,
+metadata checks, and verification calls are paused by author direction until a
+smaller-footprint policy is specified. At the last Sheet checkpoint it held
 154 cost entries with operational totals of $11.01 confirmed, $0.27
 unreconciled, and $11.28 maximum represented. Each entry is rounded upward to
 the next cent for operational display; exact six-decimal amounts remain in the
@@ -88,7 +98,7 @@ audit data.
 
 ## Known pending transition
 
-The host migration, controlled update, and legacy source identity approval are
-complete. The next project action is deterministic offline replay of the four
-preserved legacy response sets as specified in `NEXT_ACTION.md`. No paid model
-or provider request is authorized.
+The host migration, controlled update, source identity approval, and legacy
+replay are complete. The next project action is deterministic resolution of the
+24-record replay repair queue, beginning with Human Rulings reconstruction, as
+specified in `NEXT_ACTION.md`. No paid model or provider request is authorized.

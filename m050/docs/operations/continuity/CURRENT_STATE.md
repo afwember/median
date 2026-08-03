@@ -1,5 +1,13 @@
 # MEDIAN Current State
 
+> **Superseded operational snapshot — do not use the milestones below as current authority.**
+> The current state is controlled by
+> `m050/extraction/control/M050_Active_Control_Index_v0_10_MEDIANv0_5_0.json`
+> and `m050/extraction/control/M050_Current_State_Checkpoint_v0_1_MEDIANv0_5_0.md`.
+> The controlling corpus vector is **24 registered / 22 compile scope / 4 atomized
+> legacy seed / 18 outstanding = 14 pre-reconciliation + 4 later or conditional**.
+> The legacy review queues are preserved but dormant.
+
 State date: 2026-08-03 (America/New_York)
 
 Primary host: dedicated Apple-silicon Mac Mini

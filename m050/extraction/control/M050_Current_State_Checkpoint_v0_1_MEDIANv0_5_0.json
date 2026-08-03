@@ -1,0 +1,72 @@
+{
+  "schema_version": "M050-CURRENT-STATE-CHECKPOINT-0.1",
+  "title": "MEDIAN v0.5.0 Current-State Checkpoint",
+  "created": "2026-08-03",
+  "status": "CORPUS_ATOMIZATION_INCOMPLETE_HANDOFF_READY",
+  "predecessor_commit": "41d529982f00b2a239628ccf1ee108081776b7dd",
+  "repository_alignment_requirement": "The corrective checkpoint commit must be pushed and local HEAD must equal origin/main before successor cold start.",
+  "corpus_vector": {
+    "registered_sources": 24,
+    "atomic_compile_exclusions": 2,
+    "compile_scope_sources": 22,
+    "atomized_legacy_seed_sources": 4,
+    "outstanding_compile_scope_sources": 18,
+    "outstanding_pre_reconciliation_sources": 14,
+    "outstanding_later_or_conditional_sources": 4
+  },
+  "historical_reclassification": {
+    "v0_9_review_artifacts": "PRESERVED_DORMANT_PARTIAL_LEGACY_REVIEW_PLANNING",
+    "historical_artifacts_rewritten": false,
+    "semantic_reviews_performed": 0,
+    "accepted_evidence_records": 0
+  },
+  "successor_authority": "READ_ONLY_UNTIL_EXPLICIT_AUTHOR_TRANSFER",
+  "prohibited_or_paused": [
+    "legacy_review_queue_execution",
+    "semantic_acceptance",
+    "mapping",
+    "reconciliation",
+    "compiled_prose",
+    "provider_calls",
+    "google_sheets_interactions"
+  ],
+  "next_authorized_transition": "Push and verify this corrective checkpoint, then perform the repository-defined read-only successor-task cold start. Source atomization may resume only after explicit author transfer.",
+  "artifacts": {
+    "agents_contract": {
+      "path": "AGENTS.md",
+      "sha256": "b11f012ecdf5d74505340c55889eb7fde1fad268c477053f5e7f6e99a58442dd"
+    },
+    "active_control_index": {
+      "path": "m050/extraction/control/M050_Active_Control_Index_v0_10_MEDIANv0_5_0.json",
+      "sha256": "946172d494de1445dc7ef19498a2bb1e8a7265d47f467ac92041dc0f7616e21e"
+    },
+    "gate_2_source_disposition": {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
+      "sha256": "f460dd7c3ebf2df9344ee58aa8f650c3314af436b7684bf6cd2bf674fef5bf63"
+    },
+    "source_state_matrix": {
+      "path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json",
+      "sha256": "d9ac119559e2cf0b4dc90205529ee6737d83a4c6e35f33f27bebeafda17a792d"
+    },
+    "source_state_report": {
+      "path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.md",
+      "sha256": "93d96df03802ac645ebb50803755a6098918a354dcb88fae997e9b24f0c6110e"
+    },
+    "source_state_generator": {
+      "path": "m050/tools/m050_build_compile_source_state.py",
+      "sha256": "c3bad7381738c77ab62ec7da00eb427c0dabd82cc634e488fcf0d24eb5665aa1"
+    },
+    "checkpoint_report": {
+      "path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_1_MEDIANv0_5_0.md",
+      "sha256": "457b4aa7919bafdcb072a651e7c346f4aaaa05ec431567720df551c424c07e41"
+    },
+    "new_task_bootstrap": {
+      "path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_1_MEDIANv0_5_0.md",
+      "sha256": "9d8f67f61369f0be6ed02508e95e1c9aa345087014c8ded0f9193feec79eb5a0"
+    },
+    "correction_report": {
+      "path": "m050/extraction/audit/M050_Extraction_Gate_5_Corpus_Scope_Correction_Report_v0_1_MEDIANv0_5_0.md",
+      "sha256": "6428b490b99343877e5be61f14c15395173da6742c7cdf29807608c982ad0a4f"
+    }
+  }
+}

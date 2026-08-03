@@ -51,5 +51,8 @@
     ,{"case_id": "REG-REVIEW-002", "risk": "semantic review planning omits candidates, compound records, or uncovered blocks", "expected": "fail_closed", "test_path": "tests/test_review_planning.py", "test_name": "test_review_plan_accounts_for_candidates_compounds_and_uncovered_blocks"}
     ,{"case_id": "REG-REVIEW-003", "risk": "legacy Tier 3 sampling is unpinned or loses risk weighting", "expected": "pass", "test_path": "tests/test_review_planning.py", "test_name": "test_review_plan_tier3_sample_is_pinned_and_risk_weighted"}
     ,{"case_id": "REG-REVIEW-004", "risk": "review planning changes between builds or performs unauthorized acceptance", "expected": "fail_closed", "test_path": "tests/test_review_planning.py", "test_name": "test_review_plan_is_byte_deterministic_and_performs_no_semantic_acceptance"}
+    ,{"case_id": "REG-CORPUS-001", "risk": "partial legacy migration is mistaken for whole-corpus completion", "expected": "fail_closed", "test_path": "tests/test_corpus.py", "test_name": "test_compile_scope_is_derived_as_24_22_4_18_14_4"}
+    ,{"case_id": "REG-CORPUS-002", "risk": "unknown or duplicate source disappears from the compile boundary", "expected": "fail_closed", "test_path": "tests/test_corpus.py", "test_name": "test_compile_scope_fails_closed_on_unknown_or_duplicate_source"}
+    ,{"case_id": "REG-CORPUS-003", "risk": "committed source-state matrix drifts from authoritative Gate 2", "expected": "fail_closed", "test_path": "tests/test_corpus.py", "test_name": "test_committed_compile_scope_matrix_matches_authoritative_gate_2"}
   ]
 }

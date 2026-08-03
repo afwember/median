@@ -1,0 +1,63 @@
+{
+  "schema_version": "M050-ACTIVE-CONTROL-INDEX-0.10",
+  "title": "MEDIAN v0.5.0 Active Control Index",
+  "status": "ACTIVE",
+  "updated": "2026-08-03",
+  "supersedes": {
+    "path": "m050/extraction/control/M050_Active_Control_Index_v0_9_MEDIANv0_5_0.json",
+    "sha256": "edba6b6cdf863c749afedce3e50d4be06bb74979a837971cb510190ae1b6e5c0",
+    "reason": "Reclassify four-source legacy review planning as partial and restore the complete 22-source compile boundary"
+  },
+  "execution_state": "GATE_5_LEGACY_SEED_4_OF_22_PRESERVED_CORPUS_ATOMIZATION_INCOMPLETE",
+  "author_root_of_authority": "Asa Wember",
+  "repository_writer": "One explicitly authorized Codex task at a time; successor tasks begin read-only until explicit author transfer",
+  "compile_definition": "The complete controlled pipeline across all in-scope sources: evidence preparation and atomization, semantic review, mapping, reconciliation, and final document production",
+  "corpus_state": {
+    "registered_sources": 24,
+    "atomic_compile_exclusions": 2,
+    "compile_scope_sources": 22,
+    "atomized_legacy_seed_sources": 4,
+    "outstanding_compile_scope_sources": 18,
+    "outstanding_pre_reconciliation_sources": 14,
+    "outstanding_later_or_conditional_sources": 4,
+    "whole_corpus_atomization_complete": false
+  },
+  "legacy_seed_state": {
+    "source_count": 4,
+    "mechanically_valid_candidates": 913,
+    "candidate_review_bundles": 181,
+    "compound_records_preserved": 139,
+    "uncovered_blocks": 518,
+    "semantic_reviews_performed": 0,
+    "accepted_evidence_records": 0,
+    "classification": "PRESERVED_DORMANT_PARTIAL_LEGACY_REVIEW_PLANNING",
+    "execution_authorized": false
+  },
+  "transition_boundary": {
+    "semantic_review_authorized": false,
+    "semantic_acceptance_authorized": false,
+    "mapping_authorized": false,
+    "reconciliation_authorized": false,
+    "compiled_prose_authorized": false,
+    "provider_call_authorized": false,
+    "google_sheets_interaction_authorized": false
+  },
+  "current_controls": [
+    {"path": "AGENTS.md", "role": "Repository-wide cold-start and authority contract"},
+    {"path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml", "role": "Authoritative source disposition"},
+    {"path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json", "role": "Machine-derived 24-source state and transition boundary"},
+    {"path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.md", "role": "Human-readable 24-source state matrix"},
+    {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_1_MEDIANv0_5_0.json", "role": "Hash-bound current-state handoff checkpoint"},
+    {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_1_MEDIANv0_5_0.md", "role": "Human-readable current-state handoff checkpoint"},
+    {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_1_MEDIANv0_5_0.md", "role": "Read-only successor-task cold start"},
+    {"path": "m050/extraction/audit/M050_Extraction_Gate_5_Corpus_Scope_Correction_Report_v0_1_MEDIANv0_5_0.md", "role": "Cause, correction, and reclassification report"},
+    {"path": "m050/extraction/audit/M050_Extraction_Gate_5_Corpus_Scope_Correction_Receipt_v0_1_MEDIANv0_5_0.json", "role": "Corrective checkpoint artifact bindings"},
+    {"path": "m050/extraction/review/", "role": "Preserved dormant four-source legacy review planning"},
+    {"path": "m050/extraction/engine/", "role": "Offline engine and whole-corpus regression controls"},
+    {"path": "m050/tools/m050_guard_v0_5.py", "role": "Active whole-corpus scope and historical-integrity guard"}
+  ],
+  "next_authorized_activity": "Complete and verify this corrective checkpoint, then perform a read-only successor-task cold start. Do not resume source atomization until the author explicitly transfers repository write authority after the cold-start report.",
+  "provider_call_authorized": false,
+  "google_sheets_interaction_authorized": false,
+  "gate_5_complete": false
+}

@@ -1,5 +1,11 @@
 # MEDIAN Next Action
 
+> **Superseded — do not execute the review transition described below.**
+> Current authority is `m050/extraction/control/M050_Active_Control_Index_v0_10_MEDIANv0_5_0.json`.
+> The next authorized activity is the corrective checkpoint and read-only
+> successor-task cold start. The 14 pre-reconciliation sources remain outstanding;
+> legacy review queues are dormant until a later guarded transition.
+
 Action date: 2026-08-03
 
 Transition: mechanically valid Layer E legacy candidates to review-bundle design

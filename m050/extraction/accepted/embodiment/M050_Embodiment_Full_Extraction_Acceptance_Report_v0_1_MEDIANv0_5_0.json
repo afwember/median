@@ -1,0 +1,228 @@
+{
+  "report_version": "M050-EMBODIMENT-ACCEPTANCE-0.1",
+  "status": "FULL_EMBODIMENT_SOURCE_BOUNDED_ACCEPTED_CANDIDATE",
+  "source_id": "M050-SRC-EMBODIMENT-001",
+  "source_sha256": "e858a6db1009c91c1d8679fa8f09be33ac3761ebee55e184e4137e3560c820e9",
+  "model": "claude-sonnet-5",
+  "effort": "low",
+  "chunks": 21,
+  "provider_attempts": 29,
+  "source_blocks": 589,
+  "target_blocks": 357,
+  "context_only_blocks": 57,
+  "excluded_blocks": 175,
+  "target_dispositions": 357,
+  "candidate_atoms": 337,
+  "no_substantive_claim_dispositions": 179,
+  "review_required_dispositions": 0,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "coverage_errors": 0,
+  "duplicate_target_blocks": 0,
+  "uncovered_target_blocks": 0,
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015",
+    "C0016",
+    "C0017",
+    "C0018",
+    "C0019",
+    "C0020",
+    "C0021"
+  ],
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0001_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "29017de6f6ae2bdaacf5e0dde8d0fff2994814c24dd2f8cdce7ccf61b6c541e3",
+      "review_event_id": "evt_35734d525cf46b1436a47162",
+      "review_event_outcome_sha256": "29017de6f6ae2bdaacf5e0dde8d0fff2994814c24dd2f8cdce7ccf61b6c541e3"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0002_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "286f6294de275b93c97d5177c0eda87ca2a556438f66e7d1fdd87fd02a441144",
+      "review_event_id": "evt_b7640e64de0178c9bf505395",
+      "review_event_outcome_sha256": "286f6294de275b93c97d5177c0eda87ca2a556438f66e7d1fdd87fd02a441144"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "036a932de1b4384a519f4de36a15fc56bd0a1f9d10e226db14cd25d7881700a6",
+      "review_event_id": "evt_4c8c2498ed7faab0a67db4e3",
+      "review_event_outcome_sha256": "036a932de1b4384a519f4de36a15fc56bd0a1f9d10e226db14cd25d7881700a6"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7354971c600240791ac21ee214efdde1412e103f7ad8f5de8071ddf73f33cad8",
+      "review_event_id": "evt_26507c1434e3d3e3dbd99474",
+      "review_event_outcome_sha256": "7354971c600240791ac21ee214efdde1412e103f7ad8f5de8071ddf73f33cad8"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "c315949e7cc7c09d793deae0be61bd3cfe5cd4459da334890a8364f8081df894",
+      "review_event_id": "evt_92f12bdf94d51d2f8d766d7a",
+      "review_event_outcome_sha256": "c315949e7cc7c09d793deae0be61bd3cfe5cd4459da334890a8364f8081df894"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b06a94db8480f3f93e7929f1b5a977c028382efa33a8fde34935d422a37c4af7",
+      "review_event_id": "evt_74d1522556acdd3dec1e636e",
+      "review_event_outcome_sha256": "b06a94db8480f3f93e7929f1b5a977c028382efa33a8fde34935d422a37c4af7"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "eafebac220ddd214f00814aa45365a05144071c214a8b24ba479e5b096637af9",
+      "review_event_id": "evt_f4d4f182ed1f9df5ccda2286",
+      "review_event_outcome_sha256": "eafebac220ddd214f00814aa45365a05144071c214a8b24ba479e5b096637af9"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0008_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "454fa4f5a920853b23df09e400fb1e01de1014fb178b9de7aca9e2e0ea7ca6fa",
+      "review_event_id": "evt_e2c36084ddd173e9c78126bb",
+      "review_event_outcome_sha256": "454fa4f5a920853b23df09e400fb1e01de1014fb178b9de7aca9e2e0ea7ca6fa"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "48fab3919db33fe45f245f7c19a1dd48cf54053c53bfe839c1c100c95435e0d6",
+      "review_event_id": "evt_9b5451e171e35d863adfa8f7",
+      "review_event_outcome_sha256": "48fab3919db33fe45f245f7c19a1dd48cf54053c53bfe839c1c100c95435e0d6"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0010_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "25aefd942072be496b4f5bf37077d50c8157c102692c978fb6a555ff3bace36b",
+      "review_event_id": "evt_c6ae46c3034f1bddd0187675",
+      "review_event_outcome_sha256": "25aefd942072be496b4f5bf37077d50c8157c102692c978fb6a555ff3bace36b"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d33dfd3be43d687baa2acff66ba8eb9b5fe3af2bf34d7422cf9196c36afc48dd",
+      "review_event_id": "evt_5a5eb5ef747d68fad7275f31",
+      "review_event_outcome_sha256": "d33dfd3be43d687baa2acff66ba8eb9b5fe3af2bf34d7422cf9196c36afc48dd"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "45d6bbb4333dfbfe97c451e322e5c51bc41506828daedebdacd2b0e106afd638",
+      "review_event_id": "evt_4a5364ee35ffeb8a195b33c6",
+      "review_event_outcome_sha256": "45d6bbb4333dfbfe97c451e322e5c51bc41506828daedebdacd2b0e106afd638"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "4cd056a438e02ee07d43f8860bc659a5589e64f03c99a3ea2fe799c0dcba14a8",
+      "review_event_id": "evt_84397b457b7f8982a52e65e9",
+      "review_event_outcome_sha256": "4cd056a438e02ee07d43f8860bc659a5589e64f03c99a3ea2fe799c0dcba14a8"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "58ca05b906f9118afaf09b2101617fe63c0644f80e445c4f1d49629a5ede1ca5",
+      "review_event_id": "evt_4f1b6ee3dcc6dd3f0c34b81d",
+      "review_event_outcome_sha256": "58ca05b906f9118afaf09b2101617fe63c0644f80e445c4f1d49629a5ede1ca5"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "39d5c642b89f50cd3205653eb6f0c88aaf22c02ae17b562f2552b6ee0cb0d9c9",
+      "review_event_id": "evt_d9a3c2aa4a0f944dbf7f8ead",
+      "review_event_outcome_sha256": "39d5c642b89f50cd3205653eb6f0c88aaf22c02ae17b562f2552b6ee0cb0d9c9"
+    },
+    {
+      "chunk_id": "C0016",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "ac8052603e2c64ce1ddb8553834d404976c916f5e2f731960690c96c90ca1a97",
+      "review_event_id": "evt_787e100a174289cede4e7bab",
+      "review_event_outcome_sha256": "ac8052603e2c64ce1ddb8553834d404976c916f5e2f731960690c96c90ca1a97"
+    },
+    {
+      "chunk_id": "C0017",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "8f7b8c8feac5715d9149e2e4a82c250769070a1b24d0914619cdebebc7196431",
+      "review_event_id": "evt_eb8d7ef6ed3487411b0ff7af",
+      "review_event_outcome_sha256": "8f7b8c8feac5715d9149e2e4a82c250769070a1b24d0914619cdebebc7196431"
+    },
+    {
+      "chunk_id": "C0018",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "b895d3ab5ed7cfb7b43ebace4f33bbcec0cd2e754e69d26b6e8a4aca9790a17f",
+      "review_event_id": "evt_f3073a42c1f3eb91f456e878",
+      "review_event_outcome_sha256": "b895d3ab5ed7cfb7b43ebace4f33bbcec0cd2e754e69d26b6e8a4aca9790a17f"
+    },
+    {
+      "chunk_id": "C0019",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "0ac83a3e02e7cd27be7c9877d04420e9ad82b770fc2fe6d959b4ca72f80898b0",
+      "review_event_id": "evt_fed67bf62885af3ee8782cd7",
+      "review_event_outcome_sha256": "0ac83a3e02e7cd27be7c9877d04420e9ad82b770fc2fe6d959b4ca72f80898b0"
+    },
+    {
+      "chunk_id": "C0020",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "25e3e66d58e20b175fc6bebf1331fda705b64aad5a0845d93429c6f339781ae6",
+      "review_event_id": "evt_bd3018561f683efca947eba0",
+      "review_event_outcome_sha256": "25e3e66d58e20b175fc6bebf1331fda705b64aad5a0845d93429c6f339781ae6"
+    },
+    {
+      "chunk_id": "C0021",
+      "outcome_path": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "008766763b64e5eb23a5b9930e2a24ba7445948e9fbfc40d9e6b426a49285d04",
+      "review_event_id": "evt_367dfbd5d52fd19b59028b29",
+      "review_event_outcome_sha256": "008766763b64e5eb23a5b9930e2a24ba7445948e9fbfc40d9e6b426a49285d04"
+    }
+  ],
+  "identifier_resolution": {
+    "source_identifier_field": "proposal_id",
+    "accepted_identifier_field": "proposal_id",
+    "trace_fields": [
+      "accepted_chunk_id",
+      "source_proposal_id"
+    ],
+    "policy": "EMBODIMENT-{accepted_chunk_id}-{source_proposal_id}; append a two-digit occurrence suffix only for a repeated source_proposal_id within one accepted chunk",
+    "source_identifier_occurrences": 337,
+    "source_identifier_unique_values": 337,
+    "cross_chunk_colliding_values": 0,
+    "collision_occurrences_resolved": 0,
+    "accepted_identifier_unique_values": 337
+  },
+  "media_exclusion": {
+    "excluded_media_reference_blocks": 3,
+    "retained_caption_target_blocks": 3,
+    "candidate_media_records": 0,
+    "provider_media_leaks": 0,
+    "external_artwork_consulted": false
+  },
+  "candidate_path": "m050/extraction/accepted/embodiment/M050_Embodiment_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "5c24bfb0c37f7a01aad1215823d83650e17cb4473235bffb87e30638586df456",
+  "actual_embodiment_extraction_cost_usd": "1.5999998",
+  "cumulative_provider_spend_usd": "5.8960480",
+  "cumulative_budget_usd": "6.2960482",
+  "remaining_budget_usd": "0.4000002",
+  "cache_policy": "mandatory one-hour stable-prefix caching",
+  "cache_telemetry_status": "effective",
+  "approval": true,
+  "reviewed_by": "Codex Compile Worker",
+  "reviewed_at": "2026-08-04",
+  "note": "Accepted as source-bounded atomic-extraction output only. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+}

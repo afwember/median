@@ -193,10 +193,18 @@ work on another source remain prohibited.
 ## Extraction contract
 
 Split independent claims into separate atoms and keep dependent qualifications
-with the claims they qualify. Every `exact_source_text` must be a byte-for-byte
+with the claims they qualify. In revision comparisons, a replacement statement
+and a separate statement about the successor's governing role or scope are
+independent atoms even when they share a paragraph. Likewise, a parallel cycle
+or sequence statement in which distinct subjects perform distinct functions
+requires one atom per subject-function clause, even when the statement appears
+inside one callout. Every `exact_source_text`
+must be a byte-for-byte
 contiguous substring of its target block after JSON decoding. Preserve literal
 markup, backslashes, and source escaping; never render, strip, reconstruct,
-clean, or reformat the selected source span. In particular, source HTML such as
+clean, or reformat the selected source span. After JSON decoding, copy Unicode
+punctuation as the actual source character; never replace a curly apostrophe or
+other character with literal text such as `\u2019`. In particular, source HTML such as
 `<em>claim</em>` must remain literal HTML and must never be reconstructed as
 Markdown such as `*claim*`. For any atom extracted from an HTML target block,
 `exact_source_text` must equal the entire literal target block, including all
@@ -231,7 +239,9 @@ definitions, owners, or authorities.
 Before returning, verify exact target coverage, absence of context dispositions,
 grounding, and disposition/atom cardinality. Return JSON only under the bound
 response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
-empty otherwise. Every atom must use the supplied source ID, its target block
+empty otherwise. As a final cleanup, if `kind` is not `atoms`, remove every
+element from that disposition's `atoms` array. A table header or delimiter can
+never retain a metadata atom. Every atom must use the supplied source ID, its target block
 ID, one allowed stream, exact source text, a concise normalized claim, and a
 source-faithful claim kind. Derive each proposal ID from its target block ID plus
 a local atom ordinal so proposal IDs remain unique across the source.

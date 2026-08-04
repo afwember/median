@@ -39,8 +39,8 @@ def test_processing_order_and_canonical_progress_derive_next_source_and_queue():
         if by_id[source_id]["in_compile_scope"] and source_id not in completed
     ]
 
-    assert expected_queue[0] == "M050-SRC-EMBODIMENT-001"
-    assert len(expected_queue) == 16
+    assert expected_queue[0] == "M050-SRC-AWAY-001"
+    assert len(expected_queue) == 15
     assert "next_source" not in order
     assert "outstanding_pre_reconciliation_order" not in order
     authorial = order["sequence"][0]["pre_candidate_acceptance_control"]
@@ -55,8 +55,8 @@ def test_source_completion_advances_order_without_rewriting_order_control():
     state = _load(STATE_PATH)
     by_id = {source["source_id"]: source for source in matrix["sources"]}
     completed = set(state["progress"]["completed_source_ids"])
-    assert "M050-SRC-HOME-001" in completed
-    prior_completed = completed - {"M050-SRC-HOME-001"}
+    assert "M050-SRC-EMBODIMENT-001" in completed
+    prior_completed = completed - {"M050-SRC-EMBODIMENT-001"}
     prior_next_source = next(
         item["source_id"]
         for item in order["sequence"]
@@ -69,5 +69,5 @@ def test_source_completion_advances_order_without_rewriting_order_control():
         if by_id[item["source_id"]]["in_compile_scope"]
         and item["source_id"] not in completed
     )
-    assert prior_next_source == "M050-SRC-HOME-001"
-    assert next_source == "M050-SRC-EMBODIMENT-001"
+    assert prior_next_source == "M050-SRC-EMBODIMENT-001"
+    assert next_source == "M050-SRC-AWAY-001"

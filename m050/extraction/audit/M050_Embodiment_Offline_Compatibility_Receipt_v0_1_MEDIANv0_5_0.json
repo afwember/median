@@ -5,8 +5,8 @@
   "status": "REPRESENTATIVE_PILOT_ACCEPTED_SOURCE_EXTRACTION_ACTIVE",
   "source_id": "M050-SRC-EMBODIMENT-001",
   "binding": {
-    "configuration_sha256": "511e225c10d57fc26a8086ba7d94a9723b7c7122c4d99dd5c70600c745176beb",
-    "prompt_sha256": "e3e34f4bb69c2891add2bd3eeb083adc46bc2a1f32c6dca60cc9bbffced7722a",
+    "configuration_sha256": "4e46bc837da8247ab5b9192d16710c9b1fed25391afe39555fae3725079d4494",
+    "prompt_sha256": "4fdee2edda0d021e5a7f41c89b9201e4deab92c5a24ab081659e4ae79ecdd7c6",
     "engine_module_sha256": "244486f0c6871faa996184cb76bb97bc7627590754bc4735382e919db2827406",
     "engine_tests_sha256": "b2a0d70872f7a2f7ca7203b051d549b0b1ccc77f676ccfdad3da26f15add986d",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
@@ -40,5 +40,5 @@
     "offline_tests_passed": 55
   },
   "replays": {},
-  "note": "Representative C0010 v0.1 was rejected before HTTP transport at zero incremental spend; unchanged semantics were refrozen as v0.2, which passed mechanical and substantive review without changing the calibrated 20-target density. C0001 v0.1 exposed a source-agnostic document-control metadata defect; v0.2 and v0.3 rendered literal HTML as Markdown, so HTML atoms now require the entire literal target block as their grounding span; v0.4 passed. Sequential source extraction remains active."
+  "note": "Representative C0010 v0.1 was rejected before HTTP transport at zero incremental spend; unchanged semantics were refrozen as v0.2, which passed mechanical and substantive review without changing the calibrated 20-target density. C0001 v0.1 exposed a source-agnostic document-control metadata defect; v0.2 and v0.3 rendered literal HTML as Markdown, so HTML atoms now require the entire literal target block as their grounding span; v0.4 passed. C0002 v0.1 exposed revision-claim under-atomization, and the generic atomicity rule now makes that split explicit; v0.2 passed. C0005 v0.1 exposed parallel cycle-clause under-atomization, and the generic split rule now states that case. C0008 v0.1 emitted literal Unicode escape text, and the byte-grounding rule now states that decoded punctuation must remain characters. C0018 v0.1 retained an atom in a no-substantive disposition, and final cleanup now empties all non-atoms arrays. Sequential source extraction remains active."
 }

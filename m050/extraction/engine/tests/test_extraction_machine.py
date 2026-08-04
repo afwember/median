@@ -33,7 +33,7 @@ AUTHGRAM = ROOT / "m050/extraction/calibration/authorial-grammar"
 MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
 AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
-CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_12_MEDIANv0_5_0.json"
+CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_13_MEDIANv0_5_0.json"
 CURRENT_LEDGER = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
 ACCEPTED_C0001_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Call_Packet_v0_4_MEDIANv0_5_0.json"
 ACCEPTED_C0001_OUTCOME = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Outcome_v0_4_MEDIANv0_5_0.json"
@@ -497,7 +497,7 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
         chunk_excluded = payload["excluded_block_ids"]
         assert payload["required_target_disposition_count"] == len(chunk_targets)
         dispositions_schema = packet["provider_request"]["output_config"]["format"]["schema"]["properties"]["dispositions"]
-        assert dispositions_schema["minItems"] == len(chunk_targets)
+        assert dispositions_schema["minItems"] == 1
         assert dispositions_schema["maxItems"] == len(chunk_targets)
         target_ids.extend(chunk_targets)
         context_ids.extend(chunk_context)

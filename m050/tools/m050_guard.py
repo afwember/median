@@ -123,6 +123,150 @@ def bound_file(relative: object, label: str, errors: list[str]) -> Path | None:
     return target
 
 
+def validate_accepted_candidate_records(
+    candidate_records: list[dict],
+    expected_records: list[tuple[str, dict]],
+    errors: list[str],
+) -> None:
+    """Require exact accepted-atom coverage and candidate-wide unique identifiers."""
+    if len(candidate_records) != len(expected_records):
+        errors.append(
+            "accepted candidate record coverage drifted: "
+            f"expected {len(expected_records)}, found {len(candidate_records)}"
+        )
+
+    identifiers: list[tuple[str, str]] = []
+    for index, candidate in enumerate(candidate_records):
+        identifier = next(
+            (
+                (field, value)
+                for field in ("proposal_id", "atom_id", "record_id")
+                if isinstance((value := candidate.get(field)), str) and value
+            ),
+            None,
+        )
+        if identifier is None:
+            errors.append(f"accepted candidate record {index + 1} lacks an identifier")
+        else:
+            identifiers.append(identifier)
+
+    if len({field for field, _value in identifiers}) > 1:
+        errors.append("accepted candidate identifier field is inconsistent")
+    if len(identifiers) != len({value for _field, value in identifiers}):
+        errors.append("accepted candidate record identifiers are not candidate-wide unique")
+
+    for index, (candidate, (chunk_id, expected)) in enumerate(
+        zip(candidate_records, expected_records), start=1
+    ):
+        reconstructed = dict(candidate)
+        traced_chunk = reconstructed.pop("accepted_chunk_id", None)
+        source_identifier = reconstructed.pop("source_proposal_id", None)
+        if (traced_chunk is None) != (source_identifier is None):
+            errors.append(f"accepted candidate record {index} has incomplete identifier trace")
+            continue
+        if traced_chunk is not None:
+            if traced_chunk != chunk_id:
+                errors.append(f"accepted candidate record {index} has incorrect chunk trace")
+            if expected.get("proposal_id") != source_identifier:
+                errors.append(f"accepted candidate record {index} has incorrect source identifier trace")
+            reconstructed["proposal_id"] = source_identifier
+        if reconstructed != expected:
+            errors.append(f"accepted candidate semantic coverage drifted at record {index}")
+
+
+def validate_candidate_acceptance(
+    source: dict,
+    config: dict,
+    calibration: dict,
+    accepted_ids: list[str],
+    accepted_evidence: list[dict],
+    errors: list[str],
+) -> None:
+    """Validate the established candidate/report pair for a completed source."""
+    binding = calibration.get("candidate_acceptance")
+    if not isinstance(binding, dict):
+        errors.append("completed source lacks a hash-bound candidate/report pair")
+        return
+    required_binding_keys = {"candidate", "candidate_sha256", "report", "report_sha256"}
+    if set(binding) != required_binding_keys:
+        errors.append("candidate acceptance binding shape drifted")
+
+    candidate_path = bound_file(binding.get("candidate"), "accepted candidate", errors)
+    report_path = bound_file(binding.get("report"), "acceptance report", errors)
+    if candidate_path is None or report_path is None:
+        return
+    if sha256_file(candidate_path) != binding.get("candidate_sha256"):
+        errors.append("accepted candidate hash binding drifted")
+    if sha256_file(report_path) != binding.get("report_sha256"):
+        errors.append("acceptance report hash binding drifted")
+
+    report = read_json(report_path, errors)
+    if (
+        report.get("source_id") != source.get("id")
+        or report.get("source_sha256") != config.get("source_sha256")
+        or report.get("approval") is not True
+        or report.get("accepted_chunk_ids") != accepted_ids
+        or report.get("candidate_path") != binding.get("candidate")
+        or report.get("candidate_sha256") != binding.get("candidate_sha256")
+    ):
+        errors.append("acceptance report source or candidate binding drifted")
+
+    expected_records: list[tuple[str, dict]] = []
+    expected_inputs: list[dict] = []
+    target_dispositions = 0
+    no_substantive = 0
+    for item in accepted_evidence:
+        chunk_id = item.get("chunk_id")
+        outcome_path = bound_file(item.get("outcome"), f"candidate outcome {chunk_id}", errors)
+        ledger_path = bound_file(item.get("run_ledger"), f"candidate ledger {chunk_id}", errors)
+        if outcome_path is None or ledger_path is None:
+            continue
+        outcome = read_json(outcome_path, errors)
+        dispositions = outcome.get("structured_proposal", {}).get("dispositions", [])
+        if not isinstance(dispositions, list):
+            errors.append(f"accepted outcome dispositions are invalid: {chunk_id}")
+            continue
+        target_dispositions += len(dispositions)
+        for disposition in dispositions:
+            if disposition.get("kind") == "no_substantive_claim":
+                no_substantive += 1
+            atoms = disposition.get("atoms", [])
+            if not isinstance(atoms, list) or any(not isinstance(atom, dict) for atom in atoms):
+                errors.append(f"accepted outcome atoms are invalid: {chunk_id}")
+                continue
+            expected_records.extend((chunk_id, atom) for atom in atoms)
+        outcome_hash = sha256_file(outcome_path)
+        matching = [
+            event for event in read_jsonl(ledger_path, f"candidate ledger {chunk_id}", errors)
+            if event.get("chunk_id") == chunk_id
+            and event.get("state") == "review_passed"
+            and event.get("outcome_sha256") == outcome_hash
+        ]
+        if len(matching) != 1:
+            errors.append(f"candidate review evidence is not unique: {chunk_id}")
+            continue
+        expected_inputs.append({
+            "chunk_id": chunk_id,
+            "outcome_path": item.get("outcome"),
+            "outcome_sha256": outcome_hash,
+            "review_event_id": matching[0].get("event_id"),
+            "review_event_outcome_sha256": matching[0].get("outcome_sha256"),
+        })
+
+    candidate_records = read_jsonl(candidate_path, "accepted candidate", errors)
+    validate_accepted_candidate_records(candidate_records, expected_records, errors)
+    if report.get("accepted_inputs") != expected_inputs:
+        errors.append("acceptance report evidence coverage drifted")
+    for field, expected in {
+        "chunks": len(accepted_ids),
+        "target_dispositions": target_dispositions,
+        "candidate_atoms": len(expected_records),
+        "no_substantive_claim_dispositions": no_substantive,
+    }.items():
+        if report.get(field) != expected:
+            errors.append(f"acceptance report exact coverage drifted: {field}")
+
+
 def relative_files(roots: Iterable[str]) -> set[str]:
     found: set[str] = set()
     for root_text in roots:
@@ -465,6 +609,11 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         ]
         if len(matching) != 1 or matching[0].get("outcome_sha256") != sha256_file(outcome_path):
             errors.append(f"accepted review binding drifted: {chunk_id}")
+
+    if source.get("whole_source_candidate_complete") is True:
+        validate_candidate_acceptance(
+            source, config, calibration, accepted_ids, accepted_evidence, errors
+        )
 
     freeze_path = bound_file(calibration.get("freeze"), "active freeze", errors)
     compatibility_path = bound_file(

@@ -17,7 +17,7 @@
     "prompt_sha256": "1ff0db0ede8f68bf93b186cedc04267cbc1982e8eec5c13196f8154ae0d7d959",
     "response_schema_sha256": "b6a24406a63dca25b6129ab4ae00329c5c6ee7da5e5bbf8514c437d298280bf0",
     "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
-    "engine_tests_sha256": "2de00037230d8c67ec255b0c680ef790585ab5e18247a5018959d48b717ca515",
+    "engine_tests_sha256": "bee3cf93cd1e65a4809fc5339236818bccce9e48c993f62b13e45023a1a7379d",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "e069fabd91cfdb186cf3c73db7a3fd24724b51fd298eed6ca757b54dabcb4a96",
     "allowed_streams": ["evidence_game_semantic"],
@@ -47,7 +47,7 @@
   },
   "offline_verification": {
     "all_15_chunks_fake_validated": true,
-    "offline_tests_passed": 50,
+    "offline_tests_passed": 53,
     "c0009_v0_1_rejected_at_max_tokens": true,
     "c0009_v0_2_rejected_for_exact_html_grounding": true,
     "c0009_v0_3_rejected_for_byte_exact_grounding": true,

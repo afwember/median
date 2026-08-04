@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T09:35:04-04:00",
-  "execution_state": "HOME_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_HALT",
+  "updated": "2026-08-04T10:03:22-04:00",
+  "execution_state": "HOME_SOURCE_BOUNDED_CANDIDATE_ACCEPTANCE_REPAIRED_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -132,6 +132,12 @@
         "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/home/M050_Home_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "360f6c1b882b4d4640718b2101adeea6fdc656f6716f0ce26fe0b40e7d107121",
+      "report": "m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "596bc239b17b47ac3e141a22be11d5ac30503f087ca3eeb9b98eafa41fb4d479"
+    },
     "compatibility_replays": {},
     "pilot_chunk_id": "C0015",
     "generated_chunk_count": 15,
@@ -144,7 +150,7 @@
     "redacted_media_and_caption_blocks": 6,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 50,
+    "offline_tests_passed": 53,
     "cache_miss_call_ceiling_usd": "0.222"
   },
   "latest_provider_attempt": {
@@ -176,12 +182,12 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 9:35:04 AM EDT",
-    "status": "Home source-bounded candidate accepted; source-work grant ended",
-    "phase": "Atomic extraction — Home completion halt",
+    "updated_human": "August 4, 2026 at 10:03:22 AM EDT",
+    "status": "Home source-bounded candidate acceptance repaired and hash-bound; source-work grant ended",
+    "phase": "Atomic extraction — Home repaired completion halt",
     "source": "Home — 6 / 22",
     "chunk": "15 / 15 accepted — 280 eligible targets, 280 dispositions, 500 atoms; no rejected chunk is active",
-    "now": "Whole-document coverage and extraction-quality review passed; six media-associated blocks remained excluded, exact cumulative spend is $4.2960482, and $0.9119432 remains",
+    "now": "The accepted candidate/report pair is materialized from 15 accepted outcomes with exact 500-atom coverage and 500 unique traceable identifiers; provider spend remains $4.2960482",
     "next": "Halt for Asa; starting Embodiment or any other source requires a new explicit source-work grant"
   },
   "next_possible_transition": "With Asa's explicit authorization, begin Embodiment identity preparation under atomic extraction; no later phase is authorized.",

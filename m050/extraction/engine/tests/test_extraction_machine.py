@@ -33,6 +33,7 @@ AUTHGRAM = ROOT / "m050/extraction/calibration/authorial-grammar"
 MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
 AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
+GUARD = ROOT / "m050/tools/m050_guard.py"
 CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_15_MEDIANv0_5_0.json"
 CURRENT_LEDGER = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
 ACCEPTED_C0001_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Call_Packet_v0_4_MEDIANv0_5_0.json"
@@ -47,6 +48,67 @@ def _json(path):
 
 def _jsonl(path):
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
+
+
+def _guard_module():
+    spec = importlib.util.spec_from_file_location("m050_guard_for_tests", GUARD)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_completed_source_has_exact_hash_bound_candidate_acceptance():
+    guard = _guard_module()
+    state = _json(COMPILE_STATE)
+    errors = []
+    config = _json(ROOT / state["calibration"]["configuration"])
+    guard.validate_candidate_acceptance(
+        state["source"],
+        config,
+        state["calibration"],
+        state["source"]["accepted_chunk_ids"],
+        state["calibration"]["accepted_evidence"],
+        errors,
+    )
+    assert errors == []
+
+
+def test_completed_source_rejects_missing_candidate_acceptance_pair():
+    guard = _guard_module()
+    state = _json(COMPILE_STATE)
+    calibration = copy.deepcopy(state["calibration"])
+    calibration.pop("candidate_acceptance")
+    errors = []
+    guard.validate_candidate_acceptance(
+        state["source"],
+        _json(ROOT / calibration["configuration"]),
+        calibration,
+        state["source"]["accepted_chunk_ids"],
+        calibration["accepted_evidence"],
+        errors,
+    )
+    assert errors == ["completed source lacks a hash-bound candidate/report pair"]
+
+
+def test_accepted_candidate_rejects_missing_coverage_and_duplicate_identifiers():
+    guard = _guard_module()
+    expected = [
+        ("C0001", {"proposal_id": "P1", "source_id": "S1"}),
+        ("C0002", {"proposal_id": "P1", "source_id": "S1"}),
+    ]
+    candidate = [{"proposal_id": "P1", "source_id": "S1"}]
+    errors = []
+    guard.validate_accepted_candidate_records(candidate, expected, errors)
+    assert any("coverage drifted" in error for error in errors)
+
+    candidate = [
+        {"proposal_id": "P1", "source_id": "S1"},
+        {"proposal_id": "P1", "source_id": "S1"},
+    ]
+    errors = []
+    guard.validate_accepted_candidate_records(candidate, expected, errors)
+    assert "accepted candidate record identifiers are not candidate-wide unique" in errors
 
 
 def _pricing():

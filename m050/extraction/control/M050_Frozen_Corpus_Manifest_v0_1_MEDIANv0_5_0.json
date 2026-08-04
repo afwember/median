@@ -64,6 +64,8 @@
     {"path":"m050/extraction/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json","sha256":"c2e142816fcb5f0eda4c68cd822f577f8f78938cf40213537d33a76e556fb24e"},
     {"path":"m050/extraction/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"2e5818604fa346a17b3c84edf77de13c25b0a3b413626037f63b273bba212b3c"},
     {"path":"m050/extraction/accepted/authorial-grammar/M050_Authorial_Grammar_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json","sha256":"f4169536331254530dffe28f43175e2b9eb7642eb32650910bd84792431c7a71"},
-    {"path":"m050/extraction/accepted/authorial-grammar/M050_Authorial_Grammar_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"d6a4182004f0fb9d7e12db8842ffc23ed89a3a795a325b412e940ba7ad00a3ce"}
+    {"path":"m050/extraction/accepted/authorial-grammar/M050_Authorial_Grammar_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"d6a4182004f0fb9d7e12db8842ffc23ed89a3a795a325b412e940ba7ad00a3ce"},
+    {"path":"m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json","sha256":"596bc239b17b47ac3e141a22be11d5ac30503f087ca3eeb9b98eafa41fb4d479"},
+    {"path":"m050/extraction/accepted/home/M050_Home_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"360f6c1b882b4d4640718b2101adeea6fdc656f6716f0ce26fe0b40e7d107121"}
   ]
 }

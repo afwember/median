@@ -1,0 +1,179 @@
+{
+  "report_version": "M050-HOME-ACCEPTANCE-0.1",
+  "status": "FULL_HOME_SOURCE_BOUNDED_ACCEPTED_CANDIDATE",
+  "source_id": "M050-SRC-HOME-001",
+  "source_sha256": "08a45719b0c1eaa403006b3a104d12aa8a4f1f3a9d85abd867f9396d187146fa",
+  "model": "claude-sonnet-5",
+  "effort": "low",
+  "chunks": 15,
+  "provider_attempts": 34,
+  "source_blocks": 585,
+  "target_blocks": 280,
+  "context_only_blocks": 40,
+  "excluded_blocks": 265,
+  "target_dispositions": 280,
+  "candidate_atoms": 500,
+  "no_substantive_claim_dispositions": 61,
+  "review_required_dispositions": 0,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "coverage_errors": 0,
+  "duplicate_target_blocks": 0,
+  "uncovered_target_blocks": 0,
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015"
+  ],
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0001_Outcome_v0_12_MEDIANv0_5_0.json",
+      "outcome_sha256": "d2e36a53b977b07f8684340ca16198b41b973df79d1887f2345989b9bb6acdb6",
+      "review_event_id": "evt_6f5fe19878d247bd2e62e27b",
+      "review_event_outcome_sha256": "d2e36a53b977b07f8684340ca16198b41b973df79d1887f2345989b9bb6acdb6"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "81c160ba8549f2714044bbe5f1d4f99474b3f7bee5e0d2a9c3f1f08519ac02e7",
+      "review_event_id": "evt_ad3a9fc770e875c1bd81d162",
+      "review_event_outcome_sha256": "81c160ba8549f2714044bbe5f1d4f99474b3f7bee5e0d2a9c3f1f08519ac02e7"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "63629f1db6d28d89a9534fee3db07c6c25bddf1da43297f96720d96bf1884453",
+      "review_event_id": "evt_ef41350d4bdd6babf6be6eb3",
+      "review_event_outcome_sha256": "63629f1db6d28d89a9534fee3db07c6c25bddf1da43297f96720d96bf1884453"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "07d4c59d903d21796b357634ea388697a4148124578e5341ac072abc7bead101",
+      "review_event_id": "evt_de04e38d86a95de955e9c6c3",
+      "review_event_outcome_sha256": "07d4c59d903d21796b357634ea388697a4148124578e5341ac072abc7bead101"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "ab4502294e994807c6470d87efae598a3ebd6376715914d54a4186cc25ba42f5",
+      "review_event_id": "evt_e3a45e6d44e2bbcc7d21bb30",
+      "review_event_outcome_sha256": "ab4502294e994807c6470d87efae598a3ebd6376715914d54a4186cc25ba42f5"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0006_Outcome_v0_5_MEDIANv0_5_0.json",
+      "outcome_sha256": "dfa3e141a177adcb08cd70cba783781f19503c10b963cc656dc25aab6c353dac",
+      "review_event_id": "evt_9395418f8729887568200f91",
+      "review_event_outcome_sha256": "dfa3e141a177adcb08cd70cba783781f19503c10b963cc656dc25aab6c353dac"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "8b0d52291b5b4794582c87dd1e8613a0f780d7ab0ae84b6bcbb901b285db48b4",
+      "review_event_id": "evt_d587294b9f3f55e9cb4f2573",
+      "review_event_outcome_sha256": "8b0d52291b5b4794582c87dd1e8613a0f780d7ab0ae84b6bcbb901b285db48b4"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b82dc8a27a0158bcbfdc37d9f72b6770c2b5a42df3bd576006198e1992f70904",
+      "review_event_id": "evt_1b3ad79cd690f962c3eda6bf",
+      "review_event_outcome_sha256": "b82dc8a27a0158bcbfdc37d9f72b6770c2b5a42df3bd576006198e1992f70904"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0009_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "c23cb74353fbea408f0b44a2c02a1ce9b9cda478cfb65fe0ff415f4e37ad099d",
+      "review_event_id": "evt_cbc6e65e008642b3ae388da9",
+      "review_event_outcome_sha256": "c23cb74353fbea408f0b44a2c02a1ce9b9cda478cfb65fe0ff415f4e37ad099d"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "6a2337d9d025f98850d4700b8683627f23780e98093419a83472b4d5a35b563f",
+      "review_event_id": "evt_b7f909151d3be43ac581530d",
+      "review_event_outcome_sha256": "6a2337d9d025f98850d4700b8683627f23780e98093419a83472b4d5a35b563f"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7813743206775de078fc3bf73d38b12cf2f36407d17fef093fd27ae661b9a521",
+      "review_event_id": "evt_cd883aec9c0975050d48cf90",
+      "review_event_outcome_sha256": "7813743206775de078fc3bf73d38b12cf2f36407d17fef093fd27ae661b9a521"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d83de4d7f2eb2b49ade1f89d01c4c07ff6ed493fafc7f5f7cdea3039c56c0f86",
+      "review_event_id": "evt_b242e8afd6a1e167be8f6849",
+      "review_event_outcome_sha256": "d83de4d7f2eb2b49ade1f89d01c4c07ff6ed493fafc7f5f7cdea3039c56c0f86"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b75f226a25b5bdd9fff47add978b4e4ddb75aecadca10f18d35bcc8d714e5c6a",
+      "review_event_id": "evt_8e1ef659998ecdbc3aa002be",
+      "review_event_outcome_sha256": "b75f226a25b5bdd9fff47add978b4e4ddb75aecadca10f18d35bcc8d714e5c6a"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0014_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "7ed5be7b17f3ceb99eaa20692aaac54080d606806620b2fea86524500d953fbf",
+      "review_event_id": "evt_4d8c9e132901122a9d2de6df",
+      "review_event_outcome_sha256": "7ed5be7b17f3ceb99eaa20692aaac54080d606806620b2fea86524500d953fbf"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/home-pilot/M050_Home_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7c18729b308d9ad79f43330eab1f1965f116d05edd5336fc52cb9a0019115f61",
+      "review_event_id": "evt_06eac1cc33f1ecc98a560133",
+      "review_event_outcome_sha256": "7c18729b308d9ad79f43330eab1f1965f116d05edd5336fc52cb9a0019115f61"
+    }
+  ],
+  "identifier_resolution": {
+    "source_identifier_field": "proposal_id",
+    "accepted_identifier_field": "proposal_id",
+    "trace_fields": [
+      "accepted_chunk_id",
+      "source_proposal_id"
+    ],
+    "policy": "HOME-{accepted_chunk_id}-{source_proposal_id}; append a two-digit occurrence suffix only for a repeated source_proposal_id within one accepted chunk",
+    "source_identifier_occurrences": 500,
+    "source_identifier_unique_values": 477,
+    "cross_chunk_colliding_values": 23,
+    "collision_occurrences_resolved": 23,
+    "accepted_identifier_unique_values": 500
+  },
+  "media_exclusion": {
+    "excluded_media_and_caption_blocks": 6,
+    "candidate_media_records": 0,
+    "provider_media_leaks": 0,
+    "external_artwork_consulted": false
+  },
+  "candidate_path": "m050/extraction/accepted/home/M050_Home_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "360f6c1b882b4d4640718b2101adeea6fdc656f6716f0ce26fe0b40e7d107121",
+  "actual_home_extraction_cost_usd": "2.9166340",
+  "cumulative_provider_spend_usd": "4.2960482",
+  "cumulative_budget_usd": "5.2079914",
+  "remaining_budget_usd": "0.9119432",
+  "cache_policy": "mandatory one-hour stable-prefix caching",
+  "cache_telemetry_status": "effective",
+  "approval": true,
+  "reviewed_by": "Codex Compile Worker",
+  "reviewed_at": "2026-08-04",
+  "note": "Accepted as source-bounded atomic-extraction output only. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+}

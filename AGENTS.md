@@ -21,8 +21,12 @@ transcript—is the durable source of operational truth.
 The compilation method is closed during execution. A compile task executes the
 method; it does not redesign the method in response to ordinary difficulty.
 
-1. **Conservation of Process:** constrain, combine, correct, simplify, or reuse
-   existing machinery before proposing anything new.
+1. **Conservation of Process:** within the current authorized phase mechanics,
+   constrain, combine, correct, simplify, or reuse existing implementation
+   before proposing anything new. This permits a Compile Worker to repair how
+   the established phase operates; it does not permit changes to phase
+   structure, stage boundaries, artifact classes, authority rules, or
+   cross-phase interfaces.
 2. **Conservation of Representation:** every authoritative fact has one
    canonical home. Derived views never become parallel authority.
 3. **Conservation of Mandate:** perform only the authorized source and lifecycle
@@ -39,6 +43,49 @@ A component must transform canonical content, enforce an invariant, or preserve
 necessary evidence or an unresolved exception. Otherwise remove or fuse it.
 Do not repair synchronization trouble by creating another synchronization
 layer.
+
+## Task roles and phase handoff
+
+Task titles do not confer authority. The two permitted working roles are a
+division of mandate, not another workflow layer:
+
+- **Supervisor:** works in discussion with Asa and may change the compilation
+  architecture or this contract only after Asa explicitly authorizes the
+  proposed system change. It never redesigns the system automatically and does
+  not gain source-work or provider authority from its role.
+- **Compile Worker:** executes one explicitly authorized phase and source using
+  the established method. Within an active source-work grant and spend envelope
+  it may handle ordinary extraction details, including diagnosis, correction,
+  simplification, validation, retry, state maintenance, and coherent repository
+  checkpoints, without transaction-by-transaction approval.
+
+The Compile Worker may not alter cross-phase architecture, add a stage or
+artifact family, relax an invariant, advance to another source or phase, or
+reinterpret CoS to enlarge its mandate. If it concludes that the existing
+structure cannot safely do the work, it must halt and submit a concise human
+review request stating the exact obstruction and the smallest change it thinks
+is necessary. Difficulty is not permission to self-redesign.
+
+Only one role writes the repository at a time. When the Supervisor is changing
+the system, the Compile Worker remains paused. It resumes only from a clean,
+committed, pushed checkpoint after completing the required cold start. At an
+overall phase boundary, the Supervisor may retool the contract in discussion
+with Asa; the Compile Worker begins the new phase only after Asa explicitly
+authorizes it.
+
+## Phase model
+
+The permanent constitution is phase-neutral. Exactly one replaceable active
+phase profile defines the Worker’s current mechanics, invariants, evidence
+closure, completion condition, and prohibited transitions. A phase profile is
+execution authority only when Asa has explicitly authorized that phase.
+
+At a phase boundary, the Worker halts. In discussion with Asa, the Supervisor
+replaces the active profile in place and adapts only the phase-specific guard
+validation. It must preserve the permanent CoS, role, authority,
+canonical-state, STATUS, and one-writer rules. Do not preserve the retired
+profile as another active file or accumulate profiles into a workflow stack;
+Git is the history.
 
 ## Canonical controls
 
@@ -58,17 +105,18 @@ layer.
 
 1. Confirm `AGENTS.override.md` is absent.
 2. Read the canonical compile state completely.
-3. Read the source processing order completely.
+3. Read every active-phase control named by this contract and the canonical
+   state completely.
 4. Read `STATUS.md` and confirm it exactly mirrors the canonical state.
 5. Run `.venv/bin/python m050/tools/m050_guard.py --with-tests` before
    control/code release, provider-enabled configuration release, whole-source
    acceptance, and commit/push. Routine provider capture uses the extraction
    machine’s focused packet, source, spend, cache, response, and prior-review
    checks.
-6. Report concisely: corpus vector; selected and next source; accepted/rejected
-   chunk boundary; source-work and spend authority; halt conditions; prohibited
-   later stages; next possible transition; STATUS freshness; and whether local
-   `HEAD` equals `origin/main`.
+6. Report concisely: active phase; current target and completed/rejected
+   boundary; work and spend authority; halt conditions; prohibited transitions;
+   next possible transition; STATUS freshness; and whether local `HEAD` equals
+   `origin/main`.
 
 No separate successor packet is required. These canonical files are the handoff.
 
@@ -76,9 +124,23 @@ No separate successor packet is required. These canonical files are the handoff.
 
 - Asa Wember remains the sole authorial authority.
 - Only one task may write the repository at a time. A successor task begins
-  read-only until Asa explicitly grants a bounded repository task or names one
-  Spec Doc for source work.
+  read-only until Asa explicitly grants a bounded repository task or
+  active-profile work.
 - A bounded repository task authorizes only its stated change.
+
+## Active phase profile — atomic extraction
+
+This profile governs atomic extraction only. Its completion condition is
+source-bounded candidate acceptance for all compile-scope sources assigned to
+this phase. It grants no semantic acceptance, mapping, reconciliation, or
+compiled-prose authority. At completion, or before any transition to another
+overall phase, the Compile Worker halts for the phase handoff above.
+
+For this profile, the canonical source processing order is a required cold-start
+control. The Worker reports the exact corpus vector, selected and next source,
+accepted/rejected chunk boundary, source-work and spend authority, and all
+prohibited later stages.
+
 - A source-work grant is confined to one named source and ends when that source
   reaches source-bounded candidate acceptance. Starting the next source always
   requires a new explicit grant from Asa.
@@ -115,7 +177,7 @@ Halt for Asa only when:
    or a change that cannot pass existing guards; or
 3. the authorized source is complete.
 
-## Source lifecycle invariants
+### Source lifecycle invariants
 
 - Follow the approved processing order; never choose by filename or task memory.
 - Every new provider-eligible source begins with a content/provenance identity
@@ -142,7 +204,7 @@ Halt for Asa only when:
 - Source-bounded candidate acceptance is not Layer E semantic acceptance,
   mapping, reconciliation, canonization, or compiled prose.
 
-## Artifact and state discipline
+### Artifact and state discipline
 
 - Frozen sources and accepted evidence are immutable.
 - Preserve raw provider responses, compact outcomes, exact usage/cost, rejected
@@ -158,7 +220,7 @@ Halt for Asa only when:
   genuinely unsafe or impossible.
 - A normal compile operation has no process delta.
 
-## Hard boundaries
+### Active-phase hard boundaries
 
 - A deterministic-only source never enters provider calibration. A non-atomic
   companion never enters atomization.

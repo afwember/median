@@ -1,10 +1,10 @@
 # MEDIAN v0.5.0 Authorial Grammar Content/Provenance Identity Card v0.1
 
 Date: 2026-08-03  
-Status: `DRAFT_AWAITING_AUTHOR_REVIEW`  
-Lifecycle state: `identity_card_draft`  
+Status: `APPROVED`
+Lifecycle state: `identity_card_approved`
 Author/root of authority: Asa Wember  
-Draft scope: source identity only; no extraction preparation or execution authority
+Scope: source identity only; source-work, provider, spend, and later-phase authority remain separate
 
 ## 1. Source identity
 
@@ -22,20 +22,17 @@ Draft scope: source identity only; no extraction preparation or execution author
 | Gate 2 disposition | `source_bounded_atomic_extraction` |
 | Allowed output stream | `evidence_authorial_rule` only |
 | Gate 2 exclusions | `document_furniture`, `change_record` |
-| Current compile state | `outstanding`; first source in the approved processing order |
+| Current compile state | Active source; C0001 and C0002 accepted, C0003 frozen for recalibration pilot |
 
-The path, hash, source ID, disposition, stream, and exclusions above agree across the frozen corpus manifest and Gate 2 disposition. The processing-order control identifies this source as next, but this draft does not authorize offline extraction preparation.
+The path, hash, source ID, disposition, stream, and exclusions above agree across the frozen corpus manifest and Gate 2 disposition. Approval of this identity card settles the source boundary only; it does not authorize a source run, provider call, spend, or later phase.
 
 ## 2. Control bindings
 
-| Control | SHA-256 | Function |
-|---|---|---|
-| `m050/extraction/control/M050_Frozen_Corpus_Manifest_v0_1_MEDIANv0_5_0.json` | `98ad9e63af025e9953a04719a246fcf2959faea471d81276b31b7c21e5a1b91d` | Frozen source identity |
-| `m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml` | `f460dd7c3ebf2df9344ee58aa8f650c3314af436b7684bf6cd2bf674fef5bf63` | Disposition, stream, and exclusions |
-| `m050/extraction/control/M050_Compile_Source_Processing_Order_v0_1_MEDIANv0_5_0.json` | `eaf7ad4711b9f29d173415e44a6c98a32f3958c0c8bcfcf66f40b32c6a6bba23` | Approved source order and source-specific conformance gate |
-| `m050/extraction/control/M050_Source_Atomization_Pilot_Calibration_Protocol_v0_1_MEDIANv0_5_0.md` | `34d59f71b8adefd57090aa51903f3ff756614eb1ea5d218027142de6f02da7d0` | Identity/pilot/full-source lifecycle |
-
-Authorial Grammar has no Gate 3 legacy-reuse entry, accepted legacy candidate, or legacy acceptance report. It must not be represented through the legacy identity-card schema, whose required candidate and reuse bindings do not exist for this source.
+The active extraction configuration binds this exact card, its approval receipt,
+the Authorial Grammar block manifest, and the Gate 2 disposition by hash. Root
+`AGENTS.md` governs lifecycle and mandate; the canonical compile state and source
+processing order govern mutable status and sequence. This card intentionally
+does not duplicate their changing values.
 
 ## 3. Reason for existence and content role
 
@@ -160,27 +157,19 @@ No embedded image, figure, audio, video, or external media asset appears in the 
 - The source's self-recorded convention ledger and change record are not substitutes for the mandatory post-extraction Human Rulings conformance gate.
 - Repository history proves inclusion from the reorganization commit onward; it does not establish complete pre-repository genealogy.
 
-## 11. Review questions requiring author disposition
+## 11. Approval resolution
 
-1. Does this card correctly limit the source to `evidence_authorial_rule` while treating MSID validity, game mechanics, operator meaning, and final publication implementation as externally owned?
-2. Is the whole `# Change Record` region excluded as document history, with no exception needed for any item duplicated there?
-3. Is mechanics-teaching Narrative italics the only currently provisional convention in the source?
-4. Should the Phonebook plate reference remain `publication_only`, with only its derived/non-independent rule eligible as authorial evidence?
-5. Are examples, checklists, tables, lint patterns, and template fragments correctly classified as supporting or operational authorial evidence rather than independent mechanics or ontology?
-6. Are there any missing predecessors, authoring discussions, or provenance carriers that should be bound before approval?
-7. Does Asa approve the section-level candidate-owner boundaries and the later post-extraction Human Rulings conformance gate stated here?
+Asa Wember approved the source identity and section-level ownership boundaries.
+The allowed stream remains `evidence_authorial_rule`; the Change Record remains
+excluded; provisional, prospective, example, table, lint, and publication-only
+material retain the qualifications stated above. Post-extraction conformance
+against applicable Human Rulings authorial evidence remains mandatory before
+source-bounded candidate acceptance.
 
 ## 12. Current transition boundary
 
-This artifact is a draft only. It does not authorize:
-
-- transition to `identity_card_approved`;
-- offline parsing, block-manifest production, chunk planning, prompt development, fake-response testing, or pilot selection;
-- provider/model calls, retries, or spending;
-- Google Sheets interaction;
-- source atomization or full-source execution;
-- Layer E semantic review or acceptance;
-- mapping, reconciliation, canonization, or compiled prose; or
-- work on the next source.
-
-The next permitted transition is author review of this exact draft. Review corrections return a superseding draft. Approval must be explicit and must bind the approved artifact hash before offline dry-run work can begin. Pilot and full-source authority remain separate later decisions.
+This approved artifact settles source identity only. It does not itself authorize
+source work, provider/model calls, retries, spending, Google Sheets interaction,
+Layer E semantic review or acceptance, mapping, reconciliation, canonization,
+compiled prose, or work on another source. Those permissions remain governed by
+the root contract and canonical compile state.

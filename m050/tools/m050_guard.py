@@ -25,9 +25,6 @@ FROZEN = ROOT / "m050/extraction/control/M050_Frozen_Corpus_Manifest_v0_1_MEDIAN
 GATE_2 = ROOT / "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml"
 MATRIX = ROOT / "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json"
 ORDER = ROOT / "m050/extraction/control/M050_Compile_Source_Processing_Order_v0_1_MEDIANv0_5_0.json"
-MIGRATION_RECEIPT = ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Layer_E_Legacy_Migration_Receipt_v0_1_MEDIANv0_5_0.json"
-ARCHIVE_RETIREMENT_RECEIPT = ROOT / "m050/extraction/audit/M050_Extraction_Gate_5_Archive_Retirement_Receipt_v0_1_MEDIANv0_5_0.json"
-RELOCATION_MANIFEST = ROOT / "m050/extraction/evidence/legacy/M050_Legacy_Evidence_Relocation_Manifest_v0_1_MEDIANv0_5_0.json"
 CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
 PROMPT = ROOT / "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Extraction_Prompt_v0_5_MEDIANv0_5_0.md"
 FREEZE = ROOT / "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Target_Coverage_C0003_Pilot_Freeze_Proposal_v0_11_MEDIANv0_5_0.json"
@@ -40,6 +37,24 @@ PILOT_PACKET = PACKET_DIR / "M050_Authorial_Grammar_Target_Coverage_C0003_Call_P
 CHUNK_PLAN = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Section_Aware_Chunk_Plan_v0_3_MEDIANv0_5_0.json"
 ENGINE_MODULE = ROOT / "m050/extraction/engine/src/median_gate5/extraction_machine.py"
 ENGINE_TESTS = ROOT / "m050/extraction/engine/tests/test_extraction_machine.py"
+HUMAN_EVIDENCE = ROOT / "m050/extraction/evidence/human-rulings"
+
+LIVE_EXTRACTION_DIRS = {
+    "accepted",
+    "audit",
+    "calibration",
+    "control",
+    "engine",
+    "evidence",
+    "runs",
+}
+PROCESS_MARKDOWN = {
+    "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Extraction_Prompt_v0_5_MEDIANv0_5_0.md",
+    "m050/extraction/control/source-identities/README.md",
+    "m050/extraction/control/source-identities/cards/M050_Authorial_Grammar_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "m050/extraction/engine/README.md",
+    "m050/extraction/evidence/human-rulings/source/M050_Human_Rulings_Ledger_Pre_Reference_Rewrite_v0_4_MEDIANv0_5_0.md",
+}
 
 CORPUS = {
     "registered_sources": 24,
@@ -51,6 +66,7 @@ CORPUS = {
     "outstanding_later_or_conditional_sources": 4,
 }
 IGNORED_NAMES = {".DS_Store"}
+IGNORED_RUNTIME_DIRS = {"__pycache__", ".pytest_cache", "build", "median_gate5.egg-info"}
 RETIRED_PATTERNS = (
     "m050/extraction/control/M050_Active_Control_Index_v0_*_MEDIANv0_5_0.json",
     "m050/extraction/control/M050_Current_State_Checkpoint_v0_*_MEDIANv0_5_0.json",
@@ -59,6 +75,7 @@ RETIRED_PATTERNS = (
     "m050/extraction/control/M050_Compile_Execution_Standard_v0_*_MEDIANv0_5_0.md",
     "m050/extraction/control/M050_Repository_Write_Authority_and_Freeze_Policy_v0_1_MEDIANv0_5_0.md",
     "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.md",
+    "m050/extraction/control/M050_Source_Atomization_Pilot_Calibration_Protocol_v0_*_MEDIANv0_5_0.md",
     "m050/tools/m050_guard_v0_*.py",
 )
 
@@ -93,6 +110,10 @@ def relative_files(roots: Iterable[str]) -> set[str]:
             if item.is_file() and item.name not in IGNORED_NAMES:
                 found.add(item.relative_to(ROOT).as_posix())
     return found
+
+
+def is_live_file(path: Path) -> bool:
+    return path.name not in IGNORED_NAMES and not (set(path.parts) & IGNORED_RUNTIME_DIRS)
 
 
 def gate2_registered_sources() -> dict[str, tuple[str, str]]:
@@ -151,143 +172,92 @@ def validate_frozen_corpus(errors: list[str]) -> tuple[int, int]:
     return len(expected), len(immutable)
 
 
-def validate_archive_retirement(errors: list[str]) -> int:
+def validate_live_topology(errors: list[str]) -> None:
+    extraction = ROOT / "m050/extraction"
+    active_dirs = {
+        item.relative_to(extraction).parts[0]
+        for item in extraction.rglob("*")
+        if item.is_file() and is_live_file(item)
+    }
+    if active_dirs != LIVE_EXTRACTION_DIRS:
+        errors.append(
+            "live extraction topology drifted: "
+            f"expected {sorted(LIVE_EXTRACTION_DIRS)}, found {sorted(active_dirs)}"
+        )
+    markdown = {
+        item.relative_to(ROOT).as_posix()
+        for item in extraction.rglob("*.md")
+        if item.is_file() and is_live_file(item)
+    }
+    if markdown != PROCESS_MARKDOWN:
+        errors.append("process-facing Markdown allowlist drifted")
     if (ROOT / "m050/archive").exists():
         errors.append("retired m050/archive directory has returned")
-    frozen = read_json(FROZEN, errors)
-    manifest = read_json(RELOCATION_MANIFEST, errors)
-    receipt = read_json(ARCHIVE_RETIREMENT_RECEIPT, errors)
-    if manifest.get("status") != "ACTIVE_ARCHIVE_RETIRED":
-        errors.append("legacy-evidence relocation manifest is not active")
-    retired = manifest.get("retired_archive_snapshot", {})
-    expected = frozen.get("archive_snapshot", {})
-    for key in (
-        "root",
-        "file_count_excluding_ds_store",
-        "total_bytes",
-        "ordered_path_and_sha256_digest",
-    ):
-        if retired.get(key) != expected.get(key):
-            errors.append(f"retired archive snapshot drifted: {key}")
-    original_paths: set[str] = set()
-    relocated_paths: set[str] = set()
-    for item in manifest.get("relocations", []):
-        original = item.get("original_path")
-        relocated = item.get("relocated_path")
-        if not isinstance(original, str) or not original.startswith("m050/archive/"):
-            errors.append(f"invalid retired archive identifier: {original}")
-            continue
-        if not isinstance(relocated, str) or not relocated.startswith("m050/extraction/evidence/legacy/"):
-            errors.append(f"invalid relocated evidence path: {relocated}")
-            continue
-        if original in original_paths or relocated in relocated_paths:
-            errors.append("duplicate legacy-evidence relocation")
-            continue
-        original_paths.add(original)
-        relocated_paths.add(relocated)
-        target = ROOT / relocated
-        if not target.is_file() or sha256_file(target) != item.get("sha256"):
-            errors.append(f"relocated legacy evidence drifted: {relocated}")
-    if len(original_paths) != 12 or len(relocated_paths) != 12:
-        errors.append("legacy-evidence relocation coverage is not 12 files")
-    if receipt.get("status") != "ARCHIVE_RETIRED_EVIDENCE_RELOCATED":
-        errors.append("archive-retirement receipt status drifted")
-    if receipt.get("authority") != "Asa Wember":
-        errors.append("archive-retirement receipt lacks author authority")
-    if receipt.get("bindings", {}).get("relocation_manifest", {}).get("sha256") != sha256_file(
-        RELOCATION_MANIFEST
-    ):
-        errors.append("archive-retirement relocation binding drifted")
-    verification = receipt.get("verification", {})
-    if (
-        verification.get("relocated_evidence_files") != 12
-        or verification.get("relocated_evidence_hash_mismatches") != 0
-        or verification.get("retired_archive_present") is not False
-    ):
-        errors.append("archive-retirement verification boundary drifted")
-    return len(relocated_paths)
 
 
-def validate_legacy_evidence(errors: list[str]) -> int:
-    receipt = read_json(MIGRATION_RECEIPT, errors)
-    if receipt.get("status") != "LAYER_E_LEGACY_MIGRATION_CANDIDATES_COMPLETE":
-        errors.append("legacy migration receipt status drifted")
-    if receipt.get("provider_call_authorized") is not False:
-        errors.append("legacy migration receipt permits provider calls")
-    if receipt.get("external_model_calls") != 0 or receipt.get("accounted_cost_cents") != 0:
-        errors.append("legacy migration receipt cost boundary drifted")
-
-    artifacts = receipt.get("artifacts", {})
-    required = (
-        "migration_candidates",
-        "compound_review_inventory",
-        "transition_control",
-        "migration_report",
-        "crossing_block_ledger",
-        "human_rulings_block_ledger",
-        "msid_block_ledger",
-        "pa_block_ledger",
-        "human_readable_report",
-    )
-    resolved: dict[str, Path] = {}
-    for name in required:
-        binding = artifacts.get(name, {})
-        target = ROOT / binding.get("path", "")
-        resolved[name] = target
-        if not target.is_file() or sha256_file(target) != binding.get("sha256"):
-            errors.append(f"legacy evidence artifact drifted: {name}")
-    if any(not target.is_file() for target in resolved.values()):
-        return 0
-
-    try:
-        candidates = [
-            json.loads(line)
-            for line in resolved["migration_candidates"].read_text(encoding="utf-8").splitlines()
-            if line.strip()
-        ]
-        inventory = [
-            json.loads(line)
-            for line in resolved["compound_review_inventory"].read_text(encoding="utf-8").splitlines()
-            if line.strip()
-        ]
-        transition = json.loads(resolved["transition_control"].read_text(encoding="utf-8"))
-        report = json.loads(resolved["migration_report"].read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        errors.append(f"legacy evidence JSON invalid: {exc}")
-        return 0
-
-    ids = [item.get("legacy_record_id") for item in candidates]
-    if len(candidates) != 913 or len(set(ids)) != 913 or any(not isinstance(item, str) for item in ids):
-        errors.append("legacy migration candidate coverage is not 913 unique records")
-    for candidate in candidates:
-        if (
-            candidate.get("state") != "mechanically_valid"
-            or candidate.get("acceptance_state") != "not_accepted"
-            or candidate.get("review_state") != "pending"
-            or candidate.get("mapping_state") != "not_started"
-            or candidate.get("reconciliation_state") != "not_started"
-        ):
-            errors.append(f"legacy candidate crossed its dormant boundary: {candidate.get('legacy_record_id')}")
-            break
-    inventory_ids = [item.get("legacy_record_id") for item in inventory]
-    if len(inventory) != 139 or len(set(inventory_ids)) != 139:
-        errors.append("legacy compound review inventory drifted")
-    if (
-        transition.get("permitted_next_state") != "semantic_review_pending"
-        or transition.get("direct_acceptance_from_mechanically_valid_prohibited") is not True
-        or transition.get("mapping_authorized") is not False
-        or transition.get("reconciliation_authorized") is not False
-        or transition.get("compilation_authorized") is not False
-    ):
-        errors.append("legacy transition boundary drifted")
+def validate_human_evidence(errors: list[str]) -> None:
+    reconstruction = HUMAN_EVIDENCE / "reconstruction"
+    report_path = reconstruction / "M050_Human_Rulings_Reconstruction_Report_v0_1_MEDIANv0_5_0.json"
+    report = read_json(report_path, errors)
+    expected = {
+        "coordinate_ledger": reconstruction / "M050_Human_Rulings_Legacy_Atom_Coordinate_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+        "reference_rewrite_map": reconstruction / "M050_Human_Rulings_Active_to_Legacy_Reference_Rewrite_Map_v0_1_MEDIANv0_5_0.json",
+        "registry": reconstruction / "M050_Human_Rulings_Section_and_Field_Registry_v0_1_MEDIANv0_5_0.json",
+    }
     if (
         report.get("passed") is not True
-        or report.get("migration_candidate_count") != 913
-        or report.get("accepted_evidence_records") != 0
-        or report.get("semantic_reviews_performed") != 0
+        or report.get("legacy_record_count") != 173
+        or report.get("ruling_count") != 41
+        or report.get("complete_ruling_coverage") is not True
     ):
-        errors.append("legacy migration report drifted")
-    return len(set(ids))
+        errors.append("Human Rulings reconstruction boundary drifted")
+    for name, target in expected.items():
+        binding = report.get(name, {})
+        if (
+            binding.get("path") != target.relative_to(ROOT).as_posix()
+            or not target.is_file()
+            or binding.get("sha256") != sha256_file(target)
+        ):
+            errors.append(f"Human Rulings reconstruction binding drifted: {name}")
+
+
+def validate_accepted_authorial_chunks(errors: list[str]) -> None:
+    boundaries = (
+        (
+            "C0001",
+            ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Outcome_v0_4_MEDIANv0_5_0.json",
+            ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_Source_Run_Ledger_v0_4_MEDIANv0_5_0.jsonl",
+        ),
+        (
+            "C0002",
+            ROOT / "m050/extraction/runs/authorial-grammar-structural-pilot/M050_Authorial_Grammar_Structural_C0002_Outcome_v0_8_MEDIANv0_5_0.json",
+            ROOT / "m050/extraction/runs/authorial-grammar-structural-pilot/M050_Authorial_Grammar_Structural_Pilot_Run_Ledger_v0_8_MEDIANv0_5_0.jsonl",
+        ),
+    )
+    for chunk_id, outcome_path, ledger_path in boundaries:
+        outcome = read_json(outcome_path, errors)
+        if (
+            outcome.get("chunk_id") != chunk_id
+            or outcome.get("mechanical_validation", {}).get("passed") is not True
+        ):
+            errors.append(f"accepted Authorial Grammar outcome drifted: {chunk_id}")
+            continue
+        try:
+            events = [
+                json.loads(line)
+                for line in ledger_path.read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"accepted Authorial Grammar ledger invalid: {chunk_id}: {exc}")
+            continue
+        matching = [
+            event
+            for event in events
+            if event.get("chunk_id") == chunk_id and event.get("state") == "review_passed"
+        ]
+        if len(matching) != 1 or matching[0].get("outcome_sha256") != sha256_file(outcome_path):
+            errors.append(f"accepted Authorial Grammar review binding drifted: {chunk_id}")
 
 
 def validate_source_registry(errors: list[str]) -> None:
@@ -343,7 +313,16 @@ def validate_timestamp(state: dict, errors: list[str]) -> None:
         errors.append("human STATUS timestamp disagrees with canonical ISO timestamp")
 
 
-def validate_current_boundary(errors: list[str]) -> None:
+def validate_atomic_extraction_profile(errors: list[str]) -> None:
+    contract = AGENTS.read_text(encoding="utf-8")
+    for phrase in (
+        "Active phase profile — atomic extraction",
+        "Starting the next source always",
+        "A normal compile operation has no process delta",
+        "canonical source processing order is a required cold-start",
+    ):
+        if phrase not in contract:
+            errors.append(f"atomic-extraction profile omits required control: {phrase}")
     state = read_json(STATE, errors)
     config = read_json(CONFIG, errors)
     freeze = read_json(FREEZE, errors)
@@ -441,8 +420,8 @@ def validate_current_boundary(errors: list[str]) -> None:
         errors.append("rejected-pilot ledger drifted")
 
     packets = sorted(PACKET_DIR.glob("*_Call_Packet_v0_11_MEDIANv0_5_0.json"))
-    if len(packets) != 13:
-        errors.append("target-coverage packet count drifted")
+    if packets != [PILOT_PACKET]:
+        errors.append("only the frozen C0003 target-coverage packet may be stored")
     for packet_path in packets:
         packet = read_json(packet_path, errors)
         if packet.get("configuration_sha256") != sha256_file(CONFIG):
@@ -458,6 +437,20 @@ def validate_current_boundary(errors: list[str]) -> None:
         or replays.get("rejected_c0003", {}).get("missing_target_count") != 2
     ):
         errors.append("target-coverage compatibility replay drifted")
+    replay_paths = {
+        "accepted_c0001": ROOT / "m050/extraction/audit/replays/M050_Authorial_Grammar_C0001_Target_Coverage_Replay_v0_3_MEDIANv0_5_0.json",
+        "accepted_c0002": ROOT / "m050/extraction/audit/replays/M050_Authorial_Grammar_C0002_Target_Coverage_Replay_v0_3_MEDIANv0_5_0.json",
+        "rejected_c0003": ROOT / "m050/extraction/audit/replays/M050_Authorial_Grammar_C0003_Target_Coverage_Replay_v0_3_MEDIANv0_5_0.json",
+    }
+    for name, target in replay_paths.items():
+        if not target.is_file() or replays.get(name, {}).get("sha256") != sha256_file(target):
+            errors.append(f"target-coverage replay binding drifted: {name}")
+    if (
+        freeze.get("offline_verification", {}).get("offline_tests_passed") != 47
+        or compatibility.get("offline_verification", {}).get("offline_tests_passed") != 47
+        or calibration.get("offline_tests_passed") != 47
+    ):
+        errors.append("focused extraction test-count binding drifted")
 
     state_spend = state.get("spend", {})
     if (
@@ -481,6 +474,17 @@ def validate_current_boundary(errors: list[str]) -> None:
         errors.append("STATUS does not exactly mirror canonical compile state")
 
 
+def validate_active_phase(errors: list[str]) -> None:
+    """Single replaceable phase-specific validation seam."""
+    state = read_json(STATE, errors)
+    if state.get("dashboard", {}).get("phase") != "Atomic extraction — source calibration":
+        errors.append("canonical state does not name the active atomic-extraction profile")
+        return
+    validate_human_evidence(errors)
+    validate_accepted_authorial_chunks(errors)
+    validate_atomic_extraction_profile(errors)
+
+
 def validate_operating_contract(errors: list[str]) -> None:
     if OVERRIDE.exists() or OVERRIDE.is_symlink():
         errors.append("AGENTS.override.md exists")
@@ -491,8 +495,11 @@ def validate_operating_contract(errors: list[str]) -> None:
         "Conservation of Mandate",
         "M050_Compile_State_MEDIANv0_5_0.json",
         "m050/tools/m050_guard.py",
-        "Starting the next source always",
-        "A normal compile operation has no process delta",
+        "works in discussion with Asa",
+        "executes one explicitly authorized phase and source",
+        "must halt and submit a concise human",
+        "Only one role writes the repository at a time",
+        "Exactly one replaceable active",
     ):
         if phrase not in text:
             errors.append(f"AGENTS omits required control: {phrase}")
@@ -505,12 +512,16 @@ def validate_json_integrity(errors: list[str]) -> tuple[int, int]:
     json_count = 0
     jsonl_count = 0
     for target in (ROOT / "m050/extraction").rglob("*.json"):
+        if not is_live_file(target):
+            continue
         try:
             json.loads(target.read_text(encoding="utf-8"))
             json_count += 1
         except (OSError, json.JSONDecodeError) as exc:
             errors.append(f"invalid JSON {target.relative_to(ROOT)}: {exc}")
     for target in (ROOT / "m050/extraction").rglob("*.jsonl"):
+        if not is_live_file(target):
+            continue
         try:
             for line in target.read_text(encoding="utf-8").splitlines():
                 if line.strip():
@@ -552,11 +563,10 @@ def main() -> int:
 
     errors: list[str] = []
     frozen_count, immutable_count = validate_frozen_corpus(errors)
-    relocated_count = validate_archive_retirement(errors)
-    legacy_count = validate_legacy_evidence(errors)
+    validate_live_topology(errors)
     validate_source_registry(errors)
     validate_operating_contract(errors)
-    validate_current_boundary(errors)
+    validate_active_phase(errors)
     json_count, jsonl_count = validate_json_integrity(errors)
     validate_work_order(args.work_order, errors)
     if args.with_tests and run_tests():
@@ -571,8 +581,8 @@ def main() -> int:
     print("M050 COMPILE GUARD: PASS")
     print("- corpus: 24 / 22 / 4 / 18 = 14 + 4")
     print(f"- frozen files: {frozen_count}; immutable accepted artifacts: {immutable_count}")
-    print(f"- retired archive absent; compact relocated evidence: {relocated_count}/12")
-    print(f"- preserved dormant legacy candidates: {legacy_count}/913")
+    print("- live extraction topology: 7 directories; retired process families absent")
+    print("- Human Rulings evidence: 173 reconstructed records across 41 rulings")
     print("- Authorial Grammar C0001/C0002 accepted; C0003 frozen and unauthorized")
     print("- spend: $0.475963 exact; $1.524037 remaining; $0.48 display")
     print(f"- JSON integrity: {json_count} JSON files and {jsonl_count} JSONL files")

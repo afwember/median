@@ -5,28 +5,13 @@ import json
 from pathlib import Path
 import sys
 
-import yaml
-
-from .bundles import build_reconciliation_bundles, orphaned_mapped_evidence
-from .canonical import content_id, sha256_file, write_new_bytes, write_new_json
+from .canonical import content_id, sha256_file, write_new_json
 from .errors import ContractError, Gate5Error
-from .identity import identity_card_errors, transition_identity_card
-from .legacy import build_legacy_replay
-from .migration import build_layer_e_legacy_migration
-from .review_planning import build_legacy_semantic_review_plan
-from .rulings import build_human_rulings_reconstruction
-from .repairs import (
-    build_compound_dispositions,
-    build_occurrence_resolution,
-    build_repair_closure,
-)
 from .runtime import runtime_errors, runtime_report
 from .schema import validate_artifact
 from .scope import require_input_paths, require_new_output_path
-from .states import transition_receipt
 from .structure import Block, parse_markdown, plan_chunks
 from .validation import validate_atoms, validate_block_dispositions
-from .workorders import verify_work_order
 
 
 def _preflight(args: argparse.Namespace) -> int:
@@ -52,143 +37,6 @@ def _read_json(path: Path) -> dict:
     return value
 
 
-def _read_yaml(path: Path) -> dict:
-    value = yaml.safe_load(path.read_text(encoding="utf-8"))
-    if not isinstance(value, dict):
-        raise ContractError(f"YAML root must be an object: {path}")
-    return value
-
-
-def _profile(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    supplied = {
-        "card": Path(args.card),
-        "block_manifest": Path(args.block_manifest),
-        "frozen_manifest": Path(args.frozen_manifest),
-        "source_disposition": Path(args.source_disposition),
-        "reuse_disposition": Path(args.reuse_disposition),
-    }
-    require_input_paths(
-        repo_root,
-        supplied.values(),
-        [Path("m050/extraction/control"), Path("m050/extraction/audit")],
-    )
-    resolved = {
-        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
-        for key, path in supplied.items()
-    }
-    card = _read_json(resolved["card"])
-    block_manifest = _read_json(resolved["block_manifest"])
-    frozen_manifest = _read_json(resolved["frozen_manifest"])
-    source_disposition = _read_yaml(resolved["source_disposition"])
-    reuse_disposition = _read_yaml(resolved["reuse_disposition"])
-    errors = identity_card_errors(
-        repo_root,
-        card,
-        block_manifest,
-        frozen_manifest,
-        source_disposition,
-        reuse_disposition,
-    )
-    report = {
-        "schema_version": "M050-IDENTITY-CARD-VALIDATION-0.1",
-        "card_id": card["card_id"],
-        "source_id": card["source_id"],
-        "passed": not errors,
-        "errors": errors,
-    }
-    if args.output:
-        output = require_new_output_path(repo_root, Path(args.output))
-        write_new_json(output, report)
-    else:
-        print(json.dumps(report, indent=2, sort_keys=True))
-    return 0 if not errors else 1
-
-
-def _profile_transition(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    supplied = {
-        "card": Path(args.card),
-        "block_manifest": Path(args.block_manifest),
-        "frozen_manifest": Path(args.frozen_manifest),
-        "source_disposition": Path(args.source_disposition),
-        "reuse_disposition": Path(args.reuse_disposition),
-    }
-    if args.predecessor_receipt:
-        supplied["predecessor_receipt"] = Path(args.predecessor_receipt)
-    require_input_paths(
-        repo_root,
-        supplied.values(),
-        [Path("m050/extraction/control"), Path("m050/extraction/audit")],
-    )
-    resolved = {
-        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
-        for key, path in supplied.items()
-    }
-    card = _read_json(resolved["card"])
-    block_manifest = _read_json(resolved["block_manifest"])
-    frozen_manifest = _read_json(resolved["frozen_manifest"])
-    source_disposition = _read_yaml(resolved["source_disposition"])
-    reuse_disposition = _read_yaml(resolved["reuse_disposition"])
-    errors = identity_card_errors(
-        repo_root,
-        card,
-        block_manifest,
-        frozen_manifest,
-        source_disposition,
-        reuse_disposition,
-    )
-    if errors:
-        raise ContractError("identity card failed pre-transition validation: " + "; ".join(errors))
-    transitioned = transition_identity_card(card, args.new_status)
-    transitioned_errors = identity_card_errors(
-        repo_root,
-        transitioned,
-        block_manifest,
-        frozen_manifest,
-        source_disposition,
-        reuse_disposition,
-    )
-    if transitioned_errors:
-        raise ContractError(
-            "transitioned identity card failed validation: " + "; ".join(transitioned_errors)
-        )
-    predecessor_hash = (
-        sha256_file(resolved["predecessor_receipt"])
-        if "predecessor_receipt" in resolved
-        else None
-    )
-    receipt = transition_receipt(
-        machine="identity_card",
-        artifact_id=transitioned["card_id"],
-        prior_state=card["status"],
-        new_state=transitioned["status"],
-        authority=args.authority,
-        reason=args.reason,
-        tool_version="median-gate5-0.1.0",
-        predecessor_receipt_hash=predecessor_hash,
-        timestamp=args.timestamp,
-    )
-    validate_artifact("transition_receipt", receipt)
-    card_output = require_new_output_path(repo_root, Path(args.output_card))
-    receipt_output = require_new_output_path(repo_root, Path(args.output_receipt))
-    write_new_json(card_output, transitioned)
-    write_new_json(receipt_output, receipt)
-    print(
-        json.dumps(
-            {
-                "card_id": transitioned["card_id"],
-                "receipt_id": receipt["receipt_id"],
-                "status": transitioned["status"],
-                "source_id": transitioned["source_id"],
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0
-
-
 def _block(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root).resolve()
     source_path = Path(args.source_path)
@@ -198,8 +46,7 @@ def _block(args: argparse.Namespace) -> int:
         [Path("m050/docs/baseline"), Path("m050/docs/v0.5")],
     )
     resolved = (repo_root / source_path).resolve()
-    raw = resolved.read_text(encoding="utf-8", errors="strict")
-    blocks = parse_markdown(args.source_id, raw)
+    blocks = parse_markdown(args.source_id, resolved.read_text(encoding="utf-8", errors="strict"))
     body = {
         "source_id": args.source_id,
         "source_sha256": sha256_file(resolved),
@@ -212,8 +59,7 @@ def _block(args: argparse.Namespace) -> int:
         **body,
     }
     validate_artifact("block_manifest", artifact)
-    output = require_new_output_path(repo_root, Path(args.output))
-    write_new_json(output, artifact)
+    write_new_json(require_new_output_path(repo_root, Path(args.output)), artifact)
     return 0
 
 
@@ -243,23 +89,7 @@ def _plan(args: argparse.Namespace) -> int:
         **body,
     }
     validate_artifact("chunk_plan", artifact)
-    output = require_new_output_path(repo_root, Path(args.output))
-    write_new_json(output, artifact)
-    return 0
-
-
-def _verify_work_order(args: argparse.Namespace) -> int:
-    work_order = _read_json(Path(args.work_order))
-    report = verify_work_order(Path(args.repo_root).resolve(), work_order)
-    report.update(
-        schema_version="M050-WORK-ORDER-VERIFICATION-0.1",
-        work_order_id=work_order["work_order_id"],
-    )
-    if args.output:
-        output = require_new_output_path(Path(args.repo_root), Path(args.output))
-        write_new_json(output, report)
-    else:
-        print(json.dumps(report, indent=2, sort_keys=True))
+    write_new_json(require_new_output_path(repo_root, Path(args.output)), artifact)
     return 0
 
 
@@ -271,22 +101,15 @@ def _validate_proposal(args: argparse.Namespace) -> int:
     validate_artifact("proposal", proposal)
     if block_manifest["source_id"] != proposal["source_id"]:
         raise ContractError("proposal and block manifest source IDs differ")
-    dispositions = validate_block_dispositions(
-        block_manifest["blocks"], proposal["dispositions"]
-    )
-    atoms = validate_atoms(
-        proposal["source_id"], block_manifest["blocks"], proposal["dispositions"]
-    )
+    dispositions = validate_block_dispositions(block_manifest["blocks"], proposal["dispositions"])
+    atoms = validate_atoms(proposal["source_id"], block_manifest["blocks"], proposal["dispositions"])
     body = {
         "proposal_set_id": proposal["proposal_set_id"],
         "validator_version": "0.1.0",
         "passed": dispositions["passed"] and atoms["passed"],
         "checks": {"block_dispositions": dispositions, "atoms": atoms},
         "normalization_events": [
-            {
-                "proposal_id": result["proposal_id"],
-                "events": result["normalization_events"],
-            }
+            {"proposal_id": result["proposal_id"], "events": result["normalization_events"]}
             for result in atoms["atom_results"]
             if result["normalization_events"]
         ],
@@ -301,411 +124,18 @@ def _validate_proposal(args: argparse.Namespace) -> int:
         **body,
     }
     validate_artifact("validation_report", report)
-    output = require_new_output_path(repo_root, Path(args.output))
-    write_new_json(output, report)
+    write_new_json(require_new_output_path(repo_root, Path(args.output)), report)
     return 0 if report["passed"] else 1
-
-
-def _replay_legacy(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    supplied = [Path(args.card), Path(args.block_manifest)]
-    require_input_paths(
-        repo_root,
-        supplied,
-        [Path("m050/extraction/control")],
-    )
-    card_path = (repo_root / supplied[0]).resolve() if not supplied[0].is_absolute() else supplied[0].resolve()
-    block_path = (repo_root / supplied[1]).resolve() if not supplied[1].is_absolute() else supplied[1].resolve()
-    ledger_output = require_new_output_path(repo_root, Path(args.output_ledger))
-    report_output = require_new_output_path(repo_root, Path(args.output_report))
-    if ledger_output == report_output:
-        raise ContractError("legacy replay ledger and report outputs must differ")
-    card = _read_json(card_path)
-    block_manifest = _read_json(block_path)
-    ledger_bytes, report = build_legacy_replay(
-        repo_root=repo_root,
-        card=card,
-        card_path=card_path,
-        block_manifest=block_manifest,
-        block_manifest_path=block_path,
-        ledger_relative_path=str(ledger_output.relative_to(repo_root)),
-    )
-    write_new_bytes(ledger_output, ledger_bytes)
-    write_new_json(report_output, report)
-    print(
-        json.dumps(
-            {
-                "source_id": report["source_id"],
-                "replay_id": report["replay_id"],
-                "passed": report["passed"],
-                "migration_ready": report["migration_ready"],
-                "records": report["record_count"],
-                "review_queue": len(report["review_queue_ids"]),
-                "grounding_failures": len(report["grounding_failure_ids"]),
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0 if report["passed"] else 1
-
-
-def _reconstruct_human_rulings(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    supplied = {
-        "card": Path(args.card),
-        "replay_ledger": Path(args.replay_ledger),
-        "replay_report": Path(args.replay_report),
-        "migration_receipt": Path(args.migration_receipt),
-    }
-    require_input_paths(
-        repo_root,
-        supplied.values(),
-        [
-            Path("m050/extraction/control"),
-            Path("m050/extraction/replay"),
-            Path("m050/extraction/evidence/legacy"),
-        ],
-    )
-    resolved = {
-        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
-        for key, path in supplied.items()
-    }
-    outputs = {
-        "registry": require_new_output_path(repo_root, Path(args.output_registry)),
-        "coordinate_ledger": require_new_output_path(repo_root, Path(args.output_coordinate_ledger)),
-        "rewrite_map": require_new_output_path(repo_root, Path(args.output_rewrite_map)),
-        "report": require_new_output_path(repo_root, Path(args.output_report)),
-    }
-    if len(set(outputs.values())) != len(outputs):
-        raise ContractError("Human Rulings reconstruction outputs must be distinct")
-    card = _read_json(resolved["card"])
-    replay_report = _read_json(resolved["replay_report"])
-    registry, coordinate_bytes, rewrite_map, report = build_human_rulings_reconstruction(
-        repo_root=repo_root,
-        card=card,
-        card_path=resolved["card"],
-        replay_ledger_path=resolved["replay_ledger"],
-        replay_report=replay_report,
-        replay_report_path=resolved["replay_report"],
-        migration_receipt_path=resolved["migration_receipt"],
-        registry_relative_path=str(outputs["registry"].relative_to(repo_root)),
-        coordinate_ledger_relative_path=str(outputs["coordinate_ledger"].relative_to(repo_root)),
-        rewrite_map_relative_path=str(outputs["rewrite_map"].relative_to(repo_root)),
-    )
-    write_new_json(outputs["registry"], registry)
-    write_new_bytes(outputs["coordinate_ledger"], coordinate_bytes)
-    write_new_json(outputs["rewrite_map"], rewrite_map)
-    write_new_json(outputs["report"], report)
-    print(
-        json.dumps(
-            {
-                "source_id": report["source_id"],
-                "reconstruction_id": report["reconstruction_id"],
-                "passed": report["passed"],
-                "rulings": report["ruling_count"],
-                "fields": report["field_count"],
-                "legacy_records": report["legacy_record_count"],
-                "reference_rewrites": report["reference_rewrite_count"],
-                "legacy_only_records_resolved": report["legacy_only_record_count"],
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0 if report["passed"] else 1
-
-
-def _dispose_compounds(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    milestone_supplied = Path(args.replay_milestone)
-    require_input_paths(
-        repo_root,
-        [milestone_supplied],
-        [Path("m050/extraction/audit")],
-    )
-    milestone_path = (
-        (repo_root / milestone_supplied).resolve()
-        if not milestone_supplied.is_absolute()
-        else milestone_supplied.resolve()
-    )
-    ledger_output = require_new_output_path(repo_root, Path(args.output_ledger))
-    report_output = require_new_output_path(repo_root, Path(args.output_report))
-    if ledger_output == report_output:
-        raise ContractError("compound disposition ledger and report outputs must differ")
-    ledger_bytes, report = build_compound_dispositions(
-        repo_root=repo_root,
-        replay_milestone=_read_json(milestone_path),
-        replay_milestone_path=milestone_path,
-        ledger_relative_path=str(ledger_output.relative_to(repo_root)),
-    )
-    write_new_bytes(ledger_output, ledger_bytes)
-    write_new_json(report_output, report)
-    print(
-        json.dumps(
-            {
-                "compound_report_id": report["compound_report_id"],
-                "passed": report["passed"],
-                "records": report["record_count"],
-                "preserved_as_indivisible_compounds": report[
-                    "tier_2_semantic_review_required"
-                ],
-                "semantic_reviews_performed": report["semantic_reviews_performed"],
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0 if report["passed"] else 1
-
-
-def _resolve_legacy_occurrence(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    milestone_supplied = Path(args.replay_milestone)
-    require_input_paths(
-        repo_root,
-        [milestone_supplied],
-        [Path("m050/extraction/audit")],
-    )
-    milestone_path = (
-        (repo_root / milestone_supplied).resolve()
-        if not milestone_supplied.is_absolute()
-        else milestone_supplied.resolve()
-    )
-    output = require_new_output_path(repo_root, Path(args.output))
-    resolution = build_occurrence_resolution(
-        repo_root=repo_root,
-        replay_milestone=_read_json(milestone_path),
-        replay_milestone_path=milestone_path,
-    )
-    write_new_json(output, resolution)
-    print(
-        json.dumps(
-            {
-                "occurrence_resolution_id": resolution["occurrence_resolution_id"],
-                "legacy_record_id": resolution["legacy_record_id"],
-                "selected_line": resolution["selected_span"]["start_line"],
-                "selected_block_id": resolution["selected_block_id"],
-                "resolution_disposition": resolution["resolution_disposition"],
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0
-
-
-def _verify_repair_closure(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    supplied = {
-        "replay_milestone": Path(args.replay_milestone),
-        "human_report": Path(args.human_report),
-        "compound_report": Path(args.compound_report),
-        "occurrence_resolution": Path(args.occurrence_resolution),
-    }
-    require_input_paths(
-        repo_root,
-        supplied.values(),
-        [Path("m050/extraction/audit"), Path("m050/extraction/reconstruction"), Path("m050/extraction/repairs")],
-    )
-    resolved = {
-        key: (repo_root / path).resolve() if not path.is_absolute() else path.resolve()
-        for key, path in supplied.items()
-    }
-    output = require_new_output_path(repo_root, Path(args.output))
-    closure = build_repair_closure(
-        repo_root=repo_root,
-        replay_milestone=_read_json(resolved["replay_milestone"]),
-        replay_milestone_path=resolved["replay_milestone"],
-        human_reconstruction_report_path=resolved["human_report"],
-        compound_report_path=resolved["compound_report"],
-        occurrence_resolution_path=resolved["occurrence_resolution"],
-    )
-    write_new_json(output, closure)
-    print(
-        json.dumps(
-            {
-                "repair_closure_id": closure["repair_closure_id"],
-                "passed": closure["passed"],
-                "legacy_records": closure["legacy_record_count"],
-                "raw_replay_queue": closure["raw_replay_queue_count"],
-                "mechanically_dispositioned": closure[
-                    "mechanically_dispositioned_queue_count"
-                ],
-                "unresolved_grounding_or_coordinate_repairs": closure[
-                    "unresolved_grounding_or_coordinate_repairs"
-                ],
-                "byte_identical_replay_ledgers": closure[
-                    "replay_ledgers_byte_identical"
-                ],
-                "byte_identical_replay_reports": closure[
-                    "replay_reports_byte_identical"
-                ],
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0 if closure["passed"] else 1
-
-
-def _bundle(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    mapping_value = json.loads(Path(args.mappings).read_text(encoding="utf-8"))
-    if not isinstance(mapping_value, list):
-        raise ContractError("mapping input root must be an array")
-    aliases = (
-        json.loads(Path(args.aliases).read_text(encoding="utf-8")) if args.aliases else {}
-    )
-    if not isinstance(aliases, dict):
-        raise ContractError("alias input root must be an object")
-    bundles, exceptional = build_reconciliation_bundles(mapping_value, aliases)
-    artifact = {
-        "schema_version": "M050-BUNDLE-BUILD-REPORT-0.1",
-        "bundles": bundles,
-        "exceptional_mappings": exceptional,
-        "orphaned_mapped_evidence": orphaned_mapped_evidence(mapping_value, bundles),
-    }
-    output = require_new_output_path(repo_root, Path(args.output))
-    write_new_json(output, artifact)
-    return 0 if not artifact["orphaned_mapped_evidence"] else 1
-
-
-def _migrate_legacy_layer_e(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    closure_path = (repo_root / args.repair_closure).resolve()
-    output_arguments = {
-        "candidates": args.output_candidates,
-        "compound_inventory": args.output_compound_inventory,
-        "report": args.output_report,
-        "M050-SRC-CROSSING-001": args.output_crossing_block_ledger,
-        "M050-SRC-HUMAN-RULINGS-001": args.output_human_rulings_block_ledger,
-        "M050-SRC-MSID-GRAMMAR-001": args.output_msid_block_ledger,
-        "M050-SRC-PA-001": args.output_pa_block_ledger,
-    }
-    require_input_paths(
-        repo_root,
-        [Path(args.repair_closure)],
-        [Path("m050/extraction/repairs")],
-    )
-    outputs = {
-        key: require_new_output_path(repo_root, Path(value))
-        for key, value in output_arguments.items()
-    }
-    closure = _read_json(closure_path)
-    block_paths = {
-        source_id: str(outputs[source_id].relative_to(repo_root))
-        for source_id in (
-            "M050-SRC-CROSSING-001",
-            "M050-SRC-HUMAN-RULINGS-001",
-            "M050-SRC-MSID-GRAMMAR-001",
-            "M050-SRC-PA-001",
-        )
-    }
-    candidates, compounds, block_ledgers, report = build_layer_e_legacy_migration(
-        repo_root=repo_root,
-        repair_closure=closure,
-        repair_closure_path=closure_path,
-        candidate_relative_path=str(outputs["candidates"].relative_to(repo_root)),
-        compound_relative_path=str(outputs["compound_inventory"].relative_to(repo_root)),
-        block_ledger_relative_paths=block_paths,
-    )
-    write_new_bytes(outputs["candidates"], candidates)
-    write_new_bytes(outputs["compound_inventory"], compounds)
-    for source_id, data in block_ledgers.items():
-        write_new_bytes(outputs[source_id], data)
-    write_new_json(outputs["report"], report)
-    print(
-        json.dumps(
-            {
-                "migration_report_id": report["migration_report_id"],
-                "passed": report["passed"],
-                "migration_candidates": report["migration_candidate_count"],
-                "accepted_evidence_records": report["accepted_evidence_records"],
-                "compound_review_records": report["compound_review_count"],
-                "retrospective_block_ledgers": report["retrospective_block_ledgers"],
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0
-
-
-def _plan_legacy_semantic_review(args: argparse.Namespace) -> int:
-    repo_root = Path(args.repo_root).resolve()
-    receipt_supplied = Path(args.migration_receipt)
-    require_input_paths(
-        repo_root,
-        [receipt_supplied],
-        [Path("m050/extraction/audit")],
-    )
-    receipt_path = (
-        (repo_root / receipt_supplied).resolve()
-        if not receipt_supplied.is_absolute()
-        else receipt_supplied.resolve()
-    )
-    outputs = {
-        "candidate_bundles": require_new_output_path(
-            repo_root, Path(args.output_candidate_bundles)
-        ),
-        "coverage_bundles": require_new_output_path(
-            repo_root, Path(args.output_coverage_bundles)
-        ),
-        "transitions": require_new_output_path(repo_root, Path(args.output_transitions)),
-        "report": require_new_output_path(repo_root, Path(args.output_report)),
-    }
-    if len(set(outputs.values())) != len(outputs):
-        raise ContractError("legacy semantic-review plan outputs must be distinct")
-    candidate_bytes, coverage_bytes, transition_bytes, report = (
-        build_legacy_semantic_review_plan(
-            repo_root=repo_root,
-            migration_receipt_path=receipt_path,
-            candidate_bundle_relative_path=str(outputs["candidate_bundles"].relative_to(repo_root)),
-            coverage_bundle_relative_path=str(outputs["coverage_bundles"].relative_to(repo_root)),
-            transition_relative_path=str(outputs["transitions"].relative_to(repo_root)),
-            effective_date=args.effective_date,
-            tier3_seed=args.tier3_seed,
-        )
-    )
-    write_new_bytes(outputs["candidate_bundles"], candidate_bytes)
-    write_new_bytes(outputs["coverage_bundles"], coverage_bytes)
-    write_new_bytes(outputs["transitions"], transition_bytes)
-    write_new_json(outputs["report"], report)
-    print(
-        json.dumps(
-            {
-                "review_plan_id": report["review_plan_id"],
-                "passed": report["passed"],
-                "candidates": report["candidate_records"],
-                "candidate_bundles": report["candidate_review_bundle_count"],
-                "uncovered_blocks": report["uncovered_blocks"],
-                "coverage_bundles": report["uncovered_block_review_bundle_count"],
-                "semantic_reviews_performed": report["semantic_reviews_performed"],
-                "expected_human_minutes": report["human_effort_projection"]["scenarios"]["expected"]["total_minutes"],
-            },
-            indent=2,
-            sort_keys=True,
-        )
-    )
-    return 0
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="median-gate5")
     subparsers = parser.add_subparsers(dest="command", required=True)
+
     preflight = subparsers.add_parser("preflight", help="verify the local offline runtime")
-    preflight.add_argument(
-        "--credential-path",
-        action="append",
-        default=[],
-        help="check existence and mode only; file contents are never read",
-    )
-    preflight.add_argument(
-        "--lock",
-        help="verify every exact package version recorded in this requirements lock",
-    )
-    preflight.add_argument("--output", help="append the preflight report at this new path")
+    preflight.add_argument("--credential-path", action="append", default=[])
+    preflight.add_argument("--lock")
+    preflight.add_argument("--output")
     preflight.add_argument("--repo-root", default=".")
     preflight.set_defaults(func=_preflight)
 
@@ -716,34 +146,6 @@ def build_parser() -> argparse.ArgumentParser:
     block.add_argument("--output", required=True)
     block.set_defaults(func=_block)
 
-    profile = subparsers.add_parser("profile", help="validate a source identity card")
-    profile.add_argument("--repo-root", default=".")
-    profile.add_argument("--card", required=True)
-    profile.add_argument("--block-manifest", required=True)
-    profile.add_argument("--frozen-manifest", required=True)
-    profile.add_argument("--source-disposition", required=True)
-    profile.add_argument("--reuse-disposition", required=True)
-    profile.add_argument("--output")
-    profile.set_defaults(func=_profile)
-
-    profile_transition = subparsers.add_parser(
-        "profile-transition", help="issue a new identity-card state revision and receipt"
-    )
-    profile_transition.add_argument("--repo-root", default=".")
-    profile_transition.add_argument("--card", required=True)
-    profile_transition.add_argument("--block-manifest", required=True)
-    profile_transition.add_argument("--frozen-manifest", required=True)
-    profile_transition.add_argument("--source-disposition", required=True)
-    profile_transition.add_argument("--reuse-disposition", required=True)
-    profile_transition.add_argument("--new-status", required=True, choices=["reviewed", "approved"])
-    profile_transition.add_argument("--authority", required=True)
-    profile_transition.add_argument("--reason", required=True)
-    profile_transition.add_argument("--timestamp")
-    profile_transition.add_argument("--predecessor-receipt")
-    profile_transition.add_argument("--output-card", required=True)
-    profile_transition.add_argument("--output-receipt", required=True)
-    profile_transition.set_defaults(func=_profile_transition)
-
     plan = subparsers.add_parser("plan", help="create a dual-limit chunk plan")
     plan.add_argument("--repo-root", default=".")
     plan.add_argument("--block-manifest", required=True)
@@ -752,110 +154,12 @@ def build_parser() -> argparse.ArgumentParser:
     plan.add_argument("--output", required=True)
     plan.set_defaults(func=_plan)
 
-    work_order = subparsers.add_parser("verify-work-order")
-    work_order.add_argument("--repo-root", default=".")
-    work_order.add_argument("--work-order", required=True)
-    work_order.add_argument("--output")
-    work_order.set_defaults(func=_verify_work_order)
-
     proposal = subparsers.add_parser("validate-proposal")
     proposal.add_argument("--repo-root", default=".")
     proposal.add_argument("--block-manifest", required=True)
     proposal.add_argument("--proposal", required=True)
     proposal.add_argument("--output", required=True)
     proposal.set_defaults(func=_validate_proposal)
-
-    replay = subparsers.add_parser(
-        "replay-legacy", help="replay one immutable legacy candidate against approved controls"
-    )
-    replay.add_argument("--repo-root", default=".")
-    replay.add_argument("--card", required=True)
-    replay.add_argument("--block-manifest", required=True)
-    replay.add_argument("--output-ledger", required=True)
-    replay.add_argument("--output-report", required=True)
-    replay.set_defaults(func=_replay_legacy)
-
-    reconstruct = subparsers.add_parser(
-        "reconstruct-human-rulings",
-        help="reconstruct the 41 historical rulings and bind all legacy atoms to coordinates",
-    )
-    reconstruct.add_argument("--repo-root", default=".")
-    reconstruct.add_argument("--card", required=True)
-    reconstruct.add_argument("--replay-ledger", required=True)
-    reconstruct.add_argument("--replay-report", required=True)
-    reconstruct.add_argument("--migration-receipt", required=True)
-    reconstruct.add_argument("--output-registry", required=True)
-    reconstruct.add_argument("--output-coordinate-ledger", required=True)
-    reconstruct.add_argument("--output-rewrite-map", required=True)
-    reconstruct.add_argument("--output-report", required=True)
-    reconstruct.set_defaults(func=_reconstruct_human_rulings)
-
-    compounds = subparsers.add_parser(
-        "dispose-cross-block-compounds",
-        help="preserve and disposition all replay quotations crossing block boundaries",
-    )
-    compounds.add_argument("--repo-root", default=".")
-    compounds.add_argument("--replay-milestone", required=True)
-    compounds.add_argument("--output-ledger", required=True)
-    compounds.add_argument("--output-report", required=True)
-    compounds.set_defaults(func=_dispose_compounds)
-
-    occurrence = subparsers.add_parser(
-        "resolve-legacy-occurrence",
-        help="resolve the pinned exact whole-line match for the replay occurrence exception",
-    )
-    occurrence.add_argument("--repo-root", default=".")
-    occurrence.add_argument("--replay-milestone", required=True)
-    occurrence.add_argument("--output", required=True)
-    occurrence.set_defaults(func=_resolve_legacy_occurrence)
-
-    closure = subparsers.add_parser(
-        "verify-repair-closure",
-        help="prove complete repair-overlay coverage and byte-identical legacy replay",
-    )
-    closure.add_argument("--repo-root", default=".")
-    closure.add_argument("--replay-milestone", required=True)
-    closure.add_argument("--human-report", required=True)
-    closure.add_argument("--compound-report", required=True)
-    closure.add_argument("--occurrence-resolution", required=True)
-    closure.add_argument("--output", required=True)
-    closure.set_defaults(func=_verify_repair_closure)
-
-    migrate = subparsers.add_parser(
-        "migrate-legacy-layer-e",
-        help="build 913 mechanically valid, unaccepted Layer E migration candidates",
-    )
-    migrate.add_argument("--repo-root", default=".")
-    migrate.add_argument("--repair-closure", required=True)
-    migrate.add_argument("--output-candidates", required=True)
-    migrate.add_argument("--output-compound-inventory", required=True)
-    migrate.add_argument("--output-crossing-block-ledger", required=True)
-    migrate.add_argument("--output-human-rulings-block-ledger", required=True)
-    migrate.add_argument("--output-msid-block-ledger", required=True)
-    migrate.add_argument("--output-pa-block-ledger", required=True)
-    migrate.add_argument("--output-report", required=True)
-    migrate.set_defaults(func=_migrate_legacy_layer_e)
-
-    review_plan = subparsers.add_parser(
-        "plan-legacy-semantic-review",
-        help="build deterministic review bundles, transition receipts, and human-effort projections",
-    )
-    review_plan.add_argument("--repo-root", default=".")
-    review_plan.add_argument("--migration-receipt", required=True)
-    review_plan.add_argument("--effective-date", required=True)
-    review_plan.add_argument("--tier3-seed", required=True)
-    review_plan.add_argument("--output-candidate-bundles", required=True)
-    review_plan.add_argument("--output-coverage-bundles", required=True)
-    review_plan.add_argument("--output-transitions", required=True)
-    review_plan.add_argument("--output-report", required=True)
-    review_plan.set_defaults(func=_plan_legacy_semantic_review)
-
-    bundle = subparsers.add_parser("bundle")
-    bundle.add_argument("--repo-root", default=".")
-    bundle.add_argument("--mappings", required=True)
-    bundle.add_argument("--aliases")
-    bundle.add_argument("--output", required=True)
-    bundle.set_defaults(func=_bundle)
     return parser
 
 

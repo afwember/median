@@ -14,31 +14,31 @@ Completed legacy extractions are being retained where their source quotations re
 
 Current status:
 
-- Gates 1–4 are complete: process diagnosis, target-process definition, legacy-extraction reuse review, source identity correction, and repository cleanup.
-- Gate 5 is in progress. Its locked Mac Mini runtime, artifact contracts, source-independent offline engine foundation, and regression suite are implemented and verified.
-- The v0.5.0 corpus is frozen by exact path and hash; only Codex changes the repository under explicit author direction.
-- External model extraction remains paused until Gate 5 completes and the author separately approves an exact positive-cost work order.
+- The corpus boundary is `24 / 22 / 4 / 18 = 14 + 4`.
+- Four accepted legacy source candidates are preserved; Authorial Grammar is the first outstanding source.
+- The source-agnostic extraction engine, current configuration, exact provider evidence, and focused tests are active.
+- Later semantic acceptance, mapping, reconciliation, and compiled prose remain blocked until atomization is complete.
 - MEDIAN v0.5.1 material is isolated under `m051/` and excluded from the v0.5.0 compile.
 
 ## Repository map
 
 ```text
 m050/docs/                 Current v0.5.0 sources and the v0.4.6 baseline
-m050/extraction/           Accepted evidence, audits, progress, and compact legacy evidence
-m050/extraction/engine/    Gate 5 schemas, deterministic tooling, and offline regression suite
-m050/extraction/progress/  Human-readable trackers and compile cost ledger
+m050/extraction/accepted/  Four immutable accepted legacy source candidates
+m050/extraction/control/   Canonical state, source order, manifests, and active configuration
+m050/extraction/engine/    Source-agnostic extraction code and focused regression tests
+m050/extraction/evidence/  Human Rulings evidence needed by Authorial conformance
+m050/extraction/runs/      Current accepted/rejected provider evidence and frozen pilot packet
 m051/                      Post-v0.5.0 development; excluded from the current compile
 
 100 canon/ – 600 archive/  Earlier project organization and sourcebook-production history
 300 art/                   Splash image plus thumbnail-backed external artwork manifest
 ```
 
-Start with the two workbooks and cost ledger in `m050/extraction/progress/`. The active control index and frozen-corpus manifest are in `m050/extraction/control/`; the process decisions and Gate receipts are in `m050/extraction/audit/`.
-
 For recovery after a restart, context compaction, or task handoff, start with
-root `AGENTS.md`, then read the canonical
-`m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json`, the processing
-order, and `STATUS.md`. No separate successor packet is used.
+root `AGENTS.md`, then read the canonical compile state, the canonical source
+processing order, and `STATUS.md`. There is no spreadsheet, successor packet,
+active-index chain, or second process constitution.
 
 ## Core rule
 

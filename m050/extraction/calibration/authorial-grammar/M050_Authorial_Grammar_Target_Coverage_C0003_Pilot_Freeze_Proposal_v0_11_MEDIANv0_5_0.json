@@ -7,21 +7,21 @@
   "authority": {"offline_recalibration_authorized": true, "provider_call_authorized": false, "requested_provider_call_limit": 1, "requested_cost_cap_usd": "0.13", "external_transmission_for_this_binding_authorized": false},
   "binding": {
     "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
-    "configuration_sha256": "92ad5e749414d42a498a1f45c595a89cb43ed94f0ac970e8b65e8bd29ff3a511",
+    "configuration_sha256": "e620829180b2e5fd97b634c073fea191c3c3586f295eb8f32ffad239655aaec8",
     "chunk_plan_sha256": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",
     "pilot_chunk_id": "C0003",
-    "pilot_packet_sha256": "881fc8f726f3b3e6d7e877a6a750a8619b9ac013d57f64e2e6bd565c80df68a8",
-    "pilot_packet_file_sha256": "5216581e890af7eafebf955950575e5f4e2621c6440e1f06dd50145eaadcab69",
+    "pilot_packet_sha256": "99b2f7e0efd48b3a7e0d5c4a1a2bf5d353ffc71f422b7ad956c9bc3ebb569214",
+    "pilot_packet_file_sha256": "90e2fdf560166e08826696974ad411642d6258f0449d7e6e223d3ab565d0a060",
     "prompt_sha256": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
     "engine_module_sha256": "7e9d228161b553c7f04f617deb869c03bcbe5d53e87b5afc137afe67e00bf886",
-    "engine_tests_sha256": "f0195699e939f35fe521fc6c54e63ecc7d28d7ced84107c2dd5bba4f6af42b3d",
+    "engine_tests_sha256": "702fcd9f58b180da2bfadc8d4ed3755434bc127e1b69c64b2082251b76308ba6",
     "model": "claude-sonnet-5",
     "reasoning_effort": "low",
     "maximum_output_tokens": 6000,
     "cache_ttl": "1h"
   },
   "pilot": {"selection_reason": "C0003 contains pure labels, dependent example bodies, table structure, and substantive lead-ins, directly testing exact coverage and the prior structural rules.", "required_target_disposition_count": 19, "marked_pure_label_count": 3, "dependent_example_body_count": 2, "cache_miss_call_ceiling_usd": "0.12354", "requested_provider_call_limit": 1, "authorized_provider_call_limit": 0, "requested_cost_cap_usd": "0.13"},
-  "offline_verification": {"chunk_plan_changed": false, "all_13_chunks_fake_validated": true, "accepted_c0001_c0002_replays_passed": true, "rejected_c0003_replay_missing_target_count": 2, "rejected_c0003_replay_required_disposition_errors": 0, "offline_tests_passed": 122, "provider_calls": 0},
+  "offline_verification": {"chunk_plan_changed": false, "all_13_chunks_fake_validated": true, "accepted_c0001_c0002_replays_passed": true, "rejected_c0003_replay_missing_target_count": 2, "rejected_c0003_replay_required_disposition_errors": 0, "offline_tests_passed": 47, "provider_calls": 0},
   "spend_reconciliation": {"cumulative_spent_usd": "0.475963", "remaining_usd": "1.524037", "current_money_only_envelope_active": true, "money_envelope_grants_lifecycle_authority": false, "new_money_requested_usd": "0.00"},
   "next_required_author_statement": "I authorize exactly one bound Anthropic target-coverage recalibration pilot call for C0003 under a $0.13 call cap, including transmission of its bounded Authorial Grammar source text."
 }

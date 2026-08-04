@@ -4,7 +4,7 @@
   "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
   "source_sha256": "7d23ef2ccbff0c6594975c03cf405d838a3cc3f712ea6faf942581a72c9284ff",
   "allowed_streams": ["evidence_authorial_rule"],
-  "supersedes": {"path": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_5_MEDIANv0_5_0.json", "sha256": "495b46cd203d58f083905afdd6d73a6936b7d92b63fcfbadf57c33ac7bf4cb12", "reason": "Require exact disposition coverage for every target, including example bodies dependent on pure labels"},
+  "configuration_policy": "This is the sole active Authorial Grammar configuration. Maintain it in place; Git preserves predecessor history.",
   "artifacts": {
     "identity_card": "m050/extraction/control/source-identities/cards/M050_Authorial_Grammar_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
     "identity_approval_receipt": "m050/extraction/audit/identity-transitions/M050_Authorial_Grammar_Content_Provenance_Identity_Card_Approved_Transition_v0_1_MEDIANv0_5_0.json",
@@ -15,8 +15,8 @@
     "response_schema": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Pilot_001_R6_Response_Schema_v0_6_MEDIANv0_5_0.json"
   },
   "artifact_sha256": {
-    "identity_card": "983ca763a907d3465c14215bed7f165f712b903567b5bbe54f6e50f6717e10b4",
-    "identity_approval_receipt": "ee71ef2f017c1e8f66b6c48f5c6384a998b6c85345fddddf988e9645b74a132a",
+    "identity_card": "da7f6fabfa3e8279bb4c85a481d4a4a0670a344471375d5eb0a8eaa3ebc39022",
+    "identity_approval_receipt": "0f771ff355efa427482d2da70587ec11ca6aa3a8a1f01e65dcbb774dfcbef05a",
     "block_manifest": "cf1d0291cf7cb9fb3d959cb45f3477d69f5987d7d93c4f79b89dfe743eea0cca",
     "disposition_ledger": "a365b4260d8cb7820742e4ab879c3d6336f643989139c700401ee887cf960b6c",
     "chunk_plan": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",

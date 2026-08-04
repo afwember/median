@@ -4,14 +4,11 @@
   "status": "ACTIVE",
   "created": "2026-08-03",
   "authority": {
-    "sequence_source_path": "m050/extraction/progress/M050_Document_Processing_Tracker_v0_1_MEDIANv0_5_0.xlsx",
-    "sequence_source_sha256": "7a05dbcfeadf7a012a8ea00987ab6138a35d9b6c71cb70df82e44ef69cfa778c",
-    "sequence_sheet": "Document Processing",
-    "sequence_range": "A7:M31",
+    "sequence_authority": "Asa Wember-approved compile order recovered on 2026-08-03 and maintained canonically in this file",
     "disposition_source_path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
     "disposition_source_sha256": "f460dd7c3ebf2df9344ee58aa8f650c3314af436b7684bf6cd2bf674fef5bf63",
     "state_matrix_path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json",
-    "derivation_rule": "Sequence comes only from the tracker intended-processing-order rows. Identity, scope, disposition, phase, and current state come only from the Gate-2-derived source-state matrix. No filename or task-memory inference."
+    "derivation_rule": "Order comes only from this canonical sequence. Identity, scope, disposition, phase, and current state come from the Gate-2-derived source-state matrix. No spreadsheet, filename, or task-memory inference."
   },
   "sequence": [
     {
@@ -25,7 +22,7 @@
         "kind": "post_extraction_source_bounded_conformance_review",
         "higher_authority_source_id": "M050-SRC-HUMAN-RULINGS-001",
         "provider_prompt_inclusion": "prohibited",
-        "basis": "Use the active frozen Human Rulings source, its approved identity/coordinate controls, and mechanically valid reconstruction evidence. The retired v0.2 partition is historical rejection evidence and is not active authority.",
+        "basis": "Use the frozen Human Rulings source, accepted candidate, block manifest, and current reconstruction evidence. Historical rejected partitions are not active inputs.",
         "effect": "Record conflicts, omissions, or status mismatches and return defects to calibration; do not perform Layer E semantic acceptance or cross-source reconciliation."
       }
     },
@@ -56,7 +53,7 @@
   "next_source": {
     "order": 1,
     "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
-    "next_activity": "Draft the content/provenance identity card only after explicit author transfer"
+    "next_activity": "Continue the frozen C0003 target-coverage pilot only within an explicit Authorial Grammar source-work grant and the active spend envelope"
   },
   "outstanding_pre_reconciliation_order": [
     "M050-SRC-AUTHORIAL-GRAMMAR-001",

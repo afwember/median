@@ -32,8 +32,11 @@ from median_gate5.extraction_machine import (
 ROOT = Path(__file__).parents[4]
 AUTHGRAM = ROOT / "m050/extraction/calibration/authorial-grammar"
 MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
-AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_5_MEDIANv0_5_0.json"
-CROSSING_MANIFEST = ROOT / "m050/extraction/control/source-identities/blocks/M050_Crossing_Block_Manifest_v0_1_MEDIANv0_5_0.json"
+AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
+ACCEPTED_C0001_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Call_Packet_v0_4_MEDIANv0_5_0.json"
+ACCEPTED_C0001_OUTCOME = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Outcome_v0_4_MEDIANv0_5_0.json"
+ACCEPTED_C0001_RAW = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Raw_Response_v0_4_MEDIANv0_5_0.json"
+SECOND_SOURCE_MANIFEST = ROOT / "m050/extraction/control/source-identities/blocks/M050_Human_Rulings_Block_Manifest_v0_1_MEDIANv0_5_0.json"
 
 
 def _json(path):
@@ -105,9 +108,9 @@ def test_request_caches_only_stable_system_prefix_for_one_hour():
     assert "cache_control" not in request["messages"][0]
 
 
-def test_generic_validator_replays_accepted_authorial_r6():
-    payload = _json(AUTHGRAM / "pilots/M050_Authorial_Grammar_Pilot_001_R6_Payload_v0_6_MEDIANv0_5_0.json")
-    response = _json(AUTHGRAM / "pilots/M050_Authorial_Grammar_Pilot_001_R6_Structured_Proposal_v0_6_MEDIANv0_5_0.json")
+def test_generic_validator_replays_accepted_authorial_c0001():
+    payload = _json(ACCEPTED_C0001_PACKET)["payload"]
+    response = _json(ACCEPTED_C0001_OUTCOME)["structured_proposal"]
     schema = _json(AUTHGRAM / "M050_Authorial_Grammar_Pilot_001_R6_Response_Schema_v0_6_MEDIANv0_5_0.json")
     report = validate_extraction_response(
         payload=payload,
@@ -120,14 +123,11 @@ def test_generic_validator_replays_accepted_authorial_r6():
     assert report["checks"]["review_required_blocks"] == 0
 
 
-def test_extracts_accepted_r6_from_raw_anthropic_envelope():
-    raw = _json(
-        AUTHGRAM
-        / "pilots/M050_Authorial_Grammar_Pilot_001_R6_Raw_Anthropic_Response_v0_6_MEDIANv0_5_0.json"
-    )
+def test_extracts_accepted_c0001_from_raw_anthropic_envelope():
+    raw = _json(ACCEPTED_C0001_RAW)
     structured = extract_anthropic_structured_response(raw)
     assert structured["source_id"] == "M050-SRC-AUTHORIAL-GRAMMAR-001"
-    assert len(structured["dispositions"]) == 27
+    assert len(structured["dispositions"]) == 15
 
     raw["stop_reason"] = "max_tokens"
     with pytest.raises(ContractError, match="did not end cleanly"):
@@ -569,7 +569,7 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
 
 
 def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
-    manifest = _json(CROSSING_MANIFEST)
+    manifest = _json(SECOND_SOURCE_MANIFEST)
     dispositions = draft_block_dispositions(manifest)
     assert len(dispositions) == len(manifest["blocks"])
     assert all(item["draft_requires_identity_review"] for item in dispositions)
@@ -598,7 +598,7 @@ def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
     prompt = build_generic_source_prompt(
         manifest["source_id"],
         ["evidence_game_semantic"],
-        "Extract Crossing's own game-semantic claims without importing other sources.",
+        "Extract this source's own claims without importing other sources.",
     )
     payload = build_chunk_payload(manifest, dispositions, plan["chunks"][0])
     request = build_anthropic_request(

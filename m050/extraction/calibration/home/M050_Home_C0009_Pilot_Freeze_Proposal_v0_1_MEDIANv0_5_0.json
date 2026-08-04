@@ -1,20 +1,20 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
   "proposal_id": "M050-HOME-C0009-PILOT-FREEZE-001",
-  "state": "pilot_chunk_frozen_not_provider_released",
-  "machine_state": "offline_preparation_complete",
+  "state": "c0006_refrozen_after_table_atomicity_correction",
+  "machine_state": "source_extraction_active",
   "binding": {
     "source_id": "M050-SRC-HOME-001",
     "source_sha256": "08a45719b0c1eaa403006b3a104d12aa8a4f1f3a9d85abd867f9396d187146fa",
-    "configuration_sha256": "3e5204ec7aa33a91b2a30c48aa6ff961dcef1448d31004af660e6100e6b94498",
+    "configuration_sha256": "8005f3106b5a9e8769f950f6fccc265201fde97b1e0fbab02fe7e4f0f9db44f6",
     "identity_card_sha256": "3b874f826882948765542ea21c2d4a69ff27d5ce746317f270455ba74c1d8675",
     "block_manifest_sha256": "f33aa2165572d2498a27f3d05a56f2845643650001e269adff81bfcded0fe77a",
     "disposition_ledger_sha256": "2c8cf9dcba04dcbdfc38728784d25db7f4ee18aa7340b826a318908ac568c1db",
     "chunk_plan_sha256": "a27e68911d33ed3e596dfc52328487e8b32494e095927a75515beb465e16a3fc",
-    "pilot_chunk_id": "C0009",
-    "pilot_packet_sha256": "eee7c988c8724bfa178120704f586e8f1b9e09fa8b712c1a0203c8cb2390e3c5",
-    "pilot_packet_file_sha256": "5096e13cff8947ff6e7b2bb479499464a31147caae1208eec27df50f82aa2fdd",
-    "prompt_sha256": "d254299464ddd5543da0d263fc8acfe8f9c406e5a1141517a0dff52e56d7cabb",
+    "pilot_chunk_id": "C0006",
+    "pilot_packet_sha256": "7ed7254d67cf3fa0c9602993cbbfb52af00c6e697a901d1f6b2452ae5f80ffe7",
+    "pilot_packet_file_sha256": "8a6cfe9330dd6872b6491c8a3a58363ad3050cc1165ee335bba919c95a238cf9",
+    "prompt_sha256": "8682fee0efd0932a3b1f18917e1cdc1642942e15fa0cc5237af11e9f659cae96",
     "response_schema_sha256": "b6a24406a63dca25b6129ab4ae00329c5c6ee7da5e5bbf8514c437d298280bf0",
     "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
     "engine_tests_sha256": "5f46c84a27d50ea5d0e0284508aa24d3899c9e6de1cc4269732b20bd01f60a20",
@@ -23,7 +23,7 @@
     "allowed_streams": ["evidence_game_semantic"],
     "model": "claude-sonnet-5",
     "reasoning_effort": "low",
-    "maximum_output_tokens": 6000,
+    "maximum_output_tokens": 16000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
     "pricing": {
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0009 is representative of Home's most difficult extraction structure: 20 targets across table rows, numbered procedure, choice grammar, qualified examples, and a section transition.",
+    "selection_reason": "C0009 and C0001 through C0005 are accepted; C0006 is now the first outstanding chunk in the retained section-aware source order.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.126864"
+    "cache_miss_call_ceiling_usd": "0.23598"
   },
   "exclusion_policy": {
     "non_authoritative_media_occurrences": 3,
@@ -48,6 +48,34 @@
   "offline_verification": {
     "all_15_chunks_fake_validated": true,
     "offline_tests_passed": 50,
-    "provider_call_made": false
+    "c0009_v0_1_rejected_at_max_tokens": true,
+    "c0009_v0_2_rejected_for_exact_html_grounding": true,
+    "c0009_v0_3_rejected_for_byte_exact_grounding": true,
+    "c0009_v0_4_mechanical_and_substantive_review_passed": true,
+    "c0001_v0_1_rejected_for_structural_table_headers": true,
+    "c0001_v0_2_rejected_for_tautological_pure_label_atom": true,
+    "c0001_v0_3_rejected_for_omitted_table_relationship": true,
+    "c0001_v0_4_rejected_for_incomplete_table_cell_coverage": true,
+    "c0001_v0_5_rejected_for_duplicate_empty_atoms_disposition": true,
+    "c0001_v0_6_rejected_for_pure_label_and_independent_claim_omissions": true,
+    "c0001_v0_7_rejected_at_medium_reasoning_output_cap": true,
+    "c0001_v0_8_rejected_for_invalid_single_disposition_response": true,
+    "c0001_v0_9_rejected_for_table_row_under_atomization": true,
+    "c0001_v0_10_rejected_for_redundant_category_atom": true,
+    "c0001_v0_11_rejected_for_mapping_consequence_fusion": true,
+    "c0001_v0_12_mechanical_and_substantive_review_passed": true,
+    "c0002_v0_1_mechanical_and_substantive_review_passed": true,
+    "c0003_v0_1_mechanical_and_substantive_review_passed": true,
+    "c0004_v0_1_mechanical_and_substantive_review_passed": true,
+    "c0005_v0_1_mechanical_and_substantive_review_passed": true,
+    "c0006_v0_1_rejected_at_output_cap": true,
+    "c0006_v0_2_rejected_for_table_row_under_atomization": true,
+    "c0006_v0_3_rejected_for_residual_table_row_under_atomization": true,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 15,
+    "chunk_boundary_changed": false,
+    "prompt_changed": true,
+    "schema_changed": false,
+    "provider_call_made": true
   }
 }

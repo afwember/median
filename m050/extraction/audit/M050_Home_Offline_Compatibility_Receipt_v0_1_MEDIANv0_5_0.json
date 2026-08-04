@@ -2,11 +2,11 @@
   "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
   "receipt_id": "M050-HOME-OFFLINE-COMPATIBILITY-001",
   "date": "2026-08-04",
-  "status": "HOME_OFFLINE_PREPARATION_VERIFIED_PILOT_NOT_PROVIDER_RELEASED",
+  "status": "HOME_C0006_TABLE_ATOMICITY_CORRECTION_OFFLINE_VERIFIED",
   "source_id": "M050-SRC-HOME-001",
   "binding": {
-    "configuration_sha256": "3e5204ec7aa33a91b2a30c48aa6ff961dcef1448d31004af660e6100e6b94498",
-    "prompt_sha256": "d254299464ddd5543da0d263fc8acfe8f9c406e5a1141517a0dff52e56d7cabb",
+    "configuration_sha256": "8005f3106b5a9e8769f950f6fccc265201fde97b1e0fbab02fe7e4f0f9db44f6",
+    "prompt_sha256": "8682fee0efd0932a3b1f18917e1cdc1642942e15fa0cc5237af11e9f659cae96",
     "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
     "engine_tests_sha256": "5f46c84a27d50ea5d0e0284508aa24d3899c9e6de1cc4269732b20bd01f60a20",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
@@ -38,6 +38,163 @@
     "media_leaks": 0,
     "offline_tests_passed": 50
   },
+  "output_cap_correction": {
+    "chunk_id": "C0009",
+    "rejected_attempt_version": "v0.1",
+    "prior_maximum_output_tokens": 6000,
+    "corrected_maximum_output_tokens": 8000,
+    "chunk_boundary_changed": false,
+    "prompt_or_schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "exact_grounding_correction": {
+    "chunk_id": "C0009",
+    "rejected_attempt_version": "v0.2",
+    "defect": "Two HTML callout atoms converted the exact opening strong tag to Markdown emphasis and failed contiguous grounding.",
+    "correction": "Require literal preservation of HTML opening and closing tags in exact_source_text.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "byte_exact_grounding_correction": {
+    "chunk_id": "C0009",
+    "rejected_attempt_version": "v0.3",
+    "defect": "Three atoms reconstructed exact_source_text instead of copying a contiguous source substring: two HTML opening tags became Markdown and one escaped arrow lost its backslash.",
+    "correction": "Require byte-for-byte substring selection after JSON decoding, preserve literal tags and backslashes, and permit whole-block spans when safest.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "calibration_result": {
+    "chunk_id": "C0009",
+    "outcome_sha256": "c23cb74353fbea408f0b44a2c02a1ce9b9cda478cfb65fe0ff415f4e37ad099d",
+    "mechanical_passed": true,
+    "substantive_review_passed": true,
+    "target_blocks": 20,
+    "atoms": 25,
+    "output_tokens": 7235,
+    "maximum_output_tokens": 8000,
+    "plan_retained": true
+  },
+  "table_structure_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.1",
+    "defect": "The provider atomized two pure structural table-header rows that the established validator requires as no_substantive_claim.",
+    "correction": "Explicitly require no_substantive_claim for pure table-header and delimiter targets and reserve atoms for substantive table-body rows.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "pure_label_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.2",
+    "defect": "A pure topic label was converted into a tautological atom saying the revision summary describes its announced topic.",
+    "correction": "Require no_substantive_claim for pure headings, section labels, and topic labels that only announce following content.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "table_relationship_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.3",
+    "defect": "A substantive table-body row's consequence was extracted while its prior-model to reworked-model mapping was omitted.",
+    "correction": "Require preservation of claims and relationships across all substantive table-body cells, including categorical mappings between columns.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "table_cell_completeness_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.4",
+    "defect": "One multi-column mapping row named the reworked category and consequence but still omitted the prior-category cell.",
+    "correction": "Require an explicit per-nonempty-cell coverage check and a grounded mapping atom naming both exact category values for prior-to-reworked rows.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "exact_cardinality_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.5",
+    "defect": "One target block appeared twice and one duplicate used kind atoms with an empty atoms array.",
+    "correction": "Consolidate a final output checklist requiring exactly one disposition per target, no context dispositions, nonempty atoms only for kind atoms, and empty arrays otherwise.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "reasoning_effort_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.6",
+    "defect": "A low-effort response repeated a prohibited pure-label atom and omitted three independent table consequence claims despite explicit prompt rules.",
+    "correction": "Raise reasoning effort from low to medium while retaining the same model, prompt, schema, chunk boundary, and 8,000-token output cap.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "medium_reasoning_output_cap_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.7",
+    "defect": "Medium reasoning used 5,000 thinking tokens and reached the 8,000-token output cap before a clean structured proposal was captured.",
+    "prior_maximum_output_tokens": 8000,
+    "corrected_maximum_output_tokens": 12000,
+    "chunk_boundary_changed": false,
+    "prompt_or_schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "medium_reasoning_reversion": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.8",
+    "defect": "The second medium-reasoning attempt returned one invalid unknown-block disposition and omitted all 20 targets.",
+    "correction": "Revert reasoning effort to the prior low setting while retaining the corrected prompt and 12,000-token allowance; the packet differs from all rejected packets.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "table_atomization_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.9",
+    "defect": "Multiple table rows preserved all content but fused categorical mappings and independent consequence claims into single atoms.",
+    "correction": "Require a distinct mapping atom plus separate atoms for each independent consequence sentence or clause in substantive table-body rows.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "table_redundancy_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.10",
+    "defect": "One table row produced a redundant standalone prior-category atom in addition to a complete mapping atom naming the same category.",
+    "correction": "Prohibit separate atoms that merely restate either category already named by a complete mapping atom.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "absolute_mapping_separation_correction": {
+    "chunk_id": "C0001",
+    "rejected_attempt_version": "v0.11",
+    "defect": "Two table rows fused consequence content into their mapping atoms while the remaining mapping rows separated correctly.",
+    "correction": "Require every prior-to-reworked row to use one mapping-only atom and one or more separate consequence-only atoms, including single-consequence rows.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "c0006_output_cap_correction": {
+    "chunk_id": "C0006",
+    "rejected_attempt_version": "v0.1",
+    "defect": "The response reached the 12,000-token output cap before a clean structured proposal was captured.",
+    "prior_maximum_output_tokens": 12000,
+    "corrected_maximum_output_tokens": 16000,
+    "chunk_boundary_changed": false,
+    "prompt_or_schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "c0006_table_atomicity_correction": {
+    "chunk_id": "C0006",
+    "rejected_attempt_version": "v0.2",
+    "defect": "Eight multi-column Role rows fused distinct Place, ordinary-load, Project, and Encounter claims into one atom, and two Project examples fused independent interpretation or effect content.",
+    "correction": "Require separate atoms for independent semantic-column claims in every substantive table row while retaining cells together only for one indivisible relationship or a dependent qualification.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
   "replays": {},
-  "note": "Offline compatibility only. No repository text was transmitted and no provider call was made."
+  "note": "This receipt covers offline compatibility only; its verification step made no provider call. Provider attempts are preserved separately in the active run ledger and outcomes."
 }

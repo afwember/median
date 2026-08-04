@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T02:19:55-04:00",
-  "execution_state": "HOME_OFFLINE_PREPARATION_COMPLETE_SPEND_REPLENISHED_PILOT_NOT_RELEASED",
+  "updated": "2026-08-04T03:46:31-04:00",
+  "execution_state": "HOME_C0006_V0_3_REJECTED_SPEND_CEILING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -26,20 +26,59 @@
     "id": "M050-SRC-HOME-001",
     "label": "Home",
     "compile_ordinal": 5,
-    "accepted_chunk_ids": [],
-    "rejected_chunk_id": null,
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002",
+      "C0003",
+      "C0004",
+      "C0005",
+      "C0009"
+    ],
+    "rejected_chunk_id": "C0006",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/home/M050_Home_C0009_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Home_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/home-pilot/M050_Home_C0009_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [],
+    "pilot_packet": "m050/extraction/runs/home-pilot/M050_Home_C0006_Call_Packet_v0_3_MEDIANv0_5_0.json",
+    "latest_outcome": "m050/extraction/runs/home-pilot/M050_Home_C0006_Outcome_v0_3_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0001_Outcome_v0_12_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0004",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0005",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0009_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
     "compatibility_replays": {},
-    "pilot_chunk_id": "C0009",
+    "pilot_chunk_id": "C0006",
     "generated_chunk_count": 15,
     "target_blocks_per_chunk": 20,
     "required_target_disposition_count": 20,
@@ -51,19 +90,30 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 50,
-    "cache_miss_call_ceiling_usd": "0.126864"
+    "cache_miss_call_ceiling_usd": "0.23598"
   },
-  "latest_provider_attempt": null,
+  "latest_provider_attempt": {
+    "chunk_id": "C0006",
+    "http_status": 200,
+    "stop_reason": "end_turn",
+    "output_tokens": 10065,
+    "cache_creation_input_tokens": 2308,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.120186",
+    "mechanical_passed": true,
+    "review_state": "review_failed"
+  },
   "spend": {
     "active": true,
     "authorized_usd": "3.3794142",
-    "cumulative_spent_usd": "1.3794142",
-    "remaining_usd": "2.0000000",
-    "display_usd_rounded_up": "1.38"
+    "cumulative_spent_usd": "3.2079914",
+    "remaining_usd": "0.1714228",
+    "display_usd_rounded_up": "3.21"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -71,14 +121,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 2:19:55 AM EDT",
-    "status": "Home offline preparation complete; spend replenished to $2.00 available; C0009 not provider-released",
-    "phase": "Atomic extraction — Home preparation halt",
+    "updated_human": "August 4, 2026 at 3:46:31 AM EDT",
+    "status": "Home C0006 v0.3 rejected; halted at spend ceiling",
+    "phase": "Atomic extraction — Home representative pilot",
     "source": "Home — 5 / 22",
-    "chunk": "C0009 / 15 — representative pilot frozen; no accepted or rejected Home chunk",
-    "now": "Cumulative spend capacity is $3.3794142 with $1.3794142 historically spent and exactly $2.0000000 available; no provider call is in flight",
-    "next": "Await explicit Home source-work authority before transmitting frozen C0009"
+    "chunk": "C0006 / 15 — C0001 through C0005 and C0009 accepted; latest rejected attempt is C0006 v0.1",
+    "now": "C0006 v0.3 was rejected for residual fusion of independent semantic-column claims; exact cost $0.120186 is reconciled and the $0.1714228 balance cannot cover the $0.23598 conservative retry ceiling",
+    "next": "Halt for Asa because remaining authorized spend cannot cover the next conservative Home C0006 retry ceiling"
   },
-  "next_possible_transition": "Explicit Home source-work authority may release the frozen C0009 representative pilot when a new cold start confirms readiness; the active budget has sufficient balance.",
+  "next_possible_transition": "After Asa replenishes the cumulative spend budget, correct and refreeze C0006 under the existing atomicity invariant, then run offline compatibility, full guard, and focused preflight before any retry.",
   "gate_5_complete": false
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T10:27:51-04:00",
+  "updated": "2026-08-04T10:41:36-04:00",
   "execution_state": "EMBODIMENT_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
@@ -41,9 +41,9 @@
   "latest_provider_attempt": null,
   "spend": {
     "active": true,
-    "authorized_usd": "5.2079914",
+    "authorized_usd": "6.2960482",
     "cumulative_spent_usd": "4.2960482",
-    "remaining_usd": "0.9119432",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "4.30"
   },
   "authority": {
@@ -56,12 +56,12 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 10:27:51 AM EDT",
+    "updated_human": "August 4, 2026 at 10:41:36 AM EDT",
     "status": "Embodiment identity card proposed; author approval required before provider transmission",
     "phase": "Atomic extraction — Embodiment identity approval halt",
     "source": "Embodiment — ordinal 6; 6 / 22 compile-scope sources complete",
     "chunk": "No Embodiment chunk selected; accepted/rejected boundary is empty",
-    "now": "Frozen source identity, provenance, authority boundaries, section ownership, and three media dispositions are proposed; no provider call or spend occurred",
+    "now": "Frozen source identity and three media dispositions remain proposed; the cumulative envelope is replenished to $2.0000000 remaining with exact spend unchanged at $4.2960482",
     "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
   "next_possible_transition": "With Asa's identity-card approval, perform Embodiment offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",

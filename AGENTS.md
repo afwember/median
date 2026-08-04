@@ -81,6 +81,17 @@ overall phase boundary, the Supervisor may retool the contract in discussion
 with Asa; the Compile Worker begins the new phase only after Asa explicitly
 authorizes it.
 
+**Stopdown** is the Worker-side formal handoff, not merely a pause in source
+work. At source completion the Worker must finish candidate packaging and
+validation, set both source-work and repository-write authority to false in
+canonical state, refresh `STATUS.md`, run the required guard, commit and push
+that closing transition, and confirm a clean worktree with local `HEAD` equal
+to `origin/main`. The closing commit and push are the final repository actions
+permitted by the expiring source grant and may publish only the prepared source
+completion and authority revocation. A source-completion halt is not a
+Stopdown while either authority remains true. After the closing push the Worker
+makes no further repository write unless Asa explicitly grants new work.
+
 ## Phase model
 
 The permanent constitution is phase-neutral. Exactly one replaceable active
@@ -152,7 +163,8 @@ prohibited later stages.
 
 - A source-work grant is confined to one named source and ends when that source
   reaches source-bounded candidate acceptance. Starting the next source always
-  requires a new explicit grant from Asa.
+  requires a new explicit grant from Asa. Source completion must close through
+  the formal Stopdown defined above.
 - Within an active source-work grant, an active cumulative spend budget with
   enough remaining balance for the next conservative cache-miss ceiling is
   provider-call permission. No separate call receipt, call limit, chunk

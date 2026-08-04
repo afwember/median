@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T13:47:49-04:00",
+  "updated": "2026-08-04T14:03:01-04:00",
   "execution_state": "EMBODIMENT_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_HALT",
   "corpus": {
     "registered_sources": 24,
@@ -221,7 +221,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 1:47:49 PM EDT",
+    "updated_human": "August 4, 2026 at 2:03:01 PM EDT",
     "status": "Embodiment source-bounded candidate accepted; source-work grant ended",
     "phase": "Atomic extraction — halted at Embodiment completion",
     "source": "Embodiment — ordinal 6; 7 / 22 compile-scope sources complete",

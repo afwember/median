@@ -520,6 +520,31 @@ def validate_pending_identity_card(
             errors.append(f"pending identity card lacks required binding: {required}")
 
 
+def validate_authority_state(
+    source: dict[str, Any], authority: dict[str, Any], errors: list[str]
+) -> None:
+    for prohibited in (
+        "google_sheets_interaction_authorized",
+        "semantic_acceptance_authorized",
+        "mapping_authorized",
+        "reconciliation_authorized",
+        "compiled_prose_authorized",
+    ):
+        if authority.get(prohibited) is not False:
+            errors.append(f"prohibited authority is active: {prohibited}")
+    if source.get("source_work_authorized") is not authority.get("source_work_authorized"):
+        errors.append("source-work authority disagrees between source and authority state")
+    if "provider_call_authorized" in authority:
+        errors.append("canonical authority stores redundant transaction-level provider permission")
+    if authority.get("source_work_authorized") is True and authority.get("repository_writes_authorized") is not True:
+        errors.append("active source work lacks the one-writer repository grant")
+    if source.get("whole_source_candidate_complete") is True:
+        if authority.get("source_work_authorized") is not False:
+            errors.append("completed source retains source-work authority")
+        if authority.get("repository_writes_authorized") is not False:
+            errors.append("completed source has not completed formal Stopdown")
+
+
 def validate_atomic_extraction_profile(errors: list[str]) -> None:
     state = read_json(STATE, errors)
     if state.get("schema_version") != "M050-COMPILE-STATE-1.0":
@@ -588,21 +613,7 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         errors.append("active source is outside compile scope")
 
     authority = state.get("authority", {})
-    for prohibited in (
-        "google_sheets_interaction_authorized",
-        "semantic_acceptance_authorized",
-        "mapping_authorized",
-        "reconciliation_authorized",
-        "compiled_prose_authorized",
-    ):
-        if authority.get(prohibited) is not False:
-            errors.append(f"prohibited authority is active: {prohibited}")
-    if source.get("source_work_authorized") is not authority.get("source_work_authorized"):
-        errors.append("source-work authority disagrees between source and authority state")
-    if "provider_call_authorized" in authority:
-        errors.append("canonical authority stores redundant transaction-level provider permission")
-    if authority.get("source_work_authorized") is True and authority.get("repository_writes_authorized") is not True:
-        errors.append("active source work lacks the one-writer repository grant")
+    validate_authority_state(source, authority, errors)
 
     calibration = state.get("calibration", {})
     if "provider_call_authorized" in calibration:

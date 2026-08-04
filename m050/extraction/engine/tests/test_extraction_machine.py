@@ -175,6 +175,60 @@ def test_pending_identity_card_is_hash_bound_and_has_no_extraction_boundary(tmp_
     assert errors == ["pending identity card hash binding drifted"]
 
 
+def test_completed_source_requires_formal_stopdown_authority():
+    guard = _guard_module()
+    source = {
+        "source_work_authorized": False,
+        "whole_source_candidate_complete": True,
+    }
+    authority = {
+        "repository_writes_authorized": False,
+        "source_work_authorized": False,
+        "google_sheets_interaction_authorized": False,
+        "semantic_acceptance_authorized": False,
+        "mapping_authorized": False,
+        "reconciliation_authorized": False,
+        "compiled_prose_authorized": False,
+    }
+    errors = []
+    guard.validate_authority_state(source, authority, errors)
+    assert errors == []
+
+    authority["repository_writes_authorized"] = True
+    errors = []
+    guard.validate_authority_state(source, authority, errors)
+    assert errors == ["completed source has not completed formal Stopdown"]
+
+    source["source_work_authorized"] = True
+    authority["source_work_authorized"] = True
+    errors = []
+    guard.validate_authority_state(source, authority, errors)
+    assert errors == [
+        "completed source retains source-work authority",
+        "completed source has not completed formal Stopdown",
+    ]
+
+
+def test_active_source_retains_one_writer_authority():
+    guard = _guard_module()
+    source = {
+        "source_work_authorized": True,
+        "whole_source_candidate_complete": False,
+    }
+    authority = {
+        "repository_writes_authorized": True,
+        "source_work_authorized": True,
+        "google_sheets_interaction_authorized": False,
+        "semantic_acceptance_authorized": False,
+        "mapping_authorized": False,
+        "reconciliation_authorized": False,
+        "compiled_prose_authorized": False,
+    }
+    errors = []
+    guard.validate_authority_state(source, authority, errors)
+    assert errors == []
+
+
 def _pricing():
     return {
         "input_usd_per_million_tokens": "2",

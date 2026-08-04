@@ -1,0 +1,44 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-EMBODIMENT-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-04",
+  "status": "REPRESENTATIVE_PILOT_ACCEPTED_SOURCE_EXTRACTION_ACTIVE",
+  "source_id": "M050-SRC-EMBODIMENT-001",
+  "binding": {
+    "configuration_sha256": "511e225c10d57fc26a8086ba7d94a9723b7c7122c4d99dd5c70600c745176beb",
+    "prompt_sha256": "e3e34f4bb69c2891add2bd3eeb083adc46bc2a1f32c6dca60cc9bbffced7722a",
+    "engine_module_sha256": "244486f0c6871faa996184cb76bb97bc7627590754bc4735382e919db2827406",
+    "engine_tests_sha256": "b2a0d70872f7a2f7ca7203b051d549b0b1ccc77f676ccfdad3da26f15add986d",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
+  },
+  "source_review": {
+    "source_blocks": 589,
+    "eligible_targets": 357,
+    "context_only_blocks": 57,
+    "excluded_blocks": 175,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 3,
+    "media_reference_blocks_excluded": 3,
+    "media_caption_targets_retained": 3,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 21,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 844,
+    "representative_pilot_chunk_id": "C0010",
+    "pilot_selection_basis": "C0010 has the highest estimated input load and combines species-mapping tables, prose doctrine, qualified examples, structural rows, and the flagship-experience transition."
+  },
+  "offline_verification": {
+    "all_21_chunks_fake_validated": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 55
+  },
+  "replays": {},
+  "note": "Representative C0010 v0.1 was rejected before HTTP transport at zero incremental spend; unchanged semantics were refrozen as v0.2, which passed mechanical and substantive review without changing the calibrated 20-target density. C0001 v0.1 exposed a source-agnostic document-control metadata defect; v0.2 and v0.3 rendered literal HTML as Markdown, so HTML atoms now require the entire literal target block as their grounding span; v0.4 passed. Sequential source extraction remains active."
+}

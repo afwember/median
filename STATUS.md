@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-**UPDATED:** August 4, 2026 at 10:41:36 AM EDT<br>
+**UPDATED:** August 4, 2026 at 11:15:10 AM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Embodiment identity card proposed; author approval required before provider transmission<br>
-**PHASE:** Atomic extraction — Embodiment identity approval halt<br>
+**STATUS:** Embodiment C0001 accepted; C0002 is ready<br>
+**PHASE:** Atomic extraction — Embodiment sequential source extraction<br>
 **SOURCE:** Embodiment — ordinal 6; 6 / 22 compile-scope sources complete<br>
-**CHUNK:** No Embodiment chunk selected; accepted/rejected boundary is empty<br>
-**NOW:** Frozen source identity and three media dispositions remain proposed; the cumulative envelope is replenished to $2.0000000 remaining with exact spend unchanged at $4.2960482<br>
-**NEXT:** Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation<br>
-**TOTAL COST:** $4.30 cumulative provider spend
+**CHUNK:** Accepted C0001 and C0010; rejected/frozen none; C0002 is ready<br>
+**NOW:** C0001 v0.4 passed exact coverage, byte grounding, metadata, media-boundary, and substantive review at $0.047484; $1.7429290 remains<br>
+**NEXT:** Call frozen C0002, preserve it, and complete mechanical and substantive review before any next chunk<br>
+**TOTAL COST:** $4.56 cumulative provider spend

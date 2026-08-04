@@ -1,3 +1,18 @@
+# MEDIAN source-bounded atomic extraction
+
+Allowed source: `M050-SRC-EMBODIMENT-001` only
+Allowed streams: `evidence_game_semantic`
+
+Convert every supplied target block into exactly one grounded disposition. The
+disposition block-ID set must exactly equal the supplied `target_blocks` block-ID
+set, with no omission, duplication, or additional ID. Context blocks may guide
+interpretation but never receive dispositions. Excluded blocks are omitted
+offline. Use only `SOURCE_BLOCKS`; do not import other MEDIAN sources, prior
+atoms, background knowledge, mapping, reconciliation, canonization, or inferred
+authority.
+
+## Approved content/provenance boundary
+
 # MEDIAN v0.5.0 Embodiment Content/Provenance Identity Card v0.1
 
 Date: 2026-08-04  
@@ -41,36 +56,10 @@ does not independently own MSID validity, constitutional precedence, ecological
 premises, authorial orthography, final implementation, manifestation-specific
 controls, publication layout, or semantic reconciliation.
 
-## 3. Genealogy and provenance
+## 3. Provider-safe provenance boundary
 
-The revision summary says this specification replaces an original "Playful
-Register" proposal and folds the former Webisode function into EMBODY and
-Campaign Memory. No Playful Register or direct predecessor file is registered
-as an active source, so the predecessor must not be reconstructed or treated as
-available evidence. Repository history first contains the frozen v2.0 file in
-commit `d294d4c528f98dd0790804b0b305a053a90af17e` (`Checkpoint MEDIAN v0.5 compile
-reorganization`, 2026-08-02). That proves repository inclusion, not complete
-pre-repository authorship history.
-
-Applicable higher-authority Human Rulings include:
-
-- `HR-PHIL-004`: a substantial or repeatable attachment-forward system must
-  perform genuine Game Logic work rather than claim mechanical exemption;
-- `HR-ARCH-001`: the five Registers are Colony, Field, Crossing, Encounter, and
-  Embodiment, while `TRAVEL` is Field's operator;
-- `HR-MEM-001`: meaningful history may arise at Home or Away and is not limited
-  to Exposure or contested MEET;
-- `HR-AWAY-002`: Muted DWELL presentation at an Away Stopover does not create
-  Home Mode, Quiet Equilibrium, or EMBODY;
-- `HR-AUTH-002`: Ecology is a subsidiary owner for bodily priors and perception,
-  while dedicated system owners determine mechanical expression;
-- `HR-SEM-005`: noun-form `Architecture.Register.Embodiment` and substantive
-  `Home.Embodiment` pair with the `EMBODY` operator; and
-- `HR-LANG-004`: Bare Core-Species Singular uses singular agreement where that
-  authorial construction applies.
-
-These rulings constrain review and later reconciliation. Their text must not be
-included in the Embodiment provider payload.
+Do not import or reconstruct predecessor material or Human Rulings content.
+Treat only the supplied `SOURCE_BLOCKS` as extractable source content.
 
 ## 4. Authority boundary
 
@@ -200,3 +189,49 @@ the validated configuration and packet, completed offline and replay gates,
 sequential review, and sufficient cumulative budget. Google Sheets interaction,
 semantic acceptance, mapping, reconciliation, canonization, compiled prose, and
 work on another source remain prohibited.
+
+## Extraction contract
+
+Split independent claims into separate atoms and keep dependent qualifications
+with the claims they qualify. Every `exact_source_text` must be a byte-for-byte
+contiguous substring of its target block after JSON decoding. Preserve literal
+markup, backslashes, and source escaping; never render, strip, reconstruct,
+clean, or reformat the selected source span. In particular, source HTML such as
+`<em>claim</em>` must remain literal HTML and must never be reconstructed as
+Markdown such as `*claim*`. For any atom extracted from an HTML target block,
+`exact_source_text` must equal the entire literal target block, including all
+tags and whitespace; do not split or shorten that grounding span. Copy the
+whole target block when
+that is the safest exact grounded span.
+
+Honor every target-supplied `required_disposition` or `allowed_dispositions`
+constraint. Pure structural headings, labels, table headers, and table
+delimiters carry no substantive atom; never turn a label into a tautological
+claim that its section discusses the announced topic. Structural context never
+excuses a dependent substantive target from receiving its own disposition.
+Document-control metadata rows, including document version, date, target
+architecture, and self-declared canon/status labels, likewise receive
+`no_substantive_claim`; they are provenance furniture rather than game-semantic
+evidence.
+
+For every substantive table-body row, cover every nonempty semantic cell.
+Create separate atoms for independently asserted properties, functions,
+effects, examples, interpretations, or consequences. Keep cells together only
+when they form one indivisible relationship or when one qualifies another.
+Preserve both endpoints of a categorical mapping, while keeping independent
+consequences separate from that mapping.
+
+Preserve provisional, historical, rejected, example, negative, conditional,
+scope, ownership, and authority qualifiers. Use `review_required` instead of
+guessing. Never silently repair source text or invent identifiers, statuses,
+definitions, owners, or authorities.
+
+## Output check
+
+Before returning, verify exact target coverage, absence of context dispositions,
+grounding, and disposition/atom cardinality. Return JSON only under the bound
+response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
+empty otherwise. Every atom must use the supplied source ID, its target block
+ID, one allowed stream, exact source text, a concise normalized claim, and a
+source-faithful claim kind. Derive each proposal ID from its target block ID plus
+a local atom ordinal so proposal IDs remain unique across the source.

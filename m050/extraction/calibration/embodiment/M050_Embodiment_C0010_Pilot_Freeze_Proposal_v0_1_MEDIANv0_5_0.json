@@ -1,0 +1,66 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-EMBODIMENT-C0010-PILOT-FREEZE-001",
+  "state": "source_extraction_active",
+  "machine_state": "sequential_provider_call_ready_when_canonical_state_is_released",
+  "binding": {
+    "source_id": "M050-SRC-EMBODIMENT-001",
+    "source_sha256": "e858a6db1009c91c1d8679fa8f09be33ac3761ebee55e184e4137e3560c820e9",
+    "configuration_sha256": "511e225c10d57fc26a8086ba7d94a9723b7c7122c4d99dd5c70600c745176beb",
+    "identity_card_sha256": "b413e5b6b2a05c8af443629dab3a6716e24c6d024f8624c63fad37f88fc3a6ac",
+    "block_manifest_sha256": "e7660641f82004e41bc791c7d6c41c862ba0c9fa3346700629ce632b6bcde4e8",
+    "disposition_ledger_sha256": "7e94300ac33916bd1e1680efb1558554a356793429d16b460bfda5744f60e37f",
+    "chunk_plan_sha256": "9ec2b696b196f27040d80ce8c54a9c9d241b6a9eaa6c22573e839052d80cc565",
+    "pilot_chunk_id": "C0002",
+    "pilot_packet_sha256": "ba395bd55782abcf1bd97e0e3eed52667b56866bbfd25fbc3a9578ed8e3cb47c",
+    "pilot_packet_file_sha256": "5207bd39a9233f6746d4a3cd94a902c0c49f02f35fbcdef92a0c1b4021cacc36",
+    "prompt_sha256": "e3e34f4bb69c2891add2bd3eeb083adc46bc2a1f32c6dca60cc9bbffced7722a",
+    "response_schema_sha256": "9d7a272ff7ac5232825ab81b5f731e6f9c21326db37f8e9bf89741731e6b36e5",
+    "engine_module_sha256": "244486f0c6871faa996184cb76bb97bc7627590754bc4735382e919db2827406",
+    "engine_tests_sha256": "b2a0d70872f7a2f7ca7203b051d549b0b1ccc77f676ccfdad3da26f15add986d",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
+    "allowed_streams": [
+      "evidence_game_semantic"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 16000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0001 and representative C0010 are accepted; C0002 is the first outstanding chunk in retained source order.",
+    "required_target_disposition_count": 20,
+    "cache_miss_call_ceiling_usd": "0.255648"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 3,
+    "excluded_media_reference_blocks": 3,
+    "retained_caption_target_blocks": 3,
+    "media_content_in_packet": false,
+    "external_artwork_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_21_chunks_fake_validated": true,
+    "offline_tests_passed": 55,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 21,
+    "chunk_count_is_input": false,
+    "c0010_v0_1_rejected_before_transport_at_zero_cost": true,
+    "c0010_v0_2_mechanical_and_substantive_review_passed": true,
+    "c0001_v0_1_rejected_for_document_control_metadata_atoms": true,
+    "c0001_v0_2_rejected_for_rendered_html_grounding": true,
+    "c0001_v0_3_rejected_for_split_rendered_html_grounding": true,
+    "c0001_v0_4_mechanical_and_substantive_review_passed": true,
+    "prompt_changed": true,
+    "provider_call_made": true
+  }
+}

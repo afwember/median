@@ -1,10 +1,10 @@
 # MEDIAN COMPILE — v0.5.0
 
-**UPDATED:** August 3, 2026 at 9:43:57 PM EDT<br>
+**UPDATED:** August 3, 2026 at 9:53:54 PM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** CoS live-process cleanup complete; C0003 remains frozen and unauthorized<br>
+**STATUS:** Supervisor CoS duty explicit; C0003 remains frozen and unauthorized<br>
 **PHASE:** Atomic extraction — source calibration<br>
 **SOURCE:** Authorial Grammar — 1 / 22<br>
 **CHUNK:** C0003 / 13 — C0001/C0002 accepted; latest C0003 rejected for two omissions<br>

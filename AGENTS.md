@@ -52,7 +52,13 @@ division of mandate, not another workflow layer:
 - **Supervisor:** works in discussion with Asa and may change the compilation
   architecture or this contract only after Asa explicitly authorizes the
   proposed system change. It never redesigns the system automatically and does
-  not gain source-work or provider authority from its role.
+  not gain source-work or provider authority from its role. The Supervisor is
+  equally bound by Conservation of System. Authority to change the system is
+  not authority to expand it freely. Every proposed system change must first
+  seek reduction, reuse, constraint, correction, or fusion of existing
+  machinery and state its net process delta. Any increase in total stages,
+  artifact classes, representations, handoffs, or supervisory machinery
+  requires specific discussion with Asa and explicit approval.
 - **Compile Worker:** executes one explicitly authorized phase and source using
   the established method. Within an active source-work grant and spend envelope
   it may handle ordinary extraction details, including diagnosis, correction,

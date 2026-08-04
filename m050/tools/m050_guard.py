@@ -496,6 +496,8 @@ def validate_operating_contract(errors: list[str]) -> None:
         "M050_Compile_State_MEDIANv0_5_0.json",
         "m050/tools/m050_guard.py",
         "works in discussion with Asa",
+        "equally bound by Conservation of System",
+        "state its net process delta",
         "executes one explicitly authorized phase and source",
         "must halt and submit a concise human",
         "Only one role writes the repository at a time",

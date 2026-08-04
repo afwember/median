@@ -150,6 +150,23 @@ def test_payload_is_source_agnostic_and_accounts_for_exclusions():
     assert len(payload["payload_sha256"]) == 64
 
 
+def test_generic_prompt_promotes_only_concise_cross_source_invariants():
+    boundary = "Extract this source's claims within its approved identity boundary."
+    prompt = build_generic_source_prompt(
+        "M050-SRC-TEST-001", ["evidence_game_semantic"], boundary
+    )
+
+    assert boundary in prompt
+    assert "block-ID set must exactly equal" in prompt
+    assert "byte-for-byte" in prompt
+    assert "required_disposition" in prompt
+    assert "every nonempty semantic cell" in prompt
+    assert "target block ID plus\na local atom ordinal" in prompt
+    assert "cost, staffing, and effect" not in prompt
+    assert "dedicated Home" not in prompt
+    assert len(prompt.split()) < 400
+
+
 def test_request_caches_only_stable_system_prefix_for_one_hour():
     request = build_anthropic_request(
         prompt="Stable source policy",

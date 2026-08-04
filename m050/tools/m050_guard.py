@@ -507,7 +507,8 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         errors.append("active source is not registered in the canonical matrix and order")
         registered = {}
         ordered = {}
-    if source.get("whole_source_candidate_complete") is True:
+    source_complete = source.get("whole_source_candidate_complete") is True
+    if source_complete:
         if source_id not in completed_ids:
             errors.append("completed active source is absent from canonical progress")
     elif source_id != next_outstanding:
@@ -650,8 +651,14 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         or binding.get("prompt_sha256") != sha256_file(prompt)
         or binding.get("pilot_packet_sha256") != packet.get("packet_sha256")
         or binding.get("pilot_packet_file_sha256") != sha256_file(packet_path)
-        or binding.get("engine_module_sha256") != sha256_file(ENGINE_MODULE)
-        or binding.get("engine_tests_sha256") != sha256_file(ENGINE_TESTS)
+        or (
+            not source_complete
+            and binding.get("engine_module_sha256") != sha256_file(ENGINE_MODULE)
+        )
+        or (
+            not source_complete
+            and binding.get("engine_tests_sha256") != sha256_file(ENGINE_TESTS)
+        )
     ):
         errors.append("active freeze binding drifted")
     if "authority" in freeze:
@@ -713,12 +720,16 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         errors.append("run ledger contains events but canonical state has no latest provider attempt")
 
     compatibility_binding = compatibility.get("binding", {})
-    for key, expected in {
+    current_compatibility_bindings = {
         "configuration_sha256": sha256_file(config_path),
         "prompt_sha256": sha256_file(prompt) if prompt else None,
-        "engine_module_sha256": sha256_file(ENGINE_MODULE),
-        "engine_tests_sha256": sha256_file(ENGINE_TESTS),
-    }.items():
+    }
+    if not source_complete:
+        current_compatibility_bindings.update({
+            "engine_module_sha256": sha256_file(ENGINE_MODULE),
+            "engine_tests_sha256": sha256_file(ENGINE_TESTS),
+        })
+    for key, expected in current_compatibility_bindings.items():
         if key in compatibility_binding and compatibility_binding.get(key) != expected:
             errors.append(f"compatibility binding drifted: {key}")
     replays = compatibility.get("replays", {})

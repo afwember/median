@@ -424,7 +424,13 @@ def build_generic_source_prompt(
 Allowed source: `{source_id}` only
 Allowed streams: {streams}
 
-Convert every supplied target block into exactly one grounded disposition. Context blocks may guide interpretation but never receive dispositions. Excluded blocks are omitted offline. Use only `SOURCE_BLOCKS`; do not import other MEDIAN sources, prior atoms, background knowledge, mapping, reconciliation, canonization, or inferred authority.
+Convert every supplied target block into exactly one grounded disposition. The
+disposition block-ID set must exactly equal the supplied `target_blocks` block-ID
+set, with no omission, duplication, or additional ID. Context blocks may guide
+interpretation but never receive dispositions. Excluded blocks are omitted
+offline. Use only `SOURCE_BLOCKS`; do not import other MEDIAN sources, prior
+atoms, background knowledge, mapping, reconciliation, canonization, or inferred
+authority.
 
 ## Approved content/provenance boundary
 
@@ -432,9 +438,40 @@ Convert every supplied target block into exactly one grounded disposition. Conte
 
 ## Extraction contract
 
-Split independent claims into separate atoms and keep dependent qualifications with the claim they qualify. Copy every `exact_source_text` exactly and contiguously from its target block. Preserve provisional, historical, rejected, example, negative, conditional, scope, ownership, and authority qualifiers. Use `review_required` instead of guessing. Never silently repair source text or invent identifiers, statuses, definitions, owners, or authorities.
+Split independent claims into separate atoms and keep dependent qualifications
+with the claims they qualify. Every `exact_source_text` must be a byte-for-byte
+contiguous substring of its target block after JSON decoding. Preserve literal
+markup, backslashes, and source escaping; never render, strip, reconstruct,
+clean, or reformat the selected source span. Copy the whole target block when
+that is the safest exact grounded span.
 
-Return JSON only under the bound response schema. `atoms` must be nonempty only when kind is `atoms`; it must be empty otherwise. Every atom must use the supplied source ID, its target block ID, one allowed stream, a unique proposal ID, exact source text, a concise normalized claim, and a source-faithful claim kind.
+Honor every target-supplied `required_disposition` or `allowed_dispositions`
+constraint. Pure structural headings, labels, table headers, and table
+delimiters carry no substantive atom; never turn a label into a tautological
+claim that its section discusses the announced topic. Structural context never
+excuses a dependent substantive target from receiving its own disposition.
+
+For every substantive table-body row, cover every nonempty semantic cell.
+Create separate atoms for independently asserted properties, functions,
+effects, examples, interpretations, or consequences. Keep cells together only
+when they form one indivisible relationship or when one qualifies another.
+Preserve both endpoints of a categorical mapping, while keeping independent
+consequences separate from that mapping.
+
+Preserve provisional, historical, rejected, example, negative, conditional,
+scope, ownership, and authority qualifiers. Use `review_required` instead of
+guessing. Never silently repair source text or invent identifiers, statuses,
+definitions, owners, or authorities.
+
+## Output check
+
+Before returning, verify exact target coverage, absence of context dispositions,
+grounding, and disposition/atom cardinality. Return JSON only under the bound
+response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
+empty otherwise. Every atom must use the supplied source ID, its target block
+ID, one allowed stream, exact source text, a concise normalized claim, and a
+source-faithful claim kind. Derive each proposal ID from its target block ID plus
+a local atom ordinal so proposal IDs remain unique across the source.
 """
 
 

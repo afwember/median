@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T10:05:59-04:00",
-  "execution_state": "HOME_SOURCE_BOUNDED_CANDIDATE_ACCEPTANCE_REPAIRED_HALT",
+  "updated": "2026-08-04T10:13:47-04:00",
+  "execution_state": "GENERIC_EXTRACTION_PROMPT_BASE_REWRITE_COMPLETE_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -182,12 +182,12 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 10:05:59 AM EDT",
-    "status": "Home source-bounded candidate acceptance repaired and hash-bound; source-work grant ended",
-    "phase": "Atomic extraction — Home repaired completion halt",
+    "updated_human": "August 4, 2026 at 10:13:47 AM EDT",
+    "status": "Generic extraction prompt base rewritten and validated; Supervisor write authority ended",
+    "phase": "Atomic extraction — inter-source Supervisor maintenance halt",
     "source": "Home — 6 / 22",
     "chunk": "15 / 15 accepted — 280 eligible targets, 280 dispositions, 500 atoms; no rejected chunk is active",
-    "now": "The accepted candidate/report pair is materialized from 15 accepted outcomes with exact 500-atom coverage and 500 unique traceable identifiers; provider spend remains $4.2960482",
+    "now": "The source-agnostic starting prompt now carries concise target-set, exact-grounding, structural, table-atomicity, and identifier invariants; Home accepted evidence is unchanged, the current guard passes 54 tests, and no provider spend occurred",
     "next": "Halt for Asa; starting Embodiment or any other source requires a new explicit source-work grant"
   },
   "next_possible_transition": "With Asa's explicit authorization, begin Embodiment identity preparation under atomic extraction; no later phase is authorized.",

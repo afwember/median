@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T16:20:46-04:00",
-  "execution_state": "AWAY_C0015_ACCEPTED_C0016_FROZEN_SPEND_HALT",
+  "updated": "2026-08-04T16:30:27-04:00",
+  "execution_state": "AWAY_C0015_ACCEPTED_C0016_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -162,9 +162,9 @@
   },
   "spend": {
     "active": true,
-    "authorized_usd": "7.8960480",
+    "authorized_usd": "9.6834980",
     "cumulative_spent_usd": "7.6834980",
-    "remaining_usd": "0.2125500",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "7.69"
   },
   "authority": {
@@ -177,14 +177,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 4:20:46 PM EDT",
-    "status": "Away C0015 v0.1 accepted; C0016 v0.1 is frozen at a spend halt",
+    "updated_human": "August 4, 2026 at 4:30:27 PM EDT",
+    "status": "Away C0015 v0.1 accepted; C0016 v0.1 is frozen and ready",
     "phase": "Atomic extraction — Away representative pilot",
     "source": "Away — ordinal 7; 7 / 22 compile-scope sources complete",
     "chunk": "C0016 / 27 — C0001 through C0015 accepted",
-    "now": "C0015 v0.1 passed mechanical and substantive review at $0.092298 exact cost; C0016 v0.1 is hash-bound but its ceiling exceeds the remaining balance",
-    "next": "Halt until cumulative spend authority can cover C0016 v0.1's $0.272952 conservative ceiling; current remaining balance is $0.2125500"
+    "now": "The Away cumulative envelope is replenished to $2.0000000 remaining; C0016 v0.1 remains hash-bound at a $0.272952 conservative ceiling",
+    "next": "Transmit frozen C0016 v0.1 after focused preflight confirms its $0.272952 ceiling within the $2.0000000 remaining envelope"
   },
-  "next_possible_transition": "Frozen C0016 v0.1 may proceed only after cumulative spend authority covers its $0.272952 conservative ceiling; no other source or later phase is authorized.",
+  "next_possible_transition": "The active Away grant and replenished cumulative budget permit frozen C0016 v0.1 after focused preflight; no other source or later phase is authorized.",
   "gate_5_complete": false
 }

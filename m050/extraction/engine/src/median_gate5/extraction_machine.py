@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+import copy
 from decimal import Decimal, InvalidOperation, ROUND_CEILING
 import hashlib
 import json
@@ -456,11 +457,28 @@ def build_anthropic_request(
         raise ContractError("unsupported reasoning effort")
     if not isinstance(maximum_output_tokens, int) or maximum_output_tokens < 1:
         raise ContractError("maximum output tokens must be positive")
-    schema = {
+    schema = copy.deepcopy({
         key: value
         for key, value in response_schema.items()
         if key not in {"$schema", "$id"}
-    }
+    })
+    target_count = payload.get("required_target_disposition_count")
+    target_blocks = payload.get("target_blocks")
+    if (
+        not isinstance(target_count, int)
+        or target_count < 1
+        or not isinstance(target_blocks, list)
+        or target_count != len(target_blocks)
+    ):
+        raise ContractError("payload target-disposition count is invalid")
+    try:
+        dispositions_schema = schema["properties"]["dispositions"]
+    except (KeyError, TypeError) as exc:
+        raise ContractError("response schema lacks dispositions") from exc
+    if not isinstance(dispositions_schema, dict):
+        raise ContractError("response dispositions schema is invalid")
+    dispositions_schema["minItems"] = target_count
+    dispositions_schema["maxItems"] = target_count
     Draft202012Validator.check_schema(schema)
     schema_contract = (
         "BOUND_RESPONSE_SCHEMA\n"
@@ -481,11 +499,14 @@ def build_anthropic_request(
             "format": {"type": "json_schema", "schema": schema},
         },
         "system": [
-            {"type": "text", "text": prompt},
+            {
+                "type": "text",
+                "text": prompt,
+                "cache_control": {"type": "ephemeral", "ttl": cache_ttl},
+            },
             {
                 "type": "text",
                 "text": schema_contract,
-                "cache_control": {"type": "ephemeral", "ttl": cache_ttl},
             },
         ],
         "messages": [{"role": "user", "content": user_text}],
@@ -708,13 +729,17 @@ def conservative_call_ceiling(
     output_rate = _decimal(pricing.get("output_usd_per_million_tokens"), "output rate")
     input_multiplier = Decimal(1)
     system = request.get("system", [])
-    cache_control = system[-1].get("cache_control", {}) if system else {}
-    if cache_control.get("ttl") == "1h":
+    cache_ttls = {
+        item.get("cache_control", {}).get("ttl")
+        for item in system
+        if isinstance(item, dict) and isinstance(item.get("cache_control"), dict)
+    }
+    if "1h" in cache_ttls:
         input_multiplier = _decimal(
             pricing.get("cache_1h_write_multiplier", "2"),
             "1h cache write multiplier",
         )
-    elif cache_control.get("ttl") == "5m":
+    elif "5m" in cache_ttls:
         input_multiplier = _decimal(
             pricing.get("cache_5m_write_multiplier", "1.25"),
             "5m cache write multiplier",

@@ -89,8 +89,8 @@ def test_payload_is_source_agnostic_and_accounts_for_exclusions():
 def test_request_caches_only_stable_system_prefix_for_one_hour():
     request = build_anthropic_request(
         prompt="Stable source policy",
-        response_schema={"type": "object"},
-        payload={"source_id": "S", "target_blocks": []},
+        response_schema={"type": "object", "properties": {"dispositions": {"type": "array"}}},
+        payload={"source_id": "S", "required_target_disposition_count": 1, "target_blocks": [{"block_id": "B1"}]},
         model="claude-sonnet-5",
         reasoning_effort="low",
         maximum_output_tokens=6000,
@@ -99,12 +99,12 @@ def test_request_caches_only_stable_system_prefix_for_one_hour():
     assert request["system"][0] == {
         "type": "text",
         "text": "Stable source policy",
+        "cache_control": {"type": "ephemeral", "ttl": "1h"},
     }
     assert request["system"][1]["text"].startswith("BOUND_RESPONSE_SCHEMA\n")
-    assert request["system"][1]["cache_control"] == {
-        "type": "ephemeral",
-        "ttl": "1h",
-    }
+    assert "cache_control" not in request["system"][1]
+    assert request["output_config"]["format"]["schema"]["properties"]["dispositions"]["minItems"] == 1
+    assert request["output_config"]["format"]["schema"]["properties"]["dispositions"]["maxItems"] == 1
     assert "cache_control" not in request["messages"][0]
 
 
@@ -376,8 +376,8 @@ def _required_binding():
 def test_money_envelope_does_not_replace_lifecycle_authority():
     request = build_anthropic_request(
         prompt="policy",
-        response_schema={"type": "object"},
-        payload={"source_id": "S1"},
+        response_schema={"type": "object", "properties": {"dispositions": {"type": "array"}}},
+        payload={"source_id": "S1", "required_target_disposition_count": 1, "target_blocks": [{"block_id": "B1"}]},
         model="claude-sonnet-5",
         reasoning_effort="low",
         maximum_output_tokens=100,
@@ -385,7 +385,7 @@ def test_money_envelope_does_not_replace_lifecycle_authority():
     )
     ceiling = conservative_call_ceiling(request, _pricing())
     uncached_request = copy.deepcopy(request)
-    uncached_request["system"][-1].pop("cache_control")
+    uncached_request["system"][0].pop("cache_control")
     assert ceiling > conservative_call_ceiling(uncached_request, _pricing())
     result = spend_preflight(
         envelope=_envelope(),
@@ -503,7 +503,7 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
     target_ids = []
     context_ids = []
     excluded_ids = []
-    stable_systems = []
+    stable_prompt_prefixes = []
     packets = []
     config = _json(AUTHGRAM_CONFIG)
     plan = _json(ROOT / config["artifacts"]["chunk_plan"])
@@ -520,10 +520,13 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
         chunk_context = [item["block_id"] for item in payload["context_blocks"]]
         chunk_excluded = payload["excluded_block_ids"]
         assert payload["required_target_disposition_count"] == len(chunk_targets)
+        dispositions_schema = packet["provider_request"]["output_config"]["format"]["schema"]["properties"]["dispositions"]
+        assert dispositions_schema["minItems"] == len(chunk_targets)
+        assert dispositions_schema["maxItems"] == len(chunk_targets)
         target_ids.extend(chunk_targets)
         context_ids.extend(chunk_context)
         excluded_ids.extend(chunk_excluded)
-        stable_systems.append(packet["provider_request"]["system"])
+        stable_prompt_prefixes.append(packet["provider_request"]["system"][0])
 
     manifest = _json(ROOT / config["artifacts"]["block_manifest"])
     primary_ids = [block_id for chunk in plan["chunks"] for block_id in chunk["block_ids"]]
@@ -534,8 +537,8 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
     assert plan["quantization"]["generated_chunk_count"] == len(chunk_ids) == 13
     assert plan["quantization"]["chunk_count_is_input"] is False
     assert context_ids
-    assert all(system == stable_systems[0] for system in stable_systems)
-    assert stable_systems[0][-1]["cache_control"] == {
+    assert all(prefix == stable_prompt_prefixes[0] for prefix in stable_prompt_prefixes)
+    assert stable_prompt_prefixes[0]["cache_control"] == {
         "type": "ephemeral",
         "ttl": "1h",
     }
@@ -610,7 +613,7 @@ def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
         maximum_output_tokens=6000,
         cache_ttl="1h",
     )
-    assert request["system"][-1]["cache_control"]["ttl"] == "1h"
+    assert request["system"][0]["cache_control"]["ttl"] == "1h"
     fake = {
         "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
         "proposal_set_id": "offline-fake",

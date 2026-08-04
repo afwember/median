@@ -451,6 +451,75 @@ def validate_timestamp(state: dict, errors: list[str]) -> None:
         errors.append("human STATUS timestamp disagrees with canonical ISO timestamp")
 
 
+def validate_spend_and_status(state: dict, errors: list[str]) -> None:
+    state_spend = state.get("spend", {})
+    if "record" in state_spend:
+        errors.append("canonical spend points to a redundant successor spend file")
+    try:
+        authorized = Decimal(state_spend.get("authorized_usd", ""))
+        cumulative = Decimal(state_spend.get("cumulative_spent_usd", ""))
+        remaining = Decimal(state_spend.get("remaining_usd", ""))
+        rounded = cumulative.quantize(Decimal("0.01"), rounding=ROUND_CEILING)
+    except Exception:
+        errors.append("canonical cumulative budget is not decimal")
+    else:
+        if state_spend.get("active") is not True:
+            errors.append("canonical cumulative budget is inactive")
+        if cumulative < 0 or authorized < 0 or remaining < 0 or authorized - cumulative != remaining:
+            errors.append("canonical cumulative budget arithmetic is inconsistent")
+        if state_spend.get("display_usd_rounded_up") != f"{rounded:.2f}":
+            errors.append("dashboard cost is not rounded upward to the cent")
+
+    validate_timestamp(state, errors)
+    if STATUS.read_text(encoding="utf-8") != expected_status(state):
+        errors.append("STATUS does not exactly mirror canonical compile state")
+
+
+def validate_pending_identity_card(
+    source: dict,
+    registered: dict,
+    calibration: dict,
+    latest: object,
+    errors: list[str],
+) -> None:
+    """Validate the existing pre-configuration identity-approval boundary."""
+    expected_keys = {
+        "identity_card",
+        "identity_card_sha256",
+        "identity_card_approval_pending",
+        "offline_gate_passed",
+    }
+    if set(calibration) != expected_keys:
+        errors.append("pending identity calibration state contains non-identity machinery")
+    if calibration.get("offline_gate_passed") is not False:
+        errors.append("pending identity state claims an offline extraction gate")
+    if latest is not None:
+        errors.append("pending identity state retains a provider attempt")
+    if (
+        source.get("accepted_chunk_ids") != []
+        or source.get("rejected_chunk_id") is not None
+        or source.get("whole_source_candidate_complete") is not False
+    ):
+        errors.append("pending identity source has an extraction boundary")
+
+    card_path = bound_file(calibration.get("identity_card"), "pending identity card", errors)
+    if card_path is None:
+        return
+    if sha256_file(card_path) != calibration.get("identity_card_sha256"):
+        errors.append("pending identity card hash binding drifted")
+    text = card_path.read_text(encoding="utf-8")
+    for required in (
+        "Status: `PENDING_AUTHOR_APPROVAL`",
+        "Lifecycle state: `identity_card_proposed`",
+        "Author/root of authority: Asa Wember",
+        f"| Source ID | `{source.get('id')}` |",
+        f"| Path | `{registered.get('path')}` |",
+        f"| SHA-256 | `{registered.get('sha256')}` |",
+    ):
+        if required not in text:
+            errors.append(f"pending identity card lacks required binding: {required}")
+
+
 def validate_atomic_extraction_profile(errors: list[str]) -> None:
     state = read_json(STATE, errors)
     if state.get("schema_version") != "M050-COMPILE-STATE-1.0":
@@ -538,6 +607,12 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
     calibration = state.get("calibration", {})
     if "provider_call_authorized" in calibration:
         errors.append("calibration stores redundant transaction-level provider permission")
+    if calibration.get("identity_card_approval_pending") is True:
+        validate_pending_identity_card(
+            source, registered, calibration, state.get("latest_provider_attempt"), errors
+        )
+        validate_spend_and_status(state, errors)
+        return
     if calibration.get("offline_gate_passed") is not True:
         errors.append("active packet lacks a completed offline calibration gate")
 
@@ -741,29 +816,7 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         if target is not None and replays.get(name, {}).get("sha256") != sha256_file(target):
             errors.append(f"compatibility replay binding drifted: {name}")
 
-    state_spend = state.get("spend", {})
-    if "record" in state_spend:
-        errors.append("canonical spend points to a redundant successor spend file")
-    try:
-        authorized = Decimal(state_spend.get("authorized_usd", ""))
-        cumulative = Decimal(state_spend.get("cumulative_spent_usd", ""))
-        remaining = Decimal(state_spend.get("remaining_usd", ""))
-        rounded = cumulative.quantize(
-            Decimal("0.01"), rounding=ROUND_CEILING
-        )
-    except Exception:
-        errors.append("canonical cumulative budget is not decimal")
-    else:
-        if state_spend.get("active") is not True:
-            errors.append("canonical cumulative budget is inactive")
-        if cumulative < 0 or authorized < 0 or remaining < 0 or authorized - cumulative != remaining:
-            errors.append("canonical cumulative budget arithmetic is inconsistent")
-        if state_spend.get("display_usd_rounded_up") != f"{rounded:.2f}":
-            errors.append("dashboard cost is not rounded upward to the cent")
-
-    validate_timestamp(state, errors)
-    if STATUS.read_text(encoding="utf-8") != expected_status(state):
-        errors.append("STATUS does not exactly mirror canonical compile state")
+    validate_spend_and_status(state, errors)
 
 
 def validate_active_phase(errors: list[str]) -> None:

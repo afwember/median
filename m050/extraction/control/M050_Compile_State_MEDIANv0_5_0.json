@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T10:13:47-04:00",
-  "execution_state": "GENERIC_EXTRACTION_PROMPT_BASE_REWRITE_COMPLETE_HALT",
+  "updated": "2026-08-04T10:27:51-04:00",
+  "execution_state": "EMBODIMENT_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -24,147 +24,21 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-HOME-001",
-    "label": "Home",
-    "compile_ordinal": 5,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013",
-      "C0014",
-      "C0015"
-    ],
+    "id": "M050-SRC-EMBODIMENT-001",
+    "label": "Embodiment",
+    "compile_ordinal": 6,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/home/M050_Home_C0009_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Home_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/home-pilot/M050_Home_C0015_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "latest_outcome": "m050/extraction/runs/home-pilot/M050_Home_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0001_Outcome_v0_12_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0006_Outcome_v0_5_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0009_Outcome_v0_4_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0014",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0014_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0015",
-        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/home/M050_Home_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "360f6c1b882b4d4640718b2101adeea6fdc656f6716f0ce26fe0b40e7d107121",
-      "report": "m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "596bc239b17b47ac3e141a22be11d5ac30503f087ca3eeb9b98eafa41fb4d479"
-    },
-    "compatibility_replays": {},
-    "pilot_chunk_id": "C0015",
-    "generated_chunk_count": 15,
-    "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 18,
-    "source_blocks": 585,
-    "eligible_target_blocks": 280,
-    "context_only_blocks": 40,
-    "excluded_blocks": 265,
-    "redacted_media_and_caption_blocks": 6,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 53,
-    "cache_miss_call_ceiling_usd": "0.222"
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Embodiment_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "ce08270185fb3977e72432b9f894910a2311627fd20f5ead1dd0898d102a2710",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
-  "latest_provider_attempt": {
-    "chunk_id": "C0015",
-    "http_status": 200,
-    "stop_reason": "end_turn",
-    "output_tokens": 4350,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 2666,
-    "cache_effective": true,
-    "exact_cost_usd": "0.0506572",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  },
+  "latest_provider_attempt": null,
   "spend": {
     "active": true,
     "authorized_usd": "5.2079914",
@@ -173,8 +47,8 @@
     "display_usd_rounded_up": "4.30"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -182,14 +56,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 10:13:47 AM EDT",
-    "status": "Generic extraction prompt base rewritten and validated; Supervisor write authority ended",
-    "phase": "Atomic extraction — inter-source Supervisor maintenance halt",
-    "source": "Home — 6 / 22",
-    "chunk": "15 / 15 accepted — 280 eligible targets, 280 dispositions, 500 atoms; no rejected chunk is active",
-    "now": "The source-agnostic starting prompt now carries concise target-set, exact-grounding, structural, table-atomicity, and identifier invariants; Home accepted evidence is unchanged, the current guard passes 54 tests, and no provider spend occurred",
-    "next": "Halt for Asa; starting Embodiment or any other source requires a new explicit source-work grant"
+    "updated_human": "August 4, 2026 at 10:27:51 AM EDT",
+    "status": "Embodiment identity card proposed; author approval required before provider transmission",
+    "phase": "Atomic extraction — Embodiment identity approval halt",
+    "source": "Embodiment — ordinal 6; 6 / 22 compile-scope sources complete",
+    "chunk": "No Embodiment chunk selected; accepted/rejected boundary is empty",
+    "now": "Frozen source identity, provenance, authority boundaries, section ownership, and three media dispositions are proposed; no provider call or spend occurred",
+    "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
-  "next_possible_transition": "With Asa's explicit authorization, begin Embodiment identity preparation under atomic extraction; no later phase is authorized.",
+  "next_possible_transition": "With Asa's identity-card approval, perform Embodiment offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
   "gate_5_complete": false
 }

@@ -34,6 +34,9 @@ MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
 AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
 GUARD = ROOT / "m050/tools/m050_guard.py"
+HOME_CONFIG = ROOT / "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
+HOME_REPORT = ROOT / "m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json"
+HOME_LEDGER = "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
 CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_15_MEDIANv0_5_0.json"
 CURRENT_LEDGER = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
 ACCEPTED_C0001_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Call_Packet_v0_4_MEDIANv0_5_0.json"
@@ -58,17 +61,41 @@ def _guard_module():
     return module
 
 
+def _home_acceptance_fixture():
+    report = _json(HOME_REPORT)
+    source = {
+        "id": report["source_id"],
+        "accepted_chunk_ids": report["accepted_chunk_ids"],
+    }
+    calibration = {
+        "accepted_evidence": [
+            {
+                "chunk_id": item["chunk_id"],
+                "outcome": item["outcome_path"],
+                "run_ledger": HOME_LEDGER,
+            }
+            for item in report["accepted_inputs"]
+        ],
+        "candidate_acceptance": {
+            "candidate": report["candidate_path"],
+            "candidate_sha256": report["candidate_sha256"],
+            "report": HOME_REPORT.relative_to(ROOT).as_posix(),
+            "report_sha256": hashlib.sha256(HOME_REPORT.read_bytes()).hexdigest(),
+        },
+    }
+    return source, _json(HOME_CONFIG), calibration
+
+
 def test_completed_source_has_exact_hash_bound_candidate_acceptance():
     guard = _guard_module()
-    state = _json(COMPILE_STATE)
+    source, config, calibration = _home_acceptance_fixture()
     errors = []
-    config = _json(ROOT / state["calibration"]["configuration"])
     guard.validate_candidate_acceptance(
-        state["source"],
+        source,
         config,
-        state["calibration"],
-        state["source"]["accepted_chunk_ids"],
-        state["calibration"]["accepted_evidence"],
+        calibration,
+        source["accepted_chunk_ids"],
+        calibration["accepted_evidence"],
         errors,
     )
     assert errors == []
@@ -76,15 +103,14 @@ def test_completed_source_has_exact_hash_bound_candidate_acceptance():
 
 def test_completed_source_rejects_missing_candidate_acceptance_pair():
     guard = _guard_module()
-    state = _json(COMPILE_STATE)
-    calibration = copy.deepcopy(state["calibration"])
+    source, config, calibration = _home_acceptance_fixture()
     calibration.pop("candidate_acceptance")
     errors = []
     guard.validate_candidate_acceptance(
-        state["source"],
-        _json(ROOT / calibration["configuration"]),
+        source,
+        config,
         calibration,
-        state["source"]["accepted_chunk_ids"],
+        source["accepted_chunk_ids"],
         calibration["accepted_evidence"],
         errors,
     )
@@ -109,6 +135,44 @@ def test_accepted_candidate_rejects_missing_coverage_and_duplicate_identifiers()
     errors = []
     guard.validate_accepted_candidate_records(candidate, expected, errors)
     assert "accepted candidate record identifiers are not candidate-wide unique" in errors
+
+
+def test_pending_identity_card_is_hash_bound_and_has_no_extraction_boundary(tmp_path, monkeypatch):
+    guard = _guard_module()
+    monkeypatch.setattr(guard, "ROOT", tmp_path)
+    relative = "m050/extraction/control/source-identities/cards/test.md"
+    card = tmp_path / relative
+    card.parent.mkdir(parents=True)
+    source = {
+        "id": "M050-SRC-TEST-001",
+        "accepted_chunk_ids": [],
+        "rejected_chunk_id": None,
+        "whole_source_candidate_complete": False,
+    }
+    registered = {"path": "m050/docs/test.md", "sha256": "a" * 64}
+    card.write_text(
+        "Status: `PENDING_AUTHOR_APPROVAL`\n"
+        "Lifecycle state: `identity_card_proposed`\n"
+        "Author/root of authority: Asa Wember\n"
+        "| Source ID | `M050-SRC-TEST-001` |\n"
+        "| Path | `m050/docs/test.md` |\n"
+        f"| SHA-256 | `{'a' * 64}` |\n",
+        encoding="utf-8",
+    )
+    calibration = {
+        "identity_card": relative,
+        "identity_card_sha256": hashlib.sha256(card.read_bytes()).hexdigest(),
+        "identity_card_approval_pending": True,
+        "offline_gate_passed": False,
+    }
+    errors = []
+    guard.validate_pending_identity_card(source, registered, calibration, None, errors)
+    assert errors == []
+
+    calibration["identity_card_sha256"] = "b" * 64
+    errors = []
+    guard.validate_pending_identity_card(source, registered, calibration, None, errors)
+    assert errors == ["pending identity card hash binding drifted"]
 
 
 def _pricing():
@@ -962,7 +1026,7 @@ def test_accepted_chunk_cannot_retry_after_source_completion():
 
     assert packet["source_id"] in state["progress"]["completed_source_ids"]
     assert state["source"]["id"] != packet["source_id"]
-    assert state["source"]["whole_source_candidate_complete"] is True
+    assert state["source"]["accepted_chunk_ids"] == []
 
 
 def test_send_records_malformed_response_without_creating_spend_successor(tmp_path, monkeypatch):

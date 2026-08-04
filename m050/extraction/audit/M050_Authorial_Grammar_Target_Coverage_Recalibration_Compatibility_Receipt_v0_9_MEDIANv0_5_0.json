@@ -16,8 +16,8 @@
   "binding": {
     "configuration_sha256": "6d3d598c3799661f3a9e78d622398e6ddd3f5a1143c932d2751522dcc57fd77b",
     "prompt_sha256": "9de7ac2aa81746a7b2b07debfbe046397f1f7f30bdb68283d2da0afdb8c3b2e4",
-    "engine_module_sha256": "057894be1779c50d3c6918c243738727a611feb0feb3d418570b9232fe9caee6",
-    "engine_tests_sha256": "94cecad4e7a4a2ae52fb3d06ead5d6f0e97857b8433434522eed84457abd1d5e"
+    "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
+    "engine_tests_sha256": "fa7d3bb17fa79fcd8cac882c7b4ba26e4d6b17cfd1178689a725d2303a20d7c3"
   },
   "policy": {
     "semantic_inventory_allowed_dispositions": ["atoms", "review_required"],

@@ -1,6 +1,6 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-AUTHGRAM-C0004-SOURCE-FREEZE-001",
+  "proposal_id": "M050-AUTHGRAM-C0008-SOURCE-FREEZE-001",
   "state": "source_chunk_frozen",
   "machine_state": "source_extraction_active",
   "correction": "C0003 calibration passed; reuse the source-agnostic semantic-inventory constraint, exact coverage, and pure-label handling for sequential source extraction.",
@@ -8,22 +8,22 @@
     "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
     "configuration_sha256": "6d3d598c3799661f3a9e78d622398e6ddd3f5a1143c932d2751522dcc57fd77b",
     "chunk_plan_sha256": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",
-    "pilot_chunk_id": "C0004",
-    "pilot_packet_sha256": "af1733a6e45bc98e959e2e50ae33e0113d1e84989a441bce69057401de14dc20",
-    "pilot_packet_file_sha256": "d34eaf62c72d5ad8cf3e9e02eeb69093eefec1c02a6833cf33f9887e0f09522d",
+    "pilot_chunk_id": "C0008",
+    "pilot_packet_sha256": "f4b153126dccbae831088d2165fb81b080171a9dfaaf5798f435036b44042c57",
+    "pilot_packet_file_sha256": "d5465c898e3a52c13a6cb704be5e22967ed3a2ee14450a813527ca4c4a2560cb",
     "prompt_sha256": "9de7ac2aa81746a7b2b07debfbe046397f1f7f30bdb68283d2da0afdb8c3b2e4",
-    "engine_module_sha256": "057894be1779c50d3c6918c243738727a611feb0feb3d418570b9232fe9caee6",
-    "engine_tests_sha256": "94cecad4e7a4a2ae52fb3d06ead5d6f0e97857b8433434522eed84457abd1d5e",
+    "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
+    "engine_tests_sha256": "fa7d3bb17fa79fcd8cac882c7b4ba26e4d6b17cfd1178689a725d2303a20d7c3",
     "model": "claude-sonnet-5",
     "reasoning_effort": "low",
     "maximum_output_tokens": 6000,
     "cache_ttl": "1h"
   },
   "pilot": {
-    "selection_reason": "C0004 is the next sequential chunk after representative C0003 calibration passed under the generic disposition constraint.",
-    "required_target_disposition_count": 15,
+    "selection_reason": "C0008 is the next sequential Authorial Grammar chunk under the calibrated source-agnostic extraction configuration.",
+    "required_target_disposition_count": 20,
     "dependent_semantic_inventory_count": 0,
-    "cache_miss_call_ceiling_usd": "0.124172"
+    "cache_miss_call_ceiling_usd": "0.11976"
   },
   "offline_verification": {
     "chunk_plan_changed": false,

@@ -884,7 +884,7 @@ def test_accepted_chunk_cannot_retry_and_next_chunk_can_proceed_under_standing_s
             hashlib.sha256(CURRENT_PACKET.read_bytes()).hexdigest(),
         )
 
-    packet = tool.build_packet(ROOT, AUTHGRAM_CONFIG, "C0004")
+    packet = tool.build_packet(ROOT, AUTHGRAM_CONFIG, state["calibration"]["pilot_chunk_id"])
     state["calibration"]["cache_miss_call_ceiling_usd"] = packet["cache_miss_call_ceiling_usd"]
     result = tool._preflight(
         packet,

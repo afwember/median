@@ -890,9 +890,12 @@ def require_run_ready_for_next_call(
     last = events[-1]
     if last.get("source_id") != source_id:
         raise ContractError("run ledger belongs to another source")
+    if any(
+        event.get("state") == "review_passed" and event.get("chunk_id") == chunk_id
+        for event in events
+    ):
+        raise ContractError("accepted chunk cannot be called again")
     if last.get("state") == "review_passed":
-        if last.get("chunk_id") == chunk_id:
-            raise ContractError("accepted chunk cannot be called again")
         return len(captured)
     if last.get("state") == "review_failed":
         if last.get("chunk_id") != chunk_id:

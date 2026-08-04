@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T14:11:26-04:00",
-  "execution_state": "EMBODIMENT_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_HALT",
+  "updated": "2026-08-04T14:20:26-04:00",
+  "execution_state": "AWAY_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -25,185 +25,21 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-EMBODIMENT-001",
-    "label": "Embodiment",
-    "compile_ordinal": 6,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013",
-      "C0014",
-      "C0015",
-      "C0016",
-      "C0017",
-      "C0018",
-      "C0019",
-      "C0020",
-      "C0021"
-    ],
+    "id": "M050-SRC-AWAY-001",
+    "label": "Away",
+    "compile_ordinal": 7,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_Embodiment_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/embodiment/M050_Embodiment_C0010_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Embodiment_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0021_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0001_Outcome_v0_4_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0002_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0008_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0010_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0014",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0015",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0016",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0017",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0018",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0019",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0020",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0021",
-        "outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "latest_outcome": "m050/extraction/runs/embodiment-pilot/M050_Embodiment_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/embodiment/M050_Embodiment_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "5c24bfb0c37f7a01aad1215823d83650e17cb4473235bffb87e30638586df456",
-      "report": "m050/extraction/accepted/embodiment/M050_Embodiment_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "bd2e68973b9ba5af5a7d1569873e217e1bf7995633a7bde086dd7f7813b4bec6"
-    },
-    "compatibility_replays": {},
-    "pilot_chunk_id": "C0021",
-    "generated_chunk_count": 21,
-    "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 1,
-    "source_blocks": 589,
-    "eligible_target_blocks": 357,
-    "context_only_blocks": 57,
-    "excluded_blocks": 175,
-    "excluded_media_reference_blocks": 3,
-    "retained_media_caption_targets": 3,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 55,
-    "cache_miss_call_ceiling_usd": "0.238016"
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Away_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "fb59e2681044342ae5041416adfb514b468cba3b45de8ccbc3be6f464dfd78ee",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
-  "latest_provider_attempt": {
-    "chunk_id": "C0021",
-    "http_status": 200,
-    "request_id": "req_011Cdi11gMh6sPgEF5XhiUh5",
-    "stop_reason": "end_turn",
-    "output_tokens": 165,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 6326,
-    "cache_effective": true,
-    "exact_cost_usd": "0.0050232",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  },
+  "latest_provider_attempt": null,
   "spend": {
     "active": true,
     "authorized_usd": "7.8960480",
@@ -212,8 +48,8 @@
     "display_usd_rounded_up": "5.90"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -221,14 +57,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 2:11:26 PM EDT",
-    "status": "Embodiment source-bounded candidate accepted; source-work grant ended",
-    "phase": "Atomic extraction — halted at Embodiment completion",
-    "source": "Embodiment — ordinal 6; 7 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0021; rejected/frozen none; whole-source candidate accepted",
-    "now": "Working spend limit replenished to $2.0000000 remaining; repository-write and source-work authority remain false",
-    "next": "Await Asa's explicit source-work grant for Away; no other source or later phase is authorized"
+    "updated_human": "August 4, 2026 at 2:20:26 PM EDT",
+    "status": "Away identity card proposed; author approval required before provider transmission",
+    "phase": "Atomic extraction — Away identity approval halt",
+    "source": "Away — ordinal 7; 7 / 22 compile-scope sources complete",
+    "chunk": "No Away chunk selected; accepted/rejected boundary is empty",
+    "now": "Frozen source identity, provenance, authority boundaries, open-status handling, and zero-media disposition are proposed; no provider call or spend occurred",
+    "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
-  "next_possible_transition": "Await Asa's explicit source-work grant for Away; spend alone cannot select or advance a source.",
+  "next_possible_transition": "With Asa's identity-card approval, perform Away offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
   "gate_5_complete": false
 }

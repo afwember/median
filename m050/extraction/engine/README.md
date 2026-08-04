@@ -5,6 +5,10 @@ compile. Source differences belong in the bound identity card, block manifest,
 disposition ledger, chunk plan, prompt, schema, and configuration—not in
 source-specific worker code.
 
+Identity approval is recorded on the card itself and in Git history. The active
+configuration binds the approved card by hash; no parallel identity-transition
+receipt is required.
+
 ## Runtime
 
 - macOS arm64
@@ -19,7 +23,8 @@ m050/tools/m050_bootstrap_gate5.sh
 
 The focused suite covers corpus order, source isolation, parsing, semantic-group
 chunking, exact target coverage, table and pure-label handling, caching, spend
-envelopes, provider capture, validation, and sequential review.
+envelopes, provider capture, validation, sequential review, and a zero-call
+parse-and-plan compatibility sweep across all 22 compile-scope sources.
 
 ## Extraction machine
 

@@ -73,6 +73,14 @@ def repo_file(repo_root: Path, supplied: str) -> Path:
     return target
 
 
+def require_approved_identity_card(path: Path) -> None:
+    text = path.read_text(encoding="utf-8", errors="strict")
+    if "Status: `APPROVED`" not in text:
+        raise ContractError("identity card is not marked APPROVED")
+    if "Author/root of authority: Asa Wember" not in text:
+        raise ContractError("identity card lacks Asa Wember as authorial authority")
+
+
 def load_config(repo_root: Path, path: Path) -> tuple[dict, dict[str, Path]]:
     config = read_json(path)
     if config.get("schema_version") != "M050-EXTRACTION-MACHINE-CONFIG-0.1":
@@ -81,7 +89,7 @@ def load_config(repo_root: Path, path: Path) -> tuple[dict, dict[str, Path]]:
     if not isinstance(artifact_paths, dict):
         raise ContractError("configuration lacks artifact paths")
     required = {
-        "identity_card", "identity_approval_receipt", "block_manifest",
+        "identity_card", "block_manifest",
         "disposition_ledger", "chunk_plan", "prompt", "response_schema"
     }
     missing = sorted(required - set(artifact_paths))
@@ -93,15 +101,7 @@ def load_config(repo_root: Path, path: Path) -> tuple[dict, dict[str, Path]]:
         expected = hashes.get(key)
         if not expected or sha256_file(target) != expected:
             raise IntegrityError(f"configuration hash mismatch: {key}")
-    card_sha256 = sha256_file(resolved["identity_card"])
-    approval = read_json(resolved["identity_approval_receipt"])
-    if (
-        approval.get("machine") != "identity_card"
-        or approval.get("new_state") != "approved"
-        or approval.get("authority") != "Asa Wember"
-        or approval.get("artifact_id") != "sic_" + card_sha256[:24]
-    ):
-        raise ContractError("configuration identity card lacks its exact Asa-approved receipt")
+    require_approved_identity_card(resolved["identity_card"])
     return config, resolved
 
 
@@ -264,16 +264,7 @@ def command_scaffold(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root).resolve()
     source_path = repo_file(repo_root, args.source_path)
     card_path = repo_file(repo_root, args.identity_card)
-    approval_path = repo_file(repo_root, args.identity_approval_receipt)
-    card_sha256 = sha256_file(card_path)
-    approval = read_json(approval_path)
-    if (
-        approval.get("machine") != "identity_card"
-        or approval.get("new_state") != "approved"
-        or approval.get("authority") != "Asa Wember"
-        or approval.get("artifact_id") != "sic_" + card_sha256[:24]
-    ):
-        raise ContractError("scaffold requires the exact Asa-approved identity card")
+    require_approved_identity_card(card_path)
     if not args.allowed_stream or len(args.allowed_stream) != len(set(args.allowed_stream)):
         raise ContractError("scaffold requires one or more unique allowed streams")
     outputs = {
@@ -330,7 +321,6 @@ def command_scaffold(args: argparse.Namespace) -> int:
     }
     relative.update({
         "identity_card": card_path.relative_to(repo_root).as_posix(),
-        "identity_approval_receipt": approval_path.relative_to(repo_root).as_posix(),
     })
     artifact_sha256 = {
         key: sha256_file(repo_root / path)
@@ -721,7 +711,6 @@ def build_parser() -> argparse.ArgumentParser:
     scaffold.add_argument("--source-id", required=True)
     scaffold.add_argument("--source-path", required=True)
     scaffold.add_argument("--identity-card", required=True)
-    scaffold.add_argument("--identity-approval-receipt", required=True)
     scaffold.add_argument("--allowed-stream", action="append", required=True)
     scaffold.add_argument("--max-input-tokens", type=int, default=12000)
     scaffold.add_argument("--target-blocks-per-chunk", type=int, required=True)

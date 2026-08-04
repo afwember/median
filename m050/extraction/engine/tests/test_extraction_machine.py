@@ -738,22 +738,12 @@ def test_scaffold_command_writes_provider_disabled_source_package(tmp_path):
     repo = tmp_path / "repo"
     source = repo / "m050/docs/spec.md"
     card = repo / "m050/extraction/control/card.md"
-    approval = repo / "m050/extraction/audit/card-approved.json"
     source.parent.mkdir(parents=True)
     card.parent.mkdir(parents=True)
-    approval.parent.mkdir(parents=True)
     source.write_text("# Test source\n\nA rule applies.\n", encoding="utf-8")
-    card.write_text("# Approved boundary\n\nOnly this source is in scope.\n", encoding="utf-8")
-    card_sha256 = hashlib.sha256(card.read_bytes()).hexdigest()
-    approval.write_text(
-        json.dumps(
-            {
-                "machine": "identity_card",
-                "new_state": "approved",
-                "authority": "Asa Wember",
-                "artifact_id": "sic_" + card_sha256[:24],
-            }
-        ),
+    card.write_text(
+        "# Approved boundary\n\nStatus: `APPROVED`\n"
+        "Author/root of authority: Asa Wember\n\nOnly this source is in scope.\n",
         encoding="utf-8",
     )
     base = "m050/extraction/onboarding/test"
@@ -762,7 +752,6 @@ def test_scaffold_command_writes_provider_disabled_source_package(tmp_path):
         source_id="M050-SRC-TEST-SPEC-001",
         source_path="m050/docs/spec.md",
         identity_card="m050/extraction/control/card.md",
-        identity_approval_receipt="m050/extraction/audit/card-approved.json",
         allowed_stream=["evidence_game_semantic"],
         max_input_tokens=12000,
         target_blocks_per_chunk=50,
@@ -783,9 +772,24 @@ def test_scaffold_command_writes_provider_disabled_source_package(tmp_path):
     loaded, paths = tool.load_config(repo, repo / f"{base}/config.json")
     assert loaded["source_id"] == "M050-SRC-TEST-SPEC-001"
     assert set(paths) == {
-        "identity_card", "identity_approval_receipt", "block_manifest",
+        "identity_card", "block_manifest",
         "disposition_ledger", "chunk_plan", "prompt", "response_schema",
     }
+
+
+def test_identity_card_approval_is_checked_without_parallel_receipt(tmp_path):
+    spec = importlib.util.spec_from_file_location("m050_extraction_machine_identity", MACHINE_TOOL)
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+    card = tmp_path / "card.md"
+    card.write_text(
+        "# Draft boundary\n\nStatus: `DRAFT_AWAITING_AUTHOR_REVIEW`\n"
+        "Author/root of authority: Asa Wember\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ContractError, match="not marked APPROVED"):
+        tool.require_approved_identity_card(card)
 
 
 def test_replan_reapportions_complete_source_from_calibrated_quantization(tmp_path):

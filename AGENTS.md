@@ -9,9 +9,11 @@ transcript—is the durable source of operational truth.
 - “The compile” is the complete controlled pipeline: evidence preparation and
   atomization, semantic review, mapping, reconciliation, and final document
   production.
-- Gate 2 registers 24 sources. Two are non-atomic companions. Compile scope is
-  22 sources: 4 atomized legacy seeds and 18 outstanding, comprising 14
-  pre-reconciliation sources and 4 later or conditional sources.
+- Gate 2 registers 24 sources. Two are non-atomic companions, so compile scope
+  is 22. The atomic-extraction baseline was 4 completed legacy seeds and 18
+  outstanding sources, comprising 14 pre-reconciliation and 4 later or
+  conditional sources. Current completed and outstanding counts derive from
+  canonical compile state and advance without rewriting this contract.
 - Never describe the four-source legacy seed or its dormant review artifacts as
   whole-corpus completion.
 - MEDIAN v0.5.0 sources are frozen. `m051/` is outside the compile.
@@ -101,7 +103,8 @@ Git is the history.
 - `STATUS.md` is the only derived human dashboard. It is never execution
   authority.
 - `m050/extraction/control/M050_Compile_Source_Processing_Order_v0_1_MEDIANv0_5_0.json`
-  controls source order.
+  controls source order. Completed progress and the next outstanding source are
+  derived from canonical compile state rather than duplicated in the order.
 - `m050/tools/m050_guard.py` is the sole active repository guard.
 - Historical checkpoints, bootstrap packets, active-index versions, execution
   standards, authority policies, and versioned guard wrappers are retired.
@@ -170,6 +173,11 @@ without transaction-by-transaction permission through:
 - current-state and STATUS maintenance; and
 - coherent commits and pushes.
 
+Changes to the generic engine, artifact schema, or validator must remain
+source-agnostic and pass the all-source offline compatibility check. A
+source-ID branch, source-specific worker, new artifact class, or changed
+cross-source invariant requires a Supervisor halt.
+
 A defect pauses further provider calls until its correction passes the existing
 offline and replay gates. It does not revoke the source-work grant merely
 because correction is required. No task may waive a defect, silently repair a
@@ -189,6 +197,9 @@ Halt for Asa only when:
 - Every new provider-eligible source begins with a content/provenance identity
   card, complete offline preparation, and representative pilot calibration.
   Prior-source success is evidence, not source transfer.
+- Maintain an approved identity card in place and bind its exact hash in the
+  active source configuration. Git records its approval history; do not create
+  a separate identity-transition receipt family.
 - Freeze the exact source, identity, disposition, streams, chunk, prompt,
   schema, engine, validator, normalization, exclusion policy, model, reasoning,
   cache, and cost bindings before a call.

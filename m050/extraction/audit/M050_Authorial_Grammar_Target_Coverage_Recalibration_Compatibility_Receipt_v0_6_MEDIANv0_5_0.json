@@ -13,10 +13,10 @@
     "basis": "C0003 had 19 targets under the accepted 20-target quantization and stopped normally after 3,629 output tokens."
   },
   "binding": {
-    "configuration_sha256": "e620829180b2e5fd97b634c073fea191c3c3586f295eb8f32ffad239655aaec8",
+    "configuration_sha256": "f13d42e047007a2bd35f7c786e90cb09d835d18eae11c66096067c78b69b2446",
     "prompt_sha256": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
     "engine_module_sha256": "7e9d228161b553c7f04f617deb869c03bcbe5d53e87b5afc137afe67e00bf886",
-    "engine_tests_sha256": "702fcd9f58b180da2bfadc8d4ed3755434bc127e1b69c64b2082251b76308ba6"
+    "engine_tests_sha256": "bb36108fd55139f84a1bda9cf7102dfe4d0e68a937b0b2b8b306b80fb5872d7f"
   },
   "policy": {
     "exact_target_disposition_coverage_required": true,

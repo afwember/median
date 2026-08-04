@@ -28,11 +28,11 @@ The path, hash, source ID, disposition, stream, and exclusions above agree acros
 
 ## 2. Control bindings
 
-The active extraction configuration binds this exact card, its approval receipt,
-the Authorial Grammar block manifest, and the Gate 2 disposition by hash. Root
-`AGENTS.md` governs lifecycle and mandate; the canonical compile state and source
-processing order govern mutable status and sequence. This card intentionally
-does not duplicate their changing values.
+The active extraction configuration binds this exact approved card and the
+Authorial Grammar extraction artifacts by hash. Git records the card's approval
+history. Root `AGENTS.md` governs lifecycle and mandate; the canonical compile
+state and source processing order govern mutable status and sequence. This card
+intentionally does not duplicate their changing values.
 
 ## 3. Reason for existence and content role
 

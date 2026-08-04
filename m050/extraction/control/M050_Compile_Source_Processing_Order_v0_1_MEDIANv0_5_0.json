@@ -8,16 +8,13 @@
     "disposition_source_path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
     "disposition_source_sha256": "f460dd7c3ebf2df9344ee58aa8f650c3314af436b7684bf6cd2bf674fef5bf63",
     "state_matrix_path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json",
-    "derivation_rule": "Order comes only from this canonical sequence. Identity, scope, disposition, phase, and current state come from the Gate-2-derived source-state matrix. No spreadsheet, filename, or task-memory inference."
+    "derivation_rule": "Order comes only from this canonical sequence. Identity, scope, disposition, and phase come from the Gate-2-derived source-state matrix. Completed progress and the next outstanding source derive from canonical compile state; they are not duplicated here. No spreadsheet, filename, or task-memory inference."
   },
   "sequence": [
     {
       "order": 1,
       "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
       "label": "Authorial Grammar",
-      "matrix_position": 1,
-      "current_state": "outstanding",
-      "processing_phase": "pre_reconciliation_atomization",
       "pre_candidate_acceptance_control": {
         "kind": "post_extraction_source_bounded_conformance_review",
         "higher_authority_source_id": "M050-SRC-HUMAN-RULINGS-001",
@@ -26,57 +23,126 @@
         "effect": "Record conflicts, omissions, or status mismatches and return defects to calibration; do not perform Layer E semantic acceptance or cross-source reconciliation."
       }
     },
-    {"order": 2, "source_id": "M050-SRC-PA-001", "label": "Governing Philosophy and Architecture", "matrix_position": 2, "current_state": "atomized_legacy_seed", "processing_phase": "preserved_pre_reconciliation_seed"},
-    {"order": 3, "source_id": "M050-SRC-HUMAN-RULINGS-001", "label": "Human Rulings", "matrix_position": 3, "current_state": "atomized_legacy_seed", "processing_phase": "preserved_pre_reconciliation_seed"},
-    {"order": 4, "source_id": "M050-SRC-MSID-GRAMMAR-001", "label": "MSID Grammar", "matrix_position": 4, "current_state": "atomized_legacy_seed", "processing_phase": "preserved_pre_reconciliation_seed"},
-    {"order": 5, "source_id": "M050-SRC-HOME-001", "label": "Home", "matrix_position": 5, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 6, "source_id": "M050-SRC-EMBODIMENT-001", "label": "Embodiment", "matrix_position": 6, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 7, "source_id": "M050-SRC-AWAY-001", "label": "Away", "matrix_position": 7, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 8, "source_id": "M050-SRC-CROSSING-001", "label": "Crossing", "matrix_position": 8, "current_state": "atomized_legacy_seed", "processing_phase": "preserved_pre_reconciliation_seed"},
-    {"order": 9, "source_id": "M050-SRC-POPULATION-001", "label": "Population", "matrix_position": 9, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 10, "source_id": "M050-SRC-GUEST-001", "label": "Guest", "matrix_position": 10, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 11, "source_id": "M050-SRC-PERSONAL-ITEMS-001", "label": "Personal Items", "matrix_position": 11, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 12, "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001", "label": "Discovery, Time, Movement, and Civic Progression", "matrix_position": 12, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 13, "source_id": "M050-SRC-CORE-TRAITS-001", "label": "Core Species Traits", "matrix_position": 13, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 14, "source_id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001", "label": "v0.4.7 Cross-System Carryforward", "matrix_position": 14, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 15, "source_id": "M050-SRC-ECOLOGY-001", "label": "Ecology", "matrix_position": 15, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 16, "source_id": "M050-SRC-GDD-COVERAGE-GAP-001", "label": "v0.4.6 GDD Coverage-Gap Development", "matrix_position": 16, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 17, "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001", "label": "v0.4.7 Development Rulings", "matrix_position": 22, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 18, "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001", "label": "v0.4.7 Development Survivorship Review", "matrix_position": 23, "current_state": "outstanding", "processing_phase": "pre_reconciliation_atomization"},
-    {"order": 19, "source_id": "M050-SRC-GDD-046-001", "label": "v0.4.6 GDD Baseline", "matrix_position": 24, "current_state": "outstanding", "processing_phase": "later_or_conditional_compile_stage"},
-    {"order": 20, "source_id": "M050-SRC-FOUR-MANIFESTATION-FRAMEWORK-001", "label": "Four Manifestation Framework", "matrix_position": 17, "current_state": "outstanding", "processing_phase": "later_or_conditional_compile_stage"},
-    {"order": 21, "source_id": "M050-SRC-APPENDIX-001", "label": "Appendix Architecture", "matrix_position": 18, "current_state": "outstanding", "processing_phase": "later_or_conditional_compile_stage"},
-    {"order": 22, "source_id": "M050-SRC-BOARD-GAME-DRAFT-001", "label": "Board Game Draft", "matrix_position": 19, "current_state": "outstanding", "processing_phase": "later_or_conditional_compile_stage"},
-    {"order": 23, "source_id": "M050-SRC-MARKET-001", "label": "Market Companion", "matrix_position": 20, "current_state": "excluded_non_atomic_companion", "processing_phase": "outside_atomic_compile"},
-    {"order": 24, "source_id": "M050-SRC-SOURCEBOOK-AUGMENTS-001", "label": "Sourcebook Augments Companion", "matrix_position": 21, "current_state": "excluded_non_atomic_companion", "processing_phase": "outside_atomic_compile"}
-  ],
-  "next_source": {
-    "order": 1,
-    "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
-    "next_activity": "Continue the frozen C0003 target-coverage pilot only within an explicit Authorial Grammar source-work grant and the active spend envelope"
-  },
-  "outstanding_pre_reconciliation_order": [
-    "M050-SRC-AUTHORIAL-GRAMMAR-001",
-    "M050-SRC-HOME-001",
-    "M050-SRC-EMBODIMENT-001",
-    "M050-SRC-AWAY-001",
-    "M050-SRC-POPULATION-001",
-    "M050-SRC-GUEST-001",
-    "M050-SRC-PERSONAL-ITEMS-001",
-    "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
-    "M050-SRC-CORE-TRAITS-001",
-    "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
-    "M050-SRC-ECOLOGY-001",
-    "M050-SRC-GDD-COVERAGE-GAP-001",
-    "M050-SRC-047-DEVELOPMENT-RULINGS-001",
-    "M050-SRC-047-SURVIVORSHIP-REVIEW-001"
+    {
+      "order": 2,
+      "source_id": "M050-SRC-PA-001",
+      "label": "Governing Philosophy and Architecture"
+    },
+    {
+      "order": 3,
+      "source_id": "M050-SRC-HUMAN-RULINGS-001",
+      "label": "Human Rulings"
+    },
+    {
+      "order": 4,
+      "source_id": "M050-SRC-MSID-GRAMMAR-001",
+      "label": "MSID Grammar"
+    },
+    {
+      "order": 5,
+      "source_id": "M050-SRC-HOME-001",
+      "label": "Home"
+    },
+    {
+      "order": 6,
+      "source_id": "M050-SRC-EMBODIMENT-001",
+      "label": "Embodiment"
+    },
+    {
+      "order": 7,
+      "source_id": "M050-SRC-AWAY-001",
+      "label": "Away"
+    },
+    {
+      "order": 8,
+      "source_id": "M050-SRC-CROSSING-001",
+      "label": "Crossing"
+    },
+    {
+      "order": 9,
+      "source_id": "M050-SRC-POPULATION-001",
+      "label": "Population"
+    },
+    {
+      "order": 10,
+      "source_id": "M050-SRC-GUEST-001",
+      "label": "Guest"
+    },
+    {
+      "order": 11,
+      "source_id": "M050-SRC-PERSONAL-ITEMS-001",
+      "label": "Personal Items"
+    },
+    {
+      "order": 12,
+      "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+      "label": "Discovery, Time, Movement, and Civic Progression"
+    },
+    {
+      "order": 13,
+      "source_id": "M050-SRC-CORE-TRAITS-001",
+      "label": "Core Species Traits"
+    },
+    {
+      "order": 14,
+      "source_id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
+      "label": "v0.4.7 Cross-System Carryforward"
+    },
+    {
+      "order": 15,
+      "source_id": "M050-SRC-ECOLOGY-001",
+      "label": "Ecology"
+    },
+    {
+      "order": 16,
+      "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
+      "label": "v0.4.6 GDD Coverage-Gap Development"
+    },
+    {
+      "order": 17,
+      "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+      "label": "v0.4.7 Development Rulings"
+    },
+    {
+      "order": 18,
+      "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+      "label": "v0.4.7 Development Survivorship Review"
+    },
+    {
+      "order": 19,
+      "source_id": "M050-SRC-GDD-046-001",
+      "label": "v0.4.6 GDD Baseline"
+    },
+    {
+      "order": 20,
+      "source_id": "M050-SRC-FOUR-MANIFESTATION-FRAMEWORK-001",
+      "label": "Four Manifestation Framework"
+    },
+    {
+      "order": 21,
+      "source_id": "M050-SRC-APPENDIX-001",
+      "label": "Appendix Architecture"
+    },
+    {
+      "order": 22,
+      "source_id": "M050-SRC-BOARD-GAME-DRAFT-001",
+      "label": "Board Game Draft"
+    },
+    {
+      "order": 23,
+      "source_id": "M050-SRC-MARKET-001",
+      "label": "Market Companion"
+    },
+    {
+      "order": 24,
+      "source_id": "M050-SRC-SOURCEBOOK-AUGMENTS-001",
+      "label": "Sourcebook Augments Companion"
+    }
   ],
   "transition_constraints": {
     "sequence_may_be_reordered_without_author_amendment": false,
     "legacy_seed_is_complete_corpus": false,
     "later_or_conditional_sources_may_enter_pre_reconciliation_atomization_early": false,
-    "excluded_companions_may_enter_atomic_extraction": false,
-    "next_source_work_authorized": false,
-    "provider_calls_authorized": false
+    "excluded_companions_may_enter_atomic_extraction": false
   }
 }

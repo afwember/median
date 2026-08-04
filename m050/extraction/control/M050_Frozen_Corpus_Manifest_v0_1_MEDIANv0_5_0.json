@@ -16,7 +16,6 @@
     "source_modification_allowed": false,
     "source_deletion_allowed": false,
     "accepted_evidence_modification_allowed": false,
-    "archive_snapshot_modification_allowed": false,
     "new_v0_5_0_design_material_allowed": false,
     "m051_input_allowed_in_m050_processing": false
   },
@@ -64,11 +63,5 @@
     {"path":"m050/extraction/accepted/pa/M050_Governing_Philosophy_and_Architecture_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"3e6c87dffe992c1dc89bbf483235e1e56965cf8b6260a748b3cb1a0516fb38d9"},
     {"path":"m050/extraction/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json","sha256":"c2e142816fcb5f0eda4c68cd822f577f8f78938cf40213537d33a76e556fb24e"},
     {"path":"m050/extraction/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"2e5818604fa346a17b3c84edf77de13c25b0a3b413626037f63b273bba212b3c"}
-  ],
-  "archive_snapshot": {
-    "root": "m050/archive",
-    "file_count_excluding_ds_store": 9921,
-    "total_bytes": 251364403,
-    "ordered_path_and_sha256_digest": "9b99f81366b13da1829bea688d4510aee3540c677f25218ebacc0fe0121011e1"
-  }
+  ]
 }

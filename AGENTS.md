@@ -15,17 +15,17 @@ source of operational truth.
 ## Required cold start
 
 1. Confirm that root `AGENTS.override.md` is absent.
-2. Read `m050/extraction/control/M050_Active_Control_Index_v0_23_MEDIANv0_5_0.json` completely.
-3. Read `m050/extraction/control/M050_Current_State_Checkpoint_v0_13_MEDIANv0_5_0.md` completely.
+2. Read `m050/extraction/control/M050_Active_Control_Index_v0_24_MEDIANv0_5_0.json` completely.
+3. Read `m050/extraction/control/M050_Current_State_Checkpoint_v0_14_MEDIANv0_5_0.md` completely.
 4. Read `m050/extraction/control/M050_Compile_Source_Processing_Order_v0_1_MEDIANv0_5_0.json` completely.
 5. Read `m050/extraction/control/M050_Source_Atomization_Pilot_Calibration_Protocol_v0_1_MEDIANv0_5_0.md` completely.
 6. Read `m050/extraction/control/M050_Compile_Execution_Standard_v0_3_MEDIANv0_5_0.md` completely.
 7. Read root `STATUS.md` completely and verify it is a derived mirror of the active index and checkpoint, not execution authority.
-8. Run `.venv/bin/python m050/tools/m050_guard_v0_18.py --with-tests` before control/code checkpoints, provider-enabled configuration release, whole-source acceptance, and commit/push. Routine append-only provider capture uses the execution standard's focused preflight and validation.
+8. Run `.venv/bin/python m050/tools/m050_guard_v0_19.py --with-tests` before control/code checkpoints, provider-enabled configuration release, whole-source acceptance, and commit/push. Routine append-only provider capture uses the execution standard's focused preflight and validation.
 9. Report the exact `24 / 22 / 4 / 18 = 14 + 4` corpus vector; the next source; the accepted-pilot boundary; the source-run and spend-envelope boundary; the required cadence and halt conditions; all prohibited later stages; the next authorized transition; whether `STATUS.md` is current; and whether local `HEAD` equals `origin/main`.
 
 The paste-ready successor-thread audit is
-`m050/extraction/control/M050_New_Task_Bootstrap_v0_13_MEDIANv0_5_0.md`.
+`m050/extraction/control/M050_New_Task_Bootstrap_v0_14_MEDIANv0_5_0.md`.
 
 ## Mandatory source-by-source calibration
 
@@ -81,4 +81,8 @@ The paste-ready successor-thread audit is
 - The call created 2,698 one-hour cache tokens and cost $0.067362. Cumulative spend is $0.419817; the active money-only balance is $1.580183.
 - Offline recalibration now marks all 14 pure example/polarity labels in bound payloads as requiring `no_substantive_claim`, with validator enforcement. Substantive colon-ended sentence lead-ins remain eligible; this is not a block-specific patch.
 - C0001/C0002 pass newly bound replay; captured C0003 fails exactly B00101/B00105 under the new rule. All 13 chunks fake-validate and 122 tests pass.
-- C0003 is frozen for a new pilot with a $0.120852 cache-miss ceiling. No provider call is authorized; spend remains $0.419817 with $1.580183 money-only balance.
+- The pure-label C0003 pilot fixed the intended table and label dispositions but omitted substantive example-list targets B00085 and B00121. It was rejected after mechanical and extraction-quality review. The call created 2,523 one-hour cache tokens and cost $0.056146.
+- Cumulative spend is $0.475963; the active money-only balance is $1.524037. The pilot authorization is consumed, and no retry or later chunk is authorized.
+- Offline recalibration now requires exact one-to-one disposition coverage for every target, including example bodies dependent on pure labels. The 20-target quantization and 13-chunk plan remain unchanged because failed C0003 had only 19 targets and stopped normally at 3,629 output tokens.
+- C0001/C0002 pass newly bound replay; captured C0003 fails exactly the two missing-target coverage checks while all table and pure-label rules pass. All 13 chunks fake-validate and 122 tests pass.
+- C0003 is frozen for a target-coverage pilot with a $0.12354 cache-miss ceiling. No provider call is authorized.

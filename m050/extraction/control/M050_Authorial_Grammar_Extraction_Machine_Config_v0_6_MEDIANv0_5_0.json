@@ -1,0 +1,44 @@
+{
+  "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
+  "status": "OFFLINE_TARGET_COVERAGE_RECALIBRATION_REQUIRES_PILOT",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_sha256": "7d23ef2ccbff0c6594975c03cf405d838a3cc3f712ea6faf942581a72c9284ff",
+  "allowed_streams": ["evidence_authorial_rule"],
+  "supersedes": {"path": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_5_MEDIANv0_5_0.json", "sha256": "495b46cd203d58f083905afdd6d73a6936b7d92b63fcfbadf57c33ac7bf4cb12", "reason": "Require exact disposition coverage for every target, including example bodies dependent on pure labels"},
+  "artifacts": {
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Authorial_Grammar_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_approval_receipt": "m050/extraction/audit/identity-transitions/M050_Authorial_Grammar_Content_Provenance_Identity_Card_Approved_Transition_v0_1_MEDIANv0_5_0.json",
+    "block_manifest": "m050/extraction/control/source-identities/blocks/M050_Authorial_Grammar_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+    "disposition_ledger": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "chunk_plan": "m050/extraction/control/M050_Authorial_Grammar_Section_Aware_Chunk_Plan_v0_3_MEDIANv0_5_0.json",
+    "prompt": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Extraction_Prompt_v0_5_MEDIANv0_5_0.md",
+    "response_schema": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Pilot_001_R6_Response_Schema_v0_6_MEDIANv0_5_0.json"
+  },
+  "artifact_sha256": {
+    "identity_card": "983ca763a907d3465c14215bed7f165f712b903567b5bbe54f6e50f6717e10b4",
+    "identity_approval_receipt": "ee71ef2f017c1e8f66b6c48f5c6384a998b6c85345fddddf988e9645b74a132a",
+    "block_manifest": "cf1d0291cf7cb9fb3d959cb45f3477d69f5987d7d93c4f79b89dfe743eea0cca",
+    "disposition_ledger": "a365b4260d8cb7820742e4ab879c3d6336f643989139c700401ee887cf960b6c",
+    "chunk_plan": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",
+    "prompt": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
+    "response_schema": "0a190a2db1b012fce4f90a33039a4ce106f1584b831a499f8dc565c5d43fee33"
+  },
+  "quantization": {"unit": "provider_eligible_target_blocks", "target_blocks_per_chunk": 20, "generated_chunk_count": 13, "chunk_count_is_input": false, "basis": "Unchanged accepted structural plan; C0003 had 19 targets and completed within output allowance, so the defect is target coverage rather than quantization"},
+  "lean_structural_policy": {
+    "table_headers_and_delimiters": "no_substantive_claim",
+    "pure_label_pattern": "Example(s)|Prefer|Preferred|Avoid|Not|Correct|Incorrect followed only by colon",
+    "pure_label_required_disposition": "no_substantive_claim",
+    "pure_labels_audited": 14,
+    "substantive_sentence_leadins_remain_eligible": true,
+    "dependent_example_bodies_remain_disposition_required": true,
+    "exact_target_disposition_coverage_required": true,
+    "payload_annotation": true,
+    "prompt_enforcement": true,
+    "validator_enforcement": true,
+    "source_specific_block_patch": false
+  },
+  "provider": {"name": "Anthropic", "model": "claude-sonnet-5", "reasoning_effort": "low", "maximum_output_tokens": 6000, "cache_ttl": "1h", "cache_required": true, "cache_boundary": "stable_system_prefix"},
+  "pricing": {"input_usd_per_million_tokens": "2", "output_usd_per_million_tokens": "10", "cache_read_multiplier": "0.1", "cache_5m_write_multiplier": "1.25", "cache_1h_write_multiplier": "2"},
+  "execution": {"cadence": "sequential_one_call_review", "provider_calls_authorized": false, "full_source_authorized": false, "spend_envelope_authorized": false, "next_chunk_requires_substantive_review_of_prior_chunk": true},
+  "recalibration": {"state": "offline_dry_run", "trigger_chunk_id": "C0003", "trigger_block_ids": ["B00085", "B00121"], "pilot_required": true, "prior_pilot_rejected": true}
+}

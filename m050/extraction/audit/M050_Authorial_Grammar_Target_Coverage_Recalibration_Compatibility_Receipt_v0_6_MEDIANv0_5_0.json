@@ -1,0 +1,36 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-AUTHGRAM-TARGET-COVERAGE-RECALIBRATION-COMPATIBILITY-006",
+  "date": "2026-08-03",
+  "status": "OFFLINE_TARGET_COVERAGE_RECALIBRATION_VERIFIED_PILOT_REQUIRED",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "trigger": {
+    "pilot_chunk_id": "C0003",
+    "outcome_sha256": "4fc84715f7fdbdbfa30855ca9ad24fcb75832ce7c283b32d42726f26b084391d",
+    "defect": "The provider omitted two substantive target example bodies despite returning all required pure-label and table-structure dispositions.",
+    "missing_target_suffixes": ["B00085", "B00121"],
+    "quantization_defect": false,
+    "basis": "C0003 had 19 targets under the accepted 20-target quantization and stopped normally after 3,629 output tokens."
+  },
+  "binding": {
+    "configuration_sha256": "92ad5e749414d42a498a1f45c595a89cb43ed94f0ac970e8b65e8bd29ff3a511",
+    "prompt_sha256": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
+    "engine_module_sha256": "7e9d228161b553c7f04f617deb869c03bcbe5d53e87b5afc137afe67e00bf886",
+    "engine_tests_sha256": "f0195699e939f35fe521fc6c54e63ecc7d28d7ced84107c2dd5bba4f6af42b3d"
+  },
+  "policy": {
+    "exact_target_disposition_coverage_required": true,
+    "dependent_example_bodies_remain_disposition_required": true,
+    "pure_label_required_disposition": "no_substantive_claim",
+    "table_headers_and_delimiters_required_disposition": "no_substantive_claim",
+    "substantive_sentence_leadins_remain_eligible": true,
+    "source_specific_block_patch": false
+  },
+  "replays": {
+    "accepted_c0001": {"sha256": "541a7f844a4a6a6dee52b1903555a5caad1a183a6e622cee6ed98fa3210dff03", "passed": true},
+    "accepted_c0002": {"sha256": "5fd32fb0c7f4721d1f37fd7af2f49b0438fef27a64df0cd532c017c7a2de0b47", "passed": true},
+    "rejected_c0003": {"sha256": "618837e2721db2ccbb4efb223de3539ed3d8d7e1393ebad23f4e620571412385", "passed": false, "coverage_errors": 1, "missing_target_count": 2, "required_disposition_errors": 0}
+  },
+  "offline_verification": {"chunk_plan_changed": false, "generated_chunk_count": 13, "all_chunks_fake_validated": true, "offline_tests_passed": 122},
+  "authority_boundary": {"provider_calls_authorized": 0, "retry_authorized": false, "full_source_run_authorized": false, "semantic_acceptance_authorized": false}
+}

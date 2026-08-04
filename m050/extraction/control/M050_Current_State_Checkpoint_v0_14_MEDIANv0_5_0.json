@@ -1,0 +1,28 @@
+{
+  "schema_version": "M050-CURRENT-STATE-CHECKPOINT-0.14",
+  "status": "AUTHORIAL_GRAMMAR_TARGET_COVERAGE_C0003_PILOT_FROZEN",
+  "date": "2026-08-03",
+  "supersedes": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_13_MEDIANv0_5_0.json", "sha256": "b98983c78795198ee2eace78706b456f0ec739cec7bddab2a40f245ad967f85a"},
+  "corpus_vector": {"registered_sources": 24, "atomic_compile_exclusions": 2, "compile_scope_sources": 22, "atomized_legacy_seed_sources": 4, "outstanding_compile_scope_sources": 18, "outstanding_pre_reconciliation_sources": 14, "outstanding_later_or_conditional_sources": 4},
+  "next_source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "source_state": "target_coverage_c0003_pilot_frozen_waiting_exact_one_call_authorization",
+  "accepted_evidence": {"new_plan_chunk_ids": ["C0001", "C0002"], "rejected_chunk_id": "C0003", "whole_source_candidate_complete": false},
+  "latest_pilot": {"chunk_id": "C0003", "authorization_consumed": true, "http_status": 200, "stop_reason": "end_turn", "output_tokens": 3629, "cache_creation_input_tokens": 2523, "exact_cost_usd": "0.056146", "intended_table_and_pure_label_rules_passed": true, "missing_target_suffixes": ["B00085", "B00121"], "mechanical_passed": false, "review_state": "review_failed", "retry_authorized": false},
+  "recalibration": {"exact_target_disposition_coverage_required": true, "dependent_example_bodies_remain_disposition_required": true, "pure_labels_audited": 14, "pure_label_required_disposition": "no_substantive_claim", "substantive_sentence_leadins_remain_eligible": true, "source_specific_block_patch": false, "chunk_plan_changed": false, "target_blocks_per_chunk": 20, "generated_chunk_count": 13, "c0001_c0002_replays_passed": true, "c0003_replay_missing_target_count": 2, "c0003_replay_required_disposition_errors": 0, "all_chunks_fake_validated": true, "offline_tests_passed": 122},
+  "frozen_pilot": {"chunk_id": "C0003", "required_target_disposition_count": 19, "marked_labels": ["B00083", "B00101", "B00105"], "dependent_example_body_count": 2, "cache_miss_call_ceiling_usd": "0.12354", "requested_cost_cap_usd": "0.13", "provider_call_authorized": false},
+  "spend": {"cumulative_spent_usd": "0.475963", "active_money_only_remaining_usd": "1.524037", "money_authority_is_lifecycle_authority": false},
+  "authority_boundary": {"repository_writes_authorized": false, "provider_call_authorized": false, "retry_authorized": false, "full_source_authorized": false, "google_sheets_authorized": false, "semantic_acceptance_authorized": false, "mapping_authorized": false, "reconciliation_authorized": false, "compiled_prose_authorized": false},
+  "artifacts": {
+    "agents_contract": {"path": "AGENTS.md", "sha256": "66de2a6658008a55deffe093a265032212baf975380f605e0304975dfa7a451d"},
+    "active_control_index": {"path": "m050/extraction/control/M050_Active_Control_Index_v0_24_MEDIANv0_5_0.json", "sha256": "8b6acf93a1bcba58258a419f2221e33eff9e56ce6b522caf683028607331cb95"},
+    "checkpoint_report": {"path": "m050/extraction/control/M050_Current_State_Checkpoint_v0_14_MEDIANv0_5_0.md", "sha256": "7c78d62f64efe59f18298b134f21404c4e32664435eadc9895405abcc6e51cfa"},
+    "new_task_bootstrap": {"path": "m050/extraction/control/M050_New_Task_Bootstrap_v0_14_MEDIANv0_5_0.md", "sha256": "dcb3367878230d2d1985f89bade7864b30cb2bdb8093110aa2fb1378d06cc22b"},
+    "configuration": {"path": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json", "sha256": "92ad5e749414d42a498a1f45c595a89cb43ed94f0ac970e8b65e8bd29ff3a511"},
+    "pilot_freeze": {"path": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Target_Coverage_C0003_Pilot_Freeze_Proposal_v0_11_MEDIANv0_5_0.json", "sha256": "ffd01baf5371c640a7855114ebd063dbdc20e69247833ec814c8412f131db485"},
+    "compatibility_receipt": {"path": "m050/extraction/audit/M050_Authorial_Grammar_Target_Coverage_Recalibration_Compatibility_Receipt_v0_6_MEDIANv0_5_0.json", "sha256": "a2ca38b6a90ad8a94b211fe0beb9e73e0a907fbc4d83bb36a9ebbf26fea4e3e6"},
+    "rejected_outcome": {"path": "m050/extraction/runs/authorial-grammar-pure-label-calibration/M050_Authorial_Grammar_Pure_Label_C0003_Outcome_v0_10_MEDIANv0_5_0.json", "sha256": "4fc84715f7fdbdbfa30855ca9ad24fcb75832ce7c283b32d42726f26b084391d"},
+    "run_ledger": {"path": "m050/extraction/runs/authorial-grammar-pure-label-calibration/M050_Authorial_Grammar_Pure_Label_Pilot_Run_Ledger_v0_10_MEDIANv0_5_0.jsonl", "sha256": "d9d6245f2cdebb21be64fb5f7e680c96f7cd5bf4d3ad9940e25545bd638bc3d3"},
+    "active_guard": {"path": "m050/tools/m050_guard_v0_19.py", "sha256": "5aef44b1a9e40b91dccf92fa27fd31c4bd09345af0d116d260cf34f47d89dbc9"}
+  },
+  "next_authorized_transition": "No activity is authorized. The next possible transition is an exact one-call C0003 target-coverage pilot authorization under a $0.13 cap."
+}

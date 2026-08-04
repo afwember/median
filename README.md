@@ -37,7 +37,7 @@ Start with the two workbooks and cost ledger in `m050/extraction/progress/`. The
 
 For recovery after a restart, context compaction, or task handoff, start with
 root `AGENTS.md`. For a new Compile thread, use
-`m050/extraction/control/M050_New_Task_Bootstrap_v0_13_MEDIANv0_5_0.md` and
+`m050/extraction/control/M050_New_Task_Bootstrap_v0_14_MEDIANv0_5_0.md` and
 require its read-only acceptance audit before transferring authority.
 
 ## Core rule

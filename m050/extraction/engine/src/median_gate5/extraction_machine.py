@@ -25,6 +25,19 @@ PURE_STRUCTURAL_LABEL = re.compile(
 )
 
 
+def _structural_table_ids(blocks: list[dict[str, Any]]) -> set[str]:
+    structural_ids: set[str] = set()
+    for index, block in enumerate(blocks):
+        if block.get("block_type") != "table_row":
+            continue
+        cells = [cell.strip() for cell in block.get("text", "").strip().strip("|").split("|")]
+        if cells and all(TABLE_DELIMITER_CELL.fullmatch(cell) for cell in cells):
+            structural_ids.add(block["block_id"])
+            if index > 0 and blocks[index - 1].get("block_type") == "table_row":
+                structural_ids.add(blocks[index - 1]["block_id"])
+    return structural_ids
+
+
 def _decimal(value: Any, field: str) -> Decimal:
     try:
         result = Decimal(str(value))
@@ -96,6 +109,7 @@ def build_chunk_payload(
     document_control_table_ids: set[str] = set()
     procedural_table_body_ids: set[str] = set()
     table_minimum_atoms: dict[str, int] = {}
+    structural_table_ids = _structural_table_ids(ordered_manifest_blocks)
     for index, block in enumerate(ordered_manifest_blocks):
         if block.get("block_type") != "table_row":
             continue
@@ -160,6 +174,9 @@ def build_chunk_payload(
             record = _block_record(block)
             if block_id in document_control_table_ids:
                 record["structural_role"] = "document_control_metadata"
+                record["required_disposition"] = "no_substantive_claim"
+            elif block_id in structural_table_ids:
+                record["structural_role"] = "table_header_or_delimiter"
                 record["required_disposition"] = "no_substantive_claim"
             elif block_id in procedural_table_body_ids:
                 record["structural_role"] = "procedural_stage_action_result"
@@ -506,14 +523,12 @@ IDs or metadata. Do not return a sample object: complete the full target set.
 
 Split independent claims into separate atoms and keep dependent qualifications
 with the claims they qualify. Every `exact_source_text` must be a byte-for-byte
-contiguous substring of its target block after JSON decoding. Preserve literal
-markup, backslashes, and source escaping; never render, strip, reconstruct,
-clean, or reformat the selected source span. Copy the whole target block when
-that is the safest exact grounded span.
+contiguous substring of its target block after JSON decoding. Exact spans retain
+markup and escaping. If markup interrupts prose, include it or split the atom.
 
-Honor every target-supplied `required_disposition`, `allowed_dispositions`, or
-`minimum_atoms`
-constraint. Pure structural headings, labels, table headers, delimiters, and
+Obey target constraints exactly. `required_disposition` fixes `kind`; when it
+is `no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
+kind, and `minimum_atoms` is a floor. Pure structural headings, labels, table headers, delimiters, and
 document-control metadata carry no substantive atom; never turn a label into a tautological
 claim that its section discusses the announced topic. Structural context never
 excuses a dependent substantive target from receiving its own disposition.
@@ -535,7 +550,7 @@ definitions, owners, or authorities.
 
 ## Output check
 
-Before returning, verify coverage, no context dispositions, grounding, and
+Verify count equals `required_target_disposition_count`, coverage, no context dispositions, grounding, and
 cardinality. Return JSON only under the bound
 response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
 empty otherwise. Every atom must use supplied source and target block IDs, an
@@ -691,15 +706,7 @@ def validate_extraction_response(
     table_structure_errors = 0
     required_disposition_errors = 0
     by_id = {block["block_id"]: block for block in targets}
-    structural_table_ids: set[str] = set()
-    for index, block in enumerate(targets):
-        if block.get("block_type") != "table_row":
-            continue
-        cells = [cell.strip() for cell in block.get("text", "").strip().strip("|").split("|")]
-        if cells and all(TABLE_DELIMITER_CELL.fullmatch(cell) for cell in cells):
-            structural_table_ids.add(block["block_id"])
-            if index > 0 and targets[index - 1].get("block_type") == "table_row":
-                structural_table_ids.add(targets[index - 1]["block_id"])
+    structural_table_ids = _structural_table_ids(targets)
     for disposition in dispositions:
         block_id = disposition.get("block_id")
         kind = disposition.get("kind")

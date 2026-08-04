@@ -5,10 +5,10 @@
   "status": "AWAY_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
   "source_id": "M050-SRC-AWAY-001",
   "binding": {
-    "configuration_sha256": "288547acd908b71ed076c9eae95c4b2196f7de973f052ac44d8447573a0198ba",
-    "prompt_sha256": "1c2c4b2ed9749474044f6f6728e119b3ca513fa4becad3727da8b9d756bae411",
-    "engine_module_sha256": "5a4fbdaac21c1fae6f0bb8c9cf41cb23c6b109b99e73505901aa919162d1ee83",
-    "engine_tests_sha256": "e2732c6763be07035c2f41bb834789154fbe035c7094acfc3c9906f5150b318d",
+    "configuration_sha256": "836e6c9f39726c787150d7f889e7814b4e7ec022ef847fdddcaccb47be6dda4f",
+    "prompt_sha256": "d47c124b3747f6a2f9b6d405bd695b2905853f8b047e0c8917d490369afb7b15",
+    "engine_module_sha256": "6437c557950e77e039cc4b9bcdafe46b6d8f45a55a0b6806a9d2ce57f856d896",
+    "engine_tests_sha256": "deb395f89e649d70b9d95c6fcdc79b6fcad8b1cc1eaa21bd165fd220fff3301e",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
   },
@@ -39,8 +39,8 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 63
+    "offline_tests_passed": 64
   },
   "replays": {},
-  "note": "C0002, C0001, C0008, and C0009 exposed source-agnostic grounding, metadata, coverage, and table-atomicity defects now corrected within existing prompt/payload/validator mechanics. C0012 v0.1 fused independent table columns; the validator now enforces their required atoms. C0014 v0.1 and v0.3 returned invented identifiers and no target coverage; the generic prompt forbids sample objects and the per-call response schema now binds disposition and atom block IDs to the exact target enum. All-source compatibility and all 27 Away fake replays pass."
+  "note": "C0002, C0001, C0008, and C0009 exposed source-agnostic grounding, metadata, coverage, and table-atomicity defects now corrected within existing prompt/payload/validator mechanics. C0012 v0.1 fused independent table columns; the validator now enforces their required atoms. C0014 constrained invented IDs; C0016 aligned payload and validator header recognition; C0021 required retaining markup in exact spans. C0025 v0.1 stopped after two of 20 targets; the generic output check now explicitly compares disposition count with required_target_disposition_count. All-source compatibility and all 27 Away fake replays pass."
 }

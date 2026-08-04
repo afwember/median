@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-AWAY-001",
     "source_sha256": "2fff249d70b88a49139e094bd8b526e526e0e024d78ea44a8fa08a48d1ddb5ea",
-    "configuration_sha256": "288547acd908b71ed076c9eae95c4b2196f7de973f052ac44d8447573a0198ba",
+    "configuration_sha256": "836e6c9f39726c787150d7f889e7814b4e7ec022ef847fdddcaccb47be6dda4f",
     "identity_card_sha256": "1f58976a00fd0ab741a02d450181e6784fa25f4006f2052d1cd840f55c88ccb3",
     "block_manifest_sha256": "1d93eb8f917e783ea308f6316bcb36f2556195537c85e2cdda94183882494f2c",
     "disposition_ledger_sha256": "5e048e0ed9bd80d8fbf84fd465e90ce9f84da2ab4c7ea646be3a1da9da7dde24",
     "chunk_plan_sha256": "fe3fa1e8b18fa2f08fbdcf875531962fe6dd1902161678e3d71bc4dc5b3cfa3a",
-    "pilot_chunk_id": "C0016",
-    "pilot_packet_sha256": "f75960e168bd73c350c8a8741bf6a3a4e548bc9c1f485278c94e4ab0a77beaea",
-    "pilot_packet_file_sha256": "e8199240b67eb91e4f8063cfbc1e65d450d874179a3ff08c12cd9ffc59d15ac1",
-    "prompt_sha256": "1c2c4b2ed9749474044f6f6728e119b3ca513fa4becad3727da8b9d756bae411",
+    "pilot_chunk_id": "C0027",
+    "pilot_packet_sha256": "b93160aa228af9eaf08e9a74246b97aee2fc547986a79839c4118fc351054181",
+    "pilot_packet_file_sha256": "4c26aff146593b68f1f8abd948eca8189de7b11ee008ea632796307661753a12",
+    "prompt_sha256": "d47c124b3747f6a2f9b6d405bd695b2905853f8b047e0c8917d490369afb7b15",
     "response_schema_sha256": "4ad25f34b769dd3471533c17b2450e317800cd57d20990bc9bf480b562b01213",
-    "engine_module_sha256": "5a4fbdaac21c1fae6f0bb8c9cf41cb23c6b109b99e73505901aa919162d1ee83",
-    "engine_tests_sha256": "e2732c6763be07035c2f41bb834789154fbe035c7094acfc3c9906f5150b318d",
+    "engine_module_sha256": "6437c557950e77e039cc4b9bcdafe46b6d8f45a55a0b6806a9d2ce57f856d896",
+    "engine_tests_sha256": "deb395f89e649d70b9d95c6fcdc79b6fcad8b1cc1eaa21bd165fd220fff3301e",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
     "allowed_streams": [
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0001 through C0015 are accepted; C0016 is the next sequential Away chunk and is frozen pending enough cumulative budget for its conservative ceiling.",
-    "required_target_disposition_count": 16,
-    "cache_miss_call_ceiling_usd": "0.272952"
+    "selection_reason": "C0001 through C0026 are accepted; C0027 is the final sequential Away chunk under the accepted source-agnostic extraction configuration.",
+    "required_target_disposition_count": 20,
+    "cache_miss_call_ceiling_usd": "0.2837"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -51,7 +51,7 @@
   "offline_verification": {
     "all_27_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 63,
+    "offline_tests_passed": 64,
     "calibrated_target_blocks_per_chunk": 20,
     "generated_chunk_count": 27,
     "chunk_count_is_input": false,
@@ -66,6 +66,10 @@
     "c0012_v0_1_rejected_for_independent_table_column_fusion": true,
     "c0014_v0_1_rejected_for_placeholder_identifiers_and_missing_coverage": true,
     "c0014_v0_3_rejected_for_invented_identifiers_and_missing_coverage": true,
+    "c0016_v0_1_rejected_for_unbound_structural_header_disposition": true,
+    "c0016_v0_2_rejected_for_unbound_structural_header_disposition": true,
+    "c0021_v0_1_rejected_for_removed_intervening_markup_in_exact_span": true,
+    "c0025_v0_1_rejected_for_partial_target_coverage": true,
     "provider_call_made": true
   }
 }

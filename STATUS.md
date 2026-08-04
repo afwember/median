@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-**UPDATED:** August 4, 2026 at 4:30:27 PM EDT<br>
+**UPDATED:** August 4, 2026 at 5:33:48 PM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Away C0015 v0.1 accepted; C0016 v0.1 is frozen and ready<br>
-**PHASE:** Atomic extraction — Away representative pilot<br>
-**SOURCE:** Away — ordinal 7; 7 / 22 compile-scope sources complete<br>
-**CHUNK:** C0016 / 27 — C0001 through C0015 accepted<br>
-**NOW:** The Away cumulative envelope is replenished to $2.0000000 remaining; C0016 v0.1 remains hash-bound at a $0.272952 conservative ceiling<br>
-**NEXT:** Transmit frozen C0016 v0.1 after focused preflight confirms its $0.272952 ceiling within the $2.0000000 remaining envelope<br>
-**TOTAL COST:** $7.69 cumulative provider spend
+**STATUS:** Away source-bounded candidate accepted; formal Stopdown complete<br>
+**PHASE:** Atomic extraction — halted at Away completion<br>
+**SOURCE:** Away — ordinal 7; 8 / 22 compile-scope sources complete<br>
+**CHUNK:** Accepted C0001-C0027; rejected/frozen none; whole-source candidate accepted<br>
+**NOW:** All 510 target dispositions and 585 atoms passed exact coverage, ledger-bound review, unique-identifier, and candidate/report hash-binding checks; $0.6576584 remains<br>
+**NEXT:** Await Asa's explicit source-work grant for Population; no other source or later phase is authorized<br>
+**TOTAL COST:** $9.03 cumulative provider spend

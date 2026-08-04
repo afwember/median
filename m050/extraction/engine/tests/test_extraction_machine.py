@@ -278,7 +278,10 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "block-ID set must exactly equal" in prompt
     assert "never repeat\nan ID" in prompt
     assert "byte-for-byte" in prompt
+    assert "If markup interrupts prose, include it or split the atom" in prompt
     assert "required_disposition" in prompt
+    assert "count equals `required_target_disposition_count`" in prompt
+    assert "`no_substantive_claim`, emit empty `atoms`" in prompt
     assert "every nonempty semantic cell" in prompt
     assert "stages,\nactions, and results as separate atoms" in prompt
     assert "semicolon-separated effects require\nseparate atoms" in prompt
@@ -460,6 +463,32 @@ def test_validator_requires_table_headers_and_delimiters_to_be_non_substantive()
     )
     assert accepted["passed"] is True
     assert accepted["checks"]["table_structure_errors"] == 0
+
+
+def test_payload_marks_generic_table_header_and_delimiter_non_substantive():
+    rows = [
+        ("B1", "| **Card family** | **Function** | **Example** |\n"),
+        ("B2", "|---|---|---|\n"),
+        ("B3", "| Arrival | A Presence arrives | Hawk pass |\n"),
+    ]
+    manifest = {
+        "source_id": "S1", "source_sha256": "a" * 64,
+        "blocks": [
+            {"block_id": block_id, "block_type": "table_row", "text": value,
+             "status_markers": []}
+            for block_id, value in rows
+        ],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [{"block_id": block_id, "disposition": "eligible"} for block_id, _ in rows],
+        {"chunk_id": "C0001", "block_ids": [block_id for block_id, _ in rows]},
+    )
+    targets = {item["block_id"]: item for item in payload["target_blocks"]}
+    for block_id in ("B1", "B2"):
+        assert targets[block_id]["structural_role"] == "table_header_or_delimiter"
+        assert targets[block_id]["required_disposition"] == "no_substantive_claim"
+    assert "required_disposition" not in targets["B3"]
 
 
 def test_payload_marks_pure_structural_labels_and_validator_enforces_nonclaim():

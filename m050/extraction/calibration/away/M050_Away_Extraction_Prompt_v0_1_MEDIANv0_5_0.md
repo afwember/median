@@ -244,14 +244,12 @@ work on another source remain prohibited.
 
 Split independent claims into separate atoms and keep dependent qualifications
 with the claims they qualify. Every `exact_source_text` must be a byte-for-byte
-contiguous substring of its target block after JSON decoding. Preserve literal
-markup, backslashes, and source escaping; never render, strip, reconstruct,
-clean, or reformat the selected source span. Copy the whole target block when
-that is the safest exact grounded span.
+contiguous substring of its target block after JSON decoding. Exact spans retain
+markup and escaping. If markup interrupts prose, include it or split the atom.
 
-Honor every target-supplied `required_disposition`, `allowed_dispositions`, or
-`minimum_atoms`
-constraint. Pure structural headings, labels, table headers, delimiters, and
+Obey target constraints exactly. `required_disposition` fixes `kind`; when it
+is `no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
+kind, and `minimum_atoms` is a floor. Pure structural headings, labels, table headers, delimiters, and
 document-control metadata carry no substantive atom; never turn a label into a tautological
 claim that its section discusses the announced topic. Structural context never
 excuses a dependent substantive target from receiving its own disposition.
@@ -273,7 +271,7 @@ definitions, owners, or authorities.
 
 ## Output check
 
-Before returning, verify coverage, no context dispositions, grounding, and
+Verify count equals `required_target_disposition_count`, coverage, no context dispositions, grounding, and
 cardinality. Return JSON only under the bound
 response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
 empty otherwise. Every atom must use supplied source and target block IDs, an

@@ -132,7 +132,6 @@ def derive_compile_source_state(
             "mapping_authorized": False,
             "reconciliation_authorized": False,
             "compiled_prose_authorized": False,
-            "provider_calls_authorized": False,
             "google_sheets_interactions_authorized": False,
         },
         "sources": rows,

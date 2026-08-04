@@ -17,7 +17,6 @@ from .validation import validate_atoms, validate_block_dispositions
 
 
 SUPPORTED_CACHE_TTLS = {"5m", "1h"}
-SUPPORTED_LIFECYCLE_STATES = {"pilot_call_authorized", "source_run_authorized"}
 HEADING_LEVEL = re.compile(r"^ {0,3}(#{1,6})(?:\s+|$)")
 TABLE_DELIMITER_CELL = re.compile(r"^:?-{3,}:?$")
 PURE_STRUCTURAL_LABEL = re.compile(
@@ -749,59 +748,48 @@ def conservative_call_ceiling(
     ) / Decimal(1_000_000)
 
 
-def spend_preflight(
+def provider_preflight(
     *,
-    envelope: dict[str, Any],
-    lifecycle_receipt: dict[str, Any],
+    compile_state: dict[str, Any],
     source_id: str,
-    completed_calls: int,
     call_ceiling_usd: Decimal,
-    required_binding: dict[str, Any] | None = None,
 ) -> dict[str, str]:
-    """Require independent lifecycle authority and cumulative monetary authority."""
-    if envelope.get("authority") != "Asa Wember":
-        raise ContractError("spend envelope requires Asa Wember authority")
-    if envelope.get("scope") != "provider_spend_only":
-        raise ContractError("spend envelope must be money-only")
-    if envelope.get("active") is not True:
-        raise ContractError("spend envelope is not active")
-    authorized = _decimal(envelope.get("authorized_usd"), "authorized spend")
-    spent = _decimal(envelope.get("spent_usd", 0), "spent amount")
-    if spent > authorized:
-        raise ContractError("spend envelope is already overdrawn")
+    """Derive call permission from the active source grant and cumulative budget."""
+    if compile_state.get("schema_version") != "M050-COMPILE-STATE-1.0":
+        raise ContractError("provider preflight requires canonical compile state")
+    source = compile_state.get("source", {})
+    authority = compile_state.get("authority", {})
+    if source.get("id") != source_id:
+        raise ContractError("active source-work grant does not cover this source")
+    if source.get("whole_source_candidate_complete") is True:
+        raise ContractError("active source is already complete")
+    if (
+        source.get("source_work_authorized") is not True
+        or authority.get("source_work_authorized") is not True
+    ):
+        raise ContractError("active source-work grant is absent")
+    if authority.get("repository_writes_authorized") is not True:
+        raise ContractError("active repository-writing authority is absent")
+    if compile_state.get("calibration", {}).get("offline_gate_passed") is not True:
+        raise ContractError("offline calibration gate has not passed")
 
-    state = lifecycle_receipt.get("state")
-    if state not in SUPPORTED_LIFECYCLE_STATES:
-        raise ContractError("call lacks an authorized extraction lifecycle transition")
-    if lifecycle_receipt.get("authority") != "Asa Wember":
-        raise ContractError("lifecycle receipt requires Asa Wember authority")
-    binding = lifecycle_receipt.get("binding", {})
-    if binding.get("source_id") != source_id:
-        raise ContractError("lifecycle authority does not cover this source")
-    if lifecycle_receipt.get("revoked") is True:
-        raise ContractError("lifecycle authority was revoked")
-    if state == "source_run_authorized" and lifecycle_receipt.get("execution_cadence") != "sequential_one_call_review":
-        raise ContractError("source-run lifecycle authority must preserve sequential review")
-    required_binding = required_binding or {}
-    drift = [
-        field
-        for field, value in required_binding.items()
-        if binding.get(field) != value
-    ]
-    if drift:
-        raise ContractError(
-            "lifecycle authority does not bind the exact execution configuration: "
-            + ", ".join(drift)
-        )
-    call_limit = lifecycle_receipt.get("provider_call_limit")
-    if not isinstance(call_limit, int) or completed_calls >= call_limit:
-        raise ContractError("lifecycle provider-call limit is exhausted")
+    spend = compile_state.get("spend", {})
+    if spend.get("active") is not True:
+        raise ContractError("cumulative spend budget is not active")
+    authorized = _decimal(spend.get("authorized_usd"), "authorized spend")
+    spent = _decimal(spend.get("cumulative_spent_usd", 0), "spent amount")
+    recorded_remaining = _decimal(spend.get("remaining_usd"), "remaining spend")
+    if spent > authorized:
+        raise ContractError("cumulative spend budget is already overdrawn")
+    remaining = authorized - spent
+    if recorded_remaining != remaining:
+        raise ContractError("canonical remaining spend is inconsistent")
 
     ceiling = _decimal(call_ceiling_usd, "call ceiling")
-    remaining = authorized - spent
     if ceiling > remaining:
-        raise ContractError("spend envelope cannot cover the next cache-miss ceiling")
+        raise ContractError("cumulative spend budget cannot cover the next cache-miss ceiling")
     return {
+        "permission_basis": "active_source_work_plus_cumulative_budget",
         "authorized_usd": format(authorized, "f"),
         "spent_usd": format(spent, "f"),
         "remaining_before_call_usd": format(remaining, "f"),
@@ -810,18 +798,21 @@ def spend_preflight(
     }
 
 
-def debit_spend_envelope(
-    envelope: dict[str, Any], actual_cost_usd: str
+def debit_compile_state_spend(
+    compile_state: dict[str, Any], actual_cost_usd: str
 ) -> dict[str, Any]:
-    """Return a successor envelope; never mutate the authorized receipt in place."""
-    updated = dict(envelope)
-    authorized = _decimal(updated.get("authorized_usd"), "authorized spend")
-    spent = _decimal(updated.get("spent_usd", 0), "spent amount")
+    """Return canonical state with its in-place cumulative spend values advanced."""
+    updated = copy.deepcopy(compile_state)
+    spend = updated.get("spend", {})
+    authorized = _decimal(spend.get("authorized_usd"), "authorized spend")
+    spent = _decimal(spend.get("cumulative_spent_usd", 0), "spent amount")
     actual = _decimal(actual_cost_usd, "actual cost")
     if spent + actual > authorized:
-        raise ContractError("actual cost would overdraw the spend envelope")
-    updated["spent_usd"] = format(spent + actual, "f")
-    updated["remaining_usd"] = format(authorized - spent - actual, "f")
+        raise ContractError("actual cost would overdraw the cumulative spend budget")
+    cumulative = spent + actual
+    spend["cumulative_spent_usd"] = format(cumulative, "f")
+    spend["remaining_usd"] = format(authorized - cumulative, "f")
+    spend["display_usd_rounded_up"] = f"{cumulative.quantize(Decimal('0.01'), rounding=ROUND_CEILING):.2f}"
     return updated
 
 
@@ -876,7 +867,10 @@ def append_run_ledger_event(path: Path, event_body: dict[str, Any]) -> dict[str,
 
 
 def require_run_ready_for_next_call(
-    events: list[dict[str, Any]], source_id: str
+    events: list[dict[str, Any]],
+    source_id: str,
+    chunk_id: str,
+    packet_file_sha256: str,
 ) -> int:
     captured = [event for event in events if event.get("state") == "call_captured"]
     if not events:
@@ -884,28 +878,25 @@ def require_run_ready_for_next_call(
     last = events[-1]
     if last.get("source_id") != source_id:
         raise ContractError("run ledger belongs to another source")
-    if last.get("state") != "review_passed":
-        raise ContractError("next call is blocked until the prior outcome passes review")
-    return len(captured)
-
-
-def require_authorized_chunk(
-    lifecycle_receipt: dict[str, Any], chunk_id: str, completed_calls: int
-) -> None:
-    authorized = lifecycle_receipt.get("authorized_chunk_ids")
-    limit = lifecycle_receipt.get("provider_call_limit")
-    if (
-        not isinstance(authorized, list)
-        or not authorized
-        or any(not isinstance(value, str) or not value for value in authorized)
-        or len(authorized) != len(set(authorized))
-    ):
-        raise ContractError("lifecycle receipt lacks an exact unique chunk sequence")
-    if not isinstance(limit, int) or limit != len(authorized):
-        raise ContractError("provider-call limit does not match the authorized chunk sequence")
-    if completed_calls < 0 or completed_calls >= len(authorized):
-        raise ContractError("authorized chunk sequence is exhausted")
-    if authorized[completed_calls] != chunk_id:
-        raise ContractError(
-            f"next authorized chunk is {authorized[completed_calls]}, not {chunk_id}"
+    if last.get("state") == "review_passed":
+        if last.get("chunk_id") == chunk_id:
+            raise ContractError("accepted chunk cannot be called again")
+        return len(captured)
+    if last.get("state") == "review_failed":
+        if last.get("chunk_id") != chunk_id:
+            raise ContractError("failed chunk must be corrected before advancing")
+        prior_call = next(
+            (
+                event
+                for event in reversed(captured)
+                if event.get("chunk_id") == chunk_id
+                and event.get("outcome_sha256") == last.get("outcome_sha256")
+            ),
+            None,
         )
+        if prior_call is None:
+            raise ContractError("failed review lacks its captured call")
+        if prior_call.get("packet_file_sha256") == packet_file_sha256:
+            raise ContractError("failed packet must be corrected before retry")
+        return len(captured)
+    raise ContractError("next call is blocked until the prior outcome is reviewed")

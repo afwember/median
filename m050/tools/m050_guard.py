@@ -59,6 +59,8 @@ RETIRED_PATTERNS = (
     "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.md",
     "m050/extraction/control/M050_Source_Atomization_Pilot_Calibration_Protocol_v0_*_MEDIANv0_5_0.md",
     "m050/tools/m050_guard_v0_*.py",
+    "m050/extraction/audit/M050_*_Active_Lifecycle_Receipt_MEDIANv0_5_0.json",
+    "m050/extraction/audit/spend-envelopes/*",
 )
 
 
@@ -383,10 +385,16 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
             errors.append(f"prohibited authority is active: {prohibited}")
     if source.get("source_work_authorized") is not authority.get("source_work_authorized"):
         errors.append("source-work authority disagrees between source and authority state")
+    if "provider_call_authorized" in authority:
+        errors.append("canonical authority stores redundant transaction-level provider permission")
+    if authority.get("source_work_authorized") is True and authority.get("repository_writes_authorized") is not True:
+        errors.append("active source work lacks the one-writer repository grant")
 
     calibration = state.get("calibration", {})
-    if calibration.get("provider_call_authorized") is not authority.get("provider_call_authorized"):
-        errors.append("provider authority disagrees between calibration and canonical authority")
+    if "provider_call_authorized" in calibration:
+        errors.append("calibration stores redundant transaction-level provider permission")
+    if calibration.get("offline_gate_passed") is not True:
+        errors.append("active packet lacks a completed offline calibration gate")
 
     config_path = bound_file(calibration.get("configuration"), "active configuration", errors)
     if config_path is None:
@@ -425,10 +433,11 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         if "Status: `APPROVED`" not in card_text or "Author/root of authority: Asa Wember" not in card_text:
             errors.append("active identity card is not explicitly Asa-approved")
     execution = config.get("execution", {})
-    if execution.get("cadence") != "sequential_one_call_review":
+    if execution != {
+        "cadence": "sequential_one_call_review",
+        "next_chunk_requires_substantive_review_of_prior_chunk": True,
+    }:
         errors.append("active configuration cadence drifted")
-    if execution.get("provider_calls_authorized") is not authority.get("provider_call_authorized"):
-        errors.append("configuration provider authority disagrees with canonical state")
     provider = config.get("provider", {})
     if provider.get("cache_required") is not True or provider.get("cache_ttl") != "1h":
         errors.append("active configuration does not require one-hour Claude caching")
@@ -496,10 +505,18 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         or binding.get("engine_tests_sha256") != sha256_file(ENGINE_TESTS)
     ):
         errors.append("active freeze binding drifted")
-    if freeze.get("authority", {}).get("provider_call_authorized") is not authority.get("provider_call_authorized"):
-        errors.append("freeze provider authority disagrees with canonical state")
+    if "authority" in freeze:
+        errors.append("freeze stores redundant transaction-level authority")
     if freeze.get("pilot", {}).get("cache_miss_call_ceiling_usd") != calibration.get("cache_miss_call_ceiling_usd"):
         errors.append("freeze call ceiling disagrees with canonical state")
+    offline_tests = calibration.get("offline_tests_passed")
+    if (
+        freeze.get("offline_verification", {}).get("offline_tests_passed") != offline_tests
+        or compatibility.get("offline_verification", {}).get("offline_tests_passed") != offline_tests
+    ):
+        errors.append("offline test count disagrees across canonical calibration evidence")
+    if "authority_boundary" in compatibility:
+        errors.append("compatibility evidence stores redundant transaction-level authority")
 
     packet_body = dict(packet)
     packet_hash = packet_body.pop("packet_sha256", None)
@@ -562,21 +579,22 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
             errors.append(f"compatibility replay binding drifted: {name}")
 
     state_spend = state.get("spend", {})
-    spend_path = bound_file(state_spend.get("record"), "active spend record", errors)
-    spend = read_json(spend_path, errors) if spend_path else {}
-    if (
-        spend.get("spent_usd") != state_spend.get("cumulative_spent_usd")
-        or spend.get("remaining_usd") != state_spend.get("remaining_usd")
-        or spend.get("authorized_usd") != state_spend.get("authorized_usd")
-    ):
-        errors.append("canonical spend disagrees with spend evidence")
+    if "record" in state_spend:
+        errors.append("canonical spend points to a redundant successor spend file")
     try:
-        rounded = Decimal(state_spend.get("cumulative_spent_usd", "")).quantize(
+        authorized = Decimal(state_spend.get("authorized_usd", ""))
+        cumulative = Decimal(state_spend.get("cumulative_spent_usd", ""))
+        remaining = Decimal(state_spend.get("remaining_usd", ""))
+        rounded = cumulative.quantize(
             Decimal("0.01"), rounding=ROUND_CEILING
         )
     except Exception:
-        errors.append("canonical cumulative spend is not decimal")
+        errors.append("canonical cumulative budget is not decimal")
     else:
+        if state_spend.get("active") is not True:
+            errors.append("canonical cumulative budget is inactive")
+        if cumulative < 0 or authorized < 0 or remaining < 0 or authorized - cumulative != remaining:
+            errors.append("canonical cumulative budget arithmetic is inconsistent")
         if state_spend.get("display_usd_rounded_up") != f"{rounded:.2f}":
             errors.append("dashboard cost is not rounded upward to the cent")
 

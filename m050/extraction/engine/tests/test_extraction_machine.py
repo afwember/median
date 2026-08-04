@@ -8,7 +8,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from median_gate5.errors import ContractError
+from median_gate5.errors import ContractError, IntegrityError
 from median_gate5.extraction_machine import (
     anthropic_usage_cost,
     append_run_ledger_event,
@@ -17,14 +17,13 @@ from median_gate5.extraction_machine import (
     build_generic_response_schema,
     build_generic_source_prompt,
     conservative_call_ceiling,
-    debit_spend_envelope,
+    debit_compile_state_spend,
     draft_block_dispositions,
     extract_anthropic_structured_response,
     read_run_ledger,
     plan_source_chunks,
-    require_authorized_chunk,
+    provider_preflight,
     require_run_ready_for_next_call,
-    spend_preflight,
     validate_extraction_response,
 )
 
@@ -33,6 +32,9 @@ ROOT = Path(__file__).parents[4]
 AUTHGRAM = ROOT / "m050/extraction/calibration/authorial-grammar"
 MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
 AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
+COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
+CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_12_MEDIANv0_5_0.json"
+CURRENT_LEDGER = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
 ACCEPTED_C0001_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Call_Packet_v0_4_MEDIANv0_5_0.json"
 ACCEPTED_C0001_OUTCOME = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Outcome_v0_4_MEDIANv0_5_0.json"
 ACCEPTED_C0001_RAW = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Raw_Response_v0_4_MEDIANv0_5_0.json"
@@ -336,44 +338,30 @@ def test_cache_aware_cost_accounting_matches_uncached_r6_and_cached_examples():
     assert cached["display_usd_rounded_up"] == "0.03"
 
 
-def _envelope():
+def _compile_state(*, source_id="S1", spent="1.92", authorized=True):
     return {
-        "authority": "Asa Wember",
-        "scope": "provider_spend_only",
-        "active": True,
-        "authorized_usd": "2.00",
-        "spent_usd": "1.92",
-    }
-
-
-def _release():
-    return {
-        "state": "source_run_authorized",
-        "authority": "Asa Wember",
-        "provider_call_limit": 5,
-        "authorized_chunk_ids": ["C0001", "C0002", "C0003", "C0004", "C0005"],
-        "execution_cadence": "sequential_one_call_review",
-        "revoked": False,
-        "binding": {
-            "source_id": "S1",
-            "configuration_sha256": "c" * 64,
-            "model": "claude-sonnet-5",
-            "reasoning_effort": "low",
-            "cache_ttl": "1h",
+        "schema_version": "M050-COMPILE-STATE-1.0",
+        "source": {
+            "id": source_id,
+            "source_work_authorized": authorized,
+            "whole_source_candidate_complete": False,
+        },
+        "authority": {
+            "repository_writes_authorized": authorized,
+            "source_work_authorized": authorized,
+        },
+        "calibration": {"offline_gate_passed": True},
+        "spend": {
+            "active": True,
+            "authorized_usd": "2.00",
+            "cumulative_spent_usd": spent,
+            "remaining_usd": format(Decimal("2.00") - Decimal(spent), "f"),
+            "display_usd_rounded_up": f"{Decimal(spent):.2f}",
         },
     }
 
 
-def _required_binding():
-    return {
-        "configuration_sha256": "c" * 64,
-        "model": "claude-sonnet-5",
-        "reasoning_effort": "low",
-        "cache_ttl": "1h",
-    }
-
-
-def test_money_envelope_does_not_replace_lifecycle_authority():
+def test_source_grant_plus_budget_derives_provider_permission():
     request = build_anthropic_request(
         prompt="policy",
         response_schema={"type": "object", "properties": {"dispositions": {"type": "array"}}},
@@ -387,111 +375,99 @@ def test_money_envelope_does_not_replace_lifecycle_authority():
     uncached_request = copy.deepcopy(request)
     uncached_request["system"][0].pop("cache_control")
     assert ceiling > conservative_call_ceiling(uncached_request, _pricing())
-    result = spend_preflight(
-        envelope=_envelope(),
-        lifecycle_receipt=_release(),
+    result = provider_preflight(
+        compile_state=_compile_state(),
         source_id="S1",
-        completed_calls=0,
         call_ceiling_usd=ceiling,
-        required_binding=_required_binding(),
     )
+    assert result["permission_basis"] == "active_source_work_plus_cumulative_budget"
     assert Decimal(result["remaining_after_reservation_usd"]) >= 0
 
-    invalid = _release()
-    invalid["state"] = "pilot_accepted"
-    with pytest.raises(ContractError, match="lifecycle"):
-        spend_preflight(
-            envelope=_envelope(),
-            lifecycle_receipt=invalid,
+    with pytest.raises(ContractError, match="source-work"):
+        provider_preflight(
+            compile_state=_compile_state(authorized=False),
             source_id="S1",
-            completed_calls=0,
             call_ceiling_usd=ceiling,
-            required_binding=_required_binding(),
         )
 
 
-def test_envelope_halts_before_next_call_and_debits_exact_actual_cost():
+def test_budget_halts_before_next_call_and_debits_canonical_state():
     with pytest.raises(ContractError, match="cannot cover"):
-        spend_preflight(
-            envelope=_envelope(),
-            lifecycle_receipt=_release(),
+        provider_preflight(
+            compile_state=_compile_state(),
             source_id="S1",
-            completed_calls=0,
             call_ceiling_usd=Decimal("0.081"),
-            required_binding=_required_binding(),
         )
-    updated = debit_spend_envelope(_envelope(), "0.06984")
-    assert updated["spent_usd"] == "1.98984"
-    assert updated["remaining_usd"] == "0.01016"
-    assert _envelope()["spent_usd"] == "1.92"
+    original = _compile_state()
+    updated = debit_compile_state_spend(original, "0.06984")
+    assert updated["spend"]["cumulative_spent_usd"] == "1.98984"
+    assert updated["spend"]["remaining_usd"] == "0.01016"
+    assert updated["spend"]["display_usd_rounded_up"] == "1.99"
+    assert original["spend"]["cumulative_spent_usd"] == "1.92"
 
 
-def test_cross_source_or_revoked_release_never_inherits_authority():
+def test_budget_never_selects_or_advances_a_source():
     with pytest.raises(ContractError, match="does not cover"):
-        spend_preflight(
-            envelope=_envelope(),
-            lifecycle_receipt=_release(),
+        provider_preflight(
+            compile_state=_compile_state(),
             source_id="S2",
-            completed_calls=0,
             call_ceiling_usd=Decimal("0.01"),
-            required_binding=_required_binding(),
         )
-    revoked = copy.deepcopy(_release())
-    revoked["revoked"] = True
-    with pytest.raises(ContractError, match="revoked"):
-        spend_preflight(
-            envelope=_envelope(),
-            lifecycle_receipt=revoked,
+    complete = _compile_state()
+    complete["source"]["whole_source_candidate_complete"] = True
+    with pytest.raises(ContractError, match="already complete"):
+        provider_preflight(
+            compile_state=complete,
             source_id="S1",
-            completed_calls=0,
             call_ceiling_usd=Decimal("0.01"),
-            required_binding=_required_binding(),
         )
 
 
-def test_lifecycle_receipt_must_bind_exact_machine_configuration():
-    release = _release()
-    release["binding"]["cache_ttl"] = "5m"
-    with pytest.raises(ContractError, match="exact execution configuration"):
-        spend_preflight(
-            envelope=_envelope(),
-            lifecycle_receipt=release,
-            source_id="S1",
-            completed_calls=0,
-            call_ceiling_usd=Decimal("0.01"),
-            required_binding=_required_binding(),
-        )
-
-
-def test_compact_run_ledger_blocks_until_review_and_verifies_chain(tmp_path):
+def test_compact_run_ledger_allows_validated_replacement_after_failure(tmp_path):
     ledger = tmp_path / "run.jsonl"
-    assert require_run_ready_for_next_call(read_run_ledger(ledger), "S1") == 0
+    assert require_run_ready_for_next_call(
+        read_run_ledger(ledger), "S1", "C0001", "a" * 64
+    ) == 0
     captured = append_run_ledger_event(
         ledger,
-        {"state": "call_captured", "source_id": "S1", "chunk_id": "C0001"},
+        {
+            "state": "call_captured",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "packet_file_sha256": "a" * 64,
+            "outcome_sha256": "o" * 64,
+        },
     )
     assert captured["sequence"] == 1
     with pytest.raises(ContractError, match="prior outcome"):
-        require_run_ready_for_next_call(read_run_ledger(ledger), "S1")
-    reviewed = append_run_ledger_event(
+        require_run_ready_for_next_call(
+            read_run_ledger(ledger), "S1", "C0001", "a" * 64
+        )
+    failed = append_run_ledger_event(
         ledger,
-        {"state": "review_passed", "source_id": "S1", "chunk_id": "C0001"},
+        {
+            "state": "review_failed",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "outcome_sha256": "o" * 64,
+        },
     )
-    assert reviewed["predecessor_event_sha256"]
-    assert require_run_ready_for_next_call(read_run_ledger(ledger), "S1") == 1
+    assert failed["predecessor_event_sha256"]
+    with pytest.raises(ContractError, match="must be corrected"):
+        require_run_ready_for_next_call(
+            read_run_ledger(ledger), "S1", "C0001", "a" * 64
+        )
+    assert require_run_ready_for_next_call(
+        read_run_ledger(ledger), "S1", "C0001", "b" * 64
+    ) == 1
+    with pytest.raises(ContractError, match="before advancing"):
+        require_run_ready_for_next_call(
+            read_run_ledger(ledger), "S1", "C0002", "b" * 64
+        )
     with pytest.raises(ContractError, match="another source"):
-        require_run_ready_for_next_call(read_run_ledger(ledger), "S2")
-
-
-def test_lifecycle_receipt_binds_exact_chunk_order_and_call_limit():
-    release = _release()
-    require_authorized_chunk(release, "C0001", 0)
-    require_authorized_chunk(release, "C0003", 2)
-    with pytest.raises(ContractError, match="next authorized chunk"):
-        require_authorized_chunk(release, "C0003", 1)
-    release["provider_call_limit"] = 4
-    with pytest.raises(ContractError, match="does not match"):
-        require_authorized_chunk(release, "C0001", 0)
+        require_run_ready_for_next_call(
+            read_run_ledger(ledger), "S2", "C0001", "b" * 64
+        )
 
 
 def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_prefix(tmp_path):
@@ -543,32 +519,42 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
         "ttl": "1h",
     }
 
-    lifecycle = {
-        "state": "source_run_authorized",
-        "authority": "Asa Wember",
-        "provider_call_limit": len(chunk_ids),
-        "authorized_chunk_ids": chunk_ids,
-        "execution_cadence": "sequential_one_call_review",
-        "revoked": False,
-        "binding": {
-            "source_id": packets[0]["source_id"],
-            "configuration_sha256": packets[0]["configuration_sha256"],
-            "model": packets[0]["binding"]["model"],
-            "reasoning_effort": packets[0]["binding"]["reasoning_effort"],
-            "cache_ttl": packets[0]["binding"]["cache_ttl"],
-        },
-    }
-    envelope = {
-        "authority": "Asa Wember",
-        "scope": "provider_spend_only",
-        "active": True,
-        "authorized_usd": "2.00",
-        "spent_usd": "0.00",
-    }
-    preflight = tool._preflight(packets[0], envelope, lifecycle, tmp_path / "run.jsonl")
+    state = _compile_state(
+        source_id=packets[0]["source_id"], spent="0.00", authorized=True
+    )
+    state["calibration"].update({
+        "configuration": packets[0]["configuration_path"],
+        "pilot_chunk_id": packets[0]["chunk_id"],
+        "cache_miss_call_ceiling_usd": packets[0]["cache_miss_call_ceiling_usd"],
+    })
+    packet_hash = hashlib.sha256(tool.canonical_json_bytes(packets[0])).hexdigest()
+    preflight = tool._preflight(
+        packets[0], packet_hash, state, tmp_path / "run.jsonl", ROOT
+    )
     assert preflight["reserved_call_ceiling_usd"] == packets[0]["cache_miss_call_ceiling_usd"]
-    with pytest.raises(ContractError, match="next authorized chunk"):
-        tool._preflight(packets[1], envelope, lifecycle, tmp_path / "run.jsonl")
+    tampered = copy.deepcopy(packets[0])
+    tampered["payload"]["target_blocks"][0]["text"] += "tampered"
+    tampered_body = dict(tampered)
+    tampered_body.pop("packet_sha256")
+    tampered["packet_sha256"] = hashlib.sha256(
+        tool.canonical_json_bytes(tampered_body)
+    ).hexdigest()
+    with pytest.raises(IntegrityError, match="deterministic current configuration"):
+        tool._preflight(
+            tampered,
+            hashlib.sha256(tool.canonical_json_bytes(tampered)).hexdigest(),
+            state,
+            tmp_path / "run.jsonl",
+            ROOT,
+        )
+    with pytest.raises(ContractError, match="current canonical chunk"):
+        tool._preflight(
+            packets[1],
+            hashlib.sha256(tool.canonical_json_bytes(packets[1])).hexdigest(),
+            state,
+            tmp_path / "run.jsonl",
+            ROOT,
+        )
 
 
 def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
@@ -771,7 +757,10 @@ def test_scaffold_command_writes_provider_disabled_source_package(tmp_path):
     assert tool.command_scaffold(args) == 0
     config = _json(repo / f"{base}/config.json")
     assert config["status"] == "DRAFT_REQUIRES_SOURCE_REVIEW_AND_PILOT_CALIBRATION"
-    assert config["execution"]["provider_calls_authorized"] is False
+    assert config["execution"] == {
+        "cadence": "sequential_one_call_review",
+        "next_chunk_requires_substantive_review_of_prior_chunk": True,
+    }
     loaded, paths = tool.load_config(repo, repo / f"{base}/config.json")
     assert loaded["source_id"] == "M050-SRC-TEST-SPEC-001"
     assert set(paths) == {
@@ -835,7 +824,28 @@ def test_replan_reapportions_complete_source_from_calibrated_quantization(tmp_pa
     ]
 
 
-def test_send_consumes_call_and_halts_on_malformed_success_response(tmp_path, monkeypatch):
+def test_current_rejected_chunk_can_retry_under_standing_source_and_budget():
+    spec = importlib.util.spec_from_file_location("m050_extraction_machine_retry", MACHINE_TOOL)
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+    packet = _json(CURRENT_PACKET)
+    state = _json(COMPILE_STATE)
+    state["source"]["source_work_authorized"] = True
+    state["authority"]["repository_writes_authorized"] = True
+    state["authority"]["source_work_authorized"] = True
+    result = tool._preflight(
+        packet,
+        hashlib.sha256(CURRENT_PACKET.read_bytes()).hexdigest(),
+        state,
+        CURRENT_LEDGER,
+        ROOT,
+    )
+    assert result["permission_basis"] == "active_source_work_plus_cumulative_budget"
+    assert result["remaining_before_call_usd"] == "1.464215"
+
+
+def test_send_records_malformed_response_without_creating_spend_successor(tmp_path, monkeypatch):
     spec = importlib.util.spec_from_file_location("m050_extraction_machine_send", MACHINE_TOOL)
     assert spec is not None and spec.loader is not None
     tool = importlib.util.module_from_spec(spec)
@@ -843,33 +853,26 @@ def test_send_consumes_call_and_halts_on_malformed_success_response(tmp_path, mo
     packet = tool.build_packet(ROOT, AUTHGRAM_CONFIG, "C0001")
 
     packet_path = tmp_path / "packet.json"
-    envelope_path = tmp_path / "spend.json"
-    release_path = tmp_path / "release.json"
+    state_path = tmp_path / "state.json"
     key_path = tmp_path / "key.txt"
     raw_path = tmp_path / "raw.json"
     outcome_path = tmp_path / "outcome.json"
-    successor_path = tmp_path / "spend-next.json"
     ledger_path = tmp_path / "run.jsonl"
     packet_path.write_bytes(tool.canonical_json_bytes(packet))
-    envelope_path.write_text(json.dumps({
-        "authority": "Asa Wember", "scope": "provider_spend_only",
-        "active": True, "authorized_usd": "2.00", "spent_usd": "0.00",
-    }), encoding="utf-8")
-    release_path.write_text(json.dumps({
-        "state": "source_run_authorized",
-        "authority": "Asa Wember",
-        "provider_call_limit": 1,
-        "authorized_chunk_ids": ["C0001"],
-        "execution_cadence": "sequential_one_call_review",
-        "revoked": False,
-        "binding": {
-            "source_id": packet["source_id"],
-            "configuration_sha256": packet["configuration_sha256"],
-            "model": packet["binding"]["model"],
-            "reasoning_effort": packet["binding"]["reasoning_effort"],
-            "cache_ttl": packet["binding"]["cache_ttl"],
-        },
-    }), encoding="utf-8")
+    config_target = tmp_path / packet["configuration_path"]
+    config_target.parent.mkdir(parents=True)
+    config_target.write_bytes(AUTHGRAM_CONFIG.read_bytes())
+    for relative in _json(AUTHGRAM_CONFIG)["artifacts"].values():
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((ROOT / relative).read_bytes())
+    state = _compile_state(source_id=packet["source_id"], spent="0.00")
+    state["calibration"].update({
+        "configuration": packet["configuration_path"],
+        "pilot_chunk_id": packet["chunk_id"],
+        "cache_miss_call_ceiling_usd": packet["cache_miss_call_ceiling_usd"],
+    })
+    state_path.write_text(json.dumps(state), encoding="utf-8")
     key_path.write_text("test-key", encoding="utf-8")
 
     class FakeResponse:
@@ -887,11 +890,10 @@ def test_send_consumes_call_and_halts_on_malformed_success_response(tmp_path, mo
 
     monkeypatch.setattr(tool.urllib.request, "urlopen", lambda *_args, **_kwargs: FakeResponse())
     args = SimpleNamespace(
+        repo_root=str(tmp_path),
         packet=str(packet_path),
         expected_packet_sha256=hashlib.sha256(packet_path.read_bytes()).hexdigest(),
-        spend_envelope=str(envelope_path),
-        successor_spend_envelope=str(successor_path),
-        lifecycle_receipt=str(release_path),
+        compile_state="state.json",
         run_ledger=str(ledger_path),
         api_key_file=str(key_path),
         raw_response=str(raw_path),
@@ -899,10 +901,8 @@ def test_send_consumes_call_and_halts_on_malformed_success_response(tmp_path, mo
     )
     assert tool.command_send(args) == 1
     assert raw_path.read_bytes() == b"not-json"
-    assert _json(outcome_path)["authorization_consumed"] is True
-    successor = _json(successor_path)
-    assert successor["active"] is False
-    assert successor["halt_reason"] == "invalid_provider_response_cost_reconciliation_required"
+    assert _json(outcome_path)["provider_call_made"] is True
+    assert _json(outcome_path)["canonical_spend_update_required"] is False
     assert read_run_ledger(ledger_path)[-1]["state"] == "call_captured"
 
 

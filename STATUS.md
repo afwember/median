@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-**UPDATED:** August 4, 2026 at 3:46:31 AM EDT<br>
+**UPDATED:** August 4, 2026 at 9:35:04 AM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Home C0006 v0.3 rejected; halted at spend ceiling<br>
-**PHASE:** Atomic extraction — Home representative pilot<br>
-**SOURCE:** Home — 5 / 22<br>
-**CHUNK:** C0006 / 15 — C0001 through C0005 and C0009 accepted; latest rejected attempt is C0006 v0.1<br>
-**NOW:** C0006 v0.3 was rejected for residual fusion of independent semantic-column claims; exact cost $0.120186 is reconciled and the $0.1714228 balance cannot cover the $0.23598 conservative retry ceiling<br>
-**NEXT:** Halt for Asa because remaining authorized spend cannot cover the next conservative Home C0006 retry ceiling<br>
-**TOTAL COST:** $3.21 cumulative provider spend
+**STATUS:** Home source-bounded candidate accepted; source-work grant ended<br>
+**PHASE:** Atomic extraction — Home completion halt<br>
+**SOURCE:** Home — 6 / 22<br>
+**CHUNK:** 15 / 15 accepted — 280 eligible targets, 280 dispositions, 500 atoms; no rejected chunk is active<br>
+**NOW:** Whole-document coverage and extraction-quality review passed; six media-associated blocks remained excluded, exact cumulative spend is $4.2960482, and $0.9119432 remains<br>
+**NEXT:** Halt for Asa; starting Embodiment or any other source requires a new explicit source-work grant<br>
+**TOTAL COST:** $4.30 cumulative provider spend

@@ -883,7 +883,7 @@ def test_accepted_chunk_cannot_retry_after_source_completion():
 
     assert packet["source_id"] in state["progress"]["completed_source_ids"]
     assert state["source"]["id"] != packet["source_id"]
-    assert state["source"]["whole_source_candidate_complete"] is False
+    assert state["source"]["whole_source_candidate_complete"] is True
 
 
 def test_send_records_malformed_response_without_creating_spend_successor(tmp_path, monkeypatch):

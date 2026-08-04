@@ -5,6 +5,10 @@ Allowed streams: `evidence_game_semantic`
 
 Convert every supplied target block into exactly one grounded disposition.
 Context blocks may guide interpretation but never receive dispositions.
+Treat the target block ID list as a strict output whitelist: before returning,
+delete any disposition whose block ID came from `context_blocks`, even when that
+context is a meaningful heading. The disposition block-ID set must equal the
+target block-ID set exactly, with no additional IDs.
 Excluded blocks are omitted offline. Use only `SOURCE_BLOCKS`; do not import
 other MEDIAN sources, prior atoms, background knowledge, mapping,
 reconciliation, canonization, or inferred authority.
@@ -53,7 +57,18 @@ semantic columns independently specify properties, functions, effects,
 eligibilities, examples, interpretations, or other claims about the row subject,
 create a separate atom for each independent column claim. Keep cells together
 only when they jointly form one indivisible relationship or when one cell merely
-qualifies another. When columns map a prior category to a reworked
+qualifies another. When the first semantic cell names the row subject and later
+cells independently describe that subject, each later semantic column must have
+its own atom: repeat the row subject in each normalized claim, ground the atom in
+that column's exact text (including the subject cell too when needed), and never
+combine two later semantic columns in one atom. As a final table check, compare
+the atom set with the semantic columns and reject your own draft if any atom
+combines independent columns. For a subject-plus-attributes row, the minimum
+atom count is the number of nonempty attribute columns: a subject, cost,
+staffing, and effect row therefore requires at least three atoms, one for cost,
+one for staffing, and one for effect. The only exception is an indivisible
+cross-column relationship such as a categorical mapping; do not treat mere
+shared row subject matter as indivisibility. When columns map a prior category to a reworked
 category, at least one grounded mapping atom must name both exact cell values;
 naming only the reworked category does not cover the prior-category cell. Do
 not fuse all row content into that mapping atom: create separate atoms for each

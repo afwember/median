@@ -2,13 +2,13 @@
   "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
   "receipt_id": "M050-HOME-OFFLINE-COMPATIBILITY-001",
   "date": "2026-08-04",
-  "status": "HOME_C0006_TABLE_ATOMICITY_CORRECTION_OFFLINE_VERIFIED",
+  "status": "HOME_SOURCE_BOUNDED_CANDIDATE_ACCEPTED",
   "source_id": "M050-SRC-HOME-001",
   "binding": {
-    "configuration_sha256": "8005f3106b5a9e8769f950f6fccc265201fde97b1e0fbab02fe7e4f0f9db44f6",
-    "prompt_sha256": "8682fee0efd0932a3b1f18917e1cdc1642942e15fa0cc5237af11e9f659cae96",
+    "configuration_sha256": "7972802b338b9a407b3cf1bf9f6375f8c045b6b71330c7239b0c84a25aaaeca5",
+    "prompt_sha256": "1ff0db0ede8f68bf93b186cedc04267cbc1982e8eec5c13196f8154ae0d7d959",
     "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
-    "engine_tests_sha256": "5f46c84a27d50ea5d0e0284508aa24d3899c9e6de1cc4269732b20bd01f60a20",
+    "engine_tests_sha256": "2de00037230d8c67ec255b0c680ef790585ab5e18247a5018959d48b717ca515",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "e069fabd91cfdb186cf3c73db7a3fd24724b51fd298eed6ca757b54dabcb4a96"
   },
@@ -195,6 +195,44 @@
     "schema_changed": false,
     "source_specific_branch_added": false
   },
+  "c0006_table_atomicity_enforcement_correction": {
+    "chunk_id": "C0006",
+    "rejected_attempt_version": "v0.3",
+    "defect": "The response still combined independent semantic columns after the general table-atomicity clarification.",
+    "correction": "Require one atom per independently descriptive semantic column after a row subject, repeat that subject in normalized claims, and reject the draft during a final column-to-atom comparison if independent columns are combined.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "c0006_table_cardinality_enforcement_correction": {
+    "chunk_id": "C0006",
+    "rejected_attempt_version": "v0.4",
+    "defect": "One subject-plus-attributes row still fused independent cost, staffing, and effect columns after the general enforcement correction.",
+    "correction": "Add a numerical subject-plus-attributes cardinality check requiring at least one atom per nonempty attribute column, with only indivisible cross-column relationships exempt.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
+  "c0014_context_id_whitelist_correction": {
+    "chunk_id": "C0014",
+    "rejected_attempt_version": "v0.1",
+    "defect": "The response covered all targets but also dispositioned four context-only heading IDs.",
+    "correction": "Treat target block IDs as a strict output whitelist and require the final disposition ID set to equal the target ID set with all context IDs removed.",
+    "chunk_boundary_changed": false,
+    "schema_changed": false,
+    "source_specific_branch_added": false
+  },
   "replays": {},
+  "whole_source_closure": {
+    "accepted_chunks": 15,
+    "eligible_targets": 280,
+    "unique_dispositions": 280,
+    "accepted_atoms": 500,
+    "excluded_media_and_caption_blocks": 6,
+    "provider_media_leaks": 0,
+    "mechanical_and_substantive_reviews_passed": 15,
+    "whole_document_coverage_passed": true,
+    "extraction_quality_review_passed": true
+  },
   "note": "This receipt covers offline compatibility only; its verification step made no provider call. Provider attempts are preserved separately in the active run ledger and outcomes."
 }

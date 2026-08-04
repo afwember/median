@@ -21,7 +21,7 @@
     "block_manifest": "f33aa2165572d2498a27f3d05a56f2845643650001e269adff81bfcded0fe77a",
     "disposition_ledger": "2c8cf9dcba04dcbdfc38728784d25db7f4ee18aa7340b826a318908ac568c1db",
     "chunk_plan": "a27e68911d33ed3e596dfc52328487e8b32494e095927a75515beb465e16a3fc",
-    "prompt": "8682fee0efd0932a3b1f18917e1cdc1642942e15fa0cc5237af11e9f659cae96",
+    "prompt": "1ff0db0ede8f68bf93b186cedc04267cbc1982e8eec5c13196f8154ae0d7d959",
     "response_schema": "b6a24406a63dca25b6129ab4ae00329c5c6ee7da5e5bbf8514c437d298280bf0"
   },
   "quantization": {

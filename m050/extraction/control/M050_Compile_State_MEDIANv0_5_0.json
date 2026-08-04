@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T03:46:31-04:00",
-  "execution_state": "HOME_C0006_V0_3_REJECTED_SPEND_CEILING_HALT",
+  "updated": "2026-08-04T09:35:04-04:00",
+  "execution_state": "HOME_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 17,
-    "outstanding_pre_reconciliation_sources": 13,
+    "outstanding_compile_scope_sources": 16,
+    "outstanding_pre_reconciliation_sources": 12,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -19,7 +19,8 @@
       "M050-SRC-HUMAN-RULINGS-001",
       "M050-SRC-MSID-GRAMMAR-001",
       "M050-SRC-CROSSING-001",
-      "M050-SRC-AUTHORIAL-GRAMMAR-001"
+      "M050-SRC-AUTHORIAL-GRAMMAR-001",
+      "M050-SRC-HOME-001"
     ]
   },
   "source": {
@@ -32,19 +33,28 @@
       "C0003",
       "C0004",
       "C0005",
-      "C0009"
+      "C0006",
+      "C0007",
+      "C0008",
+      "C0009",
+      "C0010",
+      "C0011",
+      "C0012",
+      "C0013",
+      "C0014",
+      "C0015"
     ],
-    "rejected_chunk_id": "C0006",
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "rejected_chunk_id": null,
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/home/M050_Home_C0009_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Home_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/home-pilot/M050_Home_C0006_Call_Packet_v0_3_MEDIANv0_5_0.json",
-    "latest_outcome": "m050/extraction/runs/home-pilot/M050_Home_C0006_Outcome_v0_3_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/home-pilot/M050_Home_C0015_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "latest_outcome": "m050/extraction/runs/home-pilot/M050_Home_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -72,16 +82,61 @@
         "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       },
       {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0006_Outcome_v0_5_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0007",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
         "chunk_id": "C0009",
         "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0009_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0014",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0014_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0015",
+        "outcome": "m050/extraction/runs/home-pilot/M050_Home_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {},
-    "pilot_chunk_id": "C0006",
+    "pilot_chunk_id": "C0015",
     "generated_chunk_count": 15,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
+    "required_target_disposition_count": 18,
     "source_blocks": 585,
     "eligible_target_blocks": 280,
     "context_only_blocks": 40,
@@ -90,30 +145,30 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 50,
-    "cache_miss_call_ceiling_usd": "0.23598"
+    "cache_miss_call_ceiling_usd": "0.222"
   },
   "latest_provider_attempt": {
-    "chunk_id": "C0006",
+    "chunk_id": "C0015",
     "http_status": 200,
     "stop_reason": "end_turn",
-    "output_tokens": 10065,
-    "cache_creation_input_tokens": 2308,
-    "cache_read_input_tokens": 0,
+    "output_tokens": 4350,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2666,
     "cache_effective": true,
-    "exact_cost_usd": "0.120186",
+    "exact_cost_usd": "0.0506572",
     "mechanical_passed": true,
-    "review_state": "review_failed"
+    "review_state": "review_passed"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "3.3794142",
-    "cumulative_spent_usd": "3.2079914",
-    "remaining_usd": "0.1714228",
-    "display_usd_rounded_up": "3.21"
+    "authorized_usd": "5.2079914",
+    "cumulative_spent_usd": "4.2960482",
+    "remaining_usd": "0.9119432",
+    "display_usd_rounded_up": "4.30"
   },
   "authority": {
     "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -121,14 +176,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 3:46:31 AM EDT",
-    "status": "Home C0006 v0.3 rejected; halted at spend ceiling",
-    "phase": "Atomic extraction — Home representative pilot",
-    "source": "Home — 5 / 22",
-    "chunk": "C0006 / 15 — C0001 through C0005 and C0009 accepted; latest rejected attempt is C0006 v0.1",
-    "now": "C0006 v0.3 was rejected for residual fusion of independent semantic-column claims; exact cost $0.120186 is reconciled and the $0.1714228 balance cannot cover the $0.23598 conservative retry ceiling",
-    "next": "Halt for Asa because remaining authorized spend cannot cover the next conservative Home C0006 retry ceiling"
+    "updated_human": "August 4, 2026 at 9:35:04 AM EDT",
+    "status": "Home source-bounded candidate accepted; source-work grant ended",
+    "phase": "Atomic extraction — Home completion halt",
+    "source": "Home — 6 / 22",
+    "chunk": "15 / 15 accepted — 280 eligible targets, 280 dispositions, 500 atoms; no rejected chunk is active",
+    "now": "Whole-document coverage and extraction-quality review passed; six media-associated blocks remained excluded, exact cumulative spend is $4.2960482, and $0.9119432 remains",
+    "next": "Halt for Asa; starting Embodiment or any other source requires a new explicit source-work grant"
   },
-  "next_possible_transition": "After Asa replenishes the cumulative spend budget, correct and refreeze C0006 under the existing atomicity invariant, then run offline compatibility, full guard, and focused preflight before any retry.",
+  "next_possible_transition": "With Asa's explicit authorization, begin Embodiment identity preparation under atomic extraction; no later phase is authorized.",
   "gate_5_complete": false
 }

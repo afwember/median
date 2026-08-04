@@ -30,4 +30,4 @@ fi
 "$MEDIAN_VENV_DIR/bin/median-gate5" preflight \
     --lock "$MEDIAN_ENGINE_DIR/requirements.lock"
 "$MEDIAN_VENV_DIR/bin/python" -m pytest "$MEDIAN_ENGINE_DIR/tests"
-"$MEDIAN_VENV_DIR/bin/python" "$MEDIAN_REPO_ROOT/m050/tools/m050_guard_v0_2.py" --with-tests
+"$MEDIAN_VENV_DIR/bin/python" "$MEDIAN_REPO_ROOT/m050/tools/m050_guard.py" --with-tests

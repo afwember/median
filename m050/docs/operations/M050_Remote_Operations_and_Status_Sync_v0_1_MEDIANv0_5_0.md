@@ -4,17 +4,20 @@ Record ID: `M050-REMOTE-OPS-0.1`
 Effective date: 2026-08-03  
 Primary host: dedicated M4 Mac Mini  
 Repository: `https://github.com/afwember/median`  
-Live status workbook: `https://docs.google.com/spreadsheets/d/1dCSzZNDzAHy9yIRPXRRvSL_9z9fP2CC18GNK2hPspXQ/edit`
+Paused historical status workbook: `https://docs.google.com/spreadsheets/d/1dCSzZNDzAHy9yIRPXRRvSL_9z9fP2CC18GNK2hPspXQ/edit`
 
-Canonical repository and task-handoff entry points are root `AGENTS.md` and
-`m050/extraction/control/M050_New_Task_Bootstrap_v0_3_MEDIANv0_5_0.md`.
+Canonical repository and task-handoff entry points are root `AGENTS.md`,
+`m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json`, and `STATUS.md`.
+Google Sheets synchronization is paused; the repository dashboard is the active
+phone-readable status view.
 
 ## Operating model
 
-The Google Sheet is the phone-readable operational view. Git remains the
-authoritative record for source material, extraction artifacts, exact cost
-entries, audit evidence, and executable behavior. A Sheet presentation value
-must never silently override contradictory repository evidence.
+`STATUS.md` is the phone-readable operational view, derived from the canonical
+compile-state JSON. Git remains authoritative for source material, extraction
+artifacts, exact cost entries, audit evidence, and executable behavior. The
+Google Sheet is paused historical presentation only and must not be updated or
+treated as authority without a new explicit decision.
 
 The workbook contains three tabs:
 
@@ -28,11 +31,11 @@ The workbook contains three tabs:
 
 | Subject | Authoritative record | Remote view |
 |---|---|---|
-| Source files, engine, schemas, reports, accepted evidence | Git repository | Sheet summaries and links |
-| Exact provider charges and unreconciled bounds | `m050/docs/operations/costs/M050_Compile_Cost_Entries_v0_1_MEDIANv0_5_0.csv` | `Cost Tracking` raw USD columns |
-| Operational cost totals | Per-entry upward-cent accounting derived from the CSV | `Cost Tracking` row 1 |
-| Current gate/stage coordination | Most recent evidence-backed Git checkpoint plus operator decisions | `Progress & Stages` |
-| Source processing sequence and next actions | Source inventory and Gate 5 planning artifacts | `Document Status` |
+| Source files, engine, schemas, reports, accepted evidence | Git repository | GitHub Mobile |
+| Exact provider charges and unreconciled bounds | Provider outcomes and spend records | Canonical compile state |
+| Operational cost total | Upward-cent display derived from exact spend | Final line of `STATUS.md` |
+| Current compile coordination | Canonical compile state | `STATUS.md` |
+| Source processing sequence | Source processing-order control | Canonical state and `STATUS.md` |
 
 ## Cost display rule
 
@@ -61,8 +64,8 @@ After a material status or cost change:
 
 1. update the authoritative repository artifact first when the change concerns
    source, evidence, code, or exact costs;
-2. update the corresponding Google Sheet view;
-3. verify formulas and the visible summary in Google Sheets;
+2. update the canonical compile state and derive `STATUS.md`;
+3. run the active guard;
 4. record and push the coherent repository checkpoint;
 5. confirm `origin/main` resolves to the intended local commit.
 

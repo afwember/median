@@ -35,7 +35,7 @@ From the repository root, validate one card with:
 Run the full guard before any state transition:
 
 ```sh
-.venv/bin/python m050/tools/m050_guard_v0_2.py --with-tests
+.venv/bin/python m050/tools/m050_guard.py --with-tests
 ```
 
 Never edit an approved card in place. Issue a new version with a new

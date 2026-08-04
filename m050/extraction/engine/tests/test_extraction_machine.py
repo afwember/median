@@ -934,6 +934,35 @@ def test_compact_run_ledger_allows_validated_replacement_after_failure(tmp_path)
         )
 
 
+def test_compact_run_ledger_allows_same_packet_after_reviewed_transport_failure(tmp_path):
+    ledger = tmp_path / "run.jsonl"
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "call_captured",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "packet_file_sha256": "a" * 64,
+            "outcome_sha256": "o" * 64,
+            "mechanical_passed": False,
+            "transport_error": "URLError:workspace DNS unavailable",
+        },
+    )
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "review_failed",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "outcome_sha256": "o" * 64,
+        },
+    )
+
+    assert require_run_ready_for_next_call(
+        read_run_ledger(ledger), "S1", "C0001", "a" * 64
+    ) == 1
+
+
 def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_prefix(tmp_path):
     spec = importlib.util.spec_from_file_location("m050_extraction_machine", MACHINE_TOOL)
     assert spec is not None and spec.loader is not None

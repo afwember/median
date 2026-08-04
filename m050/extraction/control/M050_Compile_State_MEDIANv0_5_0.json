@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T18:30:14-04:00",
-  "execution_state": "POPULATION_C0005_READY",
+  "updated": "2026-08-04T19:22:10-04:00",
+  "execution_state": "POPULATION_C0023_REJECTED_SPEND_EXHAUSTED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -33,9 +33,27 @@
       "C0001",
       "C0002",
       "C0003",
-      "C0004"
+      "C0004",
+      "C0005",
+      "C0006",
+      "C0007",
+      "C0008",
+      "C0009",
+      "C0010",
+      "C0011",
+      "C0012",
+      "C0013",
+      "C0014",
+      "C0015",
+      "C0016",
+      "C0017",
+      "C0018",
+      "C0019",
+      "C0020",
+      "C0021",
+      "C0022"
     ],
-    "rejected_chunk_id": null,
+    "rejected_chunk_id": "C0023",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -44,7 +62,7 @@
     "freeze": "m050/extraction/calibration/population/M050_Population_C0004_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Population_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/population-pilot/M050_Population_C0005_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/population-pilot/M050_Population_C0023_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -65,13 +83,103 @@
         "chunk_id": "C0004",
         "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0005",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0007",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0014",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0015",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0016",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0017",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0018",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0019",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0020",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0021",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0022",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0022_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {},
-    "pilot_chunk_id": "C0005",
+    "pilot_chunk_id": "C0023",
     "generated_chunk_count": 23,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 16,
+    "required_target_disposition_count": 20,
     "source_blocks": 694,
     "eligible_target_blocks": 412,
     "context_only_blocks": 63,
@@ -79,16 +187,16 @@
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 66,
-    "cache_miss_call_ceiling_usd": "0.242252",
-    "latest_outcome": "m050/extraction/runs/population-pilot/M050_Population_C0003_Outcome_v0_1_MEDIANv0_5_0.json"
+    "offline_tests_passed": 67,
+    "cache_miss_call_ceiling_usd": "0.254524",
+    "latest_outcome": "m050/extraction/runs/population-pilot/M050_Population_C0023_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "11.0258396",
-    "cumulative_spent_usd": "9.3585386",
-    "remaining_usd": "1.6673010",
-    "display_usd_rounded_up": "9.36"
+    "cumulative_spent_usd": "10.8428106",
+    "remaining_usd": "0.1830290",
+    "display_usd_rounded_up": "10.85"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -100,26 +208,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 6:30:14 PM EDT",
-    "status": "Population C0001-C0004 accepted; C0005 ready",
-    "phase": "Atomic extraction — Population representative pilot",
+    "updated_human": "August 4, 2026 at 7:22:10 PM EDT",
+    "status": "Population C0023 rejected; spend replenishment required",
+    "phase": "Atomic extraction — Population sequential extraction",
     "source": "Population — ordinal 9; 8 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0004; rejected/frozen none; C0005 / 23 is ready",
-    "now": "C0003 v0.1 passed mechanical and substantive review at $0.069110 exact; $1.6673010 remains",
-    "next": "Run focused preflight and transmit frozen Population C0005 v0.1"
+    "chunk": "Accepted C0001-C0022; rejected/frozen C0023 / 23",
+    "now": "C0023 v0.1 cost $0.090110 and was rejected because a no-substantive table header carried an atom and the end-of-specification marker was atomized; $0.1830290 remains",
+    "next": "Replenish cumulative spend before correcting, refreezing, and retrying C0023; its current conservative ceiling is $0.254524"
   },
-  "next_possible_transition": "Population C0005 v0.1 may proceed through focused preflight and provider transmission under the active source grant and cumulative budget.",
+  "next_possible_transition": "No provider call is permitted: remaining spend $0.1830290 cannot cover the $0.254524 conservative C0023 retry ceiling. Asa may replenish the cumulative spend cap.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "stop_reason": "end_turn",
-    "chunk_id": "C0003",
-    "output_tokens": 3912,
-    "cache_creation_input_tokens": 5286,
+    "chunk_id": "C0023",
+    "output_tokens": 5913,
+    "cache_creation_input_tokens": 5349,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.069110",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
+    "exact_cost_usd": "0.090110",
+    "mechanical_passed": false,
+    "review_state": "review_failed"
   }
 }

@@ -11,13 +11,13 @@
     "block_manifest_sha256": "2f9d790a53e02f41f76284702817539902041d479ffef570f8190c90896edfe2",
     "disposition_ledger_sha256": "31edeeef99f0fe04da495402f8360ee67beae0349712f43074570b2fbedca2b6",
     "chunk_plan_sha256": "11cc246557f30f6cc59b5aac479b8cb7b685b19a2b3161db4cf84c653e58be4e",
-    "pilot_chunk_id": "C0005",
-    "pilot_packet_sha256": "eb77fe96cded214c01df665054d3c7df8df47230955f67033d14a6f2bd0126da",
-    "pilot_packet_file_sha256": "8ca0afdda788d3b32093e86b38f85c39916a8363a0633103fad69d277107e241",
+    "pilot_chunk_id": "C0023",
+    "pilot_packet_sha256": "55c289b7ff14efd9675a938e5df56e64adb8413c2417e378ffb06eb675941641",
+    "pilot_packet_file_sha256": "44e5006f5b2048dc0a01f11af7c683ddaa5cdff66873808705ed3422d9a1e4af",
     "prompt_sha256": "84ed6e66d32b2aad2a1b2c3edca5b095a53c34671288e918b99003dd429c25d4",
     "response_schema_sha256": "cca10d1c5a5ac0d2cd69d48efb9777d6f643057bdf15b8e3836d50603d773ea2",
-    "engine_module_sha256": "68a524d4e749d7a3359b013752c6559f44abf24a84dab7248d1882abef774cee",
-    "engine_tests_sha256": "97263f42fa36a4212331b62fad168db3e8d559e7e49d4722c9539acb8dd30b97",
+    "engine_module_sha256": "6d160136203fc9f9e3c65af84cabec75baecd6aa7678abed4946c16ea3f9aae7",
+    "engine_tests_sha256": "ff57dee88c5fbab9a7346b313705a90afea86e586a7f697e7266791b62579523",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
     "allowed_streams": [
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0004 representative pilot and sequential C0001-C0003 reviews passed; C0005 is the next unprocessed chunk in canonical order.",
-    "required_target_disposition_count": 16,
-    "cache_miss_call_ceiling_usd": "0.242252"
+    "selection_reason": "C0022 passed mechanical and substantive review; C0023 is the final unprocessed chunk in canonical order.",
+    "required_target_disposition_count": 20,
+    "cache_miss_call_ceiling_usd": "0.254524"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -51,7 +51,7 @@
   "offline_verification": {
     "all_23_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 66,
+    "offline_tests_passed": 67,
     "calibrated_target_blocks_per_chunk": 20,
     "generated_chunk_count": 23,
     "chunk_count_is_input": false,
@@ -60,6 +60,7 @@
     "c0002_v0_1_rejected_for_contents_navigation_atomization": true,
     "c0002_v0_2_contents_navigation_required_no_substantive": true,
     "all_source_compatibility_replays_passed": 99,
-    "provider_call_made": true
+    "provider_call_made": true,
+    "same_packet_transport_retry_requires_reviewed_transport_error": true
   }
 }

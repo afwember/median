@@ -7,8 +7,8 @@
   "binding": {
     "configuration_sha256": "2915370f6b7680035359211b4740556c166fbd4433a62f500d3cd356e5a8c023",
     "prompt_sha256": "84ed6e66d32b2aad2a1b2c3edca5b095a53c34671288e918b99003dd429c25d4",
-    "engine_module_sha256": "68a524d4e749d7a3359b013752c6559f44abf24a84dab7248d1882abef774cee",
-    "engine_tests_sha256": "97263f42fa36a4212331b62fad168db3e8d559e7e49d4722c9539acb8dd30b97",
+    "engine_module_sha256": "6d160136203fc9f9e3c65af84cabec75baecd6aa7678abed4946c16ea3f9aae7",
+    "engine_tests_sha256": "ff57dee88c5fbab9a7346b313705a90afea86e586a7f697e7266791b62579523",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
   },
@@ -39,9 +39,9 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 66,
+    "offline_tests_passed": 67,
     "all_source_payload_replays_passed": 99
   },
   "replays": {},
-  "note": "C0002 v0.1 exposed atomized Contents navigation. The generic payload now marks Contents descendants as required no-substantive; 66 tests and 99 all-source payload replays pass, and C0002 v0.2 is refrozen without process delta."
+  "note": "C0002 v0.1 exposed atomized Contents navigation, corrected generically with 99 all-source payload replays. A reviewed C0005 pre-HTTP workspace-DNS failure exposed same-packet transport retry blocking; the source-agnostic correction permits it only for a captured transport_error, with 67 tests passing and no provider-request change."
 }

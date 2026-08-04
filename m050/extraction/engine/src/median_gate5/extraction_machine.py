@@ -1071,6 +1071,8 @@ def require_run_ready_for_next_call(
         if prior_call is None:
             raise ContractError("failed review lacks its captured call")
         if prior_call.get("packet_file_sha256") == packet_file_sha256:
+            if prior_call.get("transport_error"):
+                return len(captured)
             raise ContractError("failed packet must be corrected before retry")
         return len(captured)
     raise ContractError("next call is blocked until the prior outcome is reviewed")

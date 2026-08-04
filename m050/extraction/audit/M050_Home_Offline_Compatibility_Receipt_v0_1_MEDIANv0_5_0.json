@@ -1,0 +1,43 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-HOME-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-04",
+  "status": "HOME_OFFLINE_PREPARATION_VERIFIED_PILOT_NOT_PROVIDER_RELEASED",
+  "source_id": "M050-SRC-HOME-001",
+  "binding": {
+    "configuration_sha256": "3e5204ec7aa33a91b2a30c48aa6ff961dcef1448d31004af660e6100e6b94498",
+    "prompt_sha256": "d254299464ddd5543da0d263fc8acfe8f9c406e5a1141517a0dff52e56d7cabb",
+    "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
+    "engine_tests_sha256": "5f46c84a27d50ea5d0e0284508aa24d3899c9e6de1cc4269732b20bd01f60a20",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "e069fabd91cfdb186cf3c73db7a3fd24724b51fd298eed6ca757b54dabcb4a96"
+  },
+  "source_review": {
+    "source_blocks": 585,
+    "eligible_targets": 280,
+    "context_only_blocks": 40,
+    "excluded_blocks": 265,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 3,
+    "media_and_caption_blocks_redacted": 6,
+    "media_content_in_manifest_or_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 15,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 1653,
+    "representative_pilot_chunk_id": "C0009",
+    "pilot_selection_basis": "C0009 combines a numbered generation procedure, table structure, choice grammar, qualified examples, and a section transition at the joint-highest substantive character load."
+  },
+  "offline_verification": {
+    "all_15_chunks_fake_validated": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 50
+  },
+  "replays": {},
+  "note": "Offline compatibility only. No repository text was transmitted and no provider call was made."
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T17:59:27-04:00",
-  "execution_state": "AWAY_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
+  "updated": "2026-08-04T18:02:46-04:00",
+  "execution_state": "POPULATION_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -26,218 +26,19 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-AWAY-001",
-    "label": "Away",
-    "compile_ordinal": 7,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013",
-      "C0014",
-      "C0015",
-      "C0016",
-      "C0017",
-      "C0018",
-      "C0019",
-      "C0020",
-      "C0021",
-      "C0022",
-      "C0023",
-      "C0024",
-      "C0025",
-      "C0026",
-      "C0027"
-    ],
+    "id": "M050-SRC-POPULATION-001",
+    "label": "Population",
+    "compile_ordinal": 9,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_Away_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/away/M050_Away_C0002_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Away_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/away-pilot/M050_Away_C0027_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "latest_outcome": "m050/extraction/runs/away-pilot/M050_Away_C0027_Outcome_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0001_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0002_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0008_Outcome_v0_5_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0009_Outcome_v0_4_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0014",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0014_Outcome_v0_4_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0015",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0016",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0016_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0017",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0018",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0019",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0020",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0021",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0021_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0022",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0022_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0023",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0023_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0024",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0024_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0025",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0025_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0026",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0026_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0027",
-        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0027_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/away/M050_Away_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "281b08045a1c44e239165af3a4b9cbeda2dcd7862132d3b7186fb7d2f0533b9e",
-      "report": "m050/extraction/accepted/away/M050_Away_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "d0849116c4d1afef321cfdd584a4cb0b637c8dcff1b5904e3b5c4b64e75eb879"
-    },
-    "compatibility_replays": {},
-    "pilot_chunk_id": "C0027",
-    "generated_chunk_count": 27,
-    "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
-    "source_blocks": 831,
-    "eligible_target_blocks": 510,
-    "context_only_blocks": 78,
-    "excluded_blocks": 243,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 64,
-    "cache_miss_call_ceiling_usd": "0.2837"
-  },
-  "latest_provider_attempt": {
-    "http_status": 200,
-    "stop_reason": "end_turn",
-    "chunk_id": "C0027",
-    "output_tokens": 5397,
-    "cache_creation_input_tokens": 8053,
-    "cache_read_input_tokens": 0,
-    "cache_effective": true,
-    "exact_cost_usd": "0.095446",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Population_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "78e4f10cd7669e30a6405d86a15474c654110e08a175bd495ee2aa3deb5cd226",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
   "spend": {
     "active": true,
@@ -247,8 +48,8 @@
     "display_usd_rounded_up": "9.03"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -256,14 +57,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 5:59:27 PM EDT",
-    "status": "Away source-bounded candidate accepted; formal Stopdown complete",
-    "phase": "Atomic extraction — halted at Away completion",
-    "source": "Away — ordinal 7; 8 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0027; rejected/frozen none; whole-source candidate accepted",
-    "now": "All 510 target dispositions and 585 atoms passed exact coverage, ledger-bound review, unique-identifier, and candidate/report hash-binding checks; the cumulative spend balance is replenished to $2.0000000",
-    "next": "Await Asa's explicit source-work grant for Population; no other source or later phase is authorized"
+    "updated_human": "August 4, 2026 at 6:02:46 PM EDT",
+    "status": "Population identity card proposed; author approval required before provider transmission",
+    "phase": "Atomic extraction — Population identity approval halt",
+    "source": "Population — ordinal 9; 8 / 22 compile-scope sources complete",
+    "chunk": "No Population chunk selected; accepted/rejected boundary is empty",
+    "now": "Frozen Population source identity, provenance, qualification boundary, and zero-media disposition are proposed; no provider call or spend occurred",
+    "next": "Halt for Asa’s identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
-  "next_possible_transition": "Await Asa's explicit source-work grant for Population; spend alone cannot select or advance a source.",
+  "next_possible_transition": "With Asa’s identity-card approval, perform Population offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
   "gate_5_complete": false
 }

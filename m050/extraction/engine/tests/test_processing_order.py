@@ -39,8 +39,8 @@ def test_processing_order_and_canonical_progress_derive_next_source_and_queue():
         if by_id[source_id]["in_compile_scope"] and source_id not in completed
     ]
 
-    assert expected_queue[0] == "M050-SRC-AUTHORIAL-GRAMMAR-001"
-    assert len(expected_queue) == 18
+    assert expected_queue[0] == "M050-SRC-HOME-001"
+    assert len(expected_queue) == 17
     assert "next_source" not in order
     assert "outstanding_pre_reconciliation_order" not in order
     authorial = order["sequence"][0]["pre_candidate_acceptance_control"]

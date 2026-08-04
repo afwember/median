@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T01:21:45-04:00",
-  "execution_state": "AUTHORIAL_GRAMMAR_C0008_FROZEN_READINESS",
+  "updated": "2026-08-04T01:50:29-04:00",
+  "execution_state": "AUTHORIAL_GRAMMAR_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_HALTED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 18,
-    "outstanding_pre_reconciliation_sources": 14,
+    "outstanding_compile_scope_sources": 17,
+    "outstanding_pre_reconciliation_sources": 13,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -18,25 +18,26 @@
       "M050-SRC-PA-001",
       "M050-SRC-HUMAN-RULINGS-001",
       "M050-SRC-MSID-GRAMMAR-001",
-      "M050-SRC-CROSSING-001"
+      "M050-SRC-CROSSING-001",
+      "M050-SRC-AUTHORIAL-GRAMMAR-001"
     ]
   },
   "source": {
     "id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
     "label": "Authorial Grammar",
     "compile_ordinal": 1,
-    "accepted_chunk_ids": ["C0001", "C0002", "C0003", "C0004", "C0005", "C0006", "C0007"],
+    "accepted_chunk_ids": ["C0001", "C0002", "C0003", "C0004", "C0005", "C0006", "C0007", "C0008", "C0009", "C0010", "C0011", "C0012", "C0013"],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Target_Coverage_C0003_Pilot_Freeze_Proposal_v0_14_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Authorial_Grammar_Target_Coverage_Recalibration_Compatibility_Receipt_v0_9_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0008_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "latest_outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0013_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "latest_outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -72,6 +73,36 @@
         "chunk_id": "C0007",
         "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0010_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0011_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -79,10 +110,10 @@
       "accepted_c0002": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0002_Target_Coverage_Replay_v0_6_MEDIANv0_5_0.json",
       "rejected_c0003": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0003_Target_Coverage_Replay_v0_6_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0008",
+    "pilot_chunk_id": "C0013",
     "generated_chunk_count": 13,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
+    "required_target_disposition_count": 11,
     "latest_missing_target_suffixes": [],
     "exact_target_disposition_coverage_required": true,
     "dependent_example_bodies_remain_disposition_required": true,
@@ -90,30 +121,30 @@
     "c0001_c0002_replays_passed": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 50,
-    "cache_miss_call_ceiling_usd": "0.11976"
+    "cache_miss_call_ceiling_usd": "0.14298"
   },
   "latest_provider_attempt": {
-    "chunk_id": "C0007",
+    "chunk_id": "C0013",
     "http_status": 200,
     "stop_reason": "end_turn",
-    "output_tokens": 5004,
+    "output_tokens": 2775,
     "cache_creation_input_tokens": 0,
     "cache_read_input_tokens": 2198,
     "cache_effective": true,
-    "exact_cost_usd": "0.0595096",
+    "exact_cost_usd": "0.0339316",
     "mechanical_passed": true,
     "review_state": "review_passed"
   },
   "spend": {
     "active": true,
     "authorized_usd": "2.00",
-    "cumulative_spent_usd": "0.8675914",
-    "remaining_usd": "1.1324086",
-    "display_usd_rounded_up": "0.87"
+    "cumulative_spent_usd": "1.3794142",
+    "remaining_usd": "0.6205858",
+    "display_usd_rounded_up": "1.38"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -121,14 +152,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 1:21:45 AM EDT",
-    "status": "Authorial Grammar C0008 frozen; derived readiness active",
-    "phase": "Atomic extraction — source calibration",
+    "updated_human": "August 4, 2026 at 1:50:29 AM EDT",
+    "status": "Authorial Grammar source-bounded candidate accepted; Compile Worker halted",
+    "phase": "Atomic extraction — source completion halt",
     "source": "Authorial Grammar — 1 / 22",
-    "chunk": "C0008 / 13 — C0001–C0007 accepted; no rejected chunk",
-    "now": "C0007 passed mechanical and substantive review; C0008 is frozen and no provider call is in flight",
-    "next": "Run focused C0008 readiness checks, then call sequentially if readiness passes"
+    "chunk": "C0013 / 13 — C0001–C0013 accepted; no rejected chunk",
+    "now": "Authorial Grammar passed whole-document coverage and Human Rulings conformance review; source work and repository writing are stopped",
+    "next": "Await explicit authorization for the next source; do not begin Home or any later phase"
   },
-  "next_possible_transition": "Derived readiness for one sequential frozen Authorial Grammar C0008 provider call within the active cumulative budget.",
+  "next_possible_transition": "After a required cold start, explicit Asa authorization may release Home (M050-SRC-HOME-001) as the next outstanding source; no transition is currently authorized.",
   "gate_5_complete": false
 }

@@ -1,29 +1,29 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-AUTHGRAM-C0008-SOURCE-FREEZE-001",
+  "proposal_id": "M050-AUTHGRAM-C0013-SOURCE-FREEZE-001",
   "state": "source_chunk_frozen",
   "machine_state": "source_extraction_active",
-  "correction": "C0003 calibration passed; reuse the source-agnostic semantic-inventory constraint, exact coverage, and pure-label handling for sequential source extraction.",
+  "correction": "C0011 output-cap correction passed; retain the 10,000-token allowance and calibrated source-agnostic constraints for sequential extraction.",
   "binding": {
     "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
-    "configuration_sha256": "6d3d598c3799661f3a9e78d622398e6ddd3f5a1143c932d2751522dcc57fd77b",
+    "configuration_sha256": "debda7b47c9d947d4dccc1b7c2a46641ce705f8d7be7578a232ff4223b2864f8",
     "chunk_plan_sha256": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",
-    "pilot_chunk_id": "C0008",
-    "pilot_packet_sha256": "f4b153126dccbae831088d2165fb81b080171a9dfaaf5798f435036b44042c57",
-    "pilot_packet_file_sha256": "d5465c898e3a52c13a6cb704be5e22967ed3a2ee14450a813527ca4c4a2560cb",
+    "pilot_chunk_id": "C0013",
+    "pilot_packet_sha256": "92f22c597c4ed6ca39a88f6b4169d509da2176f9bbe0055fc17b8c5317bb1806",
+    "pilot_packet_file_sha256": "162949e31cbaff4abad1820bcdfd9020a03804fe5b955f6d9eb4bbfaec3cfdc9",
     "prompt_sha256": "9de7ac2aa81746a7b2b07debfbe046397f1f7f30bdb68283d2da0afdb8c3b2e4",
     "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
-    "engine_tests_sha256": "fa7d3bb17fa79fcd8cac882c7b4ba26e4d6b17cfd1178689a725d2303a20d7c3",
+    "engine_tests_sha256": "b379e3f9631ab7c2ad7a1fec4086ca84299ee9ce2b52eaf7c4bed1369ea7cc99",
     "model": "claude-sonnet-5",
     "reasoning_effort": "low",
-    "maximum_output_tokens": 6000,
+    "maximum_output_tokens": 10000,
     "cache_ttl": "1h"
   },
   "pilot": {
-    "selection_reason": "C0008 is the next sequential Authorial Grammar chunk under the calibrated source-agnostic extraction configuration.",
-    "required_target_disposition_count": 20,
+    "selection_reason": "C0013 is the final sequential Authorial Grammar provider chunk under the corrected source-agnostic extraction configuration.",
+    "required_target_disposition_count": 11,
     "dependent_semantic_inventory_count": 0,
-    "cache_miss_call_ceiling_usd": "0.11976"
+    "cache_miss_call_ceiling_usd": "0.14298"
   },
   "offline_verification": {
     "chunk_plan_changed": false,

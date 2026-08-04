@@ -535,12 +535,15 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
 
     events = read_jsonl(ledger_path, "active run ledger", errors)
     if latest:
-        validation = outcome.get("mechanical_validation", {})
+        validation = outcome.get("mechanical_validation") or {}
+        outcome_mechanical_passed = validation.get("passed")
+        if outcome_mechanical_passed is None and outcome.get("capture_error"):
+            outcome_mechanical_passed = False
         usage = outcome.get("usage", {})
         if (
             outcome.get("source_id") != source_id
             or outcome.get("chunk_id") != latest.get("chunk_id")
-            or validation.get("passed") is not latest.get("mechanical_passed")
+            or outcome_mechanical_passed is not latest.get("mechanical_passed")
             or outcome.get("http_status") != latest.get("http_status")
             or outcome.get("stop_reason") != latest.get("stop_reason")
             or usage.get("output_tokens") != latest.get("output_tokens")

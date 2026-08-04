@@ -62,6 +62,8 @@
     {"path":"m050/extraction/accepted/pa/M050_Governing_Philosophy_and_Architecture_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json","sha256":"6f4f9027236cb021ca6dddbfda79868cef3ad8a8fbbe6b832c11face7ae90e46"},
     {"path":"m050/extraction/accepted/pa/M050_Governing_Philosophy_and_Architecture_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"3e6c87dffe992c1dc89bbf483235e1e56965cf8b6260a748b3cb1a0516fb38d9"},
     {"path":"m050/extraction/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json","sha256":"c2e142816fcb5f0eda4c68cd822f577f8f78938cf40213537d33a76e556fb24e"},
-    {"path":"m050/extraction/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"2e5818604fa346a17b3c84edf77de13c25b0a3b413626037f63b273bba212b3c"}
+    {"path":"m050/extraction/accepted/human-rulings/M050_Human_Rulings_Ledger_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"2e5818604fa346a17b3c84edf77de13c25b0a3b413626037f63b273bba212b3c"},
+    {"path":"m050/extraction/accepted/authorial-grammar/M050_Authorial_Grammar_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json","sha256":"f4169536331254530dffe28f43175e2b9eb7642eb32650910bd84792431c7a71"},
+    {"path":"m050/extraction/accepted/authorial-grammar/M050_Authorial_Grammar_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl","sha256":"d6a4182004f0fb9d7e12db8842ffc23ed89a3a795a325b412e940ba7ad00a3ce"}
   ]
 }

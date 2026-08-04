@@ -2,7 +2,7 @@
   "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
   "receipt_id": "M050-AUTHGRAM-TARGET-COVERAGE-RECALIBRATION-COMPATIBILITY-009",
   "date": "2026-08-03",
-  "status": "DEPENDENT_INVENTORY_DISPOSITION_CALIBRATED_SOURCE_EXTRACTION_ACTIVE",
+  "status": "SOURCE_EXTRACTION_COMPATIBILITY_VERIFIED_C0011_OUTPUT_CAP_CORRECTED",
   "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
   "trigger": {
     "pilot_chunk_id": "C0003",
@@ -14,10 +14,10 @@
     "basis": "Annotate offline-classified semantic code or reference inventories generically and allow only atoms or review_required; retain the existing pure-label exception."
   },
   "binding": {
-    "configuration_sha256": "6d3d598c3799661f3a9e78d622398e6ddd3f5a1143c932d2751522dcc57fd77b",
+    "configuration_sha256": "debda7b47c9d947d4dccc1b7c2a46641ce705f8d7be7578a232ff4223b2864f8",
     "prompt_sha256": "9de7ac2aa81746a7b2b07debfbe046397f1f7f30bdb68283d2da0afdb8c3b2e4",
     "engine_module_sha256": "1a680116f669499418afa9b5afdbf72fdbbb141495e18313ed8513b40290a322",
-    "engine_tests_sha256": "fa7d3bb17fa79fcd8cac882c7b4ba26e4d6b17cfd1178689a725d2303a20d7c3"
+    "engine_tests_sha256": "b379e3f9631ab7c2ad7a1fec4086ca84299ee9ce2b52eaf7c4bed1369ea7cc99"
   },
   "policy": {
     "semantic_inventory_allowed_dispositions": ["atoms", "review_required"],
@@ -36,6 +36,14 @@
     "outcome_sha256": "2d241422e179d274d76b7dffe47216889159797d9ccfd9eda5989633d1b38c2e",
     "mechanical_passed": true,
     "substantive_review_passed": true
+  },
+  "output_cap_correction": {
+    "chunk_id": "C0011",
+    "prior_maximum_output_tokens": 8000,
+    "corrected_maximum_output_tokens": 10000,
+    "chunk_boundary_changed": false,
+    "prompt_or_schema_changed": false,
+    "source_specific_branch_added": false
   },
   "offline_verification": {
     "chunk_plan_changed": false,

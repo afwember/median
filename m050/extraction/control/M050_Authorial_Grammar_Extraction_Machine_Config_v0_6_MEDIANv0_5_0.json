@@ -36,7 +36,7 @@
     "validator_enforcement": true,
     "source_specific_block_patch": false
   },
-  "provider": {"name": "Anthropic", "model": "claude-sonnet-5", "reasoning_effort": "low", "maximum_output_tokens": 6000, "cache_ttl": "1h", "cache_required": true, "cache_boundary": "stable_prompt_prefix"},
+  "provider": {"name": "Anthropic", "model": "claude-sonnet-5", "reasoning_effort": "low", "maximum_output_tokens": 10000, "cache_ttl": "1h", "cache_required": true, "cache_boundary": "stable_prompt_prefix"},
   "pricing": {"input_usd_per_million_tokens": "2", "output_usd_per_million_tokens": "10", "cache_read_multiplier": "0.1", "cache_5m_write_multiplier": "1.25", "cache_1h_write_multiplier": "2"},
   "execution": {"cadence": "sequential_one_call_review", "next_chunk_requires_substantive_review_of_prior_chunk": true},
   "recalibration": {"state": "dependent_inventory_disposition_calibrated", "trigger_chunk_id": "C0003", "trigger_block_ids": ["B00085", "B00121"], "pilot_required": false, "prior_pilot_rejected": true, "pilot_passed": true}

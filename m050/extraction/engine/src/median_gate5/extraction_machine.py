@@ -23,6 +23,10 @@ PURE_STRUCTURAL_LABEL = re.compile(
     r"^(?:examples?|prefer|preferred|avoid|not|correct|incorrect):$",
     re.IGNORECASE,
 )
+DOCUMENT_END_MARKER = re.compile(
+    r"^(?:<!--[^\n]*-->\s*)?END OF (?:SPECIFICATION|DOCUMENT)\s*$",
+    re.IGNORECASE,
+)
 
 
 def _structural_table_ids(blocks: list[dict[str, Any]]) -> set[str]:
@@ -199,6 +203,9 @@ def build_chunk_payload(
                 record["structural_role"] = "independent_table_columns"
                 record["required_disposition"] = "atoms"
                 record["minimum_atoms"] = table_minimum_atoms[block_id]
+            elif DOCUMENT_END_MARKER.fullmatch(block.get("text", "").strip()):
+                record["structural_role"] = "document_end_marker"
+                record["required_disposition"] = "no_substantive_claim"
             elif PURE_STRUCTURAL_LABEL.fullmatch(block.get("text", "").strip()):
                 record["structural_role"] = "pure_example_or_polarity_label"
                 record["required_disposition"] = "no_substantive_claim"

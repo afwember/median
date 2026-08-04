@@ -1,0 +1,237 @@
+{
+  "report_version": "M050-POPULATION-ACCEPTANCE-0.1",
+  "status": "FULL_POPULATION_SOURCE_BOUNDED_ACCEPTED_CANDIDATE",
+  "source_id": "M050-SRC-POPULATION-001",
+  "source_sha256": "c818a5e13617835e0b6f18095b2ca69128028cd26406bbea6a11c0eeeb4c0981",
+  "model": "claude-sonnet-5",
+  "effort": "low",
+  "chunks": 23,
+  "provider_attempts": 26,
+  "source_blocks": 694,
+  "target_blocks": 412,
+  "context_only_blocks": 63,
+  "excluded_blocks": 219,
+  "target_dispositions": 412,
+  "candidate_atoms": 438,
+  "no_substantive_claim_dispositions": 192,
+  "review_required_dispositions": 0,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "coverage_errors": 0,
+  "duplicate_target_blocks": 0,
+  "uncovered_target_blocks": 0,
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015",
+    "C0016",
+    "C0017",
+    "C0018",
+    "C0019",
+    "C0020",
+    "C0021",
+    "C0022",
+    "C0023"
+  ],
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "89604b11610f0bc2d4de70eeac3cb7728fe9e4a1dfebd2d5c6038307c5baaa31",
+      "review_event_id": "evt_6479fcd6e44701a211305bf4",
+      "review_event_outcome_sha256": "89604b11610f0bc2d4de70eeac3cb7728fe9e4a1dfebd2d5c6038307c5baaa31"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0002_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "ac38704203e7e155dba128cd6df8406e6d216200b3b64bd79f110839875feb00",
+      "review_event_id": "evt_521c409aadb760016a617af3",
+      "review_event_outcome_sha256": "ac38704203e7e155dba128cd6df8406e6d216200b3b64bd79f110839875feb00"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7bfc0d7abed3909f59ea5d97a630feff5d046a71c39b886743ca787d3d974b91",
+      "review_event_id": "evt_43037f51a112d4d2f436e2b6",
+      "review_event_outcome_sha256": "7bfc0d7abed3909f59ea5d97a630feff5d046a71c39b886743ca787d3d974b91"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "bab7a9bcc166cf218b344c850a53c0a2186fdeb4c0debd6f6331584ae9db771a",
+      "review_event_id": "evt_847770018af4536a6d333851",
+      "review_event_outcome_sha256": "bab7a9bcc166cf218b344c850a53c0a2186fdeb4c0debd6f6331584ae9db771a"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "b20718ed5479ff73062078fab277a7b446135eec974487901e8bcb6613a1b510",
+      "review_event_id": "evt_b558649688d5451d2eaaf857",
+      "review_event_outcome_sha256": "b20718ed5479ff73062078fab277a7b446135eec974487901e8bcb6613a1b510"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "5e5ca66d1c3e8487456162880aa96c5af9ce897a625df42d6493852362aa80fb",
+      "review_event_id": "evt_b6e74871c39fbf6ce87264c8",
+      "review_event_outcome_sha256": "5e5ca66d1c3e8487456162880aa96c5af9ce897a625df42d6493852362aa80fb"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "c0ac89a99631a08501e5836fa67777892c28d9c53fb7af498a3a2b2f7d1016eb",
+      "review_event_id": "evt_2fb16592042a9937886f9b76",
+      "review_event_outcome_sha256": "c0ac89a99631a08501e5836fa67777892c28d9c53fb7af498a3a2b2f7d1016eb"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7df0cd8ffb9f0f01f8d23c42bcd5b305c81c8a96d00f76bb6cf05bf35803302f",
+      "review_event_id": "evt_9f67ce82ba5d87cb07b8b275",
+      "review_event_outcome_sha256": "7df0cd8ffb9f0f01f8d23c42bcd5b305c81c8a96d00f76bb6cf05bf35803302f"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "63f9600fc9b3214136ceb808c528c3403e7acde1dff2b66a668431ea1399d305",
+      "review_event_id": "evt_a67e2c335b328a7815f322d5",
+      "review_event_outcome_sha256": "63f9600fc9b3214136ceb808c528c3403e7acde1dff2b66a668431ea1399d305"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "439f8f7ca2ff8c1cd5cdeb7bfd8f57f871b94c65671cbb49ff71b3a734820363",
+      "review_event_id": "evt_49ca83186d1e338348b61018",
+      "review_event_outcome_sha256": "439f8f7ca2ff8c1cd5cdeb7bfd8f57f871b94c65671cbb49ff71b3a734820363"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d7d02b743cc1ea95d24c87385b1064bc876165d6160116891eab80561d6ea549",
+      "review_event_id": "evt_8d13f49dcdbbc319fbf2b189",
+      "review_event_outcome_sha256": "d7d02b743cc1ea95d24c87385b1064bc876165d6160116891eab80561d6ea549"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "5f5ee3efc1d08f5ea0790e96729cda5f10a68d65354019e04a295ca3fe528d8c",
+      "review_event_id": "evt_43e8825d21b61a17e0db1ce7",
+      "review_event_outcome_sha256": "5f5ee3efc1d08f5ea0790e96729cda5f10a68d65354019e04a295ca3fe528d8c"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "a73a9d5b6e18adb668541c9fe96c758a27a92889cbac34ad6c0f2f7da79f6d1c",
+      "review_event_id": "evt_cf3cff15cf1c20138757232e",
+      "review_event_outcome_sha256": "a73a9d5b6e18adb668541c9fe96c758a27a92889cbac34ad6c0f2f7da79f6d1c"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "738b49a8433d73e3eb0036fd071a58295da15f46817dcfe821eb1a4b7db7c008",
+      "review_event_id": "evt_3ffc4072cc2ebd5650f31781",
+      "review_event_outcome_sha256": "738b49a8433d73e3eb0036fd071a58295da15f46817dcfe821eb1a4b7db7c008"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "4b5ae9cf5fd20c564340aded11e69d81c5394cd9cbd7162db2c4cabe41441dd8",
+      "review_event_id": "evt_47249abaf84f520e20f96537",
+      "review_event_outcome_sha256": "4b5ae9cf5fd20c564340aded11e69d81c5394cd9cbd7162db2c4cabe41441dd8"
+    },
+    {
+      "chunk_id": "C0016",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "a8ddfe651aff0834a44b7ae91c5869fea67ebfa9841b51bf77bdbce1a60dc335",
+      "review_event_id": "evt_42b9ae410c23a92bd0be1860",
+      "review_event_outcome_sha256": "a8ddfe651aff0834a44b7ae91c5869fea67ebfa9841b51bf77bdbce1a60dc335"
+    },
+    {
+      "chunk_id": "C0017",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b5c8e822e1a541f24be23f8578c0d70bd0a48669fa7a27970985ed294058407a",
+      "review_event_id": "evt_8feeac028a2ff7876634cf07",
+      "review_event_outcome_sha256": "b5c8e822e1a541f24be23f8578c0d70bd0a48669fa7a27970985ed294058407a"
+    },
+    {
+      "chunk_id": "C0018",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "c7053106241e5c015a131859180006eeff77ac31975c8be8e7db7011979711e8",
+      "review_event_id": "evt_66c3dee4040e0db6b329c525",
+      "review_event_outcome_sha256": "c7053106241e5c015a131859180006eeff77ac31975c8be8e7db7011979711e8"
+    },
+    {
+      "chunk_id": "C0019",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "953bbd4bd1b7e0443889614dba793b906e879eaaee743910a5c8f8ae73c12fcb",
+      "review_event_id": "evt_2b0a8ebc868ffd2bb4996ea0",
+      "review_event_outcome_sha256": "953bbd4bd1b7e0443889614dba793b906e879eaaee743910a5c8f8ae73c12fcb"
+    },
+    {
+      "chunk_id": "C0020",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "cf8aca4d6ae8323f4645549e8989e06c890d92cbfda8ec5c0fe89e19972e17f1",
+      "review_event_id": "evt_39e3b107c8cc5d5caee35849",
+      "review_event_outcome_sha256": "cf8aca4d6ae8323f4645549e8989e06c890d92cbfda8ec5c0fe89e19972e17f1"
+    },
+    {
+      "chunk_id": "C0021",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "e1d0bbbb8ac3763785454137d28aa0235af2d1cdbe747621b59c6134e926b77e",
+      "review_event_id": "evt_56aebb6628fedba391fbf423",
+      "review_event_outcome_sha256": "e1d0bbbb8ac3763785454137d28aa0235af2d1cdbe747621b59c6134e926b77e"
+    },
+    {
+      "chunk_id": "C0022",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0022_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "eb555872105970f8431a81a1b16e5b2808ebf0de09ec5d20b8b3900f11d5d83e",
+      "review_event_id": "evt_6c194448635923472afe6f2e",
+      "review_event_outcome_sha256": "eb555872105970f8431a81a1b16e5b2808ebf0de09ec5d20b8b3900f11d5d83e"
+    },
+    {
+      "chunk_id": "C0023",
+      "outcome_path": "m050/extraction/runs/population-pilot/M050_Population_C0023_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "3c6ba56b54e97009b27f0437ede0de60d74e35da1779c89db10dd0d03c314680",
+      "review_event_id": "evt_8bf40b07d01ddd1c4162c26a",
+      "review_event_outcome_sha256": "3c6ba56b54e97009b27f0437ede0de60d74e35da1779c89db10dd0d03c314680"
+    }
+  ],
+  "identifier_resolution": {
+    "source_identifier_field": "proposal_id",
+    "accepted_identifier_field": "proposal_id",
+    "trace_fields": [
+      "accepted_chunk_id",
+      "source_proposal_id"
+    ],
+    "policy": "POPULATION-{accepted_chunk_id}-{source_proposal_id}; append a two-digit occurrence suffix only for a repeated source_proposal_id within one accepted chunk",
+    "source_identifier_occurrences": 438,
+    "source_identifier_unique_values": 438,
+    "cross_chunk_colliding_values": 0,
+    "collision_occurrences_resolved": 0,
+    "accepted_identifier_unique_values": 438
+  },
+  "candidate_path": "m050/extraction/accepted/population/M050_Population_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "b17113d322c6af8eb78efb82337e614bd688b3851ec0977b612d14cb14586d40",
+  "actual_population_extraction_cost_usd": "1.8841948",
+  "cumulative_provider_spend_usd": "10.9100344",
+  "cumulative_budget_usd": "12.8428106",
+  "remaining_budget_usd": "1.9327762",
+  "cache_policy": "mandatory one-hour stable-prefix caching",
+  "cache_telemetry_status": "effective",
+  "approval": true,
+  "reviewed_by": "Codex Compile Worker",
+  "reviewed_at": "2026-08-04",
+  "note": "Accepted as source-bounded atomic-extraction output only. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+}

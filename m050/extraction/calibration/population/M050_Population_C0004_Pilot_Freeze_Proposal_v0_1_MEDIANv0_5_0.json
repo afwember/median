@@ -12,12 +12,12 @@
     "disposition_ledger_sha256": "31edeeef99f0fe04da495402f8360ee67beae0349712f43074570b2fbedca2b6",
     "chunk_plan_sha256": "11cc246557f30f6cc59b5aac479b8cb7b685b19a2b3161db4cf84c653e58be4e",
     "pilot_chunk_id": "C0023",
-    "pilot_packet_sha256": "55c289b7ff14efd9675a938e5df56e64adb8413c2417e378ffb06eb675941641",
-    "pilot_packet_file_sha256": "44e5006f5b2048dc0a01f11af7c683ddaa5cdff66873808705ed3422d9a1e4af",
+    "pilot_packet_sha256": "c9b499d5e5a414799ed43187a007be4d1587207dd7aa77a3ff95295ef83b4d84",
+    "pilot_packet_file_sha256": "90deef948dbec096ecd297dbf6f7550058c02bc27ef066b055f7d07e7ac13562",
     "prompt_sha256": "84ed6e66d32b2aad2a1b2c3edca5b095a53c34671288e918b99003dd429c25d4",
     "response_schema_sha256": "cca10d1c5a5ac0d2cd69d48efb9777d6f643057bdf15b8e3836d50603d773ea2",
-    "engine_module_sha256": "6d160136203fc9f9e3c65af84cabec75baecd6aa7678abed4946c16ea3f9aae7",
-    "engine_tests_sha256": "ff57dee88c5fbab9a7346b313705a90afea86e586a7f697e7266791b62579523",
+    "engine_module_sha256": "93f22329902f4ce531e25519edc273c9467925e9d987617fc3e82e14ea7b193d",
+    "engine_tests_sha256": "1682749b048b42a5e87a938e068c59ead6ea4a0d301f324219c9a54628fbea60",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
     "allowed_streams": [
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0022 passed mechanical and substantive review; C0023 is the final unprocessed chunk in canonical order.",
+    "selection_reason": "C0023 v0.1 atomized structural furniture; v0.2 freezes the generic end-marker no-substantive correction while retaining the existing table-header constraint.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.254524"
+    "cache_miss_call_ceiling_usd": "0.2549"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -51,7 +51,7 @@
   "offline_verification": {
     "all_23_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 67,
+    "offline_tests_passed": 68,
     "calibrated_target_blocks_per_chunk": 20,
     "generated_chunk_count": 23,
     "chunk_count_is_input": false,
@@ -61,6 +61,7 @@
     "c0002_v0_2_contents_navigation_required_no_substantive": true,
     "all_source_compatibility_replays_passed": 99,
     "provider_call_made": true,
-    "same_packet_transport_retry_requires_reviewed_transport_error": true
+    "same_packet_transport_retry_requires_reviewed_transport_error": true,
+    "generic_document_end_marker_requires_no_substantive": true
   }
 }

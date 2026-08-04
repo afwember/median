@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T19:22:10-04:00",
-  "execution_state": "POPULATION_C0023_REJECTED_SPEND_EXHAUSTED",
+  "updated": "2026-08-04T19:38:43-04:00",
+  "execution_state": "POPULATION_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 14,
-    "outstanding_pre_reconciliation_sources": 10,
+    "outstanding_compile_scope_sources": 13,
+    "outstanding_pre_reconciliation_sources": 9,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -22,7 +22,8 @@
       "M050-SRC-AUTHORIAL-GRAMMAR-001",
       "M050-SRC-HOME-001",
       "M050-SRC-EMBODIMENT-001",
-      "M050-SRC-AWAY-001"
+      "M050-SRC-AWAY-001",
+      "M050-SRC-POPULATION-001"
     ]
   },
   "source": {
@@ -51,18 +52,19 @@
       "C0019",
       "C0020",
       "C0021",
-      "C0022"
+      "C0022",
+      "C0023"
     ],
-    "rejected_chunk_id": "C0023",
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "rejected_chunk_id": null,
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Population_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/population/M050_Population_C0004_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Population_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/population-pilot/M050_Population_C0023_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/population-pilot/M050_Population_C0023_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -173,8 +175,19 @@
         "chunk_id": "C0022",
         "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0022_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0023",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0023_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/population/M050_Population_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "b17113d322c6af8eb78efb82337e614bd688b3851ec0977b612d14cb14586d40",
+      "report": "m050/extraction/accepted/population/M050_Population_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "e3d56494433170a84db3aa96a754c84624f749488be16c78f5eb6ea9c0c44efa"
+    },
     "compatibility_replays": {},
     "pilot_chunk_id": "C0023",
     "generated_chunk_count": 23,
@@ -187,20 +200,20 @@
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 67,
-    "cache_miss_call_ceiling_usd": "0.254524",
-    "latest_outcome": "m050/extraction/runs/population-pilot/M050_Population_C0023_Outcome_v0_1_MEDIANv0_5_0.json"
+    "offline_tests_passed": 68,
+    "cache_miss_call_ceiling_usd": "0.2549",
+    "latest_outcome": "m050/extraction/runs/population-pilot/M050_Population_C0023_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "11.0258396",
-    "cumulative_spent_usd": "10.8428106",
-    "remaining_usd": "0.1830290",
-    "display_usd_rounded_up": "10.85"
+    "authorized_usd": "12.8428106",
+    "cumulative_spent_usd": "10.9100344",
+    "remaining_usd": "1.9327762",
+    "display_usd_rounded_up": "10.92"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -208,26 +221,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 7:22:10 PM EDT",
-    "status": "Population C0023 rejected; spend replenishment required",
-    "phase": "Atomic extraction — Population sequential extraction",
-    "source": "Population — ordinal 9; 8 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0022; rejected/frozen C0023 / 23",
-    "now": "C0023 v0.1 cost $0.090110 and was rejected because a no-substantive table header carried an atom and the end-of-specification marker was atomized; $0.1830290 remains",
-    "next": "Replenish cumulative spend before correcting, refreezing, and retrying C0023; its current conservative ceiling is $0.254524"
+    "updated_human": "August 4, 2026 at 7:38:43 PM EDT",
+    "status": "Population source-bounded candidate accepted; formal Stopdown complete",
+    "phase": "Atomic extraction — halted at Population completion",
+    "source": "Population — ordinal 9; 9 / 22 compile-scope sources complete",
+    "chunk": "Accepted C0001-C0023; rejected/frozen none; whole-source candidate accepted",
+    "now": "All 412 target dispositions and 438 atoms passed exact coverage, ledger-bound review, unique-identifier, and candidate/report hash-binding checks; $1.9327762 remains",
+    "next": "Await Asa's explicit source-work grant for Guest; no other source or later phase is authorized"
   },
-  "next_possible_transition": "No provider call is permitted: remaining spend $0.1830290 cannot cover the $0.254524 conservative C0023 retry ceiling. Asa may replenish the cumulative spend cap.",
+  "next_possible_transition": "Await Asa's explicit source-work grant for Guest; spend alone cannot select or advance a source.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "stop_reason": "end_turn",
     "chunk_id": "C0023",
-    "output_tokens": 5913,
-    "cache_creation_input_tokens": 5349,
-    "cache_read_input_tokens": 0,
+    "output_tokens": 5652,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 5349,
     "cache_effective": true,
-    "exact_cost_usd": "0.090110",
-    "mechanical_passed": false,
-    "review_state": "review_failed"
+    "exact_cost_usd": "0.0672238",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
   }
 }

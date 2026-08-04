@@ -229,7 +229,7 @@ def test_active_source_retains_one_writer_authority():
     assert errors == []
 
 
-def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
+def test_status_uses_unlabeled_timestamp_and_upward_rounded_cumulative_cost():
     guard = _guard_module()
     state = {
         "dashboard": {
@@ -242,6 +242,7 @@ def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
             "next": "Await authorization",
         },
         "spend": {
+            "cumulative_spent_usd": "9.0258396",
             "remaining_usd": "0.6576584",
             "display_usd_rounded_up": "9.03",
         },
@@ -249,8 +250,8 @@ def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
     status = guard.expected_status(state)
     assert "**UPDATED:**" not in status
     assert "August 4, 2026 at 5:46:07 PM EDT<br>" in status
-    assert status.endswith("**SPEND REMAINING:** $0.65\n")
-    assert "TOTAL COST" not in status
+    assert status.endswith("**TOTAL COST:** $9.03 cumulative provider spend\n")
+    assert "SPEND REMAINING" not in status
 
 
 def _pricing():
@@ -546,6 +547,39 @@ def test_payload_marks_contents_navigation_non_substantive():
     )
     targets = {item["block_id"]: item for item in payload["target_blocks"]}
     assert targets["B1"]["structural_role"] == "contents_navigation"
+    assert targets["B1"]["required_disposition"] == "no_substantive_claim"
+    assert "required_disposition" not in targets["B2"]
+
+
+def test_payload_marks_generic_document_end_marker_non_substantive():
+    manifest = {
+        "source_id": "S1",
+        "source_sha256": "d" * 64,
+        "blocks": [
+            {
+                "block_id": "B1",
+                "block_type": "paragraph",
+                "text": "<!--@22¶4-->\nEND OF SPECIFICATION\n",
+                "status_markers": [],
+            },
+            {
+                "block_id": "B2",
+                "block_type": "paragraph",
+                "text": "The specification ends when its completion condition is met.\n",
+                "status_markers": [],
+            },
+        ],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [
+            {"block_id": "B1", "disposition": "eligible"},
+            {"block_id": "B2", "disposition": "eligible"},
+        ],
+        {"chunk_id": "C0001", "block_ids": ["B1", "B2"]},
+    )
+    targets = {item["block_id"]: item for item in payload["target_blocks"]}
+    assert targets["B1"]["structural_role"] == "document_end_marker"
     assert targets["B1"]["required_disposition"] == "no_substantive_claim"
     assert "required_disposition" not in targets["B2"]
 

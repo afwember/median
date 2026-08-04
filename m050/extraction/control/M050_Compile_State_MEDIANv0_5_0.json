@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T17:46:07-04:00",
+  "updated": "2026-08-04T17:59:27-04:00",
   "execution_state": "AWAY_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
@@ -241,9 +241,9 @@
   },
   "spend": {
     "active": true,
-    "authorized_usd": "9.6834980",
+    "authorized_usd": "11.0258396",
     "cumulative_spent_usd": "9.0258396",
-    "remaining_usd": "0.6576584",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "9.03"
   },
   "authority": {
@@ -256,12 +256,12 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 5:46:07 PM EDT",
+    "updated_human": "August 4, 2026 at 5:59:27 PM EDT",
     "status": "Away source-bounded candidate accepted; formal Stopdown complete",
     "phase": "Atomic extraction — halted at Away completion",
     "source": "Away — ordinal 7; 8 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0027; rejected/frozen none; whole-source candidate accepted",
-    "now": "All 510 target dispositions and 585 atoms passed exact coverage, ledger-bound review, unique-identifier, and candidate/report hash-binding checks; $0.6576584 remains",
+    "now": "All 510 target dispositions and 585 atoms passed exact coverage, ledger-bound review, unique-identifier, and candidate/report hash-binding checks; the cumulative spend balance is replenished to $2.0000000",
     "next": "Await Asa's explicit source-work grant for Population; no other source or later phase is authorized"
   },
   "next_possible_transition": "Await Asa's explicit source-work grant for Population; spend alone cannot select or advance a source.",

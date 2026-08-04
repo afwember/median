@@ -1,0 +1,37 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-AUTHGRAM-TARGET-COVERAGE-C0003-PILOT-FREEZE-013",
+  "state": "pilot_frozen",
+  "machine_state": "pilot_frozen",
+  "correction": "Omit Anthropic-unsupported maxItems, retain supported minItems 1, and preserve exact prompt and validator coverage enforcement with one-hour stable-prefix caching.",
+  "binding": {
+    "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+    "configuration_sha256": "b1a9a73fd11b79c6a1cbb53a7c755912cf4a29d0d15d4a365db42aa431c04ba5",
+    "chunk_plan_sha256": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",
+    "pilot_chunk_id": "C0003",
+    "pilot_packet_sha256": "c6631370c2da42820df5cae71f8617e2f562cb385d0246ce46fb6055da046f5f",
+    "pilot_packet_file_sha256": "cd05e9f30afcedc873fc64cad5832d53c1a8324fd5f10fc7052537ab032f790b",
+    "prompt_sha256": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
+    "engine_module_sha256": "8c633e54289477517a20a500ed9a23ce01ce84d3cb9ca9e251407311ee2ee827",
+    "engine_tests_sha256": "9c6ab28e12646874d7896bbfce8ff577acefaca431c796497a6dfad667c35e7c",
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 6000,
+    "cache_ttl": "1h"
+  },
+  "pilot": {
+    "selection_reason": "C0003 contains pure labels, dependent example bodies, table structure, and substantive lead-ins, directly testing exact coverage after provider-schema compatibility correction.",
+    "required_target_disposition_count": 19,
+    "provider_schema_min_items": 1,
+    "provider_schema_max_items_omitted": true,
+    "cache_miss_call_ceiling_usd": "0.12354"
+  },
+  "offline_verification": {
+    "chunk_plan_changed": false,
+    "all_13_chunks_fake_validated": true,
+    "accepted_c0001_c0002_replays_passed": true,
+    "rejected_c0003_replay_missing_target_count": 1,
+    "rejected_c0003_replay_required_disposition_errors": 0,
+    "offline_tests_passed": 49
+  }
+}

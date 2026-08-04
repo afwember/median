@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-03T23:41:58-04:00",
-  "execution_state": "AUTHORIAL_GRAMMAR_C0003_V0_13_PROVIDER_SCHEMA_CORRECTED_FROZEN_COST_RECONCILIATION_REQUIRED",
+  "updated": "2026-08-03T23:48:46-04:00",
+  "execution_state": "AUTHORIAL_GRAMMAR_C0003_V0_14_PROVIDER_SCHEMA_CORRECTED_FROZEN_COST_AND_TRANSMISSION_DECISION_REQUIRED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -32,11 +32,11 @@
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Target_Coverage_C0003_Pilot_Freeze_Proposal_v0_12_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Authorial_Grammar_Target_Coverage_Recalibration_Compatibility_Receipt_v0_7_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Target_Coverage_C0003_Pilot_Freeze_Proposal_v0_13_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_Authorial_Grammar_Target_Coverage_Recalibration_Compatibility_Receipt_v0_8_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_13_MEDIANv0_5_0.json",
-    "latest_outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Outcome_v0_12_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_14_MEDIANv0_5_0.json",
+    "latest_outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Outcome_v0_13_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -50,9 +50,9 @@
       }
     ],
     "compatibility_replays": {
-      "accepted_c0001": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0001_Target_Coverage_Replay_v0_4_MEDIANv0_5_0.json",
-      "accepted_c0002": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0002_Target_Coverage_Replay_v0_4_MEDIANv0_5_0.json",
-      "rejected_c0003": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0003_Target_Coverage_Replay_v0_4_MEDIANv0_5_0.json"
+      "accepted_c0001": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0001_Target_Coverage_Replay_v0_5_MEDIANv0_5_0.json",
+      "accepted_c0002": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0002_Target_Coverage_Replay_v0_5_MEDIANv0_5_0.json",
+      "rejected_c0003": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0003_Target_Coverage_Replay_v0_5_MEDIANv0_5_0.json"
     },
     "pilot_chunk_id": "C0003",
     "generated_chunk_count": 13,
@@ -65,7 +65,7 @@
     "c0001_c0002_replays_passed": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 49,
-    "cache_miss_call_ceiling_usd": "0.12366"
+    "cache_miss_call_ceiling_usd": "0.12354"
   },
   "latest_provider_attempt": {
     "chunk_id": "C0003",
@@ -96,14 +96,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 3, 2026 at 11:41:58 PM EDT",
-    "status": "C0003 v0.13 provider-schema correction passed offline and is frozen; cost reconciliation remains required",
+    "updated_human": "August 3, 2026 at 11:48:46 PM EDT",
+    "status": "C0003 v0.14 provider-schema correction passed offline and is frozen; cost and transmission decisions required",
     "phase": "Atomic extraction — source calibration",
     "source": "Authorial Grammar — 1 / 22",
     "chunk": "C0003 / 13 — C0001/C0002 accepted; latest C0003 rejected for one omission",
-    "now": "v0.12 HTTP 400 preserved; v0.13 uses supported array bounds, passed 49 tests and all compatibility replays, and made no provider call",
-    "next": "Halt for the unresolved no-telemetry cost decision before the frozen C0003 v0.13 provider retry; $1.464215 remains"
+    "now": "v0.13 HTTP 400 preserved because maxItems is unsupported; v0.14 omits it, passed 49 tests and all compatibility replays, and made no further call",
+    "next": "Halt for v0.13 zero-cost reconciliation and explicit frozen v0.14 transmission approval; $1.464215 remains"
   },
-  "next_possible_transition": "After Asa resolves the no-telemetry transport/cost decision, retry the frozen provider-compatible C0003 v0.13 packet within the active cumulative budget.",
+  "next_possible_transition": "After Asa resolves the no-telemetry v0.13 cost decision and approves frozen v0.14 transmission, retry C0003 within the active cumulative budget.",
   "gate_5_complete": false
 }

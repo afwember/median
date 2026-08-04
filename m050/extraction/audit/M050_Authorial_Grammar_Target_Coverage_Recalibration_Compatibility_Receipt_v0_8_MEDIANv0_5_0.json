@@ -1,0 +1,40 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-AUTHGRAM-TARGET-COVERAGE-RECALIBRATION-COMPATIBILITY-008",
+  "date": "2026-08-03",
+  "status": "OFFLINE_PROVIDER_SUPPORTED_SCHEMA_VERIFIED_PILOT_REQUIRED",
+  "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
+  "trigger": {
+    "pilot_chunk_id": "C0003",
+    "outcome_sha256": "6b6d0c3af32fea18a4d7471b3be8c715ae2c3cbb464a6c2bdee552b91d0a8a7f",
+    "defect": "Anthropic rejected the bound structured-output schema before inference because array maxItems is unsupported.",
+    "quantization_defect": false,
+    "basis": "Omit unsupported provider-side array cardinality keywords except supported minItems 1; exact target coverage remains enforced by the unchanged prompt and source-agnostic validator."
+  },
+  "binding": {
+    "configuration_sha256": "b1a9a73fd11b79c6a1cbb53a7c755912cf4a29d0d15d4a365db42aa431c04ba5",
+    "prompt_sha256": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
+    "engine_module_sha256": "8c633e54289477517a20a500ed9a23ce01ce84d3cb9ca9e251407311ee2ee827",
+    "engine_tests_sha256": "9c6ab28e12646874d7896bbfce8ff577acefaca431c796497a6dfad667c35e7c"
+  },
+  "policy": {
+    "provider_schema_min_items": 1,
+    "provider_schema_max_items_omitted": true,
+    "exact_target_disposition_coverage_required": true,
+    "dependent_example_bodies_remain_disposition_required": true,
+    "prompt_exact_coverage_enforcement": true,
+    "validator_exact_coverage_enforcement": true,
+    "source_specific_block_patch": false
+  },
+  "replays": {
+    "accepted_c0001": {"sha256": "87475318b4b3a2e54fb17cac0319deeea4e49e5b018218be574cfb3949598b76", "passed": true},
+    "accepted_c0002": {"sha256": "7d805c246fe3d15bdf9077704e24b4605876589b47b7055994d56c53e55a6f09", "passed": true},
+    "rejected_c0003": {"sha256": "d7cfd161ac5773ef4349c6ad9b13794c1a716dc8fe1406e173fe637833ca0934", "passed": false, "coverage_errors": 1, "missing_target_count": 1, "required_disposition_errors": 0}
+  },
+  "offline_verification": {
+    "chunk_plan_changed": false,
+    "generated_chunk_count": 13,
+    "all_chunks_fake_validated": true,
+    "offline_tests_passed": 49
+  }
+}

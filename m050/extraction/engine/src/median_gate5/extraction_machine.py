@@ -476,11 +476,11 @@ def build_anthropic_request(
         raise ContractError("response schema lacks dispositions") from exc
     if not isinstance(dispositions_schema, dict):
         raise ContractError("response dispositions schema is invalid")
-    # Anthropic structured outputs accept array minItems only at 0 or 1.
-    # Exact target coverage remains enforced by the prompt and validator, while
-    # maxItems prevents additions in the provider-side schema.
+    # Anthropic structured outputs accept array minItems only at 0 or 1 and do
+    # not accept maxItems. Exact target coverage remains enforced by the prompt
+    # and the source-agnostic validator after capture.
     dispositions_schema["minItems"] = 1
-    dispositions_schema["maxItems"] = target_count
+    dispositions_schema.pop("maxItems", None)
     Draft202012Validator.check_schema(schema)
     schema_contract = (
         "BOUND_RESPONSE_SCHEMA\n"

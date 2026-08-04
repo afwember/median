@@ -1,6 +1,6 @@
 {
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
-  "status": "PROVIDER_COMPATIBLE_CARDINALITY_PILOT_FROZEN",
+  "status": "PROVIDER_SUPPORTED_SCHEMA_PILOT_FROZEN",
   "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
   "source_path": "m050/docs/v0.5/governance/M050_Authorial_Grammar_Orthography_and_Prose_Style_Guide_v0_1_MEDIANv0_5_0.md",
   "source_sha256": "7d23ef2ccbff0c6594975c03cf405d838a3cc3f712ea6faf942581a72c9284ff",
@@ -22,7 +22,7 @@
     "prompt": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
     "response_schema": "0a190a2db1b012fce4f90a33039a4ce106f1584b831a499f8dc565c5d43fee33"
   },
-  "quantization": {"unit": "provider_eligible_target_blocks", "target_blocks_per_chunk": 20, "generated_chunk_count": 13, "chunk_count_is_input": false, "basis": "Unchanged accepted structural plan; C0003 had 19 targets and completed within output allowance, so exact coverage remains prompt- and validator-enforced while the provider schema uses supported array bounds"},
+  "quantization": {"unit": "provider_eligible_target_blocks", "target_blocks_per_chunk": 20, "generated_chunk_count": 13, "chunk_count_is_input": false, "basis": "Unchanged accepted structural plan; C0003 had 19 targets and completed within output allowance, so exact coverage remains prompt- and validator-enforced while unsupported provider-side array cardinality keywords are omitted"},
   "lean_structural_policy": {
     "table_headers_and_delimiters": "no_substantive_claim",
     "pure_label_pattern": "Example(s)|Prefer|Preferred|Avoid|Not|Correct|Incorrect followed only by colon",
@@ -39,5 +39,5 @@
   "provider": {"name": "Anthropic", "model": "claude-sonnet-5", "reasoning_effort": "low", "maximum_output_tokens": 6000, "cache_ttl": "1h", "cache_required": true, "cache_boundary": "stable_prompt_prefix"},
   "pricing": {"input_usd_per_million_tokens": "2", "output_usd_per_million_tokens": "10", "cache_read_multiplier": "0.1", "cache_5m_write_multiplier": "1.25", "cache_1h_write_multiplier": "2"},
   "execution": {"cadence": "sequential_one_call_review", "next_chunk_requires_substantive_review_of_prior_chunk": true},
-  "recalibration": {"state": "provider_compatible_cardinality_pilot_frozen", "trigger_chunk_id": "C0003", "trigger_block_ids": ["B00085"], "pilot_required": true, "prior_pilot_rejected": true}
+  "recalibration": {"state": "provider_supported_schema_pilot_frozen", "trigger_chunk_id": "C0003", "trigger_block_ids": ["B00085"], "pilot_required": true, "prior_pilot_rejected": true}
 }

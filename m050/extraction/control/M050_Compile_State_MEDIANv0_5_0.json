@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T00:01:36-04:00",
-  "execution_state": "AUTHORIAL_GRAMMAR_C0003_V0_15_EXECUTION_ENVIRONMENT_REQUIRES_PACKET_SPECIFIC_EXTERNAL_APPROVAL",
+  "updated": "2026-08-04T00:04:50-04:00",
+  "execution_state": "AUTHORIAL_GRAMMAR_C0003_V0_15_PAUSED_FOR_SUPERVISOR_STRUCTURAL_WORK",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -28,7 +28,7 @@
     "accepted_chunk_ids": ["C0001", "C0002"],
     "rejected_chunk_id": "C0003",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json",
@@ -87,8 +87,8 @@
     "display_usd_rounded_up": "0.60"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -96,14 +96,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 12:01:36 AM EDT",
-    "status": "C0003 v0.15 frozen; repository mandate is blanket but execution environment requires packet-specific external approval",
+    "updated_human": "August 4, 2026 at 12:04:50 AM EDT",
+    "status": "Authorial Grammar C0003 v0.15 paused for structural work in the Supervisor task",
     "phase": "Atomic extraction — source calibration",
     "source": "Authorial Grammar — 1 / 22",
     "chunk": "C0003 / 13 — C0001/C0002 accepted; latest C0003 rejected for one omission",
-    "now": "The v0.15 send was blocked before transmission; no provider request, artifacts, or spend occurred despite the confirmed blanket mandate",
-    "next": "Asa must explicitly approve sending frozen C0003 v0.15, including its bounded repository source text, to Anthropic; $1.407529 remains"
+    "now": "Compile Worker source-work and repository-writing authority are relinquished; no provider call is in flight",
+    "next": "Supervisor structural work may begin from the clean pushed checkpoint; Compile Worker resumes only after a new transfer and cold start"
   },
-  "next_possible_transition": "After packet-specific external approval required by the execution environment, retry frozen C0003 v0.15 within the active cumulative budget.",
+  "next_possible_transition": "Supervisor structural work from the clean pushed checkpoint; later Compile Worker resumption requires an explicit transfer and required cold start.",
   "gate_5_complete": false
 }

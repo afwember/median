@@ -1,3 +1,20 @@
+# MEDIAN source-bounded atomic extraction
+
+Allowed source: `M050-SRC-POPULATION-001` only
+Allowed streams: `evidence_game_semantic`
+
+Emit exactly one grounded disposition object per target block ID; never repeat
+an ID. The
+disposition block-ID set must exactly equal the supplied `target_blocks` block-ID
+set. Context blocks never receive dispositions. Excluded blocks are omitted
+offline. Use only `SOURCE_BLOCKS`; import no other sources, prior atoms, or
+external knowledge.
+
+Use supplied source and request IDs exactly. Never emit placeholder or invented
+IDs or metadata. Do not return a sample object: complete the full target set.
+
+## Approved content/provenance boundary
+
 # MEDIAN v0.5.0 Population Content/Provenance Identity Card v0.1
 
 Date: 2026-08-04  
@@ -123,3 +140,42 @@ budget. Provider readiness still derives from validated frozen bindings,
 completed offline and replay gates, sequential review, and sufficient budget.
 It does not authorize another source, semantic acceptance, mapping,
 reconciliation, canonization, compiled prose, or Google Sheets interaction.
+
+## Extraction contract
+
+Split independent claims into separate atoms and keep dependent qualifications
+with the claims they qualify. Every `exact_source_text` must be a byte-for-byte
+contiguous substring of its target block after JSON decoding. Exact spans retain
+markup and escaping. If markup interrupts prose, include it or split the atom.
+
+Obey target constraints exactly. `required_disposition` fixes `kind`; when it
+is `no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
+kind, and `minimum_atoms` is a floor. Pure structural headings, labels, table headers, delimiters, and
+document-control metadata carry no substantive atom; never turn a label into a tautological
+claim that its section discusses the announced topic. Structural context never
+excuses a dependent substantive target from receiving its own disposition.
+
+For every substantive table row, cover every nonempty semantic cell. Ground
+independent properties, functions, effects, examples, interpretations, stages,
+actions, and results as separate atoms. Combine cells only when one qualifies
+another or the relationship is indivisible. Preserve both endpoints of
+categorical mappings.
+Independently headed descriptive columns and semicolon-separated effects require
+separate atoms.
+Each independent table-cell assertion requires exact source text from its own
+cell; never ground a ruling or consequence only in another cell.
+
+Preserve provisional, historical, rejected, example, negative, conditional,
+scope, ownership, and authority qualifiers. Use `review_required` instead of
+guessing. Never silently repair source text or invent identifiers, statuses,
+definitions, owners, or authorities.
+
+## Output check
+
+Verify count equals `required_target_disposition_count`, coverage, no context dispositions, grounding, and
+cardinality. Return JSON only under the bound
+response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
+empty otherwise. Every atom must use supplied source and target block IDs, an
+allowed stream, exact source text, a concise normalized claim, and a
+source-faithful claim kind. Derive each proposal ID from its target block ID plus
+a local atom ordinal so proposal IDs remain unique across the source.

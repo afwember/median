@@ -515,6 +515,41 @@ def test_payload_marks_generic_table_header_and_delimiter_non_substantive():
     assert "required_disposition" not in targets["B3"]
 
 
+def test_payload_marks_contents_navigation_non_substantive():
+    manifest = {
+        "source_id": "S1",
+        "source_sha256": "b" * 64,
+        "blocks": [
+            {
+                "block_id": "B1",
+                "block_type": "paragraph",
+                "parent_heading": "## Contents\n",
+                "text": "1. Purpose and Scope\n",
+                "status_markers": [],
+            },
+            {
+                "block_id": "B2",
+                "block_type": "paragraph",
+                "parent_heading": "# Purpose and Scope\n",
+                "text": "This source defines its bounded purpose.\n",
+                "status_markers": [],
+            },
+        ],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [
+            {"block_id": "B1", "disposition": "eligible"},
+            {"block_id": "B2", "disposition": "eligible"},
+        ],
+        {"chunk_id": "C0001", "block_ids": ["B1", "B2"]},
+    )
+    targets = {item["block_id"]: item for item in payload["target_blocks"]}
+    assert targets["B1"]["structural_role"] == "contents_navigation"
+    assert targets["B1"]["required_disposition"] == "no_substantive_claim"
+    assert "required_disposition" not in targets["B2"]
+
+
 def test_payload_marks_pure_structural_labels_and_validator_enforces_nonclaim():
     manifest = {
         "source_id": "S1", "source_sha256": "c" * 64,

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T18:02:46-04:00",
-  "execution_state": "POPULATION_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "updated": "2026-08-04T18:30:14-04:00",
+  "execution_state": "POPULATION_C0005_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -29,23 +29,66 @@
     "id": "M050-SRC-POPULATION-001",
     "label": "Population",
     "compile_ordinal": 9,
-    "accepted_chunk_ids": [],
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002",
+      "C0003",
+      "C0004"
+    ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_Population_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "78e4f10cd7669e30a6405d86a15474c654110e08a175bd495ee2aa3deb5cd226",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_Population_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/population/M050_Population_C0004_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_Population_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/population-pilot/M050_Population_C0005_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0002_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0004",
+        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {},
+    "pilot_chunk_id": "C0005",
+    "generated_chunk_count": 23,
+    "target_blocks_per_chunk": 20,
+    "required_target_disposition_count": 16,
+    "source_blocks": 694,
+    "eligible_target_blocks": 412,
+    "context_only_blocks": 63,
+    "excluded_blocks": 219,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 66,
+    "cache_miss_call_ceiling_usd": "0.242252",
+    "latest_outcome": "m050/extraction/runs/population-pilot/M050_Population_C0003_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "11.0258396",
-    "cumulative_spent_usd": "9.0258396",
-    "remaining_usd": "2.0000000",
-    "display_usd_rounded_up": "9.03"
+    "cumulative_spent_usd": "9.3585386",
+    "remaining_usd": "1.6673010",
+    "display_usd_rounded_up": "9.36"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -57,14 +100,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 6:02:46 PM EDT",
-    "status": "Population identity card proposed; author approval required before provider transmission",
-    "phase": "Atomic extraction — Population identity approval halt",
+    "updated_human": "August 4, 2026 at 6:30:14 PM EDT",
+    "status": "Population C0001-C0004 accepted; C0005 ready",
+    "phase": "Atomic extraction — Population representative pilot",
     "source": "Population — ordinal 9; 8 / 22 compile-scope sources complete",
-    "chunk": "No Population chunk selected; accepted/rejected boundary is empty",
-    "now": "Frozen Population source identity, provenance, qualification boundary, and zero-media disposition are proposed; no provider call or spend occurred",
-    "next": "Halt for Asa’s identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
+    "chunk": "Accepted C0001-C0004; rejected/frozen none; C0005 / 23 is ready",
+    "now": "C0003 v0.1 passed mechanical and substantive review at $0.069110 exact; $1.6673010 remains",
+    "next": "Run focused preflight and transmit frozen Population C0005 v0.1"
   },
-  "next_possible_transition": "With Asa’s identity-card approval, perform Population offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
-  "gate_5_complete": false
+  "next_possible_transition": "Population C0005 v0.1 may proceed through focused preflight and provider transmission under the active source grant and cumulative budget.",
+  "gate_5_complete": false,
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "stop_reason": "end_turn",
+    "chunk_id": "C0003",
+    "output_tokens": 3912,
+    "cache_creation_input_tokens": 5286,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.069110",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
+  }
 }

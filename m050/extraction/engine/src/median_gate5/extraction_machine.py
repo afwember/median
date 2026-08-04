@@ -110,6 +110,16 @@ def build_chunk_payload(
     procedural_table_body_ids: set[str] = set()
     table_minimum_atoms: dict[str, int] = {}
     structural_table_ids = _structural_table_ids(ordered_manifest_blocks)
+    contents_navigation_ids = {
+        block["block_id"]
+        for block in ordered_manifest_blocks
+        if str(block.get("parent_heading") or "")
+        .strip()
+        .lstrip("#")
+        .strip()
+        .casefold()
+        == "contents"
+    }
     for index, block in enumerate(ordered_manifest_blocks):
         if block.get("block_type") != "table_row":
             continue
@@ -172,7 +182,10 @@ def build_chunk_payload(
             context_blocks.append(_block_record(block))
         elif disposition in {"eligible", "review_required"}:
             record = _block_record(block)
-            if block_id in document_control_table_ids:
+            if block_id in contents_navigation_ids:
+                record["structural_role"] = "contents_navigation"
+                record["required_disposition"] = "no_substantive_claim"
+            elif block_id in document_control_table_ids:
                 record["structural_role"] = "document_control_metadata"
                 record["required_disposition"] = "no_substantive_claim"
             elif block_id in structural_table_ids:

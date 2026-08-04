@@ -1,0 +1,47 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-POPULATION-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-04",
+  "status": "POPULATION_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
+  "source_id": "M050-SRC-POPULATION-001",
+  "binding": {
+    "configuration_sha256": "2915370f6b7680035359211b4740556c166fbd4433a62f500d3cd356e5a8c023",
+    "prompt_sha256": "84ed6e66d32b2aad2a1b2c3edca5b095a53c34671288e918b99003dd429c25d4",
+    "engine_module_sha256": "68a524d4e749d7a3359b013752c6559f44abf24a84dab7248d1882abef774cee",
+    "engine_tests_sha256": "97263f42fa36a4212331b62fad168db3e8d559e7e49d4722c9539acb8dd30b97",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
+  },
+  "source_review": {
+    "source_blocks": 694,
+    "eligible_targets": 412,
+    "context_only_blocks": 63,
+    "excluded_blocks": 219,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 23,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 975,
+    "representative_pilot_chunk_id": "C0004",
+    "pilot_selection_basis": "C0004 has the highest estimated input load and contains qualified reference tables and cross-system boundary claims."
+  },
+  "offline_verification": {
+    "all_23_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 66,
+    "all_source_payload_replays_passed": 99
+  },
+  "replays": {},
+  "note": "C0002 v0.1 exposed atomized Contents navigation. The generic payload now marks Contents descendants as required no-substantive; 66 tests and 99 all-source payload replays pass, and C0002 v0.2 is refrozen without process delta."
+}

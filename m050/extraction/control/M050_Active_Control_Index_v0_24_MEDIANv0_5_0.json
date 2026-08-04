@@ -11,6 +11,7 @@
   "status_dashboard": {
     "path": "STATUS.md",
     "authority": "derived_non_authoritative_mirror",
+    "updated_human": "August 3, 2026 at 8:21:50 PM EDT",
     "status": "Target-coverage C0003 pilot frozen; awaiting exact one-call authorization",
     "phase": "Atomic extraction — source calibration",
     "source": "Authorial Grammar — 1 / 22",

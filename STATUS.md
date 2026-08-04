@@ -1,4 +1,6 @@
-# MEDIAN v0.5.0
+# MEDIAN COMPILE — v0.5.0
+
+**UPDATED:** August 3, 2026 at 8:21:50 PM EDT<br>
 
 <!-- Derived dashboard only; active controls and receipts remain authoritative. -->
 

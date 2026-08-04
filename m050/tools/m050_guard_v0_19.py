@@ -66,7 +66,8 @@ def read_json(path: Path, errors: list[str]) -> dict:
 def expected_status(index: dict) -> str:
     dashboard = index.get("status_dashboard", {})
     return (
-        "# MEDIAN v0.5.0\n\n"
+        "# MEDIAN COMPILE — v0.5.0\n\n"
+        f"**UPDATED:** {dashboard.get('updated_human', '')}<br>\n\n"
         "<!-- Derived dashboard only; active controls and receipts remain authoritative. -->\n\n"
         f"**STATUS:** {dashboard.get('status', '')}<br>\n"
         f"**PHASE:** {dashboard.get('phase', '')}<br>\n"

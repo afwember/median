@@ -33,7 +33,7 @@ AUTHGRAM = ROOT / "m050/extraction/calibration/authorial-grammar"
 MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
 AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
-CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_14_MEDIANv0_5_0.json"
+CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_15_MEDIANv0_5_0.json"
 CURRENT_LEDGER = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
 ACCEPTED_C0001_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Call_Packet_v0_4_MEDIANv0_5_0.json"
 ACCEPTED_C0001_OUTCOME = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Outcome_v0_4_MEDIANv0_5_0.json"
@@ -300,6 +300,48 @@ def test_payload_marks_pure_structural_labels_and_validator_enforces_nonclaim():
         allowed_streams=["allowed"],
     )
     assert accepted["passed"] is True
+
+
+def test_payload_marks_semantic_inventories_substantive_or_review_required():
+    manifest = {
+        "source_id": "S1", "source_sha256": "c" * 64,
+        "blocks": [
+            {"block_id": "B1", "block_type": "code_fence", "text": "```text\nDefined Example\n```\n", "status_markers": []},
+        ],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [{
+            "block_id": "B1", "disposition": "eligible",
+            "reason_code": "semantic_code_or_reference_inventory",
+        }],
+        {"chunk_id": "C0001", "block_ids": ["B1"]},
+    )
+    target = payload["target_blocks"][0]
+    assert target["structural_role"] == "semantic_code_or_reference_inventory"
+    assert target["allowed_dispositions"] == ["atoms", "review_required"]
+
+    schema = build_generic_response_schema("S1", ["allowed"])
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+        "proposal_set_id": "inventory-test", "request_id": "inventory-test", "source_id": "S1",
+        "dispositions": [{"block_id": "B1", "kind": "no_substantive_claim", "atoms": []}],
+    }
+    rejected = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert rejected["passed"] is False
+    assert rejected["checks"]["required_disposition_errors"] == 1
+    response["dispositions"][0] = {
+        "block_id": "B1", "kind": "review_required", "atoms": []
+    }
+    review = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert review["passed"] is True
+    assert review["decision_required"] is True
 
 
 def test_cache_aware_cost_accounting_matches_uncached_r6_and_cached_examples():
@@ -842,7 +884,7 @@ def test_current_rejected_chunk_can_retry_under_standing_source_and_budget():
         ROOT,
     )
     assert result["permission_basis"] == "active_source_work_plus_cumulative_budget"
-    assert result["remaining_before_call_usd"] == "1.464215"
+    assert result["remaining_before_call_usd"] == state["spend"]["remaining_usd"]
 
 
 def test_send_records_malformed_response_without_creating_spend_successor(tmp_path, monkeypatch):

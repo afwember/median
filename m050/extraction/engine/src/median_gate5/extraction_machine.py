@@ -108,6 +108,9 @@ def build_chunk_payload(
             if PURE_STRUCTURAL_LABEL.fullmatch(block.get("text", "").strip()):
                 record["structural_role"] = "pure_example_or_polarity_label"
                 record["required_disposition"] = "no_substantive_claim"
+            elif by_block[block_id].get("reason_code") == "semantic_code_or_reference_inventory":
+                record["structural_role"] = "semantic_code_or_reference_inventory"
+                record["allowed_dispositions"] = ["atoms", "review_required"]
             target_blocks.append(record)
         elif disposition == "excluded":
             excluded_block_ids.append(block_id)
@@ -591,6 +594,12 @@ def validate_extraction_response(
             required_disposition_errors += 1
             errors.append(
                 f"payload-required disposition {required_kind} not satisfied: {block_id}"
+            )
+        allowed_kinds = by_id.get(block_id, {}).get("allowed_dispositions")
+        if isinstance(allowed_kinds, list) and kind not in allowed_kinds:
+            required_disposition_errors += 1
+            errors.append(
+                f"payload-allowed dispositions not satisfied: {block_id}"
             )
         block = by_id.get(block_id, {})
         required_statuses = {

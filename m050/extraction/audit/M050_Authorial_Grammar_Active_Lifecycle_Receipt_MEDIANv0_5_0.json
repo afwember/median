@@ -7,11 +7,11 @@
   "authorized_chunk_ids": ["C0003"],
   "execution_cadence": "sequential_one_call_review",
   "revoked": true,
-  "revocation_reason": "The exactly one approved C0003 call was consumed and failed review; no further external transmission is authorized.",
+  "revocation_reason": "The exactly one approved C0003 call was consumed and failed review; Compile Worker repository and source authority were subsequently relinquished for process work in another task.",
   "external_transmission_approval": "I explicitly approve transmitting the bounded Authorial Grammar C0003 source text in the frozen call packet to Anthropic for exactly one provider call under the existing $0.13 call cap.",
   "binding": {
     "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
-    "configuration_sha256": "7eb33c350ce648c9307ffd1273d7871271bd264fa27d5dc7b7ed98a17311c960",
+    "configuration_sha256": "ff1d5b11df468c21b9746202c9423ddc08dee36dec3c5bc80fe9c70e6c9fe177",
     "model": "claude-sonnet-5",
     "reasoning_effort": "low",
     "cache_ttl": "1h"

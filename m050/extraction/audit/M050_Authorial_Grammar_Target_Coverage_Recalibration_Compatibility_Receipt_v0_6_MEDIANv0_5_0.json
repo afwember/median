@@ -13,7 +13,7 @@
     "basis": "C0003 had 19 targets under the accepted 20-target quantization and stopped normally after 3,913 output tokens; exact schema cardinality is the smallest source-agnostic enforcement correction."
   },
   "binding": {
-    "configuration_sha256": "7eb33c350ce648c9307ffd1273d7871271bd264fa27d5dc7b7ed98a17311c960",
+    "configuration_sha256": "ff1d5b11df468c21b9746202c9423ddc08dee36dec3c5bc80fe9c70e6c9fe177",
     "prompt_sha256": "110d691a019608ad375d44ad902976968c1006a38c5f3e650d57cfefbf97064a",
     "engine_module_sha256": "2e01f02e968128c029686323fb67655525c3b504f13a131e8248a0190bd95708",
     "engine_tests_sha256": "ebc5be2086ab0bdaffa13f4871db726707e67e232e24e28660e0d3c46b131e44"
@@ -32,5 +32,5 @@
     "rejected_c0003": {"sha256": "68a4ea291babef4037f82ac5d0c5ee37e98f6370aa9b4a4f4ef54d19881a9e49", "passed": false, "coverage_errors": 1, "missing_target_count": 1, "required_disposition_errors": 0}
   },
   "offline_verification": {"chunk_plan_changed": false, "generated_chunk_count": 13, "all_chunks_fake_validated": true, "offline_tests_passed": 50},
-  "authority_boundary": {"provider_calls_authorized": 0, "retry_authorized": true, "full_source_run_authorized": true, "semantic_acceptance_authorized": false}
+  "authority_boundary": {"provider_calls_authorized": 0, "retry_authorized": false, "full_source_run_authorized": false, "semantic_acceptance_authorized": false}
 }

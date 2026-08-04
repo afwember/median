@@ -21,14 +21,13 @@ from median_gate5.extraction_machine import (
     build_generic_source_prompt,
     canonical_json_bytes,
     conservative_call_ceiling,
-    debit_spend_envelope,
+    debit_compile_state_spend,
     draft_block_dispositions,
     extract_anthropic_structured_response,
     read_run_ledger,
     plan_source_chunks,
-    require_authorized_chunk,
+    provider_preflight,
     require_run_ready_for_next_call,
-    spend_preflight,
     validate_extraction_response,
 )
 from median_gate5.schema import validate_artifact
@@ -235,7 +234,7 @@ def build_outcome(packet: dict, raw_response: dict, raw_sha256: str) -> dict:
         "mechanical_validation": validation,
         "structured_proposal": structured,
         "substantive_review": "pending",
-        "next_call_permitted": False,
+        "review_required": True,
     }
 
 
@@ -353,9 +352,6 @@ def command_scaffold(args: argparse.Namespace) -> int:
         },
         "execution": {
             "cadence": "sequential_one_call_review",
-            "provider_calls_authorized": False,
-            "full_source_authorized": False,
-            "spend_envelope_authorized": False,
             "next_chunk_requires_substantive_review_of_prior_chunk": True,
         },
     }
@@ -366,7 +362,7 @@ def command_scaffold(args: argparse.Namespace) -> int:
         "blocks": len(blocks),
         "chunks": len(plan["chunks"]),
         "status": config["status"],
-        "provider_calls_authorized": False,
+        "provider_permission": "derived_from_canonical_source_work_and_budget",
     }, sort_keys=True))
     return 0
 
@@ -420,40 +416,90 @@ def command_replay(args: argparse.Namespace) -> int:
     return 0 if outcome["mechanical_validation"]["passed"] else 1
 
 
-def _preflight(packet: dict, envelope: dict, lifecycle: dict, ledger_path: Path) -> dict:
-    completed_calls = require_run_ready_for_next_call(
-        read_run_ledger(ledger_path), packet["source_id"]
+def _require_state_matches_latest_call(
+    repo_root: Path, state: dict, events: list[dict]
+) -> None:
+    captured = [event for event in events if event.get("state") == "call_captured"]
+    if not captured:
+        return
+    latest_capture = captured[-1]
+    outcome_path = repo_file(
+        repo_root, state.get("calibration", {}).get("latest_outcome", "")
     )
-    require_authorized_chunk(lifecycle, packet["chunk_id"], completed_calls)
-    return spend_preflight(
-        envelope=envelope,
-        lifecycle_receipt=lifecycle,
+    if sha256_file(outcome_path) != latest_capture.get("outcome_sha256"):
+        raise ContractError("canonical state has not reconciled the latest captured call")
+    latest = state.get("latest_provider_attempt", {})
+    if (
+        latest.get("chunk_id") != latest_capture.get("chunk_id")
+        or (
+            latest_capture.get("exact_cost_usd") is not None
+            and latest.get("exact_cost_usd") != latest_capture.get("exact_cost_usd")
+        )
+    ):
+        raise ContractError("canonical latest-attempt state disagrees with the run ledger")
+    if events[-1].get("state") in {"review_passed", "review_failed"}:
+        if latest.get("review_state") != events[-1].get("state"):
+            raise ContractError("canonical review state disagrees with the run ledger")
+
+
+def _preflight(
+    packet: dict,
+    packet_file_hash: str,
+    state: dict,
+    ledger_path: Path,
+    repo_root: Path,
+) -> dict:
+    calibration = state.get("calibration", {})
+    if packet.get("source_id") != state.get("source", {}).get("id"):
+        raise ContractError("packet does not belong to the active source")
+    if packet.get("chunk_id") != calibration.get("pilot_chunk_id"):
+        raise ContractError("packet is not the current canonical chunk")
+    if packet.get("configuration_path") != calibration.get("configuration"):
+        raise ContractError("packet does not use the active source configuration")
+    config_path = repo_file(repo_root, packet["configuration_path"])
+    if packet.get("configuration_sha256") != sha256_file(config_path):
+        raise IntegrityError("packet configuration binding is stale")
+    rebuilt = build_packet(repo_root, config_path, packet["chunk_id"])
+    if rebuilt.get("packet_sha256") != packet.get("packet_sha256"):
+        raise IntegrityError("packet is not the deterministic current configuration output")
+    if packet.get("cache_miss_call_ceiling_usd") != calibration.get(
+        "cache_miss_call_ceiling_usd"
+    ):
+        raise ContractError("packet call ceiling disagrees with canonical state")
+
+    events = read_run_ledger(ledger_path)
+    _require_state_matches_latest_call(repo_root, state, events)
+    require_run_ready_for_next_call(
+        events,
+        packet["source_id"],
+        packet["chunk_id"],
+        packet_file_hash,
+    )
+    return provider_preflight(
+        compile_state=state,
         source_id=packet["source_id"],
-        completed_calls=completed_calls,
         call_ceiling_usd=Decimal(packet["cache_miss_call_ceiling_usd"]),
-        required_binding={
-            "configuration_sha256": packet["configuration_sha256"],
-            "model": packet["binding"]["model"],
-            "reasoning_effort": packet["binding"]["reasoning_effort"],
-            "cache_ttl": packet["binding"]["cache_ttl"],
-        },
     )
 
 
 def command_preflight(args: argparse.Namespace) -> int:
-    packet = read_json(Path(args.packet))
+    repo_root = Path(args.repo_root).resolve()
+    packet_path = Path(args.packet).resolve()
+    packet = read_json(packet_path)
     verify_packet(packet)
     result = _preflight(
         packet,
-        read_json(Path(args.spend_envelope)),
-        read_json(Path(args.lifecycle_receipt)),
+        sha256_file(packet_path),
+        read_json(repo_file(repo_root, args.compile_state)),
         Path(args.run_ledger),
+        repo_root,
     )
     print(json.dumps(result, sort_keys=True))
     return 0
 
 
 def command_send(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root).resolve()
     packet_path = Path(args.packet).resolve()
     packet_bytes = packet_path.read_bytes()
     packet_file_hash = hashlib.sha256(packet_bytes).hexdigest()
@@ -463,15 +509,13 @@ def command_send(args: argparse.Namespace) -> int:
     if not isinstance(packet, dict):
         raise ContractError("call packet root must be an object")
     verify_packet(packet)
-    envelope = read_json(Path(args.spend_envelope))
-    lifecycle = read_json(Path(args.lifecycle_receipt))
+    state = read_json(repo_file(repo_root, args.compile_state))
     ledger_path = Path(args.run_ledger).resolve()
-    preflight = _preflight(packet, envelope, lifecycle, ledger_path)
+    preflight = _preflight(packet, packet_file_hash, state, ledger_path, repo_root)
 
     raw_output = Path(args.raw_response).resolve()
     outcome_output = Path(args.outcome).resolve()
-    envelope_output = Path(args.successor_spend_envelope).resolve()
-    for output in (raw_output, outcome_output, envelope_output):
+    for output in (raw_output, outcome_output):
         if output.exists():
             raise IntegrityError(f"refusing to overwrite: {output}")
 
@@ -515,22 +559,16 @@ def command_send(args: argparse.Namespace) -> int:
             "chunk_id": packet["chunk_id"],
             "packet_sha256": packet["packet_sha256"],
             "submitted_at_utc": submitted_at,
-            "authorization_consumed": True,
+            "provider_call_made": True,
             "http_status": status,
             "request_id": response_headers.get("request-id"),
             "transport_error": transport_error,
             "raw_response_sha256": hashlib.sha256(raw_bytes).hexdigest() if raw_bytes else None,
             "preflight": preflight,
             "substantive_review": "blocked_transport_failure",
-            "next_call_permitted": False,
+            "spend_reconciliation_required": True,
         }
         write_new_json(outcome_output, failure)
-        successor = dict(envelope)
-        successor["active"] = False
-        successor["halt_reason"] = "transport_failure_requires_reconciliation"
-        successor["predecessor_envelope_sha256"] = sha256_file(Path(args.spend_envelope))
-        successor["last_outcome_sha256"] = sha256_file(outcome_output)
-        write_new_json(envelope_output, successor)
         append_run_ledger_event(
             ledger_path,
             {
@@ -542,7 +580,7 @@ def command_send(args: argparse.Namespace) -> int:
                 "mechanical_passed": False,
                 "decision_required": True,
                 "transport_error": transport_error,
-                "successor_spend_envelope_sha256": sha256_file(envelope_output),
+                "canonical_spend_update_required": True,
             },
         )
         return 1
@@ -561,7 +599,7 @@ def command_send(args: argparse.Namespace) -> int:
             "chunk_id": packet["chunk_id"],
             "packet_sha256": packet["packet_sha256"],
             "submitted_at_utc": submitted_at,
-            "authorization_consumed": True,
+            "provider_call_made": True,
             "http_status": status,
             "request_id": response_headers.get("request-id"),
             "raw_response_sha256": hashlib.sha256(raw_bytes).hexdigest(),
@@ -570,10 +608,9 @@ def command_send(args: argparse.Namespace) -> int:
             "capture_error": f"{type(exc).__name__}:{exc}",
             "preflight": preflight,
             "substantive_review": "blocked_invalid_provider_response",
-            "next_call_permitted": False,
         }
-        successor = dict(envelope)
         cost_reconciled = False
+        updated_state = state
         usage = raw.get("usage")
         if isinstance(usage, dict):
             try:
@@ -583,48 +620,48 @@ def command_send(args: argparse.Namespace) -> int:
                     cache_ttl=packet["binding"]["cache_ttl"],
                 )
                 failure["cost"] = cost
-                successor = debit_spend_envelope(envelope, cost["total_usd"])
+                updated_state = debit_compile_state_spend(state, cost["total_usd"])
                 cost_reconciled = True
             except (ContractError, KeyError, TypeError, ValueError):
                 pass
-        successor["active"] = False
-        successor["halt_reason"] = (
-            "invalid_provider_response" if cost_reconciled
-            else "invalid_provider_response_cost_reconciliation_required"
-        )
         failure["cost_reconciled"] = cost_reconciled
+        failure["canonical_spend_update_required"] = cost_reconciled
         write_new_json(outcome_output, failure)
-        successor["predecessor_envelope_sha256"] = sha256_file(Path(args.spend_envelope))
-        successor["last_outcome_sha256"] = sha256_file(outcome_output)
-        write_new_json(envelope_output, successor)
+        ledger_event = {
+            "state": "call_captured",
+            "source_id": packet["source_id"],
+            "chunk_id": packet["chunk_id"],
+            "packet_file_sha256": packet_file_hash,
+            "outcome_sha256": sha256_file(outcome_output),
+            "mechanical_passed": False,
+            "decision_required": True,
+            "capture_error": failure["capture_error"],
+            "cost_reconciled": cost_reconciled,
+            "canonical_spend_update_required": cost_reconciled,
+        }
+        if cost_reconciled:
+            ledger_event["exact_cost_usd"] = failure["cost"]["total_usd"]
         append_run_ledger_event(
             ledger_path,
-            {
-                "state": "call_captured",
-                "source_id": packet["source_id"],
-                "chunk_id": packet["chunk_id"],
-                "packet_file_sha256": packet_file_hash,
-                "outcome_sha256": sha256_file(outcome_output),
-                "mechanical_passed": False,
-                "decision_required": True,
-                "capture_error": failure["capture_error"],
-                "cost_reconciled": cost_reconciled,
-                "successor_spend_envelope_sha256": sha256_file(envelope_output),
-            },
+            ledger_event,
         )
+        if cost_reconciled:
+            print(json.dumps({
+                "cost_usd": failure["cost"]["total_usd"],
+                "remaining_spend_usd": updated_state["spend"]["remaining_usd"],
+                "canonical_spend_update_required": True,
+            }, sort_keys=True))
         return 1
     outcome.update({
         "submitted_at_utc": submitted_at,
-        "authorization_consumed": True,
+        "provider_call_made": True,
         "http_status": status,
         "request_id": response_headers.get("request-id"),
         "preflight": preflight,
+        "canonical_spend_update_required": True,
     })
-    successor = debit_spend_envelope(envelope, outcome["cost"]["total_usd"])
-    successor["predecessor_envelope_sha256"] = sha256_file(Path(args.spend_envelope))
-    successor["last_outcome_sha256"] = hashlib.sha256(canonical_json_bytes(outcome)).hexdigest()
+    updated_state = debit_compile_state_spend(state, outcome["cost"]["total_usd"])
     write_new_json(outcome_output, outcome)
-    write_new_json(envelope_output, successor)
     append_run_ledger_event(
         ledger_path,
         {
@@ -640,7 +677,7 @@ def command_send(args: argparse.Namespace) -> int:
             "cache_effective": outcome["cache"]["effective"],
             "cache_creation_input_tokens": outcome["cache"]["creation_input_tokens"],
             "cache_read_input_tokens": outcome["cache"]["read_input_tokens"],
-            "successor_spend_envelope_sha256": sha256_file(envelope_output),
+            "canonical_spend_update_required": True,
         },
     )
     print(json.dumps({
@@ -650,7 +687,8 @@ def command_send(args: argparse.Namespace) -> int:
         "mechanical_passed": outcome["mechanical_validation"]["passed"],
         "decision_required": outcome["mechanical_validation"]["decision_required"],
         "cost_usd": outcome["cost"]["total_usd"],
-        "remaining_spend_usd": successor["remaining_usd"],
+        "remaining_spend_usd": updated_state["spend"]["remaining_usd"],
+        "canonical_spend_update_required": True,
         "cache_read_tokens": outcome["cache"]["read_input_tokens"],
     }, sort_keys=True))
     return 0 if outcome["mechanical_validation"]["passed"] else 1
@@ -690,7 +728,7 @@ def command_review(args: argparse.Namespace) -> int:
         "state": state,
         "source_id": event["source_id"],
         "chunk_id": event["chunk_id"],
-        "next_call_permitted": state == "review_passed",
+        "next_step": "reconcile canonical state, then derive readiness from source work, offline gates, and budget",
     }, sort_keys=True))
     return 0
 
@@ -743,18 +781,23 @@ def build_parser() -> argparse.ArgumentParser:
     replay.set_defaults(func=command_replay)
 
     preflight = sub.add_parser("preflight")
+    preflight.add_argument("--repo-root", default=".")
     preflight.add_argument("--packet", required=True)
-    preflight.add_argument("--spend-envelope", required=True)
-    preflight.add_argument("--lifecycle-receipt", required=True)
+    preflight.add_argument(
+        "--compile-state",
+        default="m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json",
+    )
     preflight.add_argument("--run-ledger", required=True)
     preflight.set_defaults(func=command_preflight)
 
     send = sub.add_parser("send")
+    send.add_argument("--repo-root", default=".")
     send.add_argument("--packet", required=True)
     send.add_argument("--expected-packet-sha256", required=True)
-    send.add_argument("--spend-envelope", required=True)
-    send.add_argument("--successor-spend-envelope", required=True)
-    send.add_argument("--lifecycle-receipt", required=True)
+    send.add_argument(
+        "--compile-state",
+        default="m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json",
+    )
     send.add_argument("--run-ledger", required=True)
     send.add_argument("--api-key-file", required=True)
     send.add_argument("--raw-response", required=True)

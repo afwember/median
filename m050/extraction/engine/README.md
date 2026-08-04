@@ -23,7 +23,7 @@ m050/tools/m050_bootstrap_gate5.sh
 
 The focused suite covers corpus order, source isolation, parsing, semantic-group
 chunking, exact target coverage, table and pure-label handling, caching, spend
-envelopes, provider capture, validation, sequential review, and a zero-call
+budgets, provider capture, validation, sequential review, and a zero-call
 parse-and-plan compatibility sweep across all 22 compile-scope sources.
 
 ## Extraction machine
@@ -34,13 +34,16 @@ normal commands are:
 - `scaffold`: zero-call preparation for an approved new source;
 - `replan`: complete-source re-apportionment at a calibrated target density;
 - `prepare`: build one hash-bound call packet;
-- `preflight`: enforce source, lifecycle, spend, cache, and prior-review gates;
-- `send`: make one authorized call and preserve raw response, outcome, spend,
-  and ledger evidence; and
+- `preflight`: derive provider readiness from canonical source work, offline
+  gates, cumulative budget, cache, and prior review;
+- `send`: make one ready call and preserve raw response, compact outcome, exact
+  cost, and ledger evidence; and
 - `review`: record the required substantive result before another call.
 
 Only the current pilot packet is stored ahead of use. Later packets are
 generated just in time from the active configuration and chunk plan.
+Canonical state holds cumulative spend in place. The machine does not create
+lifecycle receipts, per-call authorization records, or successor spend files.
 
 The engine does not contain legacy migration, repair, replay, semantic-review
 planning, mapping, or reconciliation commands. Those retired implementations

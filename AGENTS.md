@@ -62,7 +62,7 @@ division of mandate, not another workflow layer:
   artifact classes, representations, handoffs, or supervisory machinery
   requires specific discussion with Asa and explicit approval.
 - **Compile Worker:** executes one explicitly authorized phase and source using
-  the established method. Within an active source-work grant and spend envelope
+  the established method. Within an active source-work grant and cumulative budget
   it may handle ordinary extraction details, including diagnosis, correction,
   simplification, validation, retry, state maintenance, and coherent repository
   checkpoints, without transaction-by-transaction approval.
@@ -153,14 +153,17 @@ prohibited later stages.
 - A source-work grant is confined to one named source and ends when that source
   reaches source-bounded candidate acceptance. Starting the next source always
   requires a new explicit grant from Asa.
-- The task may derive exact, machine-consumable lifecycle receipts from an
-  active source-work grant. Those receipts bind calls and configurations for
-  enforcement; they are not additional user-approval checkpoints.
-- Provider calls additionally require an active cumulative spend envelope with
-  enough remaining balance for the next conservative cache-miss ceiling.
-  Spend authority never selects or advances a source.
+- Within an active source-work grant, an active cumulative spend budget with
+  enough remaining balance for the next conservative cache-miss ceiling is
+  provider-call permission. No separate call receipt, call limit, chunk
+  authorization list, full-source flag, or transaction-level provider approval
+  exists. Spend never selects or advances a source.
+- Call readiness is derived from the named source grant, the current validated
+  packet and configuration, completed offline/replay gates, sequential review,
+  and sufficient cumulative budget. Do not store a parallel
+  `provider_call_authorized` fact.
 
-Within an active source-work grant and spend envelope, the task may proceed
+Within an active source-work grant and cumulative budget, the task may proceed
 without transaction-by-transaction permission through:
 
 - offline parsing, chunk planning, fake-response testing, and validation;
@@ -225,12 +228,15 @@ Halt for Asa only when:
 
 - Frozen sources and accepted evidence are immutable.
 - Preserve raw provider responses, compact outcomes, exact usage/cost, rejected
-  attempts, authorizations, and hash-chained run ledgers.
+  attempts, and hash-chained run ledgers. Canonical state and Git history
+  preserve source and spend authorization.
 - Reuse the source-agnostic extraction machine. Source differences belong in
   declarative configuration, not source-specific workers.
 - Ordinary provider attempts use the existing call packet, raw response,
-  compact outcome, spend record, and one source ledger. Do not create a
-  file-per-transition family.
+  compact outcome, canonical spend state, and one source ledger. Update
+  cumulative spend in canonical state in place after capture; do not create
+  lifecycle receipts, successor spend files, or another file-per-transition
+  family.
 - Active operating instructions, guard code, and current state are maintained
   in place. Do not version them inside the working tree; Git supplies history.
 - Record exceptional material in the existing outcome and ledger unless that is

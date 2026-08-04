@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T02:16:33-04:00",
-  "execution_state": "HOME_OFFLINE_PREPARATION_COMPLETE_PILOT_FROZEN_NOT_RELEASED",
+  "updated": "2026-08-04T02:19:55-04:00",
+  "execution_state": "HOME_OFFLINE_PREPARATION_COMPLETE_SPEND_REPLENISHED_PILOT_NOT_RELEASED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -56,9 +56,9 @@
   "latest_provider_attempt": null,
   "spend": {
     "active": true,
-    "authorized_usd": "2.00",
+    "authorized_usd": "3.3794142",
     "cumulative_spent_usd": "1.3794142",
-    "remaining_usd": "0.6205858",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "1.38"
   },
   "authority": {
@@ -71,14 +71,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 2:16:33 AM EDT",
-    "status": "Home offline preparation complete; representative C0009 pilot frozen but not provider-released",
+    "updated_human": "August 4, 2026 at 2:19:55 AM EDT",
+    "status": "Home offline preparation complete; spend replenished to $2.00 available; C0009 not provider-released",
     "phase": "Atomic extraction — Home preparation halt",
     "source": "Home — 5 / 22",
     "chunk": "C0009 / 15 — representative pilot frozen; no accepted or rejected Home chunk",
-    "now": "Approved identity, complete block dispositions, media redaction, 15-chunk plan, provider-safe prompt, schema, compatibility evidence, and frozen packet all pass offline validation; no provider call is in flight",
-    "next": "Await explicit Home source-work and provider-spend authority before transmitting frozen C0009"
+    "now": "Cumulative spend capacity is $3.3794142 with $1.3794142 historically spent and exactly $2.0000000 available; no provider call is in flight",
+    "next": "Await explicit Home source-work authority before transmitting frozen C0009"
   },
-  "next_possible_transition": "Explicit Home source-work and cumulative-budget release may authorize the frozen C0009 representative pilot when a new cold start confirms readiness.",
+  "next_possible_transition": "Explicit Home source-work authority may release the frozen C0009 representative pilot when a new cold start confirms readiness; the active budget has sufficient balance.",
   "gate_5_complete": false
 }

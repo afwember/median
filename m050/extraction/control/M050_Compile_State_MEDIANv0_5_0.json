@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T10:03:22-04:00",
+  "updated": "2026-08-04T10:05:59-04:00",
   "execution_state": "HOME_SOURCE_BOUNDED_CANDIDATE_ACCEPTANCE_REPAIRED_HALT",
   "corpus": {
     "registered_sources": 24,
@@ -173,7 +173,7 @@
     "display_usd_rounded_up": "4.30"
   },
   "authority": {
-    "repository_writes_authorized": true,
+    "repository_writes_authorized": false,
     "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
@@ -182,7 +182,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 10:03:22 AM EDT",
+    "updated_human": "August 4, 2026 at 10:05:59 AM EDT",
     "status": "Home source-bounded candidate acceptance repaired and hash-bound; source-work grant ended",
     "phase": "Atomic extraction — Home repaired completion halt",
     "source": "Home — 6 / 22",

@@ -1,0 +1,46 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-AWAY-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-04",
+  "status": "AWAY_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
+  "source_id": "M050-SRC-AWAY-001",
+  "binding": {
+    "configuration_sha256": "288547acd908b71ed076c9eae95c4b2196f7de973f052ac44d8447573a0198ba",
+    "prompt_sha256": "1c2c4b2ed9749474044f6f6728e119b3ca513fa4becad3727da8b9d756bae411",
+    "engine_module_sha256": "5a4fbdaac21c1fae6f0bb8c9cf41cb23c6b109b99e73505901aa919162d1ee83",
+    "engine_tests_sha256": "e2732c6763be07035c2f41bb834789154fbe035c7094acfc3c9906f5150b318d",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
+  },
+  "source_review": {
+    "source_blocks": 831,
+    "eligible_targets": 510,
+    "context_only_blocks": 78,
+    "excluded_blocks": 243,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 27,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 1059,
+    "representative_pilot_chunk_id": "C0002",
+    "pilot_selection_basis": "C0002 has the highest estimated input load and combines the revision mandate, a nine-row revision table, literal HTML, and executive definitional prose."
+  },
+  "offline_verification": {
+    "all_27_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 63
+  },
+  "replays": {},
+  "note": "C0002, C0001, C0008, and C0009 exposed source-agnostic grounding, metadata, coverage, and table-atomicity defects now corrected within existing prompt/payload/validator mechanics. C0012 v0.1 fused independent table columns; the validator now enforces their required atoms. C0014 v0.1 and v0.3 returned invented identifiers and no target coverage; the generic prompt forbids sample objects and the per-call response schema now binds disposition and atom block IDs to the exact target enum. All-source compatibility and all 27 Away fake replays pass."
+}

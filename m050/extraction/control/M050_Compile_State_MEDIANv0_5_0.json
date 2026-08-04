@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T14:20:26-04:00",
-  "execution_state": "AWAY_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "updated": "2026-08-04T16:20:46-04:00",
+  "execution_state": "AWAY_C0015_ACCEPTED_C0016_FROZEN_SPEND_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -28,24 +28,144 @@
     "id": "M050-SRC-AWAY-001",
     "label": "Away",
     "compile_ordinal": 7,
-    "accepted_chunk_ids": [],
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002",
+      "C0003",
+      "C0004",
+      "C0005",
+      "C0006",
+      "C0007",
+      "C0008",
+      "C0009",
+      "C0010",
+      "C0011",
+      "C0012",
+      "C0013",
+      "C0014",
+      "C0015"
+    ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_Away_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "fb59e2681044342ae5041416adfb514b468cba3b45de8ccbc3be6f464dfd78ee",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_Away_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/away/M050_Away_C0002_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_Away_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/away-pilot/M050_Away_C0016_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "latest_outcome": "m050/extraction/runs/away-pilot/M050_Away_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0001_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0002_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0004",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0005",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0007",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0008_Outcome_v0_5_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0009_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0014",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0014_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0015",
+        "outcome": "m050/extraction/runs/away-pilot/M050_Away_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/away-pilot/M050_Away_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {},
+    "pilot_chunk_id": "C0016",
+    "generated_chunk_count": 27,
+    "target_blocks_per_chunk": 20,
+    "required_target_disposition_count": 16,
+    "source_blocks": 831,
+    "eligible_target_blocks": 510,
+    "context_only_blocks": 78,
+    "excluded_blocks": 243,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 63,
+    "cache_miss_call_ceiling_usd": "0.272952"
   },
-  "latest_provider_attempt": null,
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "stop_reason": "end_turn",
+    "chunk_id": "C0015",
+    "output_tokens": 5054,
+    "cache_creation_input_tokens": 8031,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.092298",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
+  },
   "spend": {
     "active": true,
     "authorized_usd": "7.8960480",
-    "cumulative_spent_usd": "5.8960480",
-    "remaining_usd": "2.0000000",
-    "display_usd_rounded_up": "5.90"
+    "cumulative_spent_usd": "7.6834980",
+    "remaining_usd": "0.2125500",
+    "display_usd_rounded_up": "7.69"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -57,14 +177,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 2:20:26 PM EDT",
-    "status": "Away identity card proposed; author approval required before provider transmission",
-    "phase": "Atomic extraction — Away identity approval halt",
+    "updated_human": "August 4, 2026 at 4:20:46 PM EDT",
+    "status": "Away C0015 v0.1 accepted; C0016 v0.1 is frozen at a spend halt",
+    "phase": "Atomic extraction — Away representative pilot",
     "source": "Away — ordinal 7; 7 / 22 compile-scope sources complete",
-    "chunk": "No Away chunk selected; accepted/rejected boundary is empty",
-    "now": "Frozen source identity, provenance, authority boundaries, open-status handling, and zero-media disposition are proposed; no provider call or spend occurred",
-    "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
+    "chunk": "C0016 / 27 — C0001 through C0015 accepted",
+    "now": "C0015 v0.1 passed mechanical and substantive review at $0.092298 exact cost; C0016 v0.1 is hash-bound but its ceiling exceeds the remaining balance",
+    "next": "Halt until cumulative spend authority can cover C0016 v0.1's $0.272952 conservative ceiling; current remaining balance is $0.2125500"
   },
-  "next_possible_transition": "With Asa's identity-card approval, perform Away offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
+  "next_possible_transition": "Frozen C0016 v0.1 may proceed only after cumulative spend authority covers its $0.272952 conservative ceiling; no other source or later phase is authorized.",
   "gate_5_complete": false
 }

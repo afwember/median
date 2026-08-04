@@ -1,0 +1,71 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-AWAY-C0002-PILOT-FREEZE-001",
+  "state": "pilot_chunk_frozen_provider_release_derived",
+  "machine_state": "offline_preparation_complete",
+  "binding": {
+    "source_id": "M050-SRC-AWAY-001",
+    "source_sha256": "2fff249d70b88a49139e094bd8b526e526e0e024d78ea44a8fa08a48d1ddb5ea",
+    "configuration_sha256": "288547acd908b71ed076c9eae95c4b2196f7de973f052ac44d8447573a0198ba",
+    "identity_card_sha256": "1f58976a00fd0ab741a02d450181e6784fa25f4006f2052d1cd840f55c88ccb3",
+    "block_manifest_sha256": "1d93eb8f917e783ea308f6316bcb36f2556195537c85e2cdda94183882494f2c",
+    "disposition_ledger_sha256": "5e048e0ed9bd80d8fbf84fd465e90ce9f84da2ab4c7ea646be3a1da9da7dde24",
+    "chunk_plan_sha256": "fe3fa1e8b18fa2f08fbdcf875531962fe6dd1902161678e3d71bc4dc5b3cfa3a",
+    "pilot_chunk_id": "C0016",
+    "pilot_packet_sha256": "f75960e168bd73c350c8a8741bf6a3a4e548bc9c1f485278c94e4ab0a77beaea",
+    "pilot_packet_file_sha256": "e8199240b67eb91e4f8063cfbc1e65d450d874179a3ff08c12cd9ffc59d15ac1",
+    "prompt_sha256": "1c2c4b2ed9749474044f6f6728e119b3ca513fa4becad3727da8b9d756bae411",
+    "response_schema_sha256": "4ad25f34b769dd3471533c17b2450e317800cd57d20990bc9bf480b562b01213",
+    "engine_module_sha256": "5a4fbdaac21c1fae6f0bb8c9cf41cb23c6b109b99e73505901aa919162d1ee83",
+    "engine_tests_sha256": "e2732c6763be07035c2f41bb834789154fbe035c7094acfc3c9906f5150b318d",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
+    "allowed_streams": [
+      "evidence_game_semantic"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 16000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0001 through C0015 are accepted; C0016 is the next sequential Away chunk and is frozen pending enough cumulative budget for its conservative ceiling.",
+    "required_target_disposition_count": 16,
+    "cache_miss_call_ceiling_usd": "0.272952"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_artwork_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_27_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 63,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 27,
+    "chunk_count_is_input": false,
+    "c0002_v0_1_rejected_for_cross_cell_ungrounded_rulings": true,
+    "c0001_v0_1_rejected_for_document_control_metadata_atoms": true,
+    "c0001_v0_2_rejected_for_residual_precedence_metadata_atom": true,
+    "c0008_v0_1_rejected_for_duplicate_target_disposition": true,
+    "c0008_v0_3_rejected_for_procedural_table_cell_fusion": true,
+    "c0008_v0_4_rejected_for_residual_procedural_table_cell_fusion": true,
+    "c0009_v0_1_rejected_for_descriptive_column_and_effect_fusion": true,
+    "c0009_v0_2_rejected_for_residual_semicolon_effect_fusion": true,
+    "c0012_v0_1_rejected_for_independent_table_column_fusion": true,
+    "c0014_v0_1_rejected_for_placeholder_identifiers_and_missing_coverage": true,
+    "c0014_v0_3_rejected_for_invented_identifiers_and_missing_coverage": true,
+    "provider_call_made": true
+  }
+}

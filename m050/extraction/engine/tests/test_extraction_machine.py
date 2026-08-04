@@ -276,10 +276,16 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
 
     assert boundary in prompt
     assert "block-ID set must exactly equal" in prompt
+    assert "never repeat\nan ID" in prompt
     assert "byte-for-byte" in prompt
     assert "required_disposition" in prompt
     assert "every nonempty semantic cell" in prompt
+    assert "stages,\nactions, and results as separate atoms" in prompt
+    assert "semicolon-separated effects require\nseparate atoms" in prompt
+    assert "document-control metadata carry no substantive atom" in prompt
     assert "target block ID plus\na local atom ordinal" in prompt
+    assert "Never emit placeholder" in prompt
+    assert "Do not return a sample object" in prompt
     assert "cost, staffing, and effect" not in prompt
     assert "dedicated Home" not in prompt
     assert len(prompt.split()) < 400
@@ -305,6 +311,27 @@ def test_request_caches_only_stable_system_prefix_for_one_hour():
     assert request["output_config"]["format"]["schema"]["properties"]["dispositions"]["minItems"] == 1
     assert "maxItems" not in request["output_config"]["format"]["schema"]["properties"]["dispositions"]
     assert "cache_control" not in request["messages"][0]
+
+
+def test_request_schema_binds_disposition_and_atom_ids_to_exact_targets():
+    schema = build_generic_response_schema("S", ["evidence_game_semantic"])
+    request = build_anthropic_request(
+        prompt="Stable source policy",
+        response_schema=schema,
+        payload={
+            "source_id": "S",
+            "required_target_disposition_count": 2,
+            "target_blocks": [{"block_id": "B1"}, {"block_id": "B2"}],
+        },
+        model="claude-sonnet-5",
+        reasoning_effort="low",
+        maximum_output_tokens=6000,
+        cache_ttl="1h",
+    )
+    dispositions = request["output_config"]["format"]["schema"]["properties"]["dispositions"]
+    assert dispositions["items"]["properties"]["block_id"] == {"enum": ["B1", "B2"]}
+    atoms = dispositions["items"]["properties"]["atoms"]
+    assert atoms["items"]["properties"]["block_id"] == {"enum": ["B1", "B2"]}
 
 
 def test_generic_validator_replays_accepted_authorial_c0001():
@@ -539,6 +566,116 @@ def test_payload_marks_semantic_inventories_substantive_or_review_required():
     )
     assert review["passed"] is True
     assert review["decision_required"] is True
+
+
+def test_payload_marks_entire_document_control_table_non_substantive():
+    rows = [
+        ("B1", "| **Document field** | **Specification** |\n"),
+        ("B2", "|---|---|\n"),
+        ("B3", "| Version | 1.0 |\n"),
+        ("B4", "| Precedence | New work leads old work |\n"),
+    ]
+    manifest = {
+        "source_id": "S1", "source_sha256": "c" * 64,
+        "blocks": [
+            {"block_id": block_id, "block_type": "table_row", "text": value,
+             "status_markers": []}
+            for block_id, value in rows
+        ],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [{"block_id": block_id, "disposition": "eligible"} for block_id, _ in rows],
+        {"chunk_id": "C0001", "block_ids": [block_id for block_id, _ in rows]},
+    )
+    assert all(
+        target["structural_role"] == "document_control_metadata"
+        and target["required_disposition"] == "no_substantive_claim"
+        for target in payload["target_blocks"]
+    )
+
+
+def test_procedural_table_requires_separate_action_and_result_atoms():
+    rows = [
+        ("B1", "| **Beat** | **Player attention** | **Possible result** |\n"),
+        ("B2", "|---|---|---|\n"),
+        ("B3", "| Read | Watch traffic | A window becomes legible |\n"),
+    ]
+    manifest = {
+        "source_id": "S1", "source_sha256": "d" * 64,
+        "blocks": [{"block_id": key, "block_type": "table_row", "text": value,
+                    "status_markers": []} for key, value in rows],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [{"block_id": key, "disposition": "eligible"} for key, _ in rows],
+        {"chunk_id": "C0001", "block_ids": [key for key, _ in rows]},
+    )
+    body = payload["target_blocks"][2]
+    assert body["structural_role"] == "procedural_stage_action_result"
+    assert body["minimum_atoms"] == 2
+    schema = build_generic_response_schema("S1", ["allowed"])
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1", "proposal_set_id": "p",
+        "request_id": "r", "source_id": "S1",
+        "dispositions": [
+            {"block_id": "B1", "kind": "no_substantive_claim", "atoms": []},
+            {"block_id": "B2", "kind": "no_substantive_claim", "atoms": []},
+            {"block_id": "B3", "kind": "atoms", "atoms": [{
+                "proposal_id": "p1", "source_id": "S1", "block_id": "B3",
+                "exact_source_text": "Watch traffic", "normalized_claim": "Watch traffic.",
+                "claim_kind": "mechanic", "stream": "allowed",
+            }]},
+        ],
+    }
+    rejected = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert rejected["passed"] is False
+    assert rejected["checks"]["atomicity_errors"] == 1
+
+
+def test_outcome_table_derives_minimum_atoms_from_semicolon_effects():
+    rows = [
+        ("B1", "| **Outcome class** | **World-state expression** |\n"),
+        ("B2", "|---|---|\n"),
+        ("B3", "| Delay | Day spent; weather worsens; margin narrows. |\n"),
+    ]
+    manifest = {
+        "source_id": "S1", "source_sha256": "e" * 64,
+        "blocks": [{"block_id": key, "block_type": "table_row", "text": value,
+                    "status_markers": []} for key, value in rows],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [{"block_id": key, "disposition": "eligible"} for key, _ in rows],
+        {"chunk_id": "C0001", "block_ids": [key for key, _ in rows]},
+    )
+    body = payload["target_blocks"][2]
+    assert body["structural_role"] == "independent_table_columns"
+    assert body["minimum_atoms"] == 3
+
+
+def test_independent_table_columns_derive_minimum_atoms():
+    rows = [
+        ("B1", "| **Option** | **Meaning** | **Constraint** |\n"),
+        ("B2", "|---|---|---|\n"),
+        ("B3", "| TAKE | Gather now | Carry is finite; renewal may fall. |\n"),
+    ]
+    manifest = {
+        "source_id": "S1", "source_sha256": "f" * 64,
+        "blocks": [{"block_id": key, "block_type": "table_row", "text": value,
+                    "status_markers": []} for key, value in rows],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [{"block_id": key, "disposition": "eligible"} for key, _ in rows],
+        {"chunk_id": "C0001", "block_ids": [key for key, _ in rows]},
+    )
+    body = payload["target_blocks"][2]
+    assert body["structural_role"] == "independent_table_columns"
+    assert body["minimum_atoms"] == 3
 
 
 def test_cache_aware_cost_accounting_matches_uncached_r6_and_cached_examples():
@@ -857,6 +994,16 @@ def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
     )
     assert report["passed"] is True
     assert report["decision_required"] is True
+
+
+def test_generic_prompt_requires_each_independent_table_cell_to_ground_its_own_claim():
+    prompt = build_generic_source_prompt(
+        "M050-SRC-TEST-001",
+        ["evidence_game_semantic"],
+        "Extract only the bound source.",
+    )
+    assert "requires exact source text from its own\ncell" in prompt
+    assert "never ground a ruling or consequence only in another cell" in prompt
 
 
 def _structural_manifest():

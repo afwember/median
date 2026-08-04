@@ -1,0 +1,75 @@
+{
+  "allowed_streams": [
+    "evidence_game_semantic"
+  ],
+  "configuration_policy": "This is the sole active Away source configuration. Maintain it in place; Git preserves predecessor history.",
+  "artifact_sha256": {
+    "block_manifest": "1d93eb8f917e783ea308f6316bcb36f2556195537c85e2cdda94183882494f2c",
+    "chunk_plan": "fe3fa1e8b18fa2f08fbdcf875531962fe6dd1902161678e3d71bc4dc5b3cfa3a",
+    "disposition_ledger": "5e048e0ed9bd80d8fbf84fd465e90ce9f84da2ab4c7ea646be3a1da9da7dde24",
+    "identity_card": "1f58976a00fd0ab741a02d450181e6784fa25f4006f2052d1cd840f55c88ccb3",
+    "prompt": "1c2c4b2ed9749474044f6f6728e119b3ca513fa4becad3727da8b9d756bae411",
+    "response_schema": "4ad25f34b769dd3471533c17b2450e317800cd57d20990bc9bf480b562b01213"
+  },
+  "artifacts": {
+    "block_manifest": "m050/extraction/control/source-identities/blocks/M050_Away_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_Away_Section_Aware_Chunk_Plan_v0_1_MEDIANv0_5_0.json",
+    "disposition_ledger": "m050/extraction/calibration/away/M050_Away_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Away_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "prompt": "m050/extraction/calibration/away/M050_Away_Extraction_Prompt_v0_1_MEDIANv0_5_0.md",
+    "response_schema": "m050/extraction/calibration/away/M050_Away_Response_Schema_v0_1_MEDIANv0_5_0.json"
+  },
+  "execution": {
+    "cadence": "sequential_one_call_review",
+    "next_chunk_requires_substantive_review_of_prior_chunk": true
+  },
+  "calibration": {
+    "state": "representative_pilot_pending",
+    "pilot_chunk_id": "C0002",
+    "pilot_required": true,
+    "pilot_passed": false
+  },
+  "lean_structural_policy": {
+    "table_headers_and_delimiters": "no_substantive_claim",
+    "source_position_markers": "retained_with_their_source_blocks",
+    "contents_navigation": "excluded_or_structural_context",
+    "dependent_bodies_remain_disposition_required": true,
+    "exact_target_disposition_coverage_required": true
+  },
+  "media_exclusion_policy": {
+    "state": "approved_no_embedded_media",
+    "excluded_occurrences": 0,
+    "excluded_blocks": 0,
+    "caption_target_blocks": 0,
+    "provider_payload_media_content_prohibited": true,
+    "external_artwork_consultation_prohibited": true
+  },
+  "pricing": {
+    "cache_1h_write_multiplier": "2",
+    "cache_5m_write_multiplier": "1.25",
+    "cache_read_multiplier": "0.1",
+    "input_usd_per_million_tokens": "2",
+    "output_usd_per_million_tokens": "10"
+  },
+  "provider": {
+    "cache_boundary": "stable_system_prefix",
+    "cache_required": true,
+    "cache_ttl": "1h",
+    "maximum_output_tokens": 16000,
+    "model": "claude-sonnet-5",
+    "name": "Anthropic",
+    "reasoning_effort": "low"
+  },
+  "quantization": {
+    "unit": "provider_eligible_target_blocks",
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 27,
+    "chunk_count_is_input": false,
+    "basis": "Approved source review yields 510 eligible targets. The 20-target density is provisional until representative C0002 pilot calibration."
+  },
+  "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
+  "source_id": "M050-SRC-AWAY-001",
+  "source_path": "m050/docs/v0.5/specifications/M050_Away_Mode_Field_Crossing_Encounter_and_Return_Specification_v1_0_MEDIANv0_5_0.md",
+  "source_sha256": "2fff249d70b88a49139e094bd8b526e526e0e024d78ea44a8fa08a48d1ddb5ea",
+  "status": "REPRESENTATIVE_PILOT_READY"
+}

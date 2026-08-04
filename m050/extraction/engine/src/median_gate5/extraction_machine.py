@@ -68,7 +68,8 @@ def build_chunk_payload(
     by_block = {item.get("block_id"): item for item in dispositions}
     if None in by_block or len(by_block) != len(dispositions):
         raise ContractError("disposition ledger has missing or duplicate block IDs")
-    manifest_blocks = {item["block_id"]: item for item in manifest.get("blocks", [])}
+    ordered_manifest_blocks = manifest.get("blocks", [])
+    manifest_blocks = {item["block_id"]: item for item in ordered_manifest_blocks}
     block_ids = chunk.get("block_ids")
     if not isinstance(block_ids, list) or not block_ids:
         raise ContractError("chunk must bind a nonempty block_ids list")
@@ -92,6 +93,58 @@ def build_chunk_payload(
     context_blocks: list[dict[str, Any]] = []
     target_blocks: list[dict[str, Any]] = []
     excluded_block_ids: list[str] = []
+    document_control_table_ids: set[str] = set()
+    procedural_table_body_ids: set[str] = set()
+    table_minimum_atoms: dict[str, int] = {}
+    for index, block in enumerate(ordered_manifest_blocks):
+        if block.get("block_type") != "table_row":
+            continue
+        cells = [
+            cell.strip().strip("*").strip().casefold()
+            for cell in block.get("text", "").strip().strip("|").split("|")
+        ]
+        if cells[:2] != ["document field", "specification"]:
+            if cells[:3] == ["beat", "player attention", "possible result"]:
+                cursor = index + 2
+                while (
+                    cursor < len(ordered_manifest_blocks)
+                    and ordered_manifest_blocks[cursor].get("block_type") == "table_row"
+                ):
+                    procedural_table_body_ids.add(ordered_manifest_blocks[cursor]["block_id"])
+                    cursor += 1
+            elif cells[:2] in (
+                ["outcome", "persistent consequence"],
+                ["outcome class", "world-state expression"],
+            ):
+                cursor = index + 2
+                while (
+                    cursor < len(ordered_manifest_blocks)
+                    and ordered_manifest_blocks[cursor].get("block_type") == "table_row"
+                ):
+                    body = ordered_manifest_blocks[cursor]
+                    body_cells = body.get("text", "").strip().strip("|").split("|")
+                    consequence = body_cells[1] if len(body_cells) > 1 else ""
+                    table_minimum_atoms[body["block_id"]] = consequence.count(";") + 1
+                    cursor += 1
+            elif cells[:3] in (
+                ["family", "examples", "primary value"],
+                ["option", "meaning", "constraint"],
+            ):
+                cursor = index + 2
+                while cursor < len(ordered_manifest_blocks) and ordered_manifest_blocks[cursor].get("block_type") == "table_row":
+                    body = ordered_manifest_blocks[cursor]
+                    body_cells = body.get("text", "").strip().strip("|").split("|")
+                    minimum = 2
+                    if cells[:3] == ["option", "meaning", "constraint"]:
+                        constraint = body_cells[2] if len(body_cells) > 2 else ""
+                        minimum += constraint.count(";")
+                    table_minimum_atoms[body["block_id"]] = minimum
+                    cursor += 1
+            continue
+        cursor = index
+        while cursor < len(ordered_manifest_blocks) and ordered_manifest_blocks[cursor].get("block_type") == "table_row":
+            document_control_table_ids.add(ordered_manifest_blocks[cursor]["block_id"])
+            cursor += 1
     for block_id in repeated_context_ids:
         if block_id in block_ids:
             continue
@@ -105,7 +158,18 @@ def build_chunk_payload(
             context_blocks.append(_block_record(block))
         elif disposition in {"eligible", "review_required"}:
             record = _block_record(block)
-            if PURE_STRUCTURAL_LABEL.fullmatch(block.get("text", "").strip()):
+            if block_id in document_control_table_ids:
+                record["structural_role"] = "document_control_metadata"
+                record["required_disposition"] = "no_substantive_claim"
+            elif block_id in procedural_table_body_ids:
+                record["structural_role"] = "procedural_stage_action_result"
+                record["required_disposition"] = "atoms"
+                record["minimum_atoms"] = 2
+            elif block_id in table_minimum_atoms:
+                record["structural_role"] = "independent_table_columns"
+                record["required_disposition"] = "atoms"
+                record["minimum_atoms"] = table_minimum_atoms[block_id]
+            elif PURE_STRUCTURAL_LABEL.fullmatch(block.get("text", "").strip()):
                 record["structural_role"] = "pure_example_or_polarity_label"
                 record["required_disposition"] = "no_substantive_claim"
             elif by_block[block_id].get("reason_code") == "semantic_code_or_reference_inventory":
@@ -424,13 +488,15 @@ def build_generic_source_prompt(
 Allowed source: `{source_id}` only
 Allowed streams: {streams}
 
-Convert every supplied target block into exactly one grounded disposition. The
+Emit exactly one grounded disposition object per target block ID; never repeat
+an ID. The
 disposition block-ID set must exactly equal the supplied `target_blocks` block-ID
-set, with no omission, duplication, or additional ID. Context blocks may guide
-interpretation but never receive dispositions. Excluded blocks are omitted
-offline. Use only `SOURCE_BLOCKS`; do not import other MEDIAN sources, prior
-atoms, background knowledge, mapping, reconciliation, canonization, or inferred
-authority.
+set. Context blocks never receive dispositions. Excluded blocks are omitted
+offline. Use only `SOURCE_BLOCKS`; import no other sources, prior atoms, or
+external knowledge.
+
+Use supplied source and request IDs exactly. Never emit placeholder or invented
+IDs or metadata. Do not return a sample object: complete the full target set.
 
 ## Approved content/provenance boundary
 
@@ -445,18 +511,22 @@ markup, backslashes, and source escaping; never render, strip, reconstruct,
 clean, or reformat the selected source span. Copy the whole target block when
 that is the safest exact grounded span.
 
-Honor every target-supplied `required_disposition` or `allowed_dispositions`
-constraint. Pure structural headings, labels, table headers, and table
-delimiters carry no substantive atom; never turn a label into a tautological
+Honor every target-supplied `required_disposition`, `allowed_dispositions`, or
+`minimum_atoms`
+constraint. Pure structural headings, labels, table headers, delimiters, and
+document-control metadata carry no substantive atom; never turn a label into a tautological
 claim that its section discusses the announced topic. Structural context never
 excuses a dependent substantive target from receiving its own disposition.
 
-For every substantive table-body row, cover every nonempty semantic cell.
-Create separate atoms for independently asserted properties, functions,
-effects, examples, interpretations, or consequences. Keep cells together only
-when they form one indivisible relationship or when one qualifies another.
-Preserve both endpoints of a categorical mapping, while keeping independent
-consequences separate from that mapping.
+For every substantive table row, cover every nonempty semantic cell. Ground
+independent properties, functions, effects, examples, interpretations, stages,
+actions, and results as separate atoms. Combine cells only when one qualifies
+another or the relationship is indivisible. Preserve both endpoints of
+categorical mappings.
+Independently headed descriptive columns and semicolon-separated effects require
+separate atoms.
+Each independent table-cell assertion requires exact source text from its own
+cell; never ground a ruling or consequence only in another cell.
 
 Preserve provisional, historical, rejected, example, negative, conditional,
 scope, ownership, and authority qualifiers. Use `review_required` instead of
@@ -465,11 +535,11 @@ definitions, owners, or authorities.
 
 ## Output check
 
-Before returning, verify exact target coverage, absence of context dispositions,
-grounding, and disposition/atom cardinality. Return JSON only under the bound
+Before returning, verify coverage, no context dispositions, grounding, and
+cardinality. Return JSON only under the bound
 response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
-empty otherwise. Every atom must use the supplied source ID, its target block
-ID, one allowed stream, exact source text, a concise normalized claim, and a
+empty otherwise. Every atom must use supplied source and target block IDs, an
+allowed stream, exact source text, a concise normalized claim, and a
 source-faithful claim kind. Derive each proposal ID from its target block ID plus
 a local atom ordinal so proposal IDs remain unique across the source.
 """
@@ -516,6 +586,30 @@ def build_anthropic_request(
         raise ContractError("response schema lacks dispositions") from exc
     if not isinstance(dispositions_schema, dict):
         raise ContractError("response dispositions schema is invalid")
+    target_ids = [block.get("block_id") for block in target_blocks]
+    if (
+        any(not isinstance(block_id, str) or not block_id for block_id in target_ids)
+        or len(target_ids) != len(set(target_ids))
+    ):
+        raise ContractError("payload target block IDs are invalid")
+    disposition_item = dispositions_schema.get("items")
+    if isinstance(disposition_item, dict):
+        disposition_properties = disposition_item.get("properties")
+        if isinstance(disposition_properties, dict):
+            block_id_schema = disposition_properties.get("block_id")
+            if isinstance(block_id_schema, dict):
+                block_id_schema.clear()
+                block_id_schema["enum"] = target_ids
+            atoms_schema = disposition_properties.get("atoms")
+            if isinstance(atoms_schema, dict):
+                atom_item = atoms_schema.get("items")
+                if isinstance(atom_item, dict):
+                    atom_properties = atom_item.get("properties")
+                    if isinstance(atom_properties, dict):
+                        atom_block_id_schema = atom_properties.get("block_id")
+                        if isinstance(atom_block_id_schema, dict):
+                            atom_block_id_schema.clear()
+                            atom_block_id_schema["enum"] = target_ids
     # Anthropic structured outputs accept array minItems only at 0 or 1 and do
     # not accept maxItems. Exact target coverage remains enforced by the prompt
     # and the source-agnostic validator after capture.
@@ -593,6 +687,7 @@ def validate_extraction_response(
     proposal_ids: list[str] = []
     review_required = 0
     conditional_errors = 0
+    atomicity_errors = 0
     table_structure_errors = 0
     required_disposition_errors = 0
     by_id = {block["block_id"]: block for block in targets}
@@ -638,6 +733,12 @@ def validate_extraction_response(
             errors.append(
                 f"payload-allowed dispositions not satisfied: {block_id}"
             )
+        minimum_atoms = by_id.get(block_id, {}).get("minimum_atoms")
+        if isinstance(minimum_atoms, int) and len(atoms) < minimum_atoms:
+            atomicity_errors += 1
+            errors.append(
+                f"payload minimum_atoms {minimum_atoms} not satisfied: {block_id}"
+            )
         block = by_id.get(block_id, {})
         required_statuses = {
             str(marker).split(":", 1)[-1].strip().upper()
@@ -675,6 +776,7 @@ def validate_extraction_response(
             "schema_errors": len(schema_errors),
             "coverage_errors": 0 if coverage["passed"] else 1,
             "conditional_atoms_errors": conditional_errors,
+            "atomicity_errors": atomicity_errors,
             "table_structure_errors": table_structure_errors,
             "required_disposition_errors": required_disposition_errors,
             "grounding_errors": sum(

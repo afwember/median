@@ -229,6 +229,30 @@ def test_active_source_retains_one_writer_authority():
     assert errors == []
 
 
+def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
+    guard = _guard_module()
+    state = {
+        "dashboard": {
+            "updated_human": "August 4, 2026 at 5:46:07 PM EDT",
+            "status": "Stopped",
+            "phase": "Atomic extraction",
+            "source": "Away",
+            "chunk": "Complete",
+            "now": "Candidate accepted",
+            "next": "Await authorization",
+        },
+        "spend": {
+            "remaining_usd": "0.6576584",
+            "display_usd_rounded_up": "9.03",
+        },
+    }
+    status = guard.expected_status(state)
+    assert "**UPDATED:**" not in status
+    assert "August 4, 2026 at 5:46:07 PM EDT<br>" in status
+    assert status.endswith("**SPEND REMAINING:** $0.65\n")
+    assert "TOTAL COST" not in status
+
+
 def _pricing():
     return {
         "input_usd_per_million_tokens": "2",

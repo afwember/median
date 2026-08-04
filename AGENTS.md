@@ -215,6 +215,15 @@ Halt for Asa only when:
 - Maintain an approved identity card in place and bind its exact hash in the
   active source configuration. Git records its approval history; do not create
   a separate identity-transition receipt family.
+- Keep each identity card minimal and source-bounded because its complete text
+  is provider-visible. It may contain only exact identity and provenance,
+  source-declared role, scope, and status, allowed streams, media and exclusion
+  rules, and handling necessary to preserve that source's own qualifications.
+  Source-declared lineage may be recorded as provenance, but do not quote,
+  summarize, interpret, or apply substantive content from Human Rulings or any
+  other external source. Known external authority may appear only as canonical
+  IDs marking unresolved traceability; its meaning, precedence, and effect
+  remain deferred to reconciliation.
 - Freeze the exact source, identity, disposition, streams, chunk, prompt,
   schema, engine, validator, normalization, exclusion policy, model, reasoning,
   cache, and cost bindings before a call.
@@ -271,6 +280,8 @@ Halt for Asa only when:
 Refresh `STATUS.md` after every accepted or rejected chunk, lifecycle halt,
 authorization or spend change, source milestone, and before commit or push.
 Derive it only from the canonical compile state. The first line below its title
-is a human-readable timestamp rounded to the nearest second. Its final nonblank
-line is cumulative provider cost rounded upward to the cent; exact cost remains
-in machine evidence. The guard rejects a stale or contradictory dashboard.
+is an unlabeled human-readable timestamp rounded to the nearest second. Its
+final nonblank line is the active spend balance rounded downward to the cent so
+it never overstates remaining authority; exact cumulative spend and balance
+remain in machine evidence. The guard rejects a stale or contradictory
+dashboard.

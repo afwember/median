@@ -10,7 +10,7 @@ import re
 import subprocess
 import sys
 from datetime import datetime
-from decimal import Decimal, ROUND_CEILING
+from decimal import Decimal, ROUND_CEILING, ROUND_FLOOR
 from pathlib import Path
 from typing import Iterable
 from zoneinfo import ZoneInfo
@@ -419,10 +419,15 @@ def validate_source_registry(errors: list[str]) -> None:
 
 def expected_status(state: dict) -> str:
     dashboard = state.get("dashboard", {})
-    display = state.get("spend", {}).get("display_usd_rounded_up", "")
+    try:
+        remaining_display = Decimal(state.get("spend", {}).get("remaining_usd", "")).quantize(
+            Decimal("0.01"), rounding=ROUND_FLOOR
+        )
+    except Exception:
+        remaining_display = ""
     return (
         "# MEDIAN COMPILE — v0.5.0\n\n"
-        f"**UPDATED:** {dashboard.get('updated_human', '')}<br>\n\n"
+        f"{dashboard.get('updated_human', '')}<br>\n\n"
         "<!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->\n\n"
         f"**STATUS:** {dashboard.get('status', '')}<br>\n"
         f"**PHASE:** {dashboard.get('phase', '')}<br>\n"
@@ -430,7 +435,7 @@ def expected_status(state: dict) -> str:
         f"**CHUNK:** {dashboard.get('chunk', '')}<br>\n"
         f"**NOW:** {dashboard.get('now', '')}<br>\n"
         f"**NEXT:** {dashboard.get('next', '')}<br>\n"
-        f"**TOTAL COST:** ${display} cumulative provider spend\n"
+        f"**SPEND REMAINING:** ${remaining_display}\n"
     )
 
 

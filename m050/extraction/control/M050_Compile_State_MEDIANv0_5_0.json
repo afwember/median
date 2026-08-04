@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T17:33:48-04:00",
+  "updated": "2026-08-04T17:46:07-04:00",
   "execution_state": "AWAY_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
@@ -256,7 +256,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 5:33:48 PM EDT",
+    "updated_human": "August 4, 2026 at 5:46:07 PM EDT",
     "status": "Away source-bounded candidate accepted; formal Stopdown complete",
     "phase": "Atomic extraction — halted at Away completion",
     "source": "Away — ordinal 7; 8 / 22 compile-scope sources complete",

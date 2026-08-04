@@ -10,4 +10,4 @@ August 4, 2026 at 7:38:43 PM EDT<br>
 **CHUNK:** Accepted C0001-C0023; rejected/frozen none; whole-source candidate accepted<br>
 **NOW:** All 412 target dispositions and 438 atoms passed exact coverage, ledger-bound review, unique-identifier, and candidate/report hash-binding checks; $1.9327762 remains<br>
 **NEXT:** Await Asa's explicit source-work grant for Guest; no other source or later phase is authorized<br>
-**TOTAL COST:** $10.92 cumulative provider spend
+**SPEND REMAINING:** $1.93

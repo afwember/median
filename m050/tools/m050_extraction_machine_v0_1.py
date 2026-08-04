@@ -7,6 +7,7 @@ from decimal import Decimal
 import hashlib
 import json
 from pathlib import Path
+import re
 import urllib.error
 import urllib.request
 
@@ -36,6 +37,10 @@ from median_gate5.structure import parse_markdown
 
 ENDPOINT = "https://api.anthropic.com/v1/messages"
 ANTHROPIC_VERSION = "2023-06-01"
+SHELL_INTERPOLATION_ARTIFACT = re.compile(
+    r"(?:^|\s)/(?:usr/)?bin/(?:ba|da|z)?sh(?:[.\s]|$)",
+    re.IGNORECASE,
+)
 
 
 def read_json(path: Path) -> dict:
@@ -705,6 +710,11 @@ def command_review(args: argparse.Namespace) -> int:
     captured = events[-1]
     if captured.get("outcome_sha256") != outcome_sha256:
         raise IntegrityError("review outcome does not match the pending ledger event")
+    if SHELL_INTERPOLATION_ARTIFACT.search(args.reason):
+        raise ContractError(
+            "review reason contains a likely shell-interpolation artifact; "
+            "resubmit it with literal-safe quoting"
+        )
     if args.result == "passed":
         validation = outcome.get("mechanical_validation", {})
         if validation.get("passed") is not True:

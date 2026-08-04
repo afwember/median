@@ -26,48 +26,33 @@ def test_processing_order_is_complete_unique_and_bound_to_source_state_matrix():
         assert item["label"]
 
 
-def test_processing_order_and_canonical_progress_derive_next_source_and_queue():
+def test_processing_order_and_canonical_progress_form_one_prefix_and_queue():
     order = _load(ORDER_PATH)
     matrix = _load(MATRIX_PATH)
     state = _load(STATE_PATH)
     ordered_ids = [item["source_id"] for item in order["sequence"]]
     by_id = {source["source_id"]: source for source in matrix["sources"]}
     completed = set(state["progress"]["completed_source_ids"])
-    expected_queue = [
+    compile_scope_ids = [
         source_id
         for source_id in ordered_ids
-        if by_id[source_id]["in_compile_scope"] and source_id not in completed
+        if by_id[source_id]["in_compile_scope"]
+    ]
+    completed_prefix = [
+        source_id for source_id in compile_scope_ids if source_id in completed
+    ]
+    expected_queue = [
+        source_id for source_id in compile_scope_ids if source_id not in completed
     ]
 
-    assert expected_queue[0] == "M050-SRC-GUEST-001"
-    assert len(expected_queue) == 13
+    assert len(compile_scope_ids) == state["corpus"]["compile_scope_sources"]
+    assert completed == set(completed_prefix)
+    assert completed_prefix == compile_scope_ids[:len(completed_prefix)]
+    assert expected_queue == compile_scope_ids[len(completed_prefix):]
+    assert len(expected_queue) == state["corpus"]["outstanding_compile_scope_sources"]
     assert "next_source" not in order
     assert "outstanding_pre_reconciliation_order" not in order
     authorial = order["sequence"][0]["pre_candidate_acceptance_control"]
     assert authorial["higher_authority_source_id"] == "M050-SRC-HUMAN-RULINGS-001"
     assert authorial["provider_prompt_inclusion"] == "prohibited"
     assert "Layer E semantic acceptance" in authorial["effect"]
-
-
-def test_source_completion_advances_order_without_rewriting_order_control():
-    order = _load(ORDER_PATH)
-    matrix = _load(MATRIX_PATH)
-    state = _load(STATE_PATH)
-    by_id = {source["source_id"]: source for source in matrix["sources"]}
-    completed = set(state["progress"]["completed_source_ids"])
-    assert "M050-SRC-POPULATION-001" in completed
-    prior_completed = completed - {"M050-SRC-POPULATION-001"}
-    prior_next_source = next(
-        item["source_id"]
-        for item in order["sequence"]
-        if by_id[item["source_id"]]["in_compile_scope"]
-        and item["source_id"] not in prior_completed
-    )
-    next_source = next(
-        item["source_id"]
-        for item in order["sequence"]
-        if by_id[item["source_id"]]["in_compile_scope"]
-        and item["source_id"] not in completed
-    )
-    assert prior_next_source == "M050-SRC-POPULATION-001"
-    assert next_source == "M050-SRC-GUEST-001"

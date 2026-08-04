@@ -260,6 +260,17 @@ Halt for Asa only when:
   family.
 - Active operating instructions, guard code, and current state are maintained
   in place. Do not version them inside the working tree; Git supplies history.
+- Within one unchanged state revision, read active controls and stable bindings
+  once. Batch independent read-only checks, and do not repeatedly inspect whole
+  packets, schemas, raw responses, or unchanged files when their hashes and the
+  compact outcome establish the required facts.
+- For routine chunk review, inspect the exact target dispositions and their
+  source/claim pairs plus mechanical findings, usage, cache, and cost. Compact
+  inspection does not replace source-grounded substantive review or any
+  mechanical gate.
+- Keep routine narration and command output to the information needed for a
+  decision, defect, spend boundary, or milestone. Successful internal
+  bookkeeping does not require a running user-facing transcript.
 - Record exceptional material in the existing outcome and ledger unless that is
   genuinely unsafe or impossible.
 - A normal compile operation has no process delta.

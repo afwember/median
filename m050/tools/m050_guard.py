@@ -420,13 +420,13 @@ def validate_source_registry(errors: list[str]) -> None:
 def expected_status(state: dict) -> str:
     dashboard = state.get("dashboard", {})
     try:
-        cumulative_display = Decimal(
-            state.get("spend", {}).get("cumulative_spent_usd", "")
+        remaining_display = Decimal(
+            state.get("spend", {}).get("remaining_usd", "")
         ).quantize(
-            Decimal("0.01"), rounding=ROUND_CEILING
+            Decimal("0.01"), rounding=ROUND_FLOOR
         )
     except Exception:
-        cumulative_display = ""
+        remaining_display = ""
     return (
         "# MEDIAN COMPILE — v0.5.0\n\n"
         f"{dashboard.get('updated_human', '')}<br>\n\n"
@@ -437,7 +437,7 @@ def expected_status(state: dict) -> str:
         f"**CHUNK:** {dashboard.get('chunk', '')}<br>\n"
         f"**NOW:** {dashboard.get('now', '')}<br>\n"
         f"**NEXT:** {dashboard.get('next', '')}<br>\n"
-        f"**TOTAL COST:** ${cumulative_display} cumulative provider spend\n"
+        f"**SPEND REMAINING:** ${remaining_display}\n"
     )
 
 

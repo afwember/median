@@ -229,7 +229,7 @@ def test_active_source_retains_one_writer_authority():
     assert errors == []
 
 
-def test_status_uses_unlabeled_timestamp_and_upward_rounded_cumulative_cost():
+def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
     guard = _guard_module()
     state = {
         "dashboard": {
@@ -242,7 +242,6 @@ def test_status_uses_unlabeled_timestamp_and_upward_rounded_cumulative_cost():
             "next": "Await authorization",
         },
         "spend": {
-            "cumulative_spent_usd": "9.0258396",
             "remaining_usd": "0.6576584",
             "display_usd_rounded_up": "9.03",
         },
@@ -250,8 +249,8 @@ def test_status_uses_unlabeled_timestamp_and_upward_rounded_cumulative_cost():
     status = guard.expected_status(state)
     assert "**UPDATED:**" not in status
     assert "August 4, 2026 at 5:46:07 PM EDT<br>" in status
-    assert status.endswith("**TOTAL COST:** $9.03 cumulative provider spend\n")
-    assert "SPEND REMAINING" not in status
+    assert status.endswith("**SPEND REMAINING:** $0.65\n")
+    assert "TOTAL COST" not in status
 
 
 def _pricing():
@@ -968,7 +967,7 @@ def test_compact_run_ledger_allows_validated_replacement_after_failure(tmp_path)
         )
 
 
-def test_compact_run_ledger_allows_same_packet_after_reviewed_transport_failure(tmp_path):
+def test_compact_run_ledger_allows_same_packet_after_reviewed_dns_failure(tmp_path):
     ledger = tmp_path / "run.jsonl"
     append_run_ledger_event(
         ledger,
@@ -995,6 +994,46 @@ def test_compact_run_ledger_allows_same_packet_after_reviewed_transport_failure(
     assert require_run_ready_for_next_call(
         read_run_ledger(ledger), "S1", "C0001", "a" * 64
     ) == 1
+
+
+@pytest.mark.parametrize(
+    "transport_error",
+    [
+        "URLError:timed out",
+        "ConnectionResetError:connection reset by peer",
+        "HTTPError:503",
+    ],
+)
+def test_compact_run_ledger_blocks_same_packet_after_other_transport_failures(
+    tmp_path, transport_error
+):
+    ledger = tmp_path / "run.jsonl"
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "call_captured",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "packet_file_sha256": "a" * 64,
+            "outcome_sha256": "o" * 64,
+            "mechanical_passed": False,
+            "transport_error": transport_error,
+        },
+    )
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "review_failed",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "outcome_sha256": "o" * 64,
+        },
+    )
+
+    with pytest.raises(ContractError, match="must be corrected"):
+        require_run_ready_for_next_call(
+            read_run_ledger(ledger), "S1", "C0001", "a" * 64
+        )
 
 
 def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_prefix(tmp_path):
@@ -1468,6 +1507,39 @@ def test_substantive_review_resolves_decision_required_outcome(tmp_path):
     )
     assert tool.command_review(args) == 0
     assert read_run_ledger(ledger_path)[-1]["state"] == "review_passed"
+
+
+def test_substantive_review_rejects_shell_interpolation_artifact(tmp_path):
+    spec = importlib.util.spec_from_file_location(
+        "m050_extraction_machine_review_shell_artifact", MACHINE_TOOL
+    )
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+    outcome_path = tmp_path / "outcome.json"
+    ledger_path = tmp_path / "run.jsonl"
+    outcome_path.write_text(json.dumps({
+        "source_id": "S1",
+        "chunk_id": "C0001",
+        "mechanical_validation": {"passed": True, "decision_required": False},
+    }), encoding="utf-8")
+    append_run_ledger_event(ledger_path, {
+        "state": "call_captured",
+        "source_id": "S1",
+        "chunk_id": "C0001",
+        "outcome_sha256": hashlib.sha256(outcome_path.read_bytes()).hexdigest(),
+    })
+    args = SimpleNamespace(
+        run_ledger=str(ledger_path),
+        outcome=str(outcome_path),
+        result="failed",
+        reviewer="source reviewer",
+        reason="Remaining /bin/zsh.1830290 cannot cover the ceiling.",
+    )
+
+    with pytest.raises(ContractError, match="shell-interpolation artifact"):
+        tool.command_review(args)
+    assert read_run_ledger(ledger_path)[-1]["state"] == "call_captured"
 
 
 def test_substantive_review_cannot_pass_mechanically_invalid_outcome(tmp_path):

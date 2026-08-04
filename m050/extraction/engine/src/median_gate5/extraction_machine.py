@@ -17,6 +17,14 @@ from .validation import validate_atoms, validate_block_dispositions
 
 
 SUPPORTED_CACHE_TTLS = {"5m", "1h"}
+DNS_TRANSPORT_MARKERS = (
+    "dns",
+    "gaierror",
+    "getaddrinfo failed",
+    "name or service not known",
+    "nodename nor servname provided",
+    "temporary failure in name resolution",
+)
 HEADING_LEVEL = re.compile(r"^ {0,3}(#{1,6})(?:\s+|$)")
 TABLE_DELIMITER_CELL = re.compile(r"^:?-{3,}:?$")
 PURE_STRUCTURAL_LABEL = re.compile(
@@ -1078,7 +1086,15 @@ def require_run_ready_for_next_call(
         if prior_call is None:
             raise ContractError("failed review lacks its captured call")
         if prior_call.get("packet_file_sha256") == packet_file_sha256:
-            if prior_call.get("transport_error"):
+            transport_error = prior_call.get("transport_error")
+            if (
+                isinstance(transport_error, str)
+                and transport_error.startswith("URLError:")
+                and any(
+                    marker in transport_error.lower()
+                    for marker in DNS_TRANSPORT_MARKERS
+                )
+            ):
                 return len(captured)
             raise ContractError("failed packet must be corrected before retry")
         return len(captured)

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T00:04:50-04:00",
-  "execution_state": "AUTHORIAL_GRAMMAR_C0003_V0_15_PAUSED_FOR_SUPERVISOR_STRUCTURAL_WORK",
+  "updated": "2026-08-04T01:08:51-04:00",
+  "execution_state": "AUTHORIAL_GRAMMAR_C0004_FROZEN_READINESS",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -25,18 +25,18 @@
     "id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
     "label": "Authorial Grammar",
     "compile_ordinal": 1,
-    "accepted_chunk_ids": ["C0001", "C0002"],
-    "rejected_chunk_id": "C0003",
+    "accepted_chunk_ids": ["C0001", "C0002", "C0003"],
+    "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/authorial-grammar/M050_Authorial_Grammar_Target_Coverage_C0003_Pilot_Freeze_Proposal_v0_14_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Authorial_Grammar_Target_Coverage_Recalibration_Compatibility_Receipt_v0_9_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_15_MEDIANv0_5_0.json",
-    "latest_outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Outcome_v0_14_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0004_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "latest_outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Outcome_v0_15_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -47,6 +47,11 @@
         "chunk_id": "C0002",
         "outcome": "m050/extraction/runs/authorial-grammar-structural-pilot/M050_Authorial_Grammar_Structural_C0002_Outcome_v0_8_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/authorial-grammar-structural-pilot/M050_Authorial_Grammar_Structural_Pilot_Run_Ledger_v0_8_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Outcome_v0_15_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -54,10 +59,10 @@
       "accepted_c0002": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0002_Target_Coverage_Replay_v0_6_MEDIANv0_5_0.json",
       "rejected_c0003": "m050/extraction/audit/replays/M050_Authorial_Grammar_C0003_Target_Coverage_Replay_v0_6_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0003",
+    "pilot_chunk_id": "C0004",
     "generated_chunk_count": 13,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 19,
+    "required_target_disposition_count": 15,
     "latest_missing_target_suffixes": [],
     "exact_target_disposition_coverage_required": true,
     "dependent_example_bodies_remain_disposition_required": true,
@@ -65,30 +70,30 @@
     "c0001_c0002_replays_passed": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 50,
-    "cache_miss_call_ceiling_usd": "0.125588"
+    "cache_miss_call_ceiling_usd": "0.124172"
   },
   "latest_provider_attempt": {
     "chunk_id": "C0003",
     "http_status": 200,
     "stop_reason": "end_turn",
-    "output_tokens": 3725,
-    "cache_creation_input_tokens": 2104,
+    "output_tokens": 4286,
+    "cache_creation_input_tokens": 2198,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.056686",
+    "exact_cost_usd": "0.062834",
     "mechanical_passed": true,
-    "review_state": "review_failed"
+    "review_state": "review_passed"
   },
   "spend": {
     "active": true,
     "authorized_usd": "2.00",
-    "cumulative_spent_usd": "0.592471",
-    "remaining_usd": "1.407529",
-    "display_usd_rounded_up": "0.60"
+    "cumulative_spent_usd": "0.655305",
+    "remaining_usd": "1.344695",
+    "display_usd_rounded_up": "0.66"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -96,14 +101,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 12:04:50 AM EDT",
-    "status": "Authorial Grammar C0003 v0.15 paused for structural work in the Supervisor task",
+    "updated_human": "August 4, 2026 at 1:08:51 AM EDT",
+    "status": "Authorial Grammar C0004 frozen; derived readiness active",
     "phase": "Atomic extraction — source calibration",
     "source": "Authorial Grammar — 1 / 22",
-    "chunk": "C0003 / 13 — C0001/C0002 accepted; latest C0003 rejected for one omission",
-    "now": "Compile Worker source-work and repository-writing authority are relinquished; no provider call is in flight",
-    "next": "Supervisor structural work may begin from the clean pushed checkpoint; Compile Worker resumes only after a new transfer and cold start"
+    "chunk": "C0004 / 13 — C0001/C0002/C0003 accepted; no rejected chunk",
+    "now": "C0004 is frozen after calibrated source release and all-source offline compatibility; no provider call is in flight",
+    "next": "Run focused C0004 packet, source, spend, cache, response, and prior-review checks, then call sequentially if readiness passes"
   },
-  "next_possible_transition": "Supervisor structural work from the clean pushed checkpoint; later Compile Worker resumption requires an explicit transfer and required cold start.",
+  "next_possible_transition": "Derived readiness for one sequential frozen Authorial Grammar C0004 provider call within the active cumulative budget.",
   "gate_5_complete": false
 }

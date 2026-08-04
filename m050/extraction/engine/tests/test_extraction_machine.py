@@ -866,7 +866,7 @@ def test_replan_reapportions_complete_source_from_calibrated_quantization(tmp_pa
     ]
 
 
-def test_current_rejected_chunk_can_retry_under_standing_source_and_budget():
+def test_accepted_chunk_cannot_retry_and_next_chunk_can_proceed_under_standing_source_and_budget():
     spec = importlib.util.spec_from_file_location("m050_extraction_machine_retry", MACHINE_TOOL)
     assert spec is not None and spec.loader is not None
     tool = importlib.util.module_from_spec(spec)
@@ -876,9 +876,19 @@ def test_current_rejected_chunk_can_retry_under_standing_source_and_budget():
     state["source"]["source_work_authorized"] = True
     state["authority"]["repository_writes_authorized"] = True
     state["authority"]["source_work_authorized"] = True
+    with pytest.raises(ContractError, match="accepted chunk cannot be called again"):
+        require_run_ready_for_next_call(
+            read_run_ledger(CURRENT_LEDGER),
+            packet["source_id"],
+            packet["chunk_id"],
+            hashlib.sha256(CURRENT_PACKET.read_bytes()).hexdigest(),
+        )
+
+    packet = tool.build_packet(ROOT, AUTHGRAM_CONFIG, "C0004")
+    state["calibration"]["cache_miss_call_ceiling_usd"] = packet["cache_miss_call_ceiling_usd"]
     result = tool._preflight(
         packet,
-        hashlib.sha256(CURRENT_PACKET.read_bytes()).hexdigest(),
+        hashlib.sha256(tool.canonical_json_bytes(packet)).hexdigest(),
         state,
         CURRENT_LEDGER,
         ROOT,

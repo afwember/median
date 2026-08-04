@@ -1,35 +1,36 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-AUTHGRAM-TARGET-COVERAGE-C0003-PILOT-FREEZE-014",
-  "state": "pilot_frozen",
-  "machine_state": "pilot_frozen",
-  "correction": "Annotate semantic code or reference inventories source-agnostically and mechanically require atoms or review_required while retaining exact coverage and pure-label handling.",
+  "proposal_id": "M050-AUTHGRAM-C0004-SOURCE-FREEZE-001",
+  "state": "source_chunk_frozen",
+  "machine_state": "source_extraction_active",
+  "correction": "C0003 calibration passed; reuse the source-agnostic semantic-inventory constraint, exact coverage, and pure-label handling for sequential source extraction.",
   "binding": {
     "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
-    "configuration_sha256": "040beea2e3bdab79712892df7dabd702ae643e138fd06a6ea4f98cb9c994ac03",
+    "configuration_sha256": "6d3d598c3799661f3a9e78d622398e6ddd3f5a1143c932d2751522dcc57fd77b",
     "chunk_plan_sha256": "554cdb473577a49e810ba763cdb39168dc7e54b72174af3264c53ccff9c1be4d",
-    "pilot_chunk_id": "C0003",
-    "pilot_packet_sha256": "7a5f5eca2c89d1b96ee8349f845f209ec9ecdf2ef90825b72bb38e668873d192",
-    "pilot_packet_file_sha256": "17b8f96401459ddb1a82ae4b7a883fd42c6f48229b249e064683a1412618e9f8",
+    "pilot_chunk_id": "C0004",
+    "pilot_packet_sha256": "af1733a6e45bc98e959e2e50ae33e0113d1e84989a441bce69057401de14dc20",
+    "pilot_packet_file_sha256": "d34eaf62c72d5ad8cf3e9e02eeb69093eefec1c02a6833cf33f9887e0f09522d",
     "prompt_sha256": "9de7ac2aa81746a7b2b07debfbe046397f1f7f30bdb68283d2da0afdb8c3b2e4",
     "engine_module_sha256": "057894be1779c50d3c6918c243738727a611feb0feb3d418570b9232fe9caee6",
-    "engine_tests_sha256": "9576309347d5427e1b2c1c00aca3045762ed02f50b656f52bdc00d866b077deb",
+    "engine_tests_sha256": "94cecad4e7a4a2ae52fb3d06ead5d6f0e97857b8433434522eed84457abd1d5e",
     "model": "claude-sonnet-5",
     "reasoning_effort": "low",
     "maximum_output_tokens": 6000,
     "cache_ttl": "1h"
   },
   "pilot": {
-    "selection_reason": "C0003 directly tests exact coverage, pure labels, table structure, and two dependent semantic inventories after the new generic disposition constraint.",
-    "required_target_disposition_count": 19,
-    "dependent_semantic_inventory_count": 2,
-    "cache_miss_call_ceiling_usd": "0.125588"
+    "selection_reason": "C0004 is the next sequential chunk after representative C0003 calibration passed under the generic disposition constraint.",
+    "required_target_disposition_count": 15,
+    "dependent_semantic_inventory_count": 0,
+    "cache_miss_call_ceiling_usd": "0.124172"
   },
   "offline_verification": {
     "chunk_plan_changed": false,
     "all_13_chunks_fake_validated": true,
     "accepted_c0001_c0002_replays_passed": true,
     "rejected_c0003_replay_required_disposition_errors": 2,
+    "accepted_c0003_review_passed": true,
     "offline_tests_passed": 50
   }
 }

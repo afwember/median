@@ -2,11 +2,11 @@
   "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
   "receipt_id": "M050-AUTHGRAM-TARGET-COVERAGE-RECALIBRATION-COMPATIBILITY-009",
   "date": "2026-08-03",
-  "status": "OFFLINE_DEPENDENT_INVENTORY_DISPOSITION_VERIFIED_PILOT_REQUIRED",
+  "status": "DEPENDENT_INVENTORY_DISPOSITION_CALIBRATED_SOURCE_EXTRACTION_ACTIVE",
   "source_id": "M050-SRC-AUTHORIAL-GRAMMAR-001",
   "trigger": {
     "pilot_chunk_id": "C0003",
-    "outcome_sha256": "b8f17fd479afe9de19cde70c5b3287411973d533caf39af6299dd818917f073e",
+    "outcome_sha256": "2d241422e179d274d76b7dffe47216889159797d9ccfd9eda5989633d1b38c2e",
     "defect": "B00085 and B00121 are eligible dependent semantic inventories but the provider returned no_substantive_claim for both.",
     "missing_target_suffixes": [],
     "affected_target_suffixes": ["B00085", "B00121"],
@@ -14,10 +14,10 @@
     "basis": "Annotate offline-classified semantic code or reference inventories generically and allow only atoms or review_required; retain the existing pure-label exception."
   },
   "binding": {
-    "configuration_sha256": "040beea2e3bdab79712892df7dabd702ae643e138fd06a6ea4f98cb9c994ac03",
+    "configuration_sha256": "6d3d598c3799661f3a9e78d622398e6ddd3f5a1143c932d2751522dcc57fd77b",
     "prompt_sha256": "9de7ac2aa81746a7b2b07debfbe046397f1f7f30bdb68283d2da0afdb8c3b2e4",
     "engine_module_sha256": "057894be1779c50d3c6918c243738727a611feb0feb3d418570b9232fe9caee6",
-    "engine_tests_sha256": "9576309347d5427e1b2c1c00aca3045762ed02f50b656f52bdc00d866b077deb"
+    "engine_tests_sha256": "94cecad4e7a4a2ae52fb3d06ead5d6f0e97857b8433434522eed84457abd1d5e"
   },
   "policy": {
     "semantic_inventory_allowed_dispositions": ["atoms", "review_required"],
@@ -30,6 +30,12 @@
     "accepted_c0001": {"sha256": "c1446aa3b2f355d4462508158232418379993a3543d2690e061fa5d90d0672e6", "passed": true},
     "accepted_c0002": {"sha256": "c4909d9f2e0b476855d57b8a65858b89b6679080dc0769d5750356796fcfa37e", "passed": true},
     "rejected_c0003": {"sha256": "f5dee6c1ee3d92e352c0de0aa6e3b509dc0365d140db0b562e1f4d35ea22f2c1", "passed": false, "coverage_errors": 0, "required_disposition_errors": 2}
+  },
+  "calibration_result": {
+    "chunk_id": "C0003",
+    "outcome_sha256": "2d241422e179d274d76b7dffe47216889159797d9ccfd9eda5989633d1b38c2e",
+    "mechanical_passed": true,
+    "substantive_review_passed": true
   },
   "offline_verification": {
     "chunk_plan_changed": false,

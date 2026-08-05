@@ -1,16 +1,14 @@
 # MEDIAN source-bounded atomic extraction
 
-Allowed source: `M050-SRC-GUEST-001` only
+Allowed source: `M050-SRC-GUEST-001`
 Allowed streams: `evidence_game_semantic`
 
-Emit one grounded disposition per target block ID. Its block-ID set must exactly
-equal `target_blocks`: no missing or repeated IDs. Context blocks receive none;
-excluded blocks are omitted offline. Use only `SOURCE_BLOCKS`; import no other
-source, prior atom, or external knowledge.
+The disposition block-ID set must exactly equal `target_blocks`: no missing or repeated IDs.
+Context blocks receive none;
+excluded blocks are omitted. Use only `SOURCE_BLOCKS`; import nothing else.
 
-Use supplied source and request IDs exactly. Never emit invented IDs, metadata,
-samples, or dummy values such as `x`. If a target cannot be resolved, emit its
-complete `review_required` disposition; never abbreviate the target set.
+Use supplied source/request IDs; invent no IDs or metadata. Never emit samples, or dummy values such as `x`.
+For unresolved targets, emit `review_required` dispositions; never abbreviate the target set.
 
 ## Approved content/provenance boundary
 
@@ -76,14 +74,16 @@ completed offline and replay gates, sequential review, and sufficient budget.
 
 ## Extraction contract
 
-Split independent claims into separate atoms and keep dependent qualifications
-with the claims they qualify. Every `exact_source_text` must be a byte-for-byte
-contiguous substring of its target block after JSON decoding. Exact spans retain
-markup and escaping. If markup interrupts prose, include it or split the atom.
+Separate independent claims; keep dependent qualifications with their claims.
+Every `exact_source_text` must be a byte-for-byte contiguous target-block
+substring after JSON decoding. Exact spans retain
+markup and escaping and must occur exactly once in the block. If claim text is
+repeated or nested inside another term, expand the span with adjacent source
+text until it is unique. If markup interrupts prose, include it or split the atom.
 
-Obey target constraints exactly. `required_disposition` fixes `kind`; when it
-is `no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
-kind, and `minimum_atoms` is a floor. Pure structural headings, labels, table headers, delimiters, and
+Obey target constraints. `required_disposition` fixes `kind`; for
+`no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
+kind; `minimum_atoms` is a floor. Pure structural headings, labels, table headers, delimiters, and
 document-control metadata carry no substantive atom; never turn a label into a tautological
 claim that its section discusses the announced topic. Structural context never
 excuses a dependent substantive target from receiving its own disposition.
@@ -93,8 +93,8 @@ independent properties, functions, effects, examples, interpretations, stages,
 actions, and results as separate atoms. Combine cells only when one qualifies
 another or the relationship is indivisible. Preserve both endpoints of
 categorical mappings.
-Independently headed descriptive columns and semicolon-separated effects require
-separate atoms.
+Ground each headed cell under its header; never infer a relationship between
+adjacent cells. Semicolon-separated effects require separate atoms.
 Each independent table-cell assertion requires exact source text from its own
 cell; never ground a ruling or consequence only in another cell.
 
@@ -105,10 +105,9 @@ definitions, owners, or authorities.
 
 ## Output check
 
-Return JSON only under the bound response schema. The disposition count must
-equal `required_target_disposition_count`. `atoms` must be nonempty only when
-kind is `atoms`; it must be
-empty otherwise. Every atom must use supplied source and target block IDs, an
+Return schema-bound JSON only after verifying its disposition count equals
+`required_target_disposition_count`. For kind `atoms`, `atoms` must be nonempty;
+for every other kind, `atoms` must be empty. Every atom must use supplied source and target block IDs, an
 allowed stream, exact source text, a concise normalized claim, and a
 source-faithful claim kind. Derive each proposal ID from its target block ID plus
 a local atom ordinal so proposal IDs remain unique across the source.

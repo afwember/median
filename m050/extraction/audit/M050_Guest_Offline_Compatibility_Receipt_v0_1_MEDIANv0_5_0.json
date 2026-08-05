@@ -5,10 +5,10 @@
   "status": "GUEST_OFFLINE_PREPARATION_VERIFIED_SEQUENTIAL_RUN_READY",
   "source_id": "M050-SRC-GUEST-001",
   "binding": {
-    "configuration_sha256": "3a9436808a3c8a7af0bf3c9ba248faf2219c46491d7714f7502600fb1ec8f90a",
-    "prompt_sha256": "027a7077237334310d4c35c1c9bd5cdc68abe24aab8159053b1779f6f3086617",
-    "engine_module_sha256": "8e25f66d4e44a86662ff8953f40cb5e0ea57efed94f55772cb137895c6659209",
-    "engine_tests_sha256": "3ee371ff49683240dc94673d85da0d522d65cd21f79f744d3a61583a3967167e",
+    "configuration_sha256": "ed7e072bd3042b83eb709079bdde9c77f8dcf85d720f5dfb20b4df739d859e51",
+    "prompt_sha256": "acdc79d2deeb0ae9eb7924790a246d177afc38bf35e0237b20fd3c594defe306",
+    "engine_module_sha256": "40201e0e6a74c313f735e87dcf0db3ac82729319289c694ae140d3f5099c1c3a",
+    "engine_tests_sha256": "cce6babfedd08bd14c81a9b4ecb035042cac5bb0807309e52dec4f851afd70a6",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
   },
@@ -43,5 +43,5 @@
     "all_source_payload_replays_passed": 148
   },
   "replays": {},
-  "note": "The validated source-agnostic 360-second read timeout remains bound. C0017 v0.3 responded but exhausted the output cap under high reasoning; v0.4 lowers reasoning to medium within the existing configuration after tests and all-source replay."
+  "note": "The validated source-agnostic 360-second read timeout remains bound. The generic prompt requires unique spans, cell-by-header grounding, no inferred adjacency relationship, full disposition-count verification, and an explicit nonempty-atoms biconditional. All 71 tests, 49 Guest fake validations, and 148 all-source packet replays pass."
 }

@@ -299,16 +299,21 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     )
 
     assert boundary in prompt
-    assert "block-ID set must exactly\nequal `target_blocks`" in prompt
+    assert "block-ID set must exactly equal `target_blocks`" in prompt
     assert "no missing or repeated IDs" in prompt
     assert "byte-for-byte" in prompt
+    assert "must occur exactly once in the block" in prompt
+    assert "repeated or nested inside another term" in prompt
     assert "If markup interrupts prose, include it or split the atom" in prompt
     assert "required_disposition" in prompt
-    assert "count must\nequal `required_target_disposition_count`" in prompt
+    assert "only after verifying its disposition count equals\n`required_target_disposition_count`" in prompt
     assert "`no_substantive_claim`, emit empty `atoms`" in prompt
+    assert "For kind `atoms`, `atoms` must be nonempty" in prompt
+    assert "for every other kind, `atoms` must be empty" in prompt
     assert "every nonempty semantic cell" in prompt
     assert "stages,\nactions, and results as separate atoms" in prompt
-    assert "semicolon-separated effects require\nseparate atoms" in prompt
+    assert "never infer a relationship between\nadjacent cells" in prompt
+    assert "Semicolon-separated effects require separate atoms" in prompt
     assert "document-control metadata carry no substantive atom" in prompt
     assert "target block ID plus\na local atom ordinal" in prompt
     assert "samples, or dummy values such as `x`" in prompt

@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-GUEST-001",
     "source_sha256": "ecedad99eb425c573149c9a1e33bcce0ee89422f76a9e1b25e4f7387af14f15f",
-    "configuration_sha256": "3a9436808a3c8a7af0bf3c9ba248faf2219c46491d7714f7502600fb1ec8f90a",
+    "configuration_sha256": "ed7e072bd3042b83eb709079bdde9c77f8dcf85d720f5dfb20b4df739d859e51",
     "identity_card_sha256": "a2e2dbcaf2ad78cf5a578ee5ccaa3e2755d0a39058415e8e0c09041fed4d6337",
     "block_manifest_sha256": "30fa23174b486d9bcf516e8b648424ea01bd545334738458bef5ed9c8be04c07",
     "disposition_ledger_sha256": "17235fad0c948ac0ee7c8426cf62fc02f8219921c61fe8bcc7ec4b91b9c91bbf",
     "chunk_plan_sha256": "b967e7ce70c391089dad937099ae17c1bb7eec49866965f8e47b3b8c8cca6abc",
-    "pilot_chunk_id": "C0018",
-    "pilot_packet_sha256": "4e3636233e336ff7e1afbf67c86c87a7a3ee91551c57e05510f27275c2399079",
-    "pilot_packet_file_sha256": "3f2d351bbddd0ebb93cca14fe4d32cabd85abca63013c9880eca817b456cdf59",
-    "prompt_sha256": "027a7077237334310d4c35c1c9bd5cdc68abe24aab8159053b1779f6f3086617",
+    "pilot_chunk_id": "C0030",
+    "pilot_packet_sha256": "2e46c2c97fc50c5372b1648d628a48222bee2bb979fc6817eba5041b97402cd0",
+    "pilot_packet_file_sha256": "2d988b3bd8826a738ff4dbdafe1166eb906ef0fcc955089c50af813a5c7c5f52",
+    "prompt_sha256": "acdc79d2deeb0ae9eb7924790a246d177afc38bf35e0237b20fd3c594defe306",
     "response_schema_sha256": "3351261fd40c671068d00856dea537735b0b98325854fca8dd40b016d65ad103",
-    "engine_module_sha256": "8e25f66d4e44a86662ff8953f40cb5e0ea57efed94f55772cb137895c6659209",
-    "engine_tests_sha256": "3ee371ff49683240dc94673d85da0d522d65cd21f79f744d3a61583a3967167e",
+    "engine_module_sha256": "40201e0e6a74c313f735e87dcf0db3ac82729319289c694ae140d3f5099c1c3a",
+    "engine_tests_sha256": "cce6babfedd08bd14c81a9b4ecb035042cac5bb0807309e52dec4f851afd70a6",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
     "allowed_streams": [
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0017 v0.4 passed mechanical and substantive review; C0018 is frozen as the next outstanding chunk but awaits sufficient spend.",
-    "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.23994"
+    "selection_reason": "C0029 v0.1 passed mechanical and substantive review; C0030 is the next outstanding chunk in retained source order and is frozen at the spend halt.",
+    "required_target_disposition_count": 15,
+    "cache_miss_call_ceiling_usd": "0.228072"
   },
   "exclusion_policy": {
     "media_occurrences": 0,

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T22:20:13-04:00",
-  "execution_state": "GUEST_C0018_SPEND_BOUNDARY_HALT",
+  "updated": "2026-08-04T23:25:37-04:00",
+  "execution_state": "GUEST_C0030_V0_1_FROZEN_SPEND_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -47,7 +47,19 @@
       "C0014",
       "C0015",
       "C0016",
-      "C0017"
+      "C0017",
+      "C0018",
+      "C0019",
+      "C0020",
+      "C0021",
+      "C0022",
+      "C0023",
+      "C0024",
+      "C0025",
+      "C0026",
+      "C0027",
+      "C0028",
+      "C0029"
     ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
@@ -58,7 +70,7 @@
     "freeze": "m050/extraction/calibration/guest/M050_Guest_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Guest_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/guest-pilot/M050_Guest_C0018_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/guest-pilot/M050_Guest_C0030_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -144,13 +156,73 @@
         "chunk_id": "C0017",
         "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Outcome_v0_4_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0018",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0019",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0020",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0021",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0022",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0022_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0023",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0023_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0024",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0024_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0025",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0026",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0026_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0027",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0027_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0028",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0028_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0029",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0029_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {},
-    "pilot_chunk_id": "C0018",
+    "pilot_chunk_id": "C0030",
     "generated_chunk_count": 49,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
+    "required_target_disposition_count": 15,
     "source_blocks": 1331,
     "eligible_target_blocks": 820,
     "context_only_blocks": 92,
@@ -159,15 +231,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 71,
-    "cache_miss_call_ceiling_usd": "0.23994",
-    "latest_outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Outcome_v0_4_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.228072",
+    "latest_outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0029_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "12.8428106",
-    "cumulative_spent_usd": "12.6260956",
-    "remaining_usd": "0.2167150",
-    "display_usd_rounded_up": "12.63"
+    "authorized_usd": "14.6260956",
+    "cumulative_spent_usd": "14.4357276",
+    "remaining_usd": "0.1903680",
+    "display_usd_rounded_up": "14.44"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -179,25 +251,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 10:20:13 PM EDT",
-    "status": "Guest Sparkup complete; halted at C0018 spend boundary",
-    "phase": "Atomic extraction — Guest spend halt",
+    "updated_human": "August 4, 2026 at 11:25:37 PM EDT",
+    "status": "Guest C0029 accepted; C0030 frozen at spend halt",
+    "phase": "Atomic extraction — Guest sequential extraction",
     "source": "Guest — ordinal 10; 9 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0017; rejected none; C0018 / 49 frozen and untransmitted; 32 remain",
-    "now": "Guest source-work and repository-write authorities are restored; C0018 ceiling $0.23994 exceeds the $0.2167150 remaining balance",
-    "next": "Halt for spend replenishment before C0018 provider transmission"
+    "chunk": "Accepted C0001-C0029; rejected none; C0030 / 49 frozen and untransmitted; 20 chunks remain",
+    "now": "C0029 v0.1 passed mechanical and substantive review at $0.168114 exact cost; $0.1903680 remains, below C0030's $0.228072 ceiling",
+    "next": "Halt for cumulative spend replenishment before any C0030 provider transmission"
   },
-  "next_possible_transition": "After Asa replenishes spend sufficiently, frozen C0018 may proceed through focused preflight and provider transmission.",
+  "next_possible_transition": "After Asa replenishes the cumulative spend envelope sufficiently, frozen Guest C0030 v0.1 may proceed through focused preflight and provider transmission.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "stop_reason": "end_turn",
-    "chunk_id": "C0017",
-    "output_tokens": 6328,
-    "cache_creation_input_tokens": 3986,
+    "chunk_id": "C0029",
+    "output_tokens": 14607,
+    "cache_creation_input_tokens": 3729,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.088406",
+    "exact_cost_usd": "0.168114",
     "mechanical_passed": true,
     "review_state": "review_passed"
   }

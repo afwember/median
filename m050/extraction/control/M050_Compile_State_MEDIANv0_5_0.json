@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T19:11:07-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0018_V0_2_CORRECTED_READY_ACTIVE",
+  "updated": "2026-08-05T19:16:48-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0019_PROVIDER_REFUSAL_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -50,9 +50,10 @@
       "C0015",
       "C0016",
       "C0017",
+      "C0018",
       "C0025"
     ],
-    "rejected_chunk_id": "C0018",
+    "rejected_chunk_id": "C0019",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -61,7 +62,7 @@
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0019_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -149,6 +150,11 @@
         "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       },
       {
+        "chunk_id": "C0018",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
         "chunk_id": "C0025",
         "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
@@ -158,10 +164,10 @@
       "c0025_disposition_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "accepted_evidence_reasoning_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Accepted_Evidence_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0018",
+    "pilot_chunk_id": "C0019",
     "generated_chunk_count": 33,
     "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 9,
+    "required_target_disposition_count": 10,
     "source_blocks": 522,
     "eligible_target_blocks": 294,
     "context_only_blocks": 37,
@@ -170,15 +176,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 80,
-    "cache_miss_call_ceiling_usd": "0.177392",
-    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Outcome_v0_1_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.180868",
+    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0019_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "21.5731716",
-    "cumulative_spent_usd": "20.9657954",
-    "remaining_usd": "0.6073762",
-    "display_usd_rounded_up": "20.97"
+    "cumulative_spent_usd": "21.0505824",
+    "remaining_usd": "0.5225892",
+    "display_usd_rounded_up": "21.06"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -190,26 +196,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 7:11:07 PM EDT",
-    "status": "Discovery Sparkup complete with corrected C0018 v0.2 ready",
+    "updated_human": "August 5, 2026 at 7:16:48 PM EDT",
+    "status": "Discovery halted on C0019 provider refusal",
     "phase": "Atomic extraction — Discovery, Time, Movement, and Civic Progression sequential extraction",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0017 and C0025; rejected C0018 v0.1; corrected C0018 v0.2 frozen",
-    "now": "Repository-write and Discovery-only source-work authorities are active; the corrected C0018 v0.2 packet remains frozen; exact cumulative spend is $20.9657954.",
-    "next": "Run focused preflight, then transmit and review corrected C0018 v0.2 under the active source grant and budget"
+    "chunk": "Accepted C0001-C0018 and C0025; C0019 v0.1 rejected",
+    "now": "C0019 v0.1 returned a provider refusal after a partial malformed structured response; exact cumulative spend is $21.0505824.",
+    "next": "Human review of the unusual C0019 provider refusal before any retry"
   },
-  "next_possible_transition": "After focused preflight, transmit and review corrected Discovery C0018 v0.2. No other source or later phase is authorized.",
+  "next_possible_transition": "Human direction on Discovery C0019 refusal; no retry, other source, or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0018",
-    "stop_reason": "end_turn",
-    "output_tokens": 5513,
+    "chunk_id": "C0019",
+    "stop_reason": null,
+    "output_tokens": 2310,
     "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 2989,
+    "cache_read_input_tokens": 3055,
     "cache_effective": true,
-    "exact_cost_usd": "0.0624358",
-    "mechanical_passed": true,
+    "exact_cost_usd": "0.031159",
+    "mechanical_passed": false,
     "review_state": "review_failed"
   }
 }

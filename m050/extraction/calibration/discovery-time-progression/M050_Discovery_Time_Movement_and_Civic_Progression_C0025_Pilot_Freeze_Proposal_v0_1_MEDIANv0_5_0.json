@@ -11,9 +11,9 @@
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
     "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
-    "pilot_chunk_id": "C0018",
-    "pilot_packet_sha256": "c202dd21e50077b5a94ec56f947b2972bf8b8542b7613644959b3994aa1b5a6e",
-    "pilot_packet_file_sha256": "ba36064f00456d1909095ea0e6801e8e46e0ea90108af162505b0d43fac65dd2",
+    "pilot_chunk_id": "C0019",
+    "pilot_packet_sha256": "8d21a4b30378d6ea246ebcd69844f09b2002c683ddcf149500fabec24905f478",
+    "pilot_packet_file_sha256": "03e0ac7bf0174f7eea9f0174e1865f64fd41affdbe5174f4fa93351cedda574a",
     "prompt_sha256": "cf68cf4a3cd68d6ca627a9509139174e67c2049000cd622848bbdb81622a462a",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
     "engine_module_sha256": "0f3e61a6a73f788490a74f27501abf00202bd1e907c501298cb98f0d259a62dd",
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0017 v0.1 passed mechanical and substantive review; C0018 v0.1 was substantively rejected for subject-only grounding of a coordinated shared predicate, and C0018 v0.2 is the corrected next sequential packet.",
-    "required_target_disposition_count": 9,
-    "cache_miss_call_ceiling_usd": "0.177392"
+    "selection_reason": "C0018 v0.2 passed mechanical and substantive review with the coordinated subject list and shared predicate intact; C0019 is the next outstanding source-derived chunk in sequential order.",
+    "required_target_disposition_count": 10,
+    "cache_miss_call_ceiling_usd": "0.180868"
   },
   "exclusion_policy": {
     "media_occurrences": 0,

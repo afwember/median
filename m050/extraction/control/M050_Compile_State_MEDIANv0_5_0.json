@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T13:21:17-04:00",
-  "execution_state": "PERSONAL_ITEMS_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
+  "updated": "2026-08-05T13:57:34-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -29,148 +29,19 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-PERSONAL-ITEMS-001",
-    "label": "Personal Items",
-    "compile_ordinal": 11,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013",
-      "C0014",
-      "C0015",
-      "C0016",
-      "C0017"
-    ],
+    "id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+    "label": "Discovery, Time, Movement, and Civic Progression",
+    "compile_ordinal": 12,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_Personal_Items_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/personal-items/M050_Personal_Items_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Personal_Items_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0017_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0004_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0006_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0008_Outcome_v0_7_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0009_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0011_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0014",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0015",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_4_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0016",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0017",
-        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/personal-items/M050_Personal_Items_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "1ffb84ee034605ee874c2d98d843180f7cf4dca0596456de63ebc8f3ae141131",
-      "report": "m050/extraction/accepted/personal-items/M050_Personal_Items_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "ca22a00df48af6f9608079e018c82b07f7a8aa419870b44c201aaa5cf0292d61"
-    },
-    "compatibility_replays": {
-      "c0001_v0_1_html_slash": "m050/extraction/audit/M050_Personal_Items_C0001_HTML_Slash_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
-    },
-    "pilot_chunk_id": "C0017",
-    "generated_chunk_count": 17,
-    "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 1,
-    "source_blocks": 297,
-    "eligible_target_blocks": 158,
-    "context_only_blocks": 31,
-    "excluded_blocks": 108,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 80,
-    "cache_miss_call_ceiling_usd": "0.198488",
-    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0017_Outcome_v0_1_MEDIANv0_5_0.json"
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Discovery_Time_Movement_and_Civic_Progression_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "286a34e8b8cd5186ec55833bfabbe788b6028b8ee00e122f23dba1bdd41b2d3e",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
   "spend": {
     "active": true,
@@ -180,8 +51,8 @@
     "display_usd_rounded_up": "19.68"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -189,26 +60,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 1:21:17 PM EDT",
-    "status": "Personal Items source-bounded candidate accepted; formal Stopdown",
-    "phase": "Atomic extraction — halted at Personal Items completion",
-    "source": "Personal Items — ordinal 11; 11 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0017; rejected/frozen none; whole-source candidate accepted",
-    "now": "All 158 target dispositions and 288 atoms passed exact coverage, ledger-bound review, media exclusion, and candidate/report hash binding; $1.8961740 remains",
-    "next": "Await Asa's explicit source-work grant for Discovery, Time, Movement, and Civic Progression; no other source or later phase is authorized"
+    "updated_human": "August 5, 2026 at 1:57:34 PM EDT",
+    "status": "Discovery, Time, Movement, and Civic Progression identity card proposed; author approval required before provider transmission",
+    "phase": "Atomic extraction — Discovery, Time, Movement, and Civic Progression identity approval halt",
+    "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
+    "chunk": "No Discovery, Time, Movement, and Civic Progression chunk selected; accepted/rejected boundary is empty",
+    "now": "Frozen source identity, provenance, qualification boundary, and zero-embedded-media disposition are proposed; no provider call or spend occurred",
+    "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
-  "next_possible_transition": "Await Asa's explicit source-work grant for Discovery, Time, Movement, and Civic Progression; spend alone cannot select or advance a source.",
-  "gate_5_complete": false,
-  "latest_provider_attempt": {
-    "http_status": 200,
-    "stop_reason": "end_turn",
-    "chunk_id": "C0017",
-    "output_tokens": 306,
-    "cache_creation_input_tokens": 2936,
-    "cache_read_input_tokens": 0,
-    "cache_effective": true,
-    "exact_cost_usd": "0.016952",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  }
+  "next_possible_transition": "With Asa's identity-card approval, perform Discovery, Time, Movement, and Civic Progression offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
+  "gate_5_complete": false
 }

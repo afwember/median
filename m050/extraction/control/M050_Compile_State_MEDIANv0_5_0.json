@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T09:51:06-04:00",
-  "execution_state": "PERSONAL_ITEMS_C0015_PARENT_HEADING_CORRECTION_FORMAL_STOPDOWN",
+  "updated": "2026-08-05T10:52:57-04:00",
+  "execution_state": "PERSONAL_ITEMS_C0015_V0_3_HTTP_529_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -145,7 +145,7 @@
     "offline_gate_passed": true,
     "offline_tests_passed": 79,
     "cache_miss_call_ceiling_usd": "0.226708",
-    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_2_MEDIANv0_5_0.json"
+    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_3_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
@@ -164,26 +164,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 9:51:06 AM EDT",
-    "status": "Personal Items formally stopped after C0015 semantic-parent correction",
+    "updated_human": "August 5, 2026 at 10:52:57 AM EDT",
+    "status": "Personal Items formally stopped after C0015 v0.3 HTTP 529",
     "phase": "Atomic extraction — Personal Items temporary Supervisor handoff",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0014; rejected C0015 v0.1-v0.2; Personal Items incomplete",
-    "now": "The existing parent_heading binding is now exposed source-agnostically; C0015 v0.1-v0.2 remain preserved and rejected, and no source decision was made",
-    "next": "Await manual Sparkup for Worker review of preserved C0015 evidence; both repository-write and source-work authority are false"
+    "chunk": "Accepted C0001-C0014; rejected C0015 v0.1-v0.2; C0015 v0.3 transport-failed; Personal Items incomplete",
+    "now": "Anthropic returned HTTP 529 overloaded before any model response, usage telemetry, or charge; C0015 v0.3 cost $0 and exact cumulative spend remains $19.4500076",
+    "next": "Await Asa's explicit transport-retry decision; both repository-write and source-work authority are false"
   },
-  "next_possible_transition": "Manual Sparkup may authorize the Worker to review preserved C0015 evidence under the corrected parent-heading boundary before deciding whether any provider retry is needed.",
+  "next_possible_transition": "Human review of the C0015 v0.3 HTTP 529 transport failure before any retry or repository work resumes.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": 200,
-    "stop_reason": "end_turn",
+    "http_status": 529,
+    "stop_reason": null,
     "chunk_id": "C0015",
-    "output_tokens": 10120,
-    "cache_creation_input_tokens": 3663,
-    "cache_read_input_tokens": 0,
-    "cache_effective": true,
-    "exact_cost_usd": "0.123162",
-    "mechanical_passed": true,
+    "output_tokens": null,
+    "cache_creation_input_tokens": null,
+    "cache_read_input_tokens": null,
+    "cache_effective": false,
+    "exact_cost_usd": null,
+    "mechanical_passed": null,
     "review_state": "review_failed"
   }
 }

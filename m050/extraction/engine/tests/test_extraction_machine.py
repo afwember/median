@@ -1236,7 +1236,16 @@ def test_compact_run_ledger_allows_validated_replacement_after_failure(tmp_path)
         )
 
 
-def test_compact_run_ledger_allows_same_packet_after_reviewed_dns_failure(tmp_path):
+@pytest.mark.parametrize(
+    "transport_error",
+    [
+        "URLError:workspace DNS unavailable",
+        "HTTPError:529",
+    ],
+)
+def test_compact_run_ledger_allows_same_packet_after_reviewed_transient_failure(
+    tmp_path, transport_error
+):
     ledger = tmp_path / "run.jsonl"
     append_run_ledger_event(
         ledger,
@@ -1247,7 +1256,7 @@ def test_compact_run_ledger_allows_same_packet_after_reviewed_dns_failure(tmp_pa
             "packet_file_sha256": "a" * 64,
             "outcome_sha256": "o" * 64,
             "mechanical_passed": False,
-            "transport_error": "URLError:workspace DNS unavailable",
+            "transport_error": transport_error,
         },
     )
     append_run_ledger_event(

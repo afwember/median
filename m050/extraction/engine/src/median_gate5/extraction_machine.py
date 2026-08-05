@@ -25,6 +25,7 @@ DNS_TRANSPORT_MARKERS = (
     "nodename nor servname provided",
     "temporary failure in name resolution",
 )
+RETRYABLE_HTTP_TRANSPORT_ERRORS = {"HTTPError:529"}
 HEADING_LEVEL = re.compile(r"^ {0,3}(#{1,6})(?:\s+|$)")
 TABLE_DELIMITER_CELL = re.compile(r"^:?-{3,}:?$")
 PURE_STRUCTURAL_LABEL = re.compile(
@@ -1109,13 +1110,17 @@ def require_run_ready_for_next_call(
             raise ContractError("failed review lacks its captured call")
         if prior_call.get("packet_file_sha256") == packet_file_sha256:
             transport_error = prior_call.get("transport_error")
-            if (
+            retryable_dns_failure = (
                 isinstance(transport_error, str)
                 and transport_error.startswith("URLError:")
                 and any(
                     marker in transport_error.lower()
                     for marker in DNS_TRANSPORT_MARKERS
                 )
+            )
+            if (
+                retryable_dns_failure
+                or transport_error in RETRYABLE_HTTP_TRANSPORT_ERRORS
             ):
                 return len(captured)
             raise ContractError("failed packet must be corrected before retry")

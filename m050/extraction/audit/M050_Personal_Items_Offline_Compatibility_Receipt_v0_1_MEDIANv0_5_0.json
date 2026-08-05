@@ -7,8 +7,8 @@
   "binding": {
     "configuration_sha256": "84c0b445dd012efafb7594e08abf8d8732a9de93c6d21531265424cc88afdde1",
     "prompt_sha256": "d7d766d5048e49546c626e197311ad40cd6d592b68fa8d72e0a5feff315c0506",
-    "engine_module_sha256": "e97ce1ee6d6a06013baacf303295329590f08f810eec87f7d55c420922abebd5",
-    "engine_tests_sha256": "80290c0fbc1054b653437f493e7ffc4f6baa43e0bba609385baaadeddb1d8869"
+    "engine_module_sha256": "f27fa4fe542b1f74d572182ccb55df3271a7a55138983ad7106c13c22d2a9f46",
+    "engine_tests_sha256": "c3a2084606d653be9fdcc59052ea42583dddc6b1943474fddd8aacfa7d0ed941"
   },
   "source_review": {
     "source_blocks": 297,
@@ -37,7 +37,7 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 79,
+    "offline_tests_passed": 80,
     "all_source_packet_replays_passed": 165,
     "active_source_guard_passed": true
   },
@@ -47,5 +47,5 @@
       "result": "mechanical_pass"
     }
   },
-  "note": "The established quantization machinery reduced density from 20 to 10 after C0005 v0.1 output-limit rejection. C0001 v0.1 exposed a source-agnostic HTML-tag slash false positive, corrected with exact replay. C0004 v0.1-v0.2 returned incomplete placeholders at low and medium reasoning; a 5-target replan correctly refused to split an indivisible group, so high reasoning was retained. C0006 v0.1 exposed incomplete target enumeration. C0008 v0.1 emitted literal placeholder IDs, so the no-dummy instruction explicitly prohibits placeholders. C0008 v0.3-v0.6 exposed ambiguity in shared-qualifier grounding. Asa ruled that exact spans uniquely ground core assertions while normalized claims may incorporate explicit, unambiguous same-block shared qualifiers. C0011 v0.1 corrupted a smart-quoted example and v0.2 emitted literal Unicode-escape spellings. The active prompt exactly matches the generic builder and requires actual target-block characters after JSON decoding. C0015 v0.1-v0.2 exposed the omitted semantic-parent binding: existing parent_heading metadata now travels with each body target, may explicitly qualify that target, and never becomes an atom or exact-text source. All 165 packets rebuild, the exact compatibility replay passes, and all 79 guard-selected tests pass."
+  "note": "The established quantization machinery reduced density from 20 to 10 after C0005 v0.1 output-limit rejection. C0001 v0.1 exposed a source-agnostic HTML-tag slash false positive, corrected with exact replay. C0004 v0.1-v0.2 returned incomplete placeholders at low and medium reasoning; a 5-target replan correctly refused to split an indivisible group, so high reasoning was retained. C0006 v0.1 exposed incomplete target enumeration. C0008 v0.1 emitted literal placeholder IDs, so the no-dummy instruction explicitly prohibits placeholders. C0008 v0.3-v0.6 exposed ambiguity in shared-qualifier grounding. Asa ruled that exact spans uniquely ground core assertions while normalized claims may incorporate explicit, unambiguous same-block shared qualifiers. C0011 v0.1 corrupted a smart-quoted example and v0.2 emitted literal Unicode-escape spellings. The active prompt exactly matches the generic builder and requires actual target-block characters after JSON decoding. C0015 v0.1-v0.2 exposed the omitted semantic-parent binding: existing parent_heading metadata now travels with each body target, may explicitly qualify that target, and never becomes an atom or exact-text source. C0015 v0.3 then received HTTP 529 before model output; the established readiness gate now permits the unchanged packet only after manual Sparkup restores normal source and budget authority. All 165 packets rebuild, the exact compatibility replay passes, and all 80 guard-selected tests pass."
 }

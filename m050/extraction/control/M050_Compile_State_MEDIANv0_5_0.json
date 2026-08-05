@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T10:52:57-04:00",
-  "execution_state": "PERSONAL_ITEMS_C0015_V0_3_HTTP_529_FORMAL_STOPDOWN",
+  "updated": "2026-08-05T11:00:25-04:00",
+  "execution_state": "PERSONAL_ITEMS_C0015_V0_3_TRANSIENT_HTTP_529_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -143,7 +143,7 @@
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 79,
+    "offline_tests_passed": 80,
     "cache_miss_call_ceiling_usd": "0.226708",
     "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_3_MEDIANv0_5_0.json"
   },
@@ -164,15 +164,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 10:52:57 AM EDT",
+    "updated_human": "August 5, 2026 at 11:00:25 AM EDT",
     "status": "Personal Items formally stopped after C0015 v0.3 HTTP 529",
     "phase": "Atomic extraction — Personal Items temporary Supervisor handoff",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0014; rejected C0015 v0.1-v0.2; C0015 v0.3 transport-failed; Personal Items incomplete",
-    "now": "Anthropic returned HTTP 529 overloaded before any model response, usage telemetry, or charge; C0015 v0.3 cost $0 and exact cumulative spend remains $19.4500076",
-    "next": "Await Asa's explicit transport-retry decision; both repository-write and source-work authority are false"
+    "now": "Anthropic returned HTTP 529 overloaded before any model response or usage telemetry; no charge was reported, and canonical spend remains unchanged at $19.4500076",
+    "next": "Await manual Sparkup; after authority is restored, the unchanged frozen C0015 v0.3 packet may be retried under normal budget and preflight controls"
   },
-  "next_possible_transition": "Human review of the C0015 v0.3 HTTP 529 transport failure before any retry or repository work resumes.",
+  "next_possible_transition": "Manual Sparkup may restore bounded Personal Items authority and permit retry of the unchanged frozen C0015 v0.3 packet after normal preflight.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 529,

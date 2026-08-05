@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T18:11:06-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0018_REJECTED_GENERIC_PROMPT_COMPATIBILITY_HALT",
+  "updated": "2026-08-05T18:24:45-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_MID_SOURCE_FORMAL_STOPDOWN_AT_C0018_REJECTION",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -54,7 +54,7 @@
     ],
     "rejected_chunk_id": "C0018",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -181,8 +181,8 @@
     "display_usd_rounded_up": "20.97"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -190,15 +190,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 6:11:06 PM EDT",
-    "status": "Discovery C0018 rejected; halted for generic-prompt compatibility decision",
-    "phase": "Atomic extraction — Discovery, Time, Movement, and Civic Progression sequential extraction",
+    "updated_human": "August 5, 2026 at 6:24:45 PM EDT",
+    "status": "Discovery mid-source formal Stopdown at C0018 rejection boundary",
+    "phase": "Atomic extraction — halted during Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0017 and C0025; rejected C0018 v0.1",
-    "now": "C0018 subject-only spans fail to ground their coordinated shared predicate; cumulative spend is $20.9657954.",
-    "next": "Human decision is required because the smallest generic-prompt correction conflicts with guarded accepted-prompt compatibility"
+    "now": "Both authorities are revoked; C0018 v0.1 remains rejected for subject-only grounding of a coordinated shared predicate; exact cumulative spend is $20.9657954.",
+    "next": "Await Asa's explicit Sparkup and resolution of the generic-prompt compatibility issue before any further operation"
   },
-  "next_possible_transition": "After authorial or Supervisor resolution of generic-prompt compatibility, correct and refreeze Discovery C0018; no other source or later phase is authorized.",
+  "next_possible_transition": "With Asa's explicit Sparkup and resolution of the generic-prompt compatibility issue, correct and refreeze Discovery C0018. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

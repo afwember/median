@@ -11,9 +11,9 @@
     "block_manifest_sha256": "99540dacbc6fa73939be4aa08c32c85ffc86e15207b6febb96bae25394619080",
     "disposition_ledger_sha256": "e2f8f6cd5b251709b07f031f3c90e07f57307a7a66c6af4bd621b3c0b1fc5859",
     "chunk_plan_sha256": "34151d22766b14bd4e827c350eda46222b16e3ad2802bc153e4368bc443a6f6d",
-    "pilot_chunk_id": "C0015",
-    "pilot_packet_sha256": "b6f6fbe99dfa049a5f718169bb2fcfed35a9742a2bfa3876f51067e55625c137",
-    "pilot_packet_file_sha256": "f0bb7d4d8684089c167b6826be11fa9ab1ca31ff58c62227d4a55a7a2f64cfe4",
+    "pilot_chunk_id": "C0016",
+    "pilot_packet_sha256": "72f0f1be58b4033ea2778143f9ee130fe8c5dd88a1f088f839f668b6b595090e",
+    "pilot_packet_file_sha256": "d25275d6ca6b2056f52305673e737a4fbfc7dfd94f958c7bcf9deaad390e0277",
     "prompt_sha256": "d7d766d5048e49546c626e197311ad40cd6d592b68fa8d72e0a5feff315c0506",
     "response_schema_sha256": "fcd9834d0e905d5a72faa26e4432bd3019859cf07a8dd2c0a54c3b78d2a39744",
     "engine_module_sha256": "f27fa4fe542b1f74d572182ccb55df3271a7a55138983ad7106c13c22d2a9f46",
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0015 v0.1-v0.2 remain preserved and rejected. Supervisor review found that the existing parent_heading metadata explicitly binds the governing heading to its body; the corrected generic payload exposes that binding. C0015 v0.3 is frozen offline, but no provider call or source acceptance is authorized by this checkpoint.",
+    "selection_reason": "The unchanged C0015 v0.3 packet passed mechanical and substantive review on its manual-Sparkup retry after the preserved HTTP 529 attempt. C0016 v0.1 is the next sequential frozen packet and remains untransmitted at the spend boundary.",
     "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.226708"
+    "cache_miss_call_ceiling_usd": "0.219972"
   },
   "exclusion_policy": {
     "media_occurrences": 0,

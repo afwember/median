@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T11:00:25-04:00",
-  "execution_state": "PERSONAL_ITEMS_C0015_V0_3_TRANSIENT_HTTP_529_FORMAL_STOPDOWN",
+  "updated": "2026-08-05T11:05:56-04:00",
+  "execution_state": "PERSONAL_ITEMS_C0016_V0_1_FROZEN_SPEND_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -45,18 +45,19 @@
       "C0011",
       "C0012",
       "C0013",
-      "C0014"
+      "C0014",
+      "C0015"
     ],
-    "rejected_chunk_id": "C0015",
+    "rejected_chunk_id": "C0016",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Personal_Items_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/personal-items/M050_Personal_Items_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Personal_Items_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Call_Packet_v0_3_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0016_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -127,12 +128,17 @@
         "chunk_id": "C0014",
         "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0015",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
       "c0001_v0_1_html_slash": "m050/extraction/audit/M050_Personal_Items_C0001_HTML_Slash_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0015",
+    "pilot_chunk_id": "C0016",
     "generated_chunk_count": 17,
     "target_blocks_per_chunk": 10,
     "required_target_disposition_count": 10,
@@ -144,19 +150,19 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 80,
-    "cache_miss_call_ceiling_usd": "0.226708",
-    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_3_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.219972",
+    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_4_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "19.7245696",
-    "cumulative_spent_usd": "19.4500076",
-    "remaining_usd": "0.2745620",
-    "display_usd_rounded_up": "19.46"
+    "cumulative_spent_usd": "19.5731716",
+    "remaining_usd": "0.1513980",
+    "display_usd_rounded_up": "19.58"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -164,26 +170,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 11:00:25 AM EDT",
-    "status": "Personal Items formally stopped after C0015 v0.3 HTTP 529",
-    "phase": "Atomic extraction — Personal Items temporary Supervisor handoff",
+    "updated_human": "August 5, 2026 at 11:05:56 AM EDT",
+    "status": "Personal Items C0015 accepted; C0016 frozen at spend boundary",
+    "phase": "Atomic extraction — Personal Items sequential extraction",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0014; rejected C0015 v0.1-v0.2; C0015 v0.3 transport-failed; Personal Items incomplete",
-    "now": "Anthropic returned HTTP 529 overloaded before any model response or usage telemetry; no charge was reported, and canonical spend remains unchanged at $19.4500076",
-    "next": "Await manual Sparkup; after authority is restored, the unchanged frozen C0015 v0.3 packet may be retried under normal budget and preflight controls"
+    "chunk": "Accepted C0001-C0015; prior C0015 rejections and transport failure preserved; C0016 v0.1 frozen and untransmitted",
+    "now": "C0015 passed mechanical and substantive review on retry; $0.1513980 remains, below C0016's $0.219972 conservative ceiling",
+    "next": "Await spend replenishment sufficient to cover frozen C0016 v0.1; do not transmit"
   },
-  "next_possible_transition": "Manual Sparkup may restore bounded Personal Items authority and permit retry of the unchanged frozen C0015 v0.3 packet after normal preflight.",
+  "next_possible_transition": "Spend replenishment sufficient to cover the $0.219972 conservative ceiling, followed by focused preflight of frozen C0016 v0.1.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": 529,
-    "stop_reason": null,
+    "http_status": 200,
+    "stop_reason": "end_turn",
     "chunk_id": "C0015",
-    "output_tokens": null,
-    "cache_creation_input_tokens": null,
-    "cache_read_input_tokens": null,
-    "cache_effective": false,
-    "exact_cost_usd": null,
-    "mechanical_passed": null,
-    "review_state": "review_failed"
+    "output_tokens": 10059,
+    "cache_creation_input_tokens": 3645,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.123164",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
   }
 }

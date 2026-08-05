@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T22:05:43-04:00",
-  "execution_state": "GUEST_C0018_TEMPORARY_SUPERVISOR_HANDOFF",
+  "updated": "2026-08-04T22:20:13-04:00",
+  "execution_state": "GUEST_C0018_SPEND_BOUNDARY_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -51,7 +51,7 @@
     ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Guest_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -170,8 +170,8 @@
     "display_usd_rounded_up": "12.63"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -179,15 +179,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 10:05:43 PM EDT",
-    "status": "Guest mid-source Stopdown; Supervisor handoff at C0018",
-    "phase": "Atomic extraction — temporary Supervisor handoff",
+    "updated_human": "August 4, 2026 at 10:20:13 PM EDT",
+    "status": "Guest Sparkup complete; halted at C0018 spend boundary",
+    "phase": "Atomic extraction — Guest spend halt",
     "source": "Guest — ordinal 10; 9 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0017; rejected none; C0018 / 49 frozen and untransmitted; 32 remain",
-    "now": "Guest is incomplete; source-work and repository-write authorities are false at the preserved $0.2167150 spend boundary",
-    "next": "Temporary Supervisor tuning handoff; no extraction resumes without explicit authority restoration and sufficient spend"
+    "now": "Guest source-work and repository-write authorities are restored; C0018 ceiling $0.23994 exceeds the $0.2167150 remaining balance",
+    "next": "Halt for spend replenishment before C0018 provider transmission"
   },
-  "next_possible_transition": "After the Supervisor checkpoint and Asa explicitly restores Guest source-work and repository-write authority with sufficient spend, frozen C0018 may resume at focused preflight.",
+  "next_possible_transition": "After Asa replenishes spend sufficiently, frozen C0018 may proceed through focused preflight and provider transmission.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

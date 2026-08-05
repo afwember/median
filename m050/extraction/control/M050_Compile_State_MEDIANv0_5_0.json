@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T19:38:43-04:00",
-  "execution_state": "POPULATION_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
+  "updated": "2026-08-04T20:10:35-04:00",
+  "execution_state": "GUEST_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -27,182 +27,19 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-POPULATION-001",
-    "label": "Population",
-    "compile_ordinal": 9,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013",
-      "C0014",
-      "C0015",
-      "C0016",
-      "C0017",
-      "C0018",
-      "C0019",
-      "C0020",
-      "C0021",
-      "C0022",
-      "C0023"
-    ],
+    "id": "M050-SRC-GUEST-001",
+    "label": "Guest",
+    "compile_ordinal": 10,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_Population_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/population/M050_Population_C0004_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Population_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/population-pilot/M050_Population_C0023_Call_Packet_v0_2_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0002_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0014",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0015",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0016",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0017",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0018",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0019",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0020",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0021",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0022",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0022_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0023",
-        "outcome": "m050/extraction/runs/population-pilot/M050_Population_C0023_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/population-pilot/M050_Population_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/population/M050_Population_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "b17113d322c6af8eb78efb82337e614bd688b3851ec0977b612d14cb14586d40",
-      "report": "m050/extraction/accepted/population/M050_Population_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "e3d56494433170a84db3aa96a754c84624f749488be16c78f5eb6ea9c0c44efa"
-    },
-    "compatibility_replays": {},
-    "pilot_chunk_id": "C0023",
-    "generated_chunk_count": 23,
-    "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
-    "source_blocks": 694,
-    "eligible_target_blocks": 412,
-    "context_only_blocks": 63,
-    "excluded_blocks": 219,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 68,
-    "cache_miss_call_ceiling_usd": "0.2549",
-    "latest_outcome": "m050/extraction/runs/population-pilot/M050_Population_C0023_Outcome_v0_2_MEDIANv0_5_0.json"
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Guest_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "bfc09bcfb81d483d3722a1d00a16f37b476b3e9900342222937df1e409ad1453",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
   "spend": {
     "active": true,
@@ -212,8 +49,8 @@
     "display_usd_rounded_up": "10.92"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -221,26 +58,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 7:38:43 PM EDT",
-    "status": "Population source-bounded candidate accepted; formal Stopdown complete",
-    "phase": "Atomic extraction — halted at Population completion",
-    "source": "Population — ordinal 9; 9 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0023; rejected/frozen none; whole-source candidate accepted",
-    "now": "All 412 target dispositions and 438 atoms passed exact coverage, ledger-bound review, unique-identifier, and candidate/report hash-binding checks; $1.9327762 remains",
-    "next": "Await Asa's explicit source-work grant for Guest; no other source or later phase is authorized"
+    "updated_human": "August 4, 2026 at 8:10:35 PM EDT",
+    "status": "Guest identity card proposed; author approval required before provider transmission",
+    "phase": "Atomic extraction — Guest identity approval halt",
+    "source": "Guest — ordinal 10; 9 / 22 compile-scope sources complete",
+    "chunk": "No Guest chunk selected; accepted/rejected boundary is empty",
+    "now": "Frozen Guest source identity, provenance, qualification boundary, and zero-media disposition are proposed; no provider call or spend occurred",
+    "next": "Halt for Asa’s identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
-  "next_possible_transition": "Await Asa's explicit source-work grant for Guest; spend alone cannot select or advance a source.",
-  "gate_5_complete": false,
-  "latest_provider_attempt": {
-    "http_status": 200,
-    "stop_reason": "end_turn",
-    "chunk_id": "C0023",
-    "output_tokens": 5652,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 5349,
-    "cache_effective": true,
-    "exact_cost_usd": "0.0672238",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  }
+  "next_possible_transition": "With Asa’s identity-card approval, perform Guest offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
+  "gate_5_complete": false
 }

@@ -170,6 +170,14 @@ prohibited later stages.
   provider-call permission. No separate call receipt, call limit, chunk
   authorization list, full-source flag, or transaction-level provider approval
   exists. Spend never selects or advances a source.
+- The named source-work grant is also informed source-level permission to use
+  the locally stored Anthropic API credential to transmit to Anthropic every
+  validated frozen packet containing bounded repository text from that source,
+  including ordinary corrected or refrozen retries, until the grant ends or is
+  revoked. Anthropic is the only approved external destination. This permission
+  does not extend to another source, unrelated repository material, another
+  provider, or disclosure of the credential as content. A newly frozen packet
+  is not a new approval boundary.
 - Call readiness is derived from the named source grant, the current validated
   packet and configuration, completed offline/replay gates, sequential review,
   and sufficient cumulative budget. Do not store a parallel

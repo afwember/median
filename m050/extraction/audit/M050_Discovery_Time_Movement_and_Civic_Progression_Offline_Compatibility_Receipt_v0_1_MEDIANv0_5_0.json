@@ -1,0 +1,46 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-DISCOVERY-TIME-PROGRESSION-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-05",
+  "status": "DISCOVERY_TIME_PROGRESSION_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
+  "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+  "binding": {
+    "configuration_sha256": "f7f889fdb9cec393003ebbad6413d4497772a91c152101151bf1a4aa709089df",
+    "prompt_sha256": "3183ab8cb8f870e0f476fadd80980bf11a7057aa47627ad1d5d2f7bb5c33702c",
+    "engine_module_sha256": "283b0f1f87cd336042208c784d7a9d17a5d326b37ae071d84a3913c85c0467a8",
+    "engine_tests_sha256": "e0fe6aefd1958b5bf6a178fdb2bac04e270fdce94246bc6b98a591010507073d"
+  },
+  "source_review": {
+    "source_blocks": 522,
+    "eligible_targets": 298,
+    "context_only_blocks": 36,
+    "excluded_blocks": 188,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 10,
+    "generated_chunk_count": 33,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 536,
+    "representative_pilot_chunk_id": "C0025",
+    "pilot_selection_basis": "C0025 is the densest ten-target rules table and combines qualified civic-proof definitions with dependent explanatory rules."
+  },
+  "offline_verification": {
+    "all_33_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 80,
+    "all_source_structural_compatibility_passed": true,
+    "active_source_guard_ready": true
+  },
+  "replays": {},
+  "note": "The approved frozen Markdown was parsed by the existing generic machine. All 522 blocks received an explicit source-reviewed disposition; all 33 generated payloads passed offline fake-response validation. The stable system prompt and output-schema cache boundary is unchanged."
+}

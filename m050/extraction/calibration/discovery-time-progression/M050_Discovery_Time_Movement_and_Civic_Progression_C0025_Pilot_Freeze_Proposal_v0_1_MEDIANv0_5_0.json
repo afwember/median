@@ -1,0 +1,61 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-DISCOVERY-TIME-PROGRESSION-C0025-PILOT-FREEZE-001",
+  "state": "representative_pilot_frozen_pending_provider_call",
+  "machine_state": "representative_pilot_pending",
+  "binding": {
+    "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+    "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
+    "configuration_sha256": "f7f889fdb9cec393003ebbad6413d4497772a91c152101151bf1a4aa709089df",
+    "identity_card_sha256": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
+    "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
+    "disposition_ledger_sha256": "3085021e79d711181931e02e6c066e05b92a2369927599aa5431d144d079eba3",
+    "chunk_plan_sha256": "20a6824a1c673b49dff191b7f9f2ac1f57f4adaeacfd214b595cef031df0a7c6",
+    "pilot_chunk_id": "C0025",
+    "pilot_packet_sha256": "882919961e6832511164f5487b17c71e27b7930995a9da5ee8bdbee0fd8c9cb4",
+    "pilot_packet_file_sha256": "21837879a366e669c37f7d1b90acb9f7c02158b1b2ed3a79388bee2d73375429",
+    "prompt_sha256": "3183ab8cb8f870e0f476fadd80980bf11a7057aa47627ad1d5d2f7bb5c33702c",
+    "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
+    "engine_module_sha256": "283b0f1f87cd336042208c784d7a9d17a5d326b37ae071d84a3913c85c0467a8",
+    "engine_tests_sha256": "e0fe6aefd1958b5bf6a178fdb2bac04e270fdce94246bc6b98a591010507073d",
+    "allowed_streams": [
+      "evidence_game_semantic"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 6000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0025 is the densest representative ten-target rules table and exercises qualifications and dependent rule bodies.",
+    "required_target_disposition_count": 10,
+    "cache_miss_call_ceiling_usd": "0.121832"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_33_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 80,
+    "calibrated_target_blocks_per_chunk": 10,
+    "generated_chunk_count": 33,
+    "chunk_count_is_input": false,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "provider_call_made": false
+  }
+}

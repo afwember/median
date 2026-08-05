@@ -1,0 +1,75 @@
+{
+  "allowed_streams": [
+    "evidence_game_semantic"
+  ],
+  "artifact_sha256": {
+    "block_manifest": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
+    "chunk_plan": "20a6824a1c673b49dff191b7f9f2ac1f57f4adaeacfd214b595cef031df0a7c6",
+    "disposition_ledger": "3085021e79d711181931e02e6c066e05b92a2369927599aa5431d144d079eba3",
+    "identity_card": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
+    "prompt": "3183ab8cb8f870e0f476fadd80980bf11a7057aa47627ad1d5d2f7bb5c33702c",
+    "response_schema": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4"
+  },
+  "artifacts": {
+    "block_manifest": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Section_Aware_Chunk_Plan_v0_1_MEDIANv0_5_0.json",
+    "disposition_ledger": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Discovery_Time_Movement_and_Civic_Progression_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "prompt": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Prompt_MEDIANv0_5_0.md",
+    "response_schema": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Response_Schema_v0_1_MEDIANv0_5_0.json"
+  },
+  "calibration": {
+    "pilot_chunk_id": "C0025",
+    "pilot_passed": false,
+    "pilot_required": true,
+    "state": "representative_pilot_frozen_pending_provider_call"
+  },
+  "execution": {
+    "cadence": "sequential_one_call_review",
+    "next_chunk_requires_substantive_review_of_prior_chunk": true
+  },
+  "lean_structural_policy": {
+    "contents_navigation": "excluded_or_structural_context",
+    "dependent_bodies_remain_disposition_required": true,
+    "exact_target_disposition_coverage_required": true,
+    "source_position_markers": "retained_with_their_source_blocks",
+    "table_headers_and_delimiters": "no_substantive_claim"
+  },
+  "media_exclusion_policy": {
+    "caption_target_blocks": 0,
+    "excluded_blocks": 0,
+    "excluded_occurrences": 0,
+    "external_representation_consultation_prohibited": true,
+    "provider_payload_media_content_prohibited": true,
+    "state": "approved_no_embedded_media"
+  },
+  "pricing": {
+    "cache_1h_write_multiplier": "2",
+    "cache_5m_write_multiplier": "1.25",
+    "cache_read_multiplier": "0.1",
+    "input_usd_per_million_tokens": "2",
+    "output_usd_per_million_tokens": "10"
+  },
+  "provider": {
+    "cache_boundary": "stable_system_prefix",
+    "cache_required": true,
+    "cache_ttl": "1h",
+    "maximum_output_tokens": 6000,
+    "model": "claude-sonnet-5",
+    "name": "Anthropic",
+    "read_timeout_seconds": 180,
+    "reasoning_effort": "low"
+  },
+  "quantization": {
+    "basis": "Provisional source calibration uses 10 provider-eligible targets per chunk; C0025 is the densest representative rules table at this quantization and must pass before sequential continuation.",
+    "chunk_count_is_input": false,
+    "generated_chunk_count": 33,
+    "target_blocks_per_chunk": 10,
+    "unit": "provider_eligible_target_blocks"
+  },
+  "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
+  "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+  "source_path": "m050/docs/v0.5/specifications/M050_Discovery_Time_Movement_and_Civic_Progression_Specification_v1_0_MEDIANv0_5_0.md",
+  "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
+  "status": "PILOT_FROZEN_PENDING_PROVIDER_CALL"
+}

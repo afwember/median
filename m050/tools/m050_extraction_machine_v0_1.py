@@ -106,6 +106,17 @@ def load_config(repo_root: Path, path: Path) -> tuple[dict, dict[str, Path]]:
         if not expected or sha256_file(target) != expected:
             raise IntegrityError(f"configuration hash mismatch: {key}")
     require_approved_identity_card(resolved["identity_card"])
+    if "_Prompt_v" not in resolved["prompt"].name:
+        expected_prompt = build_generic_source_prompt(
+            config.get("source_id", ""),
+            config.get("allowed_streams", []),
+            resolved["identity_card"].read_text(encoding="utf-8", errors="strict"),
+        )
+        if (
+            resolved["prompt"].read_text(encoding="utf-8", errors="strict")
+            != expected_prompt
+        ):
+            raise IntegrityError("active prompt differs from generic prompt builder")
     return config, resolved
 
 

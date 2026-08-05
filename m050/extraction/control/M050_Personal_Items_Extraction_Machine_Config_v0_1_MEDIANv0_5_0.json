@@ -7,7 +7,7 @@
     "chunk_plan": "34151d22766b14bd4e827c350eda46222b16e3ad2802bc153e4368bc443a6f6d",
     "disposition_ledger": "e2f8f6cd5b251709b07f031f3c90e07f57307a7a66c6af4bd621b3c0b1fc5859",
     "identity_card": "a679ff553213b61324e0604db43acc319483a07ae114d741f1cd947d8f212ea0",
-    "prompt": "d3069e35f1b647db20c2d65f42ec1d2b87ddf7a565f96b396b30d039d7087bf7",
+    "prompt": "d7d766d5048e49546c626e197311ad40cd6d592b68fa8d72e0a5feff315c0506",
     "response_schema": "fcd9834d0e905d5a72faa26e4432bd3019859cf07a8dd2c0a54c3b78d2a39744"
   },
   "artifacts": {
@@ -15,7 +15,7 @@
     "chunk_plan": "m050/extraction/control/M050_Personal_Items_Section_Aware_Chunk_Plan_v0_2_MEDIANv0_5_0.json",
     "disposition_ledger": "m050/extraction/calibration/personal-items/M050_Personal_Items_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
     "identity_card": "m050/extraction/control/source-identities/cards/M050_Personal_Items_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "prompt": "m050/extraction/calibration/personal-items/M050_Personal_Items_Extraction_Prompt_v0_11_MEDIANv0_5_0.md",
+    "prompt": "m050/extraction/calibration/personal-items/M050_Personal_Items_Extraction_Prompt_MEDIANv0_5_0.md",
     "response_schema": "m050/extraction/calibration/personal-items/M050_Personal_Items_Response_Schema_v0_1_MEDIANv0_5_0.json"
   },
   "calibration": {

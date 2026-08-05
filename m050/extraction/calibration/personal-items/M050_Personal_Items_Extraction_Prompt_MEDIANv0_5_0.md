@@ -3,12 +3,11 @@
 Allowed source: `M050-SRC-PERSONAL-ITEMS-001`
 Allowed streams: `evidence_game_semantic`
 
-The disposition block-ID set must exactly equal `target_blocks`: no missing or repeated IDs.
-Return one disposition per target, in input order;
-partially enumerated dispositions are invalid.
+The input-ordered disposition block-ID set must exactly equal `target_blocks`:
+none missing, repeated, or partial.
 Disposition neither context nor excluded blocks. Use only `SOURCE_BLOCKS`.
 
-Use supplied IDs only. Never emit samples, placeholders, or dummy values such as `x`.
+Use only supplied IDs; never samples, placeholders, or dummy `x`.
 Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Approved content/provenance boundary
@@ -77,22 +76,23 @@ sufficient budget.
 
 ## Extraction contract
 
-Separate claims. Shared qualifiers must begin every qualified exact span. Every `exact_source_text` is
-a byte-for-byte contiguous target-block substring after JSON decoding, retains
-markup and escaping, and must occur exactly once in the block. For text
-repeated or nested inside another term, expand with adjacent source text until unique.
-If markup interrupts prose, include it or split the atom.
+Separate claims. Exact spans uniquely ground core assertions. Normalized claims may add explicit, unambiguous qualifiers from the
+target block or its supplied `parent_heading`; other context never supplies qualifiers or exact text. A parent heading may qualify
+its body but is not an atom. Every `exact_source_text` is
+a byte-for-byte contiguous target-block substring that occurs exactly once. After JSON decoding it contains actual target-block
+characters, never literal backslash Unicode-escape spellings.
+Expand repeated or nested terms with adjacent text until unique.
+Include interrupting markup or split the atom.
 
-Obey target constraints. `required_disposition` fixes `kind`; for
-`no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
-kind; `minimum_atoms` is a floor. Structural headings, labels, table headers,
-delimiters, and document-control metadata carry no substantive atom. Never turn
-a label into a tautological topic claim or use structural context to omit a
+Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;
+`no_substantive_claim` requires empty `atoms`. Structural headings, labels, table headers,
+delimiters, and document-control metadata carry no substantive atom. Never make
+a label a tautological topic claim or use structural context to omit a
 dependent substantive target.
 
-For every substantive table row, cover every nonempty semantic cell. Ground
+For each substantive table row, cover every nonempty semantic cell. Separate
 independent properties, functions, effects, examples, interpretations, stages,
-actions, and results as separate atoms. Combine cells only when one qualifies
+actions, and results. Combine cells only when one qualifies
 another or the relationship is indivisible. Preserve both endpoints of
 categorical mappings.
 Ground each headed cell under its header; never infer a relationship between
@@ -108,9 +108,9 @@ owners, or authorities.
 
 ## Output check
 
-Return schema-bound JSON only after verifying its disposition count equals
-`required_target_disposition_count`. For kind `atoms`, `atoms` must be nonempty;
-for every other kind, `atoms` must be empty. Every atom needs supplied source/target block IDs, an
+Return schema-bound JSON only after verifying exactly
+`required_target_disposition_count` dispositions. Kind `atoms` requires nonempty
+`atoms`; all other kinds require empty `atoms`. Every atom needs supplied source/target block IDs, an
 allowed stream, exact source text, concise normalized claim, and source-faithful
 claim kind. Derive each proposal ID from target block ID plus local atom ordinal;
 proposal IDs must remain source-unique.

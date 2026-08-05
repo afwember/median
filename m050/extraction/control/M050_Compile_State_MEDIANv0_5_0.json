@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T08:18:28-04:00",
-  "execution_state": "PERSONAL_ITEMS_C0015_REPEATED_CROSS_BLOCK_QUALIFICATION_FORMAL_STOPDOWN",
+  "updated": "2026-08-05T09:51:06-04:00",
+  "execution_state": "PERSONAL_ITEMS_C0015_PARENT_HEADING_CORRECTION_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -56,7 +56,7 @@
     "freeze": "m050/extraction/calibration/personal-items/M050_Personal_Items_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Personal_Items_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Call_Packet_v0_3_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -143,8 +143,8 @@
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 77,
-    "cache_miss_call_ceiling_usd": "0.223508",
+    "offline_tests_passed": 79,
+    "cache_miss_call_ceiling_usd": "0.226708",
     "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
@@ -164,15 +164,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 8:18:28 AM EDT",
-    "status": "Personal Items formally stopped at repeated C0015 cross-block qualification defect",
+    "updated_human": "August 5, 2026 at 9:51:06 AM EDT",
+    "status": "Personal Items formally stopped after C0015 semantic-parent correction",
     "phase": "Atomic extraction — Personal Items temporary Supervisor handoff",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0014; rejected C0015 v0.1-v0.2; Personal Items incomplete",
-    "now": "C0015 v0.2 repeated the cross-block deferred-work qualification defect after the generic context-boundary correction; exact cumulative spend is $19.4500076 and $0.2745620 remains",
-    "next": "Await Asa or Supervisor judgment; both repository-write and source-work authority are false"
+    "now": "The existing parent_heading binding is now exposed source-agnostically; C0015 v0.1-v0.2 remain preserved and rejected, and no source decision was made",
+    "next": "Await manual Sparkup for Worker review of preserved C0015 evidence; both repository-write and source-work authority are false"
   },
-  "next_possible_transition": "Human review of the repeated C0015 cross-block qualification obstruction before any repository or source work resumes.",
+  "next_possible_transition": "Manual Sparkup may authorize the Worker to review preserved C0015 evidence under the corrected parent-heading boundary before deciding whether any provider retry is needed.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

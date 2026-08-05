@@ -193,6 +193,11 @@ source-agnostic and pass the all-source offline compatibility check. A
 source-ID branch, source-specific worker, new artifact class, or changed
 cross-source invariant requires a Supervisor halt.
 
+Deciding whether context semantically qualifies a target, redefining the
+target/context/grounding boundary, or otherwise interpreting source structure
+is not an ordinary phase repair. Preserve the evidence and halt for authorial
+or Supervisor review rather than changing that boundary during source work.
+
 A defect pauses further provider calls until its correction passes the existing
 offline and replay gates. It does not revoke the source-work grant merely
 because correction is required. No task may waive a defect, silently repair a
@@ -264,6 +269,8 @@ Halt for Asa only when:
   family.
 - Active operating instructions, guard code, and current state are maintained
   in place. Do not version them inside the working tree; Git supplies history.
+- Update the configured active-source prompt in place. Do not create a
+  successor prompt file for an ordinary correction.
 - Within one unchanged state revision, read active controls and stable bindings
   once. Batch independent read-only checks, and do not repeatedly inspect whole
   packets, schemas, raw responses, or unchanged files when their hashes and the

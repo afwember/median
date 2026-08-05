@@ -1,9 +1,11 @@
 import copy
+from datetime import datetime
 from decimal import Decimal
 import hashlib
 import importlib.util
 import json
 from pathlib import Path
+import sys
 from types import SimpleNamespace
 
 import pytest
@@ -35,7 +37,7 @@ AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extract
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
 GUARD = ROOT / "m050/tools/m050_guard.py"
 HOME_CONFIG = ROOT / "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
-PERSONAL_ITEMS_CONFIG = ROOT / "m050/extraction/control/M050_Personal_Items_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
+RENDER_STATUS = ROOT / "m050/tools/m050_render_status.py"
 HOME_REPORT = ROOT / "m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json"
 HOME_LEDGER = "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
 CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_15_MEDIANv0_5_0.json"
@@ -59,6 +61,21 @@ def _guard_module():
     assert spec is not None and spec.loader is not None
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    return module
+
+
+def _render_status_module():
+    spec = importlib.util.spec_from_file_location(
+        "m050_render_status_for_tests", RENDER_STATUS
+    )
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    tool_path = str(RENDER_STATUS.parent)
+    sys.path.insert(0, tool_path)
+    try:
+        spec.loader.exec_module(module)
+    finally:
+        sys.path.remove(tool_path)
     return module
 
 
@@ -254,6 +271,37 @@ def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
     assert "TOTAL COST" not in status
 
 
+def test_status_renderer_rounds_and_updates_canonical_timestamp(tmp_path):
+    renderer = _render_status_module()
+    state_path = tmp_path / "state.json"
+    status_path = tmp_path / "STATUS.md"
+    state = {
+        "updated": "2026-01-01T00:00:00-05:00",
+        "dashboard": {
+            "updated_human": "stale",
+            "status": "Stopped",
+            "phase": "Atomic extraction",
+            "source": "Personal Items",
+            "chunk": "C0015",
+            "now": "Stopped",
+            "next": "Await authorization",
+        },
+        "spend": {"remaining_usd": "0.2745620"},
+    }
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    renderer.render_status(
+        state_path,
+        status_path,
+        now=datetime.fromisoformat("2026-08-05T09:12:13.600000-04:00"),
+    )
+    updated = _json(state_path)
+    assert updated["updated"] == "2026-08-05T09:12:14-04:00"
+    assert updated["dashboard"]["updated_human"] == (
+        "August 5, 2026 at 9:12:14 AM EDT"
+    )
+    assert status_path.read_text(encoding="utf-8") == renderer.expected_status(updated)
+
+
 def _pricing():
     return {
         "input_usd_per_million_tokens": "2",
@@ -300,10 +348,8 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     )
 
     assert boundary in prompt
-    assert "block-ID set must exactly equal `target_blocks`" in prompt
-    assert "none missing or repeated" in prompt
-    assert "one input-ordered disposition per target" in prompt
-    assert "partial enumeration is invalid" in prompt
+    assert "input-ordered disposition block-ID set must exactly equal `target_blocks`" in prompt
+    assert "none missing, repeated, or partial" in prompt
     assert "byte-for-byte" in prompt
     assert "target-block substring that occurs exactly once" in prompt
     assert "Expand repeated or nested terms with adjacent text until unique" in prompt
@@ -313,12 +359,12 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "Preserve smart quotes exactly" not in prompt
     assert "Include interrupting markup or split the atom" in prompt
     assert "required_disposition" in prompt
-    assert "only after verifying its disposition count equals\n`required_target_disposition_count`" in prompt
-    assert "`no_substantive_claim`, emit empty `atoms`" in prompt
-    assert "For kind `atoms`, `atoms` must be nonempty" in prompt
-    assert "for every other kind, `atoms` must be empty" in prompt
+    assert "after verifying exactly\n`required_target_disposition_count` dispositions" in prompt
+    assert "`no_substantive_claim` requires empty `atoms`" in prompt
+    assert "Kind `atoms` requires nonempty\n`atoms`" in prompt
+    assert "all other kinds require empty `atoms`" in prompt
     assert "every nonempty semantic cell" in prompt
-    assert "stages,\nactions, and results as separate atoms" in prompt
+    assert "stages,\nactions, and results" in prompt
     assert "never infer a relationship between\nadjacent cells" in prompt
     assert "No exact span crosses a semicolon; each side gets its own atom" in prompt
     assert "Copy every authored slash into the normalized claim" in prompt
@@ -329,15 +375,17 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "never samples, placeholders, or dummy `x`" in prompt
     assert "never abbreviate the target set" in prompt
     assert "Exact spans uniquely ground core assertions" in prompt
-    assert "only explicit, unambiguous target-block\nqualifiers" in prompt
-    assert "context blocks never supply qualifiers or exact text" in prompt
+    assert "target block or its supplied `parent_heading`" in prompt
+    assert "other context never supplies qualifiers or exact text" in prompt
+    assert "A parent heading may qualify\nits body but is not an atom" in prompt
     assert "cost, staffing, and effect" not in prompt
     assert "dedicated Home" not in prompt
     assert len(prompt.split()) < 400
 
 
 def test_personal_items_active_prompt_equals_generated_generic_prompt():
-    config = _json(PERSONAL_ITEMS_CONFIG)
+    state = _json(COMPILE_STATE)
+    config = _json(ROOT / state["calibration"]["configuration"])
     identity = (ROOT / config["artifacts"]["identity_card"]).read_text(encoding="utf-8")
     active = (ROOT / config["artifacts"]["prompt"]).read_text(encoding="utf-8")
     generated = build_generic_source_prompt(
@@ -745,6 +793,30 @@ def test_payload_marks_contents_navigation_non_substantive():
     assert targets["B1"]["structural_role"] == "contents_navigation"
     assert targets["B1"]["required_disposition"] == "no_substantive_claim"
     assert "required_disposition" not in targets["B2"]
+
+
+def test_payload_exposes_existing_parent_heading_to_its_target():
+    manifest = {
+        "source_id": "S1",
+        "source_sha256": "c" * 64,
+        "blocks": [
+            {
+                "block_id": "B1",
+                "block_type": "paragraph",
+                "parent_heading": "## Explicitly deferred work\n",
+                "text": "- Registry publication.\n",
+                "status_markers": [],
+            },
+        ],
+    }
+    payload = build_chunk_payload(
+        manifest,
+        [{"block_id": "B1", "disposition": "eligible"}],
+        {"chunk_id": "C0001", "block_ids": ["B1"]},
+    )
+    assert payload["target_blocks"][0]["parent_heading"] == (
+        "## Explicitly deferred work\n"
+    )
 
 
 def test_payload_marks_generic_document_end_marker_non_substantive():

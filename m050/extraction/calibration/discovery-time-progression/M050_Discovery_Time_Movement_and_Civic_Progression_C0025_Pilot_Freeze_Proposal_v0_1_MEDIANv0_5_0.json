@@ -1,19 +1,19 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
   "proposal_id": "M050-DISCOVERY-TIME-PROGRESSION-C0025-PILOT-FREEZE-001",
-  "state": "representative_pilot_frozen_pending_provider_call",
-  "machine_state": "representative_pilot_pending",
+  "state": "representative_pilot_accepted_sequential_run_ready",
+  "machine_state": "representative_pilot_complete",
   "binding": {
     "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
     "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
-    "configuration_sha256": "f7f889fdb9cec393003ebbad6413d4497772a91c152101151bf1a4aa709089df",
+    "configuration_sha256": "11912063be7f19a2a709b546310c91750c269f7cba6771856cca47f35608c43f",
     "identity_card_sha256": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
     "disposition_ledger_sha256": "3085021e79d711181931e02e6c066e05b92a2369927599aa5431d144d079eba3",
     "chunk_plan_sha256": "20a6824a1c673b49dff191b7f9f2ac1f57f4adaeacfd214b595cef031df0a7c6",
-    "pilot_chunk_id": "C0025",
-    "pilot_packet_sha256": "882919961e6832511164f5487b17c71e27b7930995a9da5ee8bdbee0fd8c9cb4",
-    "pilot_packet_file_sha256": "21837879a366e669c37f7d1b90acb9f7c02158b1b2ed3a79388bee2d73375429",
+    "pilot_chunk_id": "C0001",
+    "pilot_packet_sha256": "7b970d1281cb6c75120fe8c71f605cf45c356e9549287c0465d08c5f2913c294",
+    "pilot_packet_file_sha256": "632e2a14c72a514bb970aff2914ad0c54bafd8c36485070000f39987af790fc9",
     "prompt_sha256": "3183ab8cb8f870e0f476fadd80980bf11a7057aa47627ad1d5d2f7bb5c33702c",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
     "engine_module_sha256": "283b0f1f87cd336042208c784d7a9d17a5d326b37ae071d84a3913c85c0467a8",
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0025 is the densest representative ten-target rules table and exercises qualifications and dependent rule bodies.",
+    "selection_reason": "C0025 v0.1 passed representative pilot review; C0001 is the first outstanding source-derived chunk in sequential order.",
     "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.121832"
+    "cache_miss_call_ceiling_usd": "0.115752"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -56,6 +56,7 @@
     "all_source_structural_compatibility_passed": true,
     "active_prompt_matches_generic_builder": true,
     "stable_output_schema_cache_boundary_preserved": true,
-    "provider_call_made": false
+    "provider_call_made": true,
+    "c0025_v0_1_mechanical_and_substantive_review_passed": true
   }
 }

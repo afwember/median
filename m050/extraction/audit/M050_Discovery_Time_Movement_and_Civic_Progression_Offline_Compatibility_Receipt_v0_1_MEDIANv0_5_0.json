@@ -5,7 +5,7 @@
   "status": "DISCOVERY_TIME_PROGRESSION_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
   "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
   "binding": {
-    "configuration_sha256": "f7f889fdb9cec393003ebbad6413d4497772a91c152101151bf1a4aa709089df",
+    "configuration_sha256": "11912063be7f19a2a709b546310c91750c269f7cba6771856cca47f35608c43f",
     "prompt_sha256": "3183ab8cb8f870e0f476fadd80980bf11a7057aa47627ad1d5d2f7bb5c33702c",
     "engine_module_sha256": "283b0f1f87cd336042208c784d7a9d17a5d326b37ae071d84a3913c85c0467a8",
     "engine_tests_sha256": "e0fe6aefd1958b5bf6a178fdb2bac04e270fdce94246bc6b98a591010507073d"
@@ -42,5 +42,5 @@
     "active_source_guard_ready": true
   },
   "replays": {},
-  "note": "The approved frozen Markdown was parsed by the existing generic machine. All 522 blocks received an explicit source-reviewed disposition; all 33 generated payloads passed offline fake-response validation. The stable system prompt and output-schema cache boundary is unchanged."
+  "note": "The approved frozen Markdown was parsed by the existing generic machine. All 522 blocks received an explicit source-reviewed disposition; all 33 generated payloads passed offline fake-response validation. C0025 v0.1 passed representative pilot review. The stable system prompt and output-schema cache boundary is unchanged."
 }

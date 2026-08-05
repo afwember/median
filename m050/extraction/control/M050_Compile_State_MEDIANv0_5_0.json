@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T15:48:21-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0025_REPRESENTATIVE_PILOT_FROZEN_READY",
+  "updated": "2026-08-05T16:51:22-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0025_ACCEPTED_C0001_FROZEN_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -32,7 +32,9 @@
     "id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
     "label": "Discovery, Time, Movement, and Civic Progression",
     "compile_ordinal": 12,
-    "accepted_chunk_ids": [],
+    "accepted_chunk_ids": [
+      "C0025"
+    ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
@@ -42,10 +44,16 @@
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [],
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0001_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0025",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
     "compatibility_replays": {},
-    "pilot_chunk_id": "C0025",
+    "pilot_chunk_id": "C0001",
     "generated_chunk_count": 33,
     "target_blocks_per_chunk": 10,
     "required_target_disposition_count": 10,
@@ -57,14 +65,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 80,
-    "cache_miss_call_ceiling_usd": "0.121832"
+    "cache_miss_call_ceiling_usd": "0.115752",
+    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "21.5731716",
-    "cumulative_spent_usd": "19.6769976",
-    "remaining_usd": "1.8961740",
-    "display_usd_rounded_up": "19.68"
+    "cumulative_spent_usd": "19.7385936",
+    "remaining_usd": "1.8345780",
+    "display_usd_rounded_up": "19.74"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -76,14 +85,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 3:48:21 PM EDT",
-    "status": "Discovery, Time, Movement, and Civic Progression C0025 representative pilot frozen and provider-ready",
+    "updated_human": "August 5, 2026 at 4:51:22 PM EDT",
+    "status": "Discovery C0025 representative pilot accepted; C0001 frozen",
     "phase": "Atomic extraction — Discovery, Time, Movement, and Civic Progression representative pilot",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
-    "chunk": "C0025 frozen as the representative pilot; accepted/rejected boundary is empty",
-    "now": "Approved identity and all 522 block dispositions passed offline preparation; 33 payloads fake-validated; C0025 ceiling is $0.121832",
-    "next": "Derived readiness permits exactly the frozen C0025 provider call, followed by preservation, mechanical validation, and substantive review"
+    "chunk": "Accepted C0025; rejected none; C0001 frozen and untransmitted",
+    "now": "C0025 passed mechanical and substantive review with 15 atoms; exact cumulative spend is $19.7385936 and $1.8345780 remains",
+    "next": "Await explicit external transmission approval for frozen C0001 v0.1; the prior packet-specific one-call approval is exhausted"
   },
-  "next_possible_transition": "Transmit frozen Discovery C0025 under the active source grant and cumulative budget; no other source or later phase is authorized.",
-  "gate_5_complete": false
+  "next_possible_transition": "Transmit frozen Discovery C0001 v0.1 only after explicit external packet approval; no other source or later phase is authorized.",
+  "gate_5_complete": false,
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "stop_reason": "end_turn",
+    "chunk_id": "C0025",
+    "output_tokens": 4221,
+    "cache_creation_input_tokens": 2989,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.061596",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
+  }
 }

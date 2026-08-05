@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 5, 2026 at 3:48:21 PM EDT<br>
+August 5, 2026 at 4:51:22 PM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Discovery, Time, Movement, and Civic Progression C0025 representative pilot frozen and provider-ready<br>
+**STATUS:** Discovery C0025 representative pilot accepted; C0001 frozen<br>
 **PHASE:** Atomic extraction — Discovery, Time, Movement, and Civic Progression representative pilot<br>
 **SOURCE:** Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete<br>
-**CHUNK:** C0025 frozen as the representative pilot; accepted/rejected boundary is empty<br>
-**NOW:** Approved identity and all 522 block dispositions passed offline preparation; 33 payloads fake-validated; C0025 ceiling is $0.121832<br>
-**NEXT:** Derived readiness permits exactly the frozen C0025 provider call, followed by preservation, mechanical validation, and substantive review<br>
-**SPEND REMAINING:** $1.89
+**CHUNK:** Accepted C0025; rejected none; C0001 frozen and untransmitted<br>
+**NOW:** C0025 passed mechanical and substantive review with 15 atoms; exact cumulative spend is $19.7385936 and $1.8345780 remains<br>
+**NEXT:** Await explicit external transmission approval for frozen C0001 v0.1; the prior packet-specific one-call approval is exhausted<br>
+**SPEND REMAINING:** $1.83

@@ -20,9 +20,9 @@
   },
   "calibration": {
     "pilot_chunk_id": "C0025",
-    "pilot_passed": false,
+    "pilot_passed": true,
     "pilot_required": true,
-    "state": "representative_pilot_frozen_pending_provider_call"
+    "state": "representative_pilot_complete"
   },
   "execution": {
     "cadence": "sequential_one_call_review",
@@ -61,7 +61,7 @@
     "reasoning_effort": "low"
   },
   "quantization": {
-    "basis": "Provisional source calibration uses 10 provider-eligible targets per chunk; C0025 is the densest representative rules table at this quantization and must pass before sequential continuation.",
+    "basis": "C0025 v0.1 passed mechanical and substantive review at 10 provider-eligible targets; this calibrated density preserves complete semantic groups and yields 33 source-derived chunks.",
     "chunk_count_is_input": false,
     "generated_chunk_count": 33,
     "target_blocks_per_chunk": 10,
@@ -71,5 +71,5 @@
   "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
   "source_path": "m050/docs/v0.5/specifications/M050_Discovery_Time_Movement_and_Civic_Progression_Specification_v1_0_MEDIANv0_5_0.md",
   "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
-  "status": "PILOT_FROZEN_PENDING_PROVIDER_CALL"
+  "status": "SEQUENTIAL_RUN_READY"
 }

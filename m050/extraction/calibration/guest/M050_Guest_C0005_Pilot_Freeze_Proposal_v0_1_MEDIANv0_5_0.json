@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-GUEST-001",
     "source_sha256": "ecedad99eb425c573149c9a1e33bcce0ee89422f76a9e1b25e4f7387af14f15f",
-    "configuration_sha256": "ed7e072bd3042b83eb709079bdde9c77f8dcf85d720f5dfb20b4df739d859e51",
+    "configuration_sha256": "7ebeff094a51b682ef97352dbea8784e2d0d1bd21d6e3af6c350182dfd9bebe0",
     "identity_card_sha256": "a2e2dbcaf2ad78cf5a578ee5ccaa3e2755d0a39058415e8e0c09041fed4d6337",
     "block_manifest_sha256": "30fa23174b486d9bcf516e8b648424ea01bd545334738458bef5ed9c8be04c07",
     "disposition_ledger_sha256": "17235fad0c948ac0ee7c8426cf62fc02f8219921c61fe8bcc7ec4b91b9c91bbf",
     "chunk_plan_sha256": "b967e7ce70c391089dad937099ae17c1bb7eec49866965f8e47b3b8c8cca6abc",
-    "pilot_chunk_id": "C0030",
-    "pilot_packet_sha256": "2e46c2c97fc50c5372b1648d628a48222bee2bb979fc6817eba5041b97402cd0",
-    "pilot_packet_file_sha256": "2d988b3bd8826a738ff4dbdafe1166eb906ef0fcc955089c50af813a5c7c5f52",
-    "prompt_sha256": "acdc79d2deeb0ae9eb7924790a246d177afc38bf35e0237b20fd3c594defe306",
+    "pilot_chunk_id": "C0044",
+    "pilot_packet_sha256": "8b3b80119ec6d6c043df9eb32123dcd035f4c91e2ce9cea6a046b342b5ed7aa0",
+    "pilot_packet_file_sha256": "e35d5988cf5139b5e537a9f088f229cb5a500225b4084caf0e47883c7df31ea7",
+    "prompt_sha256": "56732bb4ced9388f226087ff4921a7ca48ad639e285fd476379020e7eedf66a5",
     "response_schema_sha256": "3351261fd40c671068d00856dea537735b0b98325854fca8dd40b016d65ad103",
-    "engine_module_sha256": "40201e0e6a74c313f735e87dcf0db3ac82729319289c694ae140d3f5099c1c3a",
-    "engine_tests_sha256": "cce6babfedd08bd14c81a9b4ecb035042cac5bb0807309e52dec4f851afd70a6",
+    "engine_module_sha256": "c1be630e418e83ac6dcbf188c6bcd35bc5e44e6df2deedb2085625af9e098e3c",
+    "engine_tests_sha256": "5992d322b14b40d149e26d2855b44402f97ca4ea6021632c0f8f8309f6030d4c",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
     "allowed_streams": [
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0029 v0.1 passed mechanical and substantive review; C0030 is the next outstanding chunk in retained source order and is frozen at the spend halt.",
-    "required_target_disposition_count": 15,
-    "cache_miss_call_ceiling_usd": "0.228072"
+    "selection_reason": "C0043 v0.1 passed mechanical and substantive review; C0044 is the next outstanding chunk in retained source order and is frozen pending sufficient cumulative budget.",
+    "required_target_disposition_count": 17,
+    "cache_miss_call_ceiling_usd": "0.230956"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -51,7 +51,7 @@
   "offline_verification": {
     "all_49_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 71,
+    "offline_tests_passed": 73,
     "calibrated_target_blocks_per_chunk": 20,
     "generated_chunk_count": 49,
     "chunk_count_is_input": false,

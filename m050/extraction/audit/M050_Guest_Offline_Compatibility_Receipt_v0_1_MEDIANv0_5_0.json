@@ -5,10 +5,10 @@
   "status": "GUEST_OFFLINE_PREPARATION_VERIFIED_SEQUENTIAL_RUN_READY",
   "source_id": "M050-SRC-GUEST-001",
   "binding": {
-    "configuration_sha256": "ed7e072bd3042b83eb709079bdde9c77f8dcf85d720f5dfb20b4df739d859e51",
-    "prompt_sha256": "acdc79d2deeb0ae9eb7924790a246d177afc38bf35e0237b20fd3c594defe306",
-    "engine_module_sha256": "40201e0e6a74c313f735e87dcf0db3ac82729319289c694ae140d3f5099c1c3a",
-    "engine_tests_sha256": "cce6babfedd08bd14c81a9b4ecb035042cac5bb0807309e52dec4f851afd70a6",
+    "configuration_sha256": "7ebeff094a51b682ef97352dbea8784e2d0d1bd21d6e3af6c350182dfd9bebe0",
+    "prompt_sha256": "56732bb4ced9388f226087ff4921a7ca48ad639e285fd476379020e7eedf66a5",
+    "engine_module_sha256": "c1be630e418e83ac6dcbf188c6bcd35bc5e44e6df2deedb2085625af9e098e3c",
+    "engine_tests_sha256": "5992d322b14b40d149e26d2855b44402f97ca4ea6021632c0f8f8309f6030d4c",
     "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
     "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
   },
@@ -39,9 +39,9 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 71,
+    "offline_tests_passed": 73,
     "all_source_payload_replays_passed": 148
   },
   "replays": {},
-  "note": "The validated source-agnostic 360-second read timeout remains bound. The generic prompt requires unique spans, cell-by-header grounding, no inferred adjacency relationship, full disposition-count verification, and an explicit nonempty-atoms biconditional. All 71 tests, 49 Guest fake validations, and 148 all-source packet replays pass."
+  "note": "The validated source-agnostic 360-second read timeout remains bound. The generic prompt requires unique spans, cell-by-header grounding, no inferred adjacency, literal slash retention unless source-defined, semicolon-bounded atomic spans, full disposition-count verification, and an explicit nonempty-atoms biconditional. The validator mechanically rejects normalized claims that drop authored slashes or exact spans that cross authored semicolons while preserving terminal list punctuation compatibility. All 73 tests, 49 Guest fake validations, and 148 all-source packet replays pass."
 }

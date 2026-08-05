@@ -313,9 +313,12 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "every nonempty semantic cell" in prompt
     assert "stages,\nactions, and results as separate atoms" in prompt
     assert "never infer a relationship between\nadjacent cells" in prompt
-    assert "Semicolon-separated effects require separate atoms" in prompt
+    assert "No exact span crosses a semicolon; each side gets its own atom" in prompt
+    assert "Copy every authored slash into the normalized claim" in prompt
+    assert "never replace it with a word unless the source defines that meaning" in prompt
     assert "document-control metadata carry no substantive atom" in prompt
-    assert "target block ID plus\na local atom ordinal" in prompt
+    assert "target block ID plus local atom ordinal" in prompt
+    assert "proposal IDs must remain source-unique" in prompt
     assert "samples, or dummy values such as `x`" in prompt
     assert "never abbreviate the target set" in prompt
     assert "cost, staffing, and effect" not in prompt
@@ -492,6 +495,90 @@ def test_validator_requires_table_headers_and_delimiters_to_be_non_substantive()
     )
     assert accepted["passed"] is True
     assert accepted["checks"]["table_structure_errors"] == 0
+
+
+def test_validator_requires_authored_slashes_in_normalized_claims():
+    payload = {
+        "source_id": "S1",
+        "target_blocks": [{
+            "block_id": "B1", "block_type": "paragraph",
+            "text": "Ledge Loft / Open Flight Shelf\n", "status_markers": [],
+        }],
+        "context_blocks": [],
+        "excluded_block_ids": [],
+    }
+    schema = build_generic_response_schema("S1", ["allowed"])
+    atom = {
+        "proposal_id": "P1", "source_id": "S1", "block_id": "B1",
+        "exact_source_text": "Ledge Loft / Open Flight Shelf",
+        "normalized_claim": "The House is Ledge Loft or Open Flight Shelf.",
+        "claim_kind": "attribute", "stream": "allowed",
+    }
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+        "proposal_set_id": "slash-test", "request_id": "slash-test",
+        "source_id": "S1",
+        "dispositions": [{"block_id": "B1", "kind": "atoms", "atoms": [atom]}],
+    }
+    rejected = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert rejected["passed"] is False
+    assert rejected["checks"]["relationship_preservation_errors"] == 1
+
+    atom["normalized_claim"] = "The House is Ledge Loft / Open Flight Shelf."
+    accepted = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert accepted["passed"] is True
+    assert accepted["checks"]["relationship_preservation_errors"] == 0
+
+
+def test_validator_requires_semicolon_clauses_to_be_separate_atoms():
+    payload = {
+        "source_id": "S1",
+        "target_blocks": [{
+            "block_id": "B1", "block_type": "paragraph",
+            "text": "The Healer values calm; a Crafter brings salvage.\n",
+            "status_markers": [],
+        }],
+        "context_blocks": [],
+        "excluded_block_ids": [],
+    }
+    schema = build_generic_response_schema("S1", ["allowed"])
+    atoms = [{
+        "proposal_id": "P1", "source_id": "S1", "block_id": "B1",
+        "exact_source_text": "The Healer values calm; a Crafter brings salvage.",
+        "normalized_claim": "The Healer values calm while a Crafter brings salvage.",
+        "claim_kind": "relationship", "stream": "allowed",
+    }]
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+        "proposal_set_id": "semicolon-test", "request_id": "semicolon-test",
+        "source_id": "S1",
+        "dispositions": [{"block_id": "B1", "kind": "atoms", "atoms": atoms}],
+    }
+    rejected = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert rejected["passed"] is False
+    assert rejected["checks"]["atomicity_errors"] == 1
+
+    response["dispositions"][0]["atoms"] = [
+        {**atoms[0], "exact_source_text": "The Healer values calm",
+         "normalized_claim": "The Healer values calm."},
+        {**atoms[0], "proposal_id": "P2",
+         "exact_source_text": "a Crafter brings salvage.",
+         "normalized_claim": "A Crafter brings salvage."},
+    ]
+    accepted = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert accepted["passed"] is True
 
 
 def test_payload_marks_generic_table_header_and_delimiter_non_substantive():

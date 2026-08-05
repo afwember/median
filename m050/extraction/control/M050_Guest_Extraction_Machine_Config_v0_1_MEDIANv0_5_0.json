@@ -36,7 +36,8 @@
     "maximum_output_tokens": 16000,
     "model": "claude-sonnet-5",
     "name": "Anthropic",
-    "reasoning_effort": "high"
+    "reasoning_effort": "medium",
+    "read_timeout_seconds": 360
   },
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
   "source_id": "M050-SRC-GUEST-001",

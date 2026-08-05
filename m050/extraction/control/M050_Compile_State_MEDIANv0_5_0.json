@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T21:41:10-04:00",
-  "execution_state": "GUEST_C0017_TRANSPORT_COST_HALT",
+  "updated": "2026-08-04T21:58:09-04:00",
+  "execution_state": "GUEST_C0018_SPEND_BOUNDARY_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -46,9 +46,10 @@
       "C0013",
       "C0014",
       "C0015",
-      "C0016"
+      "C0016",
+      "C0017"
     ],
-    "rejected_chunk_id": "C0017",
+    "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -57,7 +58,7 @@
     "freeze": "m050/extraction/calibration/guest/M050_Guest_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Guest_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/guest-pilot/M050_Guest_C0018_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -138,10 +139,15 @@
         "chunk_id": "C0016",
         "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0017",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {},
-    "pilot_chunk_id": "C0017",
+    "pilot_chunk_id": "C0018",
     "generated_chunk_count": 49,
     "target_blocks_per_chunk": 20,
     "required_target_disposition_count": 20,
@@ -153,15 +159,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 71,
-    "cache_miss_call_ceiling_usd": "0.234216",
-    "latest_outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Outcome_v0_1_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.23994",
+    "latest_outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Outcome_v0_4_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "12.8428106",
-    "cumulative_spent_usd": "12.3677104",
-    "remaining_usd": "0.4751002",
-    "display_usd_rounded_up": "12.37"
+    "cumulative_spent_usd": "12.6260956",
+    "remaining_usd": "0.2167150",
+    "display_usd_rounded_up": "12.63"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -173,26 +179,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 9:41:10 PM EDT",
-    "status": "Guest C0017 halted on unresolved transport cost",
-    "phase": "Atomic extraction — Guest transport halt",
+    "updated_human": "August 4, 2026 at 9:58:09 PM EDT",
+    "status": "Guest C0017 accepted; halted at C0018 spend boundary",
+    "phase": "Atomic extraction — Guest spend halt",
     "source": "Guest — ordinal 10; 9 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0016; rejected/frozen C0017 / 49; transport failure",
-    "now": "C0017 timed out after submission with no response, usage, request ID, or exact cost; known reconciled balance remains $0.4751002",
-    "next": "Halt for authorial resolution of the unresolved transport and cost decision before any retry or further call"
+    "chunk": "Accepted C0001-C0017; rejected/frozen none; C0018 / 49 frozen",
+    "now": "C0017 passed mechanical and substantive review; C0018 ceiling $0.23994 exceeds the $0.2167150 remaining balance",
+    "next": "Halt for spend replenishment before C0018 provider transmission"
   },
-  "next_possible_transition": "After Asa resolves the C0017 transport-cost treatment, reconcile spend and determine whether a refrozen retry is permitted.",
+  "next_possible_transition": "After Asa replenishes spend sufficiently, C0018 may proceed through focused preflight and provider transmission.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": null,
-    "stop_reason": null,
+    "http_status": 200,
+    "stop_reason": "end_turn",
     "chunk_id": "C0017",
-    "output_tokens": null,
-    "cache_creation_input_tokens": null,
-    "cache_read_input_tokens": null,
-    "cache_effective": null,
-    "exact_cost_usd": null,
-    "mechanical_passed": null,
-    "review_state": "review_failed"
+    "output_tokens": 6328,
+    "cache_creation_input_tokens": 3986,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.088406",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
   }
 }

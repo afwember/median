@@ -1462,7 +1462,13 @@ def test_send_records_malformed_response_without_creating_spend_successor(tmp_pa
         def read(self):
             return b"not-json"
 
-    monkeypatch.setattr(tool.urllib.request, "urlopen", lambda *_args, **_kwargs: FakeResponse())
+    observed = {}
+
+    def fake_urlopen(*_args, **kwargs):
+        observed["timeout"] = kwargs["timeout"]
+        return FakeResponse()
+
+    monkeypatch.setattr(tool.urllib.request, "urlopen", fake_urlopen)
     args = SimpleNamespace(
         repo_root=str(tmp_path),
         packet=str(packet_path),
@@ -1474,6 +1480,7 @@ def test_send_records_malformed_response_without_creating_spend_successor(tmp_pa
         outcome=str(outcome_path),
     )
     assert tool.command_send(args) == 1
+    assert observed["timeout"] == 180
     assert raw_path.read_bytes() == b"not-json"
     assert _json(outcome_path)["provider_call_made"] is True
     assert _json(outcome_path)["canonical_spend_update_required"] is False

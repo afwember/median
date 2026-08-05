@@ -183,6 +183,7 @@ def build_packet(repo_root: Path, config_path: Path, selector: str) -> dict:
             "reasoning_effort": provider["reasoning_effort"],
             "cache_ttl": provider["cache_ttl"],
             "cache_required": provider.get("cache_required", True),
+            "read_timeout_seconds": provider.get("read_timeout_seconds", 180),
         },
         "allowed_streams": config.get("allowed_streams", []),
         "pricing": pricing,
@@ -347,6 +348,7 @@ def command_scaffold(args: argparse.Namespace) -> int:
             "cache_ttl": "1h",
             "cache_required": True,
             "cache_boundary": "stable_system_prefix",
+            "read_timeout_seconds": 180,
         },
         "pricing": {
             "input_usd_per_million_tokens": "2",
@@ -544,7 +546,9 @@ def command_send(args: argparse.Namespace) -> int:
     raw_bytes = b""
     transport_error = None
     try:
-        with urllib.request.urlopen(request, timeout=180) as response:
+        with urllib.request.urlopen(
+            request, timeout=packet["binding"].get("read_timeout_seconds", 180)
+        ) as response:
             status = response.status
             raw_bytes = response.read()
             response_headers = dict(response.headers.items())

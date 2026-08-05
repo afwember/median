@@ -549,7 +549,9 @@ Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Extraction contract
 
-Separate claims. Exact spans uniquely ground core assertions. Normalized claims may add explicit, unambiguous qualifiers from the
+Separate claims. Exact spans uniquely ground core assertions. Keep a coordinated subject list with its shared predicate in one atom
+unless each split atom has a contiguous span containing both its subject and predicate. A subject or label alone never grounds an
+imported predicate. Normalized claims may add explicit, unambiguous qualifiers from the
 target block or its supplied `parent_heading`; other context never supplies qualifiers or exact text. A parent heading may qualify
 its body but is not an atom. Every `exact_source_text` is
 a byte-for-byte contiguous target-block substring that occurs exactly once. After JSON decoding it contains actual target-block

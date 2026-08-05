@@ -37,7 +37,6 @@ AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extract
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
 GUARD = ROOT / "m050/tools/m050_guard.py"
 HOME_CONFIG = ROOT / "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
-PERSONAL_ITEMS_CONFIG = ROOT / "m050/extraction/control/M050_Personal_Items_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
 RENDER_STATUS = ROOT / "m050/tools/m050_render_status.py"
 HOME_REPORT = ROOT / "m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json"
 HOME_LEDGER = "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
@@ -376,16 +375,19 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "never samples, placeholders, or dummy `x`" in prompt
     assert "never abbreviate the target set" in prompt
     assert "Exact spans uniquely ground core assertions" in prompt
+    assert "Keep a coordinated subject list with its shared predicate in one atom" in prompt
+    assert "A subject or label alone never grounds an\nimported predicate" in prompt
     assert "target block or its supplied `parent_heading`" in prompt
     assert "other context never supplies qualifiers or exact text" in prompt
     assert "A parent heading may qualify\nits body but is not an atom" in prompt
     assert "cost, staffing, and effect" not in prompt
     assert "dedicated Home" not in prompt
-    assert len(prompt.split()) < 400
+    assert len(prompt.split()) < 450
 
 
-def test_personal_items_prompt_equals_generated_generic_prompt():
-    config = _json(PERSONAL_ITEMS_CONFIG)
+def test_active_prompt_equals_generated_generic_prompt():
+    state = _json(COMPILE_STATE)
+    config = _json(ROOT / state["calibration"]["configuration"])
     identity = (ROOT / config["artifacts"]["identity_card"]).read_text(encoding="utf-8")
     active = (ROOT / config["artifacts"]["prompt"]).read_text(encoding="utf-8")
     generated = build_generic_source_prompt(

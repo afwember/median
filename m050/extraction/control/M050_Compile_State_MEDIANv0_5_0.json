@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T18:24:45-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_MID_SOURCE_FORMAL_STOPDOWN_AT_C0018_REJECTION",
+  "updated": "2026-08-05T18:39:36-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0018_V0_2_CORRECTED_READY_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -61,7 +61,7 @@
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -170,7 +170,7 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 80,
-    "cache_miss_call_ceiling_usd": "0.176504",
+    "cache_miss_call_ceiling_usd": "0.177392",
     "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
@@ -190,15 +190,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 6:24:45 PM EDT",
-    "status": "Discovery mid-source formal Stopdown at C0018 rejection boundary",
+    "updated_human": "August 5, 2026 at 6:39:36 PM EDT",
+    "status": "Discovery formal Stopdown with corrected C0018 v0.2 ready",
     "phase": "Atomic extraction — halted during Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0017 and C0025; rejected C0018 v0.1",
-    "now": "Both authorities are revoked; C0018 v0.1 remains rejected for subject-only grounding of a coordinated shared predicate; exact cumulative spend is $20.9657954.",
-    "next": "Await Asa's explicit Sparkup and resolution of the generic-prompt compatibility issue before any further operation"
+    "chunk": "Accepted C0001-C0017 and C0025; rejected C0018 v0.1; corrected C0018 v0.2 frozen",
+    "now": "Both authorities are revoked; the generic coordinated-subject/shared-predicate correction passed all 33 fake packet validations and replayed all 18 accepted chunks; exact cumulative spend is $20.9657954.",
+    "next": "Await Asa's next clear instruction to resume Worker activity before transmitting corrected C0018 v0.2"
   },
-  "next_possible_transition": "With Asa's explicit Sparkup and resolution of the generic-prompt compatibility issue, correct and refreeze Discovery C0018. No other source or later phase is authorized.",
+  "next_possible_transition": "A clear instruction from Asa to resume Worker activity may activate Discovery only and release corrected C0018 v0.2 after cold start and focused preflight. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

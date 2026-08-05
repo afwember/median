@@ -143,6 +143,12 @@ No separate successor packet is required. These canonical files are the handoff.
 ## Authority model
 
 - Asa Wember remains the sole authorial authority.
+- Asa gives standing informed consent for repository material to be transmitted
+  to Anthropic when an authorized compile task requires it, using the locally
+  stored Anthropic API credential. This consent is repository-wide and does not
+  require packet-, source-, or call-specific restatement. It permits the
+  external transfer only; it does not select a source, activate work, authorize
+  spend, widen a task, or permit transmission to another provider.
 - Only one task may write the repository at a time. A successor task begins
   read-only until Asa explicitly grants a bounded repository task or
   active-profile work.
@@ -161,23 +167,25 @@ control. The Worker reports the exact corpus vector, selected and next source,
 accepted/rejected chunk boundary, source-work and spend authority, and all
 prohibited later stages.
 
-- A source-work grant is confined to one named source and ends when that source
-  reaches source-bounded candidate acceptance. Starting the next source always
-  requires a new explicit grant from Asa. Source completion must close through
-  the formal Stopdown defined above.
+- A clear instruction from Asa to resume, continue, begin, or proceed with
+  Compile Worker activity is a sufficient explicit source-work grant for
+  exactly one source. No prescribed wording or source-name restatement is
+  required. The Worker derives the current or next source deterministically
+  from canonical compile state and processing order and reports that source
+  during cold start. If those controls do not select exactly one source, halt.
+  Source completion ends the grant and must close through formal Stopdown;
+  starting the following source requires a later human instruction.
 - Within an active source-work grant, an active cumulative spend budget with
   enough remaining balance for the next conservative cache-miss ceiling is
   provider-call permission. No separate call receipt, call limit, chunk
   authorization list, full-source flag, or transaction-level provider approval
   exists. Spend never selects or advances a source.
-- The named source-work grant is also informed source-level permission to use
-  the locally stored Anthropic API credential to transmit to Anthropic every
-  validated frozen packet containing bounded repository text from that source,
-  including ordinary corrected or refrozen retries, until the grant ends or is
-  revoked. Anthropic is the only approved external destination. This permission
-  does not extend to another source, unrelated repository material, another
-  provider, or disclosure of the credential as content. A newly frozen packet
-  is not a new approval boundary.
+- Standing repository-wide Anthropic transmission consent covers every
+  validated frozen packet, including ordinary corrected or refrozen retries.
+  A newly frozen packet is not a new approval boundary. Actual transmission
+  remains limited by the active task mandate, source grant, call readiness, and
+  spend budget; the credential may authenticate the call but must not be
+  disclosed as provider content.
 - Call readiness is derived from the named source grant, the current validated
   packet and configuration, completed offline/replay gates, sequential review,
   and sufficient cumulative budget. Do not store a parallel
@@ -290,6 +298,11 @@ Halt for Asa only when:
 - Keep routine narration and command output to the information needed for a
   decision, defect, spend boundary, or milestone. Successful internal
   bookkeeping does not require a running user-facing transcript.
+- At every halt, begin the user-facing report with `WORKER STATE: STOPDOWN`
+  only when both authorities are false and the closing checkpoint is clean,
+  pushed, and synchronized. Otherwise begin with `WORKER STATE: NOT STOPDOWN —
+  <reason>`. Follow it with `SOURCE PROGRESS: <current chunk> / <total chunks>`,
+  deriving the denominator from canonical state and the active chunk plan.
 - Record exceptional material in the existing outcome and ledger unless that is
   genuinely unsafe or impossible.
 - A normal compile operation has no process delta.

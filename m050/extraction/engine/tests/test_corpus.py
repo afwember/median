@@ -7,7 +7,12 @@ import yaml
 
 from median_gate5.corpus import derive_compile_source_state
 from median_gate5.errors import ContractError
-from median_gate5.extraction_machine import draft_block_dispositions, plan_source_chunks
+from median_gate5.extraction_machine import (
+    build_anthropic_request,
+    build_generic_response_schema,
+    draft_block_dispositions,
+    plan_source_chunks,
+)
 from median_gate5.schema import validate_artifact
 from median_gate5.structure import parse_markdown
 
@@ -96,3 +101,35 @@ def test_all_compile_scope_sources_parse_and_enter_generic_chunk_planner():
         assert [block_id for chunk in plan["chunks"] for block_id in chunk["block_ids"]] == [
             block["block_id"] for block in manifest["blocks"]
         ]
+        target_ids = [
+            item["block_id"]
+            for item in dispositions
+            if item["disposition"] == "eligible"
+        ][:2]
+        assert target_ids
+        request = build_anthropic_request(
+            prompt="Stable all-source compatibility policy",
+            response_schema=build_generic_response_schema(
+                source["source_id"], ["evidence_game_semantic"]
+            ),
+            payload={
+                "source_id": source["source_id"],
+                "required_target_disposition_count": len(target_ids),
+                "target_blocks": [
+                    {"block_id": block_id} for block_id in target_ids
+                ],
+            },
+            model="claude-sonnet-5",
+            reasoning_effort="low",
+            maximum_output_tokens=6000,
+            cache_ttl="1h",
+        )
+        disposition_schema = request["output_config"]["format"]["schema"][
+            "properties"
+        ]["dispositions"]
+        assert disposition_schema["items"]["properties"]["block_id"] == {
+            "type": "string",
+            "pattern": (
+                f"^{source['source_id']}__B[0-9]{{5}}_[0-9a-f]{{12}}$"
+            ),
+        }

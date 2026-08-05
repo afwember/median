@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T11:33:47-04:00",
+  "updated": "2026-08-05T13:21:17-04:00",
   "execution_state": "PERSONAL_ITEMS_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
@@ -189,7 +189,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 11:33:47 AM EDT",
+    "updated_human": "August 5, 2026 at 1:21:17 PM EDT",
     "status": "Personal Items source-bounded candidate accepted; formal Stopdown",
     "phase": "Atomic extraction — halted at Personal Items completion",
     "source": "Personal Items — ordinal 11; 11 / 22 compile-scope sources complete",

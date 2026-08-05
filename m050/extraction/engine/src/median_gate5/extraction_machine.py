@@ -611,11 +611,13 @@ def build_anthropic_request(
         raise ContractError("unsupported reasoning effort")
     if not isinstance(maximum_output_tokens, int) or maximum_output_tokens < 1:
         raise ContractError("maximum output tokens must be positive")
-    schema = copy.deepcopy({
-        key: value
-        for key, value in response_schema.items()
-        if key not in {"$schema", "$id"}
-    })
+    stable_schema = copy.deepcopy(
+        {
+            key: value
+            for key, value in response_schema.items()
+            if key not in {"$schema", "$id"}
+        }
+    )
     target_count = payload.get("required_target_disposition_count")
     target_blocks = payload.get("target_blocks")
     if (
@@ -626,44 +628,72 @@ def build_anthropic_request(
     ):
         raise ContractError("payload target-disposition count is invalid")
     try:
-        dispositions_schema = schema["properties"]["dispositions"]
+        stable_dispositions_schema = stable_schema["properties"]["dispositions"]
     except (KeyError, TypeError) as exc:
         raise ContractError("response schema lacks dispositions") from exc
-    if not isinstance(dispositions_schema, dict):
+    if not isinstance(stable_dispositions_schema, dict):
         raise ContractError("response dispositions schema is invalid")
+    source_id = payload.get("source_id")
+    if not isinstance(source_id, str) or not re.fullmatch(r"[A-Za-z0-9-]+", source_id):
+        raise ContractError("payload source ID is invalid")
     target_ids = [block.get("block_id") for block in target_blocks]
     if (
         any(not isinstance(block_id, str) or not block_id for block_id in target_ids)
         or len(target_ids) != len(set(target_ids))
     ):
         raise ContractError("payload target block IDs are invalid")
-    disposition_item = dispositions_schema.get("items")
-    if isinstance(disposition_item, dict):
+    bound_schema = copy.deepcopy(stable_schema)
+    bound_dispositions_schema = bound_schema["properties"]["dispositions"]
+
+    def constrain_block_ids(
+        dispositions_schema: dict[str, Any], constraint: dict[str, Any]
+    ) -> None:
+        disposition_item = dispositions_schema.get("items")
+        if not isinstance(disposition_item, dict):
+            return
         disposition_properties = disposition_item.get("properties")
-        if isinstance(disposition_properties, dict):
-            block_id_schema = disposition_properties.get("block_id")
-            if isinstance(block_id_schema, dict):
-                block_id_schema.clear()
-                block_id_schema["enum"] = target_ids
-            atoms_schema = disposition_properties.get("atoms")
-            if isinstance(atoms_schema, dict):
-                atom_item = atoms_schema.get("items")
-                if isinstance(atom_item, dict):
-                    atom_properties = atom_item.get("properties")
-                    if isinstance(atom_properties, dict):
-                        atom_block_id_schema = atom_properties.get("block_id")
-                        if isinstance(atom_block_id_schema, dict):
-                            atom_block_id_schema.clear()
-                            atom_block_id_schema["enum"] = target_ids
+        if not isinstance(disposition_properties, dict):
+            return
+        block_id_schema = disposition_properties.get("block_id")
+        if isinstance(block_id_schema, dict):
+            block_id_schema.clear()
+            block_id_schema.update(constraint)
+        atoms_schema = disposition_properties.get("atoms")
+        if not isinstance(atoms_schema, dict):
+            return
+        atom_item = atoms_schema.get("items")
+        if not isinstance(atom_item, dict):
+            return
+        atom_properties = atom_item.get("properties")
+        if not isinstance(atom_properties, dict):
+            return
+        atom_block_id_schema = atom_properties.get("block_id")
+        if isinstance(atom_block_id_schema, dict):
+            atom_block_id_schema.clear()
+            atom_block_id_schema.update(constraint)
+
+    source_block_pattern = f"^{source_id}__B[0-9]{{5}}_[0-9a-f]{{12}}$"
+    constrain_block_ids(
+        stable_dispositions_schema,
+        {"type": "string", "pattern": source_block_pattern},
+    )
+    constrain_block_ids(bound_dispositions_schema, {"enum": target_ids})
     # Anthropic structured outputs accept array minItems only at 0 or 1 and do
     # not accept maxItems. Exact target coverage remains enforced by the prompt
     # and the source-agnostic validator after capture.
-    dispositions_schema["minItems"] = 1
-    dispositions_schema.pop("maxItems", None)
-    Draft202012Validator.check_schema(schema)
+    for dispositions_schema in (
+        stable_dispositions_schema,
+        bound_dispositions_schema,
+    ):
+        dispositions_schema["minItems"] = 1
+        dispositions_schema.pop("maxItems", None)
+    Draft202012Validator.check_schema(stable_schema)
+    Draft202012Validator.check_schema(bound_schema)
     schema_contract = (
         "BOUND_RESPONSE_SCHEMA\n"
-        + json.dumps(schema, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+        + json.dumps(
+            bound_schema, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+        )
         + "\nEND_BOUND_RESPONSE_SCHEMA"
     )
     user_text = (
@@ -677,7 +707,7 @@ def build_anthropic_request(
         "thinking": {"type": "adaptive"},
         "output_config": {
             "effort": reasoning_effort,
-            "format": {"type": "json_schema", "schema": schema},
+            "format": {"type": "json_schema", "schema": stable_schema},
         },
         "system": [
             {

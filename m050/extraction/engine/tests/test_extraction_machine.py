@@ -417,25 +417,67 @@ def test_request_caches_only_stable_system_prefix_for_one_hour():
     assert "cache_control" not in request["messages"][0]
 
 
-def test_request_schema_binds_disposition_and_atom_ids_to_exact_targets():
-    schema = build_generic_response_schema("S", ["evidence_game_semantic"])
-    request = build_anthropic_request(
-        prompt="Stable source policy",
-        response_schema=schema,
-        payload={
-            "source_id": "S",
-            "required_target_disposition_count": 2,
-            "target_blocks": [{"block_id": "B1"}, {"block_id": "B2"}],
-        },
-        model="claude-sonnet-5",
-        reasoning_effort="low",
-        maximum_output_tokens=6000,
-        cache_ttl="1h",
-    )
-    dispositions = request["output_config"]["format"]["schema"]["properties"]["dispositions"]
-    assert dispositions["items"]["properties"]["block_id"] == {"enum": ["B1", "B2"]}
+def test_request_keeps_output_schema_stable_and_bound_contract_exact():
+    source_id = "M050-SRC-TEST-001"
+    first_ids = [
+        f"{source_id}__B00001_aaaaaaaaaaaa",
+        f"{source_id}__B00002_bbbbbbbbbbbb",
+    ]
+    second_ids = [f"{source_id}__B00003_cccccccccccc"]
+    schema = build_generic_response_schema(source_id, ["evidence_game_semantic"])
+
+    def request_for(target_ids):
+        return build_anthropic_request(
+            prompt="Stable source policy",
+            response_schema=schema,
+            payload={
+                "source_id": source_id,
+                "required_target_disposition_count": len(target_ids),
+                "target_blocks": [
+                    {"block_id": block_id} for block_id in target_ids
+                ],
+            },
+            model="claude-sonnet-5",
+            reasoning_effort="low",
+            maximum_output_tokens=6000,
+            cache_ttl="1h",
+        )
+
+    first = request_for(first_ids)
+    second = request_for(second_ids)
+    assert first["output_config"] == second["output_config"]
+    assert first["system"][0] == second["system"][0]
+    assert first["system"][1] != second["system"][1]
+    assert first["messages"] != second["messages"]
+
+    dispositions = first["output_config"]["format"]["schema"]["properties"][
+        "dispositions"
+    ]
+    expected_pattern = f"^{source_id}__B[0-9]{{5}}_[0-9a-f]{{12}}$"
+    assert dispositions["items"]["properties"]["block_id"] == {
+        "type": "string",
+        "pattern": expected_pattern,
+    }
     atoms = dispositions["items"]["properties"]["atoms"]
-    assert atoms["items"]["properties"]["block_id"] == {"enum": ["B1", "B2"]}
+    assert atoms["items"]["properties"]["block_id"] == {
+        "type": "string",
+        "pattern": expected_pattern,
+    }
+
+    bound_text = first["system"][1]["text"]
+    bound_schema = json.loads(
+        bound_text.removeprefix("BOUND_RESPONSE_SCHEMA\n").removesuffix(
+            "\nEND_BOUND_RESPONSE_SCHEMA"
+        )
+    )
+    bound_dispositions = bound_schema["properties"]["dispositions"]
+    assert bound_dispositions["items"]["properties"]["block_id"] == {
+        "enum": first_ids
+    }
+    bound_atoms = bound_dispositions["items"]["properties"]["atoms"]
+    assert bound_atoms["items"]["properties"]["block_id"] == {
+        "enum": first_ids
+    }
 
 
 def test_generic_validator_replays_accepted_authorial_c0001():

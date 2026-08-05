@@ -4,15 +4,15 @@
   ],
   "artifact_sha256": {
     "block_manifest": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
-    "chunk_plan": "20a6824a1c673b49dff191b7f9f2ac1f57f4adaeacfd214b595cef031df0a7c6",
-    "disposition_ledger": "3085021e79d711181931e02e6c066e05b92a2369927599aa5431d144d079eba3",
+    "chunk_plan": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
+    "disposition_ledger": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "identity_card": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
     "prompt": "3183ab8cb8f870e0f476fadd80980bf11a7057aa47627ad1d5d2f7bb5c33702c",
     "response_schema": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4"
   },
   "artifacts": {
     "block_manifest": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Block_Manifest_v0_1_MEDIANv0_5_0.json",
-    "chunk_plan": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Section_Aware_Chunk_Plan_v0_1_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Section_Aware_Chunk_Plan_v0_2_MEDIANv0_5_0.json",
     "disposition_ledger": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
     "identity_card": "m050/extraction/control/source-identities/cards/M050_Discovery_Time_Movement_and_Civic_Progression_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
     "prompt": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Prompt_MEDIANv0_5_0.md",
@@ -22,7 +22,8 @@
     "pilot_chunk_id": "C0025",
     "pilot_passed": true,
     "pilot_required": true,
-    "state": "representative_pilot_complete"
+    "state": "representative_pilot_complete",
+    "reasoning_calibration": "C0012 v0.1 mechanically passed at low reasoning but substantively failed the categorical cross-cell mapping grounding invariant. C0015 v0.1 then showed medium reasoning did not reliably distinguish a same-row qualifier from a cross-cell mapping, so high reasoning is required for the remaining sequential chunks. C0016 v0.1 and v0.2 exhausted 6000 and 8000 output tokens before clean structured responses, so the existing output allowance is raised once more to 12000."
   },
   "execution": {
     "cadence": "sequential_one_call_review",
@@ -54,14 +55,14 @@
     "cache_boundary": "stable_system_prefix",
     "cache_required": true,
     "cache_ttl": "1h",
-    "maximum_output_tokens": 6000,
+    "maximum_output_tokens": 12000,
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "low"
+    "reasoning_effort": "high"
   },
   "quantization": {
-    "basis": "C0025 v0.1 passed mechanical and substantive review at 10 provider-eligible targets; this calibrated density preserves complete semantic groups and yields 33 source-derived chunks.",
+    "basis": "C0025 v0.1 passed mechanical and substantive review at 10 provider-eligible targets. After C0001 v0.1 exposed document-control metadata in the draft target set, the existing source-review dispositions removed three metadata blocks and made the structural title context-only without changing accepted C0025 membership; 33 source-derived chunks remain.",
     "chunk_count_is_input": false,
     "generated_chunk_count": 33,
     "target_blocks_per_chunk": 10,

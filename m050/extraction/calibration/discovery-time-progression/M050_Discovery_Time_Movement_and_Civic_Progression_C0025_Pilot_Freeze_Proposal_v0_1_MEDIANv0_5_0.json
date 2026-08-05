@@ -6,14 +6,14 @@
   "binding": {
     "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
     "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
-    "configuration_sha256": "11912063be7f19a2a709b546310c91750c269f7cba6771856cca47f35608c43f",
+    "configuration_sha256": "0fd688831044f0377fe7a98f2dde0d93e52cd922492c28723760624db874fd82",
     "identity_card_sha256": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
-    "disposition_ledger_sha256": "3085021e79d711181931e02e6c066e05b92a2369927599aa5431d144d079eba3",
-    "chunk_plan_sha256": "20a6824a1c673b49dff191b7f9f2ac1f57f4adaeacfd214b595cef031df0a7c6",
-    "pilot_chunk_id": "C0001",
-    "pilot_packet_sha256": "7b970d1281cb6c75120fe8c71f605cf45c356e9549287c0465d08c5f2913c294",
-    "pilot_packet_file_sha256": "632e2a14c72a514bb970aff2914ad0c54bafd8c36485070000f39987af790fc9",
+    "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
+    "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
+    "pilot_chunk_id": "C0018",
+    "pilot_packet_sha256": "44af7ee570e319e43804a6a8fa13be15a4e394192efbdc4cc047169e8a36019d",
+    "pilot_packet_file_sha256": "758412770e770b1569d0004f3fa5e7de83c5d2513e519d051366601da066258f",
     "prompt_sha256": "3183ab8cb8f870e0f476fadd80980bf11a7057aa47627ad1d5d2f7bb5c33702c",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
     "engine_module_sha256": "283b0f1f87cd336042208c784d7a9d17a5d326b37ae071d84a3913c85c0467a8",
@@ -22,8 +22,8 @@
       "evidence_game_semantic"
     ],
     "model": "claude-sonnet-5",
-    "reasoning_effort": "low",
-    "maximum_output_tokens": 6000,
+    "reasoning_effort": "high",
+    "maximum_output_tokens": 12000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
     "pricing": {
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0025 v0.1 passed representative pilot review; C0001 is the first outstanding source-derived chunk in sequential order.",
-    "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.115752"
+    "selection_reason": "C0017 v0.1 passed mechanical and substantive review; C0018 is the next outstanding source-derived chunk in sequential order.",
+    "required_target_disposition_count": 9,
+    "cache_miss_call_ceiling_usd": "0.176504"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -57,6 +57,17 @@
     "active_prompt_matches_generic_builder": true,
     "stable_output_schema_cache_boundary_preserved": true,
     "provider_call_made": true,
-    "c0025_v0_1_mechanical_and_substantive_review_passed": true
+    "c0025_v0_1_mechanical_and_substantive_review_passed": true,
+    "c0001_v0_1_substantive_rejection_preserved": true,
+    "document_control_disposition_correction_passed": true,
+    "c0025_disposition_compatibility_replay_passed": true,
+    "c0012_v0_1_cross_cell_grounding_rejection_preserved": true,
+    "medium_reasoning_all_accepted_evidence_compatibility_replay_passed": true,
+    "c0015_v0_1_cross_cell_review_rejection_preserved": true,
+    "high_reasoning_all_accepted_evidence_compatibility_replay_passed": true,
+    "c0016_v0_1_max_tokens_rejection_preserved": true,
+    "output_allowance_8000_all_accepted_evidence_compatibility_replay_passed": true,
+    "c0016_v0_2_max_tokens_rejection_preserved": true,
+    "output_allowance_12000_all_accepted_evidence_compatibility_replay_passed": true
   }
 }

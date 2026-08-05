@@ -1,0 +1,23 @@
+{
+  "schema_version": "M050-EXTRACTION-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-DISCOVERY-TIME-PROGRESSION-C0025-DISPOSITION-COMPATIBILITY-001",
+  "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+  "chunk_id": "C0025",
+  "purpose": "Verify that the C0001 document-control disposition correction preserves accepted C0025 target membership and mechanical validity.",
+  "binding": {
+    "configuration_sha256": "d493d3ce17c477a613f7521f8a9de9f2c65251ff924b592cc7cb9802cfbdba10",
+    "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
+    "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
+    "accepted_raw_response_sha256": "ec3c18406097483030880420bde8e836f7d666228c7efd3cbb867685c1b3f080",
+    "rebuilt_packet_sha256": "5463be36a554255bac29dc20917de3d04a3bd3cabd8c6a92e996ada50c21294a"
+  },
+  "result": {
+    "target_membership_unchanged": true,
+    "required_target_disposition_count": 10,
+    "mechanical_validation_passed": true,
+    "schema_errors": 0,
+    "coverage_errors": 0,
+    "grounding_errors": 0
+  },
+  "status": "PASS"
+}

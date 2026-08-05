@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 5, 2026 at 2:45:08 AM EDT<br>
+August 5, 2026 at 8:18:28 AM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Personal Items halted at unusual C0008 shared-qualifier defect<br>
+**STATUS:** Personal Items halted at repeated C0011 smart-quote grounding defect<br>
 **PHASE:** Atomic extraction — Personal Items sequential extraction<br>
 **SOURCE:** Personal Items — ordinal 11; 10 / 22 compile-scope sources complete<br>
-**CHUNK:** Accepted C0001-C0007; rejected C0008 v0.1 and v0.3-v0.6; no packet authorized for retry<br>
-**NOW:** C0008 v0.6 repeated the missing at-Homecoming exact-span qualification after the final precise correction; exact cumulative spend is $18.2186996<br>
-**NEXT:** Human review must decide whether exact-span grounding may rely on block context or authorize the smallest invariant change; no further call is permitted<br>
-**SPEND REMAINING:** $1.50
+**CHUNK:** Accepted C0001-C0010; rejected C0011 v0.1-v0.2; no packet authorized for retry<br>
+**NOW:** C0011 v0.2 repeated exact-grounding failure by emitting literal Unicode escape text instead of source smart quotes; exact cumulative spend is $18.8325856<br>
+**NEXT:** Human review is required before any further C0011 retry; no provider call is permitted<br>
+**SPEND REMAINING:** $0.89

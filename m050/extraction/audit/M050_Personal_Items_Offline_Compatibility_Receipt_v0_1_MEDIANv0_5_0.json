@@ -5,10 +5,10 @@
   "status": "PERSONAL_ITEMS_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
   "source_id": "M050-SRC-PERSONAL-ITEMS-001",
   "binding": {
-    "configuration_sha256": "0236613886ae92a25478a067f02788e32c703d0f6b9884c5e47979b1acf2db5b",
-    "prompt_sha256": "c3de33c7e36eb774775a821bd89a03644d2c32d0d4b8d1f2a6158d9d2b3398c1",
-    "engine_module_sha256": "03a2c5b284204b1993299f4aba7522e430ebdee6248678e1f790e54cf4691a99",
-    "engine_tests_sha256": "20fe582f285ba9f7ab55042e21f85438512951aaefc5d2819e268ad4ad610fd3"
+    "configuration_sha256": "4ae7f10d0f0d39180ad32acc1ef80f09a6c56b39d944cec7317c0c80dbcaa7ec",
+    "prompt_sha256": "e9fc83713cfbe32702dfa2b0291ad8fd1149099d5afe028a13069819febc0c4b",
+    "engine_module_sha256": "c936fe300ca29ac28897c8e8c41d4682b24b1e6803ce95a307f9ca056b9b2245",
+    "engine_tests_sha256": "56208b7365f93d8f98aae852f0da742347055ee383eedfe2208662d89c182838"
   },
   "source_review": {
     "source_blocks": 297,
@@ -47,5 +47,5 @@
       "result": "mechanical_pass"
     }
   },
-  "note": "The established quantization machinery reduced density from 20 to 10 after C0005 v0.1 output-limit rejection. C0001 v0.1 exposed a source-agnostic HTML-tag slash false positive, corrected with exact replay. C0004 v0.1-v0.2 returned incomplete placeholders at low and medium reasoning; a 5-target replan correctly refused to split an indivisible group, so high reasoning was retained. C0006 v0.1 exposed incomplete target enumeration. C0008 v0.1 emitted literal placeholder IDs, so the no-dummy instruction now explicitly prohibits placeholders. C0008 v0.3-v0.5 omitted a shared dependent timing qualification from an atom grounding span, so the existing qualification instruction now requires every qualified exact span to begin at the shared qualifier. All 165 packets rebuild and all 74 tests pass."
+  "note": "The established quantization machinery reduced density from 20 to 10 after C0005 v0.1 output-limit rejection. C0001 v0.1 exposed a source-agnostic HTML-tag slash false positive, corrected with exact replay. C0004 v0.1-v0.2 returned incomplete placeholders at low and medium reasoning; a 5-target replan correctly refused to split an indivisible group, so high reasoning was retained. C0006 v0.1 exposed incomplete target enumeration. C0008 v0.1 emitted literal placeholder IDs, so the no-dummy instruction explicitly prohibits placeholders. C0008 v0.3-v0.6 exposed ambiguity in shared-qualifier grounding. Asa ruled that exact spans uniquely ground core assertions while normalized claims may incorporate explicit, unambiguous same-block shared qualifiers, never inferred, ambiguous, cross-block, or unstated ones. C0011 v0.1 corrupted a smart-quoted example, so the existing byte-fidelity instruction now explicitly preserves smart quotes. All 165 packets rebuild, the exact compatibility replay passes, and all 74 tests pass."
 }

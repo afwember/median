@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T02:45:08-04:00",
-  "execution_state": "PERSONAL_ITEMS_C0008_UNUSUAL_SHARED_QUALIFIER_HALT",
+  "updated": "2026-08-05T08:18:28-04:00",
+  "execution_state": "PERSONAL_ITEMS_C0011_REPEATED_SMART_QUOTE_GROUNDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -38,9 +38,12 @@
       "C0004",
       "C0005",
       "C0006",
-      "C0007"
+      "C0007",
+      "C0008",
+      "C0009",
+      "C0010"
     ],
-    "rejected_chunk_id": "C0008",
+    "rejected_chunk_id": "C0011",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -49,7 +52,7 @@
     "freeze": "m050/extraction/calibration/personal-items/M050_Personal_Items_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Personal_Items_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0008_Call_Packet_v0_6_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0011_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -85,15 +88,30 @@
         "chunk_id": "C0007",
         "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0008_Outcome_v0_7_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0009_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
       "c0001_v0_1_html_slash": "m050/extraction/audit/M050_Personal_Items_C0001_HTML_Slash_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0008",
+    "pilot_chunk_id": "C0011",
     "generated_chunk_count": 17,
     "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 8,
+    "required_target_disposition_count": 10,
     "source_blocks": 297,
     "eligible_target_blocks": 158,
     "context_only_blocks": 31,
@@ -102,15 +120,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 74,
-    "cache_miss_call_ceiling_usd": "0.219896",
-    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0008_Outcome_v0_6_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.224732",
+    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0011_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "19.7245696",
-    "cumulative_spent_usd": "18.2186996",
-    "remaining_usd": "1.5058700",
-    "display_usd_rounded_up": "18.22"
+    "cumulative_spent_usd": "18.8325856",
+    "remaining_usd": "0.8919840",
+    "display_usd_rounded_up": "18.84"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -122,26 +140,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 2:45:08 AM EDT",
-    "status": "Personal Items halted at unusual C0008 shared-qualifier defect",
+    "updated_human": "August 5, 2026 at 8:18:28 AM EDT",
+    "status": "Personal Items halted at repeated C0011 smart-quote grounding defect",
     "phase": "Atomic extraction — Personal Items sequential extraction",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0007; rejected C0008 v0.1 and v0.3-v0.6; no packet authorized for retry",
-    "now": "C0008 v0.6 repeated the missing at-Homecoming exact-span qualification after the final precise correction; exact cumulative spend is $18.2186996",
-    "next": "Human review must decide whether exact-span grounding may rely on block context or authorize the smallest invariant change; no further call is permitted"
+    "chunk": "Accepted C0001-C0010; rejected C0011 v0.1-v0.2; no packet authorized for retry",
+    "now": "C0011 v0.2 repeated exact-grounding failure by emitting literal Unicode escape text instead of source smart quotes; exact cumulative spend is $18.8325856",
+    "next": "Human review is required before any further C0011 retry; no provider call is permitted"
   },
-  "next_possible_transition": "Human review of the repeated C0008 shared-qualifier obstruction; no provider retry until Asa resolves the grounding boundary or authorizes the smallest necessary invariant change.",
+  "next_possible_transition": "Human review of the repeated C0011 smart-quote grounding obstruction; no provider retry until Asa authorizes a bounded next step.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "stop_reason": "end_turn",
-    "chunk_id": "C0008",
-    "output_tokens": 11390,
-    "cache_creation_input_tokens": 3466,
+    "chunk_id": "C0011",
+    "output_tokens": 10091,
+    "cache_creation_input_tokens": 3653,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.134408",
-    "mechanical_passed": true,
+    "exact_cost_usd": "0.123156",
+    "mechanical_passed": false,
     "review_state": "review_failed"
   }
 }

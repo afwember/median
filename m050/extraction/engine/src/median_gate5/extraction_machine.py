@@ -533,12 +533,11 @@ def build_generic_source_prompt(
 Allowed source: `{source_id}`
 Allowed streams: {streams}
 
-The disposition block-ID set must exactly equal `target_blocks`: no missing or repeated IDs.
-Return one disposition per target, in input order;
-partially enumerated dispositions are invalid.
+The disposition block-ID set must exactly equal `target_blocks`: none missing or repeated.
+Return one input-ordered disposition per target; partial enumeration is invalid.
 Disposition neither context nor excluded blocks. Use only `SOURCE_BLOCKS`.
 
-Use supplied IDs only. Never emit samples, placeholders, or dummy values such as `x`.
+Use only supplied IDs; never samples, placeholders, or dummy `x`.
 Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Approved content/provenance boundary
@@ -547,17 +546,18 @@ Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Extraction contract
 
-Separate claims. Shared qualifiers must begin every qualified exact span. Every `exact_source_text` is
+Separate claims. Exact spans uniquely ground core assertions. Normalized claims may add only
+unambiguous same-block shared qualifiers; never inferred, ambiguous, cross-block, or unstated ones. Every `exact_source_text` is
 a byte-for-byte contiguous target-block substring after JSON decoding, retains
-markup and escaping, and must occur exactly once in the block. For text
-repeated or nested inside another term, expand with adjacent source text until unique.
-If markup interrupts prose, include it or split the atom.
+markup and escaping, and must occur exactly once in the block. Expand repeated
+or nested terms with adjacent text until unique.
+Preserve smart quotes exactly. Include interrupting markup or split the atom.
 
 Obey target constraints. `required_disposition` fixes `kind`; for
 `no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
 kind; `minimum_atoms` is a floor. Structural headings, labels, table headers,
-delimiters, and document-control metadata carry no substantive atom. Never turn
-a label into a tautological topic claim or use structural context to omit a
+delimiters, and document-control metadata carry no substantive atom. Never make
+a label a tautological topic claim or use structural context to omit a
 dependent substantive target.
 
 For every substantive table row, cover every nonempty semantic cell. Ground

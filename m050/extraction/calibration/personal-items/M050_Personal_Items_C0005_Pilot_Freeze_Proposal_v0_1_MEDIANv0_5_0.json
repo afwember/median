@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-PERSONAL-ITEMS-001",
     "source_sha256": "b29bb2c0b85635fb50c47828ad41d7c406d30a5e4f9928b9f483ad4b3b220455",
-    "configuration_sha256": "0236613886ae92a25478a067f02788e32c703d0f6b9884c5e47979b1acf2db5b",
+    "configuration_sha256": "4ae7f10d0f0d39180ad32acc1ef80f09a6c56b39d944cec7317c0c80dbcaa7ec",
     "identity_card_sha256": "a679ff553213b61324e0604db43acc319483a07ae114d741f1cd947d8f212ea0",
     "block_manifest_sha256": "99540dacbc6fa73939be4aa08c32c85ffc86e15207b6febb96bae25394619080",
     "disposition_ledger_sha256": "e2f8f6cd5b251709b07f031f3c90e07f57307a7a66c6af4bd621b3c0b1fc5859",
     "chunk_plan_sha256": "34151d22766b14bd4e827c350eda46222b16e3ad2802bc153e4368bc443a6f6d",
-    "pilot_chunk_id": "C0008",
-    "pilot_packet_sha256": "cd94da718e72bbfed5131a95916f533d3d94933344d44ec008c26279db08cef4",
-    "pilot_packet_file_sha256": "9add778bd64147b23574a4f8eefaaa06fe8ce6f9b8ca412c7924cd32492a0d05",
-    "prompt_sha256": "c3de33c7e36eb774775a821bd89a03644d2c32d0d4b8d1f2a6158d9d2b3398c1",
+    "pilot_chunk_id": "C0011",
+    "pilot_packet_sha256": "af5528e716f4a123afc45bbea9118908da68b88815db930a30b8bd69c52bc676",
+    "pilot_packet_file_sha256": "846a8b06cfa851b8296e73683128c25b21974bf97cabf5ae680a720f2bec3d78",
+    "prompt_sha256": "e9fc83713cfbe32702dfa2b0291ad8fd1149099d5afe028a13069819febc0c4b",
     "response_schema_sha256": "fcd9834d0e905d5a72faa26e4432bd3019859cf07a8dd2c0a54c3b78d2a39744",
-    "engine_module_sha256": "03a2c5b284204b1993299f4aba7522e430ebdee6248678e1f790e54cf4691a99",
-    "engine_tests_sha256": "20fe582f285ba9f7ab55042e21f85438512951aaefc5d2819e268ad4ad610fd3",
+    "engine_module_sha256": "c936fe300ca29ac28897c8e8c41d4682b24b1e6803ce95a307f9ca056b9b2245",
+    "engine_tests_sha256": "56208b7365f93d8f98aae852f0da742347055ee383eedfe2208662d89c182838",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0008 v0.1 was rejected for placeholders and v0.3-v0.5 for an ungrounded shared timing qualification; the existing instructions now explicitly prohibit placeholders and require every qualified exact span to begin at the shared qualifier, and C0008 v0.6 is rebound after full compatibility replay.",
-    "required_target_disposition_count": 8,
-    "cache_miss_call_ceiling_usd": "0.219896"
+    "selection_reason": "C0011 v0.1 was preserved and rejected for corrupting a smart-quoted example; the existing byte-fidelity instruction now explicitly preserves smart quotes, and C0011 v0.2 is rebound after full compatibility replay.",
+    "required_target_disposition_count": 10,
+    "cache_miss_call_ceiling_usd": "0.224732"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -67,6 +67,8 @@
     "exact_span_qualification_correction_passed": true,
     "shared_qualification_overlap_correction_passed": true,
     "shared_qualifier_span_start_correction_passed": true,
+    "authorial_same_block_shared_qualifier_ruling_implemented": true,
+    "smart_quote_fidelity_correction_passed": true,
     "provider_call_made": true
   }
 }

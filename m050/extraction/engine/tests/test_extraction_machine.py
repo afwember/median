@@ -300,13 +300,14 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
 
     assert boundary in prompt
     assert "block-ID set must exactly equal `target_blocks`" in prompt
-    assert "no missing or repeated IDs" in prompt
-    assert "one disposition per target" in prompt
-    assert "partially enumerated dispositions are invalid" in prompt
+    assert "none missing or repeated" in prompt
+    assert "one input-ordered disposition per target" in prompt
+    assert "partial enumeration is invalid" in prompt
     assert "byte-for-byte" in prompt
     assert "must occur exactly once in the block" in prompt
-    assert "repeated or nested inside another term" in prompt
-    assert "If markup interrupts prose, include it or split the atom" in prompt
+    assert "Expand repeated\nor nested terms with adjacent text until unique" in prompt
+    assert "Preserve smart quotes exactly" in prompt
+    assert "Include interrupting markup or split the atom" in prompt
     assert "required_disposition" in prompt
     assert "only after verifying its disposition count equals\n`required_target_disposition_count`" in prompt
     assert "`no_substantive_claim`, emit empty `atoms`" in prompt
@@ -321,9 +322,11 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "document-control metadata carry no substantive atom" in prompt
     assert "target block ID plus local atom ordinal" in prompt
     assert "proposal IDs must remain source-unique" in prompt
-    assert "samples, placeholders, or dummy values such as `x`" in prompt
+    assert "never samples, placeholders, or dummy `x`" in prompt
     assert "never abbreviate the target set" in prompt
-    assert "Shared qualifiers must begin every qualified exact span" in prompt
+    assert "Exact spans uniquely ground core assertions" in prompt
+    assert "unambiguous same-block shared qualifiers" in prompt
+    assert "never inferred, ambiguous, cross-block, or unstated ones" in prompt
     assert "cost, staffing, and effect" not in prompt
     assert "dedicated Home" not in prompt
     assert len(prompt.split()) < 400

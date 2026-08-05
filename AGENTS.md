@@ -219,11 +219,15 @@ Halt for Asa only when:
   is provider-visible. It may contain only exact identity and provenance,
   source-declared role, scope, and status, allowed streams, media and exclusion
   rules, and handling necessary to preserve that source's own qualifications.
-  Source-declared lineage may be recorded as provenance, but do not quote,
-  summarize, interpret, or apply substantive content from Human Rulings or any
-  other external source. Known external authority may appear only as canonical
-  IDs marking unresolved traceability; its meaning, precedence, and effect
-  remain deferred to reconciliation.
+  Exclude repository history, alternate representation filenames or hashes,
+  external-source inventories, design or literary influence discussion, and
+  source summaries that do not change provider handling. Source-declared
+  lineage may be recorded as provenance, but do not quote, summarize,
+  interpret, or apply substantive content from Human Rulings or any other
+  external source. Do not enumerate external authorities merely to preserve
+  lineage. If an external authority must be identified to enforce a provider
+  handling boundary, use only its canonical ID; its meaning, precedence, and
+  effect remain deferred to reconciliation.
 - Freeze the exact source, identity, disposition, streams, chunk, prompt,
   schema, engine, validator, normalization, exclusion policy, model, reasoning,
   cache, and cost bindings before a call.
@@ -288,11 +292,18 @@ Halt for Asa only when:
 
 ## STATUS contract
 
-Refresh `STATUS.md` after every accepted or rejected chunk, lifecycle halt,
-authorization or spend change, source milestone, and before commit or push.
-Derive it only from the canonical compile state. The first line below its title
-is an unlabeled human-readable timestamp rounded to the nearest second. Its
-final nonblank line is the active spend balance rounded downward to the cent so
-it never overstates remaining authority; exact cumulative spend and balance
-remain in machine evidence. The guard rejects a stale or contradictory
-dashboard.
+`m050/tools/m050_render_status.py` is the sole writer of `STATUS.md`. It derives
+the complete dashboard deterministically from canonical compile state; agents
+must not compose or patch dashboard prose manually.
+
+`STATUS.md` is a full-guard and publication checkpoint, not live execution
+state. Routine accepted or rejected chunks do not require regeneration. Run
+the renderer immediately before every full-guard invocation and before any
+push not already preceded by a refreshed full guard. Between refreshes,
+canonical state and the active run ledger remain authoritative.
+
+The first line below the dashboard title is an unlabeled human-readable
+timestamp rounded to the nearest second. The final nonblank line is the active
+spend balance rounded downward to the cent so it never overstates remaining
+authority; exact cumulative spend and balance remain in machine evidence. The
+guard rejects a stale or contradictory dashboard.

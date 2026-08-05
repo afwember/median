@@ -1,8 +1,8 @@
 # MEDIAN v0.5.0 Guest Content/Provenance Identity Card v0.1
 
 Date: 2026-08-04
-Status: `PENDING_AUTHOR_APPROVAL`
-Lifecycle state: `identity_card_proposed`
+Status: `APPROVED`
+Lifecycle state: `identity_card_approved`
 Author/root of authority: Asa Wember
 
 ## Source identity and authority
@@ -53,6 +53,7 @@ source, later compile stage, or Google Sheets work.
 
 ## Approval boundary
 
-This card remains pending Asa Wember's approval. No offline scaffold,
-provider-eligible configuration, provider transmission, or spend is authorized
-by this proposal.
+Asa Wember approved this source identity and extraction boundary. Approval
+permits the established Guest-only offline preparation and representative pilot
+calibration; provider readiness still requires validated frozen bindings,
+completed offline and replay gates, sequential review, and sufficient budget.

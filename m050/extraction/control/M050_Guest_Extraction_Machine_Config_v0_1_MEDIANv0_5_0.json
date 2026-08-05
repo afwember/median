@@ -1,0 +1,74 @@
+{
+  "allowed_streams": [
+    "evidence_game_semantic"
+  ],
+  "artifact_sha256": {
+    "block_manifest": "30fa23174b486d9bcf516e8b648424ea01bd545334738458bef5ed9c8be04c07",
+    "chunk_plan": "b967e7ce70c391089dad937099ae17c1bb7eec49866965f8e47b3b8c8cca6abc",
+    "disposition_ledger": "17235fad0c948ac0ee7c8426cf62fc02f8219921c61fe8bcc7ec4b91b9c91bbf",
+    "identity_card": "a2e2dbcaf2ad78cf5a578ee5ccaa3e2755d0a39058415e8e0c09041fed4d6337",
+    "prompt": "027a7077237334310d4c35c1c9bd5cdc68abe24aab8159053b1779f6f3086617",
+    "response_schema": "3351261fd40c671068d00856dea537735b0b98325854fca8dd40b016d65ad103"
+  },
+  "artifacts": {
+    "block_manifest": "m050/extraction/control/source-identities/blocks/M050_Guest_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_Guest_Section_Aware_Chunk_Plan_v0_1_MEDIANv0_5_0.json",
+    "disposition_ledger": "m050/extraction/calibration/guest/M050_Guest_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Guest_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "prompt": "m050/extraction/calibration/guest/M050_Guest_Extraction_Prompt_v0_1_MEDIANv0_5_0.md",
+    "response_schema": "m050/extraction/calibration/guest/M050_Guest_Response_Schema_v0_1_MEDIANv0_5_0.json"
+  },
+  "execution": {
+    "cadence": "sequential_one_call_review",
+    "next_chunk_requires_substantive_review_of_prior_chunk": true
+  },
+  "pricing": {
+    "cache_1h_write_multiplier": "2",
+    "cache_5m_write_multiplier": "1.25",
+    "cache_read_multiplier": "0.1",
+    "input_usd_per_million_tokens": "2",
+    "output_usd_per_million_tokens": "10"
+  },
+  "provider": {
+    "cache_boundary": "stable_system_prefix",
+    "cache_required": true,
+    "cache_ttl": "1h",
+    "maximum_output_tokens": 16000,
+    "model": "claude-sonnet-5",
+    "name": "Anthropic",
+    "reasoning_effort": "high"
+  },
+  "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
+  "source_id": "M050-SRC-GUEST-001",
+  "source_path": "m050/docs/v0.5/specifications/M050_Guest_Citizen_Specification_v2_0_MEDIANv0_5_0.md",
+  "source_sha256": "ecedad99eb425c573149c9a1e33bcce0ee89422f76a9e1b25e4f7387af14f15f",
+  "status": "SEQUENTIAL_RUN_READY",
+  "calibration": {
+    "pilot_chunk_id": "C0005",
+    "pilot_passed": true,
+    "pilot_required": true,
+    "state": "representative_pilot_complete"
+  },
+  "quantization": {
+    "basis": "Representative Guest C0005 pilot accepted at 20 targets; the calibrated density yields 49 source-derived chunks.",
+    "chunk_count_is_input": false,
+    "generated_chunk_count": 49,
+    "target_blocks_per_chunk": 20,
+    "unit": "provider_eligible_target_blocks"
+  },
+  "media_exclusion_policy": {
+    "caption_target_blocks": 0,
+    "excluded_blocks": 0,
+    "excluded_occurrences": 0,
+    "external_representation_consultation_prohibited": true,
+    "provider_payload_media_content_prohibited": true,
+    "state": "approved_no_embedded_media"
+  },
+  "lean_structural_policy": {
+    "contents_navigation": "excluded_or_structural_context",
+    "dependent_bodies_remain_disposition_required": true,
+    "exact_target_disposition_coverage_required": true,
+    "source_position_markers": "retained_with_their_source_blocks",
+    "table_headers_and_delimiters": "no_substantive_claim"
+  }
+}

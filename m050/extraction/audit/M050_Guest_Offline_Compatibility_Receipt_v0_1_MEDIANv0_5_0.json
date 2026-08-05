@@ -1,0 +1,47 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-GUEST-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-04",
+  "status": "GUEST_OFFLINE_PREPARATION_VERIFIED_SEQUENTIAL_RUN_READY",
+  "source_id": "M050-SRC-GUEST-001",
+  "binding": {
+    "configuration_sha256": "f94dc3f0aac950355537b1fb86e1dcf00f9719b17c784775471e34aa5defb8d4",
+    "prompt_sha256": "027a7077237334310d4c35c1c9bd5cdc68abe24aab8159053b1779f6f3086617",
+    "engine_module_sha256": "8e25f66d4e44a86662ff8953f40cb5e0ea57efed94f55772cb137895c6659209",
+    "engine_tests_sha256": "baa5469070385df5f0a235166681ba7cb8780cf404f4c9d1c950bd132d3af3d7",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1"
+  },
+  "source_review": {
+    "source_blocks": 1331,
+    "eligible_targets": 820,
+    "context_only_blocks": 92,
+    "excluded_blocks": 419,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 49,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 1086,
+    "representative_pilot_chunk_id": "C0005",
+    "pilot_selection_basis": "C0005 has the highest estimated input load and combines precedence rows, qualified scope, cross-system boundaries, and dense canonical summary claims."
+  },
+  "offline_verification": {
+    "all_49_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 71,
+    "all_source_payload_replays_passed": 148
+  },
+  "replays": {},
+  "note": "The validated generic full-target/no-dummy correction remains bound. After C0012 v0.1 returned a one-item placeholder response at medium reasoning, effort is raised to high for the bounded v0.2 retry; 71 tests, 49 Guest fake validations, and 148 all-source packet replays pass."
+}

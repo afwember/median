@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T20:31:18-04:00",
-  "execution_state": "GUEST_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "updated": "2026-08-04T21:41:10-04:00",
+  "execution_state": "GUEST_C0017_TRANSPORT_COST_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -30,23 +30,138 @@
     "id": "M050-SRC-GUEST-001",
     "label": "Guest",
     "compile_ordinal": 10,
-    "accepted_chunk_ids": [],
-    "rejected_chunk_id": null,
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002",
+      "C0003",
+      "C0004",
+      "C0005",
+      "C0006",
+      "C0007",
+      "C0008",
+      "C0009",
+      "C0010",
+      "C0011",
+      "C0012",
+      "C0013",
+      "C0014",
+      "C0015",
+      "C0016"
+    ],
+    "rejected_chunk_id": "C0017",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_Guest_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "31e4ca7bae2798b089f96f01acf90fe2144214f13ab5a1f1f5f9d8685b561883",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_Guest_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/guest/M050_Guest_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_Guest_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0004",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0005",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0007",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0008_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0014",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0015",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0016",
+        "outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/guest-pilot/M050_Guest_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {},
+    "pilot_chunk_id": "C0017",
+    "generated_chunk_count": 49,
+    "target_blocks_per_chunk": 20,
+    "required_target_disposition_count": 20,
+    "source_blocks": 1331,
+    "eligible_target_blocks": 820,
+    "context_only_blocks": 92,
+    "excluded_blocks": 419,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 71,
+    "cache_miss_call_ceiling_usd": "0.234216",
+    "latest_outcome": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "12.8428106",
-    "cumulative_spent_usd": "10.9100344",
-    "remaining_usd": "1.9327762",
-    "display_usd_rounded_up": "10.92"
+    "cumulative_spent_usd": "12.3677104",
+    "remaining_usd": "0.4751002",
+    "display_usd_rounded_up": "12.37"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -58,14 +173,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 8:31:18 PM EDT",
-    "status": "Minimal Guest identity card proposed; author approval required before provider transmission",
-    "phase": "Atomic extraction — Guest identity approval halt",
+    "updated_human": "August 4, 2026 at 9:41:10 PM EDT",
+    "status": "Guest C0017 halted on unresolved transport cost",
+    "phase": "Atomic extraction — Guest transport halt",
     "source": "Guest — ordinal 10; 9 / 22 compile-scope sources complete",
-    "chunk": "No Guest chunk selected; accepted/rejected boundary is empty",
-    "now": "Guest identity was reduced in place to the provider-visible handling minimum and rebound; no provider call or spend occurred",
-    "next": "Halt for Asa’s identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
+    "chunk": "Accepted C0001-C0016; rejected/frozen C0017 / 49; transport failure",
+    "now": "C0017 timed out after submission with no response, usage, request ID, or exact cost; known reconciled balance remains $0.4751002",
+    "next": "Halt for authorial resolution of the unresolved transport and cost decision before any retry or further call"
   },
-  "next_possible_transition": "With Asa’s identity-card approval, perform Guest offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
-  "gate_5_complete": false
+  "next_possible_transition": "After Asa resolves the C0017 transport-cost treatment, reconcile spend and determine whether a refrozen retry is permitted.",
+  "gate_5_complete": false,
+  "latest_provider_attempt": {
+    "http_status": null,
+    "stop_reason": null,
+    "chunk_id": "C0017",
+    "output_tokens": null,
+    "cache_creation_input_tokens": null,
+    "cache_read_input_tokens": null,
+    "cache_effective": null,
+    "exact_cost_usd": null,
+    "mechanical_passed": null,
+    "review_state": "review_failed"
+  }
 }

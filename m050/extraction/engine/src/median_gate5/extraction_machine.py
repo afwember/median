@@ -533,15 +533,14 @@ def build_generic_source_prompt(
 Allowed source: `{source_id}` only
 Allowed streams: {streams}
 
-Emit exactly one grounded disposition object per target block ID; never repeat
-an ID. The
-disposition block-ID set must exactly equal the supplied `target_blocks` block-ID
-set. Context blocks never receive dispositions. Excluded blocks are omitted
-offline. Use only `SOURCE_BLOCKS`; import no other sources, prior atoms, or
-external knowledge.
+Emit one grounded disposition per target block ID. Its block-ID set must exactly
+equal `target_blocks`: no missing or repeated IDs. Context blocks receive none;
+excluded blocks are omitted offline. Use only `SOURCE_BLOCKS`; import no other
+source, prior atom, or external knowledge.
 
-Use supplied source and request IDs exactly. Never emit placeholder or invented
-IDs or metadata. Do not return a sample object: complete the full target set.
+Use supplied source and request IDs exactly. Never emit invented IDs, metadata,
+samples, or dummy values such as `x`. If a target cannot be resolved, emit its
+complete `review_required` disposition; never abbreviate the target set.
 
 ## Approved content/provenance boundary
 
@@ -578,9 +577,9 @@ definitions, owners, or authorities.
 
 ## Output check
 
-Verify count equals `required_target_disposition_count`, coverage, no context dispositions, grounding, and
-cardinality. Return JSON only under the bound
-response schema. `atoms` must be nonempty only when kind is `atoms`; it must be
+Return JSON only under the bound response schema. The disposition count must
+equal `required_target_disposition_count`. `atoms` must be nonempty only when
+kind is `atoms`; it must be
 empty otherwise. Every atom must use supplied source and target block IDs, an
 allowed stream, exact source text, a concise normalized claim, and a
 source-faithful claim kind. Derive each proposal ID from its target block ID plus

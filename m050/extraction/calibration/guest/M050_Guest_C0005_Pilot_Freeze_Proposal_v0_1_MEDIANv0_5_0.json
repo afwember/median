@@ -1,0 +1,66 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-GUEST-C0005-PILOT-FREEZE-001",
+  "state": "representative_pilot_accepted_sequential_run_ready",
+  "machine_state": "representative_pilot_complete",
+  "binding": {
+    "source_id": "M050-SRC-GUEST-001",
+    "source_sha256": "ecedad99eb425c573149c9a1e33bcce0ee89422f76a9e1b25e4f7387af14f15f",
+    "configuration_sha256": "f94dc3f0aac950355537b1fb86e1dcf00f9719b17c784775471e34aa5defb8d4",
+    "identity_card_sha256": "a2e2dbcaf2ad78cf5a578ee5ccaa3e2755d0a39058415e8e0c09041fed4d6337",
+    "block_manifest_sha256": "30fa23174b486d9bcf516e8b648424ea01bd545334738458bef5ed9c8be04c07",
+    "disposition_ledger_sha256": "17235fad0c948ac0ee7c8426cf62fc02f8219921c61fe8bcc7ec4b91b9c91bbf",
+    "chunk_plan_sha256": "b967e7ce70c391089dad937099ae17c1bb7eec49866965f8e47b3b8c8cca6abc",
+    "pilot_chunk_id": "C0017",
+    "pilot_packet_sha256": "d4337e29e7a859c614e2b0545aff3e74c5b5d7f5be99fe5a5d3edc81af91f640",
+    "pilot_packet_file_sha256": "a59013246ec119d702f02b999bf8c99db9497f5b0c768f9ac00c32656ccb8ed0",
+    "prompt_sha256": "027a7077237334310d4c35c1c9bd5cdc68abe24aab8159053b1779f6f3086617",
+    "response_schema_sha256": "3351261fd40c671068d00856dea537735b0b98325854fca8dd40b016d65ad103",
+    "engine_module_sha256": "8e25f66d4e44a86662ff8953f40cb5e0ea57efed94f55772cb137895c6659209",
+    "engine_tests_sha256": "baa5469070385df5f0a235166681ba7cb8780cf404f4c9d1c950bd132d3af3d7",
+    "validator_sha256": "a5378fd0a5afe7591fc0f5e964ca7744ca62dfecf851db22c1e65b46730d789e",
+    "normalization_sha256": "a161b37c1cda315134286d6c36d8a55d202b832f89a6a6eda358d491e393fae1",
+    "allowed_streams": [
+      "evidence_game_semantic"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "high",
+    "maximum_output_tokens": 16000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0016 passed mechanical and substantive review; C0017 is the next outstanding chunk in retained source order.",
+    "required_target_disposition_count": 20,
+    "cache_miss_call_ceiling_usd": "0.234216"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_49_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 71,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 49,
+    "chunk_count_is_input": false,
+    "all_source_compatibility_replays_passed": 148,
+    "c0005_v0_1_mechanical_and_substantive_review_passed": true,
+    "c0008_v0_1_rejected_for_incomplete_dummy_response": true,
+    "c0008_v0_2_rejected_for_incomplete_dummy_response": true,
+    "c0012_v0_1_rejected_for_incomplete_placeholder_response": true,
+    "generic_full_target_no_dummy_correction_passed": true,
+    "provider_call_made": true
+  }
+}

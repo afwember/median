@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-04T20:10:35-04:00",
+  "updated": "2026-08-04T20:31:18-04:00",
   "execution_state": "GUEST_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
@@ -37,7 +37,7 @@
   },
   "calibration": {
     "identity_card": "m050/extraction/control/source-identities/cards/M050_Guest_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "bfc09bcfb81d483d3722a1d00a16f37b476b3e9900342222937df1e409ad1453",
+    "identity_card_sha256": "31e4ca7bae2798b089f96f01acf90fe2144214f13ab5a1f1f5f9d8685b561883",
     "identity_card_approval_pending": true,
     "offline_gate_passed": false
   },
@@ -58,12 +58,12 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 4, 2026 at 8:10:35 PM EDT",
-    "status": "Guest identity card proposed; author approval required before provider transmission",
+    "updated_human": "August 4, 2026 at 8:31:18 PM EDT",
+    "status": "Minimal Guest identity card proposed; author approval required before provider transmission",
     "phase": "Atomic extraction — Guest identity approval halt",
     "source": "Guest — ordinal 10; 9 / 22 compile-scope sources complete",
     "chunk": "No Guest chunk selected; accepted/rejected boundary is empty",
-    "now": "Frozen Guest source identity, provenance, qualification boundary, and zero-media disposition are proposed; no provider call or spend occurred",
+    "now": "Guest identity was reduced in place to the provider-visible handling minimum and rebound; no provider call or spend occurred",
     "next": "Halt for Asa’s identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
   "next_possible_transition": "With Asa’s identity-card approval, perform Guest offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",

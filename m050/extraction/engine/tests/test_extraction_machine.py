@@ -301,6 +301,8 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert boundary in prompt
     assert "block-ID set must exactly equal `target_blocks`" in prompt
     assert "no missing or repeated IDs" in prompt
+    assert "one disposition per target" in prompt
+    assert "partially enumerated dispositions are invalid" in prompt
     assert "byte-for-byte" in prompt
     assert "must occur exactly once in the block" in prompt
     assert "repeated or nested inside another term" in prompt
@@ -319,8 +321,9 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "document-control metadata carry no substantive atom" in prompt
     assert "target block ID plus local atom ordinal" in prompt
     assert "proposal IDs must remain source-unique" in prompt
-    assert "samples, or dummy values such as `x`" in prompt
+    assert "samples, placeholders, or dummy values such as `x`" in prompt
     assert "never abbreviate the target set" in prompt
+    assert "Shared qualifiers must begin every qualified exact span" in prompt
     assert "cost, staffing, and effect" not in prompt
     assert "dedicated Home" not in prompt
     assert len(prompt.split()) < 400
@@ -528,6 +531,37 @@ def test_validator_requires_authored_slashes_in_normalized_claims():
     assert rejected["checks"]["relationship_preservation_errors"] == 1
 
     atom["normalized_claim"] = "The House is Ledge Loft / Open Flight Shelf."
+    accepted = validate_extraction_response(
+        payload=payload, response=response, response_schema=schema,
+        allowed_streams=["allowed"],
+    )
+    assert accepted["passed"] is True
+    assert accepted["checks"]["relationship_preservation_errors"] == 0
+
+
+def test_validator_ignores_html_tag_slashes_in_relationship_check():
+    payload = {
+        "source_id": "S1",
+        "target_blocks": [{
+            "block_id": "B1", "block_type": "paragraph",
+            "text": "STATUS<br /> COMPLETE\n", "status_markers": [],
+        }],
+        "context_blocks": [],
+        "excluded_block_ids": [],
+    }
+    schema = build_generic_response_schema("S1", ["allowed"])
+    atom = {
+        "proposal_id": "P1", "source_id": "S1", "block_id": "B1",
+        "exact_source_text": "STATUS<br /> COMPLETE",
+        "normalized_claim": "Document status is COMPLETE.",
+        "claim_kind": "status", "stream": "allowed",
+    }
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+        "proposal_set_id": "html-slash-test", "request_id": "html-slash-test",
+        "source_id": "S1",
+        "dispositions": [{"block_id": "B1", "kind": "atoms", "atoms": [atom]}],
+    }
     accepted = validate_extraction_response(
         payload=payload, response=response, response_schema=schema,
         allowed_streams=["allowed"],

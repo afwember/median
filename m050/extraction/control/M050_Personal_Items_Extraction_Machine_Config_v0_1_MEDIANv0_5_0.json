@@ -1,0 +1,78 @@
+{
+  "allowed_streams": [
+    "evidence_game_semantic"
+  ],
+  "artifact_sha256": {
+    "block_manifest": "99540dacbc6fa73939be4aa08c32c85ffc86e15207b6febb96bae25394619080",
+    "chunk_plan": "34151d22766b14bd4e827c350eda46222b16e3ad2802bc153e4368bc443a6f6d",
+    "disposition_ledger": "e2f8f6cd5b251709b07f031f3c90e07f57307a7a66c6af4bd621b3c0b1fc5859",
+    "identity_card": "a679ff553213b61324e0604db43acc319483a07ae114d741f1cd947d8f212ea0",
+    "prompt": "c3de33c7e36eb774775a821bd89a03644d2c32d0d4b8d1f2a6158d9d2b3398c1",
+    "response_schema": "fcd9834d0e905d5a72faa26e4432bd3019859cf07a8dd2c0a54c3b78d2a39744"
+  },
+  "artifacts": {
+    "block_manifest": "m050/extraction/calibration/personal-items/M050_Personal_Items_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_Personal_Items_Section_Aware_Chunk_Plan_v0_2_MEDIANv0_5_0.json",
+    "disposition_ledger": "m050/extraction/calibration/personal-items/M050_Personal_Items_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Personal_Items_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "prompt": "m050/extraction/calibration/personal-items/M050_Personal_Items_Extraction_Prompt_v0_7_MEDIANv0_5_0.md",
+    "response_schema": "m050/extraction/calibration/personal-items/M050_Personal_Items_Response_Schema_v0_1_MEDIANv0_5_0.json"
+  },
+  "calibration": {
+    "pilot_chunk_id": "C0005",
+    "pilot_passed": true,
+    "pilot_required": true,
+    "state": "representative_pilot_complete",
+    "validator_correction": "HTML tag slashes are markup, not authored semantic slash relationships",
+    "reasoning_calibration": "C0004 v0.1-v0.2 incomplete at low and medium reasoning; high required because density cannot fall below the indivisible structural group",
+    "prompt_correction": "Every target requires exactly one input-ordered disposition; partial, duplicate, sampled, or placeholder enumeration is invalid"
+  },
+  "execution": {
+    "cadence": "sequential_one_call_review",
+    "next_chunk_requires_substantive_review_of_prior_chunk": true
+  },
+  "lean_structural_policy": {
+    "contents_navigation": "excluded_or_structural_context",
+    "dependent_bodies_remain_disposition_required": true,
+    "exact_target_disposition_coverage_required": true,
+    "source_position_markers": "retained_with_their_source_blocks",
+    "table_headers_and_delimiters": "no_substantive_claim"
+  },
+  "media_exclusion_policy": {
+    "caption_target_blocks": 0,
+    "excluded_blocks": 0,
+    "excluded_occurrences": 0,
+    "external_representation_consultation_prohibited": true,
+    "provider_payload_media_content_prohibited": true,
+    "state": "approved_no_embedded_media"
+  },
+  "pricing": {
+    "cache_1h_write_multiplier": "2",
+    "cache_5m_write_multiplier": "1.25",
+    "cache_read_multiplier": "0.1",
+    "input_usd_per_million_tokens": "2",
+    "output_usd_per_million_tokens": "10"
+  },
+  "provider": {
+    "cache_boundary": "stable_system_prefix",
+    "cache_required": true,
+    "cache_ttl": "1h",
+    "maximum_output_tokens": 16000,
+    "model": "claude-sonnet-5",
+    "name": "Anthropic",
+    "reasoning_effort": "high",
+    "read_timeout_seconds": 360
+  },
+  "quantization": {
+    "basis": "C0005 v0.1 exhausted 16000 output tokens at 20 targets. Corrected C0005 v0.2 passed mechanical and substantive review at 10 targets; this calibrated density preserves indivisible lead-in/body groups and yields 17 source-derived chunks.",
+    "chunk_count_is_input": false,
+    "generated_chunk_count": 17,
+    "target_blocks_per_chunk": 10,
+    "unit": "provider_eligible_target_blocks"
+  },
+  "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
+  "source_id": "M050-SRC-PERSONAL-ITEMS-001",
+  "source_path": "m050/docs/v0.5/specifications/M050_Personal_Items_Focus_and_Expedition_Equipment_Specification_v1_0_MEDIANv0_5_0.md",
+  "source_sha256": "b29bb2c0b85635fb50c47828ad41d7c406d30a5e4f9928b9f483ad4b3b220455",
+  "status": "SEQUENTIAL_RUN_READY"
+}

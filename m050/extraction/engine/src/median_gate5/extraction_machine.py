@@ -534,9 +534,11 @@ Allowed source: `{source_id}`
 Allowed streams: {streams}
 
 The disposition block-ID set must exactly equal `target_blocks`: no missing or repeated IDs.
+Return one disposition per target, in input order;
+partially enumerated dispositions are invalid.
 Disposition neither context nor excluded blocks. Use only `SOURCE_BLOCKS`.
 
-Use supplied IDs; invent nothing. Never emit samples, or dummy values such as `x`.
+Use supplied IDs only. Never emit samples, placeholders, or dummy values such as `x`.
 Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Approved content/provenance boundary
@@ -545,19 +547,18 @@ Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Extraction contract
 
-Separate claims; retain dependent qualifications.
-Every `exact_source_text` must be a byte-for-byte contiguous target-block
-substring after JSON decoding. Exact spans retain
-markup and escaping and must occur exactly once in the block. If claim text is
-repeated or nested inside another term, expand the span with adjacent source
-text until it is unique. If markup interrupts prose, include it or split the atom.
+Separate claims. Shared qualifiers must begin every qualified exact span. Every `exact_source_text` is
+a byte-for-byte contiguous target-block substring after JSON decoding, retains
+markup and escaping, and must occur exactly once in the block. For text
+repeated or nested inside another term, expand with adjacent source text until unique.
+If markup interrupts prose, include it or split the atom.
 
 Obey target constraints. `required_disposition` fixes `kind`; for
 `no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts
-kind; `minimum_atoms` is a floor. Structural headings, labels, table headers, delimiters, and
-document-control metadata carry no substantive atom; never turn a label into a tautological
-claim that its section discusses the announced topic. Structural context never
-excuses a dependent substantive target from receiving its own disposition.
+kind; `minimum_atoms` is a floor. Structural headings, labels, table headers,
+delimiters, and document-control metadata carry no substantive atom. Never turn
+a label into a tautological topic claim or use structural context to omit a
+dependent substantive target.
 
 For every substantive table row, cover every nonempty semantic cell. Ground
 independent properties, functions, effects, examples, interpretations, stages,
@@ -799,7 +800,8 @@ def validate_extraction_response(
                     "exact source span crosses an authored semicolon: "
                     f"{atom.get('proposal_id')}"
                 )
-            if exact.count("/") > normalized.count("/"):
+            exact_semantic_text = re.sub(r"<[^>]*>", "", exact)
+            if exact_semantic_text.count("/") > normalized.count("/"):
                 relationship_preservation_errors += 1
                 errors.append(
                     "authored slash relationship missing from normalized claim: "

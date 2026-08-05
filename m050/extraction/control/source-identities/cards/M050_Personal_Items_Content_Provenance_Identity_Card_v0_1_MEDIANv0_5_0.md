@@ -1,8 +1,8 @@
 # MEDIAN v0.5.0 Personal Items Content/Provenance Identity Card v0.1
 
 Date: 2026-08-05
-Status: `PENDING_AUTHOR_APPROVAL`
-Lifecycle state: `identity_card_proposed`
+Status: `APPROVED`
+Lifecycle state: `identity_card_approved`
 Author/root of authority: Asa Wember
 
 ## Source identity and authority
@@ -54,5 +54,8 @@ source, later compile stage, or Google Sheets work.
 
 ## Approval boundary
 
-This card awaits Asa Wember's approval. No offline scaffold, provider packet,
-or provider transmission is authorized before approval.
+Asa Wember approved this source identity and extraction boundary. Approval
+permits the established Personal Items-only offline preparation and
+representative pilot calibration; provider readiness still requires validated
+frozen bindings, completed offline and replay gates, sequential review, and
+sufficient budget.

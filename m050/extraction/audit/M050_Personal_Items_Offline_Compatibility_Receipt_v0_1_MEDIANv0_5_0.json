@@ -1,0 +1,51 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-PERSONAL-ITEMS-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-05",
+  "status": "PERSONAL_ITEMS_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
+  "source_id": "M050-SRC-PERSONAL-ITEMS-001",
+  "binding": {
+    "configuration_sha256": "0236613886ae92a25478a067f02788e32c703d0f6b9884c5e47979b1acf2db5b",
+    "prompt_sha256": "c3de33c7e36eb774775a821bd89a03644d2c32d0d4b8d1f2a6158d9d2b3398c1",
+    "engine_module_sha256": "03a2c5b284204b1993299f4aba7522e430ebdee6248678e1f790e54cf4691a99",
+    "engine_tests_sha256": "20fe582f285ba9f7ab55042e21f85438512951aaefc5d2819e268ad4ad610fd3"
+  },
+  "source_review": {
+    "source_blocks": 297,
+    "eligible_targets": 158,
+    "context_only_blocks": 31,
+    "excluded_blocks": 108,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 10,
+    "generated_chunk_count": 17,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 697,
+    "representative_pilot_chunk_id": "C0005",
+    "pilot_selection_basis": "After C0005 v0.1 exhausted the 16000-token output ceiling at 20 targets, the source was re-apportioned to 10 targets. Corrected C0005 v0.2 is the mandatory same-chunk retry and retains representative qualified Tool and Focus rules."
+  },
+  "offline_verification": {
+    "all_17_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 74,
+    "all_source_packet_replays_passed": 165,
+    "active_source_guard_passed": true
+  },
+  "replays": {
+    "c0001_v0_1_html_slash": {
+      "sha256": "ffe16bd59e1b4ef3f54ac00d187e55524dcce2eac46090d1ec38a1cfc43b15d7",
+      "result": "mechanical_pass"
+    }
+  },
+  "note": "The established quantization machinery reduced density from 20 to 10 after C0005 v0.1 output-limit rejection. C0001 v0.1 exposed a source-agnostic HTML-tag slash false positive, corrected with exact replay. C0004 v0.1-v0.2 returned incomplete placeholders at low and medium reasoning; a 5-target replan correctly refused to split an indivisible group, so high reasoning was retained. C0006 v0.1 exposed incomplete target enumeration. C0008 v0.1 emitted literal placeholder IDs, so the no-dummy instruction now explicitly prohibits placeholders. C0008 v0.3-v0.5 omitted a shared dependent timing qualification from an atom grounding span, so the existing qualification instruction now requires every qualified exact span to begin at the shared qualifier. All 165 packets rebuild and all 74 tests pass."
+}

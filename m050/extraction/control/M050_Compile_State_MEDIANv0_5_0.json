@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T01:16:59-04:00",
-  "execution_state": "PERSONAL_ITEMS_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "updated": "2026-08-05T02:45:08-04:00",
+  "execution_state": "PERSONAL_ITEMS_C0008_UNUSUAL_SHARED_QUALIFIER_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -31,23 +31,86 @@
     "id": "M050-SRC-PERSONAL-ITEMS-001",
     "label": "Personal Items",
     "compile_ordinal": 11,
-    "accepted_chunk_ids": [],
-    "rejected_chunk_id": null,
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002",
+      "C0003",
+      "C0004",
+      "C0005",
+      "C0006",
+      "C0007"
+    ],
+    "rejected_chunk_id": "C0008",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_Personal_Items_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "0aa9c838eb72f9f387625b2b031d59c4bd689b0f479e0a69d9ca1dfefb5c1616",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_Personal_Items_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/personal-items/M050_Personal_Items_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_Personal_Items_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0008_Call_Packet_v0_6_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0004",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0004_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0005",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0006_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0007",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {
+      "c0001_v0_1_html_slash": "m050/extraction/audit/M050_Personal_Items_C0001_HTML_Slash_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+    },
+    "pilot_chunk_id": "C0008",
+    "generated_chunk_count": 17,
+    "target_blocks_per_chunk": 10,
+    "required_target_disposition_count": 8,
+    "source_blocks": 297,
+    "eligible_target_blocks": 158,
+    "context_only_blocks": 31,
+    "excluded_blocks": 108,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 74,
+    "cache_miss_call_ceiling_usd": "0.219896",
+    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0008_Outcome_v0_6_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "18.3218696",
-    "cumulative_spent_usd": "16.7758356",
-    "remaining_usd": "1.5460340",
-    "display_usd_rounded_up": "16.78"
+    "authorized_usd": "19.7245696",
+    "cumulative_spent_usd": "18.2186996",
+    "remaining_usd": "1.5058700",
+    "display_usd_rounded_up": "18.22"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -59,14 +122,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 1:16:59 AM EDT",
-    "status": "Personal Items identity card proposed; author approval required before provider transmission",
-    "phase": "Atomic extraction — Personal Items identity approval halt",
+    "updated_human": "August 5, 2026 at 2:45:08 AM EDT",
+    "status": "Personal Items halted at unusual C0008 shared-qualifier defect",
+    "phase": "Atomic extraction — Personal Items sequential extraction",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
-    "chunk": "No Personal Items chunk selected; accepted/rejected boundary is empty",
-    "now": "Frozen Personal Items source identity, provenance, qualification boundary, and zero-embedded-media disposition are proposed; no provider call or spend occurred",
-    "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
+    "chunk": "Accepted C0001-C0007; rejected C0008 v0.1 and v0.3-v0.6; no packet authorized for retry",
+    "now": "C0008 v0.6 repeated the missing at-Homecoming exact-span qualification after the final precise correction; exact cumulative spend is $18.2186996",
+    "next": "Human review must decide whether exact-span grounding may rely on block context or authorize the smallest invariant change; no further call is permitted"
   },
-  "next_possible_transition": "With Asa's identity-card approval, perform Personal Items offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
-  "gate_5_complete": false
+  "next_possible_transition": "Human review of the repeated C0008 shared-qualifier obstruction; no provider retry until Asa resolves the grounding boundary or authorizes the smallest necessary invariant change.",
+  "gate_5_complete": false,
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "stop_reason": "end_turn",
+    "chunk_id": "C0008",
+    "output_tokens": 11390,
+    "cache_creation_input_tokens": 3466,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.134408",
+    "mechanical_passed": true,
+    "review_state": "review_failed"
+  }
 }

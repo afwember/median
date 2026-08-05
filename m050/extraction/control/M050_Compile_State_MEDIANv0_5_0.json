@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T11:05:56-04:00",
-  "execution_state": "PERSONAL_ITEMS_C0016_V0_1_FROZEN_SPEND_HALT",
+  "updated": "2026-08-05T11:20:58-04:00",
+  "execution_state": "PERSONAL_ITEMS_C0016_V0_1_FROZEN_PROVIDER_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -155,9 +155,9 @@
   },
   "spend": {
     "active": true,
-    "authorized_usd": "19.7245696",
+    "authorized_usd": "21.5731716",
     "cumulative_spent_usd": "19.5731716",
-    "remaining_usd": "0.1513980",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "19.58"
   },
   "authority": {
@@ -170,15 +170,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 11:05:56 AM EDT",
-    "status": "Personal Items C0015 accepted; C0016 frozen at spend boundary",
+    "updated_human": "August 5, 2026 at 11:20:58 AM EDT",
+    "status": "Personal Items C0016 v0.1 provider-ready after spend replenishment",
     "phase": "Atomic extraction — Personal Items sequential extraction",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0015; prior C0015 rejections and transport failure preserved; C0016 v0.1 frozen and untransmitted",
-    "now": "C0015 passed mechanical and substantive review on retry; $0.1513980 remains, below C0016's $0.219972 conservative ceiling",
-    "next": "Await spend replenishment sufficient to cover frozen C0016 v0.1; do not transmit"
+    "now": "The cumulative authorization was replenished to leave exactly $2.0000000 remaining; C0016 v0.1 stays frozen and untransmitted",
+    "next": "Focused preflight and sequential transmission of frozen C0016 v0.1 when work resumes"
   },
-  "next_possible_transition": "Spend replenishment sufficient to cover the $0.219972 conservative ceiling, followed by focused preflight of frozen C0016 v0.1.",
+  "next_possible_transition": "Focused preflight and sequential provider transmission of frozen C0016 v0.1 under the active source grant and replenished budget.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

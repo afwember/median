@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T19:32:07-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_MID_SOURCE_FORMAL_STOPDOWN_AT_C0019_PROVIDER_REFUSAL",
+  "updated": "2026-08-05T19:56:08-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0019_V0_2_EXACT_SONNET_5_RETRY_READY_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -62,7 +62,7 @@
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0019_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0019_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -196,15 +196,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 7:32:07 PM EDT",
-    "status": "Discovery mid-source formal Stopdown at C0019 provider-refusal boundary",
+    "updated_human": "August 5, 2026 at 7:56:08 PM EDT",
+    "status": "Discovery formal Stopdown with exact Sonnet 5 C0019 v0.2 retry ready",
     "phase": "Atomic extraction — halted during Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0018 and C0025; C0019 v0.1 rejected",
-    "now": "Both authorities are revoked; C0019 v0.1 remains rejected after a provider refusal and partial malformed structured response; exact cumulative spend is $21.0505824.",
-    "next": "Await Asa's explicit Sparkup and direction on the unusual C0019 provider refusal before any further operation"
+    "chunk": "Accepted C0001-C0018 and C0025; C0019 v0.1 refused and rejected; C0019 v0.2 frozen",
+    "now": "Both authorities are revoked; C0019 v0.1 remains the corpus's sole Sonnet 5 refusal after 257 clean completions; v0.2 is an exact same-model replay with unchanged payload, prompt, schema, cache policy, and pricing; exact cumulative spend remains $21.0505824.",
+    "next": "Await Asa's next clear instruction to resume the Worker before transmitting C0019 v0.2; halt if the exact replay also refuses"
   },
-  "next_possible_transition": "With Asa's explicit Sparkup and direction on the provider refusal, resume Discovery at C0019. No other source or later phase is authorized.",
+  "next_possible_transition": "With Asa's next clear instruction to resume the Worker, retry Discovery C0019 once using the exact frozen Sonnet 5 v0.2 replay. A second refusal requires another halt. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

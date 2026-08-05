@@ -35,7 +35,7 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0018 v0.2 passed mechanical and substantive review with the coordinated subject list and shared predicate intact; C0019 is the next outstanding source-derived chunk in sequential order.",
+    "selection_reason": "C0018 v0.2 passed mechanical and substantive review. C0019 v0.1 then ended in the corpus's sole mid-output Sonnet 5 refusal after 257 clean Sonnet 5 completions; C0019 v0.2 is one exact same-model replay with unchanged payload, prompt, schema, high-effort allowance, cache policy, and pricing.",
     "required_target_disposition_count": 10,
     "cache_miss_call_ceiling_usd": "0.180868"
   },
@@ -71,6 +71,11 @@
     "output_allowance_12000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0018_v0_1_subject_only_shared_predicate_rejection_preserved": true,
     "coordinated_subject_shared_predicate_prompt_correction_passed": true,
-    "all_18_accepted_evidence_active_prompt_compatibility_replay_passed": true
+    "all_18_accepted_evidence_active_prompt_compatibility_replay_passed": true,
+    "c0018_v0_2_mechanical_and_substantive_review_passed": true,
+    "c0019_v0_1_mid_output_bio_refusal_preserved": true,
+    "sonnet_5_clean_completion_count_before_refusal": 257,
+    "c0019_v0_2_exact_same_model_replay_verified": true,
+    "second_c0019_refusal_requires_halt": true
   }
 }

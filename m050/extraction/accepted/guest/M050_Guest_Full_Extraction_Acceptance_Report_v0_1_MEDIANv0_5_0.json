@@ -1,0 +1,445 @@
+{
+  "report_version": "M050-GUEST-ACCEPTANCE-0.1",
+  "status": "FULL_GUEST_SOURCE_BOUNDED_ACCEPTED_CANDIDATE",
+  "source_id": "M050-SRC-GUEST-001",
+  "source_sha256": "ecedad99eb425c573149c9a1e33bcce0ee89422f76a9e1b25e4f7387af14f15f",
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "chunks": 49,
+  "provider_attempts": 63,
+  "source_blocks": 1331,
+  "target_blocks": 820,
+  "context_only_blocks": 92,
+  "excluded_blocks": 419,
+  "target_dispositions": 820,
+  "candidate_atoms": 1039,
+  "no_substantive_claim_dispositions": 324,
+  "review_required_dispositions": 0,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "coverage_errors": 0,
+  "duplicate_target_blocks": 0,
+  "uncovered_target_blocks": 0,
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015",
+    "C0016",
+    "C0017",
+    "C0018",
+    "C0019",
+    "C0020",
+    "C0021",
+    "C0022",
+    "C0023",
+    "C0024",
+    "C0025",
+    "C0026",
+    "C0027",
+    "C0028",
+    "C0029",
+    "C0030",
+    "C0031",
+    "C0032",
+    "C0033",
+    "C0034",
+    "C0035",
+    "C0036",
+    "C0037",
+    "C0038",
+    "C0039",
+    "C0040",
+    "C0041",
+    "C0042",
+    "C0043",
+    "C0044",
+    "C0045",
+    "C0046",
+    "C0047",
+    "C0048",
+    "C0049"
+  ],
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "8ad8851b2f6cf53a8fb59d8812322000e42724a1fc83b4e352404928da3e03f5",
+      "review_event_id": "evt_525d503bce7ae7e1abdd924d",
+      "review_event_outcome_sha256": "8ad8851b2f6cf53a8fb59d8812322000e42724a1fc83b4e352404928da3e03f5"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "3a4e10c28024f0bee944f64bf488a705fef2bd9399cf93baf6adfbde8fe9279f",
+      "review_event_id": "evt_52fe0a449c70451f3fc1d06a",
+      "review_event_outcome_sha256": "3a4e10c28024f0bee944f64bf488a705fef2bd9399cf93baf6adfbde8fe9279f"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "f8a923d4fd9552a6afbd920d58d24cea242a387b02489409fb96d6b24e319f82",
+      "review_event_id": "evt_20409b07c56fce78f927630f",
+      "review_event_outcome_sha256": "f8a923d4fd9552a6afbd920d58d24cea242a387b02489409fb96d6b24e319f82"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "ada70a974c5744da55785c43bbc2819ee2b7639c0bfb4ea01b957cb1cffc5094",
+      "review_event_id": "evt_2142d97d236110409d55de90",
+      "review_event_outcome_sha256": "ada70a974c5744da55785c43bbc2819ee2b7639c0bfb4ea01b957cb1cffc5094"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "68b830d18b5b8a01236a4042652bfea63858a0380be978ba8bdcb75f6d22fcdf",
+      "review_event_id": "evt_c5b081b30cfcb4c205a5037b",
+      "review_event_outcome_sha256": "68b830d18b5b8a01236a4042652bfea63858a0380be978ba8bdcb75f6d22fcdf"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "9c96fe8f03b4e7731a4141cd2421baa3c8eabdfb9c6ebc06be5038ac208e5969",
+      "review_event_id": "evt_3b2bc0434ecbda971d927ca4",
+      "review_event_outcome_sha256": "9c96fe8f03b4e7731a4141cd2421baa3c8eabdfb9c6ebc06be5038ac208e5969"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "c19a35d9e6f7236f71b727b552ad5cc4e6ecf25056ca9590e9fea91d9a70c30a",
+      "review_event_id": "evt_795b4bf9aa2f5ce9beebaea0",
+      "review_event_outcome_sha256": "c19a35d9e6f7236f71b727b552ad5cc4e6ecf25056ca9590e9fea91d9a70c30a"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0008_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "2755b794254e23808575747e0b4e2414d23c479580eb9a88e640d5413f6eaafd",
+      "review_event_id": "evt_c50066788590ce52280baf02",
+      "review_event_outcome_sha256": "2755b794254e23808575747e0b4e2414d23c479580eb9a88e640d5413f6eaafd"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "28435666f29d14f8d4fbddc4de7fc6378eb6d29fe10a1bd85f0bbd2cc82f3695",
+      "review_event_id": "evt_8a54902f6f0b9da22723e6ff",
+      "review_event_outcome_sha256": "28435666f29d14f8d4fbddc4de7fc6378eb6d29fe10a1bd85f0bbd2cc82f3695"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "2b1c21cca6453df01d56c1cbe0aad2e98356e9a190cca407c3057e519f4f2e6f",
+      "review_event_id": "evt_539b36f95537f914f24366ac",
+      "review_event_outcome_sha256": "2b1c21cca6453df01d56c1cbe0aad2e98356e9a190cca407c3057e519f4f2e6f"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "61c35944cb2394da3bc62f852af0666c357a74709b0da1303d5050adcec2271e",
+      "review_event_id": "evt_bffd827d3404a054160d8f20",
+      "review_event_outcome_sha256": "61c35944cb2394da3bc62f852af0666c357a74709b0da1303d5050adcec2271e"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "9fa272eacb6dece9d23b9c9e32449d4f14271d712a5058e095640737780cdba0",
+      "review_event_id": "evt_8fcd6afe26efa7797dbe7f79",
+      "review_event_outcome_sha256": "9fa272eacb6dece9d23b9c9e32449d4f14271d712a5058e095640737780cdba0"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "70468ff404e03f3495283af135ea4da78f372b6859cee8e2bbc5a63dce5d797a",
+      "review_event_id": "evt_080cd86d87a4e4d79778ddbc",
+      "review_event_outcome_sha256": "70468ff404e03f3495283af135ea4da78f372b6859cee8e2bbc5a63dce5d797a"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7a38f8cc1768f6412f5a304ff0b34fab44979398c3c8a537b085a7baecd8b596",
+      "review_event_id": "evt_197dbc8cb32aaaf38493db5d",
+      "review_event_outcome_sha256": "7a38f8cc1768f6412f5a304ff0b34fab44979398c3c8a537b085a7baecd8b596"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "900a498711d6e00edc856dda9db3a248425e0e37fc0dd5559e967731a003e4b5",
+      "review_event_id": "evt_4335ca8fb043b00fd64a4577",
+      "review_event_outcome_sha256": "900a498711d6e00edc856dda9db3a248425e0e37fc0dd5559e967731a003e4b5"
+    },
+    {
+      "chunk_id": "C0016",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "61cdf2acecd8f4242161c27d2eb951c67454039c43e3e1ebc9e925570fab722f",
+      "review_event_id": "evt_0d4ff694492b83e647307908",
+      "review_event_outcome_sha256": "61cdf2acecd8f4242161c27d2eb951c67454039c43e3e1ebc9e925570fab722f"
+    },
+    {
+      "chunk_id": "C0017",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0017_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "e6d23694484b796c3c14bdc288fb8b5899cd1fbaf6680eca3cac2abb02c53ff2",
+      "review_event_id": "evt_e1d6b92508c8a2b425281ace",
+      "review_event_outcome_sha256": "e6d23694484b796c3c14bdc288fb8b5899cd1fbaf6680eca3cac2abb02c53ff2"
+    },
+    {
+      "chunk_id": "C0018",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "2ec72ba551458f7338be45a58da82c729919a54b87e8d9a1664bac6dfd69e9b2",
+      "review_event_id": "evt_91c6e378dacf106eb6c1d839",
+      "review_event_outcome_sha256": "2ec72ba551458f7338be45a58da82c729919a54b87e8d9a1664bac6dfd69e9b2"
+    },
+    {
+      "chunk_id": "C0019",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "4297225761a8340951f3a6b282542c3db2b25ddc93cdf5f6bb49e438bc8af38e",
+      "review_event_id": "evt_56fffe450795737d0f027767",
+      "review_event_outcome_sha256": "4297225761a8340951f3a6b282542c3db2b25ddc93cdf5f6bb49e438bc8af38e"
+    },
+    {
+      "chunk_id": "C0020",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "83c9640902596190660ef28c4a777c05cea51873f441d1705bdd9134f75a2d5e",
+      "review_event_id": "evt_97fc47078ed1b49ce4565eac",
+      "review_event_outcome_sha256": "83c9640902596190660ef28c4a777c05cea51873f441d1705bdd9134f75a2d5e"
+    },
+    {
+      "chunk_id": "C0021",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0021_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "897c57e62fe130fd94e278d0c7728e4beb3a728dcc223b85f4d558009d56e39e",
+      "review_event_id": "evt_0eeceaac76f802fb69ca09f1",
+      "review_event_outcome_sha256": "897c57e62fe130fd94e278d0c7728e4beb3a728dcc223b85f4d558009d56e39e"
+    },
+    {
+      "chunk_id": "C0022",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0022_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "89bed8d232afc8bf18afbe59130638f418e0e4aedc979d21b4581ed114b4476d",
+      "review_event_id": "evt_6a307cea64998fb6566f5f3a",
+      "review_event_outcome_sha256": "89bed8d232afc8bf18afbe59130638f418e0e4aedc979d21b4581ed114b4476d"
+    },
+    {
+      "chunk_id": "C0023",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0023_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "4475b12c5fb5e1dbecf37c41705119226b8c30e28fc58eec6ed881106fa569e9",
+      "review_event_id": "evt_63ccfd1b1352cc9233499df6",
+      "review_event_outcome_sha256": "4475b12c5fb5e1dbecf37c41705119226b8c30e28fc58eec6ed881106fa569e9"
+    },
+    {
+      "chunk_id": "C0024",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0024_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "9919dc909d8cc5e5227ea90c25457e43ad89b203b2383647b8b1365ce21532e5",
+      "review_event_id": "evt_17c0d3203952920e19a221a4",
+      "review_event_outcome_sha256": "9919dc909d8cc5e5227ea90c25457e43ad89b203b2383647b8b1365ce21532e5"
+    },
+    {
+      "chunk_id": "C0025",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "5f907ed96c4215a3bb6cc6c9cad5ba56653d44bb054178f8c8cd38507b29321e",
+      "review_event_id": "evt_0c961609580b1c489fb6f8f2",
+      "review_event_outcome_sha256": "5f907ed96c4215a3bb6cc6c9cad5ba56653d44bb054178f8c8cd38507b29321e"
+    },
+    {
+      "chunk_id": "C0026",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0026_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "2fb7cddfb3eae13b3d9cbbb198274d46702629bc8cc71bcaac1496818783be43",
+      "review_event_id": "evt_945a056322fc05893b6e2fe1",
+      "review_event_outcome_sha256": "2fb7cddfb3eae13b3d9cbbb198274d46702629bc8cc71bcaac1496818783be43"
+    },
+    {
+      "chunk_id": "C0027",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0027_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7f3a9757cae7ef5f47546d5c9ca459789ea0c5bc11897592e905f280819ea7c0",
+      "review_event_id": "evt_c9c54538ca99dc89f610429e",
+      "review_event_outcome_sha256": "7f3a9757cae7ef5f47546d5c9ca459789ea0c5bc11897592e905f280819ea7c0"
+    },
+    {
+      "chunk_id": "C0028",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0028_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "1d5229694c722a5fdc3aa0db7458cbcd36561b41c3370e2464e784761004b1b3",
+      "review_event_id": "evt_16a4fdd46b59674a28066821",
+      "review_event_outcome_sha256": "1d5229694c722a5fdc3aa0db7458cbcd36561b41c3370e2464e784761004b1b3"
+    },
+    {
+      "chunk_id": "C0029",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0029_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "6c0ddb3b320e4e1dbeb58dbead3e7cb396e795d30b44b2b578f6a816ad462fe9",
+      "review_event_id": "evt_fe85abce1dc30216a7a87036",
+      "review_event_outcome_sha256": "6c0ddb3b320e4e1dbeb58dbead3e7cb396e795d30b44b2b578f6a816ad462fe9"
+    },
+    {
+      "chunk_id": "C0030",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0030_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "de03a7d7f67b180b93685f068674e7ebe3f3bc9c92aaa222d96d3c0643252ca3",
+      "review_event_id": "evt_f0771c9373565fedb20cd2cb",
+      "review_event_outcome_sha256": "de03a7d7f67b180b93685f068674e7ebe3f3bc9c92aaa222d96d3c0643252ca3"
+    },
+    {
+      "chunk_id": "C0031",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0031_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "b94e7dcd48bf0bb68e6071c49591d4ba9fafafe8466c2ed0b1bae042ece1e1e9",
+      "review_event_id": "evt_a0168967bc285b1d01813d64",
+      "review_event_outcome_sha256": "b94e7dcd48bf0bb68e6071c49591d4ba9fafafe8466c2ed0b1bae042ece1e1e9"
+    },
+    {
+      "chunk_id": "C0032",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0032_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "9b6a0e484bfd63684f2d1d679fbef865aafd06c0fc43be010d40309311d27640",
+      "review_event_id": "evt_7af1afb3e7a0862fd20b62d9",
+      "review_event_outcome_sha256": "9b6a0e484bfd63684f2d1d679fbef865aafd06c0fc43be010d40309311d27640"
+    },
+    {
+      "chunk_id": "C0033",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0033_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "3db8273964bd90b41c1eb222c78955c3f6226e562f62813a105276de197e66a4",
+      "review_event_id": "evt_5c101c3747236f1ba9f2d2ee",
+      "review_event_outcome_sha256": "3db8273964bd90b41c1eb222c78955c3f6226e562f62813a105276de197e66a4"
+    },
+    {
+      "chunk_id": "C0034",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0034_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "df174d72277cd7adea56c59a6bc488b6ef12812563960dac7c2e3b5ef10872c4",
+      "review_event_id": "evt_6a6fc22527442e6abb7bd8c9",
+      "review_event_outcome_sha256": "df174d72277cd7adea56c59a6bc488b6ef12812563960dac7c2e3b5ef10872c4"
+    },
+    {
+      "chunk_id": "C0035",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0035_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "0d65ab1b2a1ee04b7414a08c9f096dca786877ffc64ff4e05da3abfc2de464db",
+      "review_event_id": "evt_bd4a784cbc554978e16bb3d9",
+      "review_event_outcome_sha256": "0d65ab1b2a1ee04b7414a08c9f096dca786877ffc64ff4e05da3abfc2de464db"
+    },
+    {
+      "chunk_id": "C0036",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0036_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "5c5e016268d5ac7373774fa23af69e79a876651c406b7d35b1a41419d28cfad3",
+      "review_event_id": "evt_8407cd42d08594c62819ebc5",
+      "review_event_outcome_sha256": "5c5e016268d5ac7373774fa23af69e79a876651c406b7d35b1a41419d28cfad3"
+    },
+    {
+      "chunk_id": "C0037",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0037_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "33e4a1bab35940eab48f825b4b59bd5da41b7cac308c04d87d3d9d776aaf706a",
+      "review_event_id": "evt_777ff84fd2c6a2eb2b4850ea",
+      "review_event_outcome_sha256": "33e4a1bab35940eab48f825b4b59bd5da41b7cac308c04d87d3d9d776aaf706a"
+    },
+    {
+      "chunk_id": "C0038",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0038_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "d810f2306ec5aaac411d5788713eef37c2b8df69b351ab8331094f1107ce103e",
+      "review_event_id": "evt_7a714926e035fbfd38b832a3",
+      "review_event_outcome_sha256": "d810f2306ec5aaac411d5788713eef37c2b8df69b351ab8331094f1107ce103e"
+    },
+    {
+      "chunk_id": "C0039",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0039_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "e5d44464da6ded41d33101455dc62c3214a2c8f6e6c6dde74be0505ee2a835a0",
+      "review_event_id": "evt_9c2e61f99f137b5b02a2b541",
+      "review_event_outcome_sha256": "e5d44464da6ded41d33101455dc62c3214a2c8f6e6c6dde74be0505ee2a835a0"
+    },
+    {
+      "chunk_id": "C0040",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0040_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "a21c3b9a2ff4860acc9b7a7a31c6b6dbb7582cd0fcfa9e3ea5a2948a4031eb0c",
+      "review_event_id": "evt_5a785148bc7d91ff79c516d3",
+      "review_event_outcome_sha256": "a21c3b9a2ff4860acc9b7a7a31c6b6dbb7582cd0fcfa9e3ea5a2948a4031eb0c"
+    },
+    {
+      "chunk_id": "C0041",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0041_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "dc4572727bdde29c34745d9f9ccfc8f4acf46410f6d064d40c78264b98ec5691",
+      "review_event_id": "evt_0532248bf6816bdf2d3635cf",
+      "review_event_outcome_sha256": "dc4572727bdde29c34745d9f9ccfc8f4acf46410f6d064d40c78264b98ec5691"
+    },
+    {
+      "chunk_id": "C0042",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0042_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "c08c2aaea238a96d981a9dd680c1803cd39c757215de2785d9f706d4f37c958e",
+      "review_event_id": "evt_4097ee8f6e7a0c07bfee7137",
+      "review_event_outcome_sha256": "c08c2aaea238a96d981a9dd680c1803cd39c757215de2785d9f706d4f37c958e"
+    },
+    {
+      "chunk_id": "C0043",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0043_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b0de1f00121dcf6c5399ed228026b3b196bdf88701b72a85a68573070cb2e4d7",
+      "review_event_id": "evt_f7366202d4ff8c2b750c9887",
+      "review_event_outcome_sha256": "b0de1f00121dcf6c5399ed228026b3b196bdf88701b72a85a68573070cb2e4d7"
+    },
+    {
+      "chunk_id": "C0044",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0044_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b988a81611583259e13585a3dc63788ddd9d0e693e516017b9a7b75b87908091",
+      "review_event_id": "evt_f23e98f0db1fc708de9b2fce",
+      "review_event_outcome_sha256": "b988a81611583259e13585a3dc63788ddd9d0e693e516017b9a7b75b87908091"
+    },
+    {
+      "chunk_id": "C0045",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0045_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "31edeb1cbc4f96c2317d3cb5daf57e081fceb201c3222308130d8fcf85048692",
+      "review_event_id": "evt_5f14e97bff9a2d27b13441a9",
+      "review_event_outcome_sha256": "31edeb1cbc4f96c2317d3cb5daf57e081fceb201c3222308130d8fcf85048692"
+    },
+    {
+      "chunk_id": "C0046",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0046_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "87bc22d652aee863ed5604ffb0fd624b9ed6c4e433dfe10d887d4e872df6f328",
+      "review_event_id": "evt_144e0161ff1eb551bf765ba1",
+      "review_event_outcome_sha256": "87bc22d652aee863ed5604ffb0fd624b9ed6c4e433dfe10d887d4e872df6f328"
+    },
+    {
+      "chunk_id": "C0047",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0047_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "87e634338421bc83287e45ceb6536f8b0f5098707197281c8671a6db8f23afa9",
+      "review_event_id": "evt_550e56aa53e64ae6df3834a9",
+      "review_event_outcome_sha256": "87e634338421bc83287e45ceb6536f8b0f5098707197281c8671a6db8f23afa9"
+    },
+    {
+      "chunk_id": "C0048",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0048_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "9f2a33124e8070322109e8b67e1d3743801119d572b3c8e627a4c6c09b32841c",
+      "review_event_id": "evt_75e080c298b270dd71e5ef63",
+      "review_event_outcome_sha256": "9f2a33124e8070322109e8b67e1d3743801119d572b3c8e627a4c6c09b32841c"
+    },
+    {
+      "chunk_id": "C0049",
+      "outcome_path": "m050/extraction/runs/guest-pilot/M050_Guest_C0049_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "93e710f72e75570178f5655c95d2ef9a2461c446cc7b0b00dff41078a5c257d2",
+      "review_event_id": "evt_a6a95d25043a363a8935ba52",
+      "review_event_outcome_sha256": "93e710f72e75570178f5655c95d2ef9a2461c446cc7b0b00dff41078a5c257d2"
+    }
+  ],
+  "identifier_resolution": {
+    "source_identifier_field": "proposal_id",
+    "accepted_identifier_field": "proposal_id",
+    "trace_fields": [
+      "accepted_chunk_id",
+      "source_proposal_id"
+    ],
+    "policy": "GUEST-{accepted_chunk_id}-{source_proposal_id}; append a two-digit occurrence suffix only for a repeated source_proposal_id within one accepted chunk",
+    "source_identifier_occurrences": 1039,
+    "source_identifier_unique_values": 1039,
+    "cross_chunk_colliding_values": 0,
+    "collision_occurrences_resolved": 0,
+    "accepted_identifier_unique_values": 1039
+  },
+  "candidate_path": "m050/extraction/accepted/guest/M050_Guest_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "eb186b67263103afdb9b65832d186f5bb06f24b5098a5b0a15bf2146c8e0258e",
+  "actual_guest_extraction_cost_usd": "5.8658012",
+  "cumulative_provider_spend_usd": "16.7758356",
+  "cumulative_budget_usd": "18.3218696",
+  "remaining_budget_usd": "1.5460340",
+  "cache_policy": "mandatory one-hour stable-prefix caching",
+  "cache_telemetry_status": "effective",
+  "approval": true,
+  "reviewed_by": "Codex Compile Worker",
+  "reviewed_at": "2026-08-05",
+  "note": "Accepted as source-bounded atomic-extraction output only. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+}

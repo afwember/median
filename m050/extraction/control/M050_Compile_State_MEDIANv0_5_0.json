@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T16:51:22-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0025_ACCEPTED_C0001_FROZEN_READY",
+  "updated": "2026-08-05T17:05:03-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_MID_SOURCE_FORMAL_STOPDOWN_AT_C0001",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -37,7 +37,7 @@
     ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -76,8 +76,8 @@
     "display_usd_rounded_up": "19.74"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -85,15 +85,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 4:51:22 PM EDT",
-    "status": "Discovery C0025 representative pilot accepted; C0001 frozen",
-    "phase": "Atomic extraction — Discovery, Time, Movement, and Civic Progression representative pilot",
+    "updated_human": "August 5, 2026 at 5:05:03 PM EDT",
+    "status": "Discovery mid-source formal Stopdown at frozen C0001 boundary",
+    "phase": "Atomic extraction — halted during Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
     "chunk": "Accepted C0025; rejected none; C0001 frozen and untransmitted",
-    "now": "C0025 passed mechanical and substantive review with 15 atoms; exact cumulative spend is $19.7385936 and $1.8345780 remains",
-    "next": "Await explicit external transmission approval for frozen C0001 v0.1; the prior packet-specific one-call approval is exhausted"
+    "now": "Both authorities are revoked; C0025 remains accepted and C0001 v0.1 remains frozen and untransmitted; exact cumulative spend is $19.7385936",
+    "next": "Await Asa's explicit Sparkup restoring repository-write and Discovery-only source-work authority before any further operation"
   },
-  "next_possible_transition": "Transmit frozen Discovery C0001 v0.1 only after explicit external packet approval; no other source or later phase is authorized.",
+  "next_possible_transition": "With Asa's explicit Sparkup, resume Discovery from frozen C0001 v0.1; provider transmission also requires the execution environment's explicit packet approval. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

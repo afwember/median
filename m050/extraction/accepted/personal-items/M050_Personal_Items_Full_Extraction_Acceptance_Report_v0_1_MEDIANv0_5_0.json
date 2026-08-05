@@ -1,0 +1,189 @@
+{
+  "report_version": "M050-PERSONAL-ITEMS-ACCEPTANCE-0.1",
+  "status": "FULL_PERSONAL_ITEMS_SOURCE_BOUNDED_ACCEPTED_CANDIDATE",
+  "source_id": "M050-SRC-PERSONAL-ITEMS-001",
+  "source_sha256": "b29bb2c0b85635fb50c47828ad41d7c406d30a5e4f9928b9f483ad4b3b220455",
+  "model": "claude-sonnet-5",
+  "effort": "high",
+  "chunks": 17,
+  "provider_attempts": 32,
+  "source_blocks": 297,
+  "target_blocks": 158,
+  "context_only_blocks": 31,
+  "excluded_blocks": 108,
+  "target_dispositions": 158,
+  "candidate_atoms": 288,
+  "no_substantive_claim_dispositions": 68,
+  "review_required_dispositions": 0,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "coverage_errors": 0,
+  "duplicate_target_blocks": 0,
+  "uncovered_target_blocks": 0,
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015",
+    "C0016",
+    "C0017"
+  ],
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "01bfd8910ba50562d8308dd909995a859c8f1a01a3b5f9d2ea58b136340f581d",
+      "review_event_id": "evt_e2121af424eac15719ae3e71",
+      "review_event_outcome_sha256": "01bfd8910ba50562d8308dd909995a859c8f1a01a3b5f9d2ea58b136340f581d"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "6e25a5d81d9751457836f51be6096cfafd7633b2a1c7ffd429e373afcaee4112",
+      "review_event_id": "evt_2aed9694c1db56df4d1db894",
+      "review_event_outcome_sha256": "6e25a5d81d9751457836f51be6096cfafd7633b2a1c7ffd429e373afcaee4112"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "334df1071733cf92d8946ed94a7dc2e066e5f378030fe70c559bfe1b25d7b113",
+      "review_event_id": "evt_a8a08cedd152be94dab2d7d7",
+      "review_event_outcome_sha256": "334df1071733cf92d8946ed94a7dc2e066e5f378030fe70c559bfe1b25d7b113"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0004_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "d38b0431fb087e50739fdf050ffcfe8192bf16df1ad4a7a986afe96b4bcd1057",
+      "review_event_id": "evt_3c16e47968a6b4c149192b72",
+      "review_event_outcome_sha256": "d38b0431fb087e50739fdf050ffcfe8192bf16df1ad4a7a986afe96b4bcd1057"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "348750f821fe8a2742eeb104fa6815b2b1a59a4424d02c1b931091df9430590a",
+      "review_event_id": "evt_11f450c56ed2b87e23aa555f",
+      "review_event_outcome_sha256": "348750f821fe8a2742eeb104fa6815b2b1a59a4424d02c1b931091df9430590a"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0006_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "3ba960f37a69840d508864f42aa71bed098cdba88b774a58ed2c1baab2fc4647",
+      "review_event_id": "evt_561a3615474085e92a5aded1",
+      "review_event_outcome_sha256": "3ba960f37a69840d508864f42aa71bed098cdba88b774a58ed2c1baab2fc4647"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "ea9ab94b62476265482e4f92baccafe2a06302b864529946b8a7186857d7a694",
+      "review_event_id": "evt_20a10415d00bf56be9824e46",
+      "review_event_outcome_sha256": "ea9ab94b62476265482e4f92baccafe2a06302b864529946b8a7186857d7a694"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0008_Outcome_v0_7_MEDIANv0_5_0.json",
+      "outcome_sha256": "d5ab6648695313a0400297ffc4d1838baf8d3e25d29cca3e70706227476eac1b",
+      "review_event_id": "evt_c5e1416847f0adfba744739a",
+      "review_event_outcome_sha256": "d5ab6648695313a0400297ffc4d1838baf8d3e25d29cca3e70706227476eac1b"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0009_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "bea8551b3f9a37716acafb4ca4a8c5d8c7a541069f5fec780e2c9cedafd3a629",
+      "review_event_id": "evt_e2c00bbdf9eb693f3313a7b9",
+      "review_event_outcome_sha256": "bea8551b3f9a37716acafb4ca4a8c5d8c7a541069f5fec780e2c9cedafd3a629"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "07b2999c71cad4e9ceef001c1a7c7bcb7658d1a9da92e30efde562e1645fd8c3",
+      "review_event_id": "evt_23073ea03b80e565d5b9ca3a",
+      "review_event_outcome_sha256": "07b2999c71cad4e9ceef001c1a7c7bcb7658d1a9da92e30efde562e1645fd8c3"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0011_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "e32b9d662709cd85d1d632ca6634dcb8cb2960f6a453d2b29ffbdacae5e73284",
+      "review_event_id": "evt_a73c48a00f2556a5b440f7a6",
+      "review_event_outcome_sha256": "e32b9d662709cd85d1d632ca6634dcb8cb2960f6a453d2b29ffbdacae5e73284"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "98554dc26eadf56a8e0490cf668adcb5b823c415a1e8357d07284170b862ddf0",
+      "review_event_id": "evt_9780f27a30e560f2661d02c3",
+      "review_event_outcome_sha256": "98554dc26eadf56a8e0490cf668adcb5b823c415a1e8357d07284170b862ddf0"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "aaea9c7bd323289c363129770cf7dd29bbe6effb8f28d5dc636841881349e750",
+      "review_event_id": "evt_fb25c560ac80cd6bd29c469d",
+      "review_event_outcome_sha256": "aaea9c7bd323289c363129770cf7dd29bbe6effb8f28d5dc636841881349e750"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "fa6c58eec36b4217947682ddd49708332189d3fa2010f737d0c8ce083329cdf8",
+      "review_event_id": "evt_b2a2fc229e814aaf0abf0d7c",
+      "review_event_outcome_sha256": "fa6c58eec36b4217947682ddd49708332189d3fa2010f737d0c8ce083329cdf8"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "2adea1cec5dbb4e259d945b01a78a28af1f0674e6793f6b5dc477136d9c98775",
+      "review_event_id": "evt_f2b525fe73bc8d636d69ce05",
+      "review_event_outcome_sha256": "2adea1cec5dbb4e259d945b01a78a28af1f0674e6793f6b5dc477136d9c98775"
+    },
+    {
+      "chunk_id": "C0016",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "dc3a7243f6947d9cda2641f642e01c980df306cc51635b7e27f444dbd65f4f56",
+      "review_event_id": "evt_752c73e54e3bc6aa170128fb",
+      "review_event_outcome_sha256": "dc3a7243f6947d9cda2641f642e01c980df306cc51635b7e27f444dbd65f4f56"
+    },
+    {
+      "chunk_id": "C0017",
+      "outcome_path": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "6b83150b16a460cf51156e52f23d7794e667568d7af2de454e58a1d9db19587c",
+      "review_event_id": "evt_a6fe744f5842f4bba5c496bb",
+      "review_event_outcome_sha256": "6b83150b16a460cf51156e52f23d7794e667568d7af2de454e58a1d9db19587c"
+    }
+  ],
+  "identifier_resolution": {
+    "source_identifier_field": "proposal_id",
+    "accepted_identifier_field": "proposal_id",
+    "trace_fields": [
+      "accepted_chunk_id",
+      "source_proposal_id"
+    ],
+    "policy": "PERSONAL-ITEMS-{accepted_chunk_id}-{source_proposal_id}; append a two-digit occurrence suffix only for a repeated source_proposal_id within one accepted chunk",
+    "source_identifier_occurrences": 288,
+    "source_identifier_unique_values": 288,
+    "cross_chunk_colliding_values": 0,
+    "collision_occurrences_resolved": 0,
+    "accepted_identifier_unique_values": 288
+  },
+  "candidate_path": "m050/extraction/accepted/personal-items/M050_Personal_Items_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "1ffb84ee034605ee874c2d98d843180f7cf4dca0596456de63ebc8f3ae141131",
+  "actual_personal_items_extraction_cost_usd": "2.901162",
+  "cumulative_provider_spend_usd": "19.6769976",
+  "cumulative_budget_usd": "21.5731716",
+  "remaining_budget_usd": "1.8961740",
+  "cache_policy": "mandatory one-hour stable-prefix caching",
+  "cache_telemetry_status": "effective",
+  "approval": true,
+  "reviewed_by": "Codex Compile Worker",
+  "reviewed_at": "2026-08-05",
+  "note": "Accepted as source-bounded atomic-extraction output only. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+}

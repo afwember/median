@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-PERSONAL-ITEMS-001",
     "source_sha256": "b29bb2c0b85635fb50c47828ad41d7c406d30a5e4f9928b9f483ad4b3b220455",
-    "configuration_sha256": "4ae7f10d0f0d39180ad32acc1ef80f09a6c56b39d944cec7317c0c80dbcaa7ec",
+    "configuration_sha256": "3bf450d1ca6ad46aefe6dc5aad67d29b822be30465d189f8649d83dcd2ba7d50",
     "identity_card_sha256": "a679ff553213b61324e0604db43acc319483a07ae114d741f1cd947d8f212ea0",
     "block_manifest_sha256": "99540dacbc6fa73939be4aa08c32c85ffc86e15207b6febb96bae25394619080",
     "disposition_ledger_sha256": "e2f8f6cd5b251709b07f031f3c90e07f57307a7a66c6af4bd621b3c0b1fc5859",
     "chunk_plan_sha256": "34151d22766b14bd4e827c350eda46222b16e3ad2802bc153e4368bc443a6f6d",
-    "pilot_chunk_id": "C0011",
-    "pilot_packet_sha256": "af5528e716f4a123afc45bbea9118908da68b88815db930a30b8bd69c52bc676",
-    "pilot_packet_file_sha256": "846a8b06cfa851b8296e73683128c25b21974bf97cabf5ae680a720f2bec3d78",
-    "prompt_sha256": "e9fc83713cfbe32702dfa2b0291ad8fd1149099d5afe028a13069819febc0c4b",
+    "pilot_chunk_id": "C0015",
+    "pilot_packet_sha256": "ca844a0a6abc5b577da780170ab70846d0fc2a127d4705a5fbdfa5b45bbc5301",
+    "pilot_packet_file_sha256": "3e871d4ae3d657bb481ae9ba98c64d40355fff3c4c64ce2ecd406b31281f84c7",
+    "prompt_sha256": "d3069e35f1b647db20c2d65f42ec1d2b87ddf7a565f96b396b30d039d7087bf7",
     "response_schema_sha256": "fcd9834d0e905d5a72faa26e4432bd3019859cf07a8dd2c0a54c3b78d2a39744",
-    "engine_module_sha256": "c936fe300ca29ac28897c8e8c41d4682b24b1e6803ce95a307f9ca056b9b2245",
-    "engine_tests_sha256": "56208b7365f93d8f98aae852f0da742347055ee383eedfe2208662d89c182838",
+    "engine_module_sha256": "d93ed7494ae3f9486dbbc498f0daafa5a32a3ae2c6a090859c4cd1cc5e5bbb80",
+    "engine_tests_sha256": "f67060f7be9ade74711023d76f8bdeba0dacd619ee1ba09520a87823120940e3",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0011 v0.1 was preserved and rejected for corrupting a smart-quoted example; the existing byte-fidelity instruction now explicitly preserves smart quotes, and C0011 v0.2 is rebound after full compatibility replay.",
+    "selection_reason": "C0015 v0.1 remains preserved and substantively rejected for importing a qualifier from a separate context heading. The generic target-block qualifier boundary passed full compatibility replay; C0015 v0.2 is the sole rebound retry.",
     "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.224732"
+    "cache_miss_call_ceiling_usd": "0.223508"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -49,7 +49,7 @@
   "offline_verification": {
     "all_17_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 74,
+    "offline_tests_passed": 77,
     "calibrated_target_blocks_per_chunk": 10,
     "generated_chunk_count": 17,
     "chunk_count_is_input": false,
@@ -69,6 +69,9 @@
     "shared_qualifier_span_start_correction_passed": true,
     "authorial_same_block_shared_qualifier_ruling_implemented": true,
     "smart_quote_fidelity_correction_passed": true,
+    "actual_character_json_decoding_correction_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "context_cannot_supply_normalized_qualifiers_or_exact_text": true,
     "provider_call_made": true
   }
 }

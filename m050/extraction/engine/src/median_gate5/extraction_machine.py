@@ -546,12 +546,12 @@ Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Extraction contract
 
-Separate claims. Exact spans uniquely ground core assertions. Normalized claims may add only
-unambiguous same-block shared qualifiers; never inferred, ambiguous, cross-block, or unstated ones. Every `exact_source_text` is
-a byte-for-byte contiguous target-block substring after JSON decoding, retains
-markup and escaping, and must occur exactly once in the block. Expand repeated
-or nested terms with adjacent text until unique.
-Preserve smart quotes exactly. Include interrupting markup or split the atom.
+Separate claims. Exact spans uniquely ground core assertions. Normalized claims may add only explicit, unambiguous target-block
+qualifiers; context blocks never supply qualifiers or exact text. Every `exact_source_text` is
+a byte-for-byte contiguous target-block substring that occurs exactly once. After JSON decoding it contains actual target-block
+characters, never literal backslash Unicode-escape spellings.
+Expand repeated or nested terms with adjacent text until unique.
+Include interrupting markup or split the atom.
 
 Obey target constraints. `required_disposition` fixes `kind`; for
 `no_substantive_claim`, emit empty `atoms`. `allowed_dispositions` restricts

@@ -2,7 +2,7 @@
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
   "updated": "2026-08-05T08:18:28-04:00",
-  "execution_state": "PERSONAL_ITEMS_C0011_REPEATED_SMART_QUOTE_GROUNDING_HALT",
+  "execution_state": "PERSONAL_ITEMS_C0015_REPEATED_CROSS_BLOCK_QUALIFICATION_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -41,18 +41,22 @@
       "C0007",
       "C0008",
       "C0009",
-      "C0010"
+      "C0010",
+      "C0011",
+      "C0012",
+      "C0013",
+      "C0014"
     ],
-    "rejected_chunk_id": "C0011",
+    "rejected_chunk_id": "C0015",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Personal_Items_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/personal-items/M050_Personal_Items_C0005_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Personal_Items_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0011_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -103,12 +107,32 @@
         "chunk_id": "C0010",
         "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0011_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0014",
+        "outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
       "c0001_v0_1_html_slash": "m050/extraction/audit/M050_Personal_Items_C0001_HTML_Slash_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0011",
+    "pilot_chunk_id": "C0015",
     "generated_chunk_count": 17,
     "target_blocks_per_chunk": 10,
     "required_target_disposition_count": 10,
@@ -119,20 +143,20 @@
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 74,
-    "cache_miss_call_ceiling_usd": "0.224732",
-    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0011_Outcome_v0_2_MEDIANv0_5_0.json"
+    "offline_tests_passed": 77,
+    "cache_miss_call_ceiling_usd": "0.223508",
+    "latest_outcome": "m050/extraction/runs/personal-items-pilot/M050_Personal_Items_C0015_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "19.7245696",
-    "cumulative_spent_usd": "18.8325856",
-    "remaining_usd": "0.8919840",
-    "display_usd_rounded_up": "18.84"
+    "cumulative_spent_usd": "19.4500076",
+    "remaining_usd": "0.2745620",
+    "display_usd_rounded_up": "19.46"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -141,25 +165,25 @@
   },
   "dashboard": {
     "updated_human": "August 5, 2026 at 8:18:28 AM EDT",
-    "status": "Personal Items halted at repeated C0011 smart-quote grounding defect",
-    "phase": "Atomic extraction — Personal Items sequential extraction",
+    "status": "Personal Items formally stopped at repeated C0015 cross-block qualification defect",
+    "phase": "Atomic extraction — Personal Items temporary Supervisor handoff",
     "source": "Personal Items — ordinal 11; 10 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0010; rejected C0011 v0.1-v0.2; no packet authorized for retry",
-    "now": "C0011 v0.2 repeated exact-grounding failure by emitting literal Unicode escape text instead of source smart quotes; exact cumulative spend is $18.8325856",
-    "next": "Human review is required before any further C0011 retry; no provider call is permitted"
+    "chunk": "Accepted C0001-C0014; rejected C0015 v0.1-v0.2; Personal Items incomplete",
+    "now": "C0015 v0.2 repeated the cross-block deferred-work qualification defect after the generic context-boundary correction; exact cumulative spend is $19.4500076 and $0.2745620 remains",
+    "next": "Await Asa or Supervisor judgment; both repository-write and source-work authority are false"
   },
-  "next_possible_transition": "Human review of the repeated C0011 smart-quote grounding obstruction; no provider retry until Asa authorizes a bounded next step.",
+  "next_possible_transition": "Human review of the repeated C0015 cross-block qualification obstruction before any repository or source work resumes.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "stop_reason": "end_turn",
-    "chunk_id": "C0011",
-    "output_tokens": 10091,
-    "cache_creation_input_tokens": 3653,
+    "chunk_id": "C0015",
+    "output_tokens": 10120,
+    "cache_creation_input_tokens": 3663,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.123156",
-    "mechanical_passed": false,
+    "exact_cost_usd": "0.123162",
+    "mechanical_passed": true,
     "review_state": "review_failed"
   }
 }

@@ -35,6 +35,7 @@ AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extract
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
 GUARD = ROOT / "m050/tools/m050_guard.py"
 HOME_CONFIG = ROOT / "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
+PERSONAL_ITEMS_CONFIG = ROOT / "m050/extraction/control/M050_Personal_Items_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
 HOME_REPORT = ROOT / "m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json"
 HOME_LEDGER = "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
 CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_15_MEDIANv0_5_0.json"
@@ -304,9 +305,12 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "one input-ordered disposition per target" in prompt
     assert "partial enumeration is invalid" in prompt
     assert "byte-for-byte" in prompt
-    assert "must occur exactly once in the block" in prompt
-    assert "Expand repeated\nor nested terms with adjacent text until unique" in prompt
-    assert "Preserve smart quotes exactly" in prompt
+    assert "target-block substring that occurs exactly once" in prompt
+    assert "Expand repeated or nested terms with adjacent text until unique" in prompt
+    assert "actual target-block\ncharacters" in prompt
+    assert "never literal backslash Unicode-escape spellings" in prompt
+    assert "retains\nmarkup and escaping" not in prompt
+    assert "Preserve smart quotes exactly" not in prompt
     assert "Include interrupting markup or split the atom" in prompt
     assert "required_disposition" in prompt
     assert "only after verifying its disposition count equals\n`required_target_disposition_count`" in prompt
@@ -325,11 +329,22 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "never samples, placeholders, or dummy `x`" in prompt
     assert "never abbreviate the target set" in prompt
     assert "Exact spans uniquely ground core assertions" in prompt
-    assert "unambiguous same-block shared qualifiers" in prompt
-    assert "never inferred, ambiguous, cross-block, or unstated ones" in prompt
+    assert "only explicit, unambiguous target-block\nqualifiers" in prompt
+    assert "context blocks never supply qualifiers or exact text" in prompt
     assert "cost, staffing, and effect" not in prompt
     assert "dedicated Home" not in prompt
     assert len(prompt.split()) < 400
+
+
+def test_personal_items_active_prompt_equals_generated_generic_prompt():
+    config = _json(PERSONAL_ITEMS_CONFIG)
+    identity = (ROOT / config["artifacts"]["identity_card"]).read_text(encoding="utf-8")
+    active = (ROOT / config["artifacts"]["prompt"]).read_text(encoding="utf-8")
+    generated = build_generic_source_prompt(
+        config["source_id"], config["allowed_streams"], identity
+    )
+    assert active == generated
+    assert "\\n" not in active
 
 
 def test_request_caches_only_stable_system_prefix_for_one_hour():
@@ -441,6 +456,59 @@ def test_generic_validator_fails_closed_for_source_stream_and_coverage_drift():
     assert any("source_id" in error for error in report["errors"])
     assert any("stream" in error for error in report["errors"])
     assert any("ground" in error for error in report["errors"])
+
+
+def _smart_quote_grounding_report(exact_source_text):
+    source_text = "A brief note such as “Twig takes focus - Sire’s Hat” may appear.\n"
+    payload = {
+        "source_id": "S1",
+        "target_blocks": [{
+            "block_id": "B1", "block_type": "paragraph",
+            "text": source_text, "status_markers": [],
+        }],
+        "context_blocks": [],
+        "excluded_block_ids": [],
+    }
+    response = {
+        "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+        "proposal_set_id": "smart-quote-test",
+        "request_id": "smart-quote-test",
+        "source_id": "S1",
+        "dispositions": [{
+            "block_id": "B1",
+            "kind": "atoms",
+            "atoms": [{
+                "proposal_id": "P1",
+                "source_id": "S1",
+                "block_id": "B1",
+                "exact_source_text": exact_source_text,
+                "normalized_claim": "A note may say Twig takes focus - Sire’s Hat.",
+                "claim_kind": "example",
+                "stream": "allowed",
+            }],
+        }],
+    }
+    return validate_extraction_response(
+        payload=payload,
+        response=response,
+        response_schema=build_generic_response_schema("S1", ["allowed"]),
+        allowed_streams=["allowed"],
+    )
+
+
+def test_validator_grounds_actual_source_smart_quotes_after_json_decoding():
+    report = _smart_quote_grounding_report(
+        "“Twig takes focus - Sire’s Hat”"
+    )
+    assert report["passed"] is True
+
+
+def test_validator_rejects_literal_unicode_escape_spellings_after_json_decoding():
+    report = _smart_quote_grounding_report(
+        "\\u201cTwig takes focus - Sire\\u2019s Hat\\u201d"
+    )
+    assert report["passed"] is False
+    assert any("exact contiguous grounding" in error for error in report["errors"])
 
 
 def test_validator_requires_table_headers_and_delimiters_to_be_non_substantive():

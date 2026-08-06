@@ -1,0 +1,69 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-ECOLOGY-C0001-PILOT-FREEZE-001",
+  "state": "source_candidate_accepted_stopdown",
+  "machine_state": "source_candidate_accepted_stopdown",
+  "binding": {
+    "source_id": "M050-SRC-ECOLOGY-001",
+    "source_sha256": "e6522a28d4cc2533b8ff84155b7e045ba150ae002642cd43d9895534ef7a0933",
+    "configuration_sha256": "5346e0fb637cf6ff71cd4893d95db847169ad3ca17c5c4c663e28b66f667c228",
+    "identity_card_sha256": "8751a8f8eb238c21966436c9eb52b4d5c6bc438d2c79484f2251f101baecbb39",
+    "block_manifest_sha256": "7de30725a96584cdb4b193fb3e08f26db0d3bcf2d2a65a88201f3c5b8ddca0e4",
+    "disposition_ledger_sha256": "887b3d16fed67abe77a422419df8bf3cf578dd2a916e06b762a5bcae1f2eebca",
+    "chunk_plan_sha256": "2d972874626e61b61b2e0e3550c30fa992511cd1254d33318f2884248e1bb01e",
+    "pilot_chunk_id": "C0006",
+    "pilot_packet_sha256": "efa5cb8c821cd9c67d321910200f228b959d4dfde6f9695a0b8106b14442d28c",
+    "pilot_packet_file_sha256": "23e4c61b65e8d346963e1c5a4e0fc958997b542e90bda53e98e66dceb7ef628a",
+    "prompt_sha256": "55d0a98058a3936e0fbb19c7d9ce9f724029e7960182fa60f5acaeb9768b5955",
+    "response_schema_sha256": "372821143ba19fc1c0533afd9f37ce85d2bcd6b38023c76d91bf5ba688441bdc",
+    "engine_module_sha256": "c0e387b538eb4af628d547f709c058d20144698a8f46a4e9f8ba1c0a6ec436b5",
+    "engine_tests_sha256": "e2fad75b41691eb842babe9ca88acd68c0a399512f81d2e81c6f8aeab5e1f342",
+    "allowed_streams": [
+      "evidence_game_semantic"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 24000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0001 passed representative calibration; all 98 targets have exact ordered coverage and the hash-bound 178-atom Ecology source candidate is accepted.",
+    "required_target_disposition_count": 5,
+    "cache_miss_call_ceiling_usd": "0.291796"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_6_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 83,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 6,
+    "chunk_count_is_input": false,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "provider_call_made": true,
+    "c0001_mechanical_and_substantive_review_passed": true,
+    "c0002_mechanical_and_substantive_review_passed": true,
+    "c0003_mechanical_and_substantive_review_passed": true,
+    "c0004_mechanical_and_substantive_review_passed": true,
+    "c0005_mechanical_and_substantive_review_passed": true,
+    "c0006_mechanical_and_substantive_review_passed": true,
+    "whole_source_coverage_and_quality_review_passed": true,
+    "candidate_acceptance_guard_passed": true
+  }
+}

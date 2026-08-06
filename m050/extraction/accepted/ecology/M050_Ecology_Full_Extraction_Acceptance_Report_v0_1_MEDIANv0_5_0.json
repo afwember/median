@@ -1,0 +1,78 @@
+{
+  "report_version": "M050-ECOLOGY-ACCEPTANCE-0.1",
+  "status": "ACCEPTED_EXTRACTION_CANDIDATE_READY_FOR_CORPUS_RECONCILIATION",
+  "source_id": "M050-SRC-ECOLOGY-001",
+  "source_sha256": "e6522a28d4cc2533b8ff84155b7e045ba150ae002642cd43d9895534ef7a0933",
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006"
+  ],
+  "chunks": 6,
+  "target_dispositions": 98,
+  "candidate_atoms": 178,
+  "no_substantive_claim_dispositions": 11,
+  "whole_document_review": {
+    "source_blocks": 266,
+    "eligible_target_blocks": 98,
+    "context_only_blocks": 26,
+    "excluded_blocks": 142,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "media_occurrences": 0,
+    "extraction_quality_review_passed": true,
+    "subsidiary_scope_preserved": true,
+    "unresolved_review_required_blocks": 0
+  },
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "704d74cf1596fd4cc95ff97429a49db72b7b58b6f82084a173f7f6b364cc0221",
+      "review_event_id": "evt_d3ccaa4b91364d1f294db3a7",
+      "review_event_outcome_sha256": "704d74cf1596fd4cc95ff97429a49db72b7b58b6f82084a173f7f6b364cc0221"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "e763ef85fcc02680db67c4565c1e47b5c7965b0ceda35d105b114ff47b0c8a6a",
+      "review_event_id": "evt_47c90a98a13468ebcccf254f",
+      "review_event_outcome_sha256": "e763ef85fcc02680db67c4565c1e47b5c7965b0ceda35d105b114ff47b0c8a6a"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7dac494f4d4ae954ee83f8b582db17437ba958a991cc002709f8841aa8f44b7d",
+      "review_event_id": "evt_eafcb4e733fda39e5dc52d20",
+      "review_event_outcome_sha256": "7dac494f4d4ae954ee83f8b582db17437ba958a991cc002709f8841aa8f44b7d"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "a5888239bcd9488ecf7a6d83939b4dcff5920f987fe9dee5e65ae1fcf0475f4a",
+      "review_event_id": "evt_ff7eaa76cf33a6bf7a7f9fcf",
+      "review_event_outcome_sha256": "a5888239bcd9488ecf7a6d83939b4dcff5920f987fe9dee5e65ae1fcf0475f4a"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "fc723ea6eeb84ac7709969e11021a0f348fe2ce4c1a4fa41a0f65dceb0db6c0e",
+      "review_event_id": "evt_cd14b93fa86e05a832adf4a7",
+      "review_event_outcome_sha256": "fc723ea6eeb84ac7709969e11021a0f348fe2ce4c1a4fa41a0f65dceb0db6c0e"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "63e6a7c360bebdc5d6ee2ce5826320cc6449e7a80db19d02e15f0c632395397f",
+      "review_event_id": "evt_c12821aae819171890a4b88b",
+      "review_event_outcome_sha256": "63e6a7c360bebdc5d6ee2ce5826320cc6449e7a80db19d02e15f0c632395397f"
+    }
+  ],
+  "candidate_path": "m050/extraction/accepted/ecology/M050_Ecology_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "6b8c9587eca00b917d43dbda057b1c93dbe86407262adbcf0d2ffed1f7e3af56",
+  "approval": true,
+  "note": "Accepted as source-bounded subsidiary ecological-influence extraction output; semantic acceptance, mapping, reconciliation, canonization, and compiled prose remain later compile stages."
+}

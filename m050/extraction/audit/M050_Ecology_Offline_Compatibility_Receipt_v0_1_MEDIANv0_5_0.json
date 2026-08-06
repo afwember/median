@@ -1,0 +1,47 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-ECOLOGY-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-06",
+  "status": "ECOLOGY_OFFLINE_PREPARATION_COMPATIBLE",
+  "source_id": "M050-SRC-ECOLOGY-001",
+  "binding": {
+    "configuration_sha256": "5346e0fb637cf6ff71cd4893d95db847169ad3ca17c5c4c663e28b66f667c228",
+    "prompt_sha256": "55d0a98058a3936e0fbb19c7d9ce9f724029e7960182fa60f5acaeb9768b5955",
+    "engine_module_sha256": "c0e387b538eb4af628d547f709c058d20144698a8f46a4e9f8ba1c0a6ec436b5",
+    "engine_tests_sha256": "e2fad75b41691eb842babe9ca88acd68c0a399512f81d2e81c6f8aeab5e1f342"
+  },
+  "source_review": {
+    "source_blocks": 266,
+    "eligible_targets": 98,
+    "context_only_blocks": 26,
+    "excluded_blocks": 142,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 6,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 1297,
+    "representative_pilot_chunk_id": "C0001",
+    "pilot_selection_basis": "C0001 combines near-maximum target density, the largest estimated input, source qualification boundaries, prose, HTML callouts, and table structures."
+  },
+  "offline_verification": {
+    "all_6_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 83,
+    "all_source_structural_compatibility_passed": true,
+    "active_source_guard_ready": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true
+  },
+  "replays": {}
+}

@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "ACTIVE",
-  "updated": "2026-08-06T15:54:46-04:00",
-  "execution_state": "ECOLOGY_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "status": "HALTED",
+  "updated": "2026-08-06T16:26:04-04:00",
+  "execution_state": "ECOLOGY_SOURCE_COMPLETE_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 8,
-    "outstanding_pre_reconciliation_sources": 4,
+    "outstanding_compile_scope_sources": 7,
+    "outstanding_pre_reconciliation_sources": 3,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -28,36 +28,98 @@
       "M050-SRC-PERSONAL-ITEMS-001",
       "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
       "M050-SRC-CORE-TRAITS-001",
-      "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001"
+      "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
+      "M050-SRC-ECOLOGY-001"
     ]
   },
   "source": {
     "id": "M050-SRC-ECOLOGY-001",
     "label": "Ecology",
     "compile_ordinal": 15,
-    "accepted_chunk_ids": [],
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002",
+      "C0003",
+      "C0004",
+      "C0005",
+      "C0006"
+    ],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_Ecology_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "6b05660532e057a8db79e73ce364dc68a9297e9aa98a99c9779ffcc525afe3e4",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_Ecology_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/ecology/M050_Ecology_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_Ecology_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0006_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0004",
+        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0005",
+        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {},
+    "pilot_chunk_id": "C0006",
+    "generated_chunk_count": 6,
+    "target_blocks_per_chunk": 20,
+    "required_target_disposition_count": 5,
+    "source_blocks": 266,
+    "eligible_target_blocks": 98,
+    "context_only_blocks": 26,
+    "excluded_blocks": 142,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 83,
+    "cache_miss_call_ceiling_usd": "0.291796",
+    "latest_outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/ecology/M050_Ecology_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "6b8c9587eca00b917d43dbda057b1c93dbe86407262adbcf0d2ffed1f7e3af56",
+      "report": "m050/extraction/accepted/ecology/M050_Ecology_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "60d01709688d1546d4120c6de56b823f95e7a99af96e978b40f0bb4fca377f87"
+    }
   },
   "spend": {
     "active": true,
     "authorized_usd": "28.2427722",
-    "cumulative_spent_usd": "26.6195466",
-    "remaining_usd": "1.6232256",
-    "display_usd_rounded_up": "26.62",
+    "cumulative_spent_usd": "27.3665966",
+    "remaining_usd": "0.8761756",
+    "display_usd_rounded_up": "27.37",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -65,15 +127,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 3:54:46 PM EDT",
-    "status": "Ecology identity proposed; author approval required",
-    "phase": "Atomic extraction — Ecology identity approval halt",
-    "source": "Ecology — ordinal 15; 14 / 22 compile-scope sources complete",
-    "chunk": "No chunk selected; accepted/rejected boundary empty",
-    "now": "Revised frozen source identity, subsidiary qualification, and zero-media disposition proposed; no provider call or spend",
-    "next": "Halt for author approval or amendment before scaffold, provider configuration, or transmission"
+    "updated_human": "August 6, 2026 at 4:26:04 PM EDT",
+    "status": "Ecology source candidate accepted; formal Stopdown",
+    "phase": "Atomic extraction — Ecology source completion",
+    "source": "Ecology — ordinal 15; 15 / 22 compile-scope sources complete",
+    "chunk": "C0001–C0006 accepted; 98 / 98 targets covered; 178-atom candidate accepted",
+    "now": "Whole-source coverage and extraction-quality review passed; exact cumulative spend $27.3665966 with $0.8761756 remaining; both Worker authorities revoked",
+    "next": "Halt after closing commit and push; the next source requires a new explicit source-work grant"
   },
-  "next_possible_transition": "Author approval or amendment of the pending Ecology identity card; no provider call, another source, or later phase is authorized.",
+  "next_possible_transition": null,
   "gate_5_complete": false,
-  "latest_provider_attempt": null
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "chunk_id": "C0006",
+    "stop_reason": "end_turn",
+    "output_tokens": 3369,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3052,
+    "cache_effective": true,
+    "exact_cost_usd": "0.0386984",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
+  }
 }

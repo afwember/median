@@ -30,11 +30,12 @@
     "C0017": "d364fede75d257a87fbd49f7dbecbdcce622ab0235e5eb4606a137aab5a9fe75",
     "C0018": "9a180c773283217d37a6afebbdcfac204313c4a245a7aef336686b34bdcfb948",
     "C0019": "b611c9787c075046afedb5aa257b64c888562b67441be2030f3037a696518f33",
+    "C0020": "cf15b912026b97e82c0b3bd273f3e4c97d571990c5ecb8001aec4c217de36521",
     "C0025": "e5797c1752999eed2bd095564790d800667c57e1aa661e30a38931e9d51ff964"
   },
   "result": {
-    "accepted_chunks_replayed": 20,
-    "mechanical_validation_passed": 20,
+    "accepted_chunks_replayed": 21,
+    "mechanical_validation_passed": 21,
     "all_33_chunks_fake_validated": true,
     "offline_tests_passed": 81
   },

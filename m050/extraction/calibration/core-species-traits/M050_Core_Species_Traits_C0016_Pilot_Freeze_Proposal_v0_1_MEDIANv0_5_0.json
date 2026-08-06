@@ -16,8 +16,8 @@
     "pilot_packet_file_sha256": "4d2537b4f7311312c4b9ea7d6a18ae2e5b73f400ecef562a0ca2e5f9a0a09fee",
     "prompt_sha256": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
     "response_schema_sha256": "f3d3a50417a54db8d0b11caf36db13cc56179032ca9fc1378a50438da9f81893",
-    "engine_module_sha256": "3064b64205f21060add45b05ff411923039c9cd424b1ded371e70fa39253663d",
-    "engine_tests_sha256": "3fbf3abed67a7d22646bf01518f8e78ce7cb1a0c7d412eb98acd03cf4f77966c",
+    "engine_module_sha256": "bb091b0ada4d4be1611cdc8b8b319fb0e41bbcd9116469457e0c938480e1cecc",
+    "engine_tests_sha256": "caeec38def606ebae01e4e268261123202b97231a7e0395fd1a82080a3606d19",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,7 +35,7 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0005 v0.1 appended unstated table glosses and v0.2 exhausted the 12000-token output allowance without structured output. All accepted evidence passed under high reasoning and the 24000-token allowance; C0005 v0.3 is refrozen.",
+    "selection_reason": "C0005 v0.1 appended unstated table glosses, v0.2 exhausted the 12000-token output allowance, and v0.3 timed out after transmission without response telemetry. Asa provisionally charged v0.3 at its conservative ceiling; C0005 v0.4 is refrozen under the validated 24000-token configuration.",
     "required_target_disposition_count": 8,
     "cache_miss_call_ceiling_usd": "0.294844"
   },
@@ -49,7 +49,7 @@
   "offline_verification": {
     "all_20_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 81,
+    "offline_tests_passed": 82,
     "calibrated_target_blocks_per_chunk": 10,
     "generated_chunk_count": 20,
     "chunk_count_is_input": false,
@@ -72,6 +72,9 @@
     "high_reasoning_all_accepted_evidence_compatibility_replay_passed": true,
     "output_allowance_12000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0005_v0_2_max_tokens_rejection_preserved": true,
-    "output_allowance_24000_all_accepted_evidence_compatibility_replay_passed": true
+    "output_allowance_24000_all_accepted_evidence_compatibility_replay_passed": true,
+    "c0005_v0_3_transport_timeout_preserved": true,
+    "c0005_v0_3_cost_provisionally_resolved_at_conservative_ceiling": true,
+    "read_timeout_same_packet_retry_compatibility_passed": true
   }
 }

@@ -1,0 +1,15 @@
+{
+  "schema_version": "M050-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-CORE-SPECIES-TRAITS-READ-TIMEOUT-RETRY-COMPATIBILITY-001",
+  "source_id": "M050-SRC-CORE-TRAITS-001",
+  "correction": "Treat the exact captured socket read-timeout transport result as retryable after failed review, using the existing same-packet transient-failure path.",
+  "process_delta": "none",
+  "verification": {
+    "same_packet_read_timeout_retry_passed": true,
+    "same_packet_nontransient_failure_remains_blocked": true,
+    "accepted_chunk_repeat_remains_blocked": true,
+    "all_22_compile_scope_sources_parse_and_enter_generic_chunk_planner": true,
+    "offline_tests_passed": 82
+  },
+  "result": "PASS"
+}

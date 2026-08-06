@@ -7,8 +7,8 @@
   "binding": {
     "configuration_sha256": "7315d92a6e763a7ccc1abc80ff4d55e23c5970c1054691296929a7a508bc52e2",
     "prompt_sha256": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
-    "engine_module_sha256": "3064b64205f21060add45b05ff411923039c9cd424b1ded371e70fa39253663d",
-    "engine_tests_sha256": "3fbf3abed67a7d22646bf01518f8e78ce7cb1a0c7d412eb98acd03cf4f77966c"
+    "engine_module_sha256": "bb091b0ada4d4be1611cdc8b8b319fb0e41bbcd9116469457e0c938480e1cecc",
+    "engine_tests_sha256": "caeec38def606ebae01e4e268261123202b97231a7e0395fd1a82080a3606d19"
   },
   "source_review": {
     "source_blocks": 300,
@@ -37,7 +37,7 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 81,
+    "offline_tests_passed": 82,
     "all_source_structural_compatibility_passed": true,
     "active_source_guard_ready": true,
     "c0016_representative_pilot_mechanical_and_substantive_review_passed": true
@@ -66,6 +66,10 @@
     "accepted_evidence_output_allowance_24000_compatibility": {
       "sha256": "86ca94622aea36174d240b879b96dfc32efccb47fdf95d79fb64fa65d3ab5ea6",
       "result": "all five accepted chunks mechanically pass unchanged under high reasoning and the 24000-token output allowance"
+    },
+    "read_timeout_retry_compatibility": {
+      "sha256": "e262e4f93c063b27e6e47f813155e7ffb81a562d1cbf127c1b107cda2be36523",
+      "result": "same-packet retry is permitted only for the exact captured socket read-timeout transport result after failed review; all-source structural compatibility passes"
     }
   }
 }

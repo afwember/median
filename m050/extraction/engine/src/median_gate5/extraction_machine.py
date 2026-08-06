@@ -25,7 +25,10 @@ DNS_TRANSPORT_MARKERS = (
     "nodename nor servname provided",
     "temporary failure in name resolution",
 )
-RETRYABLE_HTTP_TRANSPORT_ERRORS = {"HTTPError:529"}
+RETRYABLE_HTTP_TRANSPORT_ERRORS = {
+    "HTTPError:529",
+    "TimeoutError:The read operation timed out",
+}
 HEADING_LEVEL = re.compile(r"^ {0,3}(#{1,6})(?:\s+|$)")
 TABLE_DELIMITER_CELL = re.compile(r"^:?-{3,}:?$")
 PURE_STRUCTURAL_LABEL = re.compile(

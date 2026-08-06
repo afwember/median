@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T09:53:18-04:00",
-  "execution_state": "CORE_SPECIES_TRAITS_C0005_V0_3_TRANSPORT_TIMEOUT_COST_UNRECONCILED",
+  "updated": "2026-08-06T10:00:49-04:00",
+  "execution_state": "CORE_SPECIES_TRAITS_C0005_V0_4_SAME_SUBSTANTIVE_DEFECT_REJECTED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -49,7 +49,7 @@
     "freeze": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_C0016_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Core_Species_Traits_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Call_Packet_v0_3_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Call_Packet_v0_4_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0016",
@@ -83,7 +83,8 @@
       "c0016_document_control_disposition_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_C0016_Document_Control_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0016_structural_tagline_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_C0016_Structural_Tagline_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "accepted_evidence_high_reasoning_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Accepted_Evidence_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "accepted_evidence_output_allowance_24000_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Accepted_Evidence_Output_Allowance_24000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "accepted_evidence_output_allowance_24000_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Accepted_Evidence_Output_Allowance_24000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "read_timeout_retry_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Read_Timeout_Retry_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
     "pilot_chunk_id": "C0005",
     "generated_chunk_count": 20,
@@ -96,16 +97,18 @@
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 81,
+    "offline_tests_passed": 82,
     "cache_miss_call_ceiling_usd": "0.294844",
-    "latest_outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Outcome_v0_3_MEDIANv0_5_0.json"
+    "latest_outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Outcome_v0_4_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "24.7501186",
-    "cumulative_spent_usd": "23.4374374",
-    "remaining_usd": "1.3126812",
-    "display_usd_rounded_up": "23.44"
+    "cumulative_spent_usd": "23.8599470",
+    "remaining_usd": "0.8901716",
+    "display_usd_rounded_up": "23.86",
+    "provisional_component_usd": "0.294844",
+    "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -117,28 +120,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 9:53:18 AM EDT",
-    "status": "Core Species Traits halted at C0005 v0.3 transport timeout",
+    "updated_human": "August 6, 2026 at 10:00:49 AM EDT",
+    "status": "Core Species Traits C0005 v0.4 rejected; recurring substantive defect",
     "phase": "Atomic extraction — Core Species Traits sequential extraction",
     "source": "Core Species Traits — ordinal 13; 12 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0016 and C0001-C0004; rejected C0001 v0.1-v0.4 and C0005 v0.1-v0.2 preserved; C0005 v0.3 transmitted with no response capture",
-    "now": "C0005 v0.3 timed out after transmission with no HTTP response, request ID, usage, or exact-cost telemetry; recorded spend remains $23.4374374 and cannot yet be treated as reconciled",
-    "next": "Human review is required to resolve the C0005 v0.3 transport/cost ambiguity before retry or further calls"
+    "chunk": "Accepted C0016 and C0001-C0004; rejected C0001 v0.1-v0.4 and C0005 v0.1-v0.4 preserved",
+    "now": "C0005 v0.4 passed mechanical validation but repeated the unstated capacity gloss in all three substantive table rows; exact call cost $0.1276656 reconciled; booked cumulative spend is $23.8599470 with $0.294844 provisional",
+    "next": "Halt for authorial judgment or structural mandate; do not retry C0005 or advance"
   },
-  "next_possible_transition": "Resolve the C0005 v0.3 transport/cost ambiguity with Asa before any retry or further provider call; no other source or later phase is authorized.",
+  "next_possible_transition": "Asa must decide whether the recurring C0005 table-relationship gloss requires authorial ruling or a larger structural change; no retry, other source, or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": null,
+    "http_status": 200,
     "chunk_id": "C0005",
-    "stop_reason": null,
-    "output_tokens": null,
-    "cache_creation_input_tokens": null,
-    "cache_read_input_tokens": null,
-    "cache_effective": null,
-    "exact_cost_usd": null,
-    "mechanical_passed": null,
-    "review_state": "call_captured",
-    "transport_error": "TimeoutError:The read operation timed out",
-    "spend_reconciliation_required": true
+    "stop_reason": "end_turn",
+    "output_tokens": 12141,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 2968,
+    "cache_effective": true,
+    "exact_cost_usd": "0.1276656",
+    "mechanical_passed": true,
+    "review_state": "review_failed"
   }
 }

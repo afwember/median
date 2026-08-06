@@ -1295,6 +1295,7 @@ def test_compact_run_ledger_allows_validated_replacement_after_failure(tmp_path)
     [
         "URLError:workspace DNS unavailable",
         "HTTPError:529",
+        "TimeoutError:The read operation timed out",
     ],
 )
 def test_compact_run_ledger_allows_same_packet_after_reviewed_transient_failure(

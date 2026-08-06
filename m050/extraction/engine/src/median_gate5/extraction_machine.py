@@ -591,7 +591,7 @@ use `review_required` when necessary. Parent headings are context, never atoms. 
 `exact_source_text` is
 a byte-for-byte contiguous target-block substring that occurs exactly once. After JSON decoding it contains actual target-block
 characters, never literal backslash Unicode-escape spellings.
-Expand repeated or nested terms with adjacent text until unique.
+Repeated spans expand through nearest semicolon-free source boundary.
 Include interrupting markup or split the atom.
 
 Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;

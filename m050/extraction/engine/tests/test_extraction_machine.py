@@ -353,7 +353,7 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "none missing, repeated, or partial" in prompt
     assert "byte-for-byte" in prompt
     assert "target-block substring that occurs exactly once" in prompt
-    assert "Expand repeated or nested terms with adjacent text until unique" in prompt
+    assert "Repeated spans expand through nearest semicolon-free source boundary" in prompt
     assert "actual target-block\ncharacters" in prompt
     assert "never literal backslash Unicode-escape spellings" in prompt
     assert "retains\nmarkup and escaping" not in prompt

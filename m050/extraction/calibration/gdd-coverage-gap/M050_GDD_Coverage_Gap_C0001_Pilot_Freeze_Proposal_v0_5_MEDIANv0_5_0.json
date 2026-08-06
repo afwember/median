@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
     "source_sha256": "15af505d60383e5c47215b7c21b9016eb56e29920e71373d3c0f0c09ad95a225",
-    "configuration_sha256": "c9090cb3333ffd0bde84eefbacdab38651da5f11670db1339c7ffb669bfa941d",
+    "configuration_sha256": "bec207452070119355fdbe444896f9db862e615396b60f61bfb250706de25835",
     "identity_card_sha256": "9e5d887baef7a1958aa355cb38e779eedd97f8353759bec1a2c8a17d4231ac63",
     "block_manifest_sha256": "9f056891307db24fa516fb22637885bb8f3e89d56d1da73256d593b6e9e0e257",
     "disposition_ledger_sha256": "a20e9fbbc5ce67bda2291ec01fd0cc17279e10b31f79152ff551d3c308a338b4",
     "chunk_plan_sha256": "42b72b5da73d08b83c0c89cc1a973ede6246f04e686eef59bb86783df08637de",
-    "pilot_chunk_id": "C0008",
-    "pilot_packet_sha256": "8351bd1d5be81fa58d21a7f312b405e542885e84df8c7fe7e3591c85c8110144",
-    "pilot_packet_file_sha256": "7257a21befb8126a799f55fa718b7695dcc73cb240bff7cf015df535b3d5a5f7",
-    "prompt_sha256": "8d44f62ee76d5dd901019adc0514c3be26218bbfb93d9ad515679e8043626bba",
+    "pilot_chunk_id": "C0012",
+    "pilot_packet_sha256": "6c8a432f338b23f1b09249ff11144d4cb9dc5116ac9fdccb7b723a7c6f154a10",
+    "pilot_packet_file_sha256": "233983b37d1760e4b2fb84ee873d15278a12b489b97122faad5930ebb0217144",
+    "prompt_sha256": "e7863f8f569cb4abc5bd3e1d0a96278e58eeba93b7cfd46cc74e9b62c0b6cd19",
     "response_schema_sha256": "45c543e469738f42e297a42f051d725941bfd3ed0e0ebcf6af83ef8f45c5a918",
-    "engine_module_sha256": "aae38e0f3cf17e5bb64bd7ad0889df3990ea6d96cfb179a2ee221010feee747a",
-    "engine_tests_sha256": "801f868635bd0bf7f9e3c61f3f5768925b9e5c78dd8f493e4d34023a45643090",
+    "engine_module_sha256": "e6e6bed43dcdf4996bd2045d0d203f6db7fc00679a10cdad7c3ba0483b55a188",
+    "engine_tests_sha256": "f30ed76a35b700930fe126d2448f390472cc8e2cff89e8d34d951872cf46cfad",
     "allowed_streams": ["evidence_game_semantic"],
     "model": "claude-sonnet-5",
     "reasoning_effort": "medium",
@@ -33,9 +33,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0008 v0.2 is the corrected retry after v0.1 crossed an authored semicolon inside a table-cell custody span.",
+    "selection_reason": "C0012 v0.4 is the corrected retry after v0.2 expanded table atoms across row semicolons; repeated spans now expand only through the nearest semicolon-free source boundary.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.330016"
+    "cache_miss_call_ceiling_usd": "0.330452"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -62,6 +62,10 @@
     "c0005_mechanical_and_substantive_review_passed": true,
     "c0006_mechanical_and_substantive_review_passed": true,
     "c0007_mechanical_and_substantive_review_passed": true,
-    "c0008_mechanical_and_substantive_review_passed": false
+    "c0008_mechanical_and_substantive_review_passed": true,
+    "c0009_mechanical_and_substantive_review_passed": true,
+    "c0010_mechanical_and_substantive_review_passed": true,
+    "c0011_mechanical_and_substantive_review_passed": true,
+    "c0012_mechanical_and_substantive_review_passed": false
   }
 }

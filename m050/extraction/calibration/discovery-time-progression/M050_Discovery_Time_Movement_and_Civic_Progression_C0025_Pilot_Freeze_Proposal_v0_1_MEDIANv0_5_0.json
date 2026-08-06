@@ -6,24 +6,24 @@
   "binding": {
     "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
     "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
-    "configuration_sha256": "2ce8f1d2fd944ce6ec8650c0a6a6fc832f85d6218ef4cb72d8a500d7b050b8ed",
+    "configuration_sha256": "d631d056b5d4e405743973f26a7b2dffc5abcdf337b60b85028c2b614830157e",
     "identity_card_sha256": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
     "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
-    "pilot_chunk_id": "C0027",
-    "pilot_packet_sha256": "8044311f89c30a3e6ae0fd0f83fd298a130ee80709ca4b8f6c436cf0bc7dc79f",
-    "pilot_packet_file_sha256": "9e975fc2e653d3952d45a8eb35f6fca04f37a4533ca610a171d271f7a3fcf060",
-    "prompt_sha256": "f868056b6af33da12fda9b25c054521197dde476445650482d50e339639f0094",
+    "pilot_chunk_id": "C0033",
+    "pilot_packet_sha256": "2aa2935b9ba4b7459449640eac4e6bdce3b4b95034c7723512027f6a50fe68ee",
+    "pilot_packet_file_sha256": "583cbed25c89302d96c5c0dc203e0ae4ce7de139ac9dd005c59bc182d2998e2c",
+    "prompt_sha256": "a64550a249a896cc8f00623e05effc4b35ff327f2f397ad1db82d71d7d25ec50",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
-    "engine_module_sha256": "dcc391c0ae9ad7fd197f9a926cf7b129494ee1bf0521f0233b9bdda34370bb85",
-    "engine_tests_sha256": "4b63450d4dd9056c2ef4d378c216947e80a52e8c59f503fb166b517fa090587b",
+    "engine_module_sha256": "301cc9fa550d10de43b213166821138c1b454a7abf017a83810fc013d3300cf8",
+    "engine_tests_sha256": "cc2612963207b42a4e6f55cadde1b662d9d569ebdfb7edcffd48319f5832994a",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
     "model": "claude-sonnet-5",
     "reasoning_effort": "high",
-    "maximum_output_tokens": 12000,
+    "maximum_output_tokens": 24000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
     "pricing": {
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0026 v0.2 was accepted under the corrected atomicity invariant without another provider call. C0027 is the next outstanding source-derived chunk in sequential order.",
-    "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.183136"
+    "selection_reason": "C0033 v0.3 completed mechanically but retained unresolved same-block pronouns in standalone normalized claims. C0033 v0.4 is refrozen under the clarified same-block antecedent substitution instruction.",
+    "required_target_disposition_count": 5,
+    "cache_miss_call_ceiling_usd": "0.298268"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -71,7 +71,7 @@
     "output_allowance_12000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0018_v0_1_subject_only_shared_predicate_rejection_preserved": true,
     "coordinated_subject_shared_predicate_prompt_correction_passed": true,
-    "all_26_accepted_evidence_active_prompt_compatibility_replay_passed": true,
+    "all_33_accepted_evidence_active_prompt_compatibility_replay_passed": true,
     "c0018_v0_2_mechanical_and_substantive_review_passed": true,
     "c0019_v0_1_mid_output_bio_refusal_preserved": true,
     "sonnet_5_clean_completion_count_before_refusal": 257,
@@ -81,6 +81,14 @@
     "c0020_v0_1_unstated_comparison_target_rejection_preserved": true,
     "conservative_normalization_prompt_correction_passed": true,
     "coordinated_structure_atomicity_prompt_correction_passed": true,
-    "c0026_v0_2_mechanical_and_substantive_review_passed": true
+    "c0026_v0_2_mechanical_and_substantive_review_passed": true,
+    "c0032_v0_1_cross_block_qualifier_rejection_preserved": true,
+    "same_target_block_normalization_prompt_correction_passed": true,
+    "c0033_v0_1_max_tokens_rejection_preserved": true,
+    "output_allowance_16000_all_accepted_evidence_compatibility_replay_passed": true,
+    "c0033_v0_2_max_tokens_rejection_preserved": true,
+    "output_allowance_24000_all_accepted_evidence_compatibility_replay_passed": true,
+    "c0033_v0_3_unresolved_pronoun_rejection_preserved": true,
+    "same_block_antecedent_normalization_prompt_correction_passed": true
   }
 }

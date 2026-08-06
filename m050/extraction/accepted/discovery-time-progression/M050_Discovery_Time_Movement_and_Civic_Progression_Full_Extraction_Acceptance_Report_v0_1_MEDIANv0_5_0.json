@@ -1,0 +1,317 @@
+{
+  "report_version": "M050-DISCOVERY-TIME-PROGRESSION-ACCEPTANCE-0.1",
+  "status": "FULL_DISCOVERY_TIME_PROGRESSION_SOURCE_BOUNDED_ACCEPTED_CANDIDATE",
+  "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+  "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
+  "model": "claude-sonnet-5",
+  "effort": "high",
+  "chunks": 33,
+  "provider_attempts": 47,
+  "source_blocks": 522,
+  "target_blocks": 294,
+  "context_only_blocks": 37,
+  "excluded_blocks": 191,
+  "target_dispositions": 294,
+  "candidate_atoms": 337,
+  "no_substantive_claim_dispositions": 118,
+  "review_required_dispositions": 0,
+  "schema_errors": 0,
+  "grounding_errors": 0,
+  "coverage_errors": 0,
+  "duplicate_target_blocks": 0,
+  "uncovered_target_blocks": 0,
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015",
+    "C0016",
+    "C0017",
+    "C0018",
+    "C0019",
+    "C0020",
+    "C0021",
+    "C0022",
+    "C0023",
+    "C0024",
+    "C0025",
+    "C0026",
+    "C0027",
+    "C0028",
+    "C0029",
+    "C0030",
+    "C0031",
+    "C0032",
+    "C0033"
+  ],
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "3a522a9b53a702d1d8477daf5507f3d299f79ff93ec7b23bd6a18b49721bf860",
+      "review_event_id": "evt_c531a681cf4a433614727f8a",
+      "review_event_outcome_sha256": "3a522a9b53a702d1d8477daf5507f3d299f79ff93ec7b23bd6a18b49721bf860"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "074ac9765551c7afe0b6e634c505f46db939b4dae035c050583fdfd7298dfa0d",
+      "review_event_id": "evt_43cefe76a7c793f1556561ca",
+      "review_event_outcome_sha256": "074ac9765551c7afe0b6e634c505f46db939b4dae035c050583fdfd7298dfa0d"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b5220d01f3a41913afdbefba017086c1b5e56b6409b964e8b4616341ff5d1ce7",
+      "review_event_id": "evt_66b7c28c95a7bb1d2d9312b5",
+      "review_event_outcome_sha256": "b5220d01f3a41913afdbefba017086c1b5e56b6409b964e8b4616341ff5d1ce7"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "fc5fde6287c013bd17caf6fac1143b32319a32afcda921428515f33704d5c6eb",
+      "review_event_id": "evt_918e5d24db3e7bc5c63417c5",
+      "review_event_outcome_sha256": "fc5fde6287c013bd17caf6fac1143b32319a32afcda921428515f33704d5c6eb"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "25cd600c17c2028cdda108e4f87a3af036ceb3d98d5654b808a46d14a36936fa",
+      "review_event_id": "evt_26a6e9a3ae4c6bb8c9e1026d",
+      "review_event_outcome_sha256": "25cd600c17c2028cdda108e4f87a3af036ceb3d98d5654b808a46d14a36936fa"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "3842040395e006fcbf1d46135322e3b16b386248a849f78e6f3f731ba6dcb688",
+      "review_event_id": "evt_04ef77160feb889219a18ec2",
+      "review_event_outcome_sha256": "3842040395e006fcbf1d46135322e3b16b386248a849f78e6f3f731ba6dcb688"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "6f1cdbc67949f839607b35253091a7d47a89aa6f8c748b252b83f5989e6993bb",
+      "review_event_id": "evt_e3aa866b4b40655d02dd8179",
+      "review_event_outcome_sha256": "6f1cdbc67949f839607b35253091a7d47a89aa6f8c748b252b83f5989e6993bb"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d131fb082adf5d491b575b9344b63d37ebe6470b7564a16a81aecd9f99aea766",
+      "review_event_id": "evt_0cb7e83feb496c24f9cf8140",
+      "review_event_outcome_sha256": "d131fb082adf5d491b575b9344b63d37ebe6470b7564a16a81aecd9f99aea766"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "ff8f53e2202297973d5c5cfc9e48cd055836ac3fed2a4a271b06cc9668062230",
+      "review_event_id": "evt_f6885f803769c821e8f16470",
+      "review_event_outcome_sha256": "ff8f53e2202297973d5c5cfc9e48cd055836ac3fed2a4a271b06cc9668062230"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "e7312f3ef095cec8070750c49eb00c0d42d5fdceac7022c2602a9d4e49847b29",
+      "review_event_id": "evt_9a314ecc0abaa62fcd384e72",
+      "review_event_outcome_sha256": "e7312f3ef095cec8070750c49eb00c0d42d5fdceac7022c2602a9d4e49847b29"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "60b1bad9f20824e7a5e8bd09daa11b805d09f7e441dce863643449520a1bfc96",
+      "review_event_id": "evt_c2e98f4cfa6adacda37e25c7",
+      "review_event_outcome_sha256": "60b1bad9f20824e7a5e8bd09daa11b805d09f7e441dce863643449520a1bfc96"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "2fc90ee50290a2289df78c2f9be12db2c703e4739835dcb5b2ff40dfd2aaec01",
+      "review_event_id": "evt_5907d70156a5c1377ad17ff0",
+      "review_event_outcome_sha256": "2fc90ee50290a2289df78c2f9be12db2c703e4739835dcb5b2ff40dfd2aaec01"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "55bbeb80b23d9dd629f2b192d97f47e60203a296d5f178285f12f751985bcf0b",
+      "review_event_id": "evt_21f91a927cf3127c8c09c980",
+      "review_event_outcome_sha256": "55bbeb80b23d9dd629f2b192d97f47e60203a296d5f178285f12f751985bcf0b"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "aade7b475dd470b4c6c14f8d841d4f65a85e932b562395608327a59782225658",
+      "review_event_id": "evt_670e5ce03656fafacbad1d3e",
+      "review_event_outcome_sha256": "aade7b475dd470b4c6c14f8d841d4f65a85e932b562395608327a59782225658"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0015_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "ea122adfb5a9fe3d8b1138c12ae879948d71b876f74604d4f50cc41744b47093",
+      "review_event_id": "evt_09b2452f4a920b0f98e32651",
+      "review_event_outcome_sha256": "ea122adfb5a9fe3d8b1138c12ae879948d71b876f74604d4f50cc41744b47093"
+    },
+    {
+      "chunk_id": "C0016",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0016_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "b3210fdd0635297a78fb8ab864c9400f9de0329604046b4cb1bea99ec2db0888",
+      "review_event_id": "evt_56f9d22d318a4c716ed26d09",
+      "review_event_outcome_sha256": "b3210fdd0635297a78fb8ab864c9400f9de0329604046b4cb1bea99ec2db0888"
+    },
+    {
+      "chunk_id": "C0017",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "5e9525a91c26b3d6550a2671df30ee8e7dcf377561d3c08ddc239b1d7a33c2f2",
+      "review_event_id": "evt_016ca30dd4983a970e217d81",
+      "review_event_outcome_sha256": "5e9525a91c26b3d6550a2671df30ee8e7dcf377561d3c08ddc239b1d7a33c2f2"
+    },
+    {
+      "chunk_id": "C0018",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "d8d04faeddb81a9a5a539e7dd59583269c0448562a02c345152abd228fa899cd",
+      "review_event_id": "evt_d2f8719232aabc09a4ba3d51",
+      "review_event_outcome_sha256": "d8d04faeddb81a9a5a539e7dd59583269c0448562a02c345152abd228fa899cd"
+    },
+    {
+      "chunk_id": "C0019",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0019_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "3bd690b03d73d7700e8478d5447e34e719b10ffa671cf47469c39c9eb74ac807",
+      "review_event_id": "evt_e06bbd71fccdd7094a18322a",
+      "review_event_outcome_sha256": "3bd690b03d73d7700e8478d5447e34e719b10ffa671cf47469c39c9eb74ac807"
+    },
+    {
+      "chunk_id": "C0020",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0020_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "47718c8a6873c3e5477d720c0c132defac37fb9a53246a0a8e3e0a24e0fc0c5e",
+      "review_event_id": "evt_1ce4215ce952310b4ec0f8af",
+      "review_event_outcome_sha256": "47718c8a6873c3e5477d720c0c132defac37fb9a53246a0a8e3e0a24e0fc0c5e"
+    },
+    {
+      "chunk_id": "C0021",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0021_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "ce28bd72e5b4eec9762f1f56cf9ba566103515b9e40d484544092fbf8fee63b9",
+      "review_event_id": "evt_5a4b11c14c7fd2ae6c936fe7",
+      "review_event_outcome_sha256": "ce28bd72e5b4eec9762f1f56cf9ba566103515b9e40d484544092fbf8fee63b9"
+    },
+    {
+      "chunk_id": "C0022",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0022_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "a6742b652458b7d5be0b15b70142137a05a5f78c74809d9cf042bc802a136152",
+      "review_event_id": "evt_ff9e60cb90daeec388b3f545",
+      "review_event_outcome_sha256": "a6742b652458b7d5be0b15b70142137a05a5f78c74809d9cf042bc802a136152"
+    },
+    {
+      "chunk_id": "C0023",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0023_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "235127438b98944bb0e711d79a49ac29b3eb58142cde7320a7682d43671d907a",
+      "review_event_id": "evt_c9d019cb95e368240ef0e66e",
+      "review_event_outcome_sha256": "235127438b98944bb0e711d79a49ac29b3eb58142cde7320a7682d43671d907a"
+    },
+    {
+      "chunk_id": "C0024",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0024_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "6947a2379489aafc4fa9a6faeaa381fc764f2db997003e8fc99d2dc5d9f1d8f8",
+      "review_event_id": "evt_afda486df5f1adc14a40b232",
+      "review_event_outcome_sha256": "6947a2379489aafc4fa9a6faeaa381fc764f2db997003e8fc99d2dc5d9f1d8f8"
+    },
+    {
+      "chunk_id": "C0025",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "590108f2de201a9b837b8a5dc121b82dbfbc539c0533cf1b71972c58166e481d",
+      "review_event_id": "evt_403f6e14d3aa2f9d4971434c",
+      "review_event_outcome_sha256": "590108f2de201a9b837b8a5dc121b82dbfbc539c0533cf1b71972c58166e481d"
+    },
+    {
+      "chunk_id": "C0026",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "08e853f30d192c6de927e234c25c0215aa02986dbdf5781f0cfee94773162616",
+      "review_event_id": "evt_40abb139ffa2f29a504a34d8",
+      "review_event_outcome_sha256": "08e853f30d192c6de927e234c25c0215aa02986dbdf5781f0cfee94773162616"
+    },
+    {
+      "chunk_id": "C0027",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0027_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "57f40b537f7d67eee7c0a411a706a622590cc66163041089a427371209a3d154",
+      "review_event_id": "evt_b271aad265931b829377989e",
+      "review_event_outcome_sha256": "57f40b537f7d67eee7c0a411a706a622590cc66163041089a427371209a3d154"
+    },
+    {
+      "chunk_id": "C0028",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0028_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d64cdd19874d9d2020f80a8586d9155acf2a01b2fccb390b7627cfa53947b64f",
+      "review_event_id": "evt_7d6f0413d34203591be9ac2d",
+      "review_event_outcome_sha256": "d64cdd19874d9d2020f80a8586d9155acf2a01b2fccb390b7627cfa53947b64f"
+    },
+    {
+      "chunk_id": "C0029",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0029_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "6de78656c7a1112bd8089fabff5c3e7b11bb329df559e0384dd85937553a096e",
+      "review_event_id": "evt_f4e0909aead0a59bbad71922",
+      "review_event_outcome_sha256": "6de78656c7a1112bd8089fabff5c3e7b11bb329df559e0384dd85937553a096e"
+    },
+    {
+      "chunk_id": "C0030",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0030_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b0e949c4a027171a3a9294597ba6886afcd63e78a62d2fbf07f4bf8520bfae38",
+      "review_event_id": "evt_28bde6dd3181a64e556ba4cb",
+      "review_event_outcome_sha256": "b0e949c4a027171a3a9294597ba6886afcd63e78a62d2fbf07f4bf8520bfae38"
+    },
+    {
+      "chunk_id": "C0031",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0031_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "907374833c2399eaf4017cdbde53905071b6f3c9e507cbe8e90b5af4972495d1",
+      "review_event_id": "evt_b277bf58be30e15ac4453699",
+      "review_event_outcome_sha256": "907374833c2399eaf4017cdbde53905071b6f3c9e507cbe8e90b5af4972495d1"
+    },
+    {
+      "chunk_id": "C0032",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0032_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "68856b9017b1abf1ddf8f1a79f5866dcfd7575b22676737a645f01de094ca8ae",
+      "review_event_id": "evt_7705bee091c6b997ba8830bc",
+      "review_event_outcome_sha256": "68856b9017b1abf1ddf8f1a79f5866dcfd7575b22676737a645f01de094ca8ae"
+    },
+    {
+      "chunk_id": "C0033",
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "2f5b9aa758e27365299fea147d304afbe3aea85f4340a46e53ad0f84d1c6c87d",
+      "review_event_id": "evt_ec840e4c67b447b07063efdc",
+      "review_event_outcome_sha256": "2f5b9aa758e27365299fea147d304afbe3aea85f4340a46e53ad0f84d1c6c87d"
+    }
+  ],
+  "identifier_resolution": {
+    "source_identifier_field": "proposal_id",
+    "accepted_identifier_field": "proposal_id",
+    "trace_fields": [
+      "accepted_chunk_id",
+      "source_proposal_id"
+    ],
+    "policy": "DISCOVERY-{accepted_chunk_id}-{global accepted atom ordinal}; retain source_proposal_id for exact reconstruction",
+    "source_identifier_occurrences": 337,
+    "source_identifier_unique_values": 337,
+    "cross_chunk_colliding_values": 0,
+    "collision_occurrences_resolved": 0,
+    "accepted_identifier_unique_values": 337
+  },
+  "candidate_path": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "c2961e506b8c5753cd76f1783d3825a05eee4e41a0ef4beb1e991f11544628c8",
+  "actual_discovery_extraction_cost_usd": "3.0731210",
+  "cumulative_provider_spend_usd": "22.7501186",
+  "cumulative_budget_usd": "23.4227754",
+  "remaining_budget_usd": "0.6726568",
+  "cache_policy": "mandatory one-hour stable-prefix caching",
+  "cache_telemetry_status": "effective",
+  "approval": true,
+  "reviewed_by": "Codex Compile Worker",
+  "reviewed_at": "2026-08-06",
+  "note": "Accepted as source-bounded atomic-extraction output only. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+}

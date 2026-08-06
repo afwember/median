@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T00:08:54-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0027_V0_1_FROZEN_READY_ACTIVE",
+  "updated": "2026-08-06T00:56:19-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 11,
-    "outstanding_pre_reconciliation_sources": 7,
+    "outstanding_compile_scope_sources": 10,
+    "outstanding_pre_reconciliation_sources": 6,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -25,7 +25,8 @@
       "M050-SRC-AWAY-001",
       "M050-SRC-POPULATION-001",
       "M050-SRC-GUEST-001",
-      "M050-SRC-PERSONAL-ITEMS-001"
+      "M050-SRC-PERSONAL-ITEMS-001",
+      "M050-SRC-DISCOVERY-TIME-PROGRESSION-001"
     ]
   },
   "source": {
@@ -58,18 +59,25 @@
       "C0023",
       "C0024",
       "C0025",
-      "C0026"
+      "C0026",
+      "C0027",
+      "C0028",
+      "C0029",
+      "C0030",
+      "C0031",
+      "C0032",
+      "C0033"
     ],
-    "rejected_chunk_id": "C0027",
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "rejected_chunk_id": null,
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0027_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Call_Packet_v0_4_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -200,16 +208,57 @@
         "chunk_id": "C0026",
         "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Outcome_v0_2_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0027",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0027_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0028",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0028_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0029",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0029_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0030",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0030_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0031",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0031_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0032",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0032_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0033",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "c2961e506b8c5753cd76f1783d3825a05eee4e41a0ef4beb1e991f11544628c8",
+      "report": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "dd6e1c04baeebc66c1ff421a5764e50e17342cdd1d413e8bbaee8f57d25edcfe"
+    },
     "compatibility_replays": {
       "c0025_disposition_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "accepted_evidence_reasoning_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Accepted_Evidence_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0027",
+    "pilot_chunk_id": "C0033",
     "generated_chunk_count": 33,
     "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 10,
+    "required_target_disposition_count": 5,
     "source_blocks": 522,
     "eligible_target_blocks": 294,
     "context_only_blocks": 37,
@@ -218,19 +267,19 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 81,
-    "cache_miss_call_ceiling_usd": "0.183136",
-    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Outcome_v0_2_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.298268",
+    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Outcome_v0_4_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "23.4227754",
-    "cumulative_spent_usd": "21.6224186",
-    "remaining_usd": "1.8003568",
-    "display_usd_rounded_up": "21.63"
+    "cumulative_spent_usd": "22.7501186",
+    "remaining_usd": "0.6726568",
+    "display_usd_rounded_up": "22.76"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -238,25 +287,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 12:08:54 AM EDT",
-    "status": "Discovery C0027 frozen and ready",
-    "phase": "Atomic extraction — sequential extraction of Discovery, Time, Movement, and Civic Progression",
-    "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0026; C0027 v0.1 frozen",
-    "now": "C0026 v0.2 is accepted under Asa's atomicity ruling; C0027 v0.1 remains frozen and untransmitted; repository-write and Discovery source-work authorities are active; exact cumulative spend is $21.6224186.",
-    "next": "Run focused preflight, then transmit and review frozen C0027 v0.1"
+    "updated_human": "August 6, 2026 at 12:56:19 AM EDT",
+    "status": "Discovery source-bounded candidate accepted; formal Stopdown",
+    "phase": "Atomic extraction — halted at Discovery, Time, Movement, and Civic Progression completion",
+    "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 12 / 22 compile-scope sources complete",
+    "chunk": "Accepted C0001-C0033; rejected attempts preserved; whole-source candidate accepted",
+    "now": "All 294 target dispositions and 337 atoms passed exact coverage, ledger-bound review, all-source compatibility, and candidate/report hash binding; both authorities are false; exact cumulative spend is $22.7501186 and $0.6726568 remains.",
+    "next": "Await Asa's explicit source-work grant for Core Species Traits; no other source or later phase is authorized"
   },
-  "next_possible_transition": "Run focused preflight and transmit frozen Discovery C0027 v0.1. No other source or later phase is authorized.",
+  "next_possible_transition": "Await Asa's explicit source-work grant for Core Species Traits; spend alone cannot select or advance a source.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0026",
+    "chunk_id": "C0033",
     "stop_reason": "end_turn",
-    "output_tokens": 7846,
-    "cache_creation_input_tokens": 3117,
+    "output_tokens": 15113,
+    "cache_creation_input_tokens": 3107,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.098738",
+    "exact_cost_usd": "0.169726",
     "mechanical_passed": true,
     "review_state": "review_passed"
   }

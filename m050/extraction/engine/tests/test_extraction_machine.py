@@ -18,6 +18,7 @@ from median_gate5.extraction_machine import (
     build_chunk_payload,
     build_generic_response_schema,
     build_generic_source_prompt,
+    classify_anthropic_http_error,
     conservative_call_ceiling,
     debit_compile_state_spend,
     draft_block_dispositions,
@@ -1296,7 +1297,6 @@ def test_compact_run_ledger_allows_validated_replacement_after_failure(tmp_path)
     "transport_error",
     [
         "URLError:workspace DNS unavailable",
-        "HTTPError:400",
         "HTTPError:529",
         "TimeoutError:The read operation timed out",
     ],
@@ -1332,35 +1332,86 @@ def test_compact_run_ledger_allows_same_packet_after_reviewed_transient_failure(
     ) == 1
 
 
-def test_compact_run_ledger_blocks_second_same_packet_http_400_retry(tmp_path):
+def test_compact_run_ledger_blocks_unclassified_http_400(tmp_path):
     ledger = tmp_path / "run.jsonl"
-    for suffix in ("o", "p"):
-        append_run_ledger_event(
-            ledger,
-            {
-                "state": "call_captured",
-                "source_id": "S1",
-                "chunk_id": "C0001",
-                "packet_file_sha256": "a" * 64,
-                "outcome_sha256": suffix * 64,
-                "mechanical_passed": False,
-                "transport_error": "HTTPError:400",
-            },
-        )
-        append_run_ledger_event(
-            ledger,
-            {
-                "state": "review_failed",
-                "source_id": "S1",
-                "chunk_id": "C0001",
-                "outcome_sha256": suffix * 64,
-            },
-        )
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "call_captured", "source_id": "S1", "chunk_id": "C0001",
+            "packet_file_sha256": "a" * 64, "outcome_sha256": "o" * 64,
+            "mechanical_passed": False, "transport_error": "HTTPError:400",
+        },
+    )
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "review_failed", "source_id": "S1", "chunk_id": "C0001",
+            "outcome_sha256": "o" * 64,
+        },
+    )
 
     with pytest.raises(ContractError, match="must be corrected"):
         require_run_ready_for_next_call(
             read_run_ledger(ledger), "S1", "C0001", "a" * 64
         )
+
+
+@pytest.mark.parametrize(
+    "transport_error, transport_classification",
+    [
+        ("HTTPError:400:anthropic_credit_balance_too_low", None),
+        (
+            "HTTPError:400",
+            "anthropic_credit_balance_too_low",
+        ),
+    ],
+)
+def test_compact_run_ledger_allows_only_classified_credit_balance_http_400(
+    tmp_path, transport_error, transport_classification
+):
+    ledger = tmp_path / "run.jsonl"
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "call_captured", "source_id": "S1", "chunk_id": "C0001",
+            "packet_file_sha256": "a" * 64, "outcome_sha256": "o" * 64,
+            "mechanical_passed": False, "transport_error": transport_error,
+        },
+    )
+    review = {
+        "state": "review_failed", "source_id": "S1", "chunk_id": "C0001",
+        "outcome_sha256": "o" * 64, "reason": "reviewed transport",
+    }
+    if transport_classification:
+        review["transport_classification"] = transport_classification
+    append_run_ledger_event(ledger, review)
+
+    assert require_run_ready_for_next_call(
+        read_run_ledger(ledger), "S1", "C0001", "a" * 64
+    ) == 1
+
+
+def test_anthropic_http_400_classification_requires_exact_credit_message():
+    exact = json.dumps({
+        "type": "error",
+        "error": {
+            "type": "invalid_request_error",
+            "message": (
+                "Your credit balance is too low to access the Anthropic API. "
+                "Please go to Plans & Billing to upgrade or purchase credits."
+            ),
+        },
+    }).encode("utf-8")
+    other = json.dumps({
+        "type": "error",
+        "error": {"type": "invalid_request_error", "message": "Malformed request"},
+    }).encode("utf-8")
+
+    assert classify_anthropic_http_error(400, exact) == (
+        "HTTPError:400:anthropic_credit_balance_too_low"
+    )
+    assert classify_anthropic_http_error(400, other) == "HTTPError:400"
+    assert classify_anthropic_http_error(529, exact) == "HTTPError:529"
 
 
 def test_compact_run_ledger_allows_one_same_packet_retry_after_provider_refusal(

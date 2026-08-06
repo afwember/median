@@ -21,6 +21,7 @@ from median_gate5.extraction_machine import (
     build_generic_response_schema,
     build_generic_source_prompt,
     canonical_json_bytes,
+    classify_anthropic_http_error,
     conservative_call_ceiling,
     debit_compile_state_spend,
     draft_block_dispositions,
@@ -567,7 +568,7 @@ def command_send(args: argparse.Namespace) -> int:
         status = exc.code
         raw_bytes = exc.read()
         response_headers = dict(exc.headers.items())
-        transport_error = f"HTTPError:{exc.code}"
+        transport_error = classify_anthropic_http_error(exc.code, raw_bytes)
     except Exception as exc:
         transport_error = f"{type(exc).__name__}:{exc}"
     if raw_bytes:
@@ -717,14 +718,45 @@ def command_send(args: argparse.Namespace) -> int:
 def command_review(args: argparse.Namespace) -> int:
     ledger_path = Path(args.run_ledger).resolve()
     events = read_run_ledger(ledger_path)
-    if not events or events[-1].get("state") != "call_captured":
-        raise ContractError("run ledger has no captured call awaiting review")
     outcome_path = Path(args.outcome).resolve()
     outcome = read_json(outcome_path)
     outcome_sha256 = sha256_file(outcome_path)
-    captured = events[-1]
-    if captured.get("outcome_sha256") != outcome_sha256:
-        raise IntegrityError("review outcome does not match the pending ledger event")
+    transport_classification = getattr(args, "transport_classification", None)
+    if transport_classification:
+        if args.result != "failed":
+            raise ContractError("transport classification requires a failed review")
+        if not events or events[-1].get("state") != "review_failed":
+            raise ContractError("transport classification requires a reviewed failure")
+        if events[-1].get("outcome_sha256") != outcome_sha256:
+            raise IntegrityError("transport classification outcome is not the latest review")
+        if events[-1].get("transport_classification"):
+            raise ContractError("transport failure is already classified")
+        captured = next(
+            (
+                event for event in reversed(events)
+                if event.get("state") == "call_captured"
+                and event.get("outcome_sha256") == outcome_sha256
+            ),
+            None,
+        )
+        if captured is None or captured.get("transport_error") != "HTTPError:400":
+            raise ContractError("only a preserved generic HTTP 400 may be classified")
+        raw_response = getattr(args, "raw_response", None)
+        if not raw_response:
+            raise ContractError("transport classification requires the preserved raw response")
+        raw_bytes = Path(raw_response).resolve().read_bytes()
+        if hashlib.sha256(raw_bytes).hexdigest() != outcome.get("raw_response_sha256"):
+            raise IntegrityError("transport classification raw response binding drifted")
+        if classify_anthropic_http_error(400, raw_bytes) != (
+            "HTTPError:400:anthropic_credit_balance_too_low"
+        ):
+            raise ContractError("preserved HTTP 400 is not the exact Anthropic credit error")
+    else:
+        if not events or events[-1].get("state") != "call_captured":
+            raise ContractError("run ledger has no captured call awaiting review")
+        captured = events[-1]
+        if captured.get("outcome_sha256") != outcome_sha256:
+            raise IntegrityError("review outcome does not match the pending ledger event")
     if SHELL_INTERPOLATION_ARTIFACT.search(args.reason):
         raise ContractError(
             "review reason contains a likely shell-interpolation artifact; "
@@ -737,17 +769,17 @@ def command_review(args: argparse.Namespace) -> int:
         state = "review_passed"
     else:
         state = "review_failed"
-    event = append_run_ledger_event(
-        ledger_path,
-        {
-            "state": state,
-            "source_id": captured["source_id"],
-            "chunk_id": captured["chunk_id"],
-            "outcome_sha256": outcome_sha256,
-            "reviewer": args.reviewer,
-            "reason": args.reason,
-        },
-    )
+    event_body = {
+        "state": state,
+        "source_id": captured["source_id"],
+        "chunk_id": captured["chunk_id"],
+        "outcome_sha256": outcome_sha256,
+        "reviewer": args.reviewer,
+        "reason": args.reason,
+    }
+    if transport_classification:
+        event_body["transport_classification"] = transport_classification
+    event = append_run_ledger_event(ledger_path, event_body)
     print(json.dumps({
         "event_id": event["event_id"],
         "state": state,
@@ -835,6 +867,11 @@ def build_parser() -> argparse.ArgumentParser:
     review.add_argument("--result", choices=["passed", "failed"], required=True)
     review.add_argument("--reviewer", required=True)
     review.add_argument("--reason", required=True)
+    review.add_argument("--raw-response")
+    review.add_argument(
+        "--transport-classification",
+        choices=["anthropic_credit_balance_too_low"],
+    )
     review.set_defaults(func=command_review)
     return parser
 

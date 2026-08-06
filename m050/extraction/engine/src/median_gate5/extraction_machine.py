@@ -29,6 +29,13 @@ RETRYABLE_HTTP_TRANSPORT_ERRORS = {
     "HTTPError:529",
     "TimeoutError:The read operation timed out",
 }
+ANTHROPIC_CREDIT_BALANCE_MESSAGE = (
+    "Your credit balance is too low to access the Anthropic API. "
+    "Please go to Plans & Billing to upgrade or purchase credits."
+)
+ANTHROPIC_CREDIT_BALANCE_TRANSPORT_ERROR = (
+    "HTTPError:400:anthropic_credit_balance_too_low"
+)
 HEADING_LEVEL = re.compile(r"^ {0,3}(#{1,6})(?:\s+|$)")
 TABLE_DELIMITER_CELL = re.compile(r"^:?-{3,}:?$")
 PURE_STRUCTURAL_LABEL = re.compile(
@@ -69,6 +76,28 @@ def canonical_json_bytes(value: Any) -> bytes:
         json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
         + "\n"
     ).encode("utf-8")
+
+
+def classify_anthropic_http_error(status: int, raw_bytes: bytes) -> str:
+    """Classify only the exact preserved Anthropic credit-balance HTTP 400."""
+    generic = f"HTTPError:{status}"
+    if status != 400 or not raw_bytes:
+        return generic
+    try:
+        body = json.loads(raw_bytes)
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return generic
+    if not isinstance(body, dict) or body.get("type") != "error":
+        return generic
+    error = body.get("error")
+    if not isinstance(error, dict):
+        return generic
+    if (
+        error.get("type") == "invalid_request_error"
+        and error.get("message") == ANTHROPIC_CREDIT_BALANCE_MESSAGE
+    ):
+        return ANTHROPIC_CREDIT_BALANCE_TRANSPORT_ERROR
+    return generic
 
 
 def _block_record(block: dict[str, Any]) -> dict[str, Any]:
@@ -1169,21 +1198,18 @@ def require_run_ready_for_next_call(
                 and event.get("packet_file_sha256") == packet_file_sha256
                 and event.get("capture_error") == provider_refusal_error
             ]
-            same_packet_http_400_failures = [
-                event
-                for event in captured
-                if event.get("source_id") == source_id
-                and event.get("chunk_id") == chunk_id
-                and event.get("packet_file_sha256") == packet_file_sha256
-                and event.get("transport_error") == "HTTPError:400"
-            ]
+            reviewed_credit_balance_failure = (
+                transport_error == ANTHROPIC_CREDIT_BALANCE_TRANSPORT_ERROR
+                or (
+                    transport_error == "HTTPError:400"
+                    and last.get("transport_classification")
+                    == "anthropic_credit_balance_too_low"
+                )
+            )
             if (
                 retryable_dns_failure
                 or transport_error in RETRYABLE_HTTP_TRANSPORT_ERRORS
-                or (
-                    transport_error == "HTTPError:400"
-                    and len(same_packet_http_400_failures) == 1
-                )
+                or reviewed_credit_balance_failure
                 or (
                     prior_call.get("capture_error") == provider_refusal_error
                     and len(same_packet_refusals) == 1

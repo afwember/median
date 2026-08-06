@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T19:59:18-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0019_V0_2_EXACT_SONNET_5_RETRY_READY_ACTIVE",
+  "updated": "2026-08-05T20:04:10-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0019_V0_2_PREFLIGHT_BLOCKED_BY_SAME_PACKET_RETRY_INVARIANT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -196,15 +196,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 7:59:18 PM EDT",
-    "status": "Discovery Sparkup complete with exact Sonnet 5 C0019 v0.2 retry ready",
+    "updated_human": "August 5, 2026 at 8:04:10 PM EDT",
+    "status": "Discovery halted: exact C0019 v0.2 replay blocked by retry invariant",
     "phase": "Atomic extraction — Discovery, Time, Movement, and Civic Progression sequential extraction",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0018 and C0025; C0019 v0.1 refused and rejected; C0019 v0.2 frozen",
-    "now": "Repository-write and Discovery-only source-work authorities are active; C0019 v0.2 remains an exact same-model replay with unchanged payload, prompt, schema, cache policy, and pricing; exact cumulative spend remains $21.0505824.",
-    "next": "Run focused preflight, then transmit and review exact C0019 v0.2; halt if the replay also refuses"
+    "now": "Focused preflight rejected exact C0019 v0.2 because the existing source-agnostic machine requires a failed packet to change before retry; no provider call was made and exact cumulative spend remains $21.0505824.",
+    "next": "Supervisor resolution of the contradiction between the prepared exact replay and the same-packet retry invariant before any provider call"
   },
-  "next_possible_transition": "After focused preflight, retry Discovery C0019 once using the exact frozen Sonnet 5 v0.2 replay. A second refusal requires another halt. No other source or later phase is authorized.",
+  "next_possible_transition": "After authorized source-agnostic resolution of the same-packet retry invariant and successful focused preflight, retry Discovery C0019 once. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T21:15:24-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0021_UNSTATED_DEFINITIONAL_GLOSS_HALT",
+  "updated": "2026-08-05T21:36:24-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0021_UNSTATED_DEFINITIONAL_GLOSS_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -57,7 +57,7 @@
     ],
     "rejected_chunk_id": "C0021",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -199,8 +199,8 @@
     "display_usd_rounded_up": "21.28"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -208,15 +208,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 9:15:24 PM EDT",
-    "status": "Discovery halted on C0021 unstated definitional gloss",
-    "phase": "Atomic extraction — Discovery, Time, Movement, and Civic Progression sequential extraction",
+    "updated_human": "August 5, 2026 at 9:36:24 PM EDT",
+    "status": "Discovery formal Stopdown at C0021 definitional-gloss boundary",
+    "phase": "Atomic extraction — halted during Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0020 and C0025; rejected C0021 v0.1",
-    "now": "C0021 v0.1 added the unstated parenthetical definition ‘pace’ to ‘the journey’s clock’; the one-time C0020 authorial acceptance does not apply; exact cumulative spend is $21.2788542.",
-    "next": "Human review of the C0021 unstated definitional gloss before any correction or retry"
+    "now": "Both authorities are revoked; C0021 v0.1 remains rejected for adding the unstated parenthetical definition ‘pace’ to ‘the journey’s clock’; exact cumulative spend is $21.2788542.",
+    "next": "Await Asa's explicit Sparkup and direction on the C0021 definitional gloss before any further operation"
   },
-  "next_possible_transition": "Human direction on the Discovery C0021 unstated definitional gloss. No retry, other source, or later phase is authorized.",
+  "next_possible_transition": "After Asa's explicit Sparkup and direction on the definitional gloss, resume Discovery at C0021. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

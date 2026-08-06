@@ -2,13 +2,13 @@
   "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
   "receipt_id": "M050-047-CROSS-SYSTEM-CARRYFORWARD-OFFLINE-COMPATIBILITY-001",
   "date": "2026-08-06",
-  "status": "CROSS_SYSTEM_CARRYFORWARD_C0010_LIST_ITEM_CORRECTION_COMPATIBLE",
+  "status": "CROSS_SYSTEM_CARRYFORWARD_C0010_OWN_TEXT_CORRECTION_COMPATIBLE",
   "source_id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
   "binding": {
-    "configuration_sha256": "ec8c46ab63890f662dd43c66d628780e1d8e091f1e52a4d864963046c2c10e49",
-    "prompt_sha256": "0bd364714fae7a60f05c0299fffc119df0d8b74583e1abf438edcfa0b11877a7",
-    "engine_module_sha256": "748cd77fcbc288691433e7bb2f6c05a4a4cb2725af545c395d63287793abd080",
-    "engine_tests_sha256": "a3278ca5d9475a5f6ae7ee462e79367579f5befad9de87d18517d2da852336d8"
+    "configuration_sha256": "7c662ed8e4473f291da0732b77714063a6d2e061d256a1e68f589aa150c03257",
+    "prompt_sha256": "698f10da2620dbffaa9a69ea224642406904a2d0dc48e29e0e2604381368cff9",
+    "engine_module_sha256": "7412175596fcb85ca59d767712465923ed6cc03ba8697afc9451e164fa7683ce",
+    "engine_tests_sha256": "dc5c0af50da77abf39804a3752d85e2a7d4cbe193376d477e13950f2189e6be7"
   },
   "source_review": {
     "source_blocks": 646,
@@ -46,6 +46,8 @@
     "medium_reasoning_retry_compatibility_passed": true,
     "c0010_v0_1_list_item_rejection_preserved": true,
     "dependent_list_item_prompt_compatibility_passed": true,
-    "c0010_v0_2_cross_block_qualification_rejection_preserved": true
+    "c0010_v0_2_cross_block_qualification_rejection_preserved": true,
+    "list_item_own_text_only_prompt_compatibility_passed": true,
+    "c0010_v0_3_repeated_lead_in_import_rejection_preserved": true
   }
 }

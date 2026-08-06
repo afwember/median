@@ -1596,7 +1596,8 @@ def test_generic_prompt_requires_substantive_list_items_without_cross_block_impo
         "Extract only the bound source.",
     )
     assert "Authored\nlist items are substantive targets" in prompt
-    assert "atomize their own text" in prompt
+    assert "normalized claims may use only their own\ntext" in prompt
+    assert "never import a lead-in" in prompt
 
 
 def _structural_manifest():

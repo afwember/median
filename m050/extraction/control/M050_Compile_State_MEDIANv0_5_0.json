@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "HALTED",
-  "updated": "2026-08-06T13:41:46-04:00",
-  "execution_state": "CROSS_SYSTEM_CARRYFORWARD_C0010_RETRY_REJECTED_SPEND_CEILING_HALT",
+  "updated": "2026-08-06T13:52:04-04:00",
+  "execution_state": "CROSS_SYSTEM_CARRYFORWARD_C0010_V0_3_REPEATED_DEFECT_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -54,7 +54,7 @@
     "freeze": "m050/extraction/calibration/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Cross_System_Carryforward_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Call_Packet_v0_3_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -115,15 +115,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 83,
-    "cache_miss_call_ceiling_usd": "0.351504",
-    "latest_outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Outcome_v0_2_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.351696",
+    "latest_outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Outcome_v0_3_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "26.4988994",
-    "cumulative_spent_usd": "26.2427722",
-    "remaining_usd": "0.2561272",
-    "display_usd_rounded_up": "26.25",
+    "authorized_usd": "28.2427722",
+    "cumulative_spent_usd": "26.4150122",
+    "remaining_usd": "1.8277600",
+    "display_usd_rounded_up": "26.42",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
@@ -137,25 +137,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 1:41:46 PM EDT",
-    "status": "v0.4.7 Cross-System Carryforward halted at rejected C0010 retry; spend ceiling insufficient",
+    "updated_human": "August 6, 2026 at 1:52:04 PM EDT",
+    "status": "v0.4.7 Cross-System Carryforward halted at rejected C0010 v0.3 repeated defect",
     "phase": "Atomic extraction — v0.4.7 Cross-System Carryforward representative pilot",
     "source": "v0.4.7 Cross-System Carryforward — ordinal 14; 13 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0009 accepted; C0010 v0.1 and v0.2 rejected; C0011–C0013 unprocessed",
-    "now": "C0010 v0.2 restored list-item atoms but imported a prohibited cross-block qualifier; exact cost $0.152784 reconciled; booked cumulative spend $26.2427722 with $0.2561272 remaining",
-    "next": "Halt; remaining $0.2561272 cannot cover the $0.351504 conservative C0010 retry ceiling; replenish budget before correction, replay, refreeze, or another call"
+    "chunk": "C0001–C0009 accepted; C0010 v0.1, v0.2, and v0.3 rejected; C0011–C0013 unprocessed",
+    "now": "C0010 v0.3 mechanically passed but repeated the prohibited cross-block lead-in import after the validated own-text-only correction; exact cost $0.172240 reconciled; $1.8277600 remains",
+    "next": "Halt for human review of the repeated C0010 normalization defect; do not retry or advance to C0011"
   },
-  "next_possible_transition": "After Asa replenishes cumulative spend, diagnose the preserved C0010 cross-block qualification defect, pass offline/replay gates, and refreeze one corrected C0010 retry; no later chunk or source is authorized before C0010 acceptance.",
+  "next_possible_transition": "After human review, either authorize a bounded resolution for the preserved C0010 defect or direct a structural/mandate change; no further call or later chunk is currently permitted.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "chunk_id": "C0010",
     "stop_reason": "end_turn",
-    "output_tokens": 12003,
-    "cache_creation_input_tokens": 3090,
+    "output_tokens": 13943,
+    "cache_creation_input_tokens": 3104,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.152784",
+    "exact_cost_usd": "0.172240",
     "mechanical_passed": true,
     "review_state": "review_failed"
   }

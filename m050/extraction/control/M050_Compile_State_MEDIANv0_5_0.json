@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T18:56:13-04:00",
-  "execution_state": "GDD_COVERAGE_GAP_C0007_REPEATED_PROVIDER_CREDIT_HALT",
+  "updated": "2026-08-06T19:05:25-04:00",
+  "execution_state": "GDD_COVERAGE_GAP_C0007_CREDITS_RESTORED_RETRY_BOUNDARY_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -127,15 +127,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 6:56:13 PM EDT",
-    "status": "GDD Coverage-Gap halted after repeated provider-credit refusal",
+    "updated_human": "August 6, 2026 at 7:05:25 PM EDT",
+    "status": "GDD Coverage-Gap halted at the reviewed HTTP 400 retry boundary; provider credits restored",
     "phase": "Atomic extraction — GDD Coverage-Gap sequential run",
     "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 15 / 22 compile-scope sources complete",
     "chunk": "C0001–C0006 accepted; C0007 v0.1 rejected; C0007 v0.2 frozen but blocked by provider credit exhaustion; 20 targets selected",
-    "now": "The one permitted C0007 v0.2 same-packet retry again received Anthropic HTTP 400 before inference because provider credits remain exhausted; reconciled at $0, with exact cumulative spend $28.5937010 and $1.3452732 remaining",
-    "next": "Halt for Asa; restore Anthropic credits and resolve the repeated-transport retry boundary before any further provider call"
+    "now": "Asa confirmed Anthropic credits restored, but the existing safety gate blocks another identical C0007 packet after two reviewed HTTP 400 captures; exact cumulative spend remains $28.5937010 with $1.3452732 remaining",
+    "next": "Halt for explicit approval of a narrower reviewed-credit-failure retry treatment before any further provider call"
   },
-  "next_possible_transition": "After Anthropic credits are restored, Asa must resolve the repeated-transport retry boundary before the unchanged C0007 v0.2 packet may be retried.",
+  "next_possible_transition": "With Asa's explicit approval, apply a narrowly classified reviewed-credit-failure retry treatment without weakening the general HTTP 400 packet-defect gate.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 400,

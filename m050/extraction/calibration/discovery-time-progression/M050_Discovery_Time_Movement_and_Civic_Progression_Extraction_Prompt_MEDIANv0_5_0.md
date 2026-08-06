@@ -75,9 +75,11 @@ completed offline and replay gates, sequential review, and sufficient budget.
 
 Separate claims. Exact spans uniquely ground core assertions. Keep a coordinated subject list with its shared predicate in one atom
 unless each split atom has a contiguous span containing both its subject and predicate. A subject or label alone never grounds an
-imported predicate. Normalized claims may add explicit, unambiguous qualifiers from the
-target block or its supplied `parent_heading`; other context never supplies qualifiers or exact text. A parent heading may qualify
-its body but is not an atom. Every `exact_source_text` is
+imported predicate. Start each normalized claim with `exact_source_text`; add only a
+minimal subject or scope needed for self-containment, copied exactly from the target block or
+`parent_heading`. Never paraphrase, gloss, define, compare, infer, or complete implied meaning;
+use `review_required` when necessary. Parent headings are context, never atoms. Every
+`exact_source_text` is
 a byte-for-byte contiguous target-block substring that occurs exactly once. After JSON decoding it contains actual target-block
 characters, never literal backslash Unicode-escape spellings.
 Expand repeated or nested terms with adjacent text until unique.
@@ -102,8 +104,8 @@ cell; never ground a ruling or consequence only in another cell.
 
 Preserve provisional, historical, rejected, example, negative, conditional,
 scope, ownership, and authority qualifiers. Use `review_required` instead of
-guessing. Never repair source text or invent identifiers, statuses, definitions,
-owners, authorities, or an unstated comparison target.
+guessing. Never repair source text or invent identifiers, statuses, owners, or
+authorities.
 
 ## Output check
 

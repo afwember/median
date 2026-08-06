@@ -3,13 +3,13 @@
   "replay_id": "M050-DISCOVERY-TIME-PROGRESSION-C0025-DISPOSITION-COMPATIBILITY-001",
   "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
   "chunk_id": "C0025",
-  "purpose": "Verify that the active source-agnostic prompt clarification preserves accepted C0025 target membership and mechanical validity.",
+  "purpose": "Verify that the active source-agnostic conservative normalization rule preserves accepted C0025 target membership and mechanical validity.",
   "binding": {
-    "configuration_sha256": "6ae3c72f427b56df08da201f53972719eac520e502169bbfcd9b531b5e1e89d3",
+    "configuration_sha256": "da6a654c1bedddc7ec3bbb35483b906852290071167cc0ed3f24ec8a1f429585",
     "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
     "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "accepted_raw_response_sha256": "ec3c18406097483030880420bde8e836f7d666228c7efd3cbb867685c1b3f080",
-    "rebuilt_packet_sha256": "ba6f0ad14009ff64b4bcef4cb5c887f277bbcb6a8517d894a822fe6fdbb0cf5c"
+    "rebuilt_packet_sha256": "f955515a83564af963009c14eeb4797287ce00325828583535c43faf23c85f00"
   },
   "result": {
     "target_membership_unchanged": true,

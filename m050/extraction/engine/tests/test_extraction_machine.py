@@ -377,10 +377,13 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "Exact spans uniquely ground core assertions" in prompt
     assert "Keep a coordinated subject list with its shared predicate in one atom" in prompt
     assert "A subject or label alone never grounds an\nimported predicate" in prompt
-    assert "target block or its supplied `parent_heading`" in prompt
-    assert "other context never supplies qualifiers or exact text" in prompt
-    assert "A parent heading may qualify\nits body but is not an atom" in prompt
-    assert "Never repair source text or invent identifiers, statuses, definitions,\nowners, authorities, or an unstated comparison target" in prompt
+    assert "Start each normalized claim with `exact_source_text`" in prompt
+    assert "minimal subject or scope needed for self-containment" in prompt
+    assert "copied exactly from the target block or\n`parent_heading`" in prompt
+    assert "Never paraphrase, gloss, define, compare, infer, or complete implied meaning" in prompt
+    assert "Parent headings are context, never atoms" in prompt
+    assert "Normalized claims may add explicit, unambiguous qualifiers" not in prompt
+    assert "Never repair source text or invent identifiers, statuses, owners, or\nauthorities" in prompt
     assert "cost, staffing, and effect" not in prompt
     assert "dedicated Home" not in prompt
     assert len(prompt.split()) < 450

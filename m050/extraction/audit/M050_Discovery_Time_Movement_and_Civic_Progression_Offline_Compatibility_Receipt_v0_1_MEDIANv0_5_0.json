@@ -5,10 +5,10 @@
   "status": "DISCOVERY_TIME_PROGRESSION_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
   "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
   "binding": {
-    "configuration_sha256": "6ae3c72f427b56df08da201f53972719eac520e502169bbfcd9b531b5e1e89d3",
-    "prompt_sha256": "e3e9971f1643b7b82a57e7ebed4360ab5f65daacfe55ec4f42b1d7051b1fc766",
-    "engine_module_sha256": "6cfbca9c7ece45335c694916ed7a1ae770a9aa0e5a846b8794632a4245056374",
-    "engine_tests_sha256": "112e5eb1476b758d3d7afd2995cf0bebda2c478be3d4a5c483f80ba85742f02b"
+    "configuration_sha256": "da6a654c1bedddc7ec3bbb35483b906852290071167cc0ed3f24ec8a1f429585",
+    "prompt_sha256": "5db6dff1886216d475511564225549d128ec7f479a43dec65175b5a12fcf6c0d",
+    "engine_module_sha256": "3a6eeec35476f21bf957d619683e86e1df16dab89510f8b6053c38569eb86615",
+    "engine_tests_sha256": "3916d77ba49a500956c42144496149bb510bbb11d92d477e693135ce762b64f0"
   },
   "source_review": {
     "source_blocks": 522,
@@ -43,13 +43,13 @@
   },
   "replays": {
     "c0025_disposition_compatibility": {
-      "sha256": "202959379fcbeb66133d9c7b7362a416dd13c66f4ed3be55b54c14bf337ef246",
+        "sha256": "ddb7032631600c4d51a85c7d01fdc2abcae34c0432e38461fa56bcdece746c92",
       "result": "mechanical_pass_with_unchanged_target_membership_under_active_prompt"
     },
     "accepted_evidence_reasoning_compatibility": {
-      "sha256": "f309b38091bffabfffb0bb5115ab21fab9a4b2e9c7fe8fb40eecefbdb9f20ef6",
+        "sha256": "169fafa6120e9690f9c184ade95ae8226510cfade30cb1eb4f36fe0050133e37",
       "result": "all_21_accepted_chunks_mechanical_pass_under_active_prompt_high_reasoning_12000_token_packets"
     }
   },
-  "note": "The approved frozen Markdown was parsed by the existing generic machine. C0001 v0.1 exposed document-control metadata in the draft target set; the established source-review disposition removed three metadata blocks and made the structural title context-only. C0012 v0.1 exposed insufficient reasoning on explicit cross-cell grounding, and C0015 v0.1 showed medium reasoning did not reliably distinguish a same-row qualifier from a cross-cell mapping; the existing reasoning calibration is now high. C0016 v0.1 and v0.2 exhausted the 6000- and 8000-token output allowances, so the existing allowance is 12000. C0018 v0.1 exposed subject-only spans importing a coordinated shared predicate; the existing generic prompt now requires the shared predicate to remain with its coordinated subjects unless every split is independently contiguous and grounded. C0020 v0.1 and v0.2 resolved an implicit comparative with an unstated target; Asa gave one-time authorial acceptance of the existing C0020 v0.2 normalized language for later-phase correction without changing the extraction invariant. All 33 payloads rebuilt and fake-validated, all 21 accepted chunks replayed mechanically, and the stable-prefix and output-schema cache architecture is preserved. The existing retry gate permits exactly one unchanged-packet retry when captured evidence records a provider refusal; a second refusal and all other reviewed same-packet failures remain blocked."
+  "note": "The approved frozen Markdown was parsed by the existing generic machine. C0001 v0.1 exposed document-control metadata in the draft target set; the established source-review disposition removed three metadata blocks and made the structural title context-only. C0012 v0.1 exposed insufficient reasoning on explicit cross-cell grounding, and C0015 v0.1 showed medium reasoning did not reliably distinguish a same-row qualifier from a cross-cell mapping; the existing reasoning calibration is now high. C0016 v0.1 and v0.2 exhausted the 6000- and 8000-token output allowances, so the existing allowance is 12000. C0018 v0.1 exposed subject-only spans importing a coordinated shared predicate; the existing generic prompt requires the shared predicate to remain with its coordinated subjects unless every split is independently contiguous and grounded. C0020 and C0021 exposed a permissive normalization boundary: the provider added an unstated comparison target and then a parenthetical gloss. The generic prompt now starts from exact source text and permits only a minimal copied subject or scope needed for self-containment. Asa gave one-time authorial acceptance of the existing C0020 v0.2 normalized language for later-phase correction; C0021 v0.1 remains rejected. All 33 payloads remain structurally compatible, all 21 accepted chunks replayed mechanically under rebuilt packets, and the stable-prefix and output-schema cache architecture is preserved. The existing retry gate permits exactly one unchanged-packet retry when captured evidence records a provider refusal; a second refusal and all other reviewed same-packet failures remain blocked."
 }

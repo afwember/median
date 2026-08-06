@@ -1,0 +1,189 @@
+{
+  "report_version": "M050-CORE-SPECIES-TRAITS-ACCEPTANCE-0.1",
+  "status": "ACCEPTED_EXTRACTION_CANDIDATE_READY_FOR_CORPUS_RECONCILIATION",
+  "source_id": "M050-SRC-CORE-TRAITS-001",
+  "source_sha256": "9fbcb78ff5e359ed56c0c1c214413d9b41ffba3341529810fc8d418d06e45e89",
+  "accepted_chunk_ids": [
+    "C0016",
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015",
+    "C0017",
+    "C0018",
+    "C0019",
+    "C0020"
+  ],
+  "chunks": 20,
+  "target_dispositions": 184,
+  "candidate_atoms": 144,
+  "no_substantive_claim_dispositions": 92,
+  "whole_document_review": {
+    "source_blocks": 300,
+    "eligible_target_blocks": 184,
+    "context_only_blocks": 19,
+    "excluded_blocks": 97,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "media_occurrences": 0,
+    "extraction_quality_review_passed": true,
+    "unresolved_review_required_blocks": 0
+  },
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0016",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "93bf0c13b681ff9269f6883ac143f096b3562958a4e2a3c16066ee7f23dd97ef",
+      "review_event_id": "evt_46ff21ee107596d5631712fa",
+      "review_event_outcome_sha256": "93bf0c13b681ff9269f6883ac143f096b3562958a4e2a3c16066ee7f23dd97ef"
+    },
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0001_Outcome_v0_5_MEDIANv0_5_0.json",
+      "outcome_sha256": "9a8ec0dc1447cad17fed0b983b27c056145750eb60200ca5fe6294eb20709e13",
+      "review_event_id": "evt_bc150e37913545ba1e758bea",
+      "review_event_outcome_sha256": "9a8ec0dc1447cad17fed0b983b27c056145750eb60200ca5fe6294eb20709e13"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "3e99f73ec10d5f2d2052236a2671fc1e9cf750a36025754c34c6990cab3d951d",
+      "review_event_id": "evt_90a99483882a109dca8f2313",
+      "review_event_outcome_sha256": "3e99f73ec10d5f2d2052236a2671fc1e9cf750a36025754c34c6990cab3d951d"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "f8152e14c0c8d2d675d108160921b7bd8838563c5742fcfd29d4056dad63d420",
+      "review_event_id": "evt_106682d90db7e6bfce6f59eb",
+      "review_event_outcome_sha256": "f8152e14c0c8d2d675d108160921b7bd8838563c5742fcfd29d4056dad63d420"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "c5432c1d8b9d22ebded1048400d082b8458de6feffafee2f49020309ac01fc43",
+      "review_event_id": "evt_26d8e459848febd3f0427a0e",
+      "review_event_outcome_sha256": "c5432c1d8b9d22ebded1048400d082b8458de6feffafee2f49020309ac01fc43"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "a9c77477f54c731d008a98cddc0b58841911c586484f235a86ee94750696016b",
+      "review_event_id": "evt_d30e2505beb51f434b3c4bc3",
+      "review_event_outcome_sha256": "a9c77477f54c731d008a98cddc0b58841911c586484f235a86ee94750696016b"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "23ae1599ddbdb6b35be4ef27c021469282a0c74d3ecb70cf9248c7c626ee52be",
+      "review_event_id": "evt_09df16fd67783021d8fdf2a3",
+      "review_event_outcome_sha256": "23ae1599ddbdb6b35be4ef27c021469282a0c74d3ecb70cf9248c7c626ee52be"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "42a656892083783236ec5ed531ff9cd3918066a8b22bf96540e9cfb99afc2ea6",
+      "review_event_id": "evt_fe96428f7c8a17cca3406efd",
+      "review_event_outcome_sha256": "42a656892083783236ec5ed531ff9cd3918066a8b22bf96540e9cfb99afc2ea6"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "f158261e6b41c2a45e38e049ef65902986edb13a55d2275689b8744b1ac9018d",
+      "review_event_id": "evt_2beee96b5ec82ba1a710e263",
+      "review_event_outcome_sha256": "f158261e6b41c2a45e38e049ef65902986edb13a55d2275689b8744b1ac9018d"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "f9c330244587c62c6a3641162adf344e4ad18460b0594c11ee4edb4bf72d6949",
+      "review_event_id": "evt_6a99726d59c54908fa5afc2b",
+      "review_event_outcome_sha256": "f9c330244587c62c6a3641162adf344e4ad18460b0594c11ee4edb4bf72d6949"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "3c9b0b22e1fc48e542068e0e936c9bd4dce5691c94eb4c0996d2d61268e90fa1",
+      "review_event_id": "evt_6891216828a1634c266aa285",
+      "review_event_outcome_sha256": "3c9b0b22e1fc48e542068e0e936c9bd4dce5691c94eb4c0996d2d61268e90fa1"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "1d2705e6faf77da471e19456791211a51f1a6467163fe6027e241f794b3ebd83",
+      "review_event_id": "evt_aa526548d1d309de2dcc3d12",
+      "review_event_outcome_sha256": "1d2705e6faf77da471e19456791211a51f1a6467163fe6027e241f794b3ebd83"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "810c15994c8bcb6c6d793ca050a53cc89d7e30eb2c452374665f7b6b00e9b5a4",
+      "review_event_id": "evt_07bf173a7fe8055a66cc47a2",
+      "review_event_outcome_sha256": "810c15994c8bcb6c6d793ca050a53cc89d7e30eb2c452374665f7b6b00e9b5a4"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "bda7aec77a89132a3a46e4296ede6fb9ea00f4fbe4e802bf4aba584c6f65e1a0",
+      "review_event_id": "evt_daf9d211f8b2a09eddc373dc",
+      "review_event_outcome_sha256": "bda7aec77a89132a3a46e4296ede6fb9ea00f4fbe4e802bf4aba584c6f65e1a0"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "c0bad9368e0e829bf98fb29f64a7158f03a25954ce0c3ed54036414696340a5d",
+      "review_event_id": "evt_9ad56c828cd6d6dcd81a8d99",
+      "review_event_outcome_sha256": "c0bad9368e0e829bf98fb29f64a7158f03a25954ce0c3ed54036414696340a5d"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0015_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "ac76b909e0261f61765f4abaedda090416f566d4c689f55887d592454268cf91",
+      "review_event_id": "evt_7c2e3690c598863b275056be",
+      "review_event_outcome_sha256": "ac76b909e0261f61765f4abaedda090416f566d4c689f55887d592454268cf91"
+    },
+    {
+      "chunk_id": "C0017",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "7d94976a98a229021cfc943dd57d5135b83ea4bd4fb393463585f1dc70744057",
+      "review_event_id": "evt_acdf5b53c287e94302439bf6",
+      "review_event_outcome_sha256": "7d94976a98a229021cfc943dd57d5135b83ea4bd4fb393463585f1dc70744057"
+    },
+    {
+      "chunk_id": "C0018",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "bfef4b00cab35e73365f1e33aae40981d8bd38c9c91aebc887d1b2321a1bc789",
+      "review_event_id": "evt_0646baffa408d27cb94e5229",
+      "review_event_outcome_sha256": "bfef4b00cab35e73365f1e33aae40981d8bd38c9c91aebc887d1b2321a1bc789"
+    },
+    {
+      "chunk_id": "C0019",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "2d967b5b87c33e2e419b01d2e792cb5275e5ba97584e513bf5bbf482a06384c3",
+      "review_event_id": "evt_745547ac96a4049854bf2b3a",
+      "review_event_outcome_sha256": "2d967b5b87c33e2e419b01d2e792cb5275e5ba97584e513bf5bbf482a06384c3"
+    },
+    {
+      "chunk_id": "C0020",
+      "outcome_path": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "ef769d775ee6f394f402714d1da3a0e5dcf462078a1da3d623d8b325cdbd8875",
+      "review_event_id": "evt_38d6e0d6e4c3e96de232d0f3",
+      "review_event_outcome_sha256": "ef769d775ee6f394f402714d1da3a0e5dcf462078a1da3d623d8b325cdbd8875"
+    }
+  ],
+  "candidate_path": "m050/extraction/accepted/core-species-traits/M050_Core_Species_Traits_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "4e9e2e41711f68eac89227d0946a44f56b12e33489707bce21c803865b5d7658",
+  "approval": true,
+  "note": "Accepted as source-bounded extraction output; semantic acceptance, mapping, reconciliation, canonization, and compiled prose remain later compile stages."
+}

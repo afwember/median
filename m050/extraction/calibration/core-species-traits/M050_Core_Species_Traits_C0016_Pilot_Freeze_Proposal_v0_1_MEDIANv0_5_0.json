@@ -11,9 +11,9 @@
     "block_manifest_sha256": "468cc09281e3166c5783b86618614be68df34cd254e1b2a7864fb28243f5355e",
     "disposition_ledger_sha256": "14f18d9ca8a7076c1f68711d930759fff5415923a176dcdc59e49829eaf84691",
     "chunk_plan_sha256": "c8bc1153a4fb3f9587dd1c4ceac3ed44d87414678b2b49bc9e32aa758d2dd875",
-    "pilot_chunk_id": "C0018",
-    "pilot_packet_sha256": "f926e6057137346bf9d17d5cabf667efb73061403e191c84892603f097305d51",
-    "pilot_packet_file_sha256": "0ea095e7d87a6b7c8cb6ee64ab7ca08fc33f63ce16432b07796e2d58285cac79",
+    "pilot_chunk_id": "C0020",
+    "pilot_packet_sha256": "b08de2991605cc071f75e830e2f8ce3a38d8adb7cc36436089a3e9e5a62913e0",
+    "pilot_packet_file_sha256": "d623cc5890e1697676c4550b1ce9dd4d2cc02a34c2005367bb5143eca73c391e",
     "prompt_sha256": "f3105eab56747d4de7e0bca25142eca6ab64c9431442322aade14cc15400093e",
     "response_schema_sha256": "f3d3a50417a54db8d0b11caf36db13cc56179032ca9fc1378a50438da9f81893",
     "engine_module_sha256": "2ff7f53da23b8f9798e933ff349daf72fc82985886c695260b25b2cc34040b29",
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0017 v0.1 passed mechanical and substantive review; C0018 v0.1 is the next sequential frozen packet and awaits sufficient cumulative budget.",
-    "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.294364"
+    "selection_reason": "C0019 v0.1 passed mechanical and substantive review; C0020 v0.1 is the final sequential frozen packet.",
+    "required_target_disposition_count": 2,
+    "cache_miss_call_ceiling_usd": "0.2807"
   },
   "exclusion_policy": {
     "media_occurrences": 0,

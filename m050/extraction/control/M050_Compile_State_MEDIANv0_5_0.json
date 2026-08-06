@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "ACTIVE",
-  "updated": "2026-08-06T10:40:01-04:00",
-  "execution_state": "CORE_SPECIES_TRAITS_C0018_V0_1_FROZEN_BUDGET_INSUFFICIENT",
+  "status": "HALTED",
+  "updated": "2026-08-06T11:08:55-04:00",
+  "execution_state": "CORE_SPECIES_TRAITS_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 10,
-    "outstanding_pre_reconciliation_sources": 6,
+    "outstanding_compile_scope_sources": 9,
+    "outstanding_pre_reconciliation_sources": 5,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -26,7 +26,8 @@
       "M050-SRC-POPULATION-001",
       "M050-SRC-GUEST-001",
       "M050-SRC-PERSONAL-ITEMS-001",
-      "M050-SRC-DISCOVERY-TIME-PROGRESSION-001"
+      "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
+      "M050-SRC-CORE-TRAITS-001"
     ]
   },
   "source": {
@@ -50,18 +51,21 @@
       "C0013",
       "C0014",
       "C0015",
-      "C0017"
+      "C0017",
+      "C0018",
+      "C0019",
+      "C0020"
     ],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Core_Species_Traits_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_C0016_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Core_Species_Traits_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0018_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0020_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0016",
@@ -147,6 +151,21 @@
         "chunk_id": "C0017",
         "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0018",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0018_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0019",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0019_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0020",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -159,10 +178,10 @@
       "read_timeout_retry_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Read_Timeout_Retry_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "subjectless_prefix_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Subjectless_Prefix_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0018",
+    "pilot_chunk_id": "C0020",
     "generated_chunk_count": 20,
     "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 10,
+    "required_target_disposition_count": 2,
     "source_blocks": 300,
     "eligible_target_blocks": 184,
     "context_only_blocks": 19,
@@ -171,21 +190,27 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 82,
-    "cache_miss_call_ceiling_usd": "0.294364",
-    "latest_outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0017_Outcome_v0_1_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.2807",
+    "latest_outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/core-species-traits/M050_Core_Species_Traits_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "4e9e2e41711f68eac89227d0946a44f56b12e33489707bce21c803865b5d7658",
+      "report": "m050/extraction/accepted/core-species-traits/M050_Core_Species_Traits_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "1e52111ebcafb326e9c4ee3e6934585f53b2f9e2e1ddb2c2b56450f997f2a432"
+    }
   },
   "spend": {
     "active": true,
-    "authorized_usd": "24.7501186",
-    "cumulative_spent_usd": "24.4988994",
-    "remaining_usd": "0.2512192",
-    "display_usd_rounded_up": "24.50",
+    "authorized_usd": "26.4988994",
+    "cumulative_spent_usd": "24.6008346",
+    "remaining_usd": "1.8980648",
+    "display_usd_rounded_up": "24.61",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -193,25 +218,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 10:40:01 AM EDT",
-    "status": "Core Species Traits halted at frozen C0018 spend boundary",
+    "updated_human": "August 6, 2026 at 11:08:55 AM EDT",
+    "status": "Core Species Traits source-bounded candidate accepted; formal Stopdown complete",
     "phase": "Atomic extraction — Core Species Traits sequential extraction",
-    "source": "Core Species Traits — ordinal 13; 12 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0016, C0001-C0015, and C0017; no current rejected chunk; C0018 v0.1 frozen and untransmitted",
-    "now": "C0017 passed mechanical and substantive review; exact cost $0.0545124 reconciled; booked cumulative spend is $24.4988994 and $0.2512192 remains, below C0018's $0.294364 ceiling",
-    "next": "Halt until cumulative spend is replenished enough to cover frozen C0018 v0.1; do not transmit or advance"
+    "source": "Core Species Traits — ordinal 13 complete; 13 / 22 compile-scope sources complete",
+    "chunk": "All 20 chunks accepted; 184 target dispositions reviewed; 144 candidate atoms hash-bound",
+    "now": "Whole-document coverage and extraction-quality review passed; candidate/report pair accepted; exact C0020 cost $0.0162064 reconciled; booked cumulative spend is $24.6008346 and $1.8980648 remains; both authorities are false",
+    "next": "Halt; a new explicit grant is required before another source, and no later compile stage is authorized"
   },
-  "next_possible_transition": "Replenish the cumulative spend budget sufficiently to cover C0018 v0.1's $0.294364 conservative ceiling, then re-run focused preflight; no other source or later phase is authorized.",
+  "next_possible_transition": "Halt. Starting the next source requires a new explicit source-work and repository-write grant from Asa; no later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0017",
+    "chunk_id": "C0020",
     "stop_reason": "end_turn",
-    "output_tokens": 4790,
+    "output_tokens": 1314,
     "cache_creation_input_tokens": 0,
     "cache_read_input_tokens": 2982,
     "cache_effective": true,
-    "exact_cost_usd": "0.0545124",
+    "exact_cost_usd": "0.0162064",
     "mechanical_passed": true,
     "review_state": "review_passed"
   }

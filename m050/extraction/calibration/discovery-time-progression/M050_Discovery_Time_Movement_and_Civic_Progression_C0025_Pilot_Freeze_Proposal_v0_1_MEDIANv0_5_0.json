@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
     "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
-    "configuration_sha256": "b7a0b04b27bdbb9bb93d4b34d9d079af666bace38c78f26651d5d1a17d206483",
+    "configuration_sha256": "6ae3c72f427b56df08da201f53972719eac520e502169bbfcd9b531b5e1e89d3",
     "identity_card_sha256": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
     "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
-    "pilot_chunk_id": "C0019",
-    "pilot_packet_sha256": "8d21a4b30378d6ea246ebcd69844f09b2002c683ddcf149500fabec24905f478",
-    "pilot_packet_file_sha256": "03e0ac7bf0174f7eea9f0174e1865f64fd41affdbe5174f4fa93351cedda574a",
-    "prompt_sha256": "cf68cf4a3cd68d6ca627a9509139174e67c2049000cd622848bbdb81622a462a",
+    "pilot_chunk_id": "C0020",
+    "pilot_packet_sha256": "eb6476c8f89bafaf6515620b7a830ec984aa70127e37baa609da5982086131ce",
+    "pilot_packet_file_sha256": "ea6c01a01099e8700d70a9c8c09daa12fc718b9b669c7b2ed3549693614c98e7",
+    "prompt_sha256": "e3e9971f1643b7b82a57e7ebed4360ab5f65daacfe55ec4f42b1d7051b1fc766",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
-    "engine_module_sha256": "906578c2fa96137d613c26571fe4aac98fc3ba6fcafe120765d6881b114d05fb",
-    "engine_tests_sha256": "a255b2eb74fbc27a30cc92f7d5e6683a1650c9df3075773c6633e356c1b0ac43",
+    "engine_module_sha256": "6cfbca9c7ece45335c694916ed7a1ae770a9aa0e5a846b8794632a4245056374",
+    "engine_tests_sha256": "112e5eb1476b758d3d7afd2995cf0bebda2c478be3d4a5c483f80ba85742f02b",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0018 v0.2 passed mechanical and substantive review. C0019 v0.1 then ended in the corpus's sole mid-output Sonnet 5 refusal after 257 clean Sonnet 5 completions; C0019 v0.2 is one exact same-model replay with unchanged payload, prompt, schema, high-effort allowance, cache policy, and pricing.",
-    "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.180868"
+    "selection_reason": "C0020 v0.1 was substantively rejected for resolving an implicit comparative with an unstated target. The existing source-agnostic no-invention instruction now expressly includes unstated comparison targets; all accepted evidence remains mechanically compatible, and C0020 v0.2 is the corrected retry.",
+    "required_target_disposition_count": 8,
+    "cache_miss_call_ceiling_usd": "0.17712"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -71,12 +71,14 @@
     "output_allowance_12000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0018_v0_1_subject_only_shared_predicate_rejection_preserved": true,
     "coordinated_subject_shared_predicate_prompt_correction_passed": true,
-    "all_18_accepted_evidence_active_prompt_compatibility_replay_passed": true,
+    "all_20_accepted_evidence_active_prompt_compatibility_replay_passed": true,
     "c0018_v0_2_mechanical_and_substantive_review_passed": true,
     "c0019_v0_1_mid_output_bio_refusal_preserved": true,
     "sonnet_5_clean_completion_count_before_refusal": 257,
     "c0019_v0_2_exact_same_model_replay_verified": true,
     "single_same_packet_provider_refusal_retry_gate_passed": true,
-    "second_c0019_refusal_requires_halt": true
+    "second_c0019_refusal_requires_halt": true,
+    "c0020_v0_1_unstated_comparison_target_rejection_preserved": true,
+    "unstated_comparison_target_prompt_correction_passed": true
   }
 }

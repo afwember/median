@@ -103,7 +103,7 @@ cell; never ground a ruling or consequence only in another cell.
 Preserve provisional, historical, rejected, example, negative, conditional,
 scope, ownership, and authority qualifiers. Use `review_required` instead of
 guessing. Never repair source text or invent identifiers, statuses, definitions,
-owners, or authorities.
+owners, authorities, or an unstated comparison target.
 
 ## Output check
 

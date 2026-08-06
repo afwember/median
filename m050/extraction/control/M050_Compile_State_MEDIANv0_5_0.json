@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "HALTED",
-  "updated": "2026-08-06T15:35:42-04:00",
-  "execution_state": "CROSS_SYSTEM_CARRYFORWARD_SOURCE_COMPLETE_STOPDOWN",
+  "status": "ACTIVE",
+  "updated": "2026-08-06T15:54:46-04:00",
+  "execution_state": "ECOLOGY_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -32,122 +32,19 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
-    "label": "v0.4.7 Cross-System Carryforward",
-    "compile_ordinal": 14,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013"
-    ],
+    "id": "M050-SRC-ECOLOGY-001",
+    "label": "Ecology",
+    "compile_ordinal": 15,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_v0_4_7_Cross_System_Carryforward_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Cross_System_Carryforward_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0013_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "compatibility_replays": {},
-    "pilot_chunk_id": "C0013",
-    "generated_chunk_count": 13,
-    "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 12,
-    "source_blocks": 646,
-    "eligible_target_blocks": 233,
-    "context_only_blocks": 63,
-    "excluded_blocks": 350,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 83,
-    "cache_miss_call_ceiling_usd": "0.307284",
-    "latest_outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "a203193b2c5f57e2131c0f617a24d4ce4653ee0e2b743df389feb3384ca6f373",
-      "report": "m050/extraction/accepted/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "909600cfee12002785490bb9dbdafaac53132e5defb7369afe3d931f1eebc241"
-    }
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Ecology_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "6b05660532e057a8db79e73ce364dc68a9297e9aa98a99c9779ffcc525afe3e4",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
   "spend": {
     "active": true,
@@ -159,8 +56,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -168,26 +65,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 3:35:42 PM EDT",
-    "status": "v0.4.7 Cross-System Carryforward source candidate accepted; formal Stopdown",
-    "phase": "Atomic extraction — v0.4.7 Cross-System Carryforward representative pilot",
-    "source": "v0.4.7 Cross-System Carryforward — ordinal 14; 14 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0013 accepted; 233 / 233 targets covered; 326-atom candidate accepted",
-    "now": "Whole-source coverage and extraction-quality review passed; exact cumulative spend $26.6195466 with $1.6232256 remaining; both Worker authorities revoked",
-    "next": "Halt after closing commit and push; Ecology requires a new explicit source-work grant"
+    "updated_human": "August 6, 2026 at 3:54:46 PM EDT",
+    "status": "Ecology identity proposed; author approval required",
+    "phase": "Atomic extraction — Ecology identity approval halt",
+    "source": "Ecology — ordinal 15; 14 / 22 compile-scope sources complete",
+    "chunk": "No chunk selected; accepted/rejected boundary empty",
+    "now": "Revised frozen source identity, subsidiary qualification, and zero-media disposition proposed; no provider call or spend",
+    "next": "Halt for author approval or amendment before scaffold, provider configuration, or transmission"
   },
-  "next_possible_transition": "After a new explicit source-work grant and cold start, prepare Ecology identity; no later phase is authorized.",
+  "next_possible_transition": "Author approval or amendment of the pending Ecology identity card; no provider call, another source, or later phase is authorized.",
   "gate_5_complete": false,
-  "latest_provider_attempt": {
-    "http_status": 200,
-    "chunk_id": "C0013",
-    "stop_reason": "end_turn",
-    "output_tokens": 3902,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3141,
-    "cache_effective": true,
-    "exact_cost_usd": "0.0479342",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  }
+  "latest_provider_attempt": null
 }

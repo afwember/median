@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-CORE-TRAITS-001",
     "source_sha256": "9fbcb78ff5e359ed56c0c1c214413d9b41ffba3341529810fc8d418d06e45e89",
-    "configuration_sha256": "7315d92a6e763a7ccc1abc80ff4d55e23c5970c1054691296929a7a508bc52e2",
+    "configuration_sha256": "61cc12f8414d16f1165eb3c742389076c6417a96c3b265c5cacdd602c02da9fb",
     "identity_card_sha256": "3cddb04a10bc4e4882772b2056804fca3452eea50b1ddf9f36c3a394835b6077",
     "block_manifest_sha256": "468cc09281e3166c5783b86618614be68df34cd254e1b2a7864fb28243f5355e",
     "disposition_ledger_sha256": "14f18d9ca8a7076c1f68711d930759fff5415923a176dcdc59e49829eaf84691",
     "chunk_plan_sha256": "c8bc1153a4fb3f9587dd1c4ceac3ed44d87414678b2b49bc9e32aa758d2dd875",
-    "pilot_chunk_id": "C0005",
-    "pilot_packet_sha256": "cfbb0398a2fa8cb71074b9937a2908a0e9edb305f3da37abbf2d4369a11e488e",
-    "pilot_packet_file_sha256": "4d2537b4f7311312c4b9ea7d6a18ae2e5b73f400ecef562a0ca2e5f9a0a09fee",
-    "prompt_sha256": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
+    "pilot_chunk_id": "C0018",
+    "pilot_packet_sha256": "f926e6057137346bf9d17d5cabf667efb73061403e191c84892603f097305d51",
+    "pilot_packet_file_sha256": "0ea095e7d87a6b7c8cb6ee64ab7ca08fc33f63ce16432b07796e2d58285cac79",
+    "prompt_sha256": "f3105eab56747d4de7e0bca25142eca6ab64c9431442322aade14cc15400093e",
     "response_schema_sha256": "f3d3a50417a54db8d0b11caf36db13cc56179032ca9fc1378a50438da9f81893",
-    "engine_module_sha256": "bb091b0ada4d4be1611cdc8b8b319fb0e41bbcd9116469457e0c938480e1cecc",
-    "engine_tests_sha256": "caeec38def606ebae01e4e268261123202b97231a7e0395fd1a82080a3606d19",
+    "engine_module_sha256": "2ff7f53da23b8f9798e933ff349daf72fc82985886c695260b25b2cc34040b29",
+    "engine_tests_sha256": "119a4ba609b59384a3e73dabf27722a41b0dbb6f0cb4e832c4138c3a37629cae",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0005 v0.1 appended unstated table glosses, v0.2 exhausted the 12000-token output allowance, and v0.3 timed out after transmission without response telemetry. Asa provisionally charged v0.3 at its conservative ceiling; C0005 v0.4 is refrozen under the validated 24000-token configuration.",
-    "required_target_disposition_count": 8,
-    "cache_miss_call_ceiling_usd": "0.294844"
+    "selection_reason": "C0017 v0.1 passed mechanical and substantive review; C0018 v0.1 is the next sequential frozen packet and awaits sufficient cumulative budget.",
+    "required_target_disposition_count": 10,
+    "cache_miss_call_ceiling_usd": "0.294364"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -75,6 +75,9 @@
     "output_allowance_24000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0005_v0_3_transport_timeout_preserved": true,
     "c0005_v0_3_cost_provisionally_resolved_at_conservative_ceiling": true,
-    "read_timeout_same_packet_retry_compatibility_passed": true
+    "read_timeout_same_packet_retry_compatibility_passed": true,
+    "c0005_v0_4_accepted_by_one_time_authorial_ruling": true,
+    "c0015_v0_1_subjectless_normalized_claim_rejection_preserved": true,
+    "subjectless_prefix_all_accepted_evidence_compatibility_replay_passed": true
   }
 }

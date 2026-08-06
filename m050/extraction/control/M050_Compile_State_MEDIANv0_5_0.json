@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T10:00:49-04:00",
-  "execution_state": "CORE_SPECIES_TRAITS_C0005_V0_4_SAME_SUBSTANTIVE_DEFECT_REJECTED",
+  "updated": "2026-08-06T10:40:01-04:00",
+  "execution_state": "CORE_SPECIES_TRAITS_C0018_V0_1_FROZEN_BUDGET_INSUFFICIENT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -38,9 +38,21 @@
       "C0001",
       "C0002",
       "C0003",
-      "C0004"
+      "C0004",
+      "C0005",
+      "C0006",
+      "C0007",
+      "C0008",
+      "C0009",
+      "C0010",
+      "C0011",
+      "C0012",
+      "C0013",
+      "C0014",
+      "C0015",
+      "C0017"
     ],
-    "rejected_chunk_id": "C0005",
+    "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -49,7 +61,7 @@
     "freeze": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_C0016_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Core_Species_Traits_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Call_Packet_v0_4_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0018_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0016",
@@ -75,6 +87,66 @@
         "chunk_id": "C0004",
         "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0005",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0007",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0014",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0015",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0015_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0017",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -84,12 +156,13 @@
       "c0016_structural_tagline_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_C0016_Structural_Tagline_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "accepted_evidence_high_reasoning_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Accepted_Evidence_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "accepted_evidence_output_allowance_24000_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Accepted_Evidence_Output_Allowance_24000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "read_timeout_retry_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Read_Timeout_Retry_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "read_timeout_retry_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Read_Timeout_Retry_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "subjectless_prefix_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Subjectless_Prefix_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0005",
+    "pilot_chunk_id": "C0018",
     "generated_chunk_count": 20,
     "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 8,
+    "required_target_disposition_count": 10,
     "source_blocks": 300,
     "eligible_target_blocks": 184,
     "context_only_blocks": 19,
@@ -98,15 +171,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 82,
-    "cache_miss_call_ceiling_usd": "0.294844",
-    "latest_outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Outcome_v0_4_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.294364",
+    "latest_outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0017_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "24.7501186",
-    "cumulative_spent_usd": "23.8599470",
-    "remaining_usd": "0.8901716",
-    "display_usd_rounded_up": "23.86",
+    "cumulative_spent_usd": "24.4988994",
+    "remaining_usd": "0.2512192",
+    "display_usd_rounded_up": "24.50",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
@@ -120,26 +193,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 10:00:49 AM EDT",
-    "status": "Core Species Traits C0005 v0.4 rejected; recurring substantive defect",
+    "updated_human": "August 6, 2026 at 10:40:01 AM EDT",
+    "status": "Core Species Traits halted at frozen C0018 spend boundary",
     "phase": "Atomic extraction — Core Species Traits sequential extraction",
     "source": "Core Species Traits — ordinal 13; 12 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0016 and C0001-C0004; rejected C0001 v0.1-v0.4 and C0005 v0.1-v0.4 preserved",
-    "now": "C0005 v0.4 passed mechanical validation but repeated the unstated capacity gloss in all three substantive table rows; exact call cost $0.1276656 reconciled; booked cumulative spend is $23.8599470 with $0.294844 provisional",
-    "next": "Halt for authorial judgment or structural mandate; do not retry C0005 or advance"
+    "chunk": "Accepted C0016, C0001-C0015, and C0017; no current rejected chunk; C0018 v0.1 frozen and untransmitted",
+    "now": "C0017 passed mechanical and substantive review; exact cost $0.0545124 reconciled; booked cumulative spend is $24.4988994 and $0.2512192 remains, below C0018's $0.294364 ceiling",
+    "next": "Halt until cumulative spend is replenished enough to cover frozen C0018 v0.1; do not transmit or advance"
   },
-  "next_possible_transition": "Asa must decide whether the recurring C0005 table-relationship gloss requires authorial ruling or a larger structural change; no retry, other source, or later phase is authorized.",
+  "next_possible_transition": "Replenish the cumulative spend budget sufficiently to cover C0018 v0.1's $0.294364 conservative ceiling, then re-run focused preflight; no other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0005",
+    "chunk_id": "C0017",
     "stop_reason": "end_turn",
-    "output_tokens": 12141,
+    "output_tokens": 4790,
     "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 2968,
+    "cache_read_input_tokens": 2982,
     "cache_effective": true,
-    "exact_cost_usd": "0.1276656",
+    "exact_cost_usd": "0.0545124",
     "mechanical_passed": true,
-    "review_state": "review_failed"
+    "review_state": "review_passed"
   }
 }

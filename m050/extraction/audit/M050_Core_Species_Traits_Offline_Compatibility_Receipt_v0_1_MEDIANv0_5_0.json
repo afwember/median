@@ -5,10 +5,10 @@
   "status": "CORE_SPECIES_TRAITS_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
   "source_id": "M050-SRC-CORE-TRAITS-001",
   "binding": {
-    "configuration_sha256": "7315d92a6e763a7ccc1abc80ff4d55e23c5970c1054691296929a7a508bc52e2",
-    "prompt_sha256": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
-    "engine_module_sha256": "bb091b0ada4d4be1611cdc8b8b319fb0e41bbcd9116469457e0c938480e1cecc",
-    "engine_tests_sha256": "caeec38def606ebae01e4e268261123202b97231a7e0395fd1a82080a3606d19"
+    "configuration_sha256": "61cc12f8414d16f1165eb3c742389076c6417a96c3b265c5cacdd602c02da9fb",
+    "prompt_sha256": "f3105eab56747d4de7e0bca25142eca6ab64c9431442322aade14cc15400093e",
+    "engine_module_sha256": "2ff7f53da23b8f9798e933ff349daf72fc82985886c695260b25b2cc34040b29",
+    "engine_tests_sha256": "119a4ba609b59384a3e73dabf27722a41b0dbb6f0cb4e832c4138c3a37629cae"
   },
   "source_review": {
     "source_blocks": 300,
@@ -70,6 +70,10 @@
     "read_timeout_retry_compatibility": {
       "sha256": "e262e4f93c063b27e6e47f813155e7ffb81a562d1cbf127c1b107cda2be36523",
       "result": "same-packet retry is permitted only for the exact captured socket read-timeout transport result after failed review; all-source structural compatibility passes"
+    },
+    "subjectless_prefix_compatibility": {
+      "sha256": "fe39cec66d67f4d8acc74bbf02fb39f2407c7204c324bbb03eebc6e676a0dd51",
+      "result": "all 15 accepted chunks replay mechanically unchanged; all-source structural compatibility and 82 tests pass"
     }
   }
 }

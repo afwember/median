@@ -7,7 +7,7 @@
     "chunk_plan": "c8bc1153a4fb3f9587dd1c4ceac3ed44d87414678b2b49bc9e32aa758d2dd875",
     "disposition_ledger": "14f18d9ca8a7076c1f68711d930759fff5415923a176dcdc59e49829eaf84691",
     "identity_card": "3cddb04a10bc4e4882772b2056804fca3452eea50b1ddf9f36c3a394835b6077",
-    "prompt": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
+    "prompt": "f3105eab56747d4de7e0bca25142eca6ab64c9431442322aade14cc15400093e",
     "response_schema": "f3d3a50417a54db8d0b11caf36db13cc56179032ca9fc1378a50438da9f81893"
   },
   "artifacts": {
@@ -23,7 +23,7 @@
     "pilot_passed": true,
     "pilot_required": true,
     "state": "representative_pilot_complete",
-    "reasoning_calibration": "C0016 passed at low reasoning. C0001 v0.1 crossed an authored semicolon, requiring medium reasoning; C0001 v0.2 exhausted 6000 output tokens, requiring 8000. C0005 v0.1 appended unstated capacity glosses, requiring high reasoning. C0005 v0.2 then used all 12000 tokens as thinking without structured output, so the established allowance is raised to 24000."
+    "reasoning_calibration": "C0016 passed at low reasoning. C0001 v0.1 crossed an authored semicolon, requiring medium reasoning; C0001 v0.2 exhausted 6000 output tokens, requiring 8000. C0005 v0.1 appended unstated capacity glosses, requiring high reasoning. C0005 v0.2 then used all 12000 tokens as thinking without structured output, so the established allowance is raised to 24000. C0015 v0.1 left negative fragments subjectless; the generic self-containment invariant now requires subjectless exact-text prefixes to name their explicit governing subject."
   },
   "execution": {
     "cadence": "sequential_one_call_review",

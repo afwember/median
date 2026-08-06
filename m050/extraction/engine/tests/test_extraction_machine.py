@@ -1318,6 +1318,65 @@ def test_compact_run_ledger_allows_same_packet_after_reviewed_transient_failure(
     ) == 1
 
 
+def test_compact_run_ledger_allows_one_same_packet_retry_after_provider_refusal(
+    tmp_path,
+):
+    ledger = tmp_path / "run.jsonl"
+    refusal_error = "ContractError:Anthropic response did not end cleanly: refusal"
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "call_captured",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "packet_file_sha256": "a" * 64,
+            "outcome_sha256": "o" * 64,
+            "mechanical_passed": False,
+            "capture_error": refusal_error,
+        },
+    )
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "review_failed",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "outcome_sha256": "o" * 64,
+        },
+    )
+
+    assert require_run_ready_for_next_call(
+        read_run_ledger(ledger), "S1", "C0001", "a" * 64
+    ) == 1
+
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "call_captured",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "packet_file_sha256": "a" * 64,
+            "outcome_sha256": "p" * 64,
+            "mechanical_passed": False,
+            "capture_error": refusal_error,
+        },
+    )
+    append_run_ledger_event(
+        ledger,
+        {
+            "state": "review_failed",
+            "source_id": "S1",
+            "chunk_id": "C0001",
+            "outcome_sha256": "p" * 64,
+        },
+    )
+
+    with pytest.raises(ContractError, match="must be corrected"):
+        require_run_ready_for_next_call(
+            read_run_ledger(ledger), "S1", "C0001", "a" * 64
+        )
+
+
 @pytest.mark.parametrize(
     "transport_error",
     [

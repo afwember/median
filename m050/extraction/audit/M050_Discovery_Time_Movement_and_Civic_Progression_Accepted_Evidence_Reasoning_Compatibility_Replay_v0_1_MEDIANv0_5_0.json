@@ -34,7 +34,7 @@
     "accepted_chunks_replayed": 18,
     "mechanical_validation_passed": 18,
     "all_33_chunks_fake_validated": true,
-    "offline_tests_passed": 80
+    "offline_tests_passed": 81
   },
   "status": "PASS"
 }

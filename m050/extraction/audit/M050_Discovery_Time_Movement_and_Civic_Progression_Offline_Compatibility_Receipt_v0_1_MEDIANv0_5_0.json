@@ -7,8 +7,8 @@
   "binding": {
     "configuration_sha256": "b7a0b04b27bdbb9bb93d4b34d9d079af666bace38c78f26651d5d1a17d206483",
     "prompt_sha256": "cf68cf4a3cd68d6ca627a9509139174e67c2049000cd622848bbdb81622a462a",
-    "engine_module_sha256": "0f3e61a6a73f788490a74f27501abf00202bd1e907c501298cb98f0d259a62dd",
-    "engine_tests_sha256": "2a88506bdd359c31a89ddbe56ded0c68bfe0c615d6fea6ad34390a32411c53ef"
+    "engine_module_sha256": "906578c2fa96137d613c26571fe4aac98fc3ba6fcafe120765d6881b114d05fb",
+    "engine_tests_sha256": "a255b2eb74fbc27a30cc92f7d5e6683a1650c9df3075773c6633e356c1b0ac43"
   },
   "source_review": {
     "source_blocks": 522,
@@ -37,7 +37,7 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 80,
+    "offline_tests_passed": 81,
     "all_source_structural_compatibility_passed": true,
     "active_source_guard_ready": true
   },
@@ -47,9 +47,9 @@
       "result": "mechanical_pass_with_unchanged_target_membership_under_active_prompt"
     },
     "accepted_evidence_reasoning_compatibility": {
-      "sha256": "c9a2d2f3a170aed7fe2168623c3407f7c2b4297e672a82c983eab72c237fa61d",
+      "sha256": "55b3d96f225268bf4b065a6757106d4d72c215bc1eb31571bf6820290d0225b9",
       "result": "all_18_accepted_chunks_mechanical_pass_under_active_prompt_high_reasoning_12000_token_packets"
     }
   },
-  "note": "The approved frozen Markdown was parsed by the existing generic machine. C0001 v0.1 exposed document-control metadata in the draft target set; the established source-review disposition removed three metadata blocks and made the structural title context-only. C0012 v0.1 exposed insufficient reasoning on explicit cross-cell grounding, and C0015 v0.1 showed medium reasoning did not reliably distinguish a same-row qualifier from a cross-cell mapping; the existing reasoning calibration is now high. C0016 v0.1 and v0.2 exhausted the 6000- and 8000-token output allowances, so the existing allowance is 12000. C0018 v0.1 exposed subject-only spans importing a coordinated shared predicate; the existing generic prompt now requires the shared predicate to remain with its coordinated subjects unless every split is independently contiguous and grounded. All 33 payloads rebuilt and fake-validated, all 18 accepted chunks replayed mechanically, and the stable-prefix and output-schema cache architecture is preserved. The changed prompt content will establish a new cache entry on the next provider call."
+  "note": "The approved frozen Markdown was parsed by the existing generic machine. C0001 v0.1 exposed document-control metadata in the draft target set; the established source-review disposition removed three metadata blocks and made the structural title context-only. C0012 v0.1 exposed insufficient reasoning on explicit cross-cell grounding, and C0015 v0.1 showed medium reasoning did not reliably distinguish a same-row qualifier from a cross-cell mapping; the existing reasoning calibration is now high. C0016 v0.1 and v0.2 exhausted the 6000- and 8000-token output allowances, so the existing allowance is 12000. C0018 v0.1 exposed subject-only spans importing a coordinated shared predicate; the existing generic prompt now requires the shared predicate to remain with its coordinated subjects unless every split is independently contiguous and grounded. All 33 payloads rebuilt and fake-validated, all 18 accepted chunks replayed mechanically, and the stable-prefix and output-schema cache architecture is preserved. The existing retry gate now permits exactly one unchanged-packet retry when captured evidence records a provider refusal; a second refusal and all other reviewed same-packet failures remain blocked."
 }

@@ -16,8 +16,8 @@
     "pilot_packet_file_sha256": "03e0ac7bf0174f7eea9f0174e1865f64fd41affdbe5174f4fa93351cedda574a",
     "prompt_sha256": "cf68cf4a3cd68d6ca627a9509139174e67c2049000cd622848bbdb81622a462a",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
-    "engine_module_sha256": "0f3e61a6a73f788490a74f27501abf00202bd1e907c501298cb98f0d259a62dd",
-    "engine_tests_sha256": "2a88506bdd359c31a89ddbe56ded0c68bfe0c615d6fea6ad34390a32411c53ef",
+    "engine_module_sha256": "906578c2fa96137d613c26571fe4aac98fc3ba6fcafe120765d6881b114d05fb",
+    "engine_tests_sha256": "a255b2eb74fbc27a30cc92f7d5e6683a1650c9df3075773c6633e356c1b0ac43",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -49,7 +49,7 @@
   "offline_verification": {
     "all_33_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 80,
+    "offline_tests_passed": 81,
     "calibrated_target_blocks_per_chunk": 10,
     "generated_chunk_count": 33,
     "chunk_count_is_input": false,
@@ -76,6 +76,7 @@
     "c0019_v0_1_mid_output_bio_refusal_preserved": true,
     "sonnet_5_clean_completion_count_before_refusal": 257,
     "c0019_v0_2_exact_same_model_replay_verified": true,
+    "single_same_packet_provider_refusal_retry_gate_passed": true,
     "second_c0019_refusal_requires_halt": true
   }
 }

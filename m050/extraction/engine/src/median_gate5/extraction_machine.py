@@ -1150,9 +1150,24 @@ def require_run_ready_for_next_call(
                     for marker in DNS_TRANSPORT_MARKERS
                 )
             )
+            provider_refusal_error = (
+                "ContractError:Anthropic response did not end cleanly: refusal"
+            )
+            same_packet_refusals = [
+                event
+                for event in captured
+                if event.get("source_id") == source_id
+                and event.get("chunk_id") == chunk_id
+                and event.get("packet_file_sha256") == packet_file_sha256
+                and event.get("capture_error") == provider_refusal_error
+            ]
             if (
                 retryable_dns_failure
                 or transport_error in RETRYABLE_HTTP_TRANSPORT_ERRORS
+                or (
+                    prior_call.get("capture_error") == provider_refusal_error
+                    and len(same_packet_refusals) == 1
+                )
             ):
                 return len(captured)
             raise ContractError("failed packet must be corrected before retry")

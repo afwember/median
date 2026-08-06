@@ -175,11 +175,14 @@ sources:
 
   - source_id: M050-SRC-ECOLOGY-001
     path: m050/docs/v0.5/specifications/M050_Ecological_Influences_Specification_v1_0_MEDIANv0_5_0.md
-    sha256: e8cc0f76eb17adeeb014cdb0509c46c2a9878bc80a81f4490e9e144def60d2dc
-    content_role: subsidiary_ecological_translation_game_specification
+    sha256: e6522a28d4cc2533b8ff84155b7e045ba150ae002642cd43d9895534ef7a0933
+    content_role: subsidiary_ecological_influence_for_established_home_identities
     disposition: source_bounded_atomic_extraction
     output_streams: [evidence_game_semantic]
-    note: Extract all substantive evidence; enforce subsidiary authority during reconciliation.
+    note: >-
+      Extract only the curated subsidiary ecological influence; the source does
+      not independently authorize mechanics, register behavior, cultural canon,
+      or cross-system requirements.
 
   - source_id: M050-SRC-GDD-COVERAGE-GAP-001
     path: m050/docs/v0.5/specifications/M050_v0_4_6_GDD_Coverage_Gap_Development_v1_0_MEDIANv0_5_0.md

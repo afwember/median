@@ -5,16 +5,16 @@
   "status": "CORE_SPECIES_TRAITS_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
   "source_id": "M050-SRC-CORE-TRAITS-001",
   "binding": {
-    "configuration_sha256": "52e21eda36c567a265accac2c4010c837198029f697b993899a429e423d4da51",
+    "configuration_sha256": "7315d92a6e763a7ccc1abc80ff4d55e23c5970c1054691296929a7a508bc52e2",
     "prompt_sha256": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
     "engine_module_sha256": "3064b64205f21060add45b05ff411923039c9cd424b1ded371e70fa39253663d",
     "engine_tests_sha256": "3fbf3abed67a7d22646bf01518f8e78ce7cb1a0c7d412eb98acd03cf4f77966c"
   },
   "source_review": {
     "source_blocks": 300,
-    "eligible_targets": 187,
-    "context_only_blocks": 18,
-    "excluded_blocks": 95,
+    "eligible_targets": 184,
+    "context_only_blocks": 19,
+    "excluded_blocks": 97,
     "identity_review_flags_remaining": 0,
     "media_occurrences_excluded": 0,
     "media_reference_blocks_excluded": 0,
@@ -39,6 +39,33 @@
     "media_leaks": 0,
     "offline_tests_passed": 81,
     "all_source_structural_compatibility_passed": true,
-    "active_source_guard_ready": true
+    "active_source_guard_ready": true,
+    "c0016_representative_pilot_mechanical_and_substantive_review_passed": true
+  },
+  "replays": {
+    "accepted_evidence_medium_reasoning_compatibility": {
+      "sha256": "cc2291298d1175e623a9eef1ebec0966977110dd7cf860172479a2e6634150ce",
+      "result": "C0016 accepted evidence mechanically passes unchanged under the active prompt before the medium-reasoning C0001 retry"
+    },
+    "accepted_evidence_output_allowance_8000_compatibility": {
+      "sha256": "cc2291298d1175e623a9eef1ebec0966977110dd7cf860172479a2e6634150ce",
+      "result": "C0016 accepted evidence mechanically passes unchanged before the 8000-token C0001 retry"
+    },
+    "c0016_document_control_disposition_compatibility": {
+      "sha256": "cc2291298d1175e623a9eef1ebec0966977110dd7cf860172479a2e6634150ce",
+      "result": "C0016 accepted target membership and mechanical validity remain unchanged after excluding two C0001 document-control rows"
+    },
+    "c0016_structural_tagline_compatibility": {
+      "sha256": "cc2291298d1175e623a9eef1ebec0966977110dd7cf860172479a2e6634150ce",
+      "result": "C0016 accepted target membership and mechanical validity remain unchanged after making the C0001 tagline structural context"
+    },
+    "accepted_evidence_high_reasoning_compatibility": {
+      "sha256": "b0b2fe62956db009ad81e5910c45683686bbcf75754f7893284f5f1b8abb921c",
+      "result": "all five accepted chunks mechanically pass under high reasoning and the 12000-token allowance"
+    },
+    "accepted_evidence_output_allowance_24000_compatibility": {
+      "sha256": "86ca94622aea36174d240b879b96dfc32efccb47fdf95d79fb64fa65d3ab5ea6",
+      "result": "all five accepted chunks mechanically pass unchanged under high reasoning and the 24000-token output allowance"
+    }
   }
 }

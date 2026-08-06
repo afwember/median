@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T09:00:48-04:00",
-  "execution_state": "CORE_SPECIES_TRAITS_C0016_FROZEN_TRANSPORT_CONSENT_HALT",
+  "updated": "2026-08-06T09:53:18-04:00",
+  "execution_state": "CORE_SPECIES_TRAITS_C0005_V0_3_TRANSPORT_TIMEOUT_COST_UNRECONCILED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -33,8 +33,14 @@
     "id": "M050-SRC-CORE-TRAITS-001",
     "label": "Core Species Traits",
     "compile_ordinal": 13,
-    "accepted_chunk_ids": [],
-    "rejected_chunk_id": null,
+    "accepted_chunk_ids": [
+      "C0016",
+      "C0001",
+      "C0002",
+      "C0003",
+      "C0004"
+    ],
+    "rejected_chunk_id": "C0005",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -43,29 +49,63 @@
     "freeze": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_C0016_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Core_Species_Traits_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0016_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [],
-    "compatibility_replays": {},
-    "pilot_chunk_id": "C0016",
+    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Call_Packet_v0_3_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0016",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0016_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0001_Outcome_v0_5_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0003",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0004",
+        "outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {
+      "accepted_evidence_medium_reasoning_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_C0016_Accepted_Evidence_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "accepted_evidence_output_allowance_8000_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_C0016_Output_Allowance_8000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0016_document_control_disposition_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_C0016_Document_Control_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0016_structural_tagline_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_C0016_Structural_Tagline_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "accepted_evidence_high_reasoning_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Accepted_Evidence_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "accepted_evidence_output_allowance_24000_compatibility": "m050/extraction/audit/M050_Core_Species_Traits_Accepted_Evidence_Output_Allowance_24000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+    },
+    "pilot_chunk_id": "C0005",
     "generated_chunk_count": 20,
     "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 10,
+    "required_target_disposition_count": 8,
     "source_blocks": 300,
-    "eligible_target_blocks": 187,
-    "context_only_blocks": 18,
-    "excluded_blocks": 95,
+    "eligible_target_blocks": 184,
+    "context_only_blocks": 19,
+    "excluded_blocks": 97,
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 81,
-    "cache_miss_call_ceiling_usd": "0.12318"
+    "cache_miss_call_ceiling_usd": "0.294844",
+    "latest_outcome": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0005_Outcome_v0_3_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "24.7501186",
-    "cumulative_spent_usd": "22.7501186",
-    "remaining_usd": "2.0000000",
-    "display_usd_rounded_up": "22.76"
+    "cumulative_spent_usd": "23.4374374",
+    "remaining_usd": "1.3126812",
+    "display_usd_rounded_up": "23.44"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -77,14 +117,28 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 9:00:48 AM EDT",
-    "status": "Core Species Traits C0016 frozen; workspace blocked provider transmission before execution",
-    "phase": "Atomic extraction — Core Species Traits transport-consent halt",
+    "updated_human": "August 6, 2026 at 9:53:18 AM EDT",
+    "status": "Core Species Traits halted at C0005 v0.3 transport timeout",
+    "phase": "Atomic extraction — Core Species Traits sequential extraction",
     "source": "Core Species Traits — ordinal 13; 12 / 22 compile-scope sources complete",
-    "chunk": "C0016 frozen as the representative pilot; accepted/rejected boundary is empty",
-    "now": "Approved identity and all 300 block dispositions passed offline preparation; 20 payloads fake-validated; C0016 remains frozen and untransmitted; no request, credential, or spend occurred",
-    "next": "Await explicit user confirmation that the frozen C0016 packet containing bounded repository source text may be transmitted to Anthropic"
+    "chunk": "Accepted C0016 and C0001-C0004; rejected C0001 v0.1-v0.4 and C0005 v0.1-v0.2 preserved; C0005 v0.3 transmitted with no response capture",
+    "now": "C0005 v0.3 timed out after transmission with no HTTP response, request ID, usage, or exact-cost telemetry; recorded spend remains $23.4374374 and cannot yet be treated as reconciled",
+    "next": "Human review is required to resolve the C0005 v0.3 transport/cost ambiguity before retry or further calls"
   },
-  "next_possible_transition": "After explicit transport confirmation, transmit the unchanged frozen Core Species Traits C0016 packet to Anthropic under the active source grant and cumulative budget; no other source or later phase is authorized.",
-  "gate_5_complete": false
+  "next_possible_transition": "Resolve the C0005 v0.3 transport/cost ambiguity with Asa before any retry or further provider call; no other source or later phase is authorized.",
+  "gate_5_complete": false,
+  "latest_provider_attempt": {
+    "http_status": null,
+    "chunk_id": "C0005",
+    "stop_reason": null,
+    "output_tokens": null,
+    "cache_creation_input_tokens": null,
+    "cache_read_input_tokens": null,
+    "cache_effective": null,
+    "exact_cost_usd": null,
+    "mechanical_passed": null,
+    "review_state": "call_captured",
+    "transport_error": "TimeoutError:The read operation timed out",
+    "spend_reconciliation_required": true
+  }
 }

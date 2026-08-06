@@ -4,15 +4,15 @@
   ],
   "artifact_sha256": {
     "block_manifest": "468cc09281e3166c5783b86618614be68df34cd254e1b2a7864fb28243f5355e",
-    "chunk_plan": "0bf1f81d419fb0323dcff687300b341389105b5980f49f2b57687a710b9a958e",
-    "disposition_ledger": "905e61cc364e95330770b38b18c5beb6dd2f20ffb05799d3bc49098c84100309",
+    "chunk_plan": "c8bc1153a4fb3f9587dd1c4ceac3ed44d87414678b2b49bc9e32aa758d2dd875",
+    "disposition_ledger": "14f18d9ca8a7076c1f68711d930759fff5415923a176dcdc59e49829eaf84691",
     "identity_card": "3cddb04a10bc4e4882772b2056804fca3452eea50b1ddf9f36c3a394835b6077",
     "prompt": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
     "response_schema": "f3d3a50417a54db8d0b11caf36db13cc56179032ca9fc1378a50438da9f81893"
   },
   "artifacts": {
     "block_manifest": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_Block_Manifest_v0_1_MEDIANv0_5_0.json",
-    "chunk_plan": "m050/extraction/control/M050_Core_Species_Traits_Section_Aware_Chunk_Plan_v0_1_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_Core_Species_Traits_Section_Aware_Chunk_Plan_v0_3_MEDIANv0_5_0.json",
     "disposition_ledger": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
     "identity_card": "m050/extraction/control/source-identities/cards/M050_Core_Species_Traits_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
     "prompt": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_Extraction_Prompt_MEDIANv0_5_0.md",
@@ -20,9 +20,10 @@
   },
   "calibration": {
     "pilot_chunk_id": "C0016",
-    "pilot_passed": false,
+    "pilot_passed": true,
     "pilot_required": true,
-    "state": "representative_pilot_frozen_pending_provider_call"
+    "state": "representative_pilot_complete",
+    "reasoning_calibration": "C0016 passed at low reasoning. C0001 v0.1 crossed an authored semicolon, requiring medium reasoning; C0001 v0.2 exhausted 6000 output tokens, requiring 8000. C0005 v0.1 appended unstated capacity glosses, requiring high reasoning. C0005 v0.2 then used all 12000 tokens as thinking without structured output, so the established allowance is raised to 24000."
   },
   "execution": {
     "cadence": "sequential_one_call_review",
@@ -54,14 +55,14 @@
     "cache_boundary": "stable_system_prefix",
     "cache_required": true,
     "cache_ttl": "1h",
-    "maximum_output_tokens": 6000,
+    "maximum_output_tokens": 24000,
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "low"
+    "reasoning_effort": "high"
   },
   "quantization": {
-    "basis": "Provisional source calibration uses 10 provider-eligible targets per chunk; C0016 is the densest mixed provisional-rule and comparative-table group and must pass before sequential continuation.",
+    "basis": "Calibrated at 10 provider-eligible targets per chunk. Source review excluded two document-control rows and made the title-like tagline structural context, replanning 20 chunks without changing accepted C0016 membership.",
     "chunk_count_is_input": false,
     "generated_chunk_count": 20,
     "target_blocks_per_chunk": 10,
@@ -71,5 +72,5 @@
   "source_id": "M050-SRC-CORE-TRAITS-001",
   "source_path": "m050/docs/v0.5/specifications/M050_Core_Species_Traits_Specification_v0_1_MEDIANv0_5_0.md",
   "source_sha256": "9fbcb78ff5e359ed56c0c1c214413d9b41ffba3341529810fc8d418d06e45e89",
-  "status": "PILOT_FROZEN_PENDING_PROVIDER_CALL"
+  "status": "SEQUENTIAL_RUN_READY"
 }

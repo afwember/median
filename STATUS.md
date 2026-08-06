@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 6, 2026 at 9:00:48 AM EDT<br>
+August 6, 2026 at 9:53:18 AM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Core Species Traits C0016 frozen; workspace blocked provider transmission before execution<br>
-**PHASE:** Atomic extraction — Core Species Traits transport-consent halt<br>
+**STATUS:** Core Species Traits halted at C0005 v0.3 transport timeout<br>
+**PHASE:** Atomic extraction — Core Species Traits sequential extraction<br>
 **SOURCE:** Core Species Traits — ordinal 13; 12 / 22 compile-scope sources complete<br>
-**CHUNK:** C0016 frozen as the representative pilot; accepted/rejected boundary is empty<br>
-**NOW:** Approved identity and all 300 block dispositions passed offline preparation; 20 payloads fake-validated; C0016 remains frozen and untransmitted; no request, credential, or spend occurred<br>
-**NEXT:** Await explicit user confirmation that the frozen C0016 packet containing bounded repository source text may be transmitted to Anthropic<br>
-**SPEND REMAINING:** $2.00
+**CHUNK:** Accepted C0016 and C0001-C0004; rejected C0001 v0.1-v0.4 and C0005 v0.1-v0.2 preserved; C0005 v0.3 transmitted with no response capture<br>
+**NOW:** C0005 v0.3 timed out after transmission with no HTTP response, request ID, usage, or exact-cost telemetry; recorded spend remains $23.4374374 and cannot yet be treated as reconciled<br>
+**NEXT:** Human review is required to resolve the C0005 v0.3 transport/cost ambiguity before retry or further calls<br>
+**SPEND REMAINING:** $1.31

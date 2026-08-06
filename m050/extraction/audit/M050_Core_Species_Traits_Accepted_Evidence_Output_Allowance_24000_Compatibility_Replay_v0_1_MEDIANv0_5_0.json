@@ -1,0 +1,28 @@
+{
+  "schema_version": "M050-EXTRACTION-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-CORE-SPECIES-TRAITS-ACCEPTED-EVIDENCE-OUTPUT-24000-COMPATIBILITY-001",
+  "source_id": "M050-SRC-CORE-TRAITS-001",
+  "purpose": "Verify all accepted Core Species Traits evidence before the high-reasoning 24000-token C0005 retry.",
+  "binding": {
+    "configuration_sha256": "7315d92a6e763a7ccc1abc80ff4d55e23c5970c1054691296929a7a508bc52e2",
+    "reasoning_effort": "high",
+    "maximum_output_tokens": 24000,
+    "chunk_plan_sha256": "c8bc1153a4fb3f9587dd1c4ceac3ed44d87414678b2b49bc9e32aa758d2dd875",
+    "disposition_ledger_sha256": "14f18d9ca8a7076c1f68711d930759fff5415923a176dcdc59e49829eaf84691"
+  },
+  "replay_hash_basis": "SHA-256 of each current-packet mechanical replay artifact",
+  "accepted_chunk_replays": {
+    "C0001": "b8f3236cf11d89c0de99a884580a693a92d1c031812fe488f7b03db352ff16b2",
+    "C0002": "c01d17bbf3448602e703d6522e017b59911575671cea865b209a365139ee85e7",
+    "C0003": "909175ae7c281465eb5d3142ec9ab97591e9d419cec21d02dec929ef804930c5",
+    "C0004": "8f6d55bc4ee9d765f2e9217d25c16840ef4603a2701a879ae7dba9c92a62a150",
+    "C0016": "3726a294a88dcf56d6d31bf752d2e307900c337fed72db40df6b338974145316"
+  },
+  "result": {
+    "accepted_chunks_replayed": 5,
+    "mechanical_validation_passed": 5,
+    "all_20_chunks_fake_validated": true,
+    "offline_tests_passed": 81
+  },
+  "status": "PASS"
+}

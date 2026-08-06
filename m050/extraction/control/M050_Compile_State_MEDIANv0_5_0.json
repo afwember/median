@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "HALTED",
-  "updated": "2026-08-06T11:08:55-04:00",
+  "updated": "2026-08-06T11:55:01-04:00",
   "execution_state": "CORE_SPECIES_TRAITS_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
@@ -218,7 +218,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 11:08:55 AM EDT",
+    "updated_human": "August 6, 2026 at 11:55:01 AM EDT",
     "status": "Core Species Traits source-bounded candidate accepted; formal Stopdown complete",
     "phase": "Atomic extraction — Core Species Traits sequential extraction",
     "source": "Core Species Traits — ordinal 13 complete; 13 / 22 compile-scope sources complete",

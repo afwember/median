@@ -161,7 +161,7 @@ sources:
 
   - source_id: M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001
     path: m050/docs/v0.5/specifications/M050_v0_4_7_Cross_System_Attention_Persistence_and_World_State_Carryforward_v1_0_MEDIANv0_5_0.md
-    sha256: fd5b72fe751dd39fa9a72c739b9047c98901b7ad9bea5bcff80adbc7ab819c81
+    sha256: 239d5ab903d1d4d295503201c747c7427166cc9e4fcdd4c1f61e145b14ed0dbc
     content_role: v0_4_7_to_v0_5_controlled_carry_forward_and_developmental_bridge
     disposition: source_bounded_atomic_extraction_before_grand_reconciliation
     output_streams: [evidence_game_semantic]

@@ -39,7 +39,7 @@ CROSS-SYSTEM ARCHITECTURE CARRIED FORWARD FROM THE v0.4.7 DECISIONS LOG
 2\. Executive Summary and Canonical System Statement
 
 <!--@1.1¶3-->
-3\. Register and View Architecture
+3\. Register Architecture
 
 <!--@1.1¶4-->
 4\. The Attention Threshold: Native Information and MEET
@@ -75,18 +75,12 @@ CROSS-SYSTEM ARCHITECTURE CARRIED FORWARD FROM THE v0.4.7 DECISIONS LOG
 14\. v0.5 Revisions to Specific v0.4.7 Cross-System Carryforward Rulings
 
 <!--@1.1¶15-->
-15\. Supersession Ledger
-
-<!--@1.1¶16-->
 16\. Deferred Systems and Open Questions
 
-<!--@1.1¶17-->
+<!--@1.1¶16-->
 17\. Canon Rules, Non-Goals, and Acceptance Tests
 
-<!--@1.1¶18-->
-Final System Statement
-
-<!--@1.1¶19-->
+<!--@1.1¶17-->
 <table>
 <tbody>
 <tr class="odd">
@@ -167,7 +161,7 @@ The v0.5 redesign gives MEDIAN two highly developed halves: DWELL makes sanctuar
 | MEDIAN remains continuous and observable until a situation becomes bounded, consequential, and worthy of direct attention. MEET fixes that attention. The resulting choice acts upon one shared world state, then returns the player to a Register whose ordinary life visibly incorporates what occurred. |
 
 <!--@4-->
-# 3\. Register and View Architecture
+# 3\. Register Architecture
 
 <!--@3.1#2-->
 ## 3.1 Register definition
@@ -184,21 +178,6 @@ A Register is MEDIAN’s complete visual and interactive contract for one kind o
 | MEET         | Meet     | Attend to a bounded circumstance and decide how the relevant subject responds. |
 | EMBODY       | Embody   | Experience a Citizen’s lived scale within the safety of Home.                  |
 
-<!--@3.2#2-->
-## 3.2 View definition
-
-<!--@3.2#2¶1-->
-A View is a specific presentation built inside a Register. Views allow MEDIAN to create categorically different scenes without inventing a new mode for every presentation need.
-
-<!--@3.2#2¶2-->
-| **Register** | **Example Views**                                                                                                  |
-| ------------ | ------------------------------------------------------------------------------------------------------------------ |
-| DWELL        | Colony Overview View; Role and Readiness View; Project View; Place inspection.                                     |
-| TRAVEL       | Home Reach View; Margin View; longitudinal Reach View; Stopover approach.                                          |
-| RISK         | Staging View; outbound Crossing View; return Crossing View.                                                        |
-| MEET         | Heavy Winds View; Base Defense View; Launch View; Homecoming View; contested Node View; uncontested resource View. |
-| EMBODY       | Practice View; Presence View; species-specific Flow, Rest, Tend, or relationship moments.                          |
-
 <!--@3.3-->
 ## 3.3 Register change test
 
@@ -209,12 +188,6 @@ A View is a specific presentation built inside a Register. Views allow MEDIAN to
 
 <!--@3.3¶2-->
 A berry bush is navigable geography in TRAVEL. It becomes MEET when a party decides what relationship to establish with it or when another Presence contests it. A Rabbit court is part of DWELL until Heavy Winds make its exposed shelter line a bounded decision. The same court may later become an EMBODY Presence scene once Quiet Equilibrium returns.
-
-<!--@3.4-->
-## 3.4 Anti-fragmentation rule
-
-<!--@3.4¶1-->
-New presentation needs should first be tested as Views inside an existing Register. A new Register is justified only when the player’s complete relation to time, scale, control, and subject changes. This rule did not prevent EMBODY; it explains why EMBODY qualified while Launch, Homecoming, Base Defense, and Road Work did not.
 
 <!--@5-->
 # 4\. The Attention Threshold: Native Information and MEET
@@ -284,7 +257,7 @@ The Field cadence guardrail remains: Nodes are the meal; cards are the weather. 
 ## 5.1 Choice Event as content packet
 
 <!--@5.1¶1-->
-The Choice Event is the authored content object. MEET is the runtime manifestation. The packet must be complete enough to appear in the correct View without depending on a literal card overlay.
+The Choice Event is the authored content object. MEET is the runtime manifestation. The packet must be complete enough to appear in the correct presentation without depending on a literal card overlay.
 
 <!--@5.1¶2-->
 | **Packet field**       | **Required content**                                                                                                               |
@@ -295,7 +268,7 @@ The Choice Event is the authored content object. MEET is the runtime manifestati
 | Scene requirements     | Location, backdrop, time, weather, season, active objects, and affected Places or Nodes.                                           |
 | Subject                | Colony, Role, household, personal Citizen, or expedition party.                                                                    |
 | Stakes                 | Primary stake, secondary stake, threatened value, and what changes if the player refuses.                                          |
-| Response grammar       | Home MEET choice frame, uncontested Node grammar, contested Away Approaches, Launch, Homecoming, or another approved View grammar. |
+| Response grammar       | Home MEET choice frame, uncontested Node grammar, contested Away Approaches, Launch, Homecoming, or another approved presentation grammar. |
 | Costs and requirements | Resources, Citizen-Days, equipment, relationships, time, load, or role posture.                                                    |
 | Consequences           | Group outcome, personal consequence where applicable, duration, escalation, Conditions, route or Place changes.                    |
 | Memory                 | Campaign Memory / Chronicle language and later retrieval hooks.                                                                    |
@@ -306,13 +279,13 @@ The Choice Event is the authored content object. MEET is the runtime manifestati
 <!--@5.2¶1-->
 |                                                                                              |
 | -------------------------------------------------------------------------------------------- |
-| TRIGGER → SITUATION OPENS → MEET VIEW → RESPONSE → CONSEQUENCE → WORLD-STATE CHANGE → MEMORY |
+| TRIGGER → SITUATION OPENS → MEET PRESENTATION → RESPONSE → CONSEQUENCE → WORLD-STATE CHANGE → MEMORY |
 
 <!--@5.3-->
 ## 5.3 A bounded scene is not always an instant resolution
 
 <!--@5.3¶1-->
-Home-origin situations may remain physically present after their first MEET View. A flooded pantry may reveal a restoration cost the Colony cannot yet meet. A damaged route may remain closed. A displaced household may continue occupying temporary space. The situation remains a scene with a known subject and state; it does not become a free-floating quest marker.
+Home-origin situations may remain physically present after their first MEET presentation. A flooded pantry may reveal a restoration cost the Colony cannot yet meet. A damaged route may remain closed. A displaced household may continue occupying temporary space. The situation remains a scene with a known subject and state; it does not become a free-floating quest marker.
 
 <!--@5.3¶2-->
 | **Situation phase** | **Home-origin meaning**                                                                     |
@@ -406,12 +379,6 @@ MEDIAN maintains one Citizen Record, one wound, one relationship, one Tool, one 
 | Trusted Friend | Influences domestic presence and later memory.  | Changes willingness to travel or press onward.        | Shapes who returns for whom.               | Opens relational choices and consequences.            | Supports social Presence or Practice moments.                     |
 | Damaged Place  | Creates Load, shortfall, or a Project need.     | May alter the route through Home Reach.               | May affect a Staging edge.                 | Becomes a bounded repair or protection situation.     | Blocks or changes experiences rooted in that Place.               |
 
-<!--@7.2-->
-## 7.2 Feature test
-
-<!--@7.2¶1-->
-For every proposed mechanic, ask: “Is this a new system, or a new situation produced by existing systems in another Register?” A separate surgery game, morale economy, or Homecoming inventory subsystem is presumptively wrong when wounds, Care, supplies, and allocation already exist as shared facts.
-
 <!--@9-->
 # 8\. Personal Information and Numerical Restraint
 
@@ -435,17 +402,6 @@ Citizen condition is shown through named Conditions, descriptive bands, behavior
 | Trusted Friend; estranged; protective; dependent         | Relationship score                                     |
 | Named wound and lasting impairment                       | Generic damage points                                  |
 | Exposure state and widening consequence distribution     | A universal “danger bar” that duplicates other systems |
-
-<!--@8.3-->
-## 8.3 New meter burden of proof
-
-<!--@8.3¶1-->
-Every proposed group meter must be classified as either persistent state or a descriptive readout of existing state. Decorative quantities such as Party Unity, Community Resolve, Party Alarm, Party Calm, Negotiation Posture, or Harvest Outlook do not become new tracks merely because a prototype has room for them.
-
-<!--@8.3¶2-->
-|                                                                                            |
-| ------------------------------------------------------------------------------------------ |
-| Use numbers for shared logistics. Use language and visible condition for individual lives. |
 
 <!--@10-->
 # 9\. DWELL Attention States: Open and Called
@@ -480,9 +436,6 @@ Called is the moment a Colony situation crosses the MEET threshold. Attention fi
 
 <!--@9.3¶1-->
 The attachment-first contract remains: MEDIAN does not take a named animal from the player off-screen. While attention is Away, Home may progress, improvise, gain something, or suffer inconvenience. A dangerous Home situation may open and wait. It may become more expensive or constrain more Places, but personal catastrophe is not resolved unseen.
-
-<!--@9.3¶2-->
-v0.5 correction: Home outcome depends on remaining Role headcount, Places, spatial alignment, stores, and Readiness—not on hidden differences in individual worker aptitude.
 
 <!--@11-->
 # 10\. Event Time: Telegraph, Impact, Persistence, and Aftermath
@@ -521,9 +474,11 @@ Environmental events become clearer when written as phases rather than as one ca
 Base Defense remains a Home-origin MEET family, not a separate tactical combat system. The Colony is the party. Its defense is expressed through prepared Places, species spatial grammar, Role Capacity, relevant weakness, materials, and the willingness to accept loss.
 
 <!--@11.1-->
-## 11.1 Canonical Home MEET grammar
+## 11.1 World Pressure / Colony Readiness Home MEET grammar
 
 <!--@11.1¶1-->
+Home MEETs invoked by the World Pressure / Colony Readiness system use the following three-option grammar:
+
 | **Option**                              | **Function**                                                                       |
 | --------------------------------------- | ---------------------------------------------------------------------------------- |
 | Protect the primary stake               | Spend one appropriate commitment to preserve the most important threatened value.  |
@@ -531,7 +486,7 @@ Base Defense remains a Home-origin MEET family, not a separate tactical combat s
 | Commit neither                          | Preserve scarce capacity now and accept the compounded consequence.                |
 
 <!--@11.1¶2-->
-This grammar supersedes the old attempt to apply the five contested Away Approaches to storms, floods, structural failures, and Base Defense.
+This grammar replaces application of the five contested Away Approaches to World Pressure / Colony Readiness events such as storms, floods, structural failures, and Base Defense. It does not govern other Home MEET families.
 
 <!--@11.2-->
 ## 11.2 Personal consequence at Home
@@ -582,19 +537,13 @@ Colony art remains operationally legible even where roofs, walls, brush, or foli
 ## 13.1 Environmental labels belong in the scene
 
 <!--@13.1¶1-->
-Functional labels such as Exposed Roofline, Open Grass, Loose Coverings, or Swaying Ladder should point into the rendered Place. They describe terrain and stakes without creating a tactical positioning grid.
+Functional labels such as Exposed Roofline, Open Grass, Loose Coverings, or Swaying Ladder may point into the rendered Place. They describe terrain and stakes without creating a tactical positioning grid.
 
 <!--@13.2-->
 ## 13.2 Terrain changes price, not menu
 
 <!--@13.2¶1-->
 Away terrain may change the difficulty, consequence, or Exposure associated with an Approach. It does not create citizen-by-citizen positioning, facing, initiative, or targeting. The party remains one body on the front end; individuality resolves on the back end.
-
-<!--@13.3-->
-## 13.3 Canonical examples use canonical people
-
-<!--@13.3¶1-->
-Worked examples, concept plates, and system vignettes must draw from approved colony and Citizen banks. Reusing one name for different Citizens, inventing an unapproved roster for convenience, or allowing a concept image to establish new canon causes avoidable drift.
 
 <!--@13.4-->
 ## 13.4 Visual invention does not establish canon
@@ -635,26 +584,6 @@ The old log’s useful insight is retained at a high level: warnings should emer
 <!--@14.1¶2-->
 The old hard economy of four Guest slots divided into “warning” and “capability” modules is not carried forward here. Guest Citizen identity, residence, limits, relationships, and mechanical contribution require the dedicated v0.5 Guest Citizen pass. This specification preserves only the diegetic-warning principle.
 
-<!--@14.2-->
-## 14.2 Outpost identity after the Away rework
-
-<!--@14.2¶1-->
-The old ruling that a Held Reach carries partial Home Mode is superseded. An outpost remains Away: a refuge, Stopover, low Care point, Watch point, cache, and place to end a leg. It does not support DWELL or EMBODY as an alternate Colony.
-
-<!--@14.2¶2-->
-|                                                                |
-| -------------------------------------------------------------- |
-| An outpost gives you the roof. It never gives you the village. |
-
-<!--@14.2¶3-->
-The older emotional and species observations remain useful as worldbuilding: Mouse experiences a room that touches nothing; Rabbit experiences frontage without Company; Squirrel experiences a node with insufficient redundancy. These shape scenes and fears, not a second domestic ruleset.
-
-<!--@14.3-->
-## 14.3 Multi-day focus switching
-
-<!--@14.3¶1-->
-The old “leg is the unit of Away focus” proposal remains unresolved under v0.5. A multi-day journey may need to cut back to Dawn at Home while the party rests at a Stopover, but the exact player authority, EMBODY eligibility, and treatment of continuing absence are not yet canonical. This belongs to the Corridor and Frontier Progression pass.
-
 <!--@14.4-->
 ## 14.4 Corridor narrative orientation
 
@@ -674,27 +603,6 @@ Exact numbers of Reaches, Reaches per day, and required outposts remain prototyp
 
 <!--@14.5¶1-->
 The old unresolved question of whether every Encounter receives a Legendary / Successful / Hard-Earned / Failed grade is closed by the Away rework: there is no generic expedition grade. Memory should preserve what was achieved, paid, changed, and carried home rather than flattening the journey into one score.
-
-<!--@16-->
-# 15\. Supersession Ledger
-
-<!--@16¶1-->
-| **v0.4.7 assumption**                                         | **v0.5 disposition**   | **Leading replacement**                                                                                                   |
-| ------------------------------------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Four Registers only                                           | Superseded             | Five Registers including EMBODY.                                                                                          |
-| Encounter verb becomes Interact                               | Superseded             | MEET, understood as consequential relationship rather than person-to-person contact.                                      |
-| Field verb becomes Explore                                    | Not adopted            | TRAVEL remains the broader and more accurate verb.                                                                        |
-| Launch / Homecoming exist to preserve a four-Register ceiling | Reframed               | They remain MEET Views because their subject is a bounded relational decision, not because a fifth Register is forbidden. |
-| Five Approaches as universal Encounter UI                     | Superseded for Home    | Home MEET uses the Colony three-choice grammar; five Approaches remain provisional for contested Away MEET.               |
-| Road Work Onset may use a full choice strip                   | Superseded             | Telegraph and Persistence may use MEET; Impact resolves prior posture and immediate consequence.                          |
-| Crossing has no Exposure                                      | Superseded             | Crossing may produce personal Exposure without using the MEET Exposure procedure.                                         |
-| Exposure only in contested MEET                               | Superseded             | Exposure may arise through TRAVEL, RISK, and MEET.                                                                        |
-| Individual Home aptitude affects outcome                      | Superseded             | Equal Citizen contribution to global Roles; fiction may credit named action without hidden productivity modifiers.        |
-| Held Reach supports reduced Colony Register                   | Superseded             | Held Reach supports Away refuge and Stopover functions only.                                                              |
-| Home is a portable state                                      | Superseded             | Full sanctuary is produced by the Colony; calm Away is not Home.                                                          |
-| Fixed 70 / 20 / 10 return crossing                            | Superseded             | Return Burden and context determine whether return Crossing is played, compressed, or elided.                             |
-| Expedition Rating summarizes the run                          | Superseded             | Homecoming and Campaign Memory preserve achievement, cost, changes, and absences.                                         |
-| Domestic rework deferred to v0.5                              | Completed in principle | Places, Practices, Roles, Projects, Readiness, Weakness ledger, Home MEET, Quiet Equilibrium.                             |
 
 <!--@17-->
 # 16\. Deferred Systems and Open Questions
@@ -741,12 +649,6 @@ The old unresolved question of whether every Encounter receives a Legendary / Su
 <!--@16.3¶4-->
   - How mature Squirrel networks avoid reducing Home to merely one node among many.
 
-<!--@16.4-->
-## 16.4 Guest Citizen system boundary
-
-<!--@16.4¶1-->
-Guest Citizens, ambient residents, recurring visitors, warning behavior, residence limits, social integration, and capability design are deliberately deferred. The future Guest specification must mesh with Roles, Places, Home Readiness, Away parties, Campaign Memory, and EMBODY without turning non-core species into slotted infrastructure modules.
-
 <!--@18-->
 # 17\. Canon Rules, Non-Goals, and Acceptance Tests
 
@@ -754,7 +656,7 @@ Guest Citizens, ambient residents, recurring visitors, warning behavior, residen
 ## 17.1 Canon rules
 
 <!--@17.1¶1-->
-  - A Register is a mode of attention; a View is a presentation within it.
+  - A Register is a mode of attention.
 
 <!--@17.1¶2-->
   - Routine information remains native; bounded consequential interaction becomes MEET.
@@ -791,9 +693,6 @@ Guest Citizens, ambient residents, recurring visitors, warning behavior, residen
 
 <!--@17.2-->
 ## 17.2 Non-goals
-
-<!--@17.2¶1-->
-  - A fifth economic subsystem for every View or Register.
 
 <!--@17.2¶2-->
   - Modal interruption as the normal texture of domestic play.
@@ -832,17 +731,6 @@ Guest Citizens, ambient residents, recurring visitors, warning behavior, residen
 | Backdrop test            | A MEET scene remains recognizably the same Place or Node the player knew before attention fixed upon it.                                                 |
 | Attachment test          | The interface makes the player attend to threatened lives and Places without converting them into replaceable production assets.                         |
 | Guest-boundary test      | The document’s rules remain valid without deciding detailed Guest species capabilities.                                                                  |
-
-<!--@19-->
-# Final System Statement
-
-<!--@19¶1-->
-|                                                                                                                                                                                                                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The v0.4.7 Cross-System Carryforward are the shared grammar by which MEDIAN changes scale without changing reality. DWELL, TRAVEL, RISK, MEET, and EMBODY do not own separate versions of the world. They are five ways of attending to the same Colony, corridor, Citizens, Places, injuries, promises, and memories. |
-
-<!--@19¶2-->
-The practical sequence is simple: ordinary Registers reveal the world; threshold-worthy circumstances call MEET; MEET fixes attention on the appropriate subject; consequences alter shared world state; the player returns to ordinary life and sees what changed. This architecture lets Home remain lingerable, Away remain consequential, and attachment remain the reason the systems matter.
 
 <!--@19¶3-->
 END OF SPECIFICATION

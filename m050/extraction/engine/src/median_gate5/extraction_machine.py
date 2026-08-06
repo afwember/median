@@ -1169,9 +1169,21 @@ def require_run_ready_for_next_call(
                 and event.get("packet_file_sha256") == packet_file_sha256
                 and event.get("capture_error") == provider_refusal_error
             ]
+            same_packet_http_400_failures = [
+                event
+                for event in captured
+                if event.get("source_id") == source_id
+                and event.get("chunk_id") == chunk_id
+                and event.get("packet_file_sha256") == packet_file_sha256
+                and event.get("transport_error") == "HTTPError:400"
+            ]
             if (
                 retryable_dns_failure
                 or transport_error in RETRYABLE_HTTP_TRANSPORT_ERRORS
+                or (
+                    transport_error == "HTTPError:400"
+                    and len(same_packet_http_400_failures) == 1
+                )
                 or (
                     prior_call.get("capture_error") == provider_refusal_error
                     and len(same_packet_refusals) == 1

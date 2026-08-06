@@ -1296,6 +1296,7 @@ def test_compact_run_ledger_allows_validated_replacement_after_failure(tmp_path)
     "transport_error",
     [
         "URLError:workspace DNS unavailable",
+        "HTTPError:400",
         "HTTPError:529",
         "TimeoutError:The read operation timed out",
     ],
@@ -1329,6 +1330,37 @@ def test_compact_run_ledger_allows_same_packet_after_reviewed_transient_failure(
     assert require_run_ready_for_next_call(
         read_run_ledger(ledger), "S1", "C0001", "a" * 64
     ) == 1
+
+
+def test_compact_run_ledger_blocks_second_same_packet_http_400_retry(tmp_path):
+    ledger = tmp_path / "run.jsonl"
+    for suffix in ("o", "p"):
+        append_run_ledger_event(
+            ledger,
+            {
+                "state": "call_captured",
+                "source_id": "S1",
+                "chunk_id": "C0001",
+                "packet_file_sha256": "a" * 64,
+                "outcome_sha256": suffix * 64,
+                "mechanical_passed": False,
+                "transport_error": "HTTPError:400",
+            },
+        )
+        append_run_ledger_event(
+            ledger,
+            {
+                "state": "review_failed",
+                "source_id": "S1",
+                "chunk_id": "C0001",
+                "outcome_sha256": suffix * 64,
+            },
+        )
+
+    with pytest.raises(ContractError, match="must be corrected"):
+        require_run_ready_for_next_call(
+            read_run_ledger(ledger), "S1", "C0001", "a" * 64
+        )
 
 
 def test_compact_run_ledger_allows_one_same_packet_retry_after_provider_refusal(

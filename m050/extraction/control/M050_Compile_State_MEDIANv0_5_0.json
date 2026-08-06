@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T18:52:11-04:00",
+  "updated": "2026-08-06T18:54:40-04:00",
   "execution_state": "GDD_COVERAGE_GAP_C0007_RETRY_FROZEN_READY",
   "corpus": {
     "registered_sources": 24,
@@ -104,7 +104,7 @@
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
-    "offline_tests_passed": 83,
+    "offline_tests_passed": 85,
     "cache_miss_call_ceiling_usd": "0.323832",
     "latest_outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0007_Outcome_v0_2_MEDIANv0_5_0.json"
   },
@@ -127,7 +127,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 6:52:11 PM EDT",
+    "updated_human": "August 6, 2026 at 6:54:40 PM EDT",
     "status": "GDD Coverage-Gap extraction active after Sparkup",
     "phase": "Atomic extraction — GDD Coverage-Gap sequential run",
     "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 15 / 22 compile-scope sources complete",
@@ -147,6 +147,6 @@
     "cache_effective": false,
     "exact_cost_usd": null,
     "mechanical_passed": false,
-    "review_state": "call_captured"
+    "review_state": "review_failed"
   }
 }

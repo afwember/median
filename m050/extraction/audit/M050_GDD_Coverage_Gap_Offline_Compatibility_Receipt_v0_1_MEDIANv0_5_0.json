@@ -7,8 +7,8 @@
   "binding": {
     "configuration_sha256": "ce61b176361ff465b13792b83a94f20cf02d6a055935386453f6cf765eb3ae90",
     "prompt_sha256": "00774581cbd56499a2a87208023ec0ecbbf1332aa5a33d6bf93fa200cfde32d2",
-    "engine_module_sha256": "7aedf7607a131e749c5239c9e6b624718e4e31a092a2a7b3c1f395867c152e04",
-    "engine_tests_sha256": "694e1d81d1725e66105db97f1bda491e892f2191d15b28ca56ae35253227ae48"
+    "engine_module_sha256": "3ba34051c20b0d02da7d02c6a3976d15932215034af1f6ff3d491778347b86db",
+    "engine_tests_sha256": "f97b571499a3e42d234e4fe2d710d92162f25499f77cc46b3133381be5e1eba6"
   },
   "source_review": {
     "source_blocks": 815,
@@ -37,7 +37,7 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 83,
+    "offline_tests_passed": 85,
     "all_source_structural_compatibility_passed": true,
     "active_source_guard_ready": true,
     "active_prompt_matches_generic_builder": true,

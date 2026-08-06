@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
   "proposal_id": "M050-GDD-COVERAGE-GAP-C0001-PILOT-FREEZE-005",
-  "state": "frozen_ready_for_provider_call",
-  "machine_state": "sequential_run_ready",
+  "state": "source_candidate_accepted_stopdown",
+  "machine_state": "source_candidate_accepted_stopdown",
   "binding": {
     "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
     "source_sha256": "15af505d60383e5c47215b7c21b9016eb56e29920e71373d3c0f0c09ad95a225",
@@ -11,9 +11,9 @@
     "block_manifest_sha256": "9f056891307db24fa516fb22637885bb8f3e89d56d1da73256d593b6e9e0e257",
     "disposition_ledger_sha256": "a20e9fbbc5ce67bda2291ec01fd0cc17279e10b31f79152ff551d3c308a338b4",
     "chunk_plan_sha256": "42b72b5da73d08b83c0c89cc1a973ede6246f04e686eef59bb86783df08637de",
-    "pilot_chunk_id": "C0012",
-    "pilot_packet_sha256": "6c8a432f338b23f1b09249ff11144d4cb9dc5116ac9fdccb7b723a7c6f154a10",
-    "pilot_packet_file_sha256": "233983b37d1760e4b2fb84ee873d15278a12b489b97122faad5930ebb0217144",
+    "pilot_chunk_id": "C0013",
+    "pilot_packet_sha256": "a512637bf4492fa16c9e22d20e5afe13f52bfc9ad86d620f82684638c471a561",
+    "pilot_packet_file_sha256": "5dd8acc1065504fc48c83c582c0366f4c99bb6f43ddd8c4472462a89db991efb",
     "prompt_sha256": "e7863f8f569cb4abc5bd3e1d0a96278e58eeba93b7cfd46cc74e9b62c0b6cd19",
     "response_schema_sha256": "45c543e469738f42e297a42f051d725941bfd3ed0e0ebcf6af83ef8f45c5a918",
     "engine_module_sha256": "e6e6bed43dcdf4996bd2045d0d203f6db7fc00679a10cdad7c3ba0483b55a188",
@@ -33,9 +33,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0012 v0.4 is the corrected retry after v0.2 expanded table atoms across row semicolons; repeated spans now expand only through the nearest semicolon-free source boundary.",
-    "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.330452"
+    "selection_reason": "C0013 is the final sequential GDD Coverage-Gap chunk after C0012 v0.3 passed review.",
+    "required_target_disposition_count": 18,
+    "cache_miss_call_ceiling_usd": "0.336628"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -54,7 +54,7 @@
     "all_source_structural_compatibility_passed": true,
     "active_prompt_matches_generic_builder": true,
     "stable_output_schema_cache_boundary_preserved": true,
-    "provider_call_made": false,
+    "provider_call_made": true,
     "c0001_mechanical_and_substantive_review_passed": true,
     "c0002_mechanical_and_substantive_review_passed": true,
     "c0003_mechanical_and_substantive_review_passed": true,
@@ -66,6 +66,9 @@
     "c0009_mechanical_and_substantive_review_passed": true,
     "c0010_mechanical_and_substantive_review_passed": true,
     "c0011_mechanical_and_substantive_review_passed": true,
-    "c0012_mechanical_and_substantive_review_passed": false
+    "c0012_mechanical_and_substantive_review_passed": true,
+    "c0013_mechanical_and_substantive_review_passed": true,
+    "whole_source_coverage_and_quality_review_passed": true,
+    "candidate_acceptance_guard_passed": true
   }
 }

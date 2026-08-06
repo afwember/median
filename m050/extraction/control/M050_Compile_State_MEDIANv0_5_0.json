@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "ACTIVE",
-  "updated": "2026-08-06T19:46:37-04:00",
-  "execution_state": "GDD_COVERAGE_GAP_C0012_RETRY_FROZEN_BUDGET_HALT",
+  "status": "STOPDOWN",
+  "updated": "2026-08-06T19:59:14-04:00",
+  "execution_state": "GDD_COVERAGE_GAP_SOURCE_CANDIDATE_ACCEPTED_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 7,
-    "outstanding_pre_reconciliation_sources": 3,
+    "outstanding_compile_scope_sources": 6,
+    "outstanding_pre_reconciliation_sources": 2,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -29,7 +29,8 @@
       "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
       "M050-SRC-CORE-TRAITS-001",
       "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
-      "M050-SRC-ECOLOGY-001"
+      "M050-SRC-ECOLOGY-001",
+      "M050-SRC-GDD-COVERAGE-GAP-001"
     ]
   },
   "source": {
@@ -47,18 +48,20 @@
       "C0008",
       "C0009",
       "C0010",
-      "C0011"
+      "C0011",
+      "C0012",
+      "C0013"
     ],
-    "rejected_chunk_id": "C0012",
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "rejected_chunk_id": null,
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_GDD_Coverage_Gap_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/gdd-coverage-gap/M050_GDD_Coverage_Gap_C0001_Pilot_Freeze_Proposal_v0_5_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_GDD_Coverage_Gap_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0012_Call_Packet_v0_4_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0013_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -114,6 +117,16 @@
         "chunk_id": "C0011",
         "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0012_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -126,10 +139,10 @@
       "c0012_unique_table_label_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0012_Unique_Table_Label_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0012_nearest_boundary_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0012_Nearest_Boundary_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0012",
+    "pilot_chunk_id": "C0013",
     "generated_chunk_count": 13,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
+    "required_target_disposition_count": 18,
     "source_blocks": 815,
     "eligible_target_blocks": 251,
     "context_only_blocks": 56,
@@ -138,21 +151,27 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 87,
-    "cache_miss_call_ceiling_usd": "0.330452",
-    "latest_outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0012_Outcome_v0_2_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.336628",
+    "latest_outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/gdd-coverage-gap/M050_GDD_Coverage_Gap_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "29124057bd62d71aacbfe00e2ade6ebc7c007c09450e2e2e5419d515067337f7",
+      "report": "m050/extraction/accepted/gdd-coverage-gap/M050_GDD_Coverage_Gap_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "8bc8a4fbb88d346cb62a836188a556efbc73d0f3c242f46743d3dbc08ffe26a5"
+    }
   },
   "spend": {
     "active": true,
-    "authorized_usd": "29.9389742",
-    "cumulative_spent_usd": "29.8652378",
-    "remaining_usd": "0.0737364",
-    "display_usd_rounded_up": "29.87",
+    "authorized_usd": "31.8652378",
+    "cumulative_spent_usd": "30.3068736",
+    "remaining_usd": "1.5583642",
+    "display_usd_rounded_up": "30.31",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -160,26 +179,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 7:46:37 PM EDT",
-    "status": "GDD Coverage-Gap extraction paused at C0012 budget boundary",
-    "phase": "Atomic extraction — GDD Coverage-Gap sequential run",
-    "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 15 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0011 accepted; C0012 v0.1 and v0.2 rejected; corrected C0012 v0.4 frozen and untransmitted; 20 targets selected",
-    "now": "C0012 v0.2 crossed table-row semicolons; the nearest-boundary correction passes offline compatibility; exact cumulative spend is $29.8652378 with $0.0737364 remaining",
-    "next": "Replenish cumulative spend before transmitting C0012 v0.4; its conservative cache-miss ceiling is $0.330452"
+    "updated_human": "August 6, 2026 at 7:59:14 PM EDT",
+    "status": "Formal Stopdown — GDD Coverage-Gap source candidate accepted",
+    "phase": "Atomic extraction — GDD Coverage-Gap complete",
+    "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 16 / 22 compile-scope sources complete",
+    "chunk": "C0001–C0013 accepted; 251 / 251 targets covered; 431 candidate atoms",
+    "now": "Whole-document coverage and extraction-quality review passed; candidate/report pair is hash-bound; exact cumulative spend is $30.3068736 with $1.5583642 remaining",
+    "next": "Await an explicit source-work and repository-write grant for the next canonical source; no later phase is authorized"
   },
-  "next_possible_transition": "After spend replenishment covers the $0.330452 conservative ceiling, transmit corrected C0012 v0.4 under the active GDD Coverage-Gap grant and review it before C0013.",
+  "next_possible_transition": "Await Asa's explicit grant for the next canonical atomic-extraction source; GDD Coverage-Gap authority has ended at source completion.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0012",
+    "chunk_id": "C0013",
     "stop_reason": "end_turn",
-    "output_tokens": 23386,
-    "cache_creation_input_tokens": 3076,
-    "cache_read_input_tokens": 0,
+    "output_tokens": 20883,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3079,
     "cache_effective": true,
-    "exact_cost_usd": "0.259686",
-    "mechanical_passed": false,
-    "review_state": "review_failed"
+    "exact_cost_usd": "0.2255978",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
   }
 }

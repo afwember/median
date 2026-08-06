@@ -1,0 +1,134 @@
+{
+  "report_version": "M050-GDD-COVERAGE-GAP-ACCEPTANCE-0.1",
+  "status": "ACCEPTED_EXTRACTION_CANDIDATE_READY_FOR_CORPUS_RECONCILIATION",
+  "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
+  "source_sha256": "15af505d60383e5c47215b7c21b9016eb56e29920e71373d3c0f0c09ad95a225",
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013"
+  ],
+  "chunks": 13,
+  "target_dispositions": 251,
+  "candidate_atoms": 431,
+  "no_substantive_claim_dispositions": 14,
+  "whole_document_review": {
+    "source_blocks": 815,
+    "eligible_target_blocks": 251,
+    "context_only_blocks": 56,
+    "excluded_blocks": 508,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "media_occurrences": 0,
+    "extraction_quality_review_passed": true,
+    "source_declared_status_and_qualifications_preserved": true,
+    "unresolved_review_required_blocks": 0
+  },
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0001_Outcome_v0_5_MEDIANv0_5_0.json",
+      "outcome_sha256": "d3fd13f658bd9272d555dd3d80bea64034ae28ef51b08ccc103791be0c434177",
+      "review_event_id": "evt_19c9c292cb92a5dacf8da75f",
+      "review_event_outcome_sha256": "d3fd13f658bd9272d555dd3d80bea64034ae28ef51b08ccc103791be0c434177"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "9972626b2d0bcdc6214615ab5e3a038db1a582e2f2424124ea1e9581255d97d3",
+      "review_event_id": "evt_5c7771a2ebd464bacd29f4b4",
+      "review_event_outcome_sha256": "9972626b2d0bcdc6214615ab5e3a038db1a582e2f2424124ea1e9581255d97d3"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "5cf9390510fdb4b07b12a26733c88dd87982f3a1347df46b8c757d756f7d43da",
+      "review_event_id": "evt_00f2332f5dbee7accf6561a4",
+      "review_event_outcome_sha256": "5cf9390510fdb4b07b12a26733c88dd87982f3a1347df46b8c757d756f7d43da"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d65b3a8beaf8e549e062d9ea5126c86f78b7f8634e197f86c0f0c0f52977ef08",
+      "review_event_id": "evt_a8e23aaf689f6ef7db3bae8e",
+      "review_event_outcome_sha256": "d65b3a8beaf8e549e062d9ea5126c86f78b7f8634e197f86c0f0c0f52977ef08"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "3ab64ad3d9a898fd5fae9156ab2778af69b59fd9dbefc3b19423b4ef88ff7b15",
+      "review_event_id": "evt_097f9a5e317f37bfaf21c2e4",
+      "review_event_outcome_sha256": "3ab64ad3d9a898fd5fae9156ab2778af69b59fd9dbefc3b19423b4ef88ff7b15"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "96c45cbf93e78304673c65dbfabeedb27fee1ed61619dd34a5bde2103347fe91",
+      "review_event_id": "evt_5fcad8e26486fc90e3c709b2",
+      "review_event_outcome_sha256": "96c45cbf93e78304673c65dbfabeedb27fee1ed61619dd34a5bde2103347fe91"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0007_Outcome_v0_4_MEDIANv0_5_0.json",
+      "outcome_sha256": "f0baf7809e3cb73053276bd8378e402953df3c46b7a3d272a20e4a87f5c4f58c",
+      "review_event_id": "evt_3a80e8dae985808b0f02edee",
+      "review_event_outcome_sha256": "f0baf7809e3cb73053276bd8378e402953df3c46b7a3d272a20e4a87f5c4f58c"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0008_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "8279099a8c13108681c6c00b78e4a0a63036f625b7b81bc4bc4ecdec97750f1a",
+      "review_event_id": "evt_4df5be36912621308befd88a",
+      "review_event_outcome_sha256": "8279099a8c13108681c6c00b78e4a0a63036f625b7b81bc4bc4ecdec97750f1a"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "55c235e45a300c9c93e2dc463308f89e5d89058ab9f923d0681181e648f99a5c",
+      "review_event_id": "evt_7109a3911d0bc3e802c5a964",
+      "review_event_outcome_sha256": "55c235e45a300c9c93e2dc463308f89e5d89058ab9f923d0681181e648f99a5c"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "28ac0e84dd3c5f955fdfb9649f03b4ab782ff373649aa2fc7b132262fd1f3639",
+      "review_event_id": "evt_eb376356e80f0b90e2bce514",
+      "review_event_outcome_sha256": "28ac0e84dd3c5f955fdfb9649f03b4ab782ff373649aa2fc7b132262fd1f3639"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "f08a29d1ae437489784ff6740ad8301a7989bd129fa55195ae7b95516f9eeef9",
+      "review_event_id": "evt_463c1c4227d559c4755ddda9",
+      "review_event_outcome_sha256": "f08a29d1ae437489784ff6740ad8301a7989bd129fa55195ae7b95516f9eeef9"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0012_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "1ce350bc01c1242424f1ce1891ef1ff7a9852e39450a832df18c8cdda0e1f64a",
+      "review_event_id": "evt_8f4fc19d568343cd91f4fd67",
+      "review_event_outcome_sha256": "1ce350bc01c1242424f1ce1891ef1ff7a9852e39450a832df18c8cdda0e1f64a"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "89b1aff4788865df983a03bc9e06aa498aa3c0968d1f678a9c5318aa7c720c7f",
+      "review_event_id": "evt_d2a4efc60f3e8db1b11f76d0",
+      "review_event_outcome_sha256": "89b1aff4788865df983a03bc9e06aa498aa3c0968d1f678a9c5318aa7c720c7f"
+    }
+  ],
+  "candidate_path": "m050/extraction/accepted/gdd-coverage-gap/M050_GDD_Coverage_Gap_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "29124057bd62d71aacbfe00e2ade6ebc7c007c09450e2e2e5419d515067337f7",
+  "approval": true,
+  "note": "Accepted as source-bounded GDD Coverage-Gap extraction output; semantic acceptance, mapping, reconciliation, canonization, and compiled prose remain later compile stages."
+}

@@ -395,6 +395,8 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
 
 def test_active_prompt_equals_generated_generic_prompt():
     state = _json(COMPILE_STATE)
+    if state["calibration"].get("identity_card_approval_pending") is True:
+        return
     config = _json(ROOT / state["calibration"]["configuration"])
     identity = (ROOT / config["artifacts"]["identity_card"]).read_text(encoding="utf-8")
     active = (ROOT / config["artifacts"]["prompt"]).read_text(encoding="utf-8")

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T08:38:43-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_SOURCE_BOUNDED_CANDIDATE_CORRECTED_C0032_SCOPE_FORMAL_STOPDOWN",
+  "updated": "2026-08-06T08:43:36-04:00",
+  "execution_state": "CORE_SPECIES_TRAITS_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -30,245 +30,19 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
-    "label": "Discovery, Time, Movement, and Civic Progression",
-    "compile_ordinal": 12,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013",
-      "C0014",
-      "C0015",
-      "C0016",
-      "C0017",
-      "C0018",
-      "C0019",
-      "C0020",
-      "C0021",
-      "C0022",
-      "C0023",
-      "C0024",
-      "C0025",
-      "C0026",
-      "C0027",
-      "C0028",
-      "C0029",
-      "C0030",
-      "C0031",
-      "C0032",
-      "C0033"
-    ],
+    "id": "M050-SRC-CORE-TRAITS-001",
+    "label": "Core Species Traits",
+    "compile_ordinal": 13,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Call_Packet_v0_5_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0007_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0014",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0015",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0015_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0016",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0016_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0017",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0018",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0019",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0019_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0020",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0020_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0021",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0021_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0022",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0022_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0023",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0023_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0024",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0024_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0025",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0026",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0027",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0027_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0028",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0028_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0029",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0029_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0030",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0030_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0031",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0031_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0032",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0032_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0033",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Outcome_v0_4_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "46c598ec90c3ddd8130f003114ad9a37fe283a5a9c020f11e9ff87dbf88801d7",
-      "report": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "0c33c01218634e8cd633368f78090a96f37b576174aac3c15a55f0930b350bcd"
-    },
-    "compatibility_replays": {
-      "c0025_disposition_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "accepted_evidence_reasoning_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Accepted_Evidence_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
-    },
-    "pilot_chunk_id": "C0033",
-    "generated_chunk_count": 33,
-    "target_blocks_per_chunk": 10,
-    "required_target_disposition_count": 5,
-    "source_blocks": 522,
-    "eligible_target_blocks": 294,
-    "context_only_blocks": 37,
-    "excluded_blocks": 191,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 81,
-    "cache_miss_call_ceiling_usd": "0.29836",
-    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Outcome_v0_4_MEDIANv0_5_0.json"
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_Core_Species_Traits_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "187c79b09ec9fda12f37f541ae064c37eade6f99f97e99446090400b109fe10d",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
   "spend": {
     "active": true,
@@ -278,8 +52,8 @@
     "display_usd_rounded_up": "22.76"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -287,26 +61,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 8:38:43 AM EDT",
-    "status": "Discovery candidate corrected at C0032; formal Stopdown",
-    "phase": "Atomic extraction — halted at Discovery, Time, Movement, and Civic Progression completion",
-    "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 12 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0033; C0032 deferred scope corrected; whole-source candidate accepted",
-    "now": "All 294 target dispositions and 336 atoms passed exact coverage, ledger-bound review, all-source compatibility, and candidate/report hash binding; both authorities are false; exact cumulative spend is $22.7501186 and $0.6726568 remains.",
-    "next": "Await Asa's explicit source-work grant for Core Species Traits; no other source or later phase is authorized"
+    "updated_human": "August 6, 2026 at 8:43:36 AM EDT",
+    "status": "Core Species Traits identity card proposed; author approval required before provider transmission",
+    "phase": "Atomic extraction — Core Species Traits identity approval halt",
+    "source": "Core Species Traits — ordinal 13; 12 / 22 compile-scope sources complete",
+    "chunk": "No Core Species Traits chunk selected; accepted/rejected boundary is empty",
+    "now": "Frozen source identity, provenance, qualification boundary, and zero-embedded-media disposition are proposed; no provider call or spend occurred",
+    "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
   },
-  "next_possible_transition": "Await Asa's explicit source-work grant for Core Species Traits; spend alone cannot select or advance a source.",
-  "gate_5_complete": false,
-  "latest_provider_attempt": {
-    "http_status": 200,
-    "chunk_id": "C0033",
-    "stop_reason": "end_turn",
-    "output_tokens": 15113,
-    "cache_creation_input_tokens": 3107,
-    "cache_read_input_tokens": 0,
-    "cache_effective": true,
-    "exact_cost_usd": "0.169726",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  }
+  "next_possible_transition": "With Asa's identity-card approval, perform Core Species Traits offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
+  "gate_5_complete": false
 }

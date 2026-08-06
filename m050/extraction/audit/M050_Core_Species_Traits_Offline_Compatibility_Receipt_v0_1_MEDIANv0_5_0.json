@@ -1,0 +1,44 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-CORE-SPECIES-TRAITS-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-06",
+  "status": "CORE_SPECIES_TRAITS_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
+  "source_id": "M050-SRC-CORE-TRAITS-001",
+  "binding": {
+    "configuration_sha256": "52e21eda36c567a265accac2c4010c837198029f697b993899a429e423d4da51",
+    "prompt_sha256": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
+    "engine_module_sha256": "3064b64205f21060add45b05ff411923039c9cd424b1ded371e70fa39253663d",
+    "engine_tests_sha256": "3fbf3abed67a7d22646bf01518f8e78ce7cb1a0c7d412eb98acd03cf4f77966c"
+  },
+  "source_review": {
+    "source_blocks": 300,
+    "eligible_targets": 187,
+    "context_only_blocks": 18,
+    "excluded_blocks": 95,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 10,
+    "generated_chunk_count": 20,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 600,
+    "representative_pilot_chunk_id": "C0016",
+    "pilot_selection_basis": "C0016 is the densest mixed provisional-rule and comparative-table semantic group at the calibrated ten-target density."
+  },
+  "offline_verification": {
+    "all_20_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 81,
+    "all_source_structural_compatibility_passed": true,
+    "active_source_guard_ready": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-CORE-SPECIES-TRAITS-C0016-PILOT-FREEZE-001",
+  "state": "representative_pilot_frozen_pending_provider_call",
+  "machine_state": "representative_pilot_frozen_pending_provider_call",
+  "binding": {
+    "source_id": "M050-SRC-CORE-TRAITS-001",
+    "source_sha256": "9fbcb78ff5e359ed56c0c1c214413d9b41ffba3341529810fc8d418d06e45e89",
+    "configuration_sha256": "52e21eda36c567a265accac2c4010c837198029f697b993899a429e423d4da51",
+    "identity_card_sha256": "3cddb04a10bc4e4882772b2056804fca3452eea50b1ddf9f36c3a394835b6077",
+    "block_manifest_sha256": "468cc09281e3166c5783b86618614be68df34cd254e1b2a7864fb28243f5355e",
+    "disposition_ledger_sha256": "905e61cc364e95330770b38b18c5beb6dd2f20ffb05799d3bc49098c84100309",
+    "chunk_plan_sha256": "0bf1f81d419fb0323dcff687300b341389105b5980f49f2b57687a710b9a958e",
+    "pilot_chunk_id": "C0016",
+    "pilot_packet_sha256": "96a77d6e25cbb6667be2757023001296738e2b289671b73616e2c46e6a075793",
+    "pilot_packet_file_sha256": "dc0e9dabd3ee074f430d316f0055f2a211eed11c96ad778422aa4d8ea0abc003",
+    "prompt_sha256": "33af67dc6bf2452a5015561fa4f8e4ce15b3fd6738dc3a813a7f28109bab25c5",
+    "response_schema_sha256": "f3d3a50417a54db8d0b11caf36db13cc56179032ca9fc1378a50438da9f81893",
+    "engine_module_sha256": "3064b64205f21060add45b05ff411923039c9cd424b1ded371e70fa39253663d",
+    "engine_tests_sha256": "3fbf3abed67a7d22646bf01518f8e78ce7cb1a0c7d412eb98acd03cf4f77966c",
+    "allowed_streams": [
+      "evidence_game_semantic"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 6000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0016 is the densest mixed provisional-rule and comparative-table semantic group at ten provider-eligible targets.",
+    "required_target_disposition_count": 10,
+    "cache_miss_call_ceiling_usd": "0.12318"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_20_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 81,
+    "calibrated_target_blocks_per_chunk": 10,
+    "generated_chunk_count": 20,
+    "chunk_count_is_input": false,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "provider_call_made": false
+  }
+}

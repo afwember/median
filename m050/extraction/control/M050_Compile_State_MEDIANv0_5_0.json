@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T08:43:36-04:00",
-  "execution_state": "CORE_SPECIES_TRAITS_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "updated": "2026-08-06T09:00:48-04:00",
+  "execution_state": "CORE_SPECIES_TRAITS_C0016_FROZEN_TRANSPORT_CONSENT_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -39,16 +39,32 @@
     "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_Core_Species_Traits_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "187c79b09ec9fda12f37f541ae064c37eade6f99f97e99446090400b109fe10d",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_Core_Species_Traits_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/core-species-traits/M050_Core_Species_Traits_C0016_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_Core_Species_Traits_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/core-species-traits-pilot/M050_Core_Species_Traits_C0016_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [],
+    "compatibility_replays": {},
+    "pilot_chunk_id": "C0016",
+    "generated_chunk_count": 20,
+    "target_blocks_per_chunk": 10,
+    "required_target_disposition_count": 10,
+    "source_blocks": 300,
+    "eligible_target_blocks": 187,
+    "context_only_blocks": 18,
+    "excluded_blocks": 95,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 81,
+    "cache_miss_call_ceiling_usd": "0.12318"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "23.4227754",
+    "authorized_usd": "24.7501186",
     "cumulative_spent_usd": "22.7501186",
-    "remaining_usd": "0.6726568",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "22.76"
   },
   "authority": {
@@ -61,14 +77,14 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 8:43:36 AM EDT",
-    "status": "Core Species Traits identity card proposed; author approval required before provider transmission",
-    "phase": "Atomic extraction — Core Species Traits identity approval halt",
+    "updated_human": "August 6, 2026 at 9:00:48 AM EDT",
+    "status": "Core Species Traits C0016 frozen; workspace blocked provider transmission before execution",
+    "phase": "Atomic extraction — Core Species Traits transport-consent halt",
     "source": "Core Species Traits — ordinal 13; 12 / 22 compile-scope sources complete",
-    "chunk": "No Core Species Traits chunk selected; accepted/rejected boundary is empty",
-    "now": "Frozen source identity, provenance, qualification boundary, and zero-embedded-media disposition are proposed; no provider call or spend occurred",
-    "next": "Halt for Asa's identity-card approval or amendment before offline scaffold and provider-eligible configuration preparation"
+    "chunk": "C0016 frozen as the representative pilot; accepted/rejected boundary is empty",
+    "now": "Approved identity and all 300 block dispositions passed offline preparation; 20 payloads fake-validated; C0016 remains frozen and untransmitted; no request, credential, or spend occurred",
+    "next": "Await explicit user confirmation that the frozen C0016 packet containing bounded repository source text may be transmitted to Anthropic"
   },
-  "next_possible_transition": "With Asa's identity-card approval, perform Core Species Traits offline preparation and representative pilot calibration under the active source grant and cumulative budget; no other source or later phase is authorized.",
+  "next_possible_transition": "After explicit transport confirmation, transmit the unchanged frozen Core Species Traits C0016 packet to Anthropic under the active source grant and cumulative budget; no other source or later phase is authorized.",
   "gate_5_complete": false
 }

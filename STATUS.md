@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 5, 2026 at 11:56:11 PM EDT<br>
+August 6, 2026 at 12:03:14 AM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Discovery formal Stopdown at repeated C0026 atomicity defect<br>
+**STATUS:** Discovery formal Stopdown with C0027 ready after C0026 ruling<br>
 **PHASE:** Atomic extraction — formally stopped during Discovery, Time, Movement, and Civic Progression<br>
 **SOURCE:** Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete<br>
-**CHUNK:** Accepted C0001-C0025; rejected C0026 v0.1 and v0.2<br>
-**NOW:** C0026 v0.2 repeated the same compound-atom defect after the source-agnostic atomicity correction; both responses and exact costs are preserved; both source-work and repository-write authorities are revoked; exact cumulative spend is $21.6224186.<br>
-**NEXT:** Await human review and a new explicit Sparkup before any repository or Discovery source work<br>
+**CHUNK:** Accepted C0001-C0026; C0027 v0.1 frozen<br>
+**NOW:** The atomicity invariant now preserves authored coordinated structures unless each split remains independently grounded and self-contained; C0026 v0.2 was accepted without another provider call; both authorities remain revoked; exact cumulative spend is $21.6224186.<br>
+**NEXT:** Await Asa's explicit Sparkup, then run focused preflight and transmit frozen C0027 v0.1<br>
 **SPEND REMAINING:** $1.80

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T23:56:11-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0026_V0_2_REPEATED_ATOMICITY_DEFECT_FORMAL_STOPDOWN",
+  "updated": "2026-08-06T00:03:14-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0027_READY_AFTER_C0026_ATOMICITY_RULING_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -57,9 +57,10 @@
       "C0022",
       "C0023",
       "C0024",
-      "C0025"
+      "C0025",
+      "C0026"
     ],
-    "rejected_chunk_id": "C0026",
+    "rejected_chunk_id": "C0027",
     "whole_source_candidate_complete": false,
     "source_work_authorized": false
   },
@@ -68,7 +69,7 @@
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0027_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -194,13 +195,18 @@
         "chunk_id": "C0025",
         "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0026",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
       "c0025_disposition_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "accepted_evidence_reasoning_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Accepted_Evidence_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0026",
+    "pilot_chunk_id": "C0027",
     "generated_chunk_count": 33,
     "target_blocks_per_chunk": 10,
     "required_target_disposition_count": 10,
@@ -212,7 +218,7 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 81,
-    "cache_miss_call_ceiling_usd": "0.183468",
+    "cache_miss_call_ceiling_usd": "0.183136",
     "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
@@ -232,15 +238,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 11:56:11 PM EDT",
-    "status": "Discovery formal Stopdown at repeated C0026 atomicity defect",
+    "updated_human": "August 6, 2026 at 12:03:14 AM EDT",
+    "status": "Discovery formal Stopdown with C0027 ready after C0026 ruling",
     "phase": "Atomic extraction — formally stopped during Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0025; rejected C0026 v0.1 and v0.2",
-    "now": "C0026 v0.2 repeated the same compound-atom defect after the source-agnostic atomicity correction; both responses and exact costs are preserved; both source-work and repository-write authorities are revoked; exact cumulative spend is $21.6224186.",
-    "next": "Await human review and a new explicit Sparkup before any repository or Discovery source work"
+    "chunk": "Accepted C0001-C0026; C0027 v0.1 frozen",
+    "now": "The atomicity invariant now preserves authored coordinated structures unless each split remains independently grounded and self-contained; C0026 v0.2 was accepted without another provider call; both authorities remain revoked; exact cumulative spend is $21.6224186.",
+    "next": "Await Asa's explicit Sparkup, then run focused preflight and transmit frozen C0027 v0.1"
   },
-  "next_possible_transition": "After human review resolves the repeated Discovery C0026 atomicity defect, Asa may explicitly Spark Up Discovery again. No repository write, source work, other source, or later phase is authorized meanwhile.",
+  "next_possible_transition": "After Asa's explicit Sparkup, run focused preflight and transmit frozen Discovery C0027 v0.1. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
@@ -252,6 +258,6 @@
     "cache_effective": true,
     "exact_cost_usd": "0.098738",
     "mechanical_passed": true,
-    "review_state": "review_failed"
+    "review_state": "review_passed"
   }
 }

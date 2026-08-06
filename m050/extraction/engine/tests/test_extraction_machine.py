@@ -375,9 +375,10 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "never samples, placeholders, or dummy `x`" in prompt
     assert "never abbreviate the target set" in prompt
     assert "Exact spans uniquely ground core assertions" in prompt
-    assert "Split independent same-subject effects, examples, actions, and results" in prompt
-    assert "keep shared predicates together" in prompt
-    assert "Keep a coordinated subject list with its shared predicate in one atom" in prompt
+    assert "Separate claims only when each remains independently grounded and self-contained" in prompt
+    assert "Preserve coordinated subjects or effects in one atom" in prompt
+    assert "share a predicate, subject, condition, or relationship" in prompt
+    assert "Split independent same-subject effects" not in prompt
     assert "A subject or label alone never grounds an\nimported predicate" in prompt
     assert "Start each normalized claim with `exact_source_text`" in prompt
     assert "minimal subject or scope needed for self-containment" in prompt

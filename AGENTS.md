@@ -93,15 +93,13 @@ Stopdown while either authority remains true. After the closing push the Worker
 makes no further repository write unless Asa explicitly grants new work.
 
 After confirming formal Stopdown, the Worker uses cross-task messaging when
-available to notify exactly one task titled `Compile Supervisor` on the same
-project and host. Send one concise message containing the source progress,
-closing commit, guard result, spend balance, and synchronization result, and
-request read-only Stopdown adjudication. The notification grants no authority.
-If exactly one matching task cannot be found, report the routing ambiguity in
-the Worker task, do not retry automatically, and do not treat notification
-failure as failure of an otherwise complete Stopdown. On receipt, the
-Supervisor verifies the Stopdown read-only, reports pass or defect, and awaits
-Asa's direction; it does not begin queued repository work automatically.
+available to send exactly `Worker has Stopped Down` to the one task titled
+`Compile Supervisor` on the same project and host. The notification grants no
+authority. If exactly one matching task cannot be found, report the ambiguity
+in the Worker task, do not retry automatically, and do not invalidate the
+Stopdown. On receipt, the Supervisor adjudicates the Stopdown read-only,
+reports pass or defect, and awaits Asa's direction; it does not begin queued
+repository work automatically.
 
 ## Phase model
 

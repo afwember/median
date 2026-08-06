@@ -11,9 +11,9 @@
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
     "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
-    "pilot_chunk_id": "C0021",
-    "pilot_packet_sha256": "a193c538d2741c6ba44f3ba111d799ed1b25a209d3edaa1053210c5f5238d547",
-    "pilot_packet_file_sha256": "9e3340b676a0d4c9e9a3a618da950d0b9bc7f3903d7a7f565ee448336027920e",
+    "pilot_chunk_id": "C0024",
+    "pilot_packet_sha256": "677e86b0cb03c3f2a4d1fc42bf1d7487568568a1e72409dbd53280f7ea839fdb",
+    "pilot_packet_file_sha256": "40dcd4a41f14a9e9da47c04e44f5eb4b99098b4895f279e1fcd282480b24bfc7",
     "prompt_sha256": "5db6dff1886216d475511564225549d128ec7f479a43dec65175b5a12fcf6c0d",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
     "engine_module_sha256": "3a6eeec35476f21bf957d619683e86e1df16dab89510f8b6053c38569eb86615",
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0021 v0.1 was rejected for adding a parenthetical gloss. The existing generic prompt now uses one conservative normalization rule, and C0021 v0.2 is the next outstanding source-derived chunk in sequential order.",
-    "required_target_disposition_count": 10,
-    "cache_miss_call_ceiling_usd": "0.184816"
+    "selection_reason": "C0021 v0.2, C0022 v0.1, and C0023 v0.1 passed sequential mechanical and substantive review. C0024 v0.1 is the next outstanding source-derived chunk and remains untransmitted because its conservative cache-miss ceiling exceeds the remaining cumulative budget.",
+    "required_target_disposition_count": 4,
+    "cache_miss_call_ceiling_usd": "0.169424"
   },
   "exclusion_policy": {
     "media_occurrences": 0,

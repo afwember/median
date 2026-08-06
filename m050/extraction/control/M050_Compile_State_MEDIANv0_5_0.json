@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T18:29:58-04:00",
-  "execution_state": "GDD_COVERAGE_GAP_C0007_RETRY_TRANSPORT_BLOCKED",
+  "updated": "2026-08-06T18:35:04-04:00",
+  "execution_state": "GDD_COVERAGE_GAP_C0007_V0_2_PROVIDER_CREDIT_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -46,7 +46,7 @@
     ],
     "rejected_chunk_id": "C0007",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_GDD_Coverage_Gap_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -118,8 +118,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -127,15 +127,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 6:29:58 PM EDT",
-    "status": "GDD Coverage-Gap extraction active; spend replenished",
-    "phase": "Atomic extraction — GDD Coverage-Gap sequential run",
+    "updated_human": "August 6, 2026 at 6:35:04 PM EDT",
+    "status": "GDD Coverage-Gap formally stopped at the C0007 provider-credit boundary",
+    "phase": "Atomic extraction — GDD Coverage-Gap temporary Supervisor handoff",
     "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 15 / 22 compile-scope sources complete",
     "chunk": "C0001–C0006 accepted; C0007 v0.1 rejected; C0007 v0.2 frozen but blocked by provider credit exhaustion; 20 targets selected",
     "now": "C0007 v0.2 received HTTP 400 before inference because Anthropic credits are exhausted; reconciled at $0, with exact cumulative spend $28.5937010 and $1.3452732 remaining",
-    "next": "Halt until Anthropic credits are restored, then preflight and retry the unchanged frozen C0007 v0.2 packet"
+    "next": "Await Asa's explicit Sparkup after Anthropic credits are restored; both repository-write and source-work authority are false"
   },
-  "next_possible_transition": "After Anthropic credits are restored, preflight and retry the unchanged frozen C0007 v0.2 packet under the active source grant and cumulative budget.",
+  "next_possible_transition": "After Anthropic credits are restored, Asa may explicitly restore repository-write and GDD Coverage-Gap source-work authority to retry the unchanged frozen C0007 v0.2 packet.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 400,

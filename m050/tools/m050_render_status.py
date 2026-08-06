@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import stat
@@ -75,7 +76,31 @@ def render_status(
     return rendered
 
 
+def check_status(
+    state_path: Path = STATE,
+    status_path: Path = STATUS,
+) -> bool:
+    """Return whether STATUS matches canonical state without changing either file."""
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    if not isinstance(state, dict):
+        raise ValueError("canonical compile state must be a JSON object")
+    return status_path.read_text(encoding="utf-8") == expected_status(state)
+
+
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="verify STATUS.md against canonical state without writing",
+    )
+    args = parser.parse_args()
+    if args.check:
+        if check_status():
+            print("STATUS.md matches canonical compile state.")
+            return 0
+        print("STATUS.md does not match canonical compile state.")
+        return 1
     render_status()
     print("STATUS.md refreshed from canonical compile state.")
     return 0

@@ -1,0 +1,60 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-GDD-COVERAGE-GAP-C0001-PILOT-FREEZE-005",
+  "state": "pilot_review_passed_spend_boundary_halt",
+  "machine_state": "pilot_review_passed_spend_boundary_halt",
+  "binding": {
+    "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
+    "source_sha256": "15af505d60383e5c47215b7c21b9016eb56e29920e71373d3c0f0c09ad95a225",
+    "configuration_sha256": "2f19977ca7554311cdd4ba61bf888df3c1d819219c0d4e4e6c9f1e9ef3bf4ef9",
+    "identity_card_sha256": "9e5d887baef7a1958aa355cb38e779eedd97f8353759bec1a2c8a17d4231ac63",
+    "block_manifest_sha256": "9f056891307db24fa516fb22637885bb8f3e89d56d1da73256d593b6e9e0e257",
+    "disposition_ledger_sha256": "a20e9fbbc5ce67bda2291ec01fd0cc17279e10b31f79152ff551d3c308a338b4",
+    "chunk_plan_sha256": "42b72b5da73d08b83c0c89cc1a973ede6246f04e686eef59bb86783df08637de",
+    "pilot_chunk_id": "C0001",
+    "pilot_packet_sha256": "7d5016e5930e37ac1b5f93c2e1c872cb924d8d421ce0235b42b3ed04309388af",
+    "pilot_packet_file_sha256": "1bbcdc118d3973e8a75a41c8ba777b9c1cb1349cbb145d0cf7aa520cfa058279",
+    "prompt_sha256": "efbec4dff0bb8bedca3ab17c03a0f61a636ee7b98858c0b31075fe5d4566ec92",
+    "response_schema_sha256": "45c543e469738f42e297a42f051d725941bfd3ed0e0ebcf6af83ef8f45c5a918",
+    "engine_module_sha256": "ba0434a37aaebbbcb9ed1fa8993a77f279888c300745bc7c4bd34fdf386fa12b",
+    "engine_tests_sha256": "f58d0379bfdc3e9cb05718938894142908e4c18861b59564486f8023aa3c5a74",
+    "allowed_streams": ["evidence_game_semantic"],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 24000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0001 v0.4 mechanically passed but exposed a contradictory normalized-claim instruction; v0.5 replaces that clause in place.",
+    "required_target_disposition_count": 14,
+    "cache_miss_call_ceiling_usd": "0.337228"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_13_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 83,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 13,
+    "chunk_count_is_input": false,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "provider_call_made": true,
+    "c0001_mechanical_and_substantive_review_passed": true
+  }
+}

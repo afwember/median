@@ -554,7 +554,7 @@ Unresolved targets get `review_required`; never abbreviate the target set.
 
 Separate claims only when each remains independently grounded and self-contained. Exact spans uniquely ground core assertions. Preserve coordinated subjects or effects in one atom when they share a predicate, subject, condition, or relationship
 unless every split has a contiguous span containing its own subject and predicate. A subject or label alone never grounds an
-imported predicate. Start each normalized claim with `exact_source_text`. For self-containment,
+imported predicate. Anchor each normalized claim in `exact_source_text`. For self-containment,
 resolve pronouns and subjectless exact-text prefixes to explicit governing subjects; parent headings
 may supply only necessary status or scope.
 Never paraphrase, gloss, define, compare, infer, or complete implied meaning;
@@ -578,7 +578,8 @@ actions, and results. Combine cells only when one qualifies
 another or the relationship is indivisible. Preserve both endpoints of
 categorical mappings.
 Ground each headed cell under its header; never infer a relationship between
-adjacent cells. No exact span crosses a semicolon; each side gets its own atom.
+adjacent cells. Table-cell exact spans stop before or start after semicolons;
+never cross them.
 Copy every authored slash into the normalized claim; never replace it with a word unless the source defines that meaning.
 Each independent table-cell assertion requires exact source text from its own
 cell; never ground a ruling or consequence only in another cell.

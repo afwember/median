@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "HALTED",
-  "updated": "2026-08-06T16:37:41-04:00",
-  "execution_state": "ECOLOGY_SOURCE_COMPLETE_STOPDOWN",
+  "updated": "2026-08-06T17:45:13-04:00",
+  "execution_state": "GDD_COVERAGE_GAP_C0001_ACCEPTED_SPEND_BOUNDARY_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -33,93 +33,62 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-ECOLOGY-001",
-    "label": "Ecology",
-    "compile_ordinal": 15,
+    "id": "M050-SRC-GDD-COVERAGE-GAP-001",
+    "label": "v0.4.6 GDD Coverage-Gap Development",
+    "compile_ordinal": 16,
     "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006"
+      "C0001"
     ],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_Ecology_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/ecology/M050_Ecology_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_Ecology_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0006_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "configuration": "m050/extraction/control/M050_GDD_Coverage_Gap_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/gdd-coverage-gap/M050_GDD_Coverage_Gap_C0001_Pilot_Freeze_Proposal_v0_5_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_GDD_Coverage_Gap_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0001_Call_Packet_v0_5_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/ecology-pilot/M050_Ecology_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0001_Outcome_v0_5_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
-    "compatibility_replays": {},
-    "pilot_chunk_id": "C0006",
-    "generated_chunk_count": 6,
+    "compatibility_replays": {
+      "c0001_output_ceiling_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Output_Ceiling_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0001_semicolon_prompt_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Semicolon_Prompt_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0001_medium_reasoning_calibration": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0001_normalized_claim_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Normalized_Claim_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+    },
+    "pilot_chunk_id": "C0001",
+    "generated_chunk_count": 13,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 5,
-    "source_blocks": 266,
-    "eligible_target_blocks": 98,
-    "context_only_blocks": 26,
-    "excluded_blocks": 142,
+    "required_target_disposition_count": 14,
+    "source_blocks": 815,
+    "eligible_target_blocks": 251,
+    "context_only_blocks": 56,
+    "excluded_blocks": 508,
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 83,
-    "cache_miss_call_ceiling_usd": "0.291796",
-    "latest_outcome": "m050/extraction/runs/ecology-pilot/M050_Ecology_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/ecology/M050_Ecology_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "6b8c9587eca00b917d43dbda057b1c93dbe86407262adbcf0d2ffed1f7e3af56",
-      "report": "m050/extraction/accepted/ecology/M050_Ecology_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "60d01709688d1546d4120c6de56b823f95e7a99af96e978b40f0bb4fca377f87"
-    }
+    "cache_miss_call_ceiling_usd": "0.337228",
+    "latest_outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0001_Outcome_v0_5_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "28.2427722",
-    "cumulative_spent_usd": "27.3665966",
-    "remaining_usd": "0.8761756",
-    "display_usd_rounded_up": "27.37",
+    "cumulative_spent_usd": "27.9389742",
+    "remaining_usd": "0.3037980",
+    "display_usd_rounded_up": "27.94",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -127,25 +96,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 4:37:41 PM EDT",
-    "status": "Ecology source candidate accepted; formal Stopdown",
-    "phase": "Atomic extraction — Ecology source completion",
-    "source": "Ecology — ordinal 15; 15 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0006 accepted; 98 / 98 targets covered; 178-atom candidate accepted",
-    "now": "Whole-source coverage and extraction-quality review passed; exact cumulative spend $27.3665966 with $0.8761756 remaining; both Worker authorities revoked",
-    "next": "Halt after closing commit and push; the next source requires a new explicit source-work grant"
+    "updated_human": "August 6, 2026 at 5:45:13 PM EDT",
+    "status": "GDD Coverage-Gap C0001 accepted; spend boundary halt",
+    "phase": "Atomic extraction — GDD Coverage-Gap mid-source budget halt",
+    "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 15 / 22 compile-scope sources complete",
+    "chunk": "C0001 accepted after four preserved rejected attempts; 20 / 251 targets covered; C0002 untransmitted",
+    "now": "C0001 mechanical and substantive review passed; exact cumulative spend $27.9389742 with $0.3037980 remaining",
+    "next": "Halt because the remaining balance cannot cover C0002's $0.327612 conservative cache-miss ceiling"
   },
-  "next_possible_transition": null,
+  "next_possible_transition": "Increase the active cumulative spend authorization enough to cover C0002's $0.327612 conservative ceiling; then prepare, freeze, preflight, and transmit C0002 under the existing source grant.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0006",
+    "chunk_id": "C0001",
     "stop_reason": "end_turn",
-    "output_tokens": 3369,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3052,
+    "output_tokens": 11432,
+    "cache_creation_input_tokens": 3074,
+    "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.0386984",
+    "exact_cost_usd": "0.143616",
     "mechanical_passed": true,
     "review_state": "review_passed"
   }

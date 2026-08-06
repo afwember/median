@@ -1,0 +1,60 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-GDD-COVERAGE-GAP-C0001-PILOT-FREEZE-004",
+  "state": "frozen_ready_for_provider_call",
+  "machine_state": "sequential_run_ready",
+  "binding": {
+    "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
+    "source_sha256": "15af505d60383e5c47215b7c21b9016eb56e29920e71373d3c0f0c09ad95a225",
+    "configuration_sha256": "9a003c3c946b9bb029e9a1b7aefbe90b9a23a97c9f292b18d759eaeab88c2f77",
+    "identity_card_sha256": "9e5d887baef7a1958aa355cb38e779eedd97f8353759bec1a2c8a17d4231ac63",
+    "block_manifest_sha256": "9f056891307db24fa516fb22637885bb8f3e89d56d1da73256d593b6e9e0e257",
+    "disposition_ledger_sha256": "a20e9fbbc5ce67bda2291ec01fd0cc17279e10b31f79152ff551d3c308a338b4",
+    "chunk_plan_sha256": "42b72b5da73d08b83c0c89cc1a973ede6246f04e686eef59bb86783df08637de",
+    "pilot_chunk_id": "C0001",
+    "pilot_packet_sha256": "463e727746372a585559a7a5497c0bafee492e5a6520ad2416f44838a3e8213f",
+    "pilot_packet_file_sha256": "0705cc12306ada560799abfef3c50f4a22d917da4bcd6cccdccf2d50ed4045e4",
+    "prompt_sha256": "7894c51d6bd9b7f7affdc6371d76691b79a7cc0476ff704422ad1607cd6fd036",
+    "response_schema_sha256": "45c543e469738f42e297a42f051d725941bfd3ed0e0ebcf6af83ef8f45c5a918",
+    "engine_module_sha256": "79fc12b09f87729ed2350dc2227d6bd476f09a37284aa54f650c44fb6e7c0beb",
+    "engine_tests_sha256": "0b7792a922d3d969d96d46b67a3be3fb2a36e669c24eaf553444b4e65759ddb2",
+    "allowed_streams": ["evidence_game_semantic"],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 24000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0001 v0.3 repeated the same semicolon adherence defect; v0.4 changes only existing reasoning effort from low to medium.",
+    "required_target_disposition_count": 14,
+    "cache_miss_call_ceiling_usd": "0.337232"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_13_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 83,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 13,
+    "chunk_count_is_input": false,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "provider_call_made": false,
+    "c0001_mechanical_and_substantive_review_passed": false
+  }
+}

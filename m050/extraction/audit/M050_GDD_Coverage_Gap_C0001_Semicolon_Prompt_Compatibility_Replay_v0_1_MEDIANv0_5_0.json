@@ -1,0 +1,28 @@
+{
+  "schema_version": "M050-EXTRACTION-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-GDD-COVERAGE-GAP-C0001-SEMICOLON-PROMPT-COMPATIBILITY-001",
+  "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
+  "chunk_id": "C0001",
+  "purpose": "Verify the in-place generic table-cell semicolon clarification without changing validation, target membership, schema, or any accepted evidence.",
+  "binding": {
+    "configuration_sha256": "93768b58dd502dea21e258a0f9782ef6d84c1a96cbbb0f6b160764d3ea704068",
+    "chunk_plan_sha256": "42b72b5da73d08b83c0c89cc1a973ede6246f04e686eef59bb86783df08637de",
+    "disposition_ledger_sha256": "a20e9fbbc5ce67bda2291ec01fd0cc17279e10b31f79152ff551d3c308a338b4",
+    "prompt_sha256": "7894c51d6bd9b7f7affdc6371d76691b79a7cc0476ff704422ad1607cd6fd036",
+    "response_schema_sha256": "45c543e469738f42e297a42f051d725941bfd3ed0e0ebcf6af83ef8f45c5a918",
+    "preserved_rejected_outcome_sha256": "1c43cfe13657929214f057a90dfa6931829e3fb7202a80e67bf4d4647af19b7e"
+  },
+  "result": {
+    "preserved_rejection_unchanged": true,
+    "target_membership_unchanged": true,
+    "all_13_chunks_fake_validated": true,
+    "exact_ordered_target_count": 251,
+    "all_source_structural_compatibility_passed": true,
+    "offline_tests_passed": 83,
+    "active_prompt_matches_generic_builder": true,
+    "schema_errors": 0,
+    "coverage_errors": 0,
+    "grounding_errors": 0
+  },
+  "status": "PASS"
+}

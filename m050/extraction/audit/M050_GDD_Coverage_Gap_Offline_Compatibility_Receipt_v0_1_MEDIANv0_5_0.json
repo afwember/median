@@ -1,0 +1,64 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-GDD-COVERAGE-GAP-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-06",
+  "status": "GDD_COVERAGE_GAP_OFFLINE_PREPARATION_COMPATIBLE",
+  "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
+  "binding": {
+    "configuration_sha256": "2f19977ca7554311cdd4ba61bf888df3c1d819219c0d4e4e6c9f1e9ef3bf4ef9",
+    "prompt_sha256": "efbec4dff0bb8bedca3ab17c03a0f61a636ee7b98858c0b31075fe5d4566ec92",
+    "engine_module_sha256": "ba0434a37aaebbbcb9ed1fa8993a77f279888c300745bc7c4bd34fdf386fa12b",
+    "engine_tests_sha256": "f58d0379bfdc3e9cb05718938894142908e4c18861b59564486f8023aa3c5a74"
+  },
+  "source_review": {
+    "source_blocks": 815,
+    "eligible_targets": 251,
+    "context_only_blocks": 56,
+    "excluded_blocks": 508,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 13,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 1131,
+    "representative_pilot_chunk_id": "C0001",
+    "pilot_selection_basis": "C0001 combines full target density with source qualification boundaries, prose, callouts, list items, and table structures."
+  },
+  "offline_verification": {
+    "all_13_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 83,
+    "all_source_structural_compatibility_passed": true,
+    "active_source_guard_ready": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true
+  },
+  "replays": {
+    "c0001_output_ceiling_correction": {
+      "sha256": "5e4793b432397baf291e7f2953d7b3cbb0aeb0f7451f1bbcb11f14212c43a1d8",
+      "result": "all_13_chunks_fake_validated_with_exact_target_membership_and_all_source_compatibility"
+    },
+    "c0001_semicolon_prompt_correction": {
+      "sha256": "ccdb6628f49f482f2dcfc936f5335e3e86af8f8d500f4cd68c3f176e786e7633",
+      "result": "preserved_rejection_unchanged_and_all_source_compatibility_passed"
+    },
+    "c0001_medium_reasoning_calibration": {
+      "sha256": "803445d9a296c5ed7cf23f1888d987e63f6094a8c4d9f35705153acec2200867",
+      "result": "all_source_bindings_and_stable_output_schema_cache_boundary_preserved"
+    },
+    "c0001_normalized_claim_correction": {
+      "sha256": "1fd72ae0aba22d4399d37469d31b24d7e4b43e3e2af6b0151527f036157b733a",
+      "result": "contradictory_verbatim_start_clause_replaced_and_all_source_compatibility_passed"
+    }
+  }
+}

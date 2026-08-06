@@ -73,7 +73,7 @@ completed offline and replay gates, sequential review, and sufficient budget.
 
 ## Extraction contract
 
-Separate claims. Exact spans uniquely ground core assertions. Keep a coordinated subject list with its shared predicate in one atom
+Separate claims. Split independent same-subject effects, examples, actions, and results; keep shared predicates together. Exact spans uniquely ground core assertions. Keep a coordinated subject list with its shared predicate in one atom
 unless each split atom has a contiguous span containing both its subject and predicate. A subject or label alone never grounds an
 imported predicate. Start each normalized claim with `exact_source_text`; add only a
 minimal subject or scope needed for self-containment, copied exactly from the target block or

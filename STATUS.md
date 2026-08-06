@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 5, 2026 at 11:24:03 PM EDT<br>
+August 5, 2026 at 11:41:00 PM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** Discovery halted at C0024 spend boundary<br>
-**PHASE:** Atomic extraction — budget halt during Discovery, Time, Movement, and Civic Progression<br>
+**STATUS:** Discovery halted on repeated C0026 atomicity defect<br>
+**PHASE:** Atomic extraction — defect halt during Discovery, Time, Movement, and Civic Progression<br>
 **SOURCE:** Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete<br>
-**CHUNK:** Accepted C0001-C0023 and C0025; no rejected chunk<br>
-**NOW:** C0023 v0.1 passed mechanical and substantive review; C0024 v0.1 is frozen and untransmitted, but its $0.169424 conservative ceiling exceeds the exact $0.1503962 remaining balance; both bounded authorities remain active.<br>
-**NEXT:** Await sufficient cumulative spend authorization before C0024 preflight and transmission<br>
-**SPEND REMAINING:** $0.15
+**CHUNK:** Accepted C0001-C0025; rejected C0026 v0.1 and v0.2<br>
+**NOW:** C0026 v0.2 repeated the same compound-atom defect after the source-agnostic atomicity correction; both responses and exact costs are preserved; exact cumulative spend is $21.6224186 and both bounded authorities remain active.<br>
+**NEXT:** Await human review of the repeated C0026 atomicity defect; do not retry or advance<br>
+**SPEND REMAINING:** $1.80

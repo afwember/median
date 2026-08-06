@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
     "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
-    "configuration_sha256": "da6a654c1bedddc7ec3bbb35483b906852290071167cc0ed3f24ec8a1f429585",
+    "configuration_sha256": "6de9c0b15f986bbda3a2cec738b3972c9aa4207274f869440cd5c6f80a5f27de",
     "identity_card_sha256": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
     "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
-    "pilot_chunk_id": "C0024",
-    "pilot_packet_sha256": "677e86b0cb03c3f2a4d1fc42bf1d7487568568a1e72409dbd53280f7ea839fdb",
-    "pilot_packet_file_sha256": "40dcd4a41f14a9e9da47c04e44f5eb4b99098b4895f279e1fcd282480b24bfc7",
-    "prompt_sha256": "5db6dff1886216d475511564225549d128ec7f479a43dec65175b5a12fcf6c0d",
+    "pilot_chunk_id": "C0026",
+    "pilot_packet_sha256": "5e4e6b7db1dc763b20837f9b21f0394aa6b087720236b0e810ade7a81e248f12",
+    "pilot_packet_file_sha256": "a670a2c7e25c81a69b0a38528f9cdc685bcf925d57f136517e7507c5dd6b7b4b",
+    "prompt_sha256": "31050da6fc0dcc857ef1383910b1ac20bd300df0f553b034e35eb63fa62c109e",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
-    "engine_module_sha256": "3a6eeec35476f21bf957d619683e86e1df16dab89510f8b6053c38569eb86615",
-    "engine_tests_sha256": "3916d77ba49a500956c42144496149bb510bbb11d92d477e693135ce762b64f0",
+    "engine_module_sha256": "a8f2354fe9643c303f827ce370ad52c020a876039c3fb07a709db6f55aea48d9",
+    "engine_tests_sha256": "f34df07b9a6345704cd61e9c7f15881fb0dd69c2f7aec53b4874ac5de5d7b94b",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0021 v0.2, C0022 v0.1, and C0023 v0.1 passed sequential mechanical and substantive review. C0024 v0.1 is the next outstanding source-derived chunk and remains untransmitted because its conservative cache-miss ceiling exceeds the remaining cumulative budget.",
-    "required_target_disposition_count": 4,
-    "cache_miss_call_ceiling_usd": "0.169424"
+    "selection_reason": "C0026 v0.1 was substantively rejected for bundling independent same-subject effects and examples. After the generic atomicity correction and accepted-evidence replay, C0026 v0.2 repeated the same defect. Both attempts are preserved and further calls are halted for human review.",
+    "required_target_disposition_count": 10,
+    "cache_miss_call_ceiling_usd": "0.183468"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -71,7 +71,7 @@
     "output_allowance_12000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0018_v0_1_subject_only_shared_predicate_rejection_preserved": true,
     "coordinated_subject_shared_predicate_prompt_correction_passed": true,
-    "all_21_accepted_evidence_active_prompt_compatibility_replay_passed": true,
+    "all_25_accepted_evidence_active_prompt_compatibility_replay_passed": true,
     "c0018_v0_2_mechanical_and_substantive_review_passed": true,
     "c0019_v0_1_mid_output_bio_refusal_preserved": true,
     "sonnet_5_clean_completion_count_before_refusal": 257,
@@ -79,6 +79,7 @@
     "single_same_packet_provider_refusal_retry_gate_passed": true,
     "second_c0019_refusal_requires_halt": true,
     "c0020_v0_1_unstated_comparison_target_rejection_preserved": true,
-    "conservative_normalization_prompt_correction_passed": true
+    "conservative_normalization_prompt_correction_passed": true,
+    "independent_same_subject_atomicity_prompt_correction_passed": true
   }
 }

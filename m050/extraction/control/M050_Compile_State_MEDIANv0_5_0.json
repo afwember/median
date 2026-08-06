@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-05T23:24:03-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0024_V0_1_FROZEN_BUDGET_HALT_ACTIVE",
+  "updated": "2026-08-05T23:41:00-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0026_V0_2_REPEATED_ATOMICITY_DEFECT_HALT_ACTIVE",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -56,9 +56,10 @@
       "C0021",
       "C0022",
       "C0023",
+      "C0024",
       "C0025"
     ],
-    "rejected_chunk_id": null,
+    "rejected_chunk_id": "C0026",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -67,7 +68,7 @@
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0024_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -185,6 +186,11 @@
         "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       },
       {
+        "chunk_id": "C0024",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0024_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
         "chunk_id": "C0025",
         "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
@@ -194,7 +200,7 @@
       "c0025_disposition_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "accepted_evidence_reasoning_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Accepted_Evidence_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0024",
+    "pilot_chunk_id": "C0026",
     "generated_chunk_count": 33,
     "target_blocks_per_chunk": 10,
     "required_target_disposition_count": 10,
@@ -206,15 +212,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 81,
-    "cache_miss_call_ceiling_usd": "0.169424",
-    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0023_Outcome_v0_1_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.183468",
+    "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0026_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "21.5731716",
-    "cumulative_spent_usd": "21.4227754",
-    "remaining_usd": "0.1503962",
-    "display_usd_rounded_up": "21.43"
+    "authorized_usd": "23.4227754",
+    "cumulative_spent_usd": "21.6224186",
+    "remaining_usd": "1.8003568",
+    "display_usd_rounded_up": "21.63"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -226,26 +232,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 5, 2026 at 11:24:03 PM EDT",
-    "status": "Discovery halted at C0024 spend boundary",
-    "phase": "Atomic extraction — budget halt during Discovery, Time, Movement, and Civic Progression",
+    "updated_human": "August 5, 2026 at 11:41:00 PM EDT",
+    "status": "Discovery halted on repeated C0026 atomicity defect",
+    "phase": "Atomic extraction — defect halt during Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0023 and C0025; no rejected chunk",
-    "now": "C0023 v0.1 passed mechanical and substantive review; C0024 v0.1 is frozen and untransmitted, but its $0.169424 conservative ceiling exceeds the exact $0.1503962 remaining balance; both bounded authorities remain active.",
-    "next": "Await sufficient cumulative spend authorization before C0024 preflight and transmission"
+    "chunk": "Accepted C0001-C0025; rejected C0026 v0.1 and v0.2",
+    "now": "C0026 v0.2 repeated the same compound-atom defect after the source-agnostic atomicity correction; both responses and exact costs are preserved; exact cumulative spend is $21.6224186 and both bounded authorities remain active.",
+    "next": "Await human review of the repeated C0026 atomicity defect; do not retry or advance"
   },
-  "next_possible_transition": "After sufficient cumulative spend authorization, run focused preflight and process frozen Discovery C0024 v0.1. No other source or later phase is authorized.",
+  "next_possible_transition": "After human review resolves the repeated Discovery C0026 atomicity defect, refreeze or otherwise proceed only within the existing source grant. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0023",
+    "chunk_id": "C0026",
     "stop_reason": "end_turn",
-    "output_tokens": 4433,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3088,
+    "output_tokens": 7846,
+    "cache_creation_input_tokens": 3117,
+    "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.0517696",
+    "exact_cost_usd": "0.098738",
     "mechanical_passed": true,
-    "review_state": "review_passed"
+    "review_state": "review_failed"
   }
 }

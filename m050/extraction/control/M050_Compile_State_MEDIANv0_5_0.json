@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "HALTED",
-  "updated": "2026-08-06T13:52:04-04:00",
-  "execution_state": "CROSS_SYSTEM_CARRYFORWARD_C0010_V0_3_REPEATED_DEFECT_HALT",
+  "updated": "2026-08-06T14:15:11-04:00",
+  "execution_state": "CROSS_SYSTEM_CARRYFORWARD_SOURCE_COMPLETE_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 9,
-    "outstanding_pre_reconciliation_sources": 5,
+    "outstanding_compile_scope_sources": 8,
+    "outstanding_pre_reconciliation_sources": 4,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -27,7 +27,8 @@
       "M050-SRC-GUEST-001",
       "M050-SRC-PERSONAL-ITEMS-001",
       "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
-      "M050-SRC-CORE-TRAITS-001"
+      "M050-SRC-CORE-TRAITS-001",
+      "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001"
     ]
   },
   "source": {
@@ -43,18 +44,22 @@
       "C0006",
       "C0007",
       "C0008",
-      "C0009"
+      "C0009",
+      "C0010",
+      "C0011",
+      "C0012",
+      "C0013"
     ],
-    "rejected_chunk_id": "C0010",
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "rejected_chunk_id": null,
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Cross_System_Carryforward_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Cross_System_Carryforward_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Call_Packet_v0_3_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0013_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -100,13 +105,33 @@
         "chunk_id": "C0009",
         "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0010",
+        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0011",
+        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0012",
+        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0012_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0013",
+        "outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {},
-    "pilot_chunk_id": "C0010",
+    "pilot_chunk_id": "C0013",
     "generated_chunk_count": 13,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
+    "required_target_disposition_count": 12,
     "source_blocks": 646,
     "eligible_target_blocks": 233,
     "context_only_blocks": 63,
@@ -115,21 +140,27 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 83,
-    "cache_miss_call_ceiling_usd": "0.351696",
-    "latest_outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Outcome_v0_3_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.307284",
+    "latest_outcome": "m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "a203193b2c5f57e2131c0f617a24d4ce4653ee0e2b743df389feb3384ca6f373",
+      "report": "m050/extraction/accepted/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "909600cfee12002785490bb9dbdafaac53132e5defb7369afe3d931f1eebc241"
+    }
   },
   "spend": {
     "active": true,
     "authorized_usd": "28.2427722",
-    "cumulative_spent_usd": "26.4150122",
-    "remaining_usd": "1.8277600",
-    "display_usd_rounded_up": "26.42",
+    "cumulative_spent_usd": "26.6195466",
+    "remaining_usd": "1.6232256",
+    "display_usd_rounded_up": "26.62",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -137,26 +168,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 1:52:04 PM EDT",
-    "status": "v0.4.7 Cross-System Carryforward halted at rejected C0010 v0.3 repeated defect",
+    "updated_human": "August 6, 2026 at 2:15:11 PM EDT",
+    "status": "v0.4.7 Cross-System Carryforward source candidate accepted; formal Stopdown",
     "phase": "Atomic extraction — v0.4.7 Cross-System Carryforward representative pilot",
-    "source": "v0.4.7 Cross-System Carryforward — ordinal 14; 13 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0009 accepted; C0010 v0.1, v0.2, and v0.3 rejected; C0011–C0013 unprocessed",
-    "now": "C0010 v0.3 mechanically passed but repeated the prohibited cross-block lead-in import after the validated own-text-only correction; exact cost $0.172240 reconciled; $1.8277600 remains",
-    "next": "Halt for human review of the repeated C0010 normalization defect; do not retry or advance to C0011"
+    "source": "v0.4.7 Cross-System Carryforward — ordinal 14; 14 / 22 compile-scope sources complete",
+    "chunk": "C0001–C0013 accepted; 233 / 233 targets covered; 326-atom candidate accepted",
+    "now": "Whole-source coverage and extraction-quality review passed; exact cumulative spend $26.6195466 with $1.6232256 remaining; both Worker authorities revoked",
+    "next": "Halt after closing commit and push; Ecology requires a new explicit source-work grant"
   },
-  "next_possible_transition": "After human review, either authorize a bounded resolution for the preserved C0010 defect or direct a structural/mandate change; no further call or later chunk is currently permitted.",
+  "next_possible_transition": "After a new explicit source-work grant and cold start, prepare Ecology identity; no later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0010",
+    "chunk_id": "C0013",
     "stop_reason": "end_turn",
-    "output_tokens": 13943,
-    "cache_creation_input_tokens": 3104,
-    "cache_read_input_tokens": 0,
+    "output_tokens": 3902,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3141,
     "cache_effective": true,
-    "exact_cost_usd": "0.172240",
+    "exact_cost_usd": "0.0479342",
     "mechanical_passed": true,
-    "review_state": "review_failed"
+    "review_state": "review_passed"
   }
 }

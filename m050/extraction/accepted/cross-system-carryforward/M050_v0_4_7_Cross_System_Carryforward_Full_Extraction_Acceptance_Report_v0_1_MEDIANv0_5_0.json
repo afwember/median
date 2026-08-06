@@ -1,0 +1,44 @@
+{
+  "report_version": "M050-047-CROSS-SYSTEM-CARRYFORWARD-ACCEPTANCE-0.1",
+  "status": "ACCEPTED_EXTRACTION_CANDIDATE_READY_FOR_CORPUS_RECONCILIATION",
+  "source_id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
+  "source_sha256": "239d5ab903d1d4d295503201c747c7427166cc9e4fcdd4c1f61e145b14ed0dbc",
+  "accepted_chunk_ids": [
+    "C0001", "C0002", "C0003", "C0004", "C0005", "C0006", "C0007",
+    "C0008", "C0009", "C0010", "C0011", "C0012", "C0013"
+  ],
+  "chunks": 13,
+  "target_dispositions": 233,
+  "candidate_atoms": 326,
+  "no_substantive_claim_dispositions": 51,
+  "whole_document_review": {
+    "source_blocks": 646,
+    "eligible_target_blocks": 233,
+    "context_only_blocks": 63,
+    "excluded_blocks": 350,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "media_occurrences": 0,
+    "extraction_quality_review_passed": true,
+    "unresolved_review_required_blocks": 0
+  },
+  "accepted_inputs": [
+    {"chunk_id":"C0001","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0001_Outcome_v0_2_MEDIANv0_5_0.json","outcome_sha256":"0ea7932fcea19cb02cb0878cd49ea6bfef04b55f3a3e7beab6019b9b5229c1d3","review_event_id":"evt_04ea4ed4f6cf295481aed9f8","review_event_outcome_sha256":"0ea7932fcea19cb02cb0878cd49ea6bfef04b55f3a3e7beab6019b9b5229c1d3"},
+    {"chunk_id":"C0002","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0002_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"be4b1bfb9e7e74ac9d321a8e8f0603884ae2f34afd96af62d36d9eb30cef894b","review_event_id":"evt_66771b28e1b3a850aff7a4ce","review_event_outcome_sha256":"be4b1bfb9e7e74ac9d321a8e8f0603884ae2f34afd96af62d36d9eb30cef894b"},
+    {"chunk_id":"C0003","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0003_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"205a2c1e6655d6b107c393ed7771b10e4956a7560fb1a0693158f83832c6e872","review_event_id":"evt_96cbc4b989f82369164bfded","review_event_outcome_sha256":"205a2c1e6655d6b107c393ed7771b10e4956a7560fb1a0693158f83832c6e872"},
+    {"chunk_id":"C0004","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0004_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"f5cf2c63b15874f3ce3dc9c2955297c485f0d6ab3f2713a14909da41cf4baa2c","review_event_id":"evt_8ba34ca24e58ca0ee1da3b1b","review_event_outcome_sha256":"f5cf2c63b15874f3ce3dc9c2955297c485f0d6ab3f2713a14909da41cf4baa2c"},
+    {"chunk_id":"C0005","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0005_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"cac570e2fa3a3c6cad2e1eff62db4442d0ebe208e4cc6467b3f0db5edb8e8e41","review_event_id":"evt_bdbee4d022f4b99473f87caf","review_event_outcome_sha256":"cac570e2fa3a3c6cad2e1eff62db4442d0ebe208e4cc6467b3f0db5edb8e8e41"},
+    {"chunk_id":"C0006","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0006_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"d2bdbd7790094b5d102ef5bd0b536b44e122c93e5bbd8ff6800918d7c10e1295","review_event_id":"evt_3718cd690cf89f4896e7abb4","review_event_outcome_sha256":"d2bdbd7790094b5d102ef5bd0b536b44e122c93e5bbd8ff6800918d7c10e1295"},
+    {"chunk_id":"C0007","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0007_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"a532a6fa590f6b2ecf7ce133b95df8ca12e2d522a32575759495d96ef9e3510f","review_event_id":"evt_48f456428d7175cfa297ecde","review_event_outcome_sha256":"a532a6fa590f6b2ecf7ce133b95df8ca12e2d522a32575759495d96ef9e3510f"},
+    {"chunk_id":"C0008","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0008_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"17949337691b8605810d3c68c6b57866fc75bcf4dedee481951831c1b91461e9","review_event_id":"evt_6b7e91e7cfaef8d01bb52143","review_event_outcome_sha256":"17949337691b8605810d3c68c6b57866fc75bcf4dedee481951831c1b91461e9"},
+    {"chunk_id":"C0009","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0009_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"7112dc7312d825612c8ee6e57ccc867d6bc2904ac7c0ebf544ac10b1bdc4c6d2","review_event_id":"evt_c3ee8741bde04ebd49e06491","review_event_outcome_sha256":"7112dc7312d825612c8ee6e57ccc867d6bc2904ac7c0ebf544ac10b1bdc4c6d2"},
+    {"chunk_id":"C0010","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0010_Outcome_v0_3_MEDIANv0_5_0.json","outcome_sha256":"110b45c2b944af14e276ded80b69be56b7221601596c0a70e09a9de2d7a59c84","review_event_id":"evt_1b7d69bd24ba0a30c5c521af","review_event_outcome_sha256":"110b45c2b944af14e276ded80b69be56b7221601596c0a70e09a9de2d7a59c84"},
+    {"chunk_id":"C0011","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0011_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"d617f57a263d5aa0f98b8fb81c477c38bc6af6ddaea651f7680b793888322c33","review_event_id":"evt_a6fa1faffd81116019750e0e","review_event_outcome_sha256":"d617f57a263d5aa0f98b8fb81c477c38bc6af6ddaea651f7680b793888322c33"},
+    {"chunk_id":"C0012","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0012_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"6ac63a3c19f4bcd239356ca3608d3cff83730dcbe138521b5868171dd4956866","review_event_id":"evt_b8a735d2887b92c0a3b75019","review_event_outcome_sha256":"6ac63a3c19f4bcd239356ca3608d3cff83730dcbe138521b5868171dd4956866"},
+    {"chunk_id":"C0013","outcome_path":"m050/extraction/runs/cross-system-carryforward-pilot/M050_v0_4_7_Cross_System_Carryforward_C0013_Outcome_v0_1_MEDIANv0_5_0.json","outcome_sha256":"4e6c4658c3762343f2106c38588e355eaf66292cbc1d85d03c99b1c1ed5cc67f","review_event_id":"evt_fdc488144bce94e3e06e1d9c","review_event_outcome_sha256":"4e6c4658c3762343f2106c38588e355eaf66292cbc1d85d03c99b1c1ed5cc67f"}
+  ],
+  "candidate_path": "m050/extraction/accepted/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "a203193b2c5f57e2131c0f617a24d4ce4653ee0e2b743df389feb3384ca6f373",
+  "approval": true,
+  "note": "Accepted as source-bounded extraction output; semantic acceptance, mapping, reconciliation, canonization, and compiled prose remain later compile stages."
+}

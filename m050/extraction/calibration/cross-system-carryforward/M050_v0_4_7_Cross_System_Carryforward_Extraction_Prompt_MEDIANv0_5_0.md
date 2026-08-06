@@ -87,9 +87,10 @@ Include interrupting markup or split the atom.
 
 Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;
 `no_substantive_claim` requires empty `atoms`. Structural headings, labels, table headers,
-delimiters, and document-control metadata carry no substantive atom. Authored
-list items are substantive targets; normalized claims may use only their own
-text; never import a lead-in.
+delimiters, and document-control metadata carry no substantive atom. List-item
+claims may use minimum explicit subject/status/scope/condition/connective from
+indivisible-adjacent lead-in/heading for self-containment; never infer/import
+unrelated/external meaning or predicates.
 
 For each substantive table row, cover every nonempty semantic cell. Separate
 independent properties, functions, effects, examples, interpretations, stages,

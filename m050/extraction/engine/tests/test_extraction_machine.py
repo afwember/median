@@ -1589,15 +1589,17 @@ def test_generic_prompt_requires_each_independent_table_cell_to_ground_its_own_c
     assert "never ground a ruling or consequence only in another cell" in prompt
 
 
-def test_generic_prompt_requires_substantive_list_items_without_cross_block_import():
+def test_generic_prompt_allows_minimum_explicit_list_item_governing_context():
     prompt = build_generic_source_prompt(
         "M050-SRC-TEST-001",
         ["evidence_game_semantic"],
         "Extract only the bound source.",
     )
-    assert "Authored\nlist items are substantive targets" in prompt
-    assert "normalized claims may use only their own\ntext" in prompt
-    assert "never import a lead-in" in prompt
+    assert "List-item\nclaims may use minimum explicit subject/status/scope/condition/connective" in prompt
+    assert "from\nindivisible-adjacent lead-in/heading for self-containment" in prompt
+    assert "never infer/import\nunrelated/external meaning or predicates" in prompt
+    assert "may use only their own" not in prompt
+    assert "never import a lead-in" not in prompt
 
 
 def _structural_manifest():

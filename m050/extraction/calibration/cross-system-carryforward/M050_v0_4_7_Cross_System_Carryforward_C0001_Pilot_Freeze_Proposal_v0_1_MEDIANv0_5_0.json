@@ -1,23 +1,23 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
   "proposal_id": "M050-047-CROSS-SYSTEM-CARRYFORWARD-C0001-PILOT-FREEZE-001",
-  "state": "c0010_v0_3_retry_rejected",
-  "machine_state": "c0010_v0_3_retry_rejected",
+  "state": "source_candidate_accepted_stopdown",
+  "machine_state": "source_candidate_accepted_stopdown",
   "binding": {
     "source_id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
     "source_sha256": "239d5ab903d1d4d295503201c747c7427166cc9e4fcdd4c1f61e145b14ed0dbc",
-    "configuration_sha256": "7c662ed8e4473f291da0732b77714063a6d2e061d256a1e68f589aa150c03257",
+    "configuration_sha256": "9637e7a2ad4200cdb8060da24e1b02e604b8e460aa26264ac3d3be5c8d79ce61",
     "identity_card_sha256": "a64315ac1bec0e71d73e49a7cb2efcddde939705445d2336ab1ca9fefea2dbee",
     "block_manifest_sha256": "15c6913396425766c51fc16cfd43472c9b69dfa083d77828979a7173e8b08269",
     "disposition_ledger_sha256": "4d9ebfe1b290215ba968aa61935c2bb61bd890bd736bfe397e708334c2c747e6",
     "chunk_plan_sha256": "f5b9e61a93398d2faec2026224aefc73a9b0dd5ec08514615199ee0434934f0f",
-    "pilot_chunk_id": "C0010",
-    "pilot_packet_sha256": "4859de1b869eb1bda562425ec2ea5314c57e9b5eed8b9fced4b4031d5a646372",
-    "pilot_packet_file_sha256": "44b7acee9c47320e7544a791edd3ecefa7b7620cdb9553ff67a69648df30152e",
-    "prompt_sha256": "698f10da2620dbffaa9a69ea224642406904a2d0dc48e29e0e2604381368cff9",
+    "pilot_chunk_id": "C0013",
+    "pilot_packet_sha256": "5503885a218ef2e0a911cd7dc34ad1f58cf17176ae8e51e47195ca82d117d0d8",
+    "pilot_packet_file_sha256": "49e3b0ea13e24082d40e29bb7a8efa87337ad9277b4f5c5ab9ad1496c7bec0ba",
+    "prompt_sha256": "2c262f976a802731eb72c23b008c737ec1c9557c350216d4ff69f3f2a4ce3ca0",
     "response_schema_sha256": "16d26258d38172d7cd305ccc5a32c184bb0a8980ceb79d8acc48138397803d87",
-    "engine_module_sha256": "7412175596fcb85ca59d767712465923ed6cc03ba8697afc9451e164fa7683ce",
-    "engine_tests_sha256": "dc5c0af50da77abf39804a3752d85e2a7d4cbe193376d477e13950f2189e6be7",
+    "engine_module_sha256": "c0e387b538eb4af628d547f709c058d20144698a8f46a4e9f8ba1c0a6ec436b5",
+    "engine_tests_sha256": "e2fad75b41691eb842babe9ca88acd68c0a399512f81d2e81c6f8aeab5e1f342",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0010 v0.1 and v0.2 substantive rejections are preserved; the smallest source-agnostic own-text-only correction passed compatibility and C0010 v0.3 is frozen.",
-    "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.351696"
+    "selection_reason": "C0013 passed mechanical and substantive review; all 233 targets have exact ordered coverage and the hash-bound 326-atom source candidate is accepted.",
+    "required_target_disposition_count": 12,
+    "cache_miss_call_ceiling_usd": "0.307284"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -64,6 +64,10 @@
     "dependent_list_item_prompt_compatibility_passed": true,
     "c0010_v0_2_cross_block_qualification_rejection_preserved": true,
     "list_item_own_text_only_prompt_compatibility_passed": true,
-    "c0010_v0_3_repeated_lead_in_import_rejection_preserved": true
+    "c0010_v0_3_repeated_lead_in_import_rejection_preserved": true,
+    "dependent_list_context_human_ruling_compatibility_passed": true,
+    "c0010_v0_3_human_ruling_rereview_passed": true,
+    "whole_source_coverage_and_quality_review_passed": true,
+    "candidate_acceptance_guard_passed": true
   }
 }

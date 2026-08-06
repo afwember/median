@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T00:03:14-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0027_READY_AFTER_C0026_ATOMICITY_RULING_FORMAL_STOPDOWN",
+  "updated": "2026-08-06T00:08:54-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_C0027_V0_1_FROZEN_READY_ACTIVE",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -62,7 +62,7 @@
     ],
     "rejected_chunk_id": "C0027",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_Discovery_Time_Movement_and_Civic_Progression_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -229,8 +229,8 @@
     "display_usd_rounded_up": "21.63"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -238,15 +238,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 12:03:14 AM EDT",
-    "status": "Discovery formal Stopdown with C0027 ready after C0026 ruling",
-    "phase": "Atomic extraction — formally stopped during Discovery, Time, Movement, and Civic Progression",
+    "updated_human": "August 6, 2026 at 12:08:54 AM EDT",
+    "status": "Discovery C0027 frozen and ready",
+    "phase": "Atomic extraction — sequential extraction of Discovery, Time, Movement, and Civic Progression",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 11 / 22 compile-scope sources complete",
     "chunk": "Accepted C0001-C0026; C0027 v0.1 frozen",
-    "now": "The atomicity invariant now preserves authored coordinated structures unless each split remains independently grounded and self-contained; C0026 v0.2 was accepted without another provider call; both authorities remain revoked; exact cumulative spend is $21.6224186.",
-    "next": "Await Asa's explicit Sparkup, then run focused preflight and transmit frozen C0027 v0.1"
+    "now": "C0026 v0.2 is accepted under Asa's atomicity ruling; C0027 v0.1 remains frozen and untransmitted; repository-write and Discovery source-work authorities are active; exact cumulative spend is $21.6224186.",
+    "next": "Run focused preflight, then transmit and review frozen C0027 v0.1"
   },
-  "next_possible_transition": "After Asa's explicit Sparkup, run focused preflight and transmit frozen Discovery C0027 v0.1. No other source or later phase is authorized.",
+  "next_possible_transition": "Run focused preflight and transmit frozen Discovery C0027 v0.1. No other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

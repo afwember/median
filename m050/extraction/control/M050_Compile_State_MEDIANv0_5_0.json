@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T00:56:19-04:00",
-  "execution_state": "DISCOVERY_TIME_PROGRESSION_SOURCE_BOUNDED_CANDIDATE_ACCEPTED_FORMAL_STOPDOWN",
+  "updated": "2026-08-06T08:38:43-04:00",
+  "execution_state": "DISCOVERY_TIME_PROGRESSION_SOURCE_BOUNDED_CANDIDATE_CORRECTED_C0032_SCOPE_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -77,7 +77,7 @@
     "freeze": "m050/extraction/calibration/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Call_Packet_v0_4_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Call_Packet_v0_5_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -236,7 +236,7 @@
       },
       {
         "chunk_id": "C0032",
-        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0032_Outcome_v0_2_MEDIANv0_5_0.json",
+        "outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0032_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       },
       {
@@ -247,9 +247,9 @@
     ],
     "candidate_acceptance": {
       "candidate": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "c2961e506b8c5753cd76f1783d3825a05eee4e41a0ef4beb1e991f11544628c8",
+      "candidate_sha256": "46c598ec90c3ddd8130f003114ad9a37fe283a5a9c020f11e9ff87dbf88801d7",
       "report": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "dd6e1c04baeebc66c1ff421a5764e50e17342cdd1d413e8bbaee8f57d25edcfe"
+      "report_sha256": "0c33c01218634e8cd633368f78090a96f37b576174aac3c15a55f0930b350bcd"
     },
     "compatibility_replays": {
       "c0025_disposition_compatibility": "m050/extraction/audit/M050_Discovery_Time_Movement_and_Civic_Progression_C0025_Disposition_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
@@ -267,7 +267,7 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 81,
-    "cache_miss_call_ceiling_usd": "0.298268",
+    "cache_miss_call_ceiling_usd": "0.29836",
     "latest_outcome": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Outcome_v0_4_MEDIANv0_5_0.json"
   },
   "spend": {
@@ -287,12 +287,12 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 12:56:19 AM EDT",
-    "status": "Discovery source-bounded candidate accepted; formal Stopdown",
+    "updated_human": "August 6, 2026 at 8:38:43 AM EDT",
+    "status": "Discovery candidate corrected at C0032; formal Stopdown",
     "phase": "Atomic extraction — halted at Discovery, Time, Movement, and Civic Progression completion",
     "source": "Discovery, Time, Movement, and Civic Progression — ordinal 12; 12 / 22 compile-scope sources complete",
-    "chunk": "Accepted C0001-C0033; rejected attempts preserved; whole-source candidate accepted",
-    "now": "All 294 target dispositions and 337 atoms passed exact coverage, ledger-bound review, all-source compatibility, and candidate/report hash binding; both authorities are false; exact cumulative spend is $22.7501186 and $0.6726568 remains.",
+    "chunk": "Accepted C0001-C0033; C0032 deferred scope corrected; whole-source candidate accepted",
+    "now": "All 294 target dispositions and 336 atoms passed exact coverage, ledger-bound review, all-source compatibility, and candidate/report hash binding; both authorities are false; exact cumulative spend is $22.7501186 and $0.6726568 remains.",
     "next": "Await Asa's explicit source-work grant for Core Species Traits; no other source or later phase is authorized"
   },
   "next_possible_transition": "Await Asa's explicit source-work grant for Core Species Traits; spend alone cannot select or advance a source.",

@@ -12,7 +12,7 @@
   "context_only_blocks": 37,
   "excluded_blocks": 191,
   "target_dispositions": 294,
-  "candidate_atoms": 337,
+  "candidate_atoms": 336,
   "no_substantive_claim_dispositions": 118,
   "review_required_dispositions": 0,
   "schema_errors": 0,
@@ -275,16 +275,16 @@
     },
     {
       "chunk_id": "C0032",
-      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0032_Outcome_v0_2_MEDIANv0_5_0.json",
-      "outcome_sha256": "68856b9017b1abf1ddf8f1a79f5866dcfd7575b22676737a645f01de094ca8ae",
-      "review_event_id": "evt_7705bee091c6b997ba8830bc",
-      "review_event_outcome_sha256": "68856b9017b1abf1ddf8f1a79f5866dcfd7575b22676737a645f01de094ca8ae"
+      "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0032_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b8ce1bc8dc8e87bcffbc72b6545119e5b0fb55430f0d8ac821c8a29e6f68b18f",
+      "review_event_id": "evt_532e5afcb0774e01219f16aa",
+      "review_event_outcome_sha256": "b8ce1bc8dc8e87bcffbc72b6545119e5b0fb55430f0d8ac821c8a29e6f68b18f"
     },
     {
       "chunk_id": "C0033",
       "outcome_path": "m050/extraction/runs/discovery-time-progression-pilot/M050_Discovery_Time_Movement_and_Civic_Progression_C0033_Outcome_v0_4_MEDIANv0_5_0.json",
       "outcome_sha256": "2f5b9aa758e27365299fea147d304afbe3aea85f4340a46e53ad0f84d1c6c87d",
-      "review_event_id": "evt_ec840e4c67b447b07063efdc",
+      "review_event_id": "evt_20ef5715c0be0f014edde565",
       "review_event_outcome_sha256": "2f5b9aa758e27365299fea147d304afbe3aea85f4340a46e53ad0f84d1c6c87d"
     }
   ],
@@ -296,14 +296,14 @@
       "source_proposal_id"
     ],
     "policy": "DISCOVERY-{accepted_chunk_id}-{global accepted atom ordinal}; retain source_proposal_id for exact reconstruction",
-    "source_identifier_occurrences": 337,
-    "source_identifier_unique_values": 337,
+    "source_identifier_occurrences": 336,
+    "source_identifier_unique_values": 336,
     "cross_chunk_colliding_values": 0,
     "collision_occurrences_resolved": 0,
-    "accepted_identifier_unique_values": 337
+    "accepted_identifier_unique_values": 336
   },
   "candidate_path": "m050/extraction/accepted/discovery-time-progression/M050_Discovery_Time_Movement_and_Civic_Progression_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-  "candidate_sha256": "c2961e506b8c5753cd76f1783d3825a05eee4e41a0ef4beb1e991f11544628c8",
+  "candidate_sha256": "46c598ec90c3ddd8130f003114ad9a37fe283a5a9c020f11e9ff87dbf88801d7",
   "actual_discovery_extraction_cost_usd": "3.0731210",
   "cumulative_provider_spend_usd": "22.7501186",
   "cumulative_budget_usd": "23.4227754",
@@ -311,7 +311,7 @@
   "cache_policy": "mandatory one-hour stable-prefix caching",
   "cache_telemetry_status": "effective",
   "approval": true,
-  "reviewed_by": "Codex Compile Worker",
+  "reviewed_by": "MEDIAN Compile Supervisor under Asa Wember's explicit correction authority",
   "reviewed_at": "2026-08-06",
-  "note": "Accepted as source-bounded atomic-extraction output only. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
+  "note": "Accepted as source-bounded atomic-extraction output only after Supervisor correction of the C0032 parent-heading status/scope adjudication. Preserved C0032 v0.1 supplies only the necessary deferred-work qualifier; C0032 v0.2 is rejected for losing that governing status. This is not semantic acceptance, mapping, reconciliation, canonization, or compiled prose."
 }

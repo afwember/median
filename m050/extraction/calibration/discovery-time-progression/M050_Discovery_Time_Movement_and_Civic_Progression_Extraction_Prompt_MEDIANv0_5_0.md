@@ -76,7 +76,7 @@ completed offline and replay gates, sequential review, and sufficient budget.
 Separate claims only when each remains independently grounded and self-contained. Exact spans uniquely ground core assertions. Preserve coordinated subjects or effects in one atom when they share a predicate, subject, condition, or relationship
 unless every split has a contiguous span containing its own subject and predicate. A subject or label alone never grounds an
 imported predicate. Start each normalized claim with `exact_source_text`. For self-containment,
-replace pronouns or add subject/scope only from the target block; never from context.
+resolve pronouns and subjects from target blocks; parent headings may supply only necessary status or scope.
 Never paraphrase, gloss, define, compare, infer, or complete implied meaning;
 use `review_required` when necessary. Parent headings are context, never atoms. Every
 `exact_source_text` is

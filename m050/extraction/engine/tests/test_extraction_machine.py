@@ -382,8 +382,8 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "A subject or label alone never grounds an\nimported predicate" in prompt
     assert "Start each normalized claim with `exact_source_text`" in prompt
     assert "For self-containment" in prompt
-    assert "replace pronouns or add subject/scope only from the target block" in prompt
-    assert "never from context" in prompt
+    assert "resolve pronouns and subjects from target blocks" in prompt
+    assert "parent headings may supply only necessary status or scope" in prompt
     assert "Never paraphrase, gloss, define, compare, infer, or complete implied meaning" in prompt
     assert "Parent headings are context, never atoms" in prompt
     assert "Normalized claims may add explicit, unambiguous qualifiers" not in prompt

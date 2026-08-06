@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
     "source_sha256": "4ee2dea9e73c8e0194a9a250d1447e2d3b06202f02ae9c318c64fa501e2a30f8",
-    "configuration_sha256": "d631d056b5d4e405743973f26a7b2dffc5abcdf337b60b85028c2b614830157e",
+    "configuration_sha256": "bf32689c0f7a2932821190e55f1c18d0c98a6bdafa66eeefa0203982ed74f231",
     "identity_card_sha256": "b1c8f7d90a877f2961080bd91acd46506b0fd738991f49da2ee2dae31af19429",
     "block_manifest_sha256": "e82830d00b9c26fec165c6c7041286006927014a2f3c84451efcd83151c3659c",
     "disposition_ledger_sha256": "d8b215673a2c6e213debf966e9f3fc9c0c5006051ba813743407614394382067",
     "chunk_plan_sha256": "c1cbe8218d96f7851d3a4e92f28041e36529d79cdac8e68eefc2ce2f0eade04a",
     "pilot_chunk_id": "C0033",
-    "pilot_packet_sha256": "2aa2935b9ba4b7459449640eac4e6bdce3b4b95034c7723512027f6a50fe68ee",
-    "pilot_packet_file_sha256": "583cbed25c89302d96c5c0dc203e0ae4ce7de139ac9dd005c59bc182d2998e2c",
-    "prompt_sha256": "a64550a249a896cc8f00623e05effc4b35ff327f2f397ad1db82d71d7d25ec50",
+    "pilot_packet_sha256": "2412f6e8950e3334758cf339d01c1b97eb9bacdbeba4493f06f79ece70ace39d",
+    "pilot_packet_file_sha256": "d51893a3be2611c00a0ebf0ccde9c6a66b92f2fcd3efd7ea1bd2dc74303749be",
+    "prompt_sha256": "31e961c3ddabbdc5aa3101f23d05d0f837b1469f78ad79efe386dccf74c3d7f8",
     "response_schema_sha256": "2431843ee71fea7689196ae8a9989a55ffcf26e6e8d2310fceb9de927a5f5ea4",
-    "engine_module_sha256": "301cc9fa550d10de43b213166821138c1b454a7abf017a83810fc013d3300cf8",
-    "engine_tests_sha256": "cc2612963207b42a4e6f55cadde1b662d9d569ebdfb7edcffd48319f5832994a",
+    "engine_module_sha256": "3064b64205f21060add45b05ff411923039c9cd424b1ded371e70fa39253663d",
+    "engine_tests_sha256": "020b24f0ea703e2ccc03de96e11817c29d77b95336dd0a2df2ad23b8c36e9372",
     "allowed_streams": [
       "evidence_game_semantic"
     ],
@@ -35,9 +35,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0033 v0.3 completed mechanically but retained unresolved same-block pronouns in standalone normalized claims. C0033 v0.4 is refrozen under the clarified same-block antecedent substitution instruction.",
+    "selection_reason": "Source complete. C0033 is rebuilt offline under the corrected bounded parent-heading status/scope invariant; no provider call is authorized.",
     "required_target_disposition_count": 5,
-    "cache_miss_call_ceiling_usd": "0.298268"
+    "cache_miss_call_ceiling_usd": "0.29836"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -82,13 +82,14 @@
     "conservative_normalization_prompt_correction_passed": true,
     "coordinated_structure_atomicity_prompt_correction_passed": true,
     "c0026_v0_2_mechanical_and_substantive_review_passed": true,
-    "c0032_v0_1_cross_block_qualifier_rejection_preserved": true,
-    "same_target_block_normalization_prompt_correction_passed": true,
     "c0033_v0_1_max_tokens_rejection_preserved": true,
     "output_allowance_16000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0033_v0_2_max_tokens_rejection_preserved": true,
     "output_allowance_24000_all_accepted_evidence_compatibility_replay_passed": true,
     "c0033_v0_3_unresolved_pronoun_rejection_preserved": true,
-    "same_block_antecedent_normalization_prompt_correction_passed": true
+    "same_block_antecedent_normalization_prompt_correction_passed": true,
+    "c0032_v0_1_parent_heading_status_scope_acceptance_passed": true,
+    "c0032_v0_2_deferred_scope_loss_rejection_preserved": true,
+    "bounded_parent_heading_status_scope_prompt_correction_passed": true
   }
 }

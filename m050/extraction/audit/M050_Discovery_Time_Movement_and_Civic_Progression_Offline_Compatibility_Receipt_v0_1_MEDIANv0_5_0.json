@@ -1,14 +1,14 @@
 {
   "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
   "receipt_id": "M050-DISCOVERY-TIME-PROGRESSION-OFFLINE-COMPATIBILITY-001",
-  "date": "2026-08-05",
+  "date": "2026-08-06",
   "status": "DISCOVERY_TIME_PROGRESSION_OFFLINE_PREPARATION_VERIFIED_PILOT_READY",
   "source_id": "M050-SRC-DISCOVERY-TIME-PROGRESSION-001",
   "binding": {
-    "configuration_sha256": "d631d056b5d4e405743973f26a7b2dffc5abcdf337b60b85028c2b614830157e",
-    "prompt_sha256": "a64550a249a896cc8f00623e05effc4b35ff327f2f397ad1db82d71d7d25ec50",
-    "engine_module_sha256": "301cc9fa550d10de43b213166821138c1b454a7abf017a83810fc013d3300cf8",
-    "engine_tests_sha256": "cc2612963207b42a4e6f55cadde1b662d9d569ebdfb7edcffd48319f5832994a"
+    "configuration_sha256": "bf32689c0f7a2932821190e55f1c18d0c98a6bdafa66eeefa0203982ed74f231",
+    "prompt_sha256": "31e961c3ddabbdc5aa3101f23d05d0f837b1469f78ad79efe386dccf74c3d7f8",
+    "engine_module_sha256": "3064b64205f21060add45b05ff411923039c9cd424b1ded371e70fa39253663d",
+    "engine_tests_sha256": "020b24f0ea703e2ccc03de96e11817c29d77b95336dd0a2df2ad23b8c36e9372"
   },
   "source_review": {
     "source_blocks": 522,
@@ -43,13 +43,13 @@
   },
   "replays": {
     "c0025_disposition_compatibility": {
-        "sha256": "66070ef8ff33d09104727d160035ce557206f1e5948fbf5217fc23128208cb1f",
+      "sha256": "0e9f8c4a2c765a8bbabc069ac2046e9bae9375964c5cc999747ff4ddd7d19f4d",
       "result": "mechanical_pass_with_unchanged_target_membership_under_active_prompt"
     },
     "accepted_evidence_reasoning_compatibility": {
-      "sha256": "0b1a89ce93bee46b0caf524f76bf0f09293deb697e314a8e3aa6527c0a70f638",
+      "sha256": "0ba37308a5e90e951942c7c0b7b5fd229b4f6c23383ed91b300f065ac00b70a5",
       "result": "all_33_accepted_chunks_mechanical_pass_under_active_prompt_high_reasoning_24000_token_packets"
     }
   },
-  "note": "The approved frozen Markdown was parsed by the existing generic machine. C0001 v0.1 exposed document-control metadata in the draft target set; the established source-review disposition removed three metadata blocks and made the structural title context-only. C0012 v0.1 exposed insufficient reasoning on explicit cross-cell grounding, and C0015 v0.1 showed medium reasoning did not reliably distinguish a same-row qualifier from a cross-cell mapping; the existing reasoning calibration is now high. C0016 v0.1 and v0.2 exhausted the 6000- and 8000-token output allowances, so the existing allowance was raised to 12000. C0018 v0.1 exposed subject-only spans importing a coordinated shared predicate. C0020 and C0021 exposed a permissive normalization boundary, so the generic prompt now starts from exact source text and permits only a minimal copied subject or scope needed for self-containment. C0026 v0.1 and v0.2 preserved complete grounded coordinated structures but were rejected under an ambiguous same-subject splitting instruction. The corrected atomicity invariant splits only independently grounded, self-contained claims and preserves coordinated subjects or effects governed by one predicate, subject, condition, or relationship. Asa accepted preserved C0026 v0.2 under that rule without another provider call. C0032 v0.1 imported a qualification from its parent heading into five normalized claims; the generic prompt now permits additions only from the same target block and forbids heading or context imports. C0033 v0.1 and v0.2 exhausted the 12000- and 16000-token output allowances, so the existing allowance is now 24000. C0033 v0.3 retained unresolved pronouns in standalone normalized claims; the generic prompt now requires unambiguous same-block antecedent substitution. All 33 payloads remain structurally compatible, all 33 accepted chunks replayed mechanically under rebuilt packets, and the stable-prefix and output-schema cache architecture is preserved. The existing retry gate permits exactly one unchanged-packet retry when captured evidence records a provider refusal; a second refusal and all other reviewed same-packet failures remain blocked."
+  "note": "The approved frozen Markdown was parsed by the existing generic machine. Preserved rejected attempts document earlier calibration of metadata, table grounding, output allowance, shared predicates, normalization, atomicity, refusals, and pronoun self-containment. Supervisor review found that C0032 v0.1 correctly carried the governing deferred-work status from its bound parent heading, while v0.2 lost that qualification. The generic invariant now permits parent headings only for necessary status or scope and continues to require subjects and pronoun antecedents from target blocks. C0032 v0.1 is accepted; v0.2 is rejected. All 33 payloads remain structurally compatible, all 33 adjudicated chunks replay mechanically under rebuilt packets, and the stable-prefix and output-schema cache architecture is preserved."
 }

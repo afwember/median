@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "HALTED",
-  "updated": "2026-08-06T16:26:04-04:00",
+  "updated": "2026-08-06T16:37:41-04:00",
   "execution_state": "ECOLOGY_SOURCE_COMPLETE_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
@@ -127,7 +127,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 4:26:04 PM EDT",
+    "updated_human": "August 6, 2026 at 4:37:41 PM EDT",
     "status": "Ecology source candidate accepted; formal Stopdown",
     "phase": "Atomic extraction — Ecology source completion",
     "source": "Ecology — ordinal 15; 15 / 22 compile-scope sources complete",

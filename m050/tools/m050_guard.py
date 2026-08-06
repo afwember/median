@@ -786,7 +786,9 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
     if latest:
         validation = outcome.get("mechanical_validation") or {}
         outcome_mechanical_passed = validation.get("passed")
-        if outcome_mechanical_passed is None and outcome.get("capture_error"):
+        if outcome_mechanical_passed is None and (
+            outcome.get("capture_error") or outcome.get("transport_error")
+        ):
             outcome_mechanical_passed = False
         usage = outcome.get("usage", {})
         if (

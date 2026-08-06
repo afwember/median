@@ -7,19 +7,10 @@
 <!--@1.1¶1-->
 **Checkpoint date:** 30 July 2026  
 **Status:** Authoritative working ledger for later specification authoring  
-**Scope:** Adopted baseline rulings through BSA-11A, plus supersessions, deferred-development flags, and non-STATE commentary
+**Scope:** Curated adopted baseline rulings through BSA-11A
 
 <!--@1.1¶2-->
 ---
-
-<!--@1.2-->
-## Document Doctrine
-
-<!--@1.2¶1-->
-This ledger preserves adopted rulings at specification-level detail. It is not the final polished STATE specification, but it is the controlling working record for subsequent synthesis.
-
-<!--@1.2¶2-->
-Where a later ruling contradicts an earlier one, the later ruling controls. Provisional names, numerical values, and unresolved authoring details are marked explicitly.
 
 <!--@2-->
 # BSA-01 — Laws and Sayings
@@ -65,30 +56,6 @@ Guest interpretations do not create separate mechanics.
 <!--@3¶7-->
 > Mechanical truth remains stable under phrasing variation.
 
-<!--@4-->
-# BSA-03 — Literacy and Writing
-
-<!--@4¶1-->
-**Adopted with scope constraint.**
-
-<!--@4¶2-->
-Animals in MEDIAN can read and write.
-
-<!--@4¶3-->
-Written names, Records, Laws, memorials, signs, Chronicle material, and other textual culture may exist.
-
-<!--@4¶4-->
-Literacy is narrative permission. It is not a stat, skill, Role, progression track, or source of species differentiation.
-
-<!--@4¶5-->
-There are no separate species writing systems required by the baseline architecture.
-
-<!--@4¶6-->
-Oral culture remains important.
-
-<!--@4¶7-->
-The game gives no explicit metaphysical explanation for animal literacy.
-
 <!--@5-->
 # BSA-04 — Chronicle and Citizen’s Tale
 
@@ -120,7 +87,7 @@ Interstitial material may not invent new mechanics, major unseen events, relatio
 The three layers remain distinct:
 
 <!--@5¶10-->
-- **Campaign Memory:** persistent source facts and remembered material;
+- **The Record:** persistent source facts and remembered material;
 - **Chronicle:** selective civic history;
 - **Tale:** comprehensive but concise personal biography.
 
@@ -148,15 +115,6 @@ Information materially relevant to hospitality, relationship, residence, or citi
 <!--@6¶7-->
 Further detail may emerge through trust, EMBODY, relationships, return visits, meetings with figures from the Citizen’s past, or later events that place old experience in a new light.
 
-<!--@6¶8-->
-Later revelation may deepen, contextualize, or correct the initial account. It should not routinely replace the Citizen with a wholly contradictory secret identity.
-
-<!--@6¶9-->
-Social status may develop continuously:
-
-<!--@6¶10-->
-> stranger → recurring visitor → Wanderer → resident Guest → Citizen
-
 <!--@6¶11-->
 The Tale remains continuous throughout.
 
@@ -171,27 +129,6 @@ Founders possess their shared pre-campaign and Founding Escape biography. Citize
 
 <!--@7-->
 # BSA-05 — Lasting Citizen Change
-
-<!--@7.1-->
-## Fear Memory
-
-<!--@7.1¶1-->
-Fear Memory belongs to the Exposure framework. It is not a separate condition track or meter.
-
-<!--@7.1¶2-->
-It is a persistent, context-tagged memory.
-
-<!--@7.1¶3-->
-When a related danger recurs, Fear Memory may accelerate Exposure, alter how change manifests, or make tharn more likely.
-
-<!--@7.1¶4-->
-Later safe experience, successful return, relationships, or EMBODY may soften or transform its mechanical force.
-
-<!--@7.1¶5-->
-The history remains in the Citizen’s Tale even when the immediate mechanical pressure ebbs.
-
-<!--@7.1¶6-->
-Fear Memory is not a permanent universal penalty.
 
 <!--@7.2-->
 ## Distinction
@@ -232,35 +169,6 @@ It is socially used in Chronicle, Tale, interface, and dialogue.
 
 <!--@7.3¶6-->
 It need not add another stat effect.
-
-<!--@7.4-->
-## Keepsake
-
-<!--@7.4¶1-->
-A Keepsake is one of three mechanically active personal item categories:
-
-<!--@7.4¶2-->
-- **Keepsake:** persistent emotional anchor;
-- **Tool:** persistent practical capability;
-- **Supply:** bounded consumable preparation.
-
-<!--@7.4¶3-->
-Every Keepsake has provenance.
-
-<!--@7.4¶4-->
-The standard measurable effect is:
-
-<!--@7.4¶5-->
-> **Once between Homecomings, a Citizen may draw on their Keepsake to soften one increase of Exposure.**
-
-<!--@7.4¶6-->
-The exact numerical unit of “soften” may be tuned.
-
-<!--@7.4¶7-->
-The effect is bounded to one use, personal, refreshed through return Home, not refreshed per MEET, and not part of a magical catalog of bespoke bonuses.
-
-<!--@7.4¶8-->
-A Keepsake may help with a relevant Fear Memory, but it does so through the same bounded effect.
 
 <!--@8-->
 # BSA-06 — Minimal Personal Inventory
@@ -332,9 +240,6 @@ They consume appropriate Sustenance and/or Scrap. They are not produced from not
 <!--@9.1¶3-->
 Routine preparation is abstracted. The player does not queue every pouch or bundle.
 
-<!--@9.1¶4-->
-Common Supplies emerge through ordinary activity. Unusual Supplies may require a Practice, model, relationship, unusual material, or Project.
-
 <!--@9.2-->
 ## Tools
 
@@ -342,10 +247,10 @@ Common Supplies emerge through ordinary activity. Unusual Supplies may require a
 Tools are not produced incidentally.
 
 <!--@9.2¶2-->
-A Tool is made deliberately through the Construction Queue by a Crafter.
+A Tool is made deliberately through the Project Queue by a Crafter.
 
 <!--@9.2¶3-->
-Tool-making consumes Scrap, time, Crafter Capacity, and, where relevant, an appropriate Place or Practice.
+Tool-making consumes Scrap, time, and Crafter Capacity.
 
 <!--@9.2¶4-->
 Repair and adaptation may require tasked Crafting. Routine maintenance may remain abstracted.
@@ -465,8 +370,6 @@ Singular objects retain provenance instead of dissolving automatically into gene
 - Supplies usually use Flexible Scrap and may use Sustenance.
 - Tools usually use Rigid Scrap and often some Flexible Scrap.
 - A sack or other Carry Tool may be Flexible-only.
-- Residence and enclosure Projects tend toward Flexible Scrap.
-- Bracing, surfacing, defensive, and load-bearing Projects tend toward Rigid Scrap.
 - Major civic works and Tier-defining Projects commonly require both.
 
 <!--@10.2¶2-->
@@ -511,12 +414,9 @@ This is a nomenclature ruling, not a mechanical or ecological change.
 ## Sustenance
 
 <!--@10.5¶1-->
-The Colony consumes:
+Exact daily Sustenance drain per body-unit is reserved for the tuning phase.
 
 <!--@10.5¶2-->
-> **1 Sustenance per body-unit per Dawn.**
-
-<!--@10.5¶3-->
 Ordinary meals and Sustenance accounting belong to DWELL.
 
 <!--@10.5¶4-->
@@ -541,11 +441,11 @@ Durable Sustenance remains vital for winter, disruption, preservation, and civic
 ### Core logistical table
 
 <!--@10.5.1¶1-->
-| Civilization | Citizens per body-unit | Carry per body-unit | Sustenance per Dawn |
-|---|---:|---:|---:|
-| Rabbit | 1 | 10 | 1 |
-| Mouse | 2 | 12 | 1 |
-| Squirrel | 1 | 20 | 1 |
+| Civilization | Citizens per body-unit | Carry per body-unit | Daily Sustenance drain |
+|---|---:|---:|---|
+| Rabbit | 1 | 10 | Reserved for tuning |
+| Mouse | 2 | 12 | Reserved for tuning |
+| Squirrel | 1 | 20 | Reserved for tuning |
 
 <!--@10.6-->
 ## Healing
@@ -554,19 +454,7 @@ Durable Sustenance remains vital for winter, disruption, preservation, and civic
 There is no separate medicinal resource stock.
 
 <!--@10.6¶2-->
-Where treatment has a material cost, Healing uses ordinary Sustenance.
-
-<!--@10.6¶3-->
-A Medical or Remedy Supply may use Sustenance and Flexible Scrap.
-
-<!--@10.6¶4-->
-Splints and adaptive devices may use Rigid Scrap.
-
-<!--@10.6¶5-->
-Routine recovery is governed primarily by time, Healing coverage, Patient Load, and suitable Places.
-
-<!--@10.6¶6-->
-Material cost is reserved for significant treatment rather than charged every convalescent Dawn.
+A Remedy Supply uses Sustenance and Flexible Scrap.
 
 <!--@10.7-->
 ## Nesting
@@ -575,10 +463,10 @@ Material cost is reserved for significant treatment rather than charged every co
 There is no Nursery Matter stock.
 
 <!--@10.7¶2-->
-Nesting requires a suitable Residence-and-Care Place, civic margin, Caretaking and Teaching support, and **10 reserved Sustenance per expected new body-unit**.
+Nesting requires a suitable Residence-and-Care Place, civic margin, Caretaking and Teaching support, and reserved Sustenance equal to **ten times the eventual daily Sustenance drain per expected new body-unit**.
 
 <!--@10.7¶3-->
-Therefore one Rabbit young requires 10, one Squirrel young requires 10, and two Mouse littermates require 10 together.
+One Rabbit young represents one new body-unit, one Squirrel young represents one new body-unit, and two Mouse littermates together represent one new body-unit. The daily Sustenance drain is reserved for the tuning phase.
 
 <!--@10.7¶4-->
 This is a preparedness commitment, not a recipe that manufactures offspring.
@@ -597,12 +485,6 @@ Three body-units is the standard ordinary maximum.
 
 <!--@10.8¶3-->
 This produces 2–3 Rabbits, 4–6 Mice, or 2–3 Squirrels before Guest and mixed-party adjustments.
-
-<!--@10.8¶4-->
-Larger parties occur only as authored exceptions, such as evacuation, migration, major hauling, or a Grand Caravan.
-
-<!--@10.8¶5-->
-Larger parties are not unlocked as a permanent cap increase.
 
 <!--@11-->
 # BSA-08 — Special Artifacts
@@ -631,75 +513,6 @@ An Artifact may later become a Tool or Keepsake through an explicit transformati
 <!--@11¶8-->
 > **A Special Artifact is a singular recovered object whose identity and provenance matter mechanically and which does not dissolve into Scrap.**
 
-<!--@12-->
-# BSA-08A — Place of Pride
-
-<!--@12¶1-->
-**Adopted.**
-
-<!--@12¶2-->
-Every Colony Gathering Place contains one **Place of Pride**: a prominent communal position displaying one eligible Special Artifact.
-
-<!--@12¶3-->
-The Colony may possess multiple Artifacts, but only one is displayed and active through the Place of Pride.
-
-<!--@12¶4-->
-The displayed Artifact provides a stated **Civic Effect**.
-
-<!--@12¶5-->
-This is not magic. The effect arises through repeated story, shared lesson, accessible knowledge, affirmed relationship, confidence, or civic identity.
-
-<!--@12¶6-->
-A Civic Effect must be narrow, legible, and grounded in the Artifact’s provenance.
-
-<!--@12¶7-->
-It may support or protect a Role under defined conditions, make a Practice available, preserve knowledge, alter a Home MEET option, support hospitality or diplomacy, reduce a specific recurring disruption, or provide another closely related permission.
-
-<!--@12¶8-->
-It may not provide broad productivity percentages, universal morale, generic Colony stat increases, stackable auras, or build-combination optimization.
-
-<!--@12¶9-->
-Not every Artifact is eligible for the Place of Pride.
-
-<!--@12¶10-->
-An Artifact record may identify several possible uses: Place of Pride, Project, study leading to a Practice, Tool or adaptive device, MEET, barter or diplomacy, ceremonial return, or undedicated custody.
-
-<!--@12¶11-->
-Practical, dangerous, secret, fragile, or culturally inappropriate objects may be ineligible for display.
-
-<!--@12¶12-->
-The player may change the displayed Artifact during DWELL, outside crisis or unresolved MEET.
-
-<!--@12¶13-->
-The new Civic Effect begins on the following Dawn.
-
-<!--@12¶14-->
-Changing the display has no additional resource cost and requires no permanent Role assignment. The Dawn boundary prevents rapid swapping.
-
-<!--@12¶15-->
-The previous Artifact returns to named Colony custody.
-
-<!--@12¶16-->
-Because the Artifact is real, it may be removed, studied, damaged, stolen, surrendered, returned, transformed, or traded. Removing it ends its Civic Effect.
-
-<!--@12¶17-->
-A Keepsake is personal. The Place of Pride is communal.
-
-<!--@12¶18-->
-An active Keepsake may not be casually socketed into the Place of Pride. It may become a Colony Artifact only through inheritance, voluntary gifting, retirement, civic dedication, or another authored transition.
-
-<!--@12¶19-->
-A memorial display is distinct. A memorial object placed at the civic center indicates continuing active significance, not merely storage of the dead.
-
-<!--@12¶20-->
-The Place of Pride exists from Tier I, even if its physical form is only a ledge, stone, root, branch, or another improvised position.
-
-<!--@12¶21-->
-It may become more protected or ceremonial as the Colony develops.
-
-<!--@12¶22-->
-There is exactly one Place of Pride and one active displayed Artifact.
-
 <!--@13-->
 # BSA-08B — Gathering Place
 
@@ -716,7 +529,7 @@ Gathering Place is the universal functional term.
 It does not prescribe a circular plan, open ground, a single elevation, or another species-specific spatial form.
 
 <!--@13¶5-->
-The Gathering Place supports the teaching and interpretation of Laws, Sayings and storytelling, civic ceremonies, After-name recognition, Maturity and arrival observances, memorial practices, the recounting of Chronicle material, Council-centered cultural events, and the Place of Pride.
+The Gathering Place supports the teaching and interpretation of Laws, Sayings and storytelling, civic ceremonies, After-name recognition, Maturity and arrival observances, memorial practices, the recounting of Chronicle material, and Council-centered cultural events.
 
 <!--@13¶6-->
 Each Core civilization gives the Gathering Place its own architectural form and in-world name.
@@ -959,7 +772,6 @@ A developmental MEET may establish knowledge without completing physical work.
 <!--@16¶16-->
 - A **Practice** is what the Colony now knows how to do.
 - A **Project** is the physical or civic work needed to embody that knowledge.
-- A **Place function** is what becomes sustainably possible after completion.
 
 <!--@16¶17-->
 Some developments require no construction. Others require a Project.
@@ -973,29 +785,14 @@ A major Place might gain only one or two historically meaningful new functions a
 <!--@16¶20-->
 > **A Place does not level up. The Colony lives with it long enough to discover what else it may become.**
 
-<!--@17-->
-# Deferred Development Flag — Studying an Appropriate Node
-
-<!--@17¶1-->
-**Not yet STATE canon. Flagged for later development.**
-
-<!--@17¶2-->
-Later work must determine what makes a Node appropriate to a particular discovery; whether STUDY is a Node MEET choice, a repeated relationship with the Node, or both; what observations persist between visits; whether named Citizens, Tools, seasons, or existing Practices affect what can be learned; how study produces a developmental Home MEET rather than directly unlocking a function; whether study can reveal a Practice, identify a Project opportunity, or provide a named prerequisite material; and how to prevent STUDY from becoming a generic research button or technology-tree substitute.
-
-<!--@17¶3-->
-Working doctrine:
-
-<!--@17¶4-->
-> **A Node may show the Colony that something is possible. The Colony must still interpret that knowledge at Home and choose whether to embody it.**
-
 <!--@18-->
-# BSA-09C — Projects, Tools, and the Construction Queue
+# BSA-09C — Projects, Tools, and the Project Queue
 
 <!--@18¶1-->
 **Adopted.**
 
 <!--@18¶2-->
-The Construction Queue is the shared execution layer for deliberate work that produces a defined, persistent result.
+The Project Queue is the shared execution layer for deliberate work that produces a defined, persistent result.
 
 <!--@18¶3-->
 It is no longer exclusive to Builders.
@@ -1004,7 +801,7 @@ It is no longer exclusive to Builders.
 Every Queue entry has a defined result, a related Role, a material requirement where appropriate, and a required quantity of committed Role labor.
 
 <!--@18¶5-->
-While a Citizen services the Construction Queue, their Role Capacity is committed to that entry.
+While a Citizen services the Project Queue, their Role Capacity is committed to that entry.
 
 <!--@18¶6-->
 That Capacity does not simultaneously provide the Role’s ordinary passive function.
@@ -1016,7 +813,7 @@ If several Citizens provide the same Role, only committed Capacity is suspended.
 > **A Citizen may maintain the Colony’s ordinary function or deliberately change what the Colony can do. They do not perform both with the same civic share.**
 
 <!--@18¶9-->
-A Project is enacted through the Construction Queue by its related Role.
+A Project is enacted through the Project Queue by its related Role.
 
 <!--@18¶10-->
 The related Role is determined by the Project’s principal civic function, not simply by whether material is moved.
@@ -1031,10 +828,10 @@ A developmental MEET does not instantly upgrade a Place.
 The full sequence is:
 
 <!--@18¶14-->
-> **World experience → developmental threshold → Home MEET → Practice or decision → Construction Queue entry → completed Place function**
+> **World experience → developmental threshold → Home MEET → Practice or decision → Project Queue entry → completed Place function**
 
 <!--@18¶15-->
-Tools are produced through the same Construction Queue.
+Tools are produced through the same Project Queue.
 
 <!--@18¶16-->
 Each Tool class has a simple Scrap recipe. A Tool entry is serviced by a Crafter. Committed Crafter Capacity does not provide ordinary passive Crafting. Completion creates one persistent Tool.
@@ -1042,38 +839,35 @@ Each Tool class has a simple Scrap recipe. A Tool entry is serviced by a Crafter
 <!--@18¶17-->
 Tool-making is a deliberate opportunity cost.
 
-<!--@18¶18-->
-Supplies do not use the Construction Queue. They are produced through Provisioning.
-
 <!--@18¶19-->
 Ordinary maintenance belongs to passive Role function.
 
 <!--@18¶20-->
-A problem enters the Construction Queue only when it requires a defined intervention with a persistent result, including substantial rebuilding, Place adaptation, establishment of a new function, Tool production, or major civic work.
+A problem enters the Project Queue only when it requires a defined intervention with a persistent result, including substantial rebuilding, Place adaptation, establishment of a new function, Tool production, or major civic work.
 
 <!--@18¶21-->
-> **Roles sustain what the Colony already has. The Construction Queue commits those Roles to making something newly true.**
+> **Roles sustain what the Colony already has. The Project Queue commits those Roles to making something newly true.**
 
 <!--@19-->
-# BSA-09C.1 — Construction Queue Concurrency
+# BSA-09C.1 — Project Queue Concurrency
 
 <!--@19¶1-->
-**Adopted: one active entry per related Role.**
+**Adopted: concurrency derives from available Places supporting the relevant Practice.**
 
 <!--@19¶2-->
-The Colony may progress several Construction Queue entries simultaneously, but only one active entry for each Role.
+Each available Place that houses the relevant Practice may support one related Project Queue entry at a time. One Garden may support one Gardener Project at a time; two Gardens may support two. The same Place-based rule governs other Practices.
 
 <!--@19¶3-->
-A Builder Project, Gardener Project, and Crafter Tool may therefore progress at the same time.
+Place availability permits concurrency but does not supply the named-Citizen Capacity required to perform the work.
 
 <!--@19¶4-->
-Two Crafter entries cannot progress simultaneously merely because both exist in the Queue.
+Before the Colony possesses a Workshop, Builder has one early-game exemption and may conduct one Project at a time without an available Workshop.
 
 <!--@19¶5-->
-Additional Citizens assigned to a Role may add Citizen-Days to that Role’s active entry, preserve ordinary Role coverage, or remain fully on ordinary Practice.
+Building the first Workshop ends that exemption. Builder concurrency thereafter follows the same Place-based rule as every other Role: each available Workshop may support one Builder Project at a time.
 
 <!--@19¶6-->
-The true limit is available named-Citizen Capacity and the loss of ordinary coverage, not an abstract Colony-wide queue-slot statistic.
+Additional Citizens assigned to a Role may contribute Citizen-Days to an eligible entry, preserve ordinary Role coverage, or remain fully on ordinary Practice. Actual progress remains limited by available named-Citizen Capacity and the loss of ordinary coverage; there is no abstract Colony-wide queue-slot statistic.
 
 <!--@20-->
 # BSA-09D — Provisioning
@@ -1082,7 +876,7 @@ The true limit is available named-Citizen Capacity and the loss of ordinary cove
 **Adopted.**
 
 <!--@20¶2-->
-**Provisioning** is the shared passive-transformation system through which available Role Capacity converts existing stocks into prepared stocks or consumable items without using the Construction Queue.
+**Provisioning** is the shared passive-transformation system through which available Role Capacity converts existing stocks into prepared stocks or consumable items.
 
 <!--@20¶3-->
 Provisioning is routine, conditional, ongoing, and player-directed.
@@ -1118,7 +912,7 @@ Crafters may transform Sustenance and Scrap into Supply items according to known
 Supply Preparation is limited by available ingredients, Crafter Capacity not committed to a Tool or Project, a suitable Workshop or preparation Place, known Supply recipes, and player-set targets and reserves.
 
 <!--@20.1.2¶3-->
-A Crafter servicing the Construction Queue provides no Provisioning with that committed civic share.
+A Crafter servicing the Project Queue provides no Provisioning with that committed civic share.
 
 <!--@20.2-->
 ## Player control
@@ -1186,7 +980,7 @@ An emergency MEET may explicitly allow the Colony to break a reservation, but th
 Available Role Capacity follows this priority:
 
 <!--@20.4¶2-->
-1. Capacity committed to an active Construction Queue entry;
+1. Capacity committed to an active Project Queue entry;
 2. Capacity required to cover ordinary Role Load;
 3. remaining Capacity available for Provisioning.
 
@@ -1200,33 +994,12 @@ Routine transformation does not silently outrank civic stability.
 | Output | Production method | Civic character |
 |---|---|---|
 | Supply | Provisioning | Routine readiness |
-| Tool | Construction Queue, Crafter | Deliberate durable capability |
-| Project | Construction Queue, related Role | Persistent civic or Place change |
+| Tool | Project Queue, Crafter | Deliberate durable capability |
+| Project | Project Queue, related Role | Persistent civic or Place change |
 | Routine Role function | Passive Role Capacity | Daily maintenance and support |
 
 <!--@20.5¶2-->
-> **Provisioning keeps prepared things ready. The Construction Queue makes lasting things real.**
-
-<!--@21-->
-# Developmental Appendix Note — Mechanical Resolution Grammar
-
-<!--@21¶1-->
-**Designer commentary only. Not STATE material.**
-
-<!--@21¶2-->
-MEDIAN’s preference for small named classes, bounded permissions, fixed slots, integer costs, concise adjudication, and explicit opportunity cost resembles tabletop card-game resolution.
-
-<!--@21¶3-->
-This is an observation about design method, not an in-world rule or mandatory presentation layer.
-
-<!--@21¶4-->
-> **Tabletop clarity beneath; lived civilization above.**
-
-<!--@21¶5-->
-The mechanical layer should remain compact enough to state clearly.
-
-<!--@21¶6-->
-Citizens, Places, provenance, MEET, Chronicle, and Tale prevent that clarity from flattening the world into tokens and effects.
+> **Provisioning keeps prepared things ready. The Project Queue makes lasting things real.**
 
 <!--@22-->
 # BSA-10 — Cross-Functional Supply Classes
@@ -1292,12 +1065,6 @@ Each Supply should be potentially useful in many circumstances.
 
 <!--@23¶8-->
 Its physical verbs may support different Turns depending on context.
-
-<!--@23¶9-->
-For representative Expeditions, each Supply class should plausibly apply to more than half of the meaningful spend opportunities; most spend windows should admit at least two Supply classes; and no ordinary route, Node family, season, or encounter category should make a class routinely useless.
-
-<!--@23¶10-->
-This is an authoring and testing target, not a visible percentage or universal guarantee.
 
 <!--@23¶11-->
 Applicable does not mean optimal.
@@ -1377,24 +1144,6 @@ The same Supply remains dimensional because different encounters apply its physi
 
 <!--@25¶7-->
 The encounter supplies the one clear contextual effect.
-
-<!--@25¶8-->
-The earlier proposal for two player-selected modes per Supply is superseded.
-
-<!--@26-->
-# Superseded Note — RENDER as a Guest-Only Permission
-
-<!--@26¶1-->
-An earlier draft treated RENDER primarily as a Red Fox Guest Permission.
-
-<!--@26¶2-->
-That formulation is superseded.
-
-<!--@26¶3-->
-RENDER is a full Tool class under BSA-11.
-
-<!--@26¶4-->
-A Guest Permission may access the same functional grammar without an ordinary carried Tool where the Guest’s body and ecology justify it.
 
 <!--@27-->
 # BSA-11 — Core Tool Classes
@@ -1561,74 +1310,3 @@ A Brace Tool may protect a Citizen.
 
 <!--@28.3¶7-->
 It must not become a standardized battle shield detached from ordinary bracing, structural, carrying, or rescue use.
-
-<!--@28.4-->
-## Carry exception
-
-<!--@28.4¶1-->
-Carry already has substantial logistical value and gains no inherent martial advantage.
-
-<!--@28.4¶2-->
-A particular Conflicted MEET may recognize a creative use of a sack, sling, drag-cloth, or carried burden.
-
-<!--@28.4¶3-->
-That remains an authored contextual interaction, not a universal property of Carry.
-
-<!--@28.4¶4-->
-> **Tools are made for work, not violence. When violence reaches the Colony, Citizens may defend themselves with the implements of ordinary life.**
-
-<!--@28.4¶5-->
-Violence does not acquire its own item economy, professional identity, or progression layer.
-
-<!--@29-->
-# Complexity-Drift Watch
-
-<!--@29¶1-->
-The following warning signs are active for subsequent design work:
-
-<!--@29¶2-->
-- solving edge cases before defining the baseline interaction;
-- adding menus to express dimensionality;
-- exposing every theoretically plausible interaction;
-- turning authoring flexibility into player-facing procedure;
-- creating a second decision after a decision that was already sufficient;
-- introducing a new meter, submenu, click, or exception when an existing mechanic can carry the result.
-
-<!--@29¶3-->
-Working check:
-
-<!--@29¶4-->
-> **Does this require another click, submenu, meter, or exception?**
-
-<!--@29¶5-->
-A “yes” is not an automatic rejection, but requires explicit justification.
-
-<!--@30-->
-# Provisional and Deferred Items
-
-<!--@30¶1-->
-The following remain unresolved or require dedicated passes:
-
-<!--@30¶2-->
-1. Final species-specific in-world names and forms for Gathering Places.
-2. Final Supply class names.
-3. Final Supply recipes and exact contextual effects.
-4. Final Tool recipes and exact persistent permissions.
-5. Detailed rules for studying an appropriate Node.
-6. Exact tuning of Provisioning rates, Role-Capacity conversion, and Dawn order.
-7. Exact material scale of Tier-defining Projects.
-8. Exact wording and tuning of Keepsake Exposure mitigation.
-9. Acceptance testing of Supply general utility across representative Expeditions.
-10. Authoring tests preventing latent martial utility from becoming disguised weapon progression.
-
-<!--@31-->
-# Next Starting Point
-
-<!--@31¶1-->
-The next baseline question should continue from the Tool system after BSA-11A, unless the designer chooses to resolve one of the provisional items above first.
-
-<!--@31¶2-->
----
-
-<!--@31¶3-->
-**END OF CHECKPOINT**

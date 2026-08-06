@@ -245,7 +245,7 @@ sources:
 
   - source_id: M050-SRC-047-DEVELOPMENT-RULINGS-001
     path: m050/docs/v0.5/provenance/M050_v0_4_7_Development_Rulings_Ledger_BSA_01_to_11A_Checkpoint_2026_07_30_MEDIANv0_5_0.md
-    sha256: fc81ff3a7c7e2f26d28950bd4564f50b7fece93ca2569871b0a9b26657514bce
+    sha256: 88ae2ae2f306b6406ed96b50f0ae5faf7d91e60bf1522ef9788bf8302f419c19
     content_role: v0_4_7_to_v0_5_working_adaptation_and_disposition_ledger
     disposition: source_bounded_atomic_extraction_then_content_partition_before_grand_reconciliation
     output_streams: [evidence_game_semantic, provenance_evidence]

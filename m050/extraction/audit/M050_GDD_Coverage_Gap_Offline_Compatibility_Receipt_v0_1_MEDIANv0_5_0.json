@@ -5,10 +5,10 @@
   "status": "GDD_COVERAGE_GAP_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
   "binding": {
-    "configuration_sha256": "ce61b176361ff465b13792b83a94f20cf02d6a055935386453f6cf765eb3ae90",
-    "prompt_sha256": "00774581cbd56499a2a87208023ec0ecbbf1332aa5a33d6bf93fa200cfde32d2",
-    "engine_module_sha256": "1359fea39cf0edfbcfc327712f7d710dc0a57d8e6079b7059a780397f0279e5d",
-    "engine_tests_sha256": "05131023c0ad456055bf05bb460ac497f7bbad66446a0d1d7c396205e9f171b1"
+    "configuration_sha256": "c9090cb3333ffd0bde84eefbacdab38651da5f11670db1339c7ffb669bfa941d",
+    "prompt_sha256": "8d44f62ee76d5dd901019adc0514c3be26218bbfb93d9ad515679e8043626bba",
+    "engine_module_sha256": "aae38e0f3cf17e5bb64bd7ad0889df3990ea6d96cfb179a2ee221010feee747a",
+    "engine_tests_sha256": "801f868635bd0bf7f9e3c61f3f5768925b9e5c78dd8f493e4d34023a45643090"
   },
   "source_review": {
     "source_blocks": 815,
@@ -62,6 +62,10 @@
     },
     "c0007_whole_row_semicolon_correction": {
       "sha256": "e8f875b0d730efb7ec6ff8a49c2afa9bab28e0f8bff0be724e822c98bdcce7e0",
+      "result": "preserved_rejection_unchanged_and_all_source_compatibility_passed"
+    },
+    "c0008_table_cell_semicolon_correction": {
+      "sha256": "e67295d718150b2f06ca1d3771e60a85f5fc3b2013aa4747f520a3c30b955e21",
       "result": "preserved_rejection_unchanged_and_all_source_compatibility_passed"
     }
   }

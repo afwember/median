@@ -367,8 +367,8 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "every nonempty semantic cell" in prompt
     assert "stages,\nactions, and results" in prompt
     assert "never infer a relationship between\nadjacent cells" in prompt
-    assert "Even whole-row mappings split at authored semicolons" in prompt
-    assert "no exact\nspan crosses one" in prompt
+    assert "Table spans—cell or whole-row—split at authored semicolons" in prompt
+    assert "none crosses one" in prompt
     assert "Copy every authored slash into the normalized claim" in prompt
     assert "never replace it with a word unless the source defines that meaning" in prompt
     assert "document-control metadata carry no substantive atom" in prompt

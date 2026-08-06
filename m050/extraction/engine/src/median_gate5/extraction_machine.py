@@ -607,8 +607,8 @@ actions, and results. Combine cells only when one qualifies
 another or the relationship is indivisible. Preserve both endpoints of
 categorical mappings.
 Ground each headed cell under its header; never infer a relationship between
-adjacent cells. Even whole-row mappings split at authored semicolons; no exact
-span crosses one.
+adjacent cells. Table spans—cell or whole-row—split at authored semicolons;
+none crosses one.
 Copy every authored slash into the normalized claim; never replace it with a word unless the source defines that meaning.
 Each independent table-cell assertion requires exact source text from its own
 cell; never ground a ruling or consequence only in another cell.

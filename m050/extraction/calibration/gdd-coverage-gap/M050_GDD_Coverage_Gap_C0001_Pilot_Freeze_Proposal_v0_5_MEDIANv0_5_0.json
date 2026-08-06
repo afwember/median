@@ -6,18 +6,18 @@
   "binding": {
     "source_id": "M050-SRC-GDD-COVERAGE-GAP-001",
     "source_sha256": "15af505d60383e5c47215b7c21b9016eb56e29920e71373d3c0f0c09ad95a225",
-    "configuration_sha256": "ce61b176361ff465b13792b83a94f20cf02d6a055935386453f6cf765eb3ae90",
+    "configuration_sha256": "c9090cb3333ffd0bde84eefbacdab38651da5f11670db1339c7ffb669bfa941d",
     "identity_card_sha256": "9e5d887baef7a1958aa355cb38e779eedd97f8353759bec1a2c8a17d4231ac63",
     "block_manifest_sha256": "9f056891307db24fa516fb22637885bb8f3e89d56d1da73256d593b6e9e0e257",
     "disposition_ledger_sha256": "a20e9fbbc5ce67bda2291ec01fd0cc17279e10b31f79152ff551d3c308a338b4",
     "chunk_plan_sha256": "42b72b5da73d08b83c0c89cc1a973ede6246f04e686eef59bb86783df08637de",
-    "pilot_chunk_id": "C0007",
-    "pilot_packet_sha256": "ff82d008340d9f8fb18a56f8decc38778c99e2314d17e2c6fb84093aa2a348be",
-    "pilot_packet_file_sha256": "62a9f1a9637162c3bb77252e5207606e5274a77118fb17626d64d8c4a72f8f4e",
-    "prompt_sha256": "00774581cbd56499a2a87208023ec0ecbbf1332aa5a33d6bf93fa200cfde32d2",
+    "pilot_chunk_id": "C0008",
+    "pilot_packet_sha256": "8351bd1d5be81fa58d21a7f312b405e542885e84df8c7fe7e3591c85c8110144",
+    "pilot_packet_file_sha256": "7257a21befb8126a799f55fa718b7695dcc73cb240bff7cf015df535b3d5a5f7",
+    "prompt_sha256": "8d44f62ee76d5dd901019adc0514c3be26218bbfb93d9ad515679e8043626bba",
     "response_schema_sha256": "45c543e469738f42e297a42f051d725941bfd3ed0e0ebcf6af83ef8f45c5a918",
-    "engine_module_sha256": "1359fea39cf0edfbcfc327712f7d710dc0a57d8e6079b7059a780397f0279e5d",
-    "engine_tests_sha256": "05131023c0ad456055bf05bb460ac497f7bbad66446a0d1d7c396205e9f171b1",
+    "engine_module_sha256": "aae38e0f3cf17e5bb64bd7ad0889df3990ea6d96cfb179a2ee221010feee747a",
+    "engine_tests_sha256": "801f868635bd0bf7f9e3c61f3f5768925b9e5c78dd8f493e4d34023a45643090",
     "allowed_streams": ["evidence_game_semantic"],
     "model": "claude-sonnet-5",
     "reasoning_effort": "medium",
@@ -33,9 +33,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0007 v0.2 is the corrected retry after v0.1 crossed authored semicolons inside two whole-row table mappings.",
+    "selection_reason": "C0008 v0.2 is the corrected retry after v0.1 crossed an authored semicolon inside a table-cell custody span.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.323832"
+    "cache_miss_call_ceiling_usd": "0.330016"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -61,6 +61,7 @@
     "c0004_mechanical_and_substantive_review_passed": true,
     "c0005_mechanical_and_substantive_review_passed": true,
     "c0006_mechanical_and_substantive_review_passed": true,
-    "c0007_mechanical_and_substantive_review_passed": false
+    "c0007_mechanical_and_substantive_review_passed": true,
+    "c0008_mechanical_and_substantive_review_passed": false
   }
 }

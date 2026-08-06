@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T19:10:47-04:00",
-  "execution_state": "GDD_COVERAGE_GAP_C0007_RETRY_FROZEN_READY",
+  "updated": "2026-08-06T19:18:51-04:00",
+  "execution_state": "GDD_COVERAGE_GAP_C0008_RETRY_FROZEN_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -42,9 +42,10 @@
       "C0003",
       "C0004",
       "C0005",
-      "C0006"
+      "C0006",
+      "C0007"
     ],
-    "rejected_chunk_id": "C0007",
+    "rejected_chunk_id": "C0008",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -53,7 +54,7 @@
     "freeze": "m050/extraction/calibration/gdd-coverage-gap/M050_GDD_Coverage_Gap_C0001_Pilot_Freeze_Proposal_v0_5_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_GDD_Coverage_Gap_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0007_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0008_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -84,6 +85,11 @@
         "chunk_id": "C0006",
         "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0007",
+        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0007_Outcome_v0_4_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -91,9 +97,10 @@
       "c0001_semicolon_prompt_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Semicolon_Prompt_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0001_medium_reasoning_calibration": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0001_normalized_claim_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Normalized_Claim_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0007_whole_row_semicolon_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0007_Whole_Row_Semicolon_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "c0007_whole_row_semicolon_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0007_Whole_Row_Semicolon_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0008_table_cell_semicolon_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0008_Table_Cell_Semicolon_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0007",
+    "pilot_chunk_id": "C0008",
     "generated_chunk_count": 13,
     "target_blocks_per_chunk": 20,
     "required_target_disposition_count": 20,
@@ -105,15 +112,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 87,
-    "cache_miss_call_ceiling_usd": "0.323832",
-    "latest_outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0007_Outcome_v0_3_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.330016",
+    "latest_outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0008_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "29.9389742",
-    "cumulative_spent_usd": "28.5937010",
-    "remaining_usd": "1.3452732",
-    "display_usd_rounded_up": "28.60",
+    "cumulative_spent_usd": "28.8944422",
+    "remaining_usd": "1.0445320",
+    "display_usd_rounded_up": "28.90",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
@@ -127,25 +134,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 7:10:47 PM EDT",
+    "updated_human": "August 6, 2026 at 7:18:51 PM EDT",
     "status": "GDD Coverage-Gap extraction active; exact credit-balance transport classification approved",
     "phase": "Atomic extraction — GDD Coverage-Gap sequential run",
     "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 15 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0006 accepted; C0007 v0.1 rejected; C0007 v0.2 frozen but blocked by provider credit exhaustion; 20 targets selected",
-    "now": "The hash-bound preserved C0007 HTTP 400 was classified as the exact Anthropic credit-balance transport failure under Asa's narrow ruling; every other HTTP 400 remains a packet defect, with exact cumulative spend $28.5937010 and $1.3452732 remaining",
-    "next": "Run focused preflight and retry the unchanged frozen C0007 v0.2 packet under standing consent and the active cumulative budget"
+    "chunk": "C0001–C0007 accepted; C0008 v0.1 rejected; C0008 v0.2 frozen and untransmitted; 20 targets selected",
+    "now": "C0008 v0.1 was mechanically rejected for one table-cell span crossing an authored semicolon; exact cumulative spend is $28.8944422 with $1.0445320 remaining",
+    "next": "Run focused preflight, transmit corrected C0008 v0.2 under standing consent, preserve evidence, and review before C0009"
   },
-  "next_possible_transition": "Preflight and retry the unchanged frozen C0007 v0.2 packet under the active source grant and cumulative budget.",
+  "next_possible_transition": "Transmit the validated corrected C0008 v0.2 packet under the active source grant and cumulative budget, then preserve and review it before C0009.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": 400,
-    "chunk_id": "C0007",
-    "stop_reason": null,
-    "output_tokens": null,
-    "cache_creation_input_tokens": null,
-    "cache_read_input_tokens": null,
-    "cache_effective": false,
-    "exact_cost_usd": null,
+    "http_status": 200,
+    "chunk_id": "C0008",
+    "stop_reason": "end_turn",
+    "output_tokens": 12248,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3076,
+    "cache_effective": true,
+    "exact_cost_usd": "0.1380492",
     "mechanical_passed": false,
     "review_state": "review_failed"
   }

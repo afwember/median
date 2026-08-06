@@ -1,0 +1,47 @@
+{
+  "allowed_streams": [
+    "evidence_game_semantic"
+  ],
+  "artifact_sha256": {
+    "block_manifest": "15c6913396425766c51fc16cfd43472c9b69dfa083d77828979a7173e8b08269",
+    "chunk_plan": "f5b9e61a93398d2faec2026224aefc73a9b0dd5ec08514615199ee0434934f0f",
+    "disposition_ledger": "4d9ebfe1b290215ba968aa61935c2bb61bd890bd736bfe397e708334c2c747e6",
+    "identity_card": "a64315ac1bec0e71d73e49a7cb2efcddde939705445d2336ab1ca9fefea2dbee",
+    "prompt": "0bd364714fae7a60f05c0299fffc119df0d8b74583e1abf438edcfa0b11877a7",
+    "response_schema": "16d26258d38172d7cd305ccc5a32c184bb0a8980ceb79d8acc48138397803d87"
+  },
+  "artifacts": {
+    "block_manifest": "m050/extraction/calibration/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Block_Manifest_v0_1_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_v0_4_7_Cross_System_Carryforward_Section_Aware_Chunk_Plan_v0_2_MEDIANv0_5_0.json",
+    "disposition_ledger": "m050/extraction/calibration/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Cross_System_Carryforward_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "prompt": "m050/extraction/calibration/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Extraction_Prompt_MEDIANv0_5_0.md",
+    "response_schema": "m050/extraction/calibration/cross-system-carryforward/M050_v0_4_7_Cross_System_Carryforward_Response_Schema_v0_1_MEDIANv0_5_0.json"
+  },
+  "execution": {
+    "cadence": "sequential_one_call_review",
+    "next_chunk_requires_substantive_review_of_prior_chunk": true
+  },
+  "pricing": {
+    "cache_1h_write_multiplier": "2",
+    "cache_5m_write_multiplier": "1.25",
+    "cache_read_multiplier": "0.1",
+    "input_usd_per_million_tokens": "2",
+    "output_usd_per_million_tokens": "10"
+  },
+  "provider": {
+    "cache_boundary": "stable_system_prefix",
+    "cache_required": true,
+    "cache_ttl": "1h",
+    "maximum_output_tokens": 24000,
+    "model": "claude-sonnet-5",
+    "name": "Anthropic",
+    "read_timeout_seconds": 180,
+    "reasoning_effort": "medium"
+  },
+  "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
+  "source_id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
+  "source_path": "m050/docs/v0.5/specifications/M050_v0_4_7_Cross_System_Attention_Persistence_and_World_State_Carryforward_v1_0_MEDIANv0_5_0.md",
+  "source_sha256": "239d5ab903d1d4d295503201c747c7427166cc9e4fcdd4c1f61e145b14ed0dbc",
+  "status": "SEQUENTIAL_RUN_READY"
+}

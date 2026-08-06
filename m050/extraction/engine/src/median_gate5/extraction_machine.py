@@ -567,9 +567,8 @@ Include interrupting markup or split the atom.
 
 Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;
 `no_substantive_claim` requires empty `atoms`. Structural headings, labels, table headers,
-delimiters, and document-control metadata carry no substantive atom. Never make
-a label a tautological topic claim or use structural context to omit a
-dependent substantive target.
+delimiters, and document-control metadata carry no substantive atom. Authored
+list items are substantive targets; atomize their own text.
 
 For each substantive table row, cover every nonempty semantic cell. Separate
 independent properties, functions, effects, examples, interpretations, stages,

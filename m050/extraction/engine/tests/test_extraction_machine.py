@@ -1589,6 +1589,16 @@ def test_generic_prompt_requires_each_independent_table_cell_to_ground_its_own_c
     assert "never ground a ruling or consequence only in another cell" in prompt
 
 
+def test_generic_prompt_requires_substantive_list_items_without_cross_block_import():
+    prompt = build_generic_source_prompt(
+        "M050-SRC-TEST-001",
+        ["evidence_game_semantic"],
+        "Extract only the bound source.",
+    )
+    assert "Authored\nlist items are substantive targets" in prompt
+    assert "atomize their own text" in prompt
+
+
 def _structural_manifest():
     block_types_and_text = [
         ("heading", "# Structural examples\n"),

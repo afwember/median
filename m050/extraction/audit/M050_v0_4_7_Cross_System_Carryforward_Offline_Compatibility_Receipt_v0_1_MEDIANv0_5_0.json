@@ -1,0 +1,51 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-047-CROSS-SYSTEM-CARRYFORWARD-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-06",
+  "status": "CROSS_SYSTEM_CARRYFORWARD_C0010_LIST_ITEM_CORRECTION_COMPATIBLE",
+  "source_id": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
+  "binding": {
+    "configuration_sha256": "ec8c46ab63890f662dd43c66d628780e1d8e091f1e52a4d864963046c2c10e49",
+    "prompt_sha256": "0bd364714fae7a60f05c0299fffc119df0d8b74583e1abf438edcfa0b11877a7",
+    "engine_module_sha256": "748cd77fcbc288691433e7bb2f6c05a4a4cb2725af545c395d63287793abd080",
+    "engine_tests_sha256": "a3278ca5d9475a5f6ae7ee462e79367579f5befad9de87d18517d2da852336d8"
+  },
+  "source_review": {
+    "source_blocks": 646,
+    "eligible_targets": 233,
+    "context_only_blocks": 63,
+    "excluded_blocks": 350,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 20,
+    "generated_chunk_count": 13,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 1153,
+    "representative_pilot_chunk_id": "C0001",
+    "pilot_selection_basis": "C0001 combines maximum target density, the largest estimated input, source qualification and precedence language, prose, and table structures."
+  },
+  "offline_verification": {
+    "all_13_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 83,
+    "all_source_structural_compatibility_passed": true,
+    "active_source_guard_ready": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "c0001_v0_1_placeholder_rejection_preserved": true,
+    "medium_reasoning_retry_compatibility_passed": true,
+    "c0010_v0_1_list_item_rejection_preserved": true,
+    "dependent_list_item_prompt_compatibility_passed": true,
+    "c0010_v0_2_cross_block_qualification_rejection_preserved": true
+  }
+}

@@ -1,31 +1,31 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0013-AUTHORIAL-SUBJECT-REFREEZE-012",
-  "state": "unusual_issue_halt",
-  "machine_state": "c0013_authorized_retry_semicolon_failure_halt",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0013-MEDIUM-25000-REFREEZE-018",
+  "state": "ready_for_sequential_provider_call",
+  "machine_state": "c0013_refrozen_at_medium_reasoning_25000",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "e72458934327873d8ae0c9eebcfca94ffd8942a78db27e867752f310be21ace6",
+    "configuration_sha256": "1aa3d8b188caa2ce5ad280a3338a0eae57673d84ab90d97257fcd3354087ccd9",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
     "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
     "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
     "pilot_chunk_id": "C0013",
-    "pilot_packet_sha256": "74a7d0656ea3074a63245ad95a0e2e17be4196274b0bc49dcd065123251a10f4",
-    "pilot_packet_file_sha256": "f665562f2bded63483ff17bf70bbdb8b08d4cfa33858df76b75988037d565bdf",
+    "pilot_packet_sha256": "7860a72fabc4d8c4452cdabdfc2578f5d811253686051fd547bff23c7a2db608",
+    "pilot_packet_file_sha256": "5ee9263e984e77f26bbb4078c2c2321786184ce16597a9cb1dc115bd5f0f4e30",
     "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
     "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761",
-    "compatibility_receipt_sha256": "3ec104b0262c5c1170032880c916269d6d6e0910af11f3f7b5a8ad134d2b9568",
+    "compatibility_receipt_sha256": "ad6341ab8107b7712712c83b360c33aee9c2d7148e0271eab4dda82a4e07e1fa",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
     ],
     "model": "claude-sonnet-5",
-    "reasoning_effort": "low",
-    "maximum_output_tokens": 32000,
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 25000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
     "pricing": {
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0013 v0.5 is refrozen for the one authorially authorized retry; B00590 remains target-bound and its parent heading supplies the explicit Project Queue subject without repeated context.",
+    "selection_reason": "C0013 v0.11 is refrozen under the C0013-only retry grant using the final presently affordable established configuration binding.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.40698"
+    "cache_miss_call_ceiling_usd": "0.336992"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -58,7 +58,7 @@
     "all_source_structural_compatibility_passed": true,
     "active_prompt_matches_generic_builder": true,
     "stable_output_schema_cache_boundary_preserved": true,
-    "provider_call_made": true,
+    "provider_call_made": false,
     "c0001_mechanical_and_substantive_review_passed": true,
     "c0002_mechanical_and_substantive_review_passed": true,
     "c0003_v0_1_rejection_preserved": true,
@@ -89,6 +89,11 @@
     "c0013_v0_2_rejection_preserved": true,
     "c0013_v0_3_rejection_preserved": true,
     "c0013_v0_4_rejection_preserved": true,
-    "c0013_v0_5_rejection_preserved": true
+    "c0013_v0_5_rejection_preserved": true,
+    "c0013_v0_6_rejection_preserved": true,
+    "c0013_v0_7_rejection_preserved": true,
+    "c0013_v0_8_rejection_preserved": true,
+    "c0013_v0_9_rejection_preserved": true,
+    "c0013_v0_10_rejection_preserved": true
   }
 }

@@ -5,7 +5,7 @@
   "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "e72458934327873d8ae0c9eebcfca94ffd8942a78db27e867752f310be21ace6",
+    "configuration_sha256": "1aa3d8b188caa2ce5ad280a3338a0eae57673d84ab90d97257fcd3354087ccd9",
     "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
     "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
     "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761"
@@ -87,6 +87,30 @@
     "c0013_authorial_subject_clarification": {
       "sha256": "a593e5a62ac2ca10313c635989f4e48d62e6b881d1aa6d257fe0e5aed6b10b00",
       "result": "authorial_parent_heading_subject_ruling_applied_with_existing_provider_configuration_and_all_source_compatibility_passed"
+    },
+    "c0013_high_reasoning_32000": {
+      "sha256": "35ed103c5aca291af454ad3335bd6e6e86b928a88192a11d48b9983fc0300aa2",
+      "result": "existing_high_reasoning_binding_applied_after_semicolon_noncompliance_and_all_source_compatibility_passed"
+    },
+    "c0013_low_reasoning_40000": {
+      "sha256": "edc761fc9cbbf0282b7ff2525d8e0116b80767e145b54d9f0f28fdd45f9206c6",
+      "result": "existing_low_reasoning_and_output_allowance_bindings_applied_after_incomplete_high_response_and_all_source_compatibility_passed"
+    },
+    "c0013_low_reasoning_28000": {
+      "sha256": "a2e5b9f228e7351cb5ffdccc3318b3d05137fad20929ae9701ad3acae1c903e6",
+      "result": "existing_output_allowance_binding_refrozen_after_semicolon_noncompliance_and_all_source_compatibility_passed"
+    },
+    "c0013_medium_reasoning_28000": {
+      "sha256": "88d4d369011b0e7fe79894403623a1298ae1b8c5c3f36435c306b05647db8b63",
+      "result": "existing_medium_reasoning_binding_refrozen_after_semicolon_noncompliance_and_all_source_compatibility_passed"
+    },
+    "c0013_medium_reasoning_26000": {
+      "sha256": "b4304e0d1e6ad98c7be9778da89e424962d8e819d5449f0ba98190a9f3fd9bb0",
+      "result": "existing_output_allowance_binding_refrozen_after_review_required_response_and_all_source_compatibility_passed"
+    },
+    "c0013_medium_reasoning_25000": {
+      "sha256": "a601dc97c801ac57dce4193967bcc2c4ad64c0cb0f61762b6b4eb6c7ebe45ebb",
+      "result": "existing_output_allowance_binding_refrozen_after_semicolon_noncompliance_and_all_source_compatibility_passed"
     }
   }
 }

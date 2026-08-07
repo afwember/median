@@ -1,0 +1,41 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-C0013-MEDIUM-REASONING-28000-001",
+  "date": "2026-08-06",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0013",
+    "outcome_sha256": "e65054483e1d902005aa6bad3ba576af75d035c6fcf4a93f96f73ec57fc30194",
+    "defect": "B00631 atom A2 crossed an authored semicolon; B00590 matched the authorially ruled normalized claim."
+  },
+  "correction": {
+    "scope": "existing_declarative_reasoning_effort_binding",
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 28000,
+    "prompt_delta": 0,
+    "schema_delta": 0,
+    "validator_delta": 0,
+    "source_delta": 0,
+    "target_delta": 0,
+    "process_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "e4f9e6aef9fbbb85ea27e2ab27f0fb40ea2fddb7f8728773f544bd62d3357160",
+    "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
+    "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
+    "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
+    "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
+    "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761"
+  },
+  "offline_verification": {
+    "accepted_c0001_through_c0012_bindings_preserved": true,
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0019-MEDIUM-REASONING-REFREEZE-032",
-  "state": "ready_for_sequential_provider_call",
-  "machine_state": "c0019_v0_1_mechanical_rejection_preserved_and_medium_reasoning_packet_refrozen",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0020-SEQUENTIAL-FREEZE-033",
+  "state": "source_candidate_accepted_stopdown",
+  "machine_state": "c0020_accepted_whole_source_candidate_hash_bound",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
@@ -11,9 +11,9 @@
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
     "disposition_ledger_sha256": "eae6a8a3b712b8ccca1bd3197019c055b00b34cb0905a482206fa44567a6e77e",
     "chunk_plan_sha256": "ac8210b63f135f3c8e0bfae478b86e291e5d859832c124172a9fd7c3b547f6e7",
-    "pilot_chunk_id": "C0019",
-    "pilot_packet_sha256": "eda6ab1ba2dc8d5b5f057440bbd5db155ec62d2218c5fc7a5e74215e8af0e511",
-    "pilot_packet_file_sha256": "59f626b5f22222f463de3b931f917c11feebf9983eba2667e9f33cff71fd86f9",
+    "pilot_chunk_id": "C0020",
+    "pilot_packet_sha256": "222ac51a7491e2d4010124d48db70eba8f9922e7193195dd6fed783bca810dbc",
+    "pilot_packet_file_sha256": "d3442a3e01672ac6024740bb018b18337d926b896805996984a479cc8a9e9f5b",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0019 v0.1 is preserved as mechanically incomplete; the previously successful medium-reasoning binding is restored without changing source, prompt, schema, targets, validator, cache boundary, or phase structure.",
-    "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.38494"
+    "selection_reason": "C0020 is the final sequential chunk after explicit Supervisor manual resolution and acceptance of C0019; approved remaining-source structure and established medium-reasoning bindings remain unchanged.",
+    "required_target_disposition_count": 12,
+    "cache_miss_call_ceiling_usd": "0.367904"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -62,8 +62,8 @@
     "c0001_mechanical_and_substantive_review_passed": true,
     "c0002_mechanical_and_substantive_review_passed": true,
     "c0003_v0_1_rejection_preserved": true,
-    "whole_source_coverage_and_quality_review_passed": false,
-    "candidate_acceptance_guard_passed": false,
+    "whole_source_coverage_and_quality_review_passed": true,
+    "candidate_acceptance_guard_passed": true,
     "c0003_mechanical_and_substantive_review_passed": true,
     "c0004_mechanical_and_substantive_review_passed": true,
     "c0005_mechanical_and_substantive_review_passed": true,
@@ -109,6 +109,9 @@
     "c0017_mechanical_and_substantive_review_passed": true,
     "c0018_v0_1_mechanical_rejection_preserved": true,
     "c0018_mechanical_and_substantive_review_passed": true,
-    "c0019_v0_1_mechanical_rejection_preserved": true
+    "c0019_v0_1_mechanical_rejection_preserved": true,
+    "c0019_v0_2_mechanical_rejection_preserved": true,
+    "c0019_manual_mechanical_and_substantive_review_passed": true,
+    "c0020_mechanical_and_substantive_review_passed": true
   }
 }

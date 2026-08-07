@@ -1,0 +1,190 @@
+{
+  "report_version": "M050-DEVELOPMENT-RULINGS-ACCEPTANCE-0.1",
+  "status": "ACCEPTED_EXTRACTION_CANDIDATE_READY_FOR_CORPUS_RECONCILIATION",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009",
+    "C0010",
+    "C0011",
+    "C0012",
+    "C0013",
+    "C0014",
+    "C0015",
+    "C0016",
+    "C0017",
+    "C0018",
+    "C0019",
+    "C0020"
+  ],
+  "chunks": 20,
+  "target_dispositions": 387,
+  "candidate_atoms": 432,
+  "no_substantive_claim_dispositions": 6,
+  "whole_document_review": {
+    "source_blocks": 968,
+    "eligible_target_blocks": 387,
+    "context_only_blocks": 72,
+    "excluded_blocks": 509,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "media_occurrences": 0,
+    "extraction_quality_review_passed": true,
+    "source_declared_status_and_qualifications_preserved": true,
+    "unresolved_review_required_blocks": 0
+  },
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0001_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "8f798a4f3fa79c7504b378164ea527c3c35f2d088fdd1f890aa5de27172645fe",
+      "review_event_id": "evt_e427d323515524ce8c1bdb93",
+      "review_event_outcome_sha256": "8f798a4f3fa79c7504b378164ea527c3c35f2d088fdd1f890aa5de27172645fe"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0002_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "529294bc482392fa49b21d3f9c480066c9762f2e3421b48fe95e47eaa7fe8e14",
+      "review_event_id": "evt_80bd1599aec5a375baa15c66",
+      "review_event_outcome_sha256": "529294bc482392fa49b21d3f9c480066c9762f2e3421b48fe95e47eaa7fe8e14"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0003_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "9748148efc08c04997470c15ef819dce2ad96b0cf4c8f851d9af2bd4247f8231",
+      "review_event_id": "evt_25c3c996df68bc983db21762",
+      "review_event_outcome_sha256": "9748148efc08c04997470c15ef819dce2ad96b0cf4c8f851d9af2bd4247f8231"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "b1fc15899c5f16d44f1e76c9a5f2f4d3770c6fac858e6c3a963ab9b5bd284721",
+      "review_event_id": "evt_84bc093f061648ef0bf67438",
+      "review_event_outcome_sha256": "b1fc15899c5f16d44f1e76c9a5f2f4d3770c6fac858e6c3a963ab9b5bd284721"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d8e29361bf5d30b100cc58092245e99fffe8c5c13d15771fbc0e7daae70571a9",
+      "review_event_id": "evt_3b1792fe463adc8623164b0b",
+      "review_event_outcome_sha256": "d8e29361bf5d30b100cc58092245e99fffe8c5c13d15771fbc0e7daae70571a9"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "00ee8996692e436c2da5aa80b4c12e7c39ff957cad90c934e509d69e429b033c",
+      "review_event_id": "evt_5d35e2883f33ff5ddb6c3e13",
+      "review_event_outcome_sha256": "00ee8996692e436c2da5aa80b4c12e7c39ff957cad90c934e509d69e429b033c"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0007_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "b5a099d278fd1088cd902fa4cc5cfbcd4712ae39fb7c36a094c9d4234a8d9d87",
+      "review_event_id": "evt_1a5767c94da362121e4514cf",
+      "review_event_outcome_sha256": "b5a099d278fd1088cd902fa4cc5cfbcd4712ae39fb7c36a094c9d4234a8d9d87"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d288e5729eb2a6325484ffd21113e3cfe36b2fec6a2ec2b4197c126a14c3dec9",
+      "review_event_id": "evt_51c4e6966a900812ca40359b",
+      "review_event_outcome_sha256": "d288e5729eb2a6325484ffd21113e3cfe36b2fec6a2ec2b4197c126a14c3dec9"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "86c1f80be3eff9596700dc3783e7f4d09ce5ee6209d0a8edbdd6a6e8004acbec",
+      "review_event_id": "evt_aa8be0c7e7a47f840f552378",
+      "review_event_outcome_sha256": "86c1f80be3eff9596700dc3783e7f4d09ce5ee6209d0a8edbdd6a6e8004acbec"
+    },
+    {
+      "chunk_id": "C0010",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "1437e384fc8d0320db0dc132481eaada96f200a524f295c07e6d7c7ac8962173",
+      "review_event_id": "evt_907fc59525210255b7322186",
+      "review_event_outcome_sha256": "1437e384fc8d0320db0dc132481eaada96f200a524f295c07e6d7c7ac8962173"
+    },
+    {
+      "chunk_id": "C0011",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Outcome_v0_7_MEDIANv0_5_0.json",
+      "outcome_sha256": "79af365ff12ad550763723eedb3c5969c8c2696a2d037f83d34f2b10c8c2e2e5",
+      "review_event_id": "evt_b796da0778100ab9ce4a566d",
+      "review_event_outcome_sha256": "79af365ff12ad550763723eedb3c5969c8c2696a2d037f83d34f2b10c8c2e2e5"
+    },
+    {
+      "chunk_id": "C0012",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "de36d6dc4323107fa21b83d882cf86a42031026b7ad1b35e230e885650f8fd2b",
+      "review_event_id": "evt_e53dc64822a0221da7e89666",
+      "review_event_outcome_sha256": "de36d6dc4323107fa21b83d882cf86a42031026b7ad1b35e230e885650f8fd2b"
+    },
+    {
+      "chunk_id": "C0013",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_14_MEDIANv0_5_0.json",
+      "outcome_sha256": "3ff98dd3cda51c5d894756d1303bac88e5ab51b3a467adabd1701a5f95d47f37",
+      "review_event_id": "evt_c4db101052d60a5ee4322258",
+      "review_event_outcome_sha256": "3ff98dd3cda51c5d894756d1303bac88e5ab51b3a467adabd1701a5f95d47f37"
+    },
+    {
+      "chunk_id": "C0014",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "950af49eeb2adc2fbf1a6fc0d42e2fe21a76b618d582bb9f2ae76382f53cfd6c",
+      "review_event_id": "evt_63561062c347908f219ebe72",
+      "review_event_outcome_sha256": "950af49eeb2adc2fbf1a6fc0d42e2fe21a76b618d582bb9f2ae76382f53cfd6c"
+    },
+    {
+      "chunk_id": "C0015",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "eeb8f43082a2bb8bb757a5e64f3bed9b141a6d2de97185471e86a32eee1431bc",
+      "review_event_id": "evt_457189a9b63ffdd3a19e6dcc",
+      "review_event_outcome_sha256": "eeb8f43082a2bb8bb757a5e64f3bed9b141a6d2de97185471e86a32eee1431bc"
+    },
+    {
+      "chunk_id": "C0016",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Outcome_v0_5_MEDIANv0_5_0.json",
+      "outcome_sha256": "0a6ed256d9e31182a5e8b5e70f5def2a775e56bc1c846d586035795dcd5b0f85",
+      "review_event_id": "evt_10ad724112f1cbc7e88836c7",
+      "review_event_outcome_sha256": "0a6ed256d9e31182a5e8b5e70f5def2a775e56bc1c846d586035795dcd5b0f85"
+    },
+    {
+      "chunk_id": "C0017",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "30bce0b4a9a2a21072c38babf5d1e565f972de24a4b1f967ff8a9724a197e269",
+      "review_event_id": "evt_6bc29d14815e1bedf389c4b0",
+      "review_event_outcome_sha256": "30bce0b4a9a2a21072c38babf5d1e565f972de24a4b1f967ff8a9724a197e269"
+    },
+    {
+      "chunk_id": "C0018",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "55ce2c174531e59d32bdabe3facf7a185d79b874782a9f5011a2f97430eb02e6",
+      "review_event_id": "evt_c2457a6ab50a6b9487d2849f",
+      "review_event_outcome_sha256": "55ce2c174531e59d32bdabe3facf7a185d79b874782a9f5011a2f97430eb02e6"
+    },
+    {
+      "chunk_id": "C0019",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Outcome_v0_3_MEDIANv0_5_0.json",
+      "outcome_sha256": "09b5f726a19192ed6089df0ae327e02d41eaa0c4e412696578e31557520c06ca",
+      "review_event_id": "evt_2776e25b8daca9f07204a7aa",
+      "review_event_outcome_sha256": "09b5f726a19192ed6089df0ae327e02d41eaa0c4e412696578e31557520c06ca"
+    },
+    {
+      "chunk_id": "C0020",
+      "outcome_path": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "512813cf979420182975d2fcfd8ea89419ff471c873fefdb718e22facc43e213",
+      "review_event_id": "evt_cb49ab9e8984c1480eb48d03",
+      "review_event_outcome_sha256": "512813cf979420182975d2fcfd8ea89419ff471c873fefdb718e22facc43e213"
+    }
+  ],
+  "candidate_path": "m050/extraction/accepted/development-rulings/M050_v0_4_7_Development_Rulings_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "f369d95c98cbba607d96430fe62a5eb9f033b044666df2a893548794f1ee4e55",
+  "approval": true,
+  "note": "Accepted as source-bounded Development Rulings extraction output; semantic acceptance, mapping, reconciliation, canonization, and compiled prose remain later compile stages."
+}

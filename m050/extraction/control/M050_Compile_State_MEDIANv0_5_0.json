@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "ACTIVE",
-  "updated": "2026-08-07T08:48:14-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0020_PREPARATION_ACTIVE",
+  "status": "STOPDOWN",
+  "updated": "2026-08-07T08:56:23-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_SOURCE_CANDIDATE_ACCEPTED_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 6,
-    "outstanding_pre_reconciliation_sources": 2,
+    "outstanding_compile_scope_sources": 5,
+    "outstanding_pre_reconciliation_sources": 1,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -30,7 +30,8 @@
       "M050-SRC-CORE-TRAITS-001",
       "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
       "M050-SRC-ECOLOGY-001",
-      "M050-SRC-GDD-COVERAGE-GAP-001"
+      "M050-SRC-GDD-COVERAGE-GAP-001",
+      "M050-SRC-047-DEVELOPMENT-RULINGS-001"
     ]
   },
   "source": {
@@ -56,18 +57,19 @@
       "C0016",
       "C0017",
       "C0018",
-      "C0019"
+      "C0019",
+      "C0020"
     ],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "whole_source_candidate_complete": true,
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0020_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -163,6 +165,11 @@
         "chunk_id": "C0019",
         "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Outcome_v0_3_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0020",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -182,10 +189,10 @@
       "c0018_low_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0018_Low_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0019_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0019_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0019",
+    "pilot_chunk_id": "C0020",
     "generated_chunk_count": 20,
     "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 20,
+    "required_target_disposition_count": 12,
     "source_blocks": 968,
     "eligible_target_blocks": 387,
     "context_only_blocks": 72,
@@ -194,21 +201,27 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.38494",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Outcome_v0_2_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.367904",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/development-rulings/M050_v0_4_7_Development_Rulings_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "f369d95c98cbba607d96430fe62a5eb9f033b044666df2a893548794f1ee4e55",
+      "report": "m050/extraction/accepted/development-rulings/M050_v0_4_7_Development_Rulings_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "e2290462632e3265376cbfc096b66b2ee10a6116ccb15f919fe862a30d5c9e7c"
+    }
   },
   "spend": {
     "active": true,
     "authorized_usd": "35.5398320",
-    "cumulative_spent_usd": "34.7426580",
-    "remaining_usd": "0.7971740",
-    "display_usd_rounded_up": "34.75",
+    "cumulative_spent_usd": "34.8328860",
+    "remaining_usd": "0.7069460",
+    "display_usd_rounded_up": "34.84",
     "provisional_component_usd": "0.631836",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -216,26 +229,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 8:48:14 AM EDT",
-    "status": "v0.4.7 Development Rulings C0020 preparation active",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
-    "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0019 / C0020 accepted; 1 chunk remains unprocessed",
-    "now": "C0019 remains manually resolved and accepted under the Supervisor checkpoint; both Worker authorities are active and exact cumulative spend remains $34.7426580",
-    "next": "Validate bindings, freeze, and process final chunk C0020"
+    "updated_human": "August 7, 2026 at 8:56:23 AM EDT",
+    "status": "Formal Stopdown — v0.4.7 Development Rulings source candidate accepted",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings complete",
+    "source": "v0.4.7 Development Rulings — ordinal 17; 17 / 22 compile-scope sources complete",
+    "chunk": "C0001–C0020 accepted; 387 / 387 targets covered; 432 candidate atoms",
+    "now": "Whole-document coverage and extraction-quality review passed; candidate/report pair is hash-bound; exact cumulative spend is $34.8328860 with $0.7069460 remaining",
+    "next": "Await an explicit source-work and repository-write grant for the next canonical source; no later phase is authorized"
   },
-  "next_possible_transition": "Freeze final Development Rulings chunk C0020 after binding validation and continue sequential extraction.",
+  "next_possible_transition": "Await Asa's explicit grant for the next canonical atomic-extraction source; Development Rulings authority has ended at source completion.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0019",
+    "chunk_id": "C0020",
     "stop_reason": "end_turn",
-    "output_tokens": 2256,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3221,
+    "output_tokens": 6825,
+    "cache_creation_input_tokens": 3221,
+    "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.0366702",
-    "mechanical_passed": false,
-    "review_state": "review_failed"
+    "exact_cost_usd": "0.090228",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
   }
 }

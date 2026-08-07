@@ -1,30 +1,30 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0016-HIGH-REASONING-REFREEZE-026",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0016-STRUCTURAL-REVIEW-MEDIUM-REFREEZE-027",
   "state": "ready_for_sequential_provider_call",
-  "machine_state": "c0016_incomplete_medium_response_preserved_and_high_reasoning_packet_refrozen",
+  "machine_state": "c0016_repeated_incomplete_responses_preserved_and_approved_remaining_structure_review_medium_packet_refrozen",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "74e2767a23aa2e74d6a2b5bbfdcc5f9c75841080ce824f5c91ba719bd9629dfe",
+    "configuration_sha256": "145c6ae9f33d2ddf37a8939ac9eac647be5c75371a692a50d558ea44ff636101",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "disposition_ledger_sha256": "02e181cdb25fafb0a68149b3a22a70dd800798b9d5b5e8e79a4e34dd2fa0903a",
-    "chunk_plan_sha256": "174ac1c4ca3ff52dc10d8f1e23adff3a839adbb8d51a1836c59bd9a41931b93e",
+    "disposition_ledger_sha256": "eae6a8a3b712b8ccca1bd3197019c055b00b34cb0905a482206fa44567a6e77e",
+    "chunk_plan_sha256": "ac8210b63f135f3c8e0bfae478b86e291e5d859832c124172a9fd7c3b547f6e7",
     "pilot_chunk_id": "C0016",
-    "pilot_packet_sha256": "0f17dcf67bde91e0df89a09d2e9f2d87620ce61ae1b9702d45f5acaf2eb2526d",
-    "pilot_packet_file_sha256": "b667aa83d0c7c431aa4f8d569de6b3ab2d9260eb54f8cf8ce2b52184653f2b37",
+    "pilot_packet_sha256": "414e7a39978862b34cdfbaaa09a0392927dc0b4407f5412095bf722cf19f01c9",
+    "pilot_packet_file_sha256": "cd77b54e9b92c174261c1ea6d80c031c45c73444f711a16d72508c1ce7b1fb6d",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71",
-    "compatibility_receipt_sha256": "60fb3264ba129e0de90bc14b4bc6eb31e82efa7ddc1f1c36633954c6fdef7597",
+    "compatibility_receipt_sha256": "9fa6c6238c3556d67a34e77dd96e43593c1a53f4af26353e26b39ed2dd699325",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
     ],
     "model": "claude-sonnet-5",
-    "reasoning_effort": "high",
+    "reasoning_effort": "medium",
     "maximum_output_tokens": 30000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0016 v0.3 is preserved as a mechanically incomplete medium-reasoning response; the existing declarative reasoning-effort binding is increased to high while the source, targets, prompt, schema, validator, and extraction structure remain unchanged.",
+    "selection_reason": "C0016 v0.3 and v0.4 remain preserved as mechanically incomplete responses. The approved manual structural review resolves the remaining rhetorical and governing-lead-in classifications across the unaccepted suffix, preserves the accepted C0001-C0015 prefix, and restores the previously successful medium reasoning effort without changing the prompt, schema, validator, or phase structure.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.385644"
+    "cache_miss_call_ceiling_usd": "0.38764"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -49,11 +49,11 @@
     "external_representation_consultation_prohibited": true
   },
   "offline_verification": {
-    "all_21_chunks_fake_validated": true,
+    "all_20_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
     "offline_tests_passed": 88,
     "calibrated_target_blocks_per_chunk": 20,
-    "generated_chunk_count": 21,
+    "generated_chunk_count": 20,
     "chunk_count_is_input": false,
     "all_source_structural_compatibility_passed": true,
     "active_prompt_matches_generic_builder": true,
@@ -102,7 +102,8 @@
     "c0015_mechanical_and_substantive_review_passed": true,
     "c0016_v0_1_rejection_preserved": true,
     "accepted_c0001_through_c0015_plan_prefix_identical": true,
-    "authorial_non_substantive_governing_lead_in_b00780": true,
-    "c0016_v0_3_mechanical_rejection_preserved": true
+    "approved_remaining_source_structural_review_applied": true,
+    "c0016_v0_3_mechanical_rejection_preserved": true,
+    "c0016_v0_4_mechanical_rejection_preserved": true
   }
 }

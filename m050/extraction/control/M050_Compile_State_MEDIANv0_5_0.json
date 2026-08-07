@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T01:22:02-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0016_REPEATED_MECHANICAL_NONCOMPLIANCE_FORMAL_STOPDOWN",
+  "updated": "2026-08-07T01:43:20-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_REMAINING_STRUCTURE_REVIEW_COMPLETE_C0016_MEDIUM_PACKET_FROZEN_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -63,7 +63,7 @@
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Call_Packet_v0_3_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Call_Packet_v0_5_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -157,18 +157,18 @@
       "c0016_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0016_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
     "pilot_chunk_id": "C0016",
-    "generated_chunk_count": 21,
+    "generated_chunk_count": 20,
     "target_blocks_per_chunk": 20,
     "required_target_disposition_count": 20,
     "source_blocks": 968,
-    "eligible_target_blocks": 397,
-    "context_only_blocks": 66,
-    "excluded_blocks": 505,
+    "eligible_target_blocks": 387,
+    "context_only_blocks": 72,
+    "excluded_blocks": 509,
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.385644",
+    "cache_miss_call_ceiling_usd": "0.38764",
     "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Outcome_v0_4_MEDIANv0_5_0.json"
   },
   "spend": {
@@ -190,15 +190,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 1:22:02 AM EDT",
-    "status": "v0.4.7 Development Rulings formally stopped after repeated C0016 mechanical noncompliance",
+    "updated_human": "August 7, 2026 at 1:43:20 AM EDT",
+    "status": "v0.4.7 Development Rulings formally stopped with approved remaining-source structural review complete",
     "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0015 / C0021 accepted; C0016 v0.1 rejected; 6 chunks remain unaccepted",
-    "now": "C0016 v0.3 and v0.4 are preserved as mechanically rejected after each returned one empty disposition and omitted 19 required targets; exact cumulative spend is $34.3462770 and both authorities are false",
-    "next": "Supervisor review of the repeated C0016 mechanical noncompliance before any retry or repository work resumes"
+    "chunk": "C0001–C0015 / C0020 accepted; C0016 rejected; 5 chunks remain unaccepted",
+    "now": "The approved C0016–C0020 structural review is applied; the C0001–C0015 accepted prefix is unchanged, corrected C0016 v0.5 is frozen at medium reasoning, no provider call occurred, and both authorities are false",
+    "next": "Await an explicit Worker source-work grant for one corrected C0016 medium-reasoning call"
   },
-  "next_possible_transition": "Supervisor review of the repeated Development Rulings C0016 provider mechanical noncompliance before any retry or repository work resumes.",
+  "next_possible_transition": "An explicit Worker source-work grant may release the single frozen Development Rulings C0016 v0.5 medium-reasoning call.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

@@ -5,16 +5,16 @@
   "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "74e2767a23aa2e74d6a2b5bbfdcc5f9c75841080ce824f5c91ba719bd9629dfe",
+    "configuration_sha256": "145c6ae9f33d2ddf37a8939ac9eac647be5c75371a692a50d558ea44ff636101",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
   },
   "source_review": {
     "source_blocks": 968,
-    "eligible_targets": 397,
-    "context_only_blocks": 66,
-    "excluded_blocks": 505,
+    "eligible_targets": 387,
+    "context_only_blocks": 72,
+    "excluded_blocks": 509,
     "identity_review_flags_remaining": 0,
     "media_occurrences_excluded": 0,
     "media_reference_blocks_excluded": 0,
@@ -23,14 +23,14 @@
   },
   "quantization": {
     "target_blocks_per_chunk": 20,
-    "generated_chunk_count": 21,
+    "generated_chunk_count": 20,
     "chunk_count_is_input": false,
-    "maximum_estimated_input_tokens": 766,
+    "maximum_estimated_input_tokens": 776,
     "representative_pilot_chunk_id": "C0001",
     "pilot_selection_basis": "C0001 combines full target density with source-declared status, adoption qualifications, prose, callouts, and dependent list items."
   },
   "offline_verification": {
-    "all_21_chunks_fake_validated": true,
+    "all_20_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
     "unique_target_coverage": true,
     "schema_errors": 0,

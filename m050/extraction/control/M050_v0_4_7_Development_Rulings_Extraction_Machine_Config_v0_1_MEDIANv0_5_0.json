@@ -5,8 +5,8 @@
   ],
   "artifact_sha256": {
     "block_manifest": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "chunk_plan": "174ac1c4ca3ff52dc10d8f1e23adff3a839adbb8d51a1836c59bd9a41931b93e",
-    "disposition_ledger": "02e181cdb25fafb0a68149b3a22a70dd800798b9d5b5e8e79a4e34dd2fa0903a",
+    "chunk_plan": "ac8210b63f135f3c8e0bfae478b86e291e5d859832c124172a9fd7c3b547f6e7",
+    "disposition_ledger": "eae6a8a3b712b8ccca1bd3197019c055b00b34cb0905a482206fa44567a6e77e",
     "identity_card": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "prompt": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc"
@@ -38,7 +38,7 @@
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "high"
+    "reasoning_effort": "medium"
   },
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",

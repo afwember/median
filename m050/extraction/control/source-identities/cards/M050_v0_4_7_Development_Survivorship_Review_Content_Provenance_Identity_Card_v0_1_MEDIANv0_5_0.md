@@ -1,8 +1,8 @@
 # MEDIAN v0.5.0 v0.4.7 Development Survivorship Review Content/Provenance Identity Card v0.1
 
 Date: 2026-08-07
-Status: `PENDING_AUTHOR_APPROVAL`
-Lifecycle state: `identity_card_proposed`
+Status: `APPROVED`
+Lifecycle state: `identity_card_approved`
 Author/root of authority: Asa Wember
 
 ## Source identity and authority
@@ -51,6 +51,8 @@ source, later compile stage, or Google Sheets work.
 
 ## Approval boundary
 
-This identity card remains proposed. Asa Wember's explicit approval is required
-before offline scaffold and provider-eligible configuration preparation. No
-provider transmission is authorized by this proposal.
+Asa Wember approved this source identity and extraction boundary. Approval
+permits the established Development Survivorship Review-only offline preparation
+and representative pilot calibration; provider readiness still requires
+validated frozen bindings, completed offline and replay gates, sequential
+review, and sufficient budget.

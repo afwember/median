@@ -1,0 +1,47 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
+  "receipt_id": "M050-047-DEVELOPMENT-SURVIVORSHIP-REVIEW-OFFLINE-COMPATIBILITY-001",
+  "date": "2026-08-07",
+  "status": "DEVELOPMENT_SURVIVORSHIP_REVIEW_OFFLINE_PREPARATION_COMPATIBLE",
+  "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+  "binding": {
+    "configuration_sha256": "c9679479a6eaf5a3337831dbc5dcc291b502ec6118b47055472c44dec2d6154e",
+    "prompt_sha256": "7aa6d6526dff487199f9b6aba0badb33b23418b1408eb9b4144222cae88bc0b4",
+    "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
+    "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
+  },
+  "source_review": {
+    "source_blocks": 619,
+    "eligible_targets": 323,
+    "context_only_blocks": 46,
+    "excluded_blocks": 250,
+    "identity_review_flags_remaining": 0,
+    "media_occurrences_excluded": 0,
+    "media_reference_blocks_excluded": 0,
+    "media_caption_targets_retained": 0,
+    "media_content_in_packet": false
+  },
+  "quantization": {
+    "target_blocks_per_chunk": 40,
+    "generated_chunk_count": 9,
+    "chunk_count_is_input": false,
+    "maximum_estimated_input_tokens": 1137,
+    "representative_pilot_chunk_id": "C0001",
+    "pilot_selection_basis": "C0001 combines full target density with the source audit purpose, source-declared status qualifications, executive findings, prose, and dependent list items."
+  },
+  "offline_verification": {
+    "all_9_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "schema_errors": 0,
+    "grounding_errors": 0,
+    "coverage_errors": 0,
+    "media_leaks": 0,
+    "offline_tests_passed": 88,
+    "all_source_structural_compatibility_passed": true,
+    "active_source_guard_ready": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true
+  },
+  "replays": {}
+}

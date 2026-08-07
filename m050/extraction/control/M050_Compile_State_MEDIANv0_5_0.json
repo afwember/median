@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T09:17:36-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "updated": "2026-08-07T09:40:28-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0001_THROUGH_C0002_ACCEPTED_C0003_FROZEN_BUDGET_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -38,23 +38,54 @@
     "id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
     "label": "v0.4.7 Development Survivorship Review",
     "compile_ordinal": 18,
-    "accepted_chunk_ids": [],
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002"
+    ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Survivorship_Review_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "f3fcc67e662eece0faabd701a7977a35dda79c561fdcc2337af5f53fb37c25ba",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_v0_4_7_Development_Survivorship_Review_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0003_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {},
+    "pilot_chunk_id": "C0003",
+    "generated_chunk_count": 9,
+    "target_blocks_per_chunk": 40,
+    "required_target_disposition_count": 40,
+    "source_blocks": 619,
+    "eligible_target_blocks": 323,
+    "context_only_blocks": 46,
+    "excluded_blocks": 250,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 88,
+    "cache_miss_call_ceiling_usd": "0.424764",
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0002_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "35.5398320",
-    "cumulative_spent_usd": "34.8328860",
-    "remaining_usd": "0.7069460",
-    "display_usd_rounded_up": "34.84",
+    "cumulative_spent_usd": "35.1867660",
+    "remaining_usd": "0.3530660",
+    "display_usd_rounded_up": "35.19",
     "provisional_component_usd": "0.631836",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
@@ -68,15 +99,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 9:17:36 AM EDT",
-    "status": "v0.4.7 Development Survivorship Review identity proposed; author approval required",
-    "phase": "Atomic extraction — v0.4.7 Development Survivorship Review identity approval halt",
+    "updated_human": "August 7, 2026 at 9:40:28 AM EDT",
+    "status": "v0.4.7 Development Survivorship Review budget halt at frozen C0003",
+    "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "No chunk selected; accepted/rejected boundary empty",
-    "now": "Frozen source identity, audit-status qualifications, allowed streams, and zero-media disposition proposed; no provider call or spend",
-    "next": "Halt for author approval or amendment before scaffold, provider configuration, or transmission"
+    "chunk": "C0001–C0002 / C0009 accepted; C0003 frozen and untransmitted; no rejected chunk",
+    "now": "C0002 passed complete mechanical and substantive review with 3,240 cache-read tokens; exact cumulative spend is $35.1867660",
+    "next": "Replenish the cumulative spend budget before C0003; $0.3530660 remaining cannot cover its $0.424764 conservative ceiling"
   },
-  "next_possible_transition": "Author approval or amendment of the pending v0.4.7 Development Survivorship Review identity card; no provider call, another source, or later phase is authorized.",
+  "next_possible_transition": "Replenish the cumulative spend budget, then preflight frozen Development Survivorship Review C0003; no other source or later phase is authorized.",
   "gate_5_complete": false,
-  "latest_provider_attempt": null
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "chunk_id": "C0002",
+    "stop_reason": "end_turn",
+    "output_tokens": 13778,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3240,
+    "cache_effective": true,
+    "exact_cost_usd": "0.161474",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
+  }
 }

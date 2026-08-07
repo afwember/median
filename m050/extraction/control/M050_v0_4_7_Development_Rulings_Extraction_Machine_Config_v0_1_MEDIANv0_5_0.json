@@ -34,11 +34,11 @@
     "cache_boundary": "stable_system_prefix",
     "cache_required": true,
     "cache_ttl": "1h",
-    "maximum_output_tokens": 32000,
+    "maximum_output_tokens": 30000,
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "low"
+    "reasoning_effort": "medium"
   },
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",

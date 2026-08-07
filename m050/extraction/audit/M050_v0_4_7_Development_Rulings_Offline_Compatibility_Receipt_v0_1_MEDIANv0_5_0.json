@@ -5,7 +5,7 @@
   "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "1c8b7645f647582b1f88094f2e6251fbe36688de87efcc27b39f43df468eb402",
+    "configuration_sha256": "5d89f6c4eb8fbef1693e1b4ba533fe640c9fa52a71b7865354769a1eae2fb4eb",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"

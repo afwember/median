@@ -1,31 +1,31 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0013-SEMICOLON-ALIGNED-REFREEZE-019",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0013-MEDIUM-30000-REFREEZE-021",
   "state": "ready_for_sequential_provider_call",
-  "machine_state": "c0013_semicolon_contract_aligned_and_refrozen",
+  "machine_state": "c0013_v0_13_rejected_and_medium_30000_retry_refrozen",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "1c8b7645f647582b1f88094f2e6251fbe36688de87efcc27b39f43df468eb402",
+    "configuration_sha256": "5d89f6c4eb8fbef1693e1b4ba533fe640c9fa52a71b7865354769a1eae2fb4eb",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
     "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
     "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
     "pilot_chunk_id": "C0013",
-    "pilot_packet_sha256": "4ae01b7d082f3cf32b718f697141828272a63ca18c4034fd46cbb5a0e4339237",
-    "pilot_packet_file_sha256": "f96c05a87a389cb440798a61cba7b6544b5f365edcee245ebafbf76b3e9358e8",
+    "pilot_packet_sha256": "898088fc29652a89c47a001e44a5823db4a665c54361537129a0361565cc7e86",
+    "pilot_packet_file_sha256": "0661b03e994d55043d67ef48bf361cc5f1506c62c6ebc7ceb898723e2e980523",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71",
-    "compatibility_receipt_sha256": "d3a12d289357578f54a45f1763572cc391cfc2ae7090d91c62e72120a7cab667",
+    "compatibility_receipt_sha256": "4a40851265cf740a8eae5346e6140a88450c9959517e2479c13c850bee3c76ea",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
     ],
     "model": "claude-sonnet-5",
-    "reasoning_effort": "low",
-    "maximum_output_tokens": 32000,
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 30000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
     "pricing": {
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0013 v0.12 is refrozen after aligning the concise source-agnostic semicolon instruction with the existing validator and restoring the normal provider configuration.",
+    "selection_reason": "C0013 v0.14 is refrozen as a nonduplicate medium-reasoning retry after v0.13 passed semicolon handling but returned B00590 review-required; source, targets, prompt, schema, and validator remain unchanged.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.407316"
+    "cache_miss_call_ceiling_usd": "0.387328"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -94,6 +94,8 @@
     "c0013_v0_7_rejection_preserved": true,
     "c0013_v0_8_rejection_preserved": true,
     "c0013_v0_9_rejection_preserved": true,
-    "c0013_v0_10_rejection_preserved": true
+    "c0013_v0_10_rejection_preserved": true,
+    "c0013_v0_12_rejection_preserved": true,
+    "c0013_v0_13_rejection_preserved": true
   }
 }

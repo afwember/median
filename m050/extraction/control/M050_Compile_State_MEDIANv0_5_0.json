@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T00:30:57-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0013_SPARKUP_HALTED_INSUFFICIENT_SPEND",
+  "updated": "2026-08-07T00:49:16-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0013_V0_14_REPEATED_SUBSTANTIVE_FAILURE_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -53,14 +53,14 @@
     ],
     "rejected_chunk_id": "C0013",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Call_Packet_v0_12_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Call_Packet_v0_14_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -148,21 +148,21 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.407316",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_10_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.387328",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_14_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "33.5974518",
-    "cumulative_spent_usd": "33.5398320",
-    "remaining_usd": "0.0576198",
-    "display_usd_rounded_up": "33.54",
+    "authorized_usd": "35.5398320",
+    "cumulative_spent_usd": "33.9137882",
+    "remaining_usd": "1.6260438",
+    "display_usd_rounded_up": "33.92",
     "provisional_component_usd": "0.631836",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -170,26 +170,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:30:57 AM EDT",
-    "status": "v0.4.7 Development Rulings resumed at C0013 spend boundary",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
+    "updated_human": "August 7, 2026 at 12:49:16 AM EDT",
+    "status": "v0.4.7 Development Rulings formally stopped after C0013 v0.14",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0012 / C0021 accepted; C0013 rejected; 8 later chunks unprocessed",
-    "now": "Source-work and repository-write authority are active, but the exact $0.0576198 balance cannot cover frozen C0013 v0.12's $0.407316 conservative ceiling",
-    "next": "Await additional cumulative spend authority before transmitting frozen C0013 v0.12"
+    "now": "C0013 v0.14 is preserved as substantively rejected because B00590 again remained review-required; exact cumulative spend is $33.9137882 and both authorities are false",
+    "next": "Supervisor review of the repeated B00590 substantive failure before any retry or repository work resumes"
   },
-  "next_possible_transition": "After additional cumulative spend authority, revalidate readiness and transmit frozen Development Rulings C0013 v0.12.",
+  "next_possible_transition": "Supervisor review of the repeated Development Rulings C0013 B00590 substantive failure before any retry or repository work resumes.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "chunk_id": "C0013",
     "stop_reason": "end_turn",
-    "output_tokens": 7359,
+    "output_tokens": 11573,
     "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3171,
+    "cache_read_input_tokens": 3221,
     "cache_effective": true,
-    "exact_cost_usd": "0.0880222",
-    "mechanical_passed": false,
+    "exact_cost_usd": "0.1301722",
+    "mechanical_passed": true,
     "review_state": "review_failed"
   }
 }

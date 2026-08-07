@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0013-MEDIUM-30000-REFREEZE-021",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0016-SEQUENTIAL-FREEZE-024",
   "state": "ready_for_sequential_provider_call",
-  "machine_state": "c0013_v0_13_rejected_and_medium_30000_retry_refrozen",
+  "machine_state": "c0015_accepted_and_c0016_frozen",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
@@ -11,9 +11,9 @@
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
     "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
     "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
-    "pilot_chunk_id": "C0013",
-    "pilot_packet_sha256": "898088fc29652a89c47a001e44a5823db4a665c54361537129a0361565cc7e86",
-    "pilot_packet_file_sha256": "0661b03e994d55043d67ef48bf361cc5f1506c62c6ebc7ceb898723e2e980523",
+    "pilot_chunk_id": "C0016",
+    "pilot_packet_sha256": "3d9c87137df74f4c41bbef128db9f7c1a6241f5cea08e80ea86bdbb6a6bc784e",
+    "pilot_packet_file_sha256": "f3c65da71991cf8233107ad97a48fb016346425f756e8b6c8cc3012b1e141b86",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0013 v0.14 is refrozen as a nonduplicate medium-reasoning retry after v0.13 passed semicolon handling but returned B00590 review-required; source, targets, prompt, schema, and validator remain unchanged.",
+    "selection_reason": "C0016 is the next sequential chunk after complete mechanical and substantive acceptance of C0015; established source, prompt, schema, validator, and provider configuration remain unchanged.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.387328"
+    "cache_miss_call_ceiling_usd": "0.38426"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -96,6 +96,9 @@
     "c0013_v0_9_rejection_preserved": true,
     "c0013_v0_10_rejection_preserved": true,
     "c0013_v0_12_rejection_preserved": true,
-    "c0013_v0_13_rejection_preserved": true
+    "c0013_v0_13_rejection_preserved": true,
+    "c0013_mechanical_and_authorial_review_passed": true,
+    "c0014_mechanical_and_substantive_review_passed": true,
+    "c0015_mechanical_and_substantive_review_passed": true
   }
 }

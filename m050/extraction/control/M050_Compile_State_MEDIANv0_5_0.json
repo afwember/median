@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T00:54:19-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0013_V0_14_AUTHORIAL_EXCEPTION_ACCEPTED_FORMAL_STOPDOWN",
+  "updated": "2026-08-07T01:03:31-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0016_V0_1_AUTHORIAL_CONTEXT_REVIEW_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -50,18 +50,20 @@
       "C0010",
       "C0011",
       "C0012",
-      "C0013"
+      "C0013",
+      "C0014",
+      "C0015"
     ],
-    "rejected_chunk_id": null,
+    "rejected_chunk_id": "C0016",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Call_Packet_v0_14_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -127,6 +129,16 @@
         "chunk_id": "C0013",
         "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_14_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0014",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0015",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -142,7 +154,7 @@
       "c0013_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0013_authorial_subject_clarification": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Authorial_Subject_Clarification_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0013",
+    "pilot_chunk_id": "C0016",
     "generated_chunk_count": 21,
     "target_blocks_per_chunk": 20,
     "required_target_disposition_count": 20,
@@ -154,21 +166,21 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.387328",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_14_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.38426",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "35.5398320",
-    "cumulative_spent_usd": "33.9137882",
-    "remaining_usd": "1.6260438",
-    "display_usd_rounded_up": "33.92",
+    "cumulative_spent_usd": "34.2016988",
+    "remaining_usd": "1.3381332",
+    "display_usd_rounded_up": "34.21",
     "provisional_component_usd": "0.631836",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -176,26 +188,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:54:19 AM EDT",
-    "status": "v0.4.7 Development Rulings formally stopped after authorial acceptance of C0013 v0.14",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
+    "updated_human": "August 7, 2026 at 1:03:31 AM EDT",
+    "status": "v0.4.7 Development Rulings halted for C0016 context review",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0013 / C0021 accepted; 8 later chunks unprocessed",
-    "now": "C0013 v0.14 is accepted unchanged by explicit authorial adjudication; B00590 remains review-required and is deferred to Grand Reconciliation; no provider response was repaired and both authorities are false",
-    "next": "Await an explicit Worker source-work grant to continue with C0014"
+    "now": "C0016 v0.1 is preserved as substantively rejected because B00780 was normalized as an independent assertion despite ending in the governing connective intended pressure is; exact cumulative spend is $34.2016988",
+    "next": "Await authorial or Supervisor classification of B00780 as target or non-substantive governing context before any retry"
   },
-  "next_possible_transition": "An explicit Worker source-work grant may resume v0.4.7 Development Rulings at C0014.",
+  "next_possible_transition": "Authorial or Supervisor source-structure review of Development Rulings block B00780 before any C0016 correction or retry.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0013",
+    "chunk_id": "C0016",
     "stop_reason": "end_turn",
-    "output_tokens": 11573,
+    "output_tokens": 8476,
     "cache_creation_input_tokens": 0,
     "cache_read_input_tokens": 3221,
     "cache_effective": true,
-    "exact_cost_usd": "0.1301722",
+    "exact_cost_usd": "0.0987802",
     "mechanical_passed": true,
-    "review_state": "review_passed"
+    "review_state": "review_failed"
   }
 }

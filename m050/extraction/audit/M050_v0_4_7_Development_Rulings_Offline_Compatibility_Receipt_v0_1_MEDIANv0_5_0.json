@@ -5,15 +5,15 @@
   "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "0f5628f320436f7563c113caecfafc8d47d1ba23022b7fdadf8a9c889d4c60bf",
-    "prompt_sha256": "2387450e8f354d8889b3b98433b9d515bd96bd036e7bc8209a419b3e69873ec8",
-    "engine_module_sha256": "4a44300641e1e3622ece71c8694fe724cbaf9258acd26021ab47ba53877fda3f",
-    "engine_tests_sha256": "d518ef7e1e9912bc77274d715e4d8803391baf57ac0f2b618f684d616aea1b2e"
+    "configuration_sha256": "35226c453f67f67bfab59ff80466607d6e1df324f911651a612057449b7ecca5",
+    "prompt_sha256": "e7f2944d34a7cc111855d3b8f9530713d47fd4aa48fb9fb14e5f675f6769fc91",
+    "engine_module_sha256": "b1d95004e584d43e03ae2b39aa2758ba3d3e9a356b413968aa429c8257535642",
+    "engine_tests_sha256": "79d8a52e7b4c903d0b2b3678d961ce24c86abbeb279363d9c279f6502c28fdf4"
   },
   "source_review": {
     "source_blocks": 968,
-    "eligible_targets": 402,
-    "context_only_blocks": 62,
+    "eligible_targets": 401,
+    "context_only_blocks": 63,
     "excluded_blocks": 504,
     "identity_review_flags_remaining": 0,
     "media_occurrences_excluded": 0,
@@ -55,6 +55,14 @@
     "c0007_governing_table_header": {
       "sha256": "068ef7ffc885ec41e2c5e81112718677e30755d5d0b166b9cd5adcb50560865f",
       "result": "authorial_governing_context_classification_applied_and_all_source_compatibility_passed"
+    },
+    "c0011_non_substantive_lead_in": {
+      "sha256": "a6201a380f73673711acc9931710439f370d2420158a6e9124c9844eedd0211e",
+      "result": "existing_authorial_lead_in_classification_applied_and_all_source_compatibility_passed"
+    },
+    "c0011_anaphoric_subject": {
+      "sha256": "2cf9757dfddb9b871a7a8400da22f1f57ab08df64b799f8fc5f12b228cc85d33",
+      "result": "generic_self_containment_invariant_corrected_and_all_source_compatibility_passed"
     }
   }
 }

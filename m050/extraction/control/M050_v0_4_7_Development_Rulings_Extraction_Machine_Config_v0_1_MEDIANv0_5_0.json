@@ -5,15 +5,15 @@
   ],
   "artifact_sha256": {
     "block_manifest": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "chunk_plan": "77831d2d27a3b31e1380ec495afd902b468db74927af3fe65c67620f49836f28",
-    "disposition_ledger": "a2d43a9df22120e43ee8b91214ba815534796475e5a082644dc95f9ef457eeda",
+    "chunk_plan": "488d98a6676834abb2e90cae5ce285d891b668896f16c8be40291fb96bd92e5f",
+    "disposition_ledger": "828d8f3817ff82f120df7da41a729cd1bae47645f0b8b1ed29f68d064b1a3c24",
     "identity_card": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
-    "prompt": "2387450e8f354d8889b3b98433b9d515bd96bd036e7bc8209a419b3e69873ec8",
+    "prompt": "e7f2944d34a7cc111855d3b8f9530713d47fd4aa48fb9fb14e5f675f6769fc91",
     "response_schema": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc"
   },
   "artifacts": {
     "block_manifest": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Block_Manifest_v0_1_MEDIANv0_5_0.json",
-    "chunk_plan": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Section_Aware_Chunk_Plan_v0_4_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Section_Aware_Chunk_Plan_v0_5_MEDIANv0_5_0.json",
     "disposition_ledger": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
     "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Rulings_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
     "prompt": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Extraction_Prompt_MEDIANv0_5_0.md",

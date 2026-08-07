@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T22:11:31-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_REBOUND_C0011_FROZEN_UNTRANSMITTED_SPEND_HALT",
+  "updated": "2026-08-06T22:26:02-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_REBOUND_C0011_PERSISTENT_ANAPHORA_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -49,7 +49,7 @@
       "C0009",
       "C0010"
     ],
-    "rejected_chunk_id": null,
+    "rejected_chunk_id": "C0011",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -58,7 +58,7 @@
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Call_Packet_v0_5_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -114,29 +114,31 @@
     "compatibility_replays": {
       "c0001_low_reasoning_calibration": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0001_Low_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0003_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0003_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0007_governing_table_header": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0007_Governing_Table_Header_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "c0007_governing_table_header": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0007_Governing_Table_Header_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0011_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0011_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0011_anaphoric_subject": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0011_Anaphoric_Subject_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
     "pilot_chunk_id": "C0011",
     "generated_chunk_count": 21,
     "target_blocks_per_chunk": 20,
     "required_target_disposition_count": 20,
     "source_blocks": 968,
-    "eligible_target_blocks": 402,
-    "context_only_blocks": 62,
+    "eligible_target_blocks": 401,
+    "context_only_blocks": 63,
     "excluded_blocks": 504,
     "media_occurrences": 0,
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.325512",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0010_Outcome_v0_1_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.3255",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Outcome_v0_5_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "31.8652378",
-    "cumulative_spent_usd": "31.5974518",
-    "remaining_usd": "0.2677860",
-    "display_usd_rounded_up": "31.60",
+    "authorized_usd": "33.5974518",
+    "cumulative_spent_usd": "31.9303818",
+    "remaining_usd": "1.6670700",
+    "display_usd_rounded_up": "31.94",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
@@ -150,26 +152,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 10:11:31 PM EDT",
-    "status": "v0.4.7 Development Rulings halted at C0011 spend boundary",
+    "updated_human": "August 6, 2026 at 10:26:02 PM EDT",
+    "status": "v0.4.7 Development Rulings halted for persistent C0011 self-containment defect",
     "phase": "Atomic extraction — v0.4.7 Development Rulings rebound active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0010 / C0021 accepted; no rejected chunk; C0011 frozen and untransmitted; 11 chunks remain",
-    "now": "C0011 v0.1 is frozen and untransmitted because its $0.325512 conservative ceiling exceeds the $0.2677860 remaining balance by $0.0577260",
-    "next": "Replenish cumulative spend by at least $0.0577260, then revalidate the unchanged frozen C0011 packet before transmission"
+    "chunk": "C0001–C0010 / C0021 accepted; C0011 rejected; 10 later chunks unprocessed",
+    "now": "C0011 v0.5 is preserved and rejected because The Practice and the resulting shared Practice remain unresolved after the strengthened generic self-containment invariant; exact cumulative spend is $31.9303818 with $1.6670700 remaining",
+    "next": "Halt for human review of the persistent C0011 anaphoric-subject failure and the smallest safe correction"
   },
-  "next_possible_transition": "Replenish the active cumulative spend budget by at least $0.0577260, then revalidate the unchanged frozen C0011 v0.1 packet before transmission.",
+  "next_possible_transition": "Human review of the persistent C0011 anaphoric-subject failure and the smallest safe correction; no further retry, later chunk, another source, or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0010",
+    "chunk_id": "C0011",
     "stop_reason": "end_turn",
-    "output_tokens": 8064,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3165,
+    "output_tokens": 6466,
+    "cache_creation_input_tokens": 3163,
+    "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.096147",
+    "exact_cost_usd": "0.091042",
     "mechanical_passed": true,
-    "review_state": "review_passed"
+    "review_state": "review_failed"
   }
 }

@@ -584,8 +584,7 @@ Unresolved targets get `review_required`; never abbreviate the target set.
 Separate claims only when each remains independently grounded and self-contained. Exact spans uniquely ground core assertions. Preserve coordinated subjects or effects in one atom when they share a predicate, subject, condition, or relationship
 unless every split has a contiguous span containing its own subject and predicate. A subject or label alone never grounds an
 imported predicate. Anchor each normalized claim in `exact_source_text`. For self-containment,
-resolve pronouns and subjectless exact-text prefixes to explicit governing subjects; parent headings
-may supply only necessary status or scope.
+explicitly resolve pronouns, anaphora, and subjectless prefixes from bound context. Headings supply only necessary status or scope.
 Never paraphrase, gloss, define, compare, infer, or complete implied meaning;
 use `review_required` when necessary. Parent headings are context, never atoms. Every
 `exact_source_text` is

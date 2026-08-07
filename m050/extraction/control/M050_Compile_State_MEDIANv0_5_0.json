@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T00:24:26-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0013_SEMICOLON_ALIGNED_FORMAL_STOPDOWN",
+  "updated": "2026-08-07T00:30:57-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0013_SPARKUP_HALTED_INSUFFICIENT_SPEND",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -53,7 +53,7 @@
     ],
     "rejected_chunk_id": "C0013",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -161,8 +161,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -170,15 +170,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:24:26 AM EDT",
-    "status": "v0.4.7 Development Rulings formally stopped with C0013 v0.12 frozen",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
+    "updated_human": "August 7, 2026 at 12:30:57 AM EDT",
+    "status": "v0.4.7 Development Rulings resumed at C0013 spend boundary",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0012 / C0021 accepted; C0013 rejected; 8 later chunks unprocessed",
-    "now": "The generic prompt now states the validator's semicolon boundary explicitly; normal low-reasoning/32000-token settings are restored, v0.11 exposure is conservatively reserved at its full ceiling, and C0013 v0.12 is frozen with a $0.407316 ceiling",
-    "next": "Await additional cumulative spend authority and an explicit Worker source-work grant; both repository-write and source-work authority remain false"
+    "now": "Source-work and repository-write authority are active, but the exact $0.0576198 balance cannot cover frozen C0013 v0.12's $0.407316 conservative ceiling",
+    "next": "Await additional cumulative spend authority before transmitting frozen C0013 v0.12"
   },
-  "next_possible_transition": "After additional cumulative spend authority and an explicit Worker source-work grant, cold-start from the clean Stopdown checkpoint and transmit frozen C0013 v0.12.",
+  "next_possible_transition": "After additional cumulative spend authority, revalidate readiness and transmit frozen Development Rulings C0013 v0.12.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

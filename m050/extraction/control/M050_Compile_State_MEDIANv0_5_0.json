@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "STOPDOWN",
-  "updated": "2026-08-07T08:56:23-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_SOURCE_CANDIDATE_ACCEPTED_STOPDOWN",
+  "status": "ACTIVE",
+  "updated": "2026-08-07T09:17:36-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -35,180 +35,19 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
-    "label": "v0.4.7 Development Rulings",
-    "compile_ordinal": 17,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013",
-      "C0014",
-      "C0015",
-      "C0016",
-      "C0017",
-      "C0018",
-      "C0019",
-      "C0020"
-    ],
+    "id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+    "label": "v0.4.7 Development Survivorship Review",
+    "compile_ordinal": 18,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0020_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0001_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0002_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0003_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0007_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Outcome_v0_7_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0012_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_14_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0014",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0014_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0015",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0016",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Outcome_v0_5_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0017",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0018",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0019",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0020",
-        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "compatibility_replays": {
-      "c0001_low_reasoning_calibration": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0001_Low_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0003_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0003_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0007_governing_table_header": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0007_Governing_Table_Header_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0011_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0011_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0011_anaphoric_subject": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0011_Anaphoric_Subject_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0011_block_exclusion": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0011_Block_Exclusion_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0012_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0012_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_authorial_subject_clarification": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Authorial_Subject_Clarification_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0016_non_substantive_governing_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0016_Non_Substantive_Governing_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0016_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0016_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0018_low_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0018_Low_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0019_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0019_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
-    },
-    "pilot_chunk_id": "C0020",
-    "generated_chunk_count": 20,
-    "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 12,
-    "source_blocks": 968,
-    "eligible_target_blocks": 387,
-    "context_only_blocks": 72,
-    "excluded_blocks": 509,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.367904",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0020_Outcome_v0_1_MEDIANv0_5_0.json",
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/development-rulings/M050_v0_4_7_Development_Rulings_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "f369d95c98cbba607d96430fe62a5eb9f033b044666df2a893548794f1ee4e55",
-      "report": "m050/extraction/accepted/development-rulings/M050_v0_4_7_Development_Rulings_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "e2290462632e3265376cbfc096b66b2ee10a6116ccb15f919fe862a30d5c9e7c"
-    }
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Survivorship_Review_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "f3fcc67e662eece0faabd701a7977a35dda79c561fdcc2337af5f53fb37c25ba",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
   "spend": {
     "active": true,
@@ -220,8 +59,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -229,26 +68,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 8:56:23 AM EDT",
-    "status": "Formal Stopdown — v0.4.7 Development Rulings source candidate accepted",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings complete",
-    "source": "v0.4.7 Development Rulings — ordinal 17; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0020 accepted; 387 / 387 targets covered; 432 candidate atoms",
-    "now": "Whole-document coverage and extraction-quality review passed; candidate/report pair is hash-bound; exact cumulative spend is $34.8328860 with $0.7069460 remaining",
-    "next": "Await an explicit source-work and repository-write grant for the next canonical source; no later phase is authorized"
+    "updated_human": "August 7, 2026 at 9:17:36 AM EDT",
+    "status": "v0.4.7 Development Survivorship Review identity proposed; author approval required",
+    "phase": "Atomic extraction — v0.4.7 Development Survivorship Review identity approval halt",
+    "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
+    "chunk": "No chunk selected; accepted/rejected boundary empty",
+    "now": "Frozen source identity, audit-status qualifications, allowed streams, and zero-media disposition proposed; no provider call or spend",
+    "next": "Halt for author approval or amendment before scaffold, provider configuration, or transmission"
   },
-  "next_possible_transition": "Await Asa's explicit grant for the next canonical atomic-extraction source; Development Rulings authority has ended at source completion.",
+  "next_possible_transition": "Author approval or amendment of the pending v0.4.7 Development Survivorship Review identity card; no provider call, another source, or later phase is authorized.",
   "gate_5_complete": false,
-  "latest_provider_attempt": {
-    "http_status": 200,
-    "chunk_id": "C0020",
-    "stop_reason": "end_turn",
-    "output_tokens": 6825,
-    "cache_creation_input_tokens": 3221,
-    "cache_read_input_tokens": 0,
-    "cache_effective": true,
-    "exact_cost_usd": "0.090228",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  }
+  "latest_provider_attempt": null
 }

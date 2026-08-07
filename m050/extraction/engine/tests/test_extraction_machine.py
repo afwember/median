@@ -1604,6 +1604,70 @@ def test_authorial_full_plan_prepares_source_agnostically_with_stable_cache_pref
         )
 
 
+def test_preflight_continuity_accepts_bound_manual_resolution(tmp_path):
+    spec = importlib.util.spec_from_file_location("m050_extraction_machine_manual", MACHINE_TOOL)
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+
+    outcome = {
+        "provider_call_made": False,
+        "resolution_basis": "authorially_authorized_supervisor_manual_construction_after_preserved_provider_noncompliance",
+        "canonical_spend_update_required": False,
+        "chunk_id": "C0001",
+        "cost": {"total_usd": "0"},
+    }
+    outcome_path = tmp_path / "manual-outcome.json"
+    outcome_path.write_text(json.dumps(outcome), encoding="utf-8")
+    outcome_hash = hashlib.sha256(outcome_path.read_bytes()).hexdigest()
+    state = {
+        "calibration": {"latest_outcome": outcome_path.name},
+        "latest_provider_attempt": {
+            "chunk_id": "C0001",
+            "exact_cost_usd": "0",
+            "review_state": "review_passed",
+        },
+    }
+    events = [
+        {"state": "call_captured", "chunk_id": "C0001", "outcome_sha256": "a" * 64},
+        {"state": "review_failed", "chunk_id": "C0001", "outcome_sha256": "a" * 64},
+        {"state": "review_passed", "chunk_id": "C0001", "outcome_sha256": outcome_hash},
+    ]
+
+    tool._require_state_matches_latest_call(tmp_path, state, events)
+
+
+def test_preflight_continuity_rejects_unbound_manual_resolution(tmp_path):
+    spec = importlib.util.spec_from_file_location("m050_extraction_machine_manual_reject", MACHINE_TOOL)
+    assert spec is not None and spec.loader is not None
+    tool = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(tool)
+
+    outcome_path = tmp_path / "manual-outcome.json"
+    outcome_path.write_text(json.dumps({
+        "provider_call_made": False,
+        "resolution_basis": "authorially_authorized_supervisor_manual_construction_after_preserved_provider_noncompliance",
+        "canonical_spend_update_required": False,
+        "chunk_id": "C0001",
+        "cost": {"total_usd": "0"},
+    }), encoding="utf-8")
+    state = {
+        "calibration": {"latest_outcome": outcome_path.name},
+        "latest_provider_attempt": {
+            "chunk_id": "C0001",
+            "exact_cost_usd": "0",
+            "review_state": "review_passed",
+        },
+    }
+    events = [
+        {"state": "call_captured", "chunk_id": "C0001", "outcome_sha256": "a" * 64},
+        {"state": "review_passed", "chunk_id": "C0001", "outcome_sha256": "b" * 64},
+    ]
+
+    with pytest.raises(ContractError, match="has not reconciled"):
+        tool._require_state_matches_latest_call(tmp_path, state, events)
+
+
 def test_second_spec_doc_scaffolds_without_source_specific_worker_code():
     manifest = _json(SECOND_SOURCE_MANIFEST)
     dispositions = draft_block_dispositions(manifest)

@@ -8,7 +8,7 @@
     "configuration_sha256": "82a29169e13963695495bf08d6a3baa15dd290859508ca930f262119ee442f56",
     "prompt_sha256": "302ee273708d850d24a8ae0740e281b3610aeff8f86640f81a6627a52bdf5f39",
     "engine_module_sha256": "f9453cc46914fecacf564fb0861c070b62e3664b957ffefb1883bc3d6e692d23",
-    "engine_tests_sha256": "fa611bf1057b3b576000c5c4f1b43db48e9a66922ec4988b70bf79dbf867e584"
+    "engine_tests_sha256": "1d884f65b1ea8dce22e76e56a705d722c9c89617524e871811c83a041268c0c3"
   },
   "source_review": {
     "source_blocks": 619,
@@ -37,7 +37,7 @@
     "grounding_errors": 0,
     "coverage_errors": 0,
     "media_leaks": 0,
-    "offline_tests_passed": 88,
+    "offline_tests_passed": 90,
     "all_source_structural_compatibility_passed": true,
     "active_source_guard_ready": true,
     "active_prompt_matches_generic_builder": true,

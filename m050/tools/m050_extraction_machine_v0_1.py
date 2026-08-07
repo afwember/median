@@ -445,9 +445,26 @@ def _require_state_matches_latest_call(
     outcome_path = repo_file(
         repo_root, state.get("calibration", {}).get("latest_outcome", "")
     )
-    if sha256_file(outcome_path) != latest_capture.get("outcome_sha256"):
-        raise ContractError("canonical state has not reconciled the latest captured call")
+    outcome_hash = sha256_file(outcome_path)
+    outcome = read_json(outcome_path)
     latest = state.get("latest_provider_attempt", {})
+    if outcome_hash != latest_capture.get("outcome_sha256"):
+        manual_resolution_is_current = (
+            outcome.get("provider_call_made") is False
+            and outcome.get("resolution_basis")
+            == "authorially_authorized_supervisor_manual_construction_after_preserved_provider_noncompliance"
+            and outcome.get("cost", {}).get("total_usd") == "0"
+            and outcome.get("canonical_spend_update_required") is False
+            and events[-1].get("state") == "review_passed"
+            and events[-1].get("chunk_id") == outcome.get("chunk_id")
+            and events[-1].get("outcome_sha256") == outcome_hash
+            and latest.get("chunk_id") == outcome.get("chunk_id")
+            and latest.get("exact_cost_usd") == "0"
+            and latest.get("review_state") == "review_passed"
+        )
+        if manual_resolution_is_current:
+            return
+        raise ContractError("canonical state has not reconciled the latest captured call")
     if (
         latest.get("chunk_id") != latest_capture.get("chunk_id")
         or (

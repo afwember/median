@@ -17,8 +17,8 @@
     "prompt_sha256": "302ee273708d850d24a8ae0740e281b3610aeff8f86640f81a6627a52bdf5f39",
     "response_schema_sha256": "a009243d9ed979c0e5d7a3b9c07337c902d6f85be14e090cb042d44bfbc13c66",
     "engine_module_sha256": "f9453cc46914fecacf564fb0861c070b62e3664b957ffefb1883bc3d6e692d23",
-    "engine_tests_sha256": "fa611bf1057b3b576000c5c4f1b43db48e9a66922ec4988b70bf79dbf867e584",
-    "compatibility_receipt_sha256": "5c16feaf2817c2a969ba33639ccad0106c6105a7b4c26c478bc5662dba6bc78d",
+    "engine_tests_sha256": "1d884f65b1ea8dce22e76e56a705d722c9c89617524e871811c83a041268c0c3",
+    "compatibility_receipt_sha256": "29c211ad8414b6eaf7890a66c3200c0b29ebcea58d100806c2de3663a0ca143f",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
@@ -51,7 +51,7 @@
   "offline_verification": {
     "all_9_chunks_fake_validated": true,
     "exact_ordered_target_coverage": true,
-    "offline_tests_passed": 88,
+    "offline_tests_passed": 90,
     "calibrated_target_blocks_per_chunk": 40,
     "generated_chunk_count": 9,
     "chunk_count_is_input": false,

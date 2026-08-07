@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "STOPDOWN",
-  "updated": "2026-08-06T20:16:07-04:00",
-  "execution_state": "GDD_COVERAGE_GAP_SOURCE_CANDIDATE_ACCEPTED_STOPDOWN",
+  "status": "ACTIVE",
+  "updated": "2026-08-06T20:24:26-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_IDENTITY_CARD_APPROVAL_PENDING_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -34,131 +34,19 @@
     ]
   },
   "source": {
-    "id": "M050-SRC-GDD-COVERAGE-GAP-001",
-    "label": "v0.4.6 GDD Coverage-Gap Development",
-    "compile_ordinal": 16,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009",
-      "C0010",
-      "C0011",
-      "C0012",
-      "C0013"
-    ],
+    "id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+    "label": "v0.4.7 Development Rulings",
+    "compile_ordinal": 17,
+    "accepted_chunk_ids": [],
     "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
+    "whole_source_candidate_complete": false,
+    "source_work_authorized": true
   },
   "calibration": {
-    "configuration": "m050/extraction/control/M050_GDD_Coverage_Gap_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/gdd-coverage-gap/M050_GDD_Coverage_Gap_C0001_Pilot_Freeze_Proposal_v0_5_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_GDD_Coverage_Gap_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0013_Call_Packet_v0_1_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0001_Outcome_v0_5_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0005_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0006_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0007_Outcome_v0_4_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0008_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0009_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0010",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0010_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0011",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0011_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0012",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0012_Outcome_v0_3_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0013",
-        "outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "compatibility_replays": {
-      "c0001_output_ceiling_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Output_Ceiling_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0001_semicolon_prompt_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Semicolon_Prompt_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0001_medium_reasoning_calibration": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0001_normalized_claim_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0001_Normalized_Claim_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0007_whole_row_semicolon_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0007_Whole_Row_Semicolon_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0008_table_cell_semicolon_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0008_Table_Cell_Semicolon_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0012_unique_table_label_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0012_Unique_Table_Label_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0012_nearest_boundary_correction": "m050/extraction/audit/M050_GDD_Coverage_Gap_C0012_Nearest_Boundary_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
-    },
-    "pilot_chunk_id": "C0013",
-    "generated_chunk_count": 13,
-    "target_blocks_per_chunk": 20,
-    "required_target_disposition_count": 18,
-    "source_blocks": 815,
-    "eligible_target_blocks": 251,
-    "context_only_blocks": 56,
-    "excluded_blocks": 508,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 87,
-    "cache_miss_call_ceiling_usd": "0.336628",
-    "latest_outcome": "m050/extraction/runs/gdd-coverage-gap-pilot/M050_GDD_Coverage_Gap_C0013_Outcome_v0_1_MEDIANv0_5_0.json",
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/gdd-coverage-gap/M050_GDD_Coverage_Gap_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "29124057bd62d71aacbfe00e2ade6ebc7c007c09450e2e2e5419d515067337f7",
-      "report": "m050/extraction/accepted/gdd-coverage-gap/M050_GDD_Coverage_Gap_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "8bc8a4fbb88d346cb62a836188a556efbc73d0f3c242f46743d3dbc08ffe26a5"
-    }
+    "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Rulings_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
+    "identity_card_sha256": "43a243a41a3724ed47bc49b0455a531be5fd32ead0335f1c49ed641e3b6d6eaf",
+    "identity_card_approval_pending": true,
+    "offline_gate_passed": false
   },
   "spend": {
     "active": true,
@@ -170,8 +58,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -179,26 +67,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 8:16:07 PM EDT",
-    "status": "Formal Stopdown — GDD Coverage-Gap source candidate accepted",
-    "phase": "Atomic extraction — GDD Coverage-Gap complete",
-    "source": "v0.4.6 GDD Coverage-Gap Development — ordinal 16; 16 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0013 accepted; 251 / 251 targets covered; 431 candidate atoms",
-    "now": "Whole-document coverage and extraction-quality review passed; candidate/report pair is hash-bound; exact cumulative spend is $30.3068736 with $1.5583642 remaining",
-    "next": "Await an explicit source-work and repository-write grant for the next canonical source; no later phase is authorized"
+    "updated_human": "August 6, 2026 at 8:24:26 PM EDT",
+    "status": "v0.4.7 Development Rulings identity proposed; author approval required",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings identity approval halt",
+    "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
+    "chunk": "No chunk selected; accepted/rejected boundary empty",
+    "now": "Minimal frozen-source identity, source-declared qualification handling, and zero-media disposition proposed; no provider call or spend",
+    "next": "Halt for author approval or amendment before scaffold, provider configuration, or transmission"
   },
-  "next_possible_transition": "Await Asa's explicit grant for the next canonical atomic-extraction source; GDD Coverage-Gap authority has ended at source completion.",
+  "next_possible_transition": "Author approval or amendment of the pending v0.4.7 Development Rulings identity card; no provider call, another source, or later phase is authorized.",
   "gate_5_complete": false,
-  "latest_provider_attempt": {
-    "http_status": 200,
-    "chunk_id": "C0013",
-    "stop_reason": "end_turn",
-    "output_tokens": 20883,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3079,
-    "cache_effective": true,
-    "exact_cost_usd": "0.2255978",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  }
+  "latest_provider_attempt": null
 }

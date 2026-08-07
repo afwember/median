@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T00:07:47-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0013_V0_11_INTERRUPTED_FORMAL_STOPDOWN",
+  "updated": "2026-08-07T00:24:26-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0013_SEMICOLON_ALIGNED_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -60,7 +60,7 @@
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Call_Packet_v0_11_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Call_Packet_v0_12_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -134,13 +134,7 @@
       "c0013_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0013_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0013_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_authorial_subject_clarification": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Authorial_Subject_Clarification_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_high_reasoning_32000": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_High_Reasoning_32000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_low_reasoning_40000": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Low_Reasoning_40000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_low_reasoning_28000": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Low_Reasoning_28000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_medium_reasoning_28000": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Medium_Reasoning_28000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_medium_reasoning_26000": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Medium_Reasoning_26000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_medium_reasoning_25000": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Medium_Reasoning_25000_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "c0013_authorial_subject_clarification": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Authorial_Subject_Clarification_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
     "pilot_chunk_id": "C0013",
     "generated_chunk_count": 21,
@@ -154,17 +148,17 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.336992",
+    "cache_miss_call_ceiling_usd": "0.407316",
     "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_10_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "33.5974518",
-    "cumulative_spent_usd": "33.2028400",
-    "remaining_usd": "0.3946118",
-    "display_usd_rounded_up": "33.21",
-    "provisional_component_usd": "0.294844",
-    "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
+    "cumulative_spent_usd": "33.5398320",
+    "remaining_usd": "0.0576198",
+    "display_usd_rounded_up": "33.54",
+    "provisional_component_usd": "0.631836",
+    "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
     "repository_writes_authorized": false,
@@ -176,15 +170,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:07:47 AM EDT",
-    "status": "v0.4.7 Development Rulings formally stopped at C0013 v0.11 interrupted transport",
+    "updated_human": "August 7, 2026 at 12:24:26 AM EDT",
+    "status": "v0.4.7 Development Rulings formally stopped with C0013 v0.12 frozen",
     "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0012 / C0021 accepted; C0013 rejected; 8 later chunks unprocessed",
-    "now": "C0013 v0.11 was transmitted but interrupted before any HTTP response, provider usage telemetry, raw response, or outcome was captured; exact ledger spend remains $33.2028400 and unresolved exposure is bounded by the frozen $0.336992 ceiling",
-    "next": "Supervisor review of the unresolved C0013 v0.11 transport and cost boundary; both repository-write and source-work authority are false"
+    "now": "The generic prompt now states the validator's semicolon boundary explicitly; normal low-reasoning/32000-token settings are restored, v0.11 exposure is conservatively reserved at its full ceiling, and C0013 v0.12 is frozen with a $0.407316 ceiling",
+    "next": "Await additional cumulative spend authority and an explicit Worker source-work grant; both repository-write and source-work authority remain false"
   },
-  "next_possible_transition": "Supervisor review of the unresolved Development Rulings C0013 v0.11 transport and cost boundary before any retry or repository work resumes.",
+  "next_possible_transition": "After additional cumulative spend authority and an explicit Worker source-work grant, cold-start from the clean Stopdown checkpoint and transmit frozen C0013 v0.12.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

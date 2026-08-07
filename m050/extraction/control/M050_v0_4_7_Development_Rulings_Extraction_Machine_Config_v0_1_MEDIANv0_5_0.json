@@ -8,7 +8,7 @@
     "chunk_plan": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
     "disposition_ledger": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
     "identity_card": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
-    "prompt": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
+    "prompt": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc"
   },
   "artifacts": {
@@ -34,11 +34,11 @@
     "cache_boundary": "stable_system_prefix",
     "cache_required": true,
     "cache_ttl": "1h",
-    "maximum_output_tokens": 25000,
+    "maximum_output_tokens": 32000,
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "medium"
+    "reasoning_effort": "low"
   },
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",

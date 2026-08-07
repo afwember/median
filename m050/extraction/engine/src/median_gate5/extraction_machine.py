@@ -570,9 +570,9 @@ Allowed streams: {streams}
 
 The input-ordered disposition block-ID set must exactly equal `target_blocks`:
 none missing, repeated, or partial.
-Disposition neither context nor excluded blocks. Use only `SOURCE_BLOCKS`.
+Use only `SOURCE_BLOCKS`.
 
-Use only supplied IDs; never samples, placeholders, or dummy `x`.
+Use supplied IDs; never samples, placeholders, or dummy `x`.
 Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Approved content/provenance boundary
@@ -581,17 +581,23 @@ Unresolved targets get `review_required`; never abbreviate the target set.
 
 ## Extraction contract
 
-Separate claims only when each remains independently grounded and self-contained. Exact spans uniquely ground core assertions. Preserve coordinated subjects or effects in one atom when they share a predicate, subject, condition, or relationship
-unless every split has a contiguous span containing its own subject and predicate. A subject or label alone never grounds an
-imported predicate. Anchor each normalized claim in `exact_source_text`. For self-containment,
-if bound context names a pronoun, anaphora, or subjectless prefix's referent, substitute it in `normalized_claim`. Headings supply only status or scope.
+Separate claims only when each remains independently grounded and self-contained.
+Exact spans uniquely ground core assertions. Preserve coordinated subjects or effects in one atom
+when they share a predicate, subject, condition, or relationship;
+split only at a contiguous subject-predicate span. A subject or
+label alone never grounds an imported predicate. Anchor each normalized claim in `exact_source_text`.
+For self-containment, if bound context names a pronoun, anaphora, or subjectless prefix's referent,
+substitute it in `normalized_claim`. Headings supply only status or scope.
 Never paraphrase, gloss, define, compare, infer, or complete implied meaning;
-use `review_required` when necessary. Parent headings are context, never atoms. Every
-`exact_source_text` is
-a byte-for-byte contiguous target-block substring that occurs exactly once. After JSON decoding it contains actual target-block
+use `review_required` when necessary. Parent headings are context, never atoms.
+Every `exact_source_text` is a byte-for-byte contiguous
+target-block substring that occurs exactly once. After JSON decoding it contains actual target-block
 characters, never literal backslash Unicode-escape spellings.
-Repeated spans expand through nearest semicolon-free source boundary.
-Include interrupting markup or split the atom.
+No `exact_source_text` may cross an authored semicolon. Split semicolon-delimited
+clauses into separate atoms, including coordinated examples in ordinary prose.
+Restore an omitted later-clause subject only in `normalized_claim` from its
+adjacent coordinated clause. Repeated spans expand through nearest
+semicolon-free source boundary. Include interrupting markup or split the atom.
 
 Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;
 `no_substantive_claim` requires empty `atoms`. Structural headings, labels, table headers,
@@ -602,9 +608,8 @@ members, or assertions.
 
 For each substantive table row, cover every nonempty semantic cell. Separate
 independent properties, functions, effects, examples, interpretations, stages,
-actions, and results. Combine cells only when one qualifies
-another or the relationship is indivisible. Preserve both endpoints of
-categorical mappings.
+actions, and results. Combine qualifying/indivisible cells; preserve
+categorical-mapping endpoints.
 Ground each headed cell under its header; never infer a relationship between
 adjacent cells. Table spans—cell or whole-row—split at authored semicolons;
 none crosses one.
@@ -621,9 +626,9 @@ authorities.
 
 Return schema-bound JSON only after verifying exactly
 `required_target_disposition_count` dispositions. Kind `atoms` requires nonempty
-`atoms`; all other kinds require empty `atoms`. Every atom needs supplied source/target block IDs, an
-allowed stream, exact source text, concise normalized claim, and source-faithful
-claim kind. Derive each proposal ID from target block ID plus local atom ordinal;
+`atoms`; all other kinds require empty `atoms`. Every atom needs bound IDs/stream,
+exact source text, normalized claim, and source-faithful kind.
+Derive each proposal ID from target block ID plus local atom ordinal;
 proposal IDs must remain source-unique.
 """
 

@@ -353,7 +353,11 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "none missing, repeated, or partial" in prompt
     assert "byte-for-byte" in prompt
     assert "target-block substring that occurs exactly once" in prompt
-    assert "Repeated spans expand through nearest semicolon-free source boundary" in prompt
+    assert "No `exact_source_text` may cross an authored semicolon" in prompt
+    assert "Split semicolon-delimited\nclauses into separate atoms" in prompt
+    assert "including coordinated examples in ordinary prose" in prompt
+    assert "Restore an omitted later-clause subject only in `normalized_claim`" in prompt
+    assert "Repeated spans expand through nearest\nsemicolon-free source boundary" in prompt
     assert "actual target-block\ncharacters" in prompt
     assert "never literal backslash Unicode-escape spellings" in prompt
     assert "retains\nmarkup and escaping" not in prompt
@@ -381,7 +385,7 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "Preserve coordinated subjects or effects in one atom" in prompt
     assert "share a predicate, subject, condition, or relationship" in prompt
     assert "Split independent same-subject effects" not in prompt
-    assert "A subject or label alone never grounds an\nimported predicate" in prompt
+    assert "A subject or\nlabel alone never grounds an imported predicate" in prompt
     assert "Anchor each normalized claim in `exact_source_text`" in prompt
     assert "For self-containment" in prompt
     assert "bound context names a pronoun, anaphora, or subjectless prefix's referent" in prompt

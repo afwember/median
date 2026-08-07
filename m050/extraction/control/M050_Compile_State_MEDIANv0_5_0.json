@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T12:11:07-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0006_MANUALLY_ACCEPTED_C0007_FROZEN_READY",
+  "updated": "2026-08-07T12:20:24-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0007_V0_2_MEDIUM_REASONING_RETRY_FROZEN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -46,7 +46,7 @@
       "C0005",
       "C0006"
     ],
-    "rejected_chunk_id": null,
+    "rejected_chunk_id": "C0007",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -55,7 +55,7 @@
     "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -105,15 +105,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 90,
-    "cache_miss_call_ceiling_usd": "0.418024",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_6_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.418032",
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "39.0341560",
-    "cumulative_spent_usd": "37.2679272",
-    "remaining_usd": "1.7662288",
-    "display_usd_rounded_up": "37.27",
+    "cumulative_spent_usd": "37.5898204",
+    "remaining_usd": "1.4443356",
+    "display_usd_rounded_up": "37.59",
     "provisional_component_usd": "1.455132",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
@@ -127,26 +127,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:11:07 PM EDT",
-    "status": "v0.4.7 Development Survivorship Review active — C0006 manually accepted; C0007 frozen",
+    "updated_human": "August 7, 2026 at 12:20:24 PM EDT",
+    "status": "v0.4.7 Development Survivorship Review active — C0007 v0.2 medium-reasoning retry frozen",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0006 / C0009 accepted; C0007 frozen; no rejected chunk",
-    "now": "Both Worker authorities are active; C0006 remains manually resolved at zero provider cost and C0007 remains frozen",
-    "next": "Preflight frozen C0007 under the remaining cumulative budget"
+    "chunk": "C0001–C0006 / C0009 accepted; C0007 v0.1 rejected at output limit",
+    "now": "C0007 v0.1 output-limit rejection is preserved; indivisible target grouping is retained and v0.2 is frozen at the already-tested medium reasoning setting",
+    "next": "Preflight and retry frozen C0007 v0.2 within the remaining cumulative budget"
   },
-  "next_possible_transition": "Preflight frozen C0007 and continue this source under the remaining cumulative budget; no other source or later phase is authorized.",
+  "next_possible_transition": "Preflight and retry frozen C0007 v0.2; no other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": null,
-    "chunk_id": "C0006",
-    "stop_reason": "authorial_manual_resolution",
-    "output_tokens": 0,
+    "http_status": 200,
+    "chunk_id": "C0007",
+    "stop_reason": null,
+    "output_tokens": 30000,
     "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_effective": false,
-    "exact_cost_usd": "0",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
+    "cache_read_input_tokens": 3246,
+    "cache_effective": true,
+    "exact_cost_usd": "0.3218932",
+    "mechanical_passed": false,
+    "review_state": "review_failed"
   }
 }

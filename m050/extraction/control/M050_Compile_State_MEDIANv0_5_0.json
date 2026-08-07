@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "STOPPED_DOWN",
-  "updated": "2026-08-07T11:38:58-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0005_C0006_BOUNDARY_REOPENING_REQUIRED_STOPDOWN",
+  "updated": "2026-08-07T11:43:05-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0006_MANUALLY_ACCEPTED_C0007_FROZEN_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -43,9 +43,10 @@
       "C0002",
       "C0003",
       "C0004",
-      "C0005"
+      "C0005",
+      "C0006"
     ],
-    "rejected_chunk_id": "C0006",
+    "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": false
   },
@@ -54,7 +55,7 @@
     "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Call_Packet_v0_4_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -80,6 +81,11 @@
         "chunk_id": "C0005",
         "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0006",
+        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_6_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -87,10 +93,10 @@
       "c0006_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0006_governing_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_Governing_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0006",
+    "pilot_chunk_id": "C0007",
     "generated_chunk_count": 9,
     "target_blocks_per_chunk": 40,
-    "required_target_disposition_count": 35,
+    "required_target_disposition_count": 39,
     "source_blocks": 619,
     "eligible_target_blocks": 323,
     "context_only_blocks": 46,
@@ -99,8 +105,8 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.411668",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_5_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.418024",
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_6_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
@@ -121,26 +127,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 11:38:58 AM EDT",
-    "status": "STOPPED DOWN — v0.4.7 Development Survivorship Review incomplete at accepted C0005/C0006 boundary defect",
+    "updated_human": "August 7, 2026 at 11:43:05 AM EDT",
+    "status": "STOPPED DOWN — v0.4.7 Development Survivorship Review C0006 manually accepted; C0007 frozen",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0005 / C0009 accepted; C0006 v0.5 rejected on accepted-boundary defect",
-    "now": "Both Worker authorities are false; C0001–C0005 remain accepted and C0006 v0.5 remains rejected because B00412 was accepted in C0005 instead of governing B00415–B00418 in C0006",
-    "next": "Await explicit Sparkup and authority to reopen accepted C0005 evidence and replan the C0005/C0006 indivisible lead-in/body boundary"
+    "chunk": "C0001–C0006 / C0009 accepted; C0007 frozen; no rejected chunk",
+    "now": "C0006 was manually resolved at zero provider cost by retaining 31 valid dispositions and constructing the four distinction-category atoms governed by B00412; both Worker authorities remain false",
+    "next": "Await explicit Sparkup, then preflight frozen C0007 under the remaining cumulative budget"
   },
-  "next_possible_transition": "Explicit Sparkup plus authority to reopen accepted C0005 evidence and replan the C0005/C0006 boundary so B00412 governs B00415–B00418; no retry, other source, or later phase is authorized before then.",
+  "next_possible_transition": "Explicit Sparkup for this incomplete source, then preflight frozen C0007; no other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": 200,
+    "http_status": null,
     "chunk_id": "C0006",
-    "stop_reason": "end_turn",
-    "output_tokens": 21286,
+    "stop_reason": "authorial_manual_resolution",
+    "output_tokens": 0,
     "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3246,
-    "cache_effective": true,
-    "exact_cost_usd": "0.2337712",
+    "cache_read_input_tokens": 0,
+    "cache_effective": false,
+    "exact_cost_usd": "0",
     "mechanical_passed": true,
-    "review_state": "review_failed"
+    "review_state": "review_passed"
   }
 }

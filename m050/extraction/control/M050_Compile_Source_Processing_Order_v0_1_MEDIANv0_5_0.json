@@ -6,7 +6,7 @@
   "authority": {
     "sequence_authority": "Asa Wember-approved compile order recovered on 2026-08-03 and maintained canonically in this file",
     "disposition_source_path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
-    "disposition_source_sha256": "2ace37774363b88181bfe5e95a569e2c40c77befe7ac8ebdbbbd4c6d8bd2da22",
+    "disposition_source_sha256": "e437cf89f69a2f9ed8180427a2192ccd2a5c781e94ad63574b6d05c66d5b43b6",
     "state_matrix_path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json",
     "derivation_rule": "Order comes only from this canonical sequence. Identity, scope, disposition, and phase come from the Gate-2-derived source-state matrix. Completed progress and the next outstanding source derive from canonical compile state; they are not duplicated here. No spreadsheet, filename, or task-memory inference."
   },
@@ -116,27 +116,27 @@
     {
       "order": 20,
       "source_id": "M050-SRC-FOUR-MANIFESTATION-FRAMEWORK-001",
-      "label": "Four Manifestation Framework"
+      "label": "Manifestation Regeneration Reference"
     },
     {
       "order": 21,
       "source_id": "M050-SRC-APPENDIX-001",
-      "label": "Appendix Architecture"
+      "label": "Appendix Publication Architecture"
     },
     {
       "order": 22,
       "source_id": "M050-SRC-BOARD-GAME-DRAFT-001",
-      "label": "Board Game Draft"
+      "label": "Board Game Regeneration Reference"
     },
     {
       "order": 23,
       "source_id": "M050-SRC-MARKET-001",
-      "label": "Market Companion"
+      "label": "Market Position Publication Unit"
     },
     {
       "order": 24,
       "source_id": "M050-SRC-SOURCEBOOK-AUGMENTS-001",
-      "label": "Sourcebook Augments Companion"
+      "label": "Sourcebook Augments Plan"
     }
   ],
   "transition_constraints": {

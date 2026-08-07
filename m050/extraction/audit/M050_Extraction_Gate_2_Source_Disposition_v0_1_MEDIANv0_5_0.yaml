@@ -206,11 +206,16 @@ sources:
   - source_id: M050-SRC-FOUR-MANIFESTATION-FRAMEWORK-001
     path: m050/docs/v0.5/specifications/M050_Computer_TTRPG_Card_and_Mobile_Manifestation_Framework_v1_0_MEDIANv0_5_0.md
     sha256: 5229912716d57d76e705558694e26abb15a68c9cb6c73cd4527caa6aa62f6198
-    content_role: cross_medium_invariants_and_medium_specific_rules
-    disposition: deferred_source_bounded_atomic_extraction
-    output_streams: [manifestation_rule]
-    timing: after_core_reconciliation
-    reason: It contains substantive rules, but they translate the core and must not be flattened into core game semantics.
+    content_role: post_core_manifestation_regeneration_reference
+    disposition: post_core_regeneration_reference
+    output_streams: []
+    model_extraction: prohibited
+    timing: after_main_specification_completion
+    reason: >-
+      Use with the Board Game draft as reference input when regenerating one
+      coherent manifestations treatment from the completed main specification.
+      Do not atomize, reconcile as core semantics, or preserve it as an
+      independently governing manifestation specification.
 
   - source_id: M050-SRC-APPENDIX-001
     path: m050/docs/v0.5/specifications/M050_Appendix_Architecture_and_Content_Plan_v1_0_MEDIANv0_5_0.md
@@ -219,29 +224,50 @@ sources:
     disposition: deterministic_publication_control_parse
     output_streams: [publication_rule]
     model_extraction: prohibited
+    timing: after_main_specification_and_major_book_units_stabilize
+    note: >-
+      Rebuild the appendix architecture from the finished book. Decide then
+      whether the reference load belongs in a conventional appendix or a larger
+      Core Text and Phonebook Appendix arrangement.
 
   - source_id: M050-SRC-BOARD-GAME-DRAFT-001
     path: m050/docs/v0.5/companions/M050_Board_Game_Manifestation_Initial_Draft_v0_1_MEDIANv0_5_0.md
     sha256: aabe3b04b3665573e7346ccad171ef7bdb7706679a5081a6ad1db2eebd60d20c
-    content_role: exploratory_board_game_manifestation
-    disposition: deferred_optional_extraction
-    output_streams: [manifestation_rule]
+    content_role: post_core_manifestation_regeneration_reference
+    disposition: post_core_regeneration_reference
+    output_streams: []
+    model_extraction: prohibited
     default_record_status: exploratory
-    timing: only_if_selected_for_v0_5_0_sourcebook
+    timing: after_main_specification_completion
+    reason: >-
+      Use with the Four Manifestation Framework as reference input for one
+      newly generated derivative manifestations treatment. Do not atomize or
+      reconcile this exploratory draft as an independent source.
 
   - source_id: M050-SRC-MARKET-001
     path: m050/docs/v0.5/companions/M050_Market_Position_Comparative_Landscape_and_Resemblance_Risk_Research_v1_1_MEDIANv0_5_0.md
     sha256: 2fa77ef31a920ed1dbd77b4036b67a8ae63995af3d12c6de5c170ab8ce16ced7
-    content_role: positioning_and_comparative_analysis
+    content_role: self_contained_market_position_publication_unit
     disposition: retain_companion_no_atomic_compile_extraction
     output_streams: []
+    timing: sourcebook_assembly_after_main_specification_stabilizes
+    note: >-
+      Preserve substantially as a bounded book unit, subject only to light
+      editorial and currentness review. It does not enter atomic extraction or
+      semantic reconciliation.
 
   - source_id: M050-SRC-SOURCEBOOK-AUGMENTS-001
     path: m050/docs/v0.5/companions/M050_Sourcebook_Visual_Narrative_and_Infographic_Augments_Plan_v0_1_MEDIANv0_5_0.md
     sha256: daa34f836c7a385245bb6e9cfb9cb372249a871290915df707c8f90ec709c8ab
-    content_role: production_and_illustration_plan
+    content_role: post_core_sourcebook_augmentation_plan
     disposition: retain_companion_no_atomic_compile_extraction
     output_streams: []
+    timing: after_compiled_prose_and_book_structure_stabilize
+    note: >-
+      Populate the existing plan in place for narrative inserts, infographics,
+      diagrams, partial-page illustration, and full-page artwork. Use the
+      canonical 300 art manifest to assess carryover, revision, reference-only,
+      and retirement dispositions.
 
   - source_id: M050-SRC-047-DEVELOPMENT-RULINGS-001
     path: m050/docs/v0.5/provenance/M050_v0_4_7_Development_Rulings_Ledger_BSA_01_to_11A_Checkpoint_2026_07_30_MEDIANv0_5_0.md
@@ -285,11 +311,11 @@ sources:
     disposition: post_reconciliation_grounded_v0_4_6_coverage_audit
     output_streams: [provenance_evidence]
     default_record_status: historical
-
-unresolved_selection:
-  - source_id: M050-SRC-BOARD-GAME-DRAFT-001
-    question: Whether the exploratory board-game draft is intended as published v0.5.0 Sourcebook content.
-    effect: Does not block core evidence extraction, mapping, or reconciliation.
+    timing: after_grand_reconciliation_before_main_specification_completion
+    note: >-
+      Use only as a grounded omission audit against the reconciled corpus. It
+      does not re-enter atomization and does not automatically restore v0.4.6
+      material.
 
 gate_4_mandatory_identity_migration:
   historical_source_id: M050-SRC-GDD-COVERAGE-GAP-001

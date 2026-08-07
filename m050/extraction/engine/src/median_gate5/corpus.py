@@ -15,9 +15,8 @@ PRE_RECONCILIATION_DISPOSITIONS = {
     "source_bounded_atomic_extraction_then_content_partition_before_grand_reconciliation",
 }
 LATER_OR_CONDITIONAL_DISPOSITIONS = {
-    "deferred_source_bounded_atomic_extraction",
+    "post_core_regeneration_reference",
     "deterministic_publication_control_parse",
-    "deferred_optional_extraction",
     "post_reconciliation_grounded_v0_4_6_coverage_audit",
 }
 LEGACY_ATOMIZED_DISPOSITIONS = PRE_RECONCILIATION_DISPOSITIONS | {

@@ -603,7 +603,7 @@ Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;
 `no_substantive_claim` requires empty `atoms`. Headings, labels, table headers,
 delimiters, and document-control metadata carry no substantive atom. Dependent
 list items use minimum unambiguously-adjacent governing
-subject/status/scope/condition/connective, grammatically agreeing with targets;
+subject/status/scope/condition/connective; plural subjects take plural connectives;
 lead-ins cannot import body names,
 members, or assertions.
 

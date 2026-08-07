@@ -1,31 +1,31 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-SEQUENTIAL-C0013-HIGH-REFREEZE-011",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0013-AUTHORIAL-SUBJECT-REFREEZE-012",
   "state": "unusual_issue_halt",
-  "machine_state": "c0013_adjacent_accepted_context_obstruction_halt",
+  "machine_state": "c0013_authorized_retry_semicolon_failure_halt",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "60df2ac0ddb7589ae2d36cc2178745ea30cc346331a1a0374f26af09f78e4b5e",
+    "configuration_sha256": "e72458934327873d8ae0c9eebcfca94ffd8942a78db27e867752f310be21ace6",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
     "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
     "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
     "pilot_chunk_id": "C0013",
-    "pilot_packet_sha256": "8b40b4825f49727848d597d50342e29de9568597cf113cddb69d40024af665e7",
-    "pilot_packet_file_sha256": "10ca36032a3fa381814c7739bc934a4addb5701e49893888c99fdbf9910d4992",
+    "pilot_packet_sha256": "74a7d0656ea3074a63245ad95a0e2e17be4196274b0bc49dcd065123251a10f4",
+    "pilot_packet_file_sha256": "f665562f2bded63483ff17bf70bbdb8b08d4cfa33858df76b75988037d565bdf",
     "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
     "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761",
-    "compatibility_receipt_sha256": "2dd6ad16f7f2dd63d82e92688e91848bda219917e239db8819d3e4b23bd70744",
+    "compatibility_receipt_sha256": "3ec104b0262c5c1170032880c916269d6d6e0910af11f3f7b5a8ad134d2b9568",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
     ],
     "model": "claude-sonnet-5",
-    "reasoning_effort": "high",
-    "maximum_output_tokens": 24000,
+    "reasoning_effort": "low",
+    "maximum_output_tokens": 32000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
     "pricing": {
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0013 v0.4 is refrozen at high reasoning after v0.3 returned only one of 20 required dispositions.",
+    "selection_reason": "C0013 v0.5 is refrozen for the one authorially authorized retry; B00590 remains target-bound and its parent heading supplies the explicit Project Queue subject without repeated context.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.326984"
+    "cache_miss_call_ceiling_usd": "0.40698"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -88,6 +88,7 @@
     "accepted_c0001_through_c0012_plan_prefix_identical": true,
     "c0013_v0_2_rejection_preserved": true,
     "c0013_v0_3_rejection_preserved": true,
-    "c0013_v0_4_rejection_preserved": true
+    "c0013_v0_4_rejection_preserved": true,
+    "c0013_v0_5_rejection_preserved": true
   }
 }

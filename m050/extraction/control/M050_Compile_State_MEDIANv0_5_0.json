@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T23:30:15-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_REBOUND_C0013_ADJACENT_ACCEPTED_CONTEXT_OBSTRUCTION_HALT",
+  "updated": "2026-08-06T23:41:21-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_REBOUND_C0013_AUTHORIZED_RETRY_SEMICOLON_FAILURE_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -60,7 +60,7 @@
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Call_Packet_v0_4_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Call_Packet_v0_5_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -133,7 +133,8 @@
       "c0012_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0012_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0013_non_substantive_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Non_Substantive_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0013_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0013_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "c0013_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0013_authorial_subject_clarification": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Authorial_Subject_Clarification_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
     "pilot_chunk_id": "C0013",
     "generated_chunk_count": 21,
@@ -147,15 +148,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.326984",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_4_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.40698",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0013_Outcome_v0_5_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "33.5974518",
-    "cumulative_spent_usd": "32.6389668",
-    "remaining_usd": "0.9584850",
-    "display_usd_rounded_up": "32.64",
+    "cumulative_spent_usd": "32.7264690",
+    "remaining_usd": "0.8709828",
+    "display_usd_rounded_up": "32.73",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
@@ -169,26 +170,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 11:30:15 PM EDT",
-    "status": "v0.4.7 Development Rulings halted at C0013 adjacent-context obstruction",
+    "updated_human": "August 6, 2026 at 11:41:21 PM EDT",
+    "status": "v0.4.7 Development Rulings halted after authorized C0013 retry",
     "phase": "Atomic extraction — v0.4.7 Development Rulings rebound active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0012 / C0021 accepted; C0013 rejected; 8 later chunks unprocessed",
-    "now": "C0013 v0.4 is preserved and rejected: B00590 needs immediately preceding accepted B00588 as its explicit Project Queue referent, but the existing packet builder forbids an eligible accepted block as repeated context; exact cumulative spend is $32.6389668 with $0.9584850 remaining",
-    "next": "Halt for human review: allowing an accepted eligible prior block as bounded context requires machinery or mandate change; reclassifying B00588 would invalidate accepted C0012"
+    "now": "C0013 v0.5 correctly resolved B00590 to The Project Queue is no longer exclusive to Builders, but B00631 atom A2 crossed an authored semicolon and failed mechanical validation; exact cumulative spend is $32.7264690 with $0.8709828 remaining",
+    "next": "Halt after the single authorized retry; human review is required before any further C0013 attempt"
   },
-  "next_possible_transition": "Human review of the C0013 adjacent accepted-context obstruction; no retry, later chunk, another source, or later phase is authorized until the machinery or mandate question is resolved.",
+  "next_possible_transition": "Human review of the remaining C0013 semicolon-crossing defect after the single authorized retry; no further retry, later chunk, another source, or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "chunk_id": "C0013",
     "stop_reason": "end_turn",
-    "output_tokens": 14174,
-    "cache_creation_input_tokens": 3171,
-    "cache_read_input_tokens": 0,
+    "output_tokens": 7307,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3171,
     "cache_effective": true,
-    "exact_cost_usd": "0.168222",
-    "mechanical_passed": true,
+    "exact_cost_usd": "0.0875022",
+    "mechanical_passed": false,
     "review_state": "review_failed"
   }
 }

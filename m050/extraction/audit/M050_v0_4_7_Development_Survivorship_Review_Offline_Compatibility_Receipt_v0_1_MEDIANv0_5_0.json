@@ -5,10 +5,10 @@
   "status": "DEVELOPMENT_SURVIVORSHIP_REVIEW_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
   "binding": {
-    "configuration_sha256": "ab46f1a34de7263a4be512bc2563cd20e1848649eb318584fd38b7f6ebf79395",
-    "prompt_sha256": "7aa6d6526dff487199f9b6aba0badb33b23418b1408eb9b4144222cae88bc0b4",
-    "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
-    "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
+    "configuration_sha256": "69dff67499b4a33494dfe15a4bd702cb7bed875fdeee4c9d9735e05734833331",
+    "prompt_sha256": "302ee273708d850d24a8ae0740e281b3610aeff8f86640f81a6627a52bdf5f39",
+    "engine_module_sha256": "f9453cc46914fecacf564fb0861c070b62e3664b957ffefb1883bc3d6e692d23",
+    "engine_tests_sha256": "fa611bf1057b3b576000c5c4f1b43db48e9a66922ec4988b70bf79dbf867e584"
   },
   "source_review": {
     "source_blocks": 619,
@@ -49,6 +49,9 @@
     },
     "c0006_high_reasoning": {
       "sha256": "79d88e67da9e8f5acf1a35bab47b657feab6d6f5ed964f77f11b9449946ebfac"
+    },
+    "c0006_governing_lead_in": {
+      "sha256": "168e2bfbd2799df03b865c921259fe60f142da68141eba725f6de2aa0f9ca3e7"
     }
   }
 }

@@ -1,0 +1,43 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-SURVIVORSHIP-REVIEW-C0006-GOVERNING-LEAD-IN-001",
+  "date": "2026-08-07",
+  "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+  "preserved_rejection": {
+    "chunk_id": "C0006",
+    "outcome_sha256": "8bf82182d536df63754cdf1a4a69433fb002de18af9eb330a121a8c4b1d144c3",
+    "defect": "The high-reasoning response again marked four substantive dependent list items review_required despite their explicit adjacent governing lead-in."
+  },
+  "authorial_ruling": {
+    "governing_block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00412_1b52de27a64b",
+    "governed_block_ids": [
+      "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00415_75d80f9148a5",
+      "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00416_8fcae1839516",
+      "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00417_4edac1645efd",
+      "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00418_d7bd7760b45a"
+    ],
+    "result": "The sentence is the non-substantive governing lead-in for the four substantive list items."
+  },
+  "correction": {
+    "scope": "generic_prompt_instruction_clarification",
+    "result": "The existing dependent-list rule now requires, rather than merely permits, the minimum necessary explicit governing context when an indivisible adjacent lead-in or heading unambiguously governs the item.",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "69dff67499b4a33494dfe15a4bd702cb7bed875fdeee4c9d9735e05734833331",
+    "prompt_sha256": "302ee273708d850d24a8ae0740e281b3610aeff8f86640f81a6627a52bdf5f39",
+    "engine_module_sha256": "f9453cc46914fecacf564fb0861c070b62e3664b957ffefb1883bc3d6e692d23",
+    "engine_tests_sha256": "fa611bf1057b3b576000c5c4f1b43db48e9a66922ec4988b70bf79dbf867e584"
+  },
+  "offline_verification": {
+    "all_9_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

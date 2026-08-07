@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T10:41:07-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0006_REPEATED_LIST_CONTEXT_DEFECT_HALTED",
+  "updated": "2026-08-07T10:52:05-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0006_V0_4_CORRECTED_TRANSPORT_TIMEOUT_SPEND_RECONCILIATION_REQUIRED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -54,7 +54,7 @@
     "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Call_Packet_v0_3_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -84,7 +84,8 @@
     ],
     "compatibility_replays": {
       "c0005_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0005_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0006_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "c0006_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0006_governing_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_Governing_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
     "pilot_chunk_id": "C0006",
     "generated_chunk_count": 9,
@@ -98,8 +99,8 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.411628",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_3_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.411668",
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_4_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
@@ -120,26 +121,27 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 10:41:07 AM EDT",
-    "status": "v0.4.7 Development Survivorship Review C0006 repeated list-context defect; halted",
+    "updated_human": "August 7, 2026 at 10:52:05 AM EDT",
+    "status": "v0.4.7 Development Survivorship Review corrected C0006 transport timeout; spend reconciliation required",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
     "chunk": "C0001–C0005 / C0009 accepted; C0006 v0.1 rejected; v0.2 timed out",
-    "now": "C0006 v0.3 repeated the same four-item review_required defect at high reasoning; cumulative spend is $36.6224880",
-    "next": "Obtain authorial structural judgment for the four dependent items before correcting and refreezing C0006"
+    "now": "Corrected C0006 reached Anthropic but timed out without HTTP response or usage telemetry; cumulative spend remains $36.6224880 pending reconciliation",
+    "next": "Obtain human cost reconciliation for corrected C0006 v0.4 before any further provider call"
   },
-  "next_possible_transition": "Obtain authorial structural judgment for Development Survivorship Review C0006 blocks B00415–B00418 before any corrected retry; no other source or later phase is authorized.",
+  "next_possible_transition": "Reconcile the unresolved corrected C0006 v0.4 transport cost; no further provider call, other source, or later phase is authorized before that ruling.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": 200,
+    "http_status": null,
     "chunk_id": "C0006",
-    "stop_reason": "end_turn",
-    "output_tokens": 20863,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 3240,
-    "cache_effective": true,
-    "exact_cost_usd": "0.229540",
-    "mechanical_passed": true,
-    "review_state": "review_failed"
+    "stop_reason": null,
+    "output_tokens": null,
+    "cache_creation_input_tokens": null,
+    "cache_read_input_tokens": null,
+    "cache_effective": false,
+    "exact_cost_usd": null,
+    "mechanical_passed": false,
+    "review_state": "review_failed",
+    "transport_error": "TimeoutError:The read operation timed out"
   }
 }

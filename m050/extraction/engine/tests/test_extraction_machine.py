@@ -1683,8 +1683,8 @@ def test_generic_prompt_allows_minimum_explicit_list_item_governing_context():
         ["evidence_game_semantic"],
         "Extract only the bound source.",
     )
-    assert "Dependent\nlist items may use necessary explicit subject/status/scope/condition/connective" in prompt
-    assert "from indivisible-adjacent lead-in/heading" in prompt
+    assert "Dependent\nlist items must use minimum explicit subject/status/scope/condition/connective" in prompt
+    assert "from unambiguous indivisible-adjacent lead-in/heading" in prompt
     assert "may use only their own" not in prompt
     assert "never import a lead-in" not in prompt
 
@@ -1695,7 +1695,7 @@ def test_generic_prompt_prevents_reverse_import_from_dependent_body():
         ["evidence_game_semantic"],
         "Extract only the bound source.",
     )
-    assert "lead-ins may not import body names,\nmembers, or assertions" in prompt
+    assert "lead-ins cannot import body names,\nmembers, or assertions" in prompt
 
 
 def _structural_manifest():

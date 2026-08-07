@@ -1,0 +1,33 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-SURVIVORSHIP-REVIEW-C0005-MEDIUM-REASONING-001",
+  "date": "2026-08-07",
+  "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+  "preserved_rejection": {
+    "chunk_id": "C0005",
+    "outcome_sha256": "9cf712157b5d1745864dd9291b962aa190fcf833d06e7dcfbe8137e03bfbf147",
+    "defect": "The low-reasoning response marked seven dependent authored list items review_required instead of extracting their source-grounded claims under the immediately adjacent indivisible governing lead-in."
+  },
+  "correction": {
+    "scope": "source_configuration_sequential_retry_recalibration",
+    "result": "Reasoning effort increased from low to medium without changing the source, prompt, schema, cache boundary, target coverage, or extraction method.",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "c47ad1cf268c60f2a9650e3eb29b5c31980870e85775520d89ac1a1cf5c6036d",
+    "prompt_sha256": "7aa6d6526dff487199f9b6aba0badb33b23418b1408eb9b4144222cae88bc0b4",
+    "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
+    "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
+  },
+  "offline_verification": {
+    "all_9_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

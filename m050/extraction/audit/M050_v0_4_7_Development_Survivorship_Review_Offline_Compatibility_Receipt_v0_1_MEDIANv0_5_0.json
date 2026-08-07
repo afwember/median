@@ -5,7 +5,7 @@
   "status": "DEVELOPMENT_SURVIVORSHIP_REVIEW_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
   "binding": {
-    "configuration_sha256": "c9679479a6eaf5a3337831dbc5dcc291b502ec6118b47055472c44dec2d6154e",
+    "configuration_sha256": "ab46f1a34de7263a4be512bc2563cd20e1848649eb318584fd38b7f6ebf79395",
     "prompt_sha256": "7aa6d6526dff487199f9b6aba0badb33b23418b1408eb9b4144222cae88bc0b4",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
@@ -43,5 +43,12 @@
     "active_prompt_matches_generic_builder": true,
     "stable_output_schema_cache_boundary_preserved": true
   },
-  "replays": {}
+  "replays": {
+    "c0005_medium_reasoning": {
+      "sha256": "a43ade45652ce18609f1389b5107599f4f33eeaee9285ac4260ceff7d77c6bb7"
+    },
+    "c0006_high_reasoning": {
+      "sha256": "79d88e67da9e8f5acf1a35bab47b657feab6d6f5ed964f77f11b9449946ebfac"
+    }
+  }
 }

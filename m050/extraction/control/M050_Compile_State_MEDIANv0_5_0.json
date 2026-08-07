@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T12:47:33-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0009_V0_7_HIGH_REASONING_FINAL_RETRY_FROZEN",
+  "updated": "2026-08-07T12:49:12-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0009_REPEATED_PROVIDER_PLACEHOLDER_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -118,14 +118,14 @@
     "offline_gate_passed": true,
     "offline_tests_passed": 90,
     "cache_miss_call_ceiling_usd": "0.360264",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_4_MEDIANv0_5_0.json"
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_5_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "39.0341560",
-    "cumulative_spent_usd": "38.2743848",
-    "remaining_usd": "0.7597712",
-    "display_usd_rounded_up": "38.28",
+    "cumulative_spent_usd": "38.3111248",
+    "remaining_usd": "0.7230312",
+    "display_usd_rounded_up": "38.32",
     "provisional_component_usd": "1.455132",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
@@ -139,25 +139,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:47:33 PM EDT",
-    "status": "v0.4.7 Development Survivorship Review active — C0009 v0.7 high-reasoning final retry frozen",
+    "updated_human": "August 7, 2026 at 12:49:12 PM EDT",
+    "status": "v0.4.7 Development Survivorship Review halted — C0009 repeated provider placeholder defect",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0008 / C0009 accepted; C0009 v0.1–v0.4 rejected; v0.7 frozen",
-    "now": "C0009 v0.4 returned an incomplete one-disposition placeholder and failed mechanical coverage; high-reasoning v0.7 passes offline compatibility and is frozen for one final retry",
-    "next": "Preflight and retry frozen C0009 v0.7; halt if it does not pass complete mechanical and substantive review"
+    "chunk": "C0001–C0008 / C0009 accepted; C0009 v0.1–v0.5 rejected",
+    "now": "C0009 v0.5 repeated v0.4's incomplete one-disposition placeholder defect after high-reasoning recalibration; exact spend is reconciled and no further retry is permitted without human judgment",
+    "next": "Obtain human direction for the repeated C0009 provider noncompliance; do not retry, complete the source, or advance"
   },
-  "next_possible_transition": "Preflight and retry frozen C0009 v0.7; no other source or later phase is authorized.",
+  "next_possible_transition": "Human direction on repeated C0009 provider noncompliance; no further retry, other source, or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "chunk_id": "C0009",
     "stop_reason": "end_turn",
-    "output_tokens": 2258,
+    "output_tokens": 1668,
     "cache_creation_input_tokens": 3272,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.042640",
+    "exact_cost_usd": "0.036740",
     "mechanical_passed": false,
     "review_state": "review_failed"
   }

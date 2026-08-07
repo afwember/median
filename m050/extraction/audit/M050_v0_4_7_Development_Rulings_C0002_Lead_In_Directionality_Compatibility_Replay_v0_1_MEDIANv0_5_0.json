@@ -1,0 +1,34 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-C0002-LEAD-IN-DIRECTIONALITY-001",
+  "date": "2026-08-06",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0002",
+    "outcome_sha256": "fc892ae0412d05de41829cad9c011c0e74c3e6ae3c7ca2e837cb9ece00353c05",
+    "defect": "A lead-in atom imported the names of members from following dependent list blocks although its exact span grounded only an unnamed three-layer distinction."
+  },
+  "correction": {
+    "scope": "source_agnostic_prompt_replacement_in_place",
+    "result": "Dependent list items retain minimum governing-context permission while lead-in atoms may not import body names, members, or assertions.",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "aafd9c987fe1e37c1837d7348b10b885e42fd16d6974f78ee8ab7c9de5053fa2",
+    "prompt_sha256": "bc16bfc8db148872f8c0d37bf1df909c5cb2d8a58c45fef05ea96e1199cd99f6",
+    "engine_module_sha256": "4a44300641e1e3622ece71c8694fe724cbaf9258acd26021ab47ba53877fda3f",
+    "engine_tests_sha256": "d518ef7e1e9912bc77274d715e4d8803391baf57ac0f2b618f684d616aea1b2e"
+  },
+  "offline_verification": {
+    "focused_regression_passed": true,
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

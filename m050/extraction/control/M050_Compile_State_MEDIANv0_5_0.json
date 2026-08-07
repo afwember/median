@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T20:24:26-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_IDENTITY_CARD_APPROVAL_PENDING_HALT",
+  "updated": "2026-08-06T20:45:58-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0002_REPEATED_SUBSTANTIVE_DEFECT_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -37,23 +37,50 @@
     "id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "label": "v0.4.7 Development Rulings",
     "compile_ordinal": 17,
-    "accepted_chunk_ids": [],
-    "rejected_chunk_id": null,
+    "accepted_chunk_ids": [
+      "C0001"
+    ],
+    "rejected_chunk_id": "C0002",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Rulings_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "43a243a41a3724ed47bc49b0455a531be5fd32ead0335f1c49ed641e3b6d6eaf",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0002_Call_Packet_v0_2_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0001_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {
+      "c0002_lead_in_directionality_correction": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0002_Lead_In_Directionality_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+    },
+    "pilot_chunk_id": "C0002",
+    "generated_chunk_count": 21,
+    "target_blocks_per_chunk": 20,
+    "required_target_disposition_count": 20,
+    "source_blocks": 968,
+    "eligible_target_blocks": 403,
+    "context_only_blocks": 60,
+    "excluded_blocks": 505,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 88,
+    "cache_miss_call_ceiling_usd": "0.327488",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0002_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "31.8652378",
-    "cumulative_spent_usd": "30.3068736",
-    "remaining_usd": "1.5583642",
-    "display_usd_rounded_up": "30.31",
+    "cumulative_spent_usd": "30.6086888",
+    "remaining_usd": "1.2565490",
+    "display_usd_rounded_up": "30.61",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
@@ -67,15 +94,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 8:24:26 PM EDT",
-    "status": "v0.4.7 Development Rulings identity proposed; author approval required",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings identity approval halt",
+    "updated_human": "August 6, 2026 at 8:45:58 PM EDT",
+    "status": "v0.4.7 Development Rulings halted on repeated C0002 defect",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
-    "chunk": "No chunk selected; accepted/rejected boundary empty",
-    "now": "Minimal frozen-source identity, source-declared qualification handling, and zero-media disposition proposed; no provider call or spend",
-    "next": "Halt for author approval or amendment before scaffold, provider configuration, or transmission"
+    "chunk": "C0001 / C0021 accepted; C0002 rejected twice; 19 later chunks unprocessed",
+    "now": "C0002 v0.2 repeated the v0.1 reverse-import defect despite the guarded generic correction; exact cumulative spend is $30.6086888 with $1.2565490 remaining",
+    "next": "Halt provider activity for human review of the repeated lead-in/body grounding obstruction; preserve both attempts"
   },
-  "next_possible_transition": "Author approval or amendment of the pending v0.4.7 Development Rulings identity card; no provider call, another source, or later phase is authorized.",
+  "next_possible_transition": "Human ruling or authorization of the smallest safe correction for the repeated C0002 lead-in/body grounding defect; no retry, another source, or later phase is authorized.",
   "gate_5_complete": false,
-  "latest_provider_attempt": null
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "chunk_id": "C0002",
+    "stop_reason": "end_turn",
+    "output_tokens": 7335,
+    "cache_creation_input_tokens": 3161,
+    "cache_read_input_tokens": 0,
+    "cache_effective": true,
+    "exact_cost_usd": "0.100152",
+    "mechanical_passed": true,
+    "review_state": "review_failed"
+  }
 }

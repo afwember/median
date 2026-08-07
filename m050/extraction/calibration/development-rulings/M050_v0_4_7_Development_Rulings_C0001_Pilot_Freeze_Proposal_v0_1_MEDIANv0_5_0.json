@@ -1,0 +1,67 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0001-PILOT-FREEZE-001",
+  "state": "repeated_substantive_defect_halt",
+  "machine_state": "repeated_substantive_defect_halt",
+  "binding": {
+    "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+    "source_sha256": "88ae2ae2f306b6406ed96b50f0ae5faf7d91e60bf1522ef9788bf8302f419c19",
+    "configuration_sha256": "aafd9c987fe1e37c1837d7348b10b885e42fd16d6974f78ee8ab7c9de5053fa2",
+    "identity_card_sha256": "9a5c18458a43f3c87c920d834b1534eb6e930f9edd53cf3bec2c781838323f32",
+    "block_manifest_sha256": "0c45aea7e9db477101cde2226ace1330a47d5ee16b779cd76e11188a094dbff3",
+    "disposition_ledger_sha256": "b19945710eed2eaf3a0149b80c2f87b60ae3d4cc89a196f62696bfd2e59cd8f2",
+    "chunk_plan_sha256": "026fd5ad69e3177ea102a731e821f176cb205cb327f3129fc3e55fec2b5012b4",
+    "pilot_chunk_id": "C0002",
+    "pilot_packet_sha256": "b94987b7f6547f4070ac9f65550f51c42a24254c3c8722e9c3296dd6e52f6eeb",
+    "pilot_packet_file_sha256": "fe0200f7d3fa173aedc50c934cc683308d4814b252dd87e6635637bf64454e16",
+    "prompt_sha256": "bc16bfc8db148872f8c0d37bf1df909c5cb2d8a58c45fef05ea96e1199cd99f6",
+    "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
+    "engine_module_sha256": "4a44300641e1e3622ece71c8694fe724cbaf9258acd26021ab47ba53877fda3f",
+    "engine_tests_sha256": "d518ef7e1e9912bc77274d715e4d8803391baf57ac0f2b618f684d616aea1b2e",
+    "allowed_streams": [
+      "evidence_game_semantic",
+      "provenance_evidence"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 24000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0002 v0.2 is the single corrected retry after v0.1 was substantively rejected for reverse import from dependent list bodies.",
+    "required_target_disposition_count": 20,
+    "cache_miss_call_ceiling_usd": "0.327488"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 88,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 21,
+    "chunk_count_is_input": false,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "provider_call_made": true,
+    "c0001_mechanical_and_substantive_review_passed": true,
+    "c0002_v0_1_substantive_review_failed": true,
+    "c0002_v0_2_substantive_review_failed": true,
+    "whole_source_coverage_and_quality_review_passed": false,
+    "candidate_acceptance_guard_passed": false
+  }
+}

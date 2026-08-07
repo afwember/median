@@ -5,15 +5,15 @@
   ],
   "artifact_sha256": {
     "block_manifest": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "chunk_plan": "488d98a6676834abb2e90cae5ce285d891b668896f16c8be40291fb96bd92e5f",
-    "disposition_ledger": "828d8f3817ff82f120df7da41a729cd1bae47645f0b8b1ed29f68d064b1a3c24",
+    "chunk_plan": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
+    "disposition_ledger": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
     "identity_card": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "prompt": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
     "response_schema": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc"
   },
   "artifacts": {
     "block_manifest": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Block_Manifest_v0_1_MEDIANv0_5_0.json",
-    "chunk_plan": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Section_Aware_Chunk_Plan_v0_5_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Section_Aware_Chunk_Plan_v0_8_MEDIANv0_5_0.json",
     "disposition_ledger": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
     "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Rulings_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
     "prompt": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Extraction_Prompt_MEDIANv0_5_0.md",
@@ -38,7 +38,7 @@
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "low"
+    "reasoning_effort": "high"
   },
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",

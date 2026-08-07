@@ -5,16 +5,16 @@
   "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "d037cec430cb6920e9a3954faeb9a9f80b14af8c2f2f3fa1c173e212e02cdb8b",
+    "configuration_sha256": "60df2ac0ddb7589ae2d36cc2178745ea30cc346331a1a0374f26af09f78e4b5e",
     "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
     "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
     "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761"
   },
   "source_review": {
     "source_blocks": 968,
-    "eligible_targets": 401,
-    "context_only_blocks": 63,
-    "excluded_blocks": 504,
+    "eligible_targets": 398,
+    "context_only_blocks": 65,
+    "excluded_blocks": 505,
     "identity_review_flags_remaining": 0,
     "media_occurrences_excluded": 0,
     "media_reference_blocks_excluded": 0,
@@ -63,6 +63,26 @@
     "c0011_anaphoric_subject": {
       "sha256": "484958c99aff4e19b010000d0455cdb07eef7e7cace2521531717ed78aac1706",
       "result": "authorial_referent_ruling_encoded_in_existing_invariant_and_all_source_compatibility_passed"
+    },
+    "c0011_block_exclusion": {
+      "sha256": "c3afa2eb21e3c319ea74f2e8156755f1bc258a868def911df93f1ac6e3258cd5",
+      "result": "authorial_block_exclusion_applied_to_unaccepted_suffix_and_all_source_compatibility_passed"
+    },
+    "c0012_non_substantive_lead_in": {
+      "sha256": "4861c594c57d3c7e65b132bbd0180d7ca22c6a7fadb68d47f24e885058262e41",
+      "result": "established_non_substantive_lead_in_classification_applied_and_all_source_compatibility_passed"
+    },
+    "c0013_non_substantive_lead_in": {
+      "sha256": "7636029c6bfaf0b5ae343f29136bf9697d21421609829610aa049a18a75747a8",
+      "result": "established_non_substantive_lead_in_classification_applied_and_all_source_compatibility_passed"
+    },
+    "c0013_medium_reasoning": {
+      "sha256": "8d89be4db8ae72687deb824e0b23c6afd1ae9363ab55ec2a663afa51032f782f",
+      "result": "existing_reasoning_effort_binding_increased_after_mechanical_noncompliance_and_all_source_compatibility_passed"
+    },
+    "c0013_high_reasoning": {
+      "sha256": "dc3a95aa892d399faa83ddf5faee6a4228b588c3aa0f477f9870a0bc92d44f06",
+      "result": "existing_reasoning_effort_binding_increased_after_incomplete_medium_response_and_all_source_compatibility_passed"
     }
   }
 }

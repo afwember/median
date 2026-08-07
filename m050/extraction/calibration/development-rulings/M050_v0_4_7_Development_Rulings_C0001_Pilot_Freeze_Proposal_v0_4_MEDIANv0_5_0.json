@@ -1,30 +1,30 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-REBOUND-C0011-AUTHORIAL-REFERENT-RETRY-004",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-SEQUENTIAL-C0013-HIGH-REFREEZE-011",
   "state": "unusual_issue_halt",
-  "machine_state": "c0011_persistent_resulting_shared_practice_halt",
+  "machine_state": "c0013_adjacent_accepted_context_obstruction_halt",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "d037cec430cb6920e9a3954faeb9a9f80b14af8c2f2f3fa1c173e212e02cdb8b",
+    "configuration_sha256": "60df2ac0ddb7589ae2d36cc2178745ea30cc346331a1a0374f26af09f78e4b5e",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "disposition_ledger_sha256": "828d8f3817ff82f120df7da41a729cd1bae47645f0b8b1ed29f68d064b1a3c24",
-    "chunk_plan_sha256": "488d98a6676834abb2e90cae5ce285d891b668896f16c8be40291fb96bd92e5f",
-    "pilot_chunk_id": "C0011",
-    "pilot_packet_sha256": "72cee59df83c1f65837f041e17c6f61c46db551164dda6100d363c828e04bfe6",
-    "pilot_packet_file_sha256": "de438e4e781f602de70bb6da5bb6a0fbcc478dd833f6ca877b99eada3498d38d",
+    "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
+    "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
+    "pilot_chunk_id": "C0013",
+    "pilot_packet_sha256": "8b40b4825f49727848d597d50342e29de9568597cf113cddb69d40024af665e7",
+    "pilot_packet_file_sha256": "10ca36032a3fa381814c7739bc934a4addb5701e49893888c99fdbf9910d4992",
     "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
     "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761",
-    "compatibility_receipt_sha256": "2bbf7d6f1505089cdce6d122f1b13b55f1b3b6508a3025ae356ca1d3d4b6b114",
+    "compatibility_receipt_sha256": "2dd6ad16f7f2dd63d82e92688e91848bda219917e239db8819d3e4b23bd70744",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
     ],
     "model": "claude-sonnet-5",
-    "reasoning_effort": "low",
+    "reasoning_effort": "high",
     "maximum_output_tokens": 24000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0011 v0.6 is refrozen after Asa ruled both §15.4 anaphoric phrases explicitly refer to the Winter Cultivation Practice.",
+    "selection_reason": "C0013 v0.4 is refrozen at high reasoning after v0.3 returned only one of 20 required dispositions.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.325584"
+    "cache_miss_call_ceiling_usd": "0.326984"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -77,6 +77,17 @@
     "c0011_v0_2_rejection_preserved": true,
     "c0011_v0_4_rejection_preserved": true,
     "c0011_v0_5_rejection_preserved": true,
-    "c0011_v0_6_rejection_preserved": true
+    "c0011_v0_6_rejection_preserved": true,
+    "accepted_c0001_through_c0010_plan_prefix_identical": true,
+    "authorially_excluded_b00517_absent_from_provider_targets": true,
+    "c0011_mechanical_and_substantive_review_passed": true,
+    "c0012_v0_1_rejection_preserved": true,
+    "accepted_c0001_through_c0011_plan_prefix_identical": true,
+    "c0012_mechanical_and_substantive_review_passed": true,
+    "c0013_v0_1_rejection_preserved": true,
+    "accepted_c0001_through_c0012_plan_prefix_identical": true,
+    "c0013_v0_2_rejection_preserved": true,
+    "c0013_v0_3_rejection_preserved": true,
+    "c0013_v0_4_rejection_preserved": true
   }
 }

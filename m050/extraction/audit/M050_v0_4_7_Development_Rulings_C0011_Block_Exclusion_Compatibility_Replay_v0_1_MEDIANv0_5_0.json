@@ -1,0 +1,42 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-C0011-BLOCK-EXCLUSION-001",
+  "date": "2026-08-06",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0011",
+    "outcome_sha256": "10b9c3689bf9a712fac223825534da6ff8c8fbaba62f676fca1ca0f3028c0d85",
+    "defect": "The second sentence of block B00517 was normalized as a definite game rule despite its unreliable referent."
+  },
+  "authorial_ruling": {
+    "classification": "excluded_noncanonical_source_writing_invention",
+    "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00517_15fbfa2742e8",
+    "result": "The block is excluded in its entirety and neither sentence may enter the accepted candidate."
+  },
+  "correction": {
+    "scope": "declarative_source_disposition_and_unaccepted_suffix_replan",
+    "accepted_prefix_preserved_through": "C0010",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "fbc952c6066618d9b2247a4ac023735c87f3b6ffc45ff33453a37291567dcd34",
+    "chunk_plan_sha256": "f8facb31a17b553083f2cb660ddc14118ba1280fc68e2f8a00db48ca559ce6d0",
+    "disposition_ledger_sha256": "026d0670be2b6427436a892caf37275d53de8b799a5842298d5cec925410db80",
+    "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
+    "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
+    "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761"
+  },
+  "offline_verification": {
+    "accepted_c0001_through_c0010_plan_prefix_identical": true,
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "excluded_block_absent_from_provider_targets": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

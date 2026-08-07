@@ -1,0 +1,42 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-C0012-NON-SUBSTANTIVE-LEAD-IN-001",
+  "date": "2026-08-06",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0012",
+    "outcome_sha256": "11607de30bd12ca7214e1bb2446c615030e80ff35fab56cac97824e35048c99d",
+    "defect": "The non-substantive lead-in The reusable sequence is was atomized as an independent existence claim."
+  },
+  "applied_authorial_precedent": {
+    "classification": "non_substantive_context",
+    "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00547_94435badff19",
+    "basis": "The following block carries the complete sequence; the lead-in supplies only its grammatical introduction."
+  },
+  "correction": {
+    "scope": "declarative_source_disposition_and_unaccepted_suffix_replan",
+    "accepted_prefix_preserved_through": "C0011",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "d439dfa010abd87acf875aa022df7b0c1cef1615ab582fbeb90904baf0ef8c79",
+    "chunk_plan_sha256": "8307d5dea0427e316a84c2af10a30e537e315a4834e52c7d468e4c4fd2975d8f",
+    "disposition_ledger_sha256": "7546618241b90636fb0f0011707f841a144992f5a61bb7ff9edbc53a45c944a6",
+    "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
+    "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
+    "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761"
+  },
+  "offline_verification": {
+    "accepted_c0001_through_c0011_plan_prefix_identical": true,
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "lead_in_absent_from_provider_targets": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

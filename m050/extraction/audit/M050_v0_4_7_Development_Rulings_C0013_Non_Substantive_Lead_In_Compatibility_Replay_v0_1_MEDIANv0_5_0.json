@@ -1,0 +1,42 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-C0013-NON-SUBSTANTIVE-LEAD-IN-001",
+  "date": "2026-08-06",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0013",
+    "outcome_sha256": "bca828d1b38903b9f54baf9d610c6c358ffb3c6adc76edc7a006f20146871d05",
+    "defect": "The non-substantive lead-in The full sequence is was atomized as an independent introduction claim."
+  },
+  "applied_authorial_precedent": {
+    "classification": "non_substantive_context",
+    "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00610_af4754dab272",
+    "basis": "The following block carries the complete sequence; the lead-in supplies only its grammatical introduction."
+  },
+  "correction": {
+    "scope": "declarative_source_disposition_and_unaccepted_suffix_replan",
+    "accepted_prefix_preserved_through": "C0012",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "ed24603cb5e9aa2d05b5a0bdc13de287255cb5c98d4faae4d8609908f098c798",
+    "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
+    "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
+    "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
+    "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
+    "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761"
+  },
+  "offline_verification": {
+    "accepted_c0001_through_c0012_plan_prefix_identical": true,
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "lead_in_absent_from_provider_targets": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

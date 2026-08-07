@@ -6,7 +6,7 @@
   "authority": {
     "sequence_authority": "Asa Wember-approved compile order recovered on 2026-08-03 and maintained canonically in this file",
     "disposition_source_path": "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml",
-    "disposition_source_sha256": "e437cf89f69a2f9ed8180427a2192ccd2a5c781e94ad63574b6d05c66d5b43b6",
+    "disposition_source_sha256": "45471bc011374f7275b37bfdee19020b3d9f9965b403f39670f1ac87b76ec650",
     "state_matrix_path": "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json",
     "derivation_rule": "Order comes only from this canonical sequence. Identity, scope, disposition, and phase come from the Gate-2-derived source-state matrix. Completed progress and the next outstanding source derive from canonical compile state; they are not duplicated here. No spreadsheet, filename, or task-memory inference."
   },

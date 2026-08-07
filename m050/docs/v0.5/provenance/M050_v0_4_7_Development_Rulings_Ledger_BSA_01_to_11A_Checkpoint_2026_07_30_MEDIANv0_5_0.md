@@ -84,7 +84,7 @@ A Tale may contain short invented interstitial moments drawn from established st
 Interstitial material may not invent new mechanics, major unseen events, relationship reversals, wounds, deaths, or consequential choices the player should have been allowed to witness.
 
 <!--@5¶9-->
-The three layers remain distinct:
+The Record, Chronicle, and Tale remain distinct:
 
 <!--@5¶10-->
 - **The Record:** persistent source facts and remembered material;

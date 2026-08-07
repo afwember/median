@@ -1,24 +1,24 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-REBOUND-C0007-FREEZE-004",
-  "state": "authorial_target_context_classification_halt",
-  "machine_state": "authorial_table_header_context_classification_halt",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-REBOUND-C0011-FREEZE-004",
+  "state": "spend_insufficient_halt",
+  "machine_state": "c0011_frozen_untransmitted_spend_halt",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "527ef912c2a258e4525340f18a03f3af771aeba7068e0462ca3b96692a65e702",
+    "configuration_sha256": "0f5628f320436f7563c113caecfafc8d47d1ba23022b7fdadf8a9c889d4c60bf",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "disposition_ledger_sha256": "fb492e73cd7199cbab25ad5287afa89e3ccb9afeaac36180cd2a25d97bb46be1",
-    "chunk_plan_sha256": "59f74449b534d75b92eb58eeeb4831ddc2d6d0bee24be6d7a0c7f99b6909340c",
-    "pilot_chunk_id": "C0007",
-    "pilot_packet_sha256": "9523f8f76b8343d7c51b1f8e6e82b584297b9a633fa5c5334dc0b3baa076880c",
-    "pilot_packet_file_sha256": "85378cc08cda4469132dfee4f9e7c1a99344a842388ae234a998f53b2327a5e8",
+    "disposition_ledger_sha256": "a2d43a9df22120e43ee8b91214ba815534796475e5a082644dc95f9ef457eeda",
+    "chunk_plan_sha256": "77831d2d27a3b31e1380ec495afd902b468db74927af3fe65c67620f49836f28",
+    "pilot_chunk_id": "C0011",
+    "pilot_packet_sha256": "453c447d137c41750566234fb09a348871fe587b6919ef083aca3b211958fa8d",
+    "pilot_packet_file_sha256": "9d663ae5e43dee727ffe2c1055568cbe016a8a47bbfc11aafe03a662432dd2c8",
     "prompt_sha256": "2387450e8f354d8889b3b98433b9d515bd96bd036e7bc8209a419b3e69873ec8",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "4a44300641e1e3622ece71c8694fe724cbaf9258acd26021ab47ba53877fda3f",
     "engine_tests_sha256": "d518ef7e1e9912bc77274d715e4d8803391baf57ac0f2b618f684d616aea1b2e",
-    "compatibility_receipt_sha256": "0471fecd348ea5c96b73b968af454991b240fad552ace6c4eae2428525017171",
+    "compatibility_receipt_sha256": "46690b66fd8c6f27454415876dba890e7ad51e5a9741deba01a21ffe2b8cb74f",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0007 is the next sequential chunk after C0006 passed mechanical and substantive review.",
+    "selection_reason": "C0011 is the next sequential chunk after C0010 passed mechanical and substantive review; it remains untransmitted because the remaining budget cannot cover its conservative ceiling.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.32718"
+    "cache_miss_call_ceiling_usd": "0.325512"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -58,7 +58,7 @@
     "all_source_structural_compatibility_passed": true,
     "active_prompt_matches_generic_builder": true,
     "stable_output_schema_cache_boundary_preserved": true,
-    "provider_call_made": true,
+    "provider_call_made": false,
     "c0001_mechanical_and_substantive_review_passed": true,
     "c0002_mechanical_and_substantive_review_passed": true,
     "c0003_v0_1_rejection_preserved": true,
@@ -68,6 +68,10 @@
     "c0004_mechanical_and_substantive_review_passed": true,
     "c0005_mechanical_and_substantive_review_passed": true,
     "c0006_mechanical_and_substantive_review_passed": true,
-    "c0007_substantive_review_failed": true
+    "c0007_v0_1_rejection_preserved": true,
+    "c0007_mechanical_and_substantive_review_passed": true,
+    "c0008_mechanical_and_substantive_review_passed": true,
+    "c0009_mechanical_and_substantive_review_passed": true,
+    "c0010_mechanical_and_substantive_review_passed": true
   }
 }

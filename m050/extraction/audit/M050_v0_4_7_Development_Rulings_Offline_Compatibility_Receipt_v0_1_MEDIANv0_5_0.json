@@ -5,10 +5,10 @@
   "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "35226c453f67f67bfab59ff80466607d6e1df324f911651a612057449b7ecca5",
-    "prompt_sha256": "e7f2944d34a7cc111855d3b8f9530713d47fd4aa48fb9fb14e5f675f6769fc91",
-    "engine_module_sha256": "b1d95004e584d43e03ae2b39aa2758ba3d3e9a356b413968aa429c8257535642",
-    "engine_tests_sha256": "79d8a52e7b4c903d0b2b3678d961ce24c86abbeb279363d9c279f6502c28fdf4"
+    "configuration_sha256": "d037cec430cb6920e9a3954faeb9a9f80b14af8c2f2f3fa1c173e212e02cdb8b",
+    "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
+    "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
+    "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761"
   },
   "source_review": {
     "source_blocks": 968,
@@ -61,8 +61,8 @@
       "result": "existing_authorial_lead_in_classification_applied_and_all_source_compatibility_passed"
     },
     "c0011_anaphoric_subject": {
-      "sha256": "2cf9757dfddb9b871a7a8400da22f1f57ab08df64b799f8fc5f12b228cc85d33",
-      "result": "generic_self_containment_invariant_corrected_and_all_source_compatibility_passed"
+      "sha256": "484958c99aff4e19b010000d0455cdb07eef7e7cace2521531717ed78aac1706",
+      "result": "authorial_referent_ruling_encoded_in_existing_invariant_and_all_source_compatibility_passed"
     }
   }
 }

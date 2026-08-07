@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-06T22:26:02-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_REBOUND_C0011_PERSISTENT_ANAPHORA_HALT",
+  "updated": "2026-08-06T22:55:59-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_REBOUND_C0011_PERSISTENT_RESULTING_SHARED_PRACTICE_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -58,7 +58,7 @@
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Call_Packet_v0_5_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Call_Packet_v0_6_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -130,15 +130,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.3255",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Outcome_v0_5_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.325584",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0011_Outcome_v0_6_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "33.5974518",
-    "cumulative_spent_usd": "31.9303818",
-    "remaining_usd": "1.6670700",
-    "display_usd_rounded_up": "31.94",
+    "cumulative_spent_usd": "32.0164358",
+    "remaining_usd": "1.5810160",
+    "display_usd_rounded_up": "32.02",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
@@ -152,25 +152,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 10:26:02 PM EDT",
-    "status": "v0.4.7 Development Rulings halted for persistent C0011 self-containment defect",
+    "updated_human": "August 6, 2026 at 10:55:59 PM EDT",
+    "status": "v0.4.7 Development Rulings halted for persistent C0011 referent defect",
     "phase": "Atomic extraction — v0.4.7 Development Rulings rebound active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0010 / C0021 accepted; C0011 rejected; 10 later chunks unprocessed",
-    "now": "C0011 v0.5 is preserved and rejected because The Practice and the resulting shared Practice remain unresolved after the strengthened generic self-containment invariant; exact cumulative spend is $31.9303818 with $1.6670700 remaining",
-    "next": "Halt for human review of the persistent C0011 anaphoric-subject failure and the smallest safe correction"
+    "now": "C0011 v0.6 is preserved and rejected: The Practice was correctly resolved, but the resulting shared Practice remains unresolved despite the explicit §15.4 ruling; exact cumulative spend is $32.0164358 with $1.5810160 remaining",
+    "next": "Halt for human review of the remaining C0011 phrase the resulting shared Practice; accepting or manually repairing it is not authorized"
   },
-  "next_possible_transition": "Human review of the persistent C0011 anaphoric-subject failure and the smallest safe correction; no further retry, later chunk, another source, or later phase is authorized.",
+  "next_possible_transition": "Human review of the remaining C0011 normalized phrase the resulting shared Practice; no further retry, later chunk, another source, or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
     "chunk_id": "C0011",
     "stop_reason": "end_turn",
-    "output_tokens": 6466,
-    "cache_creation_input_tokens": 3163,
+    "output_tokens": 5964,
+    "cache_creation_input_tokens": 3171,
     "cache_read_input_tokens": 0,
     "cache_effective": true,
-    "exact_cost_usd": "0.091042",
+    "exact_cost_usd": "0.086054",
     "mechanical_passed": true,
     "review_state": "review_failed"
   }

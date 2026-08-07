@@ -1,24 +1,24 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-REBOUND-C0011-ANAPHORA-RETRY-004",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-REBOUND-C0011-AUTHORIAL-REFERENT-RETRY-004",
   "state": "unusual_issue_halt",
-  "machine_state": "c0011_persistent_anaphora_self_containment_halt",
+  "machine_state": "c0011_persistent_resulting_shared_practice_halt",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "35226c453f67f67bfab59ff80466607d6e1df324f911651a612057449b7ecca5",
+    "configuration_sha256": "d037cec430cb6920e9a3954faeb9a9f80b14af8c2f2f3fa1c173e212e02cdb8b",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
     "disposition_ledger_sha256": "828d8f3817ff82f120df7da41a729cd1bae47645f0b8b1ed29f68d064b1a3c24",
     "chunk_plan_sha256": "488d98a6676834abb2e90cae5ce285d891b668896f16c8be40291fb96bd92e5f",
     "pilot_chunk_id": "C0011",
-    "pilot_packet_sha256": "cbe255a380f1f0472a97b06d877cc6503aad0a939c19cd4af32de2395d4e93b3",
-    "pilot_packet_file_sha256": "600eb7266077cae575b2182697258f4f64391085b22c5b5d052de49659d3b2f1",
-    "prompt_sha256": "e7f2944d34a7cc111855d3b8f9530713d47fd4aa48fb9fb14e5f675f6769fc91",
+    "pilot_packet_sha256": "72cee59df83c1f65837f041e17c6f61c46db551164dda6100d363c828e04bfe6",
+    "pilot_packet_file_sha256": "de438e4e781f602de70bb6da5bb6a0fbcc478dd833f6ca877b99eada3498d38d",
+    "prompt_sha256": "32651bb3dd3044b10080a2cb59b2ebaebc747766ae2986d90788e57ec01f719d",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
-    "engine_module_sha256": "b1d95004e584d43e03ae2b39aa2758ba3d3e9a356b413968aa429c8257535642",
-    "engine_tests_sha256": "79d8a52e7b4c903d0b2b3678d961ce24c86abbeb279363d9c279f6502c28fdf4",
-    "compatibility_receipt_sha256": "c9c876a7da1b6318510052dde0b44410548285123f1332c7d31ac7871c51dfcf",
+    "engine_module_sha256": "6fc7b98041a1e095427565affef35bea944a98b9bf1d150d2563de5b83a99644",
+    "engine_tests_sha256": "fcd2fced385ce2028a597dfc88fcd88da4102d1caa1995f7ede0401251c88761",
+    "compatibility_receipt_sha256": "2bbf7d6f1505089cdce6d122f1b13b55f1b3b6508a3025ae356ca1d3d4b6b114",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0011 v0.5 is refrozen after tightening the same generic anaphora self-containment invariant in place.",
+    "selection_reason": "C0011 v0.6 is refrozen after Asa ruled both §15.4 anaphoric phrases explicitly refer to the Winter Cultivation Practice.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.3255"
+    "cache_miss_call_ceiling_usd": "0.325584"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -76,6 +76,7 @@
     "c0011_v0_1_rejection_preserved": true,
     "c0011_v0_2_rejection_preserved": true,
     "c0011_v0_4_rejection_preserved": true,
-    "c0011_v0_5_rejection_preserved": true
+    "c0011_v0_5_rejection_preserved": true,
+    "c0011_v0_6_rejection_preserved": true
   }
 }

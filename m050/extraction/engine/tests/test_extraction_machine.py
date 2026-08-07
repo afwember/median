@@ -384,9 +384,9 @@ def test_generic_prompt_promotes_only_concise_cross_source_invariants():
     assert "A subject or label alone never grounds an\nimported predicate" in prompt
     assert "Anchor each normalized claim in `exact_source_text`" in prompt
     assert "For self-containment" in prompt
-    assert "explicitly resolve pronouns, anaphora, and subjectless prefixes" in prompt
-    assert "from bound context" in prompt
-    assert "Headings supply only necessary status or scope" in prompt
+    assert "bound context names a pronoun, anaphora, or subjectless prefix's referent" in prompt
+    assert "substitute it in `normalized_claim`" in prompt
+    assert "Headings supply only status or scope" in prompt
     assert "Never paraphrase, gloss, define, compare, infer, or complete implied meaning" in prompt
     assert "Parent headings are context, never atoms" in prompt
     assert "Normalized claims may add explicit, unambiguous qualifiers" not in prompt

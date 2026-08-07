@@ -226,18 +226,39 @@ def test_mobile_web_api_auth_decision_undo_and_page(tmp_path, triage, corpus):
         _status, _headers, raw_undo = _request_json(
             f"{base}/api/undo",
             pin="2468",
-            body={"source_id": None},
+            body={"source_id": None, "visible_atom_key": third_state["atom"]["atom_key"]},
         )
         undone = json.loads(raw_undo)
         assert undone["undone"] == 1
         assert undone["stats"]["decided"] == 1
         assert undone["atom"]["atom_key"] == second_key
 
+        _status, _headers, raw_duplicate = _request_json(
+            f"{base}/api/undo",
+            pin="2468",
+            body={"source_id": None, "visible_atom_key": third_state["atom"]["atom_key"]},
+        )
+        duplicate = json.loads(raw_duplicate)
+        assert duplicate["duplicate"] is True
+        assert duplicate["undone"] == 0
+        assert duplicate["stats"]["decided"] == 1
+        assert duplicate["atom"]["atom_key"] == second_key
+
+        _status, _headers, raw_second_undo = _request_json(
+            f"{base}/api/undo",
+            pin="2468",
+            body={"source_id": None, "visible_atom_key": second_key},
+        )
+        second_undo = json.loads(raw_second_undo)
+        assert second_undo["duplicate"] is False
+        assert second_undo["stats"]["decided"] == 0
+        assert second_undo["atom"]["atom_key"] == first_key
+
         with pytest.raises(HTTPError) as cross_origin:
             _request_json(
                 f"{base}/api/undo",
                 pin="2468",
-                body={"source_id": None},
+                body={"source_id": None, "visible_atom_key": first_key},
                 origin="https://example.com",
             )
         assert cross_origin.value.code == 403

@@ -743,7 +743,7 @@ WEB_PAGE = r"""<!doctype html>
   <div class="toast" id="toast" role="status"></div>
 
   <script>
-    const ui = { atom: null, sourceId: "", pendingScope: "atom" };
+    const ui = { atom: null, sourceId: "", pendingScope: "atom", busy: false };
     const $ = (id) => document.getElementById(id);
     const buttons = [...document.querySelectorAll(".controls button")];
 
@@ -752,7 +752,7 @@ WEB_PAGE = r"""<!doctype html>
       if (!response.ok) { const body = await response.json().catch(() => ({})); throw new Error(body.error || `Request failed (${response.status})`); }
       return response.json();
     }
-    function setBusy(value) { buttons.forEach((button) => button.disabled = value); $("statusDot").style.background = value ? "var(--uncertain)" : "var(--retain)"; }
+    function setBusy(value) { ui.busy = value; buttons.forEach((button) => button.disabled = value); $("statusDot").style.background = value ? "var(--uncertain)" : "var(--retain)"; }
     function toast(message) { $("toast").textContent = message; $("toast").classList.add("show"); setTimeout(() => $("toast").classList.remove("show"), 1300); }
     function querySource() { return ui.sourceId ? `?source_id=${encodeURIComponent(ui.sourceId)}` : ""; }
 
@@ -777,12 +777,12 @@ WEB_PAGE = r"""<!doctype html>
 
     async function loadState() { setBusy(true); try { render(await api(`/api/state${querySource()}`)); } catch (error) { toast(error.message); } finally { setBusy(false); } }
     async function decide(decision, reason = null, scope = "atom") {
-      if (!ui.atom) return; setBusy(true);
+      if (!ui.atom || ui.busy) return; setBusy(true);
       try { render(await api("/api/decision", { method: "POST", body: JSON.stringify({ atom_key: ui.atom.atom_key, decision, exclusion_reason: reason, scope, source_id: ui.sourceId || null }) })); toast(scope === "block" ? "Block saved" : "Decision saved"); }
       catch (error) { toast(error.message); } finally { setBusy(false); }
     }
-    async function skip() { if (!ui.atom) return; setBusy(true); try { render(await api("/api/skip", { method: "POST", body: JSON.stringify({ atom_key: ui.atom.atom_key, source_id: ui.sourceId || null }) })); } catch (error) { toast(error.message); } finally { setBusy(false); } }
-    async function undo() { setBusy(true); try { const payload = await api("/api/undo", { method: "POST", body: JSON.stringify({ source_id: ui.sourceId || null }) }); render(payload); toast(payload.undone ? `Undid ${payload.undone} decision${payload.undone === 1 ? "" : "s"}` : "Nothing to undo"); } catch (error) { toast(error.message); } finally { setBusy(false); } }
+    async function skip() { if (!ui.atom || ui.busy) return; setBusy(true); try { render(await api("/api/skip", { method: "POST", body: JSON.stringify({ atom_key: ui.atom.atom_key, source_id: ui.sourceId || null }) })); } catch (error) { toast(error.message); } finally { setBusy(false); } }
+    async function undo() { if (!ui.atom || ui.busy) return; const visibleAtomKey = ui.atom.atom_key; setBusy(true); try { const payload = await api("/api/undo", { method: "POST", body: JSON.stringify({ source_id: ui.sourceId || null, visible_atom_key: visibleAtomKey }) }); render(payload); toast(payload.duplicate ? "Duplicate Undo ignored" : payload.undone ? `Undid ${payload.undone} decision${payload.undone === 1 ? "" : "s"}` : "Nothing to undo"); } catch (error) { toast(error.message); } finally { setBusy(false); } }
 
     document.querySelectorAll("[data-decision]").forEach((button) => button.addEventListener("click", () => decide(button.dataset.decision)));
     $("excludeButton").addEventListener("click", () => { ui.pendingScope = "atom"; $("reasonScope").textContent = "Exclude this atom from active reconciliation; preserve its evidence."; $("reasonDialog").showModal(); });
@@ -851,6 +851,7 @@ def create_web_server(
         raise TriageError("web access requires loopback or an exact Tailscale address")
     by_key = corpus.by_key
     index_by_key = {atom.key: index for index, atom in enumerate(corpus.atoms)}
+    last_undo = {"signature": None}
 
     class Handler(BaseHTTPRequestHandler):
         server_version = "MEDIANTriage/0.1"
@@ -988,6 +989,7 @@ def create_web_server(
                         scope=scope,
                         exclusion_reason=body.get("exclusion_reason"),
                     )
+                    last_undo["signature"] = None
                     index = self._next(source_id, after=index_by_key[atom.key])
                     self._json(_atom_payload(corpus, store, index))
                 elif parsed.path == "/api/skip":
@@ -997,17 +999,33 @@ def create_web_server(
                         raise TriageError("skip references an unknown atom")
                     if source_id is not None and atom.source_id != source_id:
                         raise TriageError("skip atom is outside the selected source")
+                    last_undo["signature"] = None
                     index = self._next(source_id, after=index_by_key[atom.key])
                     self._json(_atom_payload(corpus, store, index))
                 elif parsed.path == "/api/undo":
+                    visible_atom_key = body.get("visible_atom_key")
+                    visible_atom = by_key.get(visible_atom_key)
+                    if visible_atom is None:
+                        raise TriageError("undo must identify the currently visible atom")
+                    if source_id is not None and visible_atom.source_id != source_id:
+                        raise TriageError("undo atom is outside the selected source")
+                    signature = (source_id, visible_atom_key)
+                    if last_undo["signature"] == signature:
+                        payload = _atom_payload(corpus, store, self._next(source_id))
+                        payload["undone"] = 0
+                        payload["duplicate"] = True
+                        self._json(payload)
+                        return
                     undone_keys = store.undo_latest(source_id=source_id)
-                    return_index = min((index_by_key[key] for key in undone_keys), default=None)
+                    return_index = max((index_by_key[key] for key in undone_keys), default=None)
+                    last_undo["signature"] = signature
                     payload = _atom_payload(
                         corpus,
                         store,
                         return_index if return_index is not None else self._next(source_id),
                     )
                     payload["undone"] = len(undone_keys)
+                    payload["duplicate"] = False
                     self._json(payload)
                 else:
                     self._error(404, "not found")

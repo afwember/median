@@ -13,6 +13,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from m050_guard import STATE, STATUS, expected_status
+from m050_atom_triage import DEFAULT_DECISIONS, DecisionStore, load_corpus
 
 
 EASTERN = ZoneInfo("America/New_York")
@@ -63,6 +64,14 @@ def render_status(
     state = json.loads(state_path.read_text(encoding="utf-8"))
     if not isinstance(state, dict):
         raise ValueError("canonical compile state must be a JSON object")
+
+    if state.get("status") == "AUTHORIAL_TRIAGE_ACTIVE":
+        repo_root = state_path.resolve().parents[3]
+        corpus = load_corpus(repo_root)
+        store = DecisionStore(repo_root / DEFAULT_DECISIONS, corpus)
+        state.setdefault("dashboard", {})["progress"] = (
+            f"{store.counts()['decided']:,} / {len(corpus.atoms):,} authorial decisions recorded"
+        )
 
     exact = _rounded_timestamp(now)
     state["updated"] = exact.isoformat()

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "STOPPED_DOWN",
-  "updated": "2026-08-07T13:38:39-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_SOURCE_COMPLETE_STOPDOWN",
+  "status": "AUTHORIAL_TRIAGE_ACTIVE",
+  "updated": "2026-08-07T16:21:20-04:00",
+  "execution_state": "AUTHORIAL_TRIAGE_ACTIVE",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -34,6 +34,13 @@
       "M050-SRC-047-DEVELOPMENT-RULINGS-001",
       "M050-SRC-047-SURVIVORSHIP-REVIEW-001"
     ]
+  },
+  "triage": {
+    "status": "ACTIVE",
+    "input_scope": "accepted candidates for completed pre-reconciliation sources",
+    "decision_record": "m050/reconciliation/triage/M050_Authorial_Triage_Decisions_MEDIANv0_5_0.jsonl",
+    "decision_schema_version": "M050-AUTHORIAL-TRIAGE-DECISION-0.1",
+    "input_atom_count": 6550
   },
   "source": {
     "id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
@@ -134,7 +141,7 @@
     "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_6_MEDIANv0_5_0.json"
   },
   "spend": {
-    "active": true,
+    "active": false,
     "authorized_usd": "49.8530417",
     "cumulative_spent_usd": "49.1300105",
     "remaining_usd": "0.7230312",
@@ -145,8 +152,9 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": false,
+    "repository_writes_authorized": true,
     "source_work_authorized": false,
+    "triage_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -154,15 +162,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 1:38:39 PM EDT",
-    "status": "STOPPED DOWN — v0.4.7 Development Survivorship Review source-bounded extraction complete",
-    "phase": "Atomic extraction — v0.4.7 Development Survivorship Review complete",
-    "source": "v0.4.7 Development Survivorship Review — ordinal 18; 18 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0009 / C0009 accepted; no rejected chunk",
-    "now": "C0009 passed through the authorially authorized zero-provider manual resolution; the hash-bound whole-source candidate and acceptance report are complete, and both Worker authorities are false",
-    "next": "Await explicit authorization; do not begin another source or later compile stage"
+    "updated_human": "August 7, 2026 at 4:21:20 PM EDT",
+    "status": "ACTIVE — deterministic authorial triage",
+    "phase": "Authorial triage — reconciliation eligibility",
+    "source": "18 accepted pre-reconciliation sources; 6,550 atoms",
+    "progress": "0 / 6,550 authorial decisions recorded",
+    "now": "The canonical decision record is empty; mobile authorial triage is active over hash-bound accepted evidence",
+    "next": "Record retain, exclude, or uncertain decisions; checkpoint before any system tuning"
   },
-  "next_possible_transition": "Explicit human authorization after formal Stopdown; no other source or later phase is authorized.",
+  "next_possible_transition": "Complete one valid authorial triage decision for each bound atom, then halt for the separately authorized reconciliation transition.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": null,

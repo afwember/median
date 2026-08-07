@@ -15,6 +15,23 @@ from pathlib import Path
 from typing import Iterable
 from zoneinfo import ZoneInfo
 
+try:
+    from m050.tools.m050_atom_triage import (
+        DEFAULT_DECISIONS as TRIAGE_DECISIONS,
+        SCHEMA_VERSION as TRIAGE_SCHEMA_VERSION,
+        DecisionStore as TriageDecisionStore,
+        TriageError,
+        load_corpus as load_triage_corpus,
+    )
+except ModuleNotFoundError:  # Direct execution from m050/tools.
+    from m050_atom_triage import (
+        DEFAULT_DECISIONS as TRIAGE_DECISIONS,
+        SCHEMA_VERSION as TRIAGE_SCHEMA_VERSION,
+        DecisionStore as TriageDecisionStore,
+        TriageError,
+        load_corpus as load_triage_corpus,
+    )
+
 
 ROOT = Path(__file__).resolve().parents[2]
 STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
@@ -419,6 +436,8 @@ def validate_source_registry(errors: list[str]) -> None:
 
 def expected_status(state: dict) -> str:
     dashboard = state.get("dashboard", {})
+    progress_label = "PROGRESS" if "progress" in dashboard else "CHUNK"
+    progress_value = dashboard.get("progress", dashboard.get("chunk", ""))
     try:
         remaining_display = Decimal(
             state.get("spend", {}).get("remaining_usd", "")
@@ -434,10 +453,10 @@ def expected_status(state: dict) -> str:
         f"**STATUS:** {dashboard.get('status', '')}<br>\n"
         f"**PHASE:** {dashboard.get('phase', '')}<br>\n"
         f"**SOURCE:** {dashboard.get('source', '')}<br>\n"
-        f"**CHUNK:** {dashboard.get('chunk', '')}<br>\n"
+        f"**{progress_label}:** {progress_value}<br>\n"
         f"**NOW:** {dashboard.get('now', '')}<br>\n"
         f"**NEXT:** {dashboard.get('next', '')}<br>\n"
-        f"**SPEND REMAINING:** ${remaining_display}\n"
+        f"**{'PROVIDER SPEND (INACTIVE)' if state.get('spend', {}).get('active') is False else 'SPEND REMAINING'}:** ${remaining_display}\n"
     )
 
 
@@ -458,7 +477,12 @@ def validate_timestamp(state: dict, errors: list[str]) -> None:
         errors.append("human STATUS timestamp disagrees with canonical ISO timestamp")
 
 
-def validate_spend_and_status(state: dict, errors: list[str]) -> None:
+def validate_spend_and_status(
+    state: dict,
+    errors: list[str],
+    *,
+    active_required: bool = True,
+) -> None:
     state_spend = state.get("spend", {})
     if "record" in state_spend:
         errors.append("canonical spend points to a redundant successor spend file")
@@ -470,8 +494,8 @@ def validate_spend_and_status(state: dict, errors: list[str]) -> None:
     except Exception:
         errors.append("canonical cumulative budget is not decimal")
     else:
-        if state_spend.get("active") is not True:
-            errors.append("canonical cumulative budget is inactive")
+        if state_spend.get("active") is not active_required:
+            errors.append("canonical cumulative budget activity disagrees with the active phase")
         if cumulative < 0 or authorized < 0 or remaining < 0 or authorized - cumulative != remaining:
             errors.append("canonical cumulative budget arithmetic is inconsistent")
         if state_spend.get("display_usd_rounded_up") != f"{rounded:.2f}":
@@ -545,10 +569,18 @@ def validate_authority_state(
         errors.append("canonical authority stores redundant transaction-level provider permission")
     if authority.get("source_work_authorized") is True and authority.get("repository_writes_authorized") is not True:
         errors.append("active source work lacks the one-writer repository grant")
+    triage_active = authority.get("triage_authorized") is True
+    if triage_active:
+        if authority.get("source_work_authorized") is not False:
+            errors.append("triage overlaps source-work authority")
+        if authority.get("repository_writes_authorized") is not True:
+            errors.append("active triage lacks the one-writer repository grant")
+    elif "triage_authorized" in authority and authority.get("triage_authorized") is not False:
+        errors.append("triage authority is invalid")
     if source.get("whole_source_candidate_complete") is True:
         if authority.get("source_work_authorized") is not False:
             errors.append("completed source retains source-work authority")
-        if authority.get("repository_writes_authorized") is not False:
+        if not triage_active and authority.get("repository_writes_authorized") is not False:
             errors.append("completed source has not completed formal Stopdown")
 
 
@@ -868,17 +900,59 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         if target is not None and replays.get(name, {}).get("sha256") != sha256_file(target):
             errors.append(f"compatibility replay binding drifted: {name}")
 
-    validate_spend_and_status(state, errors)
+    validate_spend_and_status(
+        state,
+        errors,
+        active_required=state.get("authority", {}).get("triage_authorized") is not True,
+    )
+
+
+def validate_authorial_triage_profile(errors: list[str]) -> None:
+    state = read_json(STATE, errors)
+    triage = state.get("triage", {})
+    expected_triage = {
+        "status": "ACTIVE",
+        "input_scope": "accepted candidates for completed pre-reconciliation sources",
+        "decision_record": TRIAGE_DECISIONS.as_posix(),
+        "decision_schema_version": TRIAGE_SCHEMA_VERSION,
+        "input_atom_count": 6550,
+    }
+    if triage != expected_triage:
+        errors.append("canonical authorial-triage binding drifted")
+    authority = state.get("authority", {})
+    if (
+        state.get("status") != "AUTHORIAL_TRIAGE_ACTIVE"
+        or state.get("execution_state") != "AUTHORIAL_TRIAGE_ACTIVE"
+        or authority.get("repository_writes_authorized") is not True
+        or authority.get("triage_authorized") is not True
+        or authority.get("source_work_authorized") is not False
+    ):
+        errors.append("canonical authorial-triage authority is inactive or inconsistent")
+    try:
+        corpus = load_triage_corpus(ROOT)
+        store = TriageDecisionStore(ROOT / TRIAGE_DECISIONS, corpus)
+    except TriageError as exc:
+        errors.append(f"canonical authorial-triage record is invalid: {exc}")
+        return
+    if len(corpus.atoms) != triage.get("input_atom_count") or len(corpus.source_labels) != 18:
+        errors.append("authorial-triage input coverage drifted")
+    expected_progress = f"{store.counts()['decided']:,} / {len(corpus.atoms):,} authorial decisions recorded"
+    if state.get("dashboard", {}).get("progress") != expected_progress:
+        errors.append("authorial-triage dashboard progress is stale")
 
 
 def validate_active_phase(errors: list[str]) -> None:
     """Single replaceable phase-specific validation seam."""
     state = read_json(STATE, errors)
-    if not state.get("dashboard", {}).get("phase", "").startswith("Atomic extraction"):
-        errors.append("canonical state does not name the active atomic-extraction profile")
-        return
+    phase = state.get("dashboard", {}).get("phase", "")
     validate_human_evidence(errors)
-    validate_atomic_extraction_profile(errors)
+    if phase.startswith("Atomic extraction"):
+        validate_atomic_extraction_profile(errors)
+    elif phase.startswith("Authorial triage"):
+        validate_atomic_extraction_profile(errors)
+        validate_authorial_triage_profile(errors)
+    else:
+        errors.append("canonical state does not name a supported active phase profile")
 
 
 def validate_operating_contract(errors: list[str]) -> None:
@@ -891,7 +965,7 @@ def validate_operating_contract(errors: list[str]) -> None:
         "## Phase model",
         "## Canonical controls",
         "## Authority model",
-        "## Active phase profile — atomic extraction",
+        "## Active phase profile — authorial triage",
         "## STATUS contract",
     ):
         if heading not in text:

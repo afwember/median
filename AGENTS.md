@@ -163,169 +163,75 @@ No separate successor packet is required. These canonical files are the handoff.
   active-profile work.
 - A bounded repository task authorizes only its stated change.
 
-## Active phase profile — atomic extraction
+## Active phase profile — authorial triage
 
-This profile governs atomic extraction only. Its completion condition is
-source-bounded candidate acceptance for all compile-scope sources assigned to
-this phase. It grants no semantic acceptance, mapping, reconciliation, or
-compiled-prose authority. At completion, or before any transition to another
-overall phase, the Compile Worker halts for the phase handoff above.
+This profile governs deterministic authorial triage of the immutable accepted
+atoms from the 18 completed pre-reconciliation sources. Its purpose is to
+reduce later model work by recording which atoms remain eligible for active
+reconciliation. It does not perform semantic acceptance, mapping,
+reconciliation, canonization, or compiled prose.
 
-For this profile, the canonical source processing order is a required cold-start
-control. The Worker reports the exact corpus vector, selected and next source,
-accepted/rejected chunk boundary, source-work and spend authority, and all
-prohibited later stages.
+The phase has no provider calls, model spend, prompts, schemas, or calibration.
+The author works through `m050/tools/m050_atom_triage.py`; no Compile Worker is
+active while the author-directed interface holds repository-write authority.
+Before the Supervisor changes code, controls, or structure, stop the interface
+and checkpoint its decisions so the one-writer rule remains exact.
 
-- A clear instruction from Asa to resume, continue, begin, or proceed with
-  Compile Worker activity is a sufficient explicit source-work grant for
-  exactly one source. No prescribed wording or source-name restatement is
-  required. The Worker derives the current or next source deterministically
-  from canonical compile state and processing order and reports that source
-  during cold start. If those controls do not select exactly one source, halt.
-  Source completion ends the grant and must close through formal Stopdown;
-  starting the following source requires a later human instruction.
-- Within an active source-work grant, an active cumulative spend budget with
-  enough remaining balance for the next conservative cache-miss ceiling is
-  provider-call permission. No separate call receipt, call limit, chunk
-  authorization list, full-source flag, or transaction-level provider approval
-  exists. Spend never selects or advances a source.
-- Standing repository-wide Anthropic transmission consent covers every
-  validated frozen packet, including ordinary corrected or refrozen retries.
-  A newly frozen packet is not a new approval boundary. Actual transmission
-  remains limited by the active task mandate, source grant, call readiness, and
-  spend budget; the credential may authenticate the call but must not be
-  disclosed as provider content.
-- Call readiness is derived from the named source grant, the current validated
-  packet and configuration, completed offline/replay gates, sequential review,
-  and sufficient cumulative budget. Do not store a parallel
-  `provider_call_authorized` fact.
+### Canonical input and decision record
 
-Within an active source-work grant and cumulative budget, the task may proceed
-without transaction-by-transaction permission through:
+- Accepted extraction candidates remain immutable evidence. The triage tool
+  verifies every candidate against its acceptance-report SHA-256 before use.
+- `m050/reconciliation/triage/M050_Authorial_Triage_Decisions_MEDIANv0_5_0.jsonl`
+  is the sole canonical triage decision record. It contains at most one current
+  decision per accepted atom; Git is its history.
+- Every decision binds the source ID, atom ID, source block, and accepted
+  candidate hash. Binding drift is a hard failure.
+- The tool writes the complete current decision record atomically. It may undo
+  the latest atom or whole-block event without creating an event-log family.
+- Source text, normalized claims, sibling atoms, and provenance are read-only
+  views. Triage never rewrites accepted evidence.
 
-- offline parsing, chunk planning, fake-response testing, and validation;
-- bounded sequential provider calls;
-- mechanical and substantive review after each call;
-- diagnosis of ordinary defects;
-- correction or simplification of existing prompt, schema, configuration,
-  chunking, engine, validator, or tests;
-- compatibility replay, refreezing, and retry of the affected chunk;
-- current-state and STATUS maintenance; and
-- coherent commits and pushes.
+### Authorial decisions
 
-Changes to the generic engine, artifact schema, or validator must remain
-source-agnostic and pass the all-source offline compatibility check. A
-source-ID branch, source-specific worker, new artifact class, or changed
-cross-source invariant requires a Supervisor halt.
+- `retain` means eligible for later reconciliation. It does not mean the atom
+  is true, current, nonduplicative, or accepted into final canon.
+- `exclude` removes the atom from active v0.5.0 reconciliation while preserving
+  its immutable evidence. It requires exactly one existing reason:
+  `obsolete_or_superseded`, `administrative_or_provenance_only`,
+  `outside_v0_5_scope`, `true_duplicate`, or `other_authorial_exclusion`.
+- `uncertain` reserves the atom for explicit later model-assisted or authorial
+  review. It is not an implicit retain or exclude.
+- A whole-block decision applies one reversible authorial event to every atom
+  in the displayed source block. Skip records nothing.
+- Editorial or semantic grammar that governs the authoritative presentation of
+  the specification remains reconciliation-eligible even when it is not a game
+  mechanic. Administrative/provenance-only is for project-history or process
+  material, not normative specification rules.
 
-Deciding whether context semantically qualifies a target, redefining the
-target/context/grounding boundary, or otherwise interpreting source structure
-is not an ordinary phase repair. Preserve the evidence and halt for authorial
-or Supervisor review rather than changing that boundary during source work.
+### Execution and boundaries
 
-A defect pauses further provider calls until its correction passes the existing
-offline and replay gates. It does not revoke the source-work grant merely
-because correction is required. No task may waive a defect, silently repair a
-provider response, or skip review.
-
-Halt for Asa only when:
-
-1. remaining authorized spend cannot cover the next conservative call ceiling;
-2. an unusual issue requires authorial judgment, mandate expansion, cross-source
-   authority, new procedural machinery, an unresolved transport/cost decision,
-   or a change that cannot pass existing guards; or
-3. the authorized source is complete.
-
-### Source lifecycle invariants
-
-- Follow the approved processing order; never choose by filename or task memory.
-- Every new provider-eligible source begins with a content/provenance identity
-  card, complete offline preparation, and representative pilot calibration.
-  Prior-source success is evidence, not source transfer.
-- Maintain an approved identity card in place and bind its exact hash in the
-  active source configuration. Git records its approval history; do not create
-  a separate identity-transition receipt family.
-- Keep each identity card minimal and source-bounded because its complete text
-  is provider-visible. It may contain only exact identity and provenance,
-  source-declared role, scope, and status, allowed streams, media and exclusion
-  rules, and handling necessary to preserve that source's own qualifications.
-  Exclude repository history, alternate representation filenames or hashes,
-  external-source inventories, design or literary influence discussion, and
-  source summaries that do not change provider handling. Source-declared
-  lineage may be recorded as provenance, but do not quote, summarize,
-  interpret, or apply substantive content from Human Rulings or any other
-  external source. Do not enumerate external authorities merely to preserve
-  lineage. If an external authority must be identified to enforce a provider
-  handling boundary, use only its canonical ID; its meaning, precedence, and
-  effect remain deferred to reconciliation.
-- Freeze the exact source, identity, disposition, streams, chunk, prompt,
-  schema, engine, validator, normalization, exclusion policy, model, reasoning,
-  cache, and cost bindings before a call.
-- Run sequentially: one call, preservation, validation, and extraction-quality
-  review before the next call.
-- Provider prompts expose extractable content from exactly one source.
-- Every figure, caption, and media reference receives an explicit disposition.
-- Claude caching is mandatory when eligible: one-hour stable-prefix caching,
-  cache-aware accounting, and a halt when both cache-creation and cache-read
-  telemetry are zero.
-- Chunk count is generated from calibrated target density. Preserve indivisible
-  semantic lead-in/body groups. If one exceeds machine limits, halt rather than
-  split it or invent a workaround.
-- Whole-document coverage and extraction-quality review are required before
-  source-bounded candidate acceptance.
-- Authorial Grammar additionally requires post-extraction, pre-candidate
-  conformance review against applicable Human Rulings evidence. Human Rulings
-  content remains outside its provider payload.
-- Source-bounded candidate acceptance is not Layer E semantic acceptance,
-  mapping, reconciliation, canonization, or compiled prose.
-
-### Artifact and state discipline
-
-- Frozen sources and accepted evidence are immutable.
-- Preserve raw provider responses, compact outcomes, exact usage/cost, rejected
-  attempts, and hash-chained run ledgers. Canonical state and Git history
-  preserve source and spend authorization.
-- Reuse the source-agnostic extraction machine. Source differences belong in
-  declarative configuration, not source-specific workers.
-- Ordinary provider attempts use the existing call packet, raw response,
-  compact outcome, canonical spend state, and one source ledger. Update
-  cumulative spend in canonical state in place after capture; do not create
-  lifecycle receipts, successor spend files, or another file-per-transition
-  family.
-- Active operating instructions, guard code, and current state are maintained
-  in place. Do not version them inside the working tree; Git supplies history.
-- Update the configured active-source prompt in place. Do not create a
-  successor prompt file for an ordinary correction.
-- Within one unchanged state revision, read active controls and stable bindings
-  once. Batch independent read-only checks, and do not repeatedly inspect whole
-  packets, schemas, raw responses, or unchanged files when their hashes and the
-  compact outcome establish the required facts.
-- For routine chunk review, inspect the exact target dispositions and their
-  source/claim pairs plus mechanical findings, usage, cache, and cost. Compact
-  inspection does not replace source-grounded substantive review or any
-  mechanical gate.
-- Keep routine narration and command output to the information needed for a
-  decision, defect, spend boundary, or milestone. Successful internal
-  bookkeeping does not require a running user-facing transcript.
-- At every halt, begin the user-facing report with `WORKER STATE: STOPDOWN`
-  only when both authorities are false and the closing checkpoint is clean,
-  pushed, and synchronized. Otherwise begin with `WORKER STATE: NOT STOPDOWN —
-  <reason>`. Follow it with `SOURCE PROGRESS: <current chunk> / <total chunks>`,
-  deriving the denominator from canonical state and the active chunk plan.
-- Record exceptional material in the existing outcome and ledger unless that is
-  genuinely unsafe or impossible.
-- A normal compile operation has no process delta.
-
-### Active-phase hard boundaries
-
-- A deterministic-only source never enters provider calibration. A non-atomic
-  companion never enters atomization.
-- Semantic acceptance, mapping, reconciliation, and compiled prose remain
-  prohibited until corpus atomization is complete and separately released.
-- Google Sheets interaction remains paused.
-- Credentials never enter the repository, prompts, receipts, or reports.
-- Keep user-facing reports to decisions, defects, spend exhaustion, source
-  milestones, and completion.
+- Process atoms in canonical source order unless the author deliberately uses
+  the source filter. Resume at the first undecided atom in the selected scope.
+- The mobile interface may bind without another password only to loopback or an
+  exact Tailscale IPv4 address. Wildcard, LAN, and public bindings are
+  prohibited. Tailscale Funnel is prohibited.
+- Routine decisions update only the canonical decision record. They do not
+  require per-decision STATUS refreshes, commits, agent narration, or model
+  review.
+- At an author-requested checkpoint or before system tuning, stop the interface,
+  refresh canonical state and STATUS, run the existing guard, commit and push,
+  and confirm a clean synchronized worktree before further structural writes.
+- Halt for candidate/hash drift, malformed or duplicate decisions, corpus
+  coverage disagreement, an unavailable canonical record, or a requested
+  decision category the current form cannot express. Do not add a category or
+  workflow in response; submit the smallest review question.
+- Phase completion is exactly one valid decision for each of the 6,550 accepted
+  atoms currently bound to this phase. The four later or conditional sources
+  remain outside this triage input set unless a later phase transition changes
+  their canonical disposition.
+- Google Sheets, provider calls, semantic acceptance, mapping, reconciliation,
+  canonization, and compiled prose remain prohibited.
+- A normal triage operation has no process delta.
 
 ## STATUS contract
 
@@ -340,7 +246,8 @@ push not already preceded by a refreshed full guard. Between refreshes,
 canonical state and the active run ledger remain authoritative.
 
 The first line below the dashboard title is an unlabeled human-readable
-timestamp rounded to the nearest second. The final nonblank line is the active
-spend balance rounded downward to the cent so it never overstates remaining
-authority; exact cumulative spend and balance remain in machine evidence. The
-guard rejects a stale or contradictory dashboard.
+timestamp rounded to the nearest second. The final nonblank line is the
+remaining provider balance rounded downward to the cent so it never overstates
+authority; it is explicitly labeled inactive during provider-free phases.
+Exact cumulative spend and balance remain in machine evidence. The guard
+rejects a stale or contradictory dashboard.

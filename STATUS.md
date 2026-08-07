@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 7, 2026 at 1:38:39 PM EDT<br>
+August 7, 2026 at 4:21:20 PM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
-**STATUS:** STOPPED DOWN — v0.4.7 Development Survivorship Review source-bounded extraction complete<br>
-**PHASE:** Atomic extraction — v0.4.7 Development Survivorship Review complete<br>
-**SOURCE:** v0.4.7 Development Survivorship Review — ordinal 18; 18 / 22 compile-scope sources complete<br>
-**CHUNK:** C0001–C0009 / C0009 accepted; no rejected chunk<br>
-**NOW:** C0009 passed through the authorially authorized zero-provider manual resolution; the hash-bound whole-source candidate and acceptance report are complete, and both Worker authorities are false<br>
-**NEXT:** Await explicit authorization; do not begin another source or later compile stage<br>
-**SPEND REMAINING:** $0.72
+**STATUS:** ACTIVE — deterministic authorial triage<br>
+**PHASE:** Authorial triage — reconciliation eligibility<br>
+**SOURCE:** 18 accepted pre-reconciliation sources; 6,550 atoms<br>
+**PROGRESS:** 0 / 6,550 authorial decisions recorded<br>
+**NOW:** The canonical decision record is empty; mobile authorial triage is active over hash-bound accepted evidence<br>
+**NEXT:** Record retain, exclude, or uncertain decisions; checkpoint before any system tuning<br>
+**PROVIDER SPEND (INACTIVE):** $0.72

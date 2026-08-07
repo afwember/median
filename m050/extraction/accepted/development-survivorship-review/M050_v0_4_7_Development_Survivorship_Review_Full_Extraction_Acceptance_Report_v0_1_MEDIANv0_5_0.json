@@ -1,0 +1,102 @@
+{
+  "report_version": "M050-DEVELOPMENT-SURVIVORSHIP-REVIEW-ACCEPTANCE-0.1",
+  "status": "ACCEPTED_EXTRACTION_CANDIDATE_READY_FOR_CORPUS_RECONCILIATION",
+  "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+  "source_sha256": "cd32434225e48618689f73f697ec21c17514514f3bea28ea0de552318a58257b",
+  "accepted_chunk_ids": [
+    "C0001",
+    "C0002",
+    "C0003",
+    "C0004",
+    "C0005",
+    "C0006",
+    "C0007",
+    "C0008",
+    "C0009"
+  ],
+  "chunks": 9,
+  "target_dispositions": 323,
+  "candidate_atoms": 384,
+  "no_substantive_claim_dispositions": 11,
+  "whole_document_review": {
+    "source_blocks": 619,
+    "eligible_target_blocks": 323,
+    "context_only_blocks": 46,
+    "excluded_blocks": 250,
+    "exact_ordered_target_coverage": true,
+    "unique_target_coverage": true,
+    "media_occurrences": 0,
+    "extraction_quality_review_passed": true,
+    "source_declared_status_and_qualifications_preserved": true,
+    "unresolved_review_required_blocks": 1
+  },
+  "accepted_inputs": [
+    {
+      "chunk_id": "C0001",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "26a5c7ff27faa1bf85fce75de857d51db707527618b2d6e1120d954a4ce1d427",
+      "review_event_id": "evt_ad7e947ac0d258a882e51e86",
+      "review_event_outcome_sha256": "26a5c7ff27faa1bf85fce75de857d51db707527618b2d6e1120d954a4ce1d427"
+    },
+    {
+      "chunk_id": "C0002",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "32950a82753df273399ea0edb509c41ca4439e69c7bb5ea1eaab7d8c9993deaa",
+      "review_event_id": "evt_4bc446cc9e8db4bfbb13c802",
+      "review_event_outcome_sha256": "32950a82753df273399ea0edb509c41ca4439e69c7bb5ea1eaab7d8c9993deaa"
+    },
+    {
+      "chunk_id": "C0003",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "49b4cdb77602663ae780534185eb42188286b80895bc4dd96feb3411b0258b3f",
+      "review_event_id": "evt_40e31b6012d0880c4137eb8e",
+      "review_event_outcome_sha256": "49b4cdb77602663ae780534185eb42188286b80895bc4dd96feb3411b0258b3f"
+    },
+    {
+      "chunk_id": "C0004",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "d385f98bb7bec8410483617cffe8eead036ca27e93e7f6c634e049062f73548b",
+      "review_event_id": "evt_80b246979a4ef79fdcfeddea",
+      "review_event_outcome_sha256": "d385f98bb7bec8410483617cffe8eead036ca27e93e7f6c634e049062f73548b"
+    },
+    {
+      "chunk_id": "C0005",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "7cd73dae3a5a507b12e98475ea9c74c54d7d67dfb00c59212a3cd7c62b5adbe4",
+      "review_event_id": "evt_8ffd50901c738ce4a7242992",
+      "review_event_outcome_sha256": "7cd73dae3a5a507b12e98475ea9c74c54d7d67dfb00c59212a3cd7c62b5adbe4"
+    },
+    {
+      "chunk_id": "C0006",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_6_MEDIANv0_5_0.json",
+      "outcome_sha256": "b65a9c3243a6a0c85273f650d2044923f5a1c992ecd9bee7950e120e88c9eeaa",
+      "review_event_id": "evt_8b8a77e11374687e60d02dde",
+      "review_event_outcome_sha256": "b65a9c3243a6a0c85273f650d2044923f5a1c992ecd9bee7950e120e88c9eeaa"
+    },
+    {
+      "chunk_id": "C0007",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Outcome_v0_2_MEDIANv0_5_0.json",
+      "outcome_sha256": "36ed0bdf5b73d7204b8f4368e96ea8d4fce35d72bc2beb3d440893402d7cb6f0",
+      "review_event_id": "evt_53b03aebbec0cfbef6ce9167",
+      "review_event_outcome_sha256": "36ed0bdf5b73d7204b8f4368e96ea8d4fce35d72bc2beb3d440893402d7cb6f0"
+    },
+    {
+      "chunk_id": "C0008",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+      "outcome_sha256": "f93d03b6205848286050906a31718ae9fe79d7f1d4c387e991f26ef40008ac1d",
+      "review_event_id": "evt_2ff6dbbbca6e3b43ad5616b7",
+      "review_event_outcome_sha256": "f93d03b6205848286050906a31718ae9fe79d7f1d4c387e991f26ef40008ac1d"
+    },
+    {
+      "chunk_id": "C0009",
+      "outcome_path": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_6_MEDIANv0_5_0.json",
+      "outcome_sha256": "a19bd88f879c81a8ff8688f7ce5235b333e5ac19b94af1360bdb77650c6de49f",
+      "review_event_id": "evt_1e90a9dbe60de21f3896591b",
+      "review_event_outcome_sha256": "a19bd88f879c81a8ff8688f7ce5235b333e5ac19b94af1360bdb77650c6de49f"
+    }
+  ],
+  "candidate_path": "m050/extraction/accepted/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+  "candidate_sha256": "f4b9fc7e2ecec1520f2747fb47178923f3723db22318dab2b97cf741a4201cce",
+  "approval": true,
+  "note": "Accepted as source-bounded Development Survivorship Review extraction output; one review-required block remains explicitly unresolved in source evidence, and semantic acceptance, mapping, reconciliation, canonization, and compiled prose remain later compile stages."
+}

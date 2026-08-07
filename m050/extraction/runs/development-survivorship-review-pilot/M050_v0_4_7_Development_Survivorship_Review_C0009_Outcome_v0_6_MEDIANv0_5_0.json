@@ -1,0 +1,243 @@
+{
+  "cache": {
+    "required": false,
+    "requested_ttl": null,
+    "effective": false,
+    "creation_input_tokens": 0,
+    "read_input_tokens": 0
+  },
+  "canonical_spend_update_required": false,
+  "chunk_id": "C0009",
+  "cost": {
+    "uncached_input_usd": "0",
+    "cache_5m_write_usd": "0",
+    "cache_1h_write_usd": "0",
+    "cache_read_usd": "0",
+    "output_usd": "0",
+    "total_usd": "0",
+    "display_usd_rounded_up": "0.00"
+  },
+  "http_status": null,
+  "mechanical_validation": {
+    "checks": {
+      "atomicity_errors": 0,
+      "conditional_atoms_errors": 0,
+      "coverage_errors": 0,
+      "grounding_errors": 0,
+      "low_yield_review_blocks": [],
+      "relationship_preservation_errors": 0,
+      "required_disposition_errors": 0,
+      "review_required_blocks": 0,
+      "schema_errors": 0,
+      "table_structure_errors": 0
+    },
+    "decision_required": false,
+    "errors": [],
+    "passed": true
+  },
+  "model": null,
+  "packet_sha256": "dbb17fdc3bda367b3d36c8062af65f84d4154608f98c211c52dfb243386ea19c",
+  "preflight": {
+    "authorized_usd": "39.0341560",
+    "permission_basis": "active_source_work_plus_cumulative_budget",
+    "remaining_after_reservation_usd": "0.5049752",
+    "remaining_before_call_usd": "0.8652312",
+    "reserved_call_ceiling_usd": "0.360256",
+    "spent_usd": "38.1689248"
+  },
+  "provider_call_made": false,
+  "provider_message_id": null,
+  "raw_response_sha256": "2459b410f63bb24c36694de5ef80b0d30f6782fb109f498b306bb601ec206c23",
+  "request_id": "SUPERVISOR-MANUAL-C0009-001",
+  "review_required": false,
+  "schema_version": "M050-EXTRACTION-CALL-OUTCOME-0.1",
+  "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+  "stop_reason": "authorial_manual_resolution",
+  "structured_proposal": {
+    "dispositions": [
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00604_50b4d6df7277",
+            "claim_kind": "recommendation",
+            "exact_source_text": "The v0.5 Appendix update should follow the six decisions above.",
+            "normalized_claim": "The v0.5 Appendix update should follow the six decisions above.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00604_50b4d6df7277-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00604_50b4d6df7277",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00606_558d4932dd19",
+        "kind": "no_substantive_claim"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00609_98f6564d17fa",
+            "claim_kind": "recommendation",
+            "exact_source_text": "building/Place family and rung vocabulary",
+            "normalized_claim": "Building/Place family and rung vocabulary is a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00609_98f6564d17fa-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00609_98f6564d17fa",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00610_c9a7451f7e9c",
+            "claim_kind": "recommendation",
+            "exact_source_text": "folk place-name component banks",
+            "normalized_claim": "Folk place-name component banks are a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00610_c9a7451f7e9c-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00610_c9a7451f7e9c",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00611_20a3b48942ba",
+            "claim_kind": "recommendation",
+            "exact_source_text": "hyphen-compound style and glossary",
+            "normalized_claim": "Hyphen-compound style and glossary is a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00611_20a3b48942ba-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00611_20a3b48942ba",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00612_be96101bd4f2",
+            "claim_kind": "recommendation",
+            "exact_source_text": "descriptive aptitude/condition bands",
+            "normalized_claim": "Descriptive aptitude/condition bands are a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00612_be96101bd4f2-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00612_be96101bd4f2",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00613_18b5837e2a39",
+            "claim_kind": "recommendation",
+            "exact_source_text": "resource and carrying reference",
+            "normalized_claim": "Resource and carrying reference is a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00613_18b5837e2a39-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00613_18b5837e2a39",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00614_32afa65cbbce",
+            "claim_kind": "recommendation",
+            "exact_source_text": "Record schemas",
+            "normalized_claim": "Record schemas are a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00614_32afa65cbbce-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00614_32afa65cbbce",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00615_f9942713127b",
+            "claim_kind": "recommendation",
+            "exact_source_text": "Tier proof reference",
+            "normalized_claim": "Tier proof reference is a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00615_f9942713127b-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00615_f9942713127b",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00616_55cbb593fa9f",
+            "claim_kind": "recommendation",
+            "exact_source_text": "Guest species contracts and roster references where appropriate",
+            "normalized_claim": "Guest species contracts and roster references where appropriate are a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00616_55cbb593fa9f-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00616_55cbb593fa9f",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00617_cb11fb225bf9",
+            "claim_kind": "recommendation",
+            "exact_source_text": "unresolved implementation values clearly marked as tuning",
+            "normalized_claim": "Unresolved implementation values clearly marked as tuning are a likely Appendix destination.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00617_cb11fb225bf9-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00617_cb11fb225bf9",
+        "kind": "atoms"
+      },
+      {
+        "atoms": [
+          {
+            "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00619_3aeb03c15e0c",
+            "claim_kind": "recommendation",
+            "exact_source_text": "Manifestation-specific material formerly associated with Appendices E–H should be reconciled against the four-form manifestation framework rather than automatically retained as GDD appendices.",
+            "normalized_claim": "Manifestation-specific material formerly associated with Appendices E–H should be reconciled against the four-form manifestation framework rather than automatically retained as GDD appendices.",
+            "proposal_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00619_3aeb03c15e0c-01",
+            "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
+            "stream": "provenance_evidence"
+          }
+        ],
+        "block_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001__B00619_3aeb03c15e0c",
+        "kind": "atoms"
+      }
+    ],
+    "proposal_set_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001-C0009-MANUAL-001",
+    "request_id": "SUPERVISOR-MANUAL-C0009-001",
+    "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+    "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001"
+  },
+  "submitted_at_utc": "2026-08-07T17:02:25Z",
+  "substantive_review": "passed_by_compile_worker_under_explicit_authorial_authority",
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  },
+  "resolution_basis": "authorially_authorized_supervisor_manual_construction_after_preserved_provider_noncompliance"
+}

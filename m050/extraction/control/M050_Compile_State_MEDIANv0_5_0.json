@@ -1,15 +1,15 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "STOPPED_DOWN",
-  "updated": "2026-08-07T12:55:02-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0009_REPEATED_PROVIDER_PLACEHOLDER_STOPDOWN",
+  "updated": "2026-08-07T13:07:19-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_SOURCE_COMPLETE_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
     "compile_scope_sources": 22,
     "atomized_legacy_seed_sources": 4,
-    "outstanding_compile_scope_sources": 5,
-    "outstanding_pre_reconciliation_sources": 1,
+    "outstanding_compile_scope_sources": 4,
+    "outstanding_pre_reconciliation_sources": 0,
     "outstanding_later_or_conditional_sources": 4,
     "whole_corpus_atomization_complete": false
   },
@@ -31,7 +31,8 @@
       "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001",
       "M050-SRC-ECOLOGY-001",
       "M050-SRC-GDD-COVERAGE-GAP-001",
-      "M050-SRC-047-DEVELOPMENT-RULINGS-001"
+      "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+      "M050-SRC-047-SURVIVORSHIP-REVIEW-001"
     ]
   },
   "source": {
@@ -46,10 +47,11 @@
       "C0005",
       "C0006",
       "C0007",
-      "C0008"
+      "C0008",
+      "C0009"
     ],
-    "rejected_chunk_id": "C0009",
-    "whole_source_candidate_complete": false,
+    "rejected_chunk_id": null,
+    "whole_source_candidate_complete": true,
     "source_work_authorized": false
   },
   "calibration": {
@@ -98,8 +100,19 @@
         "chunk_id": "C0008",
         "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0009",
+        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_6_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
+    "candidate_acceptance": {
+      "candidate": "m050/extraction/accepted/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
+      "candidate_sha256": "f4b9fc7e2ecec1520f2747fb47178923f3723db22318dab2b97cf741a4201cce",
+      "report": "m050/extraction/accepted/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
+      "report_sha256": "c20b7af397f3a7efb06faecffccc7a786189787c4e7f187073ca9227027f0a8b"
+    },
     "compatibility_replays": {
       "c0005_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0005_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0006_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
@@ -118,7 +131,7 @@
     "offline_gate_passed": true,
     "offline_tests_passed": 90,
     "cache_miss_call_ceiling_usd": "0.360264",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_5_MEDIANv0_5_0.json"
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_6_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
@@ -139,26 +152,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:55:02 PM EDT",
-    "status": "STOPPED DOWN — v0.4.7 Development Survivorship Review incomplete at repeated C0009 provider placeholder defect",
-    "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
-    "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0008 / C0009 accepted; C0009 v0.1–v0.5 rejected",
-    "now": "Both Worker authorities are false; C0001–C0008 remain accepted and C0009 v0.1–v0.5 remain rejected after the repeated incomplete one-disposition placeholder defect",
-    "next": "Await explicit Sparkup and human direction for C0009; do not retry, complete the source, or advance"
+    "updated_human": "August 7, 2026 at 1:07:19 PM EDT",
+    "status": "STOPPED DOWN — v0.4.7 Development Survivorship Review source-bounded extraction complete",
+    "phase": "Atomic extraction — v0.4.7 Development Survivorship Review complete",
+    "source": "v0.4.7 Development Survivorship Review — ordinal 18; 18 / 22 compile-scope sources complete",
+    "chunk": "C0001–C0009 / C0009 accepted; no rejected chunk",
+    "now": "C0009 passed through the authorially authorized zero-provider manual resolution; the hash-bound whole-source candidate and acceptance report are complete, and both Worker authorities are false",
+    "next": "Await explicit authorization; do not begin another source or later compile stage"
   },
-  "next_possible_transition": "Explicit Sparkup plus human direction on repeated C0009 provider noncompliance; no retry, other source, or later phase is authorized before then.",
+  "next_possible_transition": "Explicit human authorization after formal Stopdown; no other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": 200,
+    "http_status": null,
     "chunk_id": "C0009",
-    "stop_reason": "end_turn",
-    "output_tokens": 1668,
-    "cache_creation_input_tokens": 3272,
+    "stop_reason": "authorial_manual_resolution",
+    "output_tokens": 0,
+    "cache_creation_input_tokens": 0,
     "cache_read_input_tokens": 0,
-    "cache_effective": true,
-    "exact_cost_usd": "0.036740",
-    "mechanical_passed": false,
-    "review_state": "review_failed"
+    "cache_effective": false,
+    "exact_cost_usd": "0",
+    "mechanical_passed": true,
+    "review_state": "review_passed"
   }
 }

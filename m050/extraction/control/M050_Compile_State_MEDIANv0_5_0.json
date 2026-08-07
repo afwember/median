@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T01:43:20-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_REMAINING_STRUCTURE_REVIEW_COMPLETE_C0016_MEDIUM_PACKET_FROZEN_FORMAL_STOPDOWN",
+  "updated": "2026-08-07T01:48:58-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0016_V0_5_MEDIUM_PACKET_READY_ACTIVE",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -56,7 +56,7 @@
     ],
     "rejected_chunk_id": "C0016",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -181,8 +181,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -190,15 +190,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 1:43:20 AM EDT",
-    "status": "v0.4.7 Development Rulings formally stopped with approved remaining-source structural review complete",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
+    "updated_human": "August 7, 2026 at 1:48:58 AM EDT",
+    "status": "v0.4.7 Development Rulings C0016 v0.5 ready",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0015 / C0020 accepted; C0016 rejected; 5 chunks remain unaccepted",
-    "now": "The approved C0016–C0020 structural review is applied; the C0001–C0015 accepted prefix is unchanged, corrected C0016 v0.5 is frozen at medium reasoning, no provider call occurred, and both authorities are false",
-    "next": "Await an explicit Worker source-work grant for one corrected C0016 medium-reasoning call"
+    "now": "The approved C0016–C0020 structural review is applied; the C0001–C0015 accepted prefix is unchanged, corrected C0016 v0.5 is frozen at medium reasoning, and both Worker authorities are active",
+    "next": "Run focused readiness preflight and transmit the frozen C0016 v0.5 packet"
   },
-  "next_possible_transition": "An explicit Worker source-work grant may release the single frozen Development Rulings C0016 v0.5 medium-reasoning call.",
+  "next_possible_transition": "Transmit the validated frozen Development Rulings C0016 v0.5 packet after focused readiness preflight.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

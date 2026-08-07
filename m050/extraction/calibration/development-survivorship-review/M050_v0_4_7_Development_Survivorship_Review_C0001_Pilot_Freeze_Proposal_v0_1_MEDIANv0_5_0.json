@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-SURVIVORSHIP-REVIEW-C0007-MEDIUM-REASONING-RETRY-FREEZE-012",
+  "proposal_id": "M050-047-DEVELOPMENT-SURVIVORSHIP-REVIEW-C0008-SEQUENTIAL-FREEZE-013",
   "state": "frozen_ready_for_provider_call",
-  "machine_state": "c0001_through_c0006_accepted_and_c0007_frozen",
+  "machine_state": "c0001_through_c0007_accepted_and_c0008_frozen",
   "binding": {
     "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
     "source_sha256": "cd32434225e48618689f73f697ec21c17514514f3bea28ea0de552318a58257b",
@@ -11,9 +11,9 @@
     "block_manifest_sha256": "caa5de51db9cf5c73f2ffb1afe2806349a9d6244648e2ff93a6e73fa2baadca5",
     "disposition_ledger_sha256": "c679e3f2ab6403076d9f238605240651f4c0b9ea150a4daa73ed022b95702920",
     "chunk_plan_sha256": "59e5f5175370eb678b6fe82dde4630f1ca3dcb6bfcead382fa095febbd011b33",
-    "pilot_chunk_id": "C0007",
-    "pilot_packet_sha256": "4a291fb145afde3d51fcbf16a0444261d76fd7e1a7c59760fd82c02dac7519c4",
-    "pilot_packet_file_sha256": "e76b784132a08ea6cbb845d557dd0efbdc302424246d67ca93fd8d45963d7fac",
+    "pilot_chunk_id": "C0008",
+    "pilot_packet_sha256": "14a13a220c5314538a788c322913160a9093c58b2c5d148a4a5c6b3f2942c91f",
+    "pilot_packet_file_sha256": "55cc2fe22eebdeee990d7fce228ec31d04fa615b33dd3ee9100872cfcfd4a064",
     "prompt_sha256": "302ee273708d850d24a8ae0740e281b3610aeff8f86640f81a6627a52bdf5f39",
     "response_schema_sha256": "a009243d9ed979c0e5d7a3b9c07337c902d6f85be14e090cb042d44bfbc13c66",
     "engine_module_sha256": "f9453cc46914fecacf564fb0861c070b62e3664b957ffefb1883bc3d6e692d23",
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0007 v0.2 retains its indivisible 39-target group and uses the already-tested medium reasoning setting after v0.1 exhausted the output limit at high reasoning.",
-    "required_target_disposition_count": 39,
-    "cache_miss_call_ceiling_usd": "0.418032"
+    "selection_reason": "C0008 is the next sequential chunk after C0007 v0.2 passed at the calibrated medium reasoning setting.",
+    "required_target_disposition_count": 40,
+    "cache_miss_call_ceiling_usd": "0.418424"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -72,6 +72,7 @@
     "c0006_v0_4_corrected_transport_timeout_preserved": true,
     "c0006_v0_5_structural_boundary_rejection_preserved": true,
     "c0006_manual_resolution_passed": true,
-    "c0007_v0_1_output_limit_rejection_preserved": true
+    "c0007_v0_1_output_limit_rejection_preserved": true,
+    "c0007_v0_2_mechanical_and_substantive_review_passed": true
   }
 }

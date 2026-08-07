@@ -81,9 +81,9 @@ label alone never grounds an imported predicate. Anchor each normalized claim in
 For self-containment, if bound context names a pronoun, anaphora, or subjectless prefix's referent,
 substitute it in `normalized_claim`. Headings supply only status or scope.
 Never paraphrase, gloss, define, compare, infer, or complete implied meaning;
-use `review_required` when necessary. Parent headings are context, never atoms.
+use `review_required`. Parent headings are context, never atoms.
 Every `exact_source_text` is a byte-for-byte contiguous
-target-block substring that occurs exactly once. After JSON decoding it contains actual target-block
+target-block substring that occurs exactly once. JSON-decoded, it contains actual target-block
 characters, never literal backslash Unicode-escape spellings.
 No `exact_source_text` may cross an authored semicolon. Split semicolon-delimited
 clauses into separate atoms, including coordinated examples in ordinary prose.
@@ -92,15 +92,15 @@ adjacent coordinated clause. Repeated spans expand through nearest
 semicolon-free source boundary. Include interrupting markup or split the atom.
 
 Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;
-`no_substantive_claim` requires empty `atoms`. Structural headings, labels, table headers,
+`no_substantive_claim` requires empty `atoms`. Headings, labels, table headers,
 delimiters, and document-control metadata carry no substantive atom. Dependent
 list items use minimum unambiguously-adjacent governing
 subject/status/scope/condition/connective, grammatically agreeing with targets;
 lead-ins cannot import body names,
 members, or assertions.
 
-For each substantive table row, cover every nonempty semantic cell. Separate
-independent properties, functions, effects, examples, interpretations, stages,
+For substantive table rows, cover every nonempty semantic cell. Separate
+properties, functions, effects, examples, interpretations, stages,
 actions, and results. Combine qualifying/indivisible cells; preserve
 categorical-mapping endpoints.
 Ground each headed cell under its header; never infer a relationship between
@@ -110,6 +110,7 @@ Copy every authored slash into the normalized claim; never replace it with a wor
 Each independent table-cell assertion requires exact source text from its own
 cell; never ground a ruling or consequence only in another cell.
 
+Process/audit/publication → `provenance_evidence`; game claims → `evidence_game_semantic`.
 Preserve provisional, historical, rejected, example, negative, conditional,
 scope, ownership, and authority qualifiers. Use `review_required` instead of
 guessing. Never repair source text or invent identifiers, statuses, owners, or
@@ -119,7 +120,7 @@ authorities.
 
 Return schema-bound JSON only after verifying exactly
 `required_target_disposition_count` dispositions. Kind `atoms` requires nonempty
-`atoms`; all other kinds require empty `atoms`. Every atom needs bound IDs/stream,
+`atoms`; all other kinds require empty `atoms`. Every atom needs IDs/stream,
 exact source text, normalized claim, and source-faithful kind.
 Derive each proposal ID from target block ID plus local atom ordinal;
 proposal IDs must remain source-unique.

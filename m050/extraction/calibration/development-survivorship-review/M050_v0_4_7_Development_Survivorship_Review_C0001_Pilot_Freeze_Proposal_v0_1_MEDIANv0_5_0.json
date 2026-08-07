@@ -1,24 +1,24 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-SURVIVORSHIP-REVIEW-C0009-NUMBER-AGREEMENT-RETRY-FREEZE-017",
+  "proposal_id": "M050-047-DEVELOPMENT-SURVIVORSHIP-REVIEW-C0009-STREAM-ROUTING-RETRY-FREEZE-018",
   "state": "frozen_ready_for_provider_call",
   "machine_state": "c0001_through_c0008_accepted_and_c0009_frozen",
   "binding": {
     "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
     "source_sha256": "cd32434225e48618689f73f697ec21c17514514f3bea28ea0de552318a58257b",
-    "configuration_sha256": "8656857fe24b4c9bdb84ddc56268e0761a4249b73841ac1a2ec3559f72f95048",
+    "configuration_sha256": "fb0eac23cb0d40eab3fd0a706ba14647782e1ccd32dd9efed60a6db35e1c37f4",
     "identity_card_sha256": "cac84146b0cbc6bfc80c41cbc1ec7b62988b2365245ec93ef79f9dd034b90c19",
     "block_manifest_sha256": "caa5de51db9cf5c73f2ffb1afe2806349a9d6244648e2ff93a6e73fa2baadca5",
     "disposition_ledger_sha256": "c679e3f2ab6403076d9f238605240651f4c0b9ea150a4daa73ed022b95702920",
     "chunk_plan_sha256": "59e5f5175370eb678b6fe82dde4630f1ca3dcb6bfcead382fa095febbd011b33",
     "pilot_chunk_id": "C0009",
-    "pilot_packet_sha256": "56518f375537443012972cfe11b747fb341c9800357c0d3c83fef874f6a06c69",
-    "pilot_packet_file_sha256": "8235b6bebbdcd62f81c39449eb0d2c67c02a4beb75d695b9bbe3d34a9819afaa",
-    "prompt_sha256": "ccd5841281328ebe90fa9cc778c632bb126073f5d6333294069155f209e0fc1a",
+    "pilot_packet_sha256": "dbb17fdc3bda367b3d36c8062af65f84d4154608f98c211c52dfb243386ea19c",
+    "pilot_packet_file_sha256": "2d265bd7411dec7b5b340a19c658c7cffa8b734edc73a02e59c3baa96941ef81",
+    "prompt_sha256": "5977486d705a2e29bae7a00e969544897763d0a7cfb4d45c0478fb9b646efe6a",
     "response_schema_sha256": "a009243d9ed979c0e5d7a3b9c07337c902d6f85be14e090cb042d44bfbc13c66",
-    "engine_module_sha256": "d9f369f7f1eae6dfc24b35cb2759e12415208a06320b590feff49b58b01c5a11",
-    "engine_tests_sha256": "70e49e3b092e78e6707a3937ef174f55314cca16f318b8ac8d53f9edd3e0f316",
-    "compatibility_receipt_sha256": "80451cc13905d1fc92cb465189ab7865323046250c3b16d394f605083d06866e",
+    "engine_module_sha256": "49640f62e8c3e0ae9411c2e5658ccdefda6fd0acdde9414d23a3ab936708d505",
+    "engine_tests_sha256": "839bd50bb4390877f6bd12e02c1acaa8784fe7d0d46c1cc931b65f0ba35fbbe9",
+    "compatibility_receipt_sha256": "f7125593ccc39e1cbf2991ba947d0343083b6255290128fccad0ec13fef76e74",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0009 v0.4 preserves the final 12-target packet and expresses the source-agnostic grammatical-agreement invariant within the established concise-prompt ceiling after v0.1 used singular connectives with plural dependent list-item subjects.",
+    "selection_reason": "C0009 v0.5 preserves the final 12-target packet and concisely distinguishes process, audit, and publication evidence from game-semantic claims after v0.2 misrouted Appendix recommendations.",
     "required_target_disposition_count": 12,
-    "cache_miss_call_ceiling_usd": "0.360088"
+    "cache_miss_call_ceiling_usd": "0.360256"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -75,6 +75,7 @@
     "c0007_v0_1_output_limit_rejection_preserved": true,
     "c0007_v0_2_mechanical_and_substantive_review_passed": true,
     "c0008_mechanical_and_substantive_review_passed": true,
-    "c0009_v0_1_substantive_rejection_preserved": true
+    "c0009_v0_1_substantive_rejection_preserved": true,
+    "c0009_v0_2_substantive_rejection_preserved": true
   }
 }

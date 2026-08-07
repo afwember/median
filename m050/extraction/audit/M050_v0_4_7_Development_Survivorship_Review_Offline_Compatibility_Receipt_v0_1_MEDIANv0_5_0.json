@@ -5,10 +5,10 @@
   "status": "DEVELOPMENT_SURVIVORSHIP_REVIEW_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
   "binding": {
-    "configuration_sha256": "8656857fe24b4c9bdb84ddc56268e0761a4249b73841ac1a2ec3559f72f95048",
-    "prompt_sha256": "ccd5841281328ebe90fa9cc778c632bb126073f5d6333294069155f209e0fc1a",
-    "engine_module_sha256": "d9f369f7f1eae6dfc24b35cb2759e12415208a06320b590feff49b58b01c5a11",
-    "engine_tests_sha256": "70e49e3b092e78e6707a3937ef174f55314cca16f318b8ac8d53f9edd3e0f316"
+    "configuration_sha256": "fb0eac23cb0d40eab3fd0a706ba14647782e1ccd32dd9efed60a6db35e1c37f4",
+    "prompt_sha256": "5977486d705a2e29bae7a00e969544897763d0a7cfb4d45c0478fb9b646efe6a",
+    "engine_module_sha256": "49640f62e8c3e0ae9411c2e5658ccdefda6fd0acdde9414d23a3ab936708d505",
+    "engine_tests_sha256": "839bd50bb4390877f6bd12e02c1acaa8784fe7d0d46c1cc931b65f0ba35fbbe9"
   },
   "source_review": {
     "source_blocks": 619,

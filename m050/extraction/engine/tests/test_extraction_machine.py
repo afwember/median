@@ -1749,6 +1749,7 @@ def test_generic_prompt_allows_minimum_explicit_list_item_governing_context():
     )
     assert "Dependent\nlist items use minimum unambiguously-adjacent governing" in prompt
     assert "subject/status/scope/condition/connective, grammatically agreeing with targets" in prompt
+    assert "Process/audit/publication → `provenance_evidence`; game claims → `evidence_game_semantic`" in prompt
     assert "minimum unambiguously-adjacent governing" in prompt
     assert "may use only their own" not in prompt
     assert "never import a lead-in" not in prompt

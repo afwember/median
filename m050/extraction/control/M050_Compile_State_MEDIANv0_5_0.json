@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "STOPDOWN",
-  "updated": "2026-08-06T21:05:11-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_SOURCE_REBOUND_IDENTITY_APPROVAL_PENDING_STOPDOWN",
+  "status": "ACTIVE",
+  "updated": "2026-08-06T21:30:00-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_REBOUND_C0003_AUTHORIAL_TARGET_CONTEXT_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -37,29 +37,62 @@
     "id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "label": "v0.4.7 Development Rulings",
     "compile_ordinal": 17,
-    "accepted_chunk_ids": [],
-    "rejected_chunk_id": null,
+    "accepted_chunk_ids": [
+      "C0001",
+      "C0002"
+    ],
+    "rejected_chunk_id": "C0003",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
-    "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Rulings_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
-    "identity_card_sha256": "fe29905f0bf15dc37b84a7181aba177aedc3a5b8f0c4a334179f8175e33601c8",
-    "identity_card_approval_pending": true,
-    "offline_gate_passed": false
+    "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
+    "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_3_MEDIANv0_5_0.json",
+    "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
+    "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0003_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "accepted_evidence": [
+      {
+        "chunk_id": "C0001",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0001_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0002",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0002_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      }
+    ],
+    "compatibility_replays": {
+      "c0001_low_reasoning_calibration": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0001_Low_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+    },
+    "pilot_chunk_id": "C0003",
+    "generated_chunk_count": 21,
+    "target_blocks_per_chunk": 20,
+    "required_target_disposition_count": 20,
+    "source_blocks": 968,
+    "eligible_target_blocks": 403,
+    "context_only_blocks": 60,
+    "excluded_blocks": 505,
+    "media_occurrences": 0,
+    "exact_target_disposition_coverage_required": true,
+    "offline_gate_passed": true,
+    "offline_tests_passed": 88,
+    "cache_miss_call_ceiling_usd": "0.3203",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0003_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "31.8652378",
-    "cumulative_spent_usd": "30.6086888",
-    "remaining_usd": "1.2565490",
-    "display_usd_rounded_up": "30.61",
+    "cumulative_spent_usd": "30.9003328",
+    "remaining_usd": "0.9649050",
+    "display_usd_rounded_up": "30.91",
     "provisional_component_usd": "0.294844",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -67,15 +100,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 9:05:11 PM EDT",
-    "status": "Formal Stopdown — Development Rulings source clarified and rebound identity proposed",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings identity approval Stopdown",
+    "updated_human": "August 6, 2026 at 9:30:00 PM EDT",
+    "status": "v0.4.7 Development Rulings halted for C0003 target-context ruling",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings rebound active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
-    "chunk": "No chunk selected; accepted/rejected boundary reset after source clarification",
-    "now": "The ambiguous three-layer lead-in is self-contained, the registered source is rebound, prior attempts remain historical evidence, and both authorities remain revoked",
-    "next": "Await explicit approval of the rebound identity and Sparkup before rebuilding the established source scaffold; no provider call or source advance is authorized"
+    "chunk": "C0001–C0002 / C0021 accepted; C0003 rejected; 18 later chunks unprocessed",
+    "now": "C0003 preserved and rejected because The intended physical tendencies are was atomized by importing personal item slots from outside its exact span; exact cumulative spend is $30.9003328 with $0.9649050 remaining",
+    "next": "Halt for authorial classification of the C0003 lead-in as non-substantive context or as a claim with an explicitly permitted governing subject"
   },
-  "next_possible_transition": "Explicit approval of the rebound v0.4.7 Development Rulings identity and Sparkup; no provider call, another source, or later phase is authorized.",
+  "next_possible_transition": "Authorial ruling on the C0003 lead-in target/context boundary; no retry, another source, or later phase is authorized.",
   "gate_5_complete": false,
-  "latest_provider_attempt": null
+  "latest_provider_attempt": {
+    "http_status": 200,
+    "chunk_id": "C0003",
+    "stop_reason": "end_turn",
+    "output_tokens": 5072,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3165,
+    "cache_effective": true,
+    "exact_cost_usd": "0.064029",
+    "mechanical_passed": true,
+    "review_state": "review_failed"
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-REBOUND-C0001-LOW-REASONING-001",
+  "date": "2026-08-06",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0001",
+    "outcome_sha256": "f621ec339fa79105a31cfc6e4235194567b768a1e95679f888e3e542fb6b14d0",
+    "defect": "The medium-reasoning response returned one empty disposition and omitted nineteen required targets."
+  },
+  "correction": {
+    "scope": "source_configuration_representative_pilot_recalibration",
+    "result": "Reasoning effort reduced from medium to low without changing the source, prompt, schema, cache boundary, target coverage, or extraction method.",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "ca0536985a02c81c778fc9a17f682dadd9d2be8eb1494193e8281f6c7c46a85d",
+    "prompt_sha256": "2387450e8f354d8889b3b98433b9d515bd96bd036e7bc8209a419b3e69873ec8",
+    "engine_module_sha256": "4a44300641e1e3622ece71c8694fe724cbaf9258acd26021ab47ba53877fda3f",
+    "engine_tests_sha256": "d518ef7e1e9912bc77274d715e4d8803391baf57ac0f2b618f684d616aea1b2e"
+  },
+  "offline_verification": {
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

@@ -4,11 +4,11 @@
     "provenance_evidence"
   ],
   "artifact_sha256": {
-    "block_manifest": "0c45aea7e9db477101cde2226ace1330a47d5ee16b779cd76e11188a094dbff3",
-    "chunk_plan": "026fd5ad69e3177ea102a731e821f176cb205cb327f3129fc3e55fec2b5012b4",
-    "disposition_ledger": "b19945710eed2eaf3a0149b80c2f87b60ae3d4cc89a196f62696bfd2e59cd8f2",
-    "identity_card": "9a5c18458a43f3c87c920d834b1534eb6e930f9edd53cf3bec2c781838323f32",
-    "prompt": "bc16bfc8db148872f8c0d37bf1df909c5cb2d8a58c45fef05ea96e1199cd99f6",
+    "block_manifest": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
+    "chunk_plan": "c17e369d9e98d04c149bfe7eba51052a5b86c4247a5b03d7fb891ecd3780bf8e",
+    "disposition_ledger": "a98271f1453a8f1c25042026cfd4824c20ac4f03129a20a7b93c122c527d1d76",
+    "identity_card": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
+    "prompt": "2387450e8f354d8889b3b98433b9d515bd96bd036e7bc8209a419b3e69873ec8",
     "response_schema": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc"
   },
   "artifacts": {
@@ -38,11 +38,11 @@
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "medium"
+    "reasoning_effort": "low"
   },
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "source_path": "m050/docs/v0.5/provenance/M050_v0_4_7_Development_Rulings_Ledger_BSA_01_to_11A_Checkpoint_2026_07_30_MEDIANv0_5_0.md",
-  "source_sha256": "88ae2ae2f306b6406ed96b50f0ae5faf7d91e60bf1522ef9788bf8302f419c19",
+  "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
   "status": "SEQUENTIAL_RUN_READY"
 }

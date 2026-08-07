@@ -2,11 +2,11 @@
   "schema_version": "M050-OFFLINE-COMPATIBILITY-RECEIPT-0.1",
   "receipt_id": "M050-047-DEVELOPMENT-RULINGS-OFFLINE-COMPATIBILITY-001",
   "date": "2026-08-06",
-  "status": "DEVELOPMENT_RULINGS_OFFLINE_PREPARATION_COMPATIBLE",
+  "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "aafd9c987fe1e37c1837d7348b10b885e42fd16d6974f78ee8ab7c9de5053fa2",
-    "prompt_sha256": "bc16bfc8db148872f8c0d37bf1df909c5cb2d8a58c45fef05ea96e1199cd99f6",
+    "configuration_sha256": "ca0536985a02c81c778fc9a17f682dadd9d2be8eb1494193e8281f6c7c46a85d",
+    "prompt_sha256": "2387450e8f354d8889b3b98433b9d515bd96bd036e7bc8209a419b3e69873ec8",
     "engine_module_sha256": "4a44300641e1e3622ece71c8694fe724cbaf9258acd26021ab47ba53877fda3f",
     "engine_tests_sha256": "d518ef7e1e9912bc77274d715e4d8803391baf57ac0f2b618f684d616aea1b2e"
   },
@@ -44,8 +44,8 @@
     "stable_output_schema_cache_boundary_preserved": true
   },
   "replays": {
-    "c0002_lead_in_directionality_correction": {
-      "sha256": "dbb56a4bc12d2574dfc1a53c2e980b9e3a79582b20d387f8e52b308e433a55d1",
+    "c0001_low_reasoning_calibration": {
+      "sha256": "cf342ed25135f3d53a0cd554cbb5973324a9c135fa272bea87f8b41f29aa837f",
       "result": "preserved_rejection_unchanged_and_all_source_compatibility_passed"
     }
   }

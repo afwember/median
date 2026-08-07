@@ -25,7 +25,7 @@ Author/root of authority: Asa Wember
 |---|---|
 | Source ID | `M050-SRC-047-DEVELOPMENT-RULINGS-001` |
 | Path | `m050/docs/v0.5/provenance/M050_v0_4_7_Development_Rulings_Ledger_BSA_01_to_11A_Checkpoint_2026_07_30_MEDIANv0_5_0.md` |
-| SHA-256 | `88ae2ae2f306b6406ed96b50f0ae5faf7d91e60bf1522ef9788bf8302f419c19` |
+| SHA-256 | `34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b` |
 | Source role | `v0_4_7_to_v0_5_working_adaptation_and_disposition_ledger` |
 | Disposition | `source_bounded_atomic_extraction_then_content_partition_before_grand_reconciliation` |
 | Allowed streams | `evidence_game_semantic`; `provenance_evidence` |
@@ -64,11 +64,11 @@ source, later compile stage, or Google Sheets work.
 
 ## Approval boundary
 
-Asa Wember approved this source identity and extraction boundary. Approval
-permits the established Development Rulings-only offline preparation and
-representative pilot calibration; provider readiness still requires validated
-frozen bindings, completed offline and replay gates, sequential review, and
-sufficient budget.
+Asa Wember approved this rebound source identity and extraction boundary.
+Approval permits the established Development Rulings-only offline preparation
+and representative pilot calibration; provider readiness still requires fresh
+validated frozen bindings, completed offline and replay gates, sequential
+review, and sufficient budget.
 
 ## Extraction contract
 

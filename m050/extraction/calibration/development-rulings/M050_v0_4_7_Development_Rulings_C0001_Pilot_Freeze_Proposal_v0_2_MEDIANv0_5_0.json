@@ -1,0 +1,65 @@
+{
+  "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-REBOUND-C0001-PILOT-FREEZE-002",
+  "state": "provider_response_captured_review_pending",
+  "machine_state": "provider_response_captured_review_pending",
+  "binding": {
+    "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+    "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
+    "configuration_sha256": "19e533e099c1ae9506c5c93a000159befef46c28408297265faa47be7d03eceb",
+    "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
+    "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
+    "disposition_ledger_sha256": "a98271f1453a8f1c25042026cfd4824c20ac4f03129a20a7b93c122c527d1d76",
+    "chunk_plan_sha256": "c17e369d9e98d04c149bfe7eba51052a5b86c4247a5b03d7fb891ecd3780bf8e",
+    "pilot_chunk_id": "C0001",
+    "pilot_packet_sha256": "8cf110a93b491b756c531b062be3998072859e07100c7f96e85637b51e6a3773",
+    "pilot_packet_file_sha256": "c2a4a833c3f2c800a4442f704f3e1cb38229719e2da28220666c2394598833ad",
+    "prompt_sha256": "2387450e8f354d8889b3b98433b9d515bd96bd036e7bc8209a419b3e69873ec8",
+    "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
+    "engine_module_sha256": "4a44300641e1e3622ece71c8694fe724cbaf9258acd26021ab47ba53877fda3f",
+    "engine_tests_sha256": "d518ef7e1e9912bc77274d715e4d8803391baf57ac0f2b618f684d616aea1b2e",
+    "allowed_streams": [
+      "evidence_game_semantic",
+      "provenance_evidence"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "medium",
+    "maximum_output_tokens": 24000,
+    "cache_ttl": "1h",
+    "cache_boundary": "stable_system_prefix",
+    "pricing": {
+      "input_usd_per_million_tokens": "2",
+      "output_usd_per_million_tokens": "10",
+      "cache_read_multiplier": "0.1",
+      "cache_5m_write_multiplier": "1.25",
+      "cache_1h_write_multiplier": "2"
+    }
+  },
+  "pilot": {
+    "selection_reason": "C0001 is the representative first sequential chunk of the clarified rebound source and includes full target density, source-declared status, adoption qualifications, prose, callouts, and dependent list items.",
+    "required_target_disposition_count": 20,
+    "cache_miss_call_ceiling_usd": "0.328984"
+  },
+  "exclusion_policy": {
+    "media_occurrences": 0,
+    "excluded_media_reference_blocks": 0,
+    "retained_caption_target_blocks": 0,
+    "media_content_in_packet": false,
+    "external_representation_consultation_prohibited": true
+  },
+  "offline_verification": {
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "offline_tests_passed": 88,
+    "calibrated_target_blocks_per_chunk": 20,
+    "generated_chunk_count": 21,
+    "chunk_count_is_input": false,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "provider_call_made": true,
+    "c0001_mechanical_and_substantive_review_passed": false,
+    "whole_source_coverage_and_quality_review_passed": false,
+    "candidate_acceptance_guard_passed": false
+  }
+}

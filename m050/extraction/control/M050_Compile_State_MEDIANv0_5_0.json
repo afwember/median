@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T02:15:26-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0019_REPEATED_REASONING_MODE_MECHANICAL_NONCOMPLIANCE_FORMAL_STOPDOWN",
+  "updated": "2026-08-07T02:24:26-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0019_MANUAL_RESOLUTION_ACCEPTED_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -55,9 +55,10 @@
       "C0015",
       "C0016",
       "C0017",
-      "C0018"
+      "C0018",
+      "C0019"
     ],
-    "rejected_chunk_id": "C0019",
+    "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
     "source_work_authorized": false
   },
@@ -157,6 +158,11 @@
         "chunk_id": "C0018",
         "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0019",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Outcome_v0_3_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -210,15 +216,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 2:15:26 AM EDT",
-    "status": "v0.4.7 Development Rulings formally stopped after repeated C0019 mechanical noncompliance",
+    "updated_human": "August 7, 2026 at 2:24:26 AM EDT",
+    "status": "v0.4.7 Development Rulings formally stopped with C0019 manually resolved and accepted",
     "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0018 / C0020 accepted; 2 chunks remain unprocessed",
-    "now": "C0019 low- and medium-reasoning attempts are preserved as mechanically rejected after returning only empty dispositions and incomplete coverage; exact cumulative spend is $34.7426580 and both authorities are false",
-    "next": "Supervisor review of the C0019 correction strategy before any retry or repository work resumes"
+    "chunk": "C0001–C0019 / C0020 accepted; 1 chunk remains unprocessed",
+    "now": "C0019 passed exact 20-target mechanical and substantive review through an explicitly authorized Supervisor manual construction; both failed provider responses remain preserved, no additional call or spend occurred, and both authorities are false",
+    "next": "Await an explicit Worker source-work grant to freeze and process final chunk C0020"
   },
-  "next_possible_transition": "Supervisor review of the repeated Development Rulings C0019 provider mechanical noncompliance before any retry or repository work resumes.",
+  "next_possible_transition": "An explicit Worker source-work grant may release preparation and processing of final Development Rulings chunk C0020.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

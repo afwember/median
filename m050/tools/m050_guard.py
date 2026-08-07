@@ -682,6 +682,8 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
 
     accepted_ids = source.get("accepted_chunk_ids", [])
     accepted_evidence = calibration.get("accepted_evidence", [])
+    manual_accepted_ids: set[str] = set()
+    accepted_outcome_hashes: set[str] = set()
     if [item.get("chunk_id") for item in accepted_evidence] != accepted_ids:
         errors.append("accepted chunk evidence does not exactly cover the canonical boundary")
     for item in accepted_evidence:
@@ -691,12 +693,24 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         if outcome_path is None or ledger_path is None:
             continue
         outcome = read_json(outcome_path, errors)
+        accepted_outcome_hashes.add(sha256_file(outcome_path))
         if (
             outcome.get("source_id") != source_id
             or outcome.get("chunk_id") != chunk_id
             or outcome.get("mechanical_validation", {}).get("passed") is not True
         ):
             errors.append(f"accepted outcome boundary drifted: {chunk_id}")
+        if outcome.get("provider_call_made") is False and (
+            outcome.get("resolution_basis")
+            != "authorially_authorized_supervisor_manual_construction_after_preserved_provider_noncompliance"
+            or outcome.get("model") is not None
+            or outcome.get("http_status") is not None
+            or outcome.get("cost", {}).get("total_usd") != "0"
+            or outcome.get("canonical_spend_update_required") is not False
+        ):
+            errors.append(f"accepted manual outcome provenance drifted: {chunk_id}")
+        elif outcome.get("provider_call_made") is False:
+            manual_accepted_ids.add(chunk_id)
         matching = [
             event for event in read_jsonl(ledger_path, f"accepted ledger {chunk_id}", errors)
             if event.get("chunk_id") == chunk_id and event.get("state") == "review_passed"
@@ -803,14 +817,32 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
             or outcome.get("cost", {}).get("total_usd") != latest.get("exact_cost_usd")
         ):
             errors.append("latest provider attempt disagrees with canonical state")
-        if latest.get("review_state") == "review_failed" and source.get("rejected_chunk_id") != latest.get("chunk_id"):
-            errors.append("rejected chunk boundary disagrees with the latest failed review")
         if (
-            not events
-            or events[-1].get("state") != latest.get("review_state")
-            or events[-1].get("outcome_sha256") != sha256_file(outcome_path)
+            latest.get("review_state") == "review_failed"
+            and source.get("rejected_chunk_id") != latest.get("chunk_id")
+            and latest.get("chunk_id") not in manual_accepted_ids
         ):
+            errors.append("rejected chunk boundary disagrees with the latest failed review")
+        latest_outcome_hash = sha256_file(outcome_path)
+        latest_review_matches = [
+            (index, event)
+            for index, event in enumerate(events)
+            if event.get("state") == latest.get("review_state")
+            and event.get("outcome_sha256") == latest_outcome_hash
+        ]
+        if len(latest_review_matches) != 1:
             errors.append("active run ledger disagrees with the latest outcome")
+        elif latest_review_matches[0][0] != len(events) - 1:
+            # A preserved provider failure may be followed only by its one
+            # explicitly bound, accepted manual resolution.
+            trailing_events = events[latest_review_matches[0][0] + 1:]
+            if (
+                len(trailing_events) != 1
+                or trailing_events[0].get("state") != "review_passed"
+                or trailing_events[0].get("chunk_id") != latest.get("chunk_id")
+                or trailing_events[0].get("outcome_sha256") not in accepted_outcome_hashes
+            ):
+                errors.append("active run ledger has unauthorized events after the latest provider outcome")
     elif events:
         errors.append("run ledger contains events but canonical state has no latest provider attempt")
 

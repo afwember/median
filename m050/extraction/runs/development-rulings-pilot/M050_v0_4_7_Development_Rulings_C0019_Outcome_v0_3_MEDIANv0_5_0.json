@@ -1,0 +1,324 @@
+{
+  "schema_version": "M050-EXTRACTION-CALL-OUTCOME-0.1",
+  "resolution_basis": "authorially_authorized_supervisor_manual_construction_after_preserved_provider_noncompliance",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "chunk_id": "C0019",
+  "packet_sha256": "eda6ab1ba2dc8d5b5f057440bbd5db155ec62d2218c5fc7a5e74215e8af0e511",
+  "provider_call_made": false,
+  "provider_message_id": null,
+  "request_id": "SUPERVISOR-MANUAL-C0019-001",
+  "submitted_at_utc": "2026-08-07T06:19:33Z",
+  "http_status": null,
+  "model": null,
+  "stop_reason": "authorial_manual_resolution",
+  "cache": {
+    "required": false,
+    "requested_ttl": null,
+    "effective": false,
+    "creation_input_tokens": 0,
+    "read_input_tokens": 0
+  },
+  "usage": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0
+  },
+  "cost": {
+    "uncached_input_usd": "0",
+    "cache_5m_write_usd": "0",
+    "cache_1h_write_usd": "0",
+    "cache_read_usd": "0",
+    "output_usd": "0",
+    "total_usd": "0",
+    "display_usd_rounded_up": "0.00"
+  },
+  "canonical_spend_update_required": false,
+  "review_required": false,
+  "mechanical_validation": {
+    "passed": true,
+    "decision_required": false,
+    "errors": [],
+    "checks": {
+      "schema_errors": 0,
+      "coverage_errors": 0,
+      "grounding_errors": 0,
+      "conditional_atoms_errors": 0,
+      "atomicity_errors": 0,
+      "table_structure_errors": 0,
+      "required_disposition_errors": 0,
+      "relationship_preservation_errors": 0,
+      "review_required_blocks": 0,
+      "low_yield_review_blocks": []
+    }
+  },
+  "substantive_review": "passed_by_supervisor_under_explicit_authorial_authority",
+  "structured_proposal": {
+    "schema_version": "M050-EVIDENCE-PROPOSAL-0.1",
+    "proposal_set_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001-C0019-MANUAL-001",
+    "request_id": "SUPERVISOR-MANUAL-C0019-001",
+    "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+    "dispositions": [
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00892_f56435fe946e",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00892-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00892_f56435fe946e",
+          "exact_source_text": "A Guest Permission may grant access to Render without carrying a conventional Render Tool when the capability follows directly from the Guest’s body, behavior, and ecological knowledge.",
+          "normalized_claim": "A Guest Permission may grant access to Render without carrying a conventional Render Tool when the capability follows directly from the Guest’s body, behavior, and ecological knowledge.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00894_2f3a134d4a26",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00894-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00894_2f3a134d4a26",
+          "exact_source_text": "The Red Fox’s Carcass Claim is the principal example.",
+          "normalized_claim": "The Red Fox’s Carcass Claim is the principal example of a Guest Permission granting access to Render through a living capability.",
+          "claim_kind": "example",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00896_b4144211edf5",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00896-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00896_b4144211edf5",
+          "exact_source_text": "The Guest is not operating a separate crafting system.",
+          "normalized_claim": "The Guest is not operating a separate crafting system.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00898_26d7fe10eccb",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00898-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00898_26d7fe10eccb",
+          "exact_source_text": "The Guest accesses the same Render grammar through a distinctive living capability.",
+          "normalized_claim": "The Guest accesses the same Render grammar through a distinctive living capability.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00903_3303d4ebecda",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00903-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00903_3303d4ebecda",
+          "exact_source_text": "**Adopted.**",
+          "normalized_claim": "BSA-11A — Latent Martial Utility of Tools is adopted.",
+          "claim_kind": "status",
+          "stream": "provenance_evidence"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00905_32ac9829a166",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00905-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00905_32ac9829a166",
+          "exact_source_text": "MEDIAN has no Weapon class.",
+          "normalized_claim": "MEDIAN has no Weapon class.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00907_670d2763149e",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00907-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00907_670d2763149e",
+          "exact_source_text": "The Colony does not manufacture, classify, equip, or celebrate objects whose principal civic purpose is injuring another animal.",
+          "normalized_claim": "The Colony does not manufacture, classify, equip, or celebrate objects whose principal civic purpose is injuring another animal.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00909_1fe240333873",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00909-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00909_1fe240333873",
+          "exact_source_text": "Nevertheless, the physical functions of most Tools have obvious utility when a Conflicted MEET becomes violent.",
+          "normalized_claim": "The physical functions of most Tools have obvious utility when a Conflicted MEET becomes violent.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00914_6cdd6cbb523c",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00914-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00914_6cdd6cbb523c",
+          "exact_source_text": "- Reach;",
+          "normalized_claim": "Reach possesses latent martial utility.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00915_4edcdd8eb566",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00915-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00915_4edcdd8eb566",
+          "exact_source_text": "- Cut;",
+          "normalized_claim": "Cut possesses latent martial utility.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00916_3996303aad2b",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00916-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00916_3996303aad2b",
+          "exact_source_text": "- Brace;",
+          "normalized_claim": "Brace possesses latent martial utility.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00917_08bc00a100d8",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00917-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00917_08bc00a100d8",
+          "exact_source_text": "- Render.",
+          "normalized_claim": "Render possesses latent martial utility.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00919_6df985993c0c",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00919-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00919_6df985993c0c",
+          "exact_source_text": "Carry does not possess this property by default.",
+          "normalized_claim": "Carry does not possess latent martial utility by default.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00924_2c8de9b82840",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00924-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00924_2c8de9b82840",
+          "exact_source_text": "During a Conflicted MEET, a relevant Tool may provide one slight contextual advantage to an approach that materially resembles a fight.",
+          "normalized_claim": "During a Conflicted MEET, a relevant Tool may provide one slight contextual advantage to an approach that materially resembles a fight.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00929_4246f3f64680",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00929-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00929_4246f3f64680",
+          "exact_source_text": "- Reach may maintain distance or control an approach.",
+          "normalized_claim": "Example: Reach may maintain distance or control an approach during a Conflicted MEET.",
+          "claim_kind": "example",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00930_87f3eecad949",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00930-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00930_87f3eecad949",
+          "exact_source_text": "- Cut may threaten, sever, pierce, or free under pressure.",
+          "normalized_claim": "Example: Cut may threaten, sever, pierce, or free under pressure during a Conflicted MEET.",
+          "claim_kind": "example",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00931_fcaf90675864",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00931-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00931_fcaf90675864",
+          "exact_source_text": "- Brace may block, hold ground, deflect force, or protect another Citizen.",
+          "normalized_claim": "Example: Brace may block, hold ground, deflect force, or protect another Citizen during a Conflicted MEET.",
+          "claim_kind": "example",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00932_89d2c5733c5a",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00932-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00932_89d2c5733c5a",
+          "exact_source_text": "- Render may apply processing implements or anatomical knowledge against resistant living danger.",
+          "normalized_claim": "Example: Render may apply processing implements or anatomical knowledge against resistant living danger during a Conflicted MEET.",
+          "claim_kind": "example",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00934_d673925d55f0",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00934-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00934_d673925d55f0",
+          "exact_source_text": "The Tool’s relevance appears as a compact inline indicator on the relevant Turn.",
+          "normalized_claim": "The Tool’s relevance appears as a compact inline indicator on the relevant Turn.",
+          "claim_kind": "rule",
+          "stream": "evidence_game_semantic"
+        }]
+      },
+      {
+        "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00938_e13ab746d61d",
+        "kind": "atoms",
+        "atoms": [{
+          "proposal_id": "B00938-1",
+          "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+          "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00938_e13ab746d61d",
+          "exact_source_text": "> **PRESS — Force the attacker away**  \n> `Reach Tool applies`",
+          "normalized_claim": "Example: the PRESS Turn ‘Force the attacker away’ indicates that a Reach Tool applies.",
+          "claim_kind": "example",
+          "stream": "evidence_game_semantic"
+        }]
+      }
+    ]
+  }
+}

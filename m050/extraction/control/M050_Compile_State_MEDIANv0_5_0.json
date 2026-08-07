@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T01:48:58-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0016_V0_5_MEDIUM_PACKET_READY_ACTIVE",
+  "updated": "2026-08-07T02:09:40-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0019_REPEATED_REASONING_MODE_MECHANICAL_NONCOMPLIANCE_HALT",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -52,9 +52,12 @@
       "C0012",
       "C0013",
       "C0014",
-      "C0015"
+      "C0015",
+      "C0016",
+      "C0017",
+      "C0018"
     ],
-    "rejected_chunk_id": "C0016",
+    "rejected_chunk_id": "C0019",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -63,7 +66,7 @@
     "freeze": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_C0001_Pilot_Freeze_Proposal_v0_4_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Call_Packet_v0_5_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Call_Packet_v0_2_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -139,6 +142,21 @@
         "chunk_id": "C0015",
         "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0015_Outcome_v0_1_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0016",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Outcome_v0_5_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0017",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0017_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0018",
+        "outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0018_Outcome_v0_2_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_Run_Ledger_v0_2_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -154,9 +172,11 @@
       "c0013_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0013_authorial_subject_clarification": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0013_Authorial_Subject_Clarification_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0016_non_substantive_governing_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0016_Non_Substantive_Governing_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0016_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0016_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
+      "c0016_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0016_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0018_low_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0018_Low_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
+      "c0019_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Rulings_C0019_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0016",
+    "pilot_chunk_id": "C0019",
     "generated_chunk_count": 20,
     "target_blocks_per_chunk": 20,
     "required_target_disposition_count": 20,
@@ -168,15 +188,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
-    "cache_miss_call_ceiling_usd": "0.38764",
-    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0016_Outcome_v0_4_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.38494",
+    "latest_outcome": "m050/extraction/runs/development-rulings-pilot/M050_v0_4_7_Development_Rulings_C0019_Outcome_v0_2_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "35.5398320",
-    "cumulative_spent_usd": "34.3462770",
-    "remaining_usd": "1.1935550",
-    "display_usd_rounded_up": "34.35",
+    "cumulative_spent_usd": "34.7426580",
+    "remaining_usd": "0.7971740",
+    "display_usd_rounded_up": "34.75",
     "provisional_component_usd": "0.631836",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
@@ -190,25 +210,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 1:48:58 AM EDT",
-    "status": "v0.4.7 Development Rulings C0016 v0.5 ready",
+    "updated_human": "August 7, 2026 at 2:09:40 AM EDT",
+    "status": "v0.4.7 Development Rulings halted on repeated C0019 mechanical noncompliance",
     "phase": "Atomic extraction — v0.4.7 Development Rulings active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0015 / C0020 accepted; C0016 rejected; 5 chunks remain unaccepted",
-    "now": "The approved C0016–C0020 structural review is applied; the C0001–C0015 accepted prefix is unchanged, corrected C0016 v0.5 is frozen at medium reasoning, and both Worker authorities are active",
-    "next": "Run focused readiness preflight and transmit the frozen C0016 v0.5 packet"
+    "chunk": "C0001–C0018 / C0020 accepted; 2 chunks remain unprocessed",
+    "now": "C0019 low- and medium-reasoning attempts are preserved as mechanically rejected after returning only empty dispositions and incomplete coverage; exact cumulative spend is $34.7426580",
+    "next": "Await human review of the C0019 correction strategy before any further retry"
   },
-  "next_possible_transition": "Transmit the validated frozen Development Rulings C0016 v0.5 packet after focused readiness preflight.",
+  "next_possible_transition": "Authorial or Supervisor review of the repeated C0019 provider mechanical noncompliance before any further correction or retry.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0016",
+    "chunk_id": "C0019",
     "stop_reason": "end_turn",
-    "output_tokens": 7648,
-    "cache_creation_input_tokens": 3221,
-    "cache_read_input_tokens": 0,
+    "output_tokens": 2256,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3221,
     "cache_effective": true,
-    "exact_cost_usd": "0.103104",
+    "exact_cost_usd": "0.0366702",
     "mechanical_passed": false,
     "review_state": "review_failed"
   }

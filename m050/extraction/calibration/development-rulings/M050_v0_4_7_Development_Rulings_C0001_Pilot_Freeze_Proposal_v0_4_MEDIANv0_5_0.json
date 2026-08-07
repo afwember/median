@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0016-STRUCTURAL-REVIEW-MEDIUM-REFREEZE-027",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0019-MEDIUM-REASONING-REFREEZE-032",
   "state": "ready_for_sequential_provider_call",
-  "machine_state": "c0016_repeated_incomplete_responses_preserved_and_approved_remaining_structure_review_medium_packet_refrozen",
+  "machine_state": "c0019_v0_1_mechanical_rejection_preserved_and_medium_reasoning_packet_refrozen",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
@@ -11,14 +11,14 @@
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
     "disposition_ledger_sha256": "eae6a8a3b712b8ccca1bd3197019c055b00b34cb0905a482206fa44567a6e77e",
     "chunk_plan_sha256": "ac8210b63f135f3c8e0bfae478b86e291e5d859832c124172a9fd7c3b547f6e7",
-    "pilot_chunk_id": "C0016",
-    "pilot_packet_sha256": "414e7a39978862b34cdfbaaa09a0392927dc0b4407f5412095bf722cf19f01c9",
-    "pilot_packet_file_sha256": "cd77b54e9b92c174261c1ea6d80c031c45c73444f711a16d72508c1ce7b1fb6d",
+    "pilot_chunk_id": "C0019",
+    "pilot_packet_sha256": "eda6ab1ba2dc8d5b5f057440bbd5db155ec62d2218c5fc7a5e74215e8af0e511",
+    "pilot_packet_file_sha256": "59f626b5f22222f463de3b931f917c11feebf9983eba2667e9f33cff71fd86f9",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71",
-    "compatibility_receipt_sha256": "9fa6c6238c3556d67a34e77dd96e43593c1a53f4af26353e26b39ed2dd699325",
+    "compatibility_receipt_sha256": "63e776a67fa4be69fa627a4dff4abc51d52a6feb9baf4c55bc42f3eaa2281be5",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0016 v0.3 and v0.4 remain preserved as mechanically incomplete responses. The approved manual structural review resolves the remaining rhetorical and governing-lead-in classifications across the unaccepted suffix, preserves the accepted C0001-C0015 prefix, and restores the previously successful medium reasoning effort without changing the prompt, schema, validator, or phase structure.",
+    "selection_reason": "C0019 v0.1 is preserved as mechanically incomplete; the previously successful medium-reasoning binding is restored without changing source, prompt, schema, targets, validator, cache boundary, or phase structure.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.38764"
+    "cache_miss_call_ceiling_usd": "0.38494"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -104,6 +104,11 @@
     "accepted_c0001_through_c0015_plan_prefix_identical": true,
     "approved_remaining_source_structural_review_applied": true,
     "c0016_v0_3_mechanical_rejection_preserved": true,
-    "c0016_v0_4_mechanical_rejection_preserved": true
+    "c0016_v0_4_mechanical_rejection_preserved": true,
+    "c0016_mechanical_and_substantive_review_passed": true,
+    "c0017_mechanical_and_substantive_review_passed": true,
+    "c0018_v0_1_mechanical_rejection_preserved": true,
+    "c0018_mechanical_and_substantive_review_passed": true,
+    "c0019_v0_1_mechanical_rejection_preserved": true
   }
 }

@@ -96,6 +96,14 @@
     "c0016_high_reasoning": {
       "sha256": "c3ccfc5ffdfdb1705d6c01c4b338223d59104301db35b5f00fc094e241284e2b",
       "result": "existing_reasoning_effort_binding_increased_after_incomplete_medium_response_and_all_source_compatibility_passed"
+    },
+    "c0018_low_reasoning": {
+      "sha256": "b3b0927eb240a470942abf153fc31658f9e3c4a01777d8f70940404a1159d45c",
+      "result": "established_low_reasoning_correction_applied_after_incomplete_medium_response_and_all_source_compatibility_passed"
+    },
+    "c0019_medium_reasoning": {
+      "sha256": "b82176bf25b7b69514680a0fc2a03e0c1f40d0a8926e147cb856333df5667453",
+      "result": "established_medium_reasoning_binding_restored_after_incomplete_low_response_and_all_source_compatibility_passed"
     }
   }
 }

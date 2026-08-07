@@ -1,0 +1,39 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-C0018-LOW-REASONING-001",
+  "date": "2026-08-07",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0018",
+    "outcome_sha256": "e5e55506404554262bb3f436349524e1dd9b16b24dee5e73eed8834c0d0e2639",
+    "defect": "The medium-reasoning response returned one empty atoms disposition and omitted 19 required targets."
+  },
+  "correction": {
+    "scope": "existing_declarative_reasoning_effort_binding",
+    "replacement": "low",
+    "prompt_delta": 0,
+    "schema_delta": 0,
+    "validator_delta": 0,
+    "target_delta": 0,
+    "process_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "93201c7020db885f95e3c51089ce84447d9cf90124bcc0848d77214824c24e5d",
+    "chunk_plan_sha256": "ac8210b63f135f3c8e0bfae478b86e291e5d859832c124172a9fd7c3b547f6e7",
+    "disposition_ledger_sha256": "eae6a8a3b712b8ccca1bd3197019c055b00b34cb0905a482206fa44567a6e77e",
+    "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
+    "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
+    "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
+  },
+  "offline_verification": {
+    "accepted_c0001_through_c0017_bindings_preserved": true,
+    "all_20_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

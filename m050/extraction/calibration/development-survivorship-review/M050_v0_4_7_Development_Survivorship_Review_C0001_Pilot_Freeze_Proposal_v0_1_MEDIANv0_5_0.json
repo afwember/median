@@ -69,6 +69,7 @@
     "c0006_v0_1_substantive_rejection_preserved": true,
     "c0006_v0_2_transport_timeout_preserved": true,
     "c0006_v0_3_repeated_substantive_rejection_preserved": true,
-    "c0006_v0_4_corrected_transport_timeout_preserved": true
+    "c0006_v0_4_corrected_transport_timeout_preserved": true,
+    "c0006_v0_5_structural_boundary_rejection_preserved": true
   }
 }

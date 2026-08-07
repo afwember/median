@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T11:24:37-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0006_SPEND_EXHAUSTED_BELOW_RETRY_CEILING",
+  "updated": "2026-08-07T11:36:57-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0005_C0006_ACCEPTED_BOUNDARY_REOPENING_REQUIRED",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -100,14 +100,14 @@
     "offline_gate_passed": true,
     "offline_tests_passed": 88,
     "cache_miss_call_ceiling_usd": "0.411668",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_4_MEDIANv0_5_0.json"
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_5_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
-    "authorized_usd": "37.1867660",
-    "cumulative_spent_usd": "37.0341560",
-    "remaining_usd": "0.1526100",
-    "display_usd_rounded_up": "37.04",
+    "authorized_usd": "39.0341560",
+    "cumulative_spent_usd": "37.2679272",
+    "remaining_usd": "1.7662288",
+    "display_usd_rounded_up": "37.27",
     "provisional_component_usd": "1.455132",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
@@ -121,27 +121,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 11:24:37 AM EDT",
-    "status": "v0.4.7 Development Survivorship Review halted at C0006 spend boundary",
+    "updated_human": "August 7, 2026 at 11:36:57 AM EDT",
+    "status": "v0.4.7 Development Survivorship Review halted — accepted C0005/C0006 boundary requires reopening",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0005 / C0009 accepted; C0006 v0.1 rejected; v0.2 timed out",
-    "now": "Corrected C0006 v0.4 transport cost is conservatively reconciled at $0.411668; $0.1526100 remains, below the $0.411668 retry ceiling",
-    "next": "Replenish the cumulative spend budget before retrying frozen C0006 v0.4"
+    "chunk": "C0001–C0005 / C0009 accepted; C0006 v0.5 rejected on accepted-boundary defect",
+    "now": "C0006 v0.5 exposed that governing lead-in B00412 is absent from C0006 and was accepted as a substantive C0005 atom, contradicting the authorial non-substantive governing-context ruling",
+    "next": "Obtain authority to reopen accepted C0005 evidence and replan the C0005/C0006 indivisible lead-in/body boundary"
   },
-  "next_possible_transition": "Replenish cumulative spend sufficiently to cover the frozen C0006 v0.4 $0.411668 ceiling; no provider call, other source, or later phase is authorized before then.",
+  "next_possible_transition": "Authorize reopening accepted C0005 evidence and replanning the C0005/C0006 boundary so B00412 governs B00415–B00418; no retry, other source, or later phase is authorized before then.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
-    "http_status": null,
+    "http_status": 200,
     "chunk_id": "C0006",
-    "stop_reason": null,
-    "output_tokens": null,
-    "cache_creation_input_tokens": null,
-    "cache_read_input_tokens": null,
-    "cache_effective": false,
-    "exact_cost_usd": null,
-    "mechanical_passed": false,
-    "review_state": "review_failed",
-    "transport_error": "TimeoutError:The read operation timed out"
+    "stop_reason": "end_turn",
+    "output_tokens": 21286,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3246,
+    "cache_effective": true,
+    "exact_cost_usd": "0.2337712",
+    "mechanical_passed": true,
+    "review_state": "review_failed"
   }
 }

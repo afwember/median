@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "STOPPED_DOWN",
-  "updated": "2026-08-07T11:04:04-04:00",
+  "updated": "2026-08-07T11:12:38-04:00",
   "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0006_TEMPORARY_STOPDOWN_WITH_UNRESOLVED_TRANSPORT_COST",
   "corpus": {
     "registered_sources": 24,
@@ -54,7 +54,7 @@
     "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Call_Packet_v0_3_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Call_Packet_v0_4_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -121,7 +121,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 11:04:04 AM EDT",
+    "updated_human": "August 7, 2026 at 11:12:38 AM EDT",
     "status": "STOPPED DOWN — v0.4.7 Development Survivorship Review incomplete at corrected C0006 transport-cost boundary",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",

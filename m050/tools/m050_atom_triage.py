@@ -469,26 +469,8 @@ class DecisionStore:
                 self.decisions[key] = value
         self._write()
 
-    def undo_latest(self, *, source_id: str | None = None) -> int:
-        """Remove the most recent atom or block decision after a resumed session."""
-        eligible = [
-            record
-            for record in self.decisions.values()
-            if source_id is None or record["source_id"] == source_id
-        ]
-        if not eligible:
-            return 0
-        latest = max(eligible, key=lambda item: item["decided_at"])
-        event_id = latest["event_id"]
-        keys = [
-            key for key, record in self.decisions.items() if record["event_id"] == event_id
-        ]
-        for key in keys:
-            self.decisions.pop(key)
-        self._write()
-        return len(keys)
-
-    def latest_event_keys(self, *, source_id: str | None = None) -> tuple[str, ...]:
+    def undo_latest(self, *, source_id: str | None = None) -> tuple[str, ...]:
+        """Remove and return the atom keys from the most recent decision event."""
         eligible = [
             record
             for record in self.decisions.values()
@@ -498,9 +480,13 @@ class DecisionStore:
             return ()
         latest = max(eligible, key=lambda item: item["decided_at"])
         event_id = latest["event_id"]
-        return tuple(
+        keys = [
             key for key, record in self.decisions.items() if record["event_id"] == event_id
-        )
+        ]
+        for key in keys:
+            self.decisions.pop(key)
+        self._write()
+        return tuple(keys)
 
     def next_undecided(self, *, source_id: str | None = None, after: int = -1) -> int | None:
         for index in range(after + 1, len(self.corpus.atoms)):
@@ -1014,15 +1000,14 @@ def create_web_server(
                     index = self._next(source_id, after=index_by_key[atom.key])
                     self._json(_atom_payload(corpus, store, index))
                 elif parsed.path == "/api/undo":
-                    latest_keys = store.latest_event_keys(source_id=source_id)
-                    return_index = min((index_by_key[key] for key in latest_keys), default=None)
-                    undone = store.undo_latest(source_id=source_id)
+                    undone_keys = store.undo_latest(source_id=source_id)
+                    return_index = min((index_by_key[key] for key in undone_keys), default=None)
                     payload = _atom_payload(
                         corpus,
                         store,
                         return_index if return_index is not None else self._next(source_id),
                     )
-                    payload["undone"] = undone
+                    payload["undone"] = len(undone_keys)
                     self._json(payload)
                 else:
                     self._error(404, "not found")

@@ -123,7 +123,7 @@ def test_latest_decision_can_be_undone_after_resume(tmp_path, triage, corpus):
     block = next(value for value in corpus.block_members.values() if len(value) >= 3)
     store.apply(block, "retain", scope="block")
     resumed = triage.DecisionStore(path, corpus)
-    assert resumed.undo_latest() == len(block)
+    assert len(resumed.undo_latest()) == len(block)
     assert resumed.decisions == {}
     assert path.read_text(encoding="utf-8") == ""
 
@@ -207,6 +207,22 @@ def test_mobile_web_api_auth_decision_undo_and_page(tmp_path, triage, corpus):
         assert next_state["stats"]["decided"] == 1
         assert next_state["atom"]["atom_key"] != first_key
 
+        second_key = next_state["atom"]["atom_key"]
+        _status, _headers, raw_third = _request_json(
+            f"{base}/api/decision",
+            pin="2468",
+            body={
+                "atom_key": second_key,
+                "decision": "retain",
+                "exclusion_reason": None,
+                "scope": "atom",
+                "source_id": None,
+            },
+        )
+        third_state = json.loads(raw_third)
+        assert third_state["stats"]["decided"] == 2
+        assert third_state["atom"]["atom_key"] not in {first_key, second_key}
+
         _status, _headers, raw_undo = _request_json(
             f"{base}/api/undo",
             pin="2468",
@@ -214,8 +230,8 @@ def test_mobile_web_api_auth_decision_undo_and_page(tmp_path, triage, corpus):
         )
         undone = json.loads(raw_undo)
         assert undone["undone"] == 1
-        assert undone["stats"]["decided"] == 0
-        assert undone["atom"]["atom_key"] == first_key
+        assert undone["stats"]["decided"] == 1
+        assert undone["atom"]["atom_key"] == second_key
 
         with pytest.raises(HTTPError) as cross_origin:
             _request_json(

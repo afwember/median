@@ -602,8 +602,9 @@ semicolon-free source boundary. Include interrupting markup or split the atom.
 Obey `required_disposition`, `allowed_dispositions`, and `minimum_atoms`;
 `no_substantive_claim` requires empty `atoms`. Structural headings, labels, table headers,
 delimiters, and document-control metadata carry no substantive atom. Dependent
-list items must use minimum explicit subject/status/scope/condition/connective
-from unambiguous indivisible-adjacent lead-in/heading; lead-ins cannot import body names,
+list items use minimum unambiguously-adjacent governing
+subject/status/scope/condition/connective, grammatically agreeing with targets;
+lead-ins cannot import body names,
 members, or assertions.
 
 For each substantive table row, cover every nonempty semantic cell. Separate

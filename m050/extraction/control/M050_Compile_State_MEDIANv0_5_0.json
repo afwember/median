@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T12:30:17-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0008_ACCEPTED_C0009_FROZEN",
+  "updated": "2026-08-07T12:37:15-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0009_V0_4_NUMBER_AGREEMENT_RETRY_FROZEN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -48,7 +48,7 @@
       "C0007",
       "C0008"
     ],
-    "rejected_chunk_id": null,
+    "rejected_chunk_id": "C0009",
     "whole_source_candidate_complete": false,
     "source_work_authorized": true
   },
@@ -57,7 +57,7 @@
     "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Call_Packet_v0_4_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -117,15 +117,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 90,
-    "cache_miss_call_ceiling_usd": "0.360076",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0008_Outcome_v0_1_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.360088",
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "39.0341560",
-    "cumulative_spent_usd": "38.0643716",
-    "remaining_usd": "0.9697844",
-    "display_usd_rounded_up": "38.07",
+    "cumulative_spent_usd": "38.1129228",
+    "remaining_usd": "0.9212332",
+    "display_usd_rounded_up": "38.12",
     "provisional_component_usd": "1.455132",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
@@ -139,26 +139,26 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:30:17 PM EDT",
-    "status": "v0.4.7 Development Survivorship Review active — C0008 accepted; C0009 frozen",
+    "updated_human": "August 7, 2026 at 12:37:15 PM EDT",
+    "status": "v0.4.7 Development Survivorship Review active — C0009 v0.4 number-agreement retry frozen",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0008 / C0009 accepted; C0009 frozen; no rejected chunk",
-    "now": "C0008 passed mechanical and substantive review; exact spend is reconciled and final chunk C0009 is frozen",
-    "next": "Preflight frozen C0009 under the remaining cumulative budget"
+    "chunk": "C0001–C0008 / C0009 accepted; C0009 v0.1 rejected; v0.4 frozen",
+    "now": "C0009 v0.1 mechanical review passed but substantive review rejected plural-subject singular-connective normalizations; the concise source-agnostic correction passes compatibility and v0.4 is frozen",
+    "next": "Preflight and retry frozen C0009 v0.4 under the remaining cumulative budget"
   },
-  "next_possible_transition": "Preflight frozen C0009 and continue this source; no other source or later phase is authorized.",
+  "next_possible_transition": "Preflight and retry frozen C0009 v0.4; no other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0008",
+    "chunk_id": "C0009",
     "stop_reason": "end_turn",
-    "output_tokens": 14010,
+    "output_tokens": 4093,
     "cache_creation_input_tokens": 0,
     "cache_read_input_tokens": 3246,
     "cache_effective": true,
-    "exact_cost_usd": "0.1620632",
+    "exact_cost_usd": "0.0485512",
     "mechanical_passed": true,
-    "review_state": "review_passed"
+    "review_state": "review_failed"
   }
 }

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T01:20:00-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0016_REPEATED_MECHANICAL_NONCOMPLIANCE_HALT",
+  "updated": "2026-08-07T01:22:02-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0016_REPEATED_MECHANICAL_NONCOMPLIANCE_FORMAL_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -56,7 +56,7 @@
     ],
     "rejected_chunk_id": "C0016",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -181,8 +181,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -190,15 +190,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 1:20:00 AM EDT",
-    "status": "v0.4.7 Development Rulings halted on repeated C0016 mechanical noncompliance",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
+    "updated_human": "August 7, 2026 at 1:22:02 AM EDT",
+    "status": "v0.4.7 Development Rulings formally stopped after repeated C0016 mechanical noncompliance",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0015 / C0021 accepted; C0016 v0.1 rejected; 6 chunks remain unaccepted",
-    "now": "C0016 v0.3 and v0.4 are preserved as mechanically rejected after each returned one empty disposition and omitted 19 required targets; exact cumulative spend is $34.3462770",
-    "next": "Await human review of the correction strategy before any further C0016 retry"
+    "now": "C0016 v0.3 and v0.4 are preserved as mechanically rejected after each returned one empty disposition and omitted 19 required targets; exact cumulative spend is $34.3462770 and both authorities are false",
+    "next": "Supervisor review of the repeated C0016 mechanical noncompliance before any retry or repository work resumes"
   },
-  "next_possible_transition": "Authorial or Supervisor review of the repeated C0016 provider mechanical noncompliance before any further correction or retry.",
+  "next_possible_transition": "Supervisor review of the repeated Development Rulings C0016 provider mechanical noncompliance before any retry or repository work resumes.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

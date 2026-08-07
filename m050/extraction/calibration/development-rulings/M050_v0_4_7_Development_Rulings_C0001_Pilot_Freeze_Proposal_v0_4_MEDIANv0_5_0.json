@@ -1,30 +1,30 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
-  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0016-SEQUENTIAL-FREEZE-024",
+  "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0016-HIGH-REASONING-REFREEZE-026",
   "state": "ready_for_sequential_provider_call",
-  "machine_state": "c0015_accepted_and_c0016_frozen",
+  "machine_state": "c0016_incomplete_medium_response_preserved_and_high_reasoning_packet_refrozen",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "34ba0aa443aefe73ee041189998e9afa44521ffe7e7d742d787286f6ae3a2a6b",
-    "configuration_sha256": "5d89f6c4eb8fbef1693e1b4ba533fe640c9fa52a71b7865354769a1eae2fb4eb",
+    "configuration_sha256": "74e2767a23aa2e74d6a2b5bbfdcc5f9c75841080ce824f5c91ba719bd9629dfe",
     "identity_card_sha256": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "block_manifest_sha256": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "disposition_ledger_sha256": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
-    "chunk_plan_sha256": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
+    "disposition_ledger_sha256": "02e181cdb25fafb0a68149b3a22a70dd800798b9d5b5e8e79a4e34dd2fa0903a",
+    "chunk_plan_sha256": "174ac1c4ca3ff52dc10d8f1e23adff3a839adbb8d51a1836c59bd9a41931b93e",
     "pilot_chunk_id": "C0016",
-    "pilot_packet_sha256": "3d9c87137df74f4c41bbef128db9f7c1a6241f5cea08e80ea86bdbb6a6bc784e",
-    "pilot_packet_file_sha256": "f3c65da71991cf8233107ad97a48fb016346425f756e8b6c8cc3012b1e141b86",
+    "pilot_packet_sha256": "0f17dcf67bde91e0df89a09d2e9f2d87620ce61ae1b9702d45f5acaf2eb2526d",
+    "pilot_packet_file_sha256": "b667aa83d0c7c431aa4f8d569de6b3ab2d9260eb54f8cf8ce2b52184653f2b37",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema_sha256": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71",
-    "compatibility_receipt_sha256": "4a40851265cf740a8eae5346e6140a88450c9959517e2479c13c850bee3c76ea",
+    "compatibility_receipt_sha256": "60fb3264ba129e0de90bc14b4bc6eb31e82efa7ddc1f1c36633954c6fdef7597",
     "allowed_streams": [
       "evidence_game_semantic",
       "provenance_evidence"
     ],
     "model": "claude-sonnet-5",
-    "reasoning_effort": "medium",
+    "reasoning_effort": "high",
     "maximum_output_tokens": 30000,
     "cache_ttl": "1h",
     "cache_boundary": "stable_system_prefix",
@@ -37,9 +37,9 @@
     }
   },
   "pilot": {
-    "selection_reason": "C0016 is the next sequential chunk after complete mechanical and substantive acceptance of C0015; established source, prompt, schema, validator, and provider configuration remain unchanged.",
+    "selection_reason": "C0016 v0.3 is preserved as a mechanically incomplete medium-reasoning response; the existing declarative reasoning-effort binding is increased to high while the source, targets, prompt, schema, validator, and extraction structure remain unchanged.",
     "required_target_disposition_count": 20,
-    "cache_miss_call_ceiling_usd": "0.38426"
+    "cache_miss_call_ceiling_usd": "0.385644"
   },
   "exclusion_policy": {
     "media_occurrences": 0,
@@ -99,6 +99,10 @@
     "c0013_v0_13_rejection_preserved": true,
     "c0013_mechanical_and_authorial_review_passed": true,
     "c0014_mechanical_and_substantive_review_passed": true,
-    "c0015_mechanical_and_substantive_review_passed": true
+    "c0015_mechanical_and_substantive_review_passed": true,
+    "c0016_v0_1_rejection_preserved": true,
+    "accepted_c0001_through_c0015_plan_prefix_identical": true,
+    "authorial_non_substantive_governing_lead_in_b00780": true,
+    "c0016_v0_3_mechanical_rejection_preserved": true
   }
 }

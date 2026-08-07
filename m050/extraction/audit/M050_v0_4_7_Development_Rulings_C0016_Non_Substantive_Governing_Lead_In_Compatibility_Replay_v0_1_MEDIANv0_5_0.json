@@ -1,0 +1,43 @@
+{
+  "schema_version": "M050-OFFLINE-COMPATIBILITY-REPLAY-0.1",
+  "replay_id": "M050-047-DEVELOPMENT-RULINGS-C0016-NON-SUBSTANTIVE-GOVERNING-LEAD-IN-001",
+  "date": "2026-08-07",
+  "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
+  "preserved_rejection": {
+    "chunk_id": "C0016",
+    "outcome_sha256": "f117b62ad62ea095e8e585cec13c5c744304e1534dc29d7b89be66a2f7457cd7",
+    "defect": "The non-substantive governing lead-in was atomized as an independent claim."
+  },
+  "applied_authorial_precedent": {
+    "classification": "non_substantive_governing_lead_in",
+    "block_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001__B00780_15b4f5e7e185",
+    "basis": "The lead-in governs the following authored contrast but does not state an independent substantive rule."
+  },
+  "correction": {
+    "scope": "declarative_source_disposition_and_unaccepted_suffix_replan",
+    "accepted_prefix_preserved_through": "C0015",
+    "process_delta": 0,
+    "schema_delta": 0,
+    "artifact_family_delta": 0
+  },
+  "binding": {
+    "configuration_sha256": "53c9d9fb99fa70ffa83bb334b3d69d3c3f4e283b56fd106336bde2ba24299b94",
+    "chunk_plan_sha256": "174ac1c4ca3ff52dc10d8f1e23adff3a839adbb8d51a1836c59bd9a41931b93e",
+    "disposition_ledger_sha256": "02e181cdb25fafb0a68149b3a22a70dd800798b9d5b5e8e79a4e34dd2fa0903a",
+    "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
+    "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
+    "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
+  },
+  "offline_verification": {
+    "accepted_c0001_through_c0015_plan_prefix_identical": true,
+    "all_21_chunks_fake_validated": true,
+    "exact_ordered_target_coverage": true,
+    "lead_in_absent_from_provider_targets": true,
+    "lead_in_retained_as_governing_context": true,
+    "all_source_structural_compatibility_passed": true,
+    "active_prompt_matches_generic_builder": true,
+    "stable_output_schema_cache_boundary_preserved": true,
+    "offline_tests_passed": 88
+  },
+  "result": "PASS"
+}

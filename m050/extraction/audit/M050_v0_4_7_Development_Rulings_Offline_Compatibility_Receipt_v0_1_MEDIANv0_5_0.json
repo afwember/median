@@ -5,15 +5,15 @@
   "status": "DEVELOPMENT_RULINGS_REBOUND_OFFLINE_PREPARATION_COMPATIBLE",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
   "binding": {
-    "configuration_sha256": "5d89f6c4eb8fbef1693e1b4ba533fe640c9fa52a71b7865354769a1eae2fb4eb",
+    "configuration_sha256": "74e2767a23aa2e74d6a2b5bbfdcc5f9c75841080ce824f5c91ba719bd9629dfe",
     "prompt_sha256": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "engine_module_sha256": "84c9a17ddcb852b93b0e5b8ff210887a787c34cf209fc8b95e79e8dbba8ac473",
     "engine_tests_sha256": "43b5845527252ce1ed19d45f47b26c1e8a749212b430e3128548e4ded1e27a71"
   },
   "source_review": {
     "source_blocks": 968,
-    "eligible_targets": 398,
-    "context_only_blocks": 65,
+    "eligible_targets": 397,
+    "context_only_blocks": 66,
     "excluded_blocks": 505,
     "identity_review_flags_remaining": 0,
     "media_occurrences_excluded": 0,
@@ -88,6 +88,14 @@
     "c0013_authorial_subject_clarification": {
       "sha256": "a593e5a62ac2ca10313c635989f4e48d62e6b881d1aa6d257fe0e5aed6b10b00",
       "result": "authorial_parent_heading_subject_ruling_applied_with_existing_provider_configuration_and_all_source_compatibility_passed"
+    },
+    "c0016_non_substantive_governing_lead_in": {
+      "sha256": "b57d474229dc0034d8b078df8d043da2c1379d8b3d4c6c807470898dbf5e2b23",
+      "result": "authorial_non_substantive_governing_lead_in_classification_applied_and_all_source_compatibility_passed"
+    },
+    "c0016_high_reasoning": {
+      "sha256": "c3ccfc5ffdfdb1705d6c01c4b338223d59104301db35b5f00fc094e241284e2b",
+      "result": "existing_reasoning_effort_binding_increased_after_incomplete_medium_response_and_all_source_compatibility_passed"
     }
   }
 }

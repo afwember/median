@@ -5,15 +5,15 @@
   ],
   "artifact_sha256": {
     "block_manifest": "8437b2970cd9de85cae717c31f478222760a0e1e084a2389b6f38b8af619d10a",
-    "chunk_plan": "6ffce6911eedff4dd51a79f6e673835fd7ccb998ea7da73c0fd00ea40f715dc1",
-    "disposition_ledger": "93bdcb42c8446f9b2bd85d41dcb875f3807d1ded430db7c5fd06507340193baf",
+    "chunk_plan": "174ac1c4ca3ff52dc10d8f1e23adff3a839adbb8d51a1836c59bd9a41931b93e",
+    "disposition_ledger": "02e181cdb25fafb0a68149b3a22a70dd800798b9d5b5e8e79a4e34dd2fa0903a",
     "identity_card": "32373cc6bc77eade5ee5ed123b43d17e6adeb08a54e2e767cbe55c63d1d2a183",
     "prompt": "6a67fd325fe61c6e7f3ade602d4b5e6760d744d5d31550ff1ce657502dbf0555",
     "response_schema": "d6dd22e76718f87895a46dd23ce5fba2593f4f65f344484728eefeb881f919cc"
   },
   "artifacts": {
     "block_manifest": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Block_Manifest_v0_1_MEDIANv0_5_0.json",
-    "chunk_plan": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Section_Aware_Chunk_Plan_v0_8_MEDIANv0_5_0.json",
+    "chunk_plan": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Section_Aware_Chunk_Plan_v0_9_MEDIANv0_5_0.json",
     "disposition_ledger": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Block_Disposition_Ledger_v0_1_MEDIANv0_5_0.jsonl",
     "identity_card": "m050/extraction/control/source-identities/cards/M050_v0_4_7_Development_Rulings_Content_Provenance_Identity_Card_v0_1_MEDIANv0_5_0.md",
     "prompt": "m050/extraction/calibration/development-rulings/M050_v0_4_7_Development_Rulings_Extraction_Prompt_MEDIANv0_5_0.md",
@@ -38,7 +38,7 @@
     "model": "claude-sonnet-5",
     "name": "Anthropic",
     "read_timeout_seconds": 180,
-    "reasoning_effort": "medium"
+    "reasoning_effort": "high"
   },
   "schema_version": "M050-EXTRACTION-MACHINE-CONFIG-0.1",
   "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",

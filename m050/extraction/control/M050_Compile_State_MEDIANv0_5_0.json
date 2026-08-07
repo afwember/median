@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T02:24:26-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0019_MANUAL_RESOLUTION_ACCEPTED_FORMAL_STOPDOWN",
+  "updated": "2026-08-07T08:48:14-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0020_PREPARATION_ACTIVE",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -60,7 +60,7 @@
     ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
-    "source_work_authorized": false
+    "source_work_authorized": true
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -207,8 +207,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": false,
-    "source_work_authorized": false,
+    "repository_writes_authorized": true,
+    "source_work_authorized": true,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -216,15 +216,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 2:24:26 AM EDT",
-    "status": "v0.4.7 Development Rulings formally stopped with C0019 manually resolved and accepted",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings temporary Supervisor handoff",
+    "updated_human": "August 7, 2026 at 8:48:14 AM EDT",
+    "status": "v0.4.7 Development Rulings C0020 preparation active",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001–C0019 / C0020 accepted; 1 chunk remains unprocessed",
-    "now": "C0019 passed exact 20-target mechanical and substantive review through an explicitly authorized Supervisor manual construction; both failed provider responses remain preserved, no additional call or spend occurred, and both authorities are false",
-    "next": "Await an explicit Worker source-work grant to freeze and process final chunk C0020"
+    "now": "C0019 remains manually resolved and accepted under the Supervisor checkpoint; both Worker authorities are active and exact cumulative spend remains $34.7426580",
+    "next": "Validate bindings, freeze, and process final chunk C0020"
   },
-  "next_possible_transition": "An explicit Worker source-work grant may release preparation and processing of final Development Rulings chunk C0020.",
+  "next_possible_transition": "Freeze final Development Rulings chunk C0020 after binding validation and continue sequential extraction.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "ACTIVE",
-  "updated": "2026-08-06T20:45:58-04:00",
-  "execution_state": "DEVELOPMENT_RULINGS_C0002_REPEATED_SUBSTANTIVE_DEFECT_HALT",
+  "status": "STOPDOWN",
+  "updated": "2026-08-06T20:50:34-04:00",
+  "execution_state": "DEVELOPMENT_RULINGS_C0002_REPEATED_SUBSTANTIVE_DEFECT_STOPDOWN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -42,7 +42,7 @@
     ],
     "rejected_chunk_id": "C0002",
     "whole_source_candidate_complete": false,
-    "source_work_authorized": true
+    "source_work_authorized": false
   },
   "calibration": {
     "configuration": "m050/extraction/control/M050_v0_4_7_Development_Rulings_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
@@ -85,8 +85,8 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
@@ -94,15 +94,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 6, 2026 at 8:45:58 PM EDT",
-    "status": "v0.4.7 Development Rulings halted on repeated C0002 defect",
-    "phase": "Atomic extraction — v0.4.7 Development Rulings active",
+    "updated_human": "August 6, 2026 at 8:50:34 PM EDT",
+    "status": "Formal Stopdown — v0.4.7 Development Rulings halted on repeated C0002 defect",
+    "phase": "Atomic extraction — v0.4.7 Development Rulings Stopdown",
     "source": "v0.4.7 Development Rulings — ordinal 17; 16 / 22 compile-scope sources complete",
     "chunk": "C0001 / C0021 accepted; C0002 rejected twice; 19 later chunks unprocessed",
-    "now": "C0002 v0.2 repeated the v0.1 reverse-import defect despite the guarded generic correction; exact cumulative spend is $30.6086888 with $1.2565490 remaining",
-    "next": "Halt provider activity for human review of the repeated lead-in/body grounding obstruction; preserve both attempts"
+    "now": "Both C0002 attempts and failed reviews are preserved in the immutable response evidence and hash-chained run ledger; both repository-write and source-work authority are revoked",
+    "next": "Await explicit Sparkup and human direction on the repeated lead-in/body grounding obstruction; no provider call, source advance, or later phase is authorized"
   },
-  "next_possible_transition": "Human ruling or authorization of the smallest safe correction for the repeated C0002 lead-in/body grounding defect; no retry, another source, or later phase is authorized.",
+  "next_possible_transition": "Explicit Sparkup and human direction for v0.4.7 Development Rulings C0002; both rejected attempts remain preserved and no retry, another source, or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,

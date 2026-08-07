@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-PILOT-FREEZE-PROPOSAL-0.1",
   "proposal_id": "M050-047-DEVELOPMENT-RULINGS-C0001-PILOT-FREEZE-001",
-  "state": "repeated_substantive_defect_halt",
-  "machine_state": "repeated_substantive_defect_halt",
+  "state": "formal_stopdown_repeated_substantive_defect",
+  "machine_state": "formal_stopdown_repeated_substantive_defect",
   "binding": {
     "source_id": "M050-SRC-047-DEVELOPMENT-RULINGS-001",
     "source_sha256": "88ae2ae2f306b6406ed96b50f0ae5faf7d91e60bf1522ef9788bf8302f419c19",

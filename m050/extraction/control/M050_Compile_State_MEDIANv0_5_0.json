@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "ACTIVE",
-  "updated": "2026-08-07T12:26:05-04:00",
-  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0007_ACCEPTED_C0008_FROZEN",
+  "updated": "2026-08-07T12:30:17-04:00",
+  "execution_state": "DEVELOPMENT_SURVIVORSHIP_REVIEW_C0008_ACCEPTED_C0009_FROZEN",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -45,7 +45,8 @@
       "C0004",
       "C0005",
       "C0006",
-      "C0007"
+      "C0007",
+      "C0008"
     ],
     "rejected_chunk_id": null,
     "whole_source_candidate_complete": false,
@@ -56,7 +57,7 @@
     "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
     "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
     "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0008_Call_Packet_v0_1_MEDIANv0_5_0.json",
+    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Call_Packet_v0_1_MEDIANv0_5_0.json",
     "accepted_evidence": [
       {
         "chunk_id": "C0001",
@@ -92,6 +93,11 @@
         "chunk_id": "C0007",
         "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Outcome_v0_2_MEDIANv0_5_0.json",
         "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
+      },
+      {
+        "chunk_id": "C0008",
+        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
+        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
       }
     ],
     "compatibility_replays": {
@@ -99,10 +105,10 @@
       "c0006_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
       "c0006_governing_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_Governing_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
     },
-    "pilot_chunk_id": "C0008",
+    "pilot_chunk_id": "C0009",
     "generated_chunk_count": 9,
     "target_blocks_per_chunk": 40,
-    "required_target_disposition_count": 40,
+    "required_target_disposition_count": 12,
     "source_blocks": 619,
     "eligible_target_blocks": 323,
     "context_only_blocks": 46,
@@ -111,15 +117,15 @@
     "exact_target_disposition_coverage_required": true,
     "offline_gate_passed": true,
     "offline_tests_passed": 90,
-    "cache_miss_call_ceiling_usd": "0.418424",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Outcome_v0_2_MEDIANv0_5_0.json"
+    "cache_miss_call_ceiling_usd": "0.360076",
+    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0008_Outcome_v0_1_MEDIANv0_5_0.json"
   },
   "spend": {
     "active": true,
     "authorized_usd": "39.0341560",
-    "cumulative_spent_usd": "37.9023084",
-    "remaining_usd": "1.1318476",
-    "display_usd_rounded_up": "37.91",
+    "cumulative_spent_usd": "38.0643716",
+    "remaining_usd": "0.9697844",
+    "display_usd_rounded_up": "38.07",
     "provisional_component_usd": "1.455132",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
@@ -133,25 +139,25 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 12:26:05 PM EDT",
-    "status": "v0.4.7 Development Survivorship Review active — C0007 accepted; C0008 frozen",
+    "updated_human": "August 7, 2026 at 12:30:17 PM EDT",
+    "status": "v0.4.7 Development Survivorship Review active — C0008 accepted; C0009 frozen",
     "phase": "Atomic extraction — v0.4.7 Development Survivorship Review active",
     "source": "v0.4.7 Development Survivorship Review — ordinal 18; 17 / 22 compile-scope sources complete",
-    "chunk": "C0001–C0007 / C0009 accepted; C0008 frozen; no rejected chunk",
-    "now": "C0007 v0.2 passed mechanical and substantive review at medium reasoning; exact spend is reconciled and C0008 is frozen",
-    "next": "Preflight frozen C0008 under the remaining cumulative budget"
+    "chunk": "C0001–C0008 / C0009 accepted; C0009 frozen; no rejected chunk",
+    "now": "C0008 passed mechanical and substantive review; exact spend is reconciled and final chunk C0009 is frozen",
+    "next": "Preflight frozen C0009 under the remaining cumulative budget"
   },
-  "next_possible_transition": "Preflight frozen C0008 and continue this source; no other source or later phase is authorized.",
+  "next_possible_transition": "Preflight frozen C0009 and continue this source; no other source or later phase is authorized.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": 200,
-    "chunk_id": "C0007",
+    "chunk_id": "C0008",
     "stop_reason": "end_turn",
-    "output_tokens": 27826,
-    "cache_creation_input_tokens": 3246,
-    "cache_read_input_tokens": 0,
+    "output_tokens": 14010,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 3246,
     "cache_effective": true,
-    "exact_cost_usd": "0.312488",
+    "exact_cost_usd": "0.1620632",
     "mechanical_passed": true,
     "review_state": "review_passed"
   }

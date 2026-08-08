@@ -46,6 +46,7 @@ DECISIONS = {"retain", "exclude", "uncertain"}
 EXCLUSION_REASONS = {
     "obsolete_or_superseded",
     "administrative_or_provenance_only",
+    "incorrect_atomization",
     "outside_v0_5_scope",
     "true_duplicate",
     "other_authorial_exclusion",
@@ -53,6 +54,7 @@ EXCLUSION_REASONS = {
 REASON_KEYS = {
     "o": "obsolete_or_superseded",
     "a": "administrative_or_provenance_only",
+    "i": "incorrect_atomization",
     "s": "outside_v0_5_scope",
     "d": "true_duplicate",
     "x": "other_authorial_exclusion",
@@ -887,6 +889,7 @@ WEB_PAGE = r"""<!doctype html>
   <dialog id="reasonDialog"><div class="dialog-body"><h2>Why exclude?</h2><p id="reasonScope">This reason is authorial routing, not deletion of evidence.</p><div class="reason-grid">
     <button class="action quiet" data-reason="obsolete_or_superseded">Obsolete or superseded</button>
     <button class="action quiet" data-reason="administrative_or_provenance_only">Administrative or provenance-only</button>
+    <button class="action quiet" data-reason="incorrect_atomization">Incorrect atomization</button>
     <button class="action quiet" data-reason="outside_v0_5_scope">Outside v0.5 scope</button>
     <button class="action quiet" data-reason="true_duplicate">True duplicate</button>
     <button class="action quiet" data-reason="other_authorial_exclusion">Other authorial exclusion</button>
@@ -1363,7 +1366,7 @@ def _read_key() -> str:
 
 
 def _choose_exclusion_reason() -> str | None:
-    print("\nEXCLUSION REASON: [O] Obsolete  [A] Administrative  [S] Scope  [D] Duplicate  [X] Other  [Esc] Cancel")
+    print("\nEXCLUSION REASON: [O] Obsolete  [A] Administrative  [I] Incorrect atomization  [S] Scope  [D] Duplicate  [X] Other  [Esc] Cancel")
     while True:
         key = _read_key()
         if key in REASON_KEYS:

@@ -117,6 +117,19 @@ def test_decisions_save_reload_resume_and_undo_atomically(tmp_path, triage, corp
     assert path.read_text(encoding="utf-8") == ""
 
 
+def test_incorrect_atomization_is_a_valid_exclusion_reason(tmp_path, triage, corpus):
+    path = tmp_path / "incorrect-atomization.jsonl"
+    atom = corpus.atoms[0]
+    store = triage.DecisionStore(path, corpus)
+    store.apply(
+        (atom,),
+        "exclude",
+        exclusion_reason="incorrect_atomization",
+    )
+    reloaded = triage.DecisionStore(path, corpus)
+    assert reloaded.decisions[atom.key]["exclusion_reason"] == "incorrect_atomization"
+
+
 def test_latest_decision_can_be_undone_after_resume(tmp_path, triage, corpus):
     path = tmp_path / "resume-undo.jsonl"
     store = triage.DecisionStore(path, corpus)

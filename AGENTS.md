@@ -207,7 +207,11 @@ interface and checkpoint its completed source.
 - `exclude` removes the atom from active v0.5.0 reconciliation while preserving
   its immutable evidence. It requires exactly one existing reason:
   `obsolete_or_superseded`, `administrative_or_provenance_only`,
-  `outside_v0_5_scope`, `true_duplicate`, or `other_authorial_exclusion`.
+  `incorrect_atomization`, `outside_v0_5_scope`, `true_duplicate`, or
+  `other_authorial_exclusion`. Use `incorrect_atomization` when the extracted
+  atom is not a coherent standalone claim or materially misstates its bound
+  source because of splitting or normalization; it does not declare the
+  underlying source content false.
 - `uncertain` reserves the atom for explicit later model-assisted or authorial
   review. It is not an implicit retain or exclude.
 - A whole-block decision applies one reversible authorial event to every atom

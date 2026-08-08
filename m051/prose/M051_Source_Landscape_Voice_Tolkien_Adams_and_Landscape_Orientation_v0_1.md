@@ -1,10 +1,10 @@
 # Landscape Voice, Tolkien and Adams, and Landscape Orientation
 
-**Artifact class:** Developmental Source  
-**Version:** 0.1  
-**Date:** August 8, 2026  
-**Status:** Exploratory and non-authoritative  
-**Scope:** MEDIAN m051 and later development  
+**Artifact class:** Developmental Source
+**Version:** 0.1
+**Date:** August 8, 2026
+**Status:** Exploratory and non-authoritative
+**Scope:** MEDIAN m051 and later development
 
 This Source preserves a promising direction for MEDIAN's narrative presentation
 and environment-led development. It is not a finished Spec, does not amend the

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "AUTHORIAL_TRIAGE_ACTIVE",
-  "updated": "2026-08-08T01:00:53-04:00",
+  "updated": "2026-08-08T01:01:40-04:00",
   "execution_state": "AUTHORIAL_TRIAGE_ACTIVE",
   "corpus": {
     "registered_sources": 24,
@@ -162,7 +162,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 8, 2026 at 1:00:53 AM EDT",
+    "updated_human": "August 8, 2026 at 1:01:40 AM EDT",
     "status": "ACTIVE — deterministic authorial triage",
     "phase": "Authorial triage — reconciliation eligibility",
     "source": "18 accepted pre-reconciliation sources; 6,550 atoms",

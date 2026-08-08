@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "AUTHORIAL_TRIAGE_ACTIVE",
-  "updated": "2026-08-07T17:25:17-04:00",
+  "updated": "2026-08-07T20:17:27-04:00",
   "execution_state": "AUTHORIAL_TRIAGE_ACTIVE",
   "corpus": {
     "registered_sources": 24,
@@ -162,11 +162,11 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 7, 2026 at 5:25:17 PM EDT",
+    "updated_human": "August 7, 2026 at 8:17:27 PM EDT",
     "status": "ACTIVE — deterministic authorial triage",
     "phase": "Authorial triage — reconciliation eligibility",
     "source": "18 accepted pre-reconciliation sources; 6,550 atoms",
-    "progress": "120 / 6,550 authorial decisions recorded",
+    "progress": "122 / 6,550 authorial decisions recorded",
     "now": "The canonical decision record is empty; mobile authorial triage is active over hash-bound accepted evidence",
     "next": "Record retain, exclude, or uncertain decisions; checkpoint before any system tuning"
   },

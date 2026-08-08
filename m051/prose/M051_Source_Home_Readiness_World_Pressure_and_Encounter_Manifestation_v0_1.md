@@ -1,17 +1,17 @@
 ---
-title: "MEDIAN v0.5.1 Home Readiness, World Pressure, and Encounter Manifestation Specification"
+title: "MEDIAN m051 Source — Home Readiness, World Pressure, and Encounter Manifestation"
 document_id: M051-HOME-READINESS-WORLD-PRESSURE-001
 document_version: 0.1
 game_target: MEDIAN v0.5.1
-document_kind: additive_home_system_development_specification
-authority: active_for_v0_5_1_development_only
-state: ACTIVE_DEVELOPMENT
+document_kind: developmental_source
+authority: non_authoritative_source
+state: EXPLORATORY
 publication_default: internal
 created: 2026-08-01
 inherits_locked_baseline: MEDIAN v0.5.0
 does_not_reopen:
   - MEDIAN v0.5.0 Atomic Extraction
-  - MEDIAN v0.5.0 governing architecture
+  - MEDIAN v0.5.0 architecture
   - MEDIAN v0.5.0 dedicated-owner adjudication
 primary_predecessor:
   - M050_Home_Colony_and_DWELL_Specification_v1_0_MEDIANv0_5_0.docx
@@ -25,18 +25,26 @@ development_question: >
   manifestation specific enough that implementation and authoring do not guess.
 ---
 
-# MEDIAN v0.5.1
+# MEDIAN m051 Source
 ## Home Readiness, World Pressure, and Encounter Manifestation
 
-**Filename:** `M051_Home_Readiness_World_Pressure_and_Encounter_Manifestation_Specification_v0_1_MEDIANv0_5_1.md`
+**Artifact class:** Developmental Source
+**Status:** Exploratory and non-authoritative
+**Original date:** August 1, 2026
+**Reclassified:** August 8, 2026
+**Original target:** MEDIAN v0.5.1
 
-> **MEDIAN v0.5.0 is locked. This document begins additive v0.5.1 development. It may clarify, extend, and tune Home systems, but it may not retroactively alter the meaning of the v0.5.0 corpus or its Atomic Extraction.**
+> **MEDIAN v0.5.0 is locked. This Source records exploratory m051 possibilities
+> for Home systems. It does not amend m050 or independently establish m051
+> canon. Except where the Source summarizes inherited m050 material, every
+> model, category, value, relationship, and evaluation below remains available
+> for revision or rejection.**
 
 ---
 
 # 0. Revision Mandate
 
-The v0.5.0 Home specification establishes the correct architecture:
+The Source begins from this inherited m050 Home architecture:
 
 ```text
 Citizens hold Roles.
@@ -48,11 +56,13 @@ Shortfall becomes vulnerability.
 MEET turns vulnerability into a situated choice.
 ```
 
-That architecture is retained without revision.
+This Source does not propose revisions to that starting architecture.
 
-The remaining problem is specificity. The existing owner identifies the sources of Load, the reference Roles, Margin bands, the Deficiency Ledger, and the Home Encounter grammar, but it does not yet provide a sufficiently complete authoring and implementation model for:
+The development question is specificity. The existing owner identifies the
+sources of Load, the reference Roles, Margin bands, the Deficiency Ledger, and
+the Home Encounter grammar. This Source explores possible clarification of:
 
-- the canonical Load families;
+- candidate Load families;
 - which Role answers each family;
 - which material channels may modify or answer it;
 - how much Capacity or material is normally required;
@@ -61,11 +71,12 @@ The remaining problem is specificity. The existing owner identifies the sources 
 - the ontology of World Pressure;
 - the difference between simulated world state and authored special event;
 - biome, Season, Day Band, and event variation;
-- the exact route from world circumstance to Encounter flavor.
+- a legible route from world circumstance to Encounter flavor.
 
-This document begins that work.
+This Source begins that work.
 
-It is not a replacement Home specification. It is the first v0.5.1 deepening pass under the locked v0.5.0 owner.
+It is not a replacement Home Spec. It is an early m051 deepening Source under
+the locked m050 owner.
 
 ---
 
@@ -119,7 +130,9 @@ A fitting Colony Encounter applies the Big and Small relevant Weaknesses and nor
 2. protect or redirect the secondary stake through a different spend;
 3. spend neither and accept the compounded consequence.
 
-The system does not additionally charge the same deficiency through automatic decay, event frequency, worse choices, and a mandatory repair queue unless a deliberately major event justifies every layer.
+The proposed model avoids charging the same deficiency through automatic decay,
+event frequency, worse choices, and an additional repair queue unless a
+deliberately major event supports every layer.
 
 ## 1.6 Species topology changes manifestation
 
@@ -133,7 +146,7 @@ Quiet Equilibrium is a real success plateau. The Colony is not paid a bonus for 
 
 # 2. The Three Distinct Things Currently Called Pressure
 
-v0.5.1 must separate three related concepts.
+This Source explores a distinction among three related concepts.
 
 ## 2.1 Load
 
@@ -183,10 +196,10 @@ World Pressure governs **what the world is currently doing to the corridor**.
 
 ```text
 World Pressure supplies the circumstance.
-Load determines what the Colony must sustain.
+Load describes what the Colony is being asked to sustain.
 Margin determines how prepared the Colony is.
 Weakness determines what is at stake.
-MEET determines what the player must choose.
+MEET presents the resulting player choice.
 ```
 
 World Pressure is not simply another name for Deficiency Pressure.
@@ -195,9 +208,10 @@ A well-prepared Colony may absorb World Pressure silently. A poorly prepared Col
 
 ---
 
-# 3. Canonical Load Families
+# 3. Candidate Load Families
 
-v0.5.1 adopts eight Role-aligned Load families as its working Home taxonomy.
+This Source proposes eight Role-aligned Load families as a working Home
+taxonomy for later m051 review.
 
 The family is named for the civic obligation, not merely for the corresponding stock or Place.
 
@@ -212,11 +226,13 @@ The family is named for the civic obligation, not merely for the corresponding s
 | **Health Load** | Healer | Current patients, treatment readiness, recovery, illness exposure, rehabilitation, and post-Exposure burden. |
 | **Teaching Load** | Teacher | Knowledge transmission, lessons, newcomer integration, shared explanation, cultural continuity, grief, and memory-bearing work. |
 
-These families do not require eight Citizens at all times. Contextual demand and the `N/A` state remain mandatory.
+These candidate families do not imply eight Citizens at all times. Contextual
+demand and the `N/A` state remain part of this working model.
 
 ## 3.1 Cross-Role demand tags
 
-Some obligations should not become ninth or tenth Load families merely because several Roles participate.
+The Source explores handling some multi-Role obligations without creating ninth
+or tenth Load families.
 
 The following are **cross-Role demand tags**:
 
@@ -249,7 +265,8 @@ Provisioning is therefore an authored relationship among existing Roles, not a n
 
 # 4. Load Is Measured in Capacity, Not Paid as a Resource Tax
 
-The original development prompt asks which resource addresses each Load and how much. The governing answer is:
+The original development prompt asks which resource addresses each Load and how
+much. The Source's working answer is:
 
 > **Role Capacity addresses routine Load. Materials do not purchase exemption from civic responsibility.**
 
@@ -261,7 +278,9 @@ The original development prompt asks which resource addresses each Load and how 
 Margin = Capacity - Load
 ```
 
-The Capacity-to-Load relationship remains integer-based unless later prototype work proves a narrow need for half-step display. v0.5.1 should not default to decimals.
+The candidate Capacity-to-Load relationship is integer-based. Half-step display
+or decimals remain possible later tuning questions rather than defaults in this
+model.
 
 ## 4.2 Routine coverage
 
@@ -325,7 +344,8 @@ There is no separate Medical Stores stock.
 
 ## 5.1 No false materialization
 
-Leadership and Teaching must not acquire generic currencies merely so every row has a spend.
+The proposal avoids giving Leadership and Teaching generic currencies merely so
+every row has a spend.
 
 Their principal costs are:
 
@@ -366,7 +386,7 @@ A preparation Project normally costs:
 no more than two stock types in one recipe
 ```
 
-The exact Project determines the amount.
+The selected Project would determine the amount.
 
 Preparation may:
 
@@ -380,7 +400,8 @@ Preparation does not grant permanent universal immunity.
 
 ## 6.3 Ordinary Colony Encounter spend
 
-The default ordinary response should ask for **one meaningful cost channel**, normally:
+One possible ordinary response asks for **one meaningful cost channel**, such
+as:
 
 ```text
 1 unit of one relevant stock
@@ -394,11 +415,12 @@ or
 one bounded Cohesion / Resolve consequence accepted
 ```
 
-A choice may combine fiction and presentation around the cost, but should not hide multiple mechanical charges inside one button.
+A choice may combine fiction and presentation around the cost while keeping
+multiple mechanical charges visible rather than hiding them inside one button.
 
 ## 6.4 Major response
 
-A major response may require:
+A possible major response may require:
 
 ```text
 2 total stock units
@@ -408,17 +430,19 @@ or
 2 distinct nonmaterial opportunity costs
 ```
 
-This should protect a correspondingly major stake.
+In this model, such a cost corresponds to a major stake.
 
 ## 6.5 Exceptional event
 
-An exceptional authored event may exceed the ordinary grammar, but it must identify itself as exceptional and must not redefine the everyday cost baseline.
+An exceptional authored event may exceed the ordinary grammar while remaining
+visibly exceptional rather than redefining the everyday cost baseline.
 
 ## 6.6 Refusal
 
 Refusal spends no immediate resource. It accepts a compound result affecting the primary and secondary stakes.
 
-Refusal must remain a legitimate strategic answer when the Colony chooses to preserve scarce reserves for a greater known Pressure.
+The model leaves refusal available as a strategic answer when the Colony
+preserves scarce reserves for a greater known Pressure.
 
 ---
 
@@ -437,7 +461,8 @@ The inherited Margin bands remain:
 
 ## 7.1 Consequence ladder
 
-Failure to maintain a Load family should proceed through a restrained ladder.
+The Source proposes a restrained consequence ladder for failure to maintain a
+Load family.
 
 ### A. Latent vulnerability
 
@@ -530,7 +555,7 @@ Social and civic problems are not normally World Pressure. Newcomer strain, grie
 
 ## 8.3 Pressure record
 
-A tracked World Pressure should be representable by:
+A possible World Pressure description includes:
 
 ```yaml
 pressure_family:
@@ -558,7 +583,8 @@ Use a small qualitative scale:
 | **Severe** | Can open MEET, deepen consequences, or affect several Load families. |
 | **Exceptional** | Authored corridor event that may override normal frequency safeguards. |
 
-Exact hidden numbers may exist in implementation, but the player-facing grammar remains qualitative.
+Numerical values may exist beneath the imagined system, while this Source
+explores a qualitative player-facing grammar.
 
 ## 8.5 Duration
 
@@ -572,7 +598,8 @@ Seasonal
 Persistent until changed
 ```
 
-Duration should change content and Load, not merely repeat the same event card.
+The proposal uses duration to change content and Load rather than merely repeat
+the same event card.
 
 ---
 
@@ -642,7 +669,8 @@ Biome establishes:
 - human-maintenance pattern;
 - visual and acoustic Encounter vocabulary.
 
-Biome should not create a separate Home engine. It supplies different inputs to the shared Pressure and Load model.
+The proposal treats Biome as different input to a shared Pressure and Load
+model rather than a separate Home engine.
 
 Example:
 
@@ -687,7 +715,7 @@ Day Band modifies a Pressure when the difference is materially legible.
 | Evening | Cooling, commuter traffic, household return, predator transition |
 | Night | Reduced human work, darkness, cold, altered predator activity, sound carrying |
 
-Day Band should usually change:
+Possible Day Band changes include:
 
 - warning quality;
 - who is present;
@@ -695,7 +723,7 @@ Day Band should usually change:
 - traffic and predator activity;
 - immediate option costs.
 
-It should not add a universal Night penalty.
+The model does not propose a universal Night penalty.
 
 ## 10.4 Special events
 
@@ -720,7 +748,7 @@ Special events may:
 - create a multi-stage situation;
 - persist as a Condition or Project after MEET.
 
-They must still use existing systems wherever possible.
+The proposal favors expression through existing systems wherever possible.
 
 ---
 
@@ -737,7 +765,7 @@ A Colony Encounter is not generic flavor attached after the calculation. Its fic
 4. Big and Small Weakness select primary and collateral stakes.
 5. Species topology selects threatened geometry and failure spread.
 6. Biome, Season, and Day Band select sensory and situational expression.
-7. Current Places and Conditions select the exact tableau.
+7. Current Places and Conditions select the specific tableau.
 8. Named Role holders provide advice, disagreement, fear, or practical framing.
 9. Campaign history adds callbacks without changing hidden productivity.
 10. Two spends and one refusal resolve the transaction.
@@ -756,16 +784,18 @@ A Colony Encounter is not generic flavor attached after the calculation. Its fic
 | Biome | Material and environmental vocabulary |
 | Season | Timing, expectedness, and resource context |
 | Day Band | Light, sound, activity, and warning conditions |
-| Places | Exact threatened location |
+| Places | Specific threatened location |
 | Role holders | Human-scale—or animal-scale—voice and advice |
 | Campaign Memory | Why this manifestation belongs to this Colony |
-| Choice grammar | What the player must sacrifice or accept |
+| Choice grammar | What the player may sacrifice or accept |
 
 ## 11.3 Flavor rule
 
 > **Colony Encounter flavor is state-derived recombination, not random decorative text.**
 
-The same Heavy Winds family should not merely swap species names. It should threaten different geometry, expose different weak Roles, require different credible resources, and foreground different ordinary lives.
+The Source proposes that the same Heavy Winds family change geometry, weak
+Roles, credible resources, and foregrounded lives rather than merely swapping
+species names.
 
 ---
 
@@ -833,7 +863,8 @@ It may affect:
 - Building Load through access and cover;
 - Care Load through evacuation and Stores movement;
 - Leadership Load through coordinated sacrifice;
-- Teaching Load if records, memorials, or culturally important Places must be moved;
+- Teaching Load if records, memorials, or culturally important Places may need
+  to be moved;
 - species topology through the particular way the settlement occupies space.
 
 This family is crucial because it makes the highway corridor a human-maintained environment rather than generic wilderness.
@@ -842,7 +873,7 @@ This family is crucial because it makes the highway corridor a human-maintained 
 
 # 13. Colony Encounter Authoring Matrix
 
-Every reusable Encounter family should eventually declare:
+A possible future Encounter-family description includes:
 
 ```yaml
 encounter_family:
@@ -867,7 +898,7 @@ persistence_behavior:
 
 ## 13.1 Minimum authoring standard
 
-A complete family needs:
+A future review of a developed family could look for:
 
 - at least three credible Big Weakness manifestations;
 - at least three credible Small Weakness complications;
@@ -880,7 +911,7 @@ A complete family needs:
 
 ## 13.2 Repetition protection
 
-A family should remember:
+Possible repetition memory includes:
 
 - recently threatened Places;
 - recent Big and Small Weakness pairings;
@@ -889,13 +920,13 @@ A family should remember:
 - whether the Colony prepared successfully;
 - whether the event remains unresolved.
 
-The director should prefer variation without inventing irrelevant Roles.
+The proposed director favors variation without inventing irrelevant Roles.
 
 ---
 
 # 14. Information Architecture
 
-The player should see:
+Candidate visible information includes:
 
 - current Role Capacity;
 - current Role Load;
@@ -909,10 +940,10 @@ The player should see:
 - broad consequence previews;
 - the posture change caused by an Expedition departure.
 
-The player should not see:
+Candidate hidden information includes:
 
-- exact Deficiency Pressure score;
-- exact next trigger;
+- numerical Deficiency Pressure;
+- predetermined trigger detail;
 - hidden Big and Small Weakness ranking;
 - full probability tables;
 - every future manifestation;
@@ -920,7 +951,7 @@ The player should not see:
 
 ## 14.1 Dawn ledger
 
-The Dawn ledger should add one compact World Pressure section:
+One possible Dawn ledger adds a compact World Pressure section:
 
 ```text
 WORLD
@@ -942,9 +973,10 @@ After the ledger is read, the interface quiets.
 
 ---
 
-# 15. Development Decisions Settled in v0.1
+# 15. Working Hypotheses Collected in v0.1
 
-This first v0.5.1 document adopts the following development propositions:
+This Source collects the following working hypotheses for later authorial
+review:
 
 1. Load, Deficiency Pressure, and World Pressure are distinct.
 2. Eight working Load families map to the eight established Home Roles.
@@ -955,8 +987,9 @@ This first v0.5.1 document adopts the following development propositions:
 7. World Pressure is exogenous in origin and mediated in consequence.
 8. Biome, Season, Day Band, and special events modify shared Pressure families rather than create parallel Home engines.
 9. Colony Encounter flavor is generated through state-derived recombination.
-10. The same World Pressure must produce materially different manifestations through Weakness profile and species topology.
-11. v0.5.0 Atomic Extraction must not use this v0.5.1 document to reinterpret the locked corpus.
+10. The same World Pressure may produce materially different manifestations
+    through Weakness profile and species topology.
+11. The Source was not intended to reinterpret the locked m050 corpus.
 
 ---
 
@@ -1046,23 +1079,23 @@ During the locked v0.5.0 Atomic Extraction:
 
 ---
 
-# 18. Acceptance Tests for the Completed v0.5.1 Pass
+# 18. Evaluation Questions for a Future m051 Pass
 
-| Test | Passing condition |
+| Evaluation question | Possible evidence |
 |---|---|
-| Complete Load map | Every recurring Home obligation belongs to one primary Load family or an explicit cross-Role tag. |
-| No false resource tax | Routine covered Load does not consume arbitrary material each Dawn. |
-| Legible answer | The player can tell which Role, Place, preparation, or stock channel can improve a vulnerable posture. |
-| Exact enough to author | An Encounter writer can determine eligible Roles, stakes, costs, and consequences without inventing system rules. |
-| World is more than weather | Human maintenance, traffic, biological activity, and exceptional corridor events use the same Pressure framework. |
-| No parallel biome engines | Biomes change profiles and manifestations without replacing the Home system. |
-| Day Band restraint | Time of day changes relevant activity and presentation without imposing a universal Night penalty. |
-| Silent success | Readiness can absorb forecast Pressure without opening MEET. |
-| Weakness specificity | The same Pressure family changes materially under different Big and Small Weaknesses. |
-| Species specificity | Mouse, Rabbit, and Squirrel manifestations differ in threatened geometry and failure propagation. |
-| No double charge | A shortfall normally transacts through one clear Encounter rather than stacked automatic penalties. |
-| Recovery | A strained Colony has a clear route back to Quiet Equilibrium. |
-| v0.5.0 lock | No v0.5.1 proposition is retroactively used to alter v0.5.0 Atomic Extraction. |
+| Does the Load map cover recurring Home obligations? | Each obligation can be discussed through one candidate family or an explicit cross-Role tag. |
+| Does the model avoid a false resource tax? | Covered routine Load does not imply arbitrary Dawn material consumption. |
+| Is a vulnerable posture legible? | The player can identify a relevant Role, Place, preparation, or stock channel. |
+| Is the model useful for Encounter authoring? | A writer can propose Roles, stakes, costs, and consequences without filling major conceptual gaps. |
+| Does World Pressure extend beyond weather? | Human maintenance, traffic, biology, and exceptional corridor events can be explored through the same framework. |
+| Does Biome avoid multiplying Home engines? | Biomes alter profiles and manifestations while sharing the proposed Home model. |
+| Is Day Band restrained? | Time changes relevant activity and presentation without a universal Night penalty. |
+| Can readiness produce silent success? | Forecast Pressure can sometimes be absorbed without MEET. |
+| Do Weaknesses matter? | One Pressure family can change under different Big and Small Weaknesses. |
+| Does species topology matter? | Mouse, Rabbit, and Squirrel examples differ in threatened geometry and failure propagation. |
+| Does the model avoid double charging? | A shortfall can transact through one clear Encounter rather than stacked automatic penalties. |
+| Is recovery visible? | A strained Colony can have a plausible route toward Quiet Equilibrium. |
+| Is the m050 boundary preserved? | The Source is not used retroactively to alter m050 extraction evidence. |
 
 ---
 
@@ -1091,5 +1124,6 @@ During the locked v0.5.0 Atomic Extraction:
 - Defined banded persistent simulation and the doctrine that World Pressure is exogenous in origin and mediated in consequence.
 - Defined biome, Season, Day Band, and special-event variation.
 - Formalized the Colony Encounter manifestation pipeline.
-- Added authoring matrices, examples, development decisions, open questions, and acceptance tests.
+- Added authoring matrices, examples, working hypotheses, open questions, and
+  evaluation questions.
 - Preserved a hard boundary preventing v0.5.1 from affecting v0.5.0 Atomic Extraction.

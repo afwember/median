@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "AUTHORIAL_TRIAGE_ACTIVE",
-  "updated": "2026-08-08T02:00:11-04:00",
+  "updated": "2026-08-08T12:31:03-04:00",
   "execution_state": "AUTHORIAL_TRIAGE_ACTIVE",
   "corpus": {
     "registered_sources": 24,
@@ -152,7 +152,7 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
+    "repository_writes_authorized": false,
     "source_work_authorized": false,
     "triage_authorized": true,
     "google_sheets_interaction_authorized": false,
@@ -162,13 +162,13 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "August 8, 2026 at 2:00:11 AM EDT",
+    "updated_human": "August 8, 2026 at 12:31:03 PM EDT",
     "status": "ACTIVE — deterministic authorial triage",
     "phase": "Authorial triage — reconciliation eligibility",
     "source": "18 accepted pre-reconciliation sources; 6,550 atoms",
     "progress": "122 / 6,550 authorial decisions recorded",
-    "now": "The canonical decision record is empty; mobile authorial triage is active over hash-bound accepted evidence",
-    "next": "Record retain, exclude, or uncertain decisions; checkpoint before any system tuning"
+    "now": "Mobile authorial triage writes a noncanonical working record outside Git while accepted evidence remains read-only",
+    "next": "Complete the current source in working triage, then checkpoint it before the next source opens"
   },
   "next_possible_transition": "Complete one valid authorial triage decision for each bound atom, then halt for the separately authorized reconciliation transition.",
   "gate_5_complete": false,

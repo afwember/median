@@ -573,8 +573,8 @@ def validate_authority_state(
     if triage_active:
         if authority.get("source_work_authorized") is not False:
             errors.append("triage overlaps source-work authority")
-        if authority.get("repository_writes_authorized") is not True:
-            errors.append("active triage lacks the one-writer repository grant")
+        if authority.get("repository_writes_authorized") is not False:
+            errors.append("working triage improperly holds repository-write authority")
     elif "triage_authorized" in authority and authority.get("triage_authorized") is not False:
         errors.append("triage authority is invalid")
     if source.get("whole_source_candidate_complete") is True:
@@ -923,7 +923,7 @@ def validate_authorial_triage_profile(errors: list[str]) -> None:
     if (
         state.get("status") != "AUTHORIAL_TRIAGE_ACTIVE"
         or state.get("execution_state") != "AUTHORIAL_TRIAGE_ACTIVE"
-        or authority.get("repository_writes_authorized") is not True
+        or authority.get("repository_writes_authorized") is not False
         or authority.get("triage_authorized") is not True
         or authority.get("source_work_authorized") is not False
     ):

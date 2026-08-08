@@ -2,8 +2,9 @@
 """Deterministic authorial triage prototype for accepted MEDIAN atoms.
 
 Accepted extraction candidates are immutable evidence.  This tool reads them,
-joins block-addressed atoms to their frozen source blocks, and records only the
-author's current reconciliation-eligibility decisions in one JSONL file.
+joins block-addressed atoms to their frozen source blocks, and records the
+author's current reconciliation-eligibility decisions in an external working
+file that is promoted to the sole canonical Git record at source boundaries.
 """
 
 from __future__ import annotations
@@ -21,6 +22,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import textwrap
@@ -37,6 +39,7 @@ EXTRACTION = Path("m050/extraction")
 DEFAULT_DECISIONS = Path(
     "m050/reconciliation/triage/M050_Authorial_Triage_Decisions_MEDIANv0_5_0.jsonl"
 )
+WORKING_DECISIONS_NAME = "M050_Authorial_Triage_Working_Decisions_MEDIANv0_5_0.jsonl"
 
 SCHEMA_VERSION = "M050-AUTHORIAL-TRIAGE-DECISION-0.1"
 DECISIONS = {"retain", "exclude", "uncertain"}
@@ -418,6 +421,17 @@ class DecisionStore:
             temporary_path.unlink(missing_ok=True)
             raise
 
+    def replace(self, decisions: dict[str, dict]) -> None:
+        """Replace the complete current view after validating every record."""
+        replacement: dict[str, dict] = {}
+        for key, decision in decisions.items():
+            self._validate(decision)
+            if key != decision["atom_key"] or key in replacement:
+                raise TriageError("replacement triage decisions are inconsistent")
+            replacement[key] = decision
+        self.decisions = replacement
+        self._write()
+
     def apply(
         self,
         atoms: Iterable[Atom],
@@ -505,6 +519,145 @@ class DecisionStore:
         counts["undecided"] = len(self.corpus.atoms) - len(self.decisions)
         counts["total"] = len(self.corpus.atoms)
         return counts
+
+
+def default_working_decisions(repo_root: Path) -> Path:
+    """Return the requested out-of-repository MEDIAN support location."""
+    documents = next((parent for parent in repo_root.parents if parent.name == "Documents"), None)
+    if documents is None:
+        raise TriageError("cannot locate Documents/Codex/median-support from repository root")
+    return (
+        documents
+        / "Codex"
+        / "median-support"
+        / "triage-working"
+        / WORKING_DECISIONS_NAME
+    )
+
+
+def _validate_working_extends_canonical(
+    canonical: DecisionStore,
+    working: DecisionStore,
+) -> None:
+    for key, record in canonical.decisions.items():
+        if working.decisions.get(key) != record:
+            raise TriageError(
+                "working triage record does not preserve the canonical checkpoint; "
+                f"drift begins at {key}"
+            )
+
+
+def prepare_working_store(
+    canonical_path: Path,
+    working_path: Path,
+    corpus: Corpus,
+) -> DecisionStore:
+    """Initialize or validate the external noncanonical working decision view."""
+    canonical = DecisionStore(canonical_path, corpus)
+    if not working_path.exists():
+        working = DecisionStore(working_path, corpus)
+        working.replace(canonical.decisions)
+        return working
+    working = DecisionStore(working_path, corpus)
+    _validate_working_extends_canonical(canonical, working)
+    return working
+
+
+def _ordered_source_ids(corpus: Corpus) -> tuple[str, ...]:
+    return tuple(corpus.source_labels)
+
+
+def _source_complete(store: DecisionStore, source_id: str) -> bool:
+    return all(
+        atom.key in store.decisions
+        for atom in store.corpus.atoms
+        if atom.source_id == source_id
+    )
+
+
+def _active_checkpoint_source(
+    corpus: Corpus,
+    canonical: DecisionStore,
+) -> str | None:
+    return next(
+        (
+            source_id
+            for source_id in _ordered_source_ids(corpus)
+            if not _source_complete(canonical, source_id)
+        ),
+        None,
+    )
+
+
+def _working_lifecycle(
+    corpus: Corpus,
+    canonical: DecisionStore,
+    working: DecisionStore,
+) -> dict:
+    _validate_working_extends_canonical(canonical, working)
+    source_id = _active_checkpoint_source(corpus, canonical)
+    if source_id is None:
+        return {
+            "active_source_id": None,
+            "checkpoint_required": False,
+            "phase_complete": len(working.decisions) == len(corpus.atoms),
+        }
+    return {
+        "active_source_id": source_id,
+        "checkpoint_required": _source_complete(working, source_id),
+        "phase_complete": False,
+    }
+
+
+def _canonical_checkpoint_published(repo_root: Path, canonical_path: Path) -> bool:
+    """Return whether origin/main contains this exact canonical decision view."""
+    try:
+        result = subprocess.run(
+            ["git", "show", f"origin/main:{DEFAULT_DECISIONS.as_posix()}"],
+            cwd=repo_root,
+            check=True,
+            capture_output=True,
+        )
+        return result.stdout == canonical_path.read_bytes()
+    except (OSError, subprocess.CalledProcessError):
+        return False
+
+
+def checkpoint_working_decisions(
+    canonical_path: Path,
+    working_path: Path,
+    corpus: Corpus,
+) -> dict:
+    """Promote exactly one completed source from the working view to Git state."""
+    canonical = DecisionStore(canonical_path, corpus)
+    working = DecisionStore(working_path, corpus)
+    _validate_working_extends_canonical(canonical, working)
+    source_id = _active_checkpoint_source(corpus, canonical)
+    if source_id is None:
+        raise TriageError("all triage sources are already checkpointed")
+    if not _source_complete(working, source_id):
+        raise TriageError(f"working source is not complete: {source_id}")
+    source_order = _ordered_source_ids(corpus)
+    source_index = source_order.index(source_id)
+    forbidden = {
+        record["source_id"]
+        for record in working.decisions.values()
+        if source_order.index(record["source_id"]) > source_index
+    }
+    if forbidden:
+        raise TriageError(
+            "working decisions cross the required source checkpoint boundary: "
+            + ", ".join(sorted(forbidden))
+        )
+    canonical.replace(working.decisions)
+    next_source_id = _active_checkpoint_source(corpus, canonical)
+    return {
+        "checkpointed_source_id": source_id,
+        "checkpointed_source_label": corpus.source_labels[source_id],
+        "canonical_decisions": len(canonical.decisions),
+        "next_source_id": next_source_id,
+        "phase_complete": next_source_id is None,
+    }
 
 
 def _wrap(value: str, width: int, *, indent: str = "") -> str:
@@ -706,7 +859,7 @@ WEB_PAGE = r"""<!doctype html>
   <main class="shell">
     <header>
       <div><div class="eyebrow">MEDIAN v0.5.0</div><h1>Authorial Atom Triage</h1></div>
-      <div class="toolbar"><span class="status-dot" id="statusDot"></span><select id="sourceFilter" aria-label="Filter by source"><option value="">All completed sources</option></select></div>
+      <div class="toolbar"><span class="status-dot" id="statusDot"></span><select id="sourceFilter" aria-label="Filter by source"><option value="">Current released source</option></select></div>
       <div class="progress">
         <div class="pill"><strong id="sourceProgress">—</strong><span>Source</span></div>
         <div class="pill"><strong id="corpusProgress">—</strong><span>Corpus</span></div>
@@ -723,7 +876,7 @@ WEB_PAGE = r"""<!doctype html>
       <article class="card"><div class="label">Other atoms from this source block</div><div class="siblings" id="siblings"></div></article>
       <details class="card"><summary>Provenance and metadata</summary><dl class="metadata"><dt>Block type</dt><dd id="blockType"></dd><dt>Block</dt><dd id="blockId"></dd><dt>Chunk</dt><dd id="chunkId"></dd><dt>Atom ID</dt><dd id="atomId"></dd></dl></details>
     </section>
-    <section class="card complete" id="complete" hidden><h2>Review scope complete</h2><p>No undecided atoms remain in this source selection.</p></section>
+    <section class="card complete" id="complete" hidden><h2 id="completeTitle">Review scope complete</h2><p id="completeMessage">No undecided atoms remain in this source selection.</p></section>
   </main>
 
   <nav class="controls" aria-label="Triage decisions"><div class="controls-inner">
@@ -743,7 +896,7 @@ WEB_PAGE = r"""<!doctype html>
   <div class="toast" id="toast" role="status"></div>
 
   <script>
-    const ui = { atom: null, sourceId: "", pendingScope: "atom", busy: false };
+    const ui = { atom: null, sourceId: "", pendingScope: "atom", busy: false, checkpoint: false };
     const $ = (id) => document.getElementById(id);
     const buttons = [...document.querySelectorAll(".controls button")];
 
@@ -752,18 +905,33 @@ WEB_PAGE = r"""<!doctype html>
       if (!response.ok) { const body = await response.json().catch(() => ({})); throw new Error(body.error || `Request failed (${response.status})`); }
       return response.json();
     }
-    function setBusy(value) { ui.busy = value; buttons.forEach((button) => button.disabled = value); $("statusDot").style.background = value ? "var(--uncertain)" : "var(--retain)"; }
+    function setBusy(value) { ui.busy = value; buttons.forEach((button) => button.disabled = value); $("statusDot").style.background = (value || ui.checkpoint) ? "var(--uncertain)" : "var(--retain)"; }
     function toast(message) { $("toast").textContent = message; $("toast").classList.add("show"); setTimeout(() => $("toast").classList.remove("show"), 1300); }
     function querySource() { return ui.sourceId ? `?source_id=${encodeURIComponent(ui.sourceId)}` : ""; }
 
     function render(payload) {
       ui.atom = payload.atom;
+      ui.checkpoint = Boolean(payload.checkpoint_required);
       const complete = !payload.atom;
-      $("workspace").hidden = complete; $("complete").hidden = !complete;
+      $("workspace").hidden = complete; $("complete").hidden = !complete; document.querySelector(".controls").hidden = complete;
       const stats = payload.stats;
       $("decidedProgress").textContent = `${stats.decided} / ${stats.total}`;
       $("uncertainProgress").textContent = stats.uncertain;
-      if (complete) { $("sourceProgress").textContent = "Complete"; $("corpusProgress").textContent = `${stats.total} atoms`; return; }
+      if (complete) {
+        if (payload.checkpoint_required) {
+          ui.sourceId = ""; $("sourceFilter").value = "";
+          $("completeTitle").textContent = "Source checkpoint required";
+          $("completeMessage").textContent = `${payload.completed_source_label} is complete in the working record. The next source opens automatically after its validated Git checkpoint.`;
+          $("sourceProgress").textContent = "Checkpoint";
+          $("statusDot").style.background = "var(--uncertain)";
+        } else {
+          $("completeTitle").textContent = payload.phase_complete ? "Authorial triage complete" : "Review scope complete";
+          $("completeMessage").textContent = payload.phase_complete ? "Every source has been checkpointed." : "No undecided atoms remain in this source selection.";
+          $("sourceProgress").textContent = "Complete";
+        }
+        $("corpusProgress").textContent = `${stats.total} atoms`;
+        return;
+      }
       const atom = payload.atom;
       $("sourceId").textContent = atom.source_id; $("sourceId").title = atom.source_id; $("sourceLabel").textContent = atom.source_label; $("section").textContent = atom.section;
       $("currentAtom").textContent = `“${atom.exact_source_text}”`; $("normalizedClaim").textContent = atom.normalized_claim; $("sourceText").textContent = atom.source_text;
@@ -794,7 +962,7 @@ WEB_PAGE = r"""<!doctype html>
     $("sourceFilter").addEventListener("change", (event) => { ui.sourceId = event.target.value; loadState(); });
     document.addEventListener("keydown", (event) => { if (["INPUT","SELECT","BUTTON"].includes(document.activeElement.tagName) || document.querySelector("dialog[open]")) return; if (event.key.toLowerCase() === "y") decide("retain"); else if (event.key === "?") decide("uncertain"); else if (event.key.toLowerCase() === "n") $("excludeButton").click(); else if (event.key.toLowerCase() === "b") $("blockButton").click(); else if (event.key === "ArrowRight") skip(); else if (event.key.toLowerCase() === "u") undo(); });
 
-    (async () => { try { const data = await api("/api/sources"); data.sources.forEach((source) => { const option = document.createElement("option"); option.value = source.source_id; option.textContent = `${source.position}. ${source.label} (${source.atoms})`; $("sourceFilter").append(option); }); await loadState(); } catch (error) { toast(error.message); } })();
+    (async () => { try { const data = await api("/api/sources"); data.sources.forEach((source) => { const option = document.createElement("option"); option.value = source.source_id; option.textContent = `${source.position}. ${source.label} (${source.atoms})`; option.disabled = !source.available; $("sourceFilter").append(option); }); await loadState(); setInterval(() => { if (!ui.atom && !ui.busy) loadState(); }, 5000); } catch (error) { toast(error.message); } })();
   </script>
 </body>
 </html>
@@ -840,6 +1008,8 @@ def create_web_server(
     corpus: Corpus,
     store: DecisionStore,
     *,
+    canonical_path: Path | None = None,
+    repo_root: Path | None = None,
     host: str = "127.0.0.1",
     port: int = 8765,
     pin: str | None = None,
@@ -852,6 +1022,58 @@ def create_web_server(
     by_key = corpus.by_key
     index_by_key = {atom.key: index for index, atom in enumerate(corpus.atoms)}
     last_undo = {"signature": None}
+
+    def lifecycle() -> dict:
+        if canonical_path is None:
+            return {
+                "active_source_id": None,
+                "checkpoint_required": False,
+                "phase_complete": False,
+            }
+        canonical = DecisionStore(canonical_path, corpus)
+        current = _working_lifecycle(corpus, canonical, store)
+        current["publication_pending"] = bool(
+            repo_root is not None
+            and not _canonical_checkpoint_published(repo_root, canonical_path)
+        )
+        return current
+
+    def web_payload(source_id: str | None) -> dict:
+        current = lifecycle()
+        active_source_id = current["active_source_id"]
+        if canonical_path is not None:
+            if current["checkpoint_required"] or current.get("publication_pending"):
+                checkpoint_source_id = active_source_id
+                if current.get("publication_pending"):
+                    source_order = _ordered_source_ids(corpus)
+                    checkpoint_index = (
+                        source_order.index(active_source_id) - 1
+                        if active_source_id is not None
+                        else len(source_order) - 1
+                    )
+                    checkpoint_source_id = source_order[max(0, checkpoint_index)]
+                payload = _atom_payload(corpus, store, None)
+                payload.update(
+                    {
+                        "checkpoint_required": True,
+                        "phase_complete": False,
+                        "completed_source_id": checkpoint_source_id,
+                        "completed_source_label": corpus.source_labels[checkpoint_source_id],
+                    }
+                )
+                return payload
+            if current["phase_complete"]:
+                payload = _atom_payload(corpus, store, None)
+                payload.update({"checkpoint_required": False, "phase_complete": True})
+                return payload
+            if source_id not in (None, active_source_id):
+                raise TriageError(
+                    "source awaits its preceding checkpoint: " + str(source_id)
+                )
+            source_id = active_source_id
+        payload = _atom_payload(corpus, store, store.next_undecided(source_id=source_id))
+        payload.update({"checkpoint_required": False, "phase_complete": False})
+        return payload
 
     class Handler(BaseHTTPRequestHandler):
         server_version = "MEDIANTriage/0.1"
@@ -946,15 +1168,24 @@ def create_web_server(
                 query = parse_qs(parsed.query)
                 source_id = self._source((query.get("source_id") or [None])[0])
                 if parsed.path == "/api/state":
-                    self._json(_atom_payload(corpus, store, self._next(source_id)))
+                    self._json(web_payload(source_id))
                 elif parsed.path == "/api/sources":
                     totals = corpus.source_totals
+                    current = lifecycle()
+                    active_source_id = current["active_source_id"]
+                    source_order = _ordered_source_ids(corpus)
+                    active_index = (
+                        source_order.index(active_source_id)
+                        if active_source_id is not None
+                        else len(source_order)
+                    )
                     sources = [
                         {
                             "source_id": source_id,
                             "label": corpus.source_labels[source_id],
                             "position": next(atom.source_position for atom in corpus.atoms if atom.source_id == source_id),
                             "atoms": totals[source_id],
+                            "available": source_order.index(source_id) == active_index,
                         }
                         for source_id in corpus.source_labels
                     ]
@@ -974,6 +1205,18 @@ def create_web_server(
             try:
                 body = self._body()
                 source_id = self._source(body.get("source_id"))
+                current = lifecycle()
+                active_source_id = current["active_source_id"]
+                if canonical_path is not None:
+                    if (
+                        current["checkpoint_required"]
+                        or current.get("publication_pending")
+                        or current["phase_complete"]
+                    ):
+                        raise TriageError("triage decisions are held at a source checkpoint")
+                    if source_id not in (None, active_source_id):
+                        raise TriageError("decision source awaits its preceding checkpoint")
+                    source_id = active_source_id
                 if parsed.path == "/api/decision":
                     atom_key = body.get("atom_key")
                     atom = by_key.get(atom_key)
@@ -990,8 +1233,7 @@ def create_web_server(
                         exclusion_reason=body.get("exclusion_reason"),
                     )
                     last_undo["signature"] = None
-                    index = self._next(source_id, after=index_by_key[atom.key])
-                    self._json(_atom_payload(corpus, store, index))
+                    self._json(web_payload(source_id))
                 elif parsed.path == "/api/skip":
                     atom_key = body.get("atom_key")
                     atom = by_key.get(atom_key)
@@ -1001,7 +1243,9 @@ def create_web_server(
                         raise TriageError("skip atom is outside the selected source")
                     last_undo["signature"] = None
                     index = self._next(source_id, after=index_by_key[atom.key])
-                    self._json(_atom_payload(corpus, store, index))
+                    payload = _atom_payload(corpus, store, index)
+                    payload.update({"checkpoint_required": False, "phase_complete": False})
+                    self._json(payload)
                 elif parsed.path == "/api/undo":
                     visible_atom_key = body.get("visible_atom_key")
                     visible_atom = by_key.get(visible_atom_key)
@@ -1011,7 +1255,7 @@ def create_web_server(
                         raise TriageError("undo atom is outside the selected source")
                     signature = (source_id, visible_atom_key)
                     if last_undo["signature"] == signature:
-                        payload = _atom_payload(corpus, store, self._next(source_id))
+                        payload = web_payload(source_id)
                         payload["undone"] = 0
                         payload["duplicate"] = True
                         self._json(payload)
@@ -1019,11 +1263,8 @@ def create_web_server(
                     undone_keys = store.undo_latest(source_id=source_id)
                     return_index = max((index_by_key[key] for key in undone_keys), default=None)
                     last_undo["signature"] = signature
-                    payload = _atom_payload(
-                        corpus,
-                        store,
-                        return_index if return_index is not None else self._next(source_id),
-                    )
+                    payload = _atom_payload(corpus, store, return_index)
+                    payload.update({"checkpoint_required": False, "phase_complete": False})
                     payload["undone"] = len(undone_keys)
                     payload["duplicate"] = False
                     self._json(payload)
@@ -1046,14 +1287,10 @@ def _web_host_allowed(host: str) -> bool:
     return address.is_loopback or address in ipaddress.ip_network("100.64.0.0/10")
 
 
-def _require_canonical_write_authority(
+def _require_working_triage_authority(
     repo_root: Path,
-    decision_path: Path,
     corpus: Corpus,
 ) -> None:
-    canonical = (repo_root / DEFAULT_DECISIONS).resolve()
-    if decision_path.resolve() != canonical:
-        return
     state = _read_json(repo_root / STATE)
     triage = state.get("triage", {})
     authority = state.get("authority", {})
@@ -1064,22 +1301,32 @@ def _require_canonical_write_authority(
         or triage.get("decision_record") != DEFAULT_DECISIONS.as_posix()
         or triage.get("decision_schema_version") != SCHEMA_VERSION
         or triage.get("input_atom_count") != len(corpus.atoms)
-        or authority.get("repository_writes_authorized") is not True
+        or authority.get("repository_writes_authorized") is not False
         or authority.get("triage_authorized") is not True
         or authority.get("source_work_authorized") is not False
     ):
-        raise TriageError("canonical triage write authority is inactive or inconsistent")
+        raise TriageError("working triage authority is inactive or inconsistent")
 
 
 def serve_web(
     corpus: Corpus,
     store: DecisionStore,
     *,
+    canonical_path: Path,
+    repo_root: Path,
     host: str,
     port: int,
     pin: str | None,
 ) -> None:
-    server = create_web_server(corpus, store, host=host, port=port, pin=pin)
+    server = create_web_server(
+        corpus,
+        store,
+        canonical_path=canonical_path,
+        repo_root=repo_root,
+        host=host,
+        port=port,
+        pin=pin,
+    )
     actual_host, actual_port = server.server_address[:2]
     print(f"MEDIAN triage available at http://{actual_host}:{actual_port}/")
     if pin:
@@ -1202,29 +1449,55 @@ def _repo_root(value: str) -> Path:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=_repo_root, default=Path.cwd())
-    parser.add_argument("--decisions", type=Path, default=DEFAULT_DECISIONS)
+    parser.add_argument(
+        "--decisions",
+        type=Path,
+        help="external working decision record (defaults to Documents/Codex/median-support)",
+    )
     parser.add_argument("--source-id")
     parser.add_argument("--preview", action="store_true", help="render the next atom without writing")
     parser.add_argument("--stats", action="store_true", help="report decision coverage without writing")
     parser.add_argument("--serve", action="store_true", help="serve the local mobile web interface")
+    parser.add_argument(
+        "--checkpoint-working",
+        action="store_true",
+        help="promote one completed working source into the canonical Git decision record",
+    )
     parser.add_argument("--host", default="127.0.0.1", help="web bind address; non-loopback requires --pin")
     parser.add_argument("--port", type=int, default=8765, help="web port (default: 8765)")
     parser.add_argument("--pin", help="password/PIN required for private-network web access")
     args = parser.parse_args(argv)
 
     repo_root = Path(args.repo_root).resolve()
-    decision_path = args.decisions
+    canonical_path = repo_root / DEFAULT_DECISIONS
+    decision_path = args.decisions or default_working_decisions(repo_root)
     if not decision_path.is_absolute():
-        decision_path = repo_root / decision_path
+        decision_path = Path.cwd() / decision_path
+    decision_path = decision_path.resolve()
     try:
         corpus = load_corpus(repo_root)
         if args.source_id and args.source_id not in corpus.source_labels:
             raise TriageError(f"unknown or incomplete source ID: {args.source_id}")
+        if args.checkpoint_working:
+            result = checkpoint_working_decisions(canonical_path, decision_path, corpus)
+            print(json.dumps(result, indent=2))
+            return 0
         if not args.stats and not args.preview:
-            _require_canonical_write_authority(repo_root, decision_path, corpus)
-        store = DecisionStore(decision_path, corpus)
+            _require_working_triage_authority(repo_root, corpus)
+        if (args.stats or args.preview) and not decision_path.exists():
+            store = DecisionStore(canonical_path, corpus)
+        else:
+            store = prepare_working_store(canonical_path, decision_path, corpus)
         if args.serve:
-            serve_web(corpus, store, host=args.host, port=args.port, pin=args.pin)
+            serve_web(
+                corpus,
+                store,
+                canonical_path=canonical_path,
+                repo_root=repo_root,
+                host=args.host,
+                port=args.port,
+                pin=args.pin,
+            )
             return 0
         if args.stats:
             print(json.dumps(store.counts(), indent=2))
@@ -1236,7 +1509,18 @@ def main(argv: list[str] | None = None) -> int:
             else:
                 print(render_atom(corpus, index, store.decisions))
             return 0
-        interactive_review(corpus, store, source_id=args.source_id)
+        canonical = DecisionStore(canonical_path, corpus)
+        lifecycle = _working_lifecycle(corpus, canonical, store)
+        if lifecycle["checkpoint_required"]:
+            print(
+                "Source checkpoint required before continuing: "
+                + str(lifecycle["active_source_id"])
+            )
+            return 0
+        active_source_id = lifecycle["active_source_id"]
+        if args.source_id not in (None, active_source_id):
+            raise TriageError("requested source awaits its preceding checkpoint")
+        interactive_review(corpus, store, source_id=active_source_id)
         return 0
     except TriageError as exc:
         print(f"TRIAGE ERROR: {exc}", file=sys.stderr)

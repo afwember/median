@@ -287,10 +287,11 @@ def test_web_host_allowlist_is_tailscale_bounded(triage):
     assert not triage._web_host_allowed("example.com")
 
 
-def test_canonical_write_requires_active_triage_authority(tmp_path, triage, corpus):
+def test_working_triage_requires_phase_authority_without_repository_grant(
+    tmp_path, triage, corpus
+):
     state_path = tmp_path / triage.STATE
     state_path.parent.mkdir(parents=True)
-    decision_path = tmp_path / triage.DEFAULT_DECISIONS
     state = {
         "status": "AUTHORIAL_TRIAGE_ACTIVE",
         "execution_state": "AUTHORIAL_TRIAGE_ACTIVE",
@@ -301,14 +302,79 @@ def test_canonical_write_requires_active_triage_authority(tmp_path, triage, corp
             "input_atom_count": len(corpus.atoms),
         },
         "authority": {
-            "repository_writes_authorized": True,
+            "repository_writes_authorized": False,
             "triage_authorized": True,
             "source_work_authorized": False,
         },
     }
     state_path.write_text(json.dumps(state), encoding="utf-8")
-    triage._require_canonical_write_authority(tmp_path, decision_path, corpus)
+    triage._require_working_triage_authority(tmp_path, corpus)
+    state["authority"]["repository_writes_authorized"] = True
+    state_path.write_text(json.dumps(state), encoding="utf-8")
+    with pytest.raises(triage.TriageError, match="working triage authority"):
+        triage._require_working_triage_authority(tmp_path, corpus)
+    state["authority"]["repository_writes_authorized"] = False
     state["authority"]["triage_authorized"] = False
     state_path.write_text(json.dumps(state), encoding="utf-8")
-    with pytest.raises(triage.TriageError, match="write authority"):
-        triage._require_canonical_write_authority(tmp_path, decision_path, corpus)
+    with pytest.raises(triage.TriageError, match="working triage authority"):
+        triage._require_working_triage_authority(tmp_path, corpus)
+
+
+def test_working_store_initializes_from_canonical_and_detects_drift(
+    tmp_path, triage, corpus
+):
+    canonical_path = tmp_path / "canonical.jsonl"
+    working_path = tmp_path / "working.jsonl"
+    canonical = triage.DecisionStore(canonical_path, corpus)
+    canonical.apply((corpus.atoms[0],), "retain")
+    working = triage.prepare_working_store(canonical_path, working_path, corpus)
+    assert working.decisions == canonical.decisions
+    working.decisions[corpus.atoms[0].key]["decision"] = "uncertain"
+    working._write()
+    with pytest.raises(triage.TriageError, match="does not preserve"):
+        triage.prepare_working_store(canonical_path, working_path, corpus)
+
+
+def test_completed_working_source_requires_checkpoint_before_next_source(
+    tmp_path, triage, corpus
+):
+    canonical_path = tmp_path / "canonical.jsonl"
+    working_path = tmp_path / "working.jsonl"
+    canonical = triage.DecisionStore(canonical_path, corpus)
+    working = triage.prepare_working_store(canonical_path, working_path, corpus)
+    first_source_id, second_source_id = tuple(corpus.source_labels)[:2]
+    first_source_atoms = tuple(
+        atom for atom in corpus.atoms if atom.source_id == first_source_id
+    )
+    working.apply(first_source_atoms, "retain", scope="block")
+    lifecycle = triage._working_lifecycle(corpus, canonical, working)
+    assert lifecycle == {
+        "active_source_id": first_source_id,
+        "checkpoint_required": True,
+        "phase_complete": False,
+    }
+    result = triage.checkpoint_working_decisions(
+        canonical_path, working_path, corpus
+    )
+    assert result["checkpointed_source_id"] == first_source_id
+    assert result["next_source_id"] == second_source_id
+    reloaded = triage.DecisionStore(canonical_path, corpus)
+    assert len(reloaded.decisions) == len(first_source_atoms)
+
+
+def test_checkpoint_rejects_decisions_from_a_future_source(tmp_path, triage, corpus):
+    canonical_path = tmp_path / "canonical.jsonl"
+    working_path = tmp_path / "working.jsonl"
+    canonical = triage.DecisionStore(canonical_path, corpus)
+    working = triage.prepare_working_store(canonical_path, working_path, corpus)
+    first_source_id, second_source_id = tuple(corpus.source_labels)[:2]
+    first_source_atoms = tuple(
+        atom for atom in corpus.atoms if atom.source_id == first_source_id
+    )
+    second_source_atom = next(
+        atom for atom in corpus.atoms if atom.source_id == second_source_id
+    )
+    working.apply(first_source_atoms, "retain", scope="block")
+    working.apply((second_source_atom,), "retain")
+    with pytest.raises(triage.TriageError, match="cross the required source"):
+        triage.checkpoint_working_decisions(canonical_path, working_path, corpus)

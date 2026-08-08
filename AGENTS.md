@@ -172,10 +172,13 @@ reconciliation. It does not perform semantic acceptance, mapping,
 reconciliation, canonization, or compiled prose.
 
 The phase has no provider calls, model spend, prompts, schemas, or calibration.
-The author works through `m050/tools/m050_atom_triage.py`; no Compile Worker is
-active while the author-directed interface holds repository-write authority.
-Before the Supervisor changes code, controls, or structure, stop the interface
-and checkpoint its decisions so the one-writer rule remains exact.
+The author works through `m050/tools/m050_atom_triage.py`. The interface reads
+immutable repository evidence but writes its noncanonical working decisions
+only under `Documents/Codex/median-support/triage-working/`; it holds no
+repository-write authority. The Supervisor may therefore perform unrelated
+bounded repository work while triage continues. Before changing the triage
+tool, its inputs, decision form, controls, or phase structure, stop the
+interface and checkpoint its completed source.
 
 ### Canonical input and decision record
 
@@ -184,10 +187,16 @@ and checkpoint its decisions so the one-writer rule remains exact.
 - `m050/reconciliation/triage/M050_Authorial_Triage_Decisions_MEDIANv0_5_0.jsonl`
   is the sole canonical triage decision record. It contains at most one current
   decision per accepted atom; Git is its history.
+- The out-of-repository working decision file is an editor buffer, not a second
+  authority. On first use it is initialized from the canonical record. It must
+  preserve every canonical decision exactly and may add decisions only for the
+  one currently released source.
 - Every decision binds the source ID, atom ID, source block, and accepted
   candidate hash. Binding drift is a hard failure.
-- The tool writes the complete current decision record atomically. It may undo
-  the latest atom or whole-block event without creating an event-log family.
+- The tool writes the complete working view atomically. It may undo the latest
+  uncheckpointed atom or whole-block event without creating an event-log
+  family. The deterministic checkpoint command replaces the canonical record
+  only after validating the completed source and every binding.
 - Source text, normalized claims, sibling atoms, and provenance are read-only
   views. Triage never rewrites accepted evidence.
 
@@ -210,25 +219,31 @@ and checkpoint its decisions so the one-writer rule remains exact.
 
 ### Execution and boundaries
 
-- Process atoms in canonical source order unless the author deliberately uses
-  the source filter. Resume at the first undecided atom in the selected scope.
+- Process atoms in canonical source order. Resume at the first undecided atom
+  in the one source released by the latest canonical checkpoint.
 - The mobile interface may bind without another password only to loopback or an
   exact Tailscale IPv4 address. Wildcard, LAN, and public bindings are
   prohibited. Tailscale Funnel is prohibited.
-- Routine decisions update only the canonical decision record. They do not
-  require per-decision STATUS refreshes, commits, agent narration, or model
-  review.
-- At an author-requested checkpoint or before system tuning, stop the interface,
-  refresh canonical state and STATUS, run the existing guard, commit and push,
-  and confirm a clean synchronized worktree before further structural writes.
+- Routine decisions update only the external working record. They do not dirty
+  either Git repository and require no per-decision STATUS refresh, commit,
+  agent narration, or model review.
+- Completing a source is a hard checkpoint boundary. The interface must not
+  release the next source until the Supervisor imports the completed working
+  source, refreshes canonical state and STATUS, runs the existing guard,
+  commits and pushes, and confirms a clean synchronized worktree. The open
+  interface polls canonical state and releases the next source automatically
+  after that checkpoint; it does not require a Sparkup.
+- An ordinary unrelated Supervisor repository task does not require a triage
+  checkpoint. A checkpoint is required before a new triage source and before
+  any change to the triage system or its bound evidence.
 - Halt for candidate/hash drift, malformed or duplicate decisions, corpus
   coverage disagreement, an unavailable canonical record, or a requested
   decision category the current form cannot express. Do not add a category or
   workflow in response; submit the smallest review question.
-- Phase completion is exactly one valid decision for each of the 6,550 accepted
-  atoms currently bound to this phase. The four later or conditional sources
-  remain outside this triage input set unless a later phase transition changes
-  their canonical disposition.
+- Phase completion is exactly one canonical checkpointed decision for each of
+  the 6,550 accepted atoms currently bound to this phase. The four later or
+  conditional sources remain outside this triage input set unless a later phase
+  transition changes their canonical disposition.
 - Google Sheets, provider calls, semantic acceptance, mapping, reconciliation,
   canonization, and compiled prose remain prohibited.
 - A normal triage operation has no process delta.

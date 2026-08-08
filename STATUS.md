@@ -1,6 +1,6 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 7, 2026 at 8:36:55 PM EDT<br>
+August 8, 2026 at 12:56:34 AM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 

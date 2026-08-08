@@ -145,11 +145,26 @@ def test_block_decision_is_bounded_and_reversible(tmp_path, triage, corpus):
     block = next(value for value in corpus.block_members.values() if len(value) >= 3)
     path = tmp_path / "block-decisions.jsonl"
     store = triage.DecisionStore(path, corpus)
-    previous = store.apply(block, "uncertain", scope="block")
+    previous = store.apply(
+        block,
+        "uncertain",
+        scope="block",
+        review_route="general_review",
+    )
     assert set(store.decisions) == {atom.key for atom in block}
     assert {item["decision_scope"] for item in store.decisions.values()} == {"block"}
     store.restore(previous)
     assert store.decisions == {}
+
+
+def test_uncertain_rewrite_route_is_bound_and_persistent(tmp_path, triage, corpus):
+    path = tmp_path / "rewrite-list.jsonl"
+    atom = corpus.atoms[0]
+    store = triage.DecisionStore(path, corpus)
+    store.apply((atom,), "uncertain", review_route="rewrite_list")
+    reloaded = triage.DecisionStore(path, corpus)
+    assert reloaded.decisions[atom.key]["decision"] == "uncertain"
+    assert reloaded.decisions[atom.key]["review_route"] == "rewrite_list"
 
 
 def test_candidate_hash_drift_invalidates_existing_decision(tmp_path, triage, corpus):
@@ -198,6 +213,7 @@ def test_mobile_web_api_auth_decision_undo_and_page(tmp_path, triage, corpus):
         assert b'<meta name="viewport"' in page
         assert b"Authorial Atom Triage" in page
         assert b'id="excludeButton"' in page
+        assert b'data-review-route="rewrite_list"' in page
 
         _status, _headers, raw_state = _request_json(f"{base}/api/state", pin="2468")
         state = json.loads(raw_state)

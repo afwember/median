@@ -213,7 +213,11 @@ interface and checkpoint its completed source.
   source because of splitting or normalization; it does not declare the
   underlying source content false.
 - `uncertain` reserves the atom for explicit later model-assisted or authorial
-  review. It is not an implicit retain or exclude.
+  review. It requires one existing route: `general_review` or `rewrite_list`.
+  `rewrite_list` records that the immutable atom or its source-grounded claim
+  needs revised expression during reconciliation; it does not edit accepted
+  evidence or itself supply replacement canon. Uncertain is not an implicit
+  retain or exclude.
 - A whole-block decision applies one reversible authorial event to every atom
   in the displayed source block. Skip records nothing.
 - Editorial or semantic grammar that governs the authoritative presentation of

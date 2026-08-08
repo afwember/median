@@ -43,6 +43,7 @@ WORKING_DECISIONS_NAME = "M050_Authorial_Triage_Working_Decisions_MEDIANv0_5_0.j
 
 SCHEMA_VERSION = "M050-AUTHORIAL-TRIAGE-DECISION-0.1"
 DECISIONS = {"retain", "exclude", "uncertain"}
+REVIEW_ROUTES = {"general_review", "rewrite_list"}
 EXCLUSION_REASONS = {
     "obsolete_or_superseded",
     "administrative_or_provenance_only",
@@ -371,7 +372,8 @@ class DecisionStore:
             "block_key",
             "decided_at",
         }
-        if set(decision) != required:
+        allowed = required | {"review_route"}
+        if not required.issubset(decision) or not set(decision).issubset(allowed):
             raise TriageError("triage decision shape is invalid")
         atom = self.corpus.by_key.get(decision.get("atom_key"))
         if atom is None:
@@ -386,6 +388,7 @@ class DecisionStore:
             raise TriageError(f"triage decision binding drifted: {atom.key}")
         value = decision.get("decision")
         reason = decision.get("exclusion_reason")
+        review_route = decision.get("review_route")
         if value not in DECISIONS:
             raise TriageError(f"invalid triage decision: {value}")
         if value == "exclude":
@@ -393,6 +396,11 @@ class DecisionStore:
                 raise TriageError(f"invalid exclusion reason: {reason}")
         elif reason is not None:
             raise TriageError("non-exclusion decision has an exclusion reason")
+        if value == "uncertain":
+            if review_route is not None and review_route not in REVIEW_ROUTES:
+                raise TriageError(f"invalid uncertain review route: {review_route}")
+        elif review_route is not None:
+            raise TriageError("only uncertain decisions may carry a review route")
         if decision.get("decision_scope") not in {"atom", "block"}:
             raise TriageError("invalid triage decision scope")
 
@@ -441,6 +449,7 @@ class DecisionStore:
         *,
         scope: str = "atom",
         exclusion_reason: str | None = None,
+        review_route: str | None = None,
     ) -> dict[str, dict | None]:
         if decision not in DECISIONS:
             raise TriageError(f"invalid triage decision: {decision}")
@@ -448,6 +457,10 @@ class DecisionStore:
             raise TriageError("exclude requires a valid reason")
         if decision != "exclude" and exclusion_reason is not None:
             raise TriageError("only exclusions may carry a reason")
+        if decision == "uncertain" and review_route not in REVIEW_ROUTES:
+            raise TriageError("uncertain requires a valid review route")
+        if decision != "uncertain" and review_route is not None:
+            raise TriageError("only uncertain decisions may carry a review route")
         if scope not in {"atom", "block"}:
             raise TriageError(f"invalid decision scope: {scope}")
         selected = tuple(atoms)
@@ -471,6 +484,8 @@ class DecisionStore:
                 "block_key": atom.block_key,
                 "decided_at": now,
             }
+            if review_route is not None:
+                record["review_route"] = review_route
             self._validate(record)
             self.decisions[atom.key] = record
         self._write()
@@ -882,7 +897,7 @@ WEB_PAGE = r"""<!doctype html>
   </main>
 
   <nav class="controls" aria-label="Triage decisions"><div class="controls-inner">
-    <div class="primary"><button class="action retain" data-decision="retain">Retain</button><button class="action exclude" id="excludeButton">Exclude</button><button class="action uncertain" data-decision="uncertain">Uncertain</button></div>
+    <div class="primary"><button class="action retain" data-decision="retain">Retain</button><button class="action exclude" id="excludeButton">Exclude</button><button class="action uncertain" id="uncertainButton">Uncertain</button></div>
     <div class="secondary"><button class="action quiet" id="blockButton">Whole block</button><button class="action quiet" id="skipButton">Skip</button><button class="action quiet" id="undoButton">Undo</button></div>
   </div></nav>
 
@@ -894,6 +909,11 @@ WEB_PAGE = r"""<!doctype html>
     <button class="action quiet" data-reason="true_duplicate">True duplicate</button>
     <button class="action quiet" data-reason="other_authorial_exclusion">Other authorial exclusion</button>
   </div><button class="action quiet cancel" data-close="reasonDialog">Cancel</button></div></dialog>
+
+  <dialog id="reviewDialog"><div class="dialog-body"><h2>Why uncertain?</h2><p id="reviewScope">Route this atom for later reconciliation review.</p><div class="reason-grid">
+    <button class="action quiet" data-review-route="general_review">General review</button>
+    <button class="action quiet" data-review-route="rewrite_list">Add to rewrite list</button>
+  </div><button class="action quiet cancel" data-close="reviewDialog">Cancel</button></div></dialog>
 
   <dialog id="blockDialog"><div class="dialog-body"><h2>Decide the entire block?</h2><p id="blockSummary"></p><div class="reason-grid"><button class="action retain" data-block-decision="retain">Retain entire block</button><button class="action exclude" data-block-decision="exclude">Exclude entire block</button><button class="action uncertain" data-block-decision="uncertain">Mark entire block uncertain</button></div><button class="action quiet cancel" data-close="blockDialog">Cancel</button></div></dialog>
   <div class="toast" id="toast" role="status"></div>
@@ -942,14 +962,14 @@ WEB_PAGE = r"""<!doctype html>
       $("blockType").textContent = atom.block_type; $("blockId").textContent = atom.block_display; $("chunkId").textContent = atom.chunk_id || "Not recorded"; $("atomId").textContent = atom.atom_id;
       const siblings = $("siblings"); siblings.replaceChildren();
       atom.siblings.forEach((item) => { const row = document.createElement("div"); row.className = `sibling${item.current ? " current" : ""}`; const kind = document.createElement("div"); kind.className = "kind"; kind.textContent = item.current ? "Current" : item.claim_kind.replaceAll("_", " "); const claim = document.createElement("div"); claim.className = "claim"; claim.textContent = item.normalized_claim; row.append(kind, claim); siblings.append(row); });
-      const banner = $("decisionBanner"); if (atom.decision) { banner.style.display = "block"; banner.textContent = `Current decision: ${atom.decision.decision.toUpperCase()}`; } else { banner.style.display = "none"; }
+      const banner = $("decisionBanner"); if (atom.decision) { banner.style.display = "block"; const route = atom.decision.review_route ? ` — ${atom.decision.review_route.replaceAll("_", " ").toUpperCase()}` : ""; banner.textContent = `Current decision: ${atom.decision.decision.toUpperCase()}${route}`; } else { banner.style.display = "none"; }
       $("blockButton").textContent = `Whole block (${atom.siblings.length})`;
     }
 
     async function loadState() { setBusy(true); try { render(await api(`/api/state${querySource()}`)); } catch (error) { toast(error.message); } finally { setBusy(false); } }
-    async function decide(decision, reason = null, scope = "atom") {
+    async function decide(decision, reason = null, scope = "atom", reviewRoute = null) {
       if (!ui.atom || ui.busy) return; setBusy(true);
-      try { render(await api("/api/decision", { method: "POST", body: JSON.stringify({ atom_key: ui.atom.atom_key, decision, exclusion_reason: reason, scope, source_id: ui.sourceId || null }) })); toast(scope === "block" ? "Block saved" : "Decision saved"); }
+      try { render(await api("/api/decision", { method: "POST", body: JSON.stringify({ atom_key: ui.atom.atom_key, decision, exclusion_reason: reason, review_route: reviewRoute, scope, source_id: ui.sourceId || null }) })); toast(scope === "block" ? "Block saved" : "Decision saved"); }
       catch (error) { toast(error.message); } finally { setBusy(false); }
     }
     async function skip() { if (!ui.atom || ui.busy) return; setBusy(true); try { render(await api("/api/skip", { method: "POST", body: JSON.stringify({ atom_key: ui.atom.atom_key, source_id: ui.sourceId || null }) })); } catch (error) { toast(error.message); } finally { setBusy(false); } }
@@ -957,13 +977,15 @@ WEB_PAGE = r"""<!doctype html>
 
     document.querySelectorAll("[data-decision]").forEach((button) => button.addEventListener("click", () => decide(button.dataset.decision)));
     $("excludeButton").addEventListener("click", () => { ui.pendingScope = "atom"; $("reasonScope").textContent = "Exclude this atom from active reconciliation; preserve its evidence."; $("reasonDialog").showModal(); });
+    $("uncertainButton").addEventListener("click", () => { ui.pendingScope = "atom"; $("reviewScope").textContent = "Route this atom for later reconciliation review."; $("reviewDialog").showModal(); });
     $("blockButton").addEventListener("click", () => { if (!ui.atom) return; $("blockSummary").textContent = `This will apply one reversible decision to all ${ui.atom.siblings.length} atoms in ${ui.atom.block_display}.`; $("blockDialog").showModal(); });
     $("skipButton").addEventListener("click", skip); $("undoButton").addEventListener("click", undo);
-    document.querySelectorAll("[data-block-decision]").forEach((button) => button.addEventListener("click", () => { const value = button.dataset.blockDecision; $("blockDialog").close(); if (value === "exclude") { ui.pendingScope = "block"; $("reasonScope").textContent = `Exclude all ${ui.atom.siblings.length} atoms in this block; preserve their evidence.`; $("reasonDialog").showModal(); } else decide(value, null, "block"); }));
+    document.querySelectorAll("[data-block-decision]").forEach((button) => button.addEventListener("click", () => { const value = button.dataset.blockDecision; $("blockDialog").close(); if (value === "exclude") { ui.pendingScope = "block"; $("reasonScope").textContent = `Exclude all ${ui.atom.siblings.length} atoms in this block; preserve their evidence.`; $("reasonDialog").showModal(); } else if (value === "uncertain") { ui.pendingScope = "block"; $("reviewScope").textContent = `Route all ${ui.atom.siblings.length} atoms in this block for later reconciliation review.`; $("reviewDialog").showModal(); } else decide(value, null, "block"); }));
     document.querySelectorAll("[data-reason]").forEach((button) => button.addEventListener("click", () => { $("reasonDialog").close(); decide("exclude", button.dataset.reason, ui.pendingScope); }));
+    document.querySelectorAll("[data-review-route]").forEach((button) => button.addEventListener("click", () => { $("reviewDialog").close(); decide("uncertain", null, ui.pendingScope, button.dataset.reviewRoute); }));
     document.querySelectorAll("[data-close]").forEach((button) => button.addEventListener("click", () => $(button.dataset.close).close()));
     $("sourceFilter").addEventListener("change", (event) => { ui.sourceId = event.target.value; loadState(); });
-    document.addEventListener("keydown", (event) => { if (["INPUT","SELECT","BUTTON"].includes(document.activeElement.tagName) || document.querySelector("dialog[open]")) return; if (event.key.toLowerCase() === "y") decide("retain"); else if (event.key === "?") decide("uncertain"); else if (event.key.toLowerCase() === "n") $("excludeButton").click(); else if (event.key.toLowerCase() === "b") $("blockButton").click(); else if (event.key === "ArrowRight") skip(); else if (event.key.toLowerCase() === "u") undo(); });
+    document.addEventListener("keydown", (event) => { if (["INPUT","SELECT","BUTTON"].includes(document.activeElement.tagName) || document.querySelector("dialog[open]")) return; if (event.key.toLowerCase() === "y") decide("retain"); else if (event.key === "?") $("uncertainButton").click(); else if (event.key.toLowerCase() === "n") $("excludeButton").click(); else if (event.key.toLowerCase() === "b") $("blockButton").click(); else if (event.key === "ArrowRight") skip(); else if (event.key.toLowerCase() === "u") undo(); });
 
     (async () => { try { const data = await api("/api/sources"); data.sources.forEach((source) => { const option = document.createElement("option"); option.value = source.source_id; option.textContent = `${source.position}. ${source.label} (${source.atoms})`; option.disabled = !source.available; $("sourceFilter").append(option); }); await loadState(); setInterval(() => { if (!ui.atom && !ui.busy) loadState(); }, 5000); } catch (error) { toast(error.message); } })();
   </script>
@@ -1234,6 +1256,7 @@ def create_web_server(
                         body.get("decision"),
                         scope=scope,
                         exclusion_reason=body.get("exclusion_reason"),
+                        review_route=body.get("review_route"),
                     )
                     last_undo["signature"] = None
                     self._json(web_payload(source_id))
@@ -1375,18 +1398,31 @@ def _choose_exclusion_reason() -> str | None:
             return None
 
 
-def _choose_block_decision(count: int) -> tuple[str, str | None] | None:
+def _choose_review_route() -> str | None:
+    print("\nUNCERTAIN ROUTE: [G] General review  [R] Rewrite list  [Esc] Cancel")
+    while True:
+        key = _read_key()
+        if key == "g":
+            return "general_review"
+        if key == "r":
+            return "rewrite_list"
+        if key == "\x1b":
+            return None
+
+
+def _choose_block_decision(count: int) -> tuple[str, str | None, str | None] | None:
     print(f"\nApply one decision to all {count} atoms in this displayed block?")
     print("[Y] Retain  [N] Exclude  [?] Uncertain  [Esc] Cancel")
     while True:
         key = _read_key()
         if key == "y":
-            return "retain", None
+            return "retain", None, None
         if key == "?":
-            return "uncertain", None
+            route = _choose_review_route()
+            return ("uncertain", None, route) if route else None
         if key == "n":
             reason = _choose_exclusion_reason()
-            return ("exclude", reason) if reason else None
+            return ("exclude", reason, None) if reason else None
         if key == "\x1b":
             return None
 
@@ -1421,14 +1457,24 @@ def interactive_review(corpus: Corpus, store: DecisionStore, *, source_id: str |
             members = corpus.block_members[atom.block_key]
             selected = _choose_block_decision(len(members))
             if selected:
-                decision, reason = selected
+                decision, reason, review_route = selected
                 history.append(
-                    store.apply(members, decision, scope="block", exclusion_reason=reason)
+                    store.apply(
+                        members,
+                        decision,
+                        scope="block",
+                        exclusion_reason=reason,
+                        review_route=review_route,
+                    )
                 )
         elif key == "y":
             history.append(store.apply((atom,), "retain"))
         elif key == "?":
-            history.append(store.apply((atom,), "uncertain"))
+            review_route = _choose_review_route()
+            if review_route:
+                history.append(
+                    store.apply((atom,), "uncertain", review_route=review_route)
+                )
         elif key == "n":
             reason = _choose_exclusion_reason()
             if reason:

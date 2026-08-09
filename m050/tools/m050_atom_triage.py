@@ -839,6 +839,7 @@ WEB_PAGE = r"""<!doctype html>
     .controls-inner { max-width: 732px; margin: 0 auto; display: grid; gap: 8px; }
     .primary { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
     .secondary { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 8px; }
+    .control-footnote { min-height: 24px; padding-top: 4px; color: var(--muted); font-size: .62rem; line-height: 1; text-align: center; }
     .action { min-height: 54px; border: 0; border-radius: 14px; color: white; font-weight: 800; cursor: pointer; }
     .action:active { transform: scale(.98); }
     .retain { background: var(--retain); }
@@ -899,6 +900,7 @@ WEB_PAGE = r"""<!doctype html>
   <nav class="controls" aria-label="Triage decisions"><div class="controls-inner">
     <div class="primary"><button class="action retain" data-decision="retain">Retain</button><button class="action exclude" id="excludeButton">Exclude</button><button class="action uncertain" id="uncertainButton">Uncertain</button></div>
     <div class="secondary"><button class="action quiet" id="blockButton">Whole block</button><button class="action quiet" id="skipButton">Skip</button><button class="action quiet" id="undoButton">Undo</button></div>
+    <div class="control-footnote">Decisions save automatically</div>
   </div></nav>
 
   <dialog id="reasonDialog"><div class="dialog-body"><h2>Why exclude?</h2><p id="reasonScope">This reason is authorial routing, not deletion of evidence.</p><div class="reason-grid">

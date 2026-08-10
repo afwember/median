@@ -1,0 +1,221 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid601\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid701\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid8}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Here is a red-team analysis formatted in Markdown. It focuses on conceptual gaps, operational edge cases, and systemic risks without over-complicating the technical architecture.\
+\pard\pardeftab720\sa321\partightenfactor0
+
+\f1\b\fs48 \cf0 MEDIAN v0.5.0 Hardened Compile Process: Red-Team & Conceptual Gap Analysis\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\fs24 \cf0 Target Document:
+\f0\b0  MEDIAN v0.5.0 Hardened Compile Process Manual (2026-08-02)\
+
+\f1\b Review Focus:
+\f0\b0  Conceptual logic gaps, operational failure modes, and systemic edge cases.\
+
+\f1\b Goal:
+\f0\b0  Identify architectural vulnerabilities for feed-forward iteration into the core specification.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 Executive Summary\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b0\fs24 \cf0 The v0.5.0 Operating Manual is a robust, well-considered architecture designed to prevent semantic drift, hallucinations, and over-indexing on conversational context. Its strict separation of concerns (Layers E $\\rightarrow$ M $\\rightarrow$ R $\\rightarrow$ C) is a massive step forward.\
+However, the framework introduces 
+\f1\b high operational rigidity
+\f0\b0 , potential 
+\f1\b human-gating bottlenecks
+\f0\b0 , and 
+\f1\b implicit single-points-of-failure
+\f0\b0  in its reconciliation and mapping steps.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 1. Stage 0\'963 (Extraction & Evidence) Edge Cases\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Gap 1.1: Context-Free Extraction Failure (The "Atomicity Paradox")\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls1\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Vulnerability:
+\f0\b0  Stage 2 prohibits passing prior-document atoms or adjacent chunk context to prevent source cross-contamination.\
+\ls1\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Risk:
+\f0\b0  Heavily contextual sources (e.g., list items under a complex conditional heading, or pronouns referencing a subject defined 3 paragraphs earlier) will produce 
+\f1\b orphaned or semantically incomplete evidence atoms
+\f0\b0  in Layer E.\
+\ls1\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Mitigation:
+\f0\b0  Ensure Layer E structural chunking explicitly pre-pends 
+\f2\i parent block headers
+\f0\i0  (e.g., Heading 1 > Subheading 2) to the input text of every chunk, even if adjacent text is excluded.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Gap 1.2: Over-Reliance on Deterministic Quotation Matching\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls2\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Vulnerability:
+\f0\b0  Stage 3 requires exact string-matching for quotations.\
+\ls2\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Risk:
+\f0\b0  Minor model formatting artifacts (e.g., converting non-breaking spaces to standard spaces, trailing smart-quotes vs. straight quotes, or normalizing hyphens) will trigger deterministic rejection of perfectly valid extraction responses, needlessly spiking API retry costs.\
+\ls2\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Mitigation:
+\f0\b0  Implement explicit, deterministic 
+\f1\b unicode normalization rules
+\f0\b0  (e.g., NFC, whitespace collapsing, quote-stripping) 
+\f2\i prior
+\f0\i0  to exact string comparison.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 2. Stage 4\'965 (Mapping & Reconciliation) Gaps\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Gap 2.1: Semantic Drift in Controlled Vocabulary Updates\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls3\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Vulnerability:
+\f0\b0  Stage 4 creates the MSID Controlled Vocabulary 
+\f2\i from
+\f0\i0  the MSID Grammar evidence.\
+\ls3\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Risk:
+\f0\b0  What happens when Stage 5 (Reconciliation) or a Human Ruling introduces a 
+\f2\i new
+\f0\i0  game concept or terminology that was absent from the original MSID Grammar source? If Layer M restricts mapping strictly to the frozen MSID vocabulary, valid new mechanics become trapped as invalid or human_required.\
+\ls3\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Mitigation:
+\f0\b0  Define a explicit protocol for 
+\f1\b MSID Vocabulary Versioning & Evolution
+\f0\b0  (e.g., MSID v1.1 release trigger) when Reconciliation proves the existing ontology is insufficient.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Gap 2.2: Undefined Priority Rules for Cross-Source Conflicts\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Vulnerability:
+\f0\b0  Stage 5 handles conflicts between sources (e.g., Source A vs. Source B) but relies heavily on "adjudicated authority" without a defined fallback hierarchy when human rulings are silent.\
+\ls4\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Risk:
+\f0\b0  A task or model at Stage 5 will hit an uncontrolled loop or default to arbitrary choice if two non-constitutional sources directly contradict each other and no explicit precedence rule exists.\
+\ls4\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Mitigation:
+\f0\b0  Establish a deterministic 
+\f1\b Source Hierarchy Default
+\f0\b0  (e.g., Human Ruling > Constitutional Doc > Core Game Doc > Subsidiary > Bridge Doc) to handle tie-breaking when human intervention is unavailable.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 3. Stage 6 (Baseline Survivorship & Gap Audit) Vulnerabilities\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Gap 3.1: The "Silent Evolution" False Positive\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls5\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Vulnerability:
+\f0\b0  Section 4.4 and Stage 6 state that if a v0.4.6 concept is missing from v0.5.0, it cannot be assumed to be retired and must trigger a gap/ruling.\
+\ls5\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Risk:
+\f0\b0  Modernized design systems frequently rename or merge concepts (e.g., "Stamina" becoming "Energy"). If v0.4.6 "Stamina" is absent, Stage 6 may flag it as a critical gap, even if its mechanics were entirely subsumed under a new system in v0.5.0.\
+\ls5\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Mitigation:
+\f0\b0  Introduce an explicit 
+\f1\b Concept Alias / Merged Entity Ledger
+\f0\b0  in Layer M/R so that baseline audits check for 
+\f2\i semantic capability survivorship
+\f0\i0 , not just lexical key matching.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 4. Pipeline & Operational Bottlenecks\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Gap 4.1: The Human Bottleneck ("Human-in-the-Loop" Stagnation)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls6\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Vulnerability:
+\f0\b0  Human approval is strictly required for calibration, work orders, mapping exceptions, cost caps, and unresolved conflicts.\
+\ls6\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Risk:
+\f0\b0  The architecture risks total paralysis if human rulings accumulate faster than they can be processed. There is no fallback state for "Deferred Non-Critical Rulings."\
+\ls6\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Mitigation:
+\f0\b0  Classify conflicts into 
+\f1\b Blocker
+\f0\b0  (halts build) vs. 
+\f1\b Non-Blocker
+\f0\b0  (builds with an explicit [UNRESOLVED: ID] flag in compiled Layer C output).\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f1\b\fs28 \cf0 Gap 4.2: Migration Risk of Legacy Extractions (Gate 3)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls7\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Vulnerability:
+\f0\b0  Gate 3 reuses 913 legacy records from earlier extractions while stripping away their old MSID mappings and authority decisions.\
+\ls7\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The Risk:
+\f0\b0  Legacy extractions were produced under old chunking boundaries that may not align with Gate 5's new block-ID system. Retrofitting block IDs and hashes onto 913 historical records may introduce orphaned records that fail deterministic verification down the line.\
+\ls7\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Mitigation:
+\f0\b0  Require a dedicated 
+\f1\b Legacy Reconciliation Validation Script
+\f0\b0  in Gate 5 to explicitly test legacy record integrity before merging into active Layer E.\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f1\b\fs36 \cf0 Summary of Suggested Revisions for Authoring Model\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls8\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Define Unicode Normalization
+\f0\b0  for exact-string matching rules in Stage 3.\
+\ls8\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Add Parent-Context Lineage
+\f0\b0  to chunk definitions in Stage 1 to prevent orphaned quote extractions.\
+\ls8\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Establish a Non-Blocking Conflict State
+\f0\b0  in Compilation (Stage 8) so builds can complete with marked placeholders.\
+\ls8\ilvl0
+\f1\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Clarify MSID Vocabulary Evolution Rules
+\f0\b0  when new terms bypass old ontology specs.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+}

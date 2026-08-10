@@ -265,9 +265,7 @@ sources:
     timing: after_compiled_prose_and_book_structure_stabilize
     note: >-
       Populate the existing plan in place for narrative inserts, infographics,
-      diagrams, partial-page illustration, and full-page artwork. Use the
-      canonical 300 art manifest to assess carryover, revision, reference-only,
-      and retirement dispositions.
+      diagrams, partial-page illustration, and full-page artwork.
 
   - source_id: M050-SRC-047-DEVELOPMENT-RULINGS-001
     path: m050/docs/v0.5/provenance/M050_v0_4_7_Development_Rulings_Ledger_BSA_01_to_11A_Checkpoint_2026_07_30_MEDIANv0_5_0.md

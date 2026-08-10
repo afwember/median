@@ -33,8 +33,10 @@ m050/tools/                Active extraction entrypoint, guard, and deterministi
 m051/                      Post-v0.5.0 development; excluded from the current compile
 
 100 canon/ – 600 archive/  Earlier project organization and sourcebook-production history
-300 art/                   Splash image plus thumbnail-backed external artwork manifest
 ```
+
+Artwork development, manifests, and thumbnails now live in the separate
+`median-support` Studio repository.
 
 For recovery after a restart, context compaction, or task handoff, start with
 root `AGENTS.md`, then read the canonical compile state, the canonical source

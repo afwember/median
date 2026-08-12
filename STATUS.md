@@ -1,13 +1,13 @@
 # MEDIAN COMPILE — v0.5.0
 
-August 11, 2026 at 9:04:02 PM EDT<br>
+August 11, 2026 at 9:10:46 PM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
 **STATUS:** ACTIVE — deterministic authorial triage<br>
 **PHASE:** Authorial triage — reconciliation eligibility<br>
 **SOURCE:** 18 accepted pre-reconciliation sources; 6,550 atoms<br>
-**PROGRESS:** 1,011 / 6,550 authorial decisions recorded<br>
+**PROGRESS:** 1,511 / 6,550 authorial decisions recorded<br>
 **NOW:** Mobile authorial triage writes a noncanonical working record outside Git while accepted evidence remains read-only<br>
 **NEXT:** Complete the current source in working triage, then checkpoint it before the next source opens<br>
 **PROVIDER SPEND (INACTIVE):** $0.72

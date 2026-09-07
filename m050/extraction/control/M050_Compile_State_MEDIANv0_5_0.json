@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "AUTHORIAL_REWRITE_ACTIVE",
-  "updated": "2026-09-06T23:19:46-04:00",
+  "updated": "2026-09-07T15:10:09-04:00",
   "execution_state": "AUTHORIAL_REWRITE_ACTIVE",
   "corpus": {
     "registered_sources": 24,
@@ -172,11 +172,11 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "September 6, 2026 at 11:19:46 PM EDT",
+    "updated_human": "September 7, 2026 at 3:10:09 PM EDT",
     "status": "ACTIVE — deterministic authorial rewrite",
     "phase": "Authorial rewrite — source-grounded replacement claims",
     "source": "98 rewrite-list atoms across the completed pre-reconciliation corpus",
-    "progress": "5 / 98 authorial rewrite dispositions recorded",
+    "progress": "39 / 98 authorial rewrite dispositions recorded",
     "now": "The rewrite interface may record authorially accepted replacements outside Git",
     "next": "Complete the current rewrite source, then checkpoint it before the next source opens"
   },

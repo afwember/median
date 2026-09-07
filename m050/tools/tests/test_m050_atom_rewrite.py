@@ -119,6 +119,7 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
         assert status == 200
         assert headers["X-Content-Type-Options"] == "nosniff"
         assert b"Authorial Rewrite" in page
+        assert b'$("replacement").value=a.normalized_claim' in page
         _, _, raw = _request(f"{base}/api/state")
         state = json.loads(raw)
         key = state["atom"]["atom_key"]

@@ -1,4 +1,3 @@
-import base64
 import importlib.util
 import json
 from pathlib import Path
@@ -96,11 +95,8 @@ def test_working_store_preserves_canonical_and_checkpoints_one_source(tmp_path, 
     assert result["next_source_id"] != first_source
 
 
-def _request(url, *, pin=None, body=None, origin=None):
+def _request(url, *, body=None, origin=None):
     headers = {}
-    if pin:
-        token = base64.b64encode(f"asa:{pin}".encode()).decode()
-        headers["Authorization"] = f"Basic {token}"
     data = None
     if body is not None:
         headers["Content-Type"] = "application/json"
@@ -114,31 +110,26 @@ def _request(url, *, pin=None, body=None, origin=None):
 
 def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
     store = rewrite.RewriteStore(tmp_path / "working.jsonl", corpus)
-    server = rewrite.create_web_server(corpus, store, host="127.0.0.1", port=0, pin="2468")
+    server = rewrite.create_web_server(corpus, store, host="127.0.0.1", port=0)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     base = f"http://127.0.0.1:{server.server_address[1]}"
     try:
-        with pytest.raises(HTTPError) as unauthorized:
-            _request(f"{base}/api/state")
-        assert unauthorized.value.code == 401
-        status, headers, page = _request(f"{base}/", pin="2468")
+        status, headers, page = _request(f"{base}/")
         assert status == 200
         assert headers["X-Content-Type-Options"] == "nosniff"
         assert b"Authorial Rewrite" in page
-        _, _, raw = _request(f"{base}/api/state", pin="2468")
+        _, _, raw = _request(f"{base}/api/state")
         state = json.loads(raw)
         key = state["atom"]["atom_key"]
         _, _, raw = _request(
             f"{base}/api/rewrite",
-            pin="2468",
             body={"source_id": state["atom"]["source_id"], "atom_key": key, "replacement_claim": "A replacement accepted by the author."},
         )
         advanced = json.loads(raw)
         assert advanced["stats"]["rewritten"] == 1
         _, _, raw = _request(
             f"{base}/api/undo",
-            pin="2468",
             body={"source_id": state["atom"]["source_id"], "atom_key": advanced["atom"]["atom_key"], "visible_atom_key": advanced["atom"]["atom_key"]},
         )
         undone = json.loads(raw)
@@ -146,7 +137,7 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
         assert undone["stats"]["rewritten"] == 0
         with pytest.raises(HTTPError) as cross_origin:
             _request(
-                f"{base}/api/rewrite", pin="2468", origin="https://example.com",
+                f"{base}/api/rewrite", origin="https://example.com",
                 body={"source_id": state["atom"]["source_id"], "atom_key": key, "replacement_claim": "Rejected cross-origin replacement."},
             )
         assert cross_origin.value.code == 403
@@ -154,14 +145,13 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
         server.shutdown(); server.server_close(); thread.join(timeout=3)
 
 
-def test_network_boundary_requires_exact_tailscale_and_pin(tmp_path, rewrite, corpus):
+def test_network_boundary_requires_loopback_or_exact_tailscale(tmp_path, rewrite, corpus):
     store = rewrite.RewriteStore(tmp_path / "working.jsonl", corpus)
     with pytest.raises(rewrite.TriageError, match="wildcard"):
-        rewrite.create_web_server(corpus, store, host="0.0.0.0", port=0, pin="2468")
+        rewrite.create_web_server(corpus, store, host="0.0.0.0", port=0)
     with pytest.raises(rewrite.TriageError, match="loopback or an exact Tailscale"):
-        rewrite.create_web_server(corpus, store, host="192.168.1.8", port=0, pin="2468")
-    with pytest.raises(rewrite.TriageError, match="requires --pin"):
-        rewrite.create_web_server(corpus, store, host="100.122.50.97", port=0)
+        rewrite.create_web_server(corpus, store, host="192.168.1.8", port=0)
+    assert rewrite._web_host_allowed("100.122.50.97")
 
 
 def test_repository_state_authorizes_external_rewrite_only(rewrite, corpus):

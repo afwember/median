@@ -10,10 +10,8 @@ it never mutates the accepted extraction evidence it replaces downstream.
 from __future__ import annotations
 
 import argparse
-import base64
 from datetime import datetime, timezone
 import hashlib
-import hmac
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import os
@@ -388,13 +386,11 @@ $("save").onclick=()=>post("/api/rewrite",{replacement_claim:$("replacement")?.v
 </script></body></html>"""
 
 
-def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_path: Path | None = None, repo_root: Path | None = None, host: str = "127.0.0.1", port: int = 8766, pin: str | None = None) -> HTTPServer:
+def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_path: Path | None = None, repo_root: Path | None = None, host: str = "127.0.0.1", port: int = 8766) -> HTTPServer:
     if host in {"0.0.0.0", "::"}:
         raise TriageError("wildcard web binding is prohibited; use the exact Tailscale address")
     if not _web_host_allowed(host):
         raise TriageError("web access requires loopback or an exact Tailscale address")
-    if not (host in {"localhost", "127.0.0.1", "::1"}) and not pin:
-        raise TriageError("Tailscale web access requires --pin")
     index_by_key = {atom.key: index for index, atom in enumerate(corpus.atoms)}
     last_undo = {"signature": None}
 
@@ -431,17 +427,6 @@ def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_p
         server_version = "MEDIANRewrite/0.1"
         def log_message(self, format: str, *args: object) -> None:
             sys.stderr.write(f"REWRITE WEB: {format % args}\n")
-        def authorized(self) -> bool:
-            if pin is None: return True
-            header = self.headers.get("Authorization", "")
-            if not header.startswith("Basic "): return False
-            try:
-                _user, supplied = base64.b64decode(header[6:], validate=True).decode().split(":", 1)
-            except (ValueError, UnicodeDecodeError): return False
-            return hmac.compare_digest(supplied, pin)
-        def require_auth(self) -> bool:
-            if self.authorized(): return True
-            self.send_response(401); self.send_header("WWW-Authenticate", 'Basic realm="MEDIAN Rewrite"'); self.send_header("Content-Length", "0"); self.end_headers(); return False
         def send_json(self, value: dict, status: int = 200) -> None:
             body = json.dumps(value, ensure_ascii=False).encode(); self.send_response(status); self.send_header("Content-Type", "application/json; charset=utf-8"); self.send_header("Cache-Control", "no-store"); self.send_header("X-Content-Type-Options", "nosniff"); self.send_header("Content-Length", str(len(body))); self.end_headers(); self.wfile.write(body)
         def body(self) -> dict:
@@ -457,7 +442,6 @@ def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_p
             if not isinstance(value, str) or value not in corpus.source_labels: raise TriageError("unknown source filter")
             return value
         def do_GET(self) -> None:
-            if not self.require_auth(): return
             parsed = urlparse(self.path)
             try:
                 if parsed.path == "/":
@@ -470,7 +454,6 @@ def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_p
                 else: self.send_json({"error": "not found"}, 404)
             except TriageError as exc: self.send_json({"error": str(exc)}, 400)
         def do_POST(self) -> None:
-            if not self.require_auth(): return
             origin = self.headers.get("Origin")
             if origin and urlparse(origin).netloc != self.headers.get("Host"): self.send_json({"error": "cross-origin write rejected"}, 403); return
             try:
@@ -506,7 +489,6 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--checkpoint-working", action="store_true")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8766)
-    parser.add_argument("--pin")
     args = parser.parse_args(argv)
     repo_root = args.repo_root.resolve(); canonical_path = repo_root / DEFAULT_REWRITES
     working_path = (args.rewrites or default_working_rewrites(repo_root)).resolve()
@@ -522,7 +504,7 @@ def main(argv: list[str] | None = None) -> int:
             print(json.dumps(_atom_payload(corpus, store, index), indent=2, ensure_ascii=False)); return 0
         _require_authority(repo_root, corpus)
         if not args.serve: raise TriageError("use --serve, --stats, --preview, or --checkpoint-working")
-        server = create_web_server(corpus, store, canonical_path=canonical_path, repo_root=repo_root, host=args.host, port=args.port, pin=args.pin)
+        server = create_web_server(corpus, store, canonical_path=canonical_path, repo_root=repo_root, host=args.host, port=args.port)
         print(f"MEDIAN rewrite interface available at http://{server.server_address[0]}:{server.server_address[1]}/")
         try: server.serve_forever()
         except KeyboardInterrupt: pass

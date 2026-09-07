@@ -208,9 +208,9 @@ phase structure, stop the interface and checkpoint its completed source.
 - Process rewrite-list atoms in canonical source and atom order. Resume at the
   first unwritten atom in the one source released by the latest canonical
   checkpoint.
-- The interface may bind without a password only to loopback. An exact
-  Tailscale IPv4 address requires a PIN. Wildcard, LAN, public bindings, and
-  Tailscale Funnel are prohibited.
+- The interface may bind without another password only to loopback or an exact
+  Tailscale IPv4 address. Wildcard, LAN, public bindings, and Tailscale Funnel
+  are prohibited.
 - Routine rewrites update only the external editor buffer. They require no
   per-rewrite STATUS refresh, commit, agent narration, or model review.
 - Completing all rewrite-list atoms in a source is a hard checkpoint boundary.

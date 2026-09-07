@@ -48,6 +48,7 @@ def test_rewrite_is_trimmed_bound_and_authorially_accepted(tmp_path, rewrite, co
     store = rewrite.RewriteStore(path, corpus)
     store.apply(atom.key, "  A clearer source-grounded replacement.  ")
     record = rewrite.RewriteStore(path, corpus).rewrites[atom.key]
+    assert record["resolution"] == "rewrite"
     assert record["replacement_claim"] == "A clearer source-grounded replacement."
     assert record["authorially_accepted"] is True
     assert record["candidate_sha256"] == atom.candidate_sha256
@@ -55,13 +56,15 @@ def test_rewrite_is_trimmed_bound_and_authorially_accepted(tmp_path, rewrite, co
     assert record["original_claim_sha256"] == rewrite._text_sha256(atom.normalized_claim)
 
 
-def test_empty_or_unchanged_rewrite_is_rejected(tmp_path, rewrite, corpus):
+def test_empty_claim_is_rejected_and_unchanged_claim_is_accepted(tmp_path, rewrite, corpus):
     atom = corpus.atoms[0]
     store = rewrite.RewriteStore(tmp_path / "rewrites.jsonl", corpus)
     with pytest.raises(rewrite.TriageError, match="nonempty"):
         store.apply(atom.key, "  ")
-    with pytest.raises(rewrite.TriageError, match="must revise"):
-        store.apply(atom.key, atom.normalized_claim)
+    store.apply(atom.key, atom.normalized_claim)
+    record = rewrite.RewriteStore(store.path, corpus).rewrites[atom.key]
+    assert record["resolution"] == "accept"
+    assert record["replacement_claim"] == atom.normalized_claim
 
 
 def test_exclusion_uses_existing_authorial_reason(tmp_path, rewrite, corpus):
@@ -132,6 +135,7 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
         assert status == 200
         assert headers["X-Content-Type-Options"] == "nosniff"
         assert b"Authorial Rewrite" in page
+        assert b">Accept claim</button>" in page
         assert b'id="exclude"' in page
         assert b'$("replacement").value=a.normalized_claim' in page
         _, _, raw = _request(f"{base}/api/state")
@@ -143,6 +147,7 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
         )
         advanced = json.loads(raw)
         assert advanced["stats"]["rewritten"] == 1
+        assert advanced["stats"]["accepted"] == 1
         _, _, raw = _request(
             f"{base}/api/undo",
             body={"source_id": state["atom"]["source_id"], "atom_key": advanced["atom"]["atom_key"], "visible_atom_key": advanced["atom"]["atom_key"]},

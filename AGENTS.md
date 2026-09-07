@@ -189,15 +189,16 @@ phase structure, stop the interface and checkpoint its completed source.
 - Accepted extraction candidates remain immutable evidence. Every candidate is
   verified against its acceptance-report SHA-256 before use.
 - `m050/reconciliation/rewrite/M050_Authorial_Rewrites_MEDIANv0_5_0.jsonl`
-  is the sole canonical rewrite record. It contains at most one current rewrite
-  per selected atom; Git is its history.
-- Every rewrite binds the triage-record hash, source ID, atom ID, source block,
+  is the sole canonical rewrite-disposition record. It contains at most one
+  current disposition per selected atom; Git is its history.
+- Every disposition binds the triage-record hash, source ID, atom ID, source block,
   accepted-candidate hash, and original normalized-claim hash. Binding drift is
   a hard failure.
-- A submitted nonempty replacement is authorially accepted. It becomes the
-  later reconciliation input in place of the uncertain normalized claim; the
-  immutable original remains evidence and must not also enter reconciliation as
-  a parallel claim. `Exclude` records the existing
+- Submitting the unchanged normalized claim records `accept`; submitting edited
+  text records `rewrite`. Either is authorially accepted and becomes the later
+  reconciliation input in place of the uncertain atom. The immutable original
+  remains evidence and must not also enter reconciliation as a parallel claim.
+  `Exclude` records the existing
   `other_authorial_exclusion` reason, preserves the same immutable evidence, and
   removes that atom from later reconciliation.
 - The out-of-repository working file is an editor buffer, not a second
@@ -213,7 +214,7 @@ phase structure, stop the interface and checkpoint its completed source.
 - The interface may bind without another password only to loopback or an exact
   Tailscale IPv4 address. Wildcard, LAN, public bindings, and Tailscale Funnel
   are prohibited.
-- Routine rewrites update only the external editor buffer. They require no
+- Routine dispositions update only the external editor buffer. They require no
   per-rewrite STATUS refresh, commit, agent narration, or model review.
 - Completing all rewrite-list atoms in a source is a hard checkpoint boundary.
   The next source remains closed until the Supervisor imports that source,
@@ -224,9 +225,9 @@ phase structure, stop the interface and checkpoint its completed source.
   rewrites; input-count disagreement; unavailable canonical records; or an
   authorial need the single replacement-claim form cannot express. Do not add a
   category or workflow automatically; submit the smallest review question.
-- Phase completion is exactly one canonical checkpointed rewrite or exclusion
-  disposition for each of the 98 bound atoms. Then halt for the separately
-  authorized reconciliation transition.
+- Phase completion is exactly one canonical checkpointed accept, rewrite, or
+  exclusion disposition for each of the 98 bound atoms. Then halt for the
+  separately authorized reconciliation transition.
 - `m051/`, the four later or conditional sources, Google Sheets, provider calls,
   model semantic acceptance, mapping, reconciliation, canonization, and
   compiled prose remain prohibited.

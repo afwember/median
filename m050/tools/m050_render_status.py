@@ -14,6 +14,7 @@ from zoneinfo import ZoneInfo
 
 from m050_guard import STATE, STATUS, expected_status
 from m050_atom_triage import DEFAULT_DECISIONS, DecisionStore, load_corpus
+from m050_atom_rewrite import DEFAULT_REWRITES, RewriteCorpus, RewriteStore
 
 
 EASTERN = ZoneInfo("America/New_York")
@@ -71,6 +72,13 @@ def render_status(
         store = DecisionStore(repo_root / DEFAULT_DECISIONS, corpus)
         state.setdefault("dashboard", {})["progress"] = (
             f"{store.counts()['decided']:,} / {len(corpus.atoms):,} authorial decisions recorded"
+        )
+    elif state.get("status") == "AUTHORIAL_REWRITE_ACTIVE":
+        repo_root = state_path.resolve().parents[3]
+        corpus = RewriteCorpus(repo_root)
+        store = RewriteStore(repo_root / DEFAULT_REWRITES, corpus)
+        state.setdefault("dashboard", {})["progress"] = (
+            f"{store.counts()['rewritten']:,} / {len(corpus.atoms):,} authorial rewrites recorded"
         )
 
     exact = _rounded_timestamp(now)

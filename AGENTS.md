@@ -126,6 +126,8 @@ Git is the history.
   controls source order. Completed progress and the next outstanding source are
   derived from canonical compile state rather than duplicated in the order.
 - `m050/tools/m050_guard.py` is the sole active repository guard.
+- `m050/reconciliation/rewrite/M050_Authorial_Rewrites_MEDIANv0_5_0.jsonl`
+  is the sole canonical authorial rewrite record.
 - Historical checkpoints, bootstrap packets, active-index versions, execution
   standards, authority policies, and versioned guard wrappers are retired.
   Do not recreate those families.
@@ -163,98 +165,70 @@ No separate successor packet is required. These canonical files are the handoff.
   active-profile work.
 - A bounded repository task authorizes only its stated change.
 
-## Active phase profile — authorial triage
+## Active phase profile — authorial rewrite
 
-This profile governs deterministic authorial triage of the immutable accepted
-atoms from the 18 completed pre-reconciliation sources. Its purpose is to
-reduce later model work by recording which atoms remain eligible for active
-reconciliation. It does not perform semantic acceptance, mapping,
-reconciliation, canonization, or compiled prose.
+This profile governs source-grounded authorial replacement of the 98 immutable
+accepted atoms whose completed canonical triage decision is `uncertain` with
+route `rewrite_list`. It supplies accepted authorial expression for later
+reconciliation. It does not alter extraction evidence, perform cross-atom
+reconciliation, resolve other gaps, canonize claims, or produce compiled prose.
 
-The phase has no provider calls, model spend, prompts, schemas, or calibration.
-The author works through `m050/tools/m050_atom_triage.py`. The interface reads
-immutable repository evidence but writes its noncanonical working decisions
-only under `Documents/Codex/median-support/triage-working/`; it holds no
-repository-write authority. The Supervisor may therefore perform unrelated
-bounded repository work while triage continues. Before changing the triage
-tool, its inputs, decision form, controls, or phase structure, stop the
-interface and checkpoint its completed source.
+The phase has no provider calls, model spend, prompts, or calibration. The
+author works through `m050/tools/m050_atom_rewrite.py`. The interface reads
+immutable repository evidence and completed canonical triage, but writes its
+noncanonical editor buffer only under
+`Documents/Codex/median-support/rewrite-working/`; it holds no repository-write
+authority. Before changing the rewrite tool, inputs, record form, controls, or
+phase structure, stop the interface and checkpoint its completed source.
 
-### Canonical input and decision record
+### Canonical input and rewrite record
 
-- Accepted extraction candidates remain immutable evidence. The triage tool
-  verifies every candidate against its acceptance-report SHA-256 before use.
-- `m050/reconciliation/triage/M050_Authorial_Triage_Decisions_MEDIANv0_5_0.jsonl`
-  is the sole canonical triage decision record. It contains at most one current
-  decision per accepted atom; Git is its history.
-- The out-of-repository working decision file is an editor buffer, not a second
-  authority. On first use it is initialized from the canonical record. It must
-  preserve every canonical decision exactly and may add decisions only for the
-  one currently released source.
-- Every decision binds the source ID, atom ID, source block, and accepted
-  candidate hash. Binding drift is a hard failure.
-- The tool writes the complete working view atomically. It may undo the latest
-  uncheckpointed atom or whole-block event without creating an event-log
-  family. The deterministic checkpoint command replaces the canonical record
-  only after validating the completed source and every binding.
-- Source text, normalized claims, sibling atoms, and provenance are read-only
-  views. Triage never rewrites accepted evidence.
-
-### Authorial decisions
-
-- `retain` means eligible for later reconciliation. It does not mean the atom
-  is true, current, nonduplicative, or accepted into final canon.
-- `exclude` removes the atom from active v0.5.0 reconciliation while preserving
-  its immutable evidence. It requires exactly one existing reason:
-  `obsolete_or_superseded`, `administrative_or_provenance_only`,
-  `incorrect_atomization`, `outside_v0_5_scope`, `true_duplicate`, or
-  `other_authorial_exclusion`. Use `incorrect_atomization` when the extracted
-  atom is not a coherent standalone claim or materially misstates its bound
-  source because of splitting or normalization; it does not declare the
-  underlying source content false.
-- `uncertain` reserves the atom for explicit later model-assisted or authorial
-  review. It requires one existing route: `general_review` or `rewrite_list`.
-  `rewrite_list` records that the immutable atom or its source-grounded claim
-  needs revised expression during reconciliation; it does not edit accepted
-  evidence or itself supply replacement canon. Uncertain is not an implicit
-  retain or exclude.
-- A whole-block decision applies one reversible authorial event to every atom
-  in the displayed source block. Skip records nothing.
-- Editorial or semantic grammar that governs the authoritative presentation of
-  the specification remains reconciliation-eligible even when it is not a game
-  mechanic. Administrative/provenance-only is for project-history or process
-  material, not normative specification rules.
+- The completed canonical triage record is immutable phase input. Exactly its
+  98 `rewrite_list` atoms enter this phase; retained atoms, excluded atoms, and
+  any future source do not.
+- Accepted extraction candidates remain immutable evidence. Every candidate is
+  verified against its acceptance-report SHA-256 before use.
+- `m050/reconciliation/rewrite/M050_Authorial_Rewrites_MEDIANv0_5_0.jsonl`
+  is the sole canonical rewrite record. It contains at most one current rewrite
+  per selected atom; Git is its history.
+- Every rewrite binds the triage-record hash, source ID, atom ID, source block,
+  accepted-candidate hash, and original normalized-claim hash. Binding drift is
+  a hard failure.
+- A submitted nonempty replacement is authorially accepted. It becomes the
+  later reconciliation input in place of the uncertain normalized claim; the
+  immutable original remains evidence and must not also enter reconciliation as
+  a parallel claim.
+- The out-of-repository working file is an editor buffer, not a second
+  authority. It preserves every canonical rewrite exactly, writes atomically,
+  and may add rewrites only for the one currently released source. Undo removes
+  only the latest uncheckpointed rewrite in that source. Skip records nothing.
 
 ### Execution and boundaries
 
-- Process atoms in canonical source order. Resume at the first undecided atom
-  in the one source released by the latest canonical checkpoint.
-- The mobile interface may bind without another password only to loopback or an
-  exact Tailscale IPv4 address. Wildcard, LAN, and public bindings are
-  prohibited. Tailscale Funnel is prohibited.
-- Routine decisions update only the external working record. They do not dirty
-  either Git repository and require no per-decision STATUS refresh, commit,
-  agent narration, or model review.
-- Completing a source is a hard checkpoint boundary. The interface must not
-  release the next source until the Supervisor imports the completed working
-  source, refreshes canonical state and STATUS, runs the existing guard,
-  commits and pushes, and confirms a clean synchronized worktree. The open
-  interface polls canonical state and releases the next source automatically
-  after that checkpoint; it does not require a Sparkup.
-- An ordinary unrelated Supervisor repository task does not require a triage
-  checkpoint. A checkpoint is required before a new triage source and before
-  any change to the triage system or its bound evidence.
-- Halt for candidate/hash drift, malformed or duplicate decisions, corpus
-  coverage disagreement, an unavailable canonical record, or a requested
-  decision category the current form cannot express. Do not add a category or
-  workflow in response; submit the smallest review question.
-- Phase completion is exactly one canonical checkpointed decision for each of
-  the 6,550 accepted atoms currently bound to this phase. The four later or
-  conditional sources remain outside this triage input set unless a later phase
-  transition changes their canonical disposition.
-- Google Sheets, provider calls, semantic acceptance, mapping, reconciliation,
-  canonization, and compiled prose remain prohibited.
-- A normal triage operation has no process delta.
+- Process rewrite-list atoms in canonical source and atom order. Resume at the
+  first unwritten atom in the one source released by the latest canonical
+  checkpoint.
+- The interface may bind without a password only to loopback. An exact
+  Tailscale IPv4 address requires a PIN. Wildcard, LAN, public bindings, and
+  Tailscale Funnel are prohibited.
+- Routine rewrites update only the external editor buffer. They require no
+  per-rewrite STATUS refresh, commit, agent narration, or model review.
+- Completing all rewrite-list atoms in a source is a hard checkpoint boundary.
+  The next source remains closed until the Supervisor imports that source,
+  refreshes canonical state and STATUS, runs the existing guard, commits and
+  pushes, and confirms a clean synchronized worktree. The open interface polls
+  canonical state and releases the next source automatically after publication.
+- Halt for candidate, triage, block, or claim-hash drift; malformed or duplicate
+  rewrites; input-count disagreement; unavailable canonical records; or an
+  authorial need the single replacement-claim form cannot express. Do not add a
+  category or workflow automatically; submit the smallest review question.
+- Phase completion is exactly one canonical checkpointed rewrite for each of
+  the 98 bound atoms. Then halt for the separately authorized reconciliation
+  transition.
+- `m051/`, the four later or conditional sources, Google Sheets, provider calls,
+  model semantic acceptance, mapping, reconciliation, canonization, and
+  compiled prose remain prohibited.
+- A normal rewrite operation has no process delta.
 
 ## STATUS contract
 

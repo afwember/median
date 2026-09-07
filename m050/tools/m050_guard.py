@@ -32,6 +32,23 @@ except ModuleNotFoundError:  # Direct execution from m050/tools.
         load_corpus as load_triage_corpus,
     )
 
+try:
+    from m050.tools.m050_atom_rewrite import (
+        DEFAULT_REWRITES,
+        SCHEMA_VERSION as REWRITE_SCHEMA_VERSION,
+        RewriteCorpus,
+        RewriteStore,
+        _active_source as active_rewrite_source,
+    )
+except ModuleNotFoundError:  # Direct execution from m050/tools.
+    from m050_atom_rewrite import (
+        DEFAULT_REWRITES,
+        SCHEMA_VERSION as REWRITE_SCHEMA_VERSION,
+        RewriteCorpus,
+        RewriteStore,
+        _active_source as active_rewrite_source,
+    )
+
 
 ROOT = Path(__file__).resolve().parents[2]
 STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
@@ -903,7 +920,10 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
     validate_spend_and_status(
         state,
         errors,
-        active_required=state.get("authority", {}).get("triage_authorized") is not True,
+        active_required=not (
+            state.get("authority", {}).get("triage_authorized") is True
+            or state.get("authority", {}).get("rewrite_authorized") is True
+        ),
     )
 
 
@@ -941,6 +961,52 @@ def validate_authorial_triage_profile(errors: list[str]) -> None:
         errors.append("authorial-triage dashboard progress is stale")
 
 
+def validate_authorial_rewrite_profile(errors: list[str]) -> None:
+    state = read_json(STATE, errors)
+    triage = state.get("triage", {})
+    expected_triage = {
+        "status": "COMPLETE",
+        "input_scope": "accepted candidates for completed pre-reconciliation sources",
+        "decision_record": TRIAGE_DECISIONS.as_posix(),
+        "decision_schema_version": TRIAGE_SCHEMA_VERSION,
+        "input_atom_count": 6550,
+    }
+    if triage != expected_triage:
+        errors.append("completed authorial-triage binding drifted")
+    authority = state.get("authority", {})
+    if (
+        state.get("status") != "AUTHORIAL_REWRITE_ACTIVE"
+        or state.get("execution_state") != "AUTHORIAL_REWRITE_ACTIVE"
+        or authority.get("repository_writes_authorized") is not False
+        or authority.get("source_work_authorized") is not False
+        or authority.get("triage_authorized") is not False
+        or authority.get("rewrite_authorized") is not True
+    ):
+        errors.append("canonical authorial-rewrite authority is inactive or inconsistent")
+    try:
+        corpus = RewriteCorpus(ROOT)
+        store = RewriteStore(ROOT / DEFAULT_REWRITES, corpus)
+    except TriageError as exc:
+        errors.append(f"canonical authorial-rewrite record is invalid: {exc}")
+        return
+    expected_rewrite = {
+        "status": "ACTIVE",
+        "input_scope": "canonical authorial-triage decisions routed to rewrite_list",
+        "input_decision_record": TRIAGE_DECISIONS.as_posix(),
+        "input_triage_sha256": corpus.triage_sha256,
+        "rewrite_record": DEFAULT_REWRITES.as_posix(),
+        "rewrite_schema_version": REWRITE_SCHEMA_VERSION,
+        "input_atom_count": 98,
+    }
+    if state.get("rewrite") != expected_rewrite:
+        errors.append("canonical authorial-rewrite binding drifted")
+    if len(corpus.atoms) != 98:
+        errors.append("authorial-rewrite input coverage drifted")
+    expected_progress = f"{store.counts()['rewritten']:,} / {len(corpus.atoms):,} authorial rewrites recorded"
+    if state.get("dashboard", {}).get("progress") != expected_progress:
+        errors.append("authorial-rewrite dashboard progress is stale")
+
+
 def validate_active_phase(errors: list[str]) -> None:
     """Single replaceable phase-specific validation seam."""
     state = read_json(STATE, errors)
@@ -951,6 +1017,9 @@ def validate_active_phase(errors: list[str]) -> None:
     elif phase.startswith("Authorial triage"):
         validate_atomic_extraction_profile(errors)
         validate_authorial_triage_profile(errors)
+    elif phase.startswith("Authorial rewrite"):
+        validate_atomic_extraction_profile(errors)
+        validate_authorial_rewrite_profile(errors)
     else:
         errors.append("canonical state does not name a supported active phase profile")
 
@@ -965,7 +1034,7 @@ def validate_operating_contract(errors: list[str]) -> None:
         "## Phase model",
         "## Canonical controls",
         "## Authority model",
-        "## Active phase profile — authorial triage",
+        "## Active phase profile — authorial rewrite",
         "## STATUS contract",
     ):
         if heading not in text:
@@ -1018,7 +1087,14 @@ def validate_work_order(path: Path | None, errors: list[str]) -> None:
 
 def run_tests() -> int:
     return subprocess.run(
-        [str(ROOT / ".venv/bin/python"), "-m", "pytest", "m050/extraction/engine/tests", "-q"],
+        [
+            str(ROOT / ".venv/bin/python"),
+            "-m",
+            "pytest",
+            "m050/extraction/engine/tests",
+            "m050/tools/tests",
+            "-q",
+        ],
         cwd=ROOT,
         check=False,
     ).returncode
@@ -1065,10 +1141,20 @@ def main() -> int:
     print(f"- frozen files: {frozen_count}; immutable accepted artifacts: {immutable_count}")
     print("- live extraction topology: 7 directories; retired process families absent")
     print("- Human Rulings evidence: 173 reconstructed records across 41 rulings")
-    print(
-        f"- active source: {source.get('label')} ({source.get('id')}); "
-        f"accepted {accepted}; rejected/frozen {rejected}"
-    )
+    if state.get("status") == "AUTHORIAL_REWRITE_ACTIVE":
+        rewrite_corpus = RewriteCorpus(ROOT)
+        rewrite_store = RewriteStore(ROOT / DEFAULT_REWRITES, rewrite_corpus)
+        rewrite_source = active_rewrite_source(rewrite_corpus, rewrite_store)
+        rewrite_label = rewrite_corpus.source_labels.get(rewrite_source, "complete")
+        print(
+            f"- active rewrite source: {rewrite_label} ({rewrite_source or 'none'}); "
+            f"{rewrite_store.counts()['rewritten']} / {len(rewrite_corpus.atoms)} canonical rewrites"
+        )
+    else:
+        print(
+            f"- active source: {source.get('label')} ({source.get('id')}); "
+            f"accepted {accepted}; rejected/frozen {rejected}"
+        )
     print(
         f"- spend: ${spend.get('cumulative_spent_usd')} exact; "
         f"${spend.get('remaining_usd')} remaining; "

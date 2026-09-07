@@ -92,7 +92,7 @@ def test_binding_drift_is_rejected(tmp_path, rewrite, corpus):
         rewrite.RewriteStore(path, corpus)
 
 
-def test_working_store_preserves_canonical_and_checkpoints_one_source(tmp_path, rewrite, corpus):
+def test_working_store_advances_sources_and_checkpoints_complete_slate(tmp_path, rewrite, corpus):
     canonical_path = tmp_path / "canonical.jsonl"
     working_path = tmp_path / "working.jsonl"
     canonical_path.write_text("", encoding="utf-8")
@@ -104,11 +104,39 @@ def test_working_store_preserves_canonical_and_checkpoints_one_source(tmp_path, 
     lifecycle = rewrite._lifecycle(
         corpus, rewrite.RewriteStore(canonical_path, corpus), working
     )
+    assert lifecycle["checkpoint_required"] is False
+    assert lifecycle["active_source_id"] == rewrite._source_ids(corpus)[1]
+    with pytest.raises(rewrite.TriageError, match="slate is not complete"):
+        rewrite.checkpoint_working(canonical_path, working_path, corpus)
+
+    for atom in corpus.atoms:
+        if atom.key not in working.rewrites:
+            working.apply(atom.key, atom.normalized_claim)
+    lifecycle = rewrite._lifecycle(
+        corpus, rewrite.RewriteStore(canonical_path, corpus), working
+    )
     assert lifecycle["checkpoint_required"] is True
+    assert lifecycle["active_source_id"] is None
     result = rewrite.checkpoint_working(canonical_path, working_path, corpus)
-    assert result["checkpointed_source_id"] == first_source
-    assert result["canonical_dispositions"] == len(atoms)
-    assert result["next_source_id"] != first_source
+    assert result["checkpointed_scope"] == "complete_rewrite_slate"
+    assert result["canonical_dispositions"] == len(corpus.atoms)
+    assert result["next_source_id"] is None
+    assert result["phase_complete"] is True
+
+
+def test_undo_crosses_source_boundaries_but_preserves_canonical(tmp_path, rewrite, corpus):
+    canonical_path = tmp_path / "canonical.jsonl"
+    working_path = tmp_path / "working.jsonl"
+    canonical = rewrite.RewriteStore(canonical_path, corpus)
+    canonical.apply(corpus.atoms[0].key, corpus.atoms[0].normalized_claim)
+    working = rewrite.prepare_working_store(canonical_path, working_path, corpus)
+    later = next(atom for atom in corpus.atoms if atom.source_id != corpus.atoms[0].source_id)
+    working.apply(later.key, later.normalized_claim)
+
+    protected = frozenset(canonical.rewrites)
+    assert working.undo_latest(protected_keys=protected) == later.key
+    assert working.undo_latest(protected_keys=protected) is None
+    assert corpus.atoms[0].key in working.rewrites
 
 
 def _request(url, *, body=None, origin=None):
@@ -168,6 +196,35 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
                 body={"source_id": state["atom"]["source_id"], "atom_key": key, "replacement_claim": "Rejected cross-origin replacement."},
             )
         assert cross_origin.value.code == 403
+    finally:
+        server.shutdown(); server.server_close(); thread.join(timeout=3)
+
+
+def test_mobile_api_advances_to_next_source_without_checkpoint(tmp_path, rewrite, corpus):
+    store = rewrite.RewriteStore(tmp_path / "working.jsonl", corpus)
+    first_source, second_source = rewrite._source_ids(corpus)[:2]
+    first_atoms = [atom for atom in corpus.atoms if atom.source_id == first_source]
+    for atom in first_atoms[:-1]:
+        store.apply(atom.key, atom.normalized_claim)
+    server = rewrite.create_web_server(corpus, store, host="127.0.0.1", port=0)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    base = f"http://127.0.0.1:{server.server_address[1]}"
+    try:
+        _, _, raw = _request(f"{base}/api/state")
+        state = json.loads(raw)
+        assert state["atom"]["atom_key"] == first_atoms[-1].key
+        _, _, raw = _request(
+            f"{base}/api/rewrite",
+            body={
+                "source_id": first_source,
+                "atom_key": first_atoms[-1].key,
+                "replacement_claim": first_atoms[-1].normalized_claim,
+            },
+        )
+        advanced = json.loads(raw)
+        assert advanced["checkpoint_required"] is False
+        assert advanced["atom"]["source_id"] == second_source
     finally:
         server.shutdown(); server.server_close(); thread.join(timeout=3)
 

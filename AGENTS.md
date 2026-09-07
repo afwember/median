@@ -179,7 +179,8 @@ immutable repository evidence and completed canonical triage, but writes its
 noncanonical editor buffer only under
 `Documents/Codex/median-support/rewrite-working/`; it holds no repository-write
 authority. Before changing the rewrite tool, inputs, record form, controls, or
-phase structure, stop the interface and checkpoint its completed source.
+phase structure, stop the interface and preserve its working buffer. Checkpoint
+that buffer only when the complete rewrite slate is ready for publication.
 
 ### Canonical input and rewrite record
 
@@ -203,24 +204,25 @@ phase structure, stop the interface and checkpoint its completed source.
   removes that atom from later reconciliation.
 - The out-of-repository working file is an editor buffer, not a second
   authority. It preserves every canonical rewrite exactly, writes atomically,
-  and may add rewrites only for the one currently released source. Undo removes
-  only the latest uncheckpointed rewrite in that source. Skip records nothing.
+  and may add dispositions sequentially across every remaining rewrite source.
+  Undo removes only the latest uncheckpointed disposition in the working slate.
+  Skip records nothing.
 
 ### Execution and boundaries
 
 - Process rewrite-list atoms in canonical source and atom order. Resume at the
-  first unwritten atom in the one source released by the latest canonical
-  checkpoint.
+  first unwritten atom in the complete working slate. Source labels preserve
+  evidence context but are not release or checkpoint boundaries.
 - The interface may bind without another password only to loopback or an exact
   Tailscale IPv4 address. Wildcard, LAN, public bindings, and Tailscale Funnel
   are prohibited.
 - Routine dispositions update only the external editor buffer. They require no
   per-rewrite STATUS refresh, commit, agent narration, or model review.
-- Completing all rewrite-list atoms in a source is a hard checkpoint boundary.
-  The next source remains closed until the Supervisor imports that source,
+- Source transitions occur automatically in the external editor buffer and do
+  not require Git publication. Completing all 98 bound dispositions is the sole
+  rewrite checkpoint boundary. The Supervisor then imports the complete slate,
   refreshes canonical state and STATUS, runs the existing guard, commits and
-  pushes, and confirms a clean synchronized worktree. The open interface polls
-  canonical state and releases the next source automatically after publication.
+  pushes, and confirms a clean synchronized worktree.
 - Halt for candidate, triage, block, or claim-hash drift; malformed or duplicate
   rewrites; input-count disagreement; unavailable canonical records; or an
   authorial need the single replacement-claim form cannot express. Do not add a

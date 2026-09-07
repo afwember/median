@@ -239,9 +239,17 @@ class RewriteStore:
         self.rewrites[atom.key] = record
         self._write()
 
-    def undo_latest(self, source_id: str) -> str | None:
+    def undo_latest(
+        self,
+        source_id: str | None = None,
+        *,
+        protected_keys: frozenset[str] = frozenset(),
+    ) -> str | None:
         eligible = [
-            record for record in self.rewrites.values() if record["source_id"] == source_id
+            record
+            for record in self.rewrites.values()
+            if (source_id is None or record["source_id"] == source_id)
+            and record["atom_key"] not in protected_keys
         ]
         if not eligible:
             return None
@@ -321,12 +329,14 @@ def _lifecycle(corpus: RewriteCorpus, canonical: RewriteStore, working: RewriteS
     for key, record in canonical.rewrites.items():
         if working.rewrites.get(key) != record:
             raise TriageError(f"working rewrite record does not preserve canonical checkpoint: {key}")
-    source_id = _active_source(corpus, canonical)
-    if source_id is None:
+    if _active_source(corpus, canonical) is None:
         return {"active_source_id": None, "checkpoint_required": False, "phase_complete": True}
+    source_id = _active_source(corpus, working)
+    if source_id is None:
+        return {"active_source_id": None, "checkpoint_required": True, "phase_complete": False}
     return {
         "active_source_id": source_id,
-        "checkpoint_required": _source_complete(working, source_id),
+        "checkpoint_required": False,
         "phase_complete": False,
     }
 
@@ -334,26 +344,16 @@ def _lifecycle(corpus: RewriteCorpus, canonical: RewriteStore, working: RewriteS
 def checkpoint_working(canonical_path: Path, working_path: Path, corpus: RewriteCorpus) -> dict:
     canonical = RewriteStore(canonical_path, corpus)
     working = prepare_working_store(canonical_path, working_path, corpus)
-    source_id = _active_source(corpus, canonical)
-    if source_id is None:
-        raise TriageError("all rewrite sources are already checkpointed")
-    if not _source_complete(working, source_id):
-        raise TriageError(f"working rewrite source is not complete: {source_id}")
-    order = _source_ids(corpus)
-    active_index = order.index(source_id)
-    forbidden = {
-        record["source_id"] for record in working.rewrites.values()
-        if order.index(record["source_id"]) > active_index
-    }
-    if forbidden:
-        raise TriageError("working rewrites cross the required source checkpoint boundary: " + ", ".join(sorted(forbidden)))
+    if _active_source(corpus, canonical) is None:
+        raise TriageError("the complete rewrite slate is already checkpointed")
+    if _active_source(corpus, working) is not None:
+        raise TriageError("working rewrite slate is not complete")
     canonical.replace(working.rewrites)
-    next_source = _active_source(corpus, canonical)
     return {
-        "checkpointed_source_id": source_id,
+        "checkpointed_scope": "complete_rewrite_slate",
         "canonical_dispositions": len(canonical.rewrites),
-        "next_source_id": next_source,
-        "phase_complete": next_source is None,
+        "next_source_id": None,
+        "phase_complete": True,
     }
 
 
@@ -431,10 +431,11 @@ const $=id=>document.getElementById(id);let ui={atom:null,sourceId:"",busy:false
 function toast(msg){$("toast").textContent=msg;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2600)}
 async function api(path,body){const r=await fetch(path,{method:body?"POST":"GET",headers:body?{"Content-Type":"application/json"}:{},body:body?JSON.stringify(body):undefined,cache:"no-store"});const data=await r.json();if(!r.ok)throw new Error(data.error||"Request failed");return data}
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function render(data){ui.atom=data.atom;$("done").textContent=data.stats.accepted;$("excluded").textContent=data.stats.excluded;$("remaining").textContent=data.stats.remaining;$("position").textContent=data.atom?`${data.atom.rewrite_position}/${data.stats.total}`:"—";if(data.checkpoint_required){$("content").innerHTML=`<div class="complete"><h2>Source checkpoint required</h2><p>${esc(data.completed_source_label)} is complete. The next source opens after its validated Git checkpoint.</p></div>`;return}if(data.phase_complete){$("content").innerHTML='<div class="complete"><h2>Rewrite list complete</h2><p>All authorial rewrite dispositions have been checkpointed.</p></div>';return}if(!data.atom){$("content").innerHTML='<div class="complete">No rewrite available.</div>';return}const a=data.atom;ui.sourceId=a.source_id;$("source").value=ui.sourceId;$("content").innerHTML=`<div class="card source"><span class="label">${esc(a.section)}</span><strong>${esc(a.source_label)}</strong><small>${a.source_rewrite_position}/${a.source_rewrite_total} in source</small></div><div class="card"><span class="label">Original atom</span><p class="claim">“${esc(a.exact_source_text)}”</p><hr><span class="label">Normalized claim</span><p class="normalized">${esc(a.normalized_claim)}</p></div><div class="card"><span class="label">Source text</span><p class="sourceText">${esc(a.source_text)}</p></div><div class="card"><label class="label" for="replacement">Authorially accepted claim</label><textarea id="replacement" autocomplete="off" spellcheck="true" placeholder="Edit only if needed."></textarea></div><div class="card siblings"><span class="label">Other atoms from this source block</span>${a.siblings.map(s=>`<p>${s.current?"CURRENT — ":s.on_rewrite_list?"REWRITE — ":""}${esc(s.normalized_claim)}</p>`).join("")}</div>`;$("replacement").value=a.normalized_claim}
+function render(data){ui.atom=data.atom;$("done").textContent=data.stats.accepted;$("excluded").textContent=data.stats.excluded;$("remaining").textContent=data.stats.remaining;$("position").textContent=data.atom?`${data.atom.rewrite_position}/${data.stats.total}`:"—";if(data.checkpoint_required){$("content").innerHTML='<div class="complete"><h2>Final checkpoint required</h2><p>All 98 rewrite dispositions are complete. Reconciliation remains closed until the validated Git checkpoint is published.</p></div>';return}if(data.phase_complete){$("content").innerHTML='<div class="complete"><h2>Rewrite list complete</h2><p>All authorial rewrite dispositions have been checkpointed.</p></div>';return}if(!data.atom){$("content").innerHTML='<div class="complete">No rewrite available.</div>';return}const a=data.atom;ui.sourceId=a.source_id;$("source").value=ui.sourceId;$("content").innerHTML=`<div class="card source"><span class="label">${esc(a.section)}</span><strong>${esc(a.source_label)}</strong><small>${a.source_rewrite_position}/${a.source_rewrite_total} in source</small></div><div class="card"><span class="label">Original atom</span><p class="claim">“${esc(a.exact_source_text)}”</p><hr><span class="label">Normalized claim</span><p class="normalized">${esc(a.normalized_claim)}</p></div><div class="card"><span class="label">Source text</span><p class="sourceText">${esc(a.source_text)}</p></div><div class="card"><label class="label" for="replacement">Authorially accepted claim</label><textarea id="replacement" autocomplete="off" spellcheck="true" placeholder="Edit only if needed."></textarea></div><div class="card siblings"><span class="label">Other atoms from this source block</span>${a.siblings.map(s=>`<p>${s.current?"CURRENT — ":s.on_rewrite_list?"REWRITE — ":""}${esc(s.normalized_claim)}</p>`).join("")}</div>`;$("replacement").value=a.normalized_claim}
 async function load(){try{render(await api("/api/state"))}catch(e){toast(e.message)}}
 async function post(path,extra={}){if(!ui.atom)return;try{render(await api(path,{source_id:ui.sourceId,atom_key:ui.atom.atom_key,...extra}))}catch(e){toast(e.message)}}
-$("save").onclick=()=>post("/api/rewrite",{replacement_claim:$("replacement")?.value||""});$("exclude").onclick=()=>post("/api/exclude");$("skip").onclick=()=>post("/api/skip");$("undo").onclick=()=>post("/api/undo",{visible_atom_key:ui.atom?.atom_key});$("source").onchange=e=>{ui.sourceId=e.target.value;load()};
+async function undo(){try{render(await api("/api/undo",{source_id:ui.sourceId||null,visible_atom_key:ui.atom?.atom_key||null}))}catch(e){toast(e.message)}}
+$("save").onclick=()=>post("/api/rewrite",{replacement_claim:$("replacement")?.value||""});$("exclude").onclick=()=>post("/api/exclude");$("skip").onclick=()=>post("/api/skip");$("undo").onclick=undo;$("source").onchange=e=>{ui.sourceId=e.target.value;load()};
 (async()=>{try{const d=await api("/api/sources");d.sources.forEach(s=>{const o=document.createElement("option");o.value=s.source_id;o.textContent=`${s.label} (${s.atoms})`;o.disabled=!s.available;$("source").append(o)});ui.sourceId=d.active_source_id||"";$("source").value=ui.sourceId;await load();setInterval(()=>{if(!ui.atom)load()},5000)}catch(e){toast(e.message)}})();
 </script></body></html>"""
 
@@ -449,8 +450,8 @@ def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_p
 
     def lifecycle() -> dict:
         if canonical_path is None:
-            first = _source_ids(corpus)[0]
-            return {"active_source_id": first, "checkpoint_required": False, "phase_complete": False, "publication_pending": False}
+            active = _active_source(corpus, store)
+            return {"active_source_id": active, "checkpoint_required": False, "phase_complete": active is None, "publication_pending": False}
         canonical = RewriteStore(canonical_path, corpus)
         value = _lifecycle(corpus, canonical, store)
         value["publication_pending"] = bool(repo_root and not _canonical_published(repo_root, canonical_path))
@@ -461,14 +462,14 @@ def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_p
         active = current["active_source_id"]
         if current["checkpoint_required"] or current["publication_pending"]:
             result = _atom_payload(corpus, store, None)
-            result.update({"checkpoint_required": True, "phase_complete": False, "completed_source_label": corpus.source_labels.get(active, "Completed rewrite source")})
+            result.update({"checkpoint_required": True, "phase_complete": False})
             return result
         if current["phase_complete"]:
             result = _atom_payload(corpus, store, None)
             result.update({"checkpoint_required": False, "phase_complete": True})
             return result
         if source_id not in (None, active):
-            raise TriageError("source awaits its preceding checkpoint")
+            raise TriageError("source is not the next unwritten rewrite source")
         source_id = active
         if index is None:
             index = store.next_unwritten(source_id)
@@ -511,24 +512,26 @@ def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_p
             if origin and urlparse(origin).netloc != self.headers.get("Host"): self.send_json({"error": "cross-origin write rejected"}, 403); return
             try:
                 request = self.body(); source_id = self.source(request.get("source_id")); current = lifecycle(); active = current["active_source_id"]
-                if current["checkpoint_required"] or current["publication_pending"] or current["phase_complete"]: raise TriageError("rewrites are held at a source checkpoint")
-                if source_id not in (None, active): raise TriageError("source awaits its preceding checkpoint")
+                if self.path == "/api/undo":
+                    if current["publication_pending"] or current["phase_complete"]: raise TriageError("rewrites are held after the final checkpoint")
+                    signature = (source_id, request.get("visible_atom_key"))
+                    if signature == last_undo["signature"]:
+                        result = payload(None); result.update({"undone": 0, "duplicate": True}); self.send_json(result); return
+                    protected = frozenset(RewriteStore(canonical_path, corpus).rewrites) if canonical_path else frozenset()
+                    key = store.undo_latest(protected_keys=protected); last_undo["signature"] = signature
+                    result = payload(None, index_by_key[key] if key else None); result.update({"undone": 1 if key else 0, "duplicate": False}); self.send_json(result); return
+                if current["checkpoint_required"] or current["publication_pending"] or current["phase_complete"]: raise TriageError("rewrites are held for the final checkpoint")
+                if source_id not in (None, active): raise TriageError("source is not the next unwritten rewrite source")
                 source_id = active; atom = corpus.by_key.get(request.get("atom_key"))
                 if atom is None or atom.source_id != source_id: raise TriageError("request atom is outside the active rewrite source")
                 if self.path == "/api/rewrite":
-                    store.apply(atom.key, request.get("replacement_claim")); last_undo["signature"] = None; self.send_json(payload(source_id))
+                    store.apply(atom.key, request.get("replacement_claim")); last_undo["signature"] = None; self.send_json(payload(None))
                 elif self.path == "/api/exclude":
-                    store.exclude(atom.key); last_undo["signature"] = None; self.send_json(payload(source_id))
+                    store.exclude(atom.key); last_undo["signature"] = None; self.send_json(payload(None))
                 elif self.path == "/api/skip":
                     next_index = store.next_unwritten(source_id, after=index_by_key[atom.key]);
                     if next_index is None: next_index = store.next_unwritten(source_id)
                     self.send_json(payload(source_id, next_index))
-                elif self.path == "/api/undo":
-                    signature = (source_id, request.get("visible_atom_key"))
-                    if signature == last_undo["signature"]:
-                        result = payload(source_id); result.update({"undone": 0, "duplicate": True}); self.send_json(result); return
-                    key = store.undo_latest(source_id); last_undo["signature"] = signature
-                    result = payload(source_id, index_by_key[key] if key else None); result.update({"undone": 1 if key else 0, "duplicate": False}); self.send_json(result)
                 else: self.send_json({"error": "not found"}, 404)
             except TriageError as exc: self.send_json({"error": str(exc)}, 400)
     return HTTPServer((host, port), Handler)
@@ -554,7 +557,7 @@ def main(argv: list[str] | None = None) -> int:
         store = prepare_working_store(canonical_path, working_path, corpus)
         if args.stats: print(json.dumps(store.counts(), indent=2)); return 0
         if args.preview:
-            canonical = RewriteStore(canonical_path, corpus); source = _active_source(corpus, canonical)
+            source = _active_source(corpus, store)
             index = store.next_unwritten(source) if source else None
             print(json.dumps(_atom_payload(corpus, store, index), indent=2, ensure_ascii=False)); return 0
         _require_authority(repo_root, corpus)

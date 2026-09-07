@@ -78,7 +78,7 @@ def render_status(
         corpus = RewriteCorpus(repo_root)
         store = RewriteStore(repo_root / DEFAULT_REWRITES, corpus)
         state.setdefault("dashboard", {})["progress"] = (
-            f"{store.counts()['rewritten']:,} / {len(corpus.atoms):,} authorial rewrites recorded"
+            f"{store.counts()['resolved']:,} / {len(corpus.atoms):,} authorial rewrite dispositions recorded"
         )
 
     exact = _rounded_timestamp(now)

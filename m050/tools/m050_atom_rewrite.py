@@ -56,6 +56,7 @@ DEFAULT_REWRITES = Path(
 )
 WORKING_REWRITES_NAME = "M050_Authorial_Rewrite_Working_MEDIANv0_5_0.jsonl"
 SCHEMA_VERSION = "M050-AUTHORIAL-REWRITE-0.1"
+REWRITE_EXCLUSION_REASON = "other_authorial_exclusion"
 
 
 def _text_sha256(value: str) -> str:
@@ -117,7 +118,8 @@ class RewriteStore:
             "original_claim_sha256", "replacement_claim", "rewritten_at",
             "authorially_accepted",
         }
-        if set(record) != required:
+        allowed = required | {"resolution", "exclusion_reason"}
+        if not required.issubset(record) or not set(record).issubset(allowed):
             raise TriageError("authorial rewrite shape is invalid")
         atom = self.corpus.by_key.get(record.get("atom_key"))
         if atom is None:
@@ -133,13 +135,23 @@ class RewriteStore:
             or record.get("authorially_accepted") is not True
         ):
             raise TriageError(f"authorial rewrite binding drifted: {atom.key}")
+        resolution = record.get("resolution", "rewrite")
         replacement = record.get("replacement_claim")
-        if not isinstance(replacement, str) or not replacement.strip():
-            raise TriageError("replacement claim must be nonempty")
-        if replacement != replacement.strip():
-            raise TriageError("replacement claim must not have outer whitespace")
-        if replacement == atom.normalized_claim:
-            raise TriageError("replacement claim must revise the original normalized claim")
+        exclusion_reason = record.get("exclusion_reason")
+        if resolution == "rewrite":
+            if exclusion_reason is not None:
+                raise TriageError("a rewrite cannot carry an exclusion reason")
+            if not isinstance(replacement, str) or not replacement.strip():
+                raise TriageError("replacement claim must be nonempty")
+            if replacement != replacement.strip():
+                raise TriageError("replacement claim must not have outer whitespace")
+            if replacement == atom.normalized_claim:
+                raise TriageError("replacement claim must revise the original normalized claim")
+        elif resolution == "exclude":
+            if replacement is not None or exclusion_reason != REWRITE_EXCLUSION_REASON:
+                raise TriageError("authorial rewrite exclusion is malformed")
+        else:
+            raise TriageError(f"invalid authorial rewrite resolution: {resolution}")
 
     def _load(self) -> None:
         for record in _read_jsonl(self.path):
@@ -200,6 +212,30 @@ class RewriteStore:
         self.rewrites[atom.key] = record
         self._write()
 
+    def exclude(self, atom_key: str) -> None:
+        atom = self.corpus.by_key.get(atom_key)
+        if atom is None:
+            raise TriageError("exclusion references an unknown rewrite-list atom")
+        record = {
+            "schema_version": SCHEMA_VERSION,
+            "event_id": f"rewrite_{uuid.uuid4().hex}",
+            "atom_key": atom.key,
+            "atom_id": atom.atom_id,
+            "source_id": atom.source_id,
+            "block_key": atom.block_key,
+            "candidate_sha256": atom.candidate_sha256,
+            "triage_decision_sha256": self.corpus.triage_sha256,
+            "original_claim_sha256": _text_sha256(atom.normalized_claim),
+            "resolution": "exclude",
+            "replacement_claim": None,
+            "exclusion_reason": REWRITE_EXCLUSION_REASON,
+            "rewritten_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
+            "authorially_accepted": True,
+        }
+        self._validate(record)
+        self.rewrites[atom.key] = record
+        self._write()
+
     def undo_latest(self, source_id: str) -> str | None:
         eligible = [
             record for record in self.rewrites.values() if record["source_id"] == source_id
@@ -220,8 +256,17 @@ class RewriteStore:
         return None
 
     def counts(self) -> dict[str, int]:
+        rewritten = sum(
+            record.get("resolution", "rewrite") == "rewrite"
+            for record in self.rewrites.values()
+        )
+        excluded = sum(
+            record.get("resolution") == "exclude" for record in self.rewrites.values()
+        )
         return {
-            "rewritten": len(self.rewrites),
+            "rewritten": rewritten,
+            "excluded": excluded,
+            "resolved": len(self.rewrites),
             "remaining": len(self.corpus.atoms) - len(self.rewrites),
             "total": len(self.corpus.atoms),
         }
@@ -298,7 +343,7 @@ def checkpoint_working(canonical_path: Path, working_path: Path, corpus: Rewrite
     next_source = _active_source(corpus, canonical)
     return {
         "checkpointed_source_id": source_id,
-        "canonical_rewrites": len(canonical.rewrites),
+        "canonical_dispositions": len(canonical.rewrites),
         "next_source_id": next_source,
         "phase_complete": next_source is None,
     }
@@ -371,17 +416,17 @@ WEB_PAGE = r"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MEDIAN Authorial Rewrite</title>
 <style>
-:root{color-scheme:dark;--bg:#11110f;--panel:#1d1d1a;--ink:#f2eee5;--muted:#aaa69c;--gold:#c9973b;--green:#4aa476;--line:#393832}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif}.wrap{max-width:720px;margin:auto;padding:18px 16px 150px}h1{font-size:18px;letter-spacing:.12em;color:var(--gold)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px}.stat{text-align:center}.stat strong{display:block;font-size:20px}.label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:700}.source{margin:14px 0}.source strong{display:block;margin-top:5px}.claim{font:700 25px/1.35 Georgia,serif}.normalized,.sourceText{white-space:pre-wrap;line-height:1.5}.siblings{font-size:14px;color:var(--muted)}textarea{width:100%;min-height:180px;margin-top:10px;padding:14px;border-radius:12px;border:1px solid #5b584f;background:#11110f;color:var(--ink);font:18px/1.45 system-ui;resize:vertical}.bar{position:fixed;left:0;right:0;bottom:0;background:#151512ee;border-top:1px solid var(--line);padding:12px max(16px,calc((100vw - 720px)/2));display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}button{min-height:58px;border:0;border-radius:15px;color:white;font-size:17px;font-weight:800;background:#292824}#save{background:var(--green)}.complete{text-align:center;padding:40px 15px;color:var(--gold)}.toast{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#7b332f;color:white;padding:10px 15px;border-radius:12px;display:none;z-index:3}select{width:100%;padding:12px;border-radius:12px;background:var(--panel);color:var(--ink);border:1px solid var(--line)}
-</style></head><body><div id="toast" class="toast"></div><main class="wrap"><h1>MEDIAN v0.5.0 — Authorial Rewrite</h1><select id="source"></select><div class="stats"><div class="stat"><strong id="position">—</strong><span class="label">Rewrite</span></div><div class="stat"><strong id="done">—</strong><span class="label">Accepted</span></div><div class="stat"><strong id="remaining">—</strong><span class="label">Remaining</span></div></div><section id="content"></section></main><div class="bar"><button id="save">Accept rewrite</button><button id="skip">Skip</button><button id="undo">Undo</button></div>
+:root{color-scheme:dark;--bg:#11110f;--panel:#1d1d1a;--ink:#f2eee5;--muted:#aaa69c;--gold:#c9973b;--green:#4aa476;--red:#b95d57;--line:#393832}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif}.wrap{max-width:720px;margin:auto;padding:18px 16px 180px}h1{font-size:18px;letter-spacing:.12em;color:var(--gold)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px}.stat{text-align:center;padding:14px 6px}.stat strong{display:block;font-size:20px}.label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);font-weight:700}.source{margin:14px 0}.source strong{display:block;margin-top:5px}.claim{font:700 25px/1.35 Georgia,serif}.normalized,.sourceText{white-space:pre-wrap;line-height:1.5}.siblings{font-size:14px;color:var(--muted)}textarea{width:100%;min-height:180px;margin-top:10px;padding:14px;border-radius:12px;border:1px solid #5b584f;background:#11110f;color:var(--ink);font:18px/1.45 system-ui;resize:vertical}.bar{position:fixed;left:0;right:0;bottom:0;background:#151512ee;border-top:1px solid var(--line);padding:12px max(16px,calc((100vw - 720px)/2));display:grid;grid-template-columns:1fr 1fr;gap:10px}button{min-height:54px;border:0;border-radius:15px;color:white;font-size:17px;font-weight:800;background:#292824}#save{background:var(--green)}#exclude{background:var(--red)}.complete{text-align:center;padding:40px 15px;color:var(--gold)}.toast{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:#7b332f;color:white;padding:10px 15px;border-radius:12px;display:none;z-index:3}select{width:100%;padding:12px;border-radius:12px;background:var(--panel);color:var(--ink);border:1px solid var(--line)}
+</style></head><body><div id="toast" class="toast"></div><main class="wrap"><h1>MEDIAN v0.5.0 — Authorial Rewrite</h1><select id="source"></select><div class="stats"><div class="stat"><strong id="position">—</strong><span class="label">Item</span></div><div class="stat"><strong id="done">—</strong><span class="label">Rewritten</span></div><div class="stat"><strong id="excluded">—</strong><span class="label">Excluded</span></div><div class="stat"><strong id="remaining">—</strong><span class="label">Remaining</span></div></div><section id="content"></section></main><div class="bar"><button id="save">Accept rewrite</button><button id="exclude">Exclude</button><button id="skip">Skip</button><button id="undo">Undo</button></div>
 <script>
 const $=id=>document.getElementById(id);let ui={atom:null,sourceId:"",busy:false};
 function toast(msg){$("toast").textContent=msg;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2600)}
 async function api(path,body){const r=await fetch(path,{method:body?"POST":"GET",headers:body?{"Content-Type":"application/json"}:{},body:body?JSON.stringify(body):undefined,cache:"no-store"});const data=await r.json();if(!r.ok)throw new Error(data.error||"Request failed");return data}
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-function render(data){ui.atom=data.atom;$("done").textContent=data.stats.rewritten;$("remaining").textContent=data.stats.remaining;$("position").textContent=data.atom?`${data.atom.rewrite_position}/${data.stats.total}`:"—";if(data.checkpoint_required){$("content").innerHTML=`<div class="complete"><h2>Source checkpoint required</h2><p>${esc(data.completed_source_label)} is complete. The next source opens after its validated Git checkpoint.</p></div>`;return}if(data.phase_complete){$("content").innerHTML='<div class="complete"><h2>Rewrite list complete</h2><p>All authorial rewrites have been checkpointed.</p></div>';return}if(!data.atom){$("content").innerHTML='<div class="complete">No rewrite available.</div>';return}const a=data.atom;ui.sourceId=a.source_id;$("source").value=ui.sourceId;$("content").innerHTML=`<div class="card source"><span class="label">${esc(a.section)}</span><strong>${esc(a.source_label)}</strong><small>${a.source_rewrite_position}/${a.source_rewrite_total} in source</small></div><div class="card"><span class="label">Original atom</span><p class="claim">“${esc(a.exact_source_text)}”</p><hr><span class="label">Normalized claim to replace</span><p class="normalized">${esc(a.normalized_claim)}</p></div><div class="card"><span class="label">Source text</span><p class="sourceText">${esc(a.source_text)}</p></div><div class="card"><label class="label" for="replacement">Authorially accepted replacement</label><textarea id="replacement" autocomplete="off" spellcheck="true" placeholder="Edit the normalized claim."></textarea></div><div class="card siblings"><span class="label">Other atoms from this source block</span>${a.siblings.map(s=>`<p>${s.current?"CURRENT — ":s.on_rewrite_list?"REWRITE — ":""}${esc(s.normalized_claim)}</p>`).join("")}</div>`;$("replacement").value=a.normalized_claim}
+function render(data){ui.atom=data.atom;$("done").textContent=data.stats.rewritten;$("excluded").textContent=data.stats.excluded;$("remaining").textContent=data.stats.remaining;$("position").textContent=data.atom?`${data.atom.rewrite_position}/${data.stats.total}`:"—";if(data.checkpoint_required){$("content").innerHTML=`<div class="complete"><h2>Source checkpoint required</h2><p>${esc(data.completed_source_label)} is complete. The next source opens after its validated Git checkpoint.</p></div>`;return}if(data.phase_complete){$("content").innerHTML='<div class="complete"><h2>Rewrite list complete</h2><p>All authorial rewrite dispositions have been checkpointed.</p></div>';return}if(!data.atom){$("content").innerHTML='<div class="complete">No rewrite available.</div>';return}const a=data.atom;ui.sourceId=a.source_id;$("source").value=ui.sourceId;$("content").innerHTML=`<div class="card source"><span class="label">${esc(a.section)}</span><strong>${esc(a.source_label)}</strong><small>${a.source_rewrite_position}/${a.source_rewrite_total} in source</small></div><div class="card"><span class="label">Original atom</span><p class="claim">“${esc(a.exact_source_text)}”</p><hr><span class="label">Normalized claim to replace</span><p class="normalized">${esc(a.normalized_claim)}</p></div><div class="card"><span class="label">Source text</span><p class="sourceText">${esc(a.source_text)}</p></div><div class="card"><label class="label" for="replacement">Authorially accepted replacement</label><textarea id="replacement" autocomplete="off" spellcheck="true" placeholder="Edit the normalized claim."></textarea></div><div class="card siblings"><span class="label">Other atoms from this source block</span>${a.siblings.map(s=>`<p>${s.current?"CURRENT — ":s.on_rewrite_list?"REWRITE — ":""}${esc(s.normalized_claim)}</p>`).join("")}</div>`;$("replacement").value=a.normalized_claim}
 async function load(){try{render(await api("/api/state"))}catch(e){toast(e.message)}}
 async function post(path,extra={}){if(!ui.atom)return;try{render(await api(path,{source_id:ui.sourceId,atom_key:ui.atom.atom_key,...extra}))}catch(e){toast(e.message)}}
-$("save").onclick=()=>post("/api/rewrite",{replacement_claim:$("replacement")?.value||""});$("skip").onclick=()=>post("/api/skip");$("undo").onclick=()=>post("/api/undo",{visible_atom_key:ui.atom?.atom_key});$("source").onchange=e=>{ui.sourceId=e.target.value;load()};
+$("save").onclick=()=>post("/api/rewrite",{replacement_claim:$("replacement")?.value||""});$("exclude").onclick=()=>post("/api/exclude");$("skip").onclick=()=>post("/api/skip");$("undo").onclick=()=>post("/api/undo",{visible_atom_key:ui.atom?.atom_key});$("source").onchange=e=>{ui.sourceId=e.target.value;load()};
 (async()=>{try{const d=await api("/api/sources");d.sources.forEach(s=>{const o=document.createElement("option");o.value=s.source_id;o.textContent=`${s.label} (${s.atoms})`;o.disabled=!s.available;$("source").append(o)});ui.sourceId=d.active_source_id||"";$("source").value=ui.sourceId;await load();setInterval(()=>{if(!ui.atom)load()},5000)}catch(e){toast(e.message)}})();
 </script></body></html>"""
 
@@ -464,6 +509,8 @@ def create_web_server(corpus: RewriteCorpus, store: RewriteStore, *, canonical_p
                 if atom is None or atom.source_id != source_id: raise TriageError("request atom is outside the active rewrite source")
                 if self.path == "/api/rewrite":
                     store.apply(atom.key, request.get("replacement_claim")); last_undo["signature"] = None; self.send_json(payload(source_id))
+                elif self.path == "/api/exclude":
+                    store.exclude(atom.key); last_undo["signature"] = None; self.send_json(payload(source_id))
                 elif self.path == "/api/skip":
                     next_index = store.next_unwritten(source_id, after=index_by_key[atom.key]);
                     if next_index is None: next_index = store.next_unwritten(source_id)

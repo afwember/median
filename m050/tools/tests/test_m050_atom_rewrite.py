@@ -64,6 +64,19 @@ def test_empty_or_unchanged_rewrite_is_rejected(tmp_path, rewrite, corpus):
         store.apply(atom.key, atom.normalized_claim)
 
 
+def test_exclusion_uses_existing_authorial_reason(tmp_path, rewrite, corpus):
+    atom = corpus.atoms[0]
+    path = tmp_path / "exclusions.jsonl"
+    store = rewrite.RewriteStore(path, corpus)
+    store.exclude(atom.key)
+    record = rewrite.RewriteStore(path, corpus).rewrites[atom.key]
+    assert record["resolution"] == "exclude"
+    assert record["replacement_claim"] is None
+    assert record["exclusion_reason"] == "other_authorial_exclusion"
+    assert store.counts()["excluded"] == 1
+    assert store.counts()["resolved"] == 1
+
+
 def test_binding_drift_is_rejected(tmp_path, rewrite, corpus):
     atom = corpus.atoms[0]
     path = tmp_path / "rewrites.jsonl"
@@ -91,7 +104,7 @@ def test_working_store_preserves_canonical_and_checkpoints_one_source(tmp_path, 
     assert lifecycle["checkpoint_required"] is True
     result = rewrite.checkpoint_working(canonical_path, working_path, corpus)
     assert result["checkpointed_source_id"] == first_source
-    assert result["canonical_rewrites"] == len(atoms)
+    assert result["canonical_dispositions"] == len(atoms)
     assert result["next_source_id"] != first_source
 
 
@@ -119,6 +132,7 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
         assert status == 200
         assert headers["X-Content-Type-Options"] == "nosniff"
         assert b"Authorial Rewrite" in page
+        assert b'id="exclude"' in page
         assert b'$("replacement").value=a.normalized_claim' in page
         _, _, raw = _request(f"{base}/api/state")
         state = json.loads(raw)
@@ -136,6 +150,13 @@ def test_mobile_api_accepts_rewrite_skip_and_undo(tmp_path, rewrite, corpus):
         undone = json.loads(raw)
         assert undone["undone"] == 1
         assert undone["stats"]["rewritten"] == 0
+        _, _, raw = _request(
+            f"{base}/api/exclude",
+            body={"source_id": state["atom"]["source_id"], "atom_key": key},
+        )
+        excluded = json.loads(raw)
+        assert excluded["stats"]["excluded"] == 1
+        assert excluded["stats"]["resolved"] == 1
         with pytest.raises(HTTPError) as cross_origin:
             _request(
                 f"{base}/api/rewrite", origin="https://example.com",

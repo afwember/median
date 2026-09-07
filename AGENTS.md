@@ -197,7 +197,9 @@ phase structure, stop the interface and checkpoint its completed source.
 - A submitted nonempty replacement is authorially accepted. It becomes the
   later reconciliation input in place of the uncertain normalized claim; the
   immutable original remains evidence and must not also enter reconciliation as
-  a parallel claim.
+  a parallel claim. `Exclude` records the existing
+  `other_authorial_exclusion` reason, preserves the same immutable evidence, and
+  removes that atom from later reconciliation.
 - The out-of-repository working file is an editor buffer, not a second
   authority. It preserves every canonical rewrite exactly, writes atomically,
   and may add rewrites only for the one currently released source. Undo removes
@@ -222,9 +224,9 @@ phase structure, stop the interface and checkpoint its completed source.
   rewrites; input-count disagreement; unavailable canonical records; or an
   authorial need the single replacement-claim form cannot express. Do not add a
   category or workflow automatically; submit the smallest review question.
-- Phase completion is exactly one canonical checkpointed rewrite for each of
-  the 98 bound atoms. Then halt for the separately authorized reconciliation
-  transition.
+- Phase completion is exactly one canonical checkpointed rewrite or exclusion
+  disposition for each of the 98 bound atoms. Then halt for the separately
+  authorized reconciliation transition.
 - `m051/`, the four later or conditional sources, Google Sheets, provider calls,
   model semantic acceptance, mapping, reconciliation, canonization, and
   compiled prose remain prohibited.

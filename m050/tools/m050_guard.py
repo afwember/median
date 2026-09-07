@@ -1002,7 +1002,7 @@ def validate_authorial_rewrite_profile(errors: list[str]) -> None:
         errors.append("canonical authorial-rewrite binding drifted")
     if len(corpus.atoms) != 98:
         errors.append("authorial-rewrite input coverage drifted")
-    expected_progress = f"{store.counts()['rewritten']:,} / {len(corpus.atoms):,} authorial rewrites recorded"
+    expected_progress = f"{store.counts()['resolved']:,} / {len(corpus.atoms):,} authorial rewrite dispositions recorded"
     if state.get("dashboard", {}).get("progress") != expected_progress:
         errors.append("authorial-rewrite dashboard progress is stale")
 
@@ -1148,7 +1148,7 @@ def main() -> int:
         rewrite_label = rewrite_corpus.source_labels.get(rewrite_source, "complete")
         print(
             f"- active rewrite source: {rewrite_label} ({rewrite_source or 'none'}); "
-            f"{rewrite_store.counts()['rewritten']} / {len(rewrite_corpus.atoms)} canonical rewrites"
+            f"{rewrite_store.counts()['resolved']} / {len(rewrite_corpus.atoms)} canonical rewrite dispositions"
         )
     else:
         print(

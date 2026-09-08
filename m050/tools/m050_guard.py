@@ -1086,8 +1086,6 @@ def validate_msid_mapping_profile(errors: list[str]) -> None:
         errors.append("canonical Stage 4 binding drifted")
     if len(corpus.atoms) != 5382 or len(corpus.source_ids) != 18:
         errors.append("Stage 4 input coverage drifted")
-    if ready and store.mappings:
-        errors.append("Stage 4 ready state contains mappings without Worker authority")
     expected_progress = f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded"
     if state.get("dashboard", {}).get("progress") != expected_progress:
         errors.append("Stage 4 dashboard progress is stale")

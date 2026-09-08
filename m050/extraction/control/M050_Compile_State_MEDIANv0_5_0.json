@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "MSID_MAPPING_READY",
-  "updated": "2026-09-08T10:55:06-04:00",
+  "updated": "2026-09-08T18:26:01-04:00",
   "execution_state": "MSID_MAPPING_READY",
   "corpus": {
     "registered_sources": 24,
@@ -187,15 +187,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "September 8, 2026 at 10:55:06 AM EDT",
+    "updated_human": "September 8, 2026 at 6:26:01 PM EDT",
     "status": "READY — Stage 4 MSID mapping",
     "phase": "MSID mapping — semantic address assignment",
-    "source": "5,382 eligible claims across 18 completed pre-reconciliation sources",
-    "progress": "0 / 5,382 Stage 4 mappings recorded",
-    "now": "Zero-call vocabulary, input inventory, mapping record, and validator are ready; Worker authority is inactive",
-    "next": "Asa may manually initiate the Worker and grant bounded Stage 4 work on Authorial Grammar"
+    "source": "Authorial Grammar (M050-SRC-AUTHORIAL-GRAMMAR-001) — 186 / 186 mappings complete",
+    "progress": "186 / 5,382 Stage 4 mappings recorded",
+    "now": "Authorial Grammar Stage 4 mapping is complete and the Compile Worker has Stopped Down",
+    "next": "Await Asa's direction; no other source or Stage 5 work is authorized"
   },
-  "next_possible_transition": "Asa may manually initiate the Compile Worker and grant bounded Stage 4 mapping work on Authorial Grammar; Stage 5 remains prohibited.",
+  "next_possible_transition": "Asa may grant bounded Stage 4 mapping work on Governing Philosophy and Architecture; Stage 5 remains prohibited.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": null,

@@ -139,16 +139,17 @@ def test_zero_call_inventory_accounts_for_every_input(tmp_path, mapping, corpus,
     assert result["legacy_semantic_shell_atoms_ignored"] > 0
 
 
-def test_repository_state_is_ready_without_worker_or_provider_authority():
+def test_repository_state_has_consistent_mapping_lifecycle_and_no_provider_authority():
     state = json.loads(
         (ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json").read_text()
     )
-    assert state["status"] == "MSID_MAPPING_READY"
-    assert state["execution_state"] == "MSID_MAPPING_READY"
-    assert state["mapping"]["status"] == "READY"
+    assert state["status"] in {"MSID_MAPPING_READY", "MSID_MAPPING_ACTIVE"}
+    assert state["execution_state"] == state["status"]
+    active = state["status"] == "MSID_MAPPING_ACTIVE"
+    assert state["mapping"]["status"] == ("ACTIVE" if active else "READY")
     assert state["mapping"]["input_atom_count"] == 5382
     assert state["mapping"]["input_source_count"] == 18
-    assert state["authority"]["mapping_authorized"] is False
-    assert state["authority"]["source_work_authorized"] is False
-    assert state["authority"]["repository_writes_authorized"] is False
+    assert state["authority"]["mapping_authorized"] is active
+    assert state["authority"]["source_work_authorized"] is active
+    assert state["authority"]["repository_writes_authorized"] is active
     assert state["spend"]["active"] is False

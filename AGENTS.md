@@ -92,14 +92,17 @@ completion and authority revocation. A source-completion halt is not a
 Stopdown while either authority remains true. After the closing push the Worker
 makes no further repository write unless Asa explicitly grants new work.
 
-After confirming formal Stopdown, the Worker uses cross-task messaging when
-available to send exactly `Worker has Stopped Down` to the one task titled
-`Compile Supervisor` on the same project and host. The notification grants no
-authority. If exactly one matching task cannot be found, report the ambiguity
-in the Worker task, do not retry automatically, and do not invalidate the
-Stopdown. On receipt, the Supervisor adjudicates the Stopdown read-only,
-reports pass or defect, and awaits Asa's direction; it does not begin queued
-repository work automatically.
+After confirming formal Stopdown, the Worker uses Codex app task/thread
+discovery and cross-task messaging when available to send exactly
+`Worker has Stopped Down` to the one task titled `Compile Supervisor` on the
+same project and host. Sub-agent or collaboration-agent discovery is not task
+discovery and must not be used for this lookup; it sees only the current agent
+tree, not peer Codex tasks. The notification grants no authority. If app-level
+task discovery or messaging is unavailable, or exactly one matching task
+cannot be found, report that condition in the Worker task, do not retry
+automatically, and do not invalidate the Stopdown. On receipt, the Supervisor
+adjudicates the Stopdown read-only, reports pass or defect, and awaits Asa's
+direction; it does not begin queued repository work automatically.
 
 ## Phase model
 

@@ -80,6 +80,28 @@ def render_status(
         state.setdefault("dashboard", {})["progress"] = (
             f"{store.counts()['resolved']:,} / {len(corpus.atoms):,} authorial rewrite dispositions recorded"
         )
+    elif str(state.get("status", "")).startswith("MSID_MAPPING_"):
+        try:
+            from m050.tools.m050_msid_mapping import (
+                DEFAULT_MAPPINGS,
+                MSIDVocabulary,
+                MappingCorpus,
+                MappingStore,
+            )
+        except ModuleNotFoundError:
+            from m050_msid_mapping import (
+                DEFAULT_MAPPINGS,
+                MSIDVocabulary,
+                MappingCorpus,
+                MappingStore,
+            )
+        repo_root = state_path.resolve().parents[3]
+        corpus = MappingCorpus(repo_root)
+        vocabulary = MSIDVocabulary(repo_root)
+        store = MappingStore(repo_root / DEFAULT_MAPPINGS, corpus, vocabulary)
+        state.setdefault("dashboard", {})["progress"] = (
+            f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded"
+        )
 
     exact = _rounded_timestamp(now)
     state["updated"] = exact.isoformat()

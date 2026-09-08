@@ -128,6 +128,9 @@ Git is the history.
 - `m050/tools/m050_guard.py` is the sole active repository guard.
 - `m050/reconciliation/rewrite/M050_Authorial_Rewrites_MEDIANv0_5_0.jsonl`
   is the sole canonical authorial rewrite record.
+- `m050/mapping/M050_MSID_Vocabulary_MEDIANv0_5_0.json` and
+  `m050/mapping/M050_Atom_MSID_Mappings_MEDIANv0_5_0.jsonl` are respectively
+  the sole Stage 4 vocabulary and current atom-mapping record.
 - Historical checkpoints, bootstrap packets, active-index versions, execution
   standards, authority policies, and versioned guard wrappers are retired.
   Do not recreate those families.
@@ -165,75 +168,78 @@ No separate successor packet is required. These canonical files are the handoff.
   active-profile work.
 - A bounded repository task authorizes only its stated change.
 
-## Active phase profile — authorial rewrite
+## Active phase profile — Stage 4 MSID mapping
 
-This profile governs source-grounded authorial replacement of the 98 immutable
-accepted atoms whose completed canonical triage decision is `uncertain` with
-route `rewrite_list`. It supplies accepted authorial expression for later
-reconciliation. It does not alter extraction evidence, perform cross-atom
-reconciliation, resolve other gaps, canonize claims, or produce compiled prose.
+This profile governs semantic-address assignment for the 5,382 claims that
+remain eligible after completed authorial triage and rewrite. Mapping answers
+what stable MEDIAN property a claim concerns. It does not decide truth,
+authority, conflict, supersession, reconciliation, canon, or compiled prose.
 
-The phase has no provider calls, model spend, prompts, or calibration. The
-author works through `m050/tools/m050_atom_rewrite.py`. The interface reads
-immutable repository evidence and completed canonical triage, but writes its
-noncanonical editor buffer only under
-`Documents/Codex/median-support/rewrite-working/`; it holds no repository-write
-authority. Before changing the rewrite tool, inputs, record form, controls, or
-phase structure, stop the interface and preserve its working buffer. Checkpoint
-that buffer only when the complete rewrite slate is ready for publication.
+The profile is initially ready but not Worker-active. No source-work, mapping,
+provider-call, model-spend, or repository-write authority follows from profile
+installation. Asa manually initiates the Worker and grants each bounded mapping
+target. The Worker does not choose or advance its own source.
 
-### Canonical input and rewrite record
+### Canonical input and representation
 
-- The completed canonical triage record is immutable phase input. Exactly its
-  98 `rewrite_list` atoms enter this phase; retained atoms, excluded atoms, and
-  any future source do not.
-- Accepted extraction candidates remain immutable evidence. Every candidate is
-  verified against its acceptance-report SHA-256 before use.
-- `m050/reconciliation/rewrite/M050_Authorial_Rewrites_MEDIANv0_5_0.jsonl`
-  is the sole canonical rewrite-disposition record. It contains at most one
-  current disposition per selected atom; Git is its history.
-- Every disposition binds the triage-record hash, source ID, atom ID, source block,
-  accepted-candidate hash, and original normalized-claim hash. Binding drift is
-  a hard failure.
-- Submitting the unchanged normalized claim records `accept`; submitting edited
-  text records `rewrite`. Either is authorially accepted and becomes the later
-  reconciliation input in place of the uncertain atom. The immutable original
-  remains evidence and must not also enter reconciliation as a parallel claim.
-  `Exclude` records the existing
-  `other_authorial_exclusion` reason, preserves the same immutable evidence, and
-  removes that atom from later reconciliation.
-- The out-of-repository working file is an editor buffer, not a second
-  authority. It preserves every canonical rewrite exactly, writes atomically,
-  and may add dispositions sequentially across every remaining rewrite source.
-  Undo removes only the latest uncheckpointed disposition in the working slate.
-  Skip records nothing.
+- Accepted extraction candidates, the completed triage record, and the completed
+  rewrite record are immutable inputs. Every input hash is verified.
+- The effective claim is the retained normalized claim or its authorially
+  accepted rewrite. A replaced original and all triage or rewrite exclusions
+  remain evidence but do not enter Stage 4.
+- The MSID Grammar and Human Rulings remain the semantic authority.
+  `m050/mapping/M050_MSID_Vocabulary_MEDIANv0_5_0.json` is their sole
+  machine-readable Stage 4 validation projection. It is hash-bound to both
+  sources and accepted evidence, distinguishes settled, provisional, alias,
+  and rejected paths, and creates no independent ontology. Git is its history.
+- `m050/mapping/M050_Atom_MSID_Mappings_MEDIANv0_5_0.jsonl` is the sole canonical
+  mapping record. It contains at most one current mapping per eligible atom;
+  Git is its history. Do not create a filtered corpus or parallel mapping view.
+- Legacy candidate fields such as `primary_msid_candidate`, authority effects,
+  conflicts, and supersession are untrusted semantic shell. They may remain
+  source evidence but must not be imported as Stage 4 decisions.
+
+### Mapping decisions and validation
+
+- Every eligible atom receives exactly one status: `mapped`, `unmapped`,
+  `ambiguous`, `invalid`, or `human_required`.
+- A mapped atom has one primary MSID, optional related MSIDs, one existing
+  semantic relation, and ontology-grounded rationale. Mapping does not make the
+  claim or the path canonical during Stage 5.
+- `ambiguous`, `invalid`, and `human_required` remain visible. Do not choose a
+  tidy path merely to complete coverage or freeze an open TLD or branch.
+- Each record binds source, atom, block, candidate, triage, rewrite, and
+  effective-claim hashes. Missing, duplicate, drifted, excluded, or pre-rewrite
+  mappings are hard failures.
+- The validator enforces mechanically decidable minimum depth, UpperCamelCase
+  segments, TLD self-roots, Register/operator separation, aliases and rejected
+  paths, controlled relations, input eligibility, and zero `m051`
+  contamination. Noun ownership and runtime-instance boundaries remain
+  semantic mapping judgments and must use an unresolved status when uncertain.
 
 ### Execution and boundaries
 
-- Process rewrite-list atoms in canonical source and atom order. Resume at the
-  first unwritten atom in the complete working slate. Source labels preserve
-  evidence context but are not release or checkpoint boundaries.
-- The interface may bind without another password only to loopback or an exact
-  Tailscale IPv4 address. Wildcard, LAN, public bindings, and Tailscale Funnel
-  are prohibited.
-- Routine dispositions update only the external editor buffer. They require no
-  per-rewrite STATUS refresh, commit, agent narration, or model review.
-- Source transitions occur automatically in the external editor buffer and do
-  not require Git publication. Completing all 98 bound dispositions is the sole
-  rewrite checkpoint boundary. The Supervisor then imports the complete slate,
-  refreshes canonical state and STATUS, runs the existing guard, commits and
-  pushes, and confirms a clean synchronized worktree.
-- Halt for candidate, triage, block, or claim-hash drift; malformed or duplicate
-  rewrites; input-count disagreement; unavailable canonical records; or an
-  authorial need the single replacement-claim form cannot express. Do not add a
-  category or workflow automatically; submit the smallest review question.
-- Phase completion is exactly one canonical checkpointed accept, rewrite, or
-  exclusion disposition for each of the 98 bound atoms. Then halt for the
-  separately authorized reconciliation transition.
-- `m051/`, the four later or conditional sources, Google Sheets, provider calls,
-  model semantic acceptance, mapping, reconciliation, canonization, and
-  compiled prose remain prohibited.
-- A normal rewrite operation has no process delta.
+- Process eligible atoms in canonical source and atom order. Resume at the first
+  unmapped atom in the one explicitly released source.
+- Zero-call preparation may build and validate the vocabulary, inventory the
+  exact input, identify literal MSIDs, measure ignored legacy semantic shell,
+  and estimate later model work. It may not record semantic mappings.
+- Provider-assisted mapping requires a separately approved provider-enabled
+  configuration and positive cumulative spend envelope. No current extraction
+  packet, prompt, schema, budget, or credential use carries into Stage 4.
+- Within an active source grant, the Worker may map, validate, correct generic
+  local mechanics, and checkpoint coherently. It may not compare source
+  authority, merge claims, add a taxonomy, create another mapping representation,
+  enter another source, or begin Stage 5.
+- Halt for vocabulary or input drift, invalid record shape, coverage disagreement,
+  unresolved ontology that the five statuses cannot preserve, requested source
+  completion, exhausted authority or spend, or any need to change the phase.
+- Stage 4 completes only with one valid current mapping for all 5,382 inputs.
+  Then Stopdown and halt for separately authorized Stage 5 reconciliation.
+- The v0.4.6 baseline GDD, four later or conditional sources, `m051/`, Google
+  Sheets, reconciliation, baseline audit, manifestation processing,
+  canonization, and compiled prose remain prohibited.
+- A normal mapping operation has no process delta.
 
 ## STATUS contract
 

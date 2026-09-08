@@ -238,5 +238,6 @@ def test_network_boundary_requires_loopback_or_exact_tailscale(tmp_path, rewrite
     assert rewrite._web_host_allowed("100.122.50.97")
 
 
-def test_repository_state_authorizes_external_rewrite_only(rewrite, corpus):
-    rewrite._require_authority(ROOT, corpus)
+def test_repository_state_retires_external_rewrite_authority(rewrite, corpus):
+    with pytest.raises(rewrite.TriageError, match="authority is inactive"):
+        rewrite._require_authority(ROOT, corpus)

@@ -33,6 +33,29 @@ except ModuleNotFoundError:  # Direct execution from m050/tools.
     )
 
 try:
+    from m050.tools.m050_msid_mapping import (
+        DEFAULT_MAPPINGS,
+        DEFAULT_VOCABULARY,
+        SCHEMA_VERSION as MAPPING_SCHEMA_VERSION,
+        VOCABULARY_SCHEMA_VERSION,
+        MSIDVocabulary,
+        MappingCorpus,
+        MappingStore,
+        active_source as active_mapping_source,
+    )
+except ModuleNotFoundError:
+    from m050_msid_mapping import (
+        DEFAULT_MAPPINGS,
+        DEFAULT_VOCABULARY,
+        SCHEMA_VERSION as MAPPING_SCHEMA_VERSION,
+        VOCABULARY_SCHEMA_VERSION,
+        MSIDVocabulary,
+        MappingCorpus,
+        MappingStore,
+        active_source as active_mapping_source,
+    )
+
+try:
     from m050.tools.m050_atom_rewrite import (
         DEFAULT_REWRITES,
         SCHEMA_VERSION as REWRITE_SCHEMA_VERSION,
@@ -669,7 +692,8 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         errors.append("active source is outside compile scope")
 
     authority = state.get("authority", {})
-    validate_authority_state(source, authority, errors)
+    if not str(state.get("status", "")).startswith("MSID_MAPPING_"):
+        validate_authority_state(source, authority, errors)
 
     calibration = state.get("calibration", {})
     if "provider_call_authorized" in calibration:
@@ -923,6 +947,7 @@ def validate_atomic_extraction_profile(errors: list[str]) -> None:
         active_required=not (
             state.get("authority", {}).get("triage_authorized") is True
             or state.get("authority", {}).get("rewrite_authorized") is True
+            or str(state.get("status", "")).startswith("MSID_MAPPING_")
         ),
     )
 
@@ -1007,6 +1032,69 @@ def validate_authorial_rewrite_profile(errors: list[str]) -> None:
         errors.append("authorial-rewrite dashboard progress is stale")
 
 
+def validate_msid_mapping_profile(errors: list[str]) -> None:
+    state = read_json(STATE, errors)
+    authority = state.get("authority", {})
+    ready = state.get("status") == "MSID_MAPPING_READY"
+    active = state.get("status") == "MSID_MAPPING_ACTIVE"
+    if not (ready or active) or state.get("execution_state") != state.get("status"):
+        errors.append("canonical Stage 4 lifecycle state is invalid")
+    if (
+        authority.get("triage_authorized") is not False
+        or authority.get("rewrite_authorized") is not False
+        or authority.get("reconciliation_authorized") is not False
+        or authority.get("mapping_authorized") is not active
+        or authority.get("source_work_authorized") is not active
+        or authority.get("repository_writes_authorized") is not active
+    ):
+        errors.append("canonical Stage 4 authority is inactive or inconsistent")
+    try:
+        corpus = MappingCorpus(ROOT)
+        vocabulary = MSIDVocabulary(ROOT)
+        store = MappingStore(ROOT / DEFAULT_MAPPINGS, corpus, vocabulary)
+    except TriageError as exc:
+        errors.append(f"canonical Stage 4 machinery is invalid: {exc}")
+        return
+    rewrite_corpus = RewriteCorpus(ROOT)
+    expected_rewrite = {
+        "status": "COMPLETE",
+        "input_scope": "canonical authorial-triage decisions routed to rewrite_list",
+        "input_decision_record": TRIAGE_DECISIONS.as_posix(),
+        "input_triage_sha256": rewrite_corpus.triage_sha256,
+        "rewrite_record": DEFAULT_REWRITES.as_posix(),
+        "rewrite_schema_version": REWRITE_SCHEMA_VERSION,
+        "input_atom_count": 98,
+    }
+    if state.get("rewrite") != expected_rewrite:
+        errors.append("completed authorial-rewrite binding drifted")
+    expected_mapping = {
+        "status": "ACTIVE" if active else "READY",
+        "input_scope": "triage-retained claims plus authorially accepted rewrite outcomes",
+        "input_triage_record": TRIAGE_DECISIONS.as_posix(),
+        "input_triage_sha256": corpus.triage_sha256,
+        "input_rewrite_record": DEFAULT_REWRITES.as_posix(),
+        "input_rewrite_sha256": corpus.rewrite_sha256,
+        "vocabulary_record": DEFAULT_VOCABULARY.as_posix(),
+        "vocabulary_sha256": sha256_file(ROOT / DEFAULT_VOCABULARY),
+        "vocabulary_schema_version": VOCABULARY_SCHEMA_VERSION,
+        "mapping_record": DEFAULT_MAPPINGS.as_posix(),
+        "mapping_schema_version": MAPPING_SCHEMA_VERSION,
+        "input_atom_count": 5382,
+        "input_source_count": 18,
+    }
+    if state.get("mapping") != expected_mapping:
+        errors.append("canonical Stage 4 binding drifted")
+    if len(corpus.atoms) != 5382 or len(corpus.source_ids) != 18:
+        errors.append("Stage 4 input coverage drifted")
+    if ready and store.mappings:
+        errors.append("Stage 4 ready state contains mappings without Worker authority")
+    expected_progress = f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded"
+    if state.get("dashboard", {}).get("progress") != expected_progress:
+        errors.append("Stage 4 dashboard progress is stale")
+    if active and active_mapping_source(corpus, store) is None:
+        errors.append("Stage 4 remains active after complete mapping coverage")
+
+
 def validate_active_phase(errors: list[str]) -> None:
     """Single replaceable phase-specific validation seam."""
     state = read_json(STATE, errors)
@@ -1020,6 +1108,9 @@ def validate_active_phase(errors: list[str]) -> None:
     elif phase.startswith("Authorial rewrite"):
         validate_atomic_extraction_profile(errors)
         validate_authorial_rewrite_profile(errors)
+    elif phase.startswith("MSID mapping"):
+        validate_atomic_extraction_profile(errors)
+        validate_msid_mapping_profile(errors)
     else:
         errors.append("canonical state does not name a supported active phase profile")
 
@@ -1034,7 +1125,7 @@ def validate_operating_contract(errors: list[str]) -> None:
         "## Phase model",
         "## Canonical controls",
         "## Authority model",
-        "## Active phase profile — authorial rewrite",
+        "## Active phase profile — Stage 4 MSID mapping",
         "## STATUS contract",
     ):
         if heading not in text:
@@ -1149,6 +1240,16 @@ def main() -> int:
         print(
             f"- active rewrite source: {rewrite_label} ({rewrite_source or 'none'}); "
             f"{rewrite_store.counts()['resolved']} / {len(rewrite_corpus.atoms)} canonical rewrite dispositions"
+        )
+    elif str(state.get("status", "")).startswith("MSID_MAPPING_"):
+        mapping_corpus = MappingCorpus(ROOT)
+        vocabulary = MSIDVocabulary(ROOT)
+        mapping_store = MappingStore(ROOT / DEFAULT_MAPPINGS, mapping_corpus, vocabulary)
+        mapping_source = active_mapping_source(mapping_corpus, mapping_store)
+        mapping_label = mapping_corpus.source_labels.get(mapping_source, "complete")
+        print(
+            f"- active mapping source: {mapping_label} ({mapping_source or 'none'}); "
+            f"{len(mapping_store.mappings)} / {len(mapping_corpus.atoms)} canonical Stage 4 mappings"
         )
     else:
         print(

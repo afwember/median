@@ -93,6 +93,14 @@ source-completion halt is not a Stopdown while any applicable authority remains
 true. After the closing push the Worker makes no further repository write
 unless Asa explicitly grants new work.
 
+Host-privileged operations must remain narrow and independently approvable.
+Run status rendering, the full guard, Git staging, read-only Git inspection,
+commit, and push as separate tool calls rather than one compound shell request.
+When a command requires host elevation, that tool call must contain only the
+single privileged operation and must request the narrow stable command prefix
+for that operation. Repository authority does not replace host sandboxing, and
+host sandboxing must not be turned into repeated authorial approval.
+
 After confirming formal Stopdown, the Worker uses Codex app task/thread
 discovery and cross-task messaging when available to send exactly
 `Worker has Stopped Down` to the one task titled `Compile Supervisor` on the
@@ -169,9 +177,11 @@ the active profile, canonical state, or the sole guard.
 4. Read `STATUS.md` and confirm it exactly mirrors the canonical state.
 5. Run `.venv/bin/python m050/tools/m050_guard.py --with-tests` before
    control/code release, provider-enabled configuration release, whole-source
-   acceptance, and commit/push. Routine provider capture uses the extraction
-   machine’s focused packet, source, spend, cache, response, and prior-review
-   checks.
+   acceptance, and commit/push. Invoke the renderer and full guard in separate
+   tool calls. If localhost-binding tests require host elevation, the elevated
+   call contains only the exact full-guard command and its narrow stable
+   command prefix. Routine provider capture uses the extraction machine’s
+   focused packet, source, spend, cache, response, and prior-review checks.
 6. Report concisely: active phase; current target and completed/rejected
    boundary; work and spend authority; halt conditions; prohibited transitions;
    next possible transition; STATUS freshness; and whether local `HEAD` equals

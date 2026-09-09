@@ -248,6 +248,19 @@ A good checkpoint:
 - pushes successfully; and
 - ends with a clean synchronized worktree.
 
+Keep host-privileged operations independently approvable:
+
+- run status rendering and the full guard as separate tool calls;
+- put only the exact full-guard command in an elevated call and request its
+  narrow stable command prefix;
+- run Git staging, read-only inspection, commit, and push as separate tool
+  calls belonging to their own narrow approval families; and
+- never bundle unlike privileged operations into one escalated shell request.
+
+This preserves the distinction between authorial repository authority and the
+Codex host sandbox without converting an authorized source lifecycle into
+repeated human permission prompts.
+
 Do not create checkpoint artifact families when Git already provides history.
 Do not leave authority activation, source completion, or Stopdown only in an
 uncommitted worktree.

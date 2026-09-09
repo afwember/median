@@ -140,47 +140,83 @@ def test_zero_call_inventory_accounts_for_every_input(tmp_path, mapping, corpus,
     assert result["legacy_semantic_shell_atoms_ignored"] > 0
 
 
-def test_repository_state_has_consistent_mapping_lifecycle_and_no_provider_authority():
-    state = json.loads(
-        (ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json").read_text()
-    )
-    mapping_statuses = {
-        "MSID_MAPPING_READY": ("READY", "READY — Stage 4 MSID mapping", False),
-        "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED": (
-            "AUTHORIZED_AWAITING_PROCEED",
-            "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
-            True,
-        ),
-        "MSID_MAPPING_ACTIVE": ("ACTIVE", "ACTIVE — Stage 4 MSID mapping", True),
-    }
-    assert state["status"] in mapping_statuses
+def _assert_consistent_mapping_lifecycle(mapping, state):
+    assert state["status"] in mapping.MSID_MAPPING_LIFECYCLE
     assert state["execution_state"] == state["status"]
-    expected_mapping_status, expected_dashboard_status, authority_active = mapping_statuses[
-        state["status"]
-    ]
+    expected_mapping_status, expected_dashboard_status, authority_active = (
+        mapping.MSID_MAPPING_LIFECYCLE[state["status"]]
+    )
     assert state["mapping"]["status"] == expected_mapping_status
     assert state["dashboard"]["status"] == expected_dashboard_status
-    assert state["mapping"]["input_atom_count"] == 5382
-    assert state["mapping"]["input_source_count"] == 18
     assert state["authority"]["mapping_authorized"] is authority_active
     assert state["authority"]["source_work_authorized"] is authority_active
     assert state["authority"]["repository_writes_authorized"] is authority_active
     assert state["spend"]["active"] is False
 
 
-def _repository_state():
-    return json.loads(
+def test_repository_state_has_consistent_mapping_lifecycle_and_no_provider_authority(mapping):
+    state = json.loads(
         (ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json").read_text()
     )
+    _assert_consistent_mapping_lifecycle(mapping, state)
+    assert state["mapping"]["input_atom_count"] == 5382
+    assert state["mapping"]["input_source_count"] == 18
 
 
-def _store_with_keys(store, keys):
+def _lifecycle_fixture():
+    source_ids = ("SOURCE-A", "SOURCE-B", "SOURCE-C")
+    atoms = tuple(
+        SimpleNamespace(key=f"{source_id}-{index}", atom=SimpleNamespace(source_id=source_id))
+        for source_id in source_ids
+        for index in range(1, 3)
+    )
+    corpus = SimpleNamespace(
+        atoms=atoms,
+        source_ids=source_ids,
+        source_labels={
+            "SOURCE-A": "Source A",
+            "SOURCE-B": "Source B",
+            "SOURCE-C": "Source C",
+        },
+        source_totals={source_id: 2 for source_id in source_ids},
+    )
+    store = _store_with_keys({"SOURCE-A-1", "SOURCE-A-2"})
+    state = {
+        "status": "MSID_MAPPING_READY",
+        "execution_state": "MSID_MAPPING_READY",
+        "mapping": {"status": "READY"},
+        "spend": {"active": False},
+        "authority": {
+            "repository_writes_authorized": False,
+            "source_work_authorized": False,
+            "triage_authorized": False,
+            "rewrite_authorized": False,
+            "google_sheets_interaction_authorized": False,
+            "semantic_acceptance_authorized": False,
+            "mapping_authorized": False,
+            "reconciliation_authorized": False,
+            "compiled_prose_authorized": False,
+        },
+        "dashboard": {
+            "status": "READY — Stage 4 MSID mapping",
+            "phase": "MSID mapping — semantic address assignment",
+            "source": "Source A (SOURCE-A) — 2 / 2 mappings complete",
+            "progress": "2 / 6 Stage 4 mappings recorded",
+            "now": "Source A Stage 4 mapping is complete and the Compile Worker has Stopped Down",
+            "next": "Await Asa's Spark Up",
+            "updated_human": "September 9, 2026 at 10:00:00 AM EDT",
+        },
+        "next_possible_transition": "Spark Up may prepare Source B.",
+    }
+    return state, corpus, store
+
+
+def _store_with_keys(keys):
     return SimpleNamespace(mappings={key: {} for key in keys})
 
 
-def test_lifecycle_prepare_spark_up_is_bounded_and_idempotent(mapping, corpus, vocabulary):
-    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
-    state = _repository_state()
+def test_lifecycle_prepare_spark_up_is_bounded_and_idempotent(mapping):
+    state, corpus, store = _lifecycle_fixture()
     replacement, report = mapping.plan_lifecycle_transition(
         state, corpus, store, "prepare-spark-up"
     )
@@ -190,7 +226,8 @@ def test_lifecycle_prepare_spark_up_is_bounded_and_idempotent(mapping, corpus, v
     assert replacement["authority"]["mapping_authorized"] is True
     assert replacement["authority"]["source_work_authorized"] is True
     assert replacement["authority"]["repository_writes_authorized"] is True
-    assert report["source_id"] == "M050-SRC-CROSSING-001"
+    assert report["source_id"] == "SOURCE-B"
+    _assert_consistent_mapping_lifecycle(mapping, replacement)
     repeated, repeated_report = mapping.plan_lifecycle_transition(
         replacement, corpus, store, "prepare-spark-up"
     )
@@ -198,24 +235,31 @@ def test_lifecycle_prepare_spark_up_is_bounded_and_idempotent(mapping, corpus, v
     assert repeated_report["changed"] is False
 
 
-def test_lifecycle_proceed_activates_only_the_prepared_boundary(mapping, corpus, vocabulary):
-    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+def test_lifecycle_proceed_activates_only_the_prepared_boundary(mapping):
+    state, corpus, store = _lifecycle_fixture()
     prepared, _ = mapping.plan_lifecycle_transition(
-        _repository_state(), corpus, store, "prepare-spark-up"
+        state, corpus, store, "prepare-spark-up"
     )
     active, report = mapping.plan_lifecycle_transition(
         prepared, corpus, store, "activate-on-proceed"
     )
     assert active["status"] == "MSID_MAPPING_ACTIVE"
     assert active["mapping"]["status"] == "ACTIVE"
-    assert report["source_id"] == "M050-SRC-CROSSING-001"
+    assert report["source_id"] == "SOURCE-B"
     assert report["external_calls"] == 0
+    _assert_consistent_mapping_lifecycle(mapping, active)
 
 
-def test_lifecycle_stopdown_requires_complete_granted_source(mapping, corpus, vocabulary):
-    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+def test_lifecycle_proceed_from_ready_grants_nothing(mapping):
+    state, corpus, store = _lifecycle_fixture()
+    with pytest.raises(mapping.TriageError, match="prepared-authority fermata"):
+        mapping.plan_lifecycle_transition(state, corpus, store, "activate-on-proceed")
+
+
+def test_lifecycle_stopdown_requires_complete_granted_source(mapping):
+    state, corpus, store = _lifecycle_fixture()
     prepared, _ = mapping.plan_lifecycle_transition(
-        _repository_state(), corpus, store, "prepare-spark-up"
+        state, corpus, store, "prepare-spark-up"
     )
     active, _ = mapping.plan_lifecycle_transition(
         prepared, corpus, store, "activate-on-proceed"
@@ -224,19 +268,15 @@ def test_lifecycle_stopdown_requires_complete_granted_source(mapping, corpus, vo
         mapping.plan_lifecycle_transition(active, corpus, store, "prepare-stopdown")
 
 
-def test_lifecycle_stopdown_revokes_authority_and_selects_no_new_work(mapping, corpus, vocabulary):
-    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+def test_lifecycle_stopdown_revokes_authority_and_selects_no_new_work(mapping):
+    state, corpus, store = _lifecycle_fixture()
     prepared, _ = mapping.plan_lifecycle_transition(
-        _repository_state(), corpus, store, "prepare-spark-up"
+        state, corpus, store, "prepare-spark-up"
     )
     active, _ = mapping.plan_lifecycle_transition(
         prepared, corpus, store, "activate-on-proceed"
     )
-    crossing_keys = {
-        item.key for item in corpus.atoms
-        if item.atom.source_id == "M050-SRC-CROSSING-001"
-    }
-    complete_store = _store_with_keys(store, set(store.mappings) | crossing_keys)
+    complete_store = _store_with_keys(set(store.mappings) | {"SOURCE-B-1", "SOURCE-B-2"})
     stopped, report = mapping.plan_lifecycle_transition(
         active, corpus, complete_store, "prepare-stopdown"
     )
@@ -245,31 +285,51 @@ def test_lifecycle_stopdown_revokes_authority_and_selects_no_new_work(mapping, c
     assert stopped["authority"]["mapping_authorized"] is False
     assert stopped["authority"]["source_work_authorized"] is False
     assert stopped["authority"]["repository_writes_authorized"] is False
-    assert "Population" in stopped["dashboard"]["next"]
-    assert report["source_id"] == "M050-SRC-CROSSING-001"
+    assert "Source C" in stopped["dashboard"]["next"]
+    assert report["source_id"] == "SOURCE-B"
 
 
-def test_lifecycle_pre_execution_cancellation_returns_to_ready(mapping, corpus, vocabulary):
-    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+def test_lifecycle_pre_execution_cancellation_returns_to_ready(mapping):
+    state, corpus, store = _lifecycle_fixture()
     prepared, _ = mapping.plan_lifecycle_transition(
-        _repository_state(), corpus, store, "prepare-spark-up"
+        state, corpus, store, "prepare-spark-up"
     )
     stopped, _ = mapping.plan_lifecycle_transition(
         prepared, corpus, store, "prepare-stopdown"
     )
     assert stopped["status"] == "MSID_MAPPING_READY"
     assert "cancelled before execution" in stopped["dashboard"]["now"]
-    assert "Crossing" in stopped["dashboard"]["next"]
+    assert "Source B" in stopped["dashboard"]["next"]
 
 
-def test_lifecycle_rejects_mapping_beyond_the_current_source(mapping, corpus, vocabulary):
-    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
-    later_key = next(
-        item.key for item in corpus.atoms
-        if item.atom.source_id == "M050-SRC-POPULATION-001"
-    )
-    drifted_store = _store_with_keys(store, set(store.mappings) | {later_key})
+def test_lifecycle_rejects_mapping_beyond_the_current_source(mapping):
+    state, corpus, store = _lifecycle_fixture()
+    drifted_store = _store_with_keys(set(store.mappings) | {"SOURCE-C-1"})
     with pytest.raises(mapping.TriageError, match="later mapping source was entered early"):
         mapping.plan_lifecycle_transition(
-            _repository_state(), corpus, drifted_store, "prepare-spark-up"
+            state, corpus, drifted_store, "prepare-spark-up"
         )
+
+
+def test_lifecycle_final_source_stopdown_halts_at_stage_boundary(mapping):
+    state, corpus, _ = _lifecycle_fixture()
+    store = _store_with_keys({
+        "SOURCE-A-1", "SOURCE-A-2", "SOURCE-B-1", "SOURCE-B-2",
+    })
+    state["dashboard"].update({
+        "source": "Source B (SOURCE-B) — 2 / 2 mappings complete",
+        "progress": "4 / 6 Stage 4 mappings recorded",
+        "now": "Source B Stage 4 mapping is complete and the Compile Worker has Stopped Down",
+    })
+    prepared, _ = mapping.plan_lifecycle_transition(
+        state, corpus, store, "prepare-spark-up"
+    )
+    active, _ = mapping.plan_lifecycle_transition(
+        prepared, corpus, store, "activate-on-proceed"
+    )
+    complete_store = _store_with_keys({item.key for item in corpus.atoms})
+    stopped, _ = mapping.plan_lifecycle_transition(
+        active, corpus, complete_store, "prepare-stopdown"
+    )
+    assert "Stage 4 mapping is complete" in stopped["dashboard"]["next"]
+    assert "separately authorizes Stage 5" in stopped["next_possible_transition"]

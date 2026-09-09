@@ -49,7 +49,7 @@ VOCABULARY_SCHEMA_VERSION = "M050-MSID-VOCABULARY-0.1"
 MAPPING_STATUSES = {"mapped", "unmapped", "ambiguous", "invalid", "human_required"}
 REVIEW_STATES = {"worker_validated", "human_required"}
 MSID_LITERAL = re.compile(r"\b(?:[A-Z][A-Za-z0-9]*\.)+[A-Z][A-Za-z0-9]*\b")
-LIFECYCLE = {
+MSID_MAPPING_LIFECYCLE = {
     "MSID_MAPPING_READY": ("READY", "READY — Stage 4 MSID mapping", False),
     "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED": (
         "AUTHORIZED_AWAITING_PROCEED",
@@ -594,7 +594,7 @@ def _validate_lifecycle_baseline(
 ) -> None:
     errors: list[str] = []
     status = state.get("status")
-    lifecycle = LIFECYCLE.get(status)
+    lifecycle = MSID_MAPPING_LIFECYCLE.get(status)
     if lifecycle is None or state.get("execution_state") != status:
         errors.append("canonical Stage 4 lifecycle is invalid")
         expected_mapping_status, expected_dashboard_status, authority_active = None, None, False

@@ -36,6 +36,7 @@ try:
     from m050.tools.m050_msid_mapping import (
         DEFAULT_MAPPINGS,
         DEFAULT_VOCABULARY,
+        MSID_MAPPING_LIFECYCLE,
         SCHEMA_VERSION as MAPPING_SCHEMA_VERSION,
         VOCABULARY_SCHEMA_VERSION,
         MSIDVocabulary,
@@ -47,6 +48,7 @@ except ModuleNotFoundError:
     from m050_msid_mapping import (
         DEFAULT_MAPPINGS,
         DEFAULT_VOCABULARY,
+        MSID_MAPPING_LIFECYCLE,
         SCHEMA_VERSION as MAPPING_SCHEMA_VERSION,
         VOCABULARY_SCHEMA_VERSION,
         MSIDVocabulary,
@@ -85,16 +87,6 @@ ORDER = ROOT / "m050/extraction/control/M050_Compile_Source_Processing_Order_v0_
 ENGINE_MODULE = ROOT / "m050/extraction/engine/src/median_gate5/extraction_machine.py"
 ENGINE_TESTS = ROOT / "m050/extraction/engine/tests/test_extraction_machine.py"
 HUMAN_EVIDENCE = ROOT / "m050/extraction/evidence/human-rulings"
-
-MSID_MAPPING_LIFECYCLE = {
-    "MSID_MAPPING_READY": ("READY", "READY — Stage 4 MSID mapping", False),
-    "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED": (
-        "AUTHORIZED_AWAITING_PROCEED",
-        "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
-        True,
-    ),
-    "MSID_MAPPING_ACTIVE": ("ACTIVE", "ACTIVE — Stage 4 MSID mapping", True),
-}
 
 LIVE_EXTRACTION_DIRS = {
     "accepted",

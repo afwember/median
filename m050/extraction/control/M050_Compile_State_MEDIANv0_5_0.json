@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
-  "updated": "2026-09-09T00:43:50-04:00",
-  "execution_state": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
+  "status": "MSID_MAPPING_READY",
+  "updated": "2026-09-09T00:53:29-04:00",
+  "execution_state": "MSID_MAPPING_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -52,7 +52,7 @@
     "input_atom_count": 98
   },
   "mapping": {
-    "status": "AUTHORIZED_AWAITING_PROCEED",
+    "status": "READY",
     "input_scope": "triage-retained claims plus authorially accepted rewrite outcomes",
     "input_triage_record": "m050/reconciliation/triage/M050_Authorial_Triage_Decisions_MEDIANv0_5_0.jsonl",
     "input_triage_sha256": "dc78c44dbda5bda2eb0d6b89b179c28eb4b5e82155db9779eff710194f4c0e01",
@@ -176,26 +176,26 @@
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
   },
   "authority": {
-    "repository_writes_authorized": true,
-    "source_work_authorized": true,
+    "repository_writes_authorized": false,
+    "source_work_authorized": false,
     "triage_authorized": false,
     "rewrite_authorized": false,
     "google_sheets_interaction_authorized": false,
     "semantic_acceptance_authorized": false,
-    "mapping_authorized": true,
+    "mapping_authorized": false,
     "reconciliation_authorized": false,
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "September 9, 2026 at 12:43:50 AM EDT",
-    "status": "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
+    "updated_human": "September 9, 2026 at 12:53:29 AM EDT",
+    "status": "READY — Stage 4 MSID mapping",
     "phase": "MSID mapping — semantic address assignment",
-    "source": "Embodiment (M050-SRC-EMBODIMENT-001) — 332 eligible claims; 0 mapped",
-    "progress": "1,357 / 5,382 Stage 4 mappings recorded",
-    "now": "Embodiment authority is prepared; no substantive mapping has begun",
-    "next": "Await Asa's Proceed to release the already-authorized Embodiment source work"
+    "source": "Embodiment (M050-SRC-EMBODIMENT-001) — 332 / 332 mappings complete",
+    "progress": "1,689 / 5,382 Stage 4 mappings recorded",
+    "now": "Embodiment Stage 4 mapping is complete and the Compile Worker has Stopped Down",
+    "next": "Await Asa's Spark Up; it may prepare Away authority but must halt before execution"
   },
-  "next_possible_transition": "Proceed may release the already-authorized Embodiment Stage 4 work; without Proceed no substantive source work may begin, and Stage 5 remains prohibited.",
+  "next_possible_transition": "Spark Up may grant bounded Stage 4 mapping work on Away and prepare the execution fermata; Proceed cannot grant authority, and Stage 5 remains prohibited.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": null,

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "MSID_MAPPING_READY",
-  "updated": "2026-09-09T01:29:45-04:00",
+  "updated": "2026-09-09T09:43:06-04:00",
   "execution_state": "MSID_MAPPING_READY",
   "corpus": {
     "registered_sources": 24,
@@ -187,7 +187,7 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "September 9, 2026 at 1:29:45 AM EDT",
+    "updated_human": "September 9, 2026 at 9:43:06 AM EDT",
     "status": "READY — Stage 4 MSID mapping",
     "phase": "MSID mapping — semantic address assignment",
     "source": "Away (M050-SRC-AWAY-001) — 417 / 417 mappings complete",

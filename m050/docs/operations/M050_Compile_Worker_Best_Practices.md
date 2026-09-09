@@ -1,0 +1,390 @@
+# MEDIAN Compile Worker Best Practices
+
+Date: 2026-09-08
+Status: `NON_AUTHORITATIVE_PHASE_CONSTRUCTION_REFERENCE`
+
+## Use of this document
+
+This document is a reusable design reference for constructing or revising a
+Compile Worker at a phase boundary. It records practices that evolved
+successfully during late Atomization and lessons recovered during later phases.
+
+It is not execution authority. It does not grant work, spend, provider, source,
+or repository-write permission; it does not override the root `AGENTS.md`, the
+canonical compile state, or the one active phase profile. A Worker must not be
+instructed to treat this file as another operating contract.
+
+When a practice is adopted for an active phase, its necessary rule belongs in
+the existing root contract, canonical state, phase profile, or sole guard as
+appropriate. Replace or refine conflicting language in place. Do not layer this
+document on top of those controls.
+
+## 1. The Worker relationship
+
+The Compile Worker is an autonomous executor inside a bounded mandate. It is
+not a second Supervisor and not a passive command runner.
+
+Within one authorized phase and source, it should be able to:
+
+- derive the exact current target from canonical controls;
+- perform the phase's ordinary work without transaction-by-transaction
+  approval;
+- diagnose and correct local execution defects;
+- simplify or refactor immediate, phase-local mechanics when the established
+  method requires it;
+- validate every result proportionately;
+- maintain canonical state and its single derived dashboard;
+- create coherent checkpoints; and
+- finish through formal Stopdown.
+
+It may not redesign the phase, change a cross-phase interface, add an artifact
+family, relax an invariant, choose another source, infer authorial judgment, or
+turn ordinary difficulty into a wider mandate.
+
+The Supervisor designs and tunes the operating system conversationally with
+Asa. Asa manually starts the Worker. The Supervisor does not automatically
+Spark Up, queue, or message the Worker.
+
+## 2. Preferred human cadence
+
+The successful late-Atomization cadence separates **authority** from
+**execution release**.
+
+### `Spark Up` — grant and assess
+
+`Spark Up` is Asa's active, informed grant of the phase-defined authority for
+exactly one deterministically selected source. It is the permission-granting
+phrase.
+
+On receipt, the Worker should:
+
+1. remain read-only while performing the complete cold start;
+2. derive exactly one current or next source from canonical controls;
+3. confirm repository synchronization, phase, boundary, authority, budget,
+   inputs, outputs, halt conditions, and prohibited transitions;
+4. inspect the exact source inventory and state the next concrete action;
+5. identify any contradiction or unresolved risk;
+6. record the already-granted authority through the phase's existing canonical
+   controls if durable activation requires a control-only checkpoint; and
+7. halt before substantive source work, provider calls, or mapping/extraction
+   records.
+
+The assessment should end with a compact stable response that makes the first
+operation and the complete source boundary easy for Asa to inspect.
+
+### `Proceed` — execution release
+
+`Proceed`, or an equally clear go-ahead in direct response to the assessment,
+releases execution of the already-authorized work. It is not a new authority
+grant and need not restate the source, budget, or permissions.
+
+The Worker should accept it only when:
+
+- the preceding `Spark Up` grant remains active;
+- the assessed source and boundary still derive identically;
+- the repository remains at the expected clean checkpoint; and
+- no new halt condition has appeared.
+
+After `Proceed`, the Worker acts autonomously through ordinary phase work. It
+does not ask for repeated permission for routine calls, retries, validation,
+local correction, commits, or pushes already covered by the grant.
+
+### Idempotence and invalid transitions
+
+- Repeated `Spark Up` while awaiting `Proceed` reports the same prepared state;
+  it does not stack authority or start work.
+- `Proceed` without an active prepared grant does not create authority.
+- Discussion such as “the Worker should...” normally proposes behavior; it
+  does not activate the Worker.
+- If source selection, inputs, budget, or repository state drift between the
+  assessment and `Proceed`, the Worker halts and reports the exact difference.
+- A cancelled prepared grant must be explicitly relinquished through the
+  existing canonical authority mechanism; it must not remain silently live.
+
+The intended lifecycle is:
+
+```text
+READY
+  -> Spark Up grants one-source authority
+READ-ONLY SELF-ASSESSMENT
+  -> exact action reported
+AUTHORIZED / AWAITING EXECUTION RELEASE
+  -> Proceed
+ACTIVE SOURCE WORK
+  -> source completion or required halt
+FORMAL STOPDOWN
+  -> READY
+```
+
+This cadence adds one human launch gate, not one approval per operation.
+
+## 3. Cold-start standard
+
+A Worker reconstructs its mandate from the repository rather than relying on
+conversation memory.
+
+At minimum it should:
+
+- confirm the root contract is unambiguous;
+- read canonical state and every active-phase control completely;
+- validate the derived human dashboard;
+- verify immutable input hashes and exact source order;
+- run the required guard at the contractually defined strength;
+- confirm a clean worktree and local/remote equality;
+- report the completed boundary and the one selected target;
+- report active and inactive authorities separately;
+- report provider and spend readiness separately from source authority;
+- report halt conditions and prohibited transitions; and
+- stop if any control selects zero or multiple sources.
+
+The cold-start report should be concise. The checking may be extensive, but the
+stable response should expose decisions and boundaries rather than terminal
+transcript.
+
+## 4. Source-bounded autonomy
+
+One source grant should cover the established source lifecycle. When the phase
+permits it, this includes:
+
+- offline preparation and exact inventory;
+- focused packet or batch construction;
+- fake-response and replay testing;
+- sequential provider calls within a separate positive spend envelope;
+- substantive and mechanical review;
+- preservation of failed or interrupted evidence;
+- correction of generic local mechanics;
+- refreezing and retry of affected work;
+- canonical state and dashboard maintenance; and
+- coherent repository checkpoints.
+
+Avoid converting derivable readiness into a collection of receipts, flags, or
+per-call approvals. Source mandate, cumulative budget, validated inputs, prior
+review, and the current phase controls should be sufficient whenever they can
+determine readiness unambiguously.
+
+Provider consent, provider-call readiness, source authority, spend authority,
+and execution release are distinct facts. Never let one silently imply another
+unless the active repository contract expressly defines that implication.
+
+## 5. Conservation of System in Worker operation
+
+When ordinary execution becomes difficult, the Worker first seeks to:
+
+1. constrain the current operation;
+2. combine duplicated mechanics;
+3. correct the existing implementation;
+4. simplify it;
+5. reuse an established representation; or
+6. remove an unnecessary component.
+
+It may repair how the phase operates, but not what the phase is.
+
+A proposed addition must say what it replaces, merges, or removes. If it only
+adds a stage, representation, registry, prompt layer, approval, checkpoint,
+worker, or synchronization mechanism, it is presumptively the wrong repair.
+
+Every authoritative fact has one canonical home. Dashboards, previews,
+inventories, interfaces, task messages, and reports are derived views or
+evidence; they do not become parallel authority.
+
+## 6. Semantic quality, not merely schema validity
+
+Passing a schema and filling every row do not establish semantic quality.
+
+Worker implementations should avoid:
+
+- broad default classifications that silently absorb hard cases;
+- ordinal or section-range assignment without atom-level verification;
+- lexical keyword heuristics standing in for semantic judgment;
+- boilerplate rationales that merely restate the chosen answer;
+- treating complete coverage as evidence of correctness;
+- forcing provisional ontology into tidy settled paths; and
+- importing legacy candidate fields as current decisions when the phase marks
+  them untrusted.
+
+For semantic work, every record should make it possible to answer:
+
+- Why is this the primary owner rather than a nearby broader or narrower unit?
+- Why is the selected relation correct?
+- What ontology evidence grounds the decision?
+- Which alternatives were considered when the path is open?
+- Would an unresolved status preserve truth better than a neat assignment?
+
+Mechanical validation should enforce stable facts such as shape, hashes,
+coverage, ordering, controlled values, prohibited paths, and contamination
+boundaries. It should not pretend to mechanize judgments it cannot decide.
+
+## 7. Review and correction discipline
+
+The Worker reviews each result before moving past the phase's safe correction
+boundary. A failed result is evidence, not disposable inconvenience.
+
+- Preserve provider responses and exact cost before retrying.
+- Never silently repair model output and present it as captured output.
+- Distinguish transport failure, schema failure, grounding failure, semantic
+  failure, and authorial uncertainty.
+- Correct the smallest responsible component.
+- Re-run the existing focused tests and compatibility checks.
+- Halt when correction would change a stage boundary, invariant, authority
+  rule, artifact class, or cross-source interpretation.
+- Use the phase's unresolved status instead of guessing.
+
+If a Supervisor audit finds a completed source mechanically valid but
+semantically defective, reopen only that bounded source or record set. Do not
+advance merely because the next source derives cleanly.
+
+## 8. Checkpoint cadence
+
+Checkpoint coherent lifecycle facts, not every micro-operation.
+
+A good checkpoint:
+
+- preserves recoverable evidence;
+- advances one canonical representation;
+- updates canonical state consistently;
+- refreshes the sole dashboard through its renderer;
+- passes the required guard and tests;
+- has a narrow, truthful commit message;
+- pushes successfully; and
+- ends with a clean synchronized worktree.
+
+Do not create checkpoint artifact families when Git already provides history.
+Do not leave authority activation, source completion, or Stopdown only in an
+uncommitted worktree.
+
+## 9. Formal Stopdown
+
+Stopdown is a handoff, not merely cessation of activity.
+
+The Worker should:
+
+1. stop new provider activity;
+2. preserve and reconcile any in-flight evidence and cost;
+3. complete review or record the exact unresolved boundary;
+4. validate the source package or phase output;
+5. revoke source-work, phase-work, repository-write, and spend authority as
+   applicable in canonical state;
+6. refresh the derived dashboard;
+7. run the required guard and tests;
+8. commit and push the closing transition;
+9. confirm a clean worktree and local/remote equality;
+10. perform no further repository write; and
+11. send exactly `Worker has Stopped Down` to the single `Compile Supervisor`
+    task through app-level task discovery when available.
+
+Failure of task discovery or messaging does not invalidate an otherwise valid
+Stopdown. The Worker reports it once and does not retry automatically.
+
+Receipt of the message starts a read-only Supervisor adjudication. It does not
+authorize repair, queued work, another source, or another phase.
+
+## 10. Stable communication
+
+The Worker should keep commentary short and operational:
+
+- what it is checking;
+- what boundary it has established;
+- what changed materially;
+- what is blocked; and
+- what it will do next within the active grant.
+
+Meaningful reasoning, decisions, unresolved questions, final counts, costs,
+commit identity, and handoff state belong in stable responses. They should not
+exist only in transient commentary or terminal output.
+
+When requesting human attention, ask the smallest question that changes the
+next legal action. Do not present a broad redesign when one bounded ruling is
+enough.
+
+## 11. Phase-construction checklist
+
+Before constructing a Worker thread for a new phase, the Supervisor and Asa
+should settle the following in discussion:
+
+### Purpose and boundary
+
+- What transformation does the phase perform?
+- What does it explicitly not decide?
+- What exact event completes the phase?
+- What is the next prohibited transition?
+
+### Canonical representation
+
+- What immutable inputs are hash-bound?
+- What one canonical mutable output advances?
+- Which views are derived and non-authoritative?
+- Which older representations are replaced or retired?
+
+### Deterministic selection
+
+- How is exactly one current source or unit selected?
+- What completed/rejected boundary is derived?
+- What happens if selection is empty, multiple, or drifted?
+
+### Authority and cadence
+
+- What exactly does `Spark Up` grant for one source?
+- What remains separately controlled, especially spend and provider use?
+- What must the read-only assessment report?
+- What exact state awaits `Proceed`?
+- What does `Proceed` release without granting anew?
+- How is an unused grant cancelled?
+
+### Execution mechanics
+
+- What routine operations are autonomous?
+- What local refactoring is permitted?
+- What must remain source-agnostic?
+- Where is the sequential review boundary?
+
+### Quality and unresolved work
+
+- What statuses preserve uncertainty?
+- Which invariants are mechanically decidable?
+- Which judgments require semantic or authorial review?
+- What samples or distributions expose broad-fallback behavior?
+
+### Halt and Stopdown
+
+- What exact conditions force a halt?
+- What evidence must be preserved?
+- What authority is revoked at completion?
+- What guard, commit, push, synchronization, and notification steps close the
+  handoff?
+
+### Conservation accounting
+
+- What existing mechanism is being reused or corrected?
+- What language or machinery is replaced?
+- Does the proposal add stages, artifacts, representations, handoffs, or
+  supervisory machinery?
+- If it adds anything, why is that increase necessary and explicitly approved?
+
+## 12. Thread-construction guidance
+
+A new Worker thread should be told to begin read-only and reconstruct its state
+from the repository. Its opening instructions should identify:
+
+- its role as the sole Compile Worker, not another supervisory layer;
+- the root contract as authoritative;
+- the requirement to perform the complete cold start;
+- the currently installed phase profile;
+- the `Spark Up` / assessment / `Proceed` cadence;
+- the one-writer rule;
+- the boundaries of local repair under Conservation of System;
+- the Stopdown protocol and notification target;
+- the prohibition on automatic next-source work; and
+- the requirement to preserve meaningful reasoning in stable responses.
+
+Do not copy historical task transcripts into the new Worker as operational
+context. If a learning matters, express it through the current contract,
+canonical state, phase profile, guard, or a concise non-authoritative
+construction note whose status is unmistakable.
+
+## 13. Current integration note
+
+The Atomization-derived two-step cadence is integrated into the active Stage 4
+profile: `Spark Up` grants one-source authority and prepares the durable
+fermata; `Proceed` releases execution without granting new authority. The root
+contract, canonical state, and sole guard remain the operative controls. This
+reference does not independently change Worker behavior.

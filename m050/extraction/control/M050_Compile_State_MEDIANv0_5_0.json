@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "MSID_MAPPING_READY",
-  "updated": "2026-09-08T22:55:06-04:00",
+  "updated": "2026-09-08T23:14:33-04:00",
   "execution_state": "MSID_MAPPING_READY",
   "corpus": {
     "registered_sources": 24,
@@ -187,15 +187,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "September 8, 2026 at 10:55:06 PM EDT",
+    "updated_human": "September 8, 2026 at 11:14:33 PM EDT",
     "status": "READY — Stage 4 MSID mapping",
     "phase": "MSID mapping — semantic address assignment",
     "source": "Human Rulings (M050-SRC-HUMAN-RULINGS-001) — 144 / 144 mappings complete",
     "progress": "669 / 5,382 Stage 4 mappings recorded",
     "now": "Human Rulings Stage 4 mapping is complete and the Compile Worker has Stopped Down",
-    "next": "Await Asa's direction; no other source or Stage 5 work is authorized"
+    "next": "Await Asa's Spark Up; it may prepare MSID Grammar authority but must halt before execution"
   },
-  "next_possible_transition": "Asa may grant bounded Stage 4 mapping work on MSID Grammar; Stage 5 remains prohibited.",
+  "next_possible_transition": "Spark Up may grant bounded Stage 4 mapping work on MSID Grammar and prepare the execution fermata; Proceed cannot grant authority, and Stage 5 remains prohibited.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": null,

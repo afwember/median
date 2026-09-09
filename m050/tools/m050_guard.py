@@ -86,6 +86,16 @@ ENGINE_MODULE = ROOT / "m050/extraction/engine/src/median_gate5/extraction_machi
 ENGINE_TESTS = ROOT / "m050/extraction/engine/tests/test_extraction_machine.py"
 HUMAN_EVIDENCE = ROOT / "m050/extraction/evidence/human-rulings"
 
+MSID_MAPPING_LIFECYCLE = {
+    "MSID_MAPPING_READY": ("READY", "READY — Stage 4 MSID mapping", False),
+    "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED": (
+        "AUTHORIZED_AWAITING_PROCEED",
+        "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
+        True,
+    ),
+    "MSID_MAPPING_ACTIVE": ("ACTIVE", "ACTIVE — Stage 4 MSID mapping", True),
+}
+
 LIVE_EXTRACTION_DIRS = {
     "accepted",
     "audit",
@@ -1032,22 +1042,44 @@ def validate_authorial_rewrite_profile(errors: list[str]) -> None:
         errors.append("authorial-rewrite dashboard progress is stale")
 
 
-def validate_msid_mapping_profile(errors: list[str]) -> None:
-    state = read_json(STATE, errors)
-    authority = state.get("authority", {})
-    ready = state.get("status") == "MSID_MAPPING_READY"
-    active = state.get("status") == "MSID_MAPPING_ACTIVE"
-    if not (ready or active) or state.get("execution_state") != state.get("status"):
+def validate_msid_mapping_lifecycle(
+    state: dict[str, Any], errors: list[str]
+) -> tuple[str | None, bool]:
+    status = state.get("status")
+    lifecycle = MSID_MAPPING_LIFECYCLE.get(status)
+    if lifecycle is None or state.get("execution_state") != status:
         errors.append("canonical Stage 4 lifecycle state is invalid")
+        expected_mapping_status = None
+        expected_dashboard_status = None
+        authority_active = False
+    else:
+        expected_mapping_status, expected_dashboard_status, authority_active = lifecycle
+
+    authority = state.get("authority", {})
     if (
         authority.get("triage_authorized") is not False
         or authority.get("rewrite_authorized") is not False
+        or authority.get("google_sheets_interaction_authorized") is not False
+        or authority.get("semantic_acceptance_authorized") is not False
         or authority.get("reconciliation_authorized") is not False
-        or authority.get("mapping_authorized") is not active
-        or authority.get("source_work_authorized") is not active
-        or authority.get("repository_writes_authorized") is not active
+        or authority.get("compiled_prose_authorized") is not False
+        or authority.get("mapping_authorized") is not authority_active
+        or authority.get("source_work_authorized") is not authority_active
+        or authority.get("repository_writes_authorized") is not authority_active
     ):
         errors.append("canonical Stage 4 authority is inactive or inconsistent")
+    if "provider_call_authorized" in authority:
+        errors.append("canonical authority stores redundant transaction-level provider permission")
+    if state.get("mapping", {}).get("status") != expected_mapping_status:
+        errors.append("canonical Stage 4 mapping status disagrees with lifecycle")
+    if state.get("dashboard", {}).get("status") != expected_dashboard_status:
+        errors.append("canonical Stage 4 dashboard status disagrees with lifecycle")
+    return expected_mapping_status, status == "MSID_MAPPING_ACTIVE"
+
+
+def validate_msid_mapping_profile(errors: list[str]) -> None:
+    state = read_json(STATE, errors)
+    expected_mapping_status, active = validate_msid_mapping_lifecycle(state, errors)
     try:
         corpus = MappingCorpus(ROOT)
         vocabulary = MSIDVocabulary(ROOT)
@@ -1068,7 +1100,7 @@ def validate_msid_mapping_profile(errors: list[str]) -> None:
     if state.get("rewrite") != expected_rewrite:
         errors.append("completed authorial-rewrite binding drifted")
     expected_mapping = {
-        "status": "ACTIVE" if active else "READY",
+        "status": expected_mapping_status,
         "input_scope": "triage-retained claims plus authorially accepted rewrite outcomes",
         "input_triage_record": TRIAGE_DECISIONS.as_posix(),
         "input_triage_sha256": corpus.triage_sha256,

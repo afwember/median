@@ -248,6 +248,89 @@ def test_active_source_retains_one_writer_authority():
     assert errors == []
 
 
+@pytest.mark.parametrize(
+    ("status", "mapping_status", "dashboard_status", "authority_active"),
+    [
+        (
+            "MSID_MAPPING_READY",
+            "READY",
+            "READY — Stage 4 MSID mapping",
+            False,
+        ),
+        (
+            "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
+            "AUTHORIZED_AWAITING_PROCEED",
+            "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
+            True,
+        ),
+        (
+            "MSID_MAPPING_ACTIVE",
+            "ACTIVE",
+            "ACTIVE — Stage 4 MSID mapping",
+            True,
+        ),
+    ],
+)
+def test_stage_4_lifecycle_preserves_spark_up_fermata(
+    status, mapping_status, dashboard_status, authority_active
+):
+    guard = _guard_module()
+    state = {
+        "status": status,
+        "execution_state": status,
+        "mapping": {"status": mapping_status},
+        "dashboard": {"status": dashboard_status},
+        "authority": {
+            "repository_writes_authorized": authority_active,
+            "source_work_authorized": authority_active,
+            "triage_authorized": False,
+            "rewrite_authorized": False,
+            "google_sheets_interaction_authorized": False,
+            "semantic_acceptance_authorized": False,
+            "mapping_authorized": authority_active,
+            "reconciliation_authorized": False,
+            "compiled_prose_authorized": False,
+        },
+    }
+    errors = []
+    guard.validate_msid_mapping_lifecycle(state, errors)
+    assert errors == []
+
+
+def test_stage_4_fermata_requires_preexisting_authority_and_matching_state():
+    guard = _guard_module()
+    state = {
+        "status": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
+        "execution_state": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
+        "mapping": {"status": "AUTHORIZED_AWAITING_PROCEED"},
+        "dashboard": {
+            "status": "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed"
+        },
+        "authority": {
+            "repository_writes_authorized": False,
+            "source_work_authorized": False,
+            "triage_authorized": False,
+            "rewrite_authorized": False,
+            "google_sheets_interaction_authorized": False,
+            "semantic_acceptance_authorized": False,
+            "mapping_authorized": False,
+            "reconciliation_authorized": False,
+            "compiled_prose_authorized": False,
+        },
+    }
+    errors = []
+    guard.validate_msid_mapping_lifecycle(state, errors)
+    assert errors == ["canonical Stage 4 authority is inactive or inconsistent"]
+
+    state["authority"]["repository_writes_authorized"] = True
+    state["authority"]["source_work_authorized"] = True
+    state["authority"]["mapping_authorized"] = True
+    state["mapping"]["status"] = "ACTIVE"
+    errors = []
+    guard.validate_msid_mapping_lifecycle(state, errors)
+    assert errors == ["canonical Stage 4 mapping status disagrees with lifecycle"]
+
+
 def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
     guard = _guard_module()
     state = {

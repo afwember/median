@@ -83,14 +83,15 @@ authorizes it.
 
 **Stopdown** is the Worker-side formal handoff, not merely a pause in source
 work. At source completion the Worker must finish candidate packaging and
-validation, set both source-work and repository-write authority to false in
-canonical state, refresh `STATUS.md`, run the required guard, commit and push
-that closing transition, and confirm a clean worktree with local `HEAD` equal
-to `origin/main`. The closing commit and push are the final repository actions
-permitted by the expiring source grant and may publish only the prepared source
-completion and authority revocation. A source-completion halt is not a
-Stopdown while either authority remains true. After the closing push the Worker
-makes no further repository write unless Asa explicitly grants new work.
+validation, set source-work, repository-write, and the applicable phase-work
+authority to false in canonical state, refresh `STATUS.md`, run the required
+guard, commit and push that closing transition, and confirm a clean worktree
+with local `HEAD` equal to `origin/main`. The closing commit and push are the
+final repository actions permitted by the expiring source grant and may publish
+only the prepared source completion and authority revocation. A
+source-completion halt is not a Stopdown while any applicable authority remains
+true. After the closing push the Worker makes no further repository write
+unless Asa explicitly grants new work.
 
 After confirming formal Stopdown, the Worker uses Codex app task/thread
 discovery and cross-task messaging when available to send exactly
@@ -117,6 +118,12 @@ validation. It must preserve the permanent CoS, role, authority,
 canonical-state, STATUS, and one-writer rules. Do not preserve the retired
 profile as another active file or accumulate profiles into a workflow stack;
 Git is the history.
+
+`m050/docs/operations/M050_Compile_Worker_Best_Practices.md` is a
+non-authoritative phase-construction reference. It may inform Supervisor/author
+discussion, but it grants no authority and is not a Worker control. A practice
+becomes operative only when it replaces or refines language in this contract,
+the active profile, canonical state, or the sole guard.
 
 ## Canonical controls
 
@@ -180,14 +187,39 @@ authority, conflict, supersession, reconciliation, canon, or compiled prose.
 
 The profile is initially ready but not Worker-active. No source-work, mapping,
 provider-call, model-spend, or repository-write authority follows from profile
-installation. A clear instruction from Asa to resume, continue, begin, proceed,
-or `Spark Up` Compile Worker activity is a sufficient explicit source-work,
-mapping, and repository-write grant for exactly one source. No prescribed
-wording or source-name restatement is required. The Worker derives the current
-or next source deterministically from canonical compile state and source order
-and reports that source during cold start. If those controls do not select
-exactly one source, halt. Source completion ends the grant through formal
-Stopdown; starting the following source requires a later human instruction.
+installation. Asa's instruction `Spark Up` is the permission-granting phrase:
+it explicitly grants source-work, mapping, and repository-write authority for
+exactly one source. No source-name restatement is required. `Proceed`, or an
+equally clear go-ahead after the prepared report, is execution release only; it
+never creates or enlarges authority.
+
+On `Spark Up` from the ready state, the Worker first remains read-only while it
+performs the complete cold start, derives the current or next source from
+canonical state and source order, inventories the exact source boundary, and
+reports its first substantive action, halt conditions, prohibited transitions,
+and any contradiction or risk. If the controls do not select exactly one
+source, halt without activating authority. If they do, record the already
+granted authority only through the existing canonical authority fields, set
+both `status` and `execution_state` to
+`MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED`, set `mapping.status` to
+`AUTHORIZED_AWAITING_PROCEED`, refresh the dashboard and `STATUS.md`, run the
+full guard, commit and push that control-only activation, confirm a clean
+synchronized worktree, and halt at the prepared-authority fermata. This
+checkpoint may not add or change mappings, invoke a provider, or perform other
+substantive source work.
+
+From that fermata, `Proceed` releases the already-authorized source work only
+if the source and boundary still derive identically, the worktree is clean and
+synchronized at the prepared checkpoint, and no halt condition has appeared.
+The Worker sets both lifecycle fields to `MSID_MAPPING_ACTIVE` and
+`mapping.status` to `ACTIVE` before its first substantive repository write,
+then operates autonomously within the grant.
+Repeated `Spark Up` at the fermata is idempotent and starts no work. `Proceed`
+from any state other than the fermata grants nothing. Drift requires a halt and
+report. Cancellation or Stopdown before execution uses a control-only closing
+checkpoint to revoke the existing grant. Source completion ends the grant
+through formal Stopdown; starting the following source requires a later
+`Spark Up`.
 
 ### Canonical input and representation
 
@@ -236,12 +268,13 @@ Stopdown; starting the following source requires a later human instruction.
 - Provider-assisted mapping requires a separately approved provider-enabled
   configuration and positive cumulative spend envelope. No current extraction
   packet, prompt, schema, budget, or credential use carries into Stage 4.
-- Within an active source grant, the Worker may activate the applicable
-  canonical authority fields, map, validate, correct generic local mechanics,
-  maintain canonical state and STATUS, run required guards, and commit and push
-  coherent checkpoints without transaction-by-transaction approval. It may not
-  compare source authority, merge claims, add a taxonomy, create another mapping
-  representation, enter another source, or begin Stage 5.
+- After valid execution release from the prepared-authority fermata, the Worker
+  may enter the active lifecycle, map, validate, correct generic local
+  mechanics, maintain canonical state and STATUS, run required guards, and
+  commit and push coherent checkpoints without transaction-by-transaction
+  approval. It may not compare source authority, merge claims, add a taxonomy,
+  create another mapping representation, enter another source, or begin Stage
+  5.
 - Halt for vocabulary or input drift, invalid record shape, coverage disagreement,
   unresolved ontology that the five statuses cannot preserve, requested source
   completion, exhausted authority or spend, or any need to change the phase.

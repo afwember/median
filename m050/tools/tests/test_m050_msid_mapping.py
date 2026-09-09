@@ -143,13 +143,25 @@ def test_repository_state_has_consistent_mapping_lifecycle_and_no_provider_autho
     state = json.loads(
         (ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json").read_text()
     )
-    assert state["status"] in {"MSID_MAPPING_READY", "MSID_MAPPING_ACTIVE"}
+    mapping_statuses = {
+        "MSID_MAPPING_READY": ("READY", "READY — Stage 4 MSID mapping", False),
+        "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED": (
+            "AUTHORIZED_AWAITING_PROCEED",
+            "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
+            True,
+        ),
+        "MSID_MAPPING_ACTIVE": ("ACTIVE", "ACTIVE — Stage 4 MSID mapping", True),
+    }
+    assert state["status"] in mapping_statuses
     assert state["execution_state"] == state["status"]
-    active = state["status"] == "MSID_MAPPING_ACTIVE"
-    assert state["mapping"]["status"] == ("ACTIVE" if active else "READY")
+    expected_mapping_status, expected_dashboard_status, authority_active = mapping_statuses[
+        state["status"]
+    ]
+    assert state["mapping"]["status"] == expected_mapping_status
+    assert state["dashboard"]["status"] == expected_dashboard_status
     assert state["mapping"]["input_atom_count"] == 5382
     assert state["mapping"]["input_source_count"] == 18
-    assert state["authority"]["mapping_authorized"] is active
-    assert state["authority"]["source_work_authorized"] is active
-    assert state["authority"]["repository_writes_authorized"] is active
+    assert state["authority"]["mapping_authorized"] is authority_active
+    assert state["authority"]["source_work_authorized"] is authority_active
+    assert state["authority"]["repository_writes_authorized"] is authority_active
     assert state["spend"]["active"] is False

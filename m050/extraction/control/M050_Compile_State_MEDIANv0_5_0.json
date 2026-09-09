@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "MSID_MAPPING_READY",
-  "updated": "2026-09-08T20:33:45-04:00",
+  "updated": "2026-09-08T20:53:45-04:00",
   "execution_state": "MSID_MAPPING_READY",
   "corpus": {
     "registered_sources": 24,
@@ -187,15 +187,15 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "September 8, 2026 at 8:33:45 PM EDT",
+    "updated_human": "September 8, 2026 at 8:53:45 PM EDT",
     "status": "READY — Stage 4 MSID mapping",
     "phase": "MSID mapping — semantic address assignment",
-    "source": "Authorial Grammar (M050-SRC-AUTHORIAL-GRAMMAR-001) — 186 / 186 mappings complete",
-    "progress": "186 / 5,382 Stage 4 mappings recorded",
-    "now": "Authorial Grammar Stage 4 mapping is complete and the Compile Worker has Stopped Down",
+    "source": "Governing Philosophy and Architecture (M050-SRC-PA-001) — 339 / 339 mappings complete",
+    "progress": "525 / 5,382 Stage 4 mappings recorded",
+    "now": "Governing Philosophy and Architecture Stage 4 mapping is complete and the Compile Worker has Stopped Down",
     "next": "Await Asa's direction; no other source or Stage 5 work is authorized"
   },
-  "next_possible_transition": "Asa may grant bounded Stage 4 mapping work on Governing Philosophy and Architecture; Stage 5 remains prohibited.",
+  "next_possible_transition": "Asa may grant bounded Stage 4 mapping work on Human Rulings; Stage 5 remains prohibited.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": null,

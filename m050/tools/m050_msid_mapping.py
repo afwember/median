@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Zero-call Stage 4 MSID mapping inventory, validation, and record store."""
+"""Zero-call Stage 4 MSID mapping inventory, lifecycle, and record store."""
 
 from __future__ import annotations
 
 import argparse
+import copy
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import hashlib
@@ -11,6 +12,8 @@ import json
 import os
 from pathlib import Path
 import re
+import stat
+import subprocess
 import tempfile
 import uuid
 
@@ -46,10 +49,38 @@ VOCABULARY_SCHEMA_VERSION = "M050-MSID-VOCABULARY-0.1"
 MAPPING_STATUSES = {"mapped", "unmapped", "ambiguous", "invalid", "human_required"}
 REVIEW_STATES = {"worker_validated", "human_required"}
 MSID_LITERAL = re.compile(r"\b(?:[A-Z][A-Za-z0-9]*\.)+[A-Z][A-Za-z0-9]*\b")
+LIFECYCLE = {
+    "MSID_MAPPING_READY": ("READY", "READY — Stage 4 MSID mapping", False),
+    "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED": (
+        "AUTHORIZED_AWAITING_PROCEED",
+        "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
+        True,
+    ),
+    "MSID_MAPPING_ACTIVE": ("ACTIVE", "ACTIVE — Stage 4 MSID mapping", True),
+}
+TRANSITIONS = {"prepare-spark-up", "activate-on-proceed", "prepare-stopdown"}
 
 
 def _text_sha256(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def _atomic_write_json(path: Path, value: dict) -> None:
+    """Replace one existing canonical JSON object without creating a sidecar."""
+    mode = stat.S_IMODE(path.stat().st_mode) if path.exists() else 0o644
+    descriptor, name = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.")
+    temporary = Path(name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+            json.dump(value, handle, indent=2, ensure_ascii=False)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.chmod(temporary, mode)
+        os.replace(temporary, path)
+    except BaseException:
+        temporary.unlink(missing_ok=True)
+        raise
 
 
 @dataclass(frozen=True)
@@ -422,19 +453,370 @@ def inventory(corpus: MappingCorpus, vocabulary: MSIDVocabulary, store: MappingS
     }
 
 
+def _source_progress(corpus: MappingCorpus, store: MappingStore) -> dict[str, dict[str, int]]:
+    mapped = {source_id: 0 for source_id in corpus.source_ids}
+    for item in corpus.atoms:
+        if item.key in store.mappings:
+            mapped[item.atom.source_id] += 1
+    return {
+        source_id: {
+            "mapped": mapped[source_id],
+            "total": corpus.source_totals[source_id],
+            "remaining": corpus.source_totals[source_id] - mapped[source_id],
+        }
+        for source_id in corpus.source_ids
+    }
+
+
+def _validate_order_boundary(
+    corpus: MappingCorpus,
+    store: MappingStore,
+    errors: list[str],
+) -> str | None:
+    """Require a complete prefix, at most one partial source, and an empty suffix."""
+    progress = _source_progress(corpus, store)
+    current = active_source(corpus, store)
+    if current is None:
+        return None
+    current_index = corpus.source_ids.index(current)
+    for source_id in corpus.source_ids[:current_index]:
+        if progress[source_id]["remaining"]:
+            errors.append(f"earlier mapping source is incomplete: {source_id}")
+    for source_id in corpus.source_ids[current_index + 1:]:
+        if progress[source_id]["mapped"]:
+            errors.append(f"later mapping source was entered early: {source_id}")
+    return current
+
+
+def _dashboard_source_id(state: dict, corpus: MappingCorpus) -> str | None:
+    text = state.get("dashboard", {}).get("source")
+    if not isinstance(text, str):
+        return None
+    matches = [source_id for source_id in corpus.source_ids if f"({source_id})" in text]
+    return matches[0] if len(matches) == 1 else None
+
+
+def _dashboard_matches(state: dict, expected: dict[str, str]) -> bool:
+    dashboard = state.get("dashboard", {})
+    return (
+        isinstance(dashboard, dict)
+        and set(dashboard) <= set(expected) | {"updated_human"}
+        and all(dashboard.get(key) == value for key, value in expected.items())
+    )
+
+
+def _replace_dashboard_fields(state: dict, fields: dict[str, str]) -> None:
+    updated_human = state.get("dashboard", {}).get("updated_human")
+    state["dashboard"] = dict(fields)
+    if isinstance(updated_human, str):
+        state["dashboard"]["updated_human"] = updated_human
+
+
+def _expected_prepared_dashboard(
+    corpus: MappingCorpus,
+    store: MappingStore,
+    source_id: str,
+) -> dict[str, str]:
+    progress = _source_progress(corpus, store)[source_id]
+    label = corpus.source_labels[source_id]
+    return {
+        "status": "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
+        "phase": "MSID mapping — semantic address assignment",
+        "source": (
+            f"{label} ({source_id}) — {progress['total']:,} eligible claims; "
+            f"{progress['mapped']:,} mapped"
+        ),
+        "progress": f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded",
+        "now": f"{label} authority is prepared; no substantive mapping has begun",
+        "next": f"Await Asa's Proceed to release the already-authorized {label} source work",
+    }
+
+
+def _expected_active_dashboard(
+    corpus: MappingCorpus,
+    store: MappingStore,
+    source_id: str,
+) -> dict[str, str]:
+    dashboard = _expected_prepared_dashboard(corpus, store, source_id)
+    label = corpus.source_labels[source_id]
+    dashboard.update({
+        "status": "ACTIVE — Stage 4 MSID mapping",
+        "now": f"{label} Stage 4 mapping is active within the released source boundary",
+        "next": f"Complete only {label}, then formally Stop Down; do not enter another source",
+    })
+    return dashboard
+
+
+def _expected_ready_dashboard(
+    corpus: MappingCorpus,
+    store: MappingStore,
+    source_id: str,
+    *,
+    cancelled: bool,
+) -> tuple[dict[str, str], str]:
+    progress = _source_progress(corpus, store)[source_id]
+    label = corpus.source_labels[source_id]
+    next_source = active_source(corpus, store)
+    if next_source is None:
+        next_text = "Stage 4 mapping is complete; halt for separately authorized Stage 5 reconciliation"
+        transition = (
+            "Stage 4 mapping is complete; Stopdown must remain in force until Asa separately "
+            "authorizes Stage 5 reconciliation."
+        )
+    else:
+        next_label = corpus.source_labels[next_source]
+        next_text = (
+            f"Await Asa's Spark Up; it may prepare {next_label} authority but must halt before execution"
+        )
+        transition = (
+            f"Spark Up may grant bounded Stage 4 mapping work on {next_label} and prepare the "
+            "execution fermata; Proceed cannot grant authority, and Stage 5 remains prohibited."
+        )
+    now = (
+        f"{label} prepared authority was cancelled before execution and the Compile Worker has Stopped Down"
+        if cancelled
+        else f"{label} Stage 4 mapping is complete and the Compile Worker has Stopped Down"
+    )
+    return ({
+        "status": "READY — Stage 4 MSID mapping",
+        "phase": "MSID mapping — semantic address assignment",
+        "source": f"{label} ({source_id}) — {progress['mapped']:,} / {progress['total']:,} mappings complete",
+        "progress": f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded",
+        "now": now,
+        "next": next_text,
+    }, transition)
+
+
+def _validate_lifecycle_baseline(
+    state: dict,
+    corpus: MappingCorpus,
+    store: MappingStore,
+) -> None:
+    errors: list[str] = []
+    status = state.get("status")
+    lifecycle = LIFECYCLE.get(status)
+    if lifecycle is None or state.get("execution_state") != status:
+        errors.append("canonical Stage 4 lifecycle is invalid")
+        expected_mapping_status, expected_dashboard_status, authority_active = None, None, False
+    else:
+        expected_mapping_status, expected_dashboard_status, authority_active = lifecycle
+    authority = state.get("authority", {})
+    for key in (
+        "triage_authorized", "rewrite_authorized", "google_sheets_interaction_authorized",
+        "semantic_acceptance_authorized", "reconciliation_authorized", "compiled_prose_authorized",
+    ):
+        if authority.get(key) is not False:
+            errors.append(f"prohibited authority is active: {key}")
+    for key in ("mapping_authorized", "source_work_authorized", "repository_writes_authorized"):
+        if authority.get(key) is not authority_active:
+            errors.append(f"Stage 4 authority disagrees with lifecycle: {key}")
+    if state.get("mapping", {}).get("status") != expected_mapping_status:
+        errors.append("mapping status disagrees with lifecycle")
+    if state.get("dashboard", {}).get("status") != expected_dashboard_status:
+        errors.append("dashboard status disagrees with lifecycle")
+    if state.get("dashboard", {}).get("phase") != "MSID mapping — semantic address assignment":
+        errors.append("dashboard phase is not Stage 4 MSID mapping")
+    if state.get("spend", {}).get("active") is not False:
+        errors.append("provider spend is active during provider-free Stage 4")
+    expected_progress = f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded"
+    if status != "MSID_MAPPING_ACTIVE" and state.get("dashboard", {}).get("progress") != expected_progress:
+        errors.append("Stage 4 dashboard progress is stale outside active execution")
+    _validate_order_boundary(corpus, store, errors)
+    if errors:
+        raise TriageError("; ".join(errors))
+
+
+def plan_lifecycle_transition(
+    state: dict,
+    corpus: MappingCorpus,
+    store: MappingStore,
+    transition: str,
+) -> tuple[dict, dict]:
+    """Return a validated canonical-state replacement and an ephemeral report."""
+    if transition not in TRANSITIONS:
+        raise TriageError(f"unknown Stage 4 lifecycle transition: {transition}")
+    _validate_lifecycle_baseline(state, corpus, store)
+    before = state.get("status")
+    current = active_source(corpus, store)
+    result = copy.deepcopy(state)
+    changed = True
+    cancelled = False
+
+    if transition == "prepare-spark-up":
+        if before == "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED":
+            source_id = _dashboard_source_id(state, corpus)
+            if source_id is None or source_id != current or not _dashboard_matches(
+                state, _expected_prepared_dashboard(corpus, store, source_id)
+            ):
+                raise TriageError("prepared-authority boundary drifted")
+            changed = False
+        elif before != "MSID_MAPPING_READY":
+            raise TriageError("Spark Up preparation requires READY or the existing fermata")
+        else:
+            source_id = current
+            if source_id is None:
+                raise TriageError("Stage 4 has complete coverage; Spark Up cannot select a source")
+            result["status"] = result["execution_state"] = "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED"
+            result["mapping"]["status"] = "AUTHORIZED_AWAITING_PROCEED"
+            for key in ("mapping_authorized", "source_work_authorized", "repository_writes_authorized"):
+                result["authority"][key] = True
+            _replace_dashboard_fields(
+                result, _expected_prepared_dashboard(corpus, store, source_id)
+            )
+            label = corpus.source_labels[source_id]
+            result["next_possible_transition"] = (
+                f"Proceed may release the already-authorized {label} Stage 4 work; without Proceed no "
+                "substantive source work may begin, and Stage 5 remains prohibited."
+            )
+    elif transition == "activate-on-proceed":
+        if before != "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED":
+            raise TriageError("Proceed release requires the prepared-authority fermata")
+        source_id = _dashboard_source_id(state, corpus)
+        if source_id is None or source_id != current:
+            raise TriageError("prepared source no longer matches the canonical mapping boundary")
+        if not _dashboard_matches(state, _expected_prepared_dashboard(corpus, store, source_id)):
+            raise TriageError("prepared-authority inventory drifted")
+        result["status"] = result["execution_state"] = "MSID_MAPPING_ACTIVE"
+        result["mapping"]["status"] = "ACTIVE"
+        _replace_dashboard_fields(result, _expected_active_dashboard(corpus, store, source_id))
+        label = corpus.source_labels[source_id]
+        result["next_possible_transition"] = (
+            f"Complete only {label}, then formally Stop Down; another source and Stage 5 remain prohibited."
+        )
+    else:
+        if before == "MSID_MAPPING_READY":
+            source_id = _dashboard_source_id(state, corpus)
+            changed = False
+        elif before == "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED":
+            source_id = _dashboard_source_id(state, corpus)
+            if source_id is None or source_id != current or not _dashboard_matches(
+                state, _expected_prepared_dashboard(corpus, store, source_id)
+            ):
+                raise TriageError("prepared-authority boundary drifted before cancellation")
+            cancelled = True
+        elif before == "MSID_MAPPING_ACTIVE":
+            source_id = _dashboard_source_id(state, corpus)
+            if source_id is None:
+                raise TriageError("active mapping source is absent from canonical state")
+            progress = _source_progress(corpus, store)[source_id]
+            if progress["remaining"]:
+                raise TriageError(
+                    f"formal Stopdown requires complete source coverage: {progress['remaining']} remain"
+                )
+            source_index = corpus.source_ids.index(source_id)
+            expected_completed_index = (
+                len(corpus.source_ids) - 1
+                if current is None
+                else corpus.source_ids.index(current) - 1
+            )
+            if expected_completed_index < 0 or source_index != expected_completed_index:
+                raise TriageError("active grant does not match the just-completed source boundary")
+            if any(
+                _source_progress(corpus, store)[later]["mapped"]
+                for later in corpus.source_ids[source_index + 1:]
+            ):
+                raise TriageError("formal Stopdown found mappings beyond the granted source")
+        else:
+            raise TriageError("formal Stopdown requires READY, ACTIVE, or the prepared fermata")
+        if changed:
+            result["status"] = result["execution_state"] = "MSID_MAPPING_READY"
+            result["mapping"]["status"] = "READY"
+            for key in ("mapping_authorized", "source_work_authorized", "repository_writes_authorized"):
+                result["authority"][key] = False
+            dashboard, result["next_possible_transition"] = _expected_ready_dashboard(
+                corpus, store, source_id, cancelled=cancelled
+            )
+            _replace_dashboard_fields(result, dashboard)
+
+    source_progress = _source_progress(corpus, store).get(source_id, {}) if source_id else {}
+    if not changed:
+        next_operations = (
+            ["halt at the existing prepared-authority fermata"]
+            if transition == "prepare-spark-up"
+            else ["none; formal Stopdown is already in force"]
+        )
+    elif transition == "prepare-spark-up":
+        next_operations = [
+            "render STATUS.md", "run full guard", "commit", "push",
+            "confirm clean synchronization", "halt at the prepared-authority fermata",
+        ]
+    elif transition == "activate-on-proceed":
+        next_operations = ["begin only the released source work"]
+    else:
+        next_operations = [
+            "render STATUS.md", "run full guard", "commit", "push",
+            "confirm clean synchronization", "notify Compile Supervisor",
+        ]
+    report = {
+        "transition": transition,
+        "changed": changed,
+        "from_lifecycle": before,
+        "to_lifecycle": result.get("status"),
+        "source_id": source_id,
+        "source_label": corpus.source_labels.get(source_id) if source_id else None,
+        "source_progress": source_progress,
+        "mapping_records": len(store.mappings),
+        "external_calls": 0,
+        "next_required_operations": next_operations,
+    }
+    return result, report
+
+
+def _require_clean_synchronized_checkpoint(repo_root: Path) -> None:
+    status = subprocess.run(
+        ["git", "status", "--porcelain"], cwd=repo_root, check=True,
+        capture_output=True, text=True,
+    ).stdout
+    if status.strip():
+        raise TriageError("prepared lifecycle transition requires a clean worktree")
+    head = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=repo_root, check=True,
+        capture_output=True, text=True,
+    ).stdout.strip()
+    origin = subprocess.run(
+        ["git", "rev-parse", "origin/main"], cwd=repo_root, check=True,
+        capture_output=True, text=True,
+    ).stdout.strip()
+    if head != origin:
+        raise TriageError("prepared lifecycle transition requires local HEAD equal to origin/main")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, default=Path.cwd())
     parser.add_argument("--inventory", action="store_true")
     parser.add_argument("--stats", action="store_true")
     parser.add_argument("--preview", action="store_true")
+    parser.add_argument("--transition", choices=sorted(TRANSITIONS))
+    parser.add_argument(
+        "--apply",
+        action="store_true",
+        help="atomically apply a validated --transition to canonical compile state",
+    )
     args = parser.parse_args(argv)
     try:
         root = args.repo_root.resolve()
         corpus = MappingCorpus(root)
         vocabulary = MSIDVocabulary(root)
         store = MappingStore(root / DEFAULT_MAPPINGS, corpus, vocabulary)
-        if args.inventory:
+        selected = sum(bool(value) for value in (args.inventory, args.stats, args.preview, args.transition))
+        if selected != 1:
+            raise TriageError("select exactly one inventory, stats, preview, or lifecycle transition operation")
+        if args.apply and not args.transition:
+            raise TriageError("--apply is valid only with --transition")
+        if args.transition:
+            if args.transition in {"prepare-spark-up", "activate-on-proceed"}:
+                _require_clean_synchronized_checkpoint(root)
+            state_path = root / STATE
+            state = _read_json(state_path)
+            replacement, report = plan_lifecycle_transition(
+                state, corpus, store, args.transition
+            )
+            report["applied"] = bool(args.apply and report["changed"])
+            if args.apply and report["changed"]:
+                _atomic_write_json(state_path, replacement)
+            print(json.dumps(report, indent=2, ensure_ascii=False))
+        elif args.inventory:
             print(json.dumps(inventory(corpus, vocabulary, store), indent=2, ensure_ascii=False))
         elif args.stats:
             print(json.dumps(store.counts(), indent=2))
@@ -447,10 +829,8 @@ def main(argv: list[str] | None = None) -> int:
                 "effective_claim": item.effective_claim if item else None,
                 "effective_claim_origin": item.effective_claim_origin if item else None,
             }, indent=2, ensure_ascii=False))
-        else:
-            raise TriageError("use --inventory, --stats, or --preview")
         return 0
-    except TriageError as exc:
+    except (TriageError, subprocess.CalledProcessError) as exc:
         print(f"MSID MAPPING ERROR: {exc}", file=os.sys.stderr)
         return 2
 

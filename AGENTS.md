@@ -287,6 +287,13 @@ through formal Stopdown; starting the following source requires a later
 
 - Process eligible atoms in canonical source and atom order. Resume at the first
   unmapped atom in the one explicitly released source.
+- Use `m050/tools/m050_msid_mapping.py --transition prepare-spark-up`,
+  `--transition activate-on-proceed`, and `--transition prepare-stopdown` for
+  deterministic lifecycle preflight. The commands are dry-run by default;
+  `--apply` atomically changes only canonical compile state after validation.
+  Their JSON output is ephemeral reporting, not another authority record.
+  STATUS rendering, the full guard, Git operations, synchronization checks, and
+  Stopdown notification remain separate operations as required above.
 - Zero-call preparation may build and validate the vocabulary, inventory the
   exact input, identify literal MSIDs, measure ignored legacy semantic shell,
   and estimate later model work. It may not record semantic mappings.

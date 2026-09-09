@@ -2,6 +2,7 @@ import importlib.util
 import json
 from pathlib import Path
 import sys
+from types import SimpleNamespace
 
 import pytest
 
@@ -165,3 +166,110 @@ def test_repository_state_has_consistent_mapping_lifecycle_and_no_provider_autho
     assert state["authority"]["source_work_authorized"] is authority_active
     assert state["authority"]["repository_writes_authorized"] is authority_active
     assert state["spend"]["active"] is False
+
+
+def _repository_state():
+    return json.loads(
+        (ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json").read_text()
+    )
+
+
+def _store_with_keys(store, keys):
+    return SimpleNamespace(mappings={key: {} for key in keys})
+
+
+def test_lifecycle_prepare_spark_up_is_bounded_and_idempotent(mapping, corpus, vocabulary):
+    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+    state = _repository_state()
+    replacement, report = mapping.plan_lifecycle_transition(
+        state, corpus, store, "prepare-spark-up"
+    )
+    assert state["status"] == "MSID_MAPPING_READY"
+    assert replacement["status"] == "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED"
+    assert replacement["mapping"]["status"] == "AUTHORIZED_AWAITING_PROCEED"
+    assert replacement["authority"]["mapping_authorized"] is True
+    assert replacement["authority"]["source_work_authorized"] is True
+    assert replacement["authority"]["repository_writes_authorized"] is True
+    assert report["source_id"] == "M050-SRC-CROSSING-001"
+    repeated, repeated_report = mapping.plan_lifecycle_transition(
+        replacement, corpus, store, "prepare-spark-up"
+    )
+    assert repeated == replacement
+    assert repeated_report["changed"] is False
+
+
+def test_lifecycle_proceed_activates_only_the_prepared_boundary(mapping, corpus, vocabulary):
+    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+    prepared, _ = mapping.plan_lifecycle_transition(
+        _repository_state(), corpus, store, "prepare-spark-up"
+    )
+    active, report = mapping.plan_lifecycle_transition(
+        prepared, corpus, store, "activate-on-proceed"
+    )
+    assert active["status"] == "MSID_MAPPING_ACTIVE"
+    assert active["mapping"]["status"] == "ACTIVE"
+    assert report["source_id"] == "M050-SRC-CROSSING-001"
+    assert report["external_calls"] == 0
+
+
+def test_lifecycle_stopdown_requires_complete_granted_source(mapping, corpus, vocabulary):
+    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+    prepared, _ = mapping.plan_lifecycle_transition(
+        _repository_state(), corpus, store, "prepare-spark-up"
+    )
+    active, _ = mapping.plan_lifecycle_transition(
+        prepared, corpus, store, "activate-on-proceed"
+    )
+    with pytest.raises(mapping.TriageError, match="complete source coverage"):
+        mapping.plan_lifecycle_transition(active, corpus, store, "prepare-stopdown")
+
+
+def test_lifecycle_stopdown_revokes_authority_and_selects_no_new_work(mapping, corpus, vocabulary):
+    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+    prepared, _ = mapping.plan_lifecycle_transition(
+        _repository_state(), corpus, store, "prepare-spark-up"
+    )
+    active, _ = mapping.plan_lifecycle_transition(
+        prepared, corpus, store, "activate-on-proceed"
+    )
+    crossing_keys = {
+        item.key for item in corpus.atoms
+        if item.atom.source_id == "M050-SRC-CROSSING-001"
+    }
+    complete_store = _store_with_keys(store, set(store.mappings) | crossing_keys)
+    stopped, report = mapping.plan_lifecycle_transition(
+        active, corpus, complete_store, "prepare-stopdown"
+    )
+    assert stopped["status"] == "MSID_MAPPING_READY"
+    assert stopped["mapping"]["status"] == "READY"
+    assert stopped["authority"]["mapping_authorized"] is False
+    assert stopped["authority"]["source_work_authorized"] is False
+    assert stopped["authority"]["repository_writes_authorized"] is False
+    assert "Population" in stopped["dashboard"]["next"]
+    assert report["source_id"] == "M050-SRC-CROSSING-001"
+
+
+def test_lifecycle_pre_execution_cancellation_returns_to_ready(mapping, corpus, vocabulary):
+    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+    prepared, _ = mapping.plan_lifecycle_transition(
+        _repository_state(), corpus, store, "prepare-spark-up"
+    )
+    stopped, _ = mapping.plan_lifecycle_transition(
+        prepared, corpus, store, "prepare-stopdown"
+    )
+    assert stopped["status"] == "MSID_MAPPING_READY"
+    assert "cancelled before execution" in stopped["dashboard"]["now"]
+    assert "Crossing" in stopped["dashboard"]["next"]
+
+
+def test_lifecycle_rejects_mapping_beyond_the_current_source(mapping, corpus, vocabulary):
+    store = mapping.MappingStore(ROOT / mapping.DEFAULT_MAPPINGS, corpus, vocabulary)
+    later_key = next(
+        item.key for item in corpus.atoms
+        if item.atom.source_id == "M050-SRC-POPULATION-001"
+    )
+    drifted_store = _store_with_keys(store, set(store.mappings) | {later_key})
+    with pytest.raises(mapping.TriageError, match="later mapping source was entered early"):
+        mapping.plan_lifecycle_transition(
+            _repository_state(), corpus, drifted_store, "prepare-spark-up"
+        )

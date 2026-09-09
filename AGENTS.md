@@ -180,8 +180,14 @@ authority, conflict, supersession, reconciliation, canon, or compiled prose.
 
 The profile is initially ready but not Worker-active. No source-work, mapping,
 provider-call, model-spend, or repository-write authority follows from profile
-installation. Asa manually initiates the Worker and grants each bounded mapping
-target. The Worker does not choose or advance its own source.
+installation. A clear instruction from Asa to resume, continue, begin, proceed,
+or `Spark Up` Compile Worker activity is a sufficient explicit source-work,
+mapping, and repository-write grant for exactly one source. No prescribed
+wording or source-name restatement is required. The Worker derives the current
+or next source deterministically from canonical compile state and source order
+and reports that source during cold start. If those controls do not select
+exactly one source, halt. Source completion ends the grant through formal
+Stopdown; starting the following source requires a later human instruction.
 
 ### Canonical input and representation
 
@@ -230,10 +236,12 @@ target. The Worker does not choose or advance its own source.
 - Provider-assisted mapping requires a separately approved provider-enabled
   configuration and positive cumulative spend envelope. No current extraction
   packet, prompt, schema, budget, or credential use carries into Stage 4.
-- Within an active source grant, the Worker may map, validate, correct generic
-  local mechanics, and checkpoint coherently. It may not compare source
-  authority, merge claims, add a taxonomy, create another mapping representation,
-  enter another source, or begin Stage 5.
+- Within an active source grant, the Worker may activate the applicable
+  canonical authority fields, map, validate, correct generic local mechanics,
+  maintain canonical state and STATUS, run required guards, and commit and push
+  coherent checkpoints without transaction-by-transaction approval. It may not
+  compare source authority, merge claims, add a taxonomy, create another mapping
+  representation, enter another source, or begin Stage 5.
 - Halt for vocabulary or input drift, invalid record shape, coverage disagreement,
   unresolved ontology that the five statuses cannot preserve, requested source
   completion, exhausted authority or spend, or any need to change the phase.

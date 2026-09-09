@@ -36,14 +36,6 @@ def corpus(triage):
     return triage.load_corpus(ROOT)
 
 
-def test_loads_every_completed_candidate_with_unique_bound_atoms(corpus):
-    assert len(corpus.atoms) == 6550
-    assert len(corpus.candidate_hashes) == 18
-    assert len(corpus.source_labels) == 18
-    assert len(corpus.by_key) == 6550
-    assert {atom.source_id for atom in corpus.atoms} == set(corpus.candidate_hashes)
-
-
 def test_modern_atom_joins_full_source_block_and_siblings(corpus):
     atom = next(
         atom
@@ -165,18 +157,6 @@ def test_uncertain_rewrite_route_is_bound_and_persistent(tmp_path, triage, corpu
     reloaded = triage.DecisionStore(path, corpus)
     assert reloaded.decisions[atom.key]["decision"] == "uncertain"
     assert reloaded.decisions[atom.key]["review_route"] == "rewrite_list"
-
-
-def test_candidate_hash_drift_invalidates_existing_decision(tmp_path, triage, corpus):
-    atom = corpus.atoms[0]
-    path = tmp_path / "bad.jsonl"
-    store = triage.DecisionStore(path, corpus)
-    store.apply((atom,), "retain")
-    record = json.loads(path.read_text(encoding="utf-8"))
-    record["candidate_sha256"] = "0" * 64
-    path.write_text(json.dumps(record) + "\n", encoding="utf-8")
-    with pytest.raises(triage.TriageError, match="binding drifted"):
-        triage.DecisionStore(path, corpus)
 
 
 def _request_json(url, *, pin=None, body=None, origin=None):

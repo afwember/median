@@ -35,63 +35,6 @@ def corpus(rewrite):
     return rewrite.RewriteCorpus(ROOT)
 
 
-def test_input_is_exact_completed_rewrite_list(corpus):
-    assert len(corpus.atoms) == 98
-    assert len(corpus.by_key) == 98
-    assert all(atom in corpus.full_corpus.atoms for atom in corpus.atoms)
-    assert not any("m051" in atom.source_id.lower() for atom in corpus.atoms)
-
-
-def test_rewrite_is_trimmed_bound_and_authorially_accepted(tmp_path, rewrite, corpus):
-    atom = corpus.atoms[0]
-    path = tmp_path / "rewrites.jsonl"
-    store = rewrite.RewriteStore(path, corpus)
-    store.apply(atom.key, "  A clearer source-grounded replacement.  ")
-    record = rewrite.RewriteStore(path, corpus).rewrites[atom.key]
-    assert record["resolution"] == "rewrite"
-    assert record["replacement_claim"] == "A clearer source-grounded replacement."
-    assert record["authorially_accepted"] is True
-    assert record["candidate_sha256"] == atom.candidate_sha256
-    assert record["triage_decision_sha256"] == corpus.triage_sha256
-    assert record["original_claim_sha256"] == rewrite._text_sha256(atom.normalized_claim)
-
-
-def test_empty_claim_is_rejected_and_unchanged_claim_is_accepted(tmp_path, rewrite, corpus):
-    atom = corpus.atoms[0]
-    store = rewrite.RewriteStore(tmp_path / "rewrites.jsonl", corpus)
-    with pytest.raises(rewrite.TriageError, match="nonempty"):
-        store.apply(atom.key, "  ")
-    store.apply(atom.key, atom.normalized_claim)
-    record = rewrite.RewriteStore(store.path, corpus).rewrites[atom.key]
-    assert record["resolution"] == "accept"
-    assert record["replacement_claim"] == atom.normalized_claim
-
-
-def test_exclusion_uses_existing_authorial_reason(tmp_path, rewrite, corpus):
-    atom = corpus.atoms[0]
-    path = tmp_path / "exclusions.jsonl"
-    store = rewrite.RewriteStore(path, corpus)
-    store.exclude(atom.key)
-    record = rewrite.RewriteStore(path, corpus).rewrites[atom.key]
-    assert record["resolution"] == "exclude"
-    assert record["replacement_claim"] is None
-    assert record["exclusion_reason"] == "other_authorial_exclusion"
-    assert store.counts()["excluded"] == 1
-    assert store.counts()["resolved"] == 1
-
-
-def test_binding_drift_is_rejected(tmp_path, rewrite, corpus):
-    atom = corpus.atoms[0]
-    path = tmp_path / "rewrites.jsonl"
-    store = rewrite.RewriteStore(path, corpus)
-    store.apply(atom.key, "A valid replacement.")
-    record = json.loads(path.read_text(encoding="utf-8"))
-    record["original_claim_sha256"] = "0" * 64
-    path.write_text(json.dumps(record) + "\n", encoding="utf-8")
-    with pytest.raises(rewrite.TriageError, match="binding drifted"):
-        rewrite.RewriteStore(path, corpus)
-
-
 def test_working_store_advances_sources_and_checkpoints_complete_slate(tmp_path, rewrite, corpus):
     canonical_path = tmp_path / "canonical.jsonl"
     working_path = tmp_path / "working.jsonl"

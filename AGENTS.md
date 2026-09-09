@@ -178,10 +178,9 @@ the active profile, canonical state, or the sole guard.
 5. Run `.venv/bin/python m050/tools/m050_guard.py --with-tests` before
    control/code release, provider-enabled configuration release, whole-source
    acceptance, and commit/push. Invoke the renderer and full guard in separate
-   tool calls. If localhost-binding tests require host elevation, the elevated
-   call contains only the exact full-guard command and its narrow stable
-   command prefix. Routine provider capture uses the extraction machine’s
-   focused packet, source, spend, cache, response, and prior-review checks.
+   tool calls. The active Stage 4 suite is provider-free and does not bind
+   network ports. Routine provider capture uses the extraction machine’s focused
+   packet, source, spend, cache, response, and prior-review checks.
 6. Report concisely: active phase; current target and completed/rejected
    boundary; work and spend authority; halt conditions; prohibited transitions;
    next possible transition; STATUS freshness; and whether local `HEAD` equals

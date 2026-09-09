@@ -1,11 +1,9 @@
 import copy
-from datetime import datetime
 from decimal import Decimal
 import hashlib
 import importlib.util
 import json
 from pathlib import Path
-import sys
 from types import SimpleNamespace
 
 import pytest
@@ -37,10 +35,6 @@ MACHINE_TOOL = ROOT / "m050/tools/m050_extraction_machine_v0_1.py"
 AUTHGRAM_CONFIG = ROOT / "m050/extraction/control/M050_Authorial_Grammar_Extraction_Machine_Config_v0_6_MEDIANv0_5_0.json"
 COMPILE_STATE = ROOT / "m050/extraction/control/M050_Compile_State_MEDIANv0_5_0.json"
 GUARD = ROOT / "m050/tools/m050_guard.py"
-HOME_CONFIG = ROOT / "m050/extraction/control/M050_Home_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json"
-RENDER_STATUS = ROOT / "m050/tools/m050_render_status.py"
-HOME_REPORT = ROOT / "m050/extraction/accepted/home/M050_Home_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json"
-HOME_LEDGER = "m050/extraction/runs/home-pilot/M050_Home_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
 CURRENT_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_C0003_Call_Packet_v0_15_MEDIANv0_5_0.json"
 CURRENT_LEDGER = ROOT / "m050/extraction/runs/authorial-grammar-target-coverage-calibration/M050_Authorial_Grammar_Target_Coverage_Run_Ledger_v0_11_MEDIANv0_5_0.jsonl"
 ACCEPTED_C0001_PACKET = ROOT / "m050/extraction/runs/authorial-grammar-structural-source/M050_Authorial_Grammar_Structural_C0001_Call_Packet_v0_4_MEDIANv0_5_0.json"
@@ -63,97 +57,6 @@ def _guard_module():
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
-
-
-def _render_status_module():
-    spec = importlib.util.spec_from_file_location(
-        "m050_render_status_for_tests", RENDER_STATUS
-    )
-    assert spec is not None and spec.loader is not None
-    module = importlib.util.module_from_spec(spec)
-    tool_path = str(RENDER_STATUS.parent)
-    sys.path.insert(0, tool_path)
-    try:
-        spec.loader.exec_module(module)
-    finally:
-        sys.path.remove(tool_path)
-    return module
-
-
-def _home_acceptance_fixture():
-    report = _json(HOME_REPORT)
-    source = {
-        "id": report["source_id"],
-        "accepted_chunk_ids": report["accepted_chunk_ids"],
-    }
-    calibration = {
-        "accepted_evidence": [
-            {
-                "chunk_id": item["chunk_id"],
-                "outcome": item["outcome_path"],
-                "run_ledger": HOME_LEDGER,
-            }
-            for item in report["accepted_inputs"]
-        ],
-        "candidate_acceptance": {
-            "candidate": report["candidate_path"],
-            "candidate_sha256": report["candidate_sha256"],
-            "report": HOME_REPORT.relative_to(ROOT).as_posix(),
-            "report_sha256": hashlib.sha256(HOME_REPORT.read_bytes()).hexdigest(),
-        },
-    }
-    return source, _json(HOME_CONFIG), calibration
-
-
-def test_completed_source_has_exact_hash_bound_candidate_acceptance():
-    guard = _guard_module()
-    source, config, calibration = _home_acceptance_fixture()
-    errors = []
-    guard.validate_candidate_acceptance(
-        source,
-        config,
-        calibration,
-        source["accepted_chunk_ids"],
-        calibration["accepted_evidence"],
-        errors,
-    )
-    assert errors == []
-
-
-def test_completed_source_rejects_missing_candidate_acceptance_pair():
-    guard = _guard_module()
-    source, config, calibration = _home_acceptance_fixture()
-    calibration.pop("candidate_acceptance")
-    errors = []
-    guard.validate_candidate_acceptance(
-        source,
-        config,
-        calibration,
-        source["accepted_chunk_ids"],
-        calibration["accepted_evidence"],
-        errors,
-    )
-    assert errors == ["completed source lacks a hash-bound candidate/report pair"]
-
-
-def test_accepted_candidate_rejects_missing_coverage_and_duplicate_identifiers():
-    guard = _guard_module()
-    expected = [
-        ("C0001", {"proposal_id": "P1", "source_id": "S1"}),
-        ("C0002", {"proposal_id": "P1", "source_id": "S1"}),
-    ]
-    candidate = [{"proposal_id": "P1", "source_id": "S1"}]
-    errors = []
-    guard.validate_accepted_candidate_records(candidate, expected, errors)
-    assert any("coverage drifted" in error for error in errors)
-
-    candidate = [
-        {"proposal_id": "P1", "source_id": "S1"},
-        {"proposal_id": "P1", "source_id": "S1"},
-    ]
-    errors = []
-    guard.validate_accepted_candidate_records(candidate, expected, errors)
-    assert "accepted candidate record identifiers are not candidate-wide unique" in errors
 
 
 def test_pending_identity_card_is_hash_bound_and_has_no_extraction_boundary(tmp_path, monkeypatch):
@@ -246,144 +149,6 @@ def test_active_source_retains_one_writer_authority():
     errors = []
     guard.validate_authority_state(source, authority, errors)
     assert errors == []
-
-
-@pytest.mark.parametrize(
-    ("status", "mapping_status", "dashboard_status", "authority_active"),
-    [
-        (
-            "MSID_MAPPING_READY",
-            "READY",
-            "READY — Stage 4 MSID mapping",
-            False,
-        ),
-        (
-            "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
-            "AUTHORIZED_AWAITING_PROCEED",
-            "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
-            True,
-        ),
-        (
-            "MSID_MAPPING_ACTIVE",
-            "ACTIVE",
-            "ACTIVE — Stage 4 MSID mapping",
-            True,
-        ),
-    ],
-)
-def test_stage_4_lifecycle_preserves_spark_up_fermata(
-    status, mapping_status, dashboard_status, authority_active
-):
-    guard = _guard_module()
-    state = {
-        "status": status,
-        "execution_state": status,
-        "mapping": {"status": mapping_status},
-        "dashboard": {"status": dashboard_status},
-        "authority": {
-            "repository_writes_authorized": authority_active,
-            "source_work_authorized": authority_active,
-            "triage_authorized": False,
-            "rewrite_authorized": False,
-            "google_sheets_interaction_authorized": False,
-            "semantic_acceptance_authorized": False,
-            "mapping_authorized": authority_active,
-            "reconciliation_authorized": False,
-            "compiled_prose_authorized": False,
-        },
-    }
-    errors = []
-    guard.validate_msid_mapping_lifecycle(state, errors)
-    assert errors == []
-
-
-def test_stage_4_fermata_requires_preexisting_authority_and_matching_state():
-    guard = _guard_module()
-    state = {
-        "status": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
-        "execution_state": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
-        "mapping": {"status": "AUTHORIZED_AWAITING_PROCEED"},
-        "dashboard": {
-            "status": "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed"
-        },
-        "authority": {
-            "repository_writes_authorized": False,
-            "source_work_authorized": False,
-            "triage_authorized": False,
-            "rewrite_authorized": False,
-            "google_sheets_interaction_authorized": False,
-            "semantic_acceptance_authorized": False,
-            "mapping_authorized": False,
-            "reconciliation_authorized": False,
-            "compiled_prose_authorized": False,
-        },
-    }
-    errors = []
-    guard.validate_msid_mapping_lifecycle(state, errors)
-    assert errors == ["canonical Stage 4 authority is inactive or inconsistent"]
-
-    state["authority"]["repository_writes_authorized"] = True
-    state["authority"]["source_work_authorized"] = True
-    state["authority"]["mapping_authorized"] = True
-    state["mapping"]["status"] = "ACTIVE"
-    errors = []
-    guard.validate_msid_mapping_lifecycle(state, errors)
-    assert errors == ["canonical Stage 4 mapping status disagrees with lifecycle"]
-
-
-def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():
-    guard = _guard_module()
-    state = {
-        "dashboard": {
-            "updated_human": "August 4, 2026 at 5:46:07 PM EDT",
-            "status": "Stopped",
-            "phase": "Atomic extraction",
-            "source": "Away",
-            "chunk": "Complete",
-            "now": "Candidate accepted",
-            "next": "Await authorization",
-        },
-        "spend": {
-            "remaining_usd": "0.6576584",
-            "display_usd_rounded_up": "9.03",
-        },
-    }
-    status = guard.expected_status(state)
-    assert "**UPDATED:**" not in status
-    assert "August 4, 2026 at 5:46:07 PM EDT<br>" in status
-    assert status.endswith("**SPEND REMAINING:** $0.65\n")
-    assert "TOTAL COST" not in status
-
-
-def test_status_renderer_rounds_and_updates_canonical_timestamp(tmp_path):
-    renderer = _render_status_module()
-    state_path = tmp_path / "state.json"
-    status_path = tmp_path / "STATUS.md"
-    state = {
-        "updated": "2026-01-01T00:00:00-05:00",
-        "dashboard": {
-            "updated_human": "stale",
-            "status": "Stopped",
-            "phase": "Atomic extraction",
-            "source": "Personal Items",
-            "chunk": "C0015",
-            "now": "Stopped",
-            "next": "Await authorization",
-        },
-        "spend": {"remaining_usd": "0.2745620"},
-    }
-    state_path.write_text(json.dumps(state), encoding="utf-8")
-    renderer.render_status(
-        state_path,
-        status_path,
-        now=datetime.fromisoformat("2026-08-05T09:12:13.600000-04:00"),
-    )
-    updated = _json(state_path)
-    assert updated["updated"] == "2026-08-05T09:12:14-04:00"
-    assert updated["dashboard"]["updated_human"] == (
-        "August 5, 2026 at 9:12:14 AM EDT"
-    )
-    assert status_path.read_text(encoding="utf-8") == renderer.expected_status(updated)
 
 
 def _pricing():

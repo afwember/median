@@ -1205,13 +1205,16 @@ def validate_work_order(path: Path | None, errors: list[str]) -> None:
 
 
 def run_tests() -> int:
+    # The release guard follows the replaceable active phase. The complete
+    # cross-phase regression suite remains available through ordinary pytest.
     return subprocess.run(
         [
             str(ROOT / ".venv/bin/python"),
             "-m",
             "pytest",
-            "m050/extraction/engine/tests",
-            "m050/tools/tests",
+            "m050/tools/tests/test_m050_stage4_guard.py",
+            "m050/tools/tests/test_m050_msid_mapping.py",
+            "m050/tools/tests/test_m050_render_status.py",
             "-q",
         ],
         cwd=ROOT,

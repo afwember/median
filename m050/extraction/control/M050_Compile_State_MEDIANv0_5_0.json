@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "MSID_MAPPING_READY",
-  "updated": "2026-09-09T10:14:40-04:00",
+  "updated": "2026-09-09T10:20:03-04:00",
   "execution_state": "MSID_MAPPING_READY",
   "corpus": {
     "registered_sources": 24,
@@ -187,13 +187,13 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "updated_human": "September 9, 2026 at 10:14:40 AM EDT",
     "status": "READY — Stage 4 MSID mapping",
     "phase": "MSID mapping — semantic address assignment",
-    "source": "Away (M050-SRC-AWAY-001) — 417 / 417 mappings complete",
+    "source": "Crossing (M050-SRC-CROSSING-001) — 0 / 102 mappings complete",
     "progress": "2,106 / 5,382 Stage 4 mappings recorded",
-    "now": "Away Stage 4 mapping is complete and the Compile Worker has Stopped Down",
-    "next": "Await Asa's Spark Up; it may prepare Crossing authority but must halt before execution"
+    "now": "Crossing prepared authority was cancelled before execution and the Compile Worker has Stopped Down",
+    "next": "Await Asa's Spark Up; it may prepare Crossing authority but must halt before execution",
+    "updated_human": "September 9, 2026 at 10:20:03 AM EDT"
   },
   "next_possible_transition": "Spark Up may grant bounded Stage 4 mapping work on Crossing and prepare the execution fermata; Proceed cannot grant authority, and Stage 5 remains prohibited.",
   "gate_5_complete": false,

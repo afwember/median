@@ -1162,6 +1162,12 @@ def validate_operating_contract(errors: list[str]) -> None:
             errors.append(f"AGENTS omits required structural section: {heading}")
     if len(text.encode("utf-8")) > 32 * 1024:
         errors.append("AGENTS exceeds the 32 KiB root-instruction discovery limit")
+    for task_tool in (
+        "codex_app__list_threads",
+        "codex_app__send_message_to_thread",
+    ):
+        if task_tool not in text:
+            errors.append(f"AGENTS omits required Stopdown task tool: {task_tool}")
     for pattern in RETIRED_PATTERNS:
         for target in ROOT.glob(pattern):
             errors.append(f"retired supervisory file remains active: {target.relative_to(ROOT)}")

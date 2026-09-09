@@ -270,7 +270,11 @@ The Worker should:
 9. confirm a clean worktree and local/remote equality;
 10. perform no further repository write; and
 11. send exactly `Worker has Stopped Down` to the single `Compile Supervisor`
-    task through app-level task discovery when available.
+    task through app-level task discovery when available. Before declaring the
+    capability unavailable, inspect the complete tool catalog, including
+    deferred `ALL_TOOLS` entries when exposed, for
+    `codex_app__list_threads` and `codex_app__send_message_to_thread`; peer
+    Codex tasks are not visible through sub-agent discovery.
 
 Failure of task discovery or messaging does not invalidate an otherwise valid
 Stopdown. The Worker reports it once and does not retry automatically.

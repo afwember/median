@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "MSID_MAPPING_READY",
-  "updated": "2026-09-10T12:20:41-04:00",
+  "updated": "2026-09-10T13:10:39-04:00",
   "execution_state": "MSID_MAPPING_READY",
   "corpus": {
     "registered_sources": 24,
@@ -189,13 +189,13 @@
   "dashboard": {
     "status": "READY — Stage 4 MSID mapping",
     "phase": "MSID mapping — semantic address assignment",
-    "source": "v0.4.7 Development Rulings (M050-SRC-047-DEVELOPMENT-RULINGS-001) — 370 / 370 mappings complete",
-    "progress": "5,364 / 5,382 Stage 4 mappings recorded",
-    "now": "v0.4.7 Development Rulings Stage 4 mapping is complete and the Compile Worker has Stopped Down",
-    "next": "Await Asa's Spark Up; assess v0.4.7 Development Survivorship Review read-only and halt for Proceed",
-    "updated_human": "September 10, 2026 at 12:20:41 PM EDT"
+    "source": "v0.4.7 Development Survivorship Review (M050-SRC-047-SURVIVORSHIP-REVIEW-001) — 18 / 18 mappings complete",
+    "progress": "5,382 / 5,382 Stage 4 mappings recorded",
+    "now": "v0.4.7 Development Survivorship Review Stage 4 mapping is complete and the Compile Worker has Stopped Down",
+    "next": "Stage 4 mapping is complete; halt for separately authorized Stage 5 reconciliation",
+    "updated_human": "September 10, 2026 at 1:10:39 PM EDT"
   },
-  "next_possible_transition": "Spark Up may grant bounded Stage 4 mapping work on v0.4.7 Development Survivorship Review and trigger its read-only assessment; Proceed releases that grant, and Stage 5 remains prohibited.",
+  "next_possible_transition": "Stage 4 mapping is complete; Stopdown must remain in force until Asa separately authorizes Stage 5 reconciliation.",
   "gate_5_complete": false,
   "latest_provider_attempt": {
     "http_status": null,

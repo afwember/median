@@ -256,6 +256,11 @@ def test_lifecycle_proceed_from_ready_grants_nothing(mapping):
         mapping.plan_lifecycle_transition(state, corpus, store, "activate-on-proceed")
 
 
+def test_proceed_cli_rejects_redundant_dry_run(mapping, capsys):
+    assert mapping.main(["--transition", "activate-on-proceed"]) == 2
+    assert "one atomic --apply invocation" in capsys.readouterr().err
+
+
 def test_lifecycle_stopdown_requires_complete_granted_source(mapping):
     state, corpus, store = _lifecycle_fixture()
     prepared, _ = mapping.plan_lifecycle_transition(

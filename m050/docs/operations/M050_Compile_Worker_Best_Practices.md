@@ -85,6 +85,12 @@ The Worker should accept it only when:
 - the repository remains at the expected clean checkpoint; and
 - no new halt condition has appeared.
 
+The phase's activation operation should test those conditions and change the
+lifecycle atomically in one invocation. Do not precede it with a second cold
+start, full guard, separate synchronization check, dry-run transition, preview,
+inventory, or general revalidation. A failed atomic activation returns to LLM
+adjudication; a successful one should proceed directly into the prepared work.
+
 After `Proceed`, the Worker acts autonomously through ordinary phase work. It
 does not ask for repeated permission for routine calls, retries, validation,
 local correction, commits, or pushes already covered by the grant.

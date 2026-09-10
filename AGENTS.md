@@ -235,9 +235,15 @@ substantive source work.
 From that fermata, `Proceed` releases the already-authorized source work only
 if the source and boundary still derive identically, the worktree is clean and
 synchronized at the prepared checkpoint, and no halt condition has appeared.
-The Worker sets both lifecycle fields to `MSID_MAPPING_ACTIVE` and
-`mapping.status` to `ACTIVE` before its first substantive repository write,
-then operates autonomously within the grant.
+Handle `Proceed` with exactly one invocation of
+`.venv/bin/python m050/tools/m050_msid_mapping.py --transition
+activate-on-proceed --apply`. That operation performs the narrow deterministic
+stale-check and atomically sets both lifecycle fields to `MSID_MAPPING_ACTIVE`
+and `mapping.status` to `ACTIVE`. Do not precede it with another cold start,
+full guard, separate Git or synchronization checks, lifecycle dry-run, preview,
+inventory, or general revalidation. If it fails, halt and report the exact
+drift; if it succeeds, begin the prepared source work immediately and operate
+autonomously within the grant.
 Repeated `Spark Up` at the fermata is idempotent and starts no work. `Proceed`
 from any state other than the fermata grants nothing. Drift requires a halt and
 report. Cancellation or Stopdown before execution uses a control-only closing
@@ -288,11 +294,15 @@ through formal Stopdown; starting the following source requires a later
   unmapped atom in the one explicitly released source.
 - Use `m050/tools/m050_msid_mapping.py --transition prepare-spark-up`,
   `--transition activate-on-proceed`, and `--transition prepare-stopdown` for
-  deterministic lifecycle preflight. The commands are dry-run by default;
-  `--apply` atomically changes only canonical compile state after validation.
-  Their JSON output is ephemeral reporting, not another authority record.
-  STATUS rendering, the full guard, Git operations, synchronization checks, and
-  Stopdown notification remain separate operations as required above.
+  deterministic lifecycle transitions. Preparation and Stopdown commands are
+  dry-run by default; `--apply` atomically changes only canonical compile state
+  after validation. `activate-on-proceed` is the exception: it rejects dry-run
+  use and must be invoked once with `--apply`, whose internal check replaces any
+  separate Proceed preflight. Their JSON output is ephemeral reporting, not
+  another authority record. STATUS rendering, the full guard, Git operations,
+  synchronization checks, and Stopdown notification remain separate operations
+  during Spark Up preparation and formal Stopdown, as required above; do not
+  repeat them for `Proceed` activation.
 - Zero-call preparation may build and validate the vocabulary, inventory the
   exact input, identify literal MSIDs, measure ignored legacy semantic shell,
   and estimate later model work. It may not record semantic mappings.

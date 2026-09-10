@@ -795,15 +795,20 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
     try:
-        root = args.repo_root.resolve()
-        corpus = MappingCorpus(root)
-        vocabulary = MSIDVocabulary(root)
-        store = MappingStore(root / DEFAULT_MAPPINGS, corpus, vocabulary)
         selected = sum(bool(value) for value in (args.inventory, args.stats, args.preview, args.transition))
         if selected != 1:
             raise TriageError("select exactly one inventory, stats, preview, or lifecycle transition operation")
         if args.apply and not args.transition:
             raise TriageError("--apply is valid only with --transition")
+        if args.transition == "activate-on-proceed" and not args.apply:
+            raise TriageError(
+                "Proceed activation requires one atomic --apply invocation; "
+                "a separate lifecycle dry-run is prohibited"
+            )
+        root = args.repo_root.resolve()
+        corpus = MappingCorpus(root)
+        vocabulary = MSIDVocabulary(root)
+        store = MappingStore(root / DEFAULT_MAPPINGS, corpus, vocabulary)
         if args.transition:
             if args.transition in {"prepare-spark-up", "activate-on-proceed"}:
                 _require_clean_synchronized_checkpoint(root)

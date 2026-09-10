@@ -1,6 +1,6 @@
 # MEDIAN COMPILE — v0.5.0
 
-September 10, 2026 at 3:12:34 PM EDT<br>
+September 10, 2026 at 5:51:14 PM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
@@ -10,4 +10,4 @@ September 10, 2026 at 3:12:34 PM EDT<br>
 **PROGRESS:** 0 / 5,382 atoms assigned to canonical semantic units<br>
 **NOW:** Stage 5 is installed at the Away.Crossing pilot boundary; the Compile Worker is Stopped Down<br>
 **NEXT:** Spark Up may grant the bounded pilot; Proceed is still required before execution<br>
-**PROVIDER SPEND (INACTIVE):** $0.72
+**PROVIDER SPEND (INACTIVE):** $2.00

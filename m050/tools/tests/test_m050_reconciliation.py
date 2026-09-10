@@ -134,11 +134,98 @@ def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(
     }
     with pytest.raises(reconciliation.TriageError, match="model is not configured"):
         reconciliation.build_proposer_request(packet, provider)
-    provider.update({"model": "test-model", "maximum_output_tokens": 24000})
+    provider.update({
+        "model": "test-model",
+        "maximum_output_tokens": {"proposal": 40000, "review": 8000},
+    })
     request = reconciliation.build_proposer_request(packet, provider)
     assert request["model"] == "test-model"
-    assert request["system"][0]["cache_control"]["ttl"] == "1h"
+    assert request["max_tokens"] == 40000
+    assert request["messages"][0]["content"][0]["cache_control"]["ttl"] == "1h"
     assert request["output_config"]["format"]["type"] == "json_schema"
+
+
+def test_proposal_and_review_share_the_cached_packet_prefix(packet):
+    provider = {
+        "model": "claude-opus-5",
+        "reasoning_effort": "high",
+        "cache_ttl": "1h",
+        "maximum_output_tokens": {"proposal": 40000, "review": 8000},
+    }
+    proposal = _proposal(packet)
+    proposer = reconciliation.build_proposer_request(packet, provider)
+    reviewer = reconciliation.build_reviewer_request(packet, proposal, provider)
+    assert proposer["system"] == reviewer["system"]
+    assert (
+        proposer["messages"][0]["content"][0]
+        == reviewer["messages"][0]["content"][0]
+    )
+    assert (
+        proposer["messages"][0]["content"][1]
+        == reviewer["messages"][0]["content"][1]
+    )
+    cached_packet = json.loads(proposer["messages"][0]["content"][0]["text"])
+    atom_evidence = json.loads(proposer["messages"][0]["content"][1]["text"])
+    assert {**cached_packet, **atom_evidence} == packet
+    assert proposer["max_tokens"] == 40000
+    assert reviewer["max_tokens"] == 8000
+    prefix_count_body = reconciliation._token_count_body(
+        reviewer, cache_prefix_only=True
+    )
+    assert len(prefix_count_body["messages"][0]["content"]) == 1
+    assert "max_tokens" not in prefix_count_body
+
+
+def test_counted_preflight_prices_cache_miss_with_margin():
+    request = {
+        "max_tokens": 40000,
+        "messages": [{"content": [{
+            "cache_control": {"type": "ephemeral", "ttl": "1h"}
+        }]}],
+    }
+    pricing = {
+        "input_usd_per_million_tokens": "5",
+        "output_usd_per_million_tokens": "25",
+        "cache_5m_write_multiplier": "1.25",
+        "cache_1h_write_multiplier": "2",
+    }
+    token_count = {
+        "full": {"response": {"input_tokens": 100000}},
+        "cache_prefix": {"response": {"input_tokens": 90000}},
+    }
+    forecast = reconciliation.counted_call_ceiling(request, pricing, token_count)
+    assert forecast["reserved_cache_prefix_tokens"] == 91800
+    assert forecast["reserved_uncached_suffix_tokens"] == 10512
+    assert forecast["total_ceiling_usd"] == "1.97056"
+
+
+def test_token_count_preflight_uses_free_endpoint_twice(monkeypatch, tmp_path, packet):
+    provider = {
+        "model": "claude-opus-5",
+        "reasoning_effort": "high",
+        "cache_ttl": "1h",
+        "maximum_output_tokens": {"proposal": 36000, "review": 8000},
+    }
+    request = reconciliation.build_proposer_request(packet, provider)
+    observed = []
+    counts = iter((100000, 90000))
+
+    def fake_send(endpoint, body, _key_file, _timeout):
+        observed.append((endpoint, body))
+        return 200, json.dumps({"input_tokens": next(counts)}).encode("utf-8")
+
+    monkeypatch.setattr(reconciliation, "_send_anthropic_to", fake_send)
+    evidence = reconciliation._count_anthropic_request(
+        request, tmp_path / "unused-key", 1.0
+    )
+    assert len(observed) == 2
+    assert all(
+        endpoint == reconciliation.ANTHROPIC_TOKEN_COUNT_ENDPOINT
+        for endpoint, _body in observed
+    )
+    assert all("max_tokens" not in body for _endpoint, body in observed)
+    assert evidence["full"]["response"]["input_tokens"] == 100000
+    assert evidence["cache_prefix"]["response"]["input_tokens"] == 90000
 
 
 def test_run_ledger_is_append_only_and_hash_chained(tmp_path):
@@ -172,7 +259,7 @@ def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(
     assert state["authority"]["provider_calls_authorized"] is False
 
 
-def test_proceed_activates_only_reconciliation_when_provider_is_disabled(
+def test_proceed_activates_reconciliation_and_preconfigured_provider(
     corpus, empty_store
 ):
     state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
@@ -188,8 +275,9 @@ def test_proceed_activates_only_reconciliation_when_provider_is_disabled(
     assert active["authority"]["repository_writes_authorized"] is True
     assert active["authority"]["reconciliation_authorized"] is True
     assert active["authority"]["semantic_acceptance_authorized"] is True
-    assert active["authority"]["provider_calls_authorized"] is False
-    assert active["spend"]["active"] is False
+    assert active["authority"]["provider_calls_authorized"] is True
+    assert active["spend"]["active"] is True
+    assert active["spend"]["remaining_usd"] == "2.0000000"
 
 
 def test_stopdown_rejects_incomplete_tranche(corpus, empty_store):

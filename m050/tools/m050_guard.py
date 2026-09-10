@@ -342,6 +342,7 @@ def validate_spend_and_status(
     if "record" in state_spend:
         errors.append("canonical spend points to a redundant successor spend file")
     try:
+        refresh_window = Decimal(state_spend.get("refresh_window_usd", ""))
         authorized = Decimal(state_spend.get("authorized_usd", ""))
         cumulative = Decimal(state_spend.get("cumulative_spent_usd", ""))
         remaining = Decimal(state_spend.get("remaining_usd", ""))
@@ -351,7 +352,14 @@ def validate_spend_and_status(
     else:
         if state_spend.get("active") is not active_required:
             errors.append("canonical cumulative budget activity disagrees with the active phase")
-        if cumulative < 0 or authorized < 0 or remaining < 0 or authorized - cumulative != remaining:
+        if (
+            refresh_window <= 0
+            or cumulative < 0
+            or authorized < 0
+            or remaining < 0
+            or authorized - cumulative != remaining
+            or remaining > refresh_window
+        ):
             errors.append("canonical cumulative budget arithmetic is inconsistent")
         if state_spend.get("display_usd_rounded_up") != f"{rounded:.2f}":
             errors.append("dashboard cost is not rounded upward to the cent")
@@ -451,18 +459,45 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
     if not isinstance(provider, dict) or set(provider) != required_provider_keys:
         errors.append("canonical Stage 5 provider configuration shape drifted")
     elif provider_enabled:
+        output_limits = provider.get("maximum_output_tokens")
+        pricing = provider.get("pricing")
+        required_pricing = {
+            "input_usd_per_million_tokens", "output_usd_per_million_tokens",
+            "cache_read_multiplier", "cache_5m_write_multiplier",
+            "cache_1h_write_multiplier",
+        }
+        expected_pricing = {
+            "input_usd_per_million_tokens": "5",
+            "output_usd_per_million_tokens": "25",
+            "cache_read_multiplier": "0.1",
+            "cache_5m_write_multiplier": "1.25",
+            "cache_1h_write_multiplier": "2",
+        }
         if (
             provider.get("name") != "Anthropic"
-            or not isinstance(provider.get("model"), str)
-            or not provider["model"]
-            or provider.get("reasoning_effort") not in {"low", "medium", "high"}
-            or provider.get("cache_ttl") not in {"5m", "1h"}
-            or not isinstance(provider.get("maximum_output_tokens"), int)
-            or provider["maximum_output_tokens"] < 1
-            or not isinstance(provider.get("pricing"), dict)
+            or provider.get("model") != "claude-opus-5"
+            or provider.get("reasoning_effort") != "high"
+            or provider.get("cache_ttl") != "1h"
+            or not isinstance(output_limits, dict)
+            or set(output_limits) != {"proposal", "review"}
+            or any(not isinstance(value, int) or value < 1 for value in output_limits.values())
+            or not isinstance(pricing, dict)
+            or set(pricing) != required_pricing
+            or pricing != expected_pricing
             or provider.get("proposal_review_required") is not True
         ):
             errors.append("enabled Stage 5 provider configuration is invalid")
+        else:
+            try:
+                rates = [Decimal(pricing[key]) for key in required_pricing]
+                invalid_rate = any(
+                    not value.is_finite() or value <= 0 for value in rates
+                )
+            except Exception:
+                errors.append("enabled Stage 5 provider pricing is invalid")
+            else:
+                if invalid_rate:
+                    errors.append("enabled Stage 5 provider pricing is invalid")
     elif (
         provider.get("name") != "Anthropic"
         or provider.get("model") is not None
@@ -510,9 +545,21 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
             errors.append(f"invalid Stage 5 run evidence {path.relative_to(ROOT)}: {exc}")
     for ledger in run_root.rglob("run_ledger.jsonl") if run_root.exists() else ():
         try:
-            reconciliation_ledger_events(ledger)
+            events = reconciliation_ledger_events(ledger)
         except TriageError as exc:
             errors.append(f"invalid Stage 5 run ledger {ledger.relative_to(ROOT)}: {exc}")
+            continue
+        for event in events:
+            if event.get("result") == "token_count_failure":
+                continue
+            relative = event.get("token_count")
+            claimed = event.get("token_count_sha256")
+            if not isinstance(relative, str) or not isinstance(claimed, str):
+                errors.append(f"Stage 5 run event lacks token-count evidence: {ledger.relative_to(ROOT)}")
+                continue
+            evidence_path = ROOT / relative
+            if not evidence_path.is_file() or sha256_file(evidence_path) != claimed:
+                errors.append(f"Stage 5 token-count evidence drifted: {relative}")
     for unit in store.units:
         if not set(unit["related_unit_ids"]) <= unit_ids - {unit["unit_id"]}:
             errors.append(f"Stage 5 unit has an unresolved related-unit link: {unit['unit_id']}")

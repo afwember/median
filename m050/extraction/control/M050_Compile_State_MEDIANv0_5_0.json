@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-10T15:12:34-04:00",
+  "updated": "2026-09-10T17:51:14-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -86,21 +86,31 @@
     },
     "completed_tranche_ids": [],
     "provider": {
-      "enabled": false,
+      "enabled": true,
       "name": "Anthropic",
-      "model": null,
+      "model": "claude-opus-5",
       "reasoning_effort": "high",
       "cache_ttl": "1h",
-      "maximum_output_tokens": null,
-      "pricing": null,
+      "maximum_output_tokens": {
+        "proposal": 36000,
+        "review": 8000
+      },
+      "pricing": {
+        "input_usd_per_million_tokens": "5",
+        "output_usd_per_million_tokens": "25",
+        "cache_read_multiplier": "0.1",
+        "cache_5m_write_multiplier": "1.25",
+        "cache_1h_write_multiplier": "2"
+      },
       "proposal_review_required": true
     }
   },
   "spend": {
     "active": false,
-    "authorized_usd": "49.8530417",
+    "refresh_window_usd": "2.0000000",
+    "authorized_usd": "51.1300105",
     "cumulative_spent_usd": "49.1300105",
-    "remaining_usd": "0.7230312",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "49.14",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
@@ -126,7 +136,7 @@
     "progress": "0 / 5,382 atoms assigned to canonical semantic units",
     "now": "Stage 5 is installed at the Away.Crossing pilot boundary; the Compile Worker is Stopped Down",
     "next": "Spark Up may grant the bounded pilot; Proceed is still required before execution",
-    "updated_human": "September 10, 2026 at 3:12:34 PM EDT"
+    "updated_human": "September 10, 2026 at 5:51:14 PM EDT"
   },
-  "next_possible_transition": "Asa may authorize the provider model and positive Stage 5 spend envelope, then Spark Up may grant the Away.Crossing pilot."
+  "next_possible_transition": "Spark Up may grant the Away.Crossing pilot with Anthropic Opus 5 and the current $2.00 remaining spend window."
 }

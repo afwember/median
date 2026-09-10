@@ -7,6 +7,7 @@ import argparse
 import copy
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from decimal import Decimal
 import hashlib
 import json
 import os
@@ -41,7 +42,6 @@ except ModuleNotFoundError:  # Direct execution from m050/tools.
 try:
     from median_gate5.extraction_machine import (
         anthropic_usage_cost,
-        conservative_call_ceiling,
         debit_compile_state_spend,
         extract_anthropic_structured_response,
     )
@@ -51,7 +51,6 @@ except ModuleNotFoundError:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "extraction/engine/src"))
     from median_gate5.extraction_machine import (
         anthropic_usage_cost,
-        conservative_call_ceiling,
         debit_compile_state_spend,
         extract_anthropic_structured_response,
     )
@@ -64,6 +63,7 @@ DEFAULT_RECONCILIATIONS = Path(
 )
 RUNS = Path("m050/reconciliation/runs")
 ANTHROPIC_ENDPOINT = "https://api.anthropic.com/v1/messages"
+ANTHROPIC_TOKEN_COUNT_ENDPOINT = "https://api.anthropic.com/v1/messages/count_tokens"
 ANTHROPIC_VERSION = "2023-06-01"
 SCHEMA_VERSION = "M050-RECONCILED-SEMANTIC-UNIT-0.1"
 PACKET_SCHEMA_VERSION = "M050-RECONCILIATION-PACKET-0.1"
@@ -80,22 +80,25 @@ RECONCILIATION_LIFECYCLE = {
 }
 TRANSITIONS = {"prepare-spark-up", "activate-on-proceed", "prepare-stopdown"}
 
-PROPOSER_PROMPT = """You reconcile the bounded MEDIAN v0.5.0 atom packet into semantic
-propositions. Compare meanings rather than wording. Preserve material scope, conditions,
-exceptions, ownership, and normative force. Merge true duplicates and compatible partial
-claims; expose conflicts and supersession. A Human Rulings atom controls only the precise
-question it explicitly settles. Source repetition never increases authority. Mapping metadata
-routes context but does not decide truth. Do not invent rules, MSIDs, or prose outside the
-packet. Every required atom must appear exactly once as a primary member. Use human_required
-when the supplied evidence cannot support one grounded result. Return schema-bound JSON only.
+SHARED_PROVIDER_PROMPT = """You work only on the supplied, hash-bound MEDIAN v0.5.0
+semantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,
+conditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the
+precise question it explicitly settles; repetition and provenance confer no authority. Mapping
+metadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.
+Return only the JSON required by the supplied schema.
 """
 
-REVIEWER_PROMPT = """Independently audit a proposed MEDIAN v0.5.0 semantic reconciliation
-against its complete bound packet. Reject lost nuance, invented synthesis, false equivalence,
-unresolved contradiction, excessive Human Rulings weight, unsupported authority, invalid MSID
-ownership, or any required atom not represented exactly once. Do not rewrite the proposal.
-Return accept only when it is safe to promote unchanged; otherwise identify concise defects in
-schema-bound JSON.
+PROPOSER_TASK = """Reconcile the packet into semantic propositions. Merge true duplicates and
+compatible partial claims; expose conflicts and supersession. Every required atom must appear
+exactly once as a primary member. Use human_required when the supplied evidence cannot support
+one grounded result.
+"""
+
+REVIEWER_TASK = """Independently audit the appended proposal against the complete packet.
+Reject lost nuance, invented synthesis, false equivalence, unresolved contradiction, excessive
+Human Rulings weight, unsupported authority, invalid MSID ownership, or any required atom not
+represented exactly once. Do not rewrite the proposal. Return accept only when it is safe to
+promote unchanged; otherwise identify concise defects.
 """
 
 
@@ -526,10 +529,10 @@ def review_response_schema() -> dict:
 
 
 def build_anthropic_request(
-    *, prompt: str, schema: dict, payload: dict, model: str,
+    *, task: str, schema: dict, packet: dict, supplemental: dict | None, model: str,
     reasoning_effort: str, maximum_output_tokens: int, cache_ttl: str,
 ) -> dict:
-    """Build a provider request without sending it or exposing it to Codex context."""
+    """Build a request whose large packet prefix is reusable across semantic passes."""
     if not isinstance(model, str) or not model:
         raise TriageError("provider model is not configured")
     if reasoning_effort not in {"low", "medium", "high"}:
@@ -538,6 +541,36 @@ def build_anthropic_request(
         raise TriageError("provider maximum output tokens are not configured")
     if cache_ttl not in {"5m", "1h"}:
         raise TriageError("provider cache TTL is invalid")
+    cached_packet = {
+        key: value for key, value in packet.items()
+        if key not in {"atoms", "context_atoms"}
+    }
+    atom_evidence = {
+        "atoms": packet.get("atoms", []),
+        "context_atoms": packet.get("context_atoms", []),
+    }
+    content = [{
+        "type": "text",
+        "text": json.dumps(
+            cached_packet, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+        ),
+        "cache_control": {"type": "ephemeral", "ttl": cache_ttl},
+    }, {
+        "type": "text",
+        "text": json.dumps(
+            atom_evidence, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+        ),
+    }, {
+        "type": "text",
+        "text": task,
+    }]
+    if supplemental is not None:
+        content.append({
+            "type": "text",
+            "text": json.dumps(
+                supplemental, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+            ),
+        })
     return {
         "model": model,
         "max_tokens": maximum_output_tokens,
@@ -546,42 +579,46 @@ def build_anthropic_request(
             "effort": reasoning_effort,
             "format": {"type": "json_schema", "schema": schema},
         },
-        "system": [{
-            "type": "text", "text": prompt,
-            "cache_control": {"type": "ephemeral", "ttl": cache_ttl},
-        }],
+        "system": [{"type": "text", "text": SHARED_PROVIDER_PROMPT}],
         "messages": [{
             "role": "user",
-            "content": json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False),
+            "content": content,
         }],
     }
 
 
+def _role_output_limit(provider: dict, role: str) -> int | None:
+    limits = provider.get("maximum_output_tokens")
+    return limits.get(role) if isinstance(limits, dict) else None
+
+
 def build_proposer_request(packet: dict, provider: dict) -> dict:
     return build_anthropic_request(
-        prompt=PROPOSER_PROMPT,
+        task=PROPOSER_TASK,
         schema=proposal_response_schema(),
-        payload=packet,
+        packet=packet,
+        supplemental=None,
         model=provider.get("model"),
         reasoning_effort=provider.get("reasoning_effort"),
-        maximum_output_tokens=provider.get("maximum_output_tokens"),
+        maximum_output_tokens=_role_output_limit(provider, "proposal"),
         cache_ttl=provider.get("cache_ttl"),
     )
 
 
 def build_reviewer_request(packet: dict, proposal: dict, provider: dict) -> dict:
-    payload = {
-        "packet": packet,
+    supplemental = {
+        "task_input": "unchanged proposal to audit",
         "proposal": proposal,
         "proposal_sha256": hashlib.sha256(_canonical_bytes(proposal)).hexdigest(),
     }
     return build_anthropic_request(
-        prompt=REVIEWER_PROMPT,
+        task=REVIEWER_TASK,
         schema=review_response_schema(),
-        payload=payload,
+        packet=packet,
+        supplemental=supplemental,
         model=provider.get("model"),
         reasoning_effort=provider.get("reasoning_effort"),
-        maximum_output_tokens=provider.get("maximum_output_tokens"),
+        maximum_output_tokens=_role_output_limit(provider, "review"),
         cache_ttl=provider.get("cache_ttl"),
     )
 
@@ -593,6 +630,7 @@ def _run_paths(repo_root: Path, tranche_id: str, role: str, attempt: int) -> dic
         "run_dir": run_dir,
         "packet": run_dir / "packet.json",
         "request": run_dir / f"{stem}_request.json",
+        "token_count": run_dir / f"{stem}_token_count.json",
         "raw": run_dir / f"{stem}_raw_response.json",
         "structured": run_dir / f"{stem}_structured_response.json",
         "ledger": run_dir / "run_ledger.jsonl",
@@ -638,12 +676,14 @@ def _latest_valid_proposal(repo_root: Path, tranche_id: str) -> tuple[dict, Path
     raise TriageError("semantic review requires a mechanically valid proposal")
 
 
-def _send_anthropic(request_body: dict, api_key_file: Path, timeout: float) -> tuple[int, bytes]:
+def _send_anthropic_to(
+    endpoint: str, request_body: dict, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
     key = api_key_file.read_text(encoding="utf-8").strip()
     if not key:
         raise TriageError("Anthropic API key file is empty")
     request = urllib.request.Request(
-        ANTHROPIC_ENDPOINT,
+        endpoint,
         data=_canonical_bytes(request_body),
         method="POST",
         headers={
@@ -659,7 +699,117 @@ def _send_anthropic(request_body: dict, api_key_file: Path, timeout: float) -> t
         return exc.code, exc.read()
 
 
-def _provider_preflight(state: dict, request: dict) -> tuple[dict, object]:
+def _send_anthropic(request_body: dict, api_key_file: Path, timeout: float) -> tuple[int, bytes]:
+    return _send_anthropic_to(ANTHROPIC_ENDPOINT, request_body, api_key_file, timeout)
+
+
+def _token_count_body(request: dict, *, cache_prefix_only: bool) -> dict:
+    body = copy.deepcopy(request)
+    body.pop("max_tokens", None)
+    if cache_prefix_only:
+        content = body.get("messages", [{}])[0].get("content", [])
+        if not isinstance(content, list) or not content:
+            raise TriageError("provider request lacks a cacheable packet prefix")
+        body["messages"][0]["content"] = [content[0]]
+    return body
+
+
+def _count_anthropic_request(
+    request: dict, api_key_file: Path, timeout: float
+) -> dict:
+    """Capture free model-specific counts for the full request and cached prefix."""
+    full_body = _token_count_body(request, cache_prefix_only=False)
+    prefix_body = _token_count_body(request, cache_prefix_only=True)
+    evidence = {
+        "schema_version": "M050-ANTHROPIC-TOKEN-COUNT-0.1",
+        "full_request_sha256": hashlib.sha256(_canonical_bytes(full_body)).hexdigest(),
+        "cache_prefix_request_sha256": hashlib.sha256(
+            _canonical_bytes(prefix_body)
+        ).hexdigest(),
+    }
+    for name, body in (("full", full_body), ("cache_prefix", prefix_body)):
+        status, raw_bytes = _send_anthropic_to(
+            ANTHROPIC_TOKEN_COUNT_ENDPOINT, body, api_key_file, timeout
+        )
+        try:
+            response = json.loads(raw_bytes)
+        except json.JSONDecodeError as exc:
+            raise TriageError(f"Anthropic {name} token count returned invalid JSON") from exc
+        evidence[name] = {"http_status": status, "response": response}
+        if status != 200:
+            raise TriageError(f"Anthropic {name} token count returned HTTP {status}")
+        if (
+            not isinstance(response, dict)
+            or type(response.get("input_tokens")) is not int
+            or response["input_tokens"] < 1
+        ):
+            raise TriageError(f"Anthropic {name} token count is invalid")
+    if (
+        evidence["cache_prefix"]["response"]["input_tokens"]
+        > evidence["full"]["response"]["input_tokens"]
+    ):
+        raise TriageError("Anthropic cache-prefix count exceeds full request count")
+    return evidence
+
+
+def _padded_token_count(value: int) -> int:
+    """Cover the documented small variance between count and message endpoints."""
+    if value < 0:
+        raise TriageError("provider token count cannot be negative")
+    if value == 0:
+        return 0
+    margin = max(512, (value * 2 + 99) // 100)
+    return value + margin
+
+
+def counted_call_ceiling(request: dict, pricing: dict, token_count: dict) -> dict:
+    """Price a cache miss using provider counts, bounded output, and a 2% floor margin."""
+    try:
+        full = token_count["full"]["response"]["input_tokens"]
+        prefix = token_count["cache_prefix"]["response"]["input_tokens"]
+        output = request["max_tokens"]
+        input_rate = Decimal(pricing["input_usd_per_million_tokens"])
+        output_rate = Decimal(pricing["output_usd_per_million_tokens"])
+        ttl = request["messages"][0]["content"][0]["cache_control"]["ttl"]
+        write_multiplier = Decimal(
+            pricing[f"cache_{'1h' if ttl == '1h' else '5m'}_write_multiplier"]
+        )
+    except (KeyError, TypeError, ValueError, ArithmeticError) as exc:
+        raise TriageError("provider count or pricing cannot produce a call ceiling") from exc
+    if not all(type(value) is int and value >= 0 for value in (full, prefix, output)):
+        raise TriageError("provider count or output ceiling is invalid")
+    if (
+        prefix > full
+        or ttl not in {"5m", "1h"}
+        or not input_rate.is_finite()
+        or not output_rate.is_finite()
+        or not write_multiplier.is_finite()
+        or min(input_rate, output_rate, write_multiplier) <= 0
+    ):
+        raise TriageError("provider count, pricing, or cache prefix is invalid")
+    padded_prefix = _padded_token_count(prefix)
+    padded_suffix = _padded_token_count(full - prefix)
+    million = Decimal(1_000_000)
+    input_ceiling = (
+        Decimal(padded_prefix) * input_rate * write_multiplier
+        + Decimal(padded_suffix) * input_rate
+    ) / million
+    output_ceiling = Decimal(output) * output_rate / million
+    ceiling = input_ceiling + output_ceiling
+    return {
+        "reported_input_tokens": full,
+        "reported_cache_prefix_tokens": prefix,
+        "reserved_cache_prefix_tokens": padded_prefix,
+        "reserved_uncached_suffix_tokens": padded_suffix,
+        "maximum_output_tokens": output,
+        "cache_ttl": ttl,
+        "input_ceiling_usd": format(input_ceiling, "f"),
+        "output_ceiling_usd": format(output_ceiling, "f"),
+        "total_ceiling_usd": format(ceiling, "f"),
+    }
+
+
+def _provider_configuration_for_call(state: dict) -> dict:
     active, provider_enabled = _validate_lifecycle(state)
     if not active or not provider_enabled:
         raise TriageError("Stage 5 provider call is not active")
@@ -669,17 +819,22 @@ def _provider_preflight(state: dict, request: dict) -> tuple[dict, object]:
     pricing = provider.get("pricing")
     if not isinstance(pricing, dict):
         raise TriageError("Stage 5 Anthropic pricing is not configured")
-    try:
-        ceiling = conservative_call_ceiling(request, pricing)
-    except ContractError as exc:
-        raise TriageError(str(exc)) from exc
-    from decimal import Decimal
+    return provider
+
+
+def _provider_preflight(
+    state: dict, request: dict, token_count: dict
+) -> tuple[dict, dict]:
+    provider = _provider_configuration_for_call(state)
+    pricing = provider["pricing"]
+    forecast = counted_call_ceiling(request, pricing, token_count)
+    ceiling = Decimal(forecast["total_ceiling_usd"])
     remaining = Decimal(state.get("spend", {}).get("remaining_usd", "0"))
     if ceiling > remaining:
         raise TriageError(
             f"provider call ceiling {ceiling} exceeds remaining authority {remaining}"
         )
-    return provider, ceiling
+    return provider, forecast
 
 
 def _debit_response(state: dict, raw: dict, provider: dict) -> tuple[dict, dict]:
@@ -798,7 +953,7 @@ def run_provider_call(
         request = build_reviewer_request(packet, proposal, provider)
     else:
         raise TriageError("provider role must be proposal or review")
-    provider, ceiling = _provider_preflight(state, request)
+    provider = _provider_configuration_for_call(state)
     if paths["packet"].exists():
         existing_packet = json.loads(paths["packet"].read_text(encoding="utf-8"))
         if existing_packet != packet:
@@ -807,12 +962,39 @@ def run_provider_call(
         _write_new_json(paths["packet"], packet)
     _write_new_json(paths["request"], request)
     try:
+        token_count = _count_anthropic_request(request, api_key_file, timeout)
+    except (OSError, TimeoutError, urllib.error.URLError, TriageError) as exc:
+        _append_ledger(paths["ledger"], {
+            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "result": "token_count_failure", "error": str(exc),
+            "request": paths["request"].relative_to(repo_root).as_posix(),
+            "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
+        })
+        raise TriageError(f"provider token-count preflight failed: {exc}") from exc
+    _write_new_json(paths["token_count"], token_count)
+    token_fields = {
+        "token_count": paths["token_count"].relative_to(repo_root).as_posix(),
+        "token_count_sha256": _sha256(paths["token_count"]),
+    }
+    try:
+        provider, forecast = _provider_preflight(state, request, token_count)
+    except TriageError as exc:
+        _append_ledger(paths["ledger"], {
+            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "result": "preflight_rejected", "error": str(exc),
+            "request": paths["request"].relative_to(repo_root).as_posix(),
+            **token_fields,
+            "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
+        })
+        raise
+    ceiling = forecast["total_ceiling_usd"]
+    try:
         http_status, raw_bytes = _send_anthropic(request, api_key_file, timeout)
     except (OSError, TimeoutError, urllib.error.URLError) as exc:
         _append_ledger(paths["ledger"], {
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
             "result": "transport_failure", "error": str(exc),
-            "conservative_ceiling_usd": format(ceiling, "f"),
+            "preflight": forecast, **token_fields,
             "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
         })
         raise TriageError(f"provider transport failed; cost is unresolved: {exc}") from exc
@@ -824,6 +1006,7 @@ def run_provider_call(
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
             "result": "invalid_json", "http_status": http_status,
             "request": paths["request"].relative_to(repo_root).as_posix(),
+            "preflight": forecast, **token_fields,
             "raw_response": paths["raw"].relative_to(repo_root).as_posix(),
             "raw_response_sha256": _sha256(paths["raw"]),
             "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
@@ -841,6 +1024,7 @@ def run_provider_call(
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
             "result": "http_failure", "http_status": http_status,
             "request": paths["request"].relative_to(repo_root).as_posix(),
+            "preflight": forecast, **token_fields,
             "raw_response": paths["raw"].relative_to(repo_root).as_posix(),
             "raw_response_sha256": _sha256(paths["raw"]), "cost": cost,
             "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
@@ -862,6 +1046,7 @@ def run_provider_call(
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
             "result": "mechanical_failure", "error": str(exc), "http_status": http_status,
             "request": paths["request"].relative_to(repo_root).as_posix(),
+            "preflight": forecast, **token_fields,
             "raw_response": paths["raw"].relative_to(repo_root).as_posix(),
             "raw_response_sha256": _sha256(paths["raw"]), "cost": cost,
             "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
@@ -880,6 +1065,7 @@ def run_provider_call(
         "result": result, "http_status": http_status,
         "packet_sha256": packet["packet_sha256"],
         "request": paths["request"].relative_to(repo_root).as_posix(),
+        "preflight": forecast, **token_fields,
         "raw_response": paths["raw"].relative_to(repo_root).as_posix(),
         "raw_response_sha256": _sha256(paths["raw"]),
         "structured_response": paths["structured"].relative_to(repo_root).as_posix(),
@@ -891,6 +1077,7 @@ def run_provider_call(
     return updated_state, {
         "role": role, "attempt": attempt, "result": result,
         "cost_usd": cost["total_usd"],
+        "call_ceiling_usd": ceiling,
         "units_promoted": len(proposal["units"])
         if role == "review" and structured["verdict"] == "accept" else 0,
     }

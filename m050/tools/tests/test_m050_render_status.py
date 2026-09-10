@@ -24,7 +24,7 @@ def test_check_status_does_not_change_state_or_dashboard(tmp_path):
             "now": "Supervisor handoff",
             "next": "Await authorization",
         },
-        "spend": {"remaining_usd": "0.2167150"},
+        "spend": {"refresh_window_usd": "1", "remaining_usd": "0.2167150"},
     }
     state_path.write_text(json.dumps(state), encoding="utf-8")
     original_state = state_path.read_bytes()
@@ -51,7 +51,7 @@ def test_check_status_rejects_stale_dashboard_without_changing_files(tmp_path):
             "now": "Supervisor handoff",
             "next": "Await authorization",
         },
-        "spend": {"remaining_usd": "0.2167150"},
+        "spend": {"refresh_window_usd": "1", "remaining_usd": "0.2167150"},
     }
     state_path.write_text(json.dumps(state), encoding="utf-8")
     status_path.write_text("stale dashboard\n", encoding="utf-8")

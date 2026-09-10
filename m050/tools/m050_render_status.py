@@ -102,6 +102,25 @@ def render_status(
         state.setdefault("dashboard", {})["progress"] = (
             f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded"
         )
+    elif str(state.get("status", "")).startswith("RECONCILIATION_"):
+        try:
+            from m050.tools.m050_reconciliation import (
+                DEFAULT_RECONCILIATIONS,
+                ReconciliationCorpus,
+                ReconciliationStore,
+            )
+        except ModuleNotFoundError:
+            from m050_reconciliation import (
+                DEFAULT_RECONCILIATIONS,
+                ReconciliationCorpus,
+                ReconciliationStore,
+            )
+        repo_root = state_path.resolve().parents[3]
+        corpus = ReconciliationCorpus(repo_root)
+        store = ReconciliationStore(repo_root / DEFAULT_RECONCILIATIONS, corpus)
+        state.setdefault("dashboard", {})["progress"] = (
+            f"{len(store.primary_members):,} / {len(corpus.atoms):,} atoms assigned to canonical semantic units"
+        )
 
     exact = _rounded_timestamp(now)
     state["updated"] = exact.isoformat()

@@ -24,7 +24,7 @@ document on top of those controls.
 The Compile Worker is an autonomous executor inside a bounded mandate. It is
 not a second Supervisor and not a passive command runner.
 
-Within one authorized phase and source, it should be able to:
+Within one authorized phase and bounded target, it should be able to:
 
 - derive the exact current target from canonical controls;
 - perform the phase's ordinary work without transaction-by-transaction
@@ -38,7 +38,7 @@ Within one authorized phase and source, it should be able to:
 - finish through formal Stopdown.
 
 It may not redesign the phase, change a cross-phase interface, add an artifact
-family, relax an invariant, choose another source, infer authorial judgment, or
+family, relax an invariant, choose another target, infer authorial judgment, or
 turn ordinary difficulty into a wider mandate.
 
 The Supervisor designs and tunes the operating system conversationally with
@@ -53,34 +53,34 @@ The successful late-Atomization cadence separates **authority** from
 ### `Spark Up` — grant and assess
 
 `Spark Up` is Asa's active, informed grant of the phase-defined authority for
-exactly one deterministically selected source. It is the permission-granting
+exactly one deterministically selected target. It is the permission-granting
 phrase.
 
 On receipt, the Worker should:
 
 1. remain read-only while performing the complete cold start;
-2. derive exactly one current or next source from canonical controls;
+2. derive exactly one current or next target from canonical controls;
 3. confirm repository synchronization, phase, boundary, authority, budget,
    inputs, outputs, halt conditions, and prohibited transitions;
-4. inspect the exact source inventory and state the next concrete action;
+4. inspect the exact target inventory and state the next concrete action;
 5. identify any contradiction or unresolved risk;
-6. retain the assessed source and clean Git checkpoint in task context; and
+6. retain the assessed target and clean Git checkpoint in task context; and
 7. halt without changing the repository and before substantive source work,
    provider calls, or mapping/extraction records.
 
 The assessment should end with a compact stable response that makes the first
-operation and the complete source boundary easy for Asa to inspect.
+operation and the complete work boundary easy for Asa to inspect.
 
 ### `Proceed` — execution release
 
 `Proceed`, or an equally clear go-ahead in direct response to the assessment,
 releases execution of the already-authorized work. It is not a new authority
-grant and need not restate the source, budget, or permissions.
+grant and need not restate the target, budget, or permissions.
 
 The Worker should accept it only when:
 
 - the preceding `Spark Up` grant remains active;
-- the assessed source and boundary still derive identically;
+- the assessed target and boundary still derive identically;
 - the repository remains at the expected clean checkpoint; and
 - no new halt condition has appeared.
 
@@ -106,7 +106,7 @@ local correction, commits, or pushes already covered by the grant.
   authority.
 - Discussion such as “the Worker should...” normally proposes behavior; it
   does not activate the Worker.
-- If source selection, inputs, budget, or repository state drift between the
+- If target selection, inputs, budget, or repository state drift between the
   assessment and `Proceed`, the Worker halts and reports the exact difference.
 - Cancelling before `Proceed` requires no repository transition because the
   assessment created no canonical execution state; a later attempt begins with
@@ -116,12 +116,12 @@ The intended lifecycle is:
 
 ```text
 READY
-  -> Spark Up grants one-source authority
+  -> Spark Up grants one-target authority
 READ-ONLY SELF-ASSESSMENT
   -> exact action and clean checkpoint reported; repository remains READY
   -> Proceed atomically records ACTIVE execution
-ACTIVE SOURCE WORK
-  -> source completion or required halt
+ACTIVE BOUNDED WORK
+  -> target completion or required halt
 FORMAL STOPDOWN
   -> READY
 ```
@@ -138,22 +138,22 @@ At minimum it should:
 - confirm the root contract is unambiguous;
 - read canonical state and every active-phase control completely;
 - validate the derived human dashboard;
-- verify immutable input hashes and exact source order;
+- verify immutable input hashes and the exact target boundary;
 - run the required guard at the contractually defined strength;
 - confirm a clean worktree and local/remote equality;
 - report the completed boundary and the one selected target;
 - report active and inactive authorities separately;
-- report provider and spend readiness separately from source authority;
+- report provider and spend readiness separately from target authority;
 - report halt conditions and prohibited transitions; and
-- stop if any control selects zero or multiple sources.
+- stop if any control selects zero or multiple targets.
 
 The cold-start report should be concise. The checking may be extensive, but the
 stable response should expose decisions and boundaries rather than terminal
 transcript.
 
-## 4. Source-bounded autonomy
+## 4. Target-bounded autonomy
 
-One source grant should cover the established source lifecycle. When the phase
+One target grant should cover the established bounded lifecycle. When the phase
 permits it, this includes:
 
 - offline preparation and exact inventory;
@@ -239,9 +239,23 @@ boundary. A failed result is evidence, not disposable inconvenience.
   rule, artifact class, or cross-source interpretation.
 - Use the phase's unresolved status instead of guessing.
 
-If a Supervisor audit finds a completed source mechanically valid but
-semantically defective, reopen only that bounded source or record set. Do not
-advance merely because the next source derives cleanly.
+If a Supervisor audit finds completed work mechanically valid but semantically
+defective, reopen only that bounded target or record set. Do not advance merely
+because the next target derives cleanly.
+
+### Direct-API semantic work
+
+For high-volume semantic work, the provider model should normally run through a
+bounded Python caller rather than through repeated Codex turns. This keeps bulk
+packet and response tokens out of the Worker's conversational context and makes
+provider billing, model selection, raw evidence, and retry behavior explicit.
+
+Python may assemble hash-bound context, preserve raw responses, validate shape
+and exact coverage, account for cost, and route exceptions. It must not decide
+semantic equivalence, authority, conflict, or synthesis. Where subtle meaning
+matters, use one model pass to propose and a fresh pass to audit the unchanged
+proposal; only reviewed results enter canonical state. Keep routine stdout to a
+compact outcome summary and return abnormalities to LLM adjudication.
 
 ## 8. Checkpoint cadence
 

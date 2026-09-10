@@ -18,60 +18,57 @@ from zoneinfo import ZoneInfo
 try:
     from m050.tools.m050_atom_triage import (
         DEFAULT_DECISIONS as TRIAGE_DECISIONS,
-        SCHEMA_VERSION as TRIAGE_SCHEMA_VERSION,
-        DecisionStore as TriageDecisionStore,
         TriageError,
-        load_corpus as load_triage_corpus,
     )
 except ModuleNotFoundError:  # Direct execution from m050/tools.
     from m050_atom_triage import (
         DEFAULT_DECISIONS as TRIAGE_DECISIONS,
-        SCHEMA_VERSION as TRIAGE_SCHEMA_VERSION,
-        DecisionStore as TriageDecisionStore,
         TriageError,
-        load_corpus as load_triage_corpus,
     )
 
 try:
     from m050.tools.m050_msid_mapping import (
         DEFAULT_MAPPINGS,
         DEFAULT_VOCABULARY,
-        MSID_MAPPING_LIFECYCLE,
         SCHEMA_VERSION as MAPPING_SCHEMA_VERSION,
         VOCABULARY_SCHEMA_VERSION,
-        MSIDVocabulary,
-        MappingCorpus,
-        MappingStore,
-        active_source as active_mapping_source,
     )
 except ModuleNotFoundError:
     from m050_msid_mapping import (
         DEFAULT_MAPPINGS,
         DEFAULT_VOCABULARY,
-        MSID_MAPPING_LIFECYCLE,
         SCHEMA_VERSION as MAPPING_SCHEMA_VERSION,
         VOCABULARY_SCHEMA_VERSION,
-        MSIDVocabulary,
-        MappingCorpus,
-        MappingStore,
-        active_source as active_mapping_source,
+    )
+
+try:
+    from m050.tools.m050_reconciliation import (
+        DEFAULT_RECONCILIATIONS,
+        RECONCILIATION_LIFECYCLE,
+        RUNS as RECONCILIATION_RUNS,
+        SCHEMA_VERSION as RECONCILIATION_SCHEMA_VERSION,
+        ReconciliationCorpus,
+        ReconciliationStore,
+        _ledger_events as reconciliation_ledger_events,
+    )
+except ModuleNotFoundError:
+    from m050_reconciliation import (
+        DEFAULT_RECONCILIATIONS,
+        RECONCILIATION_LIFECYCLE,
+        RUNS as RECONCILIATION_RUNS,
+        SCHEMA_VERSION as RECONCILIATION_SCHEMA_VERSION,
+        ReconciliationCorpus,
+        ReconciliationStore,
+        _ledger_events as reconciliation_ledger_events,
     )
 
 try:
     from m050.tools.m050_atom_rewrite import (
         DEFAULT_REWRITES,
-        SCHEMA_VERSION as REWRITE_SCHEMA_VERSION,
-        RewriteCorpus,
-        RewriteStore,
-        _active_source as active_rewrite_source,
     )
 except ModuleNotFoundError:  # Direct execution from m050/tools.
     from m050_atom_rewrite import (
         DEFAULT_REWRITES,
-        SCHEMA_VERSION as REWRITE_SCHEMA_VERSION,
-        RewriteCorpus,
-        RewriteStore,
-        _active_source as active_rewrite_source,
     )
 
 
@@ -84,8 +81,6 @@ FROZEN = ROOT / "m050/extraction/control/M050_Frozen_Corpus_Manifest_v0_1_MEDIAN
 GATE_2 = ROOT / "m050/extraction/audit/M050_Extraction_Gate_2_Source_Disposition_v0_1_MEDIANv0_5_0.yaml"
 MATRIX = ROOT / "m050/extraction/control/M050_Compile_Source_State_Matrix_v0_1_MEDIANv0_5_0.json"
 ORDER = ROOT / "m050/extraction/control/M050_Compile_Source_Processing_Order_v0_1_MEDIANv0_5_0.json"
-ENGINE_MODULE = ROOT / "m050/extraction/engine/src/median_gate5/extraction_machine.py"
-ENGINE_TESTS = ROOT / "m050/extraction/engine/tests/test_extraction_machine.py"
 HUMAN_EVIDENCE = ROOT / "m050/extraction/evidence/human-rulings"
 STOPDOWN_NOTIFIER = ROOT / "m050/tools/m050_notify_supervisor.py"
 
@@ -142,189 +137,6 @@ def read_json(path: Path, errors: list[str]) -> dict:
         errors.append(f"JSON root is not an object: {path.relative_to(ROOT)}")
         return {}
     return value
-
-
-def read_jsonl(path: Path, label: str, errors: list[str]) -> list[dict]:
-    try:
-        values = [
-            json.loads(line)
-            for line in path.read_text(encoding="utf-8").splitlines()
-            if line.strip()
-        ]
-    except (OSError, json.JSONDecodeError) as exc:
-        errors.append(f"{label} is invalid: {exc}")
-        return []
-    if any(not isinstance(value, dict) for value in values):
-        errors.append(f"{label} contains a non-object event")
-        return []
-    return values
-
-
-def bound_file(relative: object, label: str, errors: list[str]) -> Path | None:
-    if not isinstance(relative, str) or not relative:
-        errors.append(f"{label} path is absent")
-        return None
-    supplied = Path(relative)
-    if supplied.is_absolute() or ".." in supplied.parts:
-        errors.append(f"{label} path is not repository-relative: {relative}")
-        return None
-    target = (ROOT / supplied).resolve()
-    try:
-        target.relative_to(ROOT)
-    except ValueError:
-        errors.append(f"{label} path escapes the repository: {relative}")
-        return None
-    if target == ROOT / "m051" or (ROOT / "m051") in target.parents:
-        errors.append(f"{label} path enters prohibited m051: {relative}")
-        return None
-    if not target.is_file():
-        errors.append(f"{label} file is missing: {relative}")
-        return None
-    return target
-
-
-def validate_accepted_candidate_records(
-    candidate_records: list[dict],
-    expected_records: list[tuple[str, dict]],
-    errors: list[str],
-) -> None:
-    """Require exact accepted-atom coverage and candidate-wide unique identifiers."""
-    if len(candidate_records) != len(expected_records):
-        errors.append(
-            "accepted candidate record coverage drifted: "
-            f"expected {len(expected_records)}, found {len(candidate_records)}"
-        )
-
-    identifiers: list[tuple[str, str]] = []
-    for index, candidate in enumerate(candidate_records):
-        identifier = next(
-            (
-                (field, value)
-                for field in ("proposal_id", "atom_id", "record_id")
-                if isinstance((value := candidate.get(field)), str) and value
-            ),
-            None,
-        )
-        if identifier is None:
-            errors.append(f"accepted candidate record {index + 1} lacks an identifier")
-        else:
-            identifiers.append(identifier)
-
-    if len({field for field, _value in identifiers}) > 1:
-        errors.append("accepted candidate identifier field is inconsistent")
-    if len(identifiers) != len({value for _field, value in identifiers}):
-        errors.append("accepted candidate record identifiers are not candidate-wide unique")
-
-    for index, (candidate, (chunk_id, expected)) in enumerate(
-        zip(candidate_records, expected_records), start=1
-    ):
-        reconstructed = dict(candidate)
-        traced_chunk = reconstructed.pop("accepted_chunk_id", None)
-        source_identifier = reconstructed.pop("source_proposal_id", None)
-        if (traced_chunk is None) != (source_identifier is None):
-            errors.append(f"accepted candidate record {index} has incomplete identifier trace")
-            continue
-        if traced_chunk is not None:
-            if traced_chunk != chunk_id:
-                errors.append(f"accepted candidate record {index} has incorrect chunk trace")
-            if expected.get("proposal_id") != source_identifier:
-                errors.append(f"accepted candidate record {index} has incorrect source identifier trace")
-            reconstructed["proposal_id"] = source_identifier
-        if reconstructed != expected:
-            errors.append(f"accepted candidate semantic coverage drifted at record {index}")
-
-
-def validate_candidate_acceptance(
-    source: dict,
-    config: dict,
-    calibration: dict,
-    accepted_ids: list[str],
-    accepted_evidence: list[dict],
-    errors: list[str],
-) -> None:
-    """Validate the established candidate/report pair for a completed source."""
-    binding = calibration.get("candidate_acceptance")
-    if not isinstance(binding, dict):
-        errors.append("completed source lacks a hash-bound candidate/report pair")
-        return
-    required_binding_keys = {"candidate", "candidate_sha256", "report", "report_sha256"}
-    if set(binding) != required_binding_keys:
-        errors.append("candidate acceptance binding shape drifted")
-
-    candidate_path = bound_file(binding.get("candidate"), "accepted candidate", errors)
-    report_path = bound_file(binding.get("report"), "acceptance report", errors)
-    if candidate_path is None or report_path is None:
-        return
-    if sha256_file(candidate_path) != binding.get("candidate_sha256"):
-        errors.append("accepted candidate hash binding drifted")
-    if sha256_file(report_path) != binding.get("report_sha256"):
-        errors.append("acceptance report hash binding drifted")
-
-    report = read_json(report_path, errors)
-    if (
-        report.get("source_id") != source.get("id")
-        or report.get("source_sha256") != config.get("source_sha256")
-        or report.get("approval") is not True
-        or report.get("accepted_chunk_ids") != accepted_ids
-        or report.get("candidate_path") != binding.get("candidate")
-        or report.get("candidate_sha256") != binding.get("candidate_sha256")
-    ):
-        errors.append("acceptance report source or candidate binding drifted")
-
-    expected_records: list[tuple[str, dict]] = []
-    expected_inputs: list[dict] = []
-    target_dispositions = 0
-    no_substantive = 0
-    for item in accepted_evidence:
-        chunk_id = item.get("chunk_id")
-        outcome_path = bound_file(item.get("outcome"), f"candidate outcome {chunk_id}", errors)
-        ledger_path = bound_file(item.get("run_ledger"), f"candidate ledger {chunk_id}", errors)
-        if outcome_path is None or ledger_path is None:
-            continue
-        outcome = read_json(outcome_path, errors)
-        dispositions = outcome.get("structured_proposal", {}).get("dispositions", [])
-        if not isinstance(dispositions, list):
-            errors.append(f"accepted outcome dispositions are invalid: {chunk_id}")
-            continue
-        target_dispositions += len(dispositions)
-        for disposition in dispositions:
-            if disposition.get("kind") == "no_substantive_claim":
-                no_substantive += 1
-            atoms = disposition.get("atoms", [])
-            if not isinstance(atoms, list) or any(not isinstance(atom, dict) for atom in atoms):
-                errors.append(f"accepted outcome atoms are invalid: {chunk_id}")
-                continue
-            expected_records.extend((chunk_id, atom) for atom in atoms)
-        outcome_hash = sha256_file(outcome_path)
-        matching = [
-            event for event in read_jsonl(ledger_path, f"candidate ledger {chunk_id}", errors)
-            if event.get("chunk_id") == chunk_id
-            and event.get("state") == "review_passed"
-            and event.get("outcome_sha256") == outcome_hash
-        ]
-        if len(matching) != 1:
-            errors.append(f"candidate review evidence is not unique: {chunk_id}")
-            continue
-        expected_inputs.append({
-            "chunk_id": chunk_id,
-            "outcome_path": item.get("outcome"),
-            "outcome_sha256": outcome_hash,
-            "review_event_id": matching[0].get("event_id"),
-            "review_event_outcome_sha256": matching[0].get("outcome_sha256"),
-        })
-
-    candidate_records = read_jsonl(candidate_path, "accepted candidate", errors)
-    validate_accepted_candidate_records(candidate_records, expected_records, errors)
-    if report.get("accepted_inputs") != expected_inputs:
-        errors.append("acceptance report evidence coverage drifted")
-    for field, expected in {
-        "chunks": len(accepted_ids),
-        "target_dispositions": target_dispositions,
-        "candidate_atoms": len(expected_records),
-        "no_substantive_claim_dispositions": no_substantive,
-    }.items():
-        if report.get(field) != expected:
-            errors.append(f"acceptance report exact coverage drifted: {field}")
 
 
 def relative_files(roots: Iterable[str]) -> set[str]:
@@ -549,558 +361,33 @@ def validate_spend_and_status(
         errors.append("STATUS does not exactly mirror canonical compile state")
 
 
-def validate_pending_identity_card(
-    source: dict,
-    registered: dict,
-    calibration: dict,
-    latest: object,
-    errors: list[str],
-) -> None:
-    """Validate the existing pre-configuration identity-approval boundary."""
-    expected_keys = {
-        "identity_card",
-        "identity_card_sha256",
-        "identity_card_approval_pending",
-        "offline_gate_passed",
-    }
-    if set(calibration) != expected_keys:
-        errors.append("pending identity calibration state contains non-identity machinery")
-    if calibration.get("offline_gate_passed") is not False:
-        errors.append("pending identity state claims an offline extraction gate")
-    if latest is not None:
-        errors.append("pending identity state retains a provider attempt")
-    if (
-        source.get("accepted_chunk_ids") != []
-        or source.get("rejected_chunk_id") is not None
-        or source.get("whole_source_candidate_complete") is not False
-    ):
-        errors.append("pending identity source has an extraction boundary")
-
-    card_path = bound_file(calibration.get("identity_card"), "pending identity card", errors)
-    if card_path is None:
-        return
-    if sha256_file(card_path) != calibration.get("identity_card_sha256"):
-        errors.append("pending identity card hash binding drifted")
-    text = card_path.read_text(encoding="utf-8")
-    for required in (
-        "Status: `PENDING_AUTHOR_APPROVAL`",
-        "Lifecycle state: `identity_card_proposed`",
-        "Author/root of authority: Asa Wember",
-        f"| Source ID | `{source.get('id')}` |",
-        f"| Path | `{registered.get('path')}` |",
-        f"| SHA-256 | `{registered.get('sha256')}` |",
-    ):
-        if required not in text:
-            errors.append(f"pending identity card lacks required binding: {required}")
-
-
-def validate_authority_state(
-    source: dict[str, Any], authority: dict[str, Any], errors: list[str]
-) -> None:
-    for prohibited in (
-        "google_sheets_interaction_authorized",
-        "semantic_acceptance_authorized",
-        "mapping_authorized",
-        "reconciliation_authorized",
-        "compiled_prose_authorized",
-    ):
-        if authority.get(prohibited) is not False:
-            errors.append(f"prohibited authority is active: {prohibited}")
-    if source.get("source_work_authorized") is not authority.get("source_work_authorized"):
-        errors.append("source-work authority disagrees between source and authority state")
-    if "provider_call_authorized" in authority:
-        errors.append("canonical authority stores redundant transaction-level provider permission")
-    if authority.get("source_work_authorized") is True and authority.get("repository_writes_authorized") is not True:
-        errors.append("active source work lacks the one-writer repository grant")
-    triage_active = authority.get("triage_authorized") is True
-    if triage_active:
-        if authority.get("source_work_authorized") is not False:
-            errors.append("triage overlaps source-work authority")
-        if authority.get("repository_writes_authorized") is not False:
-            errors.append("working triage improperly holds repository-write authority")
-    elif "triage_authorized" in authority and authority.get("triage_authorized") is not False:
-        errors.append("triage authority is invalid")
-    if source.get("whole_source_candidate_complete") is True:
-        if authority.get("source_work_authorized") is not False:
-            errors.append("completed source retains source-work authority")
-        if not triage_active and authority.get("repository_writes_authorized") is not False:
-            errors.append("completed source has not completed formal Stopdown")
-
-
-def validate_atomic_extraction_profile(errors: list[str]) -> None:
+def validate_reconciliation_profile(errors: list[str]) -> None:
     state = read_json(STATE, errors)
-    if state.get("schema_version") != "M050-COMPILE-STATE-1.0":
-        errors.append("canonical compile-state schema drifted")
-    matrix = read_json(MATRIX, errors)
-    order = read_json(ORDER, errors)
-    matrix_by_id = {item.get("source_id"): item for item in matrix.get("sources", [])}
-    order_by_id = {item.get("source_id"): item for item in order.get("sequence", [])}
-    completed_ids = state.get("progress", {}).get("completed_source_ids", [])
-    if len(completed_ids) != len(set(completed_ids)) or not set(completed_ids) <= set(matrix_by_id):
-        errors.append("canonical completed-source progress is duplicate or unregistered")
-    compile_scope_ids = {
-        source_id for source_id, item in matrix_by_id.items() if item.get("in_compile_scope") is True
-    }
-    legacy_seed_ids = {
-        source_id
-        for source_id, item in matrix_by_id.items()
-        if item.get("current_state") == "atomized_legacy_seed"
-    }
-    if not legacy_seed_ids <= set(completed_ids):
-        errors.append("canonical progress omits an atomized legacy seed")
-    outstanding_ids = compile_scope_ids - set(completed_ids)
-    outstanding_pre = {
-        source_id
-        for source_id in outstanding_ids
-        if matrix_by_id[source_id].get("processing_phase") == "pre_reconciliation_atomization"
-    }
-    outstanding_later = outstanding_ids - outstanding_pre
-    derived_corpus = {
-        "registered_sources": len(matrix_by_id),
-        "atomic_compile_exclusions": len(matrix_by_id) - len(compile_scope_ids),
-        "compile_scope_sources": len(compile_scope_ids),
-        "atomized_legacy_seed_sources": len(legacy_seed_ids),
-        "outstanding_compile_scope_sources": len(outstanding_ids),
-        "outstanding_pre_reconciliation_sources": len(outstanding_pre),
-        "outstanding_later_or_conditional_sources": len(outstanding_later),
-        "whole_corpus_atomization_complete": not outstanding_ids,
-    }
-    if state.get("corpus") != derived_corpus:
-        errors.append("canonical corpus vector disagrees with completed-source progress")
-    next_outstanding = next(
-        (
-            item.get("source_id")
-            for item in order.get("sequence", [])
-            if item.get("source_id") in outstanding_ids
-        ),
-        None,
-    )
-    source = state.get("source", {})
-    source_id = source.get("id")
-    registered = matrix_by_id.get(source_id)
-    ordered = order_by_id.get(source_id)
-    if not registered or not ordered:
-        errors.append("active source is not registered in the canonical matrix and order")
-        registered = {}
-        ordered = {}
-    source_complete = source.get("whole_source_candidate_complete") is True
-    if source_complete:
-        if source_id not in completed_ids:
-            errors.append("completed active source is absent from canonical progress")
-    elif source_id != next_outstanding:
-        errors.append("active source is not the next outstanding source in canonical order")
-    if source.get("compile_ordinal") != ordered.get("order"):
-        errors.append("active source compile ordinal drifted")
-    if registered.get("in_compile_scope") is not True:
-        errors.append("active source is outside compile scope")
-
-    authority = state.get("authority", {})
-    if not str(state.get("status", "")).startswith("MSID_MAPPING_"):
-        validate_authority_state(source, authority, errors)
-
-    calibration = state.get("calibration", {})
-    if "provider_call_authorized" in calibration:
-        errors.append("calibration stores redundant transaction-level provider permission")
-    if calibration.get("identity_card_approval_pending") is True:
-        validate_pending_identity_card(
-            source, registered, calibration, state.get("latest_provider_attempt"), errors
-        )
-        validate_spend_and_status(state, errors)
-        return
-    if calibration.get("offline_gate_passed") is not True:
-        errors.append("active packet lacks a completed offline calibration gate")
-
-    config_path = bound_file(calibration.get("configuration"), "active configuration", errors)
-    if config_path is None:
-        return
-    config = read_json(config_path, errors)
-    if config.get("schema_version") != "M050-EXTRACTION-MACHINE-CONFIG-0.1":
-        errors.append("active configuration schema drifted")
-    if config.get("source_id") != source_id:
-        errors.append("active configuration source ID disagrees with canonical state")
-    if config.get("source_path") != registered.get("path"):
-        errors.append("active configuration source path disagrees with source registry")
-    if config.get("source_sha256") != registered.get("sha256"):
-        errors.append("active configuration source hash disagrees with source registry")
-    if config.get("allowed_streams") != registered.get("output_streams"):
-        errors.append("active configuration streams disagree with source registry")
-
-    required_artifacts = {
-        "identity_card", "block_manifest", "disposition_ledger",
-        "chunk_plan", "prompt", "response_schema",
-    }
-    artifacts = config.get("artifacts", {})
-    artifact_hashes = config.get("artifact_sha256", {})
-    if set(artifacts) != required_artifacts or set(artifact_hashes) != required_artifacts:
-        errors.append("active configuration artifact classes drifted")
-    resolved_artifacts: dict[str, Path] = {}
-    for name in sorted(required_artifacts):
-        target = bound_file(artifacts.get(name), f"configuration artifact {name}", errors)
-        if target is None:
-            continue
-        resolved_artifacts[name] = target
-        if sha256_file(target) != artifact_hashes.get(name):
-            errors.append(f"configuration artifact binding drifted: {name}")
-    card = resolved_artifacts.get("identity_card")
-    if card is not None:
-        card_text = card.read_text(encoding="utf-8")
-        if "Status: `APPROVED`" not in card_text or "Author/root of authority: Asa Wember" not in card_text:
-            errors.append("active identity card is not explicitly Asa-approved")
-    execution = config.get("execution", {})
-    if execution != {
-        "cadence": "sequential_one_call_review",
-        "next_chunk_requires_substantive_review_of_prior_chunk": True,
-    }:
-        errors.append("active configuration cadence drifted")
-    provider = config.get("provider", {})
-    if provider.get("cache_required") is not True or provider.get("cache_ttl") != "1h":
-        errors.append("active configuration does not require one-hour Claude caching")
-
-    accepted_ids = source.get("accepted_chunk_ids", [])
-    accepted_evidence = calibration.get("accepted_evidence", [])
-    manual_accepted_ids: set[str] = set()
-    accepted_outcome_hashes: set[str] = set()
-    if [item.get("chunk_id") for item in accepted_evidence] != accepted_ids:
-        errors.append("accepted chunk evidence does not exactly cover the canonical boundary")
-    for item in accepted_evidence:
-        chunk_id = item.get("chunk_id")
-        outcome_path = bound_file(item.get("outcome"), f"accepted outcome {chunk_id}", errors)
-        ledger_path = bound_file(item.get("run_ledger"), f"accepted ledger {chunk_id}", errors)
-        if outcome_path is None or ledger_path is None:
-            continue
-        outcome = read_json(outcome_path, errors)
-        accepted_outcome_hashes.add(sha256_file(outcome_path))
-        if (
-            outcome.get("source_id") != source_id
-            or outcome.get("chunk_id") != chunk_id
-            or outcome.get("mechanical_validation", {}).get("passed") is not True
-        ):
-            errors.append(f"accepted outcome boundary drifted: {chunk_id}")
-        if outcome.get("provider_call_made") is False and (
-            outcome.get("resolution_basis")
-            != "authorially_authorized_supervisor_manual_construction_after_preserved_provider_noncompliance"
-            or outcome.get("model") is not None
-            or outcome.get("http_status") is not None
-            or outcome.get("cost", {}).get("total_usd") != "0"
-            or outcome.get("canonical_spend_update_required") is not False
-        ):
-            errors.append(f"accepted manual outcome provenance drifted: {chunk_id}")
-        elif outcome.get("provider_call_made") is False:
-            manual_accepted_ids.add(chunk_id)
-        matching = [
-            event for event in read_jsonl(ledger_path, f"accepted ledger {chunk_id}", errors)
-            if event.get("chunk_id") == chunk_id and event.get("state") == "review_passed"
-        ]
-        if len(matching) != 1 or matching[0].get("outcome_sha256") != sha256_file(outcome_path):
-            errors.append(f"accepted review binding drifted: {chunk_id}")
-
-    if source.get("whole_source_candidate_complete") is True:
-        validate_candidate_acceptance(
-            source, config, calibration, accepted_ids, accepted_evidence, errors
-        )
-
-    freeze_path = bound_file(calibration.get("freeze"), "active freeze", errors)
-    compatibility_path = bound_file(
-        calibration.get("compatibility_receipt"), "active compatibility receipt", errors
-    )
-    packet_path = bound_file(calibration.get("pilot_packet"), "active pilot packet", errors)
-    ledger_path = bound_file(calibration.get("run_ledger"), "active run ledger", errors)
-    latest = state.get("latest_provider_attempt")
-    outcome_path = (
-        bound_file(calibration.get("latest_outcome"), "latest outcome", errors)
-        if latest
-        else None
-    )
-    if None in (freeze_path, compatibility_path, packet_path, ledger_path):
-        return
-    if latest and outcome_path is None:
-        return
-
-    freeze = read_json(freeze_path, errors)
-    compatibility = read_json(compatibility_path, errors)
-    packet = read_json(packet_path, errors)
-    outcome = read_json(outcome_path, errors) if outcome_path else {}
-    pilot_chunk_id = calibration.get("pilot_chunk_id")
-    binding = freeze.get("binding", {})
-    chunk_plan = resolved_artifacts.get("chunk_plan")
-    prompt = resolved_artifacts.get("prompt")
-    if (
-        binding.get("source_id") != source_id
-        or binding.get("pilot_chunk_id") != pilot_chunk_id
-        or binding.get("configuration_sha256") != sha256_file(config_path)
-        or chunk_plan is None
-        or binding.get("chunk_plan_sha256") != sha256_file(chunk_plan)
-        or prompt is None
-        or binding.get("prompt_sha256") != sha256_file(prompt)
-        or binding.get("pilot_packet_sha256") != packet.get("packet_sha256")
-        or binding.get("pilot_packet_file_sha256") != sha256_file(packet_path)
-        or (
-            not source_complete
-            and binding.get("engine_module_sha256") != sha256_file(ENGINE_MODULE)
-        )
-        or (
-            not source_complete
-            and binding.get("engine_tests_sha256") != sha256_file(ENGINE_TESTS)
-        )
-    ):
-        errors.append("active freeze binding drifted")
-    if "authority" in freeze:
-        errors.append("freeze stores redundant transaction-level authority")
-    if freeze.get("pilot", {}).get("cache_miss_call_ceiling_usd") != calibration.get("cache_miss_call_ceiling_usd"):
-        errors.append("freeze call ceiling disagrees with canonical state")
-    offline_tests = calibration.get("offline_tests_passed")
-    if (
-        freeze.get("offline_verification", {}).get("offline_tests_passed") != offline_tests
-        or compatibility.get("offline_verification", {}).get("offline_tests_passed") != offline_tests
-    ):
-        errors.append("offline test count disagrees across canonical calibration evidence")
-    if "authority_boundary" in compatibility:
-        errors.append("compatibility evidence stores redundant transaction-level authority")
-
-    packet_body = dict(packet)
-    packet_hash = packet_body.pop("packet_sha256", None)
-    canonical_packet = (json.dumps(packet_body, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n").encode("utf-8")
-    if packet_hash != hashlib.sha256(canonical_packet).hexdigest():
-        errors.append("active packet internal hash drifted")
-    payload = packet.get("payload", {})
-    if (
-        packet.get("source_id") != source_id
-        or packet.get("chunk_id") != pilot_chunk_id
-        or packet.get("configuration_path") != calibration.get("configuration")
-        or packet.get("configuration_sha256") != sha256_file(config_path)
-        or payload.get("required_target_disposition_count") != len(payload.get("target_blocks", []))
-    ):
-        errors.append("active packet boundary drifted")
-
-    events = read_jsonl(ledger_path, "active run ledger", errors)
-    if latest:
-        validation = outcome.get("mechanical_validation") or {}
-        outcome_mechanical_passed = validation.get("passed")
-        if outcome_mechanical_passed is None and (
-            outcome.get("capture_error") or outcome.get("transport_error")
-        ):
-            outcome_mechanical_passed = False
-        usage = outcome.get("usage", {})
-        if (
-            outcome.get("source_id") != source_id
-            or outcome.get("chunk_id") != latest.get("chunk_id")
-            or outcome_mechanical_passed is not latest.get("mechanical_passed")
-            or outcome.get("http_status") != latest.get("http_status")
-            or outcome.get("stop_reason") != latest.get("stop_reason")
-            or usage.get("output_tokens") != latest.get("output_tokens")
-            or usage.get("cache_creation_input_tokens") != latest.get("cache_creation_input_tokens")
-            or usage.get("cache_read_input_tokens") != latest.get("cache_read_input_tokens")
-            or outcome.get("cost", {}).get("total_usd") != latest.get("exact_cost_usd")
-        ):
-            errors.append("latest provider attempt disagrees with canonical state")
-        if (
-            latest.get("review_state") == "review_failed"
-            and source.get("rejected_chunk_id") != latest.get("chunk_id")
-            and latest.get("chunk_id") not in manual_accepted_ids
-        ):
-            errors.append("rejected chunk boundary disagrees with the latest failed review")
-        latest_outcome_hash = sha256_file(outcome_path)
-        latest_review_matches = [
-            (index, event)
-            for index, event in enumerate(events)
-            if event.get("state") == latest.get("review_state")
-            and event.get("outcome_sha256") == latest_outcome_hash
-        ]
-        if len(latest_review_matches) != 1:
-            errors.append("active run ledger disagrees with the latest outcome")
-        elif latest_review_matches[0][0] != len(events) - 1:
-            # A preserved provider failure may be followed only by its one
-            # explicitly bound, accepted manual resolution.
-            trailing_events = events[latest_review_matches[0][0] + 1:]
-            if (
-                len(trailing_events) != 1
-                or trailing_events[0].get("state") != "review_passed"
-                or trailing_events[0].get("chunk_id") != latest.get("chunk_id")
-                or trailing_events[0].get("outcome_sha256") not in accepted_outcome_hashes
-            ):
-                errors.append("active run ledger has unauthorized events after the latest provider outcome")
-    elif events:
-        errors.append("run ledger contains events but canonical state has no latest provider attempt")
-
-    compatibility_binding = compatibility.get("binding", {})
-    current_compatibility_bindings = {
-        "configuration_sha256": sha256_file(config_path),
-        "prompt_sha256": sha256_file(prompt) if prompt else None,
-    }
-    if not source_complete:
-        current_compatibility_bindings.update({
-            "engine_module_sha256": sha256_file(ENGINE_MODULE),
-            "engine_tests_sha256": sha256_file(ENGINE_TESTS),
-        })
-    for key, expected in current_compatibility_bindings.items():
-        if key in compatibility_binding and compatibility_binding.get(key) != expected:
-            errors.append(f"compatibility binding drifted: {key}")
-    replays = compatibility.get("replays", {})
-    replay_paths = calibration.get("compatibility_replays", {})
-    if set(replays) != set(replay_paths):
-        errors.append("compatibility replay inventory drifted")
-    for name, relative in replay_paths.items():
-        target = bound_file(relative, f"compatibility replay {name}", errors)
-        if target is not None and replays.get(name, {}).get("sha256") != sha256_file(target):
-            errors.append(f"compatibility replay binding drifted: {name}")
-
-    validate_spend_and_status(
-        state,
-        errors,
-        active_required=not (
-            state.get("authority", {}).get("triage_authorized") is True
-            or state.get("authority", {}).get("rewrite_authorized") is True
-            or str(state.get("status", "")).startswith("MSID_MAPPING_")
-        ),
-    )
-
-
-def validate_authorial_triage_profile(errors: list[str]) -> None:
-    state = read_json(STATE, errors)
-    triage = state.get("triage", {})
-    expected_triage = {
-        "status": "ACTIVE",
-        "input_scope": "accepted candidates for completed pre-reconciliation sources",
-        "decision_record": TRIAGE_DECISIONS.as_posix(),
-        "decision_schema_version": TRIAGE_SCHEMA_VERSION,
-        "input_atom_count": 6550,
-    }
-    if triage != expected_triage:
-        errors.append("canonical authorial-triage binding drifted")
-    authority = state.get("authority", {})
-    if (
-        state.get("status") != "AUTHORIAL_TRIAGE_ACTIVE"
-        or state.get("execution_state") != "AUTHORIAL_TRIAGE_ACTIVE"
-        or authority.get("repository_writes_authorized") is not False
-        or authority.get("triage_authorized") is not True
-        or authority.get("source_work_authorized") is not False
-    ):
-        errors.append("canonical authorial-triage authority is inactive or inconsistent")
-    try:
-        corpus = load_triage_corpus(ROOT)
-        store = TriageDecisionStore(ROOT / TRIAGE_DECISIONS, corpus)
-    except TriageError as exc:
-        errors.append(f"canonical authorial-triage record is invalid: {exc}")
-        return
-    if len(corpus.atoms) != triage.get("input_atom_count") or len(corpus.source_labels) != 18:
-        errors.append("authorial-triage input coverage drifted")
-    expected_progress = f"{store.counts()['decided']:,} / {len(corpus.atoms):,} authorial decisions recorded"
-    if state.get("dashboard", {}).get("progress") != expected_progress:
-        errors.append("authorial-triage dashboard progress is stale")
-
-
-def validate_authorial_rewrite_profile(errors: list[str]) -> None:
-    state = read_json(STATE, errors)
-    triage = state.get("triage", {})
-    expected_triage = {
-        "status": "COMPLETE",
-        "input_scope": "accepted candidates for completed pre-reconciliation sources",
-        "decision_record": TRIAGE_DECISIONS.as_posix(),
-        "decision_schema_version": TRIAGE_SCHEMA_VERSION,
-        "input_atom_count": 6550,
-    }
-    if triage != expected_triage:
-        errors.append("completed authorial-triage binding drifted")
-    authority = state.get("authority", {})
-    if (
-        state.get("status") != "AUTHORIAL_REWRITE_ACTIVE"
-        or state.get("execution_state") != "AUTHORIAL_REWRITE_ACTIVE"
-        or authority.get("repository_writes_authorized") is not False
-        or authority.get("source_work_authorized") is not False
-        or authority.get("triage_authorized") is not False
-        or authority.get("rewrite_authorized") is not True
-    ):
-        errors.append("canonical authorial-rewrite authority is inactive or inconsistent")
-    try:
-        corpus = RewriteCorpus(ROOT)
-        store = RewriteStore(ROOT / DEFAULT_REWRITES, corpus)
-    except TriageError as exc:
-        errors.append(f"canonical authorial-rewrite record is invalid: {exc}")
-        return
-    expected_rewrite = {
-        "status": "ACTIVE",
-        "input_scope": "canonical authorial-triage decisions routed to rewrite_list",
-        "input_decision_record": TRIAGE_DECISIONS.as_posix(),
-        "input_triage_sha256": corpus.triage_sha256,
-        "rewrite_record": DEFAULT_REWRITES.as_posix(),
-        "rewrite_schema_version": REWRITE_SCHEMA_VERSION,
-        "input_atom_count": 98,
-    }
-    if state.get("rewrite") != expected_rewrite:
-        errors.append("canonical authorial-rewrite binding drifted")
-    if len(corpus.atoms) != 98:
-        errors.append("authorial-rewrite input coverage drifted")
-    expected_progress = f"{store.counts()['resolved']:,} / {len(corpus.atoms):,} authorial rewrite dispositions recorded"
-    if state.get("dashboard", {}).get("progress") != expected_progress:
-        errors.append("authorial-rewrite dashboard progress is stale")
-
-
-def validate_msid_mapping_lifecycle(
-    state: dict[str, Any], errors: list[str]
-) -> tuple[str | None, bool]:
     status = state.get("status")
-    lifecycle = MSID_MAPPING_LIFECYCLE.get(status)
+    lifecycle = RECONCILIATION_LIFECYCLE.get(status)
     if lifecycle is None or state.get("execution_state") != status:
-        errors.append("canonical Stage 4 lifecycle state is invalid")
-        expected_mapping_status = None
-        expected_dashboard_status = None
-        authority_active = False
+        errors.append("canonical Stage 5 lifecycle state is invalid")
+        reconciliation_status, dashboard_status, active = None, None, False
     else:
-        expected_mapping_status, expected_dashboard_status, authority_active = lifecycle
-
-    authority = state.get("authority", {})
-    if (
-        authority.get("triage_authorized") is not False
-        or authority.get("rewrite_authorized") is not False
-        or authority.get("google_sheets_interaction_authorized") is not False
-        or authority.get("semantic_acceptance_authorized") is not False
-        or authority.get("reconciliation_authorized") is not False
-        or authority.get("compiled_prose_authorized") is not False
-        or authority.get("mapping_authorized") is not authority_active
-        or authority.get("source_work_authorized") is not authority_active
-        or authority.get("repository_writes_authorized") is not authority_active
-    ):
-        errors.append("canonical Stage 4 authority is inactive or inconsistent")
-    if "provider_call_authorized" in authority:
-        errors.append("canonical authority stores redundant transaction-level provider permission")
-    if state.get("mapping", {}).get("status") != expected_mapping_status:
-        errors.append("canonical Stage 4 mapping status disagrees with lifecycle")
-    if state.get("dashboard", {}).get("status") != expected_dashboard_status:
-        errors.append("canonical Stage 4 dashboard status disagrees with lifecycle")
-    return expected_mapping_status, status == "MSID_MAPPING_ACTIVE"
-
-
-def validate_msid_mapping_profile(errors: list[str]) -> None:
-    state = read_json(STATE, errors)
-    expected_mapping_status, active = validate_msid_mapping_lifecycle(state, errors)
+        reconciliation_status, dashboard_status, active = lifecycle
     try:
-        corpus = MappingCorpus(ROOT)
-        vocabulary = MSIDVocabulary(ROOT)
-        store = MappingStore(ROOT / DEFAULT_MAPPINGS, corpus, vocabulary)
+        corpus = ReconciliationCorpus(ROOT)
+        store = ReconciliationStore(ROOT / DEFAULT_RECONCILIATIONS, corpus)
     except TriageError as exc:
-        errors.append(f"canonical Stage 4 machinery is invalid: {exc}")
+        errors.append(f"canonical Stage 5 machinery is invalid: {exc}")
         return
-    rewrite_corpus = RewriteCorpus(ROOT)
-    expected_rewrite = {
-        "status": "COMPLETE",
-        "input_scope": "canonical authorial-triage decisions routed to rewrite_list",
-        "input_decision_record": TRIAGE_DECISIONS.as_posix(),
-        "input_triage_sha256": rewrite_corpus.triage_sha256,
-        "rewrite_record": DEFAULT_REWRITES.as_posix(),
-        "rewrite_schema_version": REWRITE_SCHEMA_VERSION,
-        "input_atom_count": 98,
-    }
-    if state.get("rewrite") != expected_rewrite:
-        errors.append("completed authorial-rewrite binding drifted")
+
+    if state.get("mapping", {}).get("status") != "COMPLETE":
+        errors.append("Stage 5 requires completed Stage 4 mapping")
     expected_mapping = {
-        "status": expected_mapping_status,
+        "status": "COMPLETE",
         "input_scope": "triage-retained claims plus authorially accepted rewrite outcomes",
         "input_triage_record": TRIAGE_DECISIONS.as_posix(),
         "input_triage_sha256": corpus.triage_sha256,
         "input_rewrite_record": DEFAULT_REWRITES.as_posix(),
         "input_rewrite_sha256": corpus.rewrite_sha256,
         "vocabulary_record": DEFAULT_VOCABULARY.as_posix(),
-        "vocabulary_sha256": sha256_file(ROOT / DEFAULT_VOCABULARY),
+        "vocabulary_sha256": corpus.vocabulary_sha256,
         "vocabulary_schema_version": VOCABULARY_SCHEMA_VERSION,
         "mapping_record": DEFAULT_MAPPINGS.as_posix(),
         "mapping_schema_version": MAPPING_SCHEMA_VERSION,
@@ -1108,14 +395,135 @@ def validate_msid_mapping_profile(errors: list[str]) -> None:
         "input_source_count": 18,
     }
     if state.get("mapping") != expected_mapping:
-        errors.append("canonical Stage 4 binding drifted")
-    if len(corpus.atoms) != 5382 or len(corpus.source_ids) != 18:
-        errors.append("Stage 4 input coverage drifted")
-    expected_progress = f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded"
+        errors.append("completed Stage 4 mapping binding drifted")
+
+    reconciliation = state.get("reconciliation", {})
+    required_reconciliation_keys = {
+        "status", "input_scope", "input_mapping_record", "input_mapping_sha256",
+        "input_vocabulary_record", "input_vocabulary_sha256", "input_triage_sha256",
+        "input_rewrite_sha256", "reconciliation_record",
+        "reconciliation_schema_version", "input_atom_count", "input_source_count",
+        "target", "completed_tranche_ids", "provider",
+    }
+    if set(reconciliation) != required_reconciliation_keys:
+        errors.append("canonical Stage 5 binding shape drifted")
+    expected_bindings = {
+        "status": reconciliation_status,
+        "input_scope": "all 5,382 Stage 4 eligible atoms as one unitary corpus",
+        "input_mapping_record": DEFAULT_MAPPINGS.as_posix(),
+        "input_mapping_sha256": corpus.mapping_sha256,
+        "input_vocabulary_record": DEFAULT_VOCABULARY.as_posix(),
+        "input_vocabulary_sha256": corpus.vocabulary_sha256,
+        "input_triage_sha256": corpus.triage_sha256,
+        "input_rewrite_sha256": corpus.rewrite_sha256,
+        "reconciliation_record": DEFAULT_RECONCILIATIONS.as_posix(),
+        "reconciliation_schema_version": RECONCILIATION_SCHEMA_VERSION,
+        "input_atom_count": 5382,
+        "input_source_count": 18,
+    }
+    for key, value in expected_bindings.items():
+        if reconciliation.get(key) != value:
+            errors.append(f"canonical Stage 5 binding drifted: {key}")
+    target = reconciliation.get("target")
+    if not isinstance(target, dict) or set(target) != {"tranche_id", "msid_prefix", "selector"}:
+        errors.append("canonical Stage 5 target shape drifted")
+    elif (
+        not isinstance(target.get("tranche_id"), str)
+        or not target["tranche_id"]
+        or not isinstance(target.get("msid_prefix"), str)
+        or target.get("selector") not in {"exact", "subtree"}
+    ):
+        errors.append("canonical Stage 5 target is invalid")
+    completed = reconciliation.get("completed_tranche_ids")
+    if (
+        not isinstance(completed, list)
+        or len(completed) != len(set(completed))
+        or any(not isinstance(item, str) or not item for item in completed)
+    ):
+        errors.append("canonical Stage 5 completed-tranche boundary is invalid")
+
+    provider = reconciliation.get("provider")
+    required_provider_keys = {
+        "enabled", "name", "model", "reasoning_effort", "cache_ttl",
+        "maximum_output_tokens", "pricing", "proposal_review_required",
+    }
+    provider_enabled = isinstance(provider, dict) and provider.get("enabled") is True
+    if not isinstance(provider, dict) or set(provider) != required_provider_keys:
+        errors.append("canonical Stage 5 provider configuration shape drifted")
+    elif provider_enabled:
+        if (
+            provider.get("name") != "Anthropic"
+            or not isinstance(provider.get("model"), str)
+            or not provider["model"]
+            or provider.get("reasoning_effort") not in {"low", "medium", "high"}
+            or provider.get("cache_ttl") not in {"5m", "1h"}
+            or not isinstance(provider.get("maximum_output_tokens"), int)
+            or provider["maximum_output_tokens"] < 1
+            or not isinstance(provider.get("pricing"), dict)
+            or provider.get("proposal_review_required") is not True
+        ):
+            errors.append("enabled Stage 5 provider configuration is invalid")
+    elif (
+        provider.get("name") != "Anthropic"
+        or provider.get("model") is not None
+        or provider.get("maximum_output_tokens") is not None
+        or provider.get("pricing") is not None
+        or provider.get("proposal_review_required") is not True
+    ):
+        errors.append("disabled Stage 5 provider configuration carries call capability")
+
+    authority = state.get("authority", {})
+    prohibited = {
+        "source_work_authorized", "triage_authorized", "rewrite_authorized",
+        "google_sheets_interaction_authorized", "mapping_authorized",
+        "compiled_prose_authorized",
+    }
+    if any(authority.get(key) is not False for key in prohibited):
+        errors.append("canonical Stage 5 retains prohibited authority")
+    if (
+        authority.get("reconciliation_authorized") is not active
+        or authority.get("semantic_acceptance_authorized") is not active
+        or authority.get("repository_writes_authorized") is not active
+        or authority.get("provider_calls_authorized") is not (active and provider_enabled)
+    ):
+        errors.append("canonical Stage 5 authority disagrees with lifecycle")
+    if state.get("spend", {}).get("active") is not (active and provider_enabled):
+        errors.append("canonical Stage 5 spend disagrees with call authority")
+    if state.get("dashboard", {}).get("status") != dashboard_status:
+        errors.append("canonical Stage 5 dashboard status disagrees with lifecycle")
+    expected_progress = (
+        f"{len(store.primary_members):,} / {len(corpus.atoms):,} atoms assigned to canonical semantic units"
+    )
     if state.get("dashboard", {}).get("progress") != expected_progress:
-        errors.append("Stage 4 dashboard progress is stale")
-    if active and active_mapping_source(corpus, store) is None:
-        errors.append("Stage 4 remains active after complete mapping coverage")
+        errors.append("Stage 5 dashboard progress is stale")
+    unit_ids = {unit["unit_id"] for unit in store.units}
+    run_root = ROOT / RECONCILIATION_RUNS
+    packet_hashes: set[str] = set()
+    response_hashes: set[str] = set()
+    for path in run_root.rglob("*.json") if run_root.exists() else ():
+        try:
+            response_hashes.add(sha256_file(path))
+            value = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(value, dict) and isinstance(value.get("packet_sha256"), str):
+                packet_hashes.add(value["packet_sha256"])
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"invalid Stage 5 run evidence {path.relative_to(ROOT)}: {exc}")
+    for ledger in run_root.rglob("run_ledger.jsonl") if run_root.exists() else ():
+        try:
+            reconciliation_ledger_events(ledger)
+        except TriageError as exc:
+            errors.append(f"invalid Stage 5 run ledger {ledger.relative_to(ROOT)}: {exc}")
+    for unit in store.units:
+        if not set(unit["related_unit_ids"]) <= unit_ids - {unit["unit_id"]}:
+            errors.append(f"Stage 5 unit has an unresolved related-unit link: {unit['unit_id']}")
+        if unit["decision_origin"] == "provider_reviewed":
+            evidence = unit["evidence"]
+            if evidence["packet_sha256"] not in packet_hashes:
+                errors.append(f"Stage 5 unit lacks its preserved packet: {unit['unit_id']}")
+            for key in ("proposal_response_sha256", "review_response_sha256"):
+                if evidence[key] not in response_hashes:
+                    errors.append(f"Stage 5 unit lacks preserved response evidence: {unit['unit_id']}")
+    validate_spend_and_status(state, errors, active_required=active and provider_enabled)
 
 
 def validate_active_phase(errors: list[str]) -> None:
@@ -1123,17 +531,8 @@ def validate_active_phase(errors: list[str]) -> None:
     state = read_json(STATE, errors)
     phase = state.get("dashboard", {}).get("phase", "")
     validate_human_evidence(errors)
-    if phase.startswith("Atomic extraction"):
-        validate_atomic_extraction_profile(errors)
-    elif phase.startswith("Authorial triage"):
-        validate_atomic_extraction_profile(errors)
-        validate_authorial_triage_profile(errors)
-    elif phase.startswith("Authorial rewrite"):
-        validate_atomic_extraction_profile(errors)
-        validate_authorial_rewrite_profile(errors)
-    elif phase.startswith("MSID mapping"):
-        validate_atomic_extraction_profile(errors)
-        validate_msid_mapping_profile(errors)
+    if phase.startswith("Semantic reconciliation"):
+        validate_reconciliation_profile(errors)
     else:
         errors.append("canonical state does not name a supported active phase profile")
 
@@ -1148,7 +547,7 @@ def validate_operating_contract(errors: list[str]) -> None:
         "## Phase model",
         "## Canonical controls",
         "## Authority model",
-        "## Active phase profile — Stage 4 MSID mapping",
+        "## Active phase profile — Stage 5 semantic reconciliation",
         "## STATUS contract",
     ):
         if heading not in text:
@@ -1176,24 +575,25 @@ def validate_operating_contract(errors: list[str]) -> None:
 def validate_json_integrity(errors: list[str]) -> tuple[int, int]:
     json_count = 0
     jsonl_count = 0
-    for target in (ROOT / "m050/extraction").rglob("*.json"):
-        if not is_live_file(target):
-            continue
-        try:
-            json.loads(target.read_text(encoding="utf-8"))
-            json_count += 1
-        except (OSError, json.JSONDecodeError) as exc:
-            errors.append(f"invalid JSON {target.relative_to(ROOT)}: {exc}")
-    for target in (ROOT / "m050/extraction").rglob("*.jsonl"):
-        if not is_live_file(target):
-            continue
-        try:
-            for line in target.read_text(encoding="utf-8").splitlines():
-                if line.strip():
-                    json.loads(line)
-            jsonl_count += 1
-        except (OSError, json.JSONDecodeError) as exc:
-            errors.append(f"invalid JSONL {target.relative_to(ROOT)}: {exc}")
+    for root in (ROOT / "m050/extraction", ROOT / "m050/reconciliation"):
+        for target in root.rglob("*.json"):
+            if not is_live_file(target):
+                continue
+            try:
+                json.loads(target.read_text(encoding="utf-8"))
+                json_count += 1
+            except (OSError, json.JSONDecodeError) as exc:
+                errors.append(f"invalid JSON {target.relative_to(ROOT)}: {exc}")
+        for target in root.rglob("*.jsonl"):
+            if not is_live_file(target):
+                continue
+            try:
+                for line in target.read_text(encoding="utf-8").splitlines():
+                    if line.strip():
+                        json.loads(line)
+                jsonl_count += 1
+            except (OSError, json.JSONDecodeError) as exc:
+                errors.append(f"invalid JSONL {target.relative_to(ROOT)}: {exc}")
     return json_count, jsonl_count
 
 
@@ -1220,8 +620,8 @@ def run_tests() -> int:
             str(ROOT / ".venv/bin/python"),
             "-m",
             "pytest",
-            "m050/tools/tests/test_m050_stage4_guard.py",
-            "m050/tools/tests/test_m050_msid_mapping.py",
+            "m050/tools/tests/test_m050_stage5_guard.py",
+            "m050/tools/tests/test_m050_reconciliation.py",
             "m050/tools/tests/test_m050_render_status.py",
             "-q",
         ],
@@ -1255,10 +655,7 @@ def main() -> int:
 
     print("M050 COMPILE GUARD: PASS")
     state = read_json(STATE, [])
-    source = state.get("source", {})
     spend = state.get("spend", {})
-    accepted = ", ".join(source.get("accepted_chunk_ids", [])) or "none"
-    rejected = source.get("rejected_chunk_id") or "none"
     corpus = state.get("corpus", {})
     print(
         "- corpus: "
@@ -1271,29 +668,16 @@ def main() -> int:
     print(f"- frozen files: {frozen_count}; immutable accepted artifacts: {immutable_count}")
     print("- live extraction topology: 7 directories; retired process families absent")
     print("- Human Rulings evidence: 173 reconstructed records across 41 rulings")
-    if state.get("status") == "AUTHORIAL_REWRITE_ACTIVE":
-        rewrite_corpus = RewriteCorpus(ROOT)
-        rewrite_store = RewriteStore(ROOT / DEFAULT_REWRITES, rewrite_corpus)
-        rewrite_source = active_rewrite_source(rewrite_corpus, rewrite_store)
-        rewrite_label = rewrite_corpus.source_labels.get(rewrite_source, "complete")
-        print(
-            f"- active rewrite source: {rewrite_label} ({rewrite_source or 'none'}); "
-            f"{rewrite_store.counts()['resolved']} / {len(rewrite_corpus.atoms)} canonical rewrite dispositions"
+    if str(state.get("status", "")).startswith("RECONCILIATION_"):
+        reconciliation_corpus = ReconciliationCorpus(ROOT)
+        reconciliation_store = ReconciliationStore(
+            ROOT / DEFAULT_RECONCILIATIONS, reconciliation_corpus
         )
-    elif str(state.get("status", "")).startswith("MSID_MAPPING_"):
-        mapping_corpus = MappingCorpus(ROOT)
-        vocabulary = MSIDVocabulary(ROOT)
-        mapping_store = MappingStore(ROOT / DEFAULT_MAPPINGS, mapping_corpus, vocabulary)
-        mapping_source = active_mapping_source(mapping_corpus, mapping_store)
-        mapping_label = mapping_corpus.source_labels.get(mapping_source, "complete")
+        target = state.get("reconciliation", {}).get("target", {})
         print(
-            f"- active mapping source: {mapping_label} ({mapping_source or 'none'}); "
-            f"{len(mapping_store.mappings)} / {len(mapping_corpus.atoms)} canonical Stage 4 mappings"
-        )
-    else:
-        print(
-            f"- active source: {source.get('label')} ({source.get('id')}); "
-            f"accepted {accepted}; rejected/frozen {rejected}"
+            f"- active reconciliation boundary: {target.get('msid_prefix')} "
+            f"({target.get('tranche_id')}); {len(reconciliation_store.primary_members)} / "
+            f"{len(reconciliation_corpus.atoms)} atoms assigned"
         )
     print(
         f"- spend: ${spend.get('cumulative_spent_usd')} exact; "

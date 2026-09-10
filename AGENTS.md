@@ -61,9 +61,9 @@ division of mandate, not another workflow layer:
   machinery and state its net process delta. Any increase in total stages,
   artifact classes, representations, handoffs, or supervisory machinery
   requires specific discussion with Asa and explicit approval.
-- **Compile Worker:** executes one explicitly authorized phase and source using
-  the established method. Within an active source-work grant and cumulative budget
-  it may handle ordinary extraction details, including diagnosis, correction,
+- **Compile Worker:** executes one explicitly authorized phase and bounded target
+  using the established method. Within an active work grant and cumulative budget
+  it may handle ordinary phase details, including diagnosis, correction,
   simplification, validation, retry, state maintenance, and coherent repository
   checkpoints, without transaction-by-transaction approval.
 
@@ -81,15 +81,15 @@ overall phase boundary, the Supervisor may retool the contract in discussion
 with Asa; the Compile Worker begins the new phase only after Asa explicitly
 authorizes it.
 
-**Stopdown** is the Worker-side formal handoff, not merely a pause in source
-work. At source completion the Worker must finish candidate packaging and
+**Stopdown** is the Worker-side formal handoff, not merely a pause in phase
+work. At bounded-work completion the Worker must finish canonical packaging and
 validation, set source-work, repository-write, and the applicable phase-work
 authority to false in canonical state, refresh `STATUS.md`, run the required
 guard, commit and push that closing transition, and confirm a clean worktree
 with local `HEAD` equal to `origin/main`. The closing commit and push are the
-final repository actions permitted by the expiring source grant and may publish
-only the completed source work and authority revocation. A
-source-completion halt is not a Stopdown while any applicable authority remains
+final repository actions permitted by the expiring bounded grant and may publish
+only the completed work and authority revocation. A
+work-completion halt is not a Stopdown while any applicable authority remains
 true. After the closing push the Worker makes no further repository write
 unless Asa explicitly grants new work.
 
@@ -153,6 +153,8 @@ the active profile, canonical state, or the sole guard.
 - `m050/mapping/M050_MSID_Vocabulary_MEDIANv0_5_0.json` and
   `m050/mapping/M050_Atom_MSID_Mappings_MEDIANv0_5_0.jsonl` are respectively
   the sole Stage 4 vocabulary and current atom-mapping record.
+- `m050/reconciliation/M050_Reconciled_Semantic_Units_MEDIANv0_5_0.jsonl` is
+  the sole canonical Stage 5 reconciliation record.
 - Historical checkpoints, bootstrap packets, active-index versions, execution
   standards, authority policies, and versioned guard wrappers are retired.
   Do not recreate those families.
@@ -165,11 +167,11 @@ the active profile, canonical state, or the sole guard.
    state completely.
 4. Read `STATUS.md` and confirm it exactly mirrors the canonical state.
 5. Run `.venv/bin/python m050/tools/m050_guard.py --with-tests` before
-   control/code release, provider-enabled configuration release, whole-source
+   control/code release, provider-enabled configuration release, tranche
    acceptance, and commit/push. Invoke the renderer and full guard in separate
-   tool calls. The active Stage 4 suite is provider-free and does not bind
-   network ports. Routine provider capture uses the extraction machine’s focused
-   packet, source, spend, cache, response, and prior-review checks. A read-only
+   tool calls. The active Stage 5 suite is provider-free and does not bind
+   network ports. Routine provider capture uses the reconciliation tool’s focused
+   packet, tranche, spend, cache, response, and prior-review checks. A read-only
    Spark Up assessment publishes nothing and does not itself trigger the
    renderer or full guard.
 6. Report concisely: active phase; current target and completed/rejected
@@ -193,130 +195,149 @@ No separate successor packet is required. These canonical files are the handoff.
   active-profile work.
 - A bounded repository task authorizes only its stated change.
 
-## Active phase profile — Stage 4 MSID mapping
+## Active phase profile — Stage 5 semantic reconciliation
 
-This profile governs semantic-address assignment for the 5,382 claims that
-remain eligible after completed authorial triage and rewrite. Mapping answers
-what stable MEDIAN property a claim concerns. It does not decide truth,
-authority, conflict, supersession, reconciliation, canon, or compiled prose.
+This profile governs comparison and unification of the 5,382 effective claims
+that completed Stage 4. Reconciliation establishes a coherent semantic base: it
+merges genuine duplicates, combines compatible partial claims, resolves grounded
+conflicts and supersession, and preserves unresolved matters explicitly. It does
+not write the v0.5 GDD, compare against the v0.4.6 baseline, process later or
+conditional sources, fill m051 gaps, or decide document order and prose.
 
-The profile is initially ready but not Worker-active. No source-work, mapping,
-provider-call, model-spend, or repository-write authority follows from profile
-installation. Asa's instruction `Spark Up` is the permission-granting phrase:
-it explicitly grants source-work, mapping, and repository-write authority for
-exactly one source. No source-name restatement is required. `Proceed`, or an
-equally clear go-ahead after the assessment report, is execution release only; it
-never creates or enlarges authority.
+The profile is installed ready but not Worker-active. Installation grants no
+reconciliation, provider-call, model-spend, semantic-acceptance, or repository-
+write authority. Provider configuration is initially disabled. Asa must
+separately authorize a provider model and positive Stage 5 cumulative spend
+envelope before any call is possible.
 
-On `Spark Up` from the ready state, the Worker first remains read-only while it
-performs the complete cold start, derives the current or next source from
-canonical state and source order, inventories the exact source boundary, and
-reports its first substantive action, halt conditions, prohibited transitions,
-and any contradiction or risk. If the controls do not select exactly one
-source, halt without activating authority. If they do, run the read-only
-`prepare-spark-up` assessment, retain its reported source ID and Git checkpoint
-in the current task context, make no repository change, and halt for `Proceed`.
-The repository remains clean and in `MSID_MAPPING_READY`; do not refresh STATUS,
-run a publication guard, commit, or push merely to represent the pause. If the
-task loses the unconsumed grant or its assessment context, require a new
-`Spark Up` rather than reconstructing authority from repository state.
+Asa's instruction `Spark Up` is the permission-granting phrase. It grants
+reconciliation, reviewed semantic-acceptance, and repository-write authority
+for exactly the semantic tranche selected in canonical state; it also grants
+provider-call authority only when a
+previously author-approved provider configuration and spend envelope are both
+active. `Proceed`, or an equally clear go-ahead after the assessment, releases
+execution only and never creates or enlarges authority.
 
-From that read-only pause, `Proceed` releases the already-authorized source work
-only if the same Worker task retains the unconsumed `Spark Up` grant, the source
-and boundary still derive identically, the worktree remains clean and
-synchronized at the assessed checkpoint, and no halt condition has appeared.
-Handle `Proceed` with exactly one invocation of `.venv/bin/python
-m050/tools/m050_msid_mapping.py --transition activate-on-proceed
---expected-source-id <ASSESSED_SOURCE_ID> --expected-head <ASSESSED_HEAD>
---apply`. That operation performs the narrow deterministic stale-check and
-atomically sets both lifecycle fields to `MSID_MAPPING_ACTIVE`, sets
-`mapping.status` to `ACTIVE`, and records the three applicable authorities as
-true. Do not precede it with another cold start, full guard, separate Git or
-synchronization checks, lifecycle dry-run, preview, inventory, or general
-revalidation. If it fails, halt and report the exact drift; if it succeeds,
-begin the assessed source work immediately and operate autonomously within the
-grant.
-Repeated `Spark Up` during the read-only pause repeats the assessment and starts
-no work. `Proceed` without the unconsumed task-level grant and assessment grants
-nothing. Drift requires a halt and report. Because the pause creates no
-repository authority state, cancelling before execution requires no repository
-transition or checkpoint. Source completion ends the grant through formal
-Stopdown; starting the following source requires a later `Spark Up`.
+On `Spark Up` from READY, the Worker remains read-only, performs the complete
+cold start, runs `.venv/bin/python m050/tools/m050_reconciliation.py
+--transition prepare-spark-up`, retains the reported tranche ID, packet hash,
+and Git checkpoint in task context, reports its first substantive action and
+risks, and halts for `Proceed`. The pause makes no repository change: do not
+refresh STATUS, run a publication guard, commit, or push merely to represent it.
+If the task loses the unconsumed grant or assessment context, require a new
+`Spark Up`.
+
+From that pause, handle `Proceed` with exactly one invocation of `.venv/bin/python
+m050/tools/m050_reconciliation.py --transition activate-on-proceed
+--expected-tranche-id <ASSESSED_TRANCHE_ID> --expected-head <ASSESSED_HEAD>
+--apply`. The operation performs the narrow stale-check and atomically activates
+only the assessed tranche and applicable authorities. Do not precede it with
+another cold start, guard, Git check, dry run, inventory, or revalidation. If it
+fails, halt and report the drift; if it succeeds, begin the assessed work.
+Repeated `Spark Up` repeats only the assessment. `Proceed` without the retained
+grant and assessment grants nothing.
 
 ### Canonical input and representation
 
-- Accepted extraction candidates, the completed triage record, and the completed
-  rewrite record are immutable inputs. Every input hash is verified.
-- The effective claim is the retained normalized claim or its authorially
-  accepted rewrite. A replaced original and all triage or rewrite exclusions
-  remain evidence but do not enter Stage 4.
-- The MSID Grammar and Human Rulings remain the semantic authority.
-  `m050/mapping/M050_MSID_Vocabulary_MEDIANv0_5_0.json` is their sole
-  machine-readable Stage 4 validation projection. It is hash-bound to both
-  sources and accepted evidence, distinguishes settled, provisional, alias,
-  and rejected paths, and creates no independent ontology. Git is its history.
-- `m050/mapping/M050_Atom_MSID_Mappings_MEDIANv0_5_0.jsonl` is the sole canonical
-  mapping record. It contains at most one current mapping per eligible atom;
-  Git is its history. Do not create a filtered corpus or parallel mapping view.
-- Legacy candidate fields such as `primary_msid_candidate`, authority effects,
-  conflicts, and supersession are untrusted semantic shell. They may remain
-  source evidence but must not be imported as Stage 4 decisions.
+- The 5,382 effective claims and their completed mappings are immutable Stage 5
+  inputs. Canonical state binds the mapping, vocabulary, triage, and rewrite
+  hashes. Mapping metadata routes semantic context; it does not decide truth,
+  canon, authority, conflict, or supersession.
+- The corpus is unitary. Semantic tranches are bounded execution units, not
+  source partitions or parallel corpora.
+- `m050/reconciliation/M050_Reconciled_Semantic_Units_MEDIANv0_5_0.jsonl`
+  is the one canonical reconciliation record. Each record is one semantic
+  proposition and may contain atoms from multiple sources. Multiple propositions
+  may share an MSID. Every eligible atom must ultimately appear exactly once as
+  a primary member; cross-links never duplicate primary membership.
+- Unit statuses are `reconciled`, `human_required`, and
+  `authorially_deferred`. The latter is a terminal, intentionally noncanonical
+  result. `human_required` is working state and must be zero at phase completion.
+- Member dispositions are `basis`, `supporting`, `elaboration`, `superseded`,
+  `conflicting`, and `deferred`. A reconciled unit requires one current MSID and
+  one source-grounded canonical semantic claim. A deferred unit asserts no
+  canonical claim.
+- Accepted extraction, triage, rewrite, vocabulary, mapping, packet, raw
+  response, and semantic-review evidence remain immutable. Git is history; do
+  not create a filtered corpus, second reconciliation ledger, or prose view.
 
-### Mapping decisions and validation
+### Authority and semantic judgment
 
-- Every eligible atom receives exactly one status: `mapped`, `unmapped`,
-  `ambiguous`, `invalid`, or `human_required`.
-- A mapped atom has one primary MSID, optional related MSIDs, one existing
-  semantic relation, and ontology-grounded rationale. Mapping does not make the
-  claim or the path canonical during Stage 5.
-- `ambiguous`, `invalid`, and `human_required` remain visible. Do not choose a
-  tidy path merely to complete coverage or freeze an open TLD or branch.
-- Each record binds source, atom, block, candidate, triage, rewrite, and
-  effective-claim hashes. Missing, duplicate, drifted, excluded, or pre-rewrite
-  mappings are hard failures.
-- The validator enforces mechanically decidable minimum depth, UpperCamelCase
-  segments, TLD self-roots, Register/operator separation, aliases and rejected
-  paths, controlled relations, input eligibility, and zero `m051`
-  contamination. Noun ownership and runtime-instance boundaries remain
-  semantic mapping judgments and must use an unresolved status when uncertain.
+- Asa Wember remains sole authorial authority. Ordinary grounded model
+  reconciliations may become canonical after independent semantic review without
+  line-by-line author review. A model may not invent a rule, fill a gap, mint an
+  ontology path, or hide uncertainty to complete coverage.
+- Do not modify the Human Rulings Ledger. An applicable explicit ruling controls
+  only the precise question and semantic scope it settles. Include only relevant
+  ruling atoms in a packet. Affected-source metadata alone confers no priority;
+  explanation, administration, provenance, and repetition confer no authority.
+  Dedicated specifications remain detailed owners outside an exact ruling.
+  Conflict with a demonstrably later or more specific accepted authorial action
+  follows that action; otherwise preserve `human_required`.
+- Stage 4 unresolved mappings do not automatically require author review.
+  Cross-source context may attach them to grounded reconciled units. A surviving
+  canonical proposition must have a valid current MSID. If the necessary
+  vocabulary path does not exist, halt for Supervisor/author adjudication.
 
-### Execution and boundaries
+### Hybrid API method and evidence closure
 
-- Process eligible atoms in canonical source and atom order. Resume at the first
-  unmapped atom in the one explicitly released source.
-- Use `m050/tools/m050_msid_mapping.py --transition prepare-spark-up`,
-  `--transition activate-on-proceed`, and `--transition prepare-stopdown` for
-  deterministic lifecycle operations. `prepare-spark-up` is read-only and
-  rejects `--apply`; its source ID and checkpoint are ephemeral task reporting,
-  not another authority record. `activate-on-proceed` rejects dry-run use and
-  requires those two assessed values in its single `--apply` invocation.
-  `prepare-stopdown` is dry-run by default and `--apply` atomically changes only
-  canonical compile state after validation. STATUS rendering, the full guard,
-  Git operations, synchronization checks, and Stopdown notification remain
-  separate operations during formal Stopdown, as required above; do not perform
-  them merely for the Spark Up pause or repeat them for `Proceed` activation.
-- Zero-call preparation may build and validate the vocabulary, inventory the
-  exact input, identify literal MSIDs, measure ignored legacy semantic shell,
-  and estimate later model work. It may not record semantic mappings.
-- Provider-assisted mapping requires a separately approved provider-enabled
-  configuration and positive cumulative spend envelope. No current extraction
-  packet, prompt, schema, budget, or credential use carries into Stage 4.
-- After valid execution release from the read-only Spark Up pause, the Worker
-  may enter the active lifecycle, map, validate, correct generic local
-  mechanics, maintain canonical state and STATUS, run required guards, and
-  commit and push coherent checkpoints without transaction-by-transaction
-  approval. It may not compare source authority, merge claims, add a taxonomy,
-  create another mapping representation, enter another source, or begin Stage
-  5.
-- Halt for vocabulary or input drift, invalid record shape, coverage disagreement,
-  unresolved ontology that the five statuses cannot preserve, requested source
-  completion, exhausted authority or spend, or any need to change the phase.
-- Stage 4 completes only with one valid current mapping for all 5,382 inputs.
-  Then Stopdown and halt for separately authorized Stage 5 reconciliation.
+- Provider calls are direct API calls made by Python, not Codex model turns.
+  Python constructs hash-bound packets, preserves the raw response before parse,
+  enforces schema and exact atom coverage, validates bindings and cost, and emits
+  compact status. It never makes semantic equivalence, authority, conflict, or
+  synthesis judgments.
+- Every candidate packet receives two semantic passes: a strong reconciler
+  proposes units; a fresh reviewer compares that unchanged proposal against the
+  complete packet for lost nuance, invention, false equivalence, unresolved
+  conflict, authority error, and improper Human Rulings weight. Only an `accept`
+  review or an explicit authorial disposition may enter the canonical record.
+  Review rejection routes to bounded revision, `human_required`, or halt.
+- Provider model is a replaceable canonical configuration value. Reuse the
+  proven Anthropic request/capture, caching, failure classification, exact-cost,
+  and pessimistic-ceiling disciplines; do not reactivate extraction prompts,
+  chunks, streams, or source-specific controls. A different provider requires
+  explicit transfer permission and the smallest replacement adapter; do not
+  build a generic provider framework.
+- Raw packets and responses are write-once evidence. API stdout must remain a
+  compact summary so ordinary results do not enter the Worker conversation.
+  Transport, refusal, truncation, JSON, schema, coverage, grounding, semantic,
+  and authorial failures remain distinct. Retry only a narrowly classified
+  transient or correctable failure; a clean call is never repeated speculatively.
+- Cache hits never fund authority. Debit every response with known usage,
+  including unusable responses. No call may exceed the remaining cumulative
+  envelope under its conservative cache-miss ceiling. Checkpoint coherent
+  tranches, not individual calls.
+
+### Execution, halt, and completion
+
+- The initial tranche is the exact `Away.Crossing` MSID group. Descendant,
+  related, same-block, and mapping-basis atoms are context only unless listed as
+  required packet members. The pilot uses the permanent Stage 5 method; it is
+  not a separate artifact family.
+- Use `m050/tools/m050_reconciliation.py` for deterministic inventory, packet,
+  record, and lifecycle operations. `prepare-spark-up` is read-only and rejects
+  `--apply`. `activate-on-proceed` requires the assessed tranche and checkpoint.
+  `prepare-stopdown --apply` may revoke authority only after exact tranche
+  coverage. STATUS rendering, the full guard, Git operations, synchronization,
+  and Stopdown notification remain separate formal actions.
+- After execution release, the Worker operates autonomously within the tranche
+  and budget. It may diagnose and correct local implementation, validate and
+  review calls, maintain canonical state, and make coherent checkpoints. It may
+  not select the next tranche, change the representation or authority policy,
+  weaken semantic review, enter another phase, or transmit to another provider.
+- Halt for input or vocabulary drift, packet or evidence-binding defect,
+  incomplete or duplicate atom coverage, ungrounded synthesis, unresolved
+  authority, ontology defect, exhausted authority or spend, repeated provider
+  failure, or need to change the phase method.
+- Pilot Stopdown returns to Supervisor/author quality adjudication before any
+  next boundary is selected. Stage 5 completes only when all 5,382 atoms have
+  exactly one primary home, every canonical unit is grounded and valid, zero
+  `human_required` units remain, all remaining conflicts are resolved or
+  authorially deferred, and the global cross-domain consistency audit passes.
 - The v0.4.6 baseline GDD, four later or conditional sources, `m051/`, Google
-  Sheets, reconciliation, baseline audit, manifestation processing,
-  canonization, and compiled prose remain prohibited.
-- A normal mapping operation has no process delta.
+  Sheets, baseline audit, manifestation processing, canonization, document
+  structure, and compiled prose remain prohibited.
+- A normal reconciliation tranche has no process delta.
 
 ## STATUS contract
 

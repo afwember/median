@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "MSID_MAPPING_READY",
-  "updated": "2026-09-10T13:10:39-04:00",
-  "execution_state": "MSID_MAPPING_READY",
+  "status": "RECONCILIATION_READY",
+  "updated": "2026-09-10T15:12:34-04:00",
+  "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -52,7 +52,7 @@
     "input_atom_count": 98
   },
   "mapping": {
-    "status": "READY",
+    "status": "COMPLETE",
     "input_scope": "triage-retained claims plus authorially accepted rewrite outcomes",
     "input_triage_record": "m050/reconciliation/triage/M050_Authorial_Triage_Decisions_MEDIANv0_5_0.jsonl",
     "input_triage_sha256": "dc78c44dbda5bda2eb0d6b89b179c28eb4b5e82155db9779eff710194f4c0e01",
@@ -66,103 +66,35 @@
     "input_atom_count": 5382,
     "input_source_count": 18
   },
-  "source": {
-    "id": "M050-SRC-047-SURVIVORSHIP-REVIEW-001",
-    "label": "v0.4.7 Development Survivorship Review",
-    "compile_ordinal": 18,
-    "accepted_chunk_ids": [
-      "C0001",
-      "C0002",
-      "C0003",
-      "C0004",
-      "C0005",
-      "C0006",
-      "C0007",
-      "C0008",
-      "C0009"
-    ],
-    "rejected_chunk_id": null,
-    "whole_source_candidate_complete": true,
-    "source_work_authorized": false
-  },
-  "calibration": {
-    "configuration": "m050/extraction/control/M050_v0_4_7_Development_Survivorship_Review_Extraction_Machine_Config_v0_1_MEDIANv0_5_0.json",
-    "freeze": "m050/extraction/calibration/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_C0001_Pilot_Freeze_Proposal_v0_1_MEDIANv0_5_0.json",
-    "compatibility_receipt": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_Offline_Compatibility_Receipt_v0_1_MEDIANv0_5_0.json",
-    "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl",
-    "pilot_packet": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Call_Packet_v0_7_MEDIANv0_5_0.json",
-    "accepted_evidence": [
-      {
-        "chunk_id": "C0001",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0001_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0002",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0002_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0003",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0003_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0004",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0004_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0005",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0005_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0006",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0006_Outcome_v0_6_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0007",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0007_Outcome_v0_2_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0008",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0008_Outcome_v0_1_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      },
-      {
-        "chunk_id": "C0009",
-        "outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_6_MEDIANv0_5_0.json",
-        "run_ledger": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_Run_Ledger_v0_1_MEDIANv0_5_0.jsonl"
-      }
-    ],
-    "candidate_acceptance": {
-      "candidate": "m050/extraction/accepted/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_Full_Extraction_Accepted_Candidate_v0_1_MEDIANv0_5_0.jsonl",
-      "candidate_sha256": "f4b9fc7e2ecec1520f2747fb47178923f3723db22318dab2b97cf741a4201cce",
-      "report": "m050/extraction/accepted/development-survivorship-review/M050_v0_4_7_Development_Survivorship_Review_Full_Extraction_Acceptance_Report_v0_1_MEDIANv0_5_0.json",
-      "report_sha256": "c20b7af397f3a7efb06faecffccc7a786189787c4e7f187073ca9227027f0a8b"
+  "reconciliation": {
+    "status": "READY",
+    "input_scope": "all 5,382 Stage 4 eligible atoms as one unitary corpus",
+    "input_mapping_record": "m050/mapping/M050_Atom_MSID_Mappings_MEDIANv0_5_0.jsonl",
+    "input_mapping_sha256": "e5f06da32ddf4db798c685377fd1466e5e336362eb6c8e33ccfdea664e2c99ab",
+    "input_vocabulary_record": "m050/mapping/M050_MSID_Vocabulary_MEDIANv0_5_0.json",
+    "input_vocabulary_sha256": "4efb90b26020982280af0e7869e511bb1da49f68e7993b6b04c7d04a84383a04",
+    "input_triage_sha256": "dc78c44dbda5bda2eb0d6b89b179c28eb4b5e82155db9779eff710194f4c0e01",
+    "input_rewrite_sha256": "9a41bbe39c986e7025b3689e1e99fe8c21cdbb04c38d0cc1d486f239bddf6751",
+    "reconciliation_record": "m050/reconciliation/M050_Reconciled_Semantic_Units_MEDIANv0_5_0.jsonl",
+    "reconciliation_schema_version": "M050-RECONCILED-SEMANTIC-UNIT-0.1",
+    "input_atom_count": 5382,
+    "input_source_count": 18,
+    "target": {
+      "tranche_id": "away-crossing-pilot",
+      "msid_prefix": "Away.Crossing",
+      "selector": "exact"
     },
-    "compatibility_replays": {
-      "c0005_medium_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0005_Medium_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0006_high_reasoning": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_High_Reasoning_Compatibility_Replay_v0_1_MEDIANv0_5_0.json",
-      "c0006_governing_lead_in": "m050/extraction/audit/M050_v0_4_7_Development_Survivorship_Review_C0006_Governing_Lead_In_Compatibility_Replay_v0_1_MEDIANv0_5_0.json"
-    },
-    "pilot_chunk_id": "C0009",
-    "generated_chunk_count": 9,
-    "target_blocks_per_chunk": 40,
-    "required_target_disposition_count": 12,
-    "source_blocks": 619,
-    "eligible_target_blocks": 323,
-    "context_only_blocks": 46,
-    "excluded_blocks": 250,
-    "media_occurrences": 0,
-    "exact_target_disposition_coverage_required": true,
-    "offline_gate_passed": true,
-    "offline_tests_passed": 90,
-    "cache_miss_call_ceiling_usd": "0.360264",
-    "latest_outcome": "m050/extraction/runs/development-survivorship-review-pilot/M050_v0_4_7_Development_Survivorship_Review_C0009_Outcome_v0_6_MEDIANv0_5_0.json"
+    "completed_tranche_ids": [],
+    "provider": {
+      "enabled": false,
+      "name": "Anthropic",
+      "model": null,
+      "reasoning_effort": "high",
+      "cache_ttl": "1h",
+      "maximum_output_tokens": null,
+      "pricing": null,
+      "proposal_review_required": true
+    }
   },
   "spend": {
     "active": false,
@@ -184,29 +116,17 @@
     "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
     "reconciliation_authorized": false,
+    "provider_calls_authorized": false,
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "status": "READY — Stage 4 MSID mapping",
-    "phase": "MSID mapping — semantic address assignment",
-    "source": "v0.4.7 Development Survivorship Review (M050-SRC-047-SURVIVORSHIP-REVIEW-001) — 18 / 18 mappings complete",
-    "progress": "5,382 / 5,382 Stage 4 mappings recorded",
-    "now": "v0.4.7 Development Survivorship Review Stage 4 mapping is complete and the Compile Worker has Stopped Down",
-    "next": "Stage 4 mapping is complete; halt for separately authorized Stage 5 reconciliation",
-    "updated_human": "September 10, 2026 at 1:10:39 PM EDT"
+    "status": "READY — Stage 5 reconciliation",
+    "phase": "Semantic reconciliation — reviewed proposition unification",
+    "source": "Unitary 5,382-atom corpus — current semantic boundary Away.Crossing",
+    "progress": "0 / 5,382 atoms assigned to canonical semantic units",
+    "now": "Stage 5 is installed at the Away.Crossing pilot boundary; the Compile Worker is Stopped Down",
+    "next": "Spark Up may grant the bounded pilot; Proceed is still required before execution",
+    "updated_human": "September 10, 2026 at 3:12:34 PM EDT"
   },
-  "next_possible_transition": "Stage 4 mapping is complete; Stopdown must remain in force until Asa separately authorizes Stage 5 reconciliation.",
-  "gate_5_complete": false,
-  "latest_provider_attempt": {
-    "http_status": null,
-    "chunk_id": "C0009",
-    "stop_reason": "authorial_manual_resolution",
-    "output_tokens": 0,
-    "cache_creation_input_tokens": 0,
-    "cache_read_input_tokens": 0,
-    "cache_effective": false,
-    "exact_cost_usd": "0",
-    "mechanical_passed": true,
-    "review_state": "review_passed"
-  }
+  "next_possible_transition": "Asa may authorize the provider model and positive Stage 5 spend envelope, then Spark Up may grant the Away.Crossing pilot."
 }

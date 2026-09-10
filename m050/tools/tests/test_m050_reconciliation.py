@@ -147,7 +147,7 @@ def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(
 
 def test_proposal_and_review_share_the_cached_packet_prefix(packet):
     provider = {
-        "model": "claude-opus-5",
+        "model": "claude-sonnet-5",
         "reasoning_effort": "high",
         "cache_ttl": "1h",
         "maximum_output_tokens": {"proposal": 40000, "review": 8000},
@@ -201,7 +201,7 @@ def test_counted_preflight_prices_cache_miss_with_margin():
 
 def test_token_count_preflight_uses_free_endpoint_twice(monkeypatch, tmp_path, packet):
     provider = {
-        "model": "claude-opus-5",
+        "model": "claude-sonnet-5",
         "reasoning_effort": "high",
         "cache_ttl": "1h",
         "maximum_output_tokens": {"proposal": 36000, "review": 8000},

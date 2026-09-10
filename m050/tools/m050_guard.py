@@ -467,15 +467,15 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
             "cache_1h_write_multiplier",
         }
         expected_pricing = {
-            "input_usd_per_million_tokens": "5",
-            "output_usd_per_million_tokens": "25",
+            "input_usd_per_million_tokens": "3",
+            "output_usd_per_million_tokens": "15",
             "cache_read_multiplier": "0.1",
             "cache_5m_write_multiplier": "1.25",
             "cache_1h_write_multiplier": "2",
         }
         if (
             provider.get("name") != "Anthropic"
-            or provider.get("model") != "claude-opus-5"
+            or provider.get("model") != "claude-sonnet-5"
             or provider.get("reasoning_effort") != "high"
             or provider.get("cache_ttl") != "1h"
             or not isinstance(output_limits, dict)

@@ -27,7 +27,7 @@ def test_stage_5_provider_and_refreshable_window_are_bound():
     state = _state()
     provider = state["reconciliation"]["provider"]
     assert provider["enabled"] is True
-    assert provider["model"] == "claude-opus-5"
+    assert provider["model"] == "claude-sonnet-5"
     assert provider["maximum_output_tokens"] == {"proposal": 36000, "review": 8000}
     assert provider["cache_ttl"] == "1h"
     assert state["spend"]["refresh_window_usd"] == "2.0000000"

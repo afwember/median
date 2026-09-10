@@ -64,10 +64,9 @@ On receipt, the Worker should:
    inputs, outputs, halt conditions, and prohibited transitions;
 4. inspect the exact source inventory and state the next concrete action;
 5. identify any contradiction or unresolved risk;
-6. record the already-granted authority through the phase's existing canonical
-   controls if durable activation requires a control-only checkpoint; and
-7. halt before substantive source work, provider calls, or mapping/extraction
-   records.
+6. retain the assessed source and clean Git checkpoint in task context; and
+7. halt without changing the repository and before substantive source work,
+   provider calls, or mapping/extraction records.
 
 The assessment should end with a compact stable response that makes the first
 operation and the complete source boundary easy for Asa to inspect.
@@ -89,7 +88,10 @@ The phase's activation operation should test those conditions and change the
 lifecycle atomically in one invocation. Do not precede it with a second cold
 start, full guard, separate synchronization check, dry-run transition, preview,
 inventory, or general revalidation. A failed atomic activation returns to LLM
-adjudication; a successful one should proceed directly into the prepared work.
+adjudication; a successful one should proceed directly into the assessed work.
+The read-only pause itself should not be represented by mutable canonical state,
+a STATUS refresh, a guard run required only for publication, or a commit/push.
+If task continuity is lost before `Proceed`, require a new `Spark Up` assessment.
 
 After `Proceed`, the Worker acts autonomously through ordinary phase work. It
 does not ask for repeated permission for routine calls, retries, validation,
@@ -97,15 +99,18 @@ local correction, commits, or pushes already covered by the grant.
 
 ### Idempotence and invalid transitions
 
-- Repeated `Spark Up` while awaiting `Proceed` reports the same prepared state;
-  it does not stack authority or start work.
-- `Proceed` without an active prepared grant does not create authority.
+- Repeated `Spark Up` while awaiting `Proceed` repeats the same read-only
+  assessment; it does not stack authority, change repository state, or start
+  work.
+- `Proceed` without the retained unconsumed grant and assessment does not create
+  authority.
 - Discussion such as “the Worker should...” normally proposes behavior; it
   does not activate the Worker.
 - If source selection, inputs, budget, or repository state drift between the
   assessment and `Proceed`, the Worker halts and reports the exact difference.
-- A cancelled prepared grant must be explicitly relinquished through the
-  existing canonical authority mechanism; it must not remain silently live.
+- Cancelling before `Proceed` requires no repository transition because the
+  assessment created no canonical execution state; a later attempt begins with
+  a new `Spark Up`.
 
 The intended lifecycle is:
 
@@ -113,9 +118,8 @@ The intended lifecycle is:
 READY
   -> Spark Up grants one-source authority
 READ-ONLY SELF-ASSESSMENT
-  -> exact action reported
-AUTHORIZED / AWAITING EXECUTION RELEASE
-  -> Proceed
+  -> exact action and clean checkpoint reported; repository remains READY
+  -> Proceed atomically records ACTIVE execution
 ACTIVE SOURCE WORK
   -> source completion or required halt
 FORMAL STOPDOWN
@@ -407,7 +411,8 @@ construction note whose status is unmistakable.
 ## 13. Current integration note
 
 The Atomization-derived two-step cadence is integrated into the active Stage 4
-profile: `Spark Up` grants one-source authority and prepares the durable
-fermata; `Proceed` releases execution without granting new authority. The root
-contract, canonical state, and sole guard remain the operative controls. This
-reference does not independently change Worker behavior.
+profile: `Spark Up` grants one-source authority, performs a read-only assessment,
+and pauses without a repository checkpoint; `Proceed` atomically records and
+releases active execution without granting new authority. The root contract,
+canonical state, and sole guard remain the operative controls. This reference
+does not independently change Worker behavior.

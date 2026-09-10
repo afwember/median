@@ -88,7 +88,7 @@ authority to false in canonical state, refresh `STATUS.md`, run the required
 guard, commit and push that closing transition, and confirm a clean worktree
 with local `HEAD` equal to `origin/main`. The closing commit and push are the
 final repository actions permitted by the expiring source grant and may publish
-only the prepared source completion and authority revocation. A
+only the completed source work and authority revocation. A
 source-completion halt is not a Stopdown while any applicable authority remains
 true. After the closing push the Worker makes no further repository write
 unless Asa explicitly grants new work.
@@ -180,7 +180,9 @@ the active profile, canonical state, or the sole guard.
    acceptance, and commit/push. Invoke the renderer and full guard in separate
    tool calls. The active Stage 4 suite is provider-free and does not bind
    network ports. Routine provider capture uses the extraction machine’s focused
-   packet, source, spend, cache, response, and prior-review checks.
+   packet, source, spend, cache, response, and prior-review checks. A read-only
+   Spark Up assessment publishes nothing and does not itself trigger the
+   renderer or full guard.
 6. Report concisely: active phase; current target and completed/rejected
    boundary; work and spend authority; halt conditions; prohibited transitions;
    next possible transition; STATUS freshness; and whether local `HEAD` equals
@@ -214,7 +216,7 @@ provider-call, model-spend, or repository-write authority follows from profile
 installation. Asa's instruction `Spark Up` is the permission-granting phrase:
 it explicitly grants source-work, mapping, and repository-write authority for
 exactly one source. No source-name restatement is required. `Proceed`, or an
-equally clear go-ahead after the prepared report, is execution release only; it
+equally clear go-ahead after the assessment report, is execution release only; it
 never creates or enlarges authority.
 
 On `Spark Up` from the ready state, the Worker first remains read-only while it
@@ -222,34 +224,35 @@ performs the complete cold start, derives the current or next source from
 canonical state and source order, inventories the exact source boundary, and
 reports its first substantive action, halt conditions, prohibited transitions,
 and any contradiction or risk. If the controls do not select exactly one
-source, halt without activating authority. If they do, record the already
-granted authority only through the existing canonical authority fields, set
-both `status` and `execution_state` to
-`MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED`, set `mapping.status` to
-`AUTHORIZED_AWAITING_PROCEED`, refresh the dashboard and `STATUS.md`, run the
-full guard, commit and push that control-only activation, confirm a clean
-synchronized worktree, and halt at the prepared-authority fermata. This
-checkpoint may not add or change mappings, invoke a provider, or perform other
-substantive source work.
+source, halt without activating authority. If they do, run the read-only
+`prepare-spark-up` assessment, retain its reported source ID and Git checkpoint
+in the current task context, make no repository change, and halt for `Proceed`.
+The repository remains clean and in `MSID_MAPPING_READY`; do not refresh STATUS,
+run a publication guard, commit, or push merely to represent the pause. If the
+task loses the unconsumed grant or its assessment context, require a new
+`Spark Up` rather than reconstructing authority from repository state.
 
-From that fermata, `Proceed` releases the already-authorized source work only
-if the source and boundary still derive identically, the worktree is clean and
-synchronized at the prepared checkpoint, and no halt condition has appeared.
-Handle `Proceed` with exactly one invocation of
-`.venv/bin/python m050/tools/m050_msid_mapping.py --transition
-activate-on-proceed --apply`. That operation performs the narrow deterministic
-stale-check and atomically sets both lifecycle fields to `MSID_MAPPING_ACTIVE`
-and `mapping.status` to `ACTIVE`. Do not precede it with another cold start,
-full guard, separate Git or synchronization checks, lifecycle dry-run, preview,
-inventory, or general revalidation. If it fails, halt and report the exact
-drift; if it succeeds, begin the prepared source work immediately and operate
-autonomously within the grant.
-Repeated `Spark Up` at the fermata is idempotent and starts no work. `Proceed`
-from any state other than the fermata grants nothing. Drift requires a halt and
-report. Cancellation or Stopdown before execution uses a control-only closing
-checkpoint to revoke the existing grant. Source completion ends the grant
-through formal Stopdown; starting the following source requires a later
-`Spark Up`.
+From that read-only pause, `Proceed` releases the already-authorized source work
+only if the same Worker task retains the unconsumed `Spark Up` grant, the source
+and boundary still derive identically, the worktree remains clean and
+synchronized at the assessed checkpoint, and no halt condition has appeared.
+Handle `Proceed` with exactly one invocation of `.venv/bin/python
+m050/tools/m050_msid_mapping.py --transition activate-on-proceed
+--expected-source-id <ASSESSED_SOURCE_ID> --expected-head <ASSESSED_HEAD>
+--apply`. That operation performs the narrow deterministic stale-check and
+atomically sets both lifecycle fields to `MSID_MAPPING_ACTIVE`, sets
+`mapping.status` to `ACTIVE`, and records the three applicable authorities as
+true. Do not precede it with another cold start, full guard, separate Git or
+synchronization checks, lifecycle dry-run, preview, inventory, or general
+revalidation. If it fails, halt and report the exact drift; if it succeeds,
+begin the assessed source work immediately and operate autonomously within the
+grant.
+Repeated `Spark Up` during the read-only pause repeats the assessment and starts
+no work. `Proceed` without the unconsumed task-level grant and assessment grants
+nothing. Drift requires a halt and report. Because the pause creates no
+repository authority state, cancelling before execution requires no repository
+transition or checkpoint. Source completion ends the grant through formal
+Stopdown; starting the following source requires a later `Spark Up`.
 
 ### Canonical input and representation
 
@@ -294,22 +297,22 @@ through formal Stopdown; starting the following source requires a later
   unmapped atom in the one explicitly released source.
 - Use `m050/tools/m050_msid_mapping.py --transition prepare-spark-up`,
   `--transition activate-on-proceed`, and `--transition prepare-stopdown` for
-  deterministic lifecycle transitions. Preparation and Stopdown commands are
-  dry-run by default; `--apply` atomically changes only canonical compile state
-  after validation. `activate-on-proceed` is the exception: it rejects dry-run
-  use and must be invoked once with `--apply`, whose internal check replaces any
-  separate Proceed preflight. Their JSON output is ephemeral reporting, not
-  another authority record. STATUS rendering, the full guard, Git operations,
-  synchronization checks, and Stopdown notification remain separate operations
-  during Spark Up preparation and formal Stopdown, as required above; do not
-  repeat them for `Proceed` activation.
+  deterministic lifecycle operations. `prepare-spark-up` is read-only and
+  rejects `--apply`; its source ID and checkpoint are ephemeral task reporting,
+  not another authority record. `activate-on-proceed` rejects dry-run use and
+  requires those two assessed values in its single `--apply` invocation.
+  `prepare-stopdown` is dry-run by default and `--apply` atomically changes only
+  canonical compile state after validation. STATUS rendering, the full guard,
+  Git operations, synchronization checks, and Stopdown notification remain
+  separate operations during formal Stopdown, as required above; do not perform
+  them merely for the Spark Up pause or repeat them for `Proceed` activation.
 - Zero-call preparation may build and validate the vocabulary, inventory the
   exact input, identify literal MSIDs, measure ignored legacy semantic shell,
   and estimate later model work. It may not record semantic mappings.
 - Provider-assisted mapping requires a separately approved provider-enabled
   configuration and positive cumulative spend envelope. No current extraction
   packet, prompt, schema, budget, or credential use carries into Stage 4.
-- After valid execution release from the prepared-authority fermata, the Worker
+- After valid execution release from the read-only Spark Up pause, the Worker
   may enter the active lifecycle, map, validate, correct generic local
   mechanics, maintain canonical state and STATUS, run required guards, and
   commit and push coherent checkpoints without transaction-by-transaction

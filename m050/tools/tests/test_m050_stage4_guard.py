@@ -211,16 +211,10 @@ def test_accepted_candidate_rejects_missing_coverage_and_duplicate_identifiers()
     ("status", "mapping_status", "dashboard_status", "authority_active"),
     [
         ("MSID_MAPPING_READY", "READY", "READY — Stage 4 MSID mapping", False),
-        (
-            "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
-            "AUTHORIZED_AWAITING_PROCEED",
-            "AUTHORIZED — Stage 4 MSID mapping; awaiting Proceed",
-            True,
-        ),
         ("MSID_MAPPING_ACTIVE", "ACTIVE", "ACTIVE — Stage 4 MSID mapping", True),
     ],
 )
-def test_stage_4_lifecycle_preserves_spark_up_fermata(
+def test_stage_4_lifecycle_has_only_ready_and_active_repository_states(
     status, mapping_status, dashboard_status, authority_active
 ):
     state = {
@@ -245,7 +239,7 @@ def test_stage_4_lifecycle_preserves_spark_up_fermata(
     assert errors == []
 
 
-def test_stage_4_fermata_requires_preexisting_authority_and_matching_state():
+def test_stage_4_rejects_retired_durable_fermata_state():
     state = {
         "status": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
         "execution_state": "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED",
@@ -265,16 +259,12 @@ def test_stage_4_fermata_requires_preexisting_authority_and_matching_state():
             "compiled_prose_authorized": False,
         },
     }
-    errors = []
-    guard.validate_msid_mapping_lifecycle(state, errors)
-    assert errors == ["canonical Stage 4 authority is inactive or inconsistent"]
     state["authority"]["repository_writes_authorized"] = True
     state["authority"]["source_work_authorized"] = True
     state["authority"]["mapping_authorized"] = True
-    state["mapping"]["status"] = "ACTIVE"
     errors = []
     guard.validate_msid_mapping_lifecycle(state, errors)
-    assert errors == ["canonical Stage 4 mapping status disagrees with lifecycle"]
+    assert "canonical Stage 4 lifecycle state is invalid" in errors
 
 
 def test_status_uses_unlabeled_timestamp_and_safe_remaining_balance():

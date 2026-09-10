@@ -220,28 +220,29 @@ def test_lifecycle_prepare_spark_up_is_bounded_and_idempotent(mapping):
     replacement, report = mapping.plan_lifecycle_transition(
         state, corpus, store, "prepare-spark-up"
     )
-    assert state["status"] == "MSID_MAPPING_READY"
-    assert replacement["status"] == "MSID_MAPPING_AUTHORIZED_AWAITING_PROCEED"
-    assert replacement["mapping"]["status"] == "AUTHORIZED_AWAITING_PROCEED"
-    assert replacement["authority"]["mapping_authorized"] is True
-    assert replacement["authority"]["source_work_authorized"] is True
-    assert replacement["authority"]["repository_writes_authorized"] is True
+    assert replacement == state
+    assert replacement["status"] == "MSID_MAPPING_READY"
     assert report["source_id"] == "SOURCE-B"
-    _assert_consistent_mapping_lifecycle(mapping, replacement)
+    assert report["changed"] is False
+    assert report["next_required_operations"] == [
+        "report the exact assessed boundary",
+        "halt awaiting Proceed",
+    ]
     repeated, repeated_report = mapping.plan_lifecycle_transition(
-        replacement, corpus, store, "prepare-spark-up"
+        state, corpus, store, "prepare-spark-up"
     )
-    assert repeated == replacement
+    assert repeated == state
     assert repeated_report["changed"] is False
 
 
-def test_lifecycle_proceed_activates_only_the_prepared_boundary(mapping):
+def test_lifecycle_proceed_activates_only_the_assessed_boundary(mapping):
     state, corpus, store = _lifecycle_fixture()
-    prepared, _ = mapping.plan_lifecycle_transition(
-        state, corpus, store, "prepare-spark-up"
-    )
     active, report = mapping.plan_lifecycle_transition(
-        prepared, corpus, store, "activate-on-proceed"
+        state,
+        corpus,
+        store,
+        "activate-on-proceed",
+        expected_source_id="SOURCE-B",
     )
     assert active["status"] == "MSID_MAPPING_ACTIVE"
     assert active["mapping"]["status"] == "ACTIVE"
@@ -250,24 +251,53 @@ def test_lifecycle_proceed_activates_only_the_prepared_boundary(mapping):
     _assert_consistent_mapping_lifecycle(mapping, active)
 
 
-def test_lifecycle_proceed_from_ready_grants_nothing(mapping):
+def test_lifecycle_proceed_rejects_missing_or_drifted_assessment(mapping):
     state, corpus, store = _lifecycle_fixture()
-    with pytest.raises(mapping.TriageError, match="prepared-authority fermata"):
+    with pytest.raises(mapping.TriageError, match="assessed source"):
         mapping.plan_lifecycle_transition(state, corpus, store, "activate-on-proceed")
+    with pytest.raises(mapping.TriageError, match="assessed source"):
+        mapping.plan_lifecycle_transition(
+            state,
+            corpus,
+            store,
+            "activate-on-proceed",
+            expected_source_id="SOURCE-C",
+        )
 
 
 def test_proceed_cli_rejects_redundant_dry_run(mapping, capsys):
     assert mapping.main(["--transition", "activate-on-proceed"]) == 2
     assert "one atomic --apply invocation" in capsys.readouterr().err
+    assert mapping.main(["--transition", "activate-on-proceed", "--apply"]) == 2
+    assert "source ID and HEAD" in capsys.readouterr().err
+
+
+def test_spark_up_cli_rejects_repository_mutation(mapping, capsys):
+    assert mapping.main(["--transition", "prepare-spark-up", "--apply"]) == 2
+    assert "read-only" in capsys.readouterr().err
+
+
+def test_proceed_checkpoint_rejects_head_drift(mapping, monkeypatch, tmp_path):
+    outputs = iter(["", "b" * 40, "b" * 40])
+
+    def completed(*args, **kwargs):
+        return SimpleNamespace(stdout=next(outputs))
+
+    monkeypatch.setattr(mapping.subprocess, "run", completed)
+    with pytest.raises(mapping.TriageError, match="changed since the Spark Up assessment"):
+        mapping._require_clean_synchronized_checkpoint(
+            tmp_path, expected_head="a" * 40
+        )
 
 
 def test_lifecycle_stopdown_requires_complete_granted_source(mapping):
     state, corpus, store = _lifecycle_fixture()
-    prepared, _ = mapping.plan_lifecycle_transition(
-        state, corpus, store, "prepare-spark-up"
-    )
     active, _ = mapping.plan_lifecycle_transition(
-        prepared, corpus, store, "activate-on-proceed"
+        state,
+        corpus,
+        store,
+        "activate-on-proceed",
+        expected_source_id="SOURCE-B",
     )
     with pytest.raises(mapping.TriageError, match="complete source coverage"):
         mapping.plan_lifecycle_transition(active, corpus, store, "prepare-stopdown")
@@ -275,11 +305,12 @@ def test_lifecycle_stopdown_requires_complete_granted_source(mapping):
 
 def test_lifecycle_stopdown_revokes_authority_and_selects_no_new_work(mapping):
     state, corpus, store = _lifecycle_fixture()
-    prepared, _ = mapping.plan_lifecycle_transition(
-        state, corpus, store, "prepare-spark-up"
-    )
     active, _ = mapping.plan_lifecycle_transition(
-        prepared, corpus, store, "activate-on-proceed"
+        state,
+        corpus,
+        store,
+        "activate-on-proceed",
+        expected_source_id="SOURCE-B",
     )
     complete_store = _store_with_keys(set(store.mappings) | {"SOURCE-B-1", "SOURCE-B-2"})
     stopped, report = mapping.plan_lifecycle_transition(
@@ -294,17 +325,16 @@ def test_lifecycle_stopdown_revokes_authority_and_selects_no_new_work(mapping):
     assert report["source_id"] == "SOURCE-B"
 
 
-def test_lifecycle_pre_execution_cancellation_returns_to_ready(mapping):
+def test_lifecycle_pre_execution_cancellation_needs_no_repository_transition(mapping):
     state, corpus, store = _lifecycle_fixture()
-    prepared, _ = mapping.plan_lifecycle_transition(
+    assessed, assessment = mapping.plan_lifecycle_transition(
         state, corpus, store, "prepare-spark-up"
     )
-    stopped, _ = mapping.plan_lifecycle_transition(
-        prepared, corpus, store, "prepare-stopdown"
-    )
-    assert stopped["status"] == "MSID_MAPPING_READY"
-    assert "cancelled before execution" in stopped["dashboard"]["now"]
-    assert "Source B" in stopped["dashboard"]["next"]
+    assert assessed == state
+    assert assessment["source_id"] == "SOURCE-B"
+    stopped, report = mapping.plan_lifecycle_transition(state, corpus, store, "prepare-stopdown")
+    assert stopped == state
+    assert report["changed"] is False
 
 
 def test_lifecycle_rejects_mapping_beyond_the_current_source(mapping):
@@ -326,11 +356,12 @@ def test_lifecycle_final_source_stopdown_halts_at_stage_boundary(mapping):
         "progress": "4 / 6 Stage 4 mappings recorded",
         "now": "Source B Stage 4 mapping is complete and the Compile Worker has Stopped Down",
     })
-    prepared, _ = mapping.plan_lifecycle_transition(
-        state, corpus, store, "prepare-spark-up"
-    )
     active, _ = mapping.plan_lifecycle_transition(
-        prepared, corpus, store, "activate-on-proceed"
+        state,
+        corpus,
+        store,
+        "activate-on-proceed",
+        expected_source_id="SOURCE-C",
     )
     complete_store = _store_with_keys({item.key for item in corpus.atoms})
     stopped, _ = mapping.plan_lifecycle_transition(

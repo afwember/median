@@ -677,7 +677,8 @@ def plan_lifecycle_transition(
     else:
         next_operations = [
             "render STATUS.md", "run full guard", "commit", "push",
-            "confirm clean synchronization", "notify Compile Supervisor",
+            "confirm clean synchronization",
+            "run .venv/bin/python m050/tools/m050_notify_supervisor.py as the final command action",
         ]
     report = {
         "transition": transition,

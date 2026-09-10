@@ -292,15 +292,16 @@ The Worker should:
 8. commit and push the closing transition;
 9. confirm a clean worktree and local/remote equality;
 10. perform no further repository write; and
-11. send exactly `Worker has Stopped Down` to the single `Compile Supervisor`
-    task through app-level task discovery when available. Before declaring the
-    capability unavailable, inspect the complete tool catalog, including
-    deferred `ALL_TOOLS` entries when exposed, for
-    `codex_app__list_threads` and `codex_app__send_message_to_thread`; peer
-    Codex tasks are not visible through sub-agent discovery.
+11. as its final command action, run exactly `.venv/bin/python
+    m050/tools/m050_notify_supervisor.py`. The script uses the installed Codex
+    CLI to resume the task named exactly `Compile Supervisor` in the current
+    repository and pass exactly `Worker has Stopped Down`. It replaces
+    app-tool discovery and messaging rather than adding a fallback path.
 
-Failure of task discovery or messaging does not invalidate an otherwise valid
-Stopdown. The Worker reports it once and does not retry automatically.
+A nonzero script result does not invalidate an otherwise valid Stopdown. The
+Worker reports it once and does not retry automatically. After the script
+returns, the Worker may give its final stable response but performs no further
+command, tool, or repository action.
 
 Receipt of the message starts a read-only Supervisor adjudication. It does not
 authorize repair, queued work, another source, or another phase.

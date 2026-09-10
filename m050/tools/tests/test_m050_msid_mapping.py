@@ -323,6 +323,10 @@ def test_lifecycle_stopdown_revokes_authority_and_selects_no_new_work(mapping):
     assert stopped["authority"]["repository_writes_authorized"] is False
     assert "Source C" in stopped["dashboard"]["next"]
     assert report["source_id"] == "SOURCE-B"
+    assert report["next_required_operations"][-1] == (
+        "run .venv/bin/python m050/tools/m050_notify_supervisor.py "
+        "as the final command action"
+    )
 
 
 def test_lifecycle_pre_execution_cancellation_needs_no_repository_transition(mapping):

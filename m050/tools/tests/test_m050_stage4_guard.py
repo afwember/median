@@ -5,6 +5,8 @@ from datetime import datetime
 import hashlib
 import json
 from pathlib import Path
+from types import SimpleNamespace
+import subprocess
 import sys
 
 import pytest
@@ -16,6 +18,7 @@ TOOLS = ROOT / "m050/tools"
 sys.path.insert(0, str(TOOLS))
 try:
     import m050_guard as guard
+    import m050_notify_supervisor as notifier
     import m050_render_status as renderer
     from m050_atom_rewrite import RewriteCorpus, RewriteStore, TriageError as RewriteError
     from m050_atom_triage import DecisionStore, TriageError, load_corpus
@@ -67,6 +70,40 @@ def _home_acceptance_fixture():
         },
     }
     return source, _json(HOME_CONFIG), calibration
+
+
+def test_stopdown_notifier_uses_one_exact_cli_command(monkeypatch):
+    calls = []
+    monkeypatch.setattr(notifier.shutil, "which", lambda name: "/opt/codex")
+    monkeypatch.setattr(
+        notifier.subprocess,
+        "run",
+        lambda command, **kwargs: calls.append((command, kwargs))
+        or SimpleNamespace(returncode=0),
+    )
+
+    assert notifier.notify() == 0
+    assert calls == [
+        (
+            [
+                "/opt/codex",
+                "exec",
+                "resume",
+                "Compile Supervisor",
+                "Worker has Stopped Down",
+            ],
+            {
+                "cwd": notifier.ROOT,
+                "stdin": subprocess.DEVNULL,
+                "check": False,
+            },
+        )
+    ]
+
+
+def test_stopdown_notifier_fails_once_when_cli_is_absent(monkeypatch):
+    monkeypatch.setattr(notifier.shutil, "which", lambda name: None)
+    assert notifier.notify() == 127
 
 
 @pytest.fixture(scope="module")

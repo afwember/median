@@ -1,0 +1,272 @@
+{
+  "id": "resp_07fd1948174af702016aa47dd6516c87d2a93e2ed4ed84cecc",
+  "object": "response",
+  "created_at": 1789165014,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789165093,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 36000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_07fd1948174af702016aa47dd808cc87d2a02bf4a1c1d4bd88",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpH4mGsEhS680wcn_hKOZdX4OpdJokg-Ptn8VwCPepDW8e0xYWd8DlmYYzWjc9i5Dc_j8JtdsE6PsoyMRF5ebBgo2-_Bltnfs3p98uf3ZcopaAgEXn_Tq53QvvIQL6hILmIMtkyZJasii5Y5jPshSQd7s8zXtRceYGMqVVbZsYZJbJwUDvFvppW0t6ywe2sdjCtCz_dYUsSX1ztoc7Ocecz-sX1s9mJQqX7nYTnJrdEalG5BuBasVbMw-unisIXoSs4zewU6q2YrjgcXQfupiPLVBK5S4YR-ErwnHXnHWxBVW6zK1Gsd5CMFvimOr44EJ8oL8m_ofpWaCRCx3kOp36L5LBaGflXw-vTs5UOTp4fnfPrsujS165GSR1i_IjQf4--j1bV95vp9Rkum_GSE2JdHPveO40KWS-hHbSk3wPT8THukp9TmwpkwZJk2fcQf8ghfupEfuCvNZ-rY5zNT2Z2s_ECJeQ7cbn-TOxeN-2aE_TZ-9XMlAyqFtynOaMonA4HtJbl_3ugZ_Pt7UdPBpBzEMrD5ZdpcdpuJ7zJPN9pH427zM0gTIUjbD5Glye6wpxDVJZm3WhflOFK_bU3rRH0ppnvrDxF_DiG39xnw4ZBQEBQ9SjQnCYdsOJPPpwbyCKdcwseSUHCHGR-w4zcRKoOen9sugUvxqaQkF8h11YgEoXyD0EqiYJaktWDgRL7ermfYDEZpxmhS2ZKXyVguJDi762zIbH46qDN6cXm8rW8oUUpUCkV6-M1-TTLMFnVoQSIp2bob1lzLHtfyKOHmUzfPJbsNeRB3excG1-Lnp_JSXVJhlKNuAHiO3Eko7uff27mz2-QyObVnQbfWMgUBkdJ0fY6XtH4krQxlprppYvNC6ItaTT6xbJeWejiBKvHS7sC6H5cmxlvyeimtTOW2qc4-XIlYbIfMa7JlsyNaMkGmlXAueeGBCYhuNg2nMicKvpEswunVMb20MgLZzuagWpslGRRu1w3G5duQcoGB814K5E4VGCgVicpNqqV2WzKsVF4gBz-IskZOJPTWLJjPVb5RtibOm0tjAbKRoMC67V0L3AR1gM1s5RsdtvXGm8hl8nastFT0fkxFRosGEiYNyr7EiUC-D5Glz_scra2wpe3RKOgnG7Py84filslLGsGyvqEkalhSJISXZfqCi2Vo69HpkgxWF5MiplVe7CI_kFKk0zR7Gx5lVprCqOrTDmAxuuRX0qL7bxPNoPxPVKPwGV6w_ShuAuKSUcFz4_NjcUDTufNXmQC9DKMZa9G5LjwoeYVBd5ff7CRI8bQ2tp4CIyohTIB4Hculmfjrh1zH7lboCzmqXScbuAONQq1Co5e-kTnX3TnBwLgmO3nYoHoyJNak1vX6U1ZDekAzzl6AAuYr9RU4RUEfgPmb9Tddf6qw2G5KL1mPvmwrAcAq4_z0hSJRfqAnNCis_oRWTpFTFAHMX7eMEC-qJOk6wpD0r-1OuVWUoSU8e21y-m2Kh4WIMLQwcY_EhyT4Ba_K5NH-SSY9GfdczWiuku5Xw--SceO69mUcFD1rnr7Jq3_C3F8eI09oi53pCif3PqFrCpVmZtsyu8MFZv3M3L-uq-An0iDNvrPPBfFQoZEGy02gnNthw423rwRR_GyGIoB5jzo3E7p-eBZckDSGugUhYab82f8bd5XOmmHuGtAg3X9F72z9DtkAkXhAs7K2Z0QUr4437mfD7QUX95brgOeL9lO5ummmCfOL5uNKocIMxyJlrVb65X9LLMxuYvKjK_TLP3WahAcKITrUQBtQJhRjvkibW8uVMkE-TAW6UaZz2LYQKwFkxmFJ8HmD49JrNbK71rahg2vOO6ckprMfr8_288xzz4Lh9QXZFz6guD_sdswgkC08hPSj_412IjechMIopTsxT_9NRLSfd-HPwTokQOzAIOq3JsudMcY8VJrGMjTxLmzubajq-L3nupYko7XHaceaB02D85kXpOZgIrjV3Vh0pSWeG7fJjzwgAkwWHSYJIytbK6lxhPO7cypP2WfsEMdlKSNfiwa0R-pb7gCheYisNO1jpdsDthGeFeARE2UCbaIywWxgObg_7piCt0Bv4-JcyMA4EFS7ilbuPMi21G9SdfjGjA6yCY6oXx0CB1p4O5sr4DnasSuBxSE7Eyj1QzWpHji9fvsZGPHWyKV16U-LrefZYXNwrAemgE4bMeByR_ImhMiFsPQV2egDdE-yPDR-7f0W_L7TO0qKee297J7EmmHeqCy6KuTH534ulRg9SGEeHWCdFTQpJ5ZpqTRx43xdQOki5JdI94C-83W0LSmA0vlkXkuF9NNra0h9Z4ZCAmwIu4MK5-Ctq9PEVR0itUaUeHMUvx2AddyKbkgE6Wb7MIlnbLPpBUjzDOhEyyVB6xLmtb3S_gihR-DRFZ0_j6a1DPo20lZBV9Zz5UbT0sTSZtKtdMQfA1aGsXvbLnQgu6_1JKvp55y5wTGxj8Dp7aDSBtG6wy4DMwCyHoTuXWX0LWB4lj3X0cCRymrUsFGcEqlbRvMoYLeUVL41DLSUhyAiDm2tO277Bn-FaHbP9S6cW4n79I53HMhK2p_DhrO9d0-phaDZYkekSDE4Yp2LX1aJu4NIrCHH0Gsjw16Q_NcK6s-cpJbA5ObL-1rwldFLBZVt4bIGyTDLLxQJvFDOhiOh7SNLCbBRqRL_R2TotkLsZ_EA_rw4cRpUSEzdpsq66-f-1kGvJ9VtfuCmP53coJy7IIP__H6sp7Q68hloICtgog-sVFse99Txf7FDnapvvqZJyHa4g3nOeGYMeV5LRG4m5sTUpOrTDwqIxkWL2PbWktRSMzTx31YACHucJyhG_0RIvv1byGofdcb21V3gcOCPyXvJhMl-lSGuaORiPlfaLGskBbAVJxgXzVCzbcTvUCPpjf9hMiD5JGO3sGuxZXEHqDjZubfkcJ3iKaY5ds6f7mQlKpkUnkJKrHGli2bMSYzKtN96hZVAaIEZU5EgXmuYxf9FEuoYXjOuQ0mj_nsIrtldcN_v2SgdogkN0B5LZnwERkjM1YJtbsR41Qdx9U8Oh745sr6gnyAo25D71SXa47-74rx2vmvM-5MEIvCZaFzZuDpIyaypk8luiOgBo2WMwkXBISzyJZ-Qglihhf-42mbMSWTtsZwfRGoacS_tWwW1zsbQh8T2najgArIVWarFU6oh4kZzqi54h19S12WZKqjwiURSoyQX2lJ63WuPF5ITPI1QBHoJylkhk_6a__eR2i_66x16M1Mgy7NLFD9YbcRbFJr6Omn-qFCYfM78cFJ3n3rVrehJGyhjU_dlGurod17wk_6zoetaw5IgEvcoRJK5M4O22ulsLDJlMnL7OUybHjCgxDQuxQx042Exq0dqgwJMcibDNGSEh1H2YwNj6-ut-KDTYzc_vPuTCj7BbDAFi4TG8FjuRevR64IeFOmfxi37wro7ovg6tw9QT79Q4w1CAOoXMKgkTYsUZFBGFy0W_8y83G3Qre1RvUKhrQn93jel2scKb7_TiPBjPU9VMW7rcRyLpkeK2ZNMx1RIBIOoGNmryoA9XghIlR0OdaOQhII2Ad82th3-NZ2A32ICj62lLtjHpz6BzcD66Ma0nLFObTB2-c4BFMLlysG4dMn2gKWeZhX_akatrOi-k_kG-eER8apqrPXT46m0wqPWth1MMSJisHNb0wNr_wCFIqdu9BCY9kYO62RHkj-Nd1_727zvf9IrD4xynFF7ExDXk6Ve2aFkOSuASYLIG8lGGzc7qLroceV48w9mbA_a4bmx9B99osd__PW3TkCVtqT3uxbE-3cGoIfLkERT5DbDRwz9T5ss2q0hwE_T3puTC7J4olYIWrXbQ7HRq8Hg--g0n1Jl-5o5NagqR2pw9N1NRjOFuM-xSri1cWkVYR4-qVK65T-x6LjAaTAsguO8q--viXz9d-CatYE7o6Xij2yzM6zPNOdnRq14-Yxwji_hijT4rCgrumgdQm38t6FKUdjPOZz5D8SIlvAehLsMldtHy2zcoF-cjKkkhO5d6jhA5lvGcZokm6Nn0wSVXmIy9KevJgRF12_EiEyCiXawIFciIEjc1qvV9PRU8LTL5MWUiN1EKSPrpeUFFPCsCwCNBUXNZJaQUeNLwYvx0sByXaPjlqbnN1sE2EvPf6fZWqFm30KkRDDGIiRdLCOl_DIXbGyLhGubg4QgX2XGmOkPxzCn9ECtYjAWb3cHrxc891qQbQJSGKPwsQSc1gPZHAQSR-U-bkISs5HmTR92mv_gIIROL-pEXg0tPAMllUIF_WolMjl8i4DqC75hH",
+      "summary": []
+    },
+    {
+      "id": "rs_07fd1948174af702016aa47de03cac87d2a319e9bbd1e425e2",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpH4mGLNsNSKvKRMERLvv3Zjj14GAhOIsIfVwAjqodr419nVF52IIy9IDQNbplrJiNHhE6omfAdSD0yaDR-5elM0ArkZDfEjj52W2-Wt1YTcHGl9DqlKC8zbitNnTM5UUEHjdQ2GlNaOnuiwz6JGNhInRU44MWbq_ITDPbNv4c3a4FKZTSBvI1SQROLrlWY8BXKgBlBktLFv6YET4nsjSLNGSvryXmTzL1wu4T-Vc-QOMmH55iB1e_u2_FNU53qrlwnF6O1P6Nxck1hJFDSVq5y-eN7RL6JId4Qc5skE7a_-kTIqB6jJIH-F14FjIB2j-Tz5feCXFM07f_ZcVpQt6VAZFjU3aDOXbKzBfAErz-ZpLBbadrIlYRWFmbSiQvTZ0nn3nRiZZvOttagPA1pn50otMNAhgykj2UY_3mDNdGCqPG45AkzrRCz9KCkAVR8CtPPjbM1k0xTRIHrBMClwc8vXbfX7ca822GZKtpY5bmva7Ill9sYLCzkLJGjbgV_tdez9nXGz1sJPZeGjcye8FY2MqYOVEMcVMfvvsf_EE87zfA27CHDqeSzy-GGDTRUptA0z6Bukh-sHMcFZic1SmEQCK9GQ6wla85J61j_FdlgUqnYoahN7E65C-_Hpj5cZ3Em5yYKKMCyRuHuz98QhtqQmjvMJvr_iv7a9X1qtXfjTB396-wzs3szsvaIfZlAQKYhnkqBkNdOhSV8DdtU2JmKycyLjxewU1ZPDyvphFz3qSkK10Z7AKVw0oYI04VS6TIB-2APlZ1S1FYnwML07MEfgT0SV7eFu19VEYnrZwT0U2fZQiPeeIadN18ZwZ92HUt_Qz8eiM-gqE1X6TpIIXE-2QqgYOSfcdcPNQDx4ncFAdF1EVpg4QOuQEgg-lBf5hTQT0nPqxMZJSTH4Wh3vfa17EM-snYaova25IyAMz5NHncGcl37qDPKgh6vAt7DFti0eBKMAlwFxyXkrc6uQOdrKS_quPiJeeBmWGj_dCGGfercot_TfJY1TuaA8mPXpkd8CWTB7sQe04TBXXGP3sdgc1RrBW4JDkipVk0-dAzrGoP5n5TB7IMzPLiYX1Ufimzx5OAQKE6mTZ_24-AlgbSblHcUzr7MbAEV7-yP5_02X_UA1l8VKn2AQNz3X9ZukEZGza-0UWRbT-qy-vbSBG0P2FTk240oUvJuR89Y3dkrVGh9wx2wkxm-5c7cs7czA8SlYZEXb0kAbuXZY-2YvrmZxwXALPnpNcGNg4UJdxrCywJuZrXXjayjI9zgxLqPrdvBgZpwSvJjZRzANJ3CwrwdYk6NwOh-Y8pLPa6RHrDVxFEGt5Qyif3aJ_NgNq430_hIpzyTRGyWJip5q01p2uY4yrzpwtj0QqUnNg_8lVwQidRa5UzHV1gZAiVmwNT3z8JKjrQoUUlrYorC-DC8fnylakYPNY0GpRts6TEVttR_AibjrFS1uZT1pH2ua9VSw7WQdVtohm8eJrv82Y2_Ezwy61HD35Zu_MErqmWVwSkiVZOXIZ9AviQ0TAA9iuNf5nBwo4rALgxIcijBzLrX-2q4FXeyWLtYhEQM7JpRhIWn9PLMDw-Wf60HAh1N4z2Mm0rLpHsJ0U6nihZa8FZaQ_EL37KynsWEFZgxWpN_OKoNvXzcNXiMZY9Ao4_tepAVwCFLd32dgoqZrlnChIV3LQ2uiq1q7uR-Iz9VtUa9yHWrjIdtHCeGxs21KxxsMIynq-1ZiOJxcPnf0HOSMmyxpM_7dNieRSQBiGNSmV1Rr02RrXbGWJ5kqsPK_-lOkk5r1qOMqeC4wq_5YJLq6g94gpiLmbXhkVGgq1WUs2n9_euCuzZOG8BIpxYTMVwHSUeGf_r_F7VU48FIkWQiBSww-YmSw10sP-cjb0Z7DU00vC9ie6XYbiaqMOhNaRFzynAKzwAmyjLGEUlqaT_SPp5iNvVh41KIxm6OB1csTjKBezsr7VS_q3P3eupQAFYHG-d5zUElw5NPTVmjpCpFGs_AvvxIeOro86pukTzXr9XJwo-KOa1wwhYL-Zxve87H1fHcLsx12JYxB3HjEv4EFIAdM45oA16-xhi4bJNEERX-36uFIc2xXm451t8XpMnOs52JtuY-P5tQ0XX-M-i9da7Drzc9Wfpe5Z-ON8RncRswEhdoZej-Hj3OTtOvB3LdCVqK4SPrsal2_y3s2D09VhMYxWXM6I8tJbrGuzG_3EFkjRJBIfK_3SCIKLwKkvLiTlsPUXdSIJuiQ5PKLn3o-Us4aRHY3ePikx-Z0zOPsr3F62sMoeBbJkDzBDcrhhaQis4_AlByjoxhuDj-QsuMCgDrN4is0ZzOLwy_T5ZrALkWo8z2BAvXCoJPsCZajFo1l4QFgfrklKgKF9PyNR7CD6kNvvwDh-b9sOfIQrrH6kkom_Hhex13GLvB9VHyfoBd6Ic8HUZ6nBHhdPOjlvsvQKOKWl7UKv5irZp00q_9dLSkWK0VbFgxWgAH7b1ec6Tk2uZ_cVtqlDXZZ28RGSSiuUaVeyP9tNShfNFYqUeJcP2cUYhtU9dV9ZcqhoWZZXyeT04rraDeQf7EyOHvAHTUfVCi4na1bHMZ7RUXLsrl2B5Dl0EEVnQvW201InvTefJeZurW0doBk1-gzBPD4V30sUEV0GppaOB5K0OKOflILd9iGEu3mv1Xpg0VlRPWNHGU3yhifSCJdhlr8xa9q8Qqr3FtiEr3RFCdamW9h_u5pT6fp4tGv6Lnw7AtCUp8VQRxDy2KtJGfhROgJ8_4GZd3FZPABA2r0_Mve_Jn5yIFaufS_UAmUZZSXjHJYdpRn0sYxg4wzk1uDve-6bQOf4thKjXjHMO9GZtwqRjWTS4EivSCcx7Sloylc0IQjUI4Mj6WNUkp8kbdt893_OhDpEkTIZfXY4J9MLmYZy-omveKPIyLvluJGLznehdyiNnKrZ_qL59oIWn3hF8xxwbZIs1De3Biif0j2ReQQgXib2vpDE_lvCZsc4clETKaBALSFxYGAKG6sQ4QY_",
+      "summary": []
+    },
+    {
+      "id": "rs_07fd1948174af702016aa47de59d8c87d2932825c1b59b59ce",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpH4mDUCoXnuv_netQdixAGmGRprRViOXsUu6ylj5oh4v96CemkFiHq5JLEpFZn8igzomVRUefCqalMWAZJMIVXTXP2buHTebTerlJ2Ahk9mo1m-Tt1MHUfCPxAyrXoAHRKxbl415HG_T9DGdzux6Ffzm-3qKEq6JQuPBYj9xwKxH-X4ynoqrlDOKw1WJ4FrP96XSfqdSCXFzApyey3UMhIVLZTMHvdbHk04SzEMGh3aaYH8rITTPJ4mM3cOLe_f-29LRz3zs9l53e9GATlb91y0doC5hA0YFk5EsD3__Jtf79T_RwNZeuyoajtB3ayUFm5tGQ3nBCUJ8HLip4KMzZvTzD41MNt2sDbpDp0TNbFASe0v4UBDnQCDG8w6AbQiBJEgzC3YE1f4JuD3EVFUpTBrL83enlpZgw5X1GHtIWzV7srGAuqYgQcVZv0buu8OA35aqYyZxYO4Bk1kODl9h6VfkjACQElZI1WfQfFE7Vj_ShDsKvfGWwKIwQJiZXI8QMgGFC-D4Utw28hBVP62TyVyHs8Gm2SeJzgSiTy-wQr8WtBhw_380gWtZlSwDSdLJ6gwhyVCKB87V2x5-GJDnpedxkHpBxDmGgBXeFjn7CjBECgbKB1LOCjdsK4G7x71jv56OaBqOReq4bNstLydayUFSTc0TIsqs-OYWnubAQvuPYqVu_aWF74YaGUsLYVkio3dQiqitFuy0wsPqL96ZfDa09f9ps7UykH3nJ3hkUAwA4p1DdnYDEUzID65GaehfRflAO43Rg3EGIPusMGz9fyft6fP-rZofSEqNb8N-HzBXwx_0oLmH6u4w7QDfR22FqolAB-DtMQduK-KYUmOU0UgdaLihONDVKL39xD8Jh1T2OqnY_NqQeIOgE8umAm8H2cIJVFWSOezmm5bnF7Ygq5n5SLpGePIJaUNYL7VzXy1L_dUMYeD5bN9dlNd71tvk3Jk_fkEbzvmlckRbwfxcdG8gGDNrjah_JU0vX8AgZ7hNDhgEByUYVWns9hwTtTnFeMuDWY8-bSJ4Zbng97FFYEdT-PbuAruTIGxFXGzRUi17cfZxkteB3_ATe-viGsO7YSGgke2cKr0u_3sXGFyw5L9WdVEWM4X8VUoKbF1v9pupX2fHzMZ7jidRkgYnz5HSjMrbttgGEZis71eBVH32gTGyeVP9DFeQBCJgo2sSkzfN6aq8SxF24RtQqjwzgu2Z-MU6J_fp6g-TOoEmrfE2__G6wv_dH8HCuYJRgJoI-MOpy5K-YNrWw13EgL1kvCvCCl0ZxBGxSzm-QY4EXqk5jGGdUTJquU9gbRrw6Fzn5QNYtt7pOzboyzSgBLSgqDD_RB5fLMvRFWi4ps3vPJKJoY8LLoL5PG2R0tVWnQPzAtcNgikY-zeOKwF_zGLTB__oEsTYvODLGKKVDKPV9aZx4e68MX5llmp57er9CPz9UIIyI6wd1pLJtLcDHSU2VnicAjSvpoyQvw8B07WZ1orjPcku5M4zTMoYGKqEMY2BeEyYVj8H_K65r6uxeQrPFTYCuZo5ciUPlMB0MSU104SrhRdEzUeR62plocEp6CIin4Y8NvCCBT0RW0M0oREzbo6diwN5CkuH1kizIXBebZupDIZtrKQ6Ja9jj00XQkDqf32bvJuKMHAayZDbu3yvEsp4hmA6SNJN80fCddf-BWtKQieN17sZEx4rXGXvnEqAYZjC2v12XtaF4lpFhfDey39gYVlaYHGBBguGOWsobaMWBHhKxsRwegEoUGsML_UtefvMhAZsdVUMKr8LmhzxZcj6wpdFjaAJOmrB3AqadXRJQcMvQhPey24uVEDwaLxDrkeocZm9jXZwbuQjZtjSA7_z9S87nd4d7E7Ky5YMsmEhrCRYxNy3CEhDkjXwCOomY723vDHLnSDL6k3aNiIvll4jOYn-ZURV8pcZaSjSWvQVNPY_2PPXFzHGTndVD4Fq2Q7rCGgqurUXwBCtZdW5EUFllOhXfAU8l5N0nVbPcTzw3jA9bG_I0UL88CLC1trk6VUME0L500MGDaWpA3FI5hlSwNkMK9j10DX_eedur43_xa4W5HDZIIkwn6XbheRwu-xfVOlaTE70BCCtNRK_t-wIJE-wshQugxS9CkhHNhRmwcuzQG_gosdBfjINxI_IY7FQj8x74icT22wxyD4mw5pguLnwdnyjnMlfXxn6h0Ut2qA5AXtrCsNOeZy1DRD_Y86KWK24ItPgl5Q6SVwYapZ7sDDXtmR02xLIW62Mhg0_oGWalaH8-knFQw9j7jP-r_SJSzWgSWHs40VQDqu3FqeJZ1CsFaRFR78P_i-M-WFAReA1fOaZ5Yi77ECjNyX34AlKMSlHCM1aZJAV-DrcK6r_gbBdaoyRjL9Eo-fsPvn-2TJns40GQ0AY5MqMXxavLmSB0m_N3-UU5S0zoPeUh7ZkO5jNu0ZjfPvwEZH6bCSTX_lHJjO8LcIrx1DMERHhLBNWkU4KMw8CizDX4Tm1HOWBbYVCxEmHeOJ3T4bLzI4NT_5rL9RIVugB__hreMbba5Ka4gYT6kFKnrFWA7PHdFF0Hr_jdVmx41zRP9-rdetN2AawYFa5Rl14iKTjctxCgvpTDXXoGWkv2N9rTdwyqSMjfAs6AgCt07kUnd3dNu6nmdgJ8yy-iOS7m9DmtfZQZJxs0YyIZSuLn7JUtzDdn_JHCZXOIJWZJTwn-_uRIqSZA-cfptObXYDLcsftmLOb04EIif-aCQ1IsUGX9spubh0ZwKVCEGX9rPgvQqoUWW1YM8_1J1PJudHLBLVZbp8VucJfdnfUAefx2u81wUVqcPpcA6daXIiiMQWBF45Ttk_6-KuvYYVeT1YKyZ81wyBth6nJ9JTmlfRqBHKZtwDaKZV7jbdLg60yeYxl2oUjnCHNFNeTvuY9Q-7BcmlzsvMf-AoAHzTn7lVdun9kkSiOP7joX2tQFc4sF-NwJsFOR6ytZv6402ct1lRcXWmp6OkDCSaiEgNpThrE5BYcegXp5Tjtq6sNCbeQOyp6O9wxtS00nHsPEzrPtU6nBdIjUfhM7zNjBSZOYihB8o9CI496pY9bRWgNcdnOfcR0w9UzrAkhNfahQK2yyuK9UVu9tcqf10wYLCxCTFkggesQOg_TvV2Qc6STDbuP0Pan5pSx3YNXpaRLaF06TVnPzcsIVHjvmrrIQXkXut13WG54Og0v5zMkmZxu1bFz7v978x_R1_d7lPX-QhQSvzPoALe07LGdB64Xdcgnl3rlDKBNsqazlt60xT2Sl0xf1usIqKEoLTG-IOxxW4mh-IVWEDdypKJyUXizRd7tQjWKXJZF1oZntD1TqRCNg7mMuq0U0IdAalmJcldqgsS32lUHhWp_1Sfg6n_icFnQJzsO5KYb2AjlA1sF9uZK88ulHA67E1-_ag-669FhopvJ26hiwLM4rO3C4XnrorC_jxhPGDvU_abywzf1oRfE57WCbdy79QnuH7sjXMjK5IeTJC4bW4YwP0aKzeHgSvtqrPWBIOIBl524xFniJ_1eKV9RYMZa2iTHOa2dpqlCpZliM65bppNT3thhnYg2SaAx9PIeXLK52iO8wc09JL4TPeY4TCYLx3Y1eDeHZDboqLSOgDNjPhgHfLBUxAWNR9yxwRnsANeHGlkooevFG6bYCrjYKMUw7KB-g5ClgZwxIYs7_X2m5LB0feKu_DdBVb-VgYtfXnq_TbeoFks1PqOt5CsWu3j1mCO0lB_lFvCKpLZqcMeOhYHt1-QXvueb1uQQY8ncmK2ZyG5DQXGT5MHdTuq2dOcm3LYH5y0xQsS7ZHNuLav469byUXkErkdS_mKlhBwicAQqDWnQ7Fzy4peDN_QGxp3PwEHPryeNXST6YUz2BZr1pRD_xQgJ4_JFVxb-dmbzlbIWiCpVjHExZr_btaNYJcQvOBkYWtyxvqV83i0lNGjix39QSewdqLOxdCgNtffJmHkPcHkaNYLPJ74BiLy-0z6QiOLLrOHas0d9PGHlfDH_GVJk7l80UWLcymwGSY8u1J2HAnHfaSG5sTzCADgImpAv7XHqPKjbBUQv-Yl1xkeiGBzcz08x2TA53BqpdjrEaI6BJeZeAPwLDf79lYwtQPsqbvfcIf4O2qZJ8ZZxGzXjGmIsVx-QNzZFXbfdAC0hKc0zSuBSarB927Emigdcb3trNpSL_LRkEDiZ4ZnmU15UcAJAJlEME1DEk0_Q87Uur8CpP7R0Eug8FS9OTFjvjVkvgka1bYHOnSYeSR-yPD_teVoJ-dl9JdggB9MnNNaIemA1p82kYhl4KaaVC4AfK57oEco6XEAzjEhLcBUKKi9PDfKu3wtZzg9NsTnVV7Ua_WaVwBpd0PgUFOJv5txMBT5WrzpPa9nZ0_aQ3nem-_sXKhfDVXRJpHBkx51eMuYjk6GHUsirAncMDrMSoNGYxb8rCRclEyRzZeY9v38DziO8r0RaGwlDp7JhysEBpXNDVEghEHevynqXb3wOhT-qcbMDwcx5Jfw_WwOaubWsOAEhiZGvMcgG5n-cWW-sGWeGlIeAoC2tJEpGnU9I3gECZm5ehsEruJwZxbduLpB3K3zZoi3NHdxUSq4SuEc=",
+      "summary": []
+    },
+    {
+      "id": "rs_07fd1948174af702016aa47ded56b087d28cbd4c343dc68afe",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpH4mA1rjZo0aUvDQG6VL0s_L0ArmysV2yvrgCDAYW1CsetatUhpDyN-0F7YKLEkj09rBH90MdUFER3amxM7KUz6YpiHKzz4jZn_5j9AsABtULVWY3t2B13t2bJlW6DZ1Db9S_7HkVMmPix9ier_sf87OZf7Odxad6jXywA-Z1smdWWAHFU8Vi_Bg1HyztazHSn555ZTx4tWfMLq124PtjAiy5YLRN2Rbfxb_V8pkgwPsU5QD0IaW9qH1bec5ECtF6eqT7y6RZLr5DHzIpbJ6bb96tZn7SHahBYK92EaLSLnq7KrTrIQ_98zUo2HQlqG6Zo5kicHXM1pd-joi685AIVQiZETCKg3nkkHR5lqcRtWu5-ZLFPQqUr-VFJlz698YhYvm5cPeeQyaRhfqoKXjvXYculYhGhqJM-xt8sSs0mzmRY9qG88tX_m8vOIdNKt3VEFvRn-vTx_0xZSpLjhRsZWlVuiXCJkOIjAa1cto1eER_wg5WNKeGlq0PjHEdgnDHY_v5m0WfO-c2-KtoLrrG_Ac4bhHzkmE8d5lQwOtQdToDLbB9PXKEU4ZuYfeGolcF0RhCEoud_72v2S6NdUTL-rZRWN9QEEqusOrPoxpI-Igj772iE_-mXTeSebsES6fpsvNQFkfwRhA4AbVeJ8I6maUM1nrID7jtdIfq_2Nm1mlxW6fZb3z_A6Gj1ZHUCwMoH0Jy7eBQmuEnUt5_2AhF4BbvmCaB5TssK2GKFof-j62jbwKFNieRz6-3m_Z_1fY_SwGHxRw18E5HltU0DhftEHlPIt-2jyLHEKJeSDQ7j5CnJ4vionGsLMi1T271PPdB97kQLZdodFg_TbamqdkSgHXyxlHPR4VZj_gqnNXT7FisZk-yPcd_QzYWiW5DHuf1Z4KamyCKktXdClYRc36bae2-RqWBE6zO0rTHp_l2fxdAupx6e4DxYnN96Z7BaaqeP_YIcGK3tGYrmmKf1YMJ39lMEb207K2_yxVBn_LYrDSwvWjQ15xq9inG5ubIOq94cCNuML4MxqCsk93c8z_CLZH47JnzhhVt4iGW4gSXLKcAjtqN-nRO8dGCMsalDqEDzYM7vDbqtonDD-1ivADVeOla1Z2XO2tOp5WZ-IwBG92QhKvdaVwUKJXC-BIJwd87yIuxS_yAFFJnL5ac3Ko_bratUcaAwFP0zhkLNs4r-O2rIe8JiBsKuQ57bmGggfwQ2VpixGEM21x5GJi6FVZF55G0Y71-lKBr7TGYf1gpNRXZJjqjcyHiGikSD8zH_5piCf8u9RRlD-vnPeGm3mqA3Tk73JXrGofTjy8CvzPkSWvrWV5Dc-2DVvaC10fQCnziBX7BSKC8kIF4Ftr-NztcikK0-SEVy_LMEmoLkDRY73fXCF5JISgD02wAuxENgtvl-0GLp5pl3ig0aS09VQasrh0VUeL11QA0Mmk7Ks0tWw3kj0aRpooPEmKPhH_s3n58_vfV-JwUqq9eWkqscXypQWyQrIPC_frk7wOistwQ9c6gsbWTusHPMDCy5T4rHAfQ9LZ_DFCderfKpElQs5CVfabl37tZDNlklgtXRHgjh4u5i8kJ6XiRGXGd3RnG4ltF5T-EMhZHrOnmRrWYoEw8JYE22QtPZtJdTd8X6FRwvCPG6JtwavyvKV0rkFBKy3NSI68m2mRRwHo9idFl3_d--UURAiX99_kBUX98Qhcz5SOkksMgT37EHVzzgxRLHD0sfQev6vRRDzRfmHTpI1KRr6DJFaXx373lVRXZsoPJ94kzCTm-7-ACnfvIZHv0W9MnsGvWwni6_cfU48mqSRXNlNYL-Q5zx5EW_y86APqX6xTeg-6KXgRmjMeRYKBzi-xMkGmwZheurkfK3CU6ORq-UAaMkOEOvdEwPe-2Afx0R84OfVzaCTQQFm3rR5UxKEC7YYUI-Mo4SReiXD33myRUUjLA2oMs9aSk33urQDVeq2V1tvSXyoSa3OErfYCNb8e9XUMXoM-dltzK0bxcwrSyHvbqCA9_5eLD9yeKwmU-trHQWAf2v6iDXQJXHtV5xwO8_7eRCS0GrBLQuMQRQCsyiK8_Wjdlq8aDCLxjH8aG8xVZyk2Y0FS519oOYuX8fwpokKSYxj_YGtcbiI2zahbY9fCgULFT0q0_yGCAEiKW68aT7mIausK9rLi4v69lB-AHF5RIJFFzH8isfjFaygqwRvGQ8WF6KiVu7JXf2ieiiw2-Jh4wy6XpB-hlOLdAAI60DN2DKfc-XCKV638zQk7sUh4ZeniJGOVWH4eSsRq6GurLsW72ZNEheasLF1ceUwauOjiRzAyLU9t9VqVmlXTIJibafIw2y-O4N7_9sOdrXLh8fGhjR4ZAD0q_CPJBpMRtLQ_G-gqh6IguHhMGH-RzzzltR2gcTwQFl9AHdHYcZM6vn1AcVCWh0WvAebP4-WZ6E2dsxwoy43hwGir3GIKeIMGZrXkWriC2oMf2IFjkfzgGFwygXLf2Tya3CXssjEdTbXhgwxj8rRerat97Oeg5wpvBDKaTxo0ZCYxME-73CYXHtei95yQRE0BRMlyDUbR31GbyGcyPee9B76TXGaM77nA9iJl__UYLPySRq7iaJwxfSSO4Bsvz-ROcmM3lK6pjazdLCRcwNaXcBa3dOybgKGAiaBCkVAD4dY4eNye0KZKpv2MB_JvaOOCFn6rfog8C-qaQqmIfPcJfDPgHunOLDg1piOhb_OwQDPK90rSJzQ4J9WCbA14S83dNULci_QY7XdasBEwqP8xZ9bOWCsIBg2qWhhN0xrwccGvqHoTgjJgdF70Nx-lVqYRKuEJ3Wt5MxOlTdCPrLwGTQhBNpqWxkex-1dxSoOrmFg0U84SuT0RkNie0_nqXV0Ye831X1hpkd3H14dks4OgdVzD9i_RzLYtHqiecrg_vXO7kUlKDvTRZG9aTHy6SOZoYImHezrJWXiksmMw3G8nYwUlqWISBlq1pcslC4gcvlZYN-QTt2mwtVu_RwLu97ret572Z232oeEmXHLez_6_jX_aB0_rn6gXBx2CFHDmmJiW2jV4cIBydlhcGlVE_iyyy-fU_Xq3n7qv7GinJiehfK-UIwO8T35fYD62XYcFY3oPGQFS6Nry732MktfQ-3i4I8Wuj_WnY093y5vufQc35z0AvOJg_hvP4R1_bvgTisipTW-tO3yLxFavFen4HSvUzoZ_pFNydIEy3sWu3uVWusEwRkE5_eEweuAnHR4qt8XSUntwfNwira1P7aVKd4PR1yDM8kvkP_d4scj2tBn1OX-J2cJ7iT12ZlKsbr0_JtGY3_T5jxC8UFU9WWU0RVSASSZO4H_KHxvrTU4tSeJ4k28tmoYlVGmgaOKigI4-t_1zZcxjz_wPtHYS4ZX512Py2nwGL3RhMSW-6Y5unqm5U4_NosmmSjY98pAXcwefqp4mme8wP1xHhAJmCrK-7jMr_UGr13Q_D2hjfQMMdBAA-o5GISFD222k3omZKTeUP16ASDpGXUoj1hlTpzDBmhtXTddz4NshNkxvVGE1EZB638lWrPwP3ZWwzoLQZ2ad1o0yB8me0k35ROx3ffFTBNPFgYhu_jFpftpm5Kq24fha5VDPcWTOfj1loazoa991ojtaUH4JIGbL66CYdMuGLCBLQ6y8Ry7GmiqA6bu0QoFNXniOCzJKhF2_yV3wwUlOkAZeIZ5_FvxXFF2G-trfAZHBUstn8dTPbtY9-4p-pTgknQzM3Dx5xmWF-hWRYm-JkLsagHZ7O9ZOCcu71MEr8sW2rNIGEDE3Krg5vqaL09v_tahZkXuyv1_FBJvGLbKagoOkLMeahckmhbxPWxpfZaeJjvAKtwvUlkGZA22I92LjU4EGdvyFxXgaL-UPkC3DCNfE7WhyMJC3UR92W77DWjF_Z316iWOQPca7LNl2D3xSHf_EQpFEHfJfgXhprGXCYya2VgFfXzDN5rN-uuL3SDvAW55llcOIJVJBHoMd4e-THbz7k-ycLffLDkU8wTQnuW7QrcA9SXTbStqbLzg6e5agMEkSEhENMVKv91vMGfcyt58UwtzQ033Z7jm4pwzgKHoDowdy9YaWKs8hNK7sY2JB4FVZVrzviwoLh_INwrWzlsjuIZj1lpj-48IPZ2uVl1-ZpHH5OhMfa4wXGdBrY_6_TppYbVkRZ4-WkUN6RcjFQSQgHHDJ88n-cGU9sJWTQjAtVTPF-aMy4N0SAw0WtD32GUX1MiBPIAD1yNzDuL-dY77KaQ2aP4BMhBG6DSA3GhDxGHoq1MMJ_1LCE7PWwcvCwCvj6BDsUjVXSNBVAQTcO1Db45h6UseCWosGl_0yVA7gN8KOyHpoZslJuNwHSvGflaJXSimHNXanrkH32hdI5I0h4wlnk_t1mK48HLLVmnXvibl7Q5HSZS4mznhVZ6LgMp5r1TJgGCfSaYKUVkzN0crbySt_qpKyEFx6BR5NvZ_egaLz9FlXE7sQatevcfbijgZfX0z7f33dBX_xbnsbuTHmk_fmaiV3lobY1bJXk-WgKMi6yu-DqfVLg9jTxi_3za4Q5WnHJOEyGBF-Ag8RVM864i84tbbguM5ncIC6G_eV3M_n0iHnsGsrxOCgrLU88BNLab0nNhgPdZE4nU7cXkZyU8bhHZj2whSUnQJqXpE34A9e27deY4S7NQkOJgKKQA0cuZbO0EJ349HZFonYbrff2w1WOCT6iWDLanAVuS6nATh-KmojuM4=",
+      "summary": []
+    },
+    {
+      "id": "rs_07fd1948174af702016aa47df6a61887d28dd8b6a39b04a995",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpH4mOcwvuvirjF9lf8tQ6aSeYj5qJ6dlNvEgZD-2BkLucLeIaZqgbCKuFTgbP16BLAWJDstH4jgu03iSrUPdDQbMLGITNCThzEJFa-hiVJycNBFfYq2uton1ZOTDRRqimgS6fmFIX2mmjw1Q6E5Ah6TeF5bSJV1ZLm0aiVVWBGH8WgBMiJosGuIsG4IvvHTKSWyG6F_5JK8AkhvwjCLc6MKsePgv3FfUoIcwfI0TZv7wzxEFMXPWVCNDl2c2PcDuN4RlnHEl2d4ijlgsoCzrbJuhZjMuznC4iwHQBzsjDKc_g3UhyCP4Fieu0Awmnjusg14vIEI78DCVXGhVVCiat6iEhvpTuHcJVDv3Ujo-wWUvBeT4bHKVNaShVel7TZ_TCV6VFRpM5-ysxuRv1dgfn23NqpBLuijy7q5EJ65bRLWvIEeWIaq2z1VLkNuhFc-zkv0XkMf5TbA-aOSlNO_iWu5DIp4WT-pBPFg7WLxQ3QyjJUuUslQsh-tWg_z3q6bRdiHR6pvitNGzLA8yruGySEnl4Fly3dBopfHkYjbFSeJ0980IgQCV2aEirw4IruK5FvEBhDjVtEE6Om_JBS52rJdfKNWW5tN_RV21T96uST6r9VzxsjTfrrPZAxIOcoBi_k4rdn1pLN2AZyDx_KsgUc0uTo5yBu-3OF_j952sZMcxrsoYZ6Xs_e8DiVAs0jUIUTQcD7nQEBVSiMfkjKz2c5Jo9Q7U5BjwUeqDWNsUz7G7PG2dBHYJNk10N0hQ9q0UEn1PQO_texaeFvvE-bvzS3I9bJIXpcCRUVaMGNF8Tqz_Zad55lU5Yxjm_eKgpTlNtTAXBYKCd6tUIT8BfDjzajgMhO0WvvZ0jsWlDsFLVujDHjyEZfNOnbyp_0nasr2JqKpSnB0JISa1tFmm-rQjbB68VMdYl6amkS83vaSeCu_cM-hBD9MaGkt07rhzgTP6ZtG83w3mRDRRTqunS2Yd9IPT-8-C69Uw9nLNGC3dTwl9_Y2Zij7Y1NYUY5BfOx6WcalG2LT4WUeVJVCkzMiIVZvOEgkXKj48wPsz_wIsW2n6rsj5TyjAMecNb5ypg2IWtNKNwSOejk7FQsetL9cSm1bRjArgjYNFxf1i8JGzsZThKiNYIwjFmh2g0HEhH8Lu_5gw1kPP66RKJs4YgeKvWT4FdBU6Ex-sFN91Amqj32IDh9VWn1m8XrTHL0GG6QHbDgVGEoc6cAu8UQshVrQct3zP59dUgGBBjYM6aYgugsHg9UdeHYiZ545-R0sYLRmP5eDhoUM5VznG2Kj__hLJXbEKlGRQMr6p6_rAQrwEK2y7UiHTJ4uwBclP7DdhFQe5s9UW-qL00SfaMH7TiGhnwN7Qlwqa9atBkOuu3E_FVvnm1jcR6-LbO0tmF5zHapDNEQLyHvCNfTbxkIpXe6YiVVRTLLuEjJnF0o7Y7zDp3VF35ftRQOQ1bRo3TMR8epGoxMu0Bi8A-pvtsXpRFZQMyw3HnDpZg4vGBHFRAY4CSL7SuLzkBHwWbnK6P9Df7SRuu1Ba34J9nGZ0y8XkT49iA9aVBQNcBSsb2f0RR6rDtaHd3TfqyutqvIw4WS3asmPBp-yqAYojys2WGYCN-IaO_Y0efj3SzhavemBvuNMzAavriDWFX-wlYpDrBIiIy_JuwFmqK0yB0-xagRQHa7mxM4B8Us_WesJsKTXw43j_PWuC8Z0Tu3QDN4tfpZvN-X3aZl7Lt1dayjpsqEibcSRQyPq-E0K4AtiNVqqW7aRblA3COgUd1np8wlUt-kA8GUac5bW6xz8SiWrEvFo9nBiyWYcIgry1UE3SKGJUAkcNL48BmRHeGqmcekId6KRU_3q3gTp1nIe2lGvZPAHq-s27htTNWviryp60rgZ7SqQKI4A5ufWmwU29ijA-XYQt_kzNgCpHwx2oIj_llqyOcDzI1d0NKHeTnMdfc_hdtXOfwEkOaRhWnp7BXrUyJCToK-PdNoDsKAdGCaavK3iTZBQy5F2BQAjXYz8uvGTSTbu4-TLfG1fPQppNdNghCZdUDiRLbuq28xF6ur06NHxuHPJiT1xvtXA_lGLc4_XiIg5yMun6gCBXY9Fl1QZOte2W8GLNDpQ1dOhxprWSsWiAV6OHWsWJ5VGCKw4YDY4vIM7_2wI2aUpgfHJeDMYCekf59cpufHDwAmKi_rWjsYerzJBiXP5IUrV_wbr8AdgzQFIqa5DG2KSBAFr0eSuqaXBF596xNs8jM_cDKDdwuuvjzC-FjcDdMHCZxWVVRNicjrQIHdcj3lzYDhoa0m6rpYmQdtiQa1zJvR9Giz4u5klwymE_CtBMifyA8QBOs1RpIb1SwrpQ2eE4Nni414mzdxNQM4T-M7Bud90PCRFZ1RcVuNUUy_ChI3JVOlXUXXE8-AKsP33u6L6XQ46pinPV5OWZ_N7u1JK0oJrF6K6aJ7MbuZQBwUtgFXDCGHQ98OWpmOnJBJ67a_Epi95nqsrmkbDsqHWrhknVHDn058DZ_BHf5hvouheGY_88bWNZ3DwK-hkUXSMydoCELUxpeXkevIoSotcvS2-PnDfcccj136aDaHAd9hySpMeRWbaf1VT5NC4dHxnSLM-PSraspywDv8GdleU1rwB0w3u8Zd-J_OfpwksaxH6vd3KqGQBPtLWhVrwdNFy7VaCh8aQMxNLRCgwh2sNrBU7ot4Vxu882aNzDw43gF9xaO7zABS3BO91GXSRn6M3CCOy_1CWX4wfQN6O7hDx-CYdpXC5TKihpwkOLkkdeMPb_9d6nYJxQz3hYtEnT_JU5t7IkQq_OnxTG6lDplfgS2AlnqoTa-suh7DgBFc2GUNZVLUZlNQ1lyrEmR8T71t93dMZiiaBLkQkb2zJrzIXdsAtm1YEh8SMRNydIiYmt157ydPT22AUXgHniBklgOUGeD4WmO5FdhdfbCP2t-5fz3A7id_KEXTwk_meRS37wTl4EouubvLJCTRh5ilaa_FQa0B5cLKU_cN06DOewuzKVnFbU9coMHL3Hku5f9jqI4bnSzdjoFWoL1NukULXxRDj5y_kzQKoro9EXZUcb3PGtzGK97NYCoHxbDslk31oOPAiV4g==",
+      "summary": []
+    },
+    {
+      "id": "msg_07fd1948174af702016aa47dfcff3887d2939e6fb9976f49cd",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"packet_id\":\"packet_away-crossing-squirrel-001\",\"packet_sha256\":\"206d83c1924c8f9cdb509062fb5a99818f2198d83e7e22fa380eaa5d24586bd6\",\"schema_version\":\"M050-RECONCILIATION-PROPOSAL-0.1\",\"units\":[{\"authority_basis_atom_keys\":[\"M050-SRC-PA-001::ATOM-PA-DIRECT-0260\",\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0064\",\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0068\"],\"canonical_claim\":\"Away.Crossing.Squirrel is a distinct Core-Species fork under Away.Crossing.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0260\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The listed species branches and ontology evidence establish Away.Crossing.Squirrel as a distinct Crossing branch rather than a generic species tag.\",\"related_local_ids\":[\"U002\"],\"unit_local_id\":\"U001\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0028\",\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0045\",\"M050-SRC-PA-001::ATOM-PA-DIRECT-0288\"],\"canonical_claim\":\"Squirrel Crossing is structured around a moving, flowing trajectory through traffic: the player commits to one continuous vector run, potentially with limited predeclared redirects, exploiting relative motion and vehicle wakes toward a far-side climbable refuge or known vertical anchor. Its strengths are direct speed, leap commitment, and infrastructure use; it does not require convenient vertical anchors in the middle of an ordinary highway. By contrast, Rabbit waits for a broad highway window and Mouse builds continuity from fixed micro-features.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0288\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00290-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00290-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0020-B00639-3\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0028\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0044\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0045\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0046\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0047\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0048\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The claims describe compatible aspects of one movement identity. The vertical anchor is a destination or far-side refuge, so it does not conflict with the absence of required mid-highway anchors.\",\"related_local_ids\":[\"U001\",\"U003\",\"U005\"],\"unit_local_id\":\"U002\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-AWAY-001::AWAY-C0009-B00290-3\",\"M050-SRC-AWAY-001::AWAY-C0020-B00642-3\"],\"canonical_claim\":\"Squirrel Crossing characteristically fails when its committed route loses viability through a missing anchor, false landing line, or hesitation in open ground; its associated fear is that the route ends without another reachable way home.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00290-3\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0020-B00642-3\",\"disposition\":\"elaboration\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The danger and fear claims are compatible descriptions of the failure geometry surrounding an anchor-directed committed route.\",\"related_local_ids\":[\"U002\",\"U005\"],\"unit_local_id\":\"U003\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0115\"],\"canonical_claim\":null,\"human_question\":\"What is the final Squirrel planning affordance and characteristic failure geometry?\",\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0115\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The atom names a final-design question but supplies no settled proposition. Other atoms describe current movement and failure concepts without explicitly resolving their final status.\",\"related_local_ids\":[\"U002\",\"U003\"],\"unit_local_id\":\"U004\",\"unit_status\":\"human_required\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CORE-TRAITS-001::B00246-1\",\"M050-SRC-CORE-TRAITS-001::B00246-2\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-02\"],\"canonical_claim\":\"Squirrel's expedition trait offers optional shared Strained Carry, extending ordinary-material capacity at the risk of shedding during Crossing. It does not alter secured Carry rules, party action economy, or Artifact protection; Artifact exclusion and the shared, proportional, hidden-loss architecture are more important than current numeric tuning. The characteristic decision is how much extra ordinary material to expose to shedding.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00246-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00246-2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00246-3\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00012_1e7eb292cce1__A0004\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00036_078e41d768e0-2\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00036_078e41d768e0-3\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-02\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"These claims consistently define the trait's benefit, exposure, protected systems, and architectural priorities without extending the trait to secured Carry or Artifacts.\",\"related_local_ids\":[\"U006\",\"U008\",\"U009\"],\"unit_local_id\":\"U005\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0059\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00114_a0c79d3e8ed3__A0001\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01\"],\"canonical_claim\":\"Under the current working value, each Squirrel body unit adds 10 optional slots to one shared, party-wide Strained Inventory in addition to ordinary secured Carry. Normal secured Carry remains governed by the ordinary party rule. Mixed parties gain this Strained capacity only from actual Squirrel body units; Guests add none unless their own species trait later provides otherwise. The shared Strained load is exposed to hidden lane-based Jostle checks, and both 10 slots per Squirrel and the 50% full-load ceiling remain tunable working values.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0059\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0060\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0109\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00108_c25417c755af__A1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00111_b7430ef059fd__A0001\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00114_a0c79d3e8ed3__A0001\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00117_7a1a51a540ee__A0001\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The atoms agree on shared capacity, body-unit ownership, the Guest exception, ordinary secured Carry, and exposure to Jostle. The tuning atom qualifies the numeric values rather than superseding the architecture.\",\"related_local_ids\":[\"U005\",\"U007\",\"U008\"],\"unit_local_id\":\"U006\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A2\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00261_271ef1f94484-1\"],\"canonical_claim\":\"At the current 10-slot working value, three Squirrel body units provide 30 Strained slots and three Jostle checks per crossed lane; two Squirrels plus one Guest provide 20 slots and two checks; one Squirrel plus two Guests provide 10 slots and one check; and a party with no Squirrel body units receives no capacity or checks from this Squirrel trait.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00123_a7c02de795dc-A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00123_a7c02de795dc-A2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00124_d214c4674e03-A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00124_d214c4674e03-A2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00125_3c4c02113452-A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00125_3c4c02113452-A2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00261_271ef1f94484-1\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The table rows and acceptance test are direct, mutually consistent applications of capacity and check counts being proportional to Squirrel body units.\",\"related_local_ids\":[\"U006\",\"U008\"],\"unit_local_id\":\"U007\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0062\",\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0064\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00130_575d3823678f-A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00132_81298d9eb30c-A1\"],\"canonical_claim\":\"At each highway lane crossed, the system performs one hidden Jostle check per Squirrel body unit. Under the current working coefficient, each check's probability is 50% multiplied by current Strained Cargo divided by maximum Strained capacity. Thus a full inventory begins at 50% regardless of whether its maximum is 10, 20, or 30, a half-full inventory checks at 25%, and the procedure ceases when the inventory is empty.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0062\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0063\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0064\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0065\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0066\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0067\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00130_575d3823678f-A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00130_575d3823678f-A2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00132_81298d9eb30c-A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00135-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00138-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00141-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00264_4e1010108c65-1\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The duplicated procedure and formula agree, while the full, half-full, and empty cases are direct consequences and acceptance checks. The 50% coefficient remains a working value.\",\"related_local_ids\":[\"U006\",\"U007\",\"U009\"],\"unit_local_id\":\"U008\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0068\",\"M050-SRC-CORE-TRAITS-001::B00144-1\",\"M050-SRC-CORE-TRAITS-001::B00147-1\"],\"canonical_claim\":\"Each successful Jostle removes one randomly selected ordinary Cargo from the shared Strained Inventory. At most one Cargo is lost per successful check, but multiple Squirrel checks at one lane may produce multiple drops. After every drop, subsequent Jostle probability is immediately recalculated from the reduced fill level.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0068\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00144-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00147-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00150-A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00150-A2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00267_07352a2be4d1__A1\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The claims consistently specify eligible Cargo, random selection, the per-check loss limit, possible cumulative lane losses, and immediate probability reduction.\",\"related_local_ids\":[\"U008\",\"U010\"],\"unit_local_id\":\"U009\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CORE-TRAITS-001::B00156-A1\",\"M050-SRC-CORE-TRAITS-001::B00162-A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00270_41d9ff53d1ae__A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00270_41d9ff53d1ae__A2\"],\"canonical_claim\":\"During Crossing, all Jostle percentages, checks, random selection, and recalculation remain under the hood. Visuals may imply shifting bundles or lost objects, but play does not pause and no percentages, roll prompts, inventory interruptions, or item-loss alerts appear; Homecoming reports the final accounting.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0069\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0070\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00156-A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00159-A1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00162-A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00270_41d9ff53d1ae__A1\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing.Squirrel\",\"rationale\":\"The presentation claims agree that execution is uninterrupted and mechanically hidden while allowing non-transactional visual cues. Context evidence grounds Homecoming as the later accounting point.\",\"related_local_ids\":[\"U009\"],\"unit_local_id\":\"U010\",\"unit_status\":\"reconciled\"}]}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "206d83c1924c8f9cdb509062fb5a99818f2198d83e7e22fa380eaa5d24586bd6",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "const": "packet_away-crossing-squirrel-001",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "206d83c1924c8f9cdb509062fb5a99818f2198d83e7e22fa380eaa5d24586bd6",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-PROPOSAL-0.1",
+            "type": "string"
+          },
+          "units": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority_basis_atom_keys": {
+                  "items": {
+                    "description": "An exact atom_key from packet evidence.",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "canonical_claim": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty, source-grounded semantic claim.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "human_question": {
+                  "anyOf": [
+                    {
+                      "description": "A precise nonempty authorial question.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "members": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "atom_key": {
+                        "description": "An exact required atom_key from the packet.",
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "basis",
+                          "conflicting",
+                          "elaboration",
+                          "superseded",
+                          "supporting"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "atom_key",
+                      "disposition"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "primary_msid": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty current MSID; never invent a path.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rationale": {
+                  "description": "A nonempty source-grounded reconciliation rationale.",
+                  "type": "string"
+                },
+                "related_local_ids": {
+                  "items": {
+                    "pattern": "^U[0-9]+$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "unit_local_id": {
+                  "description": "A unique local ID such as U001; never empty.",
+                  "pattern": "^U[0-9]+$",
+                  "type": "string"
+                },
+                "unit_status": {
+                  "enum": [
+                    "reconciled",
+                    "human_required"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit_local_id",
+                "unit_status",
+                "primary_msid",
+                "canonical_claim",
+                "members",
+                "authority_basis_atom_keys",
+                "related_local_ids",
+                "rationale",
+                "human_question"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "units"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 30711,
+    "input_tokens_details": {
+      "cache_write_tokens": 30708,
+      "cached_tokens": 0
+    },
+    "output_tokens": 7208,
+    "output_tokens_details": {
+      "reasoning_tokens": 2520
+    },
+    "total_tokens": 37919
+  },
+  "user": null,
+  "metadata": {}
+}

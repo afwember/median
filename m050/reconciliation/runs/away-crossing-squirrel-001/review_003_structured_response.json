@@ -1,0 +1,10 @@
+{
+  "defects": [
+    "Units U005–U010 assign the broader expedition-wide Squirrel Strained Carry trait to Away.Crossing.Squirrel. Evidence supports its Crossing loss procedure, but not ownership of the entire capacity trait; the broader Core-Species Away ontology is explicitly unresolved and requires human adjudication."
+  ],
+  "packet_id": "packet_away-crossing-squirrel-001",
+  "packet_sha256": "206d83c1924c8f9cdb509062fb5a99818f2198d83e7e22fa380eaa5d24586bd6",
+  "proposal_sha256": "83bbfb7e1cdfa66af23bf5e5488757b91dd96396c76870f264d261f72d5923ef",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "human_required"
+}

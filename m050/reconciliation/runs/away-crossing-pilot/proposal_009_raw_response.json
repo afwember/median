@@ -1,0 +1,244 @@
+{
+  "id": "resp_0b658eb6d1728621016aa415bfd43c87d2a3cbe55482a740b1",
+  "object": "response",
+  "created_at": 1789138367,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789138427,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 36000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b658eb6d1728621016aa415c2b44487d2997d47c2f446cca6",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpBX7ol2lK7THu-p3LpaMr9uOi_9Dz_NYhXd7kOPkEDF3qOCl99Z3_fO2bWh1rrzubc-a0EBgpmMUK51gm5rAxS8oLyi6Rd0BOSqQx9zEKpFe4WiJ_7znJ0amiygFwM9sXufDxGDYz2cSQBJ4rbxMAypmCok3Rrh2AOIITqGwmXTZFy15ISIWs3bXN5xqTSFGqowS9NpxFtRQpRR6dULEGSWWC_a1eemlbNlgamhgqvDY7rFebpy_Pva0L6DC97nEo-gvE6Sv4QnlXe4zG1lbaQiVpduEjADxRzBDzZK7gGpYc7R_S6q-CbOtbFPOaTovq6s8zXxw-eTgAeEAuwsKPXF30oAJ58YIYHEjj9qr3nsi2CXGib7xnCILCjkmdGLjDLN4OzoTKAyiEUTLl2C1aY6pL0Elg697G3pjmlDooKjE11dcjjRR8TCRJpeqr1Bh0eZ00bAleZcI9ni1RS3B0BaZ3vtE0y713suQSS3dNtQhn7W4ACa_BW12YGkP-yam4-XIZDTSHcUiiQ74MjIehdoiu3nISWpETP5URT6u4_CfDjZOtLGVvxWUSWiXabzQlNSGixw7ipJY3Z2R_URuIQvNhGGetyog5EpByQ6kFdy1ObvxSxQkiFFcQaYjbSbslmkblN2Q4uPWb72yeXKlu0XaThyk4PSBQisSt-uoUtoaUHSEpeiTkE1I9uH1Hs4eU_EZqpr0vtxwn0Rr_zkOcrnONV3yeZ6agKaFhBaNKE766dz31tq2qp5-PCc82aSYNpmX-HJaj47Lom-4ibJCCqJzpfB259eoPx7oxtxmGNFxjPgJyeU0X8k0Do6GB2t4XEdqjSe1_vwjZKchyBcmJn2T5wCzZX9prYAUQ38vwvH9YPf2kXszO10yy6v2w3HARbSQw6zdNr0XnAi_gd_E7ol424Q7qNa8iyghGhotGCgOZ5jlkbLdLfBKecLwEpc-hXb0tMvDelnru8XfOxmnCZIlZZ-Yh9sJxdNTsjGUwZ7VXAIUdfQGvuKMCAvxfPjHPMFMqqWvSsfpSX0O61GMWz8oDezGCII06VrW5sMYEDP5B-UEn8xOJjyqjbSCdPoLua5lmsy62nQmQ-bg5VhrIlNtXYCa877NFxQO1q5-V_ZD624oJsS_HhOeAaxgVoGi6AWvW6A_rFQmWgVJN-HydYeOLNNwW82ZF7Dvy9PUR-vsz53mh7_BNr3Mr8q9cV51oMVNJtPzmdSmY1hAwNt4DqhmGsS_ajWRlbS7pHswMgzaqUTlF3ubfQ0wxFzOlntbur_G2enO0h4xwLt6xKct5SJ625aRQaG8tWT-8KYGsskKzqez-G72tZXrHliNv-OE1dAuzOT8IeflHAEG337pfd0e4jzQyuEGz2j3c2nnZA69tOiRRelpJFJwbyCVLwjAqUq7_oRDASbb8DfYgLQZDQjV752oj0iURJGmiiEHKdWNn0E0Uww2EPzTwX-llKTxKupN66CvsqkoB0hB7ea0tkOpgVXMX1QArjfZUtvU72k83WwH2v5uL-moRPUUcGYuxW5rGGhEHJjuuuUZrahwQOWAcEBLtl4rPsHrXZjt0wWeLefBKjDIpZoNAPUXPfdCePqmyCw8vWHPXgYT14_rO41QA8ajf0kwG5pyVM57HwkXILcXSQDwAqRr2UiXbzATcBzEokAZLOwDgUkCx6XVnVYnZuqVNHN7kzETEC3q3JMJIyeYRn5_kCL3JaviLe2rO9wUh8uBkI7k6PURNtdhqQ7tkBl4M5Mr92Nw6FueFO-_x3cVWDGc2qKF0-8RfoLS9_xEx16nbzXe3KzvZWRX1xt7R_WF8lBjJ-7nYfn1GiC9dUPOBiK4ljdPYOcx8aN_Qf3vowtLmXtnEDOe7sxW13CMF_dL3rMIrXjjtjKTIuQJJIogOXKKK8T0uIKSEEZfHe3Df8TbPX3DjM61z9rJZtciJfU9rpSqW0ikHVCts6GXqNGotDg1HIuZUBpzHPuAg3jKK2Q78UJzwt7nK_5VZwf5PHZR5XUQJxwLQ3WnJ2V1f87_afimt__zOErWUsZIXGRrlIliKQ_L2w2myOIq2kAShAquUciFIkYmvlhOPRBaqhhv3wWuXmtSDAoO-rh2GP8Z_Yaj25vMZ_sj3G_O7-LzwIPeoORJbMJ6ZKxdUgaBBEk0LgmLu2UImMtCwByxPJV0ta7-nbGOr_Qt_ztG9MQTs6f4DOZRGp-xtcHYgol_CE82DaOVUuB_eRrAoxLT5iDiKfDXx6_GQUnnixVer7MEwlFD0CBO3_6kfpHKNWEvqGHn1fycz7Fpx52CrVrYjH2wByZuFjHEBCZdVSfTMN5KzLylM5agcVrdM4a6dPMBWgQhOff7KNEztnbSG8bb-Cp5NrxZkwAMtMsikW0V7S1WhyqGz37kPLWAvJIwPWPv_6w2g48971CQpQvVOy53LF8vkO6LNspbT8GEf6_mwKVotpFgFip7KAyNI0SfAE_a6QRt8OFWIMKHt_a7Z7Pv4fBTOUbnloetLB5IDirQaRiN3G8H9qNlhuELCFdk6jlSXzu3h2-ZhOq4V1o4a5vacnr1x-Gv_4QEiqoHffCUa15_3WHjluI0FoDYpC4DeRCxKSELmrM7IxnZ9pajyUiEfGOm3JEuIR1MQGVuaX8OQJqs8VLQnWxuubbHa_CrlGh37LPJZckMz-q1MmGxWRixbl6a-3F2uS5TKicDMOHw92oIIOS8ddXfrXuKr1nRcuu2rQB84X0EkzHbuW8Fzeeg18u7IyWK4ljNlHGNnWxQoscFFG4nARmLhLbPYuY8DMmaPhWZb9esEljIA1fF8CwQzUDtT1lUy7ceg6PjBRpQoPYarF_VmkbM6ZlNneXODoMmZugEgtdfAgUUWBFDKX50TLhSZtk5MswL-2_ObrlkbB0UAv2sLTnV_uz3v7JIc4rt1lLeqrOtKEztBAxwoZ251FdtMgAb5-AgNBQ0wx6rXDqdB72sxfhPUnK1i6RxTadJ-M5TsT7-PSuc8NXKXa1LfcxaSxhS5Rw2h0S6zZuDv_suXkkQpoqx_kS2BpBBjTjGgsFYuZPmalCOYLhH11huXmazGN5nIlYjLJrhL2lW4-HY-aZzWAXnzvPJAn3i4BNNte9Xw-Y-zx1EzX5X0M-sGFIGIu7kILBCSDLhG_JQKo6flfOf7cImlTgrrpzOFYay21h16cj3HgiBdQ6Pkkq-EDiezriotGVW6xwaEpXK1hNy_3iDOBi13ucZAviMemQGj7tBXMfLC_UMgfagmQxZGYogvTYPu8kcfKSCzpGm5dJ-d8q9MrympnA-psFL44C-ixj7ur6Lct5nCClxGnMv7bTV46S5f-V_fM_wEUY5uU-FtFOVhFXJ5GfMZ3DFgnHcNmYTiZes3BLNi4G8jcY665jN66peDKjuJIaQQ2PcOAD6BIwwf1240v8t6UFHW9-AJOTR1TZxR-obFOBIzKeLOK2MKSuK5tfjp1nrXrDFHRkF4bTQdFfVzYsbMhO_10ZWyXtzLfBD6x9PSax5qfF-8pUwGcft8ZR5wGAFw3IaDUPJOHngNnrMkTGdlS4frAZuilS3djTf_c9eIY1xhaoSBql4DtgDpw4inOrkH9AcvXU765i1NK4MEInkEDzA-V7FrNiNy9G40HPxIcw02N439baQmdwCgpZUwVohLZDj15-7Ybi0YznNDAnlnyDY9Q3L_Kw8sMPlp0xqxNXSpH1-04YEX-Zd2aJRwkOEqR0hVf5uO-QAUig9eJU1EBMPt7k-DAnghTPdG5rFBCi774F8U4bOCzFyn25gUnwCw7QnnQD6eoRvkIPslGu3FpcdhEvLJPoEe6NtdVZr0rvvDCpDLw_ms7JtM5bAdMMYcMjMMAvCPs_nscsoyJ3ZlFQcOpXxNFDU0g9xMbaUV65Ge7QzY1ct3GI1Tf3w7qIyC194a4k9dq_WR-1UgsiGcQv54bv0c81H0hO_RPRHPsiMrfUtetWbECPQjcJdITuu5W6Pnq0W-rSyqNf0Yw-oBC4tbWbdL-dmY-8LiPjomSefr5P-NUMsP4dTxYiKFb5r0nVNiOSYwSJUy9OfSLZTnRtrI69Uayy6gHbJ4DlG_kCv7qex3deCMaf58zd0Cd6vOaUyvKqFk1R9tglTu_YKztp142uGVjAvTT4aICvxNLVxDOh0duV7pb0O2d2IQjqpMIvle6ipyqHAUujH-csE7cssQj6t0vZggFLfsrWhpWPqL58nKfMTvUGF_fVdbFrtzXKFOjQ9li3LQXaKGCdY6eyOacClfB3Y1gO75VJrpxg0_CVUvilzzJc2nbR7CUmSx33mM674p4xRB6nYC8Rz3fMIVLukvmH9aSH1yoSZ7ph6D9tGO3R_k8pumblBpdp3f2N4bAnx_g==",
+      "summary": []
+    },
+    {
+      "id": "msg_0b658eb6d1728621016aa415cb71f087d2b05d78a535a800d7",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"packet_id\":\"packet_away-crossing-pilot\",\"packet_sha256\":\"45a5f84becb658d0d77b3588d4bb3c0d76a7b39486a9a063c8530c236ec4fcdc\",\"schema_version\":\"M050-RECONCILIATION-PROPOSAL-0.1\",\"units\":[{\"authority_basis_atom_keys\":[\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0063\",\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0060\",\"M050-SRC-AWAY-001::AWAY-C0008-B00243-1\"],\"canonical_claim\":\"Crossing is MEDIAN's Away Register for brief, immediate bodily danger at highway scale. Its substantive MSID is `Away.Crossing`, its operator is `RISK`, its architectural reference is `Architecture.Register.Crossing`, and Highway is its world manifestation. It turns traffic into committed bodily action and determines passage across the barrier between territories.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0254\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0255\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0256\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0063\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0060\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0062\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0124\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0161\",\"disposition\":\"superseded\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0254\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0257\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-HOME-001::HOME-C0003-P-B00120-2\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0003-B00072-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0003-B00092-4\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00241-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00241-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00243-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0024-B00745-2\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0006\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0009\",\"disposition\":\"elaboration\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The Human Ruling settles the operator, substantive MSID, and world manifestation. MSID Grammar confirms the current path and rejects `Away.RISK.Crossing`; substantive sources consistently define Crossing as the brief highway-danger Register.\",\"related_local_ids\":[],\"unit_local_id\":\"U001\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0064\",\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0065\",\"M050-SRC-PA-001::ATOM-PA-DIRECT-0261\",\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0076\"],\"canonical_claim\":\"`Away.Crossing` is both a semantic unit and the parent of Crossing's internal ontology. The dedicated Crossing specification owns its exact phases, execution grammar, adversity, species forks, and tuned procedures. Crossing is uniquely forked among Registers into canonical `Away.Crossing.Mouse`, `Away.Crossing.Rabbit`, and `Away.Crossing.Squirrel` branches because each Core Species has materially different planning, affordance, movement, safety, and failure grammar. These remain branches of one Register, not modifiers to one universal procedure, and must not be flattened into generic `Away.Crossing.Species.*` paths without adjudication.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0258\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0259\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0261\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0283\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0284\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0285\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0291\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0293\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0064\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0065\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0067\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0068\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0076\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0258\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0024\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0080\",\"disposition\":\"elaboration\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The Human Rulings settle parent-branch status and unique species forking. The governing architecture assigns exact procedural ownership to the dedicated Crossing specification, while MSID Grammar preserves the canonical species roots and expressly prohibits unadjudicated flattening.\",\"related_local_ids\":[\"U003\",\"U008\"],\"unit_local_id\":\"U002\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0001\",\"M050-SRC-PA-001::ATOM-PA-DIRECT-0292\",\"M050-SRC-AWAY-001::AWAY-C0004-B00131-a2\",\"M050-SRC-AWAY-001::AWAY-C0008-B00248-2\"],\"canonical_claim\":\"Crossing concentrates complexity in observation and planning, followed by commitment to one whole-party passage and a brief continuous execution with compact resolution. The party resolves globally, while particular bodily consequences attach to particular Citizens. Commitment ends strategic replanning, although execution may permit immediate spatial responses such as advancing, holding, retreating while possible, protecting another Citizen, releasing cargo, or recovering from separation. Crossing is neither ordinary travel nor turn-based MEET, uses no tactical action-game structure, and may open MEET after severe disruption without itself acquiring turn structure.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-AUTHORIAL-GRAMMAR-001::P-B00450-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-PA-001::ATOM-PA-DIRECT-0292\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0004-B00131-a1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0004-B00131-a2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0004-B00131-a3\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00236-2\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00248-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00248-2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0021-B00657-2\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0001\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0005\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0007\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0011\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0019\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0058\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0103\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The sources agree on a one-plan, continuous-run contour, whole-party resolution with Citizen-specific adversity, and rejection of turn-based or tactical structures. Immediate execution decisions do not reopen strategic planning, and severe disruption may transition to MEET without changing Crossing's grammar.\",\"related_local_ids\":[\"U002\",\"U004\",\"U005\"],\"unit_local_id\":\"U003\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-AWAY-001::AWAY-C0005-M050-SRC-AWAY-001__B00150_dbf494cfc748-1\",\"M050-SRC-AWAY-001::AWAY-C0008-B00236-1\"],\"canonical_claim\":\"Before commitment, Crossing uses a deliberately limited Staging view. The player considers party, load, traffic, and the chosen edge or site; may redistribute one burdensome cargo item or protective Supply; sets the party's Crossing posture and immediate constraints; and then commits. Staging is not a tactical planning minigame.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0005-M050-SRC-AWAY-001__B00150_dbf494cfc748-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0005-M050-SRC-AWAY-001__B00150_dbf494cfc748-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0007-B00227-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00230-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0008-B00236-1\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"These compatible claims define Staging's scope, inputs, permitted adjustments, and terminating commitment while preserving its deliberately narrow decision space.\",\"related_local_ids\":[\"U003\"],\"unit_local_id\":\"U004\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-AWAY-001::AWAY-C0002-B00047-2\",\"M050-SRC-AWAY-001::AWAY-C0009-B00280-1\",\"M050-SRC-AWAY-001::AWAY-C0024-B00748-1\"],\"canonical_claim\":\"Crossing can impose personal Exposure and other consequences, including delay, wounds, persistent fear, separation, cargo effects, and acute Tharn, but it does not use MEET's Exposure procedure or Approach strip. Crossing Exposure derives from commitment under pressure, including lane time, load, injury, rescue, failed windows, night speed, fumes, and separation; players see descriptive state and consequences rather than exact hidden numerals.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0002-B00047-1\",\"disposition\":\"superseded\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0002-B00047-2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0002-B00047-3\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0005-M050-SRC-AWAY-001__B00151_19a9574e8261-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0005-M050-SRC-AWAY-001__B00151_19a9574e8261-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00280-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00280-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00280-3\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0024-B00748-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0027-M050-SRC-AWAY-001__B00813_bed424dcc0f6__a1\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"Away expressly supersedes the former no-Exposure proposition and establishes the current distinction: Crossing can create Exposure and varied consequences, with Tharn acute rather than persistent, but never imports MEET's Approach strip or Exposure procedure.\",\"related_local_ids\":[\"U003\",\"U006\"],\"unit_local_id\":\"U005\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-AWAY-001::AWAY-C0009-B00271-1\",\"M050-SRC-AWAY-001::AWAY-C0009-B00274-1\",\"M050-SRC-AWAY-001::AWAY-C0009-B00275-1\",\"M050-SRC-AWAY-001::AWAY-C0009-B00275-2\"],\"canonical_claim\":\"Crossing's consequence ladder includes cargo loss, persistent Shaken or Fear Memory, acute Tharn, and rare death. Cargo loss abandons, scatters, or crushes a carried object, food bundle, or Supply. Fear is a named Condition that can affect later volunteering, Crossing posture, or MEET options. Tharn is an acute shutdown that interrupts the sequence and makes rescue or abandonment the only immediate question. Death is rare, explicit, and visible; it can never be generated by an opaque automatic roll or unattended off-screen state. Visible catastrophe remains visible during Crossing.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00271-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00272-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00274-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00274-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0009-B00275-1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0101\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The consequence ladder distinguishes persistent fear from acute Tharn and defines each outcome. Its death rule bars opaque automatic or unattended off-screen generation, while the Crossing specification preserves catastrophe's visibility.\",\"related_local_ids\":[\"U005\"],\"unit_local_id\":\"U006\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-AWAY-001::AWAY-C0002-B00049-2\",\"M050-SRC-AWAY-001::AWAY-C0010-B00295-2\",\"M050-SRC-AWAY-001::AWAY-C0010-B00302-2\",\"M050-SRC-AWAY-001::AWAY-C0025-B00760-2\"],\"canonical_claim\":\"The fixed 70/20/10 return-Crossing roll is retired and replaced by burden-based return logic. Every returning party reaches the far-side Staging Post, where Return Burden is evaluated from time of day, traffic, route familiarity, load, injury, fear, party cohesion, and weather. Low burden receives a cinematic or abbreviated sequence that does not pretend Crossing never occurred; moderate burden receives a compressed Crossing with fewer windows and one decisive intervention so the day's cost remains legible; high burden requires a full manual Crossing in which a laden, hurt, late, or frightened party must earn the final passage.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0002-B00049-1\",\"disposition\":\"superseded\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0002-B00049-2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0002-B00049-3\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0005-M050-SRC-AWAY-001__B00156_e45e981a70e2-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0005-M050-SRC-AWAY-001__B00156_e45e981a70e2-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00295-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00295-2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00300-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00300-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00301-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00301-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00302-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0010-B00302-2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0024-B00728-1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-AWAY-001::AWAY-C0025-B00760-2\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"Away explicitly retires the percentage distribution and replaces it with objective burden factors and a three-level presentation scale. The high-burden rule carries stronger normative force than mere legibility: the burdened party must earn final passage through full manual Crossing.\",\"related_local_ids\":[\"U003\"],\"unit_local_id\":\"U007\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0081\",\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0085\"],\"canonical_claim\":\"Crow is an exception to the ground-party Crossing grammar: it auto-crosses in parallel under a distinct hidden avian adjudication affected by River Spume and roadway turbulence. Its result is independent of the ground party and is limited to Clean Flight, which has no consequence; Buffeted, which applies an existing Exposure-equivalent personal consequence; Cargo Drop, which loses one eligible ordinary carried item but never an Artifact; or Injury, which applies an existing wound or injury state. Crow may provide the ground party a deliberately modest aerial-information or underlying-success benefit. Most other land-bound Guests follow the Core Species grammar.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0081\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0082\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0083\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0084\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0085\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0111\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0112\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0113\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The Crossing specification distinguishes Crow's parallel route, hidden independent resolution, exact bounded outcomes and effects, and modest informational benefit while preserving the Core-Species rule for most land-bound Guests.\",\"related_local_ids\":[\"U002\"],\"unit_local_id\":\"U008\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-DISCOVERY-TIME-PROGRESSION-001::DISCOVERY-C0017-0179\",\"M050-SRC-DISCOVERY-TIME-PROGRESSION-001::DISCOVERY-C0018-0185\"],\"canonical_claim\":\"A RISK Crossing normally costs no additional Time Mark. It uses the current Day Band and Crossing condition as the hazardous threshold within movement because Crossing is the dangerous threshold between travel spaces, not an additional duration-bearing leg layered on top of travel.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-DISCOVERY-TIME-PROGRESSION-001::DISCOVERY-C0017-0179\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-DISCOVERY-TIME-PROGRESSION-001::DISCOVERY-C0017-0180\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-DISCOVERY-TIME-PROGRESSION-001::DISCOVERY-C0018-0185\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The time-cadence source directly states both the no-additional-Mark rule and its threshold-within-movement rationale, with the qualifier that this is the normal treatment.\",\"related_local_ids\":[],\"unit_local_id\":\"U009\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00072_a44f6f49b26e-P2\"],\"canonical_claim\":\"For individual Crossing adversity, each Rabbit or Squirrel body unit receives one standard individual adversity check. A 10% check is illustrative rather than a fixed tuned rate.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00072_a44f6f49b26e-P2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00077_28288e245cb0_A1\",\"disposition\":\"elaboration\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"Core Species Traits establishes one standard check per Rabbit or Squirrel body unit and labels the displayed 10% value as illustrative, preserving the structural rule without fixing a tuning value.\",\"related_local_ids\":[\"U003\"],\"unit_local_id\":\"U010\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00167_b08ba0607554_P01\",\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0021\"],\"canonical_claim\":\"Crossing's presentation shows bodies in the immediate event. Execution may be staged through one foreground runner while other body units remain visible, but that runner is only a camera and staging role and does not become a permanent leader or superior Citizen.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00167_b08ba0607554_P01\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0020\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0021\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The register doctrine establishes bodily presentation, and the Crossing specification defines the foreground-runner technique while expressly preventing it from creating leadership or status.\",\"related_local_ids\":[\"U003\"],\"unit_local_id\":\"U011\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-GDD-COVERAGE-GAP-001::M050-SRC-GDD-COVERAGE-GAP-001__B00305_513493215219__A0001\",\"M050-SRC-GDD-COVERAGE-GAP-001::M050-SRC-GDD-COVERAGE-GAP-001__B00328_c9013d1ef3f8__A0001\"],\"canonical_claim\":\"Within the corridor and Highway design, longitudinal movement uses a modified Longitudinal Crossing grammar, and Highway opportunities belong to Crossing and MEET rather than to a generic Highway Node layer.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-GDD-COVERAGE-GAP-001::M050-SRC-GDD-COVERAGE-GAP-001__B00305_513493215219__A0001\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GDD-COVERAGE-GAP-001::M050-SRC-GDD-COVERAGE-GAP-001__B00328_c9013d1ef3f8__A0001\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Crossing\",\"rationale\":\"The coverage-gap source supplies two compatible scope assignments: a modified Crossing grammar for longitudinal movement and shared ownership of Highway opportunities by Crossing and MEET instead of a generic node layer.\",\"related_local_ids\":[],\"unit_local_id\":\"U012\",\"unit_status\":\"reconciled\"}]}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "45a5f84becb658d0d77b3588d4bb3c0d76a7b39486a9a063c8530c236ec4fcdc",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "const": "packet_away-crossing-pilot",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "45a5f84becb658d0d77b3588d4bb3c0d76a7b39486a9a063c8530c236ec4fcdc",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-PROPOSAL-0.1",
+            "type": "string"
+          },
+          "units": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority_basis_atom_keys": {
+                  "items": {
+                    "description": "An exact atom_key from packet evidence.",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "canonical_claim": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty, source-grounded semantic claim.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "human_question": {
+                  "anyOf": [
+                    {
+                      "description": "A precise nonempty authorial question.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "members": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "atom_key": {
+                        "description": "An exact required atom_key from the packet.",
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "basis",
+                          "conflicting",
+                          "elaboration",
+                          "superseded",
+                          "supporting"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "atom_key",
+                      "disposition"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "primary_msid": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty current MSID; never invent a path.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rationale": {
+                  "description": "A nonempty source-grounded reconciliation rationale.",
+                  "type": "string"
+                },
+                "related_local_ids": {
+                  "items": {
+                    "pattern": "^U[0-9]+$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "unit_local_id": {
+                  "description": "A unique local ID such as U001; never empty.",
+                  "pattern": "^U[0-9]+$",
+                  "type": "string"
+                },
+                "unit_status": {
+                  "enum": [
+                    "reconciled",
+                    "human_required"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit_local_id",
+                "unit_status",
+                "primary_msid",
+                "canonical_claim",
+                "members",
+                "authority_basis_atom_keys",
+                "related_local_ids",
+                "rationale",
+                "human_question"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "units"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 101455,
+    "input_tokens_details": {
+      "cache_write_tokens": 101452,
+      "cached_tokens": 0
+    },
+    "output_tokens": 6708,
+    "output_tokens_details": {
+      "reasoning_tokens": 503
+    },
+    "total_tokens": 108163
+  },
+  "user": null,
+  "metadata": {}
+}

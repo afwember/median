@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-10T18:28:03-04:00",
+  "updated": "2026-09-11T10:57:22-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -84,23 +84,24 @@
       "msid_prefix": "Away.Crossing",
       "selector": "exact"
     },
-    "completed_tranche_ids": [],
+    "completed_tranche_ids": [
+      "away-crossing-pilot"
+    ],
     "provider": {
       "enabled": true,
-      "name": "Anthropic",
-      "model": "claude-sonnet-5",
-      "reasoning_effort": "high",
-      "cache_ttl": "1h",
+      "name": "OpenAI",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "cache_ttl": "30m",
       "maximum_output_tokens": {
         "proposal": 36000,
         "review": 8000
       },
       "pricing": {
-        "input_usd_per_million_tokens": "3",
-        "output_usd_per_million_tokens": "15",
+        "input_usd_per_million_tokens": "4",
+        "output_usd_per_million_tokens": "20",
         "cache_read_multiplier": "0.1",
-        "cache_5m_write_multiplier": "1.25",
-        "cache_1h_write_multiplier": "2"
+        "cache_write_multiplier": "1.25"
       },
       "proposal_review_required": true
     }
@@ -108,10 +109,10 @@
   "spend": {
     "active": false,
     "refresh_window_usd": "2.0000000",
-    "authorized_usd": "51.1300105",
-    "cumulative_spent_usd": "49.1300105",
-    "remaining_usd": "2.0000000",
-    "display_usd_rounded_up": "49.14",
+    "authorized_usd": "53.7287165",
+    "cumulative_spent_usd": "53.7287165",
+    "remaining_usd": "0.0000000",
+    "display_usd_rounded_up": "53.73",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
     "provisional_component_usd": "1.455132",
@@ -133,10 +134,10 @@
     "status": "READY — Stage 5 reconciliation",
     "phase": "Semantic reconciliation — reviewed proposition unification",
     "source": "Unitary 5,382-atom corpus — current semantic boundary Away.Crossing",
-    "progress": "0 / 5,382 atoms assigned to canonical semantic units",
-    "now": "Stage 5 is installed at the Away.Crossing pilot boundary; the Compile Worker is Stopped Down",
-    "next": "Spark Up may grant the bounded pilot; Proceed is still required before execution",
-    "updated_human": "September 10, 2026 at 6:28:03 PM EDT"
+    "progress": "105 / 5,382 atoms assigned to canonical semantic units",
+    "now": "Away.Crossing pilot is complete; the Compile Worker is Stopped Down",
+    "next": "Supervisor/author quality adjudication must select any next boundary",
+    "updated_human": "September 11, 2026 at 10:57:22 AM EDT"
   },
-  "next_possible_transition": "Spark Up may grant the Away.Crossing pilot with Anthropic Sonnet 5 High and the current $2.00 remaining spend window."
+  "next_possible_transition": "Stage 5 pilot is complete; halt for Supervisor/author quality adjudication and next boundary selection."
 }

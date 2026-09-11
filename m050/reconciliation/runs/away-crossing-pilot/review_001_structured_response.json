@@ -1,0 +1,15 @@
+{
+  "defects": [
+    "U002 omits the dedicated Crossing specification’s ownership of exact phases, execution grammar, adversity, species forks, and tuned procedures, and loses the rule against flattening canonical branches into `Away.Crossing.Species.*` without adjudication.",
+    "U003 does not preserve the required global-party resolution versus individual-Citizen consequence distinction.",
+    "U005 incorrectly groups acute Tharn with persistent consequences.",
+    "U006 omits that death can never result from an opaque automatic roll or unattended off-screen state.",
+    "U007 weakens the high-burden requirement that a laden, hurt, late, or frightened party must earn final passage to mere legibility.",
+    "U008 lists Crow outcomes without preserving that Clean Flight has no consequence, Buffeted applies an existing Exposure-equivalent personal consequence, and Injury applies an existing wound or injury state."
+  ],
+  "packet_id": "packet_away-crossing-pilot",
+  "packet_sha256": "45a5f84becb658d0d77b3588d4bb3c0d76a7b39486a9a063c8530c236ec4fcdc",
+  "proposal_sha256": "9a7f013e1a1902c3853f4562f11c394cedb0d2fdffbc6c13b8a9d5e5cad8c53e",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "revise"
+}

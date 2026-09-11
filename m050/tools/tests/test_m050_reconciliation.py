@@ -1,4 +1,5 @@
 import copy
+from decimal import Decimal
 import hashlib
 import json
 from pathlib import Path
@@ -94,6 +95,23 @@ def _proposal(packet):
     }
 
 
+def _ready_state():
+    """Derive a READY lifecycle fixture without assuming the live run is stopped."""
+    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    state["status"] = state["execution_state"] = "RECONCILIATION_READY"
+    state["reconciliation"]["status"] = "READY"
+    for key in (
+        "repository_writes_authorized",
+        "semantic_acceptance_authorized",
+        "reconciliation_authorized",
+        "provider_calls_authorized",
+    ):
+        state["authority"][key] = False
+    state["spend"]["active"] = False
+    state["dashboard"]["status"] = "READY — Stage 5 reconciliation"
+    return state
+
+
 def test_proposal_requires_exact_atom_coverage(packet, corpus):
     proposal = _proposal(packet)
     reconciliation.validate_proposal(packet, proposal, corpus)
@@ -121,13 +139,39 @@ def test_semantic_review_is_independently_hash_bound(packet, corpus):
         reconciliation.validate_review(packet, proposal, review)
 
 
+def test_review_schema_binds_all_evidence_hashes(packet):
+    proposal = _proposal(packet)
+    proposal_sha = hashlib.sha256(
+        reconciliation._canonical_bytes(proposal)
+    ).hexdigest()
+    schema = reconciliation.review_response_schema(packet, proposal_sha)
+    properties = schema["properties"]
+    assert properties["packet_id"] == {"type": "string", "const": packet["packet_id"]}
+    assert properties["packet_sha256"] == {
+        "type": "string", "const": packet["packet_sha256"]
+    }
+    assert properties["proposal_sha256"] == {"type": "string", "const": proposal_sha}
+    assert properties["defects"]["items"]["type"] == "string"
+
+
+def test_provider_completion_states_remain_distinct():
+    reconciliation._validate_provider_completion({"status": "completed"})
+    with pytest.raises(reconciliation.TriageError, match="truncation"):
+        reconciliation._validate_provider_completion({
+            "status": "incomplete",
+            "incomplete_details": {"reason": "max_output_tokens"},
+        })
+    with pytest.raises(reconciliation.TriageError, match="unexpected response status"):
+        reconciliation._validate_provider_completion({"status": "queued"})
+
+
 def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(packet):
     provider = {
         "enabled": False,
-        "name": "Anthropic",
+        "name": "OpenAI",
         "model": None,
-        "reasoning_effort": "high",
-        "cache_ttl": "1h",
+        "reasoning_effort": "medium",
+        "cache_ttl": "30m",
         "maximum_output_tokens": None,
         "pricing": None,
         "proposal_review_required": True,
@@ -140,92 +184,211 @@ def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(
     })
     request = reconciliation.build_proposer_request(packet, provider)
     assert request["model"] == "test-model"
-    assert request["max_tokens"] == 40000
-    assert request["messages"][0]["content"][0]["cache_control"]["ttl"] == "1h"
-    assert request["output_config"]["format"]["type"] == "json_schema"
+    assert request["max_output_tokens"] == 40000
+    assert request["prompt_cache_options"] == {"mode": "implicit", "ttl": "30m"}
+    assert request["text"]["format"]["type"] == "json_schema"
+    assert request["text"]["format"]["strict"] is True
+    assert request["store"] is False
+
+
+def test_proposal_schema_binds_packet_and_rejects_empty_placeholders(packet):
+    schema = reconciliation.proposal_response_schema(packet)
+    properties = schema["properties"]
+    assert properties["packet_id"] == {"type": "string", "const": packet["packet_id"]}
+    assert properties["packet_sha256"] == {
+        "type": "string", "const": packet["packet_sha256"]
+    }
+    unit = properties["units"]["items"]["properties"]
+    assert unit["unit_local_id"]["pattern"] == r"^U[0-9]+$"
+    assert unit["rationale"]["type"] == "string"
+    assert unit["canonical_claim"]["anyOf"][0]["type"] == "string"
+    assert json.dumps(schema).count('"pattern"') == 2
+
+
+def test_proposal_validator_rejects_every_failed_placeholder_shape(packet, corpus):
+    cases = [
+        ("unit_local_id", "", "local IDs"),
+        ("primary_msid", "", "non-current MSID"),
+        ("canonical_claim", "", "lacks a claim"),
+        ("rationale", "", "rationale is absent"),
+    ]
+    for field, value, message in cases:
+        proposal = _proposal(packet)
+        proposal["units"][0][field] = value
+        with pytest.raises(reconciliation.TriageError, match=message):
+            reconciliation.validate_proposal(packet, proposal, corpus)
+
+
+def test_proposal_validator_rejects_blank_human_question(packet, corpus):
+    proposal = _proposal(packet)
+    unit = proposal["units"][0]
+    unit["unit_status"] = "human_required"
+    unit["primary_msid"] = None
+    unit["canonical_claim"] = None
+    unit["human_question"] = "  "
+    with pytest.raises(reconciliation.TriageError, match="human-required proposal shape"):
+        reconciliation.validate_proposal(packet, proposal, corpus)
+
+
+def test_review_validator_rejects_blank_defect(packet):
+    proposal = _proposal(packet)
+    review = {
+        "schema_version": reconciliation.REVIEW_SCHEMA_VERSION,
+        "packet_id": packet["packet_id"],
+        "packet_sha256": packet["packet_sha256"],
+        "proposal_sha256": hashlib.sha256(
+            reconciliation._canonical_bytes(proposal)
+        ).hexdigest(),
+        "verdict": "revise",
+        "defects": ["  "],
+    }
+    with pytest.raises(reconciliation.TriageError, match="defects are invalid"):
+        reconciliation.validate_review(packet, proposal, review)
 
 
 def test_proposal_and_review_share_the_cached_packet_prefix(packet):
     provider = {
-        "model": "claude-sonnet-5",
-        "reasoning_effort": "high",
-        "cache_ttl": "1h",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "cache_ttl": "30m",
         "maximum_output_tokens": {"proposal": 40000, "review": 8000},
     }
     proposal = _proposal(packet)
     proposer = reconciliation.build_proposer_request(packet, provider)
     reviewer = reconciliation.build_reviewer_request(packet, proposal, provider)
-    assert proposer["system"] == reviewer["system"]
+    assert proposer["instructions"] == reviewer["instructions"]
     assert (
-        proposer["messages"][0]["content"][0]
-        == reviewer["messages"][0]["content"][0]
+        proposer["input"][0]["content"][0]
+        == reviewer["input"][0]["content"][0]
     )
     assert (
-        proposer["messages"][0]["content"][1]
-        == reviewer["messages"][0]["content"][1]
+        proposer["input"][0]["content"][1]
+        == reviewer["input"][0]["content"][1]
     )
-    cached_packet = json.loads(proposer["messages"][0]["content"][0]["text"])
-    atom_evidence = json.loads(proposer["messages"][0]["content"][1]["text"])
+    cached_packet = json.loads(proposer["input"][0]["content"][0]["text"])
+    atom_evidence = json.loads(proposer["input"][0]["content"][1]["text"])
     assert {**cached_packet, **atom_evidence} == packet
-    assert proposer["max_tokens"] == 40000
-    assert reviewer["max_tokens"] == 8000
-    prefix_count_body = reconciliation._token_count_body(
-        reviewer, cache_prefix_only=True
+    assert proposer["max_output_tokens"] == 40000
+    assert reviewer["max_output_tokens"] == 8000
+    count_body = reconciliation._token_count_body(reviewer)
+    assert count_body["input"] == reviewer["input"]
+    assert set(count_body) == {"model", "instructions", "input"}
+
+
+def test_bounded_revision_hash_binds_prior_proposal_and_review(packet):
+    provider = {
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "cache_ttl": "30m",
+        "maximum_output_tokens": {"proposal": 36000, "review": 8000},
+    }
+    proposal = _proposal(packet)
+    review = {
+        "schema_version": reconciliation.REVIEW_SCHEMA_VERSION,
+        "packet_id": packet["packet_id"],
+        "packet_sha256": packet["packet_sha256"],
+        "proposal_sha256": hashlib.sha256(
+            reconciliation._canonical_bytes(proposal)
+        ).hexdigest(),
+        "verdict": "revise",
+        "defects": ["Preserve one omitted grounded distinction."],
+    }
+    request = reconciliation.build_revision_request(
+        packet, proposal, review, provider
     )
-    assert len(prefix_count_body["messages"][0]["content"]) == 1
-    assert "max_tokens" not in prefix_count_body
+    supplemental = json.loads(request["input"][0]["content"][-1]["text"])
+    assert supplemental["prior_proposal"] == proposal
+    assert supplemental["independent_review"] == review
+    assert supplemental["prior_proposal_sha256"] == review["proposal_sha256"]
+    assert supplemental["independent_review_sha256"] == hashlib.sha256(
+        reconciliation._canonical_bytes(review)
+    ).hexdigest()
 
 
 def test_counted_preflight_prices_cache_miss_with_margin():
     request = {
-        "max_tokens": 40000,
-        "messages": [{"content": [{
-            "cache_control": {"type": "ephemeral", "ttl": "1h"}
-        }]}],
+        "max_output_tokens": 40000,
+        "prompt_cache_options": {"mode": "implicit", "ttl": "30m"},
     }
     pricing = {
         "input_usd_per_million_tokens": "5",
         "output_usd_per_million_tokens": "25",
-        "cache_5m_write_multiplier": "1.25",
-        "cache_1h_write_multiplier": "2",
+        "cache_write_multiplier": "1.25",
     }
     token_count = {
         "full": {"response": {"input_tokens": 100000}},
-        "cache_prefix": {"response": {"input_tokens": 90000}},
+        "uncounted_request_bytes": 1000,
     }
     forecast = reconciliation.counted_call_ceiling(request, pricing, token_count)
-    assert forecast["reserved_cache_prefix_tokens"] == 91800
-    assert forecast["reserved_uncached_suffix_tokens"] == 10512
-    assert forecast["total_ceiling_usd"] == "1.97056"
+    assert forecast["reserved_input_tokens"] == 103020
+    assert forecast["reserved_uncounted_request_tokens"] == 1000
+    assert forecast["total_ceiling_usd"] == "1.643875"
 
 
-def test_token_count_preflight_uses_free_endpoint_twice(monkeypatch, tmp_path, packet):
+def test_token_count_preflight_uses_free_openai_endpoint(monkeypatch, tmp_path, packet):
     provider = {
-        "model": "claude-sonnet-5",
-        "reasoning_effort": "high",
-        "cache_ttl": "1h",
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "cache_ttl": "30m",
         "maximum_output_tokens": {"proposal": 36000, "review": 8000},
     }
     request = reconciliation.build_proposer_request(packet, provider)
     observed = []
-    counts = iter((100000, 90000))
-
     def fake_send(endpoint, body, _key_file, _timeout):
         observed.append((endpoint, body))
-        return 200, json.dumps({"input_tokens": next(counts)}).encode("utf-8")
+        return 200, json.dumps({"input_tokens": 100000, "object": "response.input_tokens"}).encode("utf-8")
 
-    monkeypatch.setattr(reconciliation, "_send_anthropic_to", fake_send)
-    evidence = reconciliation._count_anthropic_request(
+    monkeypatch.setattr(reconciliation, "_send_openai_to", fake_send)
+    evidence = reconciliation._count_openai_request(
         request, tmp_path / "unused-key", 1.0
     )
-    assert len(observed) == 2
-    assert all(
-        endpoint == reconciliation.ANTHROPIC_TOKEN_COUNT_ENDPOINT
-        for endpoint, _body in observed
-    )
-    assert all("max_tokens" not in body for _endpoint, body in observed)
+    assert len(observed) == 1
+    assert observed[0][0] == reconciliation.OPENAI_TOKEN_COUNT_ENDPOINT
+    assert set(observed[0][1]) == {"model", "instructions", "input"}
     assert evidence["full"]["response"]["input_tokens"] == 100000
-    assert evidence["cache_prefix"]["response"]["input_tokens"] == 90000
+    assert evidence["uncounted_request_bytes"] > 0
+
+
+def test_openai_response_extraction_and_refusal_are_distinct(packet):
+    proposal = _proposal(packet)
+    raw = {
+        "object": "response",
+        "output": [{
+            "type": "message",
+            "content": [{"type": "output_text", "text": json.dumps(proposal)}],
+        }],
+    }
+    assert reconciliation._extract_openai_structured_response(raw) == proposal
+    raw["output"][0]["content"] = [{"type": "refusal", "refusal": "No."}]
+    with pytest.raises(reconciliation.TriageError, match="refusal"):
+        reconciliation._extract_openai_structured_response(raw)
+
+
+def test_openai_usage_cost_debits_uncached_cached_write_and_output():
+    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    cumulative = Decimal(state["spend"]["cumulative_spent_usd"])
+    state["spend"]["authorized_usd"] = format(cumulative + Decimal("1"), ".7f")
+    state["spend"]["remaining_usd"] = "1.0000000"
+    provider = state["reconciliation"]["provider"]
+    raw = {
+        "usage": {
+            "input_tokens": 1000,
+            "input_tokens_details": {
+                "cached_tokens": 200,
+                "cache_write_tokens": 100,
+            },
+            "output_tokens": 50,
+        }
+    }
+    updated, cost = reconciliation._debit_response(state, raw, provider)
+    assert cost["uncached_input_usd"] == "0.0028"
+    assert cost["cache_read_usd"] == "0.00008"
+    assert cost["cache_write_usd"] == "0.0005"
+    assert cost["output_usd"] == "0.001"
+    assert cost["total_usd"] == "0.00438"
+    assert Decimal(updated["spend"]["remaining_usd"]) == (
+        Decimal(state["spend"]["remaining_usd"]) - Decimal("0.00438")
+    )
 
 
 def test_run_ledger_is_append_only_and_hash_chained(tmp_path):
@@ -246,7 +409,7 @@ def test_run_ledger_is_append_only_and_hash_chained(tmp_path):
 def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(
     corpus, empty_store
 ):
-    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    state = _ready_state()
     original = copy.deepcopy(state)
     assessed, report = reconciliation.plan_lifecycle_transition(
         state, corpus, empty_store, "prepare-spark-up"
@@ -262,7 +425,7 @@ def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(
 def test_proceed_activates_reconciliation_and_preconfigured_provider(
     corpus, empty_store
 ):
-    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    state = _ready_state()
     active, report = reconciliation.plan_lifecycle_transition(
         state,
         corpus,
@@ -277,11 +440,11 @@ def test_proceed_activates_reconciliation_and_preconfigured_provider(
     assert active["authority"]["semantic_acceptance_authorized"] is True
     assert active["authority"]["provider_calls_authorized"] is True
     assert active["spend"]["active"] is True
-    assert active["spend"]["remaining_usd"] == "2.0000000"
+    assert active["spend"]["remaining_usd"] == state["spend"]["remaining_usd"]
 
 
 def test_stopdown_rejects_incomplete_tranche(corpus, empty_store):
-    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    state = _ready_state()
     active, _ = reconciliation.plan_lifecycle_transition(
         state,
         corpus,
@@ -293,6 +456,33 @@ def test_stopdown_rejects_incomplete_tranche(corpus, empty_store):
         reconciliation.plan_lifecycle_transition(
             active, corpus, empty_store, "prepare-stopdown"
         )
+
+
+def test_stopdown_revokes_unused_one_time_spend():
+    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    state["spend"].update({
+        "active": True,
+        "refresh_window_usd": "5.0000000",
+        "authorized_usd": "55.0000000",
+        "cumulative_spent_usd": "53.2500000",
+        "remaining_usd": "1.7500000",
+    })
+    reconciliation._revoke_one_time_spend_on_stopdown(state)
+    assert state["spend"]["active"] is False
+    assert state["spend"]["refresh_window_usd"] == "2.0000000"
+    assert state["spend"]["authorized_usd"] == "53.2500000"
+    assert state["spend"]["remaining_usd"] == "0.0000000"
+
+
+def test_completed_tranche_dashboard_cannot_offer_same_pilot(empty_store):
+    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    dashboard = reconciliation._dashboard(state, empty_store, active=False)
+    assert dashboard["now"] == (
+        "Away.Crossing pilot is complete; the Compile Worker is Stopped Down"
+    )
+    assert dashboard["next"] == (
+        "Supervisor/author quality adjudication must select any next boundary"
+    )
 
 
 def test_canonical_store_rejects_duplicate_primary_members(corpus, tmp_path):

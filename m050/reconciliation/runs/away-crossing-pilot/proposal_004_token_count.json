@@ -1,0 +1,17 @@
+{
+  "schema_version": "M050-ANTHROPIC-TOKEN-COUNT-0.1",
+  "full_request_sha256": "32787414e8c7a894e07d8f5d066448411c57d8dda57b6804f3fb913ae71a7db6",
+  "cache_prefix_request_sha256": "ce900dc3743f610f1b71960cd42d889a5d513153bc05b5801b9732a08ce18b67",
+  "full": {
+    "http_status": 200,
+    "response": {
+      "input_tokens": 161961
+    }
+  },
+  "cache_prefix": {
+    "http_status": 200,
+    "response": {
+      "input_tokens": 30783
+    }
+  }
+}

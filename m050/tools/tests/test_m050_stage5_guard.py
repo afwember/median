@@ -1,4 +1,5 @@
 import copy
+from decimal import Decimal
 import json
 from pathlib import Path
 import sys
@@ -27,15 +28,20 @@ def test_stage_5_provider_and_refreshable_window_are_bound():
     state = _state()
     provider = state["reconciliation"]["provider"]
     assert provider["enabled"] is True
-    assert provider["model"] == "claude-sonnet-5"
+    assert provider["name"] == "OpenAI"
+    assert provider["model"] == "gpt-5.6-sol"
+    assert provider["reasoning_effort"] == "medium"
     assert provider["maximum_output_tokens"] == {"proposal": 36000, "review": 8000}
-    assert provider["cache_ttl"] == "1h"
-    assert state["spend"]["refresh_window_usd"] == "2.0000000"
-    assert state["spend"]["remaining_usd"] == "2.0000000"
+    assert provider["cache_ttl"] == "30m"
+    refresh_window = Decimal(state["spend"]["refresh_window_usd"])
+    remaining = Decimal(state["spend"]["remaining_usd"])
+    assert refresh_window > Decimal("0")
+    assert Decimal("0") <= remaining <= refresh_window
 
 
 def test_stage_5_lifecycle_rejects_provider_authority_while_disabled(monkeypatch):
     state = _state()
+    state["reconciliation"]["provider"]["enabled"] = False
     state["authority"]["provider_calls_authorized"] = True
     monkeypatch.setattr(guard, "read_json", lambda path, errors: copy.deepcopy(state))
     errors = []

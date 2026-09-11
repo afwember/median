@@ -463,21 +463,19 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
         pricing = provider.get("pricing")
         required_pricing = {
             "input_usd_per_million_tokens", "output_usd_per_million_tokens",
-            "cache_read_multiplier", "cache_5m_write_multiplier",
-            "cache_1h_write_multiplier",
+            "cache_read_multiplier", "cache_write_multiplier",
         }
         expected_pricing = {
-            "input_usd_per_million_tokens": "3",
-            "output_usd_per_million_tokens": "15",
+            "input_usd_per_million_tokens": "4",
+            "output_usd_per_million_tokens": "20",
             "cache_read_multiplier": "0.1",
-            "cache_5m_write_multiplier": "1.25",
-            "cache_1h_write_multiplier": "2",
+            "cache_write_multiplier": "1.25",
         }
         if (
-            provider.get("name") != "Anthropic"
-            or provider.get("model") != "claude-sonnet-5"
-            or provider.get("reasoning_effort") != "high"
-            or provider.get("cache_ttl") != "1h"
+            provider.get("name") != "OpenAI"
+            or provider.get("model") != "gpt-5.6-sol"
+            or provider.get("reasoning_effort") != "medium"
+            or provider.get("cache_ttl") != "30m"
             or not isinstance(output_limits, dict)
             or set(output_limits) != {"proposal", "review"}
             or any(not isinstance(value, int) or value < 1 for value in output_limits.values())
@@ -499,7 +497,7 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
                 if invalid_rate:
                     errors.append("enabled Stage 5 provider pricing is invalid")
     elif (
-        provider.get("name") != "Anthropic"
+        provider.get("name") != "OpenAI"
         or provider.get("model") is not None
         or provider.get("maximum_output_tokens") is not None
         or provider.get("pricing") is not None

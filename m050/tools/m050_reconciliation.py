@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import stat
 import subprocess
 import tempfile
@@ -41,18 +42,14 @@ except ModuleNotFoundError:  # Direct execution from m050/tools.
 
 try:
     from median_gate5.extraction_machine import (
-        anthropic_usage_cost,
         debit_compile_state_spend,
-        extract_anthropic_structured_response,
     )
     from median_gate5.errors import ContractError
 except ModuleNotFoundError:
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "extraction/engine/src"))
     from median_gate5.extraction_machine import (
-        anthropic_usage_cost,
         debit_compile_state_spend,
-        extract_anthropic_structured_response,
     )
     from median_gate5.errors import ContractError
 
@@ -62,9 +59,8 @@ DEFAULT_RECONCILIATIONS = Path(
     "m050/reconciliation/M050_Reconciled_Semantic_Units_MEDIANv0_5_0.jsonl"
 )
 RUNS = Path("m050/reconciliation/runs")
-ANTHROPIC_ENDPOINT = "https://api.anthropic.com/v1/messages"
-ANTHROPIC_TOKEN_COUNT_ENDPOINT = "https://api.anthropic.com/v1/messages/count_tokens"
-ANTHROPIC_VERSION = "2023-06-01"
+OPENAI_ENDPOINT = "https://api.openai.com/v1/responses"
+OPENAI_TOKEN_COUNT_ENDPOINT = "https://api.openai.com/v1/responses/input_tokens"
 SCHEMA_VERSION = "M050-RECONCILED-SEMANTIC-UNIT-0.1"
 PACKET_SCHEMA_VERSION = "M050-RECONCILIATION-PACKET-0.1"
 PROPOSAL_SCHEMA_VERSION = "M050-RECONCILIATION-PROPOSAL-0.1"
@@ -91,14 +87,27 @@ Return only the JSON required by the supplied schema.
 PROPOSER_TASK = """Reconcile the packet into semantic propositions. Merge true duplicates and
 compatible partial claims; expose conflicts and supersession. Every required atom must appear
 exactly once as a primary member. Use human_required when the supplied evidence cannot support
-one grounded result.
+one grounded result. Return complete substantive units, never placeholders: every string that is
+required to carry meaning must be nonempty, unit_local_id values must be unique U-prefixed
+identifiers such as U001, and reconciled units must contain grounded canonical claims and
+rationales. Reserve enough of the output budget for the complete JSON result; once the grounded
+partition is decided, stop deliberating and emit it. Before returning, verify exact-once coverage
+of all required atom keys and verify that every related_local_id names a returned unit.
 """
 
 REVIEWER_TASK = """Independently audit the appended proposal against the complete packet.
 Reject lost nuance, invented synthesis, false equivalence, unresolved contradiction, excessive
 Human Rulings weight, unsupported authority, invalid MSID ownership, or any required atom not
 represented exactly once. Do not rewrite the proposal. Return accept only when it is safe to
-promote unchanged; otherwise identify concise defects.
+promote unchanged; otherwise identify concise, nonempty defects. Return a complete substantive
+review, never an empty placeholder.
+"""
+
+REVISION_TASK = """Return one complete replacement proposal that corrects every defect in the
+appended independent review. Preserve all grounded distinctions the review did not reject. Do not
+defend or annotate the prior proposal. Recheck every required atom for exact-once primary coverage,
+all current-MSID assignments, every disposition, all authority bases, and every cross-link before
+returning the replacement JSON.
 """
 
 
@@ -459,17 +468,33 @@ def build_packet(
     return body
 
 
-def proposal_response_schema() -> dict:
+def _string_schema(description: str) -> dict:
+    """Keep the provider grammar small; deterministic validation enforces content."""
+    return {"type": "string", "description": description}
+
+
+def proposal_response_schema(packet: dict) -> dict:
     """Stable provider schema; exact packet coverage is enforced after capture."""
-    nullable_string = {"anyOf": [{"type": "string"}, {"type": "null"}]}
+    nullable_claim = {
+        "anyOf": [
+            _string_schema("A nonempty, source-grounded semantic claim."),
+            {"type": "null"},
+        ]
+    }
+    nullable_msid = {
+        "anyOf": [
+            _string_schema("A nonempty current MSID; never invent a path."),
+            {"type": "null"},
+        ]
+    }
     return {
         "type": "object",
         "additionalProperties": False,
         "required": ["schema_version", "packet_id", "packet_sha256", "units"],
         "properties": {
-            "schema_version": {"const": PROPOSAL_SCHEMA_VERSION},
-            "packet_id": {"type": "string"},
-            "packet_sha256": {"type": "string"},
+            "schema_version": {"type": "string", "const": PROPOSAL_SCHEMA_VERSION},
+            "packet_id": {"type": "string", "const": packet["packet_id"]},
+            "packet_sha256": {"type": "string", "const": packet["packet_sha256"]},
             "units": {
                 "type": "array", "minItems": 1,
                 "items": {
@@ -480,29 +505,53 @@ def proposal_response_schema() -> dict:
                         "rationale", "human_question",
                     ],
                     "properties": {
-                        "unit_local_id": {"type": "string"},
-                        "unit_status": {"enum": ["reconciled", "human_required"]},
-                        "primary_msid": nullable_string,
-                        "canonical_claim": nullable_string,
+                        "unit_local_id": {
+                            "type": "string",
+                            "pattern": r"^U[0-9]+$",
+                            "description": "A unique local ID such as U001; never empty.",
+                        },
+                        "unit_status": {
+                            "type": "string", "enum": ["reconciled", "human_required"]
+                        },
+                        "primary_msid": nullable_msid,
+                        "canonical_claim": nullable_claim,
                         "members": {
                             "type": "array", "minItems": 1,
                             "items": {
                                 "type": "object", "additionalProperties": False,
                                 "required": ["atom_key", "disposition"],
                                 "properties": {
-                                    "atom_key": {"type": "string"},
-                                    "disposition": {"enum": sorted(MEMBER_DISPOSITIONS - {"deferred"})},
+                                    "atom_key": _string_schema(
+                                        "An exact required atom_key from the packet."
+                                    ),
+                                    "disposition": {
+                                        "type": "string",
+                                        "enum": sorted(MEMBER_DISPOSITIONS - {"deferred"}),
+                                    },
                                 },
                             },
                         },
                         "authority_basis_atom_keys": {
-                            "type": "array", "items": {"type": "string"}
+                            "type": "array", "items": _string_schema(
+                                "An exact atom_key from packet evidence."
+                            )
                         },
                         "related_local_ids": {
-                            "type": "array", "items": {"type": "string"}
+                            "type": "array", "items": {
+                                "type": "string", "pattern": r"^U[0-9]+$"
+                            }
                         },
-                        "rationale": {"type": "string"},
-                        "human_question": nullable_string,
+                        "rationale": _string_schema(
+                            "A nonempty source-grounded reconciliation rationale."
+                        ),
+                        "human_question": {
+                            "anyOf": [
+                                _string_schema(
+                                    "A precise nonempty authorial question."
+                                ),
+                                {"type": "null"},
+                            ]
+                        },
                     },
                 },
             },
@@ -510,7 +559,7 @@ def proposal_response_schema() -> dict:
     }
 
 
-def review_response_schema() -> dict:
+def review_response_schema(packet: dict, proposal_sha256: str) -> dict:
     return {
         "type": "object", "additionalProperties": False,
         "required": [
@@ -518,17 +567,22 @@ def review_response_schema() -> dict:
             "verdict", "defects",
         ],
         "properties": {
-            "schema_version": {"const": REVIEW_SCHEMA_VERSION},
-            "packet_id": {"type": "string"},
-            "packet_sha256": {"type": "string"},
-            "proposal_sha256": {"type": "string"},
-            "verdict": {"enum": ["accept", "revise", "human_required"]},
-            "defects": {"type": "array", "items": {"type": "string"}},
+            "schema_version": {"type": "string", "const": REVIEW_SCHEMA_VERSION},
+            "packet_id": {"type": "string", "const": packet["packet_id"]},
+            "packet_sha256": {"type": "string", "const": packet["packet_sha256"]},
+            "proposal_sha256": {"type": "string", "const": proposal_sha256},
+            "verdict": {
+                "type": "string", "enum": ["accept", "revise", "human_required"]
+            },
+            "defects": {
+                "type": "array",
+                "items": _string_schema("A concise, substantive review defect."),
+            },
         },
     }
 
 
-def build_anthropic_request(
+def build_openai_request(
     *, task: str, schema: dict, packet: dict, supplemental: dict | None, model: str,
     reasoning_effort: str, maximum_output_tokens: int, cache_ttl: str,
 ) -> dict:
@@ -539,7 +593,7 @@ def build_anthropic_request(
         raise TriageError("provider reasoning effort is invalid")
     if not isinstance(maximum_output_tokens, int) or maximum_output_tokens < 1:
         raise TriageError("provider maximum output tokens are not configured")
-    if cache_ttl not in {"5m", "1h"}:
+    if cache_ttl != "30m":
         raise TriageError("provider cache TTL is invalid")
     cached_packet = {
         key: value for key, value in packet.items()
@@ -550,40 +604,45 @@ def build_anthropic_request(
         "context_atoms": packet.get("context_atoms", []),
     }
     content = [{
-        "type": "text",
+        "type": "input_text",
         "text": json.dumps(
             cached_packet, sort_keys=True, separators=(",", ":"), ensure_ascii=False
         ),
-        "cache_control": {"type": "ephemeral", "ttl": cache_ttl},
     }, {
-        "type": "text",
+        "type": "input_text",
         "text": json.dumps(
             atom_evidence, sort_keys=True, separators=(",", ":"), ensure_ascii=False
         ),
     }, {
-        "type": "text",
+        "type": "input_text",
         "text": task,
     }]
     if supplemental is not None:
         content.append({
-            "type": "text",
+            "type": "input_text",
             "text": json.dumps(
                 supplemental, sort_keys=True, separators=(",", ":"), ensure_ascii=False
             ),
         })
     return {
         "model": model,
-        "max_tokens": maximum_output_tokens,
-        "thinking": {"type": "adaptive"},
-        "output_config": {
-            "effort": reasoning_effort,
-            "format": {"type": "json_schema", "schema": schema},
+        "instructions": SHARED_PROVIDER_PROMPT,
+        "input": [{"role": "user", "content": content}],
+        "reasoning": {"effort": reasoning_effort},
+        "max_output_tokens": maximum_output_tokens,
+        "text": {
+            "verbosity": "low",
+            "format": {
+                "type": "json_schema",
+                "name": "median_reconciliation_result",
+                "schema": schema,
+                "strict": True,
+            },
         },
-        "system": [{"type": "text", "text": SHARED_PROVIDER_PROMPT}],
-        "messages": [{
-            "role": "user",
-            "content": content,
-        }],
+        "prompt_cache_key": packet["packet_sha256"],
+        "prompt_cache_options": {"mode": "implicit", "ttl": cache_ttl},
+        "store": False,
+        "truncation": "disabled",
     }
 
 
@@ -593,9 +652,9 @@ def _role_output_limit(provider: dict, role: str) -> int | None:
 
 
 def build_proposer_request(packet: dict, provider: dict) -> dict:
-    return build_anthropic_request(
+    return build_openai_request(
         task=PROPOSER_TASK,
-        schema=proposal_response_schema(),
+        schema=proposal_response_schema(packet),
         packet=packet,
         supplemental=None,
         model=provider.get("model"),
@@ -606,19 +665,45 @@ def build_proposer_request(packet: dict, provider: dict) -> dict:
 
 
 def build_reviewer_request(packet: dict, proposal: dict, provider: dict) -> dict:
+    proposal_sha256 = hashlib.sha256(_canonical_bytes(proposal)).hexdigest()
     supplemental = {
         "task_input": "unchanged proposal to audit",
         "proposal": proposal,
-        "proposal_sha256": hashlib.sha256(_canonical_bytes(proposal)).hexdigest(),
+        "proposal_sha256": proposal_sha256,
     }
-    return build_anthropic_request(
+    return build_openai_request(
         task=REVIEWER_TASK,
-        schema=review_response_schema(),
+        schema=review_response_schema(packet, proposal_sha256),
         packet=packet,
         supplemental=supplemental,
         model=provider.get("model"),
         reasoning_effort=provider.get("reasoning_effort"),
         maximum_output_tokens=_role_output_limit(provider, "review"),
+        cache_ttl=provider.get("cache_ttl"),
+    )
+
+
+def build_revision_request(
+    packet: dict, proposal: dict, review: dict, provider: dict
+) -> dict:
+    return build_openai_request(
+        task=REVISION_TASK,
+        schema=proposal_response_schema(packet),
+        packet=packet,
+        supplemental={
+            "task_input": "bounded replacement of the reviewed proposal",
+            "prior_proposal": proposal,
+            "prior_proposal_sha256": hashlib.sha256(
+                _canonical_bytes(proposal)
+            ).hexdigest(),
+            "independent_review": review,
+            "independent_review_sha256": hashlib.sha256(
+                _canonical_bytes(review)
+            ).hexdigest(),
+        },
+        model=provider.get("model"),
+        reasoning_effort=provider.get("reasoning_effort"),
+        maximum_output_tokens=_role_output_limit(provider, "proposal"),
         cache_ttl=provider.get("cache_ttl"),
     )
 
@@ -676,20 +761,55 @@ def _latest_valid_proposal(repo_root: Path, tranche_id: str) -> tuple[dict, Path
     raise TriageError("semantic review requires a mechanically valid proposal")
 
 
-def _send_anthropic_to(
+def _bounded_revision_context(
+    repo_root: Path,
+    tranche_id: str,
+    packet: dict,
+    corpus: ReconciliationCorpus,
+) -> tuple[dict, dict] | None:
+    try:
+        proposal, _proposal_path = _latest_valid_proposal(repo_root, tranche_id)
+    except TriageError as exc:
+        if str(exc) == "semantic review requires a mechanically valid proposal":
+            return None
+        raise
+    proposal_sha = hashlib.sha256(_canonical_bytes(proposal)).hexdigest()
+    ledger = repo_root / RUNS / tranche_id / "run_ledger.jsonl"
+    for event in reversed(_ledger_events(ledger)):
+        if event.get("role") != "review" or not str(event.get("result", "")).startswith("review_"):
+            continue
+        relative = event.get("structured_response")
+        if not isinstance(relative, str):
+            continue
+        path = repo_root / relative
+        review = json.loads(path.read_text(encoding="utf-8"))
+        if _sha256(path) != event.get("structured_response_sha256"):
+            raise TriageError("latest review evidence hash drifted")
+        if review.get("proposal_sha256") != proposal_sha:
+            continue
+        validate_proposal(packet, proposal, corpus)
+        validate_review(packet, proposal, review)
+        if review["verdict"] == "revise":
+            return proposal, review
+        if review["verdict"] == "human_required":
+            raise TriageError("latest semantic review requires authorial disposition")
+        raise TriageError("latest mechanically valid proposal is already accepted")
+    return None
+
+
+def _send_openai_to(
     endpoint: str, request_body: dict, api_key_file: Path, timeout: float
 ) -> tuple[int, bytes]:
     key = api_key_file.read_text(encoding="utf-8").strip()
     if not key:
-        raise TriageError("Anthropic API key file is empty")
+        raise TriageError("OpenAI API key file is empty")
     request = urllib.request.Request(
         endpoint,
         data=_canonical_bytes(request_body),
         method="POST",
         headers={
             "content-type": "application/json",
-            "anthropic-version": ANTHROPIC_VERSION,
-            "x-api-key": key,
+            "authorization": f"Bearer {key}",
         },
     )
     try:
@@ -699,56 +819,45 @@ def _send_anthropic_to(
         return exc.code, exc.read()
 
 
-def _send_anthropic(request_body: dict, api_key_file: Path, timeout: float) -> tuple[int, bytes]:
-    return _send_anthropic_to(ANTHROPIC_ENDPOINT, request_body, api_key_file, timeout)
+def _send_openai(request_body: dict, api_key_file: Path, timeout: float) -> tuple[int, bytes]:
+    return _send_openai_to(OPENAI_ENDPOINT, request_body, api_key_file, timeout)
 
 
-def _token_count_body(request: dict, *, cache_prefix_only: bool) -> dict:
-    body = copy.deepcopy(request)
-    body.pop("max_tokens", None)
-    if cache_prefix_only:
-        content = body.get("messages", [{}])[0].get("content", [])
-        if not isinstance(content, list) or not content:
-            raise TriageError("provider request lacks a cacheable packet prefix")
-        body["messages"][0]["content"] = [content[0]]
-    return body
+def _token_count_body(request: dict) -> dict:
+    return {
+        key: copy.deepcopy(request[key])
+        for key in ("model", "instructions", "input")
+    }
 
 
-def _count_anthropic_request(
+def _count_openai_request(
     request: dict, api_key_file: Path, timeout: float
 ) -> dict:
-    """Capture free model-specific counts for the full request and cached prefix."""
-    full_body = _token_count_body(request, cache_prefix_only=False)
-    prefix_body = _token_count_body(request, cache_prefix_only=True)
+    """Capture a free model-specific count for the complete request."""
+    full_body = _token_count_body(request)
     evidence = {
-        "schema_version": "M050-ANTHROPIC-TOKEN-COUNT-0.1",
+        "schema_version": "M050-OPENAI-TOKEN-COUNT-0.1",
         "full_request_sha256": hashlib.sha256(_canonical_bytes(full_body)).hexdigest(),
-        "cache_prefix_request_sha256": hashlib.sha256(
-            _canonical_bytes(prefix_body)
-        ).hexdigest(),
+        "uncounted_request_bytes": max(
+            0, len(_canonical_bytes(request)) - len(_canonical_bytes(full_body))
+        ),
     }
-    for name, body in (("full", full_body), ("cache_prefix", prefix_body)):
-        status, raw_bytes = _send_anthropic_to(
-            ANTHROPIC_TOKEN_COUNT_ENDPOINT, body, api_key_file, timeout
-        )
-        try:
-            response = json.loads(raw_bytes)
-        except json.JSONDecodeError as exc:
-            raise TriageError(f"Anthropic {name} token count returned invalid JSON") from exc
-        evidence[name] = {"http_status": status, "response": response}
-        if status != 200:
-            raise TriageError(f"Anthropic {name} token count returned HTTP {status}")
-        if (
-            not isinstance(response, dict)
-            or type(response.get("input_tokens")) is not int
-            or response["input_tokens"] < 1
-        ):
-            raise TriageError(f"Anthropic {name} token count is invalid")
+    status, raw_bytes = _send_openai_to(
+        OPENAI_TOKEN_COUNT_ENDPOINT, full_body, api_key_file, timeout
+    )
+    try:
+        response = json.loads(raw_bytes)
+    except json.JSONDecodeError as exc:
+        raise TriageError("OpenAI token count returned invalid JSON") from exc
+    evidence["full"] = {"http_status": status, "response": response}
+    if status != 200:
+        raise TriageError(f"OpenAI token count returned HTTP {status}")
     if (
-        evidence["cache_prefix"]["response"]["input_tokens"]
-        > evidence["full"]["response"]["input_tokens"]
+        not isinstance(response, dict)
+        or type(response.get("input_tokens")) is not int
+        or response["input_tokens"] < 1
     ):
-        raise TriageError("Anthropic cache-prefix count exceeds full request count")
+        raise TriageError("OpenAI token count is invalid")
     return evidence
 
 
@@ -763,44 +872,37 @@ def _padded_token_count(value: int) -> int:
 
 
 def counted_call_ceiling(request: dict, pricing: dict, token_count: dict) -> dict:
-    """Price a cache miss using provider counts, bounded output, and a 2% floor margin."""
+    """Price a pessimistic full cache write plus bounded output and count margin."""
     try:
-        full = token_count["full"]["response"]["input_tokens"]
-        prefix = token_count["cache_prefix"]["response"]["input_tokens"]
-        output = request["max_tokens"]
+        reported = token_count["full"]["response"]["input_tokens"]
+        uncounted = token_count.get("uncounted_request_bytes", 0)
+        full = reported + uncounted
+        output = request["max_output_tokens"]
         input_rate = Decimal(pricing["input_usd_per_million_tokens"])
         output_rate = Decimal(pricing["output_usd_per_million_tokens"])
-        ttl = request["messages"][0]["content"][0]["cache_control"]["ttl"]
-        write_multiplier = Decimal(
-            pricing[f"cache_{'1h' if ttl == '1h' else '5m'}_write_multiplier"]
-        )
+        ttl = request["prompt_cache_options"]["ttl"]
+        write_multiplier = Decimal(pricing["cache_write_multiplier"])
     except (KeyError, TypeError, ValueError, ArithmeticError) as exc:
         raise TriageError("provider count or pricing cannot produce a call ceiling") from exc
-    if not all(type(value) is int and value >= 0 for value in (full, prefix, output)):
+    if not all(type(value) is int and value >= 0 for value in (reported, uncounted, output)):
         raise TriageError("provider count or output ceiling is invalid")
     if (
-        prefix > full
-        or ttl not in {"5m", "1h"}
+        ttl != "30m"
         or not input_rate.is_finite()
         or not output_rate.is_finite()
         or not write_multiplier.is_finite()
         or min(input_rate, output_rate, write_multiplier) <= 0
     ):
         raise TriageError("provider count, pricing, or cache prefix is invalid")
-    padded_prefix = _padded_token_count(prefix)
-    padded_suffix = _padded_token_count(full - prefix)
+    padded_input = _padded_token_count(full)
     million = Decimal(1_000_000)
-    input_ceiling = (
-        Decimal(padded_prefix) * input_rate * write_multiplier
-        + Decimal(padded_suffix) * input_rate
-    ) / million
+    input_ceiling = Decimal(padded_input) * input_rate * write_multiplier / million
     output_ceiling = Decimal(output) * output_rate / million
     ceiling = input_ceiling + output_ceiling
     return {
-        "reported_input_tokens": full,
-        "reported_cache_prefix_tokens": prefix,
-        "reserved_cache_prefix_tokens": padded_prefix,
-        "reserved_uncached_suffix_tokens": padded_suffix,
+        "reported_input_tokens": reported,
+        "reserved_uncounted_request_tokens": uncounted,
+        "reserved_input_tokens": padded_input,
         "maximum_output_tokens": output,
         "cache_ttl": ttl,
         "input_ceiling_usd": format(input_ceiling, "f"),
@@ -814,11 +916,11 @@ def _provider_configuration_for_call(state: dict) -> dict:
     if not active or not provider_enabled:
         raise TriageError("Stage 5 provider call is not active")
     provider = state["reconciliation"]["provider"]
-    if provider.get("name") != "Anthropic":
-        raise TriageError("installed Stage 5 adapter supports only Anthropic")
+    if provider.get("name") != "OpenAI":
+        raise TriageError("installed Stage 5 adapter supports only OpenAI")
     pricing = provider.get("pricing")
     if not isinstance(pricing, dict):
-        raise TriageError("Stage 5 Anthropic pricing is not configured")
+        raise TriageError("Stage 5 OpenAI pricing is not configured")
     return provider
 
 
@@ -842,13 +944,77 @@ def _debit_response(state: dict, raw: dict, provider: dict) -> tuple[dict, dict]
     if not isinstance(usage, dict):
         raise TriageError("provider response lacks billable usage")
     try:
-        cost = anthropic_usage_cost(
-            usage, provider["pricing"], cache_ttl=provider["cache_ttl"]
-        )
+        pricing = provider["pricing"]
+        input_tokens = Decimal(usage["input_tokens"])
+        output_tokens = Decimal(usage["output_tokens"])
+        details = usage.get("input_tokens_details") or {}
+        cached_tokens = Decimal(details.get("cached_tokens", 0))
+        cache_write_tokens = Decimal(details.get("cache_write_tokens", 0))
+        uncached_tokens = input_tokens - cached_tokens - cache_write_tokens
+        if min(input_tokens, output_tokens, cached_tokens, cache_write_tokens, uncached_tokens) < 0:
+            raise TriageError("OpenAI usage token accounting is invalid")
+        input_rate = Decimal(pricing["input_usd_per_million_tokens"])
+        output_rate = Decimal(pricing["output_usd_per_million_tokens"])
+        read_multiplier = Decimal(pricing["cache_read_multiplier"])
+        write_multiplier = Decimal(pricing["cache_write_multiplier"])
+        million = Decimal(1_000_000)
+        uncached_cost = uncached_tokens * input_rate / million
+        cache_read_cost = cached_tokens * input_rate * read_multiplier / million
+        cache_write_cost = cache_write_tokens * input_rate * write_multiplier / million
+        output_cost = output_tokens * output_rate / million
+        total = uncached_cost + cache_read_cost + cache_write_cost + output_cost
+        cost = {
+            "uncached_input_usd": format(uncached_cost, "f"),
+            "cache_read_usd": format(cache_read_cost, "f"),
+            "cache_write_usd": format(cache_write_cost, "f"),
+            "output_usd": format(output_cost, "f"),
+            "total_usd": format(total, "f"),
+            "display_usd_rounded_up": format(total.quantize(Decimal("0.01"), rounding="ROUND_CEILING"), "f"),
+        }
         updated = debit_compile_state_spend(state, cost["total_usd"])
-    except ContractError as exc:
+    except (ContractError, KeyError, TypeError, ValueError, ArithmeticError) as exc:
         raise TriageError(str(exc)) from exc
     return updated, cost
+
+
+def _validate_provider_completion(raw: dict) -> None:
+    """Keep refusal, truncation, and abnormal completion distinct before parsing."""
+    status = raw.get("status")
+    if status == "incomplete":
+        reason = (raw.get("incomplete_details") or {}).get("reason")
+        if reason == "max_output_tokens":
+            raise TriageError("provider truncation at maximum output tokens")
+        raise TriageError(f"provider returned incomplete response: {reason}")
+    if status != "completed":
+        raise TriageError(f"provider returned unexpected response status: {status}")
+
+
+def _extract_openai_structured_response(raw: dict) -> dict:
+    if raw.get("object") != "response":
+        raise TriageError("OpenAI response object is invalid")
+    text_blocks: list[str] = []
+    refusals: list[str] = []
+    for item in raw.get("output", []):
+        if not isinstance(item, dict) or item.get("type") != "message":
+            continue
+        for content in item.get("content", []):
+            if not isinstance(content, dict):
+                continue
+            if content.get("type") == "output_text" and isinstance(content.get("text"), str):
+                text_blocks.append(content["text"])
+            elif content.get("type") == "refusal" and isinstance(content.get("refusal"), str):
+                refusals.append(content["refusal"])
+    if refusals:
+        raise TriageError("provider refusal")
+    if len(text_blocks) != 1:
+        raise TriageError("OpenAI response must contain exactly one output text block")
+    try:
+        structured = json.loads(text_blocks[0])
+    except json.JSONDecodeError as exc:
+        raise TriageError("OpenAI structured output is invalid JSON") from exc
+    if not isinstance(structured, dict):
+        raise TriageError("OpenAI structured response root must be an object")
+    return structured
 
 
 def _promote_reviewed_proposal(
@@ -945,7 +1111,12 @@ def run_provider_call(
     proposal_path = None
     if role == "proposal":
         provider = state["reconciliation"]["provider"]
-        request = build_proposer_request(packet, provider)
+        revision = _bounded_revision_context(repo_root, tranche_id, packet, corpus)
+        request = (
+            build_revision_request(packet, revision[0], revision[1], provider)
+            if revision is not None
+            else build_proposer_request(packet, provider)
+        )
     elif role == "review":
         proposal, proposal_path = _latest_valid_proposal(repo_root, tranche_id)
         validate_proposal(packet, proposal, corpus)
@@ -962,7 +1133,7 @@ def run_provider_call(
         _write_new_json(paths["packet"], packet)
     _write_new_json(paths["request"], request)
     try:
-        token_count = _count_anthropic_request(request, api_key_file, timeout)
+        token_count = _count_openai_request(request, api_key_file, timeout)
     except (OSError, TimeoutError, urllib.error.URLError, TriageError) as exc:
         _append_ledger(paths["ledger"], {
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
@@ -989,7 +1160,7 @@ def run_provider_call(
         raise
     ceiling = forecast["total_ceiling_usd"]
     try:
-        http_status, raw_bytes = _send_anthropic(request, api_key_file, timeout)
+        http_status, raw_bytes = _send_openai(request, api_key_file, timeout)
     except (OSError, TimeoutError, urllib.error.URLError) as exc:
         _append_ledger(paths["ledger"], {
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
@@ -1032,7 +1203,8 @@ def run_provider_call(
         raise TriageError(f"provider returned HTTP {http_status}; raw response is preserved")
     updated_state, cost = _debit_response(state, raw, provider)
     try:
-        structured = extract_anthropic_structured_response(raw)
+        _validate_provider_completion(raw)
+        structured = _extract_openai_structured_response(raw)
         if role == "proposal":
             validate_proposal(packet, structured, corpus)
             result = "mechanically_valid"
@@ -1106,7 +1278,11 @@ def validate_proposal(packet: dict, proposal: dict, corpus: ReconciliationCorpus
         }:
             raise TriageError("reconciliation proposal unit shape is invalid")
         local_id = unit.get("unit_local_id")
-        if not isinstance(local_id, str) or not local_id or local_id in local_ids:
+        if (
+            not isinstance(local_id, str)
+            or re.fullmatch(r"U[0-9]+", local_id) is None
+            or local_id in local_ids
+        ):
             raise TriageError("reconciliation proposal local IDs are invalid")
         local_ids.add(local_id)
         status = unit.get("unit_status")
@@ -1124,7 +1300,12 @@ def validate_proposal(packet: dict, proposal: dict, corpus: ReconciliationCorpus
             if unit.get("human_question") is not None:
                 raise TriageError("reconciled proposal cannot ask a human question")
         else:
-            if claim is not None or not isinstance(unit.get("human_question"), str):
+            human_question = unit.get("human_question")
+            if (
+                claim is not None
+                or not isinstance(human_question, str)
+                or not human_question.strip()
+            ):
                 raise TriageError("human-required proposal shape is invalid")
         members = unit.get("members")
         if not isinstance(members, list) or not members:
@@ -1175,7 +1356,10 @@ def validate_review(packet: dict, proposal: dict, review: dict) -> None:
     if review.get("verdict") not in {"accept", "revise", "human_required"}:
         raise TriageError("reconciliation semantic review verdict is invalid")
     defects = review.get("defects")
-    if not isinstance(defects, list) or any(not isinstance(item, str) for item in defects):
+    if (
+        not isinstance(defects, list)
+        or any(not isinstance(item, str) or not item.strip() for item in defects)
+    ):
         raise TriageError("reconciliation semantic review defects are invalid")
     if review["verdict"] == "accept" and defects:
         raise TriageError("accepted semantic review cannot retain defects")
@@ -1233,15 +1417,22 @@ def _target(state: dict) -> tuple[str, str, str]:
 def _dashboard(state: dict, store: ReconciliationStore, *, active: bool) -> dict[str, str]:
     tranche_id, prefix, _selector = _target(state)
     counts = store.counts()
+    completed = tranche_id in state.get("reconciliation", {}).get(
+        "completed_tranche_ids", []
+    )
     status = "ACTIVE — Stage 5 reconciliation" if active else "READY — Stage 5 reconciliation"
     now = (
         f"{prefix} reconciliation is active within tranche {tranche_id}"
         if active
+        else f"{prefix} pilot is complete; the Compile Worker is Stopped Down"
+        if completed
         else f"Stage 5 is installed at the {prefix} pilot boundary; the Compile Worker is Stopped Down"
     )
     next_text = (
         "Complete and review only the released semantic tranche, then Stopdown"
         if active
+        else "Supervisor/author quality adjudication must select any next boundary"
+        if completed
         else "Spark Up may grant the bounded pilot; Proceed is still required before execution"
     )
     return {
@@ -1279,6 +1470,15 @@ def _validate_lifecycle(state: dict) -> tuple[bool, bool]:
     if state.get("spend", {}).get("active") is not (active and provider_enabled):
         raise TriageError("Stage 5 spend activation disagrees with provider-call authority")
     return active, provider_enabled
+
+
+def _revoke_one_time_spend_on_stopdown(state: dict) -> None:
+    spend = state["spend"]
+    cumulative = Decimal(spend["cumulative_spent_usd"])
+    spend["active"] = False
+    spend["refresh_window_usd"] = "2.0000000"
+    spend["authorized_usd"] = format(cumulative, ".7f")
+    spend["remaining_usd"] = "0.0000000"
 
 
 def plan_lifecycle_transition(
@@ -1348,7 +1548,7 @@ def plan_lifecycle_transition(
         "repository_writes_authorized", "provider_calls_authorized"
     ):
         result["authority"][key] = False
-    result["spend"]["active"] = False
+    _revoke_one_time_spend_on_stopdown(result)
     completed = result["reconciliation"].setdefault("completed_tranche_ids", [])
     if tranche_id not in completed:
         completed.append(tranche_id)

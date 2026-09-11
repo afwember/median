@@ -28,11 +28,11 @@ def test_stage_5_provider_and_manual_spend_window_are_bound():
     state = _state()
     provider = state["reconciliation"]["provider"]
     assert provider["enabled"] is True
-    assert provider["name"] == "Anthropic"
-    assert provider["model"] == "claude-sonnet-5"
-    assert provider["reasoning_effort"] == "high"
-    assert provider["maximum_output_tokens"] == {"proposal": 48000, "review": 8000}
-    assert provider["cache_ttl"] == "1h"
+    assert provider["name"] == "OpenAI"
+    assert provider["model"] == "gpt-5.6-sol"
+    assert provider["reasoning_effort"] == "medium"
+    assert provider["maximum_output_tokens"] == {"proposal": 36000, "review": 8000}
+    assert provider["cache_ttl"] == "30m"
     refresh_window = Decimal(state["spend"]["refresh_window_usd"])
     remaining = Decimal(state["spend"]["remaining_usd"])
     if state["spend"]["active"]:

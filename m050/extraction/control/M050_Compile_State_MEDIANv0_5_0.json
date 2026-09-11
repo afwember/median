@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-11T17:44:33-04:00",
+  "updated": "2026-09-11T17:54:01-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -89,20 +89,19 @@
     ],
     "provider": {
       "enabled": true,
-      "name": "Anthropic",
-      "model": "claude-sonnet-5",
-      "reasoning_effort": "high",
-      "cache_ttl": "1h",
+      "name": "OpenAI",
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "cache_ttl": "30m",
       "maximum_output_tokens": {
-        "proposal": 48000,
+        "proposal": 36000,
         "review": 8000
       },
       "pricing": {
-        "input_usd_per_million_tokens": "3",
-        "output_usd_per_million_tokens": "15",
+        "input_usd_per_million_tokens": "4",
+        "output_usd_per_million_tokens": "20",
         "cache_read_multiplier": "0.1",
-        "cache_5m_write_multiplier": "1.25",
-        "cache_1h_write_multiplier": "2"
+        "cache_write_multiplier": "1.25"
       },
       "proposal_review_required": true
     }
@@ -138,7 +137,7 @@
     "progress": "105 / 5,382 atoms assigned to canonical semantic units",
     "now": "Away.Crossing.Squirrel reconciliation is interrupted with 65 target atoms unaccounted; the Compile Worker is Stopped Down",
     "next": "Spark Up may regrant the same preserved tranche; Proceed is still required before execution",
-    "updated_human": "September 11, 2026 at 5:44:33 PM EDT"
+    "updated_human": "September 11, 2026 at 5:54:01 PM EDT"
   },
   "next_possible_transition": "Tranche away-crossing-squirrel-001 is interrupted with 65 target atoms unaccounted; Spark Up may regrant only this preserved boundary."
 }

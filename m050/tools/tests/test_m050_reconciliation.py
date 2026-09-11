@@ -71,6 +71,15 @@ def test_pilot_packet_is_exact_hash_bound_and_deduplicates_source_blocks(packet)
     ).hexdigest()
 
 
+def test_provider_comparison_reuses_exact_preserved_pilot_packet(corpus):
+    packet = reconciliation.load_preserved_comparison_packet(ROOT, corpus)
+    assert packet["tranche_id"] == reconciliation.COMPARISON_TRANCHE_ID
+    assert len(packet["required_atom_keys"]) == 105
+    assert packet["packet_sha256"] == (
+        "45a5f84becb658d0d77b3588d4bb3c0d76a7b39486a9a063c8530c236ec4fcdc"
+    )
+
+
 def _proposal(packet):
     return {
         "schema_version": reconciliation.PROPOSAL_SCHEMA_VERSION,
@@ -396,6 +405,39 @@ def test_run_ledger_is_append_only_and_hash_chained(tmp_path):
     path.write_text(json.dumps(drifted) + "\n", encoding="utf-8")
     with pytest.raises(reconciliation.TriageError, match="hash chain drifted"):
         reconciliation._ledger_events(path)
+
+
+def test_unchanged_max_token_failure_cannot_be_repeated(tmp_path):
+    request = {"model": "test", "max_tokens": 8000}
+    request_path = tmp_path / "review_001_request.json"
+    request_path.write_text(json.dumps(request), encoding="utf-8")
+    ledger = tmp_path / "run_ledger.jsonl"
+    reconciliation._append_ledger(ledger, {
+        "role": "review",
+        "result": "mechanical_failure",
+        "error": "Anthropic response did not end cleanly: max_tokens",
+        "request": request_path.name,
+    })
+    with pytest.raises(reconciliation.TriageError, match="unchanged request"):
+        reconciliation._reject_redundant_provider_request(
+            tmp_path, ledger, "review", request
+        )
+    changed = dict(request, max_tokens=12000)
+    reconciliation._reject_redundant_provider_request(
+        tmp_path, ledger, "review", changed
+    )
+
+
+def test_completed_provider_comparison_cannot_be_repeated(tmp_path):
+    ledger = tmp_path / "run_ledger.jsonl"
+    reconciliation._append_ledger(ledger, {
+        "role": "comparison_proposal",
+        "result": "mechanically_valid",
+    })
+    with pytest.raises(reconciliation.TriageError, match="already complete"):
+        reconciliation._reject_redundant_provider_request(
+            tmp_path, ledger, "comparison_proposal", {"model": "test"}
+        )
 
 
 def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(

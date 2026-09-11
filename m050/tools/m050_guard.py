@@ -480,7 +480,7 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
             or provider.get("cache_ttl") != "1h"
             or not isinstance(output_limits, dict)
             or set(output_limits) != {"proposal", "review"}
-            or any(not isinstance(value, int) or value < 1 for value in output_limits.values())
+            or output_limits != {"proposal": 48000, "review": 8000}
             or not isinstance(pricing, dict)
             or set(pricing) != required_pricing
             or pricing != expected_pricing

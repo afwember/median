@@ -292,6 +292,15 @@ grant and assessment grants nothing.
   conflict, authority error, and improper Human Rulings weight. Only an `accept`
   review or an explicit authorial disposition may enter the canonical record.
   Review rejection routes to bounded revision, `human_required`, or halt.
+- Before Squirrel work resumes, the one authorized provider-selection comparison
+  may replay the preserved `away-crossing-pilot` packet once through the configured
+  proposer using `m050/tools/m050_reconciliation.py --comparison-proposal`. Its
+  request, raw response, structured response, usage, and cost remain ordinary
+  write-once run evidence in the existing pilot run; they are noncanonical and
+  must never promote or alter reconciliation units. This comparison replaces a
+  second review pass for model selection and may not select any other packet.
+  Remove this temporary permission when the provider choice is settled; Git
+  preserves its history.
 - Provider model is a replaceable canonical configuration value. Reuse the
   proven Anthropic request/capture, caching, failure classification, exact-cost,
   and pessimistic-ceiling disciplines; do not reactivate extraction prompts,

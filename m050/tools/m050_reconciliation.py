@@ -63,6 +63,7 @@ DEFAULT_RECONCILIATIONS = Path(
     "m050/reconciliation/M050_Reconciled_Semantic_Units_MEDIANv0_5_0.jsonl"
 )
 RUNS = Path("m050/reconciliation/runs")
+COMPARISON_TRANCHE_ID = "away-crossing-pilot"
 ANTHROPIC_ENDPOINT = "https://api.anthropic.com/v1/messages"
 ANTHROPIC_TOKEN_COUNT_ENDPOINT = "https://api.anthropic.com/v1/messages/count_tokens"
 ANTHROPIC_VERSION = "2023-06-01"
@@ -473,6 +474,64 @@ def build_packet(
     return body
 
 
+def load_preserved_comparison_packet(
+    repo_root: Path, corpus: ReconciliationCorpus
+) -> dict:
+    """Load the one frozen pilot packet authorized for provider comparison."""
+    path = repo_root / RUNS / COMPARISON_TRANCHE_ID / "packet.json"
+    try:
+        packet = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise TriageError("preserved comparison packet is unavailable") from exc
+    if not isinstance(packet, dict):
+        raise TriageError("preserved comparison packet root is invalid")
+    unhashed = dict(packet)
+    claimed_hash = unhashed.pop("packet_sha256", None)
+    if claimed_hash != hashlib.sha256(_canonical_bytes(unhashed)).hexdigest():
+        raise TriageError("preserved comparison packet hash drifted")
+    expected_bindings = {
+        "mapping_sha256": corpus.mapping_sha256,
+        "vocabulary_sha256": corpus.vocabulary_sha256,
+        "triage_sha256": corpus.triage_sha256,
+        "rewrite_sha256": corpus.rewrite_sha256,
+    }
+    if (
+        packet.get("schema_version") != PACKET_SCHEMA_VERSION
+        or packet.get("packet_id") != f"packet_{COMPARISON_TRANCHE_ID}"
+        or packet.get("tranche_id") != COMPARISON_TRANCHE_ID
+        or packet.get("input_bindings") != expected_bindings
+    ):
+        raise TriageError("preserved comparison packet binding drifted")
+    required = packet.get("required_atom_keys")
+    atoms = packet.get("atoms")
+    context = packet.get("context_atoms")
+    if (
+        not isinstance(required, list)
+        or not isinstance(atoms, list)
+        or not isinstance(context, list)
+        or required != [item.get("atom_key") for item in atoms]
+        or len(required) != len(set(required))
+    ):
+        raise TriageError("preserved comparison packet membership is invalid")
+    for item in atoms:
+        if not isinstance(item, dict):
+            raise TriageError("preserved comparison packet atom is invalid")
+        atom = corpus.by_key.get(item.get("atom_key"))
+        if atom is None or item != _packet_atom(atom):
+            raise TriageError("preserved comparison packet atom binding drifted")
+    seen = set(required)
+    for item in context:
+        if not isinstance(item, dict):
+            raise TriageError("preserved comparison context atom is invalid")
+        atom = corpus.by_key.get(item.get("atom_key"))
+        if atom is None or item != _packet_atom(atom):
+            raise TriageError("preserved comparison context binding drifted")
+        if atom.key in seen:
+            raise TriageError("preserved comparison packet repeats a context atom")
+        seen.add(atom.key)
+    return packet
+
+
 def _string_schema(description: str) -> dict:
     """Keep the provider grammar small; deterministic validation enforces content."""
     return {"type": "string", "description": description}
@@ -781,6 +840,33 @@ def _bounded_revision_context(
     return None
 
 
+def _reject_redundant_provider_request(
+    repo_root: Path, ledger: Path, evidence_role: str, request: dict
+) -> None:
+    """Do not repay a deterministic failure or repeat a finished comparison."""
+    for event in reversed(_ledger_events(ledger)):
+        if event.get("role") != evidence_role:
+            continue
+        if evidence_role == "comparison_proposal" and event.get("result") == "mechanically_valid":
+            raise TriageError("the authorized provider comparison proposal is already complete")
+        if (
+            event.get("result") == "mechanical_failure"
+            and "max_tokens" in str(event.get("error", ""))
+        ):
+            relative = event.get("request")
+            if isinstance(relative, str):
+                previous_path = repo_root / relative
+                try:
+                    previous = json.loads(previous_path.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError) as exc:
+                    raise TriageError("prior failed provider request evidence is unavailable") from exc
+                if previous == request:
+                    raise TriageError(
+                        "unchanged request repeats a deterministic max-token failure"
+                    )
+        return
+
+
 def _send_anthropic_to(
     endpoint: str, request_body: dict, api_key_file: Path, timeout: float
 ) -> tuple[int, bytes]:
@@ -1039,20 +1125,31 @@ def run_provider_call(
     role: str,
     api_key_file: Path,
     timeout: float,
+    comparison: bool = False,
 ) -> tuple[dict, dict]:
-    tranche_id, prefix, selector = _target(state)
-    packet = build_packet(
-        corpus, store, tranche_id=tranche_id, msid_prefix=prefix, selector=selector
-    )
+    if comparison:
+        if role != "proposal":
+            raise TriageError("provider comparison permits only one proposal call")
+        tranche_id = COMPARISON_TRANCHE_ID
+        packet = load_preserved_comparison_packet(repo_root, corpus)
+        evidence_role = "comparison_proposal"
+    else:
+        tranche_id, prefix, selector = _target(state)
+        packet = build_packet(
+            corpus, store, tranche_id=tranche_id, msid_prefix=prefix, selector=selector
+        )
+        evidence_role = role
     base_dir = repo_root / RUNS / tranche_id
     ledger = base_dir / "run_ledger.jsonl"
-    attempt = _next_attempt(ledger, role)
-    paths = _run_paths(repo_root, tranche_id, role, attempt)
+    attempt = _next_attempt(ledger, evidence_role)
+    paths = _run_paths(repo_root, tranche_id, evidence_role, attempt)
     proposal = None
     proposal_path = None
     if role == "proposal":
         provider = state["reconciliation"]["provider"]
-        revision = _bounded_revision_context(repo_root, tranche_id, packet, corpus)
+        revision = None if comparison else _bounded_revision_context(
+            repo_root, tranche_id, packet, corpus
+        )
         request = (
             build_revision_request(packet, revision[0], revision[1], provider)
             if revision is not None
@@ -1065,6 +1162,9 @@ def run_provider_call(
         request = build_reviewer_request(packet, proposal, provider)
     else:
         raise TriageError("provider role must be proposal or review")
+    _reject_redundant_provider_request(
+        repo_root, ledger, evidence_role, request
+    )
     provider = _provider_configuration_for_call(state)
     if paths["packet"].exists():
         existing_packet = json.loads(paths["packet"].read_text(encoding="utf-8"))
@@ -1077,7 +1177,8 @@ def run_provider_call(
         token_count = _count_anthropic_request(request, api_key_file, timeout)
     except (OSError, TimeoutError, urllib.error.URLError, TriageError) as exc:
         _append_ledger(paths["ledger"], {
-            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "event_id": f"call_{uuid.uuid4().hex}", "role": evidence_role,
+            "attempt": attempt,
             "result": "token_count_failure", "error": str(exc),
             "request": paths["request"].relative_to(repo_root).as_posix(),
             "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
@@ -1092,7 +1193,8 @@ def run_provider_call(
         provider, forecast = _provider_preflight(state, request, token_count)
     except TriageError as exc:
         _append_ledger(paths["ledger"], {
-            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "event_id": f"call_{uuid.uuid4().hex}", "role": evidence_role,
+            "attempt": attempt,
             "result": "preflight_rejected", "error": str(exc),
             "request": paths["request"].relative_to(repo_root).as_posix(),
             **token_fields,
@@ -1104,7 +1206,8 @@ def run_provider_call(
         http_status, raw_bytes = _send_anthropic(request, api_key_file, timeout)
     except (OSError, TimeoutError, urllib.error.URLError) as exc:
         _append_ledger(paths["ledger"], {
-            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "event_id": f"call_{uuid.uuid4().hex}", "role": evidence_role,
+            "attempt": attempt,
             "result": "transport_failure", "error": str(exc),
             "preflight": forecast, **token_fields,
             "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
@@ -1115,7 +1218,8 @@ def run_provider_call(
         raw = json.loads(raw_bytes)
     except json.JSONDecodeError as exc:
         _append_ledger(paths["ledger"], {
-            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "event_id": f"call_{uuid.uuid4().hex}", "role": evidence_role,
+            "attempt": attempt,
             "result": "invalid_json", "http_status": http_status,
             "request": paths["request"].relative_to(repo_root).as_posix(),
             "preflight": forecast, **token_fields,
@@ -1133,7 +1237,8 @@ def run_provider_call(
             updated_state, cost = _debit_response(state, raw, provider)
             _atomic_write_json(repo_root / STATE, updated_state)
         _append_ledger(paths["ledger"], {
-            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "event_id": f"call_{uuid.uuid4().hex}", "role": evidence_role,
+            "attempt": attempt,
             "result": "http_failure", "http_status": http_status,
             "request": paths["request"].relative_to(repo_root).as_posix(),
             "preflight": forecast, **token_fields,
@@ -1155,7 +1260,8 @@ def run_provider_call(
     except (ContractError, TriageError) as exc:
         _atomic_write_json(repo_root / STATE, updated_state)
         _append_ledger(paths["ledger"], {
-            "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+            "event_id": f"call_{uuid.uuid4().hex}", "role": evidence_role,
+            "attempt": attempt,
             "result": "mechanical_failure", "error": str(exc), "http_status": http_status,
             "request": paths["request"].relative_to(repo_root).as_posix(),
             "preflight": forecast, **token_fields,
@@ -1165,7 +1271,7 @@ def run_provider_call(
         })
         raise TriageError(f"provider response failed mechanical validation: {exc}") from exc
     _write_new_json(paths["structured"], structured)
-    if role == "review" and structured["verdict"] == "accept":
+    if role == "review" and structured["verdict"] == "accept" and not comparison:
         assert proposal is not None and proposal_path is not None
         _promote_reviewed_proposal(
             store, packet, proposal, proposal_path=proposal_path,
@@ -1173,7 +1279,8 @@ def run_provider_call(
         )
     _atomic_write_json(repo_root / STATE, updated_state)
     event = {
-        "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
+        "event_id": f"call_{uuid.uuid4().hex}", "role": evidence_role,
+        "attempt": attempt,
         "result": result, "http_status": http_status,
         "packet_sha256": packet["packet_sha256"],
         "request": paths["request"].relative_to(repo_root).as_posix(),
@@ -1187,7 +1294,8 @@ def run_provider_call(
     }
     _append_ledger(paths["ledger"], event)
     return updated_state, {
-        "role": role, "attempt": attempt, "result": result,
+        "role": evidence_role, "attempt": attempt, "result": result,
+        "comparison": comparison,
         "cost_usd": cost["total_usd"],
         "call_ceiling_usd": ceiling,
         "units_promoted": len(proposal["units"])
@@ -1523,6 +1631,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--expected-head")
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--provider-role", choices=("proposal", "review"))
+    parser.add_argument("--comparison-proposal", action="store_true")
     parser.add_argument("--api-key-file", type=Path)
     parser.add_argument("--timeout", type=float, default=360.0)
     args = parser.parse_args(argv)
@@ -1532,16 +1641,19 @@ def main(argv: list[str] | None = None) -> int:
         state = json.loads(state_path.read_text(encoding="utf-8"))
         corpus = ReconciliationCorpus(repo_root)
         store = ReconciliationStore(repo_root / DEFAULT_RECONCILIATIONS, corpus)
-        if args.provider_role:
+        if args.provider_role or args.comparison_proposal:
+            if args.provider_role and args.comparison_proposal:
+                raise TriageError("choose canonical provider work or comparison, not both")
             if args.transition or args.inventory or args.apply:
                 raise TriageError("provider call cannot be combined with lifecycle or inventory flags")
             if args.api_key_file is None:
                 raise TriageError("provider call requires --api-key-file")
             _updated, summary = run_provider_call(
                 repo_root, state, corpus, store,
-                role=args.provider_role,
+                role=args.provider_role or "proposal",
                 api_key_file=args.api_key_file.resolve(),
                 timeout=args.timeout,
+                comparison=args.comparison_proposal,
             )
             print(json.dumps(summary, indent=2, ensure_ascii=False))
             return 0

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-11T10:57:22-04:00",
+  "updated": "2026-09-11T11:51:30-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -80,8 +80,8 @@
     "input_atom_count": 5382,
     "input_source_count": 18,
     "target": {
-      "tranche_id": "away-crossing-pilot",
-      "msid_prefix": "Away.Crossing",
+      "tranche_id": "away-crossing-squirrel-001",
+      "msid_prefix": "Away.Crossing.Squirrel",
       "selector": "exact"
     },
     "completed_tranche_ids": [
@@ -89,19 +89,20 @@
     ],
     "provider": {
       "enabled": true,
-      "name": "OpenAI",
-      "model": "gpt-5.6-sol",
-      "reasoning_effort": "medium",
-      "cache_ttl": "30m",
+      "name": "Anthropic",
+      "model": "claude-sonnet-5",
+      "reasoning_effort": "high",
+      "cache_ttl": "1h",
       "maximum_output_tokens": {
         "proposal": 36000,
         "review": 8000
       },
       "pricing": {
-        "input_usd_per_million_tokens": "4",
-        "output_usd_per_million_tokens": "20",
+        "input_usd_per_million_tokens": "3",
+        "output_usd_per_million_tokens": "15",
         "cache_read_multiplier": "0.1",
-        "cache_write_multiplier": "1.25"
+        "cache_5m_write_multiplier": "1.25",
+        "cache_1h_write_multiplier": "2"
       },
       "proposal_review_required": true
     }
@@ -109,9 +110,9 @@
   "spend": {
     "active": false,
     "refresh_window_usd": "2.0000000",
-    "authorized_usd": "53.7287165",
+    "authorized_usd": "55.7287165",
     "cumulative_spent_usd": "53.7287165",
-    "remaining_usd": "0.0000000",
+    "remaining_usd": "2.0000000",
     "display_usd_rounded_up": "53.73",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
@@ -133,11 +134,11 @@
   "dashboard": {
     "status": "READY — Stage 5 reconciliation",
     "phase": "Semantic reconciliation — reviewed proposition unification",
-    "source": "Unitary 5,382-atom corpus — current semantic boundary Away.Crossing",
+    "source": "Unitary 5,382-atom corpus — current semantic boundary Away.Crossing.Squirrel",
     "progress": "105 / 5,382 atoms assigned to canonical semantic units",
-    "now": "Away.Crossing pilot is complete; the Compile Worker is Stopped Down",
-    "next": "Supervisor/author quality adjudication must select any next boundary",
-    "updated_human": "September 11, 2026 at 10:57:22 AM EDT"
+    "now": "Stage 5 is prepared at the Away.Crossing.Squirrel tranche boundary; the Compile Worker is Stopped Down",
+    "next": "Spark Up may grant the bounded tranche; Proceed is still required before execution",
+    "updated_human": "September 11, 2026 at 11:51:30 AM EDT"
   },
-  "next_possible_transition": "Stage 5 pilot is complete; halt for Supervisor/author quality adjudication and next boundary selection."
+  "next_possible_transition": "Spark Up may grant the bounded Away.Crossing.Squirrel reconciliation tranche; Proceed is still required before execution."
 }

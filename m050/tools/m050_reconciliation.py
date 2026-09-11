@@ -42,14 +42,18 @@ except ModuleNotFoundError:  # Direct execution from m050/tools.
 
 try:
     from median_gate5.extraction_machine import (
+        anthropic_usage_cost,
         debit_compile_state_spend,
+        extract_anthropic_structured_response,
     )
     from median_gate5.errors import ContractError
 except ModuleNotFoundError:
     import sys
     sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "extraction/engine/src"))
     from median_gate5.extraction_machine import (
+        anthropic_usage_cost,
         debit_compile_state_spend,
+        extract_anthropic_structured_response,
     )
     from median_gate5.errors import ContractError
 
@@ -59,8 +63,9 @@ DEFAULT_RECONCILIATIONS = Path(
     "m050/reconciliation/M050_Reconciled_Semantic_Units_MEDIANv0_5_0.jsonl"
 )
 RUNS = Path("m050/reconciliation/runs")
-OPENAI_ENDPOINT = "https://api.openai.com/v1/responses"
-OPENAI_TOKEN_COUNT_ENDPOINT = "https://api.openai.com/v1/responses/input_tokens"
+ANTHROPIC_ENDPOINT = "https://api.anthropic.com/v1/messages"
+ANTHROPIC_TOKEN_COUNT_ENDPOINT = "https://api.anthropic.com/v1/messages/count_tokens"
+ANTHROPIC_VERSION = "2023-06-01"
 SCHEMA_VERSION = "M050-RECONCILED-SEMANTIC-UNIT-0.1"
 PACKET_SCHEMA_VERSION = "M050-RECONCILIATION-PACKET-0.1"
 PROPOSAL_SCHEMA_VERSION = "M050-RECONCILIATION-PROPOSAL-0.1"
@@ -582,7 +587,7 @@ def review_response_schema(packet: dict, proposal_sha256: str) -> dict:
     }
 
 
-def build_openai_request(
+def build_anthropic_request(
     *, task: str, schema: dict, packet: dict, supplemental: dict | None, model: str,
     reasoning_effort: str, maximum_output_tokens: int, cache_ttl: str,
 ) -> dict:
@@ -593,56 +598,35 @@ def build_openai_request(
         raise TriageError("provider reasoning effort is invalid")
     if not isinstance(maximum_output_tokens, int) or maximum_output_tokens < 1:
         raise TriageError("provider maximum output tokens are not configured")
-    if cache_ttl != "30m":
+    if cache_ttl not in {"5m", "1h"}:
         raise TriageError("provider cache TTL is invalid")
-    cached_packet = {
-        key: value for key, value in packet.items()
-        if key not in {"atoms", "context_atoms"}
-    }
-    atom_evidence = {
-        "atoms": packet.get("atoms", []),
-        "context_atoms": packet.get("context_atoms", []),
-    }
     content = [{
-        "type": "input_text",
+        "type": "text",
         "text": json.dumps(
-            cached_packet, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+            packet, sort_keys=True, separators=(",", ":"), ensure_ascii=False
         ),
+        "cache_control": {"type": "ephemeral", "ttl": cache_ttl},
     }, {
-        "type": "input_text",
-        "text": json.dumps(
-            atom_evidence, sort_keys=True, separators=(",", ":"), ensure_ascii=False
-        ),
-    }, {
-        "type": "input_text",
+        "type": "text",
         "text": task,
     }]
     if supplemental is not None:
         content.append({
-            "type": "input_text",
+            "type": "text",
             "text": json.dumps(
                 supplemental, sort_keys=True, separators=(",", ":"), ensure_ascii=False
             ),
         })
     return {
         "model": model,
-        "instructions": SHARED_PROVIDER_PROMPT,
-        "input": [{"role": "user", "content": content}],
-        "reasoning": {"effort": reasoning_effort},
-        "max_output_tokens": maximum_output_tokens,
-        "text": {
-            "verbosity": "low",
-            "format": {
-                "type": "json_schema",
-                "name": "median_reconciliation_result",
-                "schema": schema,
-                "strict": True,
-            },
+        "max_tokens": maximum_output_tokens,
+        "thinking": {"type": "adaptive"},
+        "output_config": {
+            "effort": reasoning_effort,
+            "format": {"type": "json_schema", "schema": schema},
         },
-        "prompt_cache_key": packet["packet_sha256"],
-        "prompt_cache_options": {"mode": "implicit", "ttl": cache_ttl},
-        "store": False,
-        "truncation": "disabled",
+        "system": [{"type": "text", "text": SHARED_PROVIDER_PROMPT}],
+        "messages": [{"role": "user", "content": content}],
     }
 
 
@@ -652,7 +636,7 @@ def _role_output_limit(provider: dict, role: str) -> int | None:
 
 
 def build_proposer_request(packet: dict, provider: dict) -> dict:
-    return build_openai_request(
+    return build_anthropic_request(
         task=PROPOSER_TASK,
         schema=proposal_response_schema(packet),
         packet=packet,
@@ -671,7 +655,7 @@ def build_reviewer_request(packet: dict, proposal: dict, provider: dict) -> dict
         "proposal": proposal,
         "proposal_sha256": proposal_sha256,
     }
-    return build_openai_request(
+    return build_anthropic_request(
         task=REVIEWER_TASK,
         schema=review_response_schema(packet, proposal_sha256),
         packet=packet,
@@ -686,7 +670,7 @@ def build_reviewer_request(packet: dict, proposal: dict, provider: dict) -> dict
 def build_revision_request(
     packet: dict, proposal: dict, review: dict, provider: dict
 ) -> dict:
-    return build_openai_request(
+    return build_anthropic_request(
         task=REVISION_TASK,
         schema=proposal_response_schema(packet),
         packet=packet,
@@ -797,19 +781,20 @@ def _bounded_revision_context(
     return None
 
 
-def _send_openai_to(
+def _send_anthropic_to(
     endpoint: str, request_body: dict, api_key_file: Path, timeout: float
 ) -> tuple[int, bytes]:
     key = api_key_file.read_text(encoding="utf-8").strip()
     if not key:
-        raise TriageError("OpenAI API key file is empty")
+        raise TriageError("Anthropic API key file is empty")
     request = urllib.request.Request(
         endpoint,
         data=_canonical_bytes(request_body),
         method="POST",
         headers={
             "content-type": "application/json",
-            "authorization": f"Bearer {key}",
+            "anthropic-version": ANTHROPIC_VERSION,
+            "x-api-key": key,
         },
     )
     try:
@@ -819,45 +804,58 @@ def _send_openai_to(
         return exc.code, exc.read()
 
 
-def _send_openai(request_body: dict, api_key_file: Path, timeout: float) -> tuple[int, bytes]:
-    return _send_openai_to(OPENAI_ENDPOINT, request_body, api_key_file, timeout)
+def _send_anthropic(
+    request_body: dict, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
+    return _send_anthropic_to(ANTHROPIC_ENDPOINT, request_body, api_key_file, timeout)
 
 
-def _token_count_body(request: dict) -> dict:
-    return {
-        key: copy.deepcopy(request[key])
-        for key in ("model", "instructions", "input")
-    }
+def _token_count_body(request: dict, *, cache_prefix_only: bool) -> dict:
+    body = copy.deepcopy(request)
+    body.pop("max_tokens", None)
+    if cache_prefix_only:
+        content = body.get("messages", [{}])[0].get("content", [])
+        if not isinstance(content, list) or not content:
+            raise TriageError("provider request lacks a cacheable packet prefix")
+        body["messages"][0]["content"] = [content[0]]
+    return body
 
 
-def _count_openai_request(
+def _count_anthropic_request(
     request: dict, api_key_file: Path, timeout: float
 ) -> dict:
-    """Capture a free model-specific count for the complete request."""
-    full_body = _token_count_body(request)
+    """Capture free model-specific counts for the full request and cached prefix."""
+    full_body = _token_count_body(request, cache_prefix_only=False)
+    prefix_body = _token_count_body(request, cache_prefix_only=True)
     evidence = {
-        "schema_version": "M050-OPENAI-TOKEN-COUNT-0.1",
+        "schema_version": "M050-ANTHROPIC-TOKEN-COUNT-0.1",
         "full_request_sha256": hashlib.sha256(_canonical_bytes(full_body)).hexdigest(),
-        "uncounted_request_bytes": max(
-            0, len(_canonical_bytes(request)) - len(_canonical_bytes(full_body))
-        ),
+        "cache_prefix_request_sha256": hashlib.sha256(
+            _canonical_bytes(prefix_body)
+        ).hexdigest(),
     }
-    status, raw_bytes = _send_openai_to(
-        OPENAI_TOKEN_COUNT_ENDPOINT, full_body, api_key_file, timeout
-    )
-    try:
-        response = json.loads(raw_bytes)
-    except json.JSONDecodeError as exc:
-        raise TriageError("OpenAI token count returned invalid JSON") from exc
-    evidence["full"] = {"http_status": status, "response": response}
-    if status != 200:
-        raise TriageError(f"OpenAI token count returned HTTP {status}")
+    for name, body in (("full", full_body), ("cache_prefix", prefix_body)):
+        status, raw_bytes = _send_anthropic_to(
+            ANTHROPIC_TOKEN_COUNT_ENDPOINT, body, api_key_file, timeout
+        )
+        try:
+            response = json.loads(raw_bytes)
+        except json.JSONDecodeError as exc:
+            raise TriageError(f"Anthropic {name} token count returned invalid JSON") from exc
+        evidence[name] = {"http_status": status, "response": response}
+        if status != 200:
+            raise TriageError(f"Anthropic {name} token count returned HTTP {status}")
+        if (
+            not isinstance(response, dict)
+            or type(response.get("input_tokens")) is not int
+            or response["input_tokens"] < 1
+        ):
+            raise TriageError(f"Anthropic {name} token count is invalid")
     if (
-        not isinstance(response, dict)
-        or type(response.get("input_tokens")) is not int
-        or response["input_tokens"] < 1
+        evidence["cache_prefix"]["response"]["input_tokens"]
+        > evidence["full"]["response"]["input_tokens"]
     ):
-        raise TriageError("OpenAI token count is invalid")
+        raise TriageError("Anthropic cache-prefix count exceeds full request count")
     return evidence
 
 
@@ -872,37 +870,44 @@ def _padded_token_count(value: int) -> int:
 
 
 def counted_call_ceiling(request: dict, pricing: dict, token_count: dict) -> dict:
-    """Price a pessimistic full cache write plus bounded output and count margin."""
+    """Price a cache miss using provider counts, bounded output, and a 2% floor margin."""
     try:
-        reported = token_count["full"]["response"]["input_tokens"]
-        uncounted = token_count.get("uncounted_request_bytes", 0)
-        full = reported + uncounted
-        output = request["max_output_tokens"]
+        full = token_count["full"]["response"]["input_tokens"]
+        prefix = token_count["cache_prefix"]["response"]["input_tokens"]
+        output = request["max_tokens"]
         input_rate = Decimal(pricing["input_usd_per_million_tokens"])
         output_rate = Decimal(pricing["output_usd_per_million_tokens"])
-        ttl = request["prompt_cache_options"]["ttl"]
-        write_multiplier = Decimal(pricing["cache_write_multiplier"])
+        ttl = request["messages"][0]["content"][0]["cache_control"]["ttl"]
+        write_multiplier = Decimal(
+            pricing[f"cache_{'1h' if ttl == '1h' else '5m'}_write_multiplier"]
+        )
     except (KeyError, TypeError, ValueError, ArithmeticError) as exc:
         raise TriageError("provider count or pricing cannot produce a call ceiling") from exc
-    if not all(type(value) is int and value >= 0 for value in (reported, uncounted, output)):
+    if not all(type(value) is int and value >= 0 for value in (full, prefix, output)):
         raise TriageError("provider count or output ceiling is invalid")
     if (
-        ttl != "30m"
+        prefix > full
+        or ttl not in {"5m", "1h"}
         or not input_rate.is_finite()
         or not output_rate.is_finite()
         or not write_multiplier.is_finite()
         or min(input_rate, output_rate, write_multiplier) <= 0
     ):
         raise TriageError("provider count, pricing, or cache prefix is invalid")
-    padded_input = _padded_token_count(full)
+    padded_prefix = _padded_token_count(prefix)
+    padded_suffix = _padded_token_count(full - prefix)
     million = Decimal(1_000_000)
-    input_ceiling = Decimal(padded_input) * input_rate * write_multiplier / million
+    input_ceiling = (
+        Decimal(padded_prefix) * input_rate * write_multiplier
+        + Decimal(padded_suffix) * input_rate
+    ) / million
     output_ceiling = Decimal(output) * output_rate / million
     ceiling = input_ceiling + output_ceiling
     return {
-        "reported_input_tokens": reported,
-        "reserved_uncounted_request_tokens": uncounted,
-        "reserved_input_tokens": padded_input,
+        "reported_input_tokens": full,
+        "reported_cache_prefix_tokens": prefix,
+        "reserved_cache_prefix_tokens": padded_prefix,
+        "reserved_uncached_suffix_tokens": padded_suffix,
         "maximum_output_tokens": output,
         "cache_ttl": ttl,
         "input_ceiling_usd": format(input_ceiling, "f"),
@@ -916,11 +921,11 @@ def _provider_configuration_for_call(state: dict) -> dict:
     if not active or not provider_enabled:
         raise TriageError("Stage 5 provider call is not active")
     provider = state["reconciliation"]["provider"]
-    if provider.get("name") != "OpenAI":
-        raise TriageError("installed Stage 5 adapter supports only OpenAI")
+    if provider.get("name") != "Anthropic":
+        raise TriageError("installed Stage 5 adapter supports only Anthropic")
     pricing = provider.get("pricing")
     if not isinstance(pricing, dict):
-        raise TriageError("Stage 5 OpenAI pricing is not configured")
+        raise TriageError("Stage 5 Anthropic pricing is not configured")
     return provider
 
 
@@ -944,77 +949,13 @@ def _debit_response(state: dict, raw: dict, provider: dict) -> tuple[dict, dict]
     if not isinstance(usage, dict):
         raise TriageError("provider response lacks billable usage")
     try:
-        pricing = provider["pricing"]
-        input_tokens = Decimal(usage["input_tokens"])
-        output_tokens = Decimal(usage["output_tokens"])
-        details = usage.get("input_tokens_details") or {}
-        cached_tokens = Decimal(details.get("cached_tokens", 0))
-        cache_write_tokens = Decimal(details.get("cache_write_tokens", 0))
-        uncached_tokens = input_tokens - cached_tokens - cache_write_tokens
-        if min(input_tokens, output_tokens, cached_tokens, cache_write_tokens, uncached_tokens) < 0:
-            raise TriageError("OpenAI usage token accounting is invalid")
-        input_rate = Decimal(pricing["input_usd_per_million_tokens"])
-        output_rate = Decimal(pricing["output_usd_per_million_tokens"])
-        read_multiplier = Decimal(pricing["cache_read_multiplier"])
-        write_multiplier = Decimal(pricing["cache_write_multiplier"])
-        million = Decimal(1_000_000)
-        uncached_cost = uncached_tokens * input_rate / million
-        cache_read_cost = cached_tokens * input_rate * read_multiplier / million
-        cache_write_cost = cache_write_tokens * input_rate * write_multiplier / million
-        output_cost = output_tokens * output_rate / million
-        total = uncached_cost + cache_read_cost + cache_write_cost + output_cost
-        cost = {
-            "uncached_input_usd": format(uncached_cost, "f"),
-            "cache_read_usd": format(cache_read_cost, "f"),
-            "cache_write_usd": format(cache_write_cost, "f"),
-            "output_usd": format(output_cost, "f"),
-            "total_usd": format(total, "f"),
-            "display_usd_rounded_up": format(total.quantize(Decimal("0.01"), rounding="ROUND_CEILING"), "f"),
-        }
+        cost = anthropic_usage_cost(
+            usage, provider["pricing"], cache_ttl=provider["cache_ttl"]
+        )
         updated = debit_compile_state_spend(state, cost["total_usd"])
-    except (ContractError, KeyError, TypeError, ValueError, ArithmeticError) as exc:
+    except ContractError as exc:
         raise TriageError(str(exc)) from exc
     return updated, cost
-
-
-def _validate_provider_completion(raw: dict) -> None:
-    """Keep refusal, truncation, and abnormal completion distinct before parsing."""
-    status = raw.get("status")
-    if status == "incomplete":
-        reason = (raw.get("incomplete_details") or {}).get("reason")
-        if reason == "max_output_tokens":
-            raise TriageError("provider truncation at maximum output tokens")
-        raise TriageError(f"provider returned incomplete response: {reason}")
-    if status != "completed":
-        raise TriageError(f"provider returned unexpected response status: {status}")
-
-
-def _extract_openai_structured_response(raw: dict) -> dict:
-    if raw.get("object") != "response":
-        raise TriageError("OpenAI response object is invalid")
-    text_blocks: list[str] = []
-    refusals: list[str] = []
-    for item in raw.get("output", []):
-        if not isinstance(item, dict) or item.get("type") != "message":
-            continue
-        for content in item.get("content", []):
-            if not isinstance(content, dict):
-                continue
-            if content.get("type") == "output_text" and isinstance(content.get("text"), str):
-                text_blocks.append(content["text"])
-            elif content.get("type") == "refusal" and isinstance(content.get("refusal"), str):
-                refusals.append(content["refusal"])
-    if refusals:
-        raise TriageError("provider refusal")
-    if len(text_blocks) != 1:
-        raise TriageError("OpenAI response must contain exactly one output text block")
-    try:
-        structured = json.loads(text_blocks[0])
-    except json.JSONDecodeError as exc:
-        raise TriageError("OpenAI structured output is invalid JSON") from exc
-    if not isinstance(structured, dict):
-        raise TriageError("OpenAI structured response root must be an object")
-    return structured
 
 
 def _promote_reviewed_proposal(
@@ -1133,7 +1074,7 @@ def run_provider_call(
         _write_new_json(paths["packet"], packet)
     _write_new_json(paths["request"], request)
     try:
-        token_count = _count_openai_request(request, api_key_file, timeout)
+        token_count = _count_anthropic_request(request, api_key_file, timeout)
     except (OSError, TimeoutError, urllib.error.URLError, TriageError) as exc:
         _append_ledger(paths["ledger"], {
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
@@ -1160,7 +1101,7 @@ def run_provider_call(
         raise
     ceiling = forecast["total_ceiling_usd"]
     try:
-        http_status, raw_bytes = _send_openai(request, api_key_file, timeout)
+        http_status, raw_bytes = _send_anthropic(request, api_key_file, timeout)
     except (OSError, TimeoutError, urllib.error.URLError) as exc:
         _append_ledger(paths["ledger"], {
             "event_id": f"call_{uuid.uuid4().hex}", "role": role, "attempt": attempt,
@@ -1203,8 +1144,7 @@ def run_provider_call(
         raise TriageError(f"provider returned HTTP {http_status}; raw response is preserved")
     updated_state, cost = _debit_response(state, raw, provider)
     try:
-        _validate_provider_completion(raw)
-        structured = _extract_openai_structured_response(raw)
+        structured = extract_anthropic_structured_response(raw)
         if role == "proposal":
             validate_proposal(packet, structured, corpus)
             result = "mechanically_valid"
@@ -1426,14 +1366,14 @@ def _dashboard(state: dict, store: ReconciliationStore, *, active: bool) -> dict
         if active
         else f"{prefix} pilot is complete; the Compile Worker is Stopped Down"
         if completed
-        else f"Stage 5 is installed at the {prefix} pilot boundary; the Compile Worker is Stopped Down"
+        else f"Stage 5 is prepared at the {prefix} tranche boundary; the Compile Worker is Stopped Down"
     )
     next_text = (
         "Complete and review only the released semantic tranche, then Stopdown"
         if active
         else "Supervisor/author quality adjudication must select any next boundary"
         if completed
-        else "Spark Up may grant the bounded pilot; Proceed is still required before execution"
+        else "Spark Up may grant the bounded tranche; Proceed is still required before execution"
     )
     return {
         "status": status,
@@ -1554,7 +1494,7 @@ def plan_lifecycle_transition(
         completed.append(tranche_id)
     _replace_dashboard_fields(result, _dashboard(result, store, active=False))
     result["next_possible_transition"] = (
-        "Stage 5 pilot is complete; halt for Supervisor/author quality adjudication and next boundary selection."
+        f"Tranche {tranche_id} is complete; halt for Supervisor/author quality adjudication and next boundary selection."
     )
     return result, {"transition": transition, "tranche_id": tranche_id, "stopped": True}
 

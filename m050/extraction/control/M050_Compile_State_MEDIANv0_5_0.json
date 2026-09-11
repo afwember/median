@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-11T18:48:59-04:00",
+  "updated": "2026-09-11T18:52:39-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -108,10 +108,10 @@
   },
   "spend": {
     "active": false,
-    "refresh_window_usd": "0.0000000",
-    "authorized_usd": "58.0456896",
+    "refresh_window_usd": "5.0000000",
+    "authorized_usd": "63.0456896",
     "cumulative_spent_usd": "58.0456896",
-    "remaining_usd": "0.0000000",
+    "remaining_usd": "5.0000000",
     "display_usd_rounded_up": "58.05",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
@@ -137,7 +137,7 @@
     "progress": "105 / 5,382 atoms assigned to canonical semantic units",
     "now": "The authorial ontology correction is installed; successor tranche away-crossing-squirrel-002 has 44 target atoms unaccounted and the Compile Worker is Stopped Down",
     "next": "Spark Up may grant the successor tranche; Proceed is still required before execution",
-    "updated_human": "September 11, 2026 at 6:48:59 PM EDT"
+    "updated_human": "September 11, 2026 at 6:52:39 PM EDT"
   },
   "next_possible_transition": "Spark Up may grant successor tranche away-crossing-squirrel-002 with its exact 44-atom Away.Crossing.Squirrel boundary."
 }

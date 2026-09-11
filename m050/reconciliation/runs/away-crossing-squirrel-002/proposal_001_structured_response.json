@@ -1,0 +1,324 @@
+{
+  "packet_id": "packet_away-crossing-squirrel-002",
+  "packet_sha256": "33c9eeb27bfe9c8567f104710cfbd1ca2cedad0ac0e19094d81af406bf83f445",
+  "schema_version": "M050-RECONCILIATION-PROPOSAL-0.1",
+  "units": [
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0064"
+      ],
+      "canonical_claim": "Away.Crossing is the parent Crossing branch and includes distinct Mouse, Rabbit, and Squirrel Core-Species forks.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-PA-001::ATOM-PA-DIRECT-0260",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Crossing",
+      "rationale": "The branch enumeration is grounded by the Human Ruling that explicitly identifies Away.Crossing as the parent of the species forks.",
+      "related_local_ids": [
+        "U002"
+      ],
+      "unit_local_id": "U001",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-PA-001::ATOM-PA-DIRECT-0288",
+        "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0028",
+        "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0045"
+      ],
+      "canonical_claim": "Squirrel Crossing uses one continuous flowing vector through moving traffic, with limited predeclared redirection, potentially one or two redirects, exploiting relative motion and vehicle wakes while accelerating toward a known far-side climbable refuge or vertical anchor. It seeks a moving traffic window rather than fixed micro-features or one broad static opening, and it does not require convenient vertical anchors in the middle of an ordinary highway. Its strengths are direct speed, leap commitment, and infrastructure use.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-PA-001::ATOM-PA-DIRECT-0288",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-AWAY-001::AWAY-C0009-B00290-1",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-AWAY-001::AWAY-C0009-B00290-2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-AWAY-001::AWAY-C0020-B00639-3",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0028",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0044",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0045",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0046",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0047",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0048",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Crossing.Squirrel",
+      "rationale": "These claims consistently define Squirrel's moving-trajectory planning and movement grammar. The mid-highway-anchor limitation is compatible with requiring a known far-side anchor, while the Rabbit and Mouse statements provide contrast.",
+      "related_local_ids": [
+        "U001",
+        "U003"
+      ],
+      "unit_local_id": "U002",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-AWAY-001::AWAY-C0009-B00290-3",
+        "M050-SRC-AWAY-001::AWAY-C0020-B00642-3"
+      ],
+      "canonical_claim": "Squirrel Crossing's characteristic failure geometry is loss of a viable moving trajectory through a missing anchor, false landing line, hesitation in open ground, or a route that ends without another reachable way home.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-AWAY-001::AWAY-C0009-B00290-3",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-AWAY-001::AWAY-C0020-B00642-3",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0115",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Crossing.Squirrel",
+      "rationale": "The danger and fear claims are compatible expressions of the characteristic failure geometry; the final fragment identifies this geometry as a tuning concern without contradicting it.",
+      "related_local_ids": [
+        "U002"
+      ],
+      "unit_local_id": "U003",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00036_078e41d768e0-3"
+      ],
+      "canonical_claim": "Squirrel Strained Cargo may be shed during Crossing.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00036_078e41d768e0-3",
+          "disposition": "basis"
+        }
+      ],
+      "primary_msid": "Away.Crossing.Squirrel",
+      "rationale": "This states the Crossing-specific limit attached to Squirrel's optional Strained Carry.",
+      "related_local_ids": [
+        "U005",
+        "U007"
+      ],
+      "unit_local_id": "U004",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0062",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00130_575d3823678f-A1"
+      ],
+      "canonical_claim": "At each highway lane crossed, the system performs one hidden Jostle check for every Squirrel body unit in the party: three Squirrel body units produce three checks, two Squirrel body units plus one Guest produce two, one Squirrel body unit plus two Guests produce one, and no Squirrel body units produce none.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0062",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00123_a7c02de795dc-A2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00124_d214c4674e03-A2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00125_3c4c02113452-A2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00130_575d3823678f-A1",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Crossing.Squirrel",
+      "rationale": "The general per-lane, per-Squirrel rule and all supplied party-composition examples agree exactly.",
+      "related_local_ids": [
+        "U004",
+        "U006"
+      ],
+      "unit_local_id": "U005",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0064",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00132_81298d9eb30c-A1"
+      ],
+      "canonical_claim": "Each Jostle check uses the current shared Strained Inventory fill proportion: chance equals 50% multiplied by current Strained Cargo divided by maximum Strained capacity. Full capacity is 50% per check regardless of whether maximum capacity is 10, 20, or 30; half capacity is 25%; at empty capacity the procedure ceases to apply. The probability is recalculated as the fill level changes.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0063",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0064",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0065",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0066",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0067",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00130_575d3823678f-A2",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00132_81298d9eb30c-A1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00135-1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00138-1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00141-1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00264_4e1010108c65-1",
+          "disposition": "elaboration"
+        }
+      ],
+      "primary_msid": "Away.Crossing.Squirrel",
+      "rationale": "The formula, proportional-fill description, boundary cases, and acceptance test are duplicates or compatible examples of one probability rule.",
+      "related_local_ids": [
+        "U005",
+        "U007"
+      ],
+      "unit_local_id": "U006",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CORE-TRAITS-001::B00144-1",
+        "M050-SRC-CORE-TRAITS-001::B00147-1"
+      ],
+      "canonical_claim": "Each successful Jostle check removes exactly one randomly selected ordinary Cargo from the shared Strained Inventory, after which probability is immediately recalculated from the reduced fill level. A single successful check cannot lose more than one Cargo, but multiple Squirrel checks at the same lane may each succeed and therefore produce multiple drops.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0068",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00144-1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00147-1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00150-A1",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00150-A2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00267_07352a2be4d1__A1",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Crossing.Squirrel",
+      "rationale": "All claims agree on random ordinary-Cargo loss, one loss per successful check, immediate recalculation, and the possibility of multiple losses from multiple checks.",
+      "related_local_ids": [
+        "U004",
+        "U006",
+        "U008"
+      ],
+      "unit_local_id": "U007",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CORE-TRAITS-001::B00156-A1",
+        "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0069"
+      ],
+      "canonical_claim": "Jostle percentages, checks, random selection, loss, and recalculation occur entirely under the hood during Crossing. Play does not pause, no roll prompt, inventory interruption, or item-loss alert appears, though visuals may imply shifting bundles, bulging cheeks, a loose object, or a Squirrel struggling with the load.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0069",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0070",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00156-A1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00159-A1",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00162-A1",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00270_41d9ff53d1ae__A1",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Crossing.Squirrel",
+      "rationale": "The sources consistently require hidden, uninterrupted execution while permitting non-transactional visual feedback.",
+      "related_local_ids": [
+        "U007"
+      ],
+      "unit_local_id": "U008",
+      "unit_status": "reconciled"
+    }
+  ]
+}

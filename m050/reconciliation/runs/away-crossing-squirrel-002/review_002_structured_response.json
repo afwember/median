@@ -1,0 +1,8 @@
+{
+  "defects": [],
+  "packet_id": "packet_away-crossing-squirrel-002",
+  "packet_sha256": "33c9eeb27bfe9c8567f104710cfbd1ca2cedad0ac0e19094d81af406bf83f445",
+  "proposal_sha256": "1316d6d849a7e3023645f0d769927552852e6c56eb3d9c4f856fba2b37fbcc62",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "accept"
+}

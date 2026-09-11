@@ -87,9 +87,9 @@ def test_authorial_ontology_correction_is_bounded_and_canonical():
         "msid_prefix": "Away.Crossing.Squirrel",
         "selector": "exact",
     }
-    assert state["reconciliation"]["completed_tranche_ids"] == [
-        "away-crossing-pilot"
-    ]
+    completed = state["reconciliation"]["completed_tranche_ids"]
+    assert "away-crossing-pilot" in completed
+    assert "away-crossing-squirrel-001" not in completed
     mappings = [
         json.loads(line)
         for line in (

@@ -471,6 +471,7 @@ def test_stopdown_interrupts_incomplete_tranche_without_marking_completion(
     corpus, empty_store
 ):
     state = _ready_state()
+    state["reconciliation"]["completed_tranche_ids"] = ["away-crossing-pilot"]
     active, _ = reconciliation.plan_lifecycle_transition(
         state,
         corpus,

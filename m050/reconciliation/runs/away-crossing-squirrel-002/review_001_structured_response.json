@@ -1,0 +1,12 @@
+{
+  "defects": [
+    "U006 presents the 50% ceiling as settled, but the packet explicitly marks it as a working value; this loses tuning status and overstates normative force.",
+    "U003 converts Squirrel's stated fear—an ending without another reachable way home—into mechanical failure geometry, creating unsupported equivalence between fear and failure.",
+    "U002 invents a “static” Rabbit opening; the supplied claims describe a broad or macro traffic window but do not establish that it is static."
+  ],
+  "packet_id": "packet_away-crossing-squirrel-002",
+  "packet_sha256": "33c9eeb27bfe9c8567f104710cfbd1ca2cedad0ac0e19094d81af406bf83f445",
+  "proposal_sha256": "9d7aeb866d2224830f1688858b6fe30ff6c6f508c42c296939c9a95f2d71b77d",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "revise"
+}

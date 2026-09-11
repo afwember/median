@@ -37,8 +37,9 @@ def test_stage_5_provider_and_manual_spend_window_are_bound():
     remaining = Decimal(state["spend"]["remaining_usd"])
     if state["spend"]["active"]:
         assert refresh_window > Decimal("0")
-    else:
-        assert refresh_window == Decimal("0")
+    assert state["spend"]["active"] is (
+        state["execution_state"] == "RECONCILIATION_ACTIVE"
+    )
     assert Decimal("0") <= remaining <= refresh_window
 
 

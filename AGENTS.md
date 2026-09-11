@@ -220,30 +220,42 @@ envelope before any call is possible.
 
 Asa's instruction `Spark Up` is the permission-granting phrase. It grants
 reconciliation, reviewed semantic-acceptance, and repository-write authority
-for exactly the semantic tranche selected in canonical state; it also grants
-provider-call authority only when a
-previously author-approved provider configuration and spend envelope are both
-active. `Proceed`, or an equally clear go-ahead after the assessment, releases
-execution only and never creates or enlarges authority.
+for exactly one semantic tranche: either the incomplete tranche preserved in
+canonical state or, after a completed boundary, the next boundary Asa selects
+at the fermata. It also grants provider-call authority only when an
+author-approved provider configuration and positive spend envelope are active
+at execution release. The grant remains in task context and is not exercisable
+before `Proceed`. `Proceed`, or an equally clear go-ahead after the assessment,
+releases execution and may concretize the boundary or spend Asa explicitly
+approves there; it does not otherwise create or enlarge authority.
 
 On `Spark Up` from READY, the Worker remains read-only, performs the complete
 cold start, runs `.venv/bin/python m050/tools/m050_reconciliation.py
---transition prepare-spark-up`, retains the reported tranche ID, packet hash,
-and Git checkpoint in task context, reports its first substantive action and
-risks, and halts for `Proceed`. The pause makes no repository change: do not
-refresh STATUS, run a publication guard, commit, or push merely to represent it.
-If the task loses the unconsumed grant or assessment context, require a new
-`Spark Up`.
+--transition prepare-spark-up`, and halts at the fermata. An incomplete current
+boundary returns its tranche ID and packet hash. A completed boundary returns
+`boundary_required` instead of rejecting Spark Up; the Worker reports the
+completed work, remaining corpus, spend need, and a recommended next exact
+boundary, then asks Asa to select it. The Worker retains the report and Git
+checkpoint in task context and states its first substantive action and risks.
+The pause makes no repository change: do not refresh STATUS, run a publication
+guard, commit, or push merely to represent it. If the task loses the unconsumed
+grant or assessment context, require a new `Spark Up`.
 
 From that pause, handle `Proceed` with exactly one invocation of `.venv/bin/python
-m050/tools/m050_reconciliation.py --transition activate-on-proceed
---expected-tranche-id <ASSESSED_TRANCHE_ID> --expected-head <ASSESSED_HEAD>
---apply`. The operation performs the narrow stale-check and atomically activates
-only the assessed tranche and applicable authorities. Do not precede it with
-another cold start, guard, Git check, dry run, inventory, or revalidation. If it
-fails, halt and report the drift; if it succeeds, begin the assessed work.
-Repeated `Spark Up` repeats only the assessment. `Proceed` without the retained
-grant and assessment grants nothing.
+m050/tools/m050_reconciliation.py --transition activate-on-proceed`. For an
+incomplete prepared tranche, pass `--expected-tranche-id` and `--expected-head`.
+When the report required a boundary, pass the author-selected
+`--select-tranche-id`, `--select-msid-prefix`, `--select-selector`, and
+`--expected-head`; a plain `Proceed` may accept a specific recommendation made
+at the fermata. The same invocation may pass `--authorize-spend-usd` only for a
+dollar amount Asa explicitly approved in that response. End either form with
+`--apply`. The operation performs the narrow stale-check and atomically binds
+and activates only that tranche and applicable authorities. An incomplete
+canonical tranche cannot be replaced. Do not precede activation with another
+cold start, guard, Git check, dry run, inventory, or revalidation. If it fails,
+halt and report the drift; if it succeeds, begin the assessed work. Repeated
+`Spark Up` repeats only the assessment. `Proceed` without the retained grant
+and assessment grants nothing.
 
 ### Canonical input and representation
 
@@ -329,7 +341,8 @@ grant and assessment grants nothing.
   not a separate artifact family.
 - Use `m050/tools/m050_reconciliation.py` for deterministic inventory, packet,
   record, and lifecycle operations. `prepare-spark-up` is read-only and rejects
-  `--apply`. `activate-on-proceed` requires the assessed tranche and checkpoint.
+  `--apply`. `activate-on-proceed` requires the assessed checkpoint and either
+  the preserved incomplete tranche or Asa's fermata-selected next boundary.
   `prepare-stopdown --apply` is the universal interrupt: it always revokes
   authority, preserves the current target, and records completion only when
   exact tranche coverage exists. STATUS rendering, the full guard, Git
@@ -338,7 +351,8 @@ grant and assessment grants nothing.
 - After execution release, the Worker operates autonomously within the tranche
   and budget. It may diagnose and correct local implementation, validate and
   review calls, maintain canonical state, and make coherent checkpoints. It may
-  not select the next tranche, change the representation or authority policy,
+  recommend but not select the next tranche, change the representation or
+  authority policy,
   weaken semantic review, enter another phase, or transmit to another provider.
 - Halt for input or vocabulary drift, packet or evidence-binding defect,
   incomplete or duplicate atom coverage, ungrounded synthesis, unresolved

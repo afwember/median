@@ -59,6 +59,7 @@ def test_operating_contract_names_only_stage_5_profile():
     assert "## Active phase profile — Stage 5 semantic reconciliation" in text
     assert "## Active phase profile — Stage 4 MSID mapping" not in text
     assert "m050/tools/m050_reconciliation.py" in text
+    assert "`boundary_required` instead of rejecting Spark Up" in text
 
 
 def test_authorial_ontology_correction_is_bounded_and_canonical():

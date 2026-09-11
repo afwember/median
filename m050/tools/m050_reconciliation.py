@@ -1435,9 +1435,18 @@ def _replace_dashboard_fields(state: dict, fields: dict[str, str]) -> None:
 
 
 def _target(state: dict) -> tuple[str, str, str]:
-    target = state.get("reconciliation", {}).get("target")
-    if not isinstance(target, dict):
+    target = _optional_target(state)
+    if target is None:
         raise TriageError("Stage 5 target is absent")
+    return target
+
+
+def _optional_target(state: dict) -> tuple[str, str, str] | None:
+    target = state.get("reconciliation", {}).get("target")
+    if target is None:
+        return None
+    if not isinstance(target, dict):
+        raise TriageError("Stage 5 target is malformed")
     tranche_id = target.get("tranche_id")
     prefix = target.get("msid_prefix")
     selector = target.get("selector")
@@ -1448,6 +1457,74 @@ def _target(state: dict) -> tuple[str, str, str]:
     ):
         raise TriageError("Stage 5 target is malformed")
     return tranche_id, prefix, selector
+
+
+def _target_remaining(
+    corpus: ReconciliationCorpus,
+    store: ReconciliationStore,
+    target: tuple[str, str, str],
+) -> set[str]:
+    _tranche_id, prefix, selector = target
+    return {
+        item.key for item in corpus.target_atoms(prefix, selector=selector)
+    } - set(store.primary_members)
+
+
+def _selection_fermata_report(
+    state: dict,
+    corpus: ReconciliationCorpus,
+    store: ReconciliationStore,
+    target: tuple[str, str, str] | None,
+) -> dict:
+    counts = store.counts()
+    report = {
+        "transition": "prepare-spark-up",
+        "boundary_required": True,
+        "current_target": (
+            None
+            if target is None
+            else {
+                "tranche_id": target[0],
+                "msid_prefix": target[1],
+                "selector": target[2],
+            }
+        ),
+        "completed_tranche_ids": list(
+            state.get("reconciliation", {}).get("completed_tranche_ids", [])
+        ),
+        "accounted_atoms": counts["accounted_atoms"],
+        "unaccounted_atoms": len(corpus.atoms) - counts["accounted_atoms"],
+        "spend_required": (
+            state.get("reconciliation", {}).get("provider", {}).get("enabled") is True
+            and Decimal(state.get("spend", {}).get("remaining_usd", "0")) <= 0
+        ),
+    }
+    return report
+
+
+def _apply_explicit_spend_grant(state: dict, amount: str | None) -> str | None:
+    if amount is None:
+        return None
+    if state.get("reconciliation", {}).get("provider", {}).get("enabled") is not True:
+        raise TriageError("provider-disabled Stage 5 cannot accept a spend grant")
+    spend = state["spend"]
+    if Decimal(spend["remaining_usd"]) > 0:
+        raise TriageError("Stage 5 already has an unused provider spend grant")
+    try:
+        grant = Decimal(amount)
+    except (ArithmeticError, ValueError):
+        raise TriageError("provider spend grant must be a decimal amount") from None
+    if not grant.is_finite() or grant <= 0:
+        raise TriageError("provider spend grant must be positive and finite")
+    grant = grant.quantize(Decimal("0.0000001"))
+    cumulative = Decimal(spend["cumulative_spent_usd"])
+    formatted = format(grant, ".7f")
+    spend.update({
+        "refresh_window_usd": formatted,
+        "authorized_usd": format(cumulative + grant, ".7f"),
+        "remaining_usd": formatted,
+    })
+    return formatted
 
 
 def _dashboard(state: dict, store: ReconciliationStore, *, active: bool) -> dict[str, str]:
@@ -1528,19 +1605,37 @@ def plan_lifecycle_transition(
     transition: str,
     *,
     expected_tranche_id: str | None = None,
+    selected_target: dict | None = None,
+    authorized_spend_usd: str | None = None,
 ) -> tuple[dict, dict]:
     if transition not in TRANSITIONS:
         raise TriageError(f"unsupported Stage 5 lifecycle transition: {transition}")
     active, _provider_enabled = _validate_lifecycle(state)
-    tranche_id, prefix, selector = _target(state)
     if transition == "prepare-spark-up":
         if active:
             raise TriageError("Spark Up assessment requires Stage 5 READY")
+        target = _optional_target(state)
+        target_completed = (
+            target is not None
+            and target[0] in state.get("reconciliation", {}).get(
+                "completed_tranche_ids", []
+            )
+        )
+        if (
+            target is None
+            or target_completed
+            or not _target_remaining(corpus, store, target)
+        ):
+            return copy.deepcopy(state), _selection_fermata_report(
+                state, corpus, store, target
+            )
+        tranche_id, prefix, selector = target
         packet = build_packet(
             corpus, store, tranche_id=tranche_id, msid_prefix=prefix, selector=selector
         )
         return copy.deepcopy(state), {
             "transition": transition,
+            "boundary_required": False,
             "tranche_id": tranche_id,
             "msid_prefix": prefix,
             "selector": selector,
@@ -1551,12 +1646,56 @@ def plan_lifecycle_transition(
     if transition == "activate-on-proceed":
         if active:
             raise TriageError("Stage 5 tranche is already active")
-        build_packet(
+        current_target = _optional_target(state)
+        current_remaining = (
+            set() if current_target is None
+            else _target_remaining(corpus, store, current_target)
+        )
+        current_completed = (
+            current_target is not None
+            and current_target[0] in state.get("reconciliation", {}).get(
+                "completed_tranche_ids", []
+            )
+        )
+        if current_completed and current_remaining:
+            raise TriageError(
+                "completed Stage 5 tranche has unaccounted target atoms"
+            )
+        if current_remaining and not current_completed:
+            if selected_target is not None:
+                raise TriageError(
+                    "an interrupted Stage 5 tranche cannot be replaced at Proceed"
+                )
+            tranche_id, prefix, selector = current_target
+            if expected_tranche_id != tranche_id:
+                raise TriageError(
+                    "assessed tranche no longer matches the canonical Stage 5 boundary"
+                )
+        else:
+            if selected_target is None:
+                raise TriageError(
+                    "Proceed requires the author-selected next Stage 5 boundary"
+                )
+            candidate_state = {"reconciliation": {"target": selected_target}}
+            tranche_id, prefix, selector = _target(candidate_state)
+            if tranche_id in state.get("reconciliation", {}).get(
+                "completed_tranche_ids", []
+            ):
+                raise TriageError("Proceed cannot reactivate a completed Stage 5 tranche")
+            if expected_tranche_id is not None:
+                raise TriageError(
+                    "a new author-selected boundary cannot also claim a prepared tranche"
+                )
+        packet = build_packet(
             corpus, store, tranche_id=tranche_id, msid_prefix=prefix, selector=selector
         )
-        if expected_tranche_id != tranche_id:
-            raise TriageError("assessed tranche no longer matches the canonical Stage 5 boundary")
         result = copy.deepcopy(state)
+        result["reconciliation"]["target"] = {
+            "tranche_id": tranche_id,
+            "msid_prefix": prefix,
+            "selector": selector,
+        }
+        granted_spend = _apply_explicit_spend_grant(result, authorized_spend_usd)
         result["status"] = result["execution_state"] = "RECONCILIATION_ACTIVE"
         result["reconciliation"]["status"] = "ACTIVE"
         result["authority"]["reconciliation_authorized"] = True
@@ -1573,9 +1712,18 @@ def plan_lifecycle_transition(
         result["next_possible_transition"] = (
             f"Continue and semantically review tranche {tranche_id}; Stopdown may interrupt at any time."
         )
-        return result, {"transition": transition, "tranche_id": tranche_id, "activated": True}
+        return result, {
+            "transition": transition,
+            "tranche_id": tranche_id,
+            "activated": True,
+            "authorized_spend_usd": granted_spend,
+            "required_atoms": len(packet["required_atom_keys"]),
+            "context_atoms": len(packet["context_atoms"]),
+            "packet_sha256": packet["packet_sha256"],
+        }
     if not active:
         return copy.deepcopy(state), {"transition": transition, "already_stopped": True}
+    tranche_id, prefix, selector = _target(state)
     target_keys = {
         item.key for item in corpus.target_atoms(prefix, selector=selector)
     }
@@ -1630,6 +1778,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--transition", choices=sorted(TRANSITIONS))
     parser.add_argument("--expected-tranche-id")
     parser.add_argument("--expected-head")
+    parser.add_argument("--select-tranche-id")
+    parser.add_argument("--select-msid-prefix")
+    parser.add_argument("--select-selector", choices=("exact", "subtree"))
+    parser.add_argument("--authorize-spend-usd")
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--provider-role", choices=("proposal", "review"))
     parser.add_argument("--api-key-file", type=Path)
@@ -1662,14 +1814,46 @@ def main(argv: list[str] | None = None) -> int:
         if args.transition == "prepare-spark-up" and args.apply:
             raise TriageError("read-only Spark Up assessment rejects --apply")
         if args.transition == "activate-on-proceed":
-            if not args.apply or not args.expected_tranche_id or not args.expected_head:
+            selection_values = (
+                args.select_tranche_id,
+                args.select_msid_prefix,
+                args.select_selector,
+            )
+            has_selection = any(value is not None for value in selection_values)
+            complete_selection = all(value is not None for value in selection_values)
+            if not args.apply or not args.expected_head:
                 raise TriageError(
-                    "Proceed activation requires --apply, --expected-tranche-id, and --expected-head"
+                    "Proceed activation requires --apply and --expected-head"
+                )
+            if has_selection != complete_selection:
+                raise TriageError(
+                    "Proceed boundary selection requires tranche ID, MSID prefix, and selector"
+                )
+            if not complete_selection and not args.expected_tranche_id:
+                raise TriageError(
+                    "Proceed requires either an assessed tranche or an author-selected boundary"
                 )
             _require_clean_synchronized_checkpoint(repo_root, args.expected_head)
+        elif args.authorize_spend_usd is not None or any((
+            args.select_tranche_id, args.select_msid_prefix, args.select_selector
+        )):
+            raise TriageError(
+                "boundary selection and spend grant apply only to Proceed activation"
+            )
+        selected_target = (
+            {
+                "tranche_id": args.select_tranche_id,
+                "msid_prefix": args.select_msid_prefix,
+                "selector": args.select_selector,
+            }
+            if args.select_tranche_id is not None
+            else None
+        )
         replacement, report = plan_lifecycle_transition(
             state, corpus, store, args.transition,
             expected_tranche_id=args.expected_tranche_id,
+            selected_target=selected_target,
+            authorized_spend_usd=args.authorize_spend_usd,
         )
         if args.apply:
             _atomic_write_json(state_path, replacement)

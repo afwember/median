@@ -100,6 +100,12 @@ def _ready_state():
     state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
     state["status"] = state["execution_state"] = "RECONCILIATION_READY"
     state["reconciliation"]["status"] = "READY"
+    target_id = state["reconciliation"]["target"]["tranche_id"]
+    state["reconciliation"]["completed_tranche_ids"] = [
+        tranche_id
+        for tranche_id in state["reconciliation"]["completed_tranche_ids"]
+        if tranche_id != target_id
+    ]
     for key in (
         "repository_writes_authorized",
         "semantic_acceptance_authorized",
@@ -444,6 +450,73 @@ def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(
     assert state["authority"]["repository_writes_authorized"] is False
     assert state["authority"]["reconciliation_authorized"] is False
     assert state["authority"]["provider_calls_authorized"] is False
+
+
+def test_spark_up_reaches_selection_fermata_after_completed_target(corpus):
+    store = reconciliation.ReconciliationStore(
+        ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
+    )
+    state = _ready_state()
+    state["reconciliation"]["completed_tranche_ids"].append(
+        "away-crossing-squirrel-002"
+    )
+    original = copy.deepcopy(state)
+    assessed, report = reconciliation.plan_lifecycle_transition(
+        state, corpus, store, "prepare-spark-up"
+    )
+    assert assessed == original
+    assert report["boundary_required"] is True
+    assert report["current_target"]["tranche_id"] == "away-crossing-squirrel-002"
+    assert report["accounted_atoms"] == 149
+    assert report["unaccounted_atoms"] == 5233
+    assert report["spend_required"] is False
+
+
+def test_proceed_atomically_binds_author_selected_boundary_and_spend(corpus):
+    store = reconciliation.ReconciliationStore(
+        ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
+    )
+    state = _ready_state()
+    state["spend"].update({
+        "refresh_window_usd": "0.0000000",
+        "authorized_usd": state["spend"]["cumulative_spent_usd"],
+        "remaining_usd": "0.0000000",
+    })
+    selected = {
+        "tranche_id": "away-crossing-phase-001",
+        "msid_prefix": "Away.Crossing.Phase",
+        "selector": "exact",
+    }
+    active, report = reconciliation.plan_lifecycle_transition(
+        state,
+        corpus,
+        store,
+        "activate-on-proceed",
+        selected_target=selected,
+        authorized_spend_usd="5",
+    )
+    assert report["activated"] is True
+    assert report["authorized_spend_usd"] == "5.0000000"
+    assert active["reconciliation"]["target"] == selected
+    assert active["spend"]["remaining_usd"] == "5.0000000"
+    assert active["spend"]["active"] is True
+    assert active["authority"]["provider_calls_authorized"] is True
+
+
+def test_proceed_cannot_replace_interrupted_boundary(corpus, empty_store):
+    state = _ready_state()
+    with pytest.raises(reconciliation.TriageError, match="cannot be replaced"):
+        reconciliation.plan_lifecycle_transition(
+            state,
+            corpus,
+            empty_store,
+            "activate-on-proceed",
+            selected_target={
+                "tranche_id": "away-crossing-phase-001",
+                "msid_prefix": "Away.Crossing.Phase",
+                "selector": "exact",
+            },
+        )
 
 
 def test_proceed_activates_reconciliation_and_preconfigured_provider(

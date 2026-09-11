@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_ACTIVE",
-  "updated": "2026-09-11T16:48:14-04:00",
+  "updated": "2026-09-11T17:12:13-04:00",
   "execution_state": "RECONCILIATION_ACTIVE",
   "corpus": {
     "registered_sources": 24,
@@ -110,14 +110,14 @@
   "spend": {
     "active": true,
     "refresh_window_usd": "2.0000000",
-    "authorized_usd": "57.0539050",
-    "cumulative_spent_usd": "55.0539050",
+    "authorized_usd": "58.7647930",
+    "cumulative_spent_usd": "56.7647930",
     "remaining_usd": "2.0000000",
-    "display_usd_rounded_up": "55.06",
+    "display_usd_rounded_up": "56.77",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
-    "provisional_component_usd": "1.455132",
-    "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout"
+    "provisional_component_usd": "3.166020",
+    "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout plus Away.Crossing provider-selection comparison attempt 2 interrupted transport conservatively reserved at its frozen $1.710888 ceiling"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -138,7 +138,7 @@
     "progress": "105 / 5,382 atoms assigned to canonical semantic units",
     "now": "Away.Crossing.Squirrel reconciliation is active within tranche away-crossing-squirrel-001",
     "next": "Complete and review only the released semantic tranche, then Stopdown",
-    "updated_human": "September 11, 2026 at 4:48:14 PM EDT"
+    "updated_human": "September 11, 2026 at 5:12:13 PM EDT"
   },
   "next_possible_transition": "Finish and semantically review tranche away-crossing-squirrel-001, then formal Stopdown."
 }

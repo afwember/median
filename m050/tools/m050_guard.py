@@ -353,7 +353,8 @@ def validate_spend_and_status(
         if state_spend.get("active") is not active_required:
             errors.append("canonical cumulative budget activity disagrees with the active phase")
         if (
-            refresh_window <= 0
+            refresh_window < 0
+            or (active_required and refresh_window <= 0)
             or cumulative < 0
             or authorized < 0
             or remaining < 0
@@ -606,6 +607,10 @@ def validate_operating_contract(errors: list[str]) -> None:
         errors.append("AGENTS omits the sole Stopdown notifier")
     if not STOPDOWN_NOTIFIER.is_file():
         errors.append("sole Stopdown notifier is missing")
+    if "Stopdown** is the universal Worker-side interrupt" not in text:
+        errors.append("AGENTS does not make Stopdown a universal interrupt")
+    if "Provider spend is never replenished automatically" not in text:
+        errors.append("AGENTS omits authorial spend replenishment control")
     for retired_task_tool in (
         "codex_app__list_threads",
         "codex_app__send_message_to_thread",

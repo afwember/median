@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
-  "status": "RECONCILIATION_ACTIVE",
-  "updated": "2026-09-11T17:12:13-04:00",
-  "execution_state": "RECONCILIATION_ACTIVE",
+  "status": "RECONCILIATION_READY",
+  "updated": "2026-09-11T17:44:33-04:00",
+  "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
     "atomic_compile_exclusions": 2,
@@ -67,7 +67,7 @@
     "input_source_count": 18
   },
   "reconciliation": {
-    "status": "ACTIVE",
+    "status": "READY",
     "input_scope": "all 5,382 Stage 4 eligible atoms as one unitary corpus",
     "input_mapping_record": "m050/mapping/M050_Atom_MSID_Mappings_MEDIANv0_5_0.jsonl",
     "input_mapping_sha256": "e5f06da32ddf4db798c685377fd1466e5e336362eb6c8e33ccfdea664e2c99ab",
@@ -108,37 +108,37 @@
     }
   },
   "spend": {
-    "active": true,
-    "refresh_window_usd": "2.0000000",
-    "authorized_usd": "58.7647930",
-    "cumulative_spent_usd": "56.7647930",
-    "remaining_usd": "2.0000000",
-    "display_usd_rounded_up": "56.77",
+    "active": false,
+    "refresh_window_usd": "0.0000000",
+    "authorized_usd": "57.5340206",
+    "cumulative_spent_usd": "57.5340206",
+    "remaining_usd": "0.0000000",
+    "display_usd_rounded_up": "57.54",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
     "provisional_component_usd": "3.166020",
     "provisional_component_basis": "C0005 v0.3 authorially directed conservative-ceiling resolution after transport timeout plus C0013 v0.11 interrupted transport conservatively reserved at its frozen $0.336992 ceiling plus Development Survivorship Review C0006 v0.2 authorially directed conservative-ceiling resolution at $0.411628 after transport timeout plus Development Survivorship Review corrected C0006 v0.4 authorially directed conservative-ceiling resolution at $0.411668 after transport timeout plus Away.Crossing provider-selection comparison attempt 2 interrupted transport conservatively reserved at its frozen $1.710888 ceiling"
   },
   "authority": {
-    "repository_writes_authorized": true,
+    "repository_writes_authorized": false,
     "source_work_authorized": false,
     "triage_authorized": false,
     "rewrite_authorized": false,
     "google_sheets_interaction_authorized": false,
-    "semantic_acceptance_authorized": true,
+    "semantic_acceptance_authorized": false,
     "mapping_authorized": false,
-    "reconciliation_authorized": true,
-    "provider_calls_authorized": true,
+    "reconciliation_authorized": false,
+    "provider_calls_authorized": false,
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "status": "ACTIVE — Stage 5 reconciliation",
+    "status": "READY — Stage 5 reconciliation",
     "phase": "Semantic reconciliation — reviewed proposition unification",
     "source": "Unitary 5,382-atom corpus — current semantic boundary Away.Crossing.Squirrel",
     "progress": "105 / 5,382 atoms assigned to canonical semantic units",
-    "now": "Away.Crossing.Squirrel reconciliation is active within tranche away-crossing-squirrel-001",
-    "next": "Complete and review only the released semantic tranche, then Stopdown",
-    "updated_human": "September 11, 2026 at 5:12:13 PM EDT"
+    "now": "Away.Crossing.Squirrel reconciliation is interrupted with 65 target atoms unaccounted; the Compile Worker is Stopped Down",
+    "next": "Spark Up may regrant the same preserved tranche; Proceed is still required before execution",
+    "updated_human": "September 11, 2026 at 5:44:33 PM EDT"
   },
-  "next_possible_transition": "Finish and semantically review tranche away-crossing-squirrel-001, then formal Stopdown."
+  "next_possible_transition": "Tranche away-crossing-squirrel-001 is interrupted with 65 target atoms unaccounted; Spark Up may regrant only this preserved boundary."
 }

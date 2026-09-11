@@ -1463,25 +1463,29 @@ def _target(state: dict) -> tuple[str, str, str]:
 
 
 def _dashboard(state: dict, store: ReconciliationStore, *, active: bool) -> dict[str, str]:
-    tranche_id, prefix, _selector = _target(state)
+    tranche_id, prefix, selector = _target(state)
     counts = store.counts()
     completed = tranche_id in state.get("reconciliation", {}).get(
         "completed_tranche_ids", []
     )
+    target_keys = {
+        item.key for item in store.corpus.target_atoms(prefix, selector=selector)
+    }
+    remaining = len(target_keys - set(store.primary_members))
     status = "ACTIVE — Stage 5 reconciliation" if active else "READY — Stage 5 reconciliation"
     now = (
         f"{prefix} reconciliation is active within tranche {tranche_id}"
         if active
         else f"{prefix} pilot is complete; the Compile Worker is Stopped Down"
         if completed
-        else f"Stage 5 is prepared at the {prefix} tranche boundary; the Compile Worker is Stopped Down"
+        else f"{prefix} reconciliation is interrupted with {remaining} target atoms unaccounted; the Compile Worker is Stopped Down"
     )
     next_text = (
-        "Complete and review only the released semantic tranche, then Stopdown"
+        "Continue only the released semantic tranche, or Stopdown at any time"
         if active
         else "Supervisor/author quality adjudication must select any next boundary"
         if completed
-        else "Spark Up may grant the bounded tranche; Proceed is still required before execution"
+        else "Spark Up may regrant the same preserved tranche; Proceed is still required before execution"
     )
     return {
         "status": status,
@@ -1524,7 +1528,7 @@ def _revoke_one_time_spend_on_stopdown(state: dict) -> None:
     spend = state["spend"]
     cumulative = Decimal(spend["cumulative_spent_usd"])
     spend["active"] = False
-    spend["refresh_window_usd"] = "2.0000000"
+    spend["refresh_window_usd"] = "0.0000000"
     spend["authorized_usd"] = format(cumulative, ".7f")
     spend["remaining_usd"] = "0.0000000"
 
@@ -1571,11 +1575,15 @@ def plan_lifecycle_transition(
         result["authority"]["semantic_acceptance_authorized"] = True
         result["authority"]["repository_writes_authorized"] = True
         provider_enabled = result["reconciliation"]["provider"]["enabled"] is True
+        if provider_enabled and Decimal(result["spend"]["remaining_usd"]) <= 0:
+            raise TriageError(
+                "provider-enabled Proceed requires explicit positive spend authority"
+            )
         result["authority"]["provider_calls_authorized"] = provider_enabled
         result["spend"]["active"] = provider_enabled
         _replace_dashboard_fields(result, _dashboard(result, store, active=True))
         result["next_possible_transition"] = (
-            f"Finish and semantically review tranche {tranche_id}, then formal Stopdown."
+            f"Continue and semantically review tranche {tranche_id}; Stopdown may interrupt at any time."
         )
         return result, {"transition": transition, "tranche_id": tranche_id, "activated": True}
     if not active:
@@ -1584,10 +1592,7 @@ def plan_lifecycle_transition(
         item.key for item in corpus.target_atoms(prefix, selector=selector)
     }
     missing = target_keys - set(store.primary_members)
-    if missing:
-        raise TriageError(
-            f"formal Stopdown requires complete tranche coverage; {len(missing)} target atoms remain"
-        )
+    target_complete = not missing
     result = copy.deepcopy(state)
     result["status"] = result["execution_state"] = "RECONCILIATION_READY"
     result["reconciliation"]["status"] = "READY"
@@ -1598,13 +1603,21 @@ def plan_lifecycle_transition(
         result["authority"][key] = False
     _revoke_one_time_spend_on_stopdown(result)
     completed = result["reconciliation"].setdefault("completed_tranche_ids", [])
-    if tranche_id not in completed:
+    if target_complete and tranche_id not in completed:
         completed.append(tranche_id)
     _replace_dashboard_fields(result, _dashboard(result, store, active=False))
     result["next_possible_transition"] = (
         f"Tranche {tranche_id} is complete; halt for Supervisor/author quality adjudication and next boundary selection."
+        if target_complete
+        else f"Tranche {tranche_id} is interrupted with {len(missing)} target atoms unaccounted; Spark Up may regrant only this preserved boundary."
     )
-    return result, {"transition": transition, "tranche_id": tranche_id, "stopped": True}
+    return result, {
+        "transition": transition,
+        "tranche_id": tranche_id,
+        "stopped": True,
+        "target_complete": target_complete,
+        "remaining_atoms": len(missing),
+    }
 
 
 def _require_clean_synchronized_checkpoint(repo_root: Path, expected_head: str) -> None:

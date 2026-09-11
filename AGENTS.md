@@ -81,17 +81,21 @@ overall phase boundary, the Supervisor may retool the contract in discussion
 with Asa; the Compile Worker begins the new phase only after Asa explicitly
 authorizes it.
 
-**Stopdown** is the Worker-side formal handoff, not merely a pause in phase
-work. At bounded-work completion the Worker must finish canonical packaging and
-validation, set source-work, repository-write, and the applicable phase-work
-authority to false in canonical state, refresh `STATUS.md`, run the required
-guard, commit and push that closing transition, and confirm a clean worktree
-with local `HEAD` equal to `origin/main`. The closing commit and push are the
-final repository actions permitted by the expiring bounded grant and may publish
-only the completed work and authority revocation. A
-work-completion halt is not a Stopdown while any applicable authority remains
-true. After the closing push the Worker makes no further repository write
-unless Asa explicitly grants new work.
+**Stopdown** is the universal Worker-side interrupt and formal handoff, not
+merely a pause in phase work. Asa may invoke it at any time, including before a
+tranche is complete. The Worker must stop new provider activity, preserve and
+cost-reconcile all available evidence, retain the exact incomplete boundary
+without marking it complete, set source-work, repository-write, provider-call,
+spend, and applicable phase-work authority to false in canonical state, refresh
+`STATUS.md`, run the required guard, commit and push that closing transition,
+and confirm a clean worktree with local `HEAD` equal to `origin/main`. When the
+tranche is complete, the same path records completion; there is no separate
+pause or abort transition. The closing commit and push are the final repository
+actions permitted by the expiring bounded grant and may publish only preserved
+work, reconciled evidence or cost, and authority revocation. A cessation is not
+a Stopdown while any applicable authority remains true. After the closing push
+the Worker makes no further repository write unless Asa explicitly grants new
+work.
 
 Host-privileged operations must remain narrow and independently approvable.
 Run status rendering, the full guard, Git staging, read-only Git inspection,
@@ -190,6 +194,10 @@ No separate successor packet is required. These canonical files are the handoff.
   require packet-, source-, or call-specific restatement. It permits the
   external transfer only; it does not select a source, activate work, authorize
   spend, widen a task, or permit transmission to another provider.
+- Provider spend is never replenished automatically. If the conservative
+  ceiling for a proposed call exceeds the remaining authorized balance, the
+  Worker halts and reports the balance, ceiling, and exact shortfall. Only Asa's
+  explicit approval of a stated dollar amount may increase `authorized_usd`.
 - Only one task may write the repository at a time. A successor task begins
   read-only until Asa explicitly grants a bounded repository task or
   active-profile work.
@@ -326,9 +334,11 @@ grant and assessment grants nothing.
 - Use `m050/tools/m050_reconciliation.py` for deterministic inventory, packet,
   record, and lifecycle operations. `prepare-spark-up` is read-only and rejects
   `--apply`. `activate-on-proceed` requires the assessed tranche and checkpoint.
-  `prepare-stopdown --apply` may revoke authority only after exact tranche
-  coverage. STATUS rendering, the full guard, Git operations, synchronization,
-  and Stopdown notification remain separate formal actions.
+  `prepare-stopdown --apply` is the universal interrupt: it always revokes
+  authority, preserves the current target, and records completion only when
+  exact tranche coverage exists. STATUS rendering, the full guard, Git
+  operations, synchronization, and Stopdown notification remain separate formal
+  actions.
 - After execution release, the Worker operates autonomously within the tranche
   and budget. It may diagnose and correct local implementation, validate and
   review calls, maintain canonical state, and make coherent checkpoints. It may

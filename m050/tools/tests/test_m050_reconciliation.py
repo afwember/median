@@ -117,6 +117,12 @@ def _ready_state():
     ):
         state["authority"][key] = False
     state["spend"]["active"] = False
+    cumulative = Decimal(state["spend"]["cumulative_spent_usd"])
+    state["spend"].update({
+        "refresh_window_usd": "2.0000000",
+        "authorized_usd": format(cumulative + Decimal("2"), ".7f"),
+        "remaining_usd": "2.0000000",
+    })
     state["dashboard"]["status"] = "READY — Stage 5 reconciliation"
     return state
 
@@ -367,7 +373,7 @@ def test_token_count_preflight_uses_free_anthropic_endpoint_twice(
 
 
 def test_anthropic_usage_cost_debits_all_cache_classes():
-    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    state = _ready_state()
     provider = state["reconciliation"]["provider"]
     raw = {
         "usage": {
@@ -477,7 +483,9 @@ def test_proceed_activates_reconciliation_and_preconfigured_provider(
     assert active["spend"]["remaining_usd"] == state["spend"]["remaining_usd"]
 
 
-def test_stopdown_rejects_incomplete_tranche(corpus, empty_store):
+def test_stopdown_interrupts_incomplete_tranche_without_marking_completion(
+    corpus, empty_store
+):
     state = _ready_state()
     active, _ = reconciliation.plan_lifecycle_transition(
         state,
@@ -486,10 +494,22 @@ def test_stopdown_rejects_incomplete_tranche(corpus, empty_store):
         "activate-on-proceed",
         expected_tranche_id="away-crossing-squirrel-001",
     )
-    with pytest.raises(reconciliation.TriageError, match="complete tranche coverage"):
-        reconciliation.plan_lifecycle_transition(
-            active, corpus, empty_store, "prepare-stopdown"
-        )
+    stopped, report = reconciliation.plan_lifecycle_transition(
+        active, corpus, empty_store, "prepare-stopdown"
+    )
+    assert stopped["execution_state"] == "RECONCILIATION_READY"
+    assert stopped["reconciliation"]["target"] == active["reconciliation"]["target"]
+    assert "away-crossing-squirrel-001" not in stopped["reconciliation"][
+        "completed_tranche_ids"
+    ]
+    assert stopped["authority"]["repository_writes_authorized"] is False
+    assert stopped["authority"]["provider_calls_authorized"] is False
+    assert stopped["spend"]["active"] is False
+    assert report["target_complete"] is False
+    assert report["remaining_atoms"] == 65
+    assert "interrupted with 65 target atoms unaccounted" in stopped[
+        "next_possible_transition"
+    ]
 
 
 def test_stopdown_revokes_unused_one_time_spend():
@@ -503,9 +523,41 @@ def test_stopdown_revokes_unused_one_time_spend():
     })
     reconciliation._revoke_one_time_spend_on_stopdown(state)
     assert state["spend"]["active"] is False
-    assert state["spend"]["refresh_window_usd"] == "2.0000000"
+    assert state["spend"]["refresh_window_usd"] == "0.0000000"
     assert state["spend"]["authorized_usd"] == "53.2500000"
     assert state["spend"]["remaining_usd"] == "0.0000000"
+
+
+def test_stopdown_marks_completion_only_with_exact_target_coverage(corpus):
+    store = reconciliation.ReconciliationStore(
+        ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
+    )
+    state = _ready_state()
+    state["reconciliation"]["target"] = {
+        "tranche_id": "away-crossing-pilot",
+        "msid_prefix": "Away.Crossing",
+        "selector": "exact",
+    }
+    state["reconciliation"]["completed_tranche_ids"] = []
+    state["status"] = state["execution_state"] = "RECONCILIATION_ACTIVE"
+    state["reconciliation"]["status"] = "ACTIVE"
+    state["dashboard"]["status"] = "ACTIVE — Stage 5 reconciliation"
+    for key in (
+        "repository_writes_authorized",
+        "semantic_acceptance_authorized",
+        "reconciliation_authorized",
+        "provider_calls_authorized",
+    ):
+        state["authority"][key] = True
+    state["spend"]["active"] = True
+    stopped, report = reconciliation.plan_lifecycle_transition(
+        state, corpus, store, "prepare-stopdown"
+    )
+    assert report["target_complete"] is True
+    assert report["remaining_atoms"] == 0
+    assert stopped["reconciliation"]["completed_tranche_ids"] == [
+        "away-crossing-pilot"
+    ]
 
 
 def test_completed_tranche_dashboard_cannot_offer_same_pilot(empty_store):
@@ -522,6 +574,25 @@ def test_completed_tranche_dashboard_cannot_offer_same_pilot(empty_store):
     assert dashboard["next"] == (
         "Supervisor/author quality adjudication must select any next boundary"
     )
+
+
+def test_provider_enabled_proceed_requires_explicit_positive_spend(
+    corpus, empty_store
+):
+    state = _ready_state()
+    state["spend"].update({
+        "refresh_window_usd": "0.0000000",
+        "authorized_usd": state["spend"]["cumulative_spent_usd"],
+        "remaining_usd": "0.0000000",
+    })
+    with pytest.raises(reconciliation.TriageError, match="explicit positive spend"):
+        reconciliation.plan_lifecycle_transition(
+            state,
+            corpus,
+            empty_store,
+            "activate-on-proceed",
+            expected_tranche_id="away-crossing-squirrel-001",
+        )
 
 
 def test_canonical_store_rejects_duplicate_primary_members(corpus, tmp_path):

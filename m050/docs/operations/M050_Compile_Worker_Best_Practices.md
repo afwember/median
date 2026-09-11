@@ -291,7 +291,10 @@ uncommitted worktree.
 
 ## 9. Formal Stopdown
 
-Stopdown is a handoff, not merely cessation of activity.
+Stopdown is a universal author-invoked interrupt and formal handoff, not merely
+cessation of activity. It must remain available before, during, or after bounded
+work; an incomplete boundary is preserved rather than marked complete, and no
+separate pause or abort lifecycle is added.
 
 The Worker should:
 

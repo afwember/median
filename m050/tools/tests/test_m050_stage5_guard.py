@@ -24,7 +24,7 @@ def test_repository_stage_5_profile_is_valid():
     assert errors == []
 
 
-def test_stage_5_provider_and_refreshable_window_are_bound():
+def test_stage_5_provider_and_manual_spend_window_are_bound():
     state = _state()
     provider = state["reconciliation"]["provider"]
     assert provider["enabled"] is True
@@ -35,7 +35,10 @@ def test_stage_5_provider_and_refreshable_window_are_bound():
     assert provider["cache_ttl"] == "1h"
     refresh_window = Decimal(state["spend"]["refresh_window_usd"])
     remaining = Decimal(state["spend"]["remaining_usd"])
-    assert refresh_window > Decimal("0")
+    if state["spend"]["active"]:
+        assert refresh_window > Decimal("0")
+    else:
+        assert refresh_window == Decimal("0")
     assert Decimal("0") <= remaining <= refresh_window
 
 

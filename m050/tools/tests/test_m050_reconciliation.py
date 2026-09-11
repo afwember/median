@@ -437,22 +437,32 @@ def test_unchanged_max_token_failure_cannot_be_repeated(tmp_path):
 
 
 def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(
-    corpus, empty_store
+    corpus, empty_store, monkeypatch
 ):
     state = _ready_state()
     original = copy.deepcopy(state)
+    monkeypatch.setattr(
+        reconciliation,
+        "build_packet",
+        lambda *args, **kwargs: (_ for _ in ()).throw(
+            AssertionError("Spark Up assessment must not build a packet")
+        ),
+    )
     assessed, report = reconciliation.plan_lifecycle_transition(
         state, corpus, empty_store, "prepare-spark-up"
     )
     assert assessed == original
-    assert report["tranche_id"] == "away-crossing-squirrel-002"
-    assert report["required_atoms"] == 44
+    assert report["execution_state"] == "RECONCILIATION_READY"
+    assert report["current_target"]["tranche_id"] == "away-crossing-squirrel-002"
+    assert report["current_target_state"] == "incomplete"
+    assert report["current_target_remaining_atoms"] == 44
+    assert "packet_sha256" not in report
     assert state["authority"]["repository_writes_authorized"] is False
     assert state["authority"]["reconciliation_authorized"] is False
     assert state["authority"]["provider_calls_authorized"] is False
 
 
-def test_spark_up_reaches_selection_fermata_after_completed_target(corpus):
+def test_spark_up_assesses_completed_target_without_rejecting(corpus):
     store = reconciliation.ReconciliationStore(
         ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
     )
@@ -465,11 +475,31 @@ def test_spark_up_reaches_selection_fermata_after_completed_target(corpus):
         state, corpus, store, "prepare-spark-up"
     )
     assert assessed == original
-    assert report["boundary_required"] is True
     assert report["current_target"]["tranche_id"] == "away-crossing-squirrel-002"
+    assert report["current_target_state"] == "completed"
+    assert report["current_target_remaining_atoms"] == 0
     assert report["accounted_atoms"] == 149
     assert report["unaccounted_atoms"] == 5233
-    assert report["spend_required"] is False
+    assert report["provider_spend_remaining_usd"] == "2.0000000"
+    assert "packet_sha256" not in report
+
+
+def test_spark_up_reports_active_engine_without_mutation(corpus, empty_store):
+    ready = _ready_state()
+    active, _ = reconciliation.plan_lifecycle_transition(
+        ready,
+        corpus,
+        empty_store,
+        "activate-on-proceed",
+        expected_tranche_id="away-crossing-squirrel-002",
+    )
+    original = copy.deepcopy(active)
+    assessed, report = reconciliation.plan_lifecycle_transition(
+        active, corpus, empty_store, "prepare-spark-up"
+    )
+    assert assessed == original
+    assert report["execution_state"] == "RECONCILIATION_ACTIVE"
+    assert report["authority"]["repository_writes_authorized"] is True
 
 
 def test_proceed_atomically_binds_author_selected_boundary_and_spend(corpus):
@@ -568,6 +598,15 @@ def test_stopdown_interrupts_incomplete_tranche_without_marking_completion(
     assert "interrupted with 44 target atoms unaccounted" in stopped[
         "next_possible_transition"
     ]
+
+
+def test_stopdown_is_safe_and_idempotent_when_already_stopped(corpus, empty_store):
+    state = _ready_state()
+    stopped, report = reconciliation.plan_lifecycle_transition(
+        state, corpus, empty_store, "prepare-stopdown"
+    )
+    assert stopped == state
+    assert report == {"transition": "prepare-stopdown", "already_stopped": True}
 
 
 def test_stopdown_revokes_unused_one_time_spend():

@@ -81,11 +81,13 @@ overall phase boundary, the Supervisor may retool the contract in discussion
 with Asa; the Compile Worker begins the new phase only after Asa explicitly
 authorizes it.
 
-**Stopdown** is the universal Worker-side interrupt and formal handoff, not
-merely a pause in phase work. Asa may invoke it at any time, including before a
-tranche is complete. The Worker must stop new provider activity, preserve and
-cost-reconcile all available evidence, retain the exact incomplete boundary
-without marking it complete, set source-work, repository-write, provider-call,
+**Stopdown** is the universal Worker-side interrupt, safe halt, authority-key
+removal, and formal handoff, not merely a pause in phase work. Asa may invoke it
+at any time,
+including before a tranche is complete. The Worker must stop new provider
+activity, preserve and cost-reconcile all available evidence, retain the exact
+incomplete boundary without marking it complete, set source-work,
+repository-write, provider-call,
 spend, and applicable phase-work authority to false in canonical state, refresh
 `STATUS.md`, run the required guard, commit and push that closing transition,
 and confirm a clean worktree with local `HEAD` equal to `origin/main`. When the
@@ -117,9 +119,10 @@ response but performs no further command, tool, or repository action.
 
 The notification grants no authority. A nonzero script result is reported once
 and is not retried automatically; it does not invalidate the Stopdown. On
-receipt, the Supervisor adjudicates the Stopdown read-only, reports pass or
-defect, and awaits Asa's direction; it does not begin queued repository work
-automatically.
+receipt, the Supervisor performs the equivalent read-only assessment: it
+verifies repository and handoff health, summarizes the Worker's actions,
+identifies any defect or next decision, and pauses for discussion. It does not
+begin queued repository work automatically.
 
 ## Phase model
 
@@ -218,43 +221,49 @@ write authority. Provider configuration is initially disabled. Asa must
 separately authorize a provider model and positive Stage 5 cumulative spend
 envelope before any call is possible.
 
-Asa's instruction `Spark Up` is the permission-granting phrase. It grants
-reconciliation, reviewed semantic-acceptance, and repository-write authority
-for exactly one semantic tranche: either the incomplete tranche preserved in
-canonical state or, after a completed boundary, the next boundary Asa selects
-at the fermata. It also grants provider-call authority only when an
-author-approved provider configuration and positive spend envelope are active
-at execution release. The grant remains in task context and is not exercisable
-before `Proceed`. `Proceed`, or an equally clear go-ahead after the assessment,
-releases execution and may concretize the boundary or spend Asa explicitly
-approves there; it does not otherwise create or enlarge authority.
+Asa's instruction `Spark Up` is the universal Worker-side key insertion and
+turn. It grants the bounded active-phase mandate, including reconciliation,
+reviewed semantic acceptance, and repository writes, for the next action Asa
+approves after the read-only assessment. Provider calls additionally require an
+author-approved provider configuration and positive spend envelope at execution
+release. The grant exists in task context while canonical execution authority
+remains false during the assessment pause. Spark Up does not itself release
+action.
 
-On `Spark Up` from READY, the Worker remains read-only, performs the complete
-cold start, runs `.venv/bin/python m050/tools/m050_reconciliation.py
---transition prepare-spark-up`, and halts at the fermata. An incomplete current
-boundary returns its tranche ID and packet hash. A completed boundary returns
-`boundary_required` instead of rejecting Spark Up; the Worker reports the
-completed work, remaining corpus, spend need, and a recommended next exact
-boundary, then asks Asa to select it. The Worker retains the report and Git
-checkpoint in task context and states its first substantive action and risks.
-The pause makes no repository change: do not refresh STATUS, run a publication
-guard, commit, or push merely to represent it. If the task loses the unconsumed
-grant or assessment context, require a new `Spark Up`.
+Immediately on `Spark Up`, the Worker remains read-only, performs the complete
+cold start, and runs `.venv/bin/python m050/tools/m050_reconciliation.py
+--transition prepare-spark-up`. That command reports current lifecycle,
+authority, target, progress, and spend facts; it does not build a packet, select
+a target, change state, or reject startup merely because the prior target is
+complete. The Worker then makes the actual assessment:
 
-From that pause, handle `Proceed` with exactly one invocation of `.venv/bin/python
-m050/tools/m050_reconciliation.py --transition activate-on-proceed`. For an
-incomplete prepared tranche, pass `--expected-tranche-id` and `--expected-head`.
-When the report required a boundary, pass the author-selected
+- If the repository is healthy and the next action is understood, state that
+  action and its material risks, then halt for action approval.
+- If the repository is dirty, contradictory, or the next action is not
+  understood, state exactly what was found or what is missing, then halt for
+  discussion.
+
+This read-only assessment pause is not a lifecycle state or publication
+checkpoint. Do not refresh STATUS, run a publication guard, commit, push,
+construct a provider packet, or repair the repository merely to represent it.
+Retain the assessment and Git checkpoint in task context. If that context is
+lost before action approval, require a new `Spark Up`.
+
+`Proceed`, or an equally clear directive in response to the assessment,
+approves and releases action; it does not insert the key or create authority.
+When the next action was already understood, activate the preserved incomplete
+tranche with `--expected-tranche-id` and `--expected-head`. When it was unknown,
+Asa's clear response may both supply and approve the exact next boundary; pass
 `--select-tranche-id`, `--select-msid-prefix`, `--select-selector`, and
-`--expected-head`; a plain `Proceed` may accept a specific recommendation made
-at the fermata. The same invocation may pass `--authorize-spend-usd` only for a
-dollar amount Asa explicitly approved in that response. End either form with
-`--apply`. The operation performs the narrow stale-check and atomically binds
-and activates only that tranche and applicable authorities. An incomplete
+`--expected-head`. The same invocation may pass `--authorize-spend-usd` only for
+a dollar amount Asa explicitly approved in that response. Use exactly one
+`.venv/bin/python m050/tools/m050_reconciliation.py --transition
+activate-on-proceed ... --apply` invocation. It performs the narrow stale-check
+and atomically binds and activates only the approved action. An incomplete
 canonical tranche cannot be replaced. Do not precede activation with another
-cold start, guard, Git check, dry run, inventory, or revalidation. If it fails,
-halt and report the drift; if it succeeds, begin the assessed work. Repeated
-`Spark Up` repeats only the assessment. `Proceed` without the retained grant
+cold start, guard, Git check, dry run, inventory, or revalidation. If activation
+fails, halt and report the drift; if it succeeds, begin work. Repeated `Spark
+Up` repeats only the assessment. `Proceed` without the retained Spark Up grant
 and assessment grants nothing.
 
 ### Canonical input and representation
@@ -342,7 +351,7 @@ and assessment grants nothing.
 - Use `m050/tools/m050_reconciliation.py` for deterministic inventory, packet,
   record, and lifecycle operations. `prepare-spark-up` is read-only and rejects
   `--apply`. `activate-on-proceed` requires the assessed checkpoint and either
-  the preserved incomplete tranche or Asa's fermata-selected next boundary.
+  the preserved incomplete tranche or Asa's action-approved next boundary.
   `prepare-stopdown --apply` is the universal interrupt: it always revokes
   authority, preserves the current target, and records completion only when
   exact tranche coverage exists. STATUS rendering, the full guard, Git

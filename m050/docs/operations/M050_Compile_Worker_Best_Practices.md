@@ -24,9 +24,11 @@ document on top of those controls.
 The Compile Worker is an autonomous executor inside a bounded mandate. It is
 not a second Supervisor and not a passive command runner.
 
-Within one authorized phase and bounded target, it should be able to:
+Within one Sparked-Up phase mandate and approved bounded action, it should be
+able to:
 
-- derive the exact current target from canonical controls;
+- identify the current target from canonical controls or report that none has
+  been selected;
 - perform the phase's ordinary work without transaction-by-transaction
   approval;
 - diagnose and correct local execution defects;
@@ -38,8 +40,8 @@ Within one authorized phase and bounded target, it should be able to:
 - finish through formal Stopdown.
 
 It may not redesign the phase, change a cross-phase interface, add an artifact
-family, relax an invariant, choose another target, infer authorial judgment, or
-turn ordinary difficulty into a wider mandate.
+family, relax an invariant, choose a target, infer authorial judgment, or turn
+ordinary difficulty into a wider mandate.
 
 The Supervisor designs and tunes the operating system conversationally with
 Asa. Asa manually starts the Worker. The Supervisor does not automatically
@@ -50,48 +52,56 @@ Spark Up, queue, or message the Worker.
 The successful late-Atomization cadence separates **authority** from
 **execution release**.
 
-### `Spark Up` — grant and assess
+### `Spark Up` — insert the key and assess
 
-`Spark Up` is Asa's active, informed grant of the phase-defined authority for
-exactly one deterministically selected target. It is the permission-granting
-phrase.
+`Spark Up` is Asa's active, informed grant of the phase-defined mandate. It is
+the universal Worker-side key insertion and turn. It does not depend on a next
+target already being selected and does not itself release action. The grant is
+retained in task context while canonical execution authority remains false
+during the assessment pause.
 
-On receipt, the Worker should:
+On receipt, the Worker should immediately:
 
 1. remain read-only while performing the complete cold start;
-2. derive exactly one current or next target from canonical controls;
-3. confirm repository synchronization, phase, boundary, authority, budget,
-   inputs, outputs, halt conditions, and prohibited transitions;
-4. inspect the exact target inventory and state the next concrete action;
-5. identify any contradiction or unresolved risk;
-6. retain the assessed target and clean Git checkpoint in task context; and
-7. halt without changing the repository and before substantive source work,
-   provider calls, or mapping/extraction records.
+2. inspect repository synchronization, lifecycle, phase, current boundary,
+   authority, budget, inputs, outputs, halt conditions, and prohibited
+   transitions;
+3. determine whether the repository is healthy and whether it understands the
+   next action;
+4. retain the clean Git checkpoint and assessment in task context; and
+5. halt without changing the repository and before substantive work, provider
+   calls, packet construction, or record changes.
 
-The assessment should end with a compact stable response that makes the first
-operation and the complete work boundary easy for Asa to inspect.
+If the repository is healthy and the next action is understood, the Worker
+states that action and its material risks and awaits approval. If the repository
+is dirty or contradictory, or the next action is unknown, it states exactly
+what it found or needs and awaits discussion. The assessment is the thread's
+reasoned reading of repository state, not another formal lifecycle checkpoint.
 
 ### `Proceed` — execution release
 
-`Proceed`, or an equally clear go-ahead in direct response to the assessment,
-releases execution of the already-authorized work. It is not a new authority
-grant and need not restate the target, budget, or permissions.
+`Proceed`, or an equally clear directive in direct response to the assessment,
+releases execution of the already-authorized action. It is not a new authority
+grant. When the next action was unknown, Asa's clear response may both supply
+and approve it.
 
 The Worker should accept it only when:
 
 - the preceding `Spark Up` grant remains active;
-- the assessed target and boundary still derive identically;
+- the approved action and any target are exact;
 - the repository remains at the expected clean checkpoint; and
 - no new halt condition has appeared.
 
 The phase's activation operation should test those conditions and change the
-lifecycle atomically in one invocation. Do not precede it with a second cold
-start, full guard, separate synchronization check, dry-run transition, preview,
-inventory, or general revalidation. A failed atomic activation returns to LLM
-adjudication; a successful one should proceed directly into the assessed work.
-The read-only pause itself should not be represented by mutable canonical state,
-a STATUS refresh, a guard run required only for publication, or a commit/push.
-If task continuity is lost before `Proceed`, require a new `Spark Up` assessment.
+lifecycle atomically in one invocation. Boundary selection or an explicitly
+approved spend grant may be recorded in that same operation. Do not precede it
+with a second cold start, full guard, separate synchronization check, dry-run
+transition, preview, inventory, or general revalidation. A failed atomic
+activation returns to LLM adjudication; a successful one should proceed directly
+into the approved work. The read-only pause itself should not be represented by
+mutable canonical state, a STATUS refresh, a guard run required only for
+publication, or a commit/push. If task continuity is lost before action
+approval, require a new `Spark Up` assessment.
 
 After `Proceed`, the Worker acts autonomously through ordinary phase work. It
 does not ask for repeated permission for routine calls, retries, validation,
@@ -99,31 +109,33 @@ local correction, commits, or pushes already covered by the grant.
 
 ### Idempotence and invalid transitions
 
-- Repeated `Spark Up` while awaiting `Proceed` repeats the same read-only
+- Repeated `Spark Up` while awaiting action approval repeats the same read-only
   assessment; it does not stack authority, change repository state, or start
   work.
 - `Proceed` without the retained unconsumed grant and assessment does not create
   authority.
 - Discussion such as “the Worker should...” normally proposes behavior; it
   does not activate the Worker.
-- If target selection, inputs, budget, or repository state drift between the
-  assessment and `Proceed`, the Worker halts and reports the exact difference.
+- If action, inputs, budget, or repository state drift between the assessment
+  and approval, the Worker halts and reports the exact difference.
 - Cancelling before `Proceed` requires no repository transition because the
   assessment created no canonical execution state; a later attempt begins with
   a new `Spark Up`.
 
-The intended lifecycle is:
+The intended engine cadence is:
 
 ```text
-READY
-  -> Spark Up grants one-target authority
-READ-ONLY SELF-ASSESSMENT
-  -> exact action and clean checkpoint reported; repository remains READY
-  -> Proceed atomically records ACTIVE execution
+STOPPED — key removed
+  -> Spark Up inserts and turns the key
+READ-ONLY ASSESSMENT — repository remains unchanged
+  -> known action: state it and await approval
+  -> dirty state or unknown action: report it and await discussion
+ACTION APPROVAL
+  -> atomically record ACTIVE execution
 ACTIVE BOUNDED WORK
-  -> target completion or required halt
-FORMAL STOPDOWN
-  -> READY
+  -> Stop Down may be invoked at any time
+STOPDOWN — preserve evidence, revoke authority, publish safe halt
+  -> STOPPED — key removed
 ```
 
 This cadence adds one human launch gate, not one approval per operation.
@@ -138,14 +150,15 @@ At minimum it should:
 - confirm the root contract is unambiguous;
 - read canonical state and every active-phase control completely;
 - validate the derived human dashboard;
-- verify immutable input hashes and the exact target boundary;
-- run the required guard at the contractually defined strength;
+- verify immutable input hashes and identify the current target, if any;
+- run only the checks the active contract requires for a read-only assessment;
 - confirm a clean worktree and local/remote equality;
-- report the completed boundary and the one selected target;
+- report the completed boundary and whether the next action is understood;
 - report active and inactive authorities separately;
 - report provider and spend readiness separately from target authority;
 - report halt conditions and prohibited transitions; and
-- stop if any control selects zero or multiple targets.
+- stop for discussion if the repository is dirty or contradictory, or the next
+  action is unknown or ambiguous.
 
 The cold-start report should be concise. The checking may be extensive, but the
 stable response should expose decisions and boundaries rather than terminal
@@ -291,10 +304,10 @@ uncommitted worktree.
 
 ## 9. Formal Stopdown
 
-Stopdown is a universal author-invoked interrupt and formal handoff, not merely
-cessation of activity. It must remain available before, during, or after bounded
-work; an incomplete boundary is preserved rather than marked complete, and no
-separate pause or abort lifecycle is added.
+Stopdown is the universal author-invoked safe halt, authority-key removal, and
+formal handoff—not merely cessation of activity. It must remain available
+before, during, or after bounded work; an incomplete boundary is preserved
+rather than marked complete, and no separate pause or abort lifecycle is added.
 
 The Worker should:
 
@@ -320,8 +333,10 @@ Worker reports it once and does not retry automatically. After the script
 returns, the Worker may give its final stable response but performs no further
 command, tool, or repository action.
 
-Receipt of the message starts a read-only Supervisor adjudication. It does not
-authorize repair, queued work, another source, or another phase.
+Receipt of the message starts the Supervisor's equivalent read-only assessment.
+The Supervisor verifies repository and handoff health, summarizes the Worker's
+actions, identifies any defect or next decision, and pauses for discussion. It
+does not authorize repair, queued work, another source, or another phase.
 
 ## 10. Stable communication
 
@@ -368,11 +383,11 @@ should settle the following in discussion:
 
 ### Authority and cadence
 
-- What exactly does `Spark Up` grant for one source?
+- What exactly does `Spark Up` grant within the bounded phase mandate?
 - What remains separately controlled, especially spend and provider use?
 - What must the read-only assessment report?
-- What exact state awaits `Proceed`?
-- What does `Proceed` release without granting anew?
+- What does the read-only assessment establish before action approval?
+- What does action approval release without granting anew?
 - How is an unused grant cancelled?
 
 ### Execution mechanics

@@ -1470,16 +1470,30 @@ def _target_remaining(
     } - set(store.primary_members)
 
 
-def _selection_fermata_report(
+def _spark_up_assessment_report(
     state: dict,
     corpus: ReconciliationCorpus,
     store: ReconciliationStore,
     target: tuple[str, str, str] | None,
 ) -> dict:
     counts = store.counts()
-    report = {
+    completed = list(
+        state.get("reconciliation", {}).get("completed_tranche_ids", [])
+    )
+    remaining = set() if target is None else _target_remaining(corpus, store, target)
+    target_state = (
+        "absent"
+        if target is None
+        else "completed"
+        if target[0] in completed
+        else "incomplete"
+        if remaining
+        else "coverage_complete_unrecorded"
+    )
+    return {
         "transition": "prepare-spark-up",
-        "boundary_required": True,
+        "execution_state": state.get("execution_state"),
+        "authority": copy.deepcopy(state.get("authority", {})),
         "current_target": (
             None
             if target is None
@@ -1489,17 +1503,18 @@ def _selection_fermata_report(
                 "selector": target[2],
             }
         ),
-        "completed_tranche_ids": list(
-            state.get("reconciliation", {}).get("completed_tranche_ids", [])
-        ),
+        "current_target_state": target_state,
+        "current_target_remaining_atoms": len(remaining),
+        "completed_tranche_ids": completed,
         "accounted_atoms": counts["accounted_atoms"],
         "unaccounted_atoms": len(corpus.atoms) - counts["accounted_atoms"],
-        "spend_required": (
+        "provider_enabled": (
             state.get("reconciliation", {}).get("provider", {}).get("enabled") is True
-            and Decimal(state.get("spend", {}).get("remaining_usd", "0")) <= 0
+        ),
+        "provider_spend_remaining_usd": state.get("spend", {}).get(
+            "remaining_usd", "0.0000000"
         ),
     }
-    return report
 
 
 def _apply_explicit_spend_grant(state: dict, amount: str | None) -> str | None:
@@ -1612,37 +1627,10 @@ def plan_lifecycle_transition(
         raise TriageError(f"unsupported Stage 5 lifecycle transition: {transition}")
     active, _provider_enabled = _validate_lifecycle(state)
     if transition == "prepare-spark-up":
-        if active:
-            raise TriageError("Spark Up assessment requires Stage 5 READY")
         target = _optional_target(state)
-        target_completed = (
-            target is not None
-            and target[0] in state.get("reconciliation", {}).get(
-                "completed_tranche_ids", []
-            )
+        return copy.deepcopy(state), _spark_up_assessment_report(
+            state, corpus, store, target
         )
-        if (
-            target is None
-            or target_completed
-            or not _target_remaining(corpus, store, target)
-        ):
-            return copy.deepcopy(state), _selection_fermata_report(
-                state, corpus, store, target
-            )
-        tranche_id, prefix, selector = target
-        packet = build_packet(
-            corpus, store, tranche_id=tranche_id, msid_prefix=prefix, selector=selector
-        )
-        return copy.deepcopy(state), {
-            "transition": transition,
-            "boundary_required": False,
-            "tranche_id": tranche_id,
-            "msid_prefix": prefix,
-            "selector": selector,
-            "required_atoms": len(packet["required_atom_keys"]),
-            "context_atoms": len(packet["context_atoms"]),
-            "packet_sha256": packet["packet_sha256"],
-        }
     if transition == "activate-on-proceed":
         if active:
             raise TriageError("Stage 5 tranche is already active")

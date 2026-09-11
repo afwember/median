@@ -247,10 +247,13 @@ grant and assessment grants nothing.
 
 ### Canonical input and representation
 
-- The 5,382 effective claims and their completed mappings are immutable Stage 5
-  inputs. Canonical state binds the mapping, vocabulary, triage, and rewrite
-  hashes. Mapping metadata routes semantic context; it does not decide truth,
-  canon, authority, conflict, or supersession.
+- The 5,382 effective claims are immutable Stage 5 inputs. Their completed
+  mappings and vocabulary are fixed during Worker execution. At a stopped
+  boundary, an explicit authorial ontology correction may replace only the
+  affected current mappings and vocabulary, must rebind their canonical hashes,
+  preserve every prior packet and run unchanged, and resume through a successor
+  tranche ID. Mapping metadata routes semantic context; it does not decide
+  truth, canon, authority, conflict, or supersession.
 - The corpus is unitary. Semantic tranches are bounded execution units, not
   source partitions or parallel corpora.
 - `m050/reconciliation/M050_Reconciled_Semantic_Units_MEDIANv0_5_0.jsonl`
@@ -265,9 +268,10 @@ grant and assessment grants nothing.
   `conflicting`, and `deferred`. A reconciled unit requires one current MSID and
   one source-grounded canonical semantic claim. A deferred unit asserts no
   canonical claim.
-- Accepted extraction, triage, rewrite, vocabulary, mapping, packet, raw
-  response, and semantic-review evidence remain immutable. Git is history; do
-  not create a filtered corpus, second reconciliation ledger, or prose view.
+- Accepted extraction, triage, rewrite, packet, raw-response, and semantic-review
+  evidence remain immutable. A replaced current vocabulary or mapping remains
+  recoverable through Git history rather than a parallel ledger. Do not create a
+  filtered corpus, second reconciliation ledger, or prose view.
 
 ### Authority and semantic judgment
 

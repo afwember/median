@@ -1,4 +1,5 @@
 import copy
+from collections import Counter
 from decimal import Decimal
 import json
 from pathlib import Path
@@ -58,6 +59,54 @@ def test_operating_contract_names_only_stage_5_profile():
     assert "## Active phase profile — Stage 5 semantic reconciliation" in text
     assert "## Active phase profile — Stage 4 MSID mapping" not in text
     assert "m050/tools/m050_reconciliation.py" in text
+
+
+def test_authorial_ontology_correction_is_bounded_and_canonical():
+    state = _state()
+    vocabulary = json.loads(
+        (ROOT / "m050/mapping/M050_MSID_Vocabulary_MEDIANv0_5_0.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert "Citizen" in vocabulary["settled_tlds"]
+    assert "Citizen" not in vocabulary["provisional_tlds"]
+    assert {
+        "Citizen.Citizen",
+        "Citizen.Core",
+        "Citizen.Core.Mouse",
+        "Citizen.Core.Rabbit",
+        "Citizen.Core.Squirrel",
+        "Citizen.Guest",
+        "Citizen.Guest.Expedition",
+        "Citizen.Guest.Resident",
+        "Away.Cargo",
+        "Away.Cargo.Strained",
+    } <= set(vocabulary["settled_paths"])
+    assert state["reconciliation"]["target"] == {
+        "tranche_id": "away-crossing-squirrel-002",
+        "msid_prefix": "Away.Crossing.Squirrel",
+        "selector": "exact",
+    }
+    assert state["reconciliation"]["completed_tranche_ids"] == [
+        "away-crossing-pilot"
+    ]
+    mappings = [
+        json.loads(line)
+        for line in (
+            ROOT / "m050/mapping/M050_Atom_MSID_Mappings_MEDIANv0_5_0.jsonl"
+        ).read_text(encoding="utf-8").splitlines()
+    ]
+    corrections = [
+        row for row in mappings
+        if row["mapper"] == "Compile Supervisor — authorial ontology correction"
+    ]
+    assert len(corrections) == 26
+    assert Counter(row["primary_msid"] for row in corrections) == {
+        "Citizen.Core.Squirrel": 8,
+        "Away.Cargo.Strained": 13,
+        "Away.Crossing.Squirrel": 5,
+    }
+    assert all("GUEST" not in row["atom_key"] for row in corrections)
 
 
 def test_status_is_exact_derived_view():

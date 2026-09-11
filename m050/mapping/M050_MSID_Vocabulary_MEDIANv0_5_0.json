@@ -28,11 +28,11 @@
     "Philosophy",
     "Architecture",
     "Home",
-    "Away"
+    "Away",
+    "Citizen"
   ],
   "provisional_tlds": [
     "World",
-    "Citizen",
     "Time",
     "Narrative"
   ],
@@ -97,7 +97,17 @@
     "Home.Embodiment",
     "Home.Encounter",
     "Home.Encounter.Homecoming",
+    "Citizen.Citizen",
+    "Citizen.Core",
+    "Citizen.Core.Mouse",
+    "Citizen.Core.Rabbit",
+    "Citizen.Core.Squirrel",
+    "Citizen.Guest",
+    "Citizen.Guest.Expedition",
+    "Citizen.Guest.Resident",
     "Away.Away",
+    "Away.Cargo",
+    "Away.Cargo.Strained",
     "Away.Field",
     "Away.Crossing",
     "Away.Crossing.Phase",
@@ -126,12 +136,11 @@
     "Home.Colony.Role.Gardener.Bramble#R002"
   ],
   "open_decisions": [
-    "Final TLD list beyond Philosophy, Architecture, Home, and Away",
+    "Final TLD list beyond Philosophy, Architecture, Home, Away, and Citizen",
     "Narrative versus Memory ontology",
     "Canonical MSIDs for Almanac, Chronicle, Leadership, and their View panes",
     "Singular versus plural naming for civic Role units",
     "Entity ID grammar",
-    "Complete Core-Species descendants below Away.Crossing",
-    "Broader Core-Species Away-trait ontology"
+    "Complete species-specific traversal descendants below Away.Crossing"
   ]
 }

@@ -439,8 +439,8 @@ def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(
         state, corpus, empty_store, "prepare-spark-up"
     )
     assert assessed == original
-    assert report["tranche_id"] == "away-crossing-squirrel-001"
-    assert report["required_atoms"] == 65
+    assert report["tranche_id"] == "away-crossing-squirrel-002"
+    assert report["required_atoms"] == 44
     assert state["authority"]["repository_writes_authorized"] is False
     assert state["authority"]["reconciliation_authorized"] is False
     assert state["authority"]["provider_calls_authorized"] is False
@@ -455,7 +455,7 @@ def test_proceed_activates_reconciliation_and_preconfigured_provider(
         corpus,
         empty_store,
         "activate-on-proceed",
-        expected_tranche_id="away-crossing-squirrel-001",
+        expected_tranche_id="away-crossing-squirrel-002",
     )
     assert report["activated"] is True
     assert active["status"] == "RECONCILIATION_ACTIVE"
@@ -476,22 +476,22 @@ def test_stopdown_interrupts_incomplete_tranche_without_marking_completion(
         corpus,
         empty_store,
         "activate-on-proceed",
-        expected_tranche_id="away-crossing-squirrel-001",
+        expected_tranche_id="away-crossing-squirrel-002",
     )
     stopped, report = reconciliation.plan_lifecycle_transition(
         active, corpus, empty_store, "prepare-stopdown"
     )
     assert stopped["execution_state"] == "RECONCILIATION_READY"
     assert stopped["reconciliation"]["target"] == active["reconciliation"]["target"]
-    assert "away-crossing-squirrel-001" not in stopped["reconciliation"][
+    assert "away-crossing-squirrel-002" not in stopped["reconciliation"][
         "completed_tranche_ids"
     ]
     assert stopped["authority"]["repository_writes_authorized"] is False
     assert stopped["authority"]["provider_calls_authorized"] is False
     assert stopped["spend"]["active"] is False
     assert report["target_complete"] is False
-    assert report["remaining_atoms"] == 65
-    assert "interrupted with 65 target atoms unaccounted" in stopped[
+    assert report["remaining_atoms"] == 44
+    assert "interrupted with 44 target atoms unaccounted" in stopped[
         "next_possible_transition"
     ]
 
@@ -575,7 +575,7 @@ def test_provider_enabled_proceed_requires_explicit_positive_spend(
             corpus,
             empty_store,
             "activate-on-proceed",
-            expected_tranche_id="away-crossing-squirrel-001",
+            expected_tranche_id="away-crossing-squirrel-002",
         )
 
 

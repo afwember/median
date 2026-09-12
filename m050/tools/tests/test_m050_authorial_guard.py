@@ -12,7 +12,7 @@ if str(TOOLS) not in sys.path:
 import m050_guard as guard
 
 
-def test_authorial_preparation_repository_passes() -> None:
+def test_authorial_structure_repository_passes() -> None:
     errors: list[str] = []
     state = guard.read_json(guard.STATE, errors)
     guard.validate_operating_contract(errors)
@@ -22,12 +22,18 @@ def test_authorial_preparation_repository_passes() -> None:
     assert errors == []
 
 
+def test_provisional_structure_preserves_approved_spine() -> None:
+    errors: list[str] = []
+    guard.validate_gdd_structure(errors)
+    assert errors == []
+
+
 def test_status_contains_no_provider_spend() -> None:
     state = json.loads(guard.STATE.read_text(encoding="utf-8"))
     rendered = guard.expected_status(state)
     assert "SPEND" not in rendered
     assert "PROVIDER" not in rendered
-    assert "authorial GDD preparation" in rendered
+    assert "provisional GDD structure" in rendered
 
 
 def test_m051_work_order_is_rejected(tmp_path: Path) -> None:

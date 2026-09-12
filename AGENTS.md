@@ -60,6 +60,8 @@ push. Host sandbox approval remains separate from repository authority.
   frozen source documents and the authorial atom library.
 - `m050/corpus/M050_Authorial_Atom_Corpus_MEDIANv0_5_0.jsonl` is the sole active
   atom-level authorial source library.
+- `m050/gdd/M050_GDD_Provisional_Structure_MEDIANv0_5_0.md` is the sole active
+  provisional GDD structure.
 - `m050/tools/m050_guard.py` is the sole active repository guard.
 - `m050/tools/m050_render_status.py` is the sole writer of `STATUS.md`.
 
@@ -107,17 +109,17 @@ releasing changed controls, corpus bindings, structure, or prose, run the
 renderer and `.venv/bin/python m050/tools/m050_guard.py --with-tests` as
 separate actions.
 
-## Active phase profile — authorial GDD preparation
+## Active phase profile — provisional GDD structure
 
-The repository is prepared for a creation-first v0.5 GDD process, but no GDD
-structure or prose task is active yet. The next task is discussion and explicit
-approval of a provisional document structure.
+The seven-Part spine of the v0.5 GDD is authorially approved. The active task is
+to refine its chapters and sections with Asa, one Part at a time, in
+`m050/gdd/M050_GDD_Provisional_Structure_MEDIANv0_5_0.md`.
 
-This preparation profile permits only explicitly authorized repository cleanup
-and control correction. It grants no corpus modification, GDD structure, or
-compiled-prose authority by itself.
+This profile grants the Compile Supervisor repository-write and GDD-structure
+authority only for the approved provisional-structure refinement. It grants no
+corpus modification or compiled-prose authority.
 
-When structure work is authorized:
+During structure work:
 
 - derive a provisional organization from design needs and the governing source
   documents, not from MSID completeness;
@@ -127,6 +129,11 @@ When structure work is authorized:
 - preserve source and atom traceability as a writing aid;
 - permit the structure to evolve through explicit author discussion; and
 - defer later or conditional source use until its intended authorial moment.
+
+The approved seven-Part spine must remain stable unless Asa reopens it. Chapter
+and section titles remain provisional until approved in their respective Part.
+The next legal transition is authorial approval of the refined Part I chapter
+and section structure.
 
 Do not require every atom to acquire a semantic unit or perfect classification
 before prose can be written. Do not create an automated discernment system,

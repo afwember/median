@@ -1,8 +1,8 @@
 {
   "schema_version": "M050-COMPILE-STATE-2.0",
-  "status": "AUTHORIAL_GDD_PREPARATION_READY",
-  "updated": "2026-09-12T09:55:47-04:00",
-  "execution_state": "AUTHORIAL_GDD_PREPARATION_READY",
+  "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
+  "updated": "2026-09-12T12:03:14-04:00",
+  "execution_state": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -29,26 +29,27 @@
     "role": "historical extraction, triage, rewrite, mapping, reconciliation, provider and spend evidence only"
   },
   "authorial_gdd": {
-    "status": "NOT_STARTED",
+    "status": "STRUCTURE_IN_PROGRESS",
     "output_root": "m050/gdd",
-    "structure_status": "NOT_PROPOSED",
+    "structure_status": "PROVISIONAL_SEVEN_PART_SPINE_APPROVED",
+    "structure_path": "m050/gdd/M050_GDD_Provisional_Structure_MEDIANv0_5_0.md",
     "composition_status": "NOT_STARTED",
     "coverage_status": "NOT_STARTED"
   },
   "authority": {
-    "repository_writes_authorized": false,
+    "repository_writes_authorized": true,
     "corpus_modification_authorized": false,
-    "gdd_structure_authorized": false,
+    "gdd_structure_authorized": true,
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "status": "READY — authorial GDD preparation",
+    "status": "ACTIVE — provisional GDD structure",
     "phase": "Creation-first authorial compilation",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
-    "progress": "GDD structure not yet proposed",
-    "now": "Information-management machinery is retired; no authorial GDD work is active",
-    "next": "Asa and the Compile Supervisor discuss and authorize the provisional v0.5 GDD structure",
-    "updated_human": "September 12, 2026 at 9:55:47 AM EDT"
+    "progress": "Seven-Part spine approved; chapter and section refinement underway",
+    "now": "Refining Part I — What MEDIAN Is: Sanctuary and Exposure",
+    "next": "Asa and the Compile Supervisor refine and approve the Part I chapter structure",
+    "updated_human": "September 12, 2026 at 12:03:14 PM EDT"
   },
-  "next_possible_transition": "Explicit authorial authorization of a bounded v0.5 GDD structure task."
+  "next_possible_transition": "Authorial approval of the refined Part I chapter and section structure."
 }

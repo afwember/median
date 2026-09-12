@@ -22,6 +22,7 @@ STATUS = ROOT / "STATUS.md"
 STATE = ROOT / "m050/control/M050_Compile_State_MEDIANv0_5_0.json"
 MANIFEST = ROOT / "m050/corpus/M050_Authorial_Atom_Corpus_Manifest_MEDIANv0_5_0.json"
 CORPUS = ROOT / "m050/corpus/M050_Authorial_Atom_Corpus_MEDIANv0_5_0.jsonl"
+GDD_STRUCTURE = ROOT / "m050/gdd/M050_GDD_Provisional_Structure_MEDIANv0_5_0.md"
 ARCHIVE = ROOT / "600 archive/m050-information-management"
 
 ATOM_SCHEMA = "M050-AUTHORIAL-CORPUS-ATOM-0.1"
@@ -35,6 +36,15 @@ RETIRED_ACTIVE_PATHS = (
     "m050/extraction",
     "m050/mapping",
     "m050/reconciliation",
+)
+APPROVED_PART_HEADINGS = (
+    "# PART I — WHAT MEDIAN IS: SANCTUARY AND EXPOSURE",
+    "# PART II — THE CORRIDOR WORLD",
+    "# PART III — HOME: COLONY, DWELL, AND EMBODY",
+    "# PART IV — THE CITIZENS",
+    "# PART V — AWAY: EXPEDITION AND RETURN",
+    "# PART VI — THE CAMPAIGN",
+    "# PART VII — PRESENTATION AND DEVELOPMENT BOUNDARY",
 )
 
 
@@ -131,7 +141,7 @@ def validate_operating_contract(errors: list[str]) -> None:
         "## Canonical controls",
         "## Historical archive",
         "## Required cold start",
-        "## Active phase profile — authorial GDD preparation",
+        "## Active phase profile — provisional GDD structure",
         "## Gates and halt conditions",
         "## STATUS contract",
     ):
@@ -139,7 +149,7 @@ def validate_operating_contract(errors: list[str]) -> None:
             errors.append(f"AGENTS omits required section: {heading}")
     if len(text.encode("utf-8")) > 32 * 1024:
         errors.append("AGENTS exceeds the 32 KiB discovery limit")
-    for required in (STATE, MANIFEST, CORPUS, ARCHIVE / "README.md"):
+    for required in (STATE, MANIFEST, CORPUS, GDD_STRUCTURE, ARCHIVE / "README.md"):
         relative = required.relative_to(ROOT).as_posix()
         if relative not in text:
             errors.append(f"AGENTS omits active or archival boundary: {relative}")
@@ -276,8 +286,8 @@ def validate_state(state: dict, errors: list[str]) -> None:
         errors.append("canonical state shape drifted")
     if state.get("schema_version") != STATE_SCHEMA:
         errors.append("canonical state schema is invalid")
-    if state.get("status") != "AUTHORIAL_GDD_PREPARATION_READY" or state.get("execution_state") != state.get("status"):
-        errors.append("canonical authorial-preparation lifecycle is invalid")
+    if state.get("status") != "AUTHORIAL_GDD_STRUCTURE_ACTIVE" or state.get("execution_state") != state.get("status"):
+        errors.append("canonical authorial-structure lifecycle is invalid")
     scope = state.get("scope", {})
     if scope != {
         "version": "MEDIAN v0.5.0",
@@ -293,24 +303,29 @@ def validate_state(state: dict, errors: list[str]) -> None:
     if set(authority) != {
         "repository_writes_authorized", "corpus_modification_authorized",
         "gdd_structure_authorized", "compiled_prose_authorized",
-    } or any(value is not False for value in authority.values()):
-        errors.append("authorial-preparation authority is not fully inactive")
+    } or authority != {
+        "repository_writes_authorized": True,
+        "corpus_modification_authorized": False,
+        "gdd_structure_authorized": True,
+        "compiled_prose_authorized": False,
+    }:
+        errors.append("authorial structure authority is invalid")
     if state.get("information_management_archive", {}).get("status") != "RETIRED":
         errors.append("information-management system is not retired")
     gdd = state.get("authorial_gdd", {})
     if gdd != {
-        "status": "NOT_STARTED",
+        "status": "STRUCTURE_IN_PROGRESS",
         "output_root": "m050/gdd",
-        "structure_status": "NOT_PROPOSED",
+        "structure_status": "PROVISIONAL_SEVEN_PART_SPINE_APPROVED",
+        "structure_path": GDD_STRUCTURE.relative_to(ROOT).as_posix(),
         "composition_status": "NOT_STARTED",
         "coverage_status": "NOT_STARTED",
     }:
-        errors.append("authorial GDD preparation boundary drifted")
-    if (ROOT / "m050/gdd").exists():
-        errors.append("GDD material exists before structure authorization")
+        errors.append("authorial GDD structure boundary drifted")
+    validate_gdd_structure(errors)
     dashboard = state.get("dashboard", {})
-    if dashboard.get("status") != "READY — authorial GDD preparation":
-        errors.append("dashboard does not name the preparation boundary")
+    if dashboard.get("status") != "ACTIVE — provisional GDD structure":
+        errors.append("dashboard does not name the active structure boundary")
     validate_timestamp(state, errors)
     try:
         rendered = STATUS.read_text(encoding="utf-8")
@@ -319,6 +334,23 @@ def validate_state(state: dict, errors: list[str]) -> None:
     else:
         if rendered != expected_status(state):
             errors.append("STATUS.md does not exactly mirror canonical state")
+
+
+def validate_gdd_structure(errors: list[str]) -> None:
+    if not GDD_STRUCTURE.is_file():
+        errors.append("canonical provisional GDD structure is missing")
+        return
+    text = GDD_STRUCTURE.read_text(encoding="utf-8")
+    found = tuple(line for line in text.splitlines() if line.startswith("# PART "))
+    if found != APPROVED_PART_HEADINGS:
+        errors.append("provisional GDD structure does not preserve the approved seven-Part spine")
+    other_files = {
+        path.relative_to(ROOT).as_posix()
+        for path in (ROOT / "m050/gdd").rglob("*")
+        if path.is_file() and path != GDD_STRUCTURE
+    }
+    if other_files:
+        errors.append(f"unapproved GDD material exists: {sorted(other_files)}")
 
 
 def validate_work_order(path: Path | None, errors: list[str]) -> None:
@@ -359,16 +391,17 @@ def main() -> int:
         errors.append("focused regression suite failed")
 
     if errors:
-        print("M050 AUTHORIAL PREPARATION GUARD: FAIL")
+        print("M050 AUTHORIAL STRUCTURE GUARD: FAIL")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    print("M050 AUTHORIAL PREPARATION GUARD: PASS")
+    print("M050 AUTHORIAL STRUCTURE GUARD: PASS")
     print(f"- frozen authorial source library: {atom_count:,} atoms across {source_count} sources")
     print(f"- frozen source files: {EXPECTED_FROZEN_FILES}")
     print("- retired information-management engine: archived and inactive")
-    print("- provider, spend, tranche, reconciliation, and prose authority: absent")
+    print("- approved seven-Part GDD spine: present")
+    print("- corpus modification and prose authority: absent")
     print("- m051 input: prohibited")
     if args.with_tests:
         print("- focused regression suite: pass")

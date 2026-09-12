@@ -471,8 +471,14 @@ def test_spark_up_assesses_completed_target_without_rejecting(corpus):
         ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
     )
     state = _ready_state()
+    state["reconciliation"]["target"] = {
+        "tranche_id": "away-cargo-strained-004",
+        "msid_prefix": "Away.Cargo.Strained",
+        "selector": "exact",
+    }
     target_id = state["reconciliation"]["target"]["tranche_id"]
-    state["reconciliation"]["completed_tranche_ids"].append(target_id)
+    if target_id not in state["reconciliation"]["completed_tranche_ids"]:
+        state["reconciliation"]["completed_tranche_ids"].append(target_id)
     original = copy.deepcopy(state)
     assessed, report = reconciliation.plan_lifecycle_transition(
         state, corpus, store, "prepare-spark-up"
@@ -511,6 +517,15 @@ def test_proceed_atomically_binds_worker_selected_boundary_and_author_spend(corp
         ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
     )
     state = _ready_state()
+    state["reconciliation"]["target"] = {
+        "tranche_id": "away-cargo-strained-004",
+        "msid_prefix": "Away.Cargo.Strained",
+        "selector": "exact",
+    }
+    if "away-cargo-strained-004" not in state["reconciliation"]["completed_tranche_ids"]:
+        state["reconciliation"]["completed_tranche_ids"].append(
+            "away-cargo-strained-004"
+        )
     state["spend"].update({
         "refresh_window_usd": "0.0000000",
         "authorized_usd": state["spend"]["cumulative_spent_usd"],

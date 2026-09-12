@@ -1,0 +1,258 @@
+{
+  "id": "resp_0f5716279cebc67f016aa4a02aed0c87d28d5ff4a7e1b99186",
+  "object": "response",
+  "created_at": 1789173802,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789173842,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 36000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f5716279cebc67f016aa4a02df5ac87d28586fcf6ca61dc7c",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpKBTh-DoBk6Vg9e5nnKShKZ2fAVC-e_cYbgKiP8_MwlGVU1NglI3Y92Wp9tebB0ItnOl_P-4OHpcoGo6kIMsrAT8wBpQW_JHPwboCDLDPByQdtN8HmohBQuqrtUPyGlIb-QzfwWLce-F4985VAJ0rMar3ZDDLKqRanlYirk8lxWh9yZkgwUM05U3YNflLDIT1foNshB6xD8MAkCeT4pFBJxLCcV3opgShbrDiSB6ScoPYRz7HOYTG6eZKFfQog6V5AhDCSgvfDZHyHmgVBS8H5Wm0LrxmeqfO_HRLEgZYpmHNt9m75rlQs5TO4pih7r2P28V8SfiaJgRU0RCZI6yaTxPZPG4snfS2I38LSVx1mJ90jwBBrR9wDdNIRCsdnS2cInrCPax2d2dP6jcQAPEdZAIBqXBuFyh7fQVjX-sNos6VKS0HGQCyzHFlJCEqwpe5Z-nNnJFcrwz68YeRrOuC1-mJIRfgff94hfWonGqKj3o9HYcbHa7wsVRhIOcdkCQ-SiBC2-C0LmcK-N9cT5VWBZvswm_6vWYw2P4paiSh2WKHYXGGGUaZHo7aQhGqZAajCTHnXX3beALphy18e1HH1pbdulmiXHw4uUx-dLkAYVv0LF3W6KJzhVuxuVJSytMmtydi_iiQOfu3wuKAutMYOQfh9NbZ26cKgonH0ctEGp9ZjH_0tKDecz3p1U0Sn8AAHFjIKdUmA9bzugTLLyN7E5mrD7wwGndclQJFUk4i2kX3aQRahX8Ycnkf8tyr7MUzDIrfjf4Yuj8rTMn8_Msd4UdARFxFXkr-nGclNik9U9UIxnPrn6gBH3n1CX84idVIv3Z4hvlgluKd6blQnabe-yFtU2z3AnIYMdhrrDnuf55VHF3PYVID9616g0wVo_hu2Tp3QzuBoHs_S1eK-fiNUSYdBewjPLxOqsjkqMKMqAgJMRx64Q6bzI4PcOAlw2Vh9awHq4ZF1GYjZIET5kcWzgbfjFwv9_17rOoVZ69ohy2wbFl103IQ3uihaGscW7PA5wcqLl07fMFgmD2CTAitCRgfLS4xcmD5l1CJCkJbXVdxwuOBF_xJBa_ed9hvIuMI08XpXVDytcukcF_ecQpUlZLlnVtb4ca26cTSzk3zeIV8sdcsipJPtkrKfFLaNXgN0Kw6x84FZ_5R7F484tPw6v4naElpdV5JKM4soEYZ9wlS96BYfO-tFlMVSifFXxz9mgIlO6_69AhsnXb736GlZinRy_OIp60-7hRGLj4aighlIHrUBYdu9Vl9OyDHX-kfAbdlcQLD0_O-ZkG959SIWzv60EeKMSkgJvGZ6Pg6CDAaM12jAD7crZQTzEeRGGT3ffB6zgHM0PGN6xoABNBEM02UgdOHT0jbljhmEhSqRlMSB_D4CVvDcgyfMsPp_qXOUQtiA_l09idE-QvVuJFacwupHon3pcAC-IEnrxdXCt4yiUESPEcwJezmT3KXezQR3d-lGUQWMNFUfjf4otuZl4Q_uqkOGYPQvImfLazlNarDkdrcfyLEfx-6RRV0ovNUiDitUnZOexl7XxjjNUfHmpDEpRadLFpzaEUCKiD28xgcL3Ceh4KT6iMDsOBW0x6_MwOi56weFUb7ipXywGCpADdCN5xSkvafIodxTPP0-NSM8q3p5BzA7ZROaqH1QaATajBZcbpks9xcMQYnQuWj8JimpdhaYhjoMj9zQ2G0yWm7C8Spp3vUOjRU4yU4Q-dlu700SZvbHeOCkLZxIFGyV35lK6FoQ0zZiYL-y-UvrIyb6gCmLi4dBIpqWid-ln8YwtRFRM6XoNP0_hsW8MGzPeW_quOXDnhpiEqkOLDw2cTYsOhfK-Gw_GQRKZTuMgIeTBLBXSRHE2XKhgvM1r0lBpb0LC_96hJkNHm4Lat0IAV_-9Ea4lj0kzFtDMwVcuYEOqr9i1LdT2VIZGDdNDjnVgMp0G5crKt6iHGRD74uxxxjXeLzeQtpwTiLjKt-fvjUNdqv0oc9J9MSennqaKLusCSWmWu0tflO2w95pUD4lmuq9t9riqC6CUWvI44CMigzTtyzPyiSF43DF50iXNW3MJ83SVS8t-odU_y3C09wG7apyUu2Kx5s_aHFrSVisgQ89mMJk8CInN_-GOQ5NL2koxluXFYNjKW5P-cLIu5tCl0CNaM5lQ74YRm2sERv9ryCN2lDRQ2-3FdiKvJQ3sN2rKEIOxJ6hlVfYNyzHdtdbHzXkWQR5zdqgpchpVmXrBkpmmU_nEAoZEWEU4S6sx_7iZQSvwow44UG0q3Q_a-jgLsHG0TWkB3mPDXx0RXmUEblFwRGt7rsoyoxLHFzJrTBn94MOIM_7_SEtIw9r49VdFcxPAizrEO8RldBOG4zc4zfjkSr47V3bzCdlxGPuarYdeZbUrIiLZ7We-SZXOVgBf_X0oAz8rhBVjwONjKcSdl_XZPf0fnK6GebFRIV1RLu0yrUq4pqzolXjOM-_1fxG7PzFR4UeW1dhRpVdkC86WD7VzHMTyNO9ryx4X0yyArZIKuMT9nubtMWwZj5wulmD9RpvJcIh8V-5tRNmlQe-akz92SOfn-njTs-Yhx3wvOYZu0khFxFwqDLCp1Q7BE9P7fmC6b4W7MDEYB5tv027GyZS_RacLie5oXhaevtcsqhqyJe8VtGvrui_6PDdY0XIpmazTfkRajfr9zgo_rKOOqH0PUb8TBgViREAE2FyGDgUbtlOwWVsBiWKiFAMUY1TC-43BufkBd_347n0xXNUTtqxwdJ3IRUb6n13s4CsXJTCVDfqBUx5BBBBmN5EOk1WmsmU7afJjx8kFsKw6xDkVaTpBBZ7gqwTR1xmdDrerg-YoRUnEtcZ9loVCNbM-VWwppZ6YvPcoG0Aq32kcK8pgN7QEOqhKR6VArr7vDZO8h_pjfHKmJKywkaZC_pN31wDSilYWAE4LhOY-oIpPmxLuS-YmmM0XxWoENNXGcTYiDNN_3hdfZF1lB-Ns8KMZYvTJV1Zobh2IM-aYjyD-09xM9icCLoV9VORHHOGUUiyoVAHrAgJH9-YOLFwADq_idJI5dQcsFMylInYBO9XvQFH1h55bgo8MRqRmj1lyFh5E1cR-66-riOOohpo7d-btWrFjg8ST8hSAZslojwJoL2a27k2x4ZIis2iolNfo8i9Ebdp_eoaU5VOkyW9fGiVoVsji9KILLbeUePidKsfVND6w9muvqPKd4B_Y7VnJ-_9s3XSh8jYTUEIKsoS8kiDzqmBL6Jhgc4qmkY-MsKVDIpV9r4wbsAKwtsFl8UHJkQ2rpKsdgiMigK_AKmIYycy5r0HrTFvR4gbCHLPqkbNMx3YOd2y67F2FcCYVjIYCHQEwD5Eca01Al-SvCN9LKJD3ACOohTXevHHqutO_2pLCTKcUXuYoPJcHJLzS11mhS10QOfNcYotXidf5BUrl3eiLWyF0ug8cL9a5FveMQ3AdgGFGHkFuh5Xuy5X1JZwzz-r4hD5Z1I2Oe8wm7PltiRimjAS9TdqMR_nlEuBejJ9naMFKlSbSiqer1PXOuh2lk1PMHnk5AhS5DsjWeLy2jL3Rni1xABgn_Udmo5FkPvOuKHyak5NISbEdYN0OtCqmk4-Kv0QlkGljR_OMgjySNDBsVg4RRy2AzbAiQbT_8kAPJMgT_QClElLwllmfwuLiXPzzI80fmWXz19oAsvfwvPcvgGljhSIHi7Cs9tci4iPH35O3VJvrx5Wrnin_pA9oofd4Cyz70Hha5XHFjcQflpBejVXUTboENUrXLNCuQ3L6Q1kNtKvodsHydaT8ATF0pw7r_oAWIdW_h8BkKB4Www8DYvgFJR7HP7YBNmu0B3KKhz-tCP7MWw0eKPKP8GvJY82ahR2vpvaG1Eh_hg6134XFFQrx9Chc7imFCQFBZOx-E4lC1fT8O13Ja23Q5cTUvNTdqEJgqPM8i8fpLV626Eswo38qLLZIobamx8egrPrEBGe1BsV9yI81XRN6mQAh_boBdJGGKsxQOTP8CUSumuuJAZYOS_n-ArqaLw4lA8s5EZkXIwm5xw0N5kS0xWMkckniImNSwLntObPGPtkci-J80wQ1uj_AoPZ8aY20q5svD4OPI0UIRAVdVJypWLLwzKA2UGpGPCVOaBf9scZvKzC4akMVAHvsoD3Xm4eHSqChxQ6QQUtA3HS3HJm9yc27e_OtFyq9sctLJQKlE1_IV4WjmgwHKAqNZDQtPcNyUkO0EflztKxi4gb3J2EPcMl4N4ZqWjSroGrJjPcebsvRLJutwcNjHXav6yuhn2GBSy5pwdQV5hHdNLSsdIyG3Q55rwt2FpZU-3hnij828Yw8S8lG0sPRZUgjePTIWlVnnzqN9xpNgZ4lnrfeJjLAVkady8WKnap4w_i8ARQSQjaxjhqS2Z3WGjKFtVmar-kk_KFZQJpwLunwnzeUNlJmkpbgLcIoDKPL-Oad1Kg0aTX03SQ3ISqmZCvO3_2_34BN_DNwtw9yUmQwWzTWziL19UGYzZOfb_EKbj4yBd5trJY9htrIsvnV15l0UMBz5pjN4VK4RI9q4AYK-RPcMmGcQvU1h2AM-3_VZZTAzPrIWtgt2-wZtMzQv8pyLNdfYpnTh7EWleJp4repjf1ktGjf5Mh461Y0C5micHSXlDpk3YO88lC4kD3OJxWCOZa_-G5G-Rmet7S0_KhzqODmuIk7jZ9tvGpGoBfRLYyMNdxwVPOHN_ay31wkP2h4AHRG7Gq9Vi4P1Xxlf2IwJ4iy3UnTo2DfP6lCgP8_4JImCjSNNFfQ0HBlMcMv0a-LHD3eUGWG8c3LlEJAwt5FK2rvb4PZBqmiXq5CCIu5C09n99RB38Pp6CxYVQFKXq9f9g3punn0GAx1hD_Utv1t8kJX3F503iUBTHmVYuEwcmvdH3m05UFC-fQOeV6s9i5S7I9X-hOyqrmn1RExZyLo1XUnb93YmAoODuAzwdiic29Ht__LLgfg2EVnigMboeWohx9Ovyh9I4N3ATTAfU97GCvVI4L06iPNziRlGl2Ptzb4SxX8pl5Ktu33sOy8uUV63uX69ymh2fheS0hh3JrV6",
+      "summary": []
+    },
+    {
+      "id": "rs_0f5716279cebc67f016aa4a035d6dc87d2949ab959030aab11",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpKBT2efI_NQKcvhgYteLDXxgPST2DRuElkuz_0WHSLCKQlGfXCOKyO0WJTBi25ijuTwQnPmzO-HR3i8N_OT6wSobRTggWs4EZ8UP71hQYh2O6PpNumFC9rrgJzeylpmgTFopviIpnEc0I-tYksBIjU9BYz94uv5RteEAFje57hGF23A6IcZTd-_F0nsRmq8HcsTdvjHmpC9XSV2VMGFd2IxRPQy8rqy6tqonMQ7cbgFthDoBZYQ4gZ--9kmgECxByXoLbu9d-NCQ24U7j1QtK8hY5oX88PhsnYM6IKdtrt2xZdzMBJthNmBlGygO-53e4tMWk8XJpHq4weS4AnSGB_4R-iU6HRXADedId5JrBpb6NyYrpDasJhQrH_2u0kR2YBXjH_NB-mYRNUr_6eGJ_DvkIp5Utn2iGh5yA-1iqnKza6rXQhkG2YdoY7xIHe7Q6MkD2kg6draAysq0RDYD-SdixyDcnxmRw2imD0xbhHsi34AT0L3dwrhSlMtaeK8kFsyumrw8XSzNq4n5ierFa8rDnCDBgQwXW3HsiEKYNIytE8I6LHF5ZTBxxBaYfiRzzkuK9rvd5aapvnmhly8i5JsfmVguCGKxYODtjW9SqA0ozyOfLj5OlxgllMnl9A1MQuqpRNfS62akS3soFKRiUHNEz1JDi9Eq3PD23ARLl2m00QY5H8JNrPA0mWGSCYNbFtj1nFFcY6v6vf1ZB0B-oBvdcXw1RA-E8zgMQQS1HQtX6I-3nwcrTZ2-W0j5u_8B6jQx3c8F4pywa8_B3AUU3euk82Xh3eq1bcdDUTrEtHIXwrUBr6Ztij8usSa6x-lCQpR84qc84TuyTEEdYAK_3bivAHICRypczVwCJ6hCkt0zLVYk9pqwAmDZzlCU93x-qmEw8L9Qt3zWA-L7TtB4pq1-s0qyku7Di02fwa-79KJldP6cHHgINmQP-bPIF7R4kca3wnJe9sRP0ka1vKD7POj6lsyVwEuBSzMQQ-s_pABDTBgHODwK96ONgjfcNM4BmZwWzSwFmNbVt02yFTC0qLavuE9aARo2Duk204wcMlXtemzS-eMBEagbIYFDhHjJmineMgD0fOT9IS45uVwttHYxWgtWdB61GmxvI9Wd8K94h-_3NcEigP36-ajW9WvJdvF7jHeOR8dVtc2Begl6Ig8h06RLPHMk2wj8K_CUZ8tROSs20UsJ5pvauK8pM6_5-LJFC2_8zshHBk0-TJ8cO0ET-96CpwcMQ92WJ6QyZFfWW64O9QdacMX_NanaXoTSnES9QD1FpyzeoY8VRSHsBEjA_vTyMMFydz_JSa2Oaf58dh6iD8QWLJWzCxjGBOipQybaLmysv8UlU1mNsMOt3m9IF3ldtKpr-VPDqEIOB5qJttnlmuCjRIidLOo530K9bSNrY6Y654OaIU_Lp0_yde_EoKSNRIOqjpdhnOhlJUxLnkZViCEmj8CciuWgItF-D0qclmuZawWd_7Rl1Snf8Y-pJopNPpTGeFBARrkhflbSTR94NdwhPzfMDBBixM1RxqdfrmHcxRFe9Qx24gMCOQPjFgZKTMI22uRu3C6zzn238X2ZtPDln01jflA0t15ghZ1ZDPtI7c5jhUT6Owt5H9jECJRbTrYHYuZ2JgncC4F1pwdtQtKjOBytTJYycoIEWr8nMaY8NtnF-aSLMBujkqCbMgNZ6N6naapxGoPr7Yds8tBgUg4pAmdaiBjqJKe5TcsxhocbuXqZE2F5-3Y75-CRCwfKxqeq0CdCRSckXgYJ-e1jjik82Es9SUcLZlOWETFQXdB5Ob2pAg_9kT_dHJEga7rx7EpeLLkZAKdpfwgc9s9mvrtTuunDS5iRuzeTUcyIY4PPlIg_C_G6Dj-n1mSsWtu1urApcUAi4X9jaylZrVI6pKK0Hxl4nC-VRVvGQnGLO6V5CxuXqT8XChGEY6QbJLrYD_KOr69QYisZ6hUt0fRgZbUeknWpo1ON1aO79c3-YxR2y_-RClUaz9rmqYdWnAVCe1M6PF35lK0wYq12w7MW3bzlTp8VSfClS4us31zgxtmLmCLjtQgE5xKp8bGr5vM30YEqJYR6R6l5eqte_OI_N_gRJR0fZhb2yTcAmLAEEUwoa9Ur5pFE4iixT7W2NkkhWRf80syhRny9X1JP8P0aAFIL9KmnTCh6ztncbETUELPRjPEweAr_x_oxUe4KyjlM9daUMTTQT0wV0o1ydO0ZfoPeGsSHXI17eE5HSw35sxE4-NXmK2fd3ClG_qc11iA_6WWeyYNbBStbNNqrWPuwzAxlTTTBOah_gAbKnO0de9sTyFIZSft-1akcTbhDY1fxLccjY8l65r2iCALCKnpIyaXDsW7taPEStMNphTpMiJhCV4CyJhhpUnu51avfxRm3Mg6DHOsRo2wuVeCro-EO-dTOaZ9i_CfMcUyMqxYcvbZb3oZwXnQLsXLz3csyPmVziuzYSRlrsJIev0pPWrvOYDj587RtusnPNFGrFQginQS2rMi8Fr2_SvWHoh8uZnXuOxEcpSrm4ZioH2wjxuNQ-p5sJOoLq9SpHCIuNTDNxq_E-EEyw178pnIR0hJp7RyrbGWmDibTOYzfUFRkWG-slI1XpmOzbBpvJ0HUvBYcxnZbWkUFj7aL39NDw44tbte-eEnECgSQw6Rt57FA_RMXCzzbRys7tkUIxS-5a0VTLuzOZWQnST6wbPUiq1anUzyz5XG5lpIiwEqw1PRCqaz7sSWXYGQS_mAcvXwZREGGgwyk8qogccByp1eb5R7_Sw3p6_JUfyiW6ZIjihGq920ANAa603Y9gdp_J2tk-7eM-GeYnxcY_97Zifo1T444i42nGbrcjpC2W7Ie_6bP_JYrr3Dv1R-fjDJPI8TXXVoArqaS_hgynFGji9qgunUc3G6Rt_YOk3vvwhLdYeXAp8uqzcJAaFcnZQqmsWn2bLxM0bh8LFuOruWkeLv3gHZeYtIgSjjAjK6d5e-m9Rlh60G1wnc9k-qs1hEoKEv2joMt90V4PRQMUzOJRoZWPqQ4iiigyo2JohGNF3kVR6EQ4NLSu7gQd37RIm3r8Kdzek7azoijsw13e_3ohD5kVjGLAj6fi9XlCo2Tj-GHXfBgaaEcxUMmqlfOAfq2_QwO5pCsgwiRjmIrGd_zCtkBX7w_IwDiVbH08vVeZAlQVU5S70lR99oMI27hGU85DROIAmtOL2thyMOxPDASoyvRAleN1efex2CsnP00n5i0BDTwznO3kk0iVVu3tDWIinZh9LOQxdjet8-t6jO65B1hn6AJrh4YwT95d2i2BqQhwlrWKJyZ8KbKpN-XvLTi8nx5pbEpgFLiYT81yG1ssqOiixYg9aM4eOtIVeWzJPD7rL3B6iMbqPTs-Jhwlpgvub20uniHoUOWlgL5W7ZejX53Pr3osamfsUgJBuAPpZRqiqVhtByi0JX56P4UdN6P3_Wmm8GpZCUvXhrJipPXgvWNqs05H4GXjP0kEt6Pp-N-BsEzyQH0WAgEJgMzZwbBMl4blrpvRbTN85IKEqMRV3jR3U4g6mtg8Rj0_DBiBlJ1GVk6pkyh3lG2SoPRQEF4g6sy9IWpqqdW9HYacXo5t_2P1aNitxiAmxfkfV3HxHoI38wvomb3ypYcRONHca03nMzH-lLVEQ08NsnUzsiqMap_aQ9CK4GNS_US7KULXdTFRs0bNsIZSUTq7G6lPTEJc167SL3Xwi7Ojf_4pGXMSP0Jj2R1Bx46rziR8tDwzSDFArpE6TfbnkCSelTaOloCfnM1U5tOcGHQzuiXsEfcD47uwAMo2uBd1tDxHGOYycHz8NyLvTyRFQw4D8V9U4SxYqbJZytfmu71iobdEyMl9Vo_PyDUgotB1VBilzmgwMpdYOjFxYOVBVUXhTEiSxf5OW01-kK4J4nq772KDXEQkEkJmEt0jHT8qcopJLEXHiTbwyh_ifrmocPFdIVHzku8SXifgBroNxIMSjcxk6nuAXkKBWp3JZyMi3vjd5Ijw0FtylxYND-k0wk6UBYG6HWXsCu1R-HNohL47Fn_I3WRL9fvbGGXEIgkG5DtIWy5bmDp5JHz1g_o40fXPP-6qclwfMQBKA3jliMWQw5A7YOaZQRMZx3pVguWvVWUzNMoTBe1u_ddA3hhU5Pgg94kd0YFNpigV5CGQcOw8nVSQR25D0zfMkjbUeGmPNnTP35iQrCoqCtzhI6SRxg24KVuPSgpzqEIIaUJG36Mh1M2XL4GIly4pc6ieL3cEG7RnkkaAbh7QSTmfQAFpAdgpJd2SoyfK_HiWZ4Nw50K1HSOp_BXWlWcy80BXZjp55DCpOQB0ICnN3cJ4gZecUeiZrSXt_R6f5RHXawDz_SFVe1TDn01PCVxCWV2GCgGPP173SEmSGFxlsuI-cwPJKxjOHo8066Zu9WfaSnBCnCTjUzfzXkJBomA4yePjOmyTXm6uPPXqgw2PvsabWFQk55500QksJb2tMlGzsf6lfAMK5OptNtvRPeKHTyDhr1CNoEqE2YPIkw6Ce-I0DgKXi0fDsaA9tbFyhxpjhmJiYnUORy_pPN439G1SHvSB7Szk9Yml3pvcTKHYU0B-SU6Y_OMS50WrtLDTGM1SY7qEtXOt0ZOVZavQDzg76l497uLQbfi7c5IQ8lwaDnFuenunplzkAZrB-IFRNhs_y67UBL-ZibdiqkeFlEkEJa5AIYnVyztJhNT5UlDUQ29bWM=",
+      "summary": []
+    },
+    {
+      "id": "rs_0f5716279cebc67f016aa4a03e479c87d2875a8bcd6a67b58e",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpKBT49MSZwsCu1M10CneW7NPs5hkuEPxdGjqSYhUEsnu1IBt7d5k8ZtJZWcH5ofPpIJd0J6jGR8bMoFBgmpFv9XmTRPyfJvhlhcyJAkrUErcEBIEdNnKQN_CmE4JF4ev_unDIju5Zg-x_jogbMhRP6h43HwtV9neTKrErUBFTnImdNJe9sbqH7Kl2J1heWhYDv2dVCxPNAXQddZvJed-RaBXiVIqjghny-6tkXTLSgih-qW1rRyckfcur3yLhb9D4BoZfgagGQ-uckYE1ZM1_nNCStifRvLHPDwGFdZKduFt6x2df3ObVfk_SFeOgbUr4BKqap44-fkhJcfv83CeVJQiRQTtgzdSYUs7joIiBeqWpBotJnlA79VFPqfElkEp9FSxAqaQIQ8ceJCUyf_PW-gDpgsasgeipH17a6Uz_sW4SNqi1V8kUK53VISX-64wDRxVy2JFGsY5V6xM6AbUG_jwc1SK232Qh6sG-HSDQLsdVpWx0wR_GkJHHmcRWvGhiaRAsnAX-vn7snClRD-7tWsR4umo4t0wZX8H9oQJIVahnfEsAhsbj_T01JABxpysfyQiGx2TX4mrJU7GgB7ZGBzj2fQo5vMEcjqLsK7ZAQzCI6cmxUtN-ew1_sVa8racFz9Qv-gOVNNUBfKtY0xSlUWO_G93srY6eNrRcViOlvE-eTCAhIsX2cbvxWIzU-mij1aeDXvsY-x2uPcGWlWxxk1tHWc6ETi8gXkWMe1u5yDOIiXonfRL7RQk95Z7edM4IVuV9wPJJqyVSOYVQOvHLAWyFP4SK9TLzO5yzPzbO5JA9sXBujxbgUtACupiS7J3AhJdXaB0m-C5_GA-xsPSHU6y9FwbtG8zPwYV_pHNdXu3iTuclcB_WEUX_b1xMdVJCFMIn4XNka8aiz5a0lA05-oSTdzZE-9nX3PXbvQaUJel5CwPJEzN1M_HR1BmzXizCdmXnrEx5aDjMrVql9aOBn3_JrSoQ4JZFhd-0IW4t39LW4eIu9nei3jsIwLGN4-jCgzN8cQrdjflydSeKl_pNhalQrJWRoLU0DuQsS5RCNxm-lVn04cxW9zIOvjcxVeVzZJH8xNj8e-qab2fYqobi3Eu-bVD2ENlckiTbH6Q5FspKiPQkm0Vq_CoyctnxNqwxB-pEqojqnMl2U7r2zNlBzp-rg15MIqL9HIZOsIpunD1C_nwDSi2t-8yzK-w01j5G19AlXiOC87Jl6K4Y56AAkk2t-5Fu06lsBSTE7Ax4jC7Zv3txqXBnO4stUuOcQhB5j7ljqzjeRxy1zhtEaz-IOASdvjUL8jDda4B3-J24-wD9i_WnkM4hA_xkEbQwh6V0uZ9P1JFYE3xec16azSz2HoQPBLERMk-FTBof5r8VdMojeOq32bo25lyXAPfN9v-t5uRpzCZqsKXWwSUf6_sFo-fNYYxOwOXLSOGOOo7ZgOd-Dj36ygjgxCrfYP6ixMmFnM61EHRHUZWkD2PGLBNMcQzMyXcE5_ObdVAmTtUC7k9jzyZTE8N6oDKtc6E2Pb9PkMueyhp0nsBMvecnrTUgb_BgCD0jigZA0OMpXqX6-chGdyrfq2w9dZvRCfpkkhcVJc5uMawKesclNq5NTXAEsEVa8DawkdVsA-8wsx6jWOoNCz_yY-8wPjRPLAQZDxqVay_u4287clBrRqBfBteImRXg80413UjTqC9ehei_N59xzCNNNntuC3G5MDs72tzWSXc91d1rjlA2gm_Gsh5n0tRo_AurTuYe6wFrRRK2DijYkFyngGSiwSAKedB8k0GelCILmgXwNT33L4qlkQIuBesQgTheru8tj_nrmzcibczwGEqzcorK1bR_A1RP7dwgI2Bhoosf0KMGhsGa7SUR3bMIXE2zfCx-MiDJJQoDSNOFmqL5lUaGN_a3fA_8CfPhTlt_0JucDT8DUd2krhynFvrba8ylZjCuOVKZUuDxE5P0osA9LGrb-Q1f5hVamL1lOI5jCYVzGgkD227uk6Vt3hBJ5AJVyiotFG_lNIZzZFlLDnVYgtkvkZPv7yVQvr1c_5VO-uQdXco-xuVhqzLzYZ6Nw2HTTrO6qoLFZwGQbp0vmSzn18Ao1VdLhbN0fJWeFXMBuJJvAcy2QLjK24es56GDIf7sjGEOUwHUdlJzWg64M4DexjV70hcsmf2j3C-Q7PO42NMsr_L8LaME756g3gWPz1WKgePh6DQiYLjMc0l4-FZbP_WWgln0tjfqv83pYLFqtusoL2LNZ0iAbgzCxjsEPlWrAFxHC0yWr11jUHVha29s8rOj5g6z1Q_13FKaKHZe0LzYNI0BcOUqL37V9R6LoXXgBw1c0mMyvER7d4JlFMJlxVqkFnlsMsVgvJexLpIUOpICrAr5o8JUx-HatruvqRJYCSvcMWPsYs1Gttp1Dt27G4yOGgmX_PXtwggy4vgLkmrBfZehzudNAdxZ7viUQ==",
+      "summary": []
+    },
+    {
+      "id": "msg_0f5716279cebc67f016aa4a040ed7487d2b838381929fd8a0e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"packet_id\":\"packet_citizen-guest-005\",\"packet_sha256\":\"37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff\",\"schema_version\":\"M050-RECONCILIATION-PROPOSAL-0.1\",\"units\":[{\"authority_basis_atom_keys\":[\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1\"],\"canonical_claim\":\"Every Guest requires content covering: Identity (name, species, silhouette, communication register, and character thesis); Expedition or Resident Type chosen for play experience rather than social worth; authorized Citizen form; a First MEET showing the animal acting for its own reasons before recruitment; concrete visible Terms of Hospitality; Guest House translations for Mouse, Rabbit, and Squirrel plus placement needs and folk naming direction; Home life; a fully attributed and conditioned Signature Permission or Affordance; an Away package for Expedition Guests; EMBODY content; and Memory content.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1\",\"disposition\":\"basis\"}],\"primary_msid\":\"Citizen.Guest\",\"rationale\":\"These atoms are compatible components of one required-content specification for the Guest ontology. Their scopes and conditions are preserved, including the Expedition-only Away package and the two authorized collective-bodied households.\",\"related_local_ids\":[\"U002\",\"U003\"],\"unit_local_id\":\"U001\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1\"],\"canonical_claim\":\"The earlier pre-design non-goal rejected treating Guest species as four-slot warning-and-capability modules before their dedicated design pass; the supplied dedicated Guest design now replaces that interim framing with a fuller content specification.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1\",\"disposition\":\"superseded\"}],\"primary_msid\":\"Citizen.Guest\",\"rationale\":\"The non-goal was expressly limited to the period before a dedicated design pass. The packet now supplies detailed Guest rosters and required fields, so the temporary pre-pass framing is superseded while its rejection of reductive four-slot treatment remains reflected in the fuller design.\",\"related_local_ids\":[\"U001\",\"U003\"],\"unit_local_id\":\"U002\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001\"],\"canonical_claim\":\"Cross-system rules subject to the Guest-boundary test must remain valid without depending on decisions about detailed Guest species capabilities.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001\",\"disposition\":\"basis\"}],\"primary_msid\":\"Citizen.Guest\",\"rationale\":\"This acceptance test establishes system independence rather than prohibiting detailed Guest design. It therefore remains compatible with the dedicated Guest specification while preserving the stated boundary condition.\",\"related_local_ids\":[\"U001\",\"U002\"],\"unit_local_id\":\"U003\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4\",\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0123\"],\"canonical_claim\":\"The Overhead Layer is primarily associated with Squirrel access but also permits occasional guest-species access as a qualitative ecological emphasis, without itself determining detailed mechanical expression.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4\",\"disposition\":\"basis\"}],\"primary_msid\":\"World.Terrain.Band.OverheadLayer\",\"rationale\":\"The required atom predicates occasional Guest access of the Overhead Layer. The Human Ruling limits ecological evidence to qualitative bodily and movement priors and leaves mechanics to dedicated owners, so no capability or universal access rule is inferred.\",\"related_local_ids\":[],\"unit_local_id\":\"U004\",\"unit_status\":\"reconciled\"}]}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "const": "packet_citizen-guest-005",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-PROPOSAL-0.1",
+            "type": "string"
+          },
+          "units": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority_basis_atom_keys": {
+                  "items": {
+                    "description": "An exact atom_key from packet evidence.",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "canonical_claim": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty, source-grounded semantic claim.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "human_question": {
+                  "anyOf": [
+                    {
+                      "description": "A precise nonempty authorial question.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "members": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "atom_key": {
+                        "description": "An exact required atom_key from the packet.",
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "basis",
+                          "conflicting",
+                          "elaboration",
+                          "superseded",
+                          "supporting"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "atom_key",
+                      "disposition"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "primary_msid": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty current MSID; never invent a path.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rationale": {
+                  "description": "A nonempty source-grounded reconciliation rationale.",
+                  "type": "string"
+                },
+                "related_local_ids": {
+                  "items": {
+                    "pattern": "^U[0-9]+$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "unit_local_id": {
+                  "description": "A unique local ID such as U001; never empty.",
+                  "pattern": "^U[0-9]+$",
+                  "type": "string"
+                },
+                "unit_status": {
+                  "enum": [
+                    "reconciled",
+                    "human_required"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit_local_id",
+                "unit_status",
+                "primary_msid",
+                "canonical_claim",
+                "members",
+                "authority_basis_atom_keys",
+                "related_local_ids",
+                "rationale",
+                "human_question"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "units"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 200255,
+    "input_tokens_details": {
+      "cache_write_tokens": 200252,
+      "cached_tokens": 0
+    },
+    "output_tokens": 3365,
+    "output_tokens_details": {
+      "reasoning_tokens": 1214
+    },
+    "total_tokens": 203620
+  },
+  "user": null,
+  "metadata": {}
+}

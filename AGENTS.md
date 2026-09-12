@@ -132,8 +132,8 @@ During structure work:
 
 The approved seven-Part spine must remain stable unless Asa reopens it. Chapter
 and section titles remain provisional until approved in their respective Part.
-Section 0 and Chapter 1 are authorially approved. The next legal transition is
-authorial approval of the refined Chapter 2 structure.
+Section 0 and Chapters 1–3 are authorially approved. The next legal transition
+is authorial approval of the refined Chapter 4 structure.
 
 Do not require every atom to acquire a semantic unit or perfect classification
 before prose can be written. Do not create an automated discernment system,

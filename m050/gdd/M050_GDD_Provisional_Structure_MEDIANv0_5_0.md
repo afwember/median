@@ -2,9 +2,9 @@
 
 ## Provisional Structure
 
-**Status:** Seven-Part spine, Section 0, and Chapter 1 structure authorially
-approved; Chapter 2 is provisionally structured; later chapters and sections
-remain provisional.
+**Status:** Seven-Part spine, Section 0, and Chapters 1–3 are authorially
+approved within this provisional structure; later chapters and sections remain
+provisional.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
 Document. It establishes the reader-facing order of the work without deciding
@@ -146,12 +146,76 @@ III. Chapter 31 later governs the Founding Escape as playable onboarding.
 - The player is not principally a commander, mayor, optimizer, or possessed
   avatar
 
-## 3. Design pillars and protections
+## 3. Global pillars and governing doctrines
 
-- The eight global pillars
-- Choice, care, identity, and memory
-- Game Logic before Attachment
-- Conservation of Systems
+The first seven sections are player-facing pillars. The final two are governing
+design doctrines: fundamental means of protecting those pillars rather than
+additional descriptions of the player experience.
+
+### 3.1 One permanent, attachment-forward Home
+
+- Home as the permanent emotional and mechanical center
+- Improvement, inhabitation, damage, repair, and memory without replacement
+- Corridor growth accumulating around the founding Home rather than making it
+  obsolete
+
+### 3.2 Every Citizen is known
+
+- Every Citizen named, distinguishable, and historically continuous
+- Population remaining small enough for every name to count
+- Core and Guest origins sharing equal personhood and Citizenship
+
+### 3.3 Home can become enough
+
+- Successful stillness as a valid state of play
+- Growth supporting ordinary life rather than perpetuating itself
+- Quiet made mechanically credible
+- Peaceful continuation through care, craft, relationship, hospitality, memory,
+  and chosen exploration
+- No required expansion, domination, or terminal victory state
+
+### 3.4 Home grows the Colony; Away changes Citizens; Return changes both
+
+- Home developing collective capability and continuity
+- Away developing and endangering particular Citizens
+- Return making collective and personal change answer one another
+- These as centers of attention rather than exclusive jurisdictions
+
+### 3.5 Consequence without disposability
+
+- Danger changing lives before erasing them
+- Harm, fear, Maiming, Distinctions, relationships, and memory carrying
+  consequence Home
+- Death remaining possible without becoming routine inventory loss
+
+### 3.6 One persistent world across two Modes and five Registers
+
+- Colony, Embodiment, Field, Crossing, and Encounter acting upon one world
+- Facts and consequences remaining continuous across Registers
+- Transitions changing attention and expression rather than partitioning
+  reality
+
+### 3.7 Lived in the world, legible in the ledger
+
+- Important state perceptible in the world and available in functional form
+- Atmosphere never excusing obscurity
+- Clarity about known facts without eliminating uncertainty or suspense
+
+### 3.8 Conservation of Systems — governing doctrine
+
+- New meaning arising through context, combination, permission, species
+  expression, manifestation, and memory before new meters or subsystems
+- A small reusable grammar protecting player attention
+- Mechanical restraint supporting expressive variety
+
+### 3.9 Game Logic opens Attachment Space — governing doctrine
+
+- Legibility enabling competence
+- Competence enabling stability
+- Stability releasing attention
+- Released attention making attachment possible
+- Repeatable attachment-forward systems performing genuine game work while
+  permitting individual quiet moments to remain non-instrumental
 
 ## 4. One world, two Modes, five Registers
 

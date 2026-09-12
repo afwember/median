@@ -42,7 +42,7 @@ structure and method with Asa before changing them, and edits repository state
 or GDD material only after Asa grants an explicit bounded task. “The Worker
 should…” normally expresses a proposal, not execution authority.
 
-No Compile Worker is active in the current preparation phase. A future Worker
+No Compile Worker participates in ordinary authorial creation. A future Worker
 would begin read-only and require an expressly installed mandate. Repository
 write authority and authorial prose authority are separate; neither follows
 from a task title or from access to the filesystem.
@@ -94,30 +94,41 @@ authorization from Asa.
 
 ## Required cold start
 
-Before any repository or GDD work:
+At the beginning of a repository-writing session or a newly selected authorial
+boundary:
 
 1. Confirm `AGENTS.override.md` is absent.
-2. Read this contract completely.
-3. Read the canonical compile state and corpus manifest completely.
-4. Read `STATUS.md` and confirm it exactly mirrors canonical state.
-5. Confirm a clean worktree and local `HEAD` equal to `origin/main`.
-6. Report the current phase, source-library boundary, active authorities,
-   prohibited inputs, next legal transition, and STATUS freshness.
+2. Read this contract and the canonical compile state.
+3. Read `STATUS.md` and confirm that it exactly mirrors canonical state.
+4. Confirm a clean worktree and local `HEAD` equal to `origin/main`.
+5. Confirm the active authority and prohibited inputs before acting.
 
-A read-only assessment does not refresh state or run publication tests. Before
+The frozen corpus manifest does not need to be reread during every chapter
+discussion. Read it completely when the source-library boundary is in question,
+before corpus-related work, or when the guard reports drift. Surface a cold-start
+discrepancy before continuing; a healthy check is not a separate approval gate.
+
+A read-only discussion does not refresh state or run publication tests. Before
 releasing changed controls, corpus bindings, structure, or prose, run the
 renderer and `.venv/bin/python m050/tools/m050_guard.py --with-tests` as
 separate actions.
 
-## Active phase profile — provisional GDD structure
+## Active working method — direct authorial structure
 
-The seven-Part spine of the v0.5 GDD is authorially approved. The active task is
-to refine its chapters and sections with Asa, one Part at a time, in
-`m050/gdd/M050_GDD_Provisional_Structure_MEDIANv0_5_0.md`.
+The seven-Part spine of the v0.5 GDD is authorially approved. Asa and the
+Compile Supervisor refine the selected chapters and sections directly in
+conversation, using
+`m050/gdd/M050_GDD_Provisional_Structure_MEDIANv0_5_0.md` as the sole working
+structure.
 
-This profile grants the Compile Supervisor repository-write and GDD-structure
-authority only for the approved provisional-structure refinement. It grants no
-corpus modification or compiled-prose authority.
+Current approval progress, the selected authorial boundary, and the next legal
+transition live only in canonical compile state and derived `STATUS.md`. Do not
+copy them into this contract, `README.md`, or the structure document's status
+header.
+
+This working method grants the Compile Supervisor repository-write and
+GDD-structure authority only for the approved provisional-structure refinement.
+It grants no corpus modification or compiled-prose authority.
 
 During structure work:
 
@@ -130,11 +141,18 @@ During structure work:
 - permit the structure to evolve through explicit author discussion; and
 - defer later or conditional source use until its intended authorial moment.
 
-The approved seven-Part spine must remain stable unless Asa reopens it. Chapter
-and section titles remain provisional until approved in their respective Part.
-Section 0, Part I, the Part II overview, and Chapters 5–6 are authorially
-approved. The next legal transition is authorial approval of the refined
-Chapter 7 structure in Part II.
+The working cadence is deliberately small:
+
+1. Asa selects or reopens a structural question.
+2. The Supervisor retrieves only the evidence needed to discuss it.
+3. Asa resolves or approves the structure in conversation.
+4. The Supervisor writes only the approved result.
+5. One publication checkpoint updates canonical state and `STATUS.md`, runs the
+   guard, reviews the diff, commits, and pushes.
+
+The approved seven-Part spine remains stable unless Asa reopens it. Chapter and
+section titles remain provisional until authorially approved. Discussion may
+leave a question unresolved without creating another workflow or holding file.
 
 Do not require every atom to acquire a semantic unit or perfect classification
 before prose can be written. Do not create an automated discernment system,

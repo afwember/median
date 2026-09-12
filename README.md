@@ -9,24 +9,29 @@ corridor, and bringing discoveries home. It is conceived by Asa Wember.
 
 ## Current work
 
-MEDIAN v0.5.0 has entered creation-first authorial compilation. Eighteen source
-documents have produced a frozen library of 5,382 authorially triaged and
-rewritten atoms. That library now supports—not precedes or replaces—the human
-work of structuring and writing one coherent v0.5 GDD.
+MEDIAN v0.5.0 is in direct authorial GDD creation. Eighteen source documents
+have produced a frozen library of 5,382 authorially triaged and rewritten
+atoms. That library supports—not precedes or replaces—the human work of
+structuring and writing one coherent v0.5 GDD.
 
 Automated semantic reconciliation, tranche processing, provider calls, and
 spend authority are retired. Their evidence remains available in the historical
-archive. The next step is to establish the provisional GDD structure in
-discussion with the author.
+archive. The author and Compile Supervisor now shape selected GDD boundaries
+directly in conversation, then record approved results in the sole provisional
+structure. Live progress and the next boundary appear only in the canonical
+compile state and its derived [status dashboard](STATUS.md).
 
 ## Repository map
 
 ```text
+AGENTS.md        Stable repository operating contract
+STATUS.md        Derived human dashboard of the live authorial boundary
+
 m050/docs/       Frozen v0.5.0 source documents and v0.4.6 baseline
 m050/corpus/     Frozen 5,382-atom authorial source library and manifest
 m050/control/    Canonical current compile state
+m050/gdd/        Sole provisional GDD structure
 m050/tools/      Sole guard, dashboard renderer, and focused tests
-STATUS.md        Derived human dashboard
 
 600 archive/m050-information-management/
                   Retired extraction, mapping, reconciliation, API, and Worker machinery

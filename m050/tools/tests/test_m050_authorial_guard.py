@@ -28,17 +28,10 @@ def test_provisional_structure_preserves_approved_spine() -> None:
     assert errors == []
 
 
-def test_status_contains_no_provider_spend() -> None:
+def test_status_stays_on_direct_authorial_surface() -> None:
     state = json.loads(guard.STATE.read_text(encoding="utf-8"))
     rendered = guard.expected_status(state)
-    assert "SPEND" not in rendered
-    assert "PROVIDER" not in rendered
+    for retired_surface in ("SPEND", "PROVIDER", "TRANCHE", "WORKER"):
+        assert retired_surface not in rendered
+    assert "Direct authorial GDD creation" in rendered
     assert "provisional GDD structure" in rendered
-
-
-def test_m051_work_order_is_rejected(tmp_path: Path) -> None:
-    work_order = tmp_path / "work.json"
-    work_order.write_text(json.dumps({"input_path": "m051/source.md"}), encoding="utf-8")
-    errors: list[str] = []
-    guard.validate_work_order(work_order, errors)
-    assert errors == ["work order contains prohibited m051 input"]

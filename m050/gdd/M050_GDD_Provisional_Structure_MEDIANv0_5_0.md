@@ -2,14 +2,14 @@
 
 ## Provisional Structure
 
-**Status:** Seven-Part spine, Section 0, Part I, the Part II overview, and
-Chapters 5–6 are authorially approved within this provisional structure; later
-chapters and sections remain provisional.
+**Status:** The seven-Part spine is authorially approved. Current chapter
+approval and the selected working boundary are recorded only in canonical
+compile state and derived `STATUS.md`.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
 Document. It establishes the reader-facing order of the work without deciding
-final canon or granting compiled-prose authority. Each Part will be refined
-with Asa in sequence, and this structure will be revised in place.
+final canon or granting compiled-prose authority. Selected boundaries are
+refined directly with Asa, and approved changes are revised in place.
 
 ## Front Matter
 

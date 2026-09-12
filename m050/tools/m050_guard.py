@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sole repository guard for creation-first MEDIAN v0.5.0 compilation."""
+"""Sole repository guard for direct authorial MEDIAN v0.5.0 creation."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ ARCHIVE = ROOT / "600 archive/m050-information-management"
 
 ATOM_SCHEMA = "M050-AUTHORIAL-CORPUS-ATOM-0.1"
 MANIFEST_SCHEMA = "M050-AUTHORIAL-CORPUS-MANIFEST-0.1"
-STATE_SCHEMA = "M050-COMPILE-STATE-2.0"
+STATE_SCHEMA = "M050-COMPILE-STATE-3.0"
 EXPECTED_ATOMS = 5382
 EXPECTED_SOURCES = 18
 EXPECTED_FROZEN_FILES = 33
@@ -141,7 +141,7 @@ def validate_operating_contract(errors: list[str]) -> None:
         "## Canonical controls",
         "## Historical archive",
         "## Required cold start",
-        "## Active phase profile — provisional GDD structure",
+        "## Active working method — direct authorial structure",
         "## Gates and halt conditions",
         "## STATUS contract",
     ):
@@ -278,7 +278,7 @@ def validate_manifest_and_corpus(state: dict, errors: list[str]) -> tuple[int, i
 
 def validate_state(state: dict, errors: list[str]) -> None:
     required = {
-        "schema_version", "status", "updated", "execution_state", "scope",
+        "schema_version", "status", "updated", "scope",
         "source_library", "information_management_archive", "authorial_gdd",
         "authority", "dashboard", "next_possible_transition",
     }
@@ -286,8 +286,8 @@ def validate_state(state: dict, errors: list[str]) -> None:
         errors.append("canonical state shape drifted")
     if state.get("schema_version") != STATE_SCHEMA:
         errors.append("canonical state schema is invalid")
-    if state.get("status") != "AUTHORIAL_GDD_STRUCTURE_ACTIVE" or state.get("execution_state") != state.get("status"):
-        errors.append("canonical authorial-structure lifecycle is invalid")
+    if state.get("status") != "AUTHORIAL_GDD_STRUCTURE_ACTIVE":
+        errors.append("canonical direct-authorial phase is invalid")
     scope = state.get("scope", {})
     if scope != {
         "version": "MEDIAN v0.5.0",
@@ -353,15 +353,6 @@ def validate_gdd_structure(errors: list[str]) -> None:
         errors.append(f"unapproved GDD material exists: {sorted(other_files)}")
 
 
-def validate_work_order(path: Path | None, errors: list[str]) -> None:
-    if path is None:
-        return
-    value = read_json(path.resolve(), errors)
-    serialized = json.dumps(value, ensure_ascii=False)
-    if '"m051' in serialized or 'm051/' in serialized:
-        errors.append("work order contains prohibited m051 input")
-
-
 def run_tests() -> int:
     return subprocess.run(
         [
@@ -376,7 +367,6 @@ def run_tests() -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--work-order", type=Path)
     parser.add_argument("--with-tests", action="store_true")
     args = parser.parse_args()
 
@@ -386,7 +376,6 @@ def main() -> int:
     validate_topology(errors)
     validate_state(state, errors)
     atom_count, source_count = validate_manifest_and_corpus(state, errors)
-    validate_work_order(args.work_order, errors)
     if args.with_tests and run_tests():
         errors.append("focused regression suite failed")
 

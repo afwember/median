@@ -788,11 +788,163 @@ as disposable interruptions.
 
 ## 9. Roles, Places, Practices, and Projects
 
-- The civic ontology
-- Roles and global capacity
-- Standing Practices
-- Active Projects
-- Species-specific spatial expression
+### 9.1 The civic relationship
+
+- Citizens holding Roles, Roles sustaining Practices, Practices giving civic
+  purpose to Places, and Projects making defined persistent changes
+- A Place as persistent physical ground rather than a separately named building
+  type; its functional name coming from the Practice that inhabits it
+- Roles answering what responsibility Citizens carry and Practices answering
+  where and how that responsibility enters communal life
+- A Role able to serve several Practices and a Practice able to draw upon
+  several Roles without becoming a staffing slot or department
+- Citizens choosing whether their civic shares sustain a Practice and
+  contribute to Readiness or become committed to an active Project
+- Practices able to contribute incremental Capacity through the Colony's prior
+  commitment of land and physical purpose as well as support active Projects
+- Practice infrastructure never advancing a Project without committed Citizens
+
+### 9.2 Roles and their Practices
+
+Each Role is first established through its civic responsibility, ordinary
+contribution, related Practices, characteristic Projects, vulnerabilities, and
+limits. The Practices are then defined in their own canonical homes so that a
+shared Practice does not appear to belong to the first Role that uses it.
+
+#### 9.2.1 Builder
+
+- Builder carrying responsibility for the physical soundness and deliberate
+  transformation of Home
+- Every available Citizen assigned Builder contributing one equal civic share,
+  without personality, prior service, Away capability, equipment, or species
+  creating a superior Builder coefficient
+- **Workshop** as the sole Practice that adds Builder Capacity
+- Workshop naming the Practice, and therefore the land committed to that civic
+  purpose, rather than a separate production-building type
+- A completed usable Workshop contributing a modest incremental amount of
+  Builder Capacity even without a Citizen currently sustaining it
+- That contribution representing prepared material, protected working ground,
+  established methods, suitable access, and accumulated physical order rather
+  than autonomous labor
+- Additional Workshops contributing incrementally without multiplying the
+  effectiveness of individual Builders
+- A Builder who sustains Workshop applying their civic share to ordinary
+  Builder Readiness
+- A Builder committed to a Project withdrawing that share from ordinary
+  Readiness and applying it to the Project
+- Several Builders therefore able to divide present effort between structural
+  Readiness and deliberate change
+- Workshop continuing to provide its incremental contribution while supporting
+  a Project, because Citizens rather than infrastructure make the commitment
+- Workshop unable to advance a Project without committed Citizens
+- Other Practices able to create structural obligations or receive Builder
+  Projects without adding Builder Capacity
+
+##### The first Workshop
+
+- The Colony able to undertake the Project establishing its first Workshop
+  without an existing Workshop, avoiding a circular prerequisite
+- The founding Project still requiring material, time, and committed Builder
+  Citizens
+- The unfinished Workshop contributing no Capacity
+- Completion ending the founding permission automatically
+- Each completed Workshop thereafter supporting one active Builder Project
+- The first Workshop marking the transition from structural capability resting
+  entirely upon present Citizens to committed land carrying a small part of the
+  Colony's structural burden
+
+##### Standing responsibility
+
+- Builder Readiness expressing whether the Colony can keep its inhabited
+  physical world sound under present conditions
+- Ordinary Builder work including small structural corrections, coverings,
+  lashings, retaining earth, protected openings, drainage, access, route
+  anchors, passages, and connections
+- Covered structural obligations meaning that Home does not deteriorate merely
+  because time passes; Builders are already performing ordinary upkeep
+- Structural soundness remaining a Colony posture rather than a separate repair
+  order for every wall, chamber, ladder, court edge, covering, drain, or route
+
+##### Builder Projects
+
+- Builder Projects committing named Citizens to make a defined physical fact
+  newly true
+- Establishing physical ground for a Practice; expanding or reshaping an
+  existing Practice; reinforcing shelter, access, drainage, routes, or anchors;
+  adapting a Practice to a newly understood use; restoring major situated
+  damage; and completing major civic or Tier-defining work
+- The receiving Practice remaining the subject of the change: a Builder Project
+  may alter Hearth, Garden, Gathering Place, Watchpost, Workshop, a Residence,
+  or another Practice without creating a separate Builder facility inside it
+- Projects consuming committed Citizen effort and appropriate material
+- Builder shares committed to Projects not simultaneously contributing to
+  ordinary Builder Readiness
+- Growth therefore asking the Colony to risk some present structural assurance
+  in order to make a lasting improvement
+
+##### Structural vulnerability
+
+- Insufficient Builder Readiness creating vulnerability rather than automatic
+  daily damage
+- Relevant pressure including heavy wind, flood or failed drainage, softened or
+  frost-heaved ground, damaged coverings or anchors, broken access, structural
+  overextension, and persistent damage requiring restoration
+- MEET localizing consequential structural vulnerability to actual inhabited
+  ground such as a room, court edge, roofline, route, opening, anchor, or
+  Practice
+- Resolution ordinarily completing the immediate transaction rather than
+  generating a redundant compulsory repair task
+- A restoration Project following only when a persistent physical result
+  genuinely remains unfinished
+
+##### Species expression
+
+- Mouse Builders using **JOIN** to make rooms, chambers, and passages one
+  protected continuity
+- Rabbit Builders preserving **GATHER** through the relationship between
+  sheltered households, mutually visible common ground, access, and nearby
+  refuge
+- Squirrel Builders using **CONNECT** to establish and reinforce routes,
+  anchors, alternatives, and protection against isolation
+- Equal Builder Capacity across the Core civilizations, with species changing
+  the physical meaning of sound construction rather than its numeric worth
+
+##### Boundaries
+
+- Builder not becoming a personal construction statistic, superior class of
+  Citizen, local repair-click system, generic Project-speed bonus, source of
+  passive construction, immunity from weather, or building-durability meter
+- Tool-making remaining Crafter's responsibility even though Tools require
+  physical material
+- Guest Affordances able to reveal hidden structural circumstances or open a
+  better response without replacing Builder Capacity or performing Projects
+  without Citizens
+
+### 9.3 Practices and shared civic life
+
+- Each important Practice receiving one canonical definition after the Roles
+  that use it have been established
+- **Gathering Place** and **Garden** remaining Practices rather than discrete
+  building types, with several Roles able to draw upon them as circumstances
+  require
+- **Hearth** replacing separate Nursery and Infirmary concepts as the shared
+  Practice of healing, nurturing, and sustaining dependent or recovering lives
+- Caretakers, Healers, and Teachers able to use Hearth according to actual need,
+  without requiring all three continuously or creating a Hearth-specific Role
+- Household, family, and any possible Kindred distinction remaining open to
+  flattening into the smallest sufficient relational vocabulary
+
+### 9.4 Active Projects
+
+- Projects as temporary commitments of named Citizen effort to defined
+  persistent results
+- Practice support, Citizen choice, material commitment, and one-Place-per-
+  Project concurrency
+
+### 9.5 Species-specific spatial expression
+
+- **JOIN**, **GATHER**, and **CONNECT** shaping how the same Practices inhabit
+  physical ground without creating parallel species-specific building systems
 
 ## 10. The daily life of the Colony
 

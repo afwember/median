@@ -451,11 +451,15 @@ def test_ready_lifecycle_grants_nothing_and_spark_up_assessment_is_read_only(
     assessed, report = reconciliation.plan_lifecycle_transition(
         state, corpus, empty_store, "prepare-spark-up"
     )
+    target = state["reconciliation"]["target"]
+    target_count = len(corpus.target_atoms(
+        target["msid_prefix"], selector=target["selector"]
+    ))
     assert assessed == original
     assert report["execution_state"] == "RECONCILIATION_READY"
-    assert report["current_target"]["tranche_id"] == "away-crossing-squirrel-002"
+    assert report["current_target"] == target
     assert report["current_target_state"] == "incomplete"
-    assert report["current_target_remaining_atoms"] == 44
+    assert report["current_target_remaining_atoms"] == target_count
     assert "packet_sha256" not in report
     assert state["authority"]["repository_writes_authorized"] is False
     assert state["authority"]["reconciliation_authorized"] is False
@@ -467,31 +471,31 @@ def test_spark_up_assesses_completed_target_without_rejecting(corpus):
         ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
     )
     state = _ready_state()
-    state["reconciliation"]["completed_tranche_ids"].append(
-        "away-crossing-squirrel-002"
-    )
+    target_id = state["reconciliation"]["target"]["tranche_id"]
+    state["reconciliation"]["completed_tranche_ids"].append(target_id)
     original = copy.deepcopy(state)
     assessed, report = reconciliation.plan_lifecycle_transition(
         state, corpus, store, "prepare-spark-up"
     )
     assert assessed == original
-    assert report["current_target"]["tranche_id"] == "away-crossing-squirrel-002"
+    assert report["current_target"]["tranche_id"] == target_id
     assert report["current_target_state"] == "completed"
     assert report["current_target_remaining_atoms"] == 0
-    assert report["accounted_atoms"] == 149
-    assert report["unaccounted_atoms"] == 5233
+    assert report["accounted_atoms"] == len(store.primary_members)
+    assert report["unaccounted_atoms"] == len(corpus.atoms) - len(store.primary_members)
     assert report["provider_spend_remaining_usd"] == "2.0000000"
     assert "packet_sha256" not in report
 
 
 def test_spark_up_reports_active_engine_without_mutation(corpus, empty_store):
     ready = _ready_state()
+    target_id = ready["reconciliation"]["target"]["tranche_id"]
     active, _ = reconciliation.plan_lifecycle_transition(
         ready,
         corpus,
         empty_store,
         "activate-on-proceed",
-        expected_tranche_id="away-crossing-squirrel-002",
+        expected_tranche_id=target_id,
     )
     original = copy.deepcopy(active)
     assessed, report = reconciliation.plan_lifecycle_transition(
@@ -553,12 +557,13 @@ def test_proceed_activates_reconciliation_and_preconfigured_provider(
     corpus, empty_store
 ):
     state = _ready_state()
+    target_id = state["reconciliation"]["target"]["tranche_id"]
     active, report = reconciliation.plan_lifecycle_transition(
         state,
         corpus,
         empty_store,
         "activate-on-proceed",
-        expected_tranche_id="away-crossing-squirrel-002",
+        expected_tranche_id=target_id,
     )
     assert report["activated"] is True
     assert active["status"] == "RECONCILIATION_ACTIVE"
@@ -574,28 +579,37 @@ def test_stopdown_interrupts_incomplete_tranche_without_marking_completion(
     corpus, empty_store
 ):
     state = _ready_state()
-    state["reconciliation"]["completed_tranche_ids"] = ["away-crossing-pilot"]
+    target = state["reconciliation"]["target"]
+    target_id = target["tranche_id"]
+    target_count = len(corpus.target_atoms(
+        target["msid_prefix"], selector=target["selector"]
+    ))
+    state["reconciliation"]["completed_tranche_ids"] = [
+        tranche_id
+        for tranche_id in state["reconciliation"]["completed_tranche_ids"]
+        if tranche_id != target_id
+    ]
     active, _ = reconciliation.plan_lifecycle_transition(
         state,
         corpus,
         empty_store,
         "activate-on-proceed",
-        expected_tranche_id="away-crossing-squirrel-002",
+        expected_tranche_id=target_id,
     )
     stopped, report = reconciliation.plan_lifecycle_transition(
         active, corpus, empty_store, "prepare-stopdown"
     )
     assert stopped["execution_state"] == "RECONCILIATION_READY"
     assert stopped["reconciliation"]["target"] == active["reconciliation"]["target"]
-    assert "away-crossing-squirrel-002" not in stopped["reconciliation"][
+    assert target_id not in stopped["reconciliation"][
         "completed_tranche_ids"
     ]
     assert stopped["authority"]["repository_writes_authorized"] is False
     assert stopped["authority"]["provider_calls_authorized"] is False
     assert stopped["spend"]["active"] is False
     assert report["target_complete"] is False
-    assert report["remaining_atoms"] == 44
-    assert "interrupted with 44 target atoms unaccounted" in stopped[
+    assert report["remaining_atoms"] == target_count
+    assert f"interrupted with {target_count} target atoms unaccounted" in stopped[
         "next_possible_transition"
     ]
 
@@ -683,12 +697,13 @@ def test_provider_enabled_proceed_requires_explicit_positive_spend(
         "remaining_usd": "0.0000000",
     })
     with pytest.raises(reconciliation.TriageError, match="explicit positive spend"):
+        target_id = state["reconciliation"]["target"]["tranche_id"]
         reconciliation.plan_lifecycle_transition(
             state,
             corpus,
             empty_store,
             "activate-on-proceed",
-            expected_tranche_id="away-crossing-squirrel-002",
+            expected_tranche_id=target_id,
         )
 
 

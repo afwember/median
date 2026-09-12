@@ -1,0 +1,57 @@
+{
+  "packet_id": "packet_citizen-core-squirrel-003",
+  "packet_sha256": "fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee",
+  "schema_version": "M050-RECONCILIATION-PROPOSAL-0.1",
+  "units": [
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0059",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00012_1e7eb292cce1__A0004",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A1",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00117_7a1a51a540ee__A0001",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01"
+      ],
+      "canonical_claim": "At the current working value, each Squirrel body unit contributes 10 optional Strained Cargo slots to one party-wide shared Strained Inventory, in addition to ordinary secured Carry. In mixed parties, Guests add no capacity under this Squirrel trait unless their own species trait says otherwise. This extra material capacity is exposed to possible shedding during Crossing.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0059",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0060",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00246-1",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00012_1e7eb292cce1__A0004",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00036_078e41d768e0-2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00114_a0c79d3e8ed3__A0001",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00117_7a1a51a540ee__A0001",
+          "disposition": "basis"
+        }
+      ],
+      "primary_msid": "Citizen.Core.Squirrel",
+      "rationale": "The atoms state compatible parts of one Squirrel trait: optional shared Strained capacity, its current per-body-unit quantity, its addition beyond secured Carry, its shedding risk, and its mixed-party ownership rule. The Guest exception qualifies rather than conflicts with the statement that capacity derives from actual Squirrel body units under this trait. The tuning-status evidence preserves that 10 slots is a working value.",
+      "related_local_ids": [],
+      "unit_local_id": "U001",
+      "unit_status": "reconciled"
+    }
+  ]
+}

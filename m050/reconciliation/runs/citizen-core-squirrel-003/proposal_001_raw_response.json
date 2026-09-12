@@ -1,0 +1,251 @@
+{
+  "id": "resp_0b68708cd591f335016aa49ac5c76c87d28c98b69b6baf2eb1",
+  "object": "response",
+  "created_at": 1789172421,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789172443,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 36000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0b68708cd591f335016aa49ac82ca887d2b014192cfe5edb58",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpJrbex8kVxkE9bbIjvx9eRD1EKTOP70Bg8SiMS93suAvsDvAdAcI5BwSGpOV4i8aSq54GCTNJRf2xpdKVHQ8w5qiCMC66IYqDDkcTmsZbgVfyvF8w44eLg9WY-aNoaE6x7LXpj4eVWVarSax9cm9qhMQ7VSNBL0593QI9OewZPrus-dh0bC8eJdK100WSupmoa0AQoohoaAN1cj98CXJok0pEhhNS3Jh54JzrASrJqyWnAV4EskrLcYVVaiXX4cJkdH4uRgnvtQFNbYFDUmyVevrGwXJteHukRgHkpXhBb5DjIopB4qlixco5cGXt96zK9qapk-h0G-wogojqhxkbXBDYUgSlPVO5vBFRZVKQATy8CSYyUcEbzJKvOb76lGgcH_sqb-fnzS2ujUA43U3Lrq6AguvvzM8WlQVX0JGBCCgNqgRPwiMd-lHjYUod7zgZxjHB1Sv7JEoiNyC58EAyz52rvdUfYfViWgbaPDQyB3K1Gu4BzRxDKX8tT9CJXScBxAq8awJzWCpPWAZCKarlczjy6t5PjbcIAPhT418icIp6VqwlLz0ktEXKwd2AYxuBTdmUlFIeUXVmDOT9LknGYvn4em5DPsm2BlK7iEklaKJ3SW73DdcX1lih3uLkuV4U_yRhS5P9060Bm355DJ18pUkn0JWBGjn1vvVKvO7eRwQGSG2YQN1_-3_0x5rpzAXn1HCl4uCrTrqn3Lp7LUlnVAe5pT-f6Ih7siqUBzJd318_dqR5heGM3MQJ0iDnwPwEb0GlX04CF5gk0dfm8uNE36XkC6PDJ5CfK4GrpoXoBqtkJ4qtUMPXQxxNyoxBG7Tlup5V7_N8CQU1x1cRT3SH86VwlVVqlsUyIqDhNQAxVDH5Os5UFQr8RjtX4Odw0SIzmupLSqJj7JrRThC1z4K2wZwuDXPtmOkPmTc8yypYBL7k983947SWl-EpnHJ7yqrjDfgI6_oQupgCDJBELhBkcae1uhedCmZB97kO2oFPX-bEe64cg5x9awI-CTu3WqIJG2u47vnilX-ux2ZqvBqpUfJs9e-xkyTSQRdMDir74wUMfDyHdIkUW7qA16zyiKu-4khnPmD-qCAuE2hkHrIgnVmrnXo5IyYF-TnMgS-vE_XNO9V_g28AWRWl6JTPBJdZmvRVwqFx35fcNuvcpxrG91H6jJ1vX_kBKFGgg0qP67c7H_gxHHfGKsiW79QkCyaerFptf7TuKu-KxfkskP_gvb2xkeZXwUqjdlh9M8j5Jeje3s3Z12p_USJE_FktZUiMOF9X4QTboYYyOq0Pwmnk_0dHzL5EhyZf-hHI2qSxVGLG_8OqpIwpn5FAsx5InpmZTnZD9XKwGyrj8h8rWvy9w4q3jwf06yi86-KEnS2sx87o4jxihDhTk-BC9uzPXdR9X6_d0lv-N-s2dy05akLNAuWdAEK13W6MkdZs7nqewZnNF6Vv8iDNYnzZywsNsXAmBwB6yLBpFHyNLKw1JQPfwuvgdtxwwfO1BQPxZHGx0qHf7-cE5uD4LBcDV05MI5JZROYIVXRJUabci8euCJzbudRc287VEByorNWUxtMnAO6FVS8TsPfsB_h0yomd8mR_uqVtR9gDQGBQp53sG_axSDfzcNhEuW3V_gbMb-uP995Fa54Jqu7DmlTGJAKCX03WlhfsIvbQog5QEcnxHrHBZuriDu8ppP_7MUbvgblGVPL-ErkDTalF9RWwL4cw8tboebaoKv0SFa7Tzcd__duU3QePC98buTymyHMBi1E23aDbk2_NVN3nYt2JPf2jlYUygYVVORTQLtcLpZJ7tIkgHwrBR4nO1W2su5mfP9_nmoUkdJa9ZG1jfFBJY3pPK6GB3dopMSIZ36fSOq5i0fzbetzEngRY1vokzuZGniHLbxZWdqXOXZsZJNlQluDnXIJRomlqmseCNho4tnrgT0K54twGFvVFLJvRRl6y4V4y0RN-AtyfAySXsXI2VNlr_JVmjrJQL1nquwTs6k0qEY0dr184AWPGBcjP00F0nErdW6Uej6H0Vv3dEEpGFshVHkrhIZSxPZnLbBt51DHqPkCpA-apDByWDBE_UihWL1JTRq5DwzLyCVpk0_lFSp2ZV2Ney5ghfzlCEnNys5t2GNU1lbyzvdPYPsZZzgA0pwAwp-R97W9J4XWaQgm9_GpUYwckTCxzSHgFA2QqDOe6s8qq2IZkRVlgzooh8JmtMH_tKYxPSyQAtfQ3LUIUu4XUDvAJfZ7Lch5nxZKIzEuVrq3iJ0Bb9O9vLMrc6FrfIHq69lx9KCHGMa8apMgYDwlUGqZQbCTGRHEth0PxOdW3Bi5GEwYMWa_0gJ1qEbGPwLFv0bmJNDmQkYPo6AtkwnNvVgKQVxT8hZQsZij-bcGajb4hIB9F17nXrIJX1ZElUMIEKT-fenx-iorjk46jNs0zb1o10CAHT4kcCWNHeadlEhRqn7XHcHXyhXZzwRghBFxp-qpkTdcN7HeZb-vno4ZbJUIx3iLr9-_tHDQYvnZUELo3Za6DgmDnO2vdZLaJu56svqpWLRfSfche7YEf7tUya01IKQ-moIgx2VmzID7sNFBH0Ncfod9EEhwS5JZdfcZCvrHNCVe6pgjXS-Ts42lE-UfgVUvWyC51F581VAaKaiaqpz33WwiZW6lgLq7UYRGFRVjC7W84KZwiHnCaAEa_Uze1t0uzGKumENGRA61PNk0XLsBAukZHRWSTfpOZtQy_-jhOmGbo38d8zxtmwMiw6kR3FkzJGXQ96u_Op2ZPYopudeZ1E_hhaPC6WgwURWoDpThjigEn8rwN0rr9X0QrXIiqLiv6AJmcoyXbz1U_yLYmX3GJh_G7doLIrW8tNDp8zhdnbr8udjPr-pgUDY_VnUGTbUHkxt6yp_k2KPMZdl2QuGcYtep6mw0G1QAyNGtk5KNKr1Lbiw4QrPYxb_I5-X-UIjBm7eyg1FPpwDPJ3MUCFVUXIb18aXpOAEqTGbsIdfX4Hgg200FvW_zvpFPq1TsFIUemq7PSzCNpLHjTTW7w2EzxrjE9gKD_x-mZ_isY56xdecYRy8i9h_QmWS-RRTuc_WyhM_hGsVRHKd4MyuX5hL5cuzQS--n_BPtzg5XU1iMhnIMHRT6i3ta3OGKHyqnO-oWI4JAyd3Wh3hVxdIuYBXmoWU4g-dNIT8SD75Zbt8Hg9wOoSFEERX27CZDcOvBThndrnqTQhdCWlmWJeYNow8IeF4hSr3FE2fcvbdZx8n4v9hDeZmK_AQDQVfbyeupBSAZXWSk3gRiwf_KuACmvmR5DPxLf9KELCkPOjQ5HF9-eSF2tZ7ydcUFixTrP8NXsfTuQmRvf0RpXeH2_jYFe6gKm-OIKmfQ0SIYbMv3wl3zxa-1qDWMys1FQeCnD5ninwQfQV_5NF8-GNf-msmUdKkGg5at_TqtODhHLastM5JiyowOy5Dvvf-IImirkwinY_nR9tCoMX2O84d0ZDJzNFfDS4-jj7xCM8yP7xnKOUZbgSe6xdiwB1lgZbhIMurTYvupR15mOqruX2muAwHkfySYkl4V3gpKmUD7g5CvMCLMf10aXbyskBam0jDO8DGF9L4soeNJVPQ0CuVPWCcoYoFm73TGZQG5xZtwgRrvFKw0oerw9_bE3rqJvhnlKoBJ8a2nbauD8s1QHKLHZ_LTso4DgXjcXQqBYXcLGZtZngHHqL5NgNhmAUPv9qpLqeCe_p3RxrXHSrQ6VHXCAjqMoEuWrE25ZqQRGvpEKjhs-3nMclEDZS_wp19M5BFRsGaTzyxASJFD0m4AjqlbFtAgHx_I0OksJXhkCebrlei0JUh4X9He05jGPNLSfzV8ttlXfGE1aGXpfcuIdKcBBfuOVWY8hDCaNgFM7jSf0uN3WIE8t25NPGEJCwRq_bjsqgAZI5S5Oz4x2CeDkkKelpBDBB7aqP-cxwKW4QOTf0uSabaYsaJT_257TCTKvO5VKToxfUCvif6U8RcpHdSg86zpQOIqFp8OswDXz7QR6E-Z47jKrWgnsCIxj4wXZwzWJ8TcYhzXn5TAsfHnLrwTjBE6-KKk9cf7fFadzTVN42J0WS5PwM2bBvygw6Y17kj10F3hYyQpV3acDOVtw-kaxxe4R3vNTYobMRtRI1yKVwqMqvz5eIfSHt_wClFE-Y-CIEv0DW5eeNJyk3-n1G5pETytZMa2Z9hDbdHUHoL6q5A52mc7hvY8qmavDFsyetpggRZPyfuFNTSmgIKlc3RuqTt6-wNo_0YKs9g1X3yYRFiLTOP3M4JRUrFJCND3DMsZTCwMvU9ThmGCnRFBaS8xpleR2YDeiYeBaXUfhs2QaKCnj27eETfJS803LD8SgykgEMu8zbNp8oajjiJwOYneT-n53gdRIwLFYG--cH-mcYqrEdg2HYH2-pTdZaHPDnwHBd_8GyiYP0_t7Mb6XJmXcbwNWDCWjr1GyZLFP33Op57sQ2YMAVwbUGqt9P8SU1G3xTZE8HTuplWP5YdJ82WrDy8hX94bHfPlhISM_TuZZEwChJtIkvS6Le3QfSojQX8bRYS6tUsOjOjo90oVUQaMQ6jlddg7HvOJ7eerNOssgc3DVrzQ3yE2HXkT0Owophd4Cd2YhFU-D0jNhVMKM0yVUztq-ZbqSp3nIHEAbt1EPvFMISkvhdboMdqCzX1H98MSkQiXtQWtr5pOJwaD5A4qTVM0peF60O_Dd1QLLj8MCVlsRcZP-39uAN4cEdCAg99eE19F_H251XfSLIYznekuDeSoJmKMRJkXIsD5d4eSAU9kqPFkqXk=",
+      "summary": []
+    },
+    {
+      "id": "rs_0b68708cd591f335016aa49ad2131487d2aea380fd896e1c48",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpJrbhM-kHzoMGxl4c8h1_6c0dRno3md3u5wUmKHRA2ngvWr3uFb3_cRgM2DRjQexH9CUtUvCMJhm7USjBxiDyMDiCzm-k6z_B_kDKLE24MuCK7IaBMISnahnwQvEN-bmo6ObWT7sKR_l3YK7FHfEXX6kYlFO6USj3CgsH1-XcPMrKE0Rhf-JlrWA7PwKNEQPP4_qaJ0AGVjtnhAYwuXN1GhHoK2bQyy4ZjSPcN2lhr8xE05aROGcXHG2Xj_82dJwSAne0pN7-5B7hJoy4llQS-YNhGIr-DSwyYKltJyxekoNmN7dwzZn5oUFgTRVxic1I4p5V4Da8_UnSJ7gxRprNxzLhXELP8OZal-s0heFpyU-1yhc-fqT5tioj0IVJW0cNU2PGg6UCrgn2LzD5jztHo8abY6xo4uF6dj0hdSReO_ogBswWBrNkJeEebQWArAXtZbU9GpC0XI2SNI9nsb0eDSigBarpGiKr4dCIVceE35Yxhf0V1qFFwZ-Gn_-yEu9oQJLZRRjxBMaeRae3Vz-7-MeqH8bnZAbg4U3jrE-1qNXQXSwZ1xje1YFGgi6Z81ENZXLfbS4UUd_42iAkRp27Pi8noDJfznIqfV5Y52jxuLObSlPzXoq-rUjf35s5aeDzybq6N9IECMKHRONi4kmzakrkyFka8z3Hv24gC2C4euOfC_aVjbZ_LX-V9-p7i8lP5l9pE099Ad19hE4x_zTOWX4Uq89cpANNR518Woe83o8y6OMVUG-X8_hrTYR6emFkpxB1ZQhQAUV-TtDOwnRqUb4z2WPZSZtQXDevYEzxZ7-hRmKNix435nMVSk1r74Wbvdzf5fMxYUMKPEwjeIJudfZndqK-neNuzuc11SVP_76MbG-Opz3DQjXh4XXfjVTU7TRIw4pkWza_VjTPw3PPkdFcJWNB6jk0QxsdPR50qWyQdjjpluT3QBEdS3VYK3SPzjyRka7S56Sf4Nf0nXnzD-22qaJYDn7NS5Lb4qgX56xSw3kFvlAnVPp-FgN5MkuoQswioFRHqADqTEsm20eOxv-_0a2wSk2sCVFztEUdSzqaYoVL07WU-u9gZeIPoY2UN5tO8cUaV0oMhsCHj0GWcSNHMrevEgFP5b_WfKMvlQgqyJesMCODLDgHLC5hlBmaGKXFVg7de-G1_zvvvVyWvmyD1qtVpdV2XuE7dZux28Cpzf-aQBLiQXcgPKymssjWWit7QPJ-lAYZ4nzBmflhzMGymVpgF_KmlU1Irkf4i5520JsgQgXCjaev3BYErRB5C7qc2JKNxkqPEhBVsPlA9ktgcrkjG3Bhdpj-EoOjviy1sEE29g_Sk0ntPfEFegy7sQNX6RKOYtrBdgfszRWk3k5Om1ncbsIi7F0Ese0S0E22NPv5852qwNSQROVxAXdlZN-VRnxHJPdqxorbF3PqMNu96o-T73uZxTOanbpO2kUhVM-zND4K-yHfigADwGzVbj15Gi4wpg-Y6WwP0ZG4YL13gZ0qBWkxGJVgJUeAArhzVH1FrODX_7KeLFKa1c5Al7tI3umUM_oPLhueFIQeMTK1g==",
+      "summary": []
+    },
+    {
+      "id": "msg_0b68708cd591f335016aa49ad35a1487d2b0992eb5e9346378",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"packet_id\":\"packet_citizen-core-squirrel-003\",\"packet_sha256\":\"fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee\",\"schema_version\":\"M050-RECONCILIATION-PROPOSAL-0.1\",\"units\":[{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0059\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00012_1e7eb292cce1__A0004\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00117_7a1a51a540ee__A0001\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01\"],\"canonical_claim\":\"At the current working value, each Squirrel body unit contributes 10 optional Strained Cargo slots to one party-wide shared Strained Inventory, in addition to ordinary secured Carry. In mixed parties, Guests add no capacity under this Squirrel trait unless their own species trait says otherwise. This extra material capacity is exposed to possible shedding during Crossing.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0059\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0060\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00246-1\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00012_1e7eb292cce1__A0004\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00036_078e41d768e0-2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00114_a0c79d3e8ed3__A0001\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00117_7a1a51a540ee__A0001\",\"disposition\":\"basis\"}],\"primary_msid\":\"Citizen.Core.Squirrel\",\"rationale\":\"The atoms state compatible parts of one Squirrel trait: optional shared Strained capacity, its current per-body-unit quantity, its addition beyond secured Carry, its shedding risk, and its mixed-party ownership rule. The Guest exception qualifies rather than conflicts with the statement that capacity derives from actual Squirrel body units under this trait. The tuning-status evidence preserves that 10 slots is a working value.\",\"related_local_ids\":[],\"unit_local_id\":\"U001\",\"unit_status\":\"reconciled\"}]}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "const": "packet_citizen-core-squirrel-003",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-PROPOSAL-0.1",
+            "type": "string"
+          },
+          "units": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority_basis_atom_keys": {
+                  "items": {
+                    "description": "An exact atom_key from packet evidence.",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "canonical_claim": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty, source-grounded semantic claim.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "human_question": {
+                  "anyOf": [
+                    {
+                      "description": "A precise nonempty authorial question.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "members": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "atom_key": {
+                        "description": "An exact required atom_key from the packet.",
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "basis",
+                          "conflicting",
+                          "elaboration",
+                          "superseded",
+                          "supporting"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "atom_key",
+                      "disposition"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "primary_msid": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty current MSID; never invent a path.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rationale": {
+                  "description": "A nonempty source-grounded reconciliation rationale.",
+                  "type": "string"
+                },
+                "related_local_ids": {
+                  "items": {
+                    "pattern": "^U[0-9]+$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "unit_local_id": {
+                  "description": "A unique local ID such as U001; never empty.",
+                  "pattern": "^U[0-9]+$",
+                  "type": "string"
+                },
+                "unit_status": {
+                  "enum": [
+                    "reconciled",
+                    "human_required"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit_local_id",
+                "unit_status",
+                "primary_msid",
+                "canonical_claim",
+                "members",
+                "authority_basis_atom_keys",
+                "related_local_ids",
+                "rationale",
+                "human_question"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "units"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 13148,
+    "input_tokens_details": {
+      "cache_write_tokens": 13145,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1379,
+    "output_tokens_details": {
+      "reasoning_tokens": 584
+    },
+    "total_tokens": 14527
+  },
+  "user": null,
+  "metadata": {}
+}

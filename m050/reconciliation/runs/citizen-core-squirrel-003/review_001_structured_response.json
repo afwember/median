@@ -1,0 +1,8 @@
+{
+  "defects": [],
+  "packet_id": "packet_citizen-core-squirrel-003",
+  "packet_sha256": "fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee",
+  "proposal_sha256": "3c34a5066a860a765ef89ae524c66fe08153ea3c4a08c6d6dc717a07908fcb15",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "accept"
+}

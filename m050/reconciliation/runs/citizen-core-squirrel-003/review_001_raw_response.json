@@ -1,0 +1,153 @@
+{
+  "id": "resp_0f2cae012de20dc2016aa49ae4476087d2bc60b74641660b5b",
+  "object": "response",
+  "created_at": 1789172452,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789172463,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 8000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0f2cae012de20dc2016aa49ae5c31487d28667c842e4079342",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpJrvPqistK5rKIIq257585pBcFRTS7g3TT-pL9cEhfnf9vZBbrRW6YUmJ8rDMBHWF4WX5YC1EcdVCZmnIVejHkiwJuAFRLyWoxJQfqYH_8zUliaC_xStPw8mbWe1jYUwl1oSABCr55MeHIs2E_P3JaBrDB6Ojqb9QTi4XpvTGpxuKoiWt80O2gg0LlO5JEQNOwrxMXdlvxQxHnfAmtILbKJDBUYP6LW73DLOd5wETxmXw6pdgsmeAFWNRFzY4WPtl5BQSacZzz-Z8Sjk-AwO56vTpNLqmGtf3MVP3UroilPzQSWxCFgKEKRmoyO3bTeH0I1P4iAl8QSsKCLSSDM8IqnQ6yOO2FdM6i-5rp7q8PefWZLjGBs_52ab9EdWTpjg7qphYbWqS6Tt0HnFdPkNrJQR9vYLZYJk_t_Xenk3ZxlWO02srewGb0e7M2ZR0D050APkFe9wTfChsdxhdY_9esWNDlTFvCaBX4ijmxtG706Jy9M7_obnoPzqXTg1nOlydVT2VDbOrGMHVZT0nmtKJOV7daGxPzAjX1hHeAUbVp_r5MP1jBtkHyVg3QcozEcYRlt82d3ZkgxGfPaZmZADNGIvK5rWZxgcQ1YkIhrdImCwm9sBGsrqIV-SOZvHiwqGMcw9pTQkdC5zZiLLXvHi1OrEyHPQM8ymLJYTQ4BxRYZMQ1I9d50w-WuS-EItLfvtchUFE-C-JRTnS3sU4NSGdi8cvY1amuHpPfVU0X3WY6JyfvBRqMrQWQwf2GRy-N2pyWfvbFGxWtPulhHs8yCpYUx52sxOMdEowOy7VVsBKhK8sQJQj6ObLKCOpXdoiGGpmIuGXwzZi_STZivZxJlDOA9swWq_C3_koKPPBo0-3AmlOZ8bVbwX1SeUi1_Hs93d9WhKWIkbQVtIU9F8eH3PgxNXUPPLRAplg0ZaqZLOKSI35VTCcApXrnUjyweau6iL06qeug_QpIRKGz7FpKarg4ZVk6oKdGkXY8bv_lRo0hi0AfH4UWF630hyl6nYk_DncLKYmd4Y0unXvKTix2zNRyTJGDemnKgzBvJ9GkPROCSIRPu306Jz6EZ5iI5vW0cxS8K1Kqn6CiXWWgDXf2gRX3JG73dcsDfJFShfoNEDzY3OZ-4-5skTl4cbRRgBy7-9-8XS2OuSMYmyeQ-I9UDP8OOdb3Go4Z530kO6qMnwqdzU5-FlG3LbKmltQBI-UftunSuHwRHeyV1aeXZK0G9Yjm3cPOEGUmNhA5avNu9b-XEeBXmYT_uLV7E4ZKU9vfNy7ISPBwU4ipYjU9lHWP5MRcSZ9eK35G8gcFxXE3i0XrJJHZ6Qw3AvTwyGfPJ6Fqp7dKFoRN00sRiVprk3vV9DLsTLI3Til7zH0x82Fd3XZD-ibjMpjdBUrfUoY5oxQ-0cmuk2F72b3_lz8ja9iH5vfVGpC9r93h86s4Rw9rOO_Ie1B0INBuQY3c3Ds94ZTy_jQwv2dUwo18NyAnibxuNDHVwcXnzsgoTzW0hT2Y0dCiosHO_m8wI2weqhEs105ll46iS4bEAV_3fwxogaWUeo0Wa9C9KR55s7SRG4L88d5PtME5bo8g9mP2aGHFzQtGpDPG28DfLyYQsbydejMFZRugAT-Ctc-uQxY4d_SGL0z0wDqNNVgeZzQRJ26QQ172VWP0yoEdMKtKct1KzPvA0MYORBCQ60ZduXq8v-lI8NkuInd8EIEnWE7um1P3X0RJc2BEy_puQ2wpjUyNl-zkLPyhoziKKR8EcQI3mI5De63Cnf__reGQb3jwlca37WGedr3SyIkGPd08m6WsHezHZ_LzveaD3kL2pjsq3nYlk_8BQi1x2f0K1oWCdULgW0WGSeKSUOjXaemaIc70j8CzCSA1kVwsQXs8nPIV2KuHYi9Sxrb6fjMF2Gl-ioxaIS6oMXDkdViKp66iXP4HusqGPJ2N2PQ6MqRtI52ILx-O06xSIAd6a0tSTi420gAbG_rr31WuS7xld_xQcW1acusD-oHTHJB6YUv14NRFY-1S1w7bug2SDt42sASvRTNLyrVX2HL33RqaaZWXZ1OjQw3QUxBJFZ7YYk9Zuc_adp4kzo4TwNXQIleDO2UjrJvBT97DH4jP2v23R7vF8oXVr9tqnDOkAbyZHXA38cv5pnwmi0m1tlXPKh82Gjo7hPHJkw0eyg96xEi_RtvEMtd37sK5odUoWxXUaC5f7Htz19Xl4KA7YHFHUn7UTyV7mih5Aj5PNqTl6YyQubDCwe52qy9Pxpx_moSqCkz-C81X-p1ePdl-OlsxN3p5MzpVHU2PQg1t2_ZCsvqL3xYBhzU92TMnKDP_1Z-nG72b04hnnskB_-RTBKa0dHCpPy-u0OKP0pETu4ft-TTvqXZKzXJek3I_8pYyIJKEMoF3BPVfQnx7LRR9K4E8tTFHD7aZ5GmKoIdv_rIPIhB6mVB21_q6BmVpari86bt9ZvUY1rN150WdhMzvGdpDMeupm5KzOrHbWnlg04whvoD5fQmAHzyDBr9-HtcwrWHC8TcdvA2kH0D3GRqFASeyxpIYFFO5aRY55PHeyqIWXkfAa0ZAStrkWNpgnRAhYoikA2uGO47jb2RGskoWfVqq4fiwmZGiZDsBJrTWyk3CH3QaTlV7pip9Y6RfX4lj1beC_yUZmJcTnnvGi2VaX4E9Yh-VKAhdQvAvn7e1uPIyALqLk1UCcwjA0J2OBLtBh7VTxn4coQkn9NFvH_joG3P4EayY_8CHCw0bAYDx9KqVw5WJIyYCrbwssKOCKzQAie18bYMni5E22s_52p-lnaWuMpolpGkr5pga8FChKBjp8D0kJjCtb0BtXIqayl0E-ht4LdtE98y3XA3EjG2HBucBp-Da2Mel4SMO_9Vdudl2qkmZl36iCfnmxmTuyCgaq99MRSOBqdfA2YM8HL2K0Ts1HJNhPYSoS_Uv7v75uocdUIcv6cYsrgiRXF7jttfjtnv5iLPkVlQHd14G5OfkJEyTOmfuE0Nct2aSMVtJjVPthGJ563zx6B4dGd2AjCnMJehC-Oef0ylJ1nzJHoAJ5B4L616zJRpgag7J1reCQt5e0ziA1LsgP52OFSH-1qp6nZXhIKT_pHntm1Za1whmSPtDcW31gpHx8_WvNfNZM9iBB9i_o1BEbWvp--g1JRlOYnBBOcRKM51dbnmist6ifLztRgwsaNADQj4IhRKjMcWX6HBmRYRBWnp_1bLZ-hgzzZGIOu56pJrpNuO9Q9HaJkIKB1qhUTRf6lUszQyZmZGqOuPQH4oXsQUa8JRFoLT8R1UqDOpSKZbBOwE7SnNm27hSM4C3H3_NKP2rtU2WAYTJiHLyF9_zJrYXVrpbxQIR3yLGFZOAsu85cFfQD0xEqARCwdJEntYL8aT8TIlC0SwVUlrSOHIGayvmL-fuCEVpGxs7e95Ap7N_A6wtPFCLmtPgOzeP1L_VbdEf0BKewKLlflIkzjuKLAzxCYbTaKYcAe8pSabapZfmHYNC4qt9AicHo7oEZHltO46leDptu9LzcLSSB0HT9IbDyfUXezeQquQ9YcV89D5HI6gBc7VXZVZdqg_CRFXoPmsdDmZ8Yz1OkA01Ix0QV3bo1YJqyFQae1JJBfos3AN1PawoetJDNmgMIW5Q7MnVPUag2xNUGdWaNrrmPEqTm1m0SHZyvrCLwsyfybekzcdlDtr90OfeoFWEDBzEBOF52van5AXVruVo028anVv1y-zv-Ov0dEfn65jE0aPZnGGHa-zq3PLxhJhHnqXqGrs3frMzr76lpITXlSeCIgNU6HOPMZd5dJpfIFbT0zrP5ODgZBnA8LdcTOBAD5w370-PWofr0juGvCVc5IPcsqoQ43PEcxnUQrdLnVb_9cUfpsPBTmE2x0tYu1IykUyyPBoCUepaAE9KrWnjwjYG4qLZNdurxEaXdHe3Q7tCOW3aeQfwMyiAEUnb05NJH0vOahh29xjsYwz6UDe_Rnv0CIFUpScEuTm_xoH6QbhSdkde7TcjcmcWWkIMBc-PocdcVr3vsopjNUXTfkar-FtCfCxS-dlRJwfTfjtxsuo5_ToynRuOhXyZ-5v_QAlxEIE8QVwq-fG-8zkqCaEG7tY8fcsEiTK5Z3XyitVVXPGmWHAYoB6kliy_FhsiKjcWv-agZWUGc-gP6oIkAB5tTlu1RmINyns7rtd8460HO8L5dqVViMudF9UJAgutVc8m8MhKMoJw3bCWxnb7s0ECQL5xFfVd92HHVNhwqIDe3tBpHiCrse4-IsSZF9aTMtdEPL1H-fbIm7O8ks4kREFgRioTLP5r1wjKT2OoRaULMsvulsNM8mJ-9He4ego0vFtwqqdbEG_61qkwg9hoLyWeUYELjW45FNOc5uccFecU9eeCJ8_6OWk_J8UD5eBlaSz7S1ZJUtFtsKTrEAZWXeVPW-rM730BlFcUhrPj0QB9yOgIVz7miuCfETnJjdPBawQCMDDW81KFyqIEWGbEkHUocJ6oVVmPHzXyE0FVLpuR_un1WoAvscK7crqwFEUlIlObTNt5M8OPP4wq1Gg7tgzxpHBW2wWzYoRYyhAZBx_Kq4pojj52azVM8ZNOq-zbwUTOTzDELJIE1xT9G-m4ljYA8w6edMykxwEO0qNTYnmjzMhIGV7AHJl05-hLagf7SmvW34bIzFopWTfmCb8o0E_fP_Y9AAZK1DTFWDsNOipxisb4FaYugOda88lbaY12XmXW12lgQREbqgQq4l_2-ZvA1YxfEPFGyROqf1-vgBQN8TKkpGerygOOyBpN2xvlumFXEuc1GXzmJq_xGg4gxt7Ar2Tzh7XH_g7TuTps584VfjrpGYh64d7X-etAueP2U1ZjATq08pYADGXkM4okyaAFs6_H1xGEcZUmCoQp_FobtjQkOA-NzGhyNPsli35AyN0P9ClQsAIMskjMhfuw78ySIlqNqYTzen0Ib7cFb0Yt7o8gulgBYR6LwS2w6AS3KVd8sqgm6xWlzgeZvB62C7XZYpFmNjDpkkC3vWQs-pB2KGww==",
+      "summary": []
+    },
+    {
+      "id": "msg_0f2cae012de20dc2016aa49aeeb2e487d29f11f2b88a7e614c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"defects\":[],\"packet_id\":\"packet_citizen-core-squirrel-003\",\"packet_sha256\":\"fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee\",\"proposal_sha256\":\"3c34a5066a860a765ef89ae524c66fe08153ea3c4a08c6d6dc717a07908fcb15\",\"schema_version\":\"M050-RECONCILIATION-REVIEW-0.1\",\"verdict\":\"accept\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "defects": {
+            "items": {
+              "description": "A concise, substantive review defect.",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "packet_id": {
+            "const": "packet_citizen-core-squirrel-003",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "fdd9dde4b69983ca22d696367deb3fedc547cde3de148c8eae5b171fcadcf8ee",
+            "type": "string"
+          },
+          "proposal_sha256": {
+            "const": "3c34a5066a860a765ef89ae524c66fe08153ea3c4a08c6d6dc717a07908fcb15",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-REVIEW-0.1",
+            "type": "string"
+          },
+          "verdict": {
+            "enum": [
+              "accept",
+              "revise",
+              "human_required"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "proposal_sha256",
+          "verdict",
+          "defects"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 13740,
+    "input_tokens_details": {
+      "cache_write_tokens": 13737,
+      "cached_tokens": 0
+    },
+    "output_tokens": 652,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 14392
+  },
+  "user": null,
+  "metadata": {}
+}

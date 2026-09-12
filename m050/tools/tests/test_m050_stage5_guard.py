@@ -87,13 +87,9 @@ def test_authorial_ontology_correction_is_bounded_and_canonical():
         "Away.Cargo",
         "Away.Cargo.Strained",
     } <= set(vocabulary["settled_paths"])
-    assert state["reconciliation"]["target"] == {
-        "tranche_id": "away-crossing-squirrel-002",
-        "msid_prefix": "Away.Crossing.Squirrel",
-        "selector": "exact",
-    }
     completed = state["reconciliation"]["completed_tranche_ids"]
     assert "away-crossing-pilot" in completed
+    assert "away-crossing-squirrel-002" in completed
     assert "away-crossing-squirrel-001" not in completed
     mappings = [
         json.loads(line)

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-12T08:39:36-04:00",
+  "updated": "2026-09-12T08:46:59-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -148,7 +148,7 @@
     "progress": "170 / 5,382 atoms assigned to canonical semantic units",
     "now": "Citizen.Guest reconciliation is interrupted with 16 target atoms unaccounted; the Compile Worker is Stopped Down",
     "next": "Spark Up may regrant the same preserved tranche; Proceed is still required before execution",
-    "updated_human": "September 12, 2026 at 8:39:36 AM EDT"
+    "updated_human": "September 12, 2026 at 8:46:59 AM EDT"
   },
   "next_possible_transition": "Tranche citizen-guest-005 is interrupted with 16 target atoms unaccounted; Spark Up may regrant only this preserved boundary."
 }

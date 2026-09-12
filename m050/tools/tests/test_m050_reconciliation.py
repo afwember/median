@@ -177,7 +177,7 @@ def test_provider_completion_states_remain_distinct():
         reconciliation._validate_provider_completion({"status": "queued"})
 
 
-def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(packet):
+def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(packet, corpus):
     provider = {
         "enabled": False,
         "name": "OpenAI",
@@ -189,12 +189,12 @@ def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(
         "proposal_review_required": True,
     }
     with pytest.raises(reconciliation.TriageError, match="model is not configured"):
-        reconciliation.build_proposer_request(packet, provider)
+        reconciliation.build_proposer_request(packet, provider, corpus.vocabulary)
     provider.update({
         "model": "test-model",
         "maximum_output_tokens": {"proposal": 40000, "review": 8000},
     })
-    request = reconciliation.build_proposer_request(packet, provider)
+    request = reconciliation.build_proposer_request(packet, provider, corpus.vocabulary)
     assert request["model"] == "test-model"
     assert request["max_output_tokens"] == 40000
     assert request["prompt_cache_options"] == {"mode": "implicit", "ttl": "30m"}
@@ -203,8 +203,8 @@ def test_provider_request_is_disabled_until_model_and_output_cap_are_configured(
     assert request["store"] is False
 
 
-def test_proposal_schema_binds_packet_and_rejects_empty_placeholders(packet):
-    schema = reconciliation.proposal_response_schema(packet)
+def test_proposal_schema_binds_packet_and_rejects_empty_placeholders(packet, corpus):
+    schema = reconciliation.proposal_response_schema(packet, corpus.vocabulary)
     properties = schema["properties"]
     assert properties["packet_id"] == {"type": "string", "const": packet["packet_id"]}
     assert properties["packet_sha256"] == {
@@ -215,6 +215,24 @@ def test_proposal_schema_binds_packet_and_rejects_empty_placeholders(packet):
     assert unit["rationale"]["type"] == "string"
     assert unit["canonical_claim"]["anyOf"][0]["type"] == "string"
     assert json.dumps(schema).count('"pattern"') == 2
+
+
+def test_proposal_schema_excludes_provisional_tlds_before_provider_capture(
+    packet, corpus
+):
+    constrained = copy.deepcopy(packet)
+    constrained["atoms"][0]["primary_msid"] = None
+    constrained["atoms"][0]["alternate_primary_msids"] = [
+        "World.Terrain.Band.OverheadLayer", "Citizen.Guest"
+    ]
+    schema = reconciliation.proposal_response_schema(
+        constrained, corpus.vocabulary
+    )
+    choices = schema["properties"]["units"]["items"]["properties"][
+        "primary_msid"
+    ]["anyOf"][0]["enum"]
+    assert "Citizen.Guest" in choices
+    assert "World.Terrain.Band.OverheadLayer" not in choices
 
 
 def test_proposal_validator_rejects_every_failed_placeholder_shape(packet, corpus):
@@ -272,17 +290,19 @@ def test_proposal_validator_rejects_provisional_and_unlisted_msids(packet, corpu
         reconciliation.validate_proposal(packet, proposal, corpus)
 
 
-def test_proposer_prompt_states_status_specific_output_contract(packet):
+def test_proposer_prompt_states_status_specific_output_contract(packet, corpus):
     request = reconciliation.build_proposer_request(packet, {
         "model": "gpt-5.6-sol",
         "reasoning_effort": "medium",
         "cache_ttl": "30m",
         "maximum_output_tokens": {"proposal": 36000, "review": 8000},
-    })
+    }, corpus.vocabulary)
     task = request["input"][0]["content"][-1]["text"]
     assert "never use a provisional TLD" in task
     assert "A reconciled unit must have a nonempty canonical_claim" in task
     assert "A human_required unit must have primary_msid null" in task
+    assert "only source-grounded home is provisional" in task
+    assert "would misstate its semantic ownership" in task
 
 
 def test_review_validator_rejects_blank_defect(packet):
@@ -301,7 +321,7 @@ def test_review_validator_rejects_blank_defect(packet):
         reconciliation.validate_review(packet, proposal, review)
 
 
-def test_proposal_and_review_share_the_cached_packet_prefix(packet):
+def test_proposal_and_review_share_the_cached_packet_prefix(packet, corpus):
     provider = {
         "model": "gpt-5.6-sol",
         "reasoning_effort": "medium",
@@ -309,7 +329,7 @@ def test_proposal_and_review_share_the_cached_packet_prefix(packet):
         "maximum_output_tokens": {"proposal": 40000, "review": 8000},
     }
     proposal = _proposal(packet)
-    proposer = reconciliation.build_proposer_request(packet, provider)
+    proposer = reconciliation.build_proposer_request(packet, provider, corpus.vocabulary)
     reviewer = reconciliation.build_reviewer_request(packet, proposal, provider)
     assert proposer["instructions"] == reviewer["instructions"]
     assert (
@@ -330,7 +350,7 @@ def test_proposal_and_review_share_the_cached_packet_prefix(packet):
     assert set(count_body) == {"model", "instructions", "input"}
 
 
-def test_bounded_revision_hash_binds_prior_proposal_and_review(packet):
+def test_bounded_revision_hash_binds_prior_proposal_and_review(packet, corpus):
     provider = {
         "model": "gpt-5.6-sol",
         "reasoning_effort": "medium",
@@ -349,7 +369,7 @@ def test_bounded_revision_hash_binds_prior_proposal_and_review(packet):
         "defects": ["Preserve one omitted grounded distinction."],
     }
     request = reconciliation.build_revision_request(
-        packet, proposal, review, provider
+        packet, proposal, review, provider, corpus.vocabulary
     )
     supplemental = json.loads(request["input"][0]["content"][-1]["text"])
     assert supplemental["prior_proposal"] == proposal
@@ -401,14 +421,18 @@ def test_batch_preflight_applies_documented_half_price_once():
     assert forecast["total_ceiling_usd"] == "0.8219375"
 
 
-def test_token_count_preflight_uses_free_openai_endpoint(monkeypatch, tmp_path, packet):
+def test_token_count_preflight_uses_free_openai_endpoint(
+    monkeypatch, tmp_path, packet, corpus
+):
     provider = {
         "model": "gpt-5.6-sol",
         "reasoning_effort": "medium",
         "cache_ttl": "30m",
         "maximum_output_tokens": {"proposal": 36000, "review": 8000},
     }
-    request = reconciliation.build_proposer_request(packet, provider)
+    request = reconciliation.build_proposer_request(
+        packet, provider, corpus.vocabulary
+    )
     observed = []
     def fake_send(endpoint, body, _key_file, _timeout):
         observed.append((endpoint, body))

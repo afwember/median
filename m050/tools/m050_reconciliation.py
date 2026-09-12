@@ -95,7 +95,10 @@ one grounded result. For every reconciled unit, primary_msid must be a settled o
 listed as primary_msid or alternate_primary_msids on at least one of that unit's required member
 atoms; never use a provisional TLD. A reconciled unit must have a nonempty canonical_claim and
 human_question must be null. A human_required unit must have primary_msid null, canonical_claim
-null, and a nonempty human_question. Return complete substantive units, never placeholders: every
+null, and a nonempty human_question. If a proposition's only source-grounded home is provisional,
+or selecting a permitted alternative would misstate its semantic ownership, return that complete
+unit as human_required and ask the precise placement question. Return complete substantive units,
+never placeholders: every
 string that is required to carry meaning must be nonempty, unit_local_id values must be unique
 U-prefixed identifiers such as U001, and rationales must be grounded and nonempty. Reserve enough
 of the output budget for the complete JSON result; once the grounded partition is decided, stop
@@ -481,7 +484,22 @@ def _string_schema(description: str) -> dict:
     return {"type": "string", "description": description}
 
 
-def proposal_response_schema(packet: dict) -> dict:
+def _packet_current_primary_msids(
+    packet: dict, vocabulary: MSIDVocabulary
+) -> list[str]:
+    return sorted({
+        msid
+        for atom in packet.get("atoms", [])
+        for msid in (
+            [atom.get("primary_msid")]
+            + atom.get("alternate_primary_msids", [])
+        )
+        if isinstance(msid, str)
+        and vocabulary.classify(msid) in {"settled", "candidate"}
+    })
+
+
+def proposal_response_schema(packet: dict, vocabulary: MSIDVocabulary) -> dict:
     """Stable provider schema; exact packet coverage is enforced after capture."""
     nullable_claim = {
         "anyOf": [
@@ -492,15 +510,17 @@ def proposal_response_schema(packet: dict) -> dict:
             {"type": "null"},
         ]
     }
-    nullable_msid = {
-        "anyOf": [
-            _string_schema(
-                "For reconciled only: a settled or candidate MSID listed on a required "
-                "member atom; never use a provisional TLD; human_required must use null."
+    current_msids = _packet_current_primary_msids(packet, vocabulary)
+    nullable_msid = {"anyOf": [{"type": "null"}]}
+    if current_msids:
+        nullable_msid["anyOf"].insert(0, {
+            "type": "string",
+            "enum": current_msids,
+            "description": (
+                "For reconciled only: one current MSID listed on a required member atom; "
+                "human_required must use null."
             ),
-            {"type": "null"},
-        ]
-    }
+        })
     return {
         "type": "object",
         "additionalProperties": False,
@@ -666,10 +686,12 @@ def _role_output_limit(provider: dict, role: str) -> int | None:
     return limits.get(role) if isinstance(limits, dict) else None
 
 
-def build_proposer_request(packet: dict, provider: dict) -> dict:
+def build_proposer_request(
+    packet: dict, provider: dict, vocabulary: MSIDVocabulary
+) -> dict:
     return build_openai_request(
         task=PROPOSER_TASK,
-        schema=proposal_response_schema(packet),
+        schema=proposal_response_schema(packet, vocabulary),
         packet=packet,
         supplemental=None,
         model=provider.get("model"),
@@ -699,11 +721,15 @@ def build_reviewer_request(packet: dict, proposal: dict, provider: dict) -> dict
 
 
 def build_revision_request(
-    packet: dict, proposal: dict, review: dict, provider: dict
+    packet: dict,
+    proposal: dict,
+    review: dict,
+    provider: dict,
+    vocabulary: MSIDVocabulary,
 ) -> dict:
     return build_openai_request(
         task=REVISION_TASK,
-        schema=proposal_response_schema(packet),
+        schema=proposal_response_schema(packet, vocabulary),
         packet=packet,
         supplemental={
             "task_input": "bounded replacement of the reviewed proposal",
@@ -1380,9 +1406,11 @@ def _role_request(
     if role == "proposal":
         revision = _bounded_revision_context(repo_root, tranche_id, packet, corpus)
         request = (
-            build_revision_request(packet, revision[0], revision[1], provider)
+            build_revision_request(
+                packet, revision[0], revision[1], provider, corpus.vocabulary
+            )
             if revision is not None
-            else build_proposer_request(packet, provider)
+            else build_proposer_request(packet, provider, corpus.vocabulary)
         )
         return request, None, None
     if role == "review":

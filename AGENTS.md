@@ -358,6 +358,12 @@ and assessment grants nothing.
   Transport, refusal, truncation, JSON, schema, coverage, grounding, semantic,
   and authorial failures remain distinct. Retry only a narrowly classified
   transient or correctable failure; a clean call is never repeated speculatively.
+- The proposal response schema enumerates only current permissible MSIDs found
+  on required packet members; it excludes provisional TLDs before generation.
+  When the only source-grounded semantic home is provisional, or a permitted
+  alternative would misstate ownership, preserve the proposition as the
+  existing `human_required` working state with a precise placement question.
+  Do not force a current address or create a separate ontology queue.
 - The current `Citizen.Guest` proposal and, if mechanically valid, its review
   are the one-request OpenAI Batch transport pilot. Batch changes delivery and
   price only: each request remains an independent existing hash-bound proposal

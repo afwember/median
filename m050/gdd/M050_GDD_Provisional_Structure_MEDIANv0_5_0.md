@@ -253,7 +253,7 @@ additional descriptions of the player experience.
 | Home | Embodiment | **EMBODY** | Experience ordinary life made possible by sanctuary. |
 | Away | Field | **TRAVEL** | Carry particular lives through distance and changing territory. |
 | Away | Crossing | **RISK** | Commit bodies, routes, burdens, and timing to immediate danger. |
-| Home or Away | Encounter | **MEET** | Answer a bounded consequential situation through choice and aftermath. |
+| Home or Away | Encounter | **MEET** | Bring a consequential situation into focus through choice and aftermath. |
 
 ### 4.5 The Colony Register — DWELL
 
@@ -274,8 +274,8 @@ additional descriptions of the player experience.
 - EMBODY becoming available because the Colony can release attention from
   urgent stewardship rather than triggering automatically or functioning as a
   reward currency
-- A bounded consequential situation promoting attention into MEET, while
-  Launch carries named Citizens from Home into Away
+- MEET bringing a consequential situation into focus when it requires direct
+  attention, while Launch carries named Citizens from Home into Away
 - Homecoming returning material, bodily, relational, civic, and remembered
   consequences to the Colony Register
 - DWELL as stewardship rather than factory maximization or perpetual crisis
@@ -297,8 +297,8 @@ additional descriptions of the player experience.
   legible
 - Traversal, observation, ordinary discovery, and changing environmental
   information remaining native to the Field without demanding a separate scene
-- A Node or Presence entering MEET only when it becomes a bounded consequential
-  situation requiring focused choice
+- Engagement with a Node or Presence opening MEET when it becomes consequential
+  and requires focused choice
 - Reaching a Roadway threshold moving the party into RISK, with a completed
   Crossing returning it to the continuous Field on the other side
 - Return using the same geography and accounting for elapsed time, changed
@@ -350,11 +350,51 @@ additional descriptions of the player experience.
 
 ### 4.8 The Encounter Register — MEET
 
-- MEET as cross-modal because consequential situations arise both Home and Away
-- Promotion into Encounter when a situation requires focused choice, visible
-  stakes, cost, and aftermath
-- A closer camera or illustrated scene not sufficient to create an Encounter
-- Not every event requiring promotion into MEET
+- **MEET opens an Encounter.** In familiar game terms, an Encounter is a
+  particular situation that draws the player's attention and asks for a choice.
+  In MEDIAN, an Encounter need not be combat, a random event, or even a crisis.
+- The Encounter Register is cross-modal. MEET can arise from the Colony during
+  DWELL, from the Field during TRAVEL, or from the consequences of a Crossing.
+- The clearest early example is a Field MEET:
+
+  **TRAVEL → click a Node → Field MEET → choose → consequence → return to
+  TRAVEL**
+
+- During TRAVEL, a Node exists as part of the visible Field geography. When the
+  player chooses to click and engage with it, MEET brings that Node into focus
+  as an Encounter.
+- The party has not teleported to a separate event space. It remains at the same
+  Node in the same world. The presentation changes so that relevant Presences,
+  local conditions, possible approaches, stakes, and costs become legible.
+- The player decides how the party will engage. The result may change the Node,
+  the party's Resources or Conditions, its relationships, its knowledge, or
+  some other persistent part of the world.
+- Once the Encounter is resolved, play normally returns to TRAVEL at the same
+  location. A sufficiently urgent consequence may instead lead directly into
+  another appropriate situation.
+- This demonstrates what changes between Registers: not necessarily the place
+  or the passage of time, but the player's relationship to the situation.
+  TRAVEL supports surveying and moving through the Field; MEET stops that
+  broader movement so the player can attend and decide.
+- The same principle applies at Home. A developing shortfall may remain ordinary
+  Colony information during DWELL until it requires a direct choice among
+  competing needs, commitments, or costs. MEET then brings that pressure into
+  focus as a Home Encounter.
+- A situation calls for MEET when meaningful action requires focused
+  information, an actual choice, and an outcome capable of producing consequence
+  or aftermath. A camera change, visible event, or piece of information alone
+  does not create an Encounter.
+- Not every Node, Presence, or routine activity opens MEET. A Field Node becomes
+  a Field MEET when the player deliberately engages with it or when circumstances
+  make that relationship consequential.
+- Encounters may concern gathering, discovery, negotiation, care, opportunity,
+  danger, conflict, or aftermath. MEET describes how the player attends to a
+  situation, not what genre of situation it must contain.
+- Encounter participants and outcomes belong to the persistent world. MEET does
+  not generate disposable event copies of Citizens, Presences, Nodes, Resources,
+  or consequences.
+- Detailed Encounter construction, available choices, costs, resolution, and
+  aftermath are established in the later gameplay chapters.
 
 ### 4.9 The Embodiment Register — EMBODY
 
@@ -364,7 +404,7 @@ additional descriptions of the player experience.
   Equilibrium
 - A temporary descent from Colony-scale stewardship into the lived physical
   scale of a present and available Citizen
-- Bounded moments of activity, motion, repose, relationship, play, and sensory
+- Particular moments of activity, motion, repose, relationship, play, and sensory
   attention making sanctuary materially felt
 - A closer and more intimate presentation expressing animal-scale Presence
   without making camera proximity sufficient to create EMBODY

@@ -309,7 +309,8 @@ ecological, temporal, and epistemic layers into focus.
 - Active traffic, noise, heat, runoff, salt, wind, barriers, and maintenance
 - The road as terrain, climate, resource edge, ecological organizer, and danger
 - Human scale as vast, mostly indifferent, and only partly legible
-- An active human world rather than a post-human one
+- The Highway remaining an active and maintained human system rather than an
+  abandoned or post-human ruin
 
 ### 5.3 Civilization in the seams
 
@@ -317,7 +318,8 @@ ecological, temporal, and epistemic layers into focus.
   practices
 - Soil, vegetation, drainage, debris, and scavenged material understood through
   their affordances
-- Non-industrial making rather than miniature human industrial society
+- Animals inhabiting and reinterpreting human infrastructure according to
+  their own scale and needs rather than reproducing miniature human industry
 
 ### 5.4 One Corridor, many Reaches
 
@@ -478,24 +480,17 @@ and quiet from emptiness.
 - Exact Resource yields, gathering procedures, and economic uses deferred to
   Away and the later Resources chapter
 
-### 7.8 Infrastructure as terrain
+### 7.8 The Highway as Signal
 
-- Culverts, drains, guardrails, signs, pipes, shoulders, roots, and accumulated
-  debris functioning as terrain
-- Human-made structures creating routes, shelter, hazards, catchments, and
-  resource opportunities without being built for animal use
-- Animals inhabiting and interpreting infrastructure without reproducing a
-  miniature human industrial world
-
-### 7.9 Noise, signals, and human disturbance
-
-- Continuous traffic forming the ordinary acoustic and vibrational climate of
-  The Highway
-- Horns, impacts, machinery, unusual silence, and changing vibration carrying
-  environmental information
-- Mowing, maintenance, Road Work, and other human interventions abruptly
-  changing cover, routes, resources, and safety
-- Detailed environmental states and their persistence deferred to Chapter 8
+- At animal scale, The Highway perceived through sound, vibration, and moving
+  air as much as through sight
+- Continuous traffic establishing an ordinary acoustic and vibrational
+  background to life
+- Horns, impacts, machinery, changing engine tones, altered vibration, and
+  unusual silence signaling changed conditions before their causes are visible
+- These signals providing partial information rather than perfect prediction
+  and requiring interpretation through animal experience and folklore
+- Detailed traffic and environmental-state effects deferred to Chapter 8
 
 ## 8. Time, traffic, and environmental change
 

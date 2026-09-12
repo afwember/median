@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-2.0",
   "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
-  "updated": "2026-09-12T14:39:35-04:00",
+  "updated": "2026-09-12T14:59:47-04:00",
   "execution_state": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
   "scope": {
     "version": "MEDIAN v0.5.0",
@@ -46,10 +46,10 @@
     "status": "ACTIVE — provisional GDD structure",
     "phase": "Creation-first authorial compilation",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
-    "progress": "Seven-Part spine, Section 0, Part I, Part II overview, and Chapter 5 structure approved",
+    "progress": "Seven-Part spine, Section 0, Part I, Part II overview, and Chapters 5–6 structure approved",
     "now": "Refining Part II — The Corridor World",
-    "next": "Asa and the Compile Supervisor refine Chapter 6 — Geography and Terminology",
-    "updated_human": "September 12, 2026 at 2:39:35 PM EDT"
+    "next": "Asa and the Compile Supervisor refine Chapter 7 — Ecology and Species Space",
+    "updated_human": "September 12, 2026 at 2:59:47 PM EDT"
   },
-  "next_possible_transition": "Authorial approval of the Chapter 6 chapter and section structure."
+  "next_possible_transition": "Authorial approval of the Chapter 7 chapter and section structure."
 }

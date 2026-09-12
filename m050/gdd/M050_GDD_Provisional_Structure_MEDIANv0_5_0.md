@@ -3,7 +3,7 @@
 ## Provisional Structure
 
 **Status:** Seven-Part spine, Section 0, Part I, the Part II overview, and
-Chapter 5 are authorially approved within this provisional structure; later
+Chapters 5–6 are authorially approved within this provisional structure; later
 chapters and sections remain provisional.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
@@ -298,7 +298,7 @@ ecological, temporal, and epistemic layers into focus.
 
 ## 5. A World at Animal Scale
 
-### 5.1 Nobody's destination, somebody's Home
+### 5.1 Nobody's destination, somebody's home
 
 - Human leftover space becoming animal homeland, sanctuary, and polity
 - The median protected enough for settlement but never detached from exposure
@@ -321,9 +321,9 @@ ecological, temporal, and epistemic layers into focus.
 
 ### 5.4 One Corridor, many Reaches
 
-- Home situated within a continuous world rather than an isolated level
-- Reaches, Margins, Crossings, Outposts, and distant destinations introduced as
-  related parts of the Corridor
+- The Colony situated within a continuous world rather than an isolated level
+- Reaches, Roadways, Margins, and Outposts introduced as related parts of the
+  Corridor
 - Detailed spatial definitions deferred to Chapter 6
 
 ### 5.5 Three ways of inhabiting the same ground
@@ -347,13 +347,49 @@ Throughout Chapter 5, sanctuary remains distinct from perfect safety, peril
 from combat fantasy, animal civilization from miniature human industrialism,
 and quiet from emptiness.
 
-## 6. Geography and terminology
+## 6. The Shape of the Corridor
 
-- The world cross-section
-- Home Median
-- Highway and Margins
-- Reaches, routes, and Nodes
-- Outposts and the wider Corridor
+### 6.1 The Highway in cross-section
+
+- **Sound Wall ‖ Margin | Roadway | Median | Roadway | Margin ‖ Sound Wall**
+- The Highway as the complete physical setting and the two Roadways as its
+  traffic bands
+- The Sound Walls as hard lateral world boundaries rather than playable zones
+- Shoulders, road edges, drainage, vegetation, and other features situated
+  within the playable bands
+
+### 6.2 From Corridor to Reach to Median
+
+- The Corridor as the continuous longitudinal organization of The Highway
+- A Reach as one comprehensible segment of the Corridor
+- The Median as the central strip continuing through successive Reaches
+- Each Reach also containing its corresponding Roadways and Margins
+- The Corridor continuing beyond the presently known or represented Reaches
+
+### 6.3 The Colony and the Home Median
+
+- The Colony, or its eventual proper name, as the permanent civic settlement
+- The Colony occupying a particular median informally called the Home Median
+- Home Median as geographic shorthand rather than the Colony's name
+- Home used alone reserved for the Mode
+- No separate Home Reach term
+
+### 6.4 Along the Corridor and across a Roadway
+
+- Longitudinal travel through a Reach and between Reaches
+- Upcorridor and downcorridor as the primary directions
+- Routes as traversable lines through territory
+- Transverse movement between Median and Margin across a Roadway
+- A Staging Post applying wherever a crossing point is chosen
+- No separate Crossing Site category
+- TRAVEL and RISK procedures deferred to Away
+
+### 6.5 Nodes and Outposts
+
+- A Node as a meaningful location anchored in Away geography
+- An Outpost as a persistent Away foothold established within a Reach
+- An Outpost remaining categorically distinct from The Colony
+- Node interaction and Outpost functions deferred to Away
 
 ## 7. Ecology and species space
 

@@ -920,6 +920,99 @@ shared Practice does not appear to belong to the first Role that uses it.
   better response without replacing Builder Capacity or performing Projects
   without Citizens
 
+#### 9.2.2 Caretaker
+
+- Caretaker carrying responsibility for receiving, provisioning, nurturing,
+  and preserving ordinary life
+- Every available Citizen assigned Caretaker contributing one equal civic share
+- Caretaker Citizens choosing whether to sustain Hearth, sustain Kitchen, or
+  commit their civic shares to active Projects
+
+##### Hearth
+
+- **Hearth** as the foundational shared Practice of nurture, dependency, and
+  recovery
+- Caretakers using Hearth to feed, settle, clean, comfort, and support vulnerable
+  Citizens; receive injured or exhausted returnees; care for young Citizens and
+  Patients between specialized treatment or teaching; and help displaced,
+  newly arrived, or dependent Citizens enter ordinary life
+- Hearth drawing upon Caretaker, Healer, and Teacher Readiness as its needs
+  require
+
+##### Kitchen
+
+- **Kitchen** as a later expansion dedicated to preservation and Provisioning
+- A completed usable Kitchen contributing incremental Caretaker Capacity even
+  without a Citizen currently sustaining it
+- Kitchen's contribution representing preserved working ground, protected
+  provisions, established methods, and physical organization rather than
+  autonomous labor
+- Caretaker Citizens sustaining Kitchen adding their civic shares to Caretaker
+  Readiness
+- Kitchen supporting Perishable-to-Durable preservation, ordinary Sustenance
+  preparation, organization and protection of reserves, household
+  provisioning, seasonal preparation, and recovery from disrupted provisions
+- Preservation operating through Provisioning rather than a queue of individual
+  Projects or orders for every bundle, cache, reserve, or meal
+- Kitchen requiring no founding exemption because Caretaking already exists
+  through Hearth before the Colony undertakes the Project establishing Kitchen
+  as a dedicated expansion
+
+##### Receiving
+
+- Receiving remaining a Caretaker responsibility rather than a separate
+  Practice
+- Homecoming, hospitality, displacement, and aftermath able to ask Caretakers
+  to receive returning Citizens, food and ordinary material, Guests or
+  Wanderers, Patients, threatened reserves, displaced inhabitants, or
+  questionable goods
+- The situation resolving through Hearth, Kitchen, Residence, Homecoming, or
+  MEET according to what is being received
+- Colony Stock remaining abstract civic inventory whose physical expression may
+  appear as pantries, caches, wrapped reserves, household stores, or protected
+  holdings without creating a Stores Practice
+
+##### Caretaker Projects
+
+- Caretaker Projects creating persistent changes rather than performing routine
+  care
+- Establishing or adapting Kitchen; expanding or altering Hearth for lasting
+  need; establishing a new preservation function; reorganizing reserves after
+  permanent loss or growth; completing lasting resettlement; or creating a
+  durable seasonal preparation beyond ordinary Provisioning
+- Evacuation, ordinary stock movement, immediate receiving, and routine
+  preservation not automatically becoming Projects
+
+##### Caretaker vulnerability
+
+- Insufficient Caretaker Readiness creating vulnerability to spoilage,
+  inaccessible or disordered reserves, crowding, displacement, failed
+  receiving, unmet dependency, household disorder, and insufficient winter
+  preparation
+- Caretaker shortfall not inflicting automatic daily harm upon named Citizens
+- Consequential shortfall becoming situated through MEET
+
+##### Species expression
+
+- Mouse Caretaking joining protected domestic spaces with nearby pantry rooms
+  and warm sheltered Hearth ground
+- Rabbit Caretaking distributing provisions among households while maintaining
+  a communal reserve near shared ground, with Hearth remaining quiet but
+  socially connected
+- Squirrel Caretaking using redundant caches, reliable routes, and distributed
+  access so that one broken connection does not isolate provisions or vulnerable
+  Citizens
+
+##### Boundaries
+
+- Caretaker not becoming a generic domestic worker, anonymous food-production
+  unit, replacement for Healer or Teacher, automatic immunity from spoilage or
+  displacement, per-household simulation, or queue of meals, preservation
+  batches, and chores
+- Caretaker not owning Hearth exclusively
+- Resident Affordances able to change how a particular threat is understood or
+  received without replacing Caretaker Capacity
+
 ### 9.3 Practices and shared civic life
 
 - Each important Practice receiving one canonical definition after the Roles

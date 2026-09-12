@@ -2,7 +2,8 @@
 
 ## Provisional Structure
 
-**Status:** Seven-Part spine authorially approved; chapters and sections remain provisional.
+**Status:** Seven-Part spine and Section 0 structure authorially approved;
+chapters and sections remain provisional.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
 Document. It establishes the reader-facing order of the work without deciding
@@ -11,10 +12,30 @@ with Asa in sequence, and this structure will be revised in place.
 
 ## Front Matter
 
-- The Founding Escape
-- Elevator pitch
-- How to read this document
+- Title page
+- Brief reader note
 - Contents
+
+# 0. THE FOUNDING ESCAPE
+
+This is a continuous narrative prologue without visible internal subsections.
+Its approved composition sequence is:
+
+- Open *in medias res* during the founding trio's flight.
+- Reveal the rupture and destruction of the old Home indirectly, through
+  fragmented perception and recollection distributed across the flight.
+- Render the event as disruptive chaos—earthquake, vibration, overwhelming
+  noise, obscured sight, and the failure of familiar ground—without gore.
+- Compress a long escape across several Median Reaches and highway Crossings,
+  establishing distance, exhaustion, and the scale of the Corridor without
+  turning the prologue into a mechanical tutorial.
+- Arrive at an unfamiliar median that is quiet, sufficiently distant, and
+  capable of becoming Home.
+- End at the recognition of possibility, before construction begins.
+
+The narrative prologue then stops. Part I supplies the world and game overview;
+Part II establishes the Corridor; and detailed gameplay begins at Home in Part
+III. Chapter 31 later governs the Founding Escape as playable onboarding.
 
 # PART I — WHAT MEDIAN IS: SANCTUARY AND EXPOSURE
 

@@ -395,50 +395,56 @@ and quiet from emptiness.
 
 ### 7.1 Shared ecology
 
-- One persistent physical ecology shared by every playable species
+- The animals of The Highway inhabiting one shared physical world
 - The Median, Roadways, Margins, infrastructure, traffic, weather, plants, and
-  animal activity understood in relation rather than as separate maps
-- No species-specific geography or ecological rules at this layer
-- Species distinctions entering play through DWELL rather than dividing the
-  corridor world
+  animal activity forming one connected ecology rather than separate
+  species-specific maps
+- The chapter describing those common ecological conditions, with species
+  distinctions in play reserved for DWELL
 
 ### 7.2 The Median: relative sanctuary
 
-- The Median as continuous habitat offering enclosure, concealment, familiar
-  routes, and reduced human access
-- The physical conditions that allow a permanent Colony to take root
-- Sanctuary remaining relative rather than absolute
-- Finite land and resources, flooding, weather, maintenance, predators, and
-  ecological exhaustion continuing to exert pressure
+- The Median as a long, narrow island of habitat: continuous along the Corridor
+  but enclosed between the Roadways
+- Soil, vegetation, drainage, cover, and reduced human access providing the
+  conditions in which a permanent Colony can take root
+- The Roadways that help isolate and protect the Median also confining it,
+  limiting resources and routes of escape
+- Sanctuary remaining relative: flooding, weather, scarcity, predators, and
+  human maintenance can still disturb it
 
 ### 7.3 The Roadways: barrier and exposure
 
-- The two Roadways as moving traffic bands and severe ecological barriers
-- Speed, noise, vibration, fumes, heat, and uncovered pavement as ordinary
-  Roadway conditions
-- Habitat fragmented by the Roadways even where the land remains physically
-  close
-- Roadway edges combining danger, drainage, debris, and salvage
-- Crossing procedures and outcomes deferred to RISK
+- Crossing a Roadway being dangerous and consequential enough to occupy an
+  entire game Mode: RISK; this chapter explains why, while its procedures come
+  later
+- The Roadways as moving barriers of traffic rather than ordinary terrain that
+  happens to be dangerous
+- Speed, noise, vibration, heat, fumes, water, and exposed pavement creating
+  conditions unlike those of the Median or Margins
+- The Roadways dividing habitats that may be physically close, making
+  transverse movement fundamentally different from travel along the Corridor
+- Roadway edges concentrating both hazards and opportunities through drainage,
+  contamination, debris, and salvage
 
-### 7.4 River Spume
+### 7.4 The Highway Through the Day
+
+- Morning, Midday, Evening, and Night changing the light, temperature,
+  activity, and traffic rhythm of The Highway
+- Those changing traffic conditions contextualizing phenomena such as River
+  Spume
+- Detailed time and traffic systems deferred to Chapter 8
+
+### 7.5 River Spume
 
 - River Spume as the vehicle-generated turbulence, pressure shifts, and debris
   lift above and beside a Roadway
-- River Spume distinguished from ordinary wind and weather
-- Its effects on flight, loose material, visibility, balance, and the ecology
-  near the Roadway
-- Mechanical resolution of River Spume deferred to RISK
-
-### 7.5 The Highway Through the Day
-
-- Morning, Midday, Evening, and Night changing light, temperature, traffic
-  rhythm, human activity, predator activity, and visibility
-- Time of Day changing nearby Node conditions and the practical character of
-  the same place
-- Environmental change altering the circumstances of play rather than
-  introducing a separate circadian ruleset or universal Night penalty
-- Exact Day Band, clock, and transition rules deferred to Chapter 8
+- Its character changing with traffic conditions over the course of the day
+- Its effects strongest over and immediately beside the Roadway, then
+  diminishing across the Margin toward the Sound Walls
+- River Spume materially affecting Crossing, the Field, and Field MEETs within
+  its reach
+- Exact mechanical effects deferred to Away and RISK
 
 ### 7.6 The Margins: abundance and disturbance
 

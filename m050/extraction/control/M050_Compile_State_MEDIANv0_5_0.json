@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-11T23:19:45-04:00",
+  "updated": "2026-09-12T08:39:36-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -120,10 +120,10 @@
     "active": false,
     "refresh_window_usd": "5.0000000",
     "authorized_usd": "63.0456896",
-    "cumulative_spent_usd": "60.8831684",
-    "remaining_usd": "2.1625212",
+    "cumulative_spent_usd": "61.4148519",
+    "remaining_usd": "1.6308377",
     "reserved_usd": "0.0000000",
-    "display_usd_rounded_up": "60.89",
+    "display_usd_rounded_up": "61.42",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
     "provisional_component_usd": "3.166020",
@@ -148,7 +148,7 @@
     "progress": "170 / 5,382 atoms assigned to canonical semantic units",
     "now": "Citizen.Guest reconciliation is interrupted with 16 target atoms unaccounted; the Compile Worker is Stopped Down",
     "next": "Spark Up may regrant the same preserved tranche; Proceed is still required before execution",
-    "updated_human": "September 11, 2026 at 11:19:45 PM EDT"
+    "updated_human": "September 12, 2026 at 8:39:36 AM EDT"
   },
   "next_possible_transition": "Tranche citizen-guest-005 is interrupted with 16 target atoms unaccounted; Spark Up may regrant only this preserved boundary."
 }

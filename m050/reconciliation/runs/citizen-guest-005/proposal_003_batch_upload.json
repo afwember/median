@@ -1,0 +1,11 @@
+{
+  "object": "file",
+  "id": "file-QQjdtiJVug1yRGek31UsNq",
+  "purpose": "batch",
+  "filename": "proposal_003_batch_input.jsonl",
+  "bytes": 665842,
+  "created_at": 1789215647,
+  "expires_at": 1791807647,
+  "status": "processed",
+  "status_details": null
+}

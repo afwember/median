@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-2.0",
   "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
-  "updated": "2026-09-12T12:20:37-04:00",
+  "updated": "2026-09-12T12:27:22-04:00",
   "execution_state": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
   "scope": {
     "version": "MEDIAN v0.5.0",
@@ -46,10 +46,10 @@
     "status": "ACTIVE — provisional GDD structure",
     "phase": "Creation-first authorial compilation",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
-    "progress": "Seven-Part spine and Section 0 structure approved; Part I refinement underway",
-    "now": "Refining Part I — What MEDIAN Is: Sanctuary and Exposure",
-    "next": "Asa and the Compile Supervisor refine and approve the Part I chapter structure",
-    "updated_human": "September 12, 2026 at 12:20:37 PM EDT"
+    "progress": "Seven-Part spine, Section 0, and Chapter 1 structure approved",
+    "now": "Refining Chapter 2 — The Attachment-Forward Base Builder",
+    "next": "Asa and the Compile Supervisor refine and approve the Chapter 2 structure",
+    "updated_human": "September 12, 2026 at 12:27:22 PM EDT"
   },
-  "next_possible_transition": "Authorial approval of the refined Part I chapter and section structure."
+  "next_possible_transition": "Authorial approval of the Chapter 2 chapter and section structure."
 }

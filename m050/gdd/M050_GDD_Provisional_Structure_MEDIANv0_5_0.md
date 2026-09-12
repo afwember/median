@@ -2,8 +2,8 @@
 
 ## Provisional Structure
 
-**Status:** Seven-Part spine and Section 0 structure authorially approved;
-chapters and sections remain provisional.
+**Status:** Seven-Part spine, Section 0, and Chapter 1 structure authorially
+approved; later chapters and sections remain provisional.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
 Document. It establishes the reader-facing order of the work without deciding
@@ -39,11 +39,48 @@ III. Chapter 31 later governs the Founding Escape as playable onboarding.
 
 # PART I — WHAT MEDIAN IS: SANCTUARY AND EXPOSURE
 
-## 1. Creative thesis
+## 1. A Civilization Where Nobody Else Would Call Home
 
-- The game in one breath
-- Core inspirations
-- What MEDIAN is not
+### 1.1 The game in one breath
+
+- Animal-colony base-building on active highway median strips
+- One permanent Home
+- A small population of named Citizens
+- Expeditions undertaken for material, civic, relational, and personal reasons
+- Consequences carried back into the Colony
+
+### 1.2 The central dramatic promise
+
+- Sanctuary → Exposure → Consequence → Return → Memory
+- Home as the condition that makes departure and return meaningful
+
+### 1.3 What the player does
+
+- Build and tend a Colony
+- Understand its needs and ordinary life
+- Prepare and send particular Citizens Away
+- Cross, travel, meet, choose, and endure
+- Return with materials, relationships, injuries, obligations, and memories
+- Inhabit the changed Home again
+
+### 1.4 Creative lineage
+
+- *Watership Down* — emotional and dramaturgical foundation
+- *Age of Empires* — legible civic growth and the transformation of a settlement
+- *Mouse Guard* — animal-scale material and visual imagination
+- A lifetime spent looking at highway median strips through car and bus windows,
+  imagining the overlooked land between roads as inhabited territory
+- A compact boundary between influence and borrowed fiction or wholesale
+  mechanics
+
+### 1.5 What MEDIAN is not
+
+- Combat-first or tactical extraction
+- An arcade road-crossing game
+- An anonymous population simulator
+- Miniature-human industrial or medieval fantasy
+- Territorial expansion that discards the founding Home
+- Sentiment detached from credible Game Logic
 
 ## 2. The attachment-forward base builder
 

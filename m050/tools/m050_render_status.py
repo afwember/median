@@ -4,17 +4,15 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timedelta
 import json
 import os
+from pathlib import Path
 import stat
 import tempfile
-from datetime import datetime, timedelta
-from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from m050_guard import STATE, STATUS, expected_status
-from m050_atom_triage import DEFAULT_DECISIONS, DecisionStore, load_corpus
-from m050_atom_rewrite import DEFAULT_REWRITES, RewriteCorpus, RewriteStore
 
 
 EASTERN = ZoneInfo("America/New_York")
@@ -22,20 +20,17 @@ EASTERN = ZoneInfo("America/New_York")
 
 def _atomic_write(path: Path, content: str) -> None:
     mode = stat.S_IMODE(path.stat().st_mode) if path.exists() else 0o644
-    descriptor, temporary_name = tempfile.mkstemp(
-        dir=path.parent,
-        prefix=f".{path.name}.",
-    )
-    temporary_path = Path(temporary_name)
+    descriptor, name = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.")
+    temporary = Path(name)
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
             handle.write(content)
             handle.flush()
             os.fsync(handle.fileno())
-        os.chmod(temporary_path, mode)
-        os.replace(temporary_path, path)
+        os.chmod(temporary, mode)
+        os.replace(temporary, path)
     except BaseException:
-        temporary_path.unlink(missing_ok=True)
+        temporary.unlink(missing_ok=True)
         raise
 
 
@@ -61,97 +56,26 @@ def render_status(
     *,
     now: datetime | None = None,
 ) -> str:
-    """Timestamp canonical state and replace its derived dashboard atomically."""
     state = json.loads(state_path.read_text(encoding="utf-8"))
     if not isinstance(state, dict):
         raise ValueError("canonical compile state must be a JSON object")
-
-    if state.get("status") == "AUTHORIAL_TRIAGE_ACTIVE":
-        repo_root = state_path.resolve().parents[3]
-        corpus = load_corpus(repo_root)
-        store = DecisionStore(repo_root / DEFAULT_DECISIONS, corpus)
-        state.setdefault("dashboard", {})["progress"] = (
-            f"{store.counts()['decided']:,} / {len(corpus.atoms):,} authorial decisions recorded"
-        )
-    elif state.get("status") == "AUTHORIAL_REWRITE_ACTIVE":
-        repo_root = state_path.resolve().parents[3]
-        corpus = RewriteCorpus(repo_root)
-        store = RewriteStore(repo_root / DEFAULT_REWRITES, corpus)
-        state.setdefault("dashboard", {})["progress"] = (
-            f"{store.counts()['resolved']:,} / {len(corpus.atoms):,} authorial rewrite dispositions recorded"
-        )
-    elif str(state.get("status", "")).startswith("MSID_MAPPING_"):
-        try:
-            from m050.tools.m050_msid_mapping import (
-                DEFAULT_MAPPINGS,
-                MSIDVocabulary,
-                MappingCorpus,
-                MappingStore,
-            )
-        except ModuleNotFoundError:
-            from m050_msid_mapping import (
-                DEFAULT_MAPPINGS,
-                MSIDVocabulary,
-                MappingCorpus,
-                MappingStore,
-            )
-        repo_root = state_path.resolve().parents[3]
-        corpus = MappingCorpus(repo_root)
-        vocabulary = MSIDVocabulary(repo_root)
-        store = MappingStore(repo_root / DEFAULT_MAPPINGS, corpus, vocabulary)
-        state.setdefault("dashboard", {})["progress"] = (
-            f"{len(store.mappings):,} / {len(corpus.atoms):,} Stage 4 mappings recorded"
-        )
-    elif str(state.get("status", "")).startswith("RECONCILIATION_"):
-        try:
-            from m050.tools.m050_reconciliation import (
-                DEFAULT_RECONCILIATIONS,
-                ReconciliationCorpus,
-                ReconciliationStore,
-            )
-        except ModuleNotFoundError:
-            from m050_reconciliation import (
-                DEFAULT_RECONCILIATIONS,
-                ReconciliationCorpus,
-                ReconciliationStore,
-            )
-        repo_root = state_path.resolve().parents[3]
-        corpus = ReconciliationCorpus(repo_root)
-        store = ReconciliationStore(repo_root / DEFAULT_RECONCILIATIONS, corpus)
-        state.setdefault("dashboard", {})["progress"] = (
-            f"{len(store.primary_members):,} / {len(corpus.atoms):,} atoms assigned to canonical semantic units"
-        )
-
     exact = _rounded_timestamp(now)
     state["updated"] = exact.isoformat()
     state.setdefault("dashboard", {})["updated_human"] = _human_timestamp(exact)
-    _atomic_write(
-        state_path,
-        json.dumps(state, indent=2, ensure_ascii=False) + "\n",
-    )
+    _atomic_write(state_path, json.dumps(state, indent=2, ensure_ascii=False) + "\n")
     rendered = expected_status(state)
     _atomic_write(status_path, rendered)
     return rendered
 
 
-def check_status(
-    state_path: Path = STATE,
-    status_path: Path = STATUS,
-) -> bool:
-    """Return whether STATUS matches canonical state without changing either file."""
+def check_status(state_path: Path = STATE, status_path: Path = STATUS) -> bool:
     state = json.loads(state_path.read_text(encoding="utf-8"))
-    if not isinstance(state, dict):
-        raise ValueError("canonical compile state must be a JSON object")
-    return status_path.read_text(encoding="utf-8") == expected_status(state)
+    return isinstance(state, dict) and status_path.read_text(encoding="utf-8") == expected_status(state)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--check",
-        action="store_true",
-        help="verify STATUS.md against canonical state without writing",
-    )
+    parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     if args.check:
         if check_status():

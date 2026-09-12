@@ -1,0 +1,54 @@
+{
+  "schema_version": "M050-COMPILE-STATE-2.0",
+  "status": "AUTHORIAL_GDD_PREPARATION_READY",
+  "updated": "2026-09-12T09:55:47-04:00",
+  "execution_state": "AUTHORIAL_GDD_PREPARATION_READY",
+  "scope": {
+    "version": "MEDIAN v0.5.0",
+    "registered_sources": 24,
+    "compile_scope_sources": 22,
+    "atomized_authorial_sources": 18,
+    "later_or_conditional_sources": 4,
+    "non_atomic_companions": 2,
+    "m051_allowed": false
+  },
+  "source_library": {
+    "status": "FROZEN",
+    "manifest": "m050/corpus/M050_Authorial_Atom_Corpus_Manifest_MEDIANv0_5_0.json",
+    "manifest_sha256": "d5cb5ef527623ace29cff31819d3356e4a2d3a6da1a88ae894a502cc933df867",
+    "record": "m050/corpus/M050_Authorial_Atom_Corpus_MEDIANv0_5_0.jsonl",
+    "record_sha256": "0d74fda3cb1218417c53cb011040c10df6badaeda620d8e1aa108522602c247e",
+    "atom_count": 5382,
+    "source_count": 18,
+    "role": "authorial evidence and retrieval library; no atom dictates final prose"
+  },
+  "information_management_archive": {
+    "status": "RETIRED",
+    "path": "600 archive/m050-information-management",
+    "last_active_checkpoint": "2745e34e423843795f80e9b47a75be31cbff7a04",
+    "role": "historical extraction, triage, rewrite, mapping, reconciliation, provider and spend evidence only"
+  },
+  "authorial_gdd": {
+    "status": "NOT_STARTED",
+    "output_root": "m050/gdd",
+    "structure_status": "NOT_PROPOSED",
+    "composition_status": "NOT_STARTED",
+    "coverage_status": "NOT_STARTED"
+  },
+  "authority": {
+    "repository_writes_authorized": false,
+    "corpus_modification_authorized": false,
+    "gdd_structure_authorized": false,
+    "compiled_prose_authorized": false
+  },
+  "dashboard": {
+    "status": "READY — authorial GDD preparation",
+    "phase": "Creation-first authorial compilation",
+    "source": "Frozen 5,382-atom authorial source library across 18 sources",
+    "progress": "GDD structure not yet proposed",
+    "now": "Information-management machinery is retired; no authorial GDD work is active",
+    "next": "Asa and the Compile Supervisor discuss and authorize the provisional v0.5 GDD structure",
+    "updated_human": "September 12, 2026 at 9:55:47 AM EDT"
+  },
+  "next_possible_transition": "Explicit authorial authorization of a bounded v0.5 GDD structure task."
+}

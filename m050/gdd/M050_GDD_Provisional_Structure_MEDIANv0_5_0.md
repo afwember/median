@@ -2,9 +2,9 @@
 
 ## Provisional Structure
 
-**Status:** Seven-Part spine, Section 0, and Part I are authorially approved
-within this provisional structure; later Parts, chapters, and sections remain
-provisional.
+**Status:** Seven-Part spine, Section 0, Part I, the Part II overview, and
+Chapter 5 are authorially approved within this provisional structure; later
+chapters and sections remain provisional.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
 Document. It establishes the reader-facing order of the work without deciding
@@ -285,12 +285,67 @@ additional descriptions of the player experience.
 
 # PART II — THE CORRIDOR WORLD
 
-## 5. The world primer
+Part II establishes the physical and perceptual reality in which the game
+occurs before explaining what the player builds or governs. The Corridor is not
+merely a map or backdrop: it is active human infrastructure inhabited at animal
+scale. Its spaces mean different things to different bodies, its conditions
+change over time, and much of it must be discovered before it can be
+understood.
 
-- Animal-scale civilization
-- The highway world
-- The three core species
-- The Laws, Sayings, and Giants
+The Part proceeds from world to geography to habitation to change to knowledge.
+Chapter 5 supplies the establishing view; Chapters 6–9 bring its spatial,
+ecological, temporal, and epistemic layers into focus.
+
+## 5. A World at Animal Scale
+
+### 5.1 Nobody's destination, somebody's Home
+
+- Human leftover space becoming animal homeland, sanctuary, and polity
+- The median protected enough for settlement but never detached from exposure
+- Nobody's destination becoming a place whose inhabitants choose to remain
+
+### 5.2 The highway is an environment
+
+- Active traffic, noise, heat, runoff, salt, wind, barriers, and maintenance
+- The road as terrain, climate, resource edge, ecological organizer, and danger
+- Human scale as vast, mostly indifferent, and only partly legible
+- An active human world rather than a post-human one
+
+### 5.3 Civilization in the seams
+
+- Animal civilization arising from bodies, ecological needs, and inherited
+  practices
+- Soil, vegetation, drainage, debris, and scavenged material understood through
+  their affordances
+- Non-industrial making rather than miniature human industrial society
+
+### 5.4 One Corridor, many Reaches
+
+- Home situated within a continuous world rather than an isolated level
+- Reaches, Margins, Crossings, Outposts, and distant destinations introduced as
+  related parts of the Corridor
+- Detailed spatial definitions deferred to Chapter 6
+
+### 5.5 Three ways of inhabiting the same ground
+
+- Mouse safety understood through enclosure and belonging
+- Rabbit safety understood through neighborhood and company
+- Squirrel safety understood through routes and reach
+- Three core species inhabiting different experiential worlds within the same
+  physical landscape
+- Other animal peoples existing beyond the three civic foundations
+
+### 5.6 Partial knowledge, language, and folklore
+
+- Animals understanding the human world through observation, inherited
+  explanation, and culturally accumulated language
+- Giants as part of the animals' partial understanding of human-scale phenomena
+- Laws and Sayings as cultural interpretations rather than objective cosmology
+- Fuller treatment of culture, records, and memory deferred to their later home
+
+Throughout Chapter 5, sanctuary remains distinct from perfect safety, peril
+from combat fantasy, animal civilization from miniature human industrialism,
+and quiet from emptiness.
 
 ## 6. Geography and terminology
 

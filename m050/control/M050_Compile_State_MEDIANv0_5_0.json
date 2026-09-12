@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-2.0",
   "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
-  "updated": "2026-09-12T12:46:09-04:00",
+  "updated": "2026-09-12T12:51:27-04:00",
   "execution_state": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
   "scope": {
     "version": "MEDIAN v0.5.0",
@@ -46,10 +46,10 @@
     "status": "ACTIVE — provisional GDD structure",
     "phase": "Creation-first authorial compilation",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
-    "progress": "Seven-Part spine, Section 0, and Chapters 1–3 structure approved",
-    "now": "Preparing Chapter 4 — One World, Two Modes, Five Registers",
-    "next": "Asa and the Compile Supervisor refine and approve the Chapter 4 structure",
-    "updated_human": "September 12, 2026 at 12:46:09 PM EDT"
+    "progress": "Seven-Part spine, Section 0, and Part I structure approved",
+    "now": "Preparing Part II — The Corridor World",
+    "next": "Asa and the Compile Supervisor refine Chapter 5 — The World Primer",
+    "updated_human": "September 12, 2026 at 12:51:27 PM EDT"
   },
-  "next_possible_transition": "Authorial approval of the Chapter 4 chapter and section structure."
+  "next_possible_transition": "Authorial approval of the Chapter 5 chapter and section structure."
 }

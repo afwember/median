@@ -2,8 +2,8 @@
 
 ## Provisional Structure
 
-**Status:** Seven-Part spine, Section 0, and Chapters 1–3 are authorially
-approved within this provisional structure; later chapters and sections remain
+**Status:** Seven-Part spine, Section 0, and Part I are authorially approved
+within this provisional structure; later Parts, chapters, and sections remain
 provisional.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
@@ -217,14 +217,73 @@ additional descriptions of the player experience.
 - Repeatable attachment-forward systems performing genuine game work while
   permitting individual quiet moments to remain non-instrumental
 
-## 4. One world, two Modes, five Registers
+## 4. One Persistent World: Two Modes, Five Registers
 
-- One persistent world
-- Home and Away
-- DWELL, EMBODY, TRAVEL, RISK, and MEET
-- Register operators
-- The Home–Away–Return cycle
-- Attention and the threshold of MEET
+### 4.1 One persistent world
+
+- No disconnected minigames
+- A Citizen, Place, object, route, wound, promise, or memory remaining the same
+  fact across every form of play
+- Registers altering scale, pace, subject, and attention rather than reality
+- Actions and consequences persisting through transitions
+
+### 4.2 Mode, Register, operator, and view
+
+- **Mode** — where primary life and responsibility are currently situated
+- **Register** — the structural form of play
+- **Operator** — the characteristic action through which the player engages a
+  Register
+- **View or camera** — a manifestation of a Register rather than the Register
+  itself
+- Interface decisions not changing game ontology
+
+### 4.3 Home and Away: Inward and Outward
+
+- Home Mode gathering responsibility Inward toward the permanent Colony
+- Away Mode extending responsibility Outward through particular Citizens
+- Modes as centers of attention rather than exclusive jurisdictions
+- Home able to concern an individual and Away able to change the Colony and
+  Corridor
+
+### 4.4 The five-Register topology
+
+| Mode | Register | Operator | Primary relationship |
+|---|---|---|---|
+| Home | Colony | **DWELL** | Understand, build, arrange, and sustain collective life. |
+| Home | Embodiment | **EMBODY** | Experience ordinary life made possible by sanctuary. |
+| Away | Field | **TRAVEL** | Carry particular lives through distance and changing territory. |
+| Away | Crossing | **RISK** | Commit bodies, routes, burdens, and timing to immediate danger. |
+| Home or Away | Encounter | **MEET** | Answer a bounded consequential situation through choice and aftermath. |
+
+### 4.5 Encounter and the threshold of attention
+
+- MEET as cross-modal because consequential situations arise both Home and Away
+- Promotion into Encounter when a situation requires focused choice, visible
+  stakes, cost, and aftermath
+- A closer camera or illustrated scene not sufficient to create an Encounter
+- Not every event requiring promotion into MEET
+
+### 4.6 Transitions without fragmentation
+
+- Transitions as emotional and attentional beats rather than neutral loading
+  screens
+- Borrowed visual composition not changing Register identity
+- What is open to the player not necessarily open or exposed within the world
+- Manifestations translating interface and camera while preserving dramatic
+  function
+
+### 4.7 The Home–Away–Return cycle
+
+- Home → Launch → Away [RISK / TRAVEL / MEET] → Return → Homecoming → Home
+- A dramatic circuit rather than a mandatory screen sequence
+- RISK, TRAVEL, and MEET recurring or appearing in situational order
+- Launch, Return, and Homecoming as transitions or procedures rather than
+  additional Registers
+- Homecoming reintegrating material, bodily, relational, civic, and remembered
+  outcomes
+- The changed Home becoming the ground of the next choice
+
+# PART II — THE CORRIDOR WORLD
 
 ## 5. The world primer
 
@@ -232,8 +291,6 @@ additional descriptions of the player experience.
 - The highway world
 - The three core species
 - The Laws, Sayings, and Giants
-
-# PART II — THE CORRIDOR WORLD
 
 ## 6. Geography and terminology
 

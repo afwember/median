@@ -61,7 +61,7 @@ division of mandate, not another workflow layer:
   machinery and state its net process delta. Any increase in total stages,
   artifact classes, representations, handoffs, or supervisory machinery
   requires specific discussion with Asa and explicit approval.
-- **Compile Worker:** executes one explicitly authorized phase and bounded target
+- **Compile Worker:** executes one explicitly authorized phase and bounded action
   using the established method. Within an active work grant and cumulative budget
   it may handle ordinary phase details, including diagnosis, correction,
   simplification, validation, retry, state maintenance, and coherent repository
@@ -237,11 +237,21 @@ authority, target, progress, and spend facts; it does not build a packet, select
 a target, change state, or reject startup merely because the prior target is
 complete. The Worker then makes the actual assessment:
 
-- If the repository is healthy and the next action is understood, state that
-  action and its material risks, then halt for action approval.
+- If the repository is healthy and an incomplete tranche is preserved, state
+  its continuation as the next action and halt for action approval.
+- If the prior tranche is complete, select the next coherent functional tranche
+  from existing vocabulary, mappings, and unaccounted atoms; state the exact
+  tranche ID, MSID boundary, selector, rationale, first action, and material
+  risks, then halt for action approval.
 - If the repository is dirty, contradictory, or the next action is not
   understood, state exactly what was found or what is missing, then halt for
   discussion.
+
+Multiple valid next tranches are not a halt condition. Choose one defensible,
+bounded semantic group, preferring established dependencies before their
+dependent mechanics and a scope that fits the current method. The choice need
+not be globally optimal. Do not create a durable ordering, selection ledger, or
+new priority system.
 
 This read-only assessment pause is not a lifecycle state or publication
 checkpoint. Do not refresh STATUS, run a publication guard, commit, push,
@@ -252,11 +262,12 @@ lost before action approval, require a new `Spark Up`.
 `Proceed`, or an equally clear directive in response to the assessment,
 approves and releases action; it does not insert the key or create authority.
 When the next action was already understood, activate the preserved incomplete
-tranche with `--expected-tranche-id` and `--expected-head`. When it was unknown,
-Asa's clear response may both supply and approve the exact next boundary; pass
+tranche with `--expected-tranche-id` and `--expected-head`. For the Worker's
+selected next tranche, `Proceed` approves that selection; pass
 `--select-tranche-id`, `--select-msid-prefix`, `--select-selector`, and
-`--expected-head`. The same invocation may pass `--authorize-spend-usd` only for
-a dollar amount Asa explicitly approved in that response. Use exactly one
+`--expected-head`. Asa may instead override it with another exact functional
+boundary. The same invocation may pass `--authorize-spend-usd` only for a dollar
+amount Asa explicitly approved in that response. Use exactly one
 `.venv/bin/python m050/tools/m050_reconciliation.py --transition
 activate-on-proceed ... --apply` invocation. It performs the narrow stale-check
 and atomically binds and activates only the approved action. An incomplete
@@ -351,7 +362,8 @@ and assessment grants nothing.
 - Use `m050/tools/m050_reconciliation.py` for deterministic inventory, packet,
   record, and lifecycle operations. `prepare-spark-up` is read-only and rejects
   `--apply`. `activate-on-proceed` requires the assessed checkpoint and either
-  the preserved incomplete tranche or Asa's action-approved next boundary.
+  the preserved incomplete tranche or the Worker's action-approved next
+  functional boundary.
   `prepare-stopdown --apply` is the universal interrupt: it always revokes
   authority, preserves the current target, and records completion only when
   exact tranche coverage exists. STATUS rendering, the full guard, Git
@@ -359,16 +371,19 @@ and assessment grants nothing.
   actions.
 - After execution release, the Worker operates autonomously within the tranche
   and budget. It may diagnose and correct local implementation, validate and
-  review calls, maintain canonical state, and make coherent checkpoints. It may
-  recommend but not select the next tranche, change the representation or
-  authority policy,
-  weaken semantic review, enter another phase, or transmit to another provider.
+  review calls, maintain canonical state, make coherent checkpoints, and select
+  the next functional tranche during a later Spark Up assessment. Tranche
+  selection may schedule only existing unaccounted Stage 5 content; it may not
+  mint an ontology path, change tranche or selector semantics, abandon an
+  incomplete boundary, change the representation or authority policy, weaken
+  semantic review, enter another phase, or transmit to another provider.
 - Halt for input or vocabulary drift, packet or evidence-binding defect,
   incomplete or duplicate atom coverage, ungrounded synthesis, unresolved
   authority, ontology defect, exhausted authority or spend, repeated provider
   failure, or need to change the phase method.
-- Pilot Stopdown returns to Supervisor/author quality adjudication before any
-  next boundary is selected. Stage 5 completes only when all 5,382 atoms have
+- Stopdown returns to Supervisor read-only adjudication. Unless that assessment
+  finds a defect requiring discussion, a fresh Spark Up lets the Worker select
+  the next functional boundary. Stage 5 completes only when all 5,382 atoms have
   exactly one primary home, every canonical unit is grounded and valid, zero
   `human_required` units remain, all remaining conflicts are resolved or
   authorially deferred, and the global cross-domain consistency audit passes.

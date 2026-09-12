@@ -502,7 +502,7 @@ def test_spark_up_reports_active_engine_without_mutation(corpus, empty_store):
     assert report["authority"]["repository_writes_authorized"] is True
 
 
-def test_proceed_atomically_binds_author_selected_boundary_and_spend(corpus):
+def test_proceed_atomically_binds_worker_selected_boundary_and_author_spend(corpus):
     store = reconciliation.ReconciliationStore(
         ROOT / reconciliation.DEFAULT_RECONCILIATIONS, corpus
     )
@@ -657,7 +657,7 @@ def test_stopdown_marks_completion_only_with_exact_target_coverage(corpus):
     ]
 
 
-def test_completed_tranche_dashboard_cannot_offer_same_pilot(empty_store):
+def test_completed_tranche_dashboard_releases_worker_selection(empty_store):
     state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
     state["reconciliation"]["target"] = {
         "tranche_id": "away-crossing-pilot",
@@ -666,10 +666,10 @@ def test_completed_tranche_dashboard_cannot_offer_same_pilot(empty_store):
     }
     dashboard = reconciliation._dashboard(state, empty_store, active=False)
     assert dashboard["now"] == (
-        "Away.Crossing pilot is complete; the Compile Worker is Stopped Down"
+        "Tranche away-crossing-pilot is complete; the Compile Worker is Stopped Down"
     )
     assert dashboard["next"] == (
-        "Supervisor/author quality adjudication must select any next boundary"
+        "Spark Up lets the Worker assess and select the next functional boundary"
     )
 
 

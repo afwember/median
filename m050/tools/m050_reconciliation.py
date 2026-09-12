@@ -1556,14 +1556,14 @@ def _dashboard(state: dict, store: ReconciliationStore, *, active: bool) -> dict
     now = (
         f"{prefix} reconciliation is active within tranche {tranche_id}"
         if active
-        else f"{prefix} pilot is complete; the Compile Worker is Stopped Down"
+        else f"Tranche {tranche_id} is complete; the Compile Worker is Stopped Down"
         if completed
         else f"{prefix} reconciliation is interrupted with {remaining} target atoms unaccounted; the Compile Worker is Stopped Down"
     )
     next_text = (
         "Continue only the released semantic tranche, or Stopdown at any time"
         if active
-        else "Supervisor/author quality adjudication must select any next boundary"
+        else "Spark Up lets the Worker assess and select the next functional boundary"
         if completed
         else "Spark Up may regrant the same preserved tranche; Proceed is still required before execution"
     )
@@ -1662,7 +1662,7 @@ def plan_lifecycle_transition(
         else:
             if selected_target is None:
                 raise TriageError(
-                    "Proceed requires the author-selected next Stage 5 boundary"
+                    "Proceed requires the assessed next Stage 5 boundary"
                 )
             candidate_state = {"reconciliation": {"target": selected_target}}
             tranche_id, prefix, selector = _target(candidate_state)
@@ -1672,7 +1672,7 @@ def plan_lifecycle_transition(
                 raise TriageError("Proceed cannot reactivate a completed Stage 5 tranche")
             if expected_tranche_id is not None:
                 raise TriageError(
-                    "a new author-selected boundary cannot also claim a prepared tranche"
+                    "a new selected boundary cannot also claim a prepared tranche"
                 )
         packet = build_packet(
             corpus, store, tranche_id=tranche_id, msid_prefix=prefix, selector=selector
@@ -1731,7 +1731,7 @@ def plan_lifecycle_transition(
         completed.append(tranche_id)
     _replace_dashboard_fields(result, _dashboard(result, store, active=False))
     result["next_possible_transition"] = (
-        f"Tranche {tranche_id} is complete; halt for Supervisor/author quality adjudication and next boundary selection."
+        f"Tranche {tranche_id} is complete; Spark Up may begin the Worker's read-only assessment and next functional boundary selection."
         if target_complete
         else f"Tranche {tranche_id} is interrupted with {len(missing)} target atoms unaccounted; Spark Up may regrant only this preserved boundary."
     )
@@ -1819,7 +1819,7 @@ def main(argv: list[str] | None = None) -> int:
                 )
             if not complete_selection and not args.expected_tranche_id:
                 raise TriageError(
-                    "Proceed requires either an assessed tranche or an author-selected boundary"
+                    "Proceed requires either a preserved tranche or an assessed next boundary"
                 )
             _require_clean_synchronized_checkpoint(repo_root, args.expected_head)
         elif args.authorize_spend_usd is not None or any((

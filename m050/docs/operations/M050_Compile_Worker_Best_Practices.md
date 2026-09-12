@@ -27,8 +27,8 @@ not a second Supervisor and not a passive command runner.
 Within one Sparked-Up phase mandate and approved bounded action, it should be
 able to:
 
-- identify the current target from canonical controls or report that none has
-  been selected;
+- identify the current target from canonical controls and, when the active
+  profile makes work ordering functional, select the next target;
 - perform the phase's ordinary work without transaction-by-transaction
   approval;
 - diagnose and correct local execution defects;
@@ -40,8 +40,9 @@ able to:
 - finish through formal Stopdown.
 
 It may not redesign the phase, change a cross-phase interface, add an artifact
-family, relax an invariant, choose a target, infer authorial judgment, or turn
-ordinary difficulty into a wider mandate.
+family, relax an invariant, redefine target semantics, make a target choice the
+active profile reserves to Asa, infer authorial judgment, or turn ordinary
+difficulty into a wider mandate.
 
 The Supervisor designs and tunes the operating system conversationally with
 Asa. Asa manually starts the Worker. The Supervisor does not automatically
@@ -67,23 +68,32 @@ On receipt, the Worker should immediately:
    authority, budget, inputs, outputs, halt conditions, and prohibited
    transitions;
 3. determine whether the repository is healthy and whether it understands the
-   next action;
+   next action, selecting the next functional target when the active profile
+   permits;
 4. retain the clean Git checkpoint and assessment in task context; and
 5. halt without changing the repository and before substantive work, provider
    calls, packet construction, or record changes.
 
 If the repository is healthy and the next action is understood, the Worker
-states that action and its material risks and awaits approval. If the repository
-is dirty or contradictory, or the next action is unknown, it states exactly
-what it found or needs and awaits discussion. The assessment is the thread's
-reasoned reading of repository state, not another formal lifecycle checkpoint.
+states that action, any selected target and rationale, and its material risks,
+then awaits approval. Functional target selection is ordinary scheduling, not a
+structural or authorial decision. If the repository is dirty or contradictory,
+or no target can be selected without changing structure or exercising authorial
+judgment, the Worker states exactly what it found or needs and awaits
+discussion. The assessment is the thread's reasoned reading of repository
+state, not another formal lifecycle checkpoint.
+
+Several valid functional targets do not create an ambiguity that requires
+escalation. Select one defensible bounded unit, state why, and continue through
+action approval. Do not add an ordering ledger or priority system merely to
+make that ordinary choice deterministic.
 
 ### `Proceed` — execution release
 
 `Proceed`, or an equally clear directive in direct response to the assessment,
-releases execution of the already-authorized action. It is not a new authority
-grant. When the next action was unknown, Asa's clear response may both supply
-and approve it.
+releases execution of the already-authorized action and approves any functional
+target the Worker stated. It is not a new authority grant. Asa may override the
+selection or supply an action that genuinely required authorial direction.
 
 The Worker should accept it only when:
 
@@ -378,6 +388,8 @@ should settle the following in discussion:
 ### Deterministic selection
 
 - How is exactly one current source or unit selected?
+- Is the next-target choice functional Worker scheduling or an authorial or
+  structural decision?
 - What completed/rejected boundary is derived?
 - What happens if selection is empty, multiple, or drifted?
 

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-11T19:46:50-04:00",
+  "updated": "2026-09-11T20:08:09-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -136,9 +136,9 @@
     "phase": "Semantic reconciliation — reviewed proposition unification",
     "source": "Unitary 5,382-atom corpus — current semantic boundary Away.Crossing.Squirrel",
     "progress": "149 / 5,382 atoms assigned to canonical semantic units",
-    "now": "Away.Crossing.Squirrel pilot is complete; the Compile Worker is Stopped Down",
-    "next": "Supervisor/author quality adjudication must select any next boundary",
-    "updated_human": "September 11, 2026 at 7:46:50 PM EDT"
+    "now": "Tranche away-crossing-squirrel-002 is complete; the Compile Worker is Stopped Down",
+    "next": "Spark Up lets the Worker assess and select the next functional boundary",
+    "updated_human": "September 11, 2026 at 8:08:09 PM EDT"
   },
-  "next_possible_transition": "Tranche away-crossing-squirrel-002 is complete; halt for Supervisor/author quality adjudication and next boundary selection."
+  "next_possible_transition": "Tranche away-crossing-squirrel-002 is complete; Spark Up may begin the Worker's read-only assessment and next functional boundary selection."
 }

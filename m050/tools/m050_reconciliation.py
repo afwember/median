@@ -18,6 +18,7 @@ import subprocess
 import tempfile
 from typing import Iterable
 import urllib.error
+import urllib.parse
 import urllib.request
 import uuid
 
@@ -61,6 +62,9 @@ DEFAULT_RECONCILIATIONS = Path(
 RUNS = Path("m050/reconciliation/runs")
 OPENAI_ENDPOINT = "https://api.openai.com/v1/responses"
 OPENAI_TOKEN_COUNT_ENDPOINT = "https://api.openai.com/v1/responses/input_tokens"
+OPENAI_FILES_ENDPOINT = "https://api.openai.com/v1/files"
+OPENAI_BATCHES_ENDPOINT = "https://api.openai.com/v1/batches"
+BATCH_TERMINAL_STATUSES = {"completed", "failed", "expired", "cancelled"}
 SCHEMA_VERSION = "M050-RECONCILED-SEMANTIC-UNIT-0.1"
 PACKET_SCHEMA_VERSION = "M050-RECONCILIATION-PACKET-0.1"
 PROPOSAL_SCHEMA_VERSION = "M050-RECONCILIATION-PROPOSAL-0.1"
@@ -729,6 +733,11 @@ def _run_paths(repo_root: Path, tranche_id: str, role: str, attempt: int) -> dic
         "token_count": run_dir / f"{stem}_token_count.json",
         "raw": run_dir / f"{stem}_raw_response.json",
         "structured": run_dir / f"{stem}_structured_response.json",
+        "batch_input": run_dir / f"{stem}_batch_input.jsonl",
+        "batch_upload": run_dir / f"{stem}_batch_upload.json",
+        "batch_submission": run_dir / f"{stem}_batch_submission.json",
+        "batch_cancellation": run_dir / f"{stem}_batch_cancellation.json",
+        "batch_output": run_dir / f"{stem}_batch_output.jsonl",
         "ledger": run_dir / "run_ledger.jsonl",
     }
 
@@ -862,6 +871,122 @@ def _send_openai(request_body: dict, api_key_file: Path, timeout: float) -> tupl
     return _send_openai_to(OPENAI_ENDPOINT, request_body, api_key_file, timeout)
 
 
+def _openai_request_bytes(
+    endpoint: str,
+    api_key_file: Path,
+    timeout: float,
+    *,
+    method: str = "GET",
+    data: bytes | None = None,
+    content_type: str | None = None,
+) -> tuple[int, bytes]:
+    key = api_key_file.read_text(encoding="utf-8").strip()
+    if not key:
+        raise TriageError("OpenAI API key file is empty")
+    headers = {"authorization": f"Bearer {key}"}
+    if content_type is not None:
+        headers["content-type"] = content_type
+    request = urllib.request.Request(
+        endpoint, data=data, method=method, headers=headers
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            return response.status, response.read()
+    except urllib.error.HTTPError as exc:
+        return exc.code, exc.read()
+
+
+def _upload_openai_batch_file(
+    content: bytes, filename: str, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
+    boundary = f"median-{uuid.uuid4().hex}"
+    body = (
+        f"--{boundary}\r\n"
+        'Content-Disposition: form-data; name="purpose"\r\n\r\n'
+        "batch\r\n"
+        f"--{boundary}\r\n"
+        f'Content-Disposition: form-data; name="file"; filename="{filename}"\r\n'
+        "Content-Type: application/jsonl\r\n\r\n"
+    ).encode("utf-8") + content + f"\r\n--{boundary}--\r\n".encode("utf-8")
+    return _openai_request_bytes(
+        OPENAI_FILES_ENDPOINT,
+        api_key_file,
+        timeout,
+        method="POST",
+        data=body,
+        content_type=f"multipart/form-data; boundary={boundary}",
+    )
+
+
+def _create_openai_batch(
+    input_file_id: str,
+    completion_window: str,
+    api_key_file: Path,
+    timeout: float,
+) -> tuple[int, bytes]:
+    return _send_openai_to(
+        OPENAI_BATCHES_ENDPOINT,
+        {
+            "input_file_id": input_file_id,
+            "endpoint": "/v1/responses",
+            "completion_window": completion_window,
+        },
+        api_key_file,
+        timeout,
+    )
+
+
+def _retrieve_openai_batch(
+    batch_id: str, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
+    quoted = urllib.parse.quote(batch_id, safe="")
+    return _openai_request_bytes(
+        f"{OPENAI_BATCHES_ENDPOINT}/{quoted}", api_key_file, timeout
+    )
+
+
+def _cancel_openai_batch(
+    batch_id: str, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
+    quoted = urllib.parse.quote(batch_id, safe="")
+    return _openai_request_bytes(
+        f"{OPENAI_BATCHES_ENDPOINT}/{quoted}/cancel",
+        api_key_file,
+        timeout,
+        method="POST",
+        data=b"{}",
+        content_type="application/json",
+    )
+
+
+def _retrieve_openai_batch(
+    batch_id: str, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
+    quoted = urllib.parse.quote(batch_id, safe="")
+    return _openai_request_bytes(
+        f"{OPENAI_BATCHES_ENDPOINT}/{quoted}", api_key_file, timeout
+    )
+
+
+def _cancel_openai_batch(
+    batch_id: str, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
+    quoted = urllib.parse.quote(batch_id, safe="")
+    return _send_openai_to(
+        f"{OPENAI_BATCHES_ENDPOINT}/{quoted}/cancel",
+        {}, api_key_file, timeout,
+    )
+
+
+def _retrieve_openai_file(
+    file_id: str, api_key_file: Path, timeout: float
+) -> tuple[int, bytes]:
+    quoted = urllib.parse.quote(file_id, safe="")
+    return _openai_request_bytes(
+        f"{OPENAI_FILES_ENDPOINT}/{quoted}/content", api_key_file, timeout
+    )
+
+
 def _token_count_body(request: dict) -> dict:
     return {
         key: copy.deepcopy(request[key])
@@ -910,7 +1035,13 @@ def _padded_token_count(value: int) -> int:
     return value + margin
 
 
-def counted_call_ceiling(request: dict, pricing: dict, token_count: dict) -> dict:
+def counted_call_ceiling(
+    request: dict,
+    pricing: dict,
+    token_count: dict,
+    *,
+    price_multiplier: Decimal = Decimal("1"),
+) -> dict:
     """Price a pessimistic full cache write plus bounded output and count margin."""
     try:
         reported = token_count["full"]["response"]["input_tokens"]
@@ -930,13 +1061,17 @@ def counted_call_ceiling(request: dict, pricing: dict, token_count: dict) -> dic
         or not input_rate.is_finite()
         or not output_rate.is_finite()
         or not write_multiplier.is_finite()
-        or min(input_rate, output_rate, write_multiplier) <= 0
+        or not price_multiplier.is_finite()
+        or min(input_rate, output_rate, write_multiplier, price_multiplier) <= 0
     ):
         raise TriageError("provider count, pricing, or cache prefix is invalid")
     padded_input = _padded_token_count(full)
     million = Decimal(1_000_000)
-    input_ceiling = Decimal(padded_input) * input_rate * write_multiplier / million
-    output_ceiling = Decimal(output) * output_rate / million
+    input_ceiling = (
+        Decimal(padded_input) * input_rate * write_multiplier
+        / million * price_multiplier
+    )
+    output_ceiling = Decimal(output) * output_rate / million * price_multiplier
     ceiling = input_ceiling + output_ceiling
     return {
         "reported_input_tokens": reported,
@@ -944,6 +1079,7 @@ def counted_call_ceiling(request: dict, pricing: dict, token_count: dict) -> dic
         "reserved_input_tokens": padded_input,
         "maximum_output_tokens": output,
         "cache_ttl": ttl,
+        "price_multiplier": format(price_multiplier, "f"),
         "input_ceiling_usd": format(input_ceiling, "f"),
         "output_ceiling_usd": format(output_ceiling, "f"),
         "total_ceiling_usd": format(ceiling, "f"),
@@ -963,12 +1099,39 @@ def _provider_configuration_for_call(state: dict) -> dict:
     return provider
 
 
+def _batch_configuration(provider: dict) -> tuple[str, Decimal, int]:
+    batch = provider.get("batch")
+    try:
+        completion_window = batch["completion_window"]
+        multiplier = Decimal(batch["price_multiplier"])
+        request_limit = batch["pilot_request_limit"]
+    except (KeyError, TypeError, ValueError, ArithmeticError) as exc:
+        raise TriageError("OpenAI Batch configuration is invalid") from exc
+    if (
+        batch.get("enabled") is not True
+        or completion_window != "24h"
+        or not multiplier.is_finite()
+        or multiplier <= 0
+        or multiplier > 1
+        or type(request_limit) is not int
+        or request_limit != 1
+    ):
+        raise TriageError("OpenAI Batch pilot configuration is invalid")
+    return completion_window, multiplier, request_limit
+
+
 def _provider_preflight(
-    state: dict, request: dict, token_count: dict
+    state: dict,
+    request: dict,
+    token_count: dict,
+    *,
+    price_multiplier: Decimal = Decimal("1"),
 ) -> tuple[dict, dict]:
     provider = _provider_configuration_for_call(state)
     pricing = provider["pricing"]
-    forecast = counted_call_ceiling(request, pricing, token_count)
+    forecast = counted_call_ceiling(
+        request, pricing, token_count, price_multiplier=price_multiplier
+    )
     ceiling = Decimal(forecast["total_ceiling_usd"])
     remaining = Decimal(state.get("spend", {}).get("remaining_usd", "0"))
     if ceiling > remaining:
@@ -978,7 +1141,12 @@ def _provider_preflight(
     return provider, forecast
 
 
-def _debit_response(state: dict, raw: dict, provider: dict) -> tuple[dict, dict]:
+def _response_cost(
+    raw: dict,
+    provider: dict,
+    *,
+    price_multiplier: Decimal = Decimal("1"),
+) -> dict:
     usage = raw.get("usage")
     if not isinstance(usage, dict):
         raise TriageError("provider response lacks billable usage")
@@ -1001,6 +1169,10 @@ def _debit_response(state: dict, raw: dict, provider: dict) -> tuple[dict, dict]
         cache_read_cost = cached_tokens * input_rate * read_multiplier / million
         cache_write_cost = cache_write_tokens * input_rate * write_multiplier / million
         output_cost = output_tokens * output_rate / million
+        uncached_cost *= price_multiplier
+        cache_read_cost *= price_multiplier
+        cache_write_cost *= price_multiplier
+        output_cost *= price_multiplier
         total = uncached_cost + cache_read_cost + cache_write_cost + output_cost
         cost = {
             "uncached_input_usd": format(uncached_cost, "f"),
@@ -1008,12 +1180,79 @@ def _debit_response(state: dict, raw: dict, provider: dict) -> tuple[dict, dict]
             "cache_write_usd": format(cache_write_cost, "f"),
             "output_usd": format(output_cost, "f"),
             "total_usd": format(total, "f"),
+            "price_multiplier": format(price_multiplier, "f"),
             "display_usd_rounded_up": format(total.quantize(Decimal("0.01"), rounding="ROUND_CEILING"), "f"),
         }
+    except (KeyError, TypeError, ValueError, ArithmeticError) as exc:
+        raise TriageError(str(exc)) from exc
+    return cost
+
+
+def _debit_response(
+    state: dict,
+    raw: dict,
+    provider: dict,
+    *,
+    price_multiplier: Decimal = Decimal("1"),
+) -> tuple[dict, dict]:
+    cost = _response_cost(raw, provider, price_multiplier=price_multiplier)
+    try:
         updated = debit_compile_state_spend(state, cost["total_usd"])
-    except (ContractError, KeyError, TypeError, ValueError, ArithmeticError) as exc:
+    except ContractError as exc:
         raise TriageError(str(exc)) from exc
     return updated, cost
+
+
+def _reserve_batch_spend(state: dict, ceiling_usd: str) -> dict:
+    updated = copy.deepcopy(state)
+    spend = updated["spend"]
+    try:
+        ceiling = Decimal(ceiling_usd)
+        remaining = Decimal(spend["remaining_usd"])
+        reserved = Decimal(spend.get("reserved_usd", "0"))
+    except (KeyError, ArithmeticError, ValueError) as exc:
+        raise TriageError("canonical Batch reservation arithmetic is invalid") from exc
+    if not ceiling.is_finite() or ceiling <= 0 or ceiling > remaining:
+        raise TriageError("Batch ceiling exceeds remaining spend authority")
+    spend["remaining_usd"] = format(remaining - ceiling, ".7f")
+    spend["reserved_usd"] = format(reserved + ceiling, ".7f")
+    return updated
+
+
+def _settle_batch_spend(
+    state: dict, reserved_usd: str, actual_usd: str
+) -> dict:
+    updated = copy.deepcopy(state)
+    spend = updated["spend"]
+    try:
+        reserved_item = Decimal(reserved_usd)
+        actual = Decimal(actual_usd)
+        reserved_total = Decimal(spend.get("reserved_usd", "0"))
+        remaining = Decimal(spend["remaining_usd"])
+        cumulative = Decimal(spend["cumulative_spent_usd"])
+        authorized = Decimal(spend["authorized_usd"])
+    except (KeyError, ArithmeticError, ValueError) as exc:
+        raise TriageError("canonical Batch settlement arithmetic is invalid") from exc
+    if (
+        min(reserved_item, actual, reserved_total, remaining, cumulative) < 0
+        or reserved_item > reserved_total
+        or actual > reserved_item
+    ):
+        raise TriageError("Batch actual cost exceeds its reserved authority")
+    spend["reserved_usd"] = format(reserved_total - reserved_item, ".7f")
+    spend["remaining_usd"] = format(remaining + reserved_item - actual, ".7f")
+    spend["cumulative_spent_usd"] = format(cumulative + actual, ".7f")
+    if Decimal(spend["remaining_usd"]) + Decimal(spend["reserved_usd"]) + Decimal(
+        spend["cumulative_spent_usd"]
+    ) != authorized:
+        raise TriageError("Batch settlement violates canonical spend conservation")
+    spend["display_usd_rounded_up"] = format(
+        Decimal(spend["cumulative_spent_usd"]).quantize(
+            Decimal("0.01"), rounding="ROUND_CEILING"
+        ),
+        ".2f",
+    )
+    return updated
 
 
 def _validate_provider_completion(raw: dict) -> None:
@@ -1128,6 +1367,31 @@ def _promote_reviewed_proposal(
         raise
 
 
+def _role_request(
+    repo_root: Path,
+    state: dict,
+    corpus: ReconciliationCorpus,
+    *,
+    tranche_id: str,
+    role: str,
+    packet: dict,
+) -> tuple[dict, dict | None, Path | None]:
+    provider = state["reconciliation"]["provider"]
+    if role == "proposal":
+        revision = _bounded_revision_context(repo_root, tranche_id, packet, corpus)
+        request = (
+            build_revision_request(packet, revision[0], revision[1], provider)
+            if revision is not None
+            else build_proposer_request(packet, provider)
+        )
+        return request, None, None
+    if role == "review":
+        proposal, proposal_path = _latest_valid_proposal(repo_root, tranche_id)
+        validate_proposal(packet, proposal, corpus)
+        return build_reviewer_request(packet, proposal, provider), proposal, proposal_path
+    raise TriageError("provider role must be proposal or review")
+
+
 def run_provider_call(
     repo_root: Path,
     state: dict,
@@ -1146,23 +1410,12 @@ def run_provider_call(
     ledger = base_dir / "run_ledger.jsonl"
     attempt = _next_attempt(ledger, role)
     paths = _run_paths(repo_root, tranche_id, role, attempt)
-    proposal = None
-    proposal_path = None
-    if role == "proposal":
-        provider = state["reconciliation"]["provider"]
-        revision = _bounded_revision_context(repo_root, tranche_id, packet, corpus)
-        request = (
-            build_revision_request(packet, revision[0], revision[1], provider)
-            if revision is not None
-            else build_proposer_request(packet, provider)
-        )
-    elif role == "review":
-        proposal, proposal_path = _latest_valid_proposal(repo_root, tranche_id)
-        validate_proposal(packet, proposal, corpus)
-        provider = state["reconciliation"]["provider"]
-        request = build_reviewer_request(packet, proposal, provider)
-    else:
-        raise TriageError("provider role must be proposal or review")
+    if state.get("reconciliation", {}).get("pending_batch") is not None:
+        raise TriageError("a direct provider call cannot bypass a pending Batch job")
+    request, proposal, proposal_path = _role_request(
+        repo_root, state, corpus,
+        tranche_id=tranche_id, role=role, packet=packet,
+    )
     _reject_redundant_provider_request(repo_root, ledger, role, request)
     provider = _provider_configuration_for_call(state)
     if paths["packet"].exists():
@@ -1299,6 +1552,407 @@ def run_provider_call(
         "call_ceiling_usd": ceiling,
         "units_promoted": len(proposal["units"])
         if role == "review" and structured["verdict"] == "accept" else 0,
+    }
+
+
+def _decode_json_object(raw_bytes: bytes, label: str) -> dict:
+    try:
+        value = json.loads(raw_bytes)
+    except json.JSONDecodeError as exc:
+        raise TriageError(f"{label} returned invalid JSON") from exc
+    if not isinstance(value, dict):
+        raise TriageError(f"{label} response root is not an object")
+    return value
+
+
+def _batch_pending(repo_root: Path, state: dict) -> dict:
+    pending = state.get("reconciliation", {}).get("pending_batch")
+    if not isinstance(pending, dict):
+        raise TriageError("no canonical OpenAI Batch job is pending")
+    requests = pending.get("requests")
+    if not isinstance(requests, list) or len(requests) != 1:
+        raise TriageError("pending OpenAI Batch request boundary is invalid")
+    request = requests[0]
+    for owner, path_key, hash_key in (
+        (pending, "input", "input_sha256"),
+        (request, "request", "request_sha256"),
+        (request, "token_count", "token_count_sha256"),
+    ):
+        relative = owner.get(path_key)
+        expected = owner.get(hash_key)
+        path = repo_root / relative if isinstance(relative, str) else None
+        if (
+            path is None or not path.is_file() or not isinstance(expected, str)
+            or _sha256(path) != expected
+        ):
+            raise TriageError(f"pending OpenAI Batch {path_key} evidence drifted")
+    try:
+        reserved = Decimal(request["reserved_ceiling_usd"])
+        state_reserved = Decimal(state["spend"]["reserved_usd"])
+    except (KeyError, ValueError, ArithmeticError) as exc:
+        raise TriageError("pending OpenAI Batch reservation is invalid") from exc
+    if reserved <= 0 or reserved != state_reserved:
+        raise TriageError("pending OpenAI Batch reservation is invalid")
+    return pending
+
+
+def _relative(repo_root: Path, path: Path) -> str:
+    return path.relative_to(repo_root).as_posix()
+
+
+def _batch_custom_id(tranche_id: str, role: str, attempt: int) -> str:
+    return f"{tranche_id}__{role}__{attempt:03d}"
+
+
+def submit_provider_batch(
+    repo_root: Path,
+    state: dict,
+    corpus: ReconciliationCorpus,
+    store: ReconciliationStore,
+    *,
+    role: str,
+    api_key_file: Path,
+    timeout: float,
+) -> tuple[dict, dict]:
+    """Submit one unchanged semantic request through OpenAI Batch.
+
+    The pending representation is deliberately a list so the same transport can
+    later carry several independently hash-bound packets without merging them.
+    This initial release admits only the current canonical tranche.
+    """
+    if state.get("reconciliation", {}).get("pending_batch") is not None:
+        raise TriageError("an OpenAI Batch job is already pending")
+    tranche_id, prefix, selector = _target(state)
+    packet = build_packet(
+        corpus, store, tranche_id=tranche_id, msid_prefix=prefix, selector=selector
+    )
+    ledger = repo_root / RUNS / tranche_id / "run_ledger.jsonl"
+    attempt = _next_attempt(ledger, role)
+    paths = _run_paths(repo_root, tranche_id, role, attempt)
+    request, _proposal, _proposal_path = _role_request(
+        repo_root, state, corpus,
+        tranche_id=tranche_id, role=role, packet=packet,
+    )
+    _reject_redundant_provider_request(repo_root, ledger, role, request)
+    provider = _provider_configuration_for_call(state)
+    completion_window, price_multiplier, _request_limit = _batch_configuration(provider)
+    if paths["packet"].exists():
+        if json.loads(paths["packet"].read_text(encoding="utf-8")) != packet:
+            raise TriageError("current packet differs from preserved tranche packet")
+    else:
+        _write_new_json(paths["packet"], packet)
+    _write_new_json(paths["request"], request)
+    try:
+        token_count = _count_openai_request(request, api_key_file, timeout)
+    except (OSError, TimeoutError, urllib.error.URLError, TriageError) as exc:
+        _append_ledger(paths["ledger"], {
+            "event_id": f"call_{uuid.uuid4().hex}", "role": role,
+            "attempt": attempt, "transport": "batch",
+            "result": "token_count_failure", "error": str(exc),
+            "request": _relative(repo_root, paths["request"]),
+            "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
+        })
+        raise TriageError(f"provider token-count preflight failed: {exc}") from exc
+    _write_new_json(paths["token_count"], token_count)
+    provider, forecast = _provider_preflight(
+        state, request, token_count, price_multiplier=price_multiplier
+    )
+    custom_id = _batch_custom_id(tranche_id, role, attempt)
+    batch_line = {
+        "custom_id": custom_id,
+        "method": "POST",
+        "url": "/v1/responses",
+        "body": request,
+    }
+    batch_bytes = _canonical_bytes(batch_line) + b"\n"
+    _write_new_bytes(paths["batch_input"], batch_bytes)
+    reserved = forecast["total_ceiling_usd"]
+    updated = _reserve_batch_spend(state, reserved)
+    pending = {
+        "schema_version": "M050-OPENAI-BATCH-PENDING-0.1",
+        "status": "prepared",
+        "batch_id": None,
+        "input_file_id": None,
+        "completion_window": completion_window,
+        "submitted_at": None,
+        "input": _relative(repo_root, paths["batch_input"]),
+        "input_sha256": _sha256(paths["batch_input"]),
+        "upload_response": _relative(repo_root, paths["batch_upload"]),
+        "submission_response": _relative(repo_root, paths["batch_submission"]),
+        "cancellation_response": _relative(repo_root, paths["batch_cancellation"]),
+        "output": _relative(repo_root, paths["batch_output"]),
+        "requests": [{
+            "custom_id": custom_id,
+            "tranche_id": tranche_id,
+            "role": role,
+            "attempt": attempt,
+            "packet_sha256": packet["packet_sha256"],
+            "request": _relative(repo_root, paths["request"]),
+            "request_sha256": _sha256(paths["request"]),
+            "token_count": _relative(repo_root, paths["token_count"]),
+            "token_count_sha256": _sha256(paths["token_count"]),
+            "reserved_ceiling_usd": reserved,
+        }],
+    }
+    updated["reconciliation"]["pending_batch"] = pending
+    _atomic_write_json(repo_root / STATE, updated)
+
+    upload_status, upload_bytes = _upload_openai_batch_file(
+        batch_bytes, paths["batch_input"].name, api_key_file, timeout
+    )
+    _write_new_bytes(paths["batch_upload"], upload_bytes)
+    upload = _decode_json_object(upload_bytes, "OpenAI Batch file upload")
+    if upload_status != 200 or not isinstance(upload.get("id"), str):
+        raise TriageError(
+            f"OpenAI Batch file upload returned HTTP {upload_status}; reservation remains preserved"
+        )
+    pending["input_file_id"] = upload["id"]
+    pending["status"] = "file_uploaded"
+    _atomic_write_json(repo_root / STATE, updated)
+
+    submit_status, submit_bytes = _create_openai_batch(
+        upload["id"], completion_window, api_key_file, timeout
+    )
+    _write_new_bytes(paths["batch_submission"], submit_bytes)
+    submission = _decode_json_object(submit_bytes, "OpenAI Batch creation")
+    if submit_status != 200 or not isinstance(submission.get("id"), str):
+        raise TriageError(
+            f"OpenAI Batch creation returned HTTP {submit_status}; reservation remains preserved"
+        )
+    pending["batch_id"] = submission["id"]
+    pending["status"] = "submitted"
+    pending["submitted_at"] = datetime.now(timezone.utc).isoformat(timespec="microseconds")
+    _atomic_write_json(repo_root / STATE, updated)
+    _append_ledger(paths["ledger"], {
+        "event_id": f"call_{uuid.uuid4().hex}", "role": role,
+        "attempt": attempt, "transport": "batch", "result": "batch_submitted",
+        "packet_sha256": packet["packet_sha256"],
+        "request": _relative(repo_root, paths["request"]),
+        "preflight": forecast,
+        "token_count": _relative(repo_root, paths["token_count"]),
+        "token_count_sha256": _sha256(paths["token_count"]),
+        "batch_input": _relative(repo_root, paths["batch_input"]),
+        "batch_input_sha256": _sha256(paths["batch_input"]),
+        "batch_submission": _relative(repo_root, paths["batch_submission"]),
+        "batch_submission_sha256": _sha256(paths["batch_submission"]),
+        "batch_id": submission["id"],
+        "reserved_ceiling_usd": reserved,
+        "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
+    })
+    return updated, {
+        "transport": "batch", "result": "submitted",
+        "batch_id": submission["id"], "request_count": 1,
+        "reserved_ceiling_usd": reserved,
+        "remaining_unreserved_usd": updated["spend"]["remaining_usd"],
+    }
+
+
+def _batch_output_item(output_bytes: bytes, custom_id: str) -> dict | None:
+    matches = []
+    for number, line in enumerate(output_bytes.splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            item = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise TriageError(f"OpenAI Batch output line {number} is invalid JSON") from exc
+        if not isinstance(item, dict):
+            raise TriageError(f"OpenAI Batch output line {number} is not an object")
+        if item.get("custom_id") == custom_id:
+            matches.append(item)
+    if len(matches) > 1:
+        raise TriageError("OpenAI Batch output duplicates the canonical custom_id")
+    return matches[0] if matches else None
+
+
+def collect_provider_batch(
+    repo_root: Path,
+    state: dict,
+    corpus: ReconciliationCorpus,
+    store: ReconciliationStore,
+    *,
+    api_key_file: Path,
+    timeout: float,
+    known_batch: dict | None = None,
+) -> tuple[dict, dict]:
+    _provider_configuration_for_call(state)
+    pending = _batch_pending(repo_root, state)
+    batch_id = pending.get("batch_id")
+    if not isinstance(batch_id, str) or not batch_id:
+        raise TriageError("pending Batch job has no recoverable batch ID")
+    if known_batch is None:
+        status_code, status_bytes = _retrieve_openai_batch(
+            batch_id, api_key_file, timeout
+        )
+        batch = _decode_json_object(status_bytes, "OpenAI Batch retrieval")
+        if status_code != 200:
+            raise TriageError(f"OpenAI Batch retrieval returned HTTP {status_code}")
+    else:
+        batch = known_batch
+    batch_status = batch.get("status")
+    if batch_status not in BATCH_TERMINAL_STATUSES:
+        return state, {
+            "transport": "batch", "result": "pending",
+            "batch_id": batch_id, "batch_status": batch_status,
+            "request_counts": batch.get("request_counts"),
+        }
+
+    request_meta = pending["requests"][0]
+    tranche_id = request_meta["tranche_id"]
+    role = request_meta["role"]
+    attempt = request_meta["attempt"]
+    paths = _run_paths(repo_root, tranche_id, role, attempt)
+    output_file_id = batch.get("output_file_id") or batch.get("error_file_id")
+    output_bytes = b""
+    if isinstance(output_file_id, str) and output_file_id:
+        output_status, output_bytes = _retrieve_openai_file(
+            output_file_id, api_key_file, timeout
+        )
+        if output_status != 200:
+            raise TriageError(f"OpenAI Batch output retrieval returned HTTP {output_status}")
+        _write_new_bytes(paths["batch_output"], output_bytes)
+    item = _batch_output_item(output_bytes, request_meta["custom_id"])
+    if batch_status == "completed" and item is None:
+        raise TriageError(
+            "completed OpenAI Batch output omits the canonical custom_id; reservation remains preserved"
+        )
+    response = item.get("response") if isinstance(item, dict) else None
+    raw = response.get("body") if isinstance(response, dict) else None
+    http_status = response.get("status_code") if isinstance(response, dict) else None
+    provider = state["reconciliation"]["provider"]
+    _completion_window, price_multiplier, _request_limit = _batch_configuration(provider)
+    actual = "0"
+    cost = None
+    if isinstance(raw, dict) and isinstance(raw.get("usage"), dict):
+        cost = _response_cost(
+            raw, provider, price_multiplier=price_multiplier
+        )
+        actual = cost["total_usd"]
+    elif isinstance(raw, dict):
+        raise TriageError("Batch response lacks usage; reservation remains preserved")
+    updated = _settle_batch_spend(
+        state, request_meta["reserved_ceiling_usd"], actual
+    )
+    updated["reconciliation"]["pending_batch"] = None
+
+    token_fields = {
+        "token_count": request_meta["token_count"],
+        "token_count_sha256": request_meta["token_count_sha256"],
+    }
+    base_event = {
+        "event_id": f"call_{uuid.uuid4().hex}", "role": role,
+        "attempt": attempt, "transport": "batch", "batch_id": batch_id,
+        "batch_status": batch_status,
+        "request": request_meta["request"], **token_fields,
+        "batch_output": pending["output"] if output_bytes else None,
+        "batch_output_sha256": _sha256(paths["batch_output"]) if output_bytes else None,
+        "cost": cost,
+        "recorded_at": datetime.now(timezone.utc).isoformat(timespec="microseconds"),
+    }
+    if not isinstance(raw, dict):
+        _atomic_write_json(repo_root / STATE, updated)
+        _append_ledger(paths["ledger"], {
+            **base_event, "result": f"batch_{batch_status}",
+            "error": item.get("error") if isinstance(item, dict) else None,
+        })
+        return updated, {
+            "transport": "batch", "result": f"batch_{batch_status}",
+            "batch_id": batch_id, "cost_usd": actual,
+        }
+
+    _write_new_json(paths["raw"], raw)
+    packet = json.loads(paths["packet"].read_text(encoding="utf-8"))
+    proposal = proposal_path = None
+    try:
+        if http_status != 200:
+            raise TriageError(f"provider returned HTTP {http_status}")
+        _validate_provider_completion(raw)
+        structured = _extract_openai_structured_response(raw)
+        if role == "proposal":
+            validate_proposal(packet, structured, corpus)
+            result = "mechanically_valid"
+        else:
+            proposal, proposal_path = _latest_valid_proposal(repo_root, tranche_id)
+            validate_proposal(packet, proposal, corpus)
+            validate_review(packet, proposal, structured)
+            result = f"review_{structured['verdict']}"
+    except (ContractError, TriageError) as exc:
+        _atomic_write_json(repo_root / STATE, updated)
+        _append_ledger(paths["ledger"], {
+            **base_event, "result": "mechanical_failure", "error": str(exc),
+            "http_status": http_status,
+            "raw_response": _relative(repo_root, paths["raw"]),
+            "raw_response_sha256": _sha256(paths["raw"]),
+        })
+        raise TriageError(f"Batch response failed mechanical validation: {exc}") from exc
+    _write_new_json(paths["structured"], structured)
+    if role == "review" and structured["verdict"] == "accept":
+        assert proposal is not None and proposal_path is not None
+        _promote_reviewed_proposal(
+            store, packet, proposal, proposal_path=proposal_path,
+            review_path=paths["structured"], provider=provider,
+        )
+    _atomic_write_json(repo_root / STATE, updated)
+    _append_ledger(paths["ledger"], {
+        **base_event, "result": result, "http_status": http_status,
+        "packet_sha256": packet["packet_sha256"],
+        "raw_response": _relative(repo_root, paths["raw"]),
+        "raw_response_sha256": _sha256(paths["raw"]),
+        "structured_response": _relative(repo_root, paths["structured"]),
+        "structured_response_sha256": _sha256(paths["structured"]),
+    })
+    return updated, {
+        "transport": "batch", "result": result, "batch_id": batch_id,
+        "cost_usd": actual,
+        "units_promoted": len(proposal["units"])
+        if role == "review" and structured["verdict"] == "accept" else 0,
+    }
+
+
+def cancel_provider_batch(
+    repo_root: Path,
+    state: dict,
+    corpus: ReconciliationCorpus,
+    store: ReconciliationStore,
+    *,
+    api_key_file: Path,
+    timeout: float,
+) -> tuple[dict, dict]:
+    _provider_configuration_for_call(state)
+    pending = _batch_pending(repo_root, state)
+    batch_id = pending.get("batch_id")
+    if not isinstance(batch_id, str) or not batch_id:
+        reserved = pending["requests"][0]["reserved_ceiling_usd"]
+        updated = _settle_batch_spend(state, reserved, "0")
+        updated["reconciliation"]["pending_batch"] = None
+        _atomic_write_json(repo_root / STATE, updated)
+        return updated, {
+            "transport": "batch", "result": "abandoned_before_submission",
+            "refunded_reservation_usd": reserved,
+        }
+    status_code, raw_bytes = _cancel_openai_batch(batch_id, api_key_file, timeout)
+    cancellation = _decode_json_object(raw_bytes, "OpenAI Batch cancellation")
+    request_meta = pending["requests"][0]
+    paths = _run_paths(
+        repo_root, request_meta["tranche_id"], request_meta["role"],
+        request_meta["attempt"],
+    )
+    _write_new_bytes(paths["batch_cancellation"], raw_bytes)
+    if status_code != 200:
+        raise TriageError(f"OpenAI Batch cancellation returned HTTP {status_code}")
+    if cancellation.get("status") in BATCH_TERMINAL_STATUSES:
+        return collect_provider_batch(
+            repo_root, state, corpus, store,
+            api_key_file=api_key_file, timeout=timeout, known_batch=cancellation,
+        )
+    updated = copy.deepcopy(state)
+    updated["reconciliation"]["pending_batch"]["status"] = "cancellation_requested"
+    updated["reconciliation"]["pending_batch"]["observed_status"] = cancellation.get("status")
+    _atomic_write_json(repo_root / STATE, updated)
+    return updated, {
+        "transport": "batch", "result": "cancellation_requested",
+        "batch_id": batch_id, "batch_status": cancellation.get("status"),
+        "reserved_usd": request_meta["reserved_ceiling_usd"],
     }
 
 
@@ -1552,6 +2206,12 @@ def _spark_up_assessment_report(
         "provider_spend_remaining_usd": state.get("spend", {}).get(
             "remaining_usd", "0.0000000"
         ),
+        "provider_spend_reserved_usd": state.get("spend", {}).get(
+            "reserved_usd", "0.0000000"
+        ),
+        "pending_batch": copy.deepcopy(
+            state.get("reconciliation", {}).get("pending_batch")
+        ),
     }
 
 
@@ -1560,6 +2220,11 @@ def _apply_explicit_spend_refresh(state: dict, amount: str | None) -> str | None
         return None
     if state.get("reconciliation", {}).get("provider", {}).get("enabled") is not True:
         raise TriageError("provider-disabled Stage 5 cannot accept a spend refresh")
+    if (
+        state.get("reconciliation", {}).get("pending_batch") is not None
+        or Decimal(state.get("spend", {}).get("reserved_usd", "0")) != 0
+    ):
+        raise TriageError("provider spend cannot be refreshed while Batch cost is reserved")
     spend = state["spend"]
     try:
         refresh = Decimal(amount)
@@ -1721,7 +2386,10 @@ def plan_lifecycle_transition(
         result["authority"]["semantic_acceptance_authorized"] = True
         result["authority"]["repository_writes_authorized"] = True
         provider_enabled = result["reconciliation"]["provider"]["enabled"] is True
-        if provider_enabled and Decimal(result["spend"]["remaining_usd"]) <= 0:
+        available_or_reserved = Decimal(result["spend"]["remaining_usd"]) + Decimal(
+            result["spend"].get("reserved_usd", "0")
+        )
+        if provider_enabled and available_or_reserved <= 0:
             raise TriageError(
                 "provider-enabled Proceed requires explicit positive spend authority"
             )
@@ -1742,6 +2410,11 @@ def plan_lifecycle_transition(
         }
     if not active:
         return copy.deepcopy(state), {"transition": transition, "already_stopped": True}
+    pending = state.get("reconciliation", {}).get("pending_batch")
+    if isinstance(pending, dict) and pending.get("status") != "cancellation_requested":
+        raise TriageError(
+            "Stopdown must cancel the pending OpenAI Batch job before authority revocation"
+        )
     tranche_id, prefix, selector = _target(state)
     target_keys = {
         item.key for item in corpus.target_atoms(prefix, selector=selector)
@@ -1803,6 +2476,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--authorize-spend-usd")
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--provider-role", choices=("proposal", "review"))
+    parser.add_argument("--batch-action", choices=("submit", "collect", "cancel"))
     parser.add_argument("--api-key-file", type=Path)
     parser.add_argument("--timeout", type=float, default=360.0)
     args = parser.parse_args(argv)
@@ -1812,6 +2486,35 @@ def main(argv: list[str] | None = None) -> int:
         state = json.loads(state_path.read_text(encoding="utf-8"))
         corpus = ReconciliationCorpus(repo_root)
         store = ReconciliationStore(repo_root / DEFAULT_RECONCILIATIONS, corpus)
+        if args.batch_action:
+            if args.transition or args.inventory or args.apply:
+                raise TriageError("Batch action cannot be combined with lifecycle or inventory flags")
+            if args.api_key_file is None:
+                raise TriageError("Batch action requires --api-key-file")
+            if args.batch_action == "submit":
+                if args.provider_role is None:
+                    raise TriageError("Batch submission requires --provider-role")
+                _updated, summary = submit_provider_batch(
+                    repo_root, state, corpus, store,
+                    role=args.provider_role,
+                    api_key_file=args.api_key_file.resolve(),
+                    timeout=args.timeout,
+                )
+            else:
+                if args.provider_role is not None:
+                    raise TriageError("Batch collection or cancellation does not take --provider-role")
+                operation = (
+                    collect_provider_batch
+                    if args.batch_action == "collect"
+                    else cancel_provider_batch
+                )
+                _updated, summary = operation(
+                    repo_root, state, corpus, store,
+                    api_key_file=args.api_key_file.resolve(),
+                    timeout=args.timeout,
+                )
+            print(json.dumps(summary, indent=2, ensure_ascii=False))
+            return 0
         if args.provider_role:
             if args.transition or args.inventory or args.apply:
                 raise TriageError("provider call cannot be combined with lifecycle or inventory flags")

@@ -183,9 +183,9 @@ the active profile, canonical state, or the sole guard.
    Spark Up assessment publishes nothing and does not itself trigger the
    renderer or full guard.
 6. Report concisely: active phase; current target and completed/rejected
-   boundary; work and spend authority; halt conditions; prohibited transitions;
-   next possible transition; STATUS freshness; and whether local `HEAD` equals
-   `origin/main`.
+   boundary; pending Batch job if any; available and reserved spend; work and
+   spend authority; halt conditions; prohibited transitions; next possible
+   transition; STATUS freshness; and whether local `HEAD` equals `origin/main`.
 
 No separate successor packet is required. These canonical files are the handoff.
 
@@ -206,7 +206,10 @@ No separate successor packet is required. These canonical files are the handoff.
   refreshed. Stopdown disables spend activity but does not erase that balance.
   A refresh replaces the available balance with the stated amount and sets
   `authorized_usd` to cumulative spend plus that amount; it does not add the
-  stated amount to an unused balance.
+  stated amount to an unused balance. A submitted Batch request reserves its
+  complete discounted conservative ceiling: authorized spend equals cumulative
+  spend plus unreserved remaining spend plus reserved spend. Do not refresh the
+  envelope while a Batch reservation is unresolved.
 - Only one task may write the repository at a time. A successor task begins
   read-only until Asa explicitly grants a bounded repository task or
   active-profile work.
@@ -355,6 +358,21 @@ and assessment grants nothing.
   Transport, refusal, truncation, JSON, schema, coverage, grounding, semantic,
   and authorial failures remain distinct. Retry only a narrowly classified
   transient or correctable failure; a clean call is never repeated speculatively.
+- The current `Citizen.Guest` proposal and, if mechanically valid, its review
+  are the one-request OpenAI Batch transport pilot. Batch changes delivery and
+  price only: each request remains an independent existing hash-bound proposal
+  or review request and returns through the existing validator, ledger, cost,
+  and promotion path. The canonical state carries at most one pending Batch job
+  and its reserved discounted ceiling. The input JSONL, upload, submission,
+  cancellation, and output wrappers live beside the existing request/response
+  evidence; they are not a new semantic artifact family.
+- A successful pilot may support a later author-approved overnight proposal
+  wave. Such a wave may combine transport for multiple independent, coherent
+  tranches but may not combine their semantic packets. Only mechanically valid
+  proposals enter a separate review wave. Batch rejects and revisions return to
+  the existing one-at-a-time direct path. The pilot request limit remains one
+  until the Supervisor and Asa assess the completed pilot and replace that
+  limit; the Worker does not widen it automatically.
 - Cache hits never fund authority. Debit every response with known usage,
   including unusable responses. No call may exceed the remaining cumulative
   envelope under its conservative cache-miss ceiling. Checkpoint coherent
@@ -376,6 +394,14 @@ and assessment grants nothing.
   exact tranche coverage exists. STATUS rendering, the full guard, Git
   operations, synchronization, and Stopdown notification remain separate formal
   actions.
+- Batch submission reserves the complete discounted ceiling before upload.
+  Collection preserves the provider output before parse, debits known usage at
+  the configured Batch multiplier, releases the unused reservation, and clears
+  the pending job. Stopdown first requests cancellation of a submitted Batch;
+  if cancellation is still pending, it preserves the job and reservation while
+  revoking all authority. A later Spark Up assessment must identify collection
+  and cost reconciliation as the next action before new provider work. A Batch
+  prepared locally but not submitted may be abandoned and fully unreserved.
 - After execution release, the Worker operates autonomously within the tranche
   and budget. It may diagnose and correct local implementation, validate and
   review calls, maintain canonical state, make coherent checkpoints, and select

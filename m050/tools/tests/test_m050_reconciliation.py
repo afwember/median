@@ -380,6 +380,27 @@ def test_counted_preflight_prices_cache_miss_with_margin():
     assert forecast["total_ceiling_usd"] == "1.643875"
 
 
+def test_batch_preflight_applies_documented_half_price_once():
+    request = {
+        "max_output_tokens": 40000,
+        "prompt_cache_options": {"mode": "implicit", "ttl": "30m"},
+    }
+    pricing = {
+        "input_usd_per_million_tokens": "5",
+        "output_usd_per_million_tokens": "25",
+        "cache_write_multiplier": "1.25",
+    }
+    token_count = {
+        "full": {"response": {"input_tokens": 100000}},
+        "uncounted_request_bytes": 1000,
+    }
+    forecast = reconciliation.counted_call_ceiling(
+        request, pricing, token_count, price_multiplier=Decimal("0.5")
+    )
+    assert forecast["price_multiplier"] == "0.5"
+    assert forecast["total_ceiling_usd"] == "0.8219375"
+
+
 def test_token_count_preflight_uses_free_openai_endpoint(monkeypatch, tmp_path, packet):
     provider = {
         "model": "gpt-5.6-sol",
@@ -441,6 +462,211 @@ def test_openai_usage_cost_debits_uncached_cached_write_and_output():
     assert Decimal(updated["spend"]["remaining_usd"]) == (
         Decimal(state["spend"]["remaining_usd"]) - Decimal("0.00438")
     )
+
+
+def test_batch_reservation_and_settlement_conserve_authorized_spend():
+    state = _ready_state()
+    reserved = reconciliation._reserve_batch_spend(state, "0.8000000")
+    assert reserved["spend"]["reserved_usd"] == "0.8000000"
+    assert reserved["spend"]["remaining_usd"] == "1.2000000"
+    settled = reconciliation._settle_batch_spend(
+        reserved, "0.8000000", "0.3000000"
+    )
+    assert settled["spend"]["reserved_usd"] == "0.0000000"
+    assert settled["spend"]["remaining_usd"] == "1.7000000"
+    assert Decimal(settled["spend"]["cumulative_spent_usd"]) == (
+        Decimal(state["spend"]["cumulative_spent_usd"]) + Decimal("0.3000000")
+    )
+    assert Decimal(settled["spend"]["authorized_usd"]) == (
+        Decimal(settled["spend"]["cumulative_spent_usd"])
+        + Decimal(settled["spend"]["remaining_usd"])
+        + Decimal(settled["spend"]["reserved_usd"])
+    )
+
+
+def test_batch_output_is_keyed_not_order_dependent():
+    output = b"\n".join([
+        json.dumps({"custom_id": "second", "response": {"status_code": 200}}).encode(),
+        json.dumps({"custom_id": "first", "response": {"status_code": 200}}).encode(),
+    ])
+    assert reconciliation._batch_output_item(output, "first")["custom_id"] == "first"
+    assert reconciliation._batch_output_item(output, "absent") is None
+
+
+def test_batch_submission_preserves_request_and_reserves_discounted_ceiling(
+    corpus, empty_store, monkeypatch, tmp_path
+):
+    state = _ready_state()
+    target_id = state["reconciliation"]["target"]["tranche_id"]
+    active, _ = reconciliation.plan_lifecycle_transition(
+        state, corpus, empty_store, "activate-on-proceed",
+        expected_tranche_id=target_id,
+    )
+    state_path = tmp_path / reconciliation.STATE
+    state_path.parent.mkdir(parents=True)
+    state_path.write_text(json.dumps(active), encoding="utf-8")
+    monkeypatch.setattr(reconciliation, "_count_openai_request", lambda *args: {
+        "schema_version": "M050-OPENAI-TOKEN-COUNT-0.1",
+        "full_request_sha256": "a" * 64,
+        "uncounted_request_bytes": 0,
+        "full": {"http_status": 200, "response": {"input_tokens": 1000}},
+    })
+    monkeypatch.setattr(
+        reconciliation, "_upload_openai_batch_file",
+        lambda *args: (200, json.dumps({"id": "file_batch_test"}).encode()),
+    )
+    monkeypatch.setattr(
+        reconciliation, "_create_openai_batch",
+        lambda *args: (200, json.dumps({"id": "batch_test", "status": "validating"}).encode()),
+    )
+    updated, report = reconciliation.submit_provider_batch(
+        tmp_path, active, corpus, empty_store,
+        role="proposal", api_key_file=tmp_path / "unused", timeout=1,
+    )
+    pending = updated["reconciliation"]["pending_batch"]
+    assert report["batch_id"] == "batch_test"
+    assert pending["status"] == "submitted"
+    assert pending["input_file_id"] == "file_batch_test"
+    assert Decimal(updated["spend"]["reserved_usd"]) > 0
+    assert Decimal(updated["spend"]["remaining_usd"]) < Decimal(
+        active["spend"]["remaining_usd"]
+    )
+    line = json.loads((tmp_path / pending["input"]).read_text(encoding="utf-8"))
+    assert line["method"] == "POST"
+    assert line["url"] == "/v1/responses"
+    assert line["body"] == json.loads(
+        (tmp_path / pending["requests"][0]["request"]).read_text(encoding="utf-8")
+    )
+
+
+def test_batch_collection_validates_existing_proposal_path_and_settles_cost(
+    corpus, empty_store, monkeypatch, tmp_path
+):
+    state = _ready_state()
+    target_id = state["reconciliation"]["target"]["tranche_id"]
+    active, _ = reconciliation.plan_lifecycle_transition(
+        state, corpus, empty_store, "activate-on-proceed",
+        expected_tranche_id=target_id,
+    )
+    tranche_id, prefix, selector = reconciliation._target(active)
+    packet = reconciliation.build_packet(
+        corpus, empty_store, tranche_id=tranche_id,
+        msid_prefix=prefix, selector=selector,
+    )
+    proposal = _proposal(packet)
+    proposal["units"][0]["primary_msid"] = "Citizen.Guest"
+    reconciliation.validate_proposal(packet, proposal, corpus)
+    paths = reconciliation._run_paths(tmp_path, tranche_id, "proposal", 1)
+    reconciliation._write_new_json(paths["packet"], packet)
+    reconciliation._write_new_json(paths["request"], {"model": "gpt-5.6-sol"})
+    reconciliation._write_new_json(paths["token_count"], {
+        "full": {"response": {"input_tokens": 1000}}
+    })
+    reconciliation._write_new_bytes(paths["batch_input"], b"{}\n")
+    custom_id = reconciliation._batch_custom_id(tranche_id, "proposal", 1)
+    active = reconciliation._reserve_batch_spend(active, "0.5000000")
+    active["reconciliation"]["pending_batch"] = {
+        "schema_version": "M050-OPENAI-BATCH-PENDING-0.1",
+        "status": "submitted", "batch_id": "batch_test",
+        "input_file_id": "file_input", "completion_window": "24h",
+        "submitted_at": "2026-09-11T00:00:00+00:00",
+        "input": reconciliation._relative(tmp_path, paths["batch_input"]),
+        "input_sha256": reconciliation._sha256(paths["batch_input"]),
+        "upload_response": reconciliation._relative(tmp_path, paths["batch_upload"]),
+        "submission_response": reconciliation._relative(tmp_path, paths["batch_submission"]),
+        "cancellation_response": reconciliation._relative(tmp_path, paths["batch_cancellation"]),
+        "output": reconciliation._relative(tmp_path, paths["batch_output"]),
+        "requests": [{
+            "custom_id": custom_id, "tranche_id": tranche_id,
+            "role": "proposal", "attempt": 1,
+            "packet_sha256": packet["packet_sha256"],
+            "request": reconciliation._relative(tmp_path, paths["request"]),
+            "request_sha256": reconciliation._sha256(paths["request"]),
+            "token_count": reconciliation._relative(tmp_path, paths["token_count"]),
+            "token_count_sha256": reconciliation._sha256(paths["token_count"]),
+            "reserved_ceiling_usd": "0.5000000",
+        }],
+    }
+    state_path = tmp_path / reconciliation.STATE
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    state_path.write_text(json.dumps(active), encoding="utf-8")
+    raw = {
+        "object": "response", "status": "completed",
+        "usage": {
+            "input_tokens": 1000,
+            "input_tokens_details": {"cached_tokens": 0, "cache_write_tokens": 0},
+            "output_tokens": 100,
+        },
+        "output": [{"type": "message", "content": [{
+            "type": "output_text", "text": json.dumps(proposal)
+        }]}],
+    }
+    output = json.dumps({
+        "custom_id": custom_id,
+        "response": {"status_code": 200, "body": raw},
+        "error": None,
+    }).encode() + b"\n"
+    monkeypatch.setattr(
+        reconciliation, "_retrieve_openai_batch",
+        lambda *args: (200, json.dumps({
+            "id": "batch_test", "status": "completed",
+            "output_file_id": "file_output",
+        }).encode()),
+    )
+    monkeypatch.setattr(
+        reconciliation, "_retrieve_openai_file", lambda *args: (200, output)
+    )
+    updated, report = reconciliation.collect_provider_batch(
+        tmp_path, active, corpus, empty_store,
+        api_key_file=tmp_path / "unused", timeout=1,
+    )
+    assert report["result"] == "mechanically_valid"
+    assert updated["reconciliation"]["pending_batch"] is None
+    assert updated["spend"]["reserved_usd"] == "0.0000000"
+    assert Decimal(report["cost_usd"]) == Decimal("0.003")
+    assert json.loads(paths["structured"].read_text(encoding="utf-8")) == proposal
+
+
+def test_batch_cancel_before_external_submission_refunds_reservation(
+    corpus, empty_store, tmp_path
+):
+    state = _ready_state()
+    target_id = state["reconciliation"]["target"]["tranche_id"]
+    active, _ = reconciliation.plan_lifecycle_transition(
+        state, corpus, empty_store, "activate-on-proceed",
+        expected_tranche_id=target_id,
+    )
+    paths = reconciliation._run_paths(tmp_path, target_id, "proposal", 1)
+    for key, value in (
+        ("batch_input", b"{}\n"),
+        ("request", b"{}\n"),
+        ("token_count", b"{}\n"),
+    ):
+        reconciliation._write_new_bytes(paths[key], value)
+    active = reconciliation._reserve_batch_spend(active, "0.5000000")
+    active["reconciliation"]["pending_batch"] = {
+        "status": "prepared", "batch_id": None,
+        "requests": [{
+            "reserved_ceiling_usd": "0.5000000",
+            "request": reconciliation._relative(tmp_path, paths["request"]),
+            "request_sha256": reconciliation._sha256(paths["request"]),
+            "token_count": reconciliation._relative(tmp_path, paths["token_count"]),
+            "token_count_sha256": reconciliation._sha256(paths["token_count"]),
+        }],
+        "input": reconciliation._relative(tmp_path, paths["batch_input"]),
+        "input_sha256": reconciliation._sha256(paths["batch_input"]),
+    }
+    state_path = tmp_path / reconciliation.STATE
+    state_path.parent.mkdir(parents=True, exist_ok=True)
+    state_path.write_text(json.dumps(active), encoding="utf-8")
+    updated, report = reconciliation.cancel_provider_batch(
+        tmp_path, active, corpus, empty_store,
+        api_key_file=tmp_path / "unused", timeout=1,
+    )
+    assert report["result"] == "abandoned_before_submission"
+    assert updated["reconciliation"]["pending_batch"] is None
+    assert updated["spend"]["reserved_usd"] == "0.0000000"
+    assert updated["spend"]["remaining_usd"] == "2.0000000"
 
 
 def test_run_ledger_is_append_only_and_hash_chained(tmp_path):
@@ -674,6 +900,28 @@ def test_stopdown_interrupts_incomplete_tranche_without_marking_completion(
     ]
 
 
+def test_stopdown_requires_pending_batch_cancellation(corpus, empty_store):
+    state = _ready_state()
+    target_id = state["reconciliation"]["target"]["tranche_id"]
+    active, _ = reconciliation.plan_lifecycle_transition(
+        state, corpus, empty_store, "activate-on-proceed",
+        expected_tranche_id=target_id,
+    )
+    active["reconciliation"]["pending_batch"] = {"status": "submitted"}
+    active["spend"]["reserved_usd"] = "0.5000000"
+    active["spend"]["remaining_usd"] = "1.5000000"
+    with pytest.raises(reconciliation.TriageError, match="cancel the pending"):
+        reconciliation.plan_lifecycle_transition(
+            active, corpus, empty_store, "prepare-stopdown"
+        )
+    active["reconciliation"]["pending_batch"]["status"] = "cancellation_requested"
+    stopped, _ = reconciliation.plan_lifecycle_transition(
+        active, corpus, empty_store, "prepare-stopdown"
+    )
+    assert stopped["spend"]["reserved_usd"] == "0.5000000"
+    assert stopped["reconciliation"]["pending_batch"]["status"] == "cancellation_requested"
+
+
 def test_stopdown_is_safe_and_idempotent_when_already_stopped(corpus, empty_store):
     state = _ready_state()
     stopped, report = reconciliation.plan_lifecycle_transition(
@@ -715,6 +963,15 @@ def test_explicit_spend_refresh_replaces_unused_balance():
     assert state["spend"]["authorized_usd"] == "57.2500000"
     assert state["spend"]["cumulative_spent_usd"] == "53.2500000"
     assert state["spend"]["remaining_usd"] == "4.0000000"
+
+
+def test_explicit_spend_refresh_rejects_pending_batch_reservation():
+    state = _ready_state()
+    state["spend"]["reserved_usd"] = "0.2500000"
+    state["spend"]["remaining_usd"] = "1.7500000"
+    state["reconciliation"]["pending_batch"] = {"status": "submitted"}
+    with pytest.raises(reconciliation.TriageError, match="Batch cost is reserved"):
+        reconciliation._apply_explicit_spend_refresh(state, "5")
 
 
 def test_stopdown_marks_completion_only_with_exact_target_coverage(corpus):

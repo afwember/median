@@ -34,14 +34,21 @@ def test_stage_5_provider_and_manual_spend_window_are_bound():
     assert provider["reasoning_effort"] == "medium"
     assert provider["maximum_output_tokens"] == {"proposal": 36000, "review": 8000}
     assert provider["cache_ttl"] == "30m"
+    assert provider["batch"] == {
+        "enabled": True,
+        "completion_window": "24h",
+        "price_multiplier": "0.5",
+        "pilot_request_limit": 1,
+    }
     refresh_window = Decimal(state["spend"]["refresh_window_usd"])
     remaining = Decimal(state["spend"]["remaining_usd"])
+    reserved = Decimal(state["spend"]["reserved_usd"])
     if state["spend"]["active"]:
         assert refresh_window > Decimal("0")
     assert state["spend"]["active"] is (
         state["execution_state"] == "RECONCILIATION_ACTIVE"
     )
-    assert Decimal("0") <= remaining <= refresh_window
+    assert Decimal("0") <= remaining + reserved <= refresh_window
 
 
 def test_stage_5_lifecycle_rejects_provider_authority_while_disabled(monkeypatch):

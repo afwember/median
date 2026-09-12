@@ -346,6 +346,7 @@ def validate_spend_and_status(
         authorized = Decimal(state_spend.get("authorized_usd", ""))
         cumulative = Decimal(state_spend.get("cumulative_spent_usd", ""))
         remaining = Decimal(state_spend.get("remaining_usd", ""))
+        reserved = Decimal(state_spend.get("reserved_usd", ""))
         rounded = cumulative.quantize(Decimal("0.01"), rounding=ROUND_CEILING)
     except Exception:
         errors.append("canonical cumulative budget is not decimal")
@@ -358,8 +359,9 @@ def validate_spend_and_status(
             or cumulative < 0
             or authorized < 0
             or remaining < 0
-            or authorized - cumulative != remaining
-            or remaining > refresh_window
+            or reserved < 0
+            or authorized - cumulative != remaining + reserved
+            or remaining + reserved > refresh_window
         ):
             errors.append("canonical cumulative budget arithmetic is inconsistent")
         if state_spend.get("display_usd_rounded_up") != f"{rounded:.2f}":
@@ -412,7 +414,7 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
         "input_vocabulary_record", "input_vocabulary_sha256", "input_triage_sha256",
         "input_rewrite_sha256", "reconciliation_record",
         "reconciliation_schema_version", "input_atom_count", "input_source_count",
-        "target", "completed_tranche_ids", "provider",
+        "target", "completed_tranche_ids", "provider", "pending_batch",
     }
     if set(reconciliation) != required_reconciliation_keys:
         errors.append("canonical Stage 5 binding shape drifted")
@@ -451,10 +453,85 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
     ):
         errors.append("canonical Stage 5 completed-tranche boundary is invalid")
 
+    pending = reconciliation.get("pending_batch")
+    if pending is not None:
+        required_pending_keys = {
+            "schema_version", "status", "batch_id", "input_file_id",
+            "completion_window", "submitted_at", "input", "input_sha256",
+            "upload_response", "submission_response", "cancellation_response",
+            "output", "requests",
+        }
+        if not isinstance(pending, dict) or not required_pending_keys <= set(pending):
+            errors.append("canonical pending Batch shape is invalid")
+        else:
+            requests = pending.get("requests")
+            if (
+                pending.get("schema_version") != "M050-OPENAI-BATCH-PENDING-0.1"
+                or pending.get("status") not in {
+                    "prepared", "file_uploaded", "submitted", "cancellation_requested"
+                }
+                or pending.get("completion_window") != "24h"
+                or not isinstance(requests, list)
+                or len(requests) != 1
+            ):
+                errors.append("canonical pending Batch binding is invalid")
+            else:
+                pending_status = pending.get("status")
+                batch_id = pending.get("batch_id")
+                input_file_id = pending.get("input_file_id")
+                if (
+                    (pending_status == "prepared" and (
+                        batch_id is not None or input_file_id is not None
+                    ))
+                    or (pending_status == "file_uploaded" and (
+                        batch_id is not None or not isinstance(input_file_id, str)
+                    ))
+                    or (pending_status in {"submitted", "cancellation_requested"} and (
+                        not isinstance(batch_id, str) or not isinstance(input_file_id, str)
+                    ))
+                ):
+                    errors.append("canonical pending Batch external binding is invalid")
+                request = requests[0]
+                try:
+                    reserved = Decimal(request.get("reserved_ceiling_usd", ""))
+                    state_reserved = Decimal(state.get("spend", {}).get("reserved_usd", ""))
+                except Exception:
+                    errors.append("canonical pending Batch reservation is invalid")
+                else:
+                    if reserved <= 0 or reserved != state_reserved:
+                        errors.append("canonical pending Batch reservation is invalid")
+                for path_key, hash_key in (
+                    ("input", "input_sha256"),
+                    ("request", "request_sha256"),
+                    ("token_count", "token_count_sha256"),
+                ):
+                    owner = pending if path_key == "input" else request
+                    relative = owner.get(path_key)
+                    claimed = owner.get(hash_key)
+                    target_path = ROOT / relative if isinstance(relative, str) else None
+                    if (
+                        target_path is None or not target_path.is_file()
+                        or not isinstance(claimed, str)
+                        or sha256_file(target_path) != claimed
+                    ):
+                        errors.append(f"canonical pending Batch evidence drifted: {path_key}")
+            if not active and pending.get("status") != "cancellation_requested":
+                errors.append("stopped Stage 5 retains an uncancelled Batch job")
+    else:
+        try:
+            reserved_without_batch = Decimal(
+                state.get("spend", {}).get("reserved_usd", "")
+            )
+        except Exception:
+            pass  # validate_spend_and_status reports malformed spend.
+        else:
+            if reserved_without_batch != 0:
+                errors.append("canonical spend is reserved without a pending Batch job")
+
     provider = reconciliation.get("provider")
     required_provider_keys = {
         "enabled", "name", "model", "reasoning_effort", "cache_ttl",
-        "maximum_output_tokens", "pricing", "proposal_review_required",
+        "maximum_output_tokens", "pricing", "batch", "proposal_review_required",
     }
     provider_enabled = isinstance(provider, dict) and provider.get("enabled") is True
     if not isinstance(provider, dict) or set(provider) != required_provider_keys:
@@ -462,6 +539,7 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
     elif provider_enabled:
         output_limits = provider.get("maximum_output_tokens")
         pricing = provider.get("pricing")
+        batch = provider.get("batch")
         required_pricing = {
             "input_usd_per_million_tokens", "output_usd_per_million_tokens",
             "cache_read_multiplier", "cache_write_multiplier",
@@ -483,6 +561,12 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
             or not isinstance(pricing, dict)
             or set(pricing) != required_pricing
             or pricing != expected_pricing
+            or batch != {
+                "enabled": True,
+                "completion_window": "24h",
+                "price_multiplier": "0.5",
+                "pilot_request_limit": 1,
+            }
             or provider.get("proposal_review_required") is not True
         ):
             errors.append("enabled Stage 5 provider configuration is invalid")
@@ -502,6 +586,7 @@ def validate_reconciliation_profile(errors: list[str]) -> None:
         or provider.get("model") is not None
         or provider.get("maximum_output_tokens") is not None
         or provider.get("pricing") is not None
+        or provider.get("batch") is not None
         or provider.get("proposal_review_required") is not True
     ):
         errors.append("disabled Stage 5 provider configuration carries call capability")
@@ -731,7 +816,8 @@ def main() -> int:
         )
     print(
         f"- spend: ${spend.get('cumulative_spent_usd')} exact; "
-        f"${spend.get('remaining_usd')} remaining; "
+        f"${spend.get('remaining_usd')} available; "
+        f"${spend.get('reserved_usd')} Batch-reserved; "
         f"${spend.get('display_usd_rounded_up')} display"
     )
     print(f"- JSON integrity: {json_count} JSON files and {jsonl_count} JSONL files")

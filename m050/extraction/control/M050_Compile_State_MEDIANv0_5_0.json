@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-1.0",
   "status": "RECONCILIATION_READY",
-  "updated": "2026-09-11T21:24:42-04:00",
+  "updated": "2026-09-11T23:19:45-04:00",
   "execution_state": "RECONCILIATION_READY",
   "corpus": {
     "registered_sources": 24,
@@ -84,6 +84,7 @@
       "msid_prefix": "Citizen.Guest",
       "selector": "exact"
     },
+    "pending_batch": null,
     "completed_tranche_ids": [
       "away-crossing-pilot",
       "away-crossing-squirrel-002",
@@ -106,6 +107,12 @@
         "cache_read_multiplier": "0.1",
         "cache_write_multiplier": "1.25"
       },
+      "batch": {
+        "enabled": true,
+        "completion_window": "24h",
+        "price_multiplier": "0.5",
+        "pilot_request_limit": 1
+      },
       "proposal_review_required": true
     }
   },
@@ -115,6 +122,7 @@
     "authorized_usd": "63.0456896",
     "cumulative_spent_usd": "60.8831684",
     "remaining_usd": "2.1625212",
+    "reserved_usd": "0.0000000",
     "display_usd_rounded_up": "60.89",
     "external_reconciliation_component_usd": "10.8188857",
     "external_reconciliation_basis": "Anthropic usage analytics total of $49.1300105 less the prior canonical cumulative spend of $38.3111248; imported at author direction after pre-reconciliation atomic extraction completion",
@@ -140,7 +148,7 @@
     "progress": "170 / 5,382 atoms assigned to canonical semantic units",
     "now": "Citizen.Guest reconciliation is interrupted with 16 target atoms unaccounted; the Compile Worker is Stopped Down",
     "next": "Spark Up may regrant the same preserved tranche; Proceed is still required before execution",
-    "updated_human": "September 11, 2026 at 9:24:42 PM EDT"
+    "updated_human": "September 11, 2026 at 11:19:45 PM EDT"
   },
   "next_possible_transition": "Tranche citizen-guest-005 is interrupted with 16 target atoms unaccounted; Spark Up may regrant only this preserved boundary."
 }

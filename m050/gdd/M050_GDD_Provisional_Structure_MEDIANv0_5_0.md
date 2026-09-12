@@ -990,6 +990,97 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Resident Affordances able to change how a particular threat is understood or
   received without replacing Caretaker Capacity
 
+#### 9.2.3 Watchkeeper
+
+- Watchkeeper carrying the singular civic responsibility of noticing pressure
+  early enough for the Colony to respond deliberately
+- Every available Citizen assigned Watchkeeper contributing one equal civic
+  share, without limiting the Role itself to one Citizen
+- Watchkeeper governing warning and Telegraph rather than generalized defense
+
+##### Watchpost
+
+- **Watchpost** as Watchkeeper's sole Practice
+- A completed usable Watchpost contributing incremental Watchkeeper Capacity
+  even without a Citizen currently sustaining it
+- Watchpost's contribution representing preserved sightlines and listening
+  lines, known approaches, warning markers, protected observation, and
+  established communication into inhabited Home rather than autonomous
+  surveillance
+- Watchkeeper Citizens sustaining Watchpost adding their civic shares to
+  Watchkeeper Readiness
+- Watchpost able to contribute Readiness while supporting an active Project,
+  with Citizens rather than infrastructure making the commitment
+- Edges, high lines, listening points, routes, and approaches remaining physical
+  circumstances of Watchpost rather than additional Practices
+- Watchkeeper able to perform basic watch before Watchpost exists, making
+  Watchpost an expansion that requires no founding exemption
+
+##### Standing responsibility
+
+- Watchkeeper Readiness expressing whether the Colony receives useful warning
+  before pressure becomes consequence
+- Ordinary watch attending settlement approaches and boundaries, flood signs
+  and changing water, human activity, predator movement, route obstruction,
+  weather Telegraph, and unusual sound, vibration, scent, or absence
+- Adequate Watchkeeper Readiness producing earlier, clearer, and
+  better-localized Telegraph; allowing ordinary pressure to be absorbed; and
+  improving the circumstances in which a consequential response begins
+- Adequate Readiness not guaranteeing that nothing happens or displaying exact
+  probabilities
+- Warning remaining meaningful only when it gives the Colony time or
+  information with which to choose
+
+##### Citizen choice
+
+- A Watchkeeper Citizen choosing whether to sustain Watchpost, answer a
+  temporary need through DWELL or MEET, or commit their civic share to an active
+  Project
+- A Watchkeeper committed to a Project withdrawing that share from ordinary
+  Watchkeeper Readiness
+- Several Watchkeepers able to divide present effort between continuous warning
+  and persistent improvement without creating per-edge staffing
+- Focused observation, forecast preparation, and threat survey remaining
+  temporary civic commitments rather than Projects unless they establish a
+  persistent result
+
+##### Watchkeeper Projects
+
+- Watchkeeper Projects making a defined warning fact newly true rather than
+  manufacturing observation work
+- Establishing or adapting Watchpost; extending useful warning to newly
+  inhabited ground; creating a lasting signal or communication line; restoring
+  a lost warning connection; or adapting warning infrastructure to a recurring
+  environmental pressure
+- Watchkeeper having no compulsory repeatable Project once the Colony's warning
+  posture is adequate
+- Workshop and Builder involvement able to support physical work without
+  transferring the Project's principal warning purpose away from Watchkeeper
+
+##### Watchkeeper vulnerability
+
+- Insufficient Watchkeeper Readiness making warning late, incomplete, or badly
+  localized rather than directly causing damage
+- Characteristic pressure including predator arrival, flood warning, human
+  work, route closure, and dangerous weather
+- Shortfall reducing preparation, narrowing available response, or allowing a
+  threat to reach inhabited ground before the Colony understands it
+- MEET locating the resulting pressure in the actual Place, route, household,
+  Practice, or Citizen at risk
+- Watchkeeper shortfall never authorizing catastrophic loss to occur unseen
+  while the player's attention is Away
+
+##### Boundaries
+
+- Watchkeeper not becoming a combat or guard class, tactical defense unit,
+  prediction engine, exact event-probability display, universal surveillance
+  system, per-edge worker assignment, or repeatable scouting chore
+- Watchkeeper warning of danger without automatically preventing it or owning
+  the Colony's response
+- Resident Affordances such as Night Sky-watch or Boundary Deterrence able to
+  provide a distinctive warning or response without replacing ordinary
+  Watchkeeper Capacity
+
 ### 9.3 Practices and shared civic life
 
 - Each important Practice receiving one canonical definition after the Roles

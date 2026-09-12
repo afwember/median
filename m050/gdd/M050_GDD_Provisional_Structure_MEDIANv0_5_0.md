@@ -897,18 +897,6 @@ shared Practice does not appear to belong to the first Role that uses it.
 - A restoration Project following only when a persistent physical result
   genuinely remains unfinished
 
-##### Species expression
-
-- Mouse Builders using **JOIN** to make rooms, chambers, and passages one
-  protected continuity
-- Rabbit Builders preserving **GATHER** through the relationship between
-  sheltered households, mutually visible common ground, access, and nearby
-  refuge
-- Squirrel Builders using **CONNECT** to establish and reinforce routes,
-  anchors, alternatives, and protection against isolation
-- Equal Builder Capacity across the Core civilizations, with species changing
-  the physical meaning of sound construction rather than its numeric worth
-
 ##### Boundaries
 
 - Builder not becoming a personal construction statistic, superior class of
@@ -992,17 +980,6 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Caretaker shortfall not inflicting automatic daily harm upon named Citizens
 - Consequential shortfall becoming situated through MEET
 
-##### Species expression
-
-- Mouse Caretaking joining protected domestic spaces with nearby pantry rooms
-  and warm sheltered Hearth ground
-- Rabbit Caretaking distributing provisions among households while maintaining
-  a communal reserve near shared ground, with Hearth remaining quiet but
-  socially connected
-- Squirrel Caretaking using redundant caches, reliable routes, and distributed
-  access so that one broken connection does not isolate provisions or vulnerable
-  Citizens
-
 ##### Boundaries
 
 - Caretaker not becoming a generic domestic worker, anonymous food-production
@@ -1034,10 +1011,16 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Practice support, Citizen choice, material commitment, and one-Place-per-
   Project concurrency
 
-### 9.5 Species-specific spatial expression
+### 9.5 Places and spatial expression
 
-- **JOIN**, **GATHER**, and **CONNECT** shaping how the same Practices inhabit
-  physical ground without creating parallel species-specific building systems
+- Species expression belonging to the physical arrangement of each Place rather
+  than altering the Role or Practice associated with it
+- **JOIN**, **GATHER**, and **CONNECT** shaping how a Place inhabits and relates
+  to surrounding physical ground while the Practice and its civic function
+  remain unchanged
+- The same Practice therefore able to receive different spatial expression
+  without creating parallel species-specific Role, Practice, Capacity, or
+  building systems
 
 ## 10. The daily life of the Colony
 

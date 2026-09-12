@@ -255,7 +255,100 @@ additional descriptions of the player experience.
 | Away | Crossing | **RISK** | Commit bodies, routes, burdens, and timing to immediate danger. |
 | Home or Away | Encounter | **MEET** | Answer a bounded consequential situation through choice and aftermath. |
 
-### 4.5 Encounter and the threshold of attention
+### 4.5 The Colony Register — DWELL
+
+- The Colony Register as the primary form of Home play, attending to the Colony
+  as a collective body
+- DWELL engaging the player in understanding, building, arranging, and
+  sustaining collective life
+- Places, Practices, Roles, Projects, Resources, Readiness, and situated
+  conditions forming its principal working material
+- Named Citizens remaining visible and individually accounted for while being
+  resolved as equal civic commitments rather than personal capability profiles
+- An elevated or sectional operational view making the Colony's relationships
+  and current posture legible without defining the Register by its camera
+- Routine information remaining native to DWELL rather than seizing attention
+  through a separate scene
+- Sustained functioning in DWELL establishing or restoring Quiet Equilibrium
+  and opening the potential for EMBODY
+- EMBODY becoming available because the Colony can release attention from
+  urgent stewardship rather than triggering automatically or functioning as a
+  reward currency
+- A bounded consequential situation promoting attention into MEET, while
+  Launch carries named Citizens from Home into Away
+- Homecoming returning material, bodily, relational, civic, and remembered
+  consequences to the Colony Register
+- DWELL as stewardship rather than factory maximization or perpetual crisis
+  prevention
+- Detailed Home systems deferred to Part III
+
+### 4.6 The Field Register — TRAVEL
+
+- The Field Register as the primary form of Away movement through extended
+  territory
+- TRAVEL carrying a particular party of named Citizens through Reaches,
+  Margins, routes, Nodes, and known or unknown conditions
+- Distance, route, time, load, shelter, knowledge, and the changing condition
+  of the party and world as its principal working material
+- The party never becoming an abstract expedition marker; the same Citizens
+  who left Home remain physically and historically present
+- A characteristic presentation following the party through terrain at animal
+  scale while keeping the route ahead, available shelter, and carried burden
+  legible
+- Traversal, observation, ordinary discovery, and changing environmental
+  information remaining native to the Field without demanding a separate scene
+- A Node or Presence entering MEET only when it becomes a bounded consequential
+  situation requiring focused choice
+- Reaching a Roadway threshold moving the party into RISK, with a completed
+  Crossing returning it to the continuous Field on the other side
+- Return using the same geography and accounting for elapsed time, changed
+  conditions, injuries, companions, and Cargo rather than teleporting the
+  outcome Home
+- Field play as neither a mission-selection map, generic open world, tactical
+  combat layer, nor stream of compulsory event cards
+- Detailed movement, time, route knowledge, Conditions, Cargo, and return
+  procedures deferred to the later Away chapters
+
+### 4.7 The Crossing Register — RISK
+
+- The Crossing Register as the concentrated Away threshold where human-scale
+  traffic becomes immediate bodily danger
+- RISK belonging specifically to Crossing rather than serving as a universal
+  resolution system for every dangerous action
+- Uniquely among the five Registers, Crossing changing its fundamental play
+  experience according to Core Species rather than merely modifying odds,
+  speed, or presentation
+- **Crossing examining animal biology through the lens of movement under
+  hazard:** each Core Species confronting the same traffic simulation through
+  its own body, perception, and locomotion
+
+| Core Species | Crossing experience |
+|---|---|
+| **Rabbit** | Read the broad traffic pattern, choose an opening, and commit to one complete sprint. |
+| **Mouse** | Read pavement-scale terrain and link meaningful waypoints into one continuous scurry. |
+| **Squirrel** | Plot a flowing trajectory through moving traffic with limited planned redirection. |
+
+- The three experiences retaining a common contour: **Plan → Commit →
+  Continuous Run → Resolve**
+- After commitment, the party executing the Crossing continuously, without the
+  Roadway pausing for turns or repeated strategic revision
+- The party following one global plan and receiving a global passage result,
+  while bodily adversity may attach to particular Citizens
+- Day Band, traffic condition, River Spume, weather, party composition, carried
+  burden, and accumulated Conditions entering RISK from the shared world
+- A closer camera, heightened sound, altered pacing, and denser information
+  expressing a change of attention rather than entry into a disconnected
+  minigame
+- A completed Crossing returning the party to the Field on the other side,
+  while a sufficiently consequential result may instead open MEET
+- Crossing outcomes remaining attached to the party through subsequent TRAVEL,
+  the return Crossing, and Homecoming
+- RISK as neither an arcade road-crossing game nor a turn-based tactical
+  Encounter
+- Detailed planning and resolution rules deferred to the dedicated Crossing
+  chapters
+
+### 4.8 The Encounter Register — MEET
 
 - MEET as cross-modal because consequential situations arise both Home and Away
 - Promotion into Encounter when a situation requires focused choice, visible
@@ -263,7 +356,31 @@ additional descriptions of the player experience.
 - A closer camera or illustrated scene not sufficient to create an Encounter
 - Not every event requiring promotion into MEET
 
-### 4.6 Transitions without fragmentation
+### 4.9 The Embodiment Register — EMBODY
+
+- The Embodiment Register as MEDIAN's second Home Register and principal
+  positive destination
+- EMBODY as optional and Home-only, becoming available through Quiet
+  Equilibrium
+- A temporary descent from Colony-scale stewardship into the lived physical
+  scale of a present and available Citizen
+- Bounded moments of activity, motion, repose, relationship, play, and sensory
+  attention making sanctuary materially felt
+- A closer and more intimate presentation expressing animal-scale Presence
+  without making camera proximity sufficient to create EMBODY
+- No required failure state, punitive pressure, or exclusive economic output
+- EMBODY as neither a general close-camera mode, Away traversal layer,
+  trauma-clearing minigame, nor additional production channel
+- Consequential MEETs not occurring inside EMBODY; urgent situations end
+  eligibility and return attention to the appropriate Register
+- EMBODY experiences able to deepen attachment or enter memory without every
+  ordinary moment requiring instrumental justification
+- EMBODY recurring whenever its conditions are met rather than serving as a
+  terminal reward or post-expedition epilogue
+- Detailed experience families, species expression, and eligibility rules
+  deferred to Part III
+
+### 4.10 Transitions without fragmentation
 
 - Transitions as emotional and attentional beats rather than neutral loading
   screens
@@ -272,7 +389,7 @@ additional descriptions of the player experience.
 - Manifestations translating interface and camera while preserving dramatic
   function
 
-### 4.7 The Home–Away–Return cycle
+### 4.11 The Home–Away–Return cycle
 
 - Home → Launch → Away [RISK / TRAVEL / MEET] → Return → Homecoming → Home
 - A dramatic circuit rather than a mandatory screen sequence

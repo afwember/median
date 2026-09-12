@@ -1,0 +1,10 @@
+{
+  "defects": [
+    "U002 conflates a pre-dedicated-design-pass non-goal with a continuing acceptance test and omits the former’s temporal condition; the packet already contains the dedicated Guest design pass, so applicability must be resolved before asking only about MSID ownership."
+  ],
+  "packet_id": "packet_citizen-guest-005",
+  "packet_sha256": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+  "proposal_sha256": "2928c3ec1e6bc8045939b8c81f42258df86b91bcee630a161939a8cf4b60cc8b",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "revise"
+}

@@ -1,0 +1,249 @@
+{
+  "id": "resp_02cbf8d8266d660c016aa54f41114087d2ba4cdcd41782f3f5",
+  "object": "response",
+  "created_at": 1789218625,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789218649,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 36000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_02cbf8d8266d660c016aa54f4397dc87d2b80fa0c134ba307d",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpU9ana58tLz9rvttUGGe2MtvrmBxJFAdc3cJITvI5OJGZ5gkGMK4YxQ2DJVpK3Fwr_6bGKClWUwW9V8Ks4Cbpl2Q_YsspQNYCpHZGPoQ7_gshbLkG2XRsbtjuQZYxb4Ee156_n1nVsSsdGWagK1gxzHP5wvRspz3wKxhVHHLLQ_2QJLg_D3LzimU9RLo-l9RlKt3Eh-NWQwVMeIpmyvaRlyDmGIKEtlKItqoOO0CvL-wSQdNSJ_qQ0ZBmxWvF5Ex90eHfefxE_EgQ4I7TfAvYgkbKRObccutHgHSVB-dz0IQQteqLOyUK8xeqevdpcJnX8fb2zbn_l23uAn9ebTP2quEl4h_DFq68AfOeydItq8qAjLKS-o1VMSypqK7mpshdIaGoWwcuBv1l1bf1F8JC6nKGVrDM4IGD53aM20Uv17DwwHUaNIKg7NXhs7_8o_W0PhdQ440hXBb0TKoREGrYzBsQwVUjofIUvBjJnpOQgs_Beok2WhqZFAcMEMKOgdF0qdOBlGnYUmeRiaxqHPVYlKyBknT4QC_zO0pTNVR0ivmu6yRn85dsJ4a4IvkM-xt_nQLGfWUiEEZxuBgJF8QZyALT5hy_VM-0jqzyWr-yKBo3l7hb5Ammw44bSk_sfQAF1U9ygQDCCCo6cBjEL6EPBdT6BpHYaR9TvIK2TbsSR982oj-cpi31bEF21QzgYv5IrgyJPJEprXGTlxtxUdjGD3dcyvus7GW4ahbof401j43lds6bMYfnaz1w4N8acBPwbTljobNzKQvQuUBRN9-hT1kJm9lzDZQ4WfUF2I9U7XuezDTfr39308XG8bY1xTSXzhPvhKoRQktn3sq482aZiX3Zq9XRfGMUNb99CbQ-WI5tbUuJNDGR0sx19jB8GRgiEc69Cn2WRbXlf69aHbMyZHVtdR7cGj7uCb1ybdam8_qOsp9BvB9PIAAHKMBdi2O_DEZBSt9vKuntB05dd9DRd5laakRpjzhWi7S-R1nJVvRDIFB7zNDs4kY0Ufw_TUAVmxpSgKrlzwEg7UuYBwIl-h7APjFRTKKtayu-dCTcKcQ-y1r6TAGlar-DIjAAduXZXyNIEpqmcqoZApM31CiFt7LhbAQGnvwAXuCqBTGnLufQAjw1sLDXrlYRD9QPczxSo162LK4MUvpDzBSANAzUM3j0GCkDR-iZJnhoSUfSww6ElM23ErwtyglXm09RL2ZA6fnoCNa0AkSeT7O3m_uPNsajoiCza9SEu_cSGV90EwpXl0Z6TCAvVRSK0EReCkkYS7JGfWrjPEa4roCEznb9x6FDa3weM0iJmiGefhet9jKtWcbdriOXTbz3cwWAp9ubLp3y1Y4X27TXRrz3mBdJV1wICSxpSstX6SVeH6VmkWYCNBneh-jmy72of1RwVb2jZRj34w1kG9NRCtHQQ7x8UOEEZ859DyrRL_4dZk9Ah-A1gMOP4uLlvkyGLiVq5wt-dvRB3z98JRpBmQT_JpU3ksxD1VlXCB609ayadLXlbVCiC0C1AW2uLQCXuTmZDWaYKlqYNmWRTq5c2GCWS2WkQ41S6tAW54c35Onfkd0xTVqn2tEdkzbmxA7oGQ3_0dOKMmroZnddpQhEPVnnbpoAl9W62jd94qs8gvhR5VHIcF4KPn4vKQ1j-qoKmWliBSYHOMJDwEvBbw_c_0tx6gLF0UXSog7rv65orq4U1aTfFgzJjEFlMaomNOlVz7gyrvGuDAZ7tKHeBNo0s7xTXWtZBfvAvFpZf17Mq57HnzSfVAmSF8R1V9Q_8isHGT9ZFl-CIDuUcpKHMndmBdCBPYBFq5Xq6gYyGDHh1qcgWIKvqtbQ9XJymemK3tl2XxWPuXY4S2d3O0N1otshcBJNaG4Wx7Co4Fg_sxSrzEFUKTMhSaipW_7MwF8NoNHlR5akUlifdoYcjcI_ZhYhmDbD5cvTGK7IXLS5AWdJ_DnlK-KBmKwXL-5zF1J-hDBB1KKEOHYL9ZwRC1D0WqpnzAtxf5G-6Vfh2cxRrCdgwp1tCdigfOVCHVIZxgr_tcHNlK5PjWwo143KSLTWskAZYWRCTI_AW107bkrzZB-lMFa9VjfhNGs2NbMIHfTAk74soE8tkekWLMEs3q9diX7KoVSDCfdbCF0G8IJe5lEQQZkJwrkFIxOoIfJ6h9EpwJopkB10N-UpWbdaUZ2bI-UHQWl6lTqo_khxJL9Sl225_0C4-3KJYDW4FZZNefJSY6P_FEA9PzwfFcJ4M8-xM3XV_vWg4ovnFQQEd2_DpvT9MxDHiTqhIwc940mJrLjfyVZ1IQkmTPXGyRK8O_2IWoeP-BGyfHNd1C9-JBU8msUqD_EZhatblGnBGphEffdEc4_aM4_0BZYtXnc5Z0Utl5B96EsIlfT3XlCgaLel36MZKBd-yzDhA9Id1pUQn1H1x9QhygJqQQq8PJkXgUs-EOehAabjarkBpJVRbfi5AFGjqFnaO3PWb-oCiyJ1Y5-V3J_N1_pBPMROENSLH8znmbJ-N4LtNIMb0gZVTgVK-_N-bvAu7gNr9YZVI-IdcDz-gG9VFzXQzW1qyIgoHBEA2M0xvoRvkdHguI5P4uvVr_MoN3hacVfxQnwF7hsxPjrqPm7VO6BPVLB0eMroCnvQqz-kzhpjvecKCqkR0Vfu1QejL_Yj_k_0K937DgcrTd13F2v0rxYPG6QlRBipZnWz3cFuA30zJh47jp56yfKV44xsRRlOfGzQQRXyXWbF6Q-bn5NUszkj0Amb3m35T4lyYHE2nJqvAt30HBiVFv7ew65tHRe5bRgALSH8NgHksRFv8RNr7KeleYDfCrNXGEFuDuRLuiPwrFTQdy1kse1gXH3qwNyDMfgXpVhVxwnS7nSrck3jYRZzgkBtcyT19WGNDWs_tIBEy9WZ0XR-NQRDqAqRnUdQ5nmEdi0aTT6jlNcJFX8SFsRbfGZDHf2qiAkjibp0KBjzQDmehYilpWWs00PVDHUghH1z5VxfSdNlfE5T5g_YJbE_7gQKu_Tmz0OmWW7MYhZ3A1Ni-WUG5Y94P4zAJKRgRWbWlaWSj05Fy5Ho_Go6llMvl07h0F2HAJ6NkZbPL9q9MQlYzKxSUse-ois99Y5mEOMtVJXy7ydAJOvabLQtLS62JCOglWPbzLyH1atGNxbdPGLg6hVG7LpyYYogLDTMCVG8gvWlszdgL73PPmlJxzVXAp0LeNk1H4mnvg8RlXbOTYQOKpNZBJMSkYK59RM54wMVtGrT0YZf6EWxNJsVJrMBBHJDm3ye7-5jxO0wJEWcdEjJ0U4Ht2NeiS1xbZ85dpr0RXgCjjtfhdLuWdXVqwE4YtwsjorKb84QxsIW-ddJDrPKGiMH5YxIyWc8xlkPyTBJpY4U14eX5xXJVw7G9xfUW0cJMLyQck0mbAqQRCPyEf4GUcS6PBiJ4jKmIuYO3Z_hxOjCBH7BUrPMBqg24J25ItO5jFVjUo-tI3397IpMIIDABpyz-7n4j9ILrpUp-0zZHCO9luDzIHCChcKKoNRPo1GR5w6pOVbGwOclG8Sx4RcnlC0PHxCtCI_5ELJSOCn-HU26DuLGCAOOCkA1hnwY1HqjioSrOY3zV_RdEC4jgHdrrsBArZMbMnID8xhO93WVzHcxSn4pBKFJjIkrd89OaH9BDNh0h43FUtHX-qOhRRnMUPqoSD8-W8bRRzaTx_MxF64NIl55_JLLr8gjRDD_K_sn6sFqZ_DJW_gBV06cDBD2XN9R-IyPbxFvqDIUd6uhPZQx08wZKmmjFnkoKPDtdCzzZrPA88atGEeR4AIXBr1LpZUHolmWOnTz1l0AHsONMsiCLzfNdvSeIV5jubu9cI9zAUD9_HSp4jtyr0rcznQXLmHuEEPl-i-SRgwEHK__hLxJx2JrInQ0BPGCO6cQeN0thdeN0Bv3POcqDCN7XhPwX-bdjjp7Aoj-BGAGoX7yZIK53QsCNmcMWtq0inyXNRX7oV1QKz10-BODEmxVvMLRLg8rdcDafi2UgXCMdTb3jeR2Ehm2CYGa1O1u4RpLgQPjjCjaOHWSOg1_3gWgsEEZXSu9nQcjYDf3zANGl3EPgDFEe5eQqoSuxArAJlMGY1g5J12Du4_dtCCdBf6VAi23iap0gBtOO388s10pnxiBLi97OXieCLWwnAAoQE3cyLuLAhHF53I5YhNIvZArM2pXquJOV90hXHEPbsioyAXof4vc02MGZghiaJ3eEmn_yHqvpj9eLNejlIM_4DgQ_KpmE0t5zbftO3V54fbmKvar6CEO0nLnB61NvONYD0Cx-9aDo4ahyL0eX-1crlkXyyMn2eE_-79qJSdld0Q-a68zhRr6u6DkEwaWHfTgH_Xhy1jdp4jm0RH2288YIO0H-nHkGcMGlPY2Dka378Rli0Sc0ewM2gnNHH1SWiMmtGu_CEuCWXzeIdCFZA6IKDnuALDBEJZRAetMSD8L4uibYWfs_fxBWk2NSouxSRrm3Gat13vQ7ZfTKBCO-w2UtZROMBqJ8fVu75Kn2zu5sfhc71j1jSXS1t4PMgwt4dQRRPzkfY1uyzyYze7fFpVAOa8c42uLrIEUNsVglfXPYmPlcrjl6SZyX8lX0hMaMaeVqj5VDA-aHkhfyP9yHxuwLVZE7yPKnZ5hg==",
+      "summary": []
+    },
+    {
+      "id": "msg_02cbf8d8266d660c016aa54f4bbb9c87d2b4a79436d20f6fb5",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"packet_id\":\"packet_citizen-guest-005\",\"packet_sha256\":\"37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff\",\"schema_version\":\"M050-RECONCILIATION-PROPOSAL-0.1\",\"units\":[{\"authority_basis_atom_keys\":[\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1\",\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0247\"],\"canonical_claim\":null,\"human_question\":\"Which current MSID\u2014Citizen.Guest, Home.Colony.Guest, or Away.Guest\u2014owns the required-content schema for every Guest, including its Expedition-only Away-package condition?\",\"members\":[{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1\",\"disposition\":\"basis\"}],\"primary_msid\":null,\"rationale\":\"The atoms are compatible components of one required-content schema, preserving identity, type, citizen form, First MEET, hospitality, housing, Home life, Signature, Expedition-only Away package, EMBODY, and Memory distinctions. Their candidate mappings do not establish ownership, and the broader ontology evidence remains unresolved, so assigning any current MSID requires authorial resolution.\",\"related_local_ids\":[],\"unit_local_id\":\"U001\",\"unit_status\":\"human_required\"},{\"authority_basis_atom_keys\":[\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1\",\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001\",\"M050-SRC-MSID-GRAMMAR-001::ATOM-MSID-DIRECT-0247\"],\"canonical_claim\":null,\"human_question\":\"Should the cross-system exclusion of pre-design-pass four-slot Guest modules and the requirement that rules remain valid without detailed Guest capabilities be owned by Citizen.Guest, Away.Guest, or Home.Colony.Guest?\",\"members\":[{\"atom_key\":\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001\",\"disposition\":\"supporting\"}],\"primary_msid\":null,\"rationale\":\"The claims compatibly establish a cross-system Guest dependency boundary, but neither they nor the unresolved ontology evidence determine whether ownership belongs to the general, Away, or Home Guest branch.\",\"related_local_ids\":[],\"unit_local_id\":\"U002\",\"unit_status\":\"human_required\"},{\"authority_basis_atom_keys\":[\"M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4\",\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0123\"],\"canonical_claim\":null,\"human_question\":\"Should occasional guest-species access in the Overhead Layer be owned by World.Terrain.Band.OverheadLayer as qualitative terrain ecology, or by Citizen.Guest?\",\"members\":[{\"atom_key\":\"M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4\",\"disposition\":\"basis\"}],\"primary_msid\":null,\"rationale\":\"The claim concerns species emphasis within the Overhead Layer, while Citizen.Guest is only an alternative mapping. The Human Ruling limits ecology to qualitative translation and leaves mechanical expression to dedicated owners, so the supplied evidence does not settle semantic ownership.\",\"related_local_ids\":[],\"unit_local_id\":\"U003\",\"unit_status\":\"human_required\"}]}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "const": "packet_citizen-guest-005",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-PROPOSAL-0.1",
+            "type": "string"
+          },
+          "units": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority_basis_atom_keys": {
+                  "items": {
+                    "description": "An exact atom_key from packet evidence.",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "canonical_claim": {
+                  "anyOf": [
+                    {
+                      "description": "For reconciled only: a nonempty, source-grounded semantic claim; human_required must use null.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "human_question": {
+                  "anyOf": [
+                    {
+                      "description": "For human_required only: a precise nonempty authorial question; reconciled must use null.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "members": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "atom_key": {
+                        "description": "An exact required atom_key from the packet.",
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "basis",
+                          "conflicting",
+                          "elaboration",
+                          "superseded",
+                          "supporting"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "atom_key",
+                      "disposition"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "primary_msid": {
+                  "anyOf": [
+                    {
+                      "description": "For reconciled only: one current MSID listed on a required member atom; human_required must use null.",
+                      "enum": [
+                        "Away.Guest",
+                        "Citizen.Guest",
+                        "Home.Colony.Guest"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rationale": {
+                  "description": "A nonempty source-grounded reconciliation rationale.",
+                  "type": "string"
+                },
+                "related_local_ids": {
+                  "items": {
+                    "pattern": "^U[0-9]+$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "unit_local_id": {
+                  "description": "A unique local ID such as U001; never empty.",
+                  "pattern": "^U[0-9]+$",
+                  "type": "string"
+                },
+                "unit_status": {
+                  "enum": [
+                    "reconciled",
+                    "human_required"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit_local_id",
+                "unit_status",
+                "primary_msid",
+                "canonical_claim",
+                "members",
+                "authority_basis_atom_keys",
+                "related_local_ids",
+                "rationale",
+                "human_question"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "units"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 202527,
+    "input_tokens_details": {
+      "cache_write_tokens": 202524,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2450,
+    "output_tokens_details": {
+      "reasoning_tokens": 510
+    },
+    "total_tokens": 204977
+  },
+  "user": null,
+  "metadata": {}
+}

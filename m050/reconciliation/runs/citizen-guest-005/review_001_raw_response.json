@@ -1,0 +1,153 @@
+{
+  "id": "resp_033d063305aab86a016aa54f1edb4887d287f73c78c3b4ae9b",
+  "object": "response",
+  "created_at": 1789218590,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789218606,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 8000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_033d063305aab86a016aa54f22aab087d2bce1a334c070c122",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpU8uN-Q0kgeSatR8hWnviwWPYdQDJk-oCAKwYpJFLE5RLy4Km7se5IxnZhp38pR4tJTocU12_EthNfXv358qixplsRNA6Yy11HjrSuVRtS8a2oslVaHon-0Ei2l61AVW7ATGx-I352i2FzfHW7qVCjIbA5QQm8KmM7vowFc8PhCnq3ty_AH07t5eeLzBybktyrx-n5aHesbY-mIMLLIuZmqO6lArn2VX-4-x_KsPi7XZz31qrf59fIs_8S7IL19rjatMKjujkc17iM9kfknv4zuIZKmNU-XkpFEMaUoNFnqd4Xgv1ssIm8s1L_vXqm6ypqmv1YqMJULTV4kQiodZsmjXH37ZDcVWeh1VF7na5Z_Z6PwDw3OFIq6sziNf9wZdfbqqITZ0bVqXE5bNE7pi79FPblD1H1_wrN2kUahq4j3Vzv5TPVRud1eyIMs5b8mtRn9RP8-2x48J2_Jdt4qZ_ROOjyZI5ckEdRiKqFCGmEhvrKX9-DwSFs8CW4IL7aHhaFqRaoDQaN39OXdTHXxhV5fDUQkataf5rPN-7KyA_4He2xTIJDGwAkO09jeaDceQSw6IV8X38AUGd4IIYvTAi2IGFJB43oNgWSIHjswQY1gLv3wzS0Xe4Ln_oUr-qvSz-W4rEn_VeV6K9ZlQUBpt5Yoi88p9fNVn52CLFlKyWb0Td_NJ9fP1Y3x-8tQREtctTAJ7tPp_sWe5agl198Vc1SR26c-bjwysjd1E_0h-6obvxITNdSte9HH2Pr6602-9HWSDNX8tvy5g40Xpae9AhXBvtQrzoKEjkMKZWVVRk27NwG0Bj9BNNBtDOkzNGz1-9wDv5mecXZ91Wv31_wTzcH99Z6jkzY2KtrF04Pfj0N-U_VbahSPZ9XhqnLDS9VybQgxGkF63Adi-IvO4Y3lisAg7H9z6z3h7h3pKgSGjklNw2gQ5bDfiGHF6zdsmMHs_1c3ERNXt5rPfvwx_jbtza9OmP8q06p2ieZNPqPj0pXakoglizGEYJzyg0MKHzF1iPMaQhoHWr90DIZutFVE1oJnGceEUO60oYG4h-OaRZVtdcqBy5W_qnnc7Agh1PjbOul_qixhUP8J6xHcojYgeMbyTk4JjLMLrmfTtY04zwv_Mbg50n0Yqvt0onBu4eYai3eIjYLKVPsYAfvxm11T6GX99tHufinESGw-l9aii6SYU5EiJ-7FJ_dvDVupfc6tc3jNAilShA73vRljQGIO0Q5ZB2zON57bMWyGZW2MSijhhG63U9AbqyImZ76OpjKU397l0T53yb-dGnRV3v7UXEybD2qHzz0L8XhOD7VqRCB_oBenitc4oqS05RK8GoI8urnef-AnZW5iE0hVdUIZ5F7TDI-TBTBMbq0UXMWpZEks2ggW6lnZ65_ybf9Fv7wJOdImbExh94MBkJZkzaR83K1XN0HbIY2uwYrB2TlzPmHmWzRp_f_ph0hXXQA_4R7JGZVwUgiwS71MxZKnfdXwF16bmH9pD6KjMAAUw2G45W1Sdq2Q94XL5dbtldIU38xIMUUrnAtT50CQFQmWW7efWPfMUkLdUx4tUtbJASQh1OWqsFVno0zoLD8Nd-pvlH7NRmOs4sgD2Hq5eB5Vi-Am9---5nCHz2ADvmL2aWe2bQa8pitaptoCtmjuiqovPSkIyJoPFzfQyOr2aziEmvTSvLQcGOOoZcMFVURunfDwhFDEPn8nmQY6ZANw4EE0KIbKOZhuG7YYEhHUV4FLUUzX3HXkHsR2vm4tKVD1TMnAdKSYwVWR0BJ_fNhl216eh2j8sPOjaPQaKlD5UWyKpALNNQr88qqF7Dd7pmdMK7yRGooPfcJ7Cm4-KcGkG8Zc8jqmVh98s4XYOf_V_CRDfJowE3OpMdawcLeCGT9csMiymbuwsXtVhUiBBfXOUnBvcRJorbDLjyGVEY_aEJddOzGsFiPEUwj1Mmg1TyHaJUtBGCwreuB6Zj10Nqnv5u4mIZR6xbV5RGZqpagXeYgtC_volkrf2zxpU-hcZBxryF8vKxl1qFIaG-29Qhzlbm9fMt63W9tPlngjF5jaGjTs9ijDF-jvo8BhfuYH1i9uJh1acqayRworkuPx4YgwUUrM3hhInyEkumpXcgby7bZlrLIbL87SZP0TeAB0yhfb0yrlrk1mkJLNux3fKKh0wnrh6K82V3Sp4NEQ2W75lqfTpxJ4UlTHAiH5HCc8vYFYlOjRr9mAp5RcqZwQfp2oc1AuDkaYMR90lIUH_0xKvPVJbncKmCPwL-FbXXa8WSVkdq1ftJoMx8OTbhKNqjr5WmCUSFuNQDq3EWBvPTPKhEngcjHnwa6occRt_ad9r5yB-Wk_q1nGA0pXyRTPOt61LHovaInSn0hkKrP_Po7_ET20k3rHwVn4Da0vDN8GguWLCcXaHV1O5Los64I4Pf0lzo81au7fByzgPyz4-F27EiYvdOwFWMT4dNhV1bkogJOPUsLYaQ9pjN-WGJWdBEsNOIWNhYEuvq9TA-JcrwmOowCyoyJQAAmUBeqzdfVf0BXZaz3QyDlF6G-CjoC5rYKsB5TKKSrFCWyZ0P6-ONWPCXMTIzcGd-3N_lRHITKkcZym_5_d2m9fcKe6t1h55roxU7hNYTGbClzSm5X8c7KPSRu9dZfwEeH-LccVeOSYoXpXFDzhcUpEOsbeE1IL4mYXK9k69oM0KqdvxL9S8-bolnf8VLcj2dXoJtyK2KfZjt4dTvCvl5l-1rqohFJ-_7FACR31pMXoCV3UWHx2hOv4OGKgtNsee-8QRO09i-kNU4NGFxxKVI4tOzfOyh29K1F28N4lpnelC54TvUBg2-2hQ1AbqwxyCFmo09DfcV53HNN3Fd00Ynm6LyQWQxC1K2spFGHIJ_dW6Xy7g7cjDjeWB5W4-mR-VC61DN20jF8ab2sXGY1Ri2SGDJKTXYyZE8EOvQDrx4pGl4wkLI1sPy5XbPj5y15maM6Ix1SsNyv0tHZcyYgc90s-voJYWOvoTSHGkDsFeeEJtuw85aUPk-7ko12PhLls7GXOyuPEBocqFdsFftS6Uioo3OHjf9cwZXtVM2DRa4qgq4U92jPz40sZLFLqAEOmH8fHrdHegI3EVrHwn8CGwEzCsWT_Z09pfwATdZJjkshDvHc5FwJutxB7TGB5mn69JUmGNSOOfj9yUs5Ucg-PpeDRdVhrpgZMSyXOjlmHLKrd0a5cWXwglkSVVc711Y_CzAW2om4mihVcuA9Vhll1ik80rV6jhqIU-I1qSvQcS8sJMBq0POqjRBya9TEjSGEFRSNsgLnqSdx53NR-2AgMw0oQiBq56xxB6VGthsUP1fGMpTpYCLghEf3DOUeELvGhswNeILAiAc4VBTVbkrkXyu63bLty7b9ekbydOeOLiLFPbv3wHBX9gqhKLsRTExegYHt9Wwrlm-QLmSU8OA5dyHXXbcLZBGB1jLVMmbgUxubHFjPb48RMcRb7K5sIQZc_idqR0jj-wOIX40NYBcB_SdIbQwI9gSJRoTBxOTk4eRwNDffufmkVUGNkakkcKztp89_lxMzF8azB5eUSDg-ITuN4WdokxlT0Be1YnHV2D4h3Ejl81XHzhJAI3ZQi75IraRZjywZk-PXvazpGGa24ZvsY-_A5CUs4cYN37Rx4w3n75rikV80KI8Ggnk0hUDMFvOqtPo_nPElbAvp50HoBI6o5jANisrCz7NuAEfqpL1JOmgQ-V5OXhFvJa_J07NPLMNKuQkvghuP6InpUI4utBt74Zj3jDJ25W7kWCCxh9z7hlVP3u8-QITzSgowl6VoaAjD_ipSbIT1C29kRFy9cFd4cQv3EpDoajzn0wDYzkQGVXNug4v5yYIpkSzk-D1xaZ3wIRuxCYp1LL7ZiOdkL8syw32M4zB-Qb9FZdDGlqgfzti7EoihCumkOsV--6B7ekOdTgJSlFbHimLxzSRBUSV7HPybzh8Aih4vsU-uefNjUICvQGZPYK8-KNmuj5mTiBk9KhSwlvv02SA39EZyNLL6CujpVBPabKbK9KPwk-5W8SexB6VCCjGlQb2ITDoKXmPL82NB7pVxOGtskdd7tP1N4E8X_RNR0HgHobznJPz1aQIMMr00_eHKADC6qB82Jmk8dN1uJSiLACy6k5gJWCUpBlMSehXz2b1PrdJa6k1yhB-szdzzFY36sqq6wqnH3sCI3Cnw0l2ij-Gyavq8v6R1vWpGTkppQLYLBhU_SFtfgw7YJcTSdibZZa3Qz8CPOHLLVfGf9k_tHI2uvULJ893ohGFW_rNTCq6JPkpgWuWL_lx5fR5DESI-4ao13-FAW9TCZPshxak7quGGpBNiMhs6Xr8LgdoBOv5d785sy0Re2JK2Cw_I7TLSInJ14US20e5tucBj-_y1jTe1Igx2EMf7gsEWK7wAuf4uzCkZwTJHIqU3YTeas7pQ5MKrDn1fatV0npjc0Dpd9QySBAC_EQXxeGJdOKBXBwJdN42UoJWdYzDAhzGxVkJLaX45A8EmlMDFPxhtWUetZvjxl0JBrxzp9z_5Y0l8CaYJr1M1DPFwS_zGlD0-1mK6SD8ahdfiUZKgKIb_Zc0n3w0VIswDHGnD8qdpg=",
+      "summary": []
+    },
+    {
+      "id": "msg_033d063305aab86a016aa54f2c0e3487d2aa7796027a96661e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"defects\":[\"U001 assigns primary_msid Citizen.Guest solely from candidate mapping metadata. The supplied ontology evidence leaves the broader TLD list unresolved, so this ownership requires human resolution rather than promotion as reconciled.\"],\"packet_id\":\"packet_citizen-guest-005\",\"packet_sha256\":\"37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff\",\"proposal_sha256\":\"73c71d85ff010ed58429f9c25da31422a647bada6a522004c24ac53fa30c2c05\",\"schema_version\":\"M050-RECONCILIATION-REVIEW-0.1\",\"verdict\":\"revise\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "defects": {
+            "items": {
+              "description": "A concise, substantive review defect.",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "packet_id": {
+            "const": "packet_citizen-guest-005",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+            "type": "string"
+          },
+          "proposal_sha256": {
+            "const": "73c71d85ff010ed58429f9c25da31422a647bada6a522004c24ac53fa30c2c05",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-REVIEW-0.1",
+            "type": "string"
+          },
+          "verdict": {
+            "enum": [
+              "accept",
+              "revise",
+              "human_required"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "proposal_sha256",
+          "verdict",
+          "defects"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 202100,
+    "input_tokens_details": {
+      "cache_write_tokens": 202097,
+      "cached_tokens": 0
+    },
+    "output_tokens": 648,
+    "output_tokens_details": {
+      "reasoning_tokens": 471
+    },
+    "total_tokens": 202748
+  },
+  "user": null,
+  "metadata": {}
+}

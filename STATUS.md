@@ -1,6 +1,6 @@
 # MEDIAN COMPILE — v0.5.0
 
-September 12, 2026 at 8:46:59 AM EDT<br>
+September 12, 2026 at 9:30:00 AM EDT<br>
 
 <!-- Derived dashboard only; M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
@@ -10,4 +10,4 @@ September 12, 2026 at 8:46:59 AM EDT<br>
 **PROGRESS:** 170 / 5,382 atoms assigned to canonical semantic units<br>
 **NOW:** Citizen.Guest reconciliation is interrupted with 16 target atoms unaccounted; the Compile Worker is Stopped Down<br>
 **NEXT:** Spark Up may regrant the same preserved tranche; Proceed is still required before execution<br>
-**PROVIDER SPEND (INACTIVE):** $1.63
+**PROVIDER SPEND (INACTIVE):** $0.81

@@ -1,0 +1,127 @@
+{
+  "packet_id": "packet_citizen-guest-005",
+  "packet_sha256": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+  "schema_version": "M050-RECONCILIATION-PROPOSAL-0.1",
+  "units": [
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1",
+        "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1"
+      ],
+      "canonical_claim": "Every Guest requires content covering: identity through a given or household name, species, silhouette, communication register, and character thesis; Expedition or Resident type selected for play experience rather than social worth; individual form or one of the two authorized collective-bodied households; a First MEET showing the animal acting for its own reasons before recruitment; concrete, visible Terms of Hospitality tied to body, place, safety, habit, or relationship; a Guest House with Mouse, Rabbit, and Squirrel translations, placement needs, and folk-naming direction; Home life covering Role Practice, routine, House use, absence consequence, relationships, and Home MEET hooks; a Signature Permission or Affordance with attribution, situation, limits, and suspension conditions; for Expedition Guests, an Away package covering Permission family, Affinity, Independent Impulse, and shared-system exceptions; at least one meaningful EMBODY Presence concept and, where appropriate, Practice or Flow; and Memory covering arrival, relationship, injury, departure, House history, loss, and Chronicle language.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1",
+          "disposition": "basis"
+        }
+      ],
+      "primary_msid": "Citizen.Guest",
+      "rationale": "These atoms are compatible components of the single required-content schema for every Guest. Citizen.Guest is listed as a candidate on every member and accurately owns the cross-mode Guest definition, while the Away-specific condition is preserved.",
+      "related_local_ids": [],
+      "unit_local_id": "U001",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1",
+        "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001"
+      ],
+      "canonical_claim": null,
+      "human_question": "Should the cross-system document's exclusion of pre-design-pass four-slot Guest modules and its requirement to remain valid without detailed Guest capabilities be owned by Citizen.Guest, Away.Guest, or Home.Colony.Guest?",
+      "members": [
+        {
+          "atom_key": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": null,
+      "rationale": "The two claims compatibly establish a cross-system dependency boundary, but the evidence lists three alternative Guest MSIDs and does not determine whether this document-scope constraint belongs to the general, Away, or Home Guest branch.",
+      "related_local_ids": [],
+      "unit_local_id": "U002",
+      "unit_status": "human_required"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4",
+        "M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0123"
+      ],
+      "canonical_claim": null,
+      "human_question": "Should occasional guest-species access in the Overhead Layer be owned by World.Terrain.Band.OverheadLayer as qualitative terrain ecology, or by Citizen.Guest?",
+      "members": [
+        {
+          "atom_key": "M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4",
+          "disposition": "basis"
+        }
+      ],
+      "primary_msid": null,
+      "rationale": "The claim concerns species emphasis within the Overhead Layer, while Citizen.Guest is only an alternative mapping. The Human Ruling limits ecology to qualitative translation and leaves mechanical expression to dedicated owners, so selecting Citizen.Guest would risk misstating semantic ownership.",
+      "related_local_ids": [],
+      "unit_local_id": "U003",
+      "unit_status": "human_required"
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "resp_0fded7a7db8214ec016aa54ee95c2087d29b17ab63e5ec362d",
+  "object": "response",
+  "created_at": 1789218537,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789218578,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 36000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0fded7a7db8214ec016aa54eec7d6c87d2832be26b0ebb8596",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpU8S5XpQ0Gg59hKtmEq1nGVklB_mOwjzj469DQz3O17Qozk2nwqPEz4fR2BvUlTiQJ2eJy3lsO8ngqPZ7NY8BxkFibO56tjnoxf7AMkJVtn7sJ76PYA9AyBKLaOwp4L-4mB2D6urx_jmpzjxAqw6L1BAZ1pS2WDSWAz1zh04x7IjDRf8T5rhOtpW9jYU1F9A8c5HCL0WwJCMkXKm8VQK8ziPesNt6lstv3fUSfvZ4zDEzWS7M7kV0mVL7Y9JzESeJqWdA4EcRZfwv3SRh7KsRCd961OhHfKoNqm4wxfowk_vXRPZXQA1yjbll4TDhXFaAw1KPbzWG1kcByaUx-jjD3z0YclFXKcdgTOzjgZCu0_uhe8POgcU6p_z-bRMvt5ID6MdpgKOuFSBr6EUV0ILiPIMPK5kpDBntRUjhBSQKVVRsc9ZbQsVWyYOTwQ3OCwdroQNDvSZT4sdp7aXt0d2hXZhmu-51Qof0NBVC-PrJ56zPiE8aeeuICLrfZNW6pPghdrZzHSr6Xy9lbzKF6L94_z02niW7cDmnJhKnT-ZYOV3H3U-vUkL-CoRCAgvCcbC1kszuUWN_2rSi5YEilGXVD2Xr7igNrfq4XcTsm7FQDCCS1UfUXg2MSjO4MokxZY58IEK8_y1qG3MfPDfzNjAUmWFVLxxX__-LT3VVkrXqNjV_fc3rNZvcpxmV875toA3QboCgXtSIz4zBasmjZ1FiTG9-JbCW0X2668lCpLtK0wxOSxGv2RUGalp8fCq-YumXxscRQ02tQQkdBFif-7xdPrCwgM9P92tWS48jgb6GJRkPEkuC6yr7QM0iHmWAxiG96OijiTD_1Wt93QhHN3W4-MiZ6lGcrY011H-lhZawkINOBp3j5RnhDyyBpePEZtf7Ctwh8jBB9hXktmDQBptCoLQq4ppxuO2QbHyGUhk03TTourSGPwGj9kKCEgG-CI6lJsrAkA9mJD_20eNLX7xcQAtpJ9qAmGw1_lPkKpAEambe55eb3N9znNMOyM3WeH7bijmMDqufcQ60uN01Do_UF184KX3YO3Vz1eQNKhLtNEFmGFzmpwL0rGVaKfdMTR1T9K5xfzOsnsNn5QtTNZOjldwjTH56iVC2mC_1BeJsintvTBgbOFdV_m26x_4eHbbBJr2e_c5JyPrdbSLP_MDffIDHtZe7CEbwDNrNhvNYkby5kBv3pyS890TZxGNY7nvcJdv0uxZlRPfUtgUfB3Gqp0cNqcS9MJtoOMaW1lvgULEWOdL2pMt0MpojiJHYIk9GkwVaNBGs9BpEhDf8OTyE_lzGxcZvQJU0wu8XrTSTTXbuv_-2UQyXhytA7sv5ju8xXUQStSe5hzVlWKWuLfwEYfx48L5aygoyDS0RnwOc-nndH5PgOtFGSBFX_cu9Jlo6C6fCWfohINOJtiiH0pPEvJEnEobzSGo6Br8emhMWNyY5sLDo4xWwYWfNM_MGymlf2dXcEqxYQBqwatpvdaT96uVsLUbxnZO2qbjh26-p8uOIFRKZtu1W46nmZL8_xyfRQihsatOGPcx5-Ewlhx9nOPyAw2PVHweh_YDIe0aLr8KblMRxKeS7b5As4lMcLC0lWaGaeBY9Km-6ZDbMWBvScdREup3Wq6gVpET9ELStQKsDmGIcV1-uo_IXxt_ObfKLdfqh2KipdbWB5iNfsULMGpO_Vf1okJl8CN01ufURtE8SInLaDbNtz6KfGeHHAr9Gn5uy_MrkWB6UdpG7gezmT4XMYmuGlxqAGWJqnKQIGqJJ199xYWZiiv4UWcKU-DsFEP2jhLkd8KoVnAFmQ6ASOxZo3ACButtRoPyLqlvd7hNEs7JBJ9grGjyQnTf22qkCe9Rg8i9nceSJT4vBGgzuS_vFEAATFp_79tYOVAQtun9Irpxg5FImyMTQmIwWM6HBNpBCLyUM9ICMjhzr3FLtIy03wDRW9m5Kak4jB4HDK5VUyl_li2V9h9HZTvkt6HNft1M8NR0nqYMD1cRV6GbxQ811Vtha7uVh6db1azWC0lL3qAFXsMGmbxK6CQnu3AcRt-QM7whVH3y8CkRNpJMFqHhDXhB9jMRqvAP0t0gy6NutDu4EHhsOjQq7P0JXu6qHESv-UXC-hMp6srqgQRAjsHYREFRT-KjLdTINMcwzzzeweLj98SksnXlJXwfFfgHMZUHSRobCVM9NaWgwiuITAmEDooqFOpor6Ra4ofroefdjPcslQILvRZjRU_iJ7uFB6Bhr_eBil_3YP-YIgO0d3NZP91Ikrl1CCFf-NgQk1FLmqwQwcvkK9GhyDf8gz_0AnjxVkLBCxVMKdgZHmTAO_NtDAW3jwb2UQKKvg-SqsFYFBEIXfTXtkQOns96txR0SaqJpG351fcXIRQABPF--_EI9Jqn-g8Dd64jnjI5qnPH-AuOKKbnnNFZ2yE5mqE0PGCZzn7rEP2OIaf-MGv9djh22l8q4eO-Dw6kyckzPhpYDOnk4a1Kav8_Yow9itP-hNz3kRO_Q_ge-urrw3We2T6bOqyrcbGfEwAPzHiaRO2L9iv7MtR_jEXTxMUt-vEjZDm0pvIpuRmhmy2gvBnLbdMp14GaeO9n1MQhN-VNBCDZ-Pu8BwLupa1dGDr2iJgivcAOlKJ_rgxy-qfZTjMi6uZovWCc4QviinIlJihLaKhWuM8HTvyWP9NjzKDdiRcbjOtkSDRTp20qE2CkdwM1bIeh6hbAcTFi1yxFmPwGwzEcTvVxmLomVFVgMwoW4USuIbJkcBkvxIATAr6oBT3XI-UoQxCIHB2aD4M1NZS95a5Ki-0gQifv5jy-i7T8bkknDH9bF-OIYtAxDW3_Ave2hPIG8I-pfiCQsl-rT_cjgT5iI3xEZP7ZTgGXw7SBX9693UEeAYyLssRX7mukdG74vPFssjpheWdswt5uzeOoB3-yYpBunKnI6GMjEODlA5MNni-czezUMmEFuPZWlTgIgqiNcVsfT7JmnumbG1zD1f2YQ0X5iL6-flamnp9jJkPvJKbkQnoCwJi20LEHRl68TdMONbanhsjOVy_910OakoPwSAkL-MxzzqfQU8SGADHiZiI8KB10yCE9aPmvCetaZf7DH2gMdKcNwVloM2SzrvxxdSi3PquyUnWj5-TqMdyd6LaV4fhu3Mbv3meoVG6gGmnx4EZfmDN8xUIUvjcCJn7hkGpe6uAKgY2TRe_xCZRNXrj72r3OlwGVjTH-WRInpDW4TtM5jeYb_c8QaBMwNEBtyH41TqiPZITMl8Z23AP-6u92YPvDt_OCYaShn_ICKhQbhEf-jEOkGli5V3A7EWl8HaT7wsjvu64cNBcftwQLx2vmUjIxcj-LY0pqS4zamM8qymlMMHobqPis8PaIFK5JwOiJ9iEq3colzHutRPVv0lTI9-xewQq8CWIz6JpPqr5N1geIcphZ1bOWCEByv7G1Br2OGFO8WhJeD7IPWlz2tpCiD_JKAqSzgHTeQlLtqgrIOVYSxGot-YIii_-mu_GyF6KgrVLvGBt-234o1tc9ZqRKYrIWvKHCdmi_cLci7CNFtecu04i0vEPBeYfrBr9a7YsO4RuVX5ax04bIQLd163eE8AbPx7BFLx3pCfLHXSkM24PV4EZ3d3IrBXs9vvPnVyz7GZYSj6iBtxyqIFRnFHbr9P1M5laX4WPShTEWMQHdtg-HJV4TxnSbejndaFzUj2cLZrdguGy9Pey23TE2xtW6w6yY44fGKWOu6uShvZwwXxtvQ994-oy_REUdNs9fnLwg2MemLQ2lHEnEDyZoL01WQSRzWGhiylIRQkKHYdQTLk4FzBsyfIxxkKCva9VK6cmVNparjt7PsaVSMCr4RwAU6-zn_fPnubXr29j8oOAD2g88xl15OBZWq5FH1ov9wJx2cr-tGHkQl4BwhabL8TvhW0HDQSFdB0cd7rIRKCQbP8-u_V11ylNvnPRwfi5FMwSikrznKhnOEztrRbHep5HKxWTtxLDpQSK5IHKgZGF924ayIQ0pCElF8pSOI9DQHqlfFVcqHSqazj01gFkfVj6YLdiVfRZvl4lEBCfU0_tKhDVFAmZ49UmWleJYBTcqHR6K7CC6KXmjzyJ62Mwb_hBnJMVeu1JZwv_h_I3aVGZY-tjjKebqoBDLSMD2b9RREBJ-PvDvr6CYfwP4MeV3UvGLXf7TJwaOb2yCCTmuQIZmVl61LM3vouS0uOnjKXELakGz69usxCeeXt3fYPVKz0eSbemsTmp5vsuFc4zdSgBmWLiaBAsA91E7bra_9mPAC12_V94KNx5LoFLob7zIHzY0-2AXyVgdG3qXuUvDby2ccpcwtoaY1JJOvob0kdB_wiD968VhzHvDphPwJA8pjBmHwaN0uJxJI3TgzfmTcDWPiJD_JJ7zJTutRSscVm-q4y6VYSsuiq0XhmFT80md_GZKYAa3wEr81Ob4txHTyJg58vqGTEH-HAF7fqvrN5_V_Ks6AvrB6sojeTl17LwWWA5F84oeSZ5U8VfBMJlnlKMyxm1qyK8B9on2rJzXMe753Pf73GEqbsDJrc8gV9DVAS9Oe4iGojiCSR0nFV5vvG8aq6FYrjkL4tCnYLBHGCaAeF9_KjOSzQJMg6JfMQZxlwnNlO25hYD_-n93DIaeL7U3FOWY_D965Z8tfYoTDGPjuZW4LPUOocO2jbn9lhBatqnysH82_Nf-ABOgXeTy-l8Fe6Vo9GshyiorlXr_aRiSorBIU4_7y_M6Q7zvy4f4SYggU4aP1aav-XP1zWuy9ce4XKIY0cfmye4GSpfvZuvzmoWGBpFJHfa_Mrg_q_6U-AyyWlrN6bTDmfVpS1zjl5HZttiOFb0cYb5wB2uXloxo-HGGgjS-BXUqoROAi-Bg-rHD-NAPYiSA3KuE0nrPFKMlcGBJh5cWzzlI47y3Ns2GMYKvHLYX3qvB5dSthGEBokrSiiZpKKYQ-4eH7zOZ80raHbd3MS0gwWHHaAvA25YaDw1XzDOLp1qsWXwP72frPBTZv8RSrbYJ2cGYJNHfX-rXKGdGPd_yzN3HSOR5UpaG5r5vlyjVqBfdOFdY3WgfITMk",
+      "summary": []
+    },
+    {
+      "id": "rs_0fded7a7db8214ec016aa54ef4c93487d2bcaac99329d9d667",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpU8Sx4T0TucyVfhbgCj4saHamDmy4z8JQ8wSPMuJiEbauxZOCGIXSBzVySBnDMy4zxVSIOhm3HE1MtCJIlaX0hRoYYaYppNOYh48S3OeWO4eCbagF9V7b_S_pzuYW9mKecFZ0hQOxwfe5RP7qlUJFmh5MWyuP1xCmWsoiMgPVJ-nvBFcs4tSSKsllRTwBChj_hLe-fIvl6HWYIFNAty2NVmrgUR9l0aC5edZU0wYffp2F0O_ZYw2FoDktgNGAqX0HgcVfKXdggvq9uJT3El49tDxK58nc-dSwGBWSRGf7m04rYPinsfAjxgNf2yJFpCmWMsya_Lqz5Sc9I-PtX99WRJRu3ubnrKzbB1axD8N_7Mlr12lmwjXUYREYulGmKZ91jzAtAP6EZKRf7l9dSvBT8xetjw8wOtJREbXO3L7H5O4_bdwvn74iwxl8kDordNA7rrK0hfcvSccU-2HpdHGZ6SEntlUXbOpu_B2Hwv6aRrYPly0h2Fy6iPupkKyFVe9J_G0aom0xuKqJOt5jywfuH7Why2OorCuiIv_cep5V8T0a68v-i5LV1mk7qP5nk4cUrlBkk7M5dmqw_uGjm61J70Z9kKKSWhGMFeEyL1mFSsoCZh0a0TGtBfHSxbJr-RTeyImv-OJWRS5MnTPYcDefSFJKEEZXi56g2pOFhQxqAzg4M2WHMLUx3CDQe7XFpbJPn2J15_-kLyFD1pkQLirJvuOtHUcCEbVH4WUqJQv8QrLeE1FHXeK-V7EaEwtdJSJDqkFeayF9QzWYqJ4C90tyNfWRzCt0O34xy8Y1i2rph7D4Bm1_opAy5xKGWkgS4eedayy4SZtsEI6SmE_6DLJyMKDJff6DKtFjKNg_nDVdyXTcOcT5f-guWg2zOO7v3bw5nwxc63C2Og4wE7zMUbpCT8r2d_XG2Qmp99XZ04yAPhNK6mRH_mEFaF5D5_GZ-9mKTmuYL5MG7qbl_-gp5mdO12iq0-rJ4f9uT5qlgURv6IU64ltx0YpW0vAjsylBirkStjMdDOXjMbcATGcaAzMwH9x2BnTfFxUdlXZEUgmQfzcfWaz-JDKEDP-hsjP6aIdaRZBzxS3B5wzqWNDCBcOH_oNx7TWWKYfKAFL-fE4EZ2AdT2R1cIDoPEvHFqm5ikDJaGpT_04m26wcyfAesv2jZ0nXz_dO3NLA7BmGyI1WjMI3xrbbvEPv8kPf2kQbdXV_j0qh9-Y-GIqoNRvAa4RBiTD1lmBUpOB1XntWqMlvqXJ65eciSpZBbF4krK1AvTyfHqK24NROnI0QbNjso5dd6w0XZFTfMplmEy4yEyLVSfm_3ZIzaUvhftzUjJfxuJWlzKBSaVDi4f5RJQHwYk9UAfL6OfAiIEfnhZEzZ2ZbsLfvgeWVWpTtw5MHiyq1cXaQq4CsIUq12wk6wgACv0ffHAh6vJaHAf6_lYfKGMFCUM5oZ5A4H3S0dRnLUNWIneTAaBphbqPo-GnLx0n2mh1RkiR3LbBIkB2vDOE1Li0BTEsU0mzawKYw2_gmWe74D1xO53BDj_iSLL7aN0GaMNh7Z0UX6bt2NDG4DYrVWbbTYcPhZ9iFGACYJdIEMOzulfoinsM9GGGPV9qYNbCJqVEiN7T8HGqZdf4FxxQGWvW-JJrmEh2hbFwR3d0ooSU0mpwOQsM2AbfmVYnjCsnaKCT545qDkRBcvzN1s78JyHy02PeeVsS82_5dyQ2yq_973pKc9xnpgnqIjEUqOsAopk2QG_C3i6IXIA_87D2-9jZKEMGkVaUUiFG2oRH7WVkmdhQ1WitQbrzmYESu_REEmd6pm5yF6SgR47aYC8_HroiP8aoFdfaCBL5yhgwgKgNe5iMuhWzYObiyU9MLlt9oOkGZIXN1xCpb9qVArdq2gc7YWMIBFfRlgmDx2Jc0Dlr9Cxta6WcenC0MdqESRSNP3mCAZ9fFdBMDvH0vNKcp_v-JC6OkF030vFOiQhmo-ziD1czqmZqCHU0mbFVLzugA-2HKO0XTRofJ7UFW9Tq1DP-rmMZgZMXb0T3HH01t8oPkvA5Vk7MWOTalMY5HOB2yKPIDdYcVUxRU_jFsq-1g8a-2g9NzsUGQoyWpxQ6l_9J4rSreHRnaIsEafy8z-qlJp-XxXxHDS-xm9buGb9SqkgZtWjtVtDnc16QX8k9Mh-7_mvcMB6q-u-Z_857O_gWtBX4pAX7eibrntFqJjxZvyoMVubM5Y_xnNkJCiwJFVr6ITBHHFXZz105FoeYKx8ucx1uWAe0ZSlDZUIIj5h9x52rMfBU9D69K0oJhtYAs10rWMS5T2M0EGygrC87ovgOCuzDA8qtli0xv7GuYOSPvzfWQX1gagqzkFk1RfuOlXCwRFyrxe2mgS1tjvm0QKUtNwME_PF0A6exzA-dzBq7oxSy8fJnC2XDeAUhSfersPwIxxCt2Ou10VJf_gmd-jUox7GssuX5mN46VWKVx8gdQumX56BQenI4y6rgVGyWF7O3H_1ea1s1V1qPh6vzP1xIknkgUK1_dYEL3BJan6q_0dclL_O7-8oKFE5PnNSGGD7kBV5kAGQ2d9vOGHl15lSnp6lTXarcchCVp7AWZBIQRDe3X1eVmLgGhbJJBxo9GyAa2tKiiszP0Hz-hphFibvV_NUnuWUSsl34iIQLuoGakoX1o6HKktRIObVqw0udx0T1OvkGhfIvEK-r8vYv83Epqv4_qyMzAIaGQCiR8VReqM4I2BGaua9zRiPvWm5FjMi9OBrFdLCx0osk3dHFtyFqrWgNjxCrs_1Pgmau6smUPLPQCN3U4sH7ZFYD6WvtNV2j5QGgIQFxgsDrpFoZweMp6Ee0Is_szkgA_0sHL4xnOWHbX2DQSgoEYi7G1YjMrIrD4sdnILP3y5RSX9RQGnT8urxVLDiRALitXTpkw86t_LPznj822g8lmuAAluwC33flByK54hJjhbIvGOkG60qPff9pdS6lM2C-YFsT3qh8O1htJ_3w7NGGmVga3Gd3g3N-3_semmQ9M-avjQzs2xSWxDGjcnlAQQ4WwCQUCYAGbugPVZgtAzxcrAwAOXloZEuoDaiZ-bmDTRPa5ms9nv2ssr1pS7d_BL_YCB2VpPaHvb4DyQUCR5QShRZotJePX-If336DrP6Yy5rJuTnlNUdO719zPZ0830V1An2fXCashF9dQY0Itf-KsYW_PdMt64M6BIgW2yplXn1C8STYDA8QcXHw-XBYpgzIMMH-RhdI5T4hHTp_4cIri2lj2bCMWRRYGOBh8LUFA3KhEPhOvS2Av0diPzk9iMNWkr-4Y1xQt2u576aRDgev49mLv_v2uEKjxJj1KzEbtbtGDkaKnQGRHeHJnt90Ay5ORBpYS0IuJtHalxPvdllB1GlwxS02BC8IHEkMnDbRmQbB23JDis-Jfeg6G2VMfQL4_bw_-0aTaUIQTElJUx6InGVigEp3PFgPq4jv3Ah94GXEUYmwEduiO5pwU_W8e4835oFYCb9c90Xbn-4PeDiK9vkuXIrw47_L2mAN_KgwXUhnePYwAU0lQ9zrwxt8qy4XOuhqxPIESVomjOrubKZVU14_Ffcy7ylaUjXjI32ItSSqqGnmQbmZbgfSwHLgicBxL-1RsZpNTmMLDcDmlU9vWjq3OOvLVe6QEBL0-B-nVgR7V9v5Q75J5Bon5ARCS5GIsu4b6E9_STBAnmq6aMTecNl7rAHjIOeCCH8I6uAmPpkvokBRBTBNgqwgEi1iFz-MRzUY5Cnkr9GlE-BlEoiuZXS4x2t8FxbMuhgEyceHjk1RM83qiCA86_hGENMxISYwXzFIX2VgjDALS3wicUbOggfb1_l2sfpuNRo9ITTyOuUgppWx6A7LBNjJpcNjJK7HCoArtzxqTEkVK6aSZlRpolP1htrboW1fIC8zSUlWNuTGdFU-ODX-HiQnbpd_F0WTELtKvR0vF86xim034pqOs0yxK5CDh3BXRNDnW9b8ltPUh-fBfLQUh7_plmpNBhExJQJoIlSyxRvZjaw_Ao9xmcp22tcx0OjdP3WnW5yPSd3DosTDPUSBY1exDoIA4uO7u68x8q-Q8HNR4oU-sxRsr6Dtk-tKniR8to13O38_sByIK02TWa6FIInPRCNYCGo38mtynUMU4m235aiv_8y95OvMAM7WMHsNbK1Ar3s3q6BfPBMmtaJmIYzmnerheeXPcm5LX82hLd3nPI1drkVWMlV1S6OqaP8QZaB_uW7r8u57Hc0_FSLesWjd462Evj-K1M37-pIdGZgyTAVINq--vZm8de7yUs3Zf0Ky9fjjTzWK6GxqWC2zHaYM_GSHHNtpPASk-lIG5TrGtAEKxgfeCVr38id_ZnpZJ5_FC9yhQuFX7TAkSdOxZ91EtsRi5ctPsp8hZLQM1FDZub793JSP_7pIgQPqwEKixzjcNBw2jZCWbRff1c5lmqSHlhqF3xIKSbUODCBdXnBMueuwfGUCmi8tytBfXbBVPnq2fFSHIBKymrpnSckQ0HfcdCo5rCx3zYj_jQYAwD0Opc4e26yXujrCMRS3fFFOq2Z8Iciz9CP53pUAppSl9tI8WZMJbtUS_IItSceCXv3zNscFFqyiaLaYriceObhsXpzar4hWDImDxPODpbBFLUc-cHCKdPAoGSPOdv1x0PKxUwCi31HK_YOTKZJlbZmenTQ8tXtv5EButnCGqtdP-xiTbMqgbK-g7OlczX51_8IkiNrg0C9zIQyz9_gabE5szInrqZQVDsLlRLcEwM13IGwrtwCLP7Sl2S6m9wAX1NJ3SrvhflGzPMJLtVpqxc3NhlVaywUnHPll2E3oAlxyIK06HaE8HZFq18YArtWo1WaN6O8LESKvxIthViznbDQmo6MKpn5BrONTOCZsnraCl7UVEpxqu5OULP97MOGhUzgWctsYM4a-h7DRclKedUE6gs-Qzc_hniu9fyl3iLAla9K9JNOgkA==",
+      "summary": []
+    },
+    {
+      "id": "rs_0fded7a7db8214ec016aa54efcbd5087d28850951f4de5b3e8",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpU8SdWY926xwrjTK-u_GaKxaZPKX2Pitjx7SIrjSyhqgPCBs6-E7Dpjf1OkKqtwj6sQ_5QBQ1SlrVqhKRa29jhDiJkyT2odc5T7HEFjUZFwyMSFzjY3YpdwFtQF0Krft-YZ3ZwWejBDCph-Jocq3b1xq89csKeRL0-twtTtLmBIebvhXt4vR4wRh6djqsPoydfN6Gikx0sxv_bmt3kB4mWZzBvrlojixSMWYPHLtxRBdklUh0ZGIu10qkRv2CLMr9VFdB1TQDpNs8PyXufHY8GKmu98LQd5Xb6wEPEgkefzmXPaHxcVw5__8om1STUhZzE-8iPxUzqhVtLcBikIX9rxOCJITLFnhBl2X6hrZyRteMUCS3AfMUTfmlS92KYsM6hfg6OopHUpCPGTlwEq6gK5hLV_wReu6WS2GhqqI0Em4pfH6p4DfVM9fFN_xyru6UKMnVDDD3Ij2j1rgvNk6-OALsFqtJk2HxKmfzZVDKbDBV9ErZV6dqxy1fk8vSkMEPpZllNKGYs5PXghiguxIOTxyRFpOCXGvJO6a7e7Ev9wwjMXB1juVsoFqO1f7gPN4RVsEWIcxDemJZjzTh41ZSzWpckOQZbpi18VLqVm24ppJx7o8BnvIUYSFGT3L9vxzg3Mgsc8zOS_yqXsDAO03-JMbrEVarRvVHCdq4YilH67epjGJKPTOvBiYvbl4utvc_3c4-BfrC7np8XYErdILIq00aB5OVFGfWwK284--6iWQAiVN_56iDrxq99NCV0MDHlEmslnBf65D0Q9h6sreaUJ0pD-tcOBcTwuUFsu63wJSYcyRE1vIPKCkCp5QU8uDmxnQ8xEHrpK1WIqpNCAxFbiNXQfHXiJ_kXlmZEwAG9w4qK_YLdRoHi8LAe0Ntu0AQsMnGyhBNEGPZc7Y-PVmMd0WkjSFDq1UX6LKUIxul-cNmIG3H5b7h9TMHcBs9C9btCRcg-Nud3_DOqIfVWq4CFgBUDU49lnAgrnW-QJ48rW6o60YrtNHAW26TdvvJGNCHGZIbNFqY22m6kBK-yewvCXKrWVxs8Uk3RymfKLDmgm6jMD3pky7SYnvvQNuOpvBRNYNmoZZlaXzCDDldl5WlhWN7ILx5JHpmEJ5JdmSaeucW7b1BsPuKu4dRuuRUBqxhrgs2u_NyWH-d-IT720RFQ47Y-jWBM5YQbxlVFLhgQh-5dy3fcjzdCXreQUlidOAAIbZwwN2V4M5Z1_K8VSiiYgLg318A8b-JKogRZuDL6TwZE726JZNE_dxiIkvbuW1juPWKc0kPDDX-xWfQIcfkn8s8qvBQ3_8QgyDbBUJiVx7TrxdlqUESur9zNlcbGIcYlI53kmLZn8dbJRNAXRPOFhX23zI7-tQHcTVNtB81P6P071zOJqmkY6AgG1cuUil9T6-ocLfXUnS8GjI0cKi-nZPt9rlcEAfa_muyo4x4wQ196R-wXkt474yTo25wbD0ExW1YB-y0-99ro-qjD3PnmKTqqdUFuo2UHMZCVIPPbD-26WhW_bKSnQjyNuvoj8ONzNrImcbNeEtwPKK7HhH-AxVFwdjDedUTBMsDyRhvD-cWOsGMUWANtvLZeL4Yc3k4Lwe-6AewvOajpWCvGv6wL5C4R3rbadweJHWW-nfrnKmA973L5Q-7f4TjWAm5yf9rRnH6t4Ck8PRC7wvVEWzHj-RijIKIurPmVdzb7RJaQEex9O0ymVdvZerNTGcuj0dUGe_RwO3ybL8P5YMQ0CEwj6C-iqTsW5bMWFXGApfQ1p7iBILfaZ56EgoiEPksmNqBZgtI7slK9H7JPLe6JCrSuVUr2HOh8xp_pVtFKh_XbHYq5u6f6l9qDaiYegUS6qA5VBjQuG4s64vzTvavnNQ-7B1-i0kL5yySIG_ce7smglswwg4m1G8gH94iLk3dXTASdq0o3T9isnTlEFZaRbdE8Ps0waqS6f2yXz_vHFBee8rrflODY6HSMzhTrsKzHYhyXupEIVROQc-lHLsb_ukVBccEgPE7pxs_8zwPM8iGfb3yK2QF5Xj6SqS83mzQGHSHhx99HapHUB_yzd0pHKCzsvGCYOGVQjUl9Kl9PS3gtsdlv_TM7k8W8YeuK6movemuuK1gdocUyilYg9aTW-bW8I0uusglFnL0bRr-vX_doM7LM74DWIbARbbEg2O8yHGqkeVyj4oviMZgndCnq4UEVDBYG5vHy3i7OU4n_0yKbLeAyIaCy9jjOPracUJGcGCVjFxzdpdHySp9jgP8a7Nc1JdYXXb0xgtKH3TI87rF97FgMfFydhP41cjZ94PUB6IHxDFyrmIe1p9DF4J0aRr1wg2w0Y2_zcdlNFUpytsPYSPGBYG5jnvY8WWbzEB6EVG-Wu8YcnFe_Qm36ewcYvQ_WdPpthmTJUV_Do5pWZnmopMACxRx-xArkLtgSOB2t2GnCdi4wm5YAHQUE36uzHOiqTW4HKyt5cpmzZZC9aUasNntXcd-FPhPswuRvM8-O-9ap926sB3Jfr7W06uRP2aazC621uptfyU3PN3RwQI3vGMigZOE5drtu1Q1CksRXSZvebCQO08TGwzVM4t0SHYQsBVBwTFQoVVLAKWL0hwwwWtYCR77qNiOPctigYBGM3koDTsb0sYRH6UkMAUsi6wE-rbMf1xBid9ljFZX4OUlhJnmxE=",
+      "summary": []
+    },
+    {
+      "id": "msg_0fded7a7db8214ec016aa54f01cfb087d28eb8011cb009d51e",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"packet_id\":\"packet_citizen-guest-005\",\"packet_sha256\":\"37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff\",\"schema_version\":\"M050-RECONCILIATION-PROPOSAL-0.1\",\"units\":[{\"authority_basis_atom_keys\":[\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1\",\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1\"],\"canonical_claim\":\"Every Guest requires content covering: identity through a given or household name, species, silhouette, communication register, and character thesis; Expedition or Resident type selected for play experience rather than social worth; individual form or one of the two authorized collective-bodied households; a First MEET showing the animal acting for its own reasons before recruitment; concrete, visible Terms of Hospitality tied to body, place, safety, habit, or relationship; a Guest House with Mouse, Rabbit, and Squirrel translations, placement needs, and folk-naming direction; Home life covering Role Practice, routine, House use, absence consequence, relationships, and Home MEET hooks; a Signature Permission or Affordance with attribution, situation, limits, and suspension conditions; for Expedition Guests, an Away package covering Permission family, Affinity, Independent Impulse, and shared-system exceptions; at least one meaningful EMBODY Presence concept and, where appropriate, Practice or Flow; and Memory covering arrival, relationship, injury, departure, House history, loss, and Chronicle language.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01235_aa8327e38fe1__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01236_bc2cfc379540__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01237_8d54cec0e5ac__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01238_3272e38fe7c5__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01239_54c987778e6d__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01240_14258f3caf16__a3\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01241_976ffb7c5800__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01242_2b803640b8a7__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01243_a9a39313b3fd__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01244_fcfee08bbc47__a1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-GUEST-001::GUEST-C0045-M050-SRC-GUEST-001__B01245_cc79538fb37f__a1\",\"disposition\":\"basis\"}],\"primary_msid\":\"Citizen.Guest\",\"rationale\":\"These atoms are compatible components of the single required-content schema for every Guest. Citizen.Guest is listed as a candidate on every member and accurately owns the cross-mode Guest definition, while the Away-specific condition is preserved.\",\"related_local_ids\":[],\"unit_local_id\":\"U001\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1\",\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001\"],\"canonical_claim\":null,\"human_question\":\"Should the cross-system document's exclusion of pre-design-pass four-slot Guest modules and its requirement to remain valid without detailed Guest capabilities be owned by Citizen.Guest, Away.Guest, or Home.Colony.Guest?\",\"members\":[{\"atom_key\":\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00627_4eec9441eb8b__A1\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001::M050-SRC-047-CROSS-SYSTEM-CARRYFORWARD-001__B00644_03e5df13de82__A0001\",\"disposition\":\"supporting\"}],\"primary_msid\":null,\"rationale\":\"The two claims compatibly establish a cross-system dependency boundary, but the evidence lists three alternative Guest MSIDs and does not determine whether this document-scope constraint belongs to the general, Away, or Home Guest branch.\",\"related_local_ids\":[],\"unit_local_id\":\"U002\",\"unit_status\":\"human_required\"},{\"authority_basis_atom_keys\":[\"M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4\",\"M050-SRC-HUMAN-RULINGS-001::ATOM-HUMAN-RULINGS-DIRECT-0123\"],\"canonical_claim\":null,\"human_question\":\"Should occasional guest-species access in the Overhead Layer be owned by World.Terrain.Band.OverheadLayer as qualitative terrain ecology, or by Citizen.Guest?\",\"members\":[{\"atom_key\":\"M050-SRC-ECOLOGY-001::M050-SRC-ECOLOGY-001__B00249_4159b691c2e9__A4\",\"disposition\":\"basis\"}],\"primary_msid\":null,\"rationale\":\"The claim concerns species emphasis within the Overhead Layer, while Citizen.Guest is only an alternative mapping. The Human Ruling limits ecology to qualitative translation and leaves mechanical expression to dedicated owners, so selecting Citizen.Guest would risk misstating semantic ownership.\",\"related_local_ids\":[],\"unit_local_id\":\"U003\",\"unit_status\":\"human_required\"}]}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "const": "packet_citizen-guest-005",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-PROPOSAL-0.1",
+            "type": "string"
+          },
+          "units": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority_basis_atom_keys": {
+                  "items": {
+                    "description": "An exact atom_key from packet evidence.",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "canonical_claim": {
+                  "anyOf": [
+                    {
+                      "description": "For reconciled only: a nonempty, source-grounded semantic claim; human_required must use null.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "human_question": {
+                  "anyOf": [
+                    {
+                      "description": "For human_required only: a precise nonempty authorial question; reconciled must use null.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "members": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "atom_key": {
+                        "description": "An exact required atom_key from the packet.",
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "basis",
+                          "conflicting",
+                          "elaboration",
+                          "superseded",
+                          "supporting"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "atom_key",
+                      "disposition"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "primary_msid": {
+                  "anyOf": [
+                    {
+                      "description": "For reconciled only: one current MSID listed on a required member atom; human_required must use null.",
+                      "enum": [
+                        "Away.Guest",
+                        "Citizen.Guest",
+                        "Home.Colony.Guest"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rationale": {
+                  "description": "A nonempty source-grounded reconciliation rationale.",
+                  "type": "string"
+                },
+                "related_local_ids": {
+                  "items": {
+                    "pattern": "^U[0-9]+$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "unit_local_id": {
+                  "description": "A unique local ID such as U001; never empty.",
+                  "pattern": "^U[0-9]+$",
+                  "type": "string"
+                },
+                "unit_status": {
+                  "enum": [
+                    "reconciled",
+                    "human_required"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit_local_id",
+                "unit_status",
+                "primary_msid",
+                "canonical_claim",
+                "members",
+                "authority_basis_atom_keys",
+                "related_local_ids",
+                "rationale",
+                "human_question"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "units"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 200429,
+    "input_tokens_details": {
+      "cache_write_tokens": 200426,
+      "cached_tokens": 0
+    },
+    "output_tokens": 3344,
+    "output_tokens_details": {
+      "reasoning_tokens": 1292
+    },
+    "total_tokens": 203773
+  },
+  "user": null,
+  "metadata": {}
+}

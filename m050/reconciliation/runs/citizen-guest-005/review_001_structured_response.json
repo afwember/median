@@ -1,0 +1,10 @@
+{
+  "defects": [
+    "U001 assigns primary_msid Citizen.Guest solely from candidate mapping metadata. The supplied ontology evidence leaves the broader TLD list unresolved, so this ownership requires human resolution rather than promotion as reconciled."
+  ],
+  "packet_id": "packet_citizen-guest-005",
+  "packet_sha256": "37e03697d49bdf15a8c550fc14d9ef116b72f71f4c6e44235bbe84b0519a38ff",
+  "proposal_sha256": "73c71d85ff010ed58429f9c25da31422a647bada6a522004c24ac53fa30c2c05",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "revise"
+}

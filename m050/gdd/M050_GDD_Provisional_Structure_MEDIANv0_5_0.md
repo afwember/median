@@ -3,7 +3,8 @@
 ## Provisional Structure
 
 **Status:** Seven-Part spine, Section 0, and Chapter 1 structure authorially
-approved; later chapters and sections remain provisional.
+approved; Chapter 2 is provisionally structured; later chapters and sections
+remain provisional.
 
 This document is the sole active structure for the MEDIAN v0.5.0 Game Design
 Document. It establishes the reader-facing order of the work without deciding
@@ -84,10 +85,66 @@ III. Chapter 31 later governs the Founding Escape as playable onboarding.
 
 ## 2. The attachment-forward base builder
 
-- The invented genre
-- The four anchors of attachment
-- The attachment chain
-- The player's position
+### 2.1 What attachment means
+
+- Imagined people, places, objects, and histories acquiring durable emotional
+  reality
+- Attachment invited through legibility, contact, care, identity, shared
+  history, credible danger, and return—never demanded or declared for the
+  player
+- The human propensity to form such attachments, demonstrated by long-lived
+  fandoms around worlds such as Middle-earth and *Star Trek*, remembered
+  Pokémon companions, and personally built *Animal Crossing* towns
+- These examples as evidence of attachment behavior, not additional creative
+  influences on MEDIAN
+
+### 2.2 The invented genre
+
+- Why the term is attachment-forward rather than attachment-first
+- Comparison with production-forward and survival-forward base builders
+- Home as an inhabited social protagonist rather than a machine, defensive
+  apparatus, or disposable platform
+- Progress accumulating around Home rather than consuming or replacing it
+
+### 2.3 Successful stillness: the pleasure of Home
+
+- Success not defined by continual expansion, territorial domination, maximum
+  population, or infinite production
+- Growth serving the capacity of one particular Home to sustain ordinary life
+- Quiet Equilibrium as an earned condition in which nothing urgently needs
+  fixing and the player is free to observe, inhabit, and enjoy the Colony
+- Calm grounded in understandable Game Logic rather than decorative inactivity
+- Continued meaning through relationships, memory, craft, hospitality,
+  exploration, and chosen civic ambition without required conquest
+- Milestones and campaign horizons without a mandatory terminal victory state
+- A Shire-like pleasure in familiar paths, known neighbors, small rituals,
+  accumulated history, and peaceful continued existence
+
+### 2.4 The four anchors of attachment
+
+- Home
+- Citizen
+- Place or object
+- Memory
+- Systems may strengthen several anchors simultaneously without multiplying
+  attachment categories unnecessarily
+
+### 2.5 The two attachment chains
+
+- Legibility → Competence → Stability → Attention → Attachment
+- Attachment → Chosen Risk → Consequence → Return → Deeper Attachment
+- The causal relationship between mechanical confidence and released attention
+
+### 2.6 The player's position
+
+- **Steward** — arranges finite civic attention
+- **Chooser** — decides when sending particular Citizens Away is justified
+- **Witness** — remains present when consequence belongs to a named life
+- **Companion** — accompanies rather than possesses during EMBODY
+- **Rememberer** — preserves what mattered without converting every memory into
+  advantage
+- The player is not principally a commander, mayor, optimizer, or possessed
+  avatar
 
 ## 3. Design pillars and protections
 

@@ -222,7 +222,7 @@ additional descriptions of the player experience.
 ### 4.1 One persistent world
 
 - No disconnected minigames
-- A Citizen, Place, object, route, wound, promise, or memory remaining the same
+- A Citizen, Place, object, Node, wound, promise, or memory remaining the same
   fact across every form of play
 - Registers altering scale, pace, subject, and attention rather than reality
 - Actions and consequences persisting through transitions
@@ -287,13 +287,13 @@ additional descriptions of the player experience.
 - The Field Register as the primary form of Away movement through extended
   territory
 - TRAVEL carrying a particular party of named Citizens through Reaches,
-  Margins, routes, Nodes, and known or unknown conditions
-- Distance, route, time, load, shelter, knowledge, and the changing condition
-  of the party and world as its principal working material
+  Margins, Nodes, and changing conditions
+- Distance, time, load, shelter, Nodes, and the changing condition of the party
+  and world as its principal working material
 - The party never becoming an abstract expedition marker; the same Citizens
   who left Home remain physically and historically present
 - A characteristic presentation following the party through terrain at animal
-  scale while keeping the route ahead, available shelter, and carried burden
+  scale while keeping the ground ahead, available shelter, and carried burden
   legible
 - Traversal, observation, ordinary discovery, and changing environmental
   information remaining native to the Field without demanding a separate scene
@@ -306,8 +306,8 @@ additional descriptions of the player experience.
   outcome Home
 - Field play as neither a mission-selection map, generic open world, tactical
   combat layer, nor stream of compulsory event cards
-- Detailed movement, time, route knowledge, Conditions, Cargo, and return
-  procedures deferred to the later Away chapters
+- Detailed movement, time, Conditions, Cargo, and return procedures deferred to
+  the later Away chapters
 
 ### 4.7 The Crossing Register — RISK
 
@@ -367,8 +367,8 @@ additional descriptions of the player experience.
   Node in the same world. The presentation changes so that relevant Presences,
   local conditions, possible approaches, stakes, and costs become legible.
 - The player decides how the party will engage. The result may change the Node,
-  the party's Resources or Conditions, its relationships, its knowledge, or
-  some other persistent part of the world.
+  the party's Resources or Conditions, its relationships, or some other
+  persistent part of the world.
 - Once the Encounter is resolved, play normally returns to TRAVEL at the same
   location. A sufficiently urgent consequence may instead lead directly into
   another appropriate situation.
@@ -449,9 +449,9 @@ scale. Its spaces mean different things to different bodies, its conditions
 change over time, and much of it must be discovered before it can be
 understood.
 
-The Part proceeds from world to geography to habitation to change to knowledge.
-Chapter 5 supplies the establishing view; Chapters 6–9 bring its spatial,
-ecological, temporal, and epistemic layers into focus.
+The Part proceeds from world to geography to habitation and change. Chapter 5
+supplies the establishing view; Chapters 6–9 bring its spatial, ecological,
+temporal, and consequential layers into focus.
 
 ## 5. A World at Animal Scale
 
@@ -494,7 +494,7 @@ ecological, temporal, and epistemic layers into focus.
   physical landscape
 - Other animal peoples existing beyond the three civic foundations
 
-### 5.6 Partial knowledge, language, and folklore
+### 5.6 Partial understanding, language, and folklore
 
 - Animals understanding the human world through observation, inherited
   explanation, and culturally accumulated language
@@ -537,7 +537,6 @@ and quiet from emptiness.
 
 - Longitudinal travel through a Reach and between Reaches
 - Upcorridor and downcorridor as the primary directions
-- Routes as traversable lines through territory
 - Transverse movement between Median and Margin across a Roadway
 - A Staging Post applying wherever a crossing point is chosen
 - No separate Crossing Site category
@@ -781,10 +780,8 @@ as disposable interruptions.
 
 ## 9. Discovery and a changing world
 
-- Revealing the Field
-- Nodes, Places, and knowledge
 - Choice Events and persistent situations
-- Known places and lasting outcomes
+- Lasting outcomes
 
 # PART III — HOME: COLONY, DWELL, AND EMBODY
 
@@ -922,7 +919,7 @@ as disposable interruptions.
 ## 26. TRAVEL: Field
 
 - Party pace and representation
-- Route texture
+- Terrain and distance
 - Reach traversal
 - Field Cards
 - Changing availability

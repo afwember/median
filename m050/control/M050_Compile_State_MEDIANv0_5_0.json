@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
   "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
-  "updated": "2026-09-12T17:05:12-04:00",
+  "updated": "2026-09-12T17:14:23-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -46,9 +46,9 @@
     "phase": "Direct authorial GDD creation",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
     "progress": "Seven-Part spine, Section 0, and Chapters 1–8 approved",
-    "now": "Preparing Chapter 9 — Discovery and a Changing World",
-    "next": "Asa and the Compile Supervisor refine Chapter 9 in direct authorial discussion",
-    "updated_human": "September 12, 2026 at 5:05:12 PM EDT"
+    "now": "Reframing Chapter 9 after retiring Study, Knowledge, and route mechanics",
+    "next": "Asa and the Compile Supervisor determine Chapter 9's remaining authorial purpose",
+    "updated_human": "September 12, 2026 at 5:14:23 PM EDT"
   },
-  "next_possible_transition": "Authorial approval of the Chapter 9 provisional structure."
+  "next_possible_transition": "Authorial decision on Chapter 9's remaining purpose and provisional structure."
 }

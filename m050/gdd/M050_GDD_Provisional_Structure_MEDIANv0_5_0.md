@@ -649,12 +649,135 @@ and quiet from emptiness.
   and requiring interpretation through animal experience and folklore
 - Detailed traffic and environmental-state effects deferred to Chapter 8
 
-## 8. Time, traffic, and environmental change
+## 8. Time, Traffic, and Environmental Change
 
-- The shared day and Day Bands
-- Traffic as a Crossing condition
-- Seasons, weather, and Road Work
-- Telegraph, impact, persistence, and aftermath
+Time makes the Corridor legible, dangerous, and alive. One clock runs beneath
+Home and Away. Light, traffic, season, weather, and human disturbance change
+the same persistent places while the player's attention is elsewhere.
+
+### 8.1 One World, One Clock
+
+- The calendar belonging to the world rather than to the current Mode or
+  Register
+- Meaningful commitments, movement, and duration advancing time; inspection,
+  planning, reading, and camera movement not doing so
+- Relevant conditions advancing everywhere when time advances anywhere
+- Expeditions therefore occurring during Colony life rather than outside it on
+  a detached mission clock
+
+### 8.2 DAWN and the Playable Day
+
+- The daily sequence:
+
+  **DAWN → Morning → Midday → Evening → Night → DAWN**
+
+- Morning, Midday, Evening, and Night as the four playable Day Bands
+- Day Bands changing light, temperature, animal activity, human disturbance,
+  sound, scent, surface conditions, and the behavior of The Highway
+- These effects belonging to particular circumstances rather than universal
+  modifiers; Night, for example, mattering differently at different Places and
+  Nodes instead of imposing one blanket penalty
+- DAWN as an explicit transition rather than a playable Day Band, advancing the
+  calendar, resolving daily accounting, progressing recovery and continuing
+  work, reporting meaningful changes, and opening Morning DWELL
+- The player choosing to proceed through DAWN after Night so that the calendar
+  never rolls over unnoticed
+
+### 8.3 Time at Home and Away
+
+Home and Away express the same clock at different resolutions.
+
+| Context | Relationship to time |
+|---|---|
+| **DWELL** | General Colony activity remains within the current Day Band. A normal Home Commitment, including a Home MEET, advances the world to the next band. |
+| **TRAVEL and Away MEET** | Each Day Band contains two Time Marks, spent according to distance and duration. |
+| **RISK** | Crossing uses the current Day Band and traffic without adding another duration to the movement that brought the party there. |
+| **EMBODY** | Ordinary life occurs within the current Day Band without becoming a time-payment action. |
+
+- Colony conditions, Node conditions, MEET presentation, traffic, and the Field
+  changing together when the Day Band changes
+- The resolution changing between Home and Away while the chronology does not
+
+### 8.4 Traffic: Pattern, Threshold, and State
+
+- Traffic behaving like weather: broadly predictable from the time of day, but
+  variable in its actual expression
+- Each Day Band supplying a weighted range from which the current traffic
+  pattern is realized
+- Volume, speed, spacing, pulse regularity, vehicle mixture, visibility, noise,
+  fumes, and disruption combining to distinguish one pattern from another
+- Each Day Band also permitting one named special state:
+
+| Day Band | Eligible special state |
+|---|---|
+| **Morning** | **Morning Rush** |
+| **Midday** | **Midday Window** |
+| **Evening** | **Evening Rush** |
+| **Night** | **Night Velocity** |
+
+- A special state becoming active only when its defining threshold is reached;
+  otherwise, The Highway retaining the ordinary variable traffic of that Day
+  Band
+- The active special state applying its modifier to the underlying traffic
+  pattern rather than replacing that pattern or determining every vehicle
+- The same special state therefore able to recur with materially different
+  traffic on different days
+- Weather, Road Work, collisions, maintenance, and other disturbances altering
+  the pattern and affecting whether a threshold is crossed
+- The realized pattern belonging to the world rather than to an individual
+  Crossing and not being rerolled whenever the player enters or leaves RISK
+- The Day Band telling the player what traffic is likely to do; observation of
+  the Roadway revealing what it is doing now
+- Waiting potentially producing another opportunity while spending world time
+  and possibly changing light, weather, party condition, or the return margin
+- Ordinary traffic and active special states affecting Crossing, River Spume,
+  Roadway-adjacent Field conditions, and Field MEETs
+- Exact traffic generation, thresholds, modifiers, and persistence intervals
+  deferred to the later RISK chapters
+
+### 8.5 Season, Weather, and Human Disturbance
+
+- Season changing the Corridor by accumulation; weather and human disturbance
+  changing it through particular events
+- Seasonal change altering vegetation, animal activity, Resource availability,
+  Node recovery, routes, shelter, Colony needs, and expedition opportunity
+- Similar pressures taking different seasonal forms: spring flooding, summer
+  heat, autumn wind and debris, or winter cold and snow
+- Green-season abundance supporting preservation, winter drawing upon what was
+  saved, and the surviving surplus or shortfall shaping spring
+- Seasonal preparation mattering without turning every winter day into
+  emergency triage; a well-sustained Colony able to pass through ordinary
+  difficult days in relative calm
+- Rain, wind, heat, cold, flooding, mowing, maintenance, and Road Work affecting
+  the Places, Nodes, and routes they can credibly reach
+- Their effects appearing through existing play as changed TRAVEL conditions,
+  altered RISK, different MEETs, threatened Places, or new DWELL work
+- No separate weather economy, seasonal minigame, universal climate statistic,
+  or blanket environmental penalty
+- Exact season lengths, weather generation, and Sustenance accounting deferred
+  to their later system chapters
+
+### 8.6 Events Through Time
+
+Environmental events unfold through time rather than appearing and disappearing
+as disposable interruptions.
+
+| Phase | Meaning |
+|---|---|
+| **Telegraph** | The world shows signs of what may happen while preparation can still alter the stakes. |
+| **Impact** | The pressure arrives and acts upon the preparation, Readiness, bodies, and Places already present. |
+| **Persistence** | The condition continues, changes, or produces a situation requiring attention. |
+| **Aftermath** | Damage, displacement, care, repair, changed routes, memory, and other consequences remain. |
+
+- Not every phase opening MEET; a warning able to remain ambient until the
+  player has a meaningful choice
+- Impact not being disguised as a leisurely decision after the event has
+  already struck
+- Heavy wind potentially announcing itself through bending reeds and humming
+  lines before tearing an exposed covering; the storm passing while closure,
+  care, repair, and memory remain
+- An event not warning, striking, and repairing itself within one card; its
+  consequences entering the persistent world and becoming part of its history
 
 ## 9. Discovery and a changing world
 

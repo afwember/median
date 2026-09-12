@@ -446,29 +446,37 @@ and quiet from emptiness.
   its reach
 - Exact mechanical effects deferred to Away and RISK
 
-### 7.6 The Margins: abundance and disturbance
+### 7.6 The Margins: Abundance and Disturbance
 
-- Grasses, flowers, seeds, insects, brush, water, and litter catches supporting
-  dense life along the outer bands of The Highway
-- The Margins providing forage, salvage, concealment, and temporary refuge
-- Runoff, contamination, mowing, predators, traffic turbulence, and human
-  access making that abundance unstable
-- The Sound Walls affecting Margin conditions while remaining hard,
-  non-playable world boundaries
+- Each Margin as the inhabited band between a Roadway and its Sound Wall,
+  shaped by both without belonging fully to either
+- Vegetation, insects, water, runoff, and accumulated human material making the
+  Margins rich in food, shelter, salvage, and other Resources
+- Margin Nodes forming around bushes and other natural features, thrown trash,
+  scattered wreckage, or even a fully wrecked car
+- These features functioning simultaneously as habitat, terrain, landmark,
+  hazard, shelter, and source of Resources
+- That abundance continually altered by contamination, flooding, mowing,
+  maintenance, predators, human access, and River Spume
+- The Sound Wall terminating the Margin as a hard world boundary rather than a
+  playable zone
 
-### 7.7 Roadway-adjacent and sheltered Nodes
+### 7.7 Resources Across the Margin
 
-- Exposure and shelter treated as a spatial continuum rather than two formal
-  classes of Node
-- Roadway-adjacent Nodes exposed to traffic noise, River Spume, fumes, runoff,
-  heat, debris, and sudden disturbance
-- Roadway-adjacent Nodes also offering traffic-borne salvage and other volatile
-  opportunities
-- Nodes sheltered by vegetation, depressions, culverts, or infrastructure
-  offering greater concealment and stability but not perfect safety
-- Different pressures and resources arising from position rather than from a
-  simple hierarchy of better and worse Nodes
-- Node interaction procedures deferred to Away
+- Resource distribution following a broad gradient rather than rigid zoning
+- Toward the Sound Walls, greater shelter and vegetation supporting bush Nodes
+  that yield Perishable Sustenance
+- Closer to the Roadway edge, thrown trash, deposited debris, and wreckage
+  supporting Nodes that yield Flexible Scrap and Rigid Scrap
+- A fully wrecked car becoming a major Node in its own right: part Resource
+  deposit, part terrain, part shelter, and part persistent world feature
+- Natural Node features occurring throughout the Margins and complicating the
+  general Roadway-edge and Sound-Wall-edge pattern
+- Roadway-adjacent Nodes tending toward greater exposure and volatile material
+  opportunity, while sheltered Nodes tend toward greater stability and living
+  Resources
+- Exact Resource yields, gathering procedures, and economic uses deferred to
+  Away and the later Resources chapter
 
 ### 7.8 Infrastructure as terrain
 

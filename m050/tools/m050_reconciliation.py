@@ -1517,26 +1517,24 @@ def _spark_up_assessment_report(
     }
 
 
-def _apply_explicit_spend_grant(state: dict, amount: str | None) -> str | None:
+def _apply_explicit_spend_refresh(state: dict, amount: str | None) -> str | None:
     if amount is None:
         return None
     if state.get("reconciliation", {}).get("provider", {}).get("enabled") is not True:
-        raise TriageError("provider-disabled Stage 5 cannot accept a spend grant")
+        raise TriageError("provider-disabled Stage 5 cannot accept a spend refresh")
     spend = state["spend"]
-    if Decimal(spend["remaining_usd"]) > 0:
-        raise TriageError("Stage 5 already has an unused provider spend grant")
     try:
-        grant = Decimal(amount)
+        refresh = Decimal(amount)
     except (ArithmeticError, ValueError):
-        raise TriageError("provider spend grant must be a decimal amount") from None
-    if not grant.is_finite() or grant <= 0:
-        raise TriageError("provider spend grant must be positive and finite")
-    grant = grant.quantize(Decimal("0.0000001"))
+        raise TriageError("provider spend refresh must be a decimal amount") from None
+    if not refresh.is_finite() or refresh <= 0:
+        raise TriageError("provider spend refresh must be positive and finite")
+    refresh = refresh.quantize(Decimal("0.0000001"))
     cumulative = Decimal(spend["cumulative_spent_usd"])
-    formatted = format(grant, ".7f")
+    formatted = format(refresh, ".7f")
     spend.update({
         "refresh_window_usd": formatted,
-        "authorized_usd": format(cumulative + grant, ".7f"),
+        "authorized_usd": format(cumulative + refresh, ".7f"),
         "remaining_usd": formatted,
     })
     return formatted
@@ -1604,13 +1602,8 @@ def _validate_lifecycle(state: dict) -> tuple[bool, bool]:
     return active, provider_enabled
 
 
-def _revoke_one_time_spend_on_stopdown(state: dict) -> None:
-    spend = state["spend"]
-    cumulative = Decimal(spend["cumulative_spent_usd"])
-    spend["active"] = False
-    spend["refresh_window_usd"] = "0.0000000"
-    spend["authorized_usd"] = format(cumulative, ".7f")
-    spend["remaining_usd"] = "0.0000000"
+def _deactivate_spend_on_stopdown(state: dict) -> None:
+    state["spend"]["active"] = False
 
 
 def plan_lifecycle_transition(
@@ -1683,7 +1676,7 @@ def plan_lifecycle_transition(
             "msid_prefix": prefix,
             "selector": selector,
         }
-        granted_spend = _apply_explicit_spend_grant(result, authorized_spend_usd)
+        refreshed_spend = _apply_explicit_spend_refresh(result, authorized_spend_usd)
         result["status"] = result["execution_state"] = "RECONCILIATION_ACTIVE"
         result["reconciliation"]["status"] = "ACTIVE"
         result["authority"]["reconciliation_authorized"] = True
@@ -1704,7 +1697,7 @@ def plan_lifecycle_transition(
             "transition": transition,
             "tranche_id": tranche_id,
             "activated": True,
-            "authorized_spend_usd": granted_spend,
+            "authorized_spend_usd": refreshed_spend,
             "required_atoms": len(packet["required_atom_keys"]),
             "context_atoms": len(packet["context_atoms"]),
             "packet_sha256": packet["packet_sha256"],
@@ -1725,7 +1718,7 @@ def plan_lifecycle_transition(
         "repository_writes_authorized", "provider_calls_authorized"
     ):
         result["authority"][key] = False
-    _revoke_one_time_spend_on_stopdown(result)
+    _deactivate_spend_on_stopdown(result)
     completed = result["reconciliation"].setdefault("completed_tranche_ids", [])
     if target_complete and tranche_id not in completed:
         completed.append(tranche_id)
@@ -1826,7 +1819,7 @@ def main(argv: list[str] | None = None) -> int:
             args.select_tranche_id, args.select_msid_prefix, args.select_selector
         )):
             raise TriageError(
-                "boundary selection and spend grant apply only to Proceed activation"
+                "boundary selection and spend refresh apply only to Proceed activation"
             )
         selected_target = (
             {

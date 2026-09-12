@@ -607,6 +607,8 @@ def test_stopdown_interrupts_incomplete_tranche_without_marking_completion(
     assert stopped["authority"]["repository_writes_authorized"] is False
     assert stopped["authority"]["provider_calls_authorized"] is False
     assert stopped["spend"]["active"] is False
+    assert stopped["spend"]["remaining_usd"] == active["spend"]["remaining_usd"]
+    assert stopped["spend"]["authorized_usd"] == active["spend"]["authorized_usd"]
     assert report["target_complete"] is False
     assert report["remaining_atoms"] == target_count
     assert f"interrupted with {target_count} target atoms unaccounted" in stopped[
@@ -623,7 +625,7 @@ def test_stopdown_is_safe_and_idempotent_when_already_stopped(corpus, empty_stor
     assert report == {"transition": "prepare-stopdown", "already_stopped": True}
 
 
-def test_stopdown_revokes_unused_one_time_spend():
+def test_stopdown_deactivates_but_preserves_unused_spend():
     state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
     state["spend"].update({
         "active": True,
@@ -632,11 +634,29 @@ def test_stopdown_revokes_unused_one_time_spend():
         "cumulative_spent_usd": "53.2500000",
         "remaining_usd": "1.7500000",
     })
-    reconciliation._revoke_one_time_spend_on_stopdown(state)
+    reconciliation._deactivate_spend_on_stopdown(state)
     assert state["spend"]["active"] is False
-    assert state["spend"]["refresh_window_usd"] == "0.0000000"
-    assert state["spend"]["authorized_usd"] == "53.2500000"
-    assert state["spend"]["remaining_usd"] == "0.0000000"
+    assert state["spend"]["refresh_window_usd"] == "5.0000000"
+    assert state["spend"]["authorized_usd"] == "55.0000000"
+    assert state["spend"]["remaining_usd"] == "1.7500000"
+
+
+def test_explicit_spend_refresh_replaces_unused_balance():
+    state = json.loads((ROOT / reconciliation.STATE).read_text(encoding="utf-8"))
+    state["spend"].update({
+        "active": False,
+        "refresh_window_usd": "5.0000000",
+        "authorized_usd": "55.0000000",
+        "cumulative_spent_usd": "53.2500000",
+        "remaining_usd": "1.7500000",
+    })
+    refreshed = reconciliation._apply_explicit_spend_refresh(state, "4")
+    assert refreshed == "4.0000000"
+    assert state["spend"]["active"] is False
+    assert state["spend"]["refresh_window_usd"] == "4.0000000"
+    assert state["spend"]["authorized_usd"] == "57.2500000"
+    assert state["spend"]["cumulative_spent_usd"] == "53.2500000"
+    assert state["spend"]["remaining_usd"] == "4.0000000"
 
 
 def test_stopdown_marks_completion_only_with_exact_target_coverage(corpus):

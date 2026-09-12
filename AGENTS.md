@@ -88,7 +88,8 @@ including before a tranche is complete. The Worker must stop new provider
 activity, preserve and cost-reconcile all available evidence, retain the exact
 incomplete boundary without marking it complete, set source-work,
 repository-write, provider-call,
-spend, and applicable phase-work authority to false in canonical state, refresh
+active spend, and applicable phase-work authority to false in canonical state,
+preserve any unused author-approved balance, refresh
 `STATUS.md`, run the required guard, commit and push that closing transition,
 and confirm a clean worktree with local `HEAD` equal to `origin/main`. When the
 tranche is complete, the same path records completion; there is no separate
@@ -200,7 +201,12 @@ No separate successor packet is required. These canonical files are the handoff.
 - Provider spend is never replenished automatically. If the conservative
   ceiling for a proposed call exceeds the remaining authorized balance, the
   Worker halts and reports the balance, ceiling, and exact shortfall. Only Asa's
-  explicit approval of a stated dollar amount may increase `authorized_usd`.
+  explicit approval of a stated dollar amount may refresh the balance. Unused
+  balance persists across Stopdown and later attempts until spent or explicitly
+  refreshed. Stopdown disables spend activity but does not erase that balance.
+  A refresh replaces the available balance with the stated amount and sets
+  `authorized_usd` to cumulative spend plus that amount; it does not add the
+  stated amount to an unused balance.
 - Only one task may write the repository at a time. A successor task begins
   read-only until Asa explicitly grants a bounded repository task or
   active-profile work.
@@ -266,8 +272,9 @@ tranche with `--expected-tranche-id` and `--expected-head`. For the Worker's
 selected next tranche, `Proceed` approves that selection; pass
 `--select-tranche-id`, `--select-msid-prefix`, `--select-selector`, and
 `--expected-head`. Asa may instead override it with another exact functional
-boundary. The same invocation may pass `--authorize-spend-usd` only for a dollar
-amount Asa explicitly approved in that response. Use exactly one
+boundary. The same invocation may pass `--authorize-spend-usd` only to refresh
+the persistent balance to a dollar amount Asa explicitly approved in that
+response. Omit it to reuse an existing positive balance. Use exactly one
 `.venv/bin/python m050/tools/m050_reconciliation.py --transition
 activate-on-proceed ... --apply` invocation. It performs the narrow stale-check
 and atomically binds and activates only the approved action. An incomplete

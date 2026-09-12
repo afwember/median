@@ -64,6 +64,8 @@ def test_operating_contract_names_only_stage_5_profile():
     assert "read-only assessment pause is not a lifecycle state" in text
     assert "select the next coherent functional tranche" in text
     assert "may recommend but not select the next tranche" not in text
+    assert "Unused\n  balance persists across Stopdown" in text
+    assert "A refresh replaces the available balance" in text
 
 
 def test_authorial_ontology_correction_is_bounded_and_canonical():

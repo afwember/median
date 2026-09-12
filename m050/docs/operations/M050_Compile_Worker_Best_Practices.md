@@ -104,7 +104,10 @@ The Worker should accept it only when:
 
 The phase's activation operation should test those conditions and change the
 lifecycle atomically in one invocation. Boundary selection or an explicitly
-approved spend grant may be recorded in that same operation. Do not precede it
+approved spend refresh may be recorded in that same operation. Unused approved
+balance should persist across Stopdown and later attempts until spent or
+explicitly refreshed; a refresh replaces the available balance rather than
+adding to it. Do not precede activation
 with a second cold start, full guard, separate synchronization check, dry-run
 transition, preview, inventory, or general revalidation. A failed atomic
 activation returns to LLM adjudication; a successful one should proceed directly
@@ -325,8 +328,9 @@ The Worker should:
 2. preserve and reconcile any in-flight evidence and cost;
 3. complete review or record the exact unresolved boundary;
 4. validate the source package or phase output;
-5. revoke source-work, phase-work, repository-write, and spend authority as
-   applicable in canonical state;
+5. revoke source-work, phase-work, repository-write, provider-call, and active
+   spend authority as applicable in canonical state while preserving any unused
+   author-approved balance;
 6. refresh the derived dashboard;
 7. run the required guard and tests;
 8. commit and push the closing transition;

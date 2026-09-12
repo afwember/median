@@ -1,0 +1,120 @@
+{
+  "packet_id": "packet_away-cargo-strained-004",
+  "packet_sha256": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+  "schema_version": "M050-RECONCILIATION-PROPOSAL-0.1",
+  "units": [
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CORE-TRAITS-001::B00246-2",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00108_c25417c755af__A1",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00111_b7430ef059fd__A0001"
+      ],
+      "canonical_claim": "Carry remains party-wide; normal secured Carry continues under the ordinary party rule, while Squirrel Strained Carry does not alter party action economy or Artifact protection.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00246-2",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00108_c25417c755af__A1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00111_b7430ef059fd__A0001",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Cargo.Strained",
+      "rationale": "The claims describe compatible boundaries of the shared inventory architecture and identify the ordinary systems that Strained Carry leaves unchanged.",
+      "related_local_ids": [
+        "U002",
+        "U003"
+      ],
+      "unit_local_id": "U001",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A1",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00123_a7c02de795dc-A1",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00124_d214c4674e03-A1",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00125_3c4c02113452-A1",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01"
+      ],
+      "canonical_claim": "Under the current working value of 10 Strained slots per Squirrel body unit, maximum Strained capacity is 30 for three Squirrels, 20 for two Squirrels plus one Guest, 10 for one Squirrel plus two Guests, and 0 with no Squirrels. Both the 10-slot value and the 50% full-load ceiling are working values rather than fixed architecture.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00123_a7c02de795dc-A1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00124_d214c4674e03-A1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00125_3c4c02113452-A1",
+          "disposition": "supporting"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01",
+          "disposition": "basis"
+        }
+      ],
+      "primary_msid": "Away.Cargo.Strained",
+      "rationale": "The composition rows consistently instantiate the 10-slots-per-Squirrel value, while the tuning statement expressly limits that number and the full-load ceiling to working values.",
+      "related_local_ids": [
+        "U001",
+        "U003"
+      ],
+      "unit_local_id": "U002",
+      "unit_status": "reconciled"
+    },
+    {
+      "authority_basis_atom_keys": [
+        "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0109",
+        "M050-SRC-CORE-TRAITS-001::B00246-3",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A2",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-02",
+        "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00261_271ef1f94484-1"
+      ],
+      "canonical_claim": "Squirrel Strained Carry is a party-wide, Squirrel-pro-rated way to expose extra ordinary material to shedding during Crossing. Its architecture includes proportional filling, one hidden lane-based Jostle check per Squirrel body unit per crossed lane, random ordinary-Cargo loss, and Artifact exclusion. Thus, under the current capacity value, a two-Squirrel plus one-Guest party has one 20-slot Strained Inventory and performs two hidden checks per crossed lane.",
+      "human_question": null,
+      "members": [
+        {
+          "atom_key": "M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0109",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::B00246-3",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A2",
+          "disposition": "elaboration"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-02",
+          "disposition": "basis"
+        },
+        {
+          "atom_key": "M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00261_271ef1f94484-1",
+          "disposition": "supporting"
+        }
+      ],
+      "primary_msid": "Away.Cargo.Strained",
+      "rationale": "The atoms consistently describe the Crossing risk architecture, its player-facing tradeoff, and a concrete acceptance-test instance; no supplied claim conflicts with another.",
+      "related_local_ids": [
+        "U001",
+        "U002"
+      ],
+      "unit_local_id": "U003",
+      "unit_status": "reconciled"
+    }
+  ]
+}

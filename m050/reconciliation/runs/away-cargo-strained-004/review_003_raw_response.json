@@ -1,0 +1,153 @@
+{
+  "id": "resp_0e20d1ba1337b4c8016aa49dfc84fc87d2bbd60907b084b0c7",
+  "object": "response",
+  "created_at": 1789173244,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789173255,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 8000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0e20d1ba1337b4c8016aa49dfda22c87d2aadedca5fb256934",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpJ4HYErIkUS-WEzHPxLfLjzgMJj7b5Up6j5kL0Y7Fo9ZSuaFHYSwvpqOMp1aF8byxpR8nkQ1Aoev7CuwdBanPWqiueZZvMwTzi3areh7v7E3fZH4Q6SuUCr8Voj8Ujqgxn0VKoKmu9nrg_OjiXBawKAxvm1eSnjpOczoPHvYSR28n5zvBZHmyDrWzRWD_HwFgSFH5BwowIKslLblXCWBotuCPNcKuuoqdxZ915jEIPVIqUWSFuiKKRBm2P80qZ4kmQa1VGNs9qazqsBKIyTNucVFHagOA4UQc5WeVTf90hbgCynv5JrqE6tB99BIpjKgUeDaNew2PF-07Dx14RIwFPnrfR3joCtUJISC1w8tNkjNRT25Mzvn1236KV7Hp-2tFzR04XtrBi6S2iZDUn6O3Wa2EobovkLZsscp4Bzz9xDy5xpJqWmsS5mGpV41nciv_cPMfpjfrX5kdGvPIZBOT8EZVnM_nzMFIsLmAJh0bKZpKJTYcsGe9DEfNNwj3bpi3OBV5d16QLG7RT6BTeSq8uOkbpNYXustKHbQ527nAqxYA_7fSBANhxCGDBTBrYlUwyWzyFwQvcA_bKjUt5jc8eLbvBfxJ0_u80ihxaU5xc6TPMjV8jbj8qR3nO9ND4ZcQOiGbJXEWJ4ioa0jfw9DEkNNUzyZhVjer5psjgIpx0Fh0sfhPBWemffR8VKdIX3GAXV4irQP2hub5fElMaiTO9Us57GoRS7HuB7Ff0iUVI5flR7TfhQgi__hCQlTikqytWVSEnUr-AYQ7E-UmW-R8kVCOhgQBR6le5cxzRBtDhJSv3RFP8s3LXxQrPPPwYhVtSURB27zBy8NCpNh39Ua18btFCMFpjGlx_yb1HC9wsi-z2NrAYGMC3tW-sC-6vsNsef5bY50wYngFIIC8eQAzRb-rOoeLbFrQEtmNb0LvxzwnzIIqDD7ybRS8NgPboc_vapKd1Rv_gSQn-NmBYWaxR9vSLUHn-OMYj8lRzoW6qFTZqUnq0QQ4T4VYX-qphzYS-XYd7KmebZplKYWvi4JNHIjdKOuyMEMtW1l4xrqPUXs-raysLEJp_8Y-bQzZ8aPl1lp13sr0_jmDM3aR-OXjJdNzCv2uFdKXhjASTAgH2uJvOpAx7B0iwLMbNAR6HoVRe427M3vzdqVBzYQRmNdOYkjb0C2QX_emBo6tVGaStjrwS6mq-0z5Tlhv6eKFNYBeGjzl653VhW1zT_KmnRUDwhJObnP9yQRUuusPb1yrZcWFVQWCI4n7BodMl3-2uD7SXr6tejFmk2uVbAUpAVMsoE6sSSWeN00OHZPL8pyhZ0KFvTpDDb3ujpmAX2XAVCSC_UDLehdOrWxizRIWE6Pc_62hn5UmhAtm13grm0tPWjHQhnKjkTl1qYztPzT6hatYGHc_83XEOaW82zhaGQ-bfhKyCwpbygq-Ar7anPVKLi3aR1PdOPlouH6vpxpXmp5Df13z5_2sxoh-AmtmQXkC3Hg8KnoZhHq0TAntPZzT2X-s2QhawdB0ad8uCg1myeVE_sPEuOeRvT_y5WoqLFUIopDKsMoicsmNJ-BtCjR7rC0Uf3G9O6w0VLK4eGNjYrynMX0FUROrND13mXAOL50bzHJlsBvF2OsFJvU2v827UIxbn_II6cfuXo6WzUBc8MscHWqj_ZtqvbxjiUF40MWkZ-HtNEvgZ6IknrZMDV-j4X3mjOzY2dcnmfkkiKkYLQOQVUd6AkR3k3ZlHetGK9klR5DQ-QaWdzv1a3YGraEwqbT5smwSLSiQ5_JwHfM2FmQEGKRKNIbqUQ1aiGsXtVkZ5MWQeizul1CZwyJ5dz2RF41BlQRt_zntKfgEv5wWjdZvqGPNYblLMWAEiVNJf1uxA28BLU4lTPpbv4L1e8vCxX215sEJjs29QzIPjV-R_x9NVySYExLz4AcwZuVJTPvDhEtL6B3O81lmCrN3zdcHRIK8C5kIhc87tlIxz0GA4-FEhQO8FGn1-4sLAgv9dZ2mQ36elS11sMJssKpOcJxbgafj574j_fNMnMrcsjvh81nTTqJbQOl0adu-ojvlijLN5cxc7g9C_80RmHHkD832eXEAVwOAfRE9scIU1MZPLM7Md67WKtqk1V6hw3JOdSkUah4xSHMeW-pdCt3Vwd6fJA0V7Yxdcwm7VN1F3nWr9n6O3Qqm33j8PsK4sq22TRbZ4odIWXHvF7ihAD9wZ4xxvxYzkbfvZISAKjpVSh6lhzFaviFC44I-z8mUB9nifBde59rXpgigjnNfFiQ11s0d80oSWvCXnRL6YzaPPeh4R8A81Lb1ucvvN4p0ZZS97CvI3GvLW8Gsq8WrnY2Dtux6TH3vQy-LwO8hMOqC1bJ05dc6NbmZWKPWVPS70NF9lKiSc684auzk3uCnAd7pkyjSpUP3FRn22eJUOPmIo1_pTz0UGKWAtU5_8ixu5YyVS__C5iCCoAAplnd2gXTVHCovUsOacnFNL6ITs5e9CRzJRsBO-NdGxHeIlVzkB7ytcdW6KxBq6EjkEJ58r7V3H9at19wmfbUczSHwfCaU6mBACAvwyrXYMNuEKlJzCvnCVCkAelsOTpnzccPHrYMxuUo3AeG1XO82v0tXYf9Z7BodsZ_1ZQniMQNPb5w4MiOgR-ueNDmXouaYT6Eshcs4j8Uo_kyk7oF1oxNapVmSY8cmA0TcXSEXAEQCZo8uRkFsm9MhrMvYhSUUmv8AhuxrYUGscNmssAdrR38P5KlX6R7hlqxFunBUd9syInCpPb7JXGBCmUL9b9pIzpg-1xdcC6seYJozhyh6BaOrwIS3oRWu4rNGAa0vSvXBQNh-Zm932guX8xJRFDGNiii_QHUBv_dVTDizFVMYKV0DQUjk5z95q2-h54zNRwnZtX-MB6wiqScFtrF55AtDfHQV78IENCOZ8MNLOXUUbxI65zrmz0OIGuLxMkTMLmZjveT7L07eD3dLSTRX5JZmDo-FrNUoV0P2UDLrQhSvtCN0t5HfGukU6nkXFTyjP6nZS-vgR_RMeUN9v8bliQI6G08J1KhFRBSN9G5_RtzLApqnOleB8m75Lyz_ARFPlb5EGSDOMFsvkK6AxRR99vVmsiEPQOlNFbQQAfQT4vAf6xKTeE5h0AtBhx5p6iOpyvyvIgbSWVTC2MEhTOglX7seaGPNmbSLM7wfQziKCKUSeP0P59Ii9EfzHXHpGExardffSn5kiTCg31jwUEJz59XOQ0IZ_jJy0egDM75XgrB8AtcGpK0PbLH-zx2eIMRIkGZRUaq1CNnv-KibpBmBRnaBQk_kC-f6vPE-o3xa91vQkhc9XtgA0X32j-qpt2dZWQq9xVqGEjptVL-QGjQ6zStnA9EMxsxLwZGA__mV671UpkUd6lB4-LM0TfUc5D4s4LjWUTNKaVii5PKM18J2sc97NMcHjGCemVR9S_UlF2KThs4qE4eKPfwO06qnK7uLVOmSBMd34jSyiprtsxWGpZFQFE_CtaRpGGyTocjQieS_zGSpNY1TX0fzDj4WEf7GfM33SXrD5LNoQWtHfmA_8T9drW3goxPOdhjG-UpAyQO5qOc8orzzb26HZR_chzGiGthcyMTwL5fZY-BgJwudF3fx0heGUCZEDF8iuVOn8ZZezCHeFTa8LScRXBH9yQj9haWTo6BDKgL3oHxpOnAy8OzlVDr1iVXvzTGJdxogKxtub2G-pvNRJnhLUHTyevMXsSfIr1f27Q-4Fyz10mZajv00G2jcUfkMGDxut34LM4xmMJw_6buOLFFf8KfApQVCfKnobIkiAo-Bh9cIYsMD0IZULw5noJSJ95eFsIQAxxNpaQqql6mrmW7QnXEbof7c3Kvfml8ISl7TdQCuEJ4AzeHeeC4DISqQiewC_xbNzg2Uw1j7oRTNDz3F0ai_0QHMpIEuhL4oNFo5xSIrbisaaa5IfoyZhvTtJAjm6SZJNFVQN9eo0IUG8dr7lkAXqmLuXlxee1Zm8X3FNIr-7qh-Oe6oGYpcm-eVTu_vDvZRHn5K_dBe3y_KUSY9l0KkeULdIzA3Sv3A_iGA5mi1EC_OlJAKl89T4saMQJS2VT6GZmxgBqt96iwf-3Nd5c7dbrVhrJh234uxuuLn0IoTzEEnerMHluW5_RNWLqqDQloJshXDvxl0KmAidw6_a7OoaU1AbTbRakTQApdDDfwKjQM10lpxPsDv6bjQigj-Tgr7skepi8OKgDm7Q_uZNym-sB-bjgmJ_dPyln4XNvRW0IgVH3zwo71cLKpLJ0hx0ocqS4u3CvO-v22xKJNUc9k3yr-xwofVDu_8Wc9Czg1kIbp1w==",
+      "summary": []
+    },
+    {
+      "id": "msg_0e20d1ba1337b4c8016aa49e04f5b487d2ab7462d1ab41941f",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"defects\":[],\"packet_id\":\"packet_away-cargo-strained-004\",\"packet_sha256\":\"1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee\",\"proposal_sha256\":\"b6c64868a7b7df8f082796f89f7611da8f87da438b7ba0e22edaf05844072053\",\"schema_version\":\"M050-RECONCILIATION-REVIEW-0.1\",\"verdict\":\"accept\"}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "defects": {
+            "items": {
+              "description": "A concise, substantive review defect.",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "packet_id": {
+            "const": "packet_away-cargo-strained-004",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+            "type": "string"
+          },
+          "proposal_sha256": {
+            "const": "b6c64868a7b7df8f082796f89f7611da8f87da438b7ba0e22edaf05844072053",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-REVIEW-0.1",
+            "type": "string"
+          },
+          "verdict": {
+            "enum": [
+              "accept",
+              "revise",
+              "human_required"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "proposal_sha256",
+          "verdict",
+          "defects"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 13232,
+    "input_tokens_details": {
+      "cache_write_tokens": 13229,
+      "cached_tokens": 0
+    },
+    "output_tokens": 605,
+    "output_tokens_details": {
+      "reasoning_tokens": 469
+    },
+    "total_tokens": 13837
+  },
+  "user": null,
+  "metadata": {}
+}

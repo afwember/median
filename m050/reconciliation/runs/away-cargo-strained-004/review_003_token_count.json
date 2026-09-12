@@ -1,0 +1,12 @@
+{
+  "schema_version": "M050-OPENAI-TOKEN-COUNT-0.1",
+  "full_request_sha256": "b311e7ec815db1309cee852d87f5a2ccb7737e1149c7f3f6251ada9b27ef36bc",
+  "uncounted_request_bytes": 1060,
+  "full": {
+    "http_status": 200,
+    "response": {
+      "object": "response.input_tokens",
+      "input_tokens": 13030
+    }
+  }
+}

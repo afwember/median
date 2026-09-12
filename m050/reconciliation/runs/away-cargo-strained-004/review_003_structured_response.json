@@ -1,0 +1,8 @@
+{
+  "defects": [],
+  "packet_id": "packet_away-cargo-strained-004",
+  "packet_sha256": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+  "proposal_sha256": "b6c64868a7b7df8f082796f89f7611da8f87da438b7ba0e22edaf05844072053",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "accept"
+}

@@ -1,0 +1,10 @@
+{
+  "defects": [
+    "U003 loses B00246-3’s decision nuance: it describes exposure to shedding but omits that the characteristic choice is how much extra ordinary material is worth exposing."
+  ],
+  "packet_id": "packet_away-cargo-strained-004",
+  "packet_sha256": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+  "proposal_sha256": "537e12db5f92ef6fa5c9f77c4580cfdce783874c54436faeb0326c3501997da2",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "revise"
+}

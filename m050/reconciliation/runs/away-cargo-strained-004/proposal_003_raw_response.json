@@ -1,0 +1,244 @@
+{
+  "id": "resp_0123ca518ae531db016aa49de1d35087d29e35f1ce436788fc",
+  "object": "response",
+  "created_at": 1789173217,
+  "status": "completed",
+  "background": false,
+  "billing": {
+    "payer": "developer"
+  },
+  "completed_at": 1789173233,
+  "error": null,
+  "frequency_penalty": 0.0,
+  "incomplete_details": null,
+  "instructions": "You work only on the supplied, hash-bound MEDIAN v0.5.0\nsemantic-reconciliation packet. Compare meanings rather than wording. Preserve material scope,\nconditions, exceptions, ownership, and normative force. A Human Rulings atom controls only the\nprecise question it explicitly settles; repetition and provenance confer no authority. Mapping\nmetadata routes context but does not decide truth. Do not invent rules, MSIDs, or evidence.\nReturn only the JSON required by the supplied schema.\n",
+  "max_output_tokens": 36000,
+  "max_tool_calls": null,
+  "model": "gpt-5.6-sol",
+  "moderation": null,
+  "output": [
+    {
+      "id": "rs_0123ca518ae531db016aa49de3942c87d2ad1d59c0ccc5782e",
+      "type": "reasoning",
+      "content": [],
+      "encrypted_content": "gAAAAABqpJ3xinfMbJcpnLT6uJ2j-z3fLnyHvIUy8iN88D3Yx--1b9o36Pwj3AeYbEXKrk0T8LS3rDuw5gd339QPe4fc8CRhfHlm0-41ZDW94Uq_wCY6e6Gtlw4nsgHH-AtEk1fm9mn2gQL50hYmnyrLf3PS8cJ_dFw0yxjKDMqlj-9XkRkaZDBm2gjDZuWx24aW3La434pv0NKoQnhc_KdQsbLyprsKHyxqHrJnyMokoMt05cgaoBaMVz5tu8GU_DwOlGo8AwFSPtbNeSfZbZqWkctbUT33yjkbP9dhgphAXsZiCze8kaQVtik8jgh_q7wu1-seRshk9KwJt8HA90MGVrNrGHX4-9zfw5V1WKK1tTJeIqEraqoyZg_zvgvNP7ygKJ-ahoiXbX7Ycn7vI0y70ZYcOzns_oDIbQPPOUkqFMDNTqhH64BR3TkdD2FYXdnrqz7fYLJA0HLDsXN5uryiA1YubVevQROBv-H6gLtqr8crQwBwiPYoVgoWB7Om-zTpceb1gbZuYep9yBTNAr-LL3-bqLEwAky84VXEFt17bx4DXuetn6MotOgZFCaXk7qqKQW4tcKEmwReP25e_mJ1zkXJD5sW1hCTffSUr49-D6ZBLDn3dmx56ypJP4HpkRWsZCZIvUXumby0KINou86m6SmkFJuyaqJc-jDbiIp7NYi4rgEPnD6R4OLtZX_dJ5QDZfXo5m70KQEjdwiwVmti3NAa4TBdnZf4OfasKGbDHqOIKFBXIe9i8o8q6vpxR3s9gGjhhnZ3VvM2YDTbbGwiqbfq8wKT0FlNtI1HkrN119UoF8X-BmolyVgryd6pMaQCvm8Kt3Mo3geHg22ZZIHVXtwsK0QsHwW9GLewRgg1hklE0Apop-SZavcWTR_wyu2FZa571eLnv1hiBckO5KipabNmvSJzfg2NEoXctTrzYPvwlBoEbaLgyEU_jWIHrSUeuBywomYgRDy9CZg5dImFQOqRfAut-uLKl99qYP6ImxL8REnoML1_7OWrZufeOn1XOwQyQoAArvEBB1LXx2i56w14rzt6GfmzPQrpmDCY3GHufGADArv4S6ozNbMX47lHYq_s8oi2PrYAlkq10LfpM8mZ-kCN_oVLlRyRVtlAXa-_rZLu2IZ0qysibvzwcL9Qsq2rfm3ftbfsOLmRkH7BnT52PyJCdqUmPZZA4Z_41urYSMZnslXeOqZ85tcUd95vzar5hGg20cZ4UYGIxOYGGmrtuR3JCmm5kSvuQaD8myKHOkCmjvDFz_eHFEGEpDoO_G0UAKAeCCyT1MTFuee9vlhotjHDNIdJYhG9vh0iWXehMrhBpZhgDaSsGt5AGbqkE2seUl2igjbqO3ziYSCXKIYEZvf-8Ykj0d6UYOWUEuhLNqew-I6_OqWcH8Uomamt6qd4GuYTnM6Q8s7vRNS8pCbQXZOUmXaVbmXO-WV5UVeHUxOSCgtMZW2KbgSw6DziRtiMN5Zyycyu6KHdmSsCAR8edK3zHaE6JUYhB9X5u7mKSkOEyxFlEy9yBE5wDaKeFPQ58zuVG9Uyc-z7J_TS-Qr4HkInmyCS6j3cSBGzAC62fDdLXUiryhftXSA2BaJ8yGpP1UVeaT9A6m8xswExYeeeRRujq9D0aTq4IrKbnpi4TGvXsPFtQaiRGTNhwVpfN3RLq9XMi9Lq7qJk66jMPDThkhXHPOGbY_ZJz_FCCu0ujt_eyq-Sph2i84j-3AF5KDlinGRSpQxZoMNLt_kvXtvl7_hUnpdbqDv32ie6JLCcLPFS8w8rv_s_scmmKTp8IyHSVtLO0OutHJhiOctJCf9W2z-dBpxSu9S3VIfAg4Mc7K4gnzjI7qMmGexeWZGOj1S8i6QDjberhhHPNw_D-dCJjvUgctyEVcFf8GL1rJoAmBIChoAHQdmK_-dgrwcj4TfpIHk27K2kakAU_3q0mDXiuKBCqaKZgSivmRXIFhHeDQCb7qg=",
+      "summary": []
+    },
+    {
+      "id": "msg_0123ca518ae531db016aa49de5fae487d2a95facae97983f7c",
+      "type": "message",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "annotations": [],
+          "logprobs": [],
+          "text": "{\"packet_id\":\"packet_away-cargo-strained-004\",\"packet_sha256\":\"1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee\",\"schema_version\":\"M050-RECONCILIATION-PROPOSAL-0.1\",\"units\":[{\"authority_basis_atom_keys\":[\"M050-SRC-CORE-TRAITS-001::B00246-2\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00108_c25417c755af__A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00111_b7430ef059fd__A0001\"],\"canonical_claim\":\"Carry remains party-wide; normal secured Carry continues under the ordinary party rule, while Squirrel Strained Carry does not alter party action economy or Artifact protection.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00246-2\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00108_c25417c755af__A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00111_b7430ef059fd__A0001\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Cargo.Strained\",\"rationale\":\"The claims describe compatible boundaries of the shared inventory architecture and identify the ordinary systems that Strained Carry leaves unchanged.\",\"related_local_ids\":[\"U002\",\"U003\"],\"unit_local_id\":\"U001\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00123_a7c02de795dc-A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00124_d214c4674e03-A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00125_3c4c02113452-A1\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01\"],\"canonical_claim\":\"Under the current working value of 10 Strained slots per Squirrel body unit, maximum Strained capacity is 30 for three Squirrel body units, 20 for two Squirrel body units plus one Guest, 10 for one Squirrel body unit plus two Guests, and 0 with no Squirrel body units. Both the 10-slot value and the 50% full-load ceiling are working values rather than fixed architecture.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00122_93c1f09de4b1-A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00123_a7c02de795dc-A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00124_d214c4674e03-A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00125_3c4c02113452-A1\",\"disposition\":\"supporting\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-01\",\"disposition\":\"basis\"}],\"primary_msid\":\"Away.Cargo.Strained\",\"rationale\":\"The composition rows consistently instantiate the 10-slots-per-Squirrel-body-unit value, while the tuning statement expressly limits that number and the full-load ceiling to working values.\",\"related_local_ids\":[\"U001\",\"U003\"],\"unit_local_id\":\"U002\",\"unit_status\":\"reconciled\"},{\"authority_basis_atom_keys\":[\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0109\",\"M050-SRC-CORE-TRAITS-001::B00246-3\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A2\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-02\",\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00261_271ef1f94484-1\"],\"canonical_claim\":\"Squirrel Strained Carry is a party-wide, Squirrel-pro-rated way to extend the haul, with the characteristic decision being how much extra ordinary material is worth exposing to shedding during Crossing. Its architecture includes proportional filling, one hidden lane-based Jostle check per Squirrel body unit per crossed lane, random ordinary-Cargo loss, and Artifact exclusion. Under the current capacity value, a two-Squirrel plus one-Guest party has one 20-slot Strained Inventory and performs two hidden checks per crossed lane.\",\"human_question\":null,\"members\":[{\"atom_key\":\"M050-SRC-CROSSING-001::ATOM-CROSS-ACCEPTED-0109\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::B00246-3\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00102_6c044d0453aa__A2\",\"disposition\":\"elaboration\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00189_3aebbe2262f3-02\",\"disposition\":\"basis\"},{\"atom_key\":\"M050-SRC-CORE-TRAITS-001::M050-SRC-CORE-TRAITS-001__B00261_271ef1f94484-1\",\"disposition\":\"supporting\"}],\"primary_msid\":\"Away.Cargo.Strained\",\"rationale\":\"The atoms consistently describe the Crossing risk architecture, preserve the characteristic player choice about how much extra ordinary material to expose, and provide a concrete acceptance-test instance; no supplied claim conflicts with another.\",\"related_local_ids\":[\"U001\",\"U002\"],\"unit_local_id\":\"U003\",\"unit_status\":\"reconciled\"}]}"
+        }
+      ],
+      "phase": "final_answer",
+      "role": "assistant"
+    }
+  ],
+  "parallel_tool_calls": true,
+  "presence_penalty": 0.0,
+  "previous_response_id": null,
+  "prompt_cache_key": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+  "prompt_cache_options": {
+    "mode": "implicit",
+    "ttl": "30m"
+  },
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "context": "all_turns",
+    "effort": "medium",
+    "mode": "standard",
+    "summary": null
+  },
+  "safety_identifier": null,
+  "service_tier": "default",
+  "store": false,
+  "temperature": 1.0,
+  "text": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "median_reconciliation_result",
+      "schema": {
+        "additionalProperties": false,
+        "properties": {
+          "packet_id": {
+            "const": "packet_away-cargo-strained-004",
+            "type": "string"
+          },
+          "packet_sha256": {
+            "const": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "M050-RECONCILIATION-PROPOSAL-0.1",
+            "type": "string"
+          },
+          "units": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "authority_basis_atom_keys": {
+                  "items": {
+                    "description": "An exact atom_key from packet evidence.",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "canonical_claim": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty, source-grounded semantic claim.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "human_question": {
+                  "anyOf": [
+                    {
+                      "description": "A precise nonempty authorial question.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "members": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "atom_key": {
+                        "description": "An exact required atom_key from the packet.",
+                        "type": "string"
+                      },
+                      "disposition": {
+                        "enum": [
+                          "basis",
+                          "conflicting",
+                          "elaboration",
+                          "superseded",
+                          "supporting"
+                        ],
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "atom_key",
+                      "disposition"
+                    ],
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "primary_msid": {
+                  "anyOf": [
+                    {
+                      "description": "A nonempty current MSID; never invent a path.",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "rationale": {
+                  "description": "A nonempty source-grounded reconciliation rationale.",
+                  "type": "string"
+                },
+                "related_local_ids": {
+                  "items": {
+                    "pattern": "^U[0-9]+$",
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "unit_local_id": {
+                  "description": "A unique local ID such as U001; never empty.",
+                  "pattern": "^U[0-9]+$",
+                  "type": "string"
+                },
+                "unit_status": {
+                  "enum": [
+                    "reconciled",
+                    "human_required"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "unit_local_id",
+                "unit_status",
+                "primary_msid",
+                "canonical_claim",
+                "members",
+                "authority_basis_atom_keys",
+                "related_local_ids",
+                "rationale",
+                "human_question"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "schema_version",
+          "packet_id",
+          "packet_sha256",
+          "units"
+        ],
+        "type": "object"
+      },
+      "strict": true
+    },
+    "verbosity": "low"
+  },
+  "tool_choice": "auto",
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  },
+  "tools": [],
+  "top_logprobs": 0,
+  "top_p": 0.98,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 13582,
+    "input_tokens_details": {
+      "cache_write_tokens": 13579,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1688,
+    "output_tokens_details": {
+      "reasoning_tokens": 126
+    },
+    "total_tokens": 15270
+  },
+  "user": null,
+  "metadata": {}
+}

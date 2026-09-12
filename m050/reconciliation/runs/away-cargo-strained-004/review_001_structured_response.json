@@ -1,0 +1,10 @@
+{
+  "defects": [
+    "U002 replaces the source’s composition counts of “Squirrel body units” with counts of “Squirrels,” losing the material body-unit counting basis for Strained capacity."
+  ],
+  "packet_id": "packet_away-cargo-strained-004",
+  "packet_sha256": "1393600051e0deea9f3c753fbd86279319b7d8f55bd59f19a90ec299357672ee",
+  "proposal_sha256": "c320e929e1d47a01b046b100c1f4f715c95324f69b020c5a61a358ccf9138382",
+  "schema_version": "M050-RECONCILIATION-REVIEW-0.1",
+  "verdict": "revise"
+}

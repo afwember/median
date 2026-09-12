@@ -87,12 +87,16 @@ Return only the JSON required by the supplied schema.
 PROPOSER_TASK = """Reconcile the packet into semantic propositions. Merge true duplicates and
 compatible partial claims; expose conflicts and supersession. Every required atom must appear
 exactly once as a primary member. Use human_required when the supplied evidence cannot support
-one grounded result. Return complete substantive units, never placeholders: every string that is
-required to carry meaning must be nonempty, unit_local_id values must be unique U-prefixed
-identifiers such as U001, and reconciled units must contain grounded canonical claims and
-rationales. Reserve enough of the output budget for the complete JSON result; once the grounded
-partition is decided, stop deliberating and emit it. Before returning, verify exact-once coverage
-of all required atom keys and verify that every related_local_id names a returned unit.
+one grounded result. For every reconciled unit, primary_msid must be a settled or candidate MSID
+listed as primary_msid or alternate_primary_msids on at least one of that unit's required member
+atoms; never use a provisional TLD. A reconciled unit must have a nonempty canonical_claim and
+human_question must be null. A human_required unit must have primary_msid null, canonical_claim
+null, and a nonempty human_question. Return complete substantive units, never placeholders: every
+string that is required to carry meaning must be nonempty, unit_local_id values must be unique
+U-prefixed identifiers such as U001, and rationales must be grounded and nonempty. Reserve enough
+of the output budget for the complete JSON result; once the grounded partition is decided, stop
+deliberating and emit it. Before returning, verify exact-once coverage of all required atom keys
+and verify that every related_local_id names a returned unit.
 """
 
 REVIEWER_TASK = """Independently audit the appended proposal against the complete packet.
@@ -477,13 +481,19 @@ def proposal_response_schema(packet: dict) -> dict:
     """Stable provider schema; exact packet coverage is enforced after capture."""
     nullable_claim = {
         "anyOf": [
-            _string_schema("A nonempty, source-grounded semantic claim."),
+            _string_schema(
+                "For reconciled only: a nonempty, source-grounded semantic claim; "
+                "human_required must use null."
+            ),
             {"type": "null"},
         ]
     }
     nullable_msid = {
         "anyOf": [
-            _string_schema("A nonempty current MSID; never invent a path."),
+            _string_schema(
+                "For reconciled only: a settled or candidate MSID listed on a required "
+                "member atom; never use a provisional TLD; human_required must use null."
+            ),
             {"type": "null"},
         ]
     }
@@ -547,7 +557,8 @@ def proposal_response_schema(packet: dict) -> dict:
                         "human_question": {
                             "anyOf": [
                                 _string_schema(
-                                    "A precise nonempty authorial question."
+                                    "For human_required only: a precise nonempty authorial "
+                                    "question; reconciled must use null."
                                 ),
                                 {"type": "null"},
                             ]
@@ -1304,6 +1315,9 @@ def validate_proposal(packet: dict, proposal: dict, corpus: ReconciliationCorpus
     units = proposal.get("units")
     if not isinstance(units, list) or not units:
         raise TriageError("reconciliation proposal contains no units")
+    required_atoms = {
+        item["atom_key"]: item for item in packet.get("atoms", [])
+    }
     local_ids: set[str] = set()
     covered: list[str] = []
     for unit in units:
@@ -1327,9 +1341,14 @@ def validate_proposal(packet: dict, proposal: dict, corpus: ReconciliationCorpus
         primary = unit.get("primary_msid")
         claim = unit.get("canonical_claim")
         if status == "reconciled":
-            if not isinstance(primary, str) or corpus.vocabulary.classify(primary) not in {
-                "settled", "candidate"
-            }:
+            classification = (
+                corpus.vocabulary.classify(primary)
+                if isinstance(primary, str)
+                else None
+            )
+            if classification == "provisional":
+                raise TriageError("reconciled proposal cannot use a provisional TLD")
+            if not isinstance(primary, str) or classification not in {"settled", "candidate"}:
                 raise TriageError("provider proposal invented or selected a non-current MSID")
             if not isinstance(claim, str) or not claim.strip():
                 raise TriageError("provider proposal reconciled unit lacks a claim")
@@ -1338,7 +1357,8 @@ def validate_proposal(packet: dict, proposal: dict, corpus: ReconciliationCorpus
         else:
             human_question = unit.get("human_question")
             if (
-                claim is not None
+                primary is not None
+                or claim is not None
                 or not isinstance(human_question, str)
                 or not human_question.strip()
             ):
@@ -1352,6 +1372,24 @@ def validate_proposal(packet: dict, proposal: dict, corpus: ReconciliationCorpus
             if member.get("disposition") not in MEMBER_DISPOSITIONS - {"deferred"}:
                 raise TriageError("provider proposal member disposition is invalid")
             covered.append(member.get("atom_key"))
+        if status == "reconciled":
+            permissible_msids = {
+                msid
+                for member in members
+                if member.get("atom_key") in required_atoms
+                for msid in (
+                    [required_atoms[member["atom_key"]].get("primary_msid")]
+                    + required_atoms[member["atom_key"]].get(
+                        "alternate_primary_msids", []
+                    )
+                )
+                if isinstance(msid, str)
+                and corpus.vocabulary.classify(msid) in {"settled", "candidate"}
+            }
+            if primary not in permissible_msids:
+                raise TriageError(
+                    "reconciled proposal primary MSID is not permissible for its required atoms"
+                )
         basis = unit.get("authority_basis_atom_keys")
         packet_keys = {
             item["atom_key"] for item in (*packet.get("atoms", []), *packet.get("context_atoms", []))

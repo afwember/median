@@ -242,6 +242,49 @@ def test_proposal_validator_rejects_blank_human_question(packet, corpus):
         reconciliation.validate_proposal(packet, proposal, corpus)
 
 
+def test_proposal_validator_requires_null_human_required_fields(packet, corpus):
+    for field, value in (
+        ("primary_msid", "Away.Crossing"),
+        ("canonical_claim", "A claim requiring authorial resolution."),
+    ):
+        proposal = _proposal(packet)
+        unit = proposal["units"][0]
+        unit["unit_status"] = "human_required"
+        unit["primary_msid"] = None
+        unit["canonical_claim"] = None
+        unit["human_question"] = "Which grounded result should control?"
+        unit[field] = value
+        with pytest.raises(
+            reconciliation.TriageError, match="human-required proposal shape"
+        ):
+            reconciliation.validate_proposal(packet, proposal, corpus)
+
+
+def test_proposal_validator_rejects_provisional_and_unlisted_msids(packet, corpus):
+    proposal = _proposal(packet)
+    proposal["units"][0]["primary_msid"] = "World.Terrain.Band.OverheadLayer"
+    with pytest.raises(reconciliation.TriageError, match="provisional TLD"):
+        reconciliation.validate_proposal(packet, proposal, corpus)
+
+    proposal = _proposal(packet)
+    proposal["units"][0]["primary_msid"] = "Citizen.Guest"
+    with pytest.raises(reconciliation.TriageError, match="not permissible"):
+        reconciliation.validate_proposal(packet, proposal, corpus)
+
+
+def test_proposer_prompt_states_status_specific_output_contract(packet):
+    request = reconciliation.build_proposer_request(packet, {
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "medium",
+        "cache_ttl": "30m",
+        "maximum_output_tokens": {"proposal": 36000, "review": 8000},
+    })
+    task = request["input"][0]["content"][-1]["text"]
+    assert "never use a provisional TLD" in task
+    assert "A reconciled unit must have a nonempty canonical_claim" in task
+    assert "A human_required unit must have primary_msid null" in task
+
+
 def test_review_validator_rejects_blank_defect(packet):
     proposal = _proposal(packet)
     review = {

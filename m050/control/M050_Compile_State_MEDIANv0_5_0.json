@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
   "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
-  "updated": "2026-09-12T17:19:11-04:00",
+  "updated": "2026-09-12T17:26:27-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -47,8 +47,8 @@
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
     "progress": "Seven-Part spine, Section 0, Chapters 1–8, and the complete Part II approved",
     "now": "Assessing Part III — Home: Colony, DWELL, and EMBODY",
-    "next": "Asa and the Compile Supervisor refine Chapter 9 — Home Mode and the Colony",
-    "updated_human": "September 12, 2026 at 5:19:11 PM EDT"
+    "next": "Asa and the Compile Supervisor refine Chapter 9 — Roles, Places, Practices, and Projects",
+    "updated_human": "September 12, 2026 at 5:26:27 PM EDT"
   },
   "next_possible_transition": "Authorial approval of the Chapter 9 provisional structure."
 }

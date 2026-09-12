@@ -36,7 +36,7 @@ Its approved composition sequence is:
 
 The narrative prologue then stops. Part I supplies the world and game overview;
 Part II establishes the Corridor; and detailed gameplay begins at Home in Part
-III. Chapter 30 later governs the Founding Escape as playable onboarding.
+III. Chapter 29 later governs the Founding Escape as playable onboarding.
 
 # PART I — WHAT MEDIAN IS: SANCTUARY AND EXPOSURE
 
@@ -786,14 +786,7 @@ as disposable interruptions.
 
 # PART III — HOME: COLONY, DWELL, AND EMBODY
 
-## 9. Home Mode and the Colony
-
-- Sanctuary as a system
-- Colony scale and spatial form
-- The Home view
-- Successful stillness
-
-## 10. Roles, Places, Practices, and Projects
+## 9. Roles, Places, Practices, and Projects
 
 - The civic ontology
 - Roles and global capacity
@@ -801,7 +794,7 @@ as disposable interruptions.
 - Active Projects
 - Species-specific spatial expression
 
-## 11. The daily life of the Colony
+## 10. The daily life of the Colony
 
 - Citizen-Days
 - DAWN adjudication
@@ -809,7 +802,7 @@ as disposable interruptions.
 - Big and Small Weakness
 - Quiet Equilibrium
 
-## 12. Colony situations and Home MEETs
+## 11. Colony situations and Home MEETs
 
 - Shortfall becoming situation
 - Global conditions
@@ -817,7 +810,7 @@ as disposable interruptions.
 - Base Defense
 - Personal consequence at Home
 
-## 13. Resources, production, and construction
+## 12. Resources, production, and construction
 
 - Sustenance and stores
 - Scrap and material transformation
@@ -825,7 +818,7 @@ as disposable interruptions.
 - Construction and decay
 - The Construction Queue
 
-## 14. Population and growth
+## 13. Population and growth
 
 - Population counts and presence
 - Capacity and overcrowding
@@ -834,7 +827,7 @@ as disposable interruptions.
 - Young Citizens
 - Hospitality as growth
 
-## 15. EMBODY
+## 14. EMBODY
 
 - Access and invitation
 - Practice and Presence
@@ -844,14 +837,14 @@ as disposable interruptions.
 
 # PART IV — THE CITIZENS
 
-## 16. Citizenhood and the Citizen Record
+## 15. Citizenhood and the Citizen Record
 
 - Equal personhood
 - Identity and presence
 - The common descriptive frame
 - Record fields and legibility
 
-## 17. The three core species
+## 16. The three core species
 
 - Mouse
 - Rabbit
@@ -859,7 +852,7 @@ as disposable interruptions.
 - Body units and comparative scale
 - Mechanical traits and mixed parties
 
-## 18. Bonds, Hearths, and the life course
+## 17. Bonds, Hearths, and the life course
 
 - Bonds and relationships
 - Hearths and lineage
@@ -867,14 +860,14 @@ as disposable interruptions.
 - Distinctions and After-names
 - Departure and memorial continuity
 
-## 19. Exposure, harm, fear, and care
+## 18. Exposure, harm, fear, and care
 
 - Personal Exposure
 - Harm and recovery
 - Fear and tharn
 - Death without disposability
 
-## 20. Personal items and Focus
+## 19. Personal items and Focus
 
 - Tools
 - Supplies
@@ -882,7 +875,7 @@ as disposable interruptions.
 - Ownership, custody, loss, and succession
 - Focus and chosen intervention
 
-## 21. Guest Citizens
+## 20. Guest Citizens
 
 - Difference and equal Citizenship
 - Resident and Expedition Guests
@@ -891,7 +884,7 @@ as disposable interruptions.
 - Signature functions
 - Collective-bodied households
 
-## 22. Names, Records, and memory
+## 21. Names, Records, and memory
 
 - Given Names and After-names
 - Place-name grammar
@@ -901,7 +894,7 @@ as disposable interruptions.
 
 # PART V — AWAY: EXPEDITION AND RETURN
 
-## 23. Leaving Home
+## 22. Leaving Home
 
 - Sources of expedition purpose
 - Party selection
@@ -909,7 +902,7 @@ as disposable interruptions.
 - Legible Home subtraction
 - Staging Posts
 
-## 24. RISK: Crossing
+## 23. RISK: Crossing
 
 - Party representation
 - Crossing conditions
@@ -917,7 +910,7 @@ as disposable interruptions.
 - Group result and individual adversity
 - Consequence and turn-back authority
 
-## 25. TRAVEL: Field
+## 24. TRAVEL: Field
 
 - Party pace and representation
 - Terrain and distance
@@ -925,7 +918,7 @@ as disposable interruptions.
 - Field Cards
 - Changing availability
 
-## 26. Nodes in the Field
+## 25. Nodes in the Field
 
 - Node families
 - Uncontested Nodes
@@ -933,7 +926,7 @@ as disposable interruptions.
 - Renewable places
 - Material and relational state
 
-## 27. MEET: consequential situations
+## 26. MEET: consequential situations
 
 - Participants and stakes
 - Approaches and Focus
@@ -942,7 +935,7 @@ as disposable interruptions.
 - Tharn interruption
 - Persistence and aftermath
 
-## 28. Outposts, Stopovers, and Held Reaches
+## 27. Outposts, Stopovers, and Held Reaches
 
 - Range and safe destinations
 - Establishing an Outpost
@@ -950,7 +943,7 @@ as disposable interruptions.
 - Active and passive value
 - Off-screen protection
 
-## 29. Return and Homecoming
+## 28. Return and Homecoming
 
 - Return Crossing
 - Return pressure
@@ -960,14 +953,14 @@ as disposable interruptions.
 
 # PART VI — THE CAMPAIGN
 
-## 30. The opening campaign
+## 29. The opening campaign
 
 - The Founding Escape
 - Tutorial sequence
 - Early Colony development
 - The first expeditions
 
-## 31. Civic progression
+## 30. Civic progression
 
 - The four Colony Tiers
 - Population and institutional proofs
@@ -975,7 +968,7 @@ as disposable interruptions.
 - Recognition MEETs
 - Stable plateaus and optional growth
 
-## 32. Corridor progression
+## 31. Corridor progression
 
 - Reaching farther along the Corridor
 - Permissions and Projects
@@ -983,7 +976,7 @@ as disposable interruptions.
 - Relationships between settlements
 - The Sovereign Network
 
-## 33. Campaign horizons
+## 32. Campaign horizons
 
 - The Ancestral Home
 - The Rest-Stop Metropolis
@@ -992,7 +985,7 @@ as disposable interruptions.
 
 # PART VII — PRESENTATION AND DEVELOPMENT BOUNDARY
 
-## 34. Interface and information design
+## 33. Interface and information design
 
 - Colony and Field views
 - Ledgers and overlays
@@ -1001,28 +994,28 @@ as disposable interruptions.
 - Advisor voice
 - Controls and accessibility
 
-## 35. Art and sound
+## 34. Art and sound
 
 - Visual identity
 - The anthropomorphism boundary
 - Animal scale and human infrastructure
 - Environmental and civic sound
 
-## 36. Content-authoring doctrine
+## 35. Content-authoring doctrine
 
 - Choice Events and MEET construction
 - Positive canon and illustrative examples
 - Numerical restraint
 - Canonical, provisional, tuning, and open material
 
-## 37. v0.5 scope and explicit deferrals
+## 36. v0.5 scope and explicit deferrals
 
 - What this edition defines
 - What remains open
 - Prototype and vertical-slice criteria
 - Later manifestations and later-version work
 
-## 38. Canonical summary
+## 37. Canonical summary
 
 # PUBLISHED APPENDICES
 

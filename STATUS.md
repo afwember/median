@@ -1,6 +1,6 @@
 # MEDIAN COMPILE — v0.5.0
 
-September 12, 2026 at 5:19:11 PM EDT<br>
+September 12, 2026 at 5:26:27 PM EDT<br>
 
 <!-- Derived dashboard only; m050/control/M050_Compile_State_MEDIANv0_5_0.json is authoritative. -->
 
@@ -9,4 +9,4 @@ September 12, 2026 at 5:19:11 PM EDT<br>
 **SOURCE:** Frozen 5,382-atom authorial source library across 18 sources<br>
 **PROGRESS:** Seven-Part spine, Section 0, Chapters 1–8, and the complete Part II approved<br>
 **NOW:** Assessing Part III — Home: Colony, DWELL, and EMBODY<br>
-**NEXT:** Asa and the Compile Supervisor refine Chapter 9 — Home Mode and the Colony
+**NEXT:** Asa and the Compile Supervisor refine Chapter 9 — Roles, Places, Practices, and Projects

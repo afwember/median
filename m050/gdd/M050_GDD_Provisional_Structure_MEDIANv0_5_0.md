@@ -391,13 +391,97 @@ and quiet from emptiness.
 - An Outpost remaining categorically distinct from The Colony
 - Node interaction and Outpost functions deferred to Away
 
-## 7. Ecology and species space
+## 7. The Ecology of The Highway
 
-- The island-sanctuary paradox
-- Human infrastructure as terrain
-- Mouse enclosure and continuity
-- Rabbit concealment and refuge
-- Squirrel height and connection
+### 7.1 Shared ecology
+
+- One persistent physical ecology shared by every playable species
+- The Median, Roadways, Margins, infrastructure, traffic, weather, plants, and
+  animal activity understood in relation rather than as separate maps
+- No species-specific geography or ecological rules at this layer
+- Species distinctions entering play through DWELL rather than dividing the
+  corridor world
+
+### 7.2 The Median: relative sanctuary
+
+- The Median as continuous habitat offering enclosure, concealment, familiar
+  routes, and reduced human access
+- The physical conditions that allow a permanent Colony to take root
+- Sanctuary remaining relative rather than absolute
+- Finite land and resources, flooding, weather, maintenance, predators, and
+  ecological exhaustion continuing to exert pressure
+
+### 7.3 The Roadways: barrier and exposure
+
+- The two Roadways as moving traffic bands and severe ecological barriers
+- Speed, noise, vibration, fumes, heat, and uncovered pavement as ordinary
+  Roadway conditions
+- Habitat fragmented by the Roadways even where the land remains physically
+  close
+- Roadway edges combining danger, drainage, debris, and salvage
+- Crossing procedures and outcomes deferred to RISK
+
+### 7.4 River Spume
+
+- River Spume as the vehicle-generated turbulence, pressure shifts, and debris
+  lift above and beside a Roadway
+- River Spume distinguished from ordinary wind and weather
+- Its effects on flight, loose material, visibility, balance, and the ecology
+  near the Roadway
+- Mechanical resolution of River Spume deferred to RISK
+
+### 7.5 The Highway Through the Day
+
+- Morning, Midday, Evening, and Night changing light, temperature, traffic
+  rhythm, human activity, predator activity, and visibility
+- Time of Day changing nearby Node conditions and the practical character of
+  the same place
+- Environmental change altering the circumstances of play rather than
+  introducing a separate circadian ruleset or universal Night penalty
+- Exact Day Band, clock, and transition rules deferred to Chapter 8
+
+### 7.6 The Margins: abundance and disturbance
+
+- Grasses, flowers, seeds, insects, brush, water, and litter catches supporting
+  dense life along the outer bands of The Highway
+- The Margins providing forage, salvage, concealment, and temporary refuge
+- Runoff, contamination, mowing, predators, traffic turbulence, and human
+  access making that abundance unstable
+- The Sound Walls affecting Margin conditions while remaining hard,
+  non-playable world boundaries
+
+### 7.7 Roadway-adjacent and sheltered Nodes
+
+- Exposure and shelter treated as a spatial continuum rather than two formal
+  classes of Node
+- Roadway-adjacent Nodes exposed to traffic noise, River Spume, fumes, runoff,
+  heat, debris, and sudden disturbance
+- Roadway-adjacent Nodes also offering traffic-borne salvage and other volatile
+  opportunities
+- Nodes sheltered by vegetation, depressions, culverts, or infrastructure
+  offering greater concealment and stability but not perfect safety
+- Different pressures and resources arising from position rather than from a
+  simple hierarchy of better and worse Nodes
+- Node interaction procedures deferred to Away
+
+### 7.8 Infrastructure as terrain
+
+- Culverts, drains, guardrails, signs, pipes, shoulders, roots, and accumulated
+  debris functioning as terrain
+- Human-made structures creating routes, shelter, hazards, catchments, and
+  resource opportunities without being built for animal use
+- Animals inhabiting and interpreting infrastructure without reproducing a
+  miniature human industrial world
+
+### 7.9 Noise, signals, and human disturbance
+
+- Continuous traffic forming the ordinary acoustic and vibrational climate of
+  The Highway
+- Horns, impacts, machinery, unusual silence, and changing vibration carrying
+  environmental information
+- Mowing, maintenance, Road Work, and other human interventions abruptly
+  changing cover, routes, resources, and safety
+- Detailed environmental states and their persistence deferred to Chapter 8
 
 ## 8. Time, traffic, and environmental change
 

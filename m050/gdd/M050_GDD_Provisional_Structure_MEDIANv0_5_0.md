@@ -1139,10 +1139,10 @@ an established use serves the Colony.
   Placed** or **Not Well Placed** according to how its relationship to
   surrounding Colony ground expresses the Colony's Core Species spatial
   operator
-- Mouse **JOIN** emphasizing contact, enclosure, adjacency, and continuous
-  protected passage
-- Rabbit **GATHER** emphasizing shared ground, mutual visibility, neighborhood
-  scale, and protective edges
+- Mouse **JOIN** emphasizing contact, enclosure, adjacency, and accumulated
+  nearness
+- Rabbit **GATHER** emphasizing open common space, mutual visibility,
+  neighborhood scale, and protective edges
 - Squirrel **CONNECT** emphasizing reachable nodes, elevation, alternate routes,
   anchors, and redundancy
 - Placement being assessed from the Place's spatial relationship rather than
@@ -2501,7 +2501,7 @@ arrivals, needs, and contributions stay legible.
 
 ### Scale and continuity
 
-- Every increase producing named Citizen subjects with Records, obligations, and
+- Every increase producing named Citizens with Records, obligations, and
   visible relationships to Home
 - Mouse Colonies able to sustain denser named populations than Rabbit or
   Squirrel Colonies without treating individual Mice as fractions of Citizens
@@ -2579,9 +2579,9 @@ tracks.
 ### Species embodiment
 
 - EMBODY translating the Colony's spatial grammar into bodily experience
-- Mouse **JOIN** becoming fitted passage, shared walls, accumulated interior,
+- Mouse **JOIN** becoming fitted adjacency, shared walls, accumulated interior,
   warmth, and nearby life
-- Rabbit **GATHER** becoming open shared ground, mutual visibility, bounding
+- Rabbit **GATHER** becoming open common space, mutual visibility, bounding
   movement, familiar neighbors, and protected edges
 - Squirrel **CONNECT** becoming height, balance, sway, junctions, alternate
   routes, and confidence across separation
@@ -2643,69 +2643,576 @@ tracks.
 
 # PART IV — THE CITIZENS
 
-## 4.1 Citizenhood and the Citizen Record
+Across Core and Guest species, balance means equivalent authorial completeness,
+mechanical credibility, expressive richness, vulnerability, and opportunity for
+attachment. It does not require identical bodies, mechanics, frequency, or
+magnitude.
 
-- Equal personhood
-- Identity and presence
-- The common descriptive frame
-- Record fields and legibility
+## 4.1 Citizenhood
 
-## 4.2 The three core species
+MEDIAN is about a civilization small enough for every member to remain a
+person. A **Citizen** is a named member of the Colony with a history, present
+relationships, and a possible future. Their location, age, injury, and current
+ability to contribute may change; their standing as a Citizen does not.
 
-- Mouse
-- Rabbit
-- Squirrel
-- Body units and comparative scale
-- Mechanical traits and mixed parties
+MEDIAN distributes the functions of a traditional player character across its
+Citizens. No one Citizen is the player's sole avatar, but each carries part of
+what makes a player character matter: a particular body, relationships,
+possessions, capabilities, history, risks, and possible future.
 
-## 4.3 Bonds, Family, and the Life Course
+In this sense, Citizens are fractional player characters rather than faceless
+units. They divide the player's attention without dividing their own
+personhood. By building a life around them, sharing their experiences, and
+living with their consequences, the player should ideally come to feel
+attachment to—and something like friendship with—their Citizens. That
+friendship is cultivated rather than measured: the player knows and accompanies
+Citizens instead of owning or optimizing them.
 
-<!-- Authorial note for later refinement: Hearth is exclusively the civic
-Practice. Family is the provisional relational term and may be refined when this
-chapter is selected. -->
+### The Citizen
 
-- Bonds and relationships
-- Family structure
-- Young Citizens
-- Maturity, aging, and death
-- Growth through experience
-- Distinctions and After-names
-- Departure and memorial continuity
+- Every living member of the Colony appearing by name in its Roster
+- One named animal as the ordinary Citizen form, with Chapter 4.3 defining the
+  only two exceptions
+- Citizens being known through their bodies, relationships, belongings,
+  histories, routines, and possible futures rather than personality scores
+- Equal standing meaning equal civic and historical consequence rather than
+  identical bodies or capabilities
+- Young, injured, dependent, elderly, non-expedition, Core, and Guest Citizens
+  remaining equally complete Citizens
 
-## 4.4 Exposure, harm, fear, and care
+### Core and Guest Citizens
 
-- Personal Exposure
-- Harm and recovery
-- Fear and tharn
-- Death without disposability
+- Core Citizens as Mice, Rabbits, or Squirrels belonging to the campaign's
+  founding civilization
+- Guest Citizens as non-Core animals welcomed into the Colony
+- Both using the same underlying architecture of citizenship, relationships,
+  presence, consequence, memory, and personal identity
+- Species and origin changing how a Citizen inhabits that architecture without
+  creating superior or lesser Citizens
+- Chapters 4.2 and 4.3 providing the respective deep dives
 
-## 4.5 Personal items and Focus
+### Body Units
 
-- Tools
-- Supplies
-- Keepsakes
-- Ownership, custody, loss, and succession
-- Focus and chosen intervention
+- **Body Unit** expressing physical and logistical scale only
+- One Rabbit, one Squirrel, or two Mice constituting one Body Unit
+- The two collective-bodied Guest households each constituting one Citizen and
+  one Body Unit despite their visible multiplicity
+- Body Units able to govern Housing, Sustenance, party composition, Carry, or
+  another explicitly bodily system
+- Names, relationships, personal items, harm, memory, and death following
+  Citizens rather than Body Units
+- A Body Unit never merging several individual Citizens into one life or
+  dividing one Citizen's personhood
 
-## 4.6 Guest Citizens
+### Belonging, presence, and availability
 
-- Difference and equal Citizenship
-- Resident and Expedition Guests
-- Becoming a resident Citizen
-- Recruitment and hospitality
-- Guest Houses
-- Signature functions
-- Collective-bodied households
+Three separate questions govern a Citizen's current state:
 
-## 4.7 Names, Records, and memory
+1. **Belonging:** Is this animal a living member of the Colony?
+2. **Presence:** Where are they now?
+3. **Availability:** What can they presently contribute or participate in?
 
-- Given Names and After-names
-- Place-name grammar
-- Colony and Citizen Records
-- Tales and Chronicle
-- Homecoming and Campaign Memory
+- The Colony Roster answering belonging
+- Home Presence and expedition or Outpost status answering location
+- Civic availability answering whether the Citizen can sustain a Role or enter
+  a Project
+- Young Citizens, Patients, and other dependents remaining present members
+  without an available Civic Share
+- Launch, Project commitment, injury, treatment, or another temporary barrier
+  changing presence or availability without removing citizenship
+- Death removing a Citizen from the living Roster without erasing their
+  historical belonging
+
+### One Citizen across the game
+
+- DWELL treating Citizens as named contributors to collective civic life
+- EMBODY letting the player live as or accompany particular Citizens
+- TRAVEL, RISK, and MEET exposing individual bodies, capabilities,
+  relationships, possessions, and consequences
+- A change occurring in one Register remaining true everywhere else
+- The game never creating separate Home and Away copies of the same Citizen
+- Every population, Role, presence, and availability total resolving back to
+  particular names
+- No Citizen receiving a hidden Home aptitude, worker quality, or generic
+  productivity rank
+
+## 4.2 The Three Core Species
+
+### Shared foundation
+
+- Each Core Species as a complete playable civilization
+- Shared Citizen, Role, relationship, item, consequence, and memory architecture
+- Species changing bodily and spatial expression without changing civic worth
+
+The illustrative maxim is: **Mouse Builds a Manor House, Rabbit Builds a
+Cul-De-Sac, Squirrel Builds a Web.** These are images of how each species shapes
+Home, not named building types or required layouts.
+
+### The animals
+
+#### Mouse — JOIN
+
+Mouse lives at a quick bodily and mental tempo. Its heart beats fast, and its
+thought and attention move rapidly among scent, sound, touch, nearby motion, and
+company. The world is immense at Mouse scale, so safety depends upon many quick
+judgments made close to the body.
+
+Mouse reads walls, roots, pipes, bark, litter, and the bases of human structures
+as edges to follow and spaces to inhabit. Adjacency supplies cover, orientation,
+and accumulated shelter; broad exposed ground becomes a profound interruption.
+A small area can contain many distinct rooms, caches, routes, and lives.
+
+Mouse therefore understands safety through enclosure, connection, and
+accumulated nearness. Its civilization **JOINs** one protected interior to
+another until many small spaces and quick individual lives become one inhabited
+whole.
+
+#### Rabbit — GATHER
+
+Rabbit lives between vigilant stillness and explosive movement. Its attention
+reaches outward across sound, motion, open ground, nearby companions, and the
+concealment surrounding them. Safety lies not in remaining enclosed, but in
+knowing when to freeze, when to run, and where refuge waits.
+
+Rabbit inhabits the surface among grass, brush, deadfall, clearings, and the
+sheltering edges of human structures. Open ground becomes useful when cover
+bounds it: a place where neighbors remain visible and concealment can be reached
+in a few decisive bounds.
+
+Rabbit therefore understands safety socially as well as spatially. Its
+civilization **GATHERs** around open common spaces that remain protected at
+their edges and difficult for the outside world to read.
+
+#### Squirrel — CONNECT
+
+Squirrel lives through balance, reach, and continuous judgment in motion.
+Grasping paws, a flexible body, and a balancing tail make trunks, branches,
+narrow surfaces, and interrupted heights into a navigable world. Safety depends
+upon seeing not only the present foothold but the next possible movement.
+
+Squirrel reads trees, posts, signs, cables, fallen wood, and human structures as
+anchors, routes, refuges, lookouts, and gaps. No point is entirely secure in
+isolation; a safe place is one from which another way home remains reachable.
+
+Squirrel therefore understands safety through connection and redundancy. Its
+civilization **CONNECTs** distant footholds, reinforces fragile links, and turns
+isolated routes into a resilient network.
+
+### Body and scale
+
+#### Rabbit
+
+- One Rabbit constituting one Body Unit
+- Rabbit's ground-running body combining vigilant stillness, powerful
+  acceleration, and decisive movement toward refuge
+
+#### Squirrel
+
+- One Squirrel constituting one Body Unit
+- Grasp, balance, climbing, leaping, and tail-assisted motion allowing Squirrel
+  to use vertical and interrupted terrain
+
+#### Mouse
+
+- Mouse's small body allowing two complete Citizens to constitute one Body Unit
+- A standard three-Body-Unit Mouse party therefore able to contain six named
+  Mice
+- Each Mouse retaining an individual Tool, Keepsake, relationships, personal
+  consequences, and possible death
+
+### Home expression
+
+Each Core Species applies its spatial operator to both Residence and Practice
+Places. The operator changes how Well-Placed status is judged, not the Place's
+civic function or Practice name.
+
+#### Squirrel — CONNECT
+
+- Home taking shape as a network of reachable nodes, anchors, and routes
+- A Place being Well Placed when it participates securely in that network, with
+  credible onward movement and sufficient alternatives if one route fails
+- A Squirrel Residence accommodating two Squirrels, or three when Well Placed
+- Growth adding or reinforcing nodes, bridging gaps, and turning fragile routes
+  into resilient connections
+- Height alone being insufficient; isolation, dependence upon one crossing, or
+  loss of an important anchor able to make a Place Not Well Placed
+
+#### Mouse — JOIN
+
+- Home taking shape as an inhabited fabric composed of adjoining rooms,
+  sheltered edges, shared boundaries, and accumulated interior
+- A Place being Well Placed when it directly adjoins the Colony's protected
+  inhabited fabric, without requiring a passage between the adjoining spaces
+- A Mouse Residence accommodating four Mice, or six when Well Placed
+- Growth adding chambers, pockets, and sheltered edges beside what is already
+  inhabited, often incorporating roots, pipes, walls, foundations, and found
+  materials
+- An isolated pocket, exposed break, or lost adjacency able to make a Place Not
+  Well Placed
+
+#### Rabbit — GATHER
+
+- Home taking shape around open common spaces bounded by concealment and
+  accessible refuge
+- A Place being Well Placed when it forms, faces, or preserves open common space
+  while retaining protective edges, mutual visibility, and nearby refuge
+- A Rabbit Residence accommodating two Rabbits, or three when Well Placed
+- Growth completing one protected court or green before budding another
+  neighborhood around new open common space
+- Mere openness being insufficient; obscured common space, severed refuge,
+  fragmentation, or exposed edges able to make a Place Not Well Placed
+
+### Away expression
+
+The party's actual bodily composition determines which Core Species traits it
+contains. Species traits scale only with the bodies or Body Units that possess
+them, and Guests gain no Core Species trait merely by joining the party.
+
+#### Rabbit
+
+- Each actual Rabbit Body Unit contributing an equal share of the party's
+  additional TRAVEL progress
+- A full three-Rabbit party receiving doubled TRAVEL progress, with mixed
+  parties receiving the proportional share physically present
+- Crossing asking when the road opens and treating the highway as one temporal
+  opening
+- Planning making traffic patterns legible through accumulated observation
+  before the player selects a launch moment, broad line, and far-side destination
+- Commitment sending the whole party through one brief, uninterrupted sprint
+- The exact relationship between Rabbit party composition and Crossing acuity
+  being defined in Chapter 5.2
+
+#### Mouse
+
+- Each Mouse contributing six slots of secured Carry, so one Mouse Body Unit
+  provides twelve slots rather than the ordinary ten
+- A full Mouse party therefore carrying thirty-six secured slots rather than
+  thirty
+- Physical adversity being distributed among the individual Mice while
+  remaining normalized by Body Unit, with the procedure reserved for Part V
+- Crossing asking where continuity can be made and revealing the road as
+  pavement-scale topology
+- Planning establishing a limited chain of three to six meaningful waypoints,
+  where added continuity may also lengthen exposure or produce awkward deviation
+- Commitment sending the Mouse party through the complete chain as one
+  continuous scurry without reopening planning at each waypoint
+
+#### Squirrel
+
+- Each actual Squirrel Body Unit contributing one equal share of optional
+  Strained Carry
+- Strained Carry remaining one shared party capacity rather than separate
+  personal Squirrel inventories
+- Additional Cargo being exposed to shedding during Crossing, with exact
+  capacity and Jostle procedure reserved for Part V
+- Crossing asking how the route moves through traffic rather than waiting for a
+  static opening
+- Planning defining a flowing trajectory through moving traffic geometry, with
+  one or two predeclared redirects and a far-side climbable refuge or anchor
+- Commitment sending the party through one continuous vector run, with the
+  final affordance and characteristic failure geometry defined in Chapter 5.2
+
+### Characteristic player decision
+
+#### Squirrel
+
+- Whether to attempt a larger material return through optional Strained Carry
+
+#### Rabbit
+
+- How to use a larger practical itinerary within the same expedition time
+
+#### Mouse
+
+- Which particular Citizens—and therefore which relationships, capabilities,
+  and risks—to bring within a party that can hold more individual lives
+
+### Limits
+
+#### Mouse
+
+- Mouse headcount not multiplying Supply capacity or collective action
+- Quick heartbeat and speed of thought shaping expression without granting
+  extra actions or additional experienced time
+- Mouse's modest secured-Carry advantage remaining distinct from Squirrel's much
+  larger optional Strained Carry and its corresponding Jostle risk
+
+#### Squirrel
+
+- Strained Carry increasing neither secured Carry, Supply capacity, collective
+  actions, nor protection for named or meaning-bearing objects
+
+#### Rabbit
+
+- Rabbit speed increasing neither Carry, Supply capacity, collective actions,
+  MEET Turns, nor experienced time
+
+No Core Species trait creates a slowest-member rule or hierarchy of species
+power.
+
+## 4.3 Guest Citizens
+
+### Equal citizenship through difference
+
+- Guest as origin category rather than civic rank
+- Equal Civic Share, vulnerability, memory, relationship, and consequence
+- Guest bodies, senses, habits, communication, and housing remaining distinct
+- Guest recruitment optional at every Tier
+
+### Expedition and Resident Guests
+
+- **Expedition Guest** defined by one bounded Away Permission
+- **Resident Guest** defined by one situated Home Affordance
+- Both being complete Citizens
+- Resident life not treated as lesser because it cannot Launch
+- Authored transitions between the two possible through life events, never
+  routine reassignment
+
+### Signature architecture
+
+- One ordinary civic contribution
+- One qualitative species Permission or Affordance
+- Expressive difference through body, Residence, routine, sound, relationships,
+  and EMBODY
+- No superior productivity coefficient or stackable passive bonus
+
+### Roles
+
+- Resident Guest species having a fixed Guest Practice and Role
+- Expedition Guest Home Roles authored by individual
+- One Civic Share regardless
+- Absence and unavailability remaining visible
+
+### Hospitality and residence
+
+- First MEET
+- Recognition and relationship
+- Terms of Hospitality
+- Guest Residence Project
+- Arrival and civic integration
+- Refusal, delay, and non-arrival
+- Guest accommodation as a dedicated Residence Place
+- Well-Placed status judged against the individual Guest species' requirements
+
+### Collective-bodied Citizens
+
+- Firefly Family and Bumblebee Household as the closed v0.5 exceptions
+- One Citizen, Record, Roster entry, Residence, Civic Share, and
+  Affordance each
+- Several visible bodies expressing one socially meaningful household
+- No general collective-Citizen rule
+
+### Guest rosters
+
+- Expedition Guest species and Permissions
+- Resident Guest species, fixed Roles, Affordances, and Residences
+- Required content fields
+- At least one meaningful Home and EMBODY expression for every Guest
+- No rarity tiers, collection percentage, or recruit-all reward
+
+## 4.4 Relationships and Family
+
+### Relationships
+
+- Persistent relationships between particular Citizens
+- Trust, affection, friendship, kinship, mentorship, rivalry, estrangement,
+  grief, and obligation
+- Relationships changing through Home, Away, MEET, EMBODY, and remembered
+  events
+- No universal affection currency
+
+### Family
+
+- **Family** as the provisional relational term
+- Family remaining wholly separate from Hearth as a civic Practice
+- Birth, adoption, chosen kinship, sustained care, and other authored belonging
+- Family composition not limited to a breeding pair
+- No genetic traits, bloodline score, breeding optimization, or family
+  technology tree
+
+### Relationships in play
+
+- Relationships informing dialogue, Focus, advice, aid, hesitation, and
+  consequence
+- Citizens retaining social autonomy
+- Relationship effects remaining contextual rather than generic stat modifiers
+- Separation, reconciliation, loss, and inheritance
+- Home and Away expressing the same relationships differently
+
+## 4.5 The Life Course
+
+### Origins and arrival
+
+- Founders and their shared pre-campaign history
+- Campaign-born Citizens
+- Wanderers and other arrivals
+- Guests' pre-existing lives
+- Citizenship never creating personhood retroactively
+
+### Young Citizens
+
+- Named and fully counted from arrival
+- Residence, relationships, needs, and ordinary presence
+- Dependency before Civic Share
+- Age-appropriate DWELL, MEET, and EMBODY participation
+- No Launch before Maturity
+
+### Maturity
+
+- Named civic transition rather than experience bar
+- Seasons and authored life events preceding Maturity
+- Civic Share beginning at Maturity
+- Expedition readiness potentially following separately
+- Recognition through family and Colony life
+- Exact timing reserved for tuning
+
+### Adulthood and aging
+
+- Changing responsibilities, relationships, capability, and needs
+- Veteran and non-expedition life remaining complete
+- No mandatory retirement conveyor
+- Age never reducing civic dignity
+
+### Death and continuity
+
+- Death reducing the living Roster
+- Historical belonging remaining
+- Relationships, possessions, Places, and family carrying the absence
+- No routine attrition or replacement logic
+- Young Citizens never framed as replacement stock
+- The Tale closing but remaining accessible
+- Detailed harm procedures governed by the relevant Away or MEET systems
+
+## 4.6 Personal Items and Focus
+
+### Shared personal inventory
+
+- One Tool box
+- One Supply box
+- One Keepsake box
+- Shared architecture for Core and Guest Citizens
+- Body compatibility expressed through manifestation rather than separate
+  systems
+
+### Tools
+
+- Persistent working capability
+- Five ordinary classes
+- Specialist Tools
+- Home equipment and reassignment
+- Maintenance, damage, adaptation, and consequential history
+
+### Supplies
+
+- Consumable expedition capability
+- Prepared from Colony stock
+- No individual maker, name, provenance, or Tale
+- Replacement through ordinary Provisioning
+
+### Keepsakes
+
+- Persistent emotional object
+- Personally rooted custody
+- Bounded contextual effect
+- Empty slots remaining valid
+- Damage, loss, gift, succession, and memorial display
+
+### Ownership and succession
+
+- Tools transferable
+- Keepsakes relationally meaningful
+- Consequential transfers remembered
+- Death never becoming an inventory-looting transaction
+
+### Focus
+
+- Approach chosen first
+- Focus identifying the Citizen whom the scene naturally follows
+- Tool, Keepsake, relationship, or authored circumstance drawing Focus
+- Focus governing presentation and possible attribution, not the group's
+  decision
+- No extra action, guaranteed success, or manufactured history
+
+## 4.7 Story Systems
+
+### One history, several views
+
+| System | Function |
+|---|---|
+| **Almanac** | What is true now about the Colony and world. |
+| **Citizen Record** | The persistent facts belonging to one Citizen. |
+| **Chronicle** | Selected history of the Colony. |
+| **Tale** | The remembered shape of one Citizen's life. |
+| **Prior-life Tale** | The life an arriving Citizen had before entering the Colony. |
+| **Campaign Memory** | The consequential event history from which records and later references draw. |
+
+### The Almanac
+
+- Authoritative current Colony and world state
+- Current Citizens, Places, resources, relationships, pressures, and known
+  circumstances
+- Always available as an interface lens
+- Community Board providing optional diegetic expression in DWELL
+- No exhaustive simulation diary
+
+### The Citizen Record
+
+- One persistent Record for every Citizen
+- Current identity, species, life stage, location, availability, Role,
+  Residence, relationships, personal consequences, items, and historical
+  recognitions
+- Shared common frame with specialized fields only where relevant
+- Guest-specific fields extending rather than replacing the shared Record
+- Closed Records retained after death
+
+### Given Names
+
+- Every Citizen entering play with an appropriate Given Name
+- Cultural naming conventions
+- Collective household names for the two defined exceptions
+- No serial worker labels or rarity presentation
+
+### Tales and Prior-life Tales
+
+- Every Citizen possessing one Tale
+- Meaningful events entering rather than every mechanical action
+- Founders beginning with shared history
+- Campaign-born Citizens beginning at birth
+- Arrivals bringing Prior-life Tales
+- Relevant truth not hidden merely to manufacture surprise
+- Further detail emerging through trust, relationships, EMBODY, and later events
+
+### Campaign Memory
+
+- Consequential events providing common historical material
+- Home and Away both able to create memory
+- Different systems presenting the same event at different scales
+- Memory supporting later dialogue, relationships, memorials, Frills, and
+  EMBODY
+- No exhaustive event ledger
+
+### Distinctions and After-names
+
+- Distinction as narrow favorable recognition grounded in meaningful conduct
+- After-name as rarer public recognition of durable life history
+- Both able to arise from Home or Away
+- Neither automatic nor selected from a reward list
+- No generic rank, experience level, or required numerical effect
+
+### Chronicle and memorial continuity
+
+- Chronicle preserving selected shared Colony history
+- Tales preserving individual lives
+- Items and Places able to retain related histories
+- Closed Tales remaining readable
+- Memorials, Keepsakes, relationships, empty Places, and future references
+  preserving absence
 
 # PART V — AWAY: EXPEDITION AND RETURN
+
+Part V owns the personal consequence architecture of Exposure, wounds, Maiming,
+Fear, Tharn, recovery, and death, including how those facts persist through
+Return and become present again at Home.
 
 ## 5.1 Leaving Home
 
@@ -2819,6 +3326,7 @@ chapter is selected. -->
 ## 7.3 Content-authoring doctrine
 
 - Choice Events and MEET construction
+- Place-name grammar and culturally authored names
 - Positive canon and illustrative examples
 - Numerical restraint
 - Canonical, provisional, tuning, and open material

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
   "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
-  "updated": "2026-09-13T12:56:47-04:00",
+  "updated": "2026-09-13T14:08:39-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -45,10 +45,10 @@
     "status": "ACTIVE — provisional GDD structure",
     "phase": "Direct authorial GDD creation",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
-    "progress": "Seven-Part spine and Parts I–III approved",
-    "now": "Beginning Part IV — The Citizens at Chapter 4.1, Citizenhood and the Citizen Record",
-    "next": "Asa and the Compile Supervisor refine Chapter 4.1",
-    "updated_human": "September 13, 2026 at 12:56:47 PM EDT"
+    "progress": "Seven-Part spine, Parts I–III, and Chapters 4.1–4.2 approved",
+    "now": "Beginning Chapter 4.3 — Guest Citizens",
+    "next": "Asa and the Compile Supervisor refine Chapter 4.3",
+    "updated_human": "September 13, 2026 at 2:08:39 PM EDT"
   },
-  "next_possible_transition": "Authorial approval of the Chapter 4.1 provisional structure."
+  "next_possible_transition": "Authorial approval of the Chapter 4.3 provisional structure."
 }

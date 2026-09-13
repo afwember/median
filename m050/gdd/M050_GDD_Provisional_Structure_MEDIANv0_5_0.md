@@ -36,13 +36,13 @@ Its approved composition sequence is:
 
 The narrative prologue then stops. Part I supplies the world and game overview;
 Part II establishes the Corridor; and detailed gameplay begins at Home in Part
-III. Chapter 29 later governs the Founding Escape as playable onboarding.
+III. Chapter 6.1 later governs the Founding Escape as playable onboarding.
 
 # PART I — WHAT MEDIAN IS: SANCTUARY AND EXPOSURE
 
-## 1. A Civilization Where Nobody Else Would Call Home
+## 1.1 A Civilization Where Nobody Else Would Call Home
 
-### 1.1 The game in one breath
+### The game in one breath
 
 - Animal-colony base-building on active highway median strips
 - One permanent Home
@@ -50,12 +50,12 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - Expeditions undertaken for material, civic, relational, and personal reasons
 - Consequences carried back into the Colony
 
-### 1.2 The central dramatic promise
+### The central dramatic promise
 
 - Sanctuary → Exposure → Consequence → Return → Memory
 - Home as the condition that makes departure and return meaningful
 
-### 1.3 What the player does
+### What the player does
 
 - Build and tend a Colony
 - Understand its needs and ordinary life
@@ -64,7 +64,7 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - Return with materials, relationships, injuries, obligations, and memories
 - Inhabit the changed Home again
 
-### 1.4 Creative lineage
+### Creative lineage
 
 - *Watership Down* — emotional and dramaturgical foundation
 - *Age of Empires* — legible civic growth and the transformation of a settlement
@@ -74,7 +74,7 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - A compact boundary between influence and borrowed fiction or wholesale
   mechanics
 
-### 1.5 What MEDIAN is not
+### What MEDIAN is not
 
 - Combat-first or tactical extraction
 - An arcade road-crossing game
@@ -83,9 +83,9 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - Territorial expansion that discards the founding Home
 - Sentiment detached from credible Game Logic
 
-## 2. The attachment-forward base builder
+## 1.2 The attachment-forward base builder
 
-### 2.1 What attachment means
+### What attachment means
 
 - Imagined people, places, objects, and histories acquiring durable emotional
   reality
@@ -98,7 +98,7 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - These examples as evidence of attachment behavior, not additional creative
   influences on MEDIAN
 
-### 2.2 The invented genre
+### The invented genre
 
 - Why the term is attachment-forward rather than attachment-first
 - Comparison with production-forward and survival-forward base builders
@@ -106,7 +106,7 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
   apparatus, or disposable platform
 - Progress accumulating around Home rather than consuming or replacing it
 
-### 2.3 Successful stillness: the pleasure of Home
+### Successful stillness: the pleasure of Home
 
 - Success not defined by continual expansion, territorial domination, maximum
   population, or infinite production
@@ -120,7 +120,7 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - A Shire-like pleasure in familiar paths, known neighbors, small rituals,
   accumulated history, and peaceful continued existence
 
-### 2.4 The four anchors of attachment
+### The four anchors of attachment
 
 - Home
 - Citizen
@@ -129,13 +129,13 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - Systems may strengthen several anchors simultaneously without multiplying
   attachment categories unnecessarily
 
-### 2.5 The two attachment chains
+### The two attachment chains
 
 - Legibility → Competence → Stability → Attention → Attachment
 - Attachment → Chosen Risk → Consequence → Return → Deeper Attachment
 - The causal relationship between mechanical confidence and released attention
 
-### 2.6 The player's position
+### The player's position
 
 - **Steward** — arranges finite civic attention
 - **Chooser** — decides when sending particular Citizens Away is justified
@@ -146,26 +146,26 @@ III. Chapter 29 later governs the Founding Escape as playable onboarding.
 - The player is not principally a commander, mayor, optimizer, or possessed
   avatar
 
-## 3. Global pillars and governing doctrines
+## 1.3 Global pillars and governing doctrines
 
 The first seven sections are player-facing pillars. The final two are governing
 design doctrines: fundamental means of protecting those pillars rather than
 additional descriptions of the player experience.
 
-### 3.1 One permanent, attachment-forward Home
+### One permanent, attachment-forward Home
 
 - Home as the permanent emotional and mechanical center
 - Improvement, inhabitation, damage, repair, and memory without replacement
 - Corridor growth accumulating around the founding Home rather than making it
   obsolete
 
-### 3.2 Every Citizen is known
+### Every Citizen is known
 
 - Every Citizen named, distinguishable, and historically continuous
 - Population remaining small enough for every name to count
 - Core and Guest origins sharing equal personhood and Citizenship
 
-### 3.3 Home can become enough
+### Home can become enough
 
 - Successful stillness as a valid state of play
 - Growth supporting ordinary life rather than perpetuating itself
@@ -174,41 +174,41 @@ additional descriptions of the player experience.
   and chosen exploration
 - No required expansion, domination, or terminal victory state
 
-### 3.4 Home grows the Colony; Away changes Citizens; Return changes both
+### Home grows the Colony; Away changes Citizens; Return changes both
 
 - Home developing collective capability and continuity
 - Away developing and endangering particular Citizens
 - Return making collective and personal change answer one another
 - These as centers of attention rather than exclusive jurisdictions
 
-### 3.5 Consequence without disposability
+### Consequence without disposability
 
 - Danger changing lives before erasing them
 - Harm, fear, Maiming, Distinctions, relationships, and memory carrying
   consequence Home
 - Death remaining possible without becoming routine inventory loss
 
-### 3.6 One persistent world across two Modes and five Registers
+### One persistent world across two Modes and five Registers
 
 - Colony, Embodiment, Field, Crossing, and Encounter acting upon one world
 - Facts and consequences remaining continuous across Registers
 - Transitions changing attention and expression rather than partitioning
   reality
 
-### 3.7 Lived in the world, legible in the ledger
+### Lived in the world, legible in the ledger
 
 - Important state perceptible in the world and available in functional form
 - Atmosphere never excusing obscurity
 - Clarity about known facts without eliminating uncertainty or suspense
 
-### 3.8 Conservation of Systems — governing doctrine
+### Conservation of Systems — governing doctrine
 
 - New meaning arising through context, combination, permission, species
   expression, manifestation, and memory before new meters or subsystems
 - A small reusable grammar protecting player attention
 - Mechanical restraint supporting expressive variety
 
-### 3.9 Game Logic opens Attachment Space — governing doctrine
+### Game Logic opens Attachment Space — governing doctrine
 
 - Legibility enabling competence
 - Competence enabling stability
@@ -217,9 +217,9 @@ additional descriptions of the player experience.
 - Repeatable attachment-forward systems performing genuine game work while
   permitting individual quiet moments to remain non-instrumental
 
-## 4. One Persistent World: Two Modes, Five Registers
+## 1.4 One Persistent World: Two Modes, Five Registers
 
-### 4.1 One persistent world
+### One persistent world
 
 - No disconnected minigames
 - A Citizen, Place, object, Node, wound, promise, or memory remaining the same
@@ -229,7 +229,7 @@ additional descriptions of the player experience.
 - Open situations remaining attached to the Citizens, Places, or Nodes where
   they exist until changed, resolved, or overtaken
 
-### 4.2 Mode, Register, operator, and view
+### Mode, Register, operator, and view
 
 - **Mode** — where primary life and responsibility are currently situated
 - **Register** — the structural form of play
@@ -239,7 +239,7 @@ additional descriptions of the player experience.
   itself
 - Interface decisions not changing game ontology
 
-### 4.3 Home and Away: Inward and Outward
+### Home and Away: Inward and Outward
 
 - Home Mode gathering responsibility Inward toward the permanent Colony
 - Away Mode extending responsibility Outward through particular Citizens
@@ -247,7 +247,7 @@ additional descriptions of the player experience.
 - Home able to concern an individual and Away able to change the Colony and
   Corridor
 
-### 4.4 The five-Register topology
+### The five-Register topology
 
 | Mode | Register | Operator | Primary relationship |
 |---|---|---|---|
@@ -257,7 +257,7 @@ additional descriptions of the player experience.
 | Away | Crossing | **RISK** | Commit bodies, routes, burdens, and timing to immediate danger. |
 | Home or Away | Encounter | **MEET** | Bring a consequential situation into focus through choice and aftermath. |
 
-### 4.5 The Colony Register — DWELL
+### The Colony Register — DWELL
 
 - The Colony Register as the primary form of Home play, attending to the Colony
   as a collective body
@@ -284,7 +284,7 @@ additional descriptions of the player experience.
   prevention
 - Detailed Home systems deferred to Part III
 
-### 4.6 The Field Register — TRAVEL
+### The Field Register — TRAVEL
 
 - The Field Register as the primary form of Away movement through extended
   territory
@@ -308,10 +308,10 @@ additional descriptions of the player experience.
   outcome Home
 - Field play as neither a mission-selection map, generic open world, tactical
   combat layer, nor stream of compulsory event cards
-- Detailed movement, time, Conditions, Cargo, and return procedures deferred to
+- Detailed movement, time, personal states, Cargo, and return procedures deferred to
   the later Away chapters
 
-### 4.7 The Crossing Register — RISK
+### The Crossing Register — RISK
 
 - The Crossing Register as the concentrated Away threshold where human-scale
   traffic becomes immediate bodily danger
@@ -337,7 +337,8 @@ additional descriptions of the player experience.
 - The party following one global plan and receiving a global passage result,
   while bodily adversity may attach to particular Citizens
 - Day Band, traffic condition, River Spume, weather, party composition, carried
-  burden, and accumulated Conditions entering RISK from the shared world
+  burden, and accumulated injuries or other personal states entering RISK from
+  the shared world
 - A closer camera, heightened sound, altered pacing, and denser information
   expressing a change of attention rather than entry into a disconnected
   minigame
@@ -350,7 +351,7 @@ additional descriptions of the player experience.
 - Detailed planning and resolution rules deferred to the dedicated Crossing
   chapters
 
-### 4.8 The Encounter Register — MEET
+### The Encounter Register — MEET
 
 - **MEET opens an Encounter.** In familiar game terms, an Encounter is a
   particular situation that draws the player's attention and asks for a choice.
@@ -371,7 +372,7 @@ additional descriptions of the player experience.
   Node in the same world. The presentation changes so that relevant Presences,
   local conditions, possible approaches, stakes, and costs become legible.
 - The player decides how the party will engage. The result may change the Node,
-  the party's Resources or Conditions, its relationships, or some other
+  the party's Resources or personal states, its relationships, or some other
   persistent part of the world.
 - Once the Encounter is resolved, play normally returns to TRAVEL at the same
   location. A sufficiently urgent consequence may instead lead directly into
@@ -400,7 +401,7 @@ additional descriptions of the player experience.
 - Detailed Encounter construction, available choices, costs, resolution, and
   aftermath are established in the later gameplay chapters.
 
-### 4.9 The Embodiment Register — EMBODY
+### The Embodiment Register — EMBODY
 
 - The Embodiment Register as MEDIAN's second Home Register and principal
   positive destination
@@ -424,7 +425,7 @@ additional descriptions of the player experience.
 - Detailed experience families, species expression, and eligibility rules
   deferred to Part III
 
-### 4.10 Transitions without fragmentation
+### Transitions without fragmentation
 
 - Transitions as emotional and attentional beats rather than neutral loading
   screens
@@ -433,7 +434,7 @@ additional descriptions of the player experience.
 - Manifestations translating interface and camera while preserving dramatic
   function
 
-### 4.11 The Home–Away–Return cycle
+### The Home–Away–Return cycle
 
 - Home → Launch → Away [RISK / TRAVEL / MEET] → Return → Homecoming → Home
 - A dramatic circuit rather than a mandatory screen sequence
@@ -453,19 +454,19 @@ scale. Its spaces mean different things to different bodies, its conditions
 change over time, and much of it must be discovered before it can be
 understood.
 
-The Part proceeds from world to geography to habitation and change. Chapter 5
-supplies the establishing view; Chapters 6–8 bring its spatial, ecological,
+The Part proceeds from world to geography to habitation and change. Chapter 2.1
+supplies the establishing view; Chapters 2.2–2.4 bring its spatial, ecological,
 temporal, and consequential layers into focus.
 
-## 5. A World at Animal Scale
+## 2.1 A World at Animal Scale
 
-### 5.1 Nobody's destination, somebody's home
+### Nobody's destination, somebody's home
 
 - Human leftover space becoming animal homeland, sanctuary, and polity
 - The median protected enough for settlement but never detached from exposure
 - Nobody's destination becoming a place whose inhabitants choose to remain
 
-### 5.2 The highway is an environment
+### The highway is an environment
 
 - Active traffic, noise, heat, runoff, salt, wind, barriers, and maintenance
 - The road as terrain, climate, resource edge, ecological organizer, and danger
@@ -473,7 +474,7 @@ temporal, and consequential layers into focus.
 - The Highway remaining an active and maintained human system rather than an
   abandoned or post-human ruin
 
-### 5.3 Civilization in the seams
+### Civilization in the seams
 
 - Animal civilization arising from bodies, ecological needs, and inherited
   practices
@@ -482,14 +483,14 @@ temporal, and consequential layers into focus.
 - Animals inhabiting and reinterpreting human infrastructure according to
   their own scale and needs rather than reproducing miniature human industry
 
-### 5.4 One Corridor, many Reaches
+### One Corridor, many Reaches
 
 - The Colony situated within a continuous world rather than an isolated level
 - Reaches, Roadways, Margins, and Outposts introduced as related parts of the
   Corridor
-- Detailed spatial definitions deferred to Chapter 6
+- Detailed spatial definitions deferred to Chapter 2.2
 
-### 5.5 Three ways of inhabiting the same ground
+### Three ways of inhabiting the same ground
 
 - Mouse safety understood through enclosure and belonging
 - Rabbit safety understood through neighborhood and company
@@ -498,7 +499,7 @@ temporal, and consequential layers into focus.
   physical landscape
 - Other animal peoples existing beyond the three civic foundations
 
-### 5.6 Partial understanding, language, and folklore
+### Partial understanding, language, and folklore
 
 - Animals understanding the human world through observation, inherited
   explanation, and culturally accumulated language
@@ -506,13 +507,13 @@ temporal, and consequential layers into focus.
 - Laws and Sayings as cultural interpretations rather than objective cosmology
 - Fuller treatment of culture, records, and memory deferred to their later home
 
-Throughout Chapter 5, sanctuary remains distinct from perfect safety, peril
+Throughout Chapter 2.1, sanctuary remains distinct from perfect safety, peril
 from combat fantasy, animal civilization from miniature human industrialism,
 and quiet from emptiness.
 
-## 6. The Shape of the Corridor
+## 2.2 The Shape of the Corridor
 
-### 6.1 The Highway in cross-section
+### The Highway in cross-section
 
 - **Sound Wall ‖ Margin | Roadway | Median | Roadway | Margin ‖ Sound Wall**
 - The Highway as the complete physical setting and the two Roadways as its
@@ -521,7 +522,7 @@ and quiet from emptiness.
 - Shoulders, road edges, drainage, vegetation, and other features situated
   within the playable bands
 
-### 6.2 From Corridor to Reach to Median
+### From Corridor to Reach to Median
 
 - The Corridor as the continuous longitudinal organization of The Highway
 - A Reach as one comprehensible segment of the Corridor
@@ -529,7 +530,7 @@ and quiet from emptiness.
 - Each Reach also containing its corresponding Roadways and Margins
 - The Corridor continuing beyond the presently known or represented Reaches
 
-### 6.3 The Colony and the Home Median
+### The Colony and the Home Median
 
 - The Colony, or its eventual proper name, as the permanent civic settlement
 - The Colony occupying a particular median informally called the Home Median
@@ -537,7 +538,7 @@ and quiet from emptiness.
 - Home used alone reserved for the Mode
 - No separate Home Reach term
 
-### 6.4 Along the Corridor and across a Roadway
+### Along the Corridor and across a Roadway
 
 - Longitudinal travel through a Reach and between Reaches
 - Upcorridor and downcorridor as the primary directions
@@ -546,16 +547,16 @@ and quiet from emptiness.
 - No separate Crossing Site category
 - TRAVEL and RISK procedures deferred to Away
 
-### 6.5 Nodes and Outposts
+### Nodes and Outposts
 
 - A Node as a meaningful location anchored in Away geography
 - An Outpost as a persistent Away foothold established within a Reach
 - An Outpost remaining categorically distinct from The Colony
 - Node interaction and Outpost functions deferred to Away
 
-## 7. The Ecology of The Highway
+## 2.3 The Ecology of The Highway
 
-### 7.1 Shared ecology
+### Shared ecology
 
 - The animals of The Highway inhabiting one shared physical world
 - The Median, Roadways, Margins, infrastructure, traffic, weather, plants, and
@@ -564,7 +565,7 @@ and quiet from emptiness.
 - The chapter describing those common ecological conditions, with species
   distinctions in play reserved for DWELL
 
-### 7.2 The Median: relative sanctuary
+### The Median: relative sanctuary
 
 - The Median as a long, narrow island of habitat: continuous along the Corridor
   but enclosed between the Roadways
@@ -575,7 +576,7 @@ and quiet from emptiness.
 - Sanctuary remaining relative: flooding, weather, scarcity, predators, and
   human maintenance can still disturb it
 
-### 7.3 The Roadways: barrier and exposure
+### The Roadways: barrier and exposure
 
 - Crossing a Roadway being dangerous and consequential enough to occupy an
   entire game Mode: RISK; this chapter explains why, while its procedures come
@@ -589,15 +590,15 @@ and quiet from emptiness.
 - Roadway edges concentrating both hazards and opportunities through drainage,
   contamination, debris, and salvage
 
-### 7.4 The Highway Through the Day
+### The Highway Through the Day
 
 - Morning, Midday, Evening, and Night changing the light, temperature,
   activity, and traffic rhythm of The Highway
 - Those changing traffic conditions contextualizing phenomena such as River
   Spume
-- Detailed time and traffic systems deferred to Chapter 8
+- Detailed time and traffic systems deferred to Chapter 2.4
 
-### 7.5 River Spume
+### River Spume
 
 - River Spume as the vehicle-generated turbulence, pressure shifts, and debris
   lift above and beside a Roadway
@@ -608,7 +609,7 @@ and quiet from emptiness.
   its reach
 - Exact mechanical effects deferred to Away and RISK
 
-### 7.6 The Margins: Abundance and Disturbance
+### The Margins: Abundance and Disturbance
 
 - Each Margin as the inhabited band between a Roadway and its Sound Wall,
   shaped by both without belonging fully to either
@@ -623,7 +624,7 @@ and quiet from emptiness.
 - The Sound Wall terminating the Margin as a hard world boundary rather than a
   playable zone
 
-### 7.7 Resources Across the Margin
+### Resources Across the Margin
 
 - Resource distribution following a broad gradient rather than rigid zoning
 - Toward the Sound Walls, greater shelter and vegetation supporting bush Nodes
@@ -640,7 +641,7 @@ and quiet from emptiness.
 - Exact Resource yields, gathering procedures, and economic uses deferred to
   Away and the later Resources chapter
 
-### 7.8 The Highway as Signal
+### The Highway as Signal
 
 - At animal scale, The Highway perceived through sound, vibration, and moving
   air as much as through sight
@@ -650,15 +651,15 @@ and quiet from emptiness.
   unusual silence signaling changed conditions before their causes are visible
 - These signals providing partial information rather than perfect prediction
   and requiring interpretation through animal experience and folklore
-- Detailed traffic and environmental-state effects deferred to Chapter 8
+- Detailed traffic and environmental-state effects deferred to Chapter 2.4
 
-## 8. Time, Traffic, and Environmental Change
+## 2.4 Time, Traffic, and Environmental Change
 
 Time makes the Corridor legible, dangerous, and alive. One clock runs beneath
 Home and Away. Light, traffic, season, weather, and human disturbance change
 the same persistent places while the player's attention is elsewhere.
 
-### 8.1 One World, One Clock
+### One World, One Clock
 
 - The calendar belonging to the world rather than to the current Mode or
   Register
@@ -668,7 +669,7 @@ the same persistent places while the player's attention is elsewhere.
 - Expeditions therefore occurring during Colony life rather than outside it on
   a detached mission clock
 
-### 8.2 DAWN and the Playable Day
+### DAWN and the Playable Day
 
 - The daily sequence:
 
@@ -686,7 +687,7 @@ the same persistent places while the player's attention is elsewhere.
 - The player choosing to proceed through DAWN after Night so that the calendar
   never rolls over unnoticed
 
-### 8.3 Time at Home and Away
+### Time at Home and Away
 
 Home and Away express the same clock at different resolutions.
 
@@ -701,7 +702,7 @@ Home and Away express the same clock at different resolutions.
   changing together when the Day Band changes
 - The resolution changing between Home and Away while the chronology does not
 
-### 8.4 Traffic: Pattern, Threshold, and State
+### Traffic: Pattern, Threshold, and State
 
 - Traffic behaving like weather: broadly predictable from the time of day, but
   variable in its actual expression
@@ -738,7 +739,7 @@ Home and Away express the same clock at different resolutions.
 - Exact traffic generation, thresholds, modifiers, and persistence intervals
   deferred to the later RISK chapters
 
-### 8.5 Season, Weather, and Human Disturbance
+### Season, Weather, and Human Disturbance
 
 - Season changing the Corridor by accumulation; weather and human disturbance
   changing it through particular events
@@ -760,7 +761,7 @@ Home and Away express the same clock at different resolutions.
 - Exact season lengths, weather generation, and Sustenance accounting deferred
   to their later system chapters
 
-### 8.6 Events Through Time
+### Events Through Time
 
 Environmental events unfold through time rather than appearing and disappearing
 as disposable interruptions.
@@ -786,74 +787,495 @@ as disposable interruptions.
 
 # PART III — HOME: COLONY, DWELL, AND EMBODY
 
-## 9. Roles, Places, Practices, and Projects
+## 3.1 Home
 
-### 9.1 The civic relationship
+**Colony DWELL is MEDIAN's base-builder mode of play.** The player builds,
+tends, organizes, prepares, understands, and inhabits one permanent Colony.
 
-- Citizens holding Roles, Roles sustaining Practices, Practices giving civic
-  purpose to Places, and Projects making defined persistent changes
-- A Place as persistent physical ground rather than a separately named building
-  type; its functional name coming from the Practice that inhabits it
-- Roles answering what responsibility Citizens carry and Practices answering
-  where and how that responsibility enters communal life
-- A Role able to serve several Practices and a Practice able to draw upon
-  several Roles without becoming a staffing slot or department
-- Citizens choosing whether their civic shares sustain a Practice and
-  contribute to Readiness or become committed to an active Project
-- Practices able to contribute incremental Capacity through the Colony's prior
-  commitment of land and physical purpose as well as support active Projects
+More precisely, **Home** is the Mode, **Colony** is its principal Register, and
+**DWELL** is the operator through which the player acts upon collective life.
+Together, Colony DWELL names MEDIAN's base-building experience.
+
+### The inward Mode
+
+- Home as the Mode in which the player's primary responsibility is the founding
+  Colony
+- Its direction being Inward: toward one permanent settlement, its civic
+  condition, and the named lives accumulated there
+- Colony and Embodiment belonging intrinsically to Home, with MEET able to bring
+  a consequential Home situation into focus
+- Home not being a camera, map, interface, or generic safe zone
+
+### Four related terms
+
+| Term | Meaning |
+|---|---|
+| **Home** | The Inward Mode of responsibility. |
+| **Colony** | The permanent civic settlement and mechanical subject of Home play. |
+| **Home Median** | The physical median occupied by the Colony. |
+| **Sanctuary** | The materially, civically, and socially credible condition the Colony creates and restores. |
+
+### One permanent center
+
+- The founding Colony remaining the campaign's permanent center
+- Growth improving, densifying, inhabiting, damaging, repairing, and remembering
+  it rather than replacing it
+- Outposts, Stopovers, Held Reaches, and allied settlements never becoming
+  duplicate Homes
+- Corridor growth increasing the Colony's reach without moving its emotional or
+  mechanical center
+
+### Sanctuary made credible
+
+- Sanctuary being achieved and maintained through understandable material,
+  civic, and social conditions
+- Sanctuary remaining relative rather than perfect: weather, scarcity, injury,
+  displacement, predators, and human disturbance can still reach Home
+- The player establishing and periodically restoring the conditions for
+  ordinary life rather than preventing perpetual collapse
+- Consequence able to enter Home without turning it into another exposure zone
+
+### Ordinary life as the purpose
+
+- Rest, care, work, conversation, play, ritual, relationship, and familiar
+  routine as part of the civilization being built
+- Stability as a successful condition rather than failed pacing
+- A sufficiently sustained Colony releasing attention toward observation,
+  attachment, chosen Projects, and EMBODY
+- Ordinary life not being idle production Capacity
+
+### Return changes Home
+
+- Away mattering because particular Citizens leave a credible sanctuary
+- Homecoming reintegrating material, bodily, relational, civic, and remembered
+  consequences
+- The Colony receiving what returned before the game becomes fully Home again
+- Every return able to alter the Home from which the next departure begins
+
+### From Home to DWELL
+
+- Chapter 3.2 explaining how the player works upon this permanent civic subject
+  through DWELL
+- Later chapters explaining its Places, species placement, Roles, Practices,
+  situations, resources, population, and embodied life
+
+## 3.2 DWELL
+
+DWELL is the ongoing stewardship of the Colony in Home. It remains open by
+default: the player chooses where to look, what responsibility to sustain, and
+which lasting changes justify committed effort.
+
+### The Colony in view
+
+- The Colony as DWELL's mechanical subject, with every named Citizen remaining
+  visible within collective civic accounting
+- The player understanding and arranging Home through Places, Practices, Roles,
+  Projects, resources, and situated conditions
+- The Colony's material, civic, and social state remaining legible both in the
+  world and in concise functional form
+- Elevated and sectional presentations expressing the Colony's state without
+  defining DWELL itself
+
+### Attention and time
+
+- Routine information and continuing work remaining native to DWELL rather than
+  seizing the camera or interrupting the player
+- Inspection, reading, planning, and camera movement not advancing time
+- A meaningful Home commitment advancing the shared world clock by one Day Band
+- DAWN resolving the completed day's accounting and surfacing only meaningful
+  change
+- Persistent Colony state not implying continuous real-time advancement
+- DWELL preparing the Colony for Launch and receiving its recalculated state
+  after Homecoming, while those connector procedures use MEET rather than
+  becoming ordinary DWELL actions
+
+### Civic Balance: Shares, Load, Readiness, and Pressure
+
+- **Civic Balance** tracking Core Residence and the Colony's ordinary Role
+  responsibilities as separate axes rather than pooling unlike obligations
+  into one capacity
+- Citizens choosing whether their Civic Shares sustain ordinary Role
+  responsibility or become committed to an active Project
+- Each Practice carrying a separate situated strength through established
+  physical purpose, Role support, and Spatial Alignment
+- Practice Strength remaining distinct from passive production or
+  transformation, which requires at least one usable relevant Practice and one
+  Citizen sustaining its defined production Role
 - Practice infrastructure never advancing a Project without committed Citizens
 
-### 9.2 Roles and their Practices
+#### Role Balance
+
+- **Civic Share** as one equal unit of ordinary Home responsibility contributed
+  by each available Citizen through their chosen Role
+- Load as the weight placed upon the Colony by growth and expansion, including
+  additional population, dependency, inhabited ground, Practices, routes,
+  stores, and other added obligations that must be sustained
+- Each Citizen sustaining the relevant Role contributing one Civic Share against
+  its Load
+- Personality, species, prior service, Away capability, equipment, and personal
+  history never changing the value of a Civic Share
+- A Citizen who is Away, unavailable, sustaining another Role, or committed to a
+  Project not contributing that Civic Share against the present Role's Load
+- Each Role retaining its own balance:
+
+  **Role Balance = sustaining Civic Shares − Role Load**
+
+#### Housing Balance
+
+- Every Core Species Citizen creating Housing demand according to Body Units
+- Each completed usable Core Residence providing two Body Units of Housing
+  Capacity
+- A Well-Placed Core Residence providing three Body Units instead, a fifty-percent
+  Spatial Alignment bonus
+- Rabbit and Squirrel Citizens each occupying one Body Unit, so one Residence
+  accommodates two of them, or three when Well Placed
+- Mouse Citizens each occupying one-half Body Unit, so one Residence
+  accommodates four of them, or six when Well Placed
+- Core Housing retaining its own balance:
+
+  **Housing Balance = usable Core Residence Capacity − Core Citizen Housing Demand**
+
+- Positive Housing Balance becoming **Housing Readiness** and zero being Covered
+- The magnitude of negative Housing Balance becoming **Housing Load**, which is
+  expressed as **Housing Pressure**
+- A Core Residence that loses capacity leaving its Citizens in place, with each
+  uncovered Body Unit becoming Housing Load and therefore Housing Pressure
+  rather than causing eviction
+- Guest housing remaining outside Core Housing Balance and occupying a dedicated
+  Place whose requirements belong to the individual Guest species
+
+#### Readiness and Pressure
+
+- Positive Role Balance becoming that Role's **Readiness**: Civic Shares beyond
+  what its ordinary responsibility presently requires
+- Zero Role Balance being **Covered**: that Role's ordinary responsibility met
+  without surplus Readiness
+- Negative Role Balance becoming that Role's **Pressure**: uncovered
+  responsibility within that civic domain
+- A Role with no present contextual Load requiring no artificial assignment merely
+  to keep its category filled
+- Readiness and Pressure remaining attached to their Roles, so surplus in one
+  domain never conceals a shortfall in another
+- Readiness supporting ordinary stability and deliberate response without
+  guaranteeing immunity from events or consequence
+
+#### Colony Pressure and situated consequence
+
+- The sum of current Housing Pressure and positive Role Pressure expressing the
+  Colony's exact civic vulnerability without pooling those deficits into one
+  balance that can conceal their sources
+- **Colony Pressure** as the variable pressure toward a Home situation, shaped
+  by seasonal and environmental circumstances, civic vulnerability, bounded
+  randomness, and the recent history of Home MEETs
+- Colony Pressure governing how readily circumstances develop into situations
+  requiring attention without becoming a player-visible score or predictable
+  incident counter
+- The greatest relevant Role shortfall determining a situation's primary civic
+  stake
+- Prominent Housing Pressure locating a situation in the affected Residence and
+  Citizens while the relevant Role profile determines its civic stakes
+- A second relevant shortfall determining its collateral civic stake when one
+  exists
+- A situation with no meaningful second Role drawing its collateral stake from
+  the actual Citizen, Place, Practice, relationship, resource, or environmental
+  circumstance involved
+- Role shortfalls being ranked by absolute uncovered Load, with the physical
+  circumstances resolving ties
+- Pressure creating vulnerability rather than inflicting automatic daily
+  damage
+
+#### Practice Strength
+
+- Each completed usable Practice carrying a **Practice Strength** score when a
+  situation occurs through or meaningfully involves it
+- An unsupported Practice contributing one-half point of Practice Strength
+- A Practice supported by at least one compatible Citizen sustaining ordinary
+  Role responsibility contributing one point instead
+- A Well-Placed Practice contributing one additional Spatial Alignment point
+- Practice Strength therefore being 0.5, 1, 1.5, or 2 according to Role support
+  and placement
+- Support requiring no player-created link between a Citizen and a Practice;
+  the presence of compatible ordinary Role support establishes it
+- A shared Practice carrying one Practice Strength for the whole situation,
+  never multiplying its contribution by the number of relevant Roles
+- Situated Practice Strength, relevant Role Readiness, preparation, resources,
+  and Affordances helping determine whether an environmental test remains an
+  ordinary report or requires a Home MEET
+- Practice Strength not erasing Role Load in the standing civic ledger
+
+#### Civic choice and Projects
+
+- Each available Citizen directing their Civic Share either to ordinary Role
+  responsibility or to an active Project, never to both simultaneously
+- A Civic Share committed to a Project advancing that defined persistent change
+  while ceasing to counter its Role Load, support a compatible Practice, or
+  support passive throughput
+- Several Citizens in one Role able to divide their Civic Shares between
+  ordinary responsibility and Projects
+- A usable Practice continuing to provide its situated Practice Strength while
+  accommodating a Project, recalculated according to whatever compatible
+  ordinary Role support remains
+- Project progress always requiring at least one committed Citizen regardless of
+  available Practice infrastructure
+
+#### Passive production and transformation
+
+- Passive production or transformation existing only where a Role and Practice
+  define a specific output
+- Output being zero unless at least one usable relevant Practice and one Citizen
+  sustaining its defined production Role are both present
+- Each usable relevant Practice contributing one yield chunk
+- Each Citizen sustaining the defined production Role contributing one yield
+  chunk
+- Each Well-Placed relevant Practice contributing one additional half chunk
+- Ordinary throughput following the shared relationship:
+
+  **Passive Throughput = usable relevant Practices + sustaining Role Citizens + (0.5 × Well-Placed relevant Practices)**
+
+- One usable Poorly Placed Practice and one sustaining Role Citizen therefore
+  producing two yield chunks, or two and one-half when that Practice is Well
+  Placed
+- Fractional throughput accumulating within its defined process until it forms
+  a whole yield chunk
+- DAWN releasing only whole chunks to Colony stock and carrying the remainder
+  forward; throughput of 1.5 therefore releasing one chunk on its first DAWN,
+  two on its second, then repeating that cadence
+- Citizens committed to Projects not contributing to passive throughput
+- Available inputs, player targets and reserves, seasonal conditions, and
+  situated modifiers constraining or modifying output only after ordinary
+  throughput has been established
+- The shared relationship not inventing passive output for a Role or Practice
+  that defines none
+
+### Quiet and consequential attention
+
+- A well-sustained Colony remaining in DWELL without compulsory intervention
+- Pressure remaining ordinary Colony information until a bounded situation
+  requires judgment
+- MEET beginning when stakes, choice, and consequence bring that situation into
+  focus
+- Quiet Equilibrium as Home's sole tracked condition, active while the Colony's
+  ordinary obligations are covered and no acute situation demands attention
+- Quiet Equilibrium opening EMBODY while active and closing EMBODY when lost,
+  without becoming a resource or reward
+- Observation and voluntary Projects remaining available independently of
+  Quiet Equilibrium
+
+## 3.3 Places and Species Placement
+
+A **Place** is physical ground designated within Home. A Builder designates that
+ground without cost. A vacant designation may be withdrawn freely; committing
+its first Residence or Practice Project establishes the Place permanently. An
+established Place may stand vacant, host one Core Residence, host one Guest
+residence, or host one Practice. Species placement determines how efficiently
+an established use serves the Colony.
+
+### Place uses
+
+- An established Place carrying its location, footprint, physical condition,
+  species-spatial relationship, and intended or established use
+- A Practice Place taking its functional name from the Practice situated there
+  rather than receiving a separate building-type name
+- A Place hosting no more than one Core Residence, Guest residence, or Practice
+- The same Practice retaining one civic function wherever it is placed and
+  whichever Core Species builds it
+- An established Place able to remain vacant or carry an unfinished, usable,
+  damaged, adapted, or transformed Residence or Practice
+- Displacement and other lasting physical consequences remaining attached to
+  the persistent Place
+- An established Place able to change use or stand vacant without ever being
+  erased back into neutral ground
+- A Place not leveling up or changing automatically; development making a
+  specific new physical fact true there
+
+### Builder designates Places
+
+- Builder as the Role through which the player designates every Place
+- Designation committing ground without requiring a Project or consuming
+  material, Civic Shares, or time
+- A vacant designation remaining freely withdrawable and providing no Practice
+  Strength, Housing Capacity, passive output, or transformation by itself
+- Establishing a Residence or Practice at that Place requiring a Builder Project
+  that commits Builder Citizens, appropriate material, and time
+- Commitment of that first Project making the Place permanent whether or not
+  the Project has yet been completed
+- The first Workshop as the sole Practice-establishment bootstrap exemption,
+  with its founding Project still requiring committed Builder Citizens,
+  material, and time
+- Every other Practice, including Gathering Place, following the ordinary
+  Builder Project rule
+- An unfinished Residence contributing no Housing Capacity and an unfinished
+  Practice contributing no Practice Strength, passive output, or transformation
+- Completion making a Residence or Practice usable, after which the Residence
+  provides Housing Capacity or compatible Role support may strengthen the
+  Practice's civic purpose
+- Builder designating the ground and making the physical fact without owning the
+  completed Practice or replacing the Role responsible for it
+- Later adaptation belonging to the Role whose persistent result it serves;
+  physical Builder involvement not transferring ownership from that Role
+
+### Core Residence
+
+- Residence as an inhabited use of Place rather than a Practice or building-type
+  family
+- Each completed usable Core Residence providing two Body Units of Housing
+  Capacity
+- A Well-Placed Core Residence providing three Body Units of Housing Capacity
+- Rabbit and Squirrel Residences therefore accommodating two Citizens, or three
+  when Well Placed
+- Mouse Residences therefore accommodating four Citizens, or six when Well
+  Placed
+- Residence contributing no Practice Strength, passive output, or Project
+  capacity
+- Guest housing occupying a dedicated Place apart from Core Species Residences
+- A Guest residence following its individual species' bodily and spatial housing
+  requirements rather than contributing to pooled Core Residence Capacity
+- Guest housing requirements being defined with the Guest species in Chapter
+  4.6
+
+### Species placement
+
+- Every completed usable Core Residence and Practice Place being either **Well
+  Placed** or **Not Well Placed** according to how its relationship to
+  surrounding Colony ground expresses the Colony's Core Species spatial
+  operator
+- Mouse **JOIN** emphasizing contact, enclosure, adjacency, and continuous
+  protected passage
+- Rabbit **GATHER** emphasizing shared ground, mutual visibility, neighborhood
+  scale, and protective edges
+- Squirrel **CONNECT** emphasizing reachable nodes, elevation, alternate routes,
+  anchors, and redundancy
+- Placement being assessed from the Place's spatial relationship rather than
+  from a species-themed building skin
+- A Practice remaining the same Practice when built by another Core Species,
+  while its physical expression and placement test change
+- Core Residence expressing the same Body Unit capacity through species form:
+  Mouse joining a room, Rabbit completing or budding a court, and Squirrel
+  adding and securing a node
+- A Guest residence being Well Placed or Not Well Placed according to the
+  housing requirements of its individual Guest species
+
+### Spatial Alignment
+
+- A Well-Placed Place contributing one Spatial Alignment point to the Practice
+  situated there
+- A Not-Well-Placed Place contributing no Spatial Alignment unit rather than
+  imposing a separate numerical penalty
+- A Well-Placed Core Residence increasing its Housing Capacity from two to three
+  Body Units
+- Spatial Alignment adding one full point to situated Practice Strength, making
+  species-conforming placement a significant source of civic resilience
+- Where the Practice defines passive production or transformation, its Spatial
+  Alignment unit also contributing to ordinary throughput
+- Spatial Alignment contributing only through a completed usable Practice and
+  never replacing the required Practice-and-Citizen production gate
+- Well-Placed status recalculating as the completed usable layout of Home changes,
+  while vacant designations have no effect upon it
+- Colony evolution therefore able to improve or degrade Spatial Alignment, as
+  when later growth obscures the central court upon which a Rabbit Place relies
+- The interface previewing alignment and capacity changes before the player
+  commits the Project that would cause them
+- Lost Core Residence Capacity creating Housing Pressure without ever evicting
+  a Citizen
+- Placement also shaping access, adjacency, resilience, exposure, circulation,
+  and failure geometry without creating a parallel species-specific civic
+  system
+
+### Place development
+
+- Sustained use, seasonal experience, civic need, consequence, or another
+  concrete change in the world able to make a specific Place improvement
+  evident
+- A Guest able to bring the understanding needed for an improvement, and the
+  Rest-Stop Metropolis able to reveal it through an appropriate relationship or
+  MEET
+- Such understanding becoming a direct, persistent possibility for the Colony
+  rather than a Knowledge resource or progression track
+- A Home MEET presenting that possibility when it warrants interpretation,
+  competing commitments, or a meaningful choice
+- Recognition of the possibility never completing the improvement by itself
+- A Role-owned Project making the improvement real whenever lasting physical or
+  civic work is required
+- Completion changing only the particular Place involved rather than every
+  Residence or Practice of the same kind
+- An improvement adapting the Place's existing Residence or Practice without
+  adding a second hosted use
+- Every Practice supporting at least one authored improvement over the course of
+  the campaign
+- Practice improvements normally adding a specific capability, response, range,
+  or form of resilience rather than a generic increase to throughput, Practice
+  or Project capacity
+- Winter Cultivation as the defined Garden improvement: a Gardener Project
+  physically adapting one Garden for limited winter production
+- Improvements never arising from use levels, experience points, percentage
+  progress toward discovery, STUDY, Knowledge progression, generic upgrade
+  slots, or automatic Tier bonuses
+
+## 3.4 Roles and Practices
+
+The Civic Balance established in Chapter 3.2 governs every Role and Practice
+below. Sustaining Citizens cover the Load of their Roles. Completed Practices
+provide situated Practice Strength according to compatible Role support and
+placement. Project commitment withdraws Citizens from ordinary responsibility,
+Practice support, and passive output.
+
+### Roles and their Practices
 
 Each Role is first established through its civic responsibility, ordinary
 contribution, related Practices, characteristic Projects, vulnerabilities, and
-limits. The Practices are then defined in their own canonical homes so that a
-shared Practice does not appear to belong to the first Role that uses it.
+limits. Shared Practices appear under every Role that uses them and are
+identified together after the Role entries so that none appears to belong to
+the first Role that uses it.
 
-#### 9.2.1 Builder
+| Role | Practices |
+|---|---|
+| **Builder** | Workshop |
+| **Gardener** | Garden |
+| **Crafter** | Workshop |
+| **Caretaker** | Hearth; Kitchen |
+| **Healer** | Hearth |
+| **Teacher** | Gathering Place; Hearth |
+| **Watchkeeper** | Watchpost |
+| **Leader** | Gathering Place |
+
+### Builder
 
 - Builder carrying responsibility for the physical soundness and deliberate
   transformation of Home
 - Every available Citizen assigned Builder contributing one equal civic share,
   without personality, prior service, Away capability, equipment, or species
   creating a superior Builder coefficient
-- **Workshop** as the sole Practice that adds Builder Capacity
+- **Workshop** as Builder's principal Practice
 - Workshop naming the Practice, and therefore the land committed to that civic
   purpose, rather than a separate production-building type
-- A completed usable Workshop contributing a modest incremental amount of
-  Builder Capacity even without a Citizen currently sustaining it
-- That contribution representing prepared material, protected working ground,
-  established methods, suitable access, and accumulated physical order rather
-  than autonomous labor
-- Additional Workshops contributing incrementally without multiplying the
-  effectiveness of individual Builders
-- A Builder who sustains Workshop applying their civic share to ordinary
-  Builder Readiness
+- Workshop Practice Strength representing prepared material, protected working
+  ground, established methods, suitable access, and accumulated physical order
+  rather than autonomous labor
+- Any Citizen sustaining Builder responsibility supporting completed usable
+  Workshops without requiring a separate assignment among them
 - A Builder committed to a Project withdrawing that share from ordinary
   Readiness and applying it to the Project
 - Several Builders therefore able to divide present effort between structural
   Readiness and deliberate change
-- Workshop continuing to provide its incremental contribution while supporting
-  a Project, because Citizens rather than infrastructure make the commitment
+- Workshop continuing to provide situated Practice Strength while supporting a
+  Project, recalculated according to remaining compatible Role support
 - Workshop unable to advance a Project without committed Citizens
 - Other Practices able to create structural obligations or receive Builder
-  Projects without adding Builder Capacity
+  Projects without becoming additional Builder Practices
 
-##### The first Workshop
+#### The first Workshop
 
 - The Colony able to undertake the Project establishing its first Workshop
   without an existing Workshop, avoiding a circular prerequisite
 - The founding Project still requiring material, time, and committed Builder
   Citizens
-- The unfinished Workshop contributing no Capacity
+- The unfinished Workshop contributing no Practice Strength
 - Completion ending the founding permission automatically
-- Each completed Workshop thereafter supporting one active Builder Project
-- The first Workshop marking the transition from structural capability resting
-  entirely upon present Citizens to committed land carrying a small part of the
-  Colony's structural burden
+- Each completed Workshop thereafter supporting one active Project
+- The first Workshop establishing situated structural support beyond the
+  Colony's Civic Shares alone
 
-##### Standing responsibility
+#### Standing responsibility
 
 - Builder Readiness expressing whether the Colony can keep its inhabited
   physical world sound under present conditions
@@ -865,24 +1287,24 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Structural soundness remaining a Colony posture rather than a separate repair
   order for every wall, chamber, ladder, court edge, covering, drain, or route
 
-##### Builder Projects
+#### Builder Projects
 
 - Builder Projects committing named Citizens to make a defined physical fact
   newly true
-- Establishing physical ground for a Practice; expanding or reshaping an
-  existing Practice; reinforcing shelter, access, drainage, routes, or anchors;
-  adapting a Practice to a newly understood use; restoring major situated
-  damage; and completing major civic or Tier-defining work
-- The receiving Practice remaining the subject of the change: a Builder Project
-  may alter Hearth, Garden, Gathering Place, Watchpost, Workshop, a Residence,
-  or another Practice without creating a separate Builder facility inside it
+- Establishing a Residence or Practice at a designated Place; reinforcing
+  shelter, access, drainage, routes, or anchors; restoring major structural
+  damage; and completing major physical or Tier-defining work
+- The receiving Residence or Practice remaining the subject of the change: a
+  Builder Project may alter Hearth, Garden, Gathering Place, Watchpost,
+  Workshop, Residence, or another established use without creating a separate
+  Builder facility inside it
 - Projects consuming committed Citizen effort and appropriate material
 - Builder shares committed to Projects not simultaneously contributing to
   ordinary Builder Readiness
 - Growth therefore asking the Colony to risk some present structural assurance
   in order to make a lasting improvement
 
-##### Structural vulnerability
+#### Structural vulnerability
 
 - Insufficient Builder Readiness creating vulnerability rather than automatic
   daily damage
@@ -897,7 +1319,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 - A restoration Project following only when a persistent physical result
   genuinely remains unfinished
 
-##### Boundaries
+#### Boundaries
 
 - Builder not becoming a personal construction statistic, superior class of
   Citizen, local repair-click system, generic Project-speed bonus, source of
@@ -905,18 +1327,252 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Tool-making remaining Crafter's responsibility even though Tools require
   physical material
 - Guest Affordances able to reveal hidden structural circumstances or open a
-  better response without replacing Builder Capacity or performing Projects
-  without Citizens
+  better response without replacing Builder responsibility or performing
+  Projects without Citizens
 
-#### 9.2.2 Caretaker
+### Gardener
+
+- Gardener carrying responsibility for cultivation, seasonal yield, and the
+  continuing health of cultivated ground
+- Every available Citizen assigned Gardener contributing one equal civic share,
+  without personality, prior service, Away capability, equipment, or species
+  creating a superior Gardener coefficient
+- **Garden** as Gardener's Practice and the ground that enables ordinary
+  Gardener production
+- Gardener Citizens choosing whether to sustain ordinary Gardener
+  responsibility or commit their Civic Shares to active Projects
+
+#### Garden
+
+- Garden naming the Practice, and therefore the land committed to cultivation,
+  rather than a separate production-building type
+- A Builder ordinarily establishing a Garden through a Builder Project after
+  the first Workshop has been completed
+- Garden receiving no founding or bootstrap exemption
+- An unfinished Garden contributing no Practice Strength and producing no
+  Sustenance
+- Garden Practice Strength representing committed ground, established
+  cultivation, protected growth, prepared soil, suitable access, and
+  accumulated order rather than autonomous labor
+- Any Citizen sustaining Gardener responsibility supporting completed usable
+  Gardens without requiring a separate assignment among them
+- Garden unable to produce Sustenance without at least one sustaining Gardener
+
+#### Passive production
+
+- Passive production requiring at least one completed usable Garden and one
+  Citizen sustaining Gardener; if either is absent, production being zero
+- Each usable Garden and each sustaining Gardener contributing one Sustenance
+  chunk, with each Well-Placed Garden adding one-half chunk
+- Normal production following the relationship:
+
+  **Perishable Sustenance = usable Gardens + sustaining Gardener Citizens + (0.5 × Well-Placed Gardens)**
+
+- During green seasons, one usable Not-Well-Placed Garden and one sustaining
+  Gardener producing two Perishable Sustenance chunks at the ordinary DAWN
+  cadence, or two and one-half when that Garden is Well Placed
+- Two Well-Placed Gardens and one Not-Well-Placed Garden sustained by two
+  Gardeners therefore producing six Perishable Sustenance chunks
+- Gardener Citizens committed to Projects withdrawing their civic shares from
+  ordinary yield
+- Seasonal and situated modifiers applying only after normal production has
+  been determined
+- Suitable managed Nodes and Sustenance-bearing Outposts able to provide bounded
+  situated additions or modifiers without counting as Practices or bypassing
+  the Garden-Gardener production gate
+
+#### Standing responsibility
+
+- Gardener Readiness expressing whether the Colony can sustain cultivated
+  ground and expected seasonal yield under present conditions
+- Ordinary Gardener work including planting, tending, gathering, protecting
+  growth, maintaining soil, responding to ordinary heat or rain, and preserving
+  cultivated continuity between yields
+- Covered Gardener responsibility preserving Garden condition and next-season
+  readiness even when the current season permits no ordinary production
+- Cultivation remaining Colony-scale stewardship rather than per-plot staffing,
+  individual harvest orders, or simulated routes between Gardens
+
+#### Winter Cultivation
+
+- An ordinary Garden producing no regular Perishable Sustenance in winter
+- **Winter Cultivation** as a learned Practice requiring both a physically
+  adapted Garden and sustaining Gardener coverage
+- Learning Winter Cultivation not producing food or adapting every Garden
+  automatically
+- Each Garden becoming winter-capable only through its own Gardener Project and
+  remaining otherwise unchanged
+- Eligible winter production equaling one-quarter of normal production after
+  the ordinary Garden-Gardener gate has been satisfied
+- Winter yield using the shared fractional-throughput accumulation rule
+
+#### Gardener Projects
+
+- Gardener Projects committing named Citizens to make a defined cultivation
+  fact newly true rather than performing routine yield
+- Establishing a cultivated line; restoring persistently damaged ground;
+  adapting one Garden for Winter Cultivation; reshaping a Garden for a newly
+  understood use; or creating another lasting seasonal or ecological change
+- Routine planting, tending, gathering, and green-season yield not automatically
+  becoming Projects
+- Gardener shares committed to Projects not simultaneously contributing to
+  passive production or ordinary Gardener Readiness
+- Workshop and Builder involvement able to establish or physically alter Garden
+  without transferring its continuing cultivation purpose away from Gardener
+
+#### Gardener vulnerability
+
+- Insufficient Gardener Readiness creating vulnerability to drought, heat,
+  washout, crop loss, poor yield, damaged soil, lost cultivated continuity, and
+  winter shortage
+- Gardener shortfall not creating food independently, concealing the explicit
+  production gate, or requiring every Garden to suffer separately
+- Consequential shortfall becoming situated through MEET at the actual Garden,
+  family, reserve, or threatened part of Home
+
+#### Boundaries
+
+- Gardener not becoming a personal cultivation statistic, superior class of
+  Citizen, autonomous farming system, per-Garden worker assignment, harvest
+  queue, or source of winter yield without learned and physically established
+  support
+- Passive production applying only to the defined Perishable Sustenance output
+  and not inventing an output for every Gardener activity or Practice
+- Guest Affordances able to alter cultivation circumstances or open a lasting
+  Garden Project without creating superior Gardener coefficients or bypassing
+  the Garden-Gardener production gate
+
+### Crafter
+
+- Crafter carrying responsibility for transforming recovered material into
+  functional civic and Away capability
+- Every available Citizen assigned Crafter contributing one equal civic share,
+  without personality, prior service, Away capability, equipment, or species
+  creating a superior Crafter coefficient
+- **Workshop** supporting both Crafter and Builder responsibility without
+  becoming a separate building type or requiring Citizens to be assigned to an
+  individual Workshop
+- Crafter Citizens choosing whether to sustain ordinary Crafter responsibility
+  and Supply Preparation or commit their Civic Shares to Tools and other active
+  Projects
+
+#### Workshop
+
+- Workshop Practice Strength representing protected working ground, organized
+  material, established methods, suitable access, and accumulated physical
+  order rather than autonomous fabrication
+- Any Citizen sustaining Builder or Crafter responsibility supporting completed
+  usable Workshops without multiplying their Practice Strength
+- Workshop requiring no Crafter bootstrap exemption because Builder establishes
+  the first Workshop through the founding Builder permission
+- One Workshop supporting no more than one active Project at a time, whether
+  that Project's principal purpose belongs to Builder, Crafter, or another Role
+
+#### Supply Preparation
+
+- **Supply Preparation** as ordinary transformation rather than an item-by-item
+  Project queue
+- Passive Supply Preparation requiring at least one completed usable Workshop
+  and one Citizen sustaining Crafter; if either is absent, transformation being
+  zero
+- Each usable Workshop and each sustaining Crafter contributing one yield
+  chunk, with each Well-Placed Workshop adding one-half chunk
+- Normal transformation following the relationship:
+
+  **Supply Preparation = usable Workshops + sustaining Crafter Citizens + (0.5 × Well-Placed Workshops)**
+
+- Supply Preparation consuming appropriate Sustenance, Flexible Scrap, Rigid
+  Scrap, or other defined inputs according to known class recipes
+- Output remaining bounded by available ingredients, known recipes, and
+  player-set targets and reserves, and never creating Supplies from nothing
+- Crafter producing ordinary non-Remedy Supplies while Remedy Supplies remain
+  Healer's responsibility
+- Prepared Supplies remaining anonymous expedition resources rather than named
+  possessions or records of their maker
+- Crafter Citizens committed to Projects withdrawing their civic shares from
+  ordinary Supply Preparation and Crafter Readiness
+
+#### Standing responsibility
+
+- Crafter Readiness expressing whether the Colony can maintain ordinary
+  functional material capability under present conditions
+- Ordinary Crafter work including sorting recovered matter, maintaining common
+  working methods, preparing bounded Supplies, preserving usable material, and
+  making credible substitutions during routine pressure
+- Covered Crafter responsibility supporting ordinary capability without
+  passively manufacturing permanent Tools or advanced expedition solutions
+- Fabrication remaining Colony-scale civic work rather than simulated benches,
+  maker aptitude, component inventories, or individual production percentages
+
+#### Tools and Crafter Projects
+
+- Tools as deliberate durable Away-function Items rather than incidental or
+  passive output
+- Making a Tool requiring a Crafter Project that consumes appropriate Scrap,
+  time, a usable Workshop, and committed Crafter Citizens
+- Ordinary Tool maintenance and repair remaining part of Crafter responsibility
+- Transformative restoration or adaptation of a Tool requiring a Crafter
+  Project only when it makes a new persistent fact true
+- Other Crafter Projects including adapting Workshop to a newly understood use,
+  establishing a lasting fabrication capability, creating a defined civic
+  artifact, or producing components for a larger persistent change
+- Crafter Projects making a defined material fact newly true rather than
+  keeping a queue full for its own sake
+- Physical collaboration with Builder or another Role not transferring a
+  Project's principal purpose away from the Role whose persistent result it
+  serves
+
+#### Fine Work
+
+- **Fine Work** as the defined Workshop improvement, established in one
+  particular Workshop through a Crafter Project
+- Fine Work opening **Specialist Tools** as a second Tool tier
+- Each Specialist Tool granting one specific authored capability unavailable to
+  the five ordinary Tool classes rather than increasing a percentage or generic
+  Tool power
+- A Specialist Tool design able to become known through a Guest, the Rest-Stop
+  Metropolis, or another direct world source
+- Each known Specialist Tool requiring its own recipe and Crafter Project at a
+  Workshop improved for Fine Work
+- Specialist Tools remaining persistent, individually held, one-slot personal
+  Tools
+- A Specialist Tool being reproducible once understood, distinguishing it from
+  a singular Special Artifact
+- Fine Work not increasing Supply Preparation, Practice Strength, or Project
+  capacity
+
+#### Crafter vulnerability
+
+- Insufficient Crafter Readiness creating vulnerability to unavailable
+  Supplies, tool failure, disordered or unusable material, failed substitution,
+  and inability to answer a situated material need
+- Crafter shortfall not automatically consuming stored material, breaking Tools
+  on a daily schedule, or generating a compulsory stream of fabrication chores
+- Consequential shortfall becoming situated through MEET, an active Project, a
+  particular Tool, or the actual Place and civic need under pressure
+
+#### Boundaries
+
+- Crafter not becoming a personal fabrication statistic, generic Project-speed
+  bonus, industrial production line, per-bench worker assignment, component
+  taxonomy, or source of infinite value from quiet Home time
+- Passive transformation applying only to defined Supply Preparation and not to
+  Tools, Keepsakes, Special Artifacts, or every Crafter activity
+- Tools remaining made for work rather than violence, even when their physical
+  functions provide narrow contextual utility during danger
+- Guest Affordances able to reveal material possibilities or open a distinctive
+  response without creating superior Crafter coefficients, bypassing recipes,
+  or producing Tools outside Projects
+
+### Caretaker
 
 - Caretaker carrying responsibility for receiving, provisioning, nurturing,
   and preserving ordinary life
 - Every available Citizen assigned Caretaker contributing one equal civic share
-- Caretaker Citizens choosing whether to sustain Hearth, sustain Kitchen, or
-  commit their civic shares to active Projects
+- Caretaker Citizens choosing whether to sustain ordinary Caretaker
+  responsibility or commit their Civic Shares to active Projects
 
-##### Hearth
+#### Hearth
 
 - **Hearth** as the foundational shared Practice of nurture, dependency, and
   recovery
@@ -927,26 +1583,37 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Hearth drawing upon Caretaker, Healer, and Teacher Readiness as its needs
   require
 
-##### Kitchen
+#### Kitchen
 
 - **Kitchen** as a later expansion dedicated to preservation and Provisioning
-- A completed usable Kitchen contributing incremental Caretaker Capacity even
-  without a Citizen currently sustaining it
-- Kitchen's contribution representing preserved working ground, protected
+- Kitchen Practice Strength representing preserved working ground, protected
   provisions, established methods, and physical organization rather than
   autonomous labor
-- Caretaker Citizens sustaining Kitchen adding their civic shares to Caretaker
-  Readiness
 - Kitchen supporting Perishable-to-Durable preservation, ordinary Sustenance
-  preparation, organization and protection of reserves, household
+  preparation, organization and protection of reserves, family
   provisioning, seasonal preparation, and recovery from disrupted provisions
+- Passive preservation requiring at least one completed usable Kitchen and one
+  Citizen sustaining Caretaker; if either is absent, preservation being zero
+- Each usable Kitchen and each sustaining Caretaker contributing one yield
+  chunk, with each Well-Placed Kitchen adding one-half chunk
+- Normal transformation following the relationship:
+
+  **Preservation Throughput = usable Kitchens + sustaining Caretaker Citizens + (0.5 × Well-Placed Kitchens)**
+
+- Preservation remaining bounded by available Perishable Sustenance, known
+  methods, and player-set targets and reserves, and never creating food from
+  nothing
+- Herbal or cultural knowledge able to qualify or modify preservation without
+  replacing the required Kitchen or sustaining Caretaker
+- Caretaker Citizens committed to Projects withdrawing their Civic Shares from
+  passive preservation
 - Preservation operating through Provisioning rather than a queue of individual
   Projects or orders for every bundle, cache, reserve, or meal
 - Kitchen requiring no founding exemption because Caretaking already exists
   through Hearth before the Colony undertakes the Project establishing Kitchen
   as a dedicated expansion
 
-##### Receiving
+#### Receiving
 
 - Receiving remaining a Caretaker responsibility rather than a separate
   Practice
@@ -957,40 +1624,255 @@ shared Practice does not appear to belong to the first Role that uses it.
 - The situation resolving through Hearth, Kitchen, Residence, Homecoming, or
   MEET according to what is being received
 - Colony Stock remaining abstract civic inventory whose physical expression may
-  appear as pantries, caches, wrapped reserves, household stores, or protected
+  appear as pantries, caches, wrapped reserves, Residence stores, or protected
   holdings without creating a Stores Practice
 
-##### Caretaker Projects
+#### Caretaker Projects
 
 - Caretaker Projects creating persistent changes rather than performing routine
   care
-- Establishing or adapting Kitchen; expanding or altering Hearth for lasting
-  need; establishing a new preservation function; reorganizing reserves after
+- Adapting Kitchen or Hearth for a lasting care need; establishing a new
+  preservation function within an existing Kitchen; reorganizing reserves after
   permanent loss or growth; completing lasting resettlement; or creating a
   durable seasonal preparation beyond ordinary Provisioning
-- Evacuation, ordinary stock movement, immediate receiving, and routine
-  preservation not automatically becoming Projects
+- Evacuation, ordinary stock movement, immediate receiving, routine
+  preservation, and changes to Provisioning targets or reserves not
+  automatically becoming Projects
 
-##### Caretaker vulnerability
+#### Open Table
+
+- **Open Table** as the defined Kitchen improvement, established in one
+  particular Kitchen through a Caretaker Project
+- A completed usable Open Table Kitchen opening **Shared Meal**, a rare
+  whole-Colony EMBODY opportunity while Quiet Equilibrium keeps EMBODY open
+- Shared Meal allowing the player to be with the Colony together through food,
+  service, conversation, proximity, and the species-specific use of common
+  space
+- Arrivals, Homecomings, recovery, seasonal observance, grief, celebration, and
+  recent shared history able to shape the experience without turning it into a
+  consequential MEET
+- Shared Meal drawing upon ordinary Colony Sustenance rather than creating a
+  separate prepared item, Feast currency, or additional economic reward
+- Open Table not resolving Guest Terms, disagreement, injury, or civic Pressure
+  merely by gathering the Colony
+- Open Table not increasing Preservation Throughput, Practice Strength, or
+  Project capacity
+
+#### Caretaker vulnerability
 
 - Insufficient Caretaker Readiness creating vulnerability to spoilage,
   inaccessible or disordered reserves, crowding, displacement, failed
-  receiving, unmet dependency, household disorder, and insufficient winter
+  receiving, unmet dependency, family disruption, and insufficient winter
   preparation
 - Caretaker shortfall not inflicting automatic daily harm upon named Citizens
 - Consequential shortfall becoming situated through MEET
 
-##### Boundaries
+#### Boundaries
 
 - Caretaker not becoming a generic domestic worker, anonymous food-production
   unit, replacement for Healer or Teacher, automatic immunity from spoilage or
-  displacement, per-household simulation, or queue of meals, preservation
+  displacement, per-Residence simulation, or queue of meals, preservation
   batches, and chores
 - Caretaker not owning Hearth exclusively
+- Caretaker Civic Shares supporting ordinary responsibility across Hearth and
+  Kitchen without requiring assignment to either Practice
 - Resident Affordances able to change how a particular threat is understood or
-  received without replacing Caretaker Capacity
+  received without replacing Caretaker responsibility
 
-#### 9.2.3 Watchkeeper
+### Healer
+
+- Healer carrying responsibility for medical readiness, particular Patients,
+  recovery, and the bodily aftermath of exposure
+- Every available Citizen assigned Healer contributing one equal civic share,
+  without personality, prior service, Away capability, equipment, or species
+  creating a superior Healer coefficient
+- **Hearth** as Healer's primary Practice and the shared civic ground through
+  which treatment and recovery enter ordinary life
+- Healer Citizens choosing whether to sustain ordinary Healer responsibility,
+  answer a particular treatment need, or commit their Civic Shares to active
+  Projects
+
+#### Care through Hearth
+
+- Hearth belonging exclusively to the civic Practice of care and nurture rather
+  than naming a family unit
+- Hearth drawing upon Healer Readiness when injury, illness, exposure,
+  rehabilitation, or bodily aftermath requires specialized care
+- Caretaker and Teacher Readiness entering the same Practice according to
+  actual need without substituting for Healer responsibility
+- Hearth Practice Strength representing prepared recovery ground, clean
+  shelter, established methods, suitable access, and accumulated order rather
+  than autonomous treatment
+- A Colony without Patients or relevant health pressure having no automatic
+  Healing Load merely because the Role exists
+- Named Patients, consequential treatment, incapacity, and recovery remaining
+  individually legible while Healer Load and Readiness remain Colony-scale
+  civic accounting
+
+#### Remedy Preparation
+
+- **Remedy Preparation** as Healer's defined passive transformation within
+  ordinary Provisioning
+- Passive Remedy Preparation requiring at least one completed usable Hearth and
+  one Citizen sustaining Healer; if either is absent, transformation being zero
+- Each usable Hearth and each sustaining Healer contributing one yield chunk,
+  with each Well-Placed Hearth adding one-half chunk
+- Normal transformation following the relationship:
+
+  **Remedy Preparation = usable Hearths + sustaining Healer Citizens + (0.5 × Well-Placed Hearths)**
+
+- Remedy Supplies consuming Sustenance and Flexible Scrap according to known
+  recipes and remaining bounded by available inputs and player-set targets and
+  reserves
+- Remedy Supplies remaining distinct from the ordinary non-Remedy Supplies
+  prepared by Crafters
+- Caretaker or Teacher Civic Shares able to support Hearth Practice Strength
+  without counting as Healers for Remedy Preparation
+- Healer Citizens committed to Projects withdrawing their civic shares from
+  ordinary care, Healer Readiness, and Remedy Preparation
+
+#### Standing responsibility
+
+- Healer Readiness expressing whether the Colony can meet present health and
+  recovery needs without allowing bodily consequence to become civic collapse
+- Ordinary Healer work including diagnosis, cleaning and stabilizing injury,
+  managing illness, guiding recovery, preparing Remedies, and receiving the
+  bodily aftermath of Homecoming or Home MEET
+- Adequate Healer Readiness supporting recovery without erasing wounds, Fear,
+  Maiming, incapacity, or the historical consequence attached to a named life
+- Healing remaining credible care over time rather than an instant restoration
+  command, generalized health meter, or immunity from future harm
+
+#### Healer Projects
+
+- Healer Projects creating persistent care capability or changing a lasting
+  health circumstance rather than turning every treatment into construction
+- Adapting Hearth to a newly understood need; establishing a durable treatment
+  or recovery capability; restoring care after persistent contamination or
+  displacement; or completing a lasting rehabilitation change
+- Immediate treatment, routine recovery, Remedy Preparation, triage, and
+  ordinary Patient care not automatically becoming Projects
+- Builder, Crafter, Caretaker, or Teacher involvement able to support a
+  persistent care change without transferring its principal purpose away from
+  Healer
+
+#### Rehabilitation
+
+- **Rehabilitation** as the defined Hearth improvement, established in one
+  particular Hearth through a Healer Project
+- The improved Hearth providing protected movement space, bodily supports, and
+  sustained care arrangements through which wound or Maiming amelioration may
+  become available
+- Rehabilitation Projects being individualized to a named Citizen and the
+  lasting consequence they carry
+- Amelioration able to establish an adapted way to move, work, communicate, or
+  eventually Launch where that Citizen's condition permits
+- Rehabilitation not guaranteeing restoration of former capability, erasing
+  Maiming, removing history, or accelerating ordinary recovery
+- Healer owning each Rehabilitation Project, with Caretaker and Teacher
+  Readiness contributing when the Citizen's actual needs require them and
+  Leader contributing none
+- One improved Hearth accommodating no more than one Rehabilitation Project at
+  a time under the ordinary Project-capacity rule
+- Detailed bodily and personal outcomes belonging to Chapter 4.4
+
+#### Healer vulnerability
+
+- Insufficient Healer Readiness creating vulnerability to delayed recovery,
+  untreated injury or illness, exhausted care, inadequate Remedies,
+  contamination, and clustered Patient need
+- Healer shortfall not inflicting anonymous daily damage, making every Citizen
+  equally ill, or concealing which named lives require care
+- Consequential shortfall becoming situated through MEET, Homecoming, a
+  particular Patient, or the actual Hearth and inhabited ground under pressure
+
+#### Boundaries
+
+- Healer not becoming a personal medicine statistic, superior class of Citizen,
+  generic recovery-speed bonus, automatic immunity, treatment queue, or source
+  of Remedies without material inputs
+- Passive transformation applying only to defined Remedy Preparation and not
+  treating care, recovery, or every Healer activity as produced output
+- Guest Affordances able to reveal a condition, contain aftermath, or open a
+  distinctive response without creating superior Healer coefficients, erasing
+  illness, or replacing ordinary Healing Load
+
+### Teacher
+
+- Teacher carrying responsibility for teaching young Citizens, integrating
+  newcomers, transmitting practical and cultural understanding, and sustaining
+  social memory
+- Every available Citizen assigned Teacher contributing one equal civic share,
+  without personality, prior service, Away capability, equipment, or species
+  creating a superior Teacher coefficient
+- **Gathering Place** as Teacher's primary public Practice, shared with Leader
+  without belonging exclusively to either Role
+- **Hearth** drawing upon Teacher Readiness when nurture, dependency, early
+  learning, or recovery requires it
+- Teacher Citizens choosing whether to sustain ordinary Teacher responsibility,
+  answer a need through Hearth, or commit their Civic Shares to active Projects
+
+#### Teaching through Gathering Place and Hearth
+
+- Gathering Place Practice Strength representing established communal ground,
+  accumulated
+  objects and records, shared conventions, suitable access, and remembered use
+  rather than autonomous teaching
+- Teaching, interpretation of Laws and Sayings, storytelling, observances,
+  memorials, After-name recognition, Maturity, arrival, and the recounting of
+  Chronicle material able to occur through Gathering Place
+- Hearth supporting Teaching when care and learning are inseparable without
+  becoming a family unit
+- Caretaker or Healer Civic Shares supporting Hearth not counting as Teachers
+
+#### Standing responsibility
+
+- Teacher Readiness expressing whether the Colony can transmit what its people
+  need to live together and remain historically continuous
+- Ordinary Teacher work including lessons, practical transmission, cultural
+  interpretation, newcomer integration, accompaniment of young Citizens,
+  memorial continuity, and helping consequential experience become shared
+  understanding
+- A Colony without young Citizens, newcomers, lessons, grief, or a transition
+  in practical or cultural understanding having no automatic Teaching Load
+- Ordinary Chronicle and Citizen Tale continuity carrying no itemized labor
+  charge
+- Teaching remaining inhabited civic life rather than a passive-output channel
+  or a hidden progression system
+
+#### Teacher Projects
+
+- Teacher Projects creating a defined persistent cultural or educational fact
+  rather than turning every lesson or story into scheduled production
+- Integrating a consequential discovery into communal understanding; creating
+  a lasting memorial or observance; adapting Gathering Place to a newly
+  understood need; or carrying a major cultural transition into ordinary life
+- Routine lessons, storytelling, record consultation, interpretation,
+  maturation, and ordinary newcomer welcome not automatically becoming Projects
+- Builder or Leader involvement able to support a lasting cultural change
+  without transferring its principal teaching purpose away from Teacher
+
+#### Teacher vulnerability
+
+- Insufficient Teacher Readiness creating vulnerability to failed newcomer
+  integration, interrupted practical transmission, loss of shared meaning,
+  neglected grief or memorial duty, and unmet needs among young Citizens
+- Teacher shortfall not deleting known facts, erasing records, halting Maturity
+  automatically, or imposing an abstract ignorance or culture penalty
+- Consequential shortfall becoming situated through MEET, a particular Citizen,
+  Gathering Place, Hearth, memorial, observance, or transition under pressure
+
+#### Boundaries
+
+- Teacher not becoming a personal instruction statistic, superior class of
+  Citizen, Maturity-speed bonus, research specialist, archive worker, culture
+  producer
+- Guest knowledge able to enter communal life through Teaching without creating
+  a superior Teacher coefficient
+- Teacher having no defined passive production or transformation merely because
+  other Roles possess one
+
+### Watchkeeper
 
 - Watchkeeper carrying the singular civic responsibility of noticing pressure
   early enough for the Colony to respond deliberately
@@ -998,25 +1880,23 @@ shared Practice does not appear to belong to the first Role that uses it.
   share, without limiting the Role itself to one Citizen
 - Watchkeeper governing warning and Telegraph rather than generalized defense
 
-##### Watchpost
+#### Watchpost
 
 - **Watchpost** as Watchkeeper's sole Practice
-- A completed usable Watchpost contributing incremental Watchkeeper Capacity
-  even without a Citizen currently sustaining it
-- Watchpost's contribution representing preserved sightlines and listening
+- Watchpost Practice Strength representing preserved sightlines and listening
   lines, known approaches, warning markers, protected observation, and
   established communication into inhabited Home rather than autonomous
   surveillance
-- Watchkeeper Citizens sustaining Watchpost adding their civic shares to
-  Watchkeeper Readiness
-- Watchpost able to contribute Readiness while supporting an active Project,
-  with Citizens rather than infrastructure making the commitment
+- Any Citizen sustaining Watchkeeper responsibility supporting completed usable
+  Watchposts without requiring assignment to an individual Watchpost
+- Watchpost retaining situated Practice Strength while supporting an active
+  Project, recalculated according to remaining Watchkeeper support
 - Edges, high lines, listening points, routes, and approaches remaining physical
   circumstances of Watchpost rather than additional Practices
 - Watchkeeper able to perform basic watch before Watchpost exists, making
   Watchpost an expansion that requires no founding exemption
 
-##### Standing responsibility
+#### Standing responsibility
 
 - Watchkeeper Readiness expressing whether the Colony receives useful warning
   before pressure becomes consequence
@@ -1031,11 +1911,11 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Warning remaining meaningful only when it gives the Colony time or
   information with which to choose
 
-##### Citizen choice
+#### Citizen choice
 
-- A Watchkeeper Citizen choosing whether to sustain Watchpost, answer a
-  temporary need through DWELL or MEET, or commit their civic share to an active
-  Project
+- A Watchkeeper Citizen choosing whether to sustain ordinary Watchkeeper
+  responsibility, answer a temporary need through DWELL or MEET, or commit
+  their Civic Share to an active Project
 - A Watchkeeper committed to a Project withdrawing that share from ordinary
   Watchkeeper Readiness
 - Several Watchkeepers able to divide present effort between continuous warning
@@ -1044,20 +1924,37 @@ shared Practice does not appear to belong to the first Role that uses it.
   temporary civic commitments rather than Projects unless they establish a
   persistent result
 
-##### Watchkeeper Projects
+#### Watchkeeper Projects
 
 - Watchkeeper Projects making a defined warning fact newly true rather than
   manufacturing observation work
-- Establishing or adapting Watchpost; extending useful warning to newly
-  inhabited ground; creating a lasting signal or communication line; restoring
-  a lost warning connection; or adapting warning infrastructure to a recurring
-  environmental pressure
+- Adapting Watchpost; extending useful warning to newly inhabited ground;
+  creating a lasting signal or communication line; restoring a lost warning
+  connection; or adapting warning infrastructure to a recurring environmental
+  pressure
 - Watchkeeper having no compulsory repeatable Project once the Colony's warning
   posture is adequate
 - Workshop and Builder involvement able to support physical work without
   transferring the Project's principal warning purpose away from Watchkeeper
 
-##### Watchkeeper vulnerability
+#### Far Warning
+
+- **Far Warning** as the defined Watchpost improvement, established in one
+  particular Watchpost through a Watchkeeper Project
+- The improved Watchpost extending established observation and signaling beyond
+  Home's immediate approaches
+- Far Warning able to reveal the family of an eligible approaching seasonal,
+  environmental, animal, human, or route pressure early enough to create an
+  additional preparation window
+- The warning remaining qualitative: it gives neither an exact probability or
+  countdown nor certainty about severity, location, or consequence
+- Far Warning not guaranteeing that every pressure is observable, preventing an
+  event, or adding generic Watchkeeper Readiness, Practice Strength, or Project
+  capacity
+- Builder or Crafter involvement able to support its physical means without
+  transferring the improvement's warning purpose away from Watchkeeper
+
+#### Watchkeeper vulnerability
 
 - Insufficient Watchkeeper Readiness making warning late, incomplete, or badly
   localized rather than directly causing damage
@@ -1065,12 +1962,12 @@ shared Practice does not appear to belong to the first Role that uses it.
   work, route closure, and dangerous weather
 - Shortfall reducing preparation, narrowing available response, or allowing a
   threat to reach inhabited ground before the Colony understands it
-- MEET locating the resulting pressure in the actual Place, route, household,
+- MEET locating the resulting pressure in the actual Place, route, Residence,
   Practice, or Citizen at risk
 - Watchkeeper shortfall never authorizing catastrophic loss to occur unseen
   while the player's attention is Away
 
-##### Boundaries
+#### Boundaries
 
 - Watchkeeper not becoming a combat or guard class, tactical defense unit,
   prediction engine, exact event-probability display, universal surveillance
@@ -1079,91 +1976,681 @@ shared Practice does not appear to belong to the first Role that uses it.
   the Colony's response
 - Resident Affordances such as Night Sky-watch or Boundary Deterrence able to
   provide a distinctive warning or response without replacing ordinary
-  Watchkeeper Capacity
+  Watchkeeper responsibility
 
-### 9.3 Practices and shared civic life
+### Leader
 
-- Each important Practice receiving one canonical definition after the Roles
-  that use it have been established
-- **Gathering Place** and **Garden** remaining Practices rather than discrete
-  building types, with several Roles able to draw upon them as circumstances
-  require
-- **Hearth** replacing separate Nursery and Infirmary concepts as the shared
-  Practice of healing, nurturing, and sustaining dependent or recovering lives
+- Leader carrying responsibility for coordinating civic decisions, making
+  competing commitments legible, buffering social strain, and enabling
+  deliberate Colony-scale action
+- Every available Citizen assigned Leader contributing one equal civic share,
+  without personality, prior service, Away capability, equipment, or species
+  creating a superior Leader coefficient
+- **Gathering Place** as Leader's sole Practice, shared with Teacher without
+  belonging exclusively to either Role
+- Leader Citizens choosing whether to sustain ordinary Leader responsibility,
+  answer a temporary civic need, or commit their Civic Shares to active
+  Projects
+- Leader not supporting Hearth Practice Strength
+
+#### Gathering Place
+
+- Gathering Place as the principal cultural and ceremonial Practice where
+  Citizens assemble to interpret their shared life and make consequential civic
+  choices together
+- Gathering Place Practice Strength representing recognized common ground,
+  established civic
+  convention, suitable access, accumulated use, and shared orientation rather
+  than autonomous leadership
+- Tier recognition, major collective deliberation, civic ceremonies, and
+  dispute resolution able to occur as Gathering Place MEETs
+
+#### Community Board
+
+- **Community Board** as the defined Gathering Place improvement, established
+  in one particular Gathering Place through a Leader Project
+- The improvement giving selected information already known to the Colony
+  persistent shared expression in DWELL
+- The Almanac remaining the always-available interface lens for current Colony
+  and world information whether or not Community Board exists
+- Community Board able to mirror known civic balance, seasonal pressure,
+  forecasts, Telegraph, and preparation without detecting or improving any of
+  them
+- Its physical board, notices, or markers able to stand within the Gathering
+  Place or elsewhere in Home without designating another Place or hosting a
+  second Practice
+- The improved Gathering Place remaining one Practice that can accommodate no
+  more than one Project at a time
+- Community Board remaining useful but non-gating: its absence never prevents
+  ordinary civic decisions or hides information the player otherwise knows
+- Community Board adding no Gathering Place Practice Strength, Leader Readiness,
+  Project capacity, detection, forecast accuracy, or autonomous decision-making
+
+#### Standing responsibility
+
+- Leader Readiness expressing whether the Colony can recognize shared pressure,
+  choose deliberately among competing needs, and carry collective decisions
+  into action
+- Ordinary Leader work including coordination, deliberation, dispute handling,
+  emergency orientation, communicating commitments, receiving civic claims,
+  and helping unequal burdens remain collectively intelligible
+- Adequate Leader Readiness not guaranteeing agreement, removing sacrifice, or
+  substituting for the particular Role needed to answer a material problem
+- Leadership remaining a civic responsibility among equals rather than rank,
+  command, office, personal charisma score, or ownership of Colony decisions
+
+#### Leader Projects
+
+- Leader Projects creating a defined persistent civic fact rather than turning
+  every decision or meeting into scheduled work
+- Adapting Gathering Place to a lasting civic need, including establishing its
+  Community Board improvement;
+  establishing a durable agreement, signal, or communication function; or
+  supporting a Tier-defining civic change
+- Ordinary coordination, dispute handling, emergency deliberation, information
+  display, and Tier-recognition ceremony not automatically becoming Projects
+- Builder, Teacher, Watchkeeper, or another Role able to support a lasting civic
+  change without transferring its principal coordinating purpose away from
+  Leader
+
+#### Leader vulnerability
+
+- Insufficient Leader Readiness creating vulnerability to delayed decisions,
+  unresolved disagreement, uneven sacrifice, failed coordination, social
+  strain, and inability to mobilize around a shared pressure
+- Leader shortfall not removing player agency, forcing irrational behavior,
+  creating automatic dissent, or making one Citizen sovereign over the Colony
+- Consequential shortfall becoming situated through MEET, a particular civic
+  decision, Gathering Place, Community Board, relationship, or shared pressure
+
+#### Boundaries
+
+- Leader not becoming a ruler, commander, mayor, superior class of Citizen,
+  wildcard civic support, cross-Role Load reduction, universal Project-speed
+  bonus, policy tree, or source of passive production
+- Guest Affordances able to alter communication, attention, or a bounded civic
+  response without creating superior Leader coefficients or replacing ordinary
+  Leader responsibility
+
+### Shared Practices
+
+- **Workshop**, **Hearth**, and **Gathering Place** remaining shared Practices
+  that compatible Roles draw upon as circumstances require
+- **Hearth** as the shared Practice of healing, nurturing, and sustaining
+  dependent or recovering lives
 - Caretakers, Healers, and Teachers able to use Hearth according to actual need,
   without requiring all three continuously or creating a Hearth-specific Role
-- Household, family, and any possible Kindred distinction remaining open to
-  flattening into the smallest sufficient relational vocabulary
+- **Family** remaining the provisional term for domestic relationship, separate
+  from Hearth as a civic Practice
 
-### 9.4 Active Projects
+### Project Queue
 
-- Projects as temporary commitments of named Citizen effort to defined
-  persistent results
-- Practice support, Citizen choice, material commitment, and one-Place-per-
-  Project concurrency
+The **Project Queue** is the shared execution layer for deliberate work that
+makes a defined, persistent result true.
 
-### 9.5 Places and spatial expression
+#### Project capacity
 
-- Species expression belonging to the physical arrangement of each Place rather
-  than altering the Role or Practice associated with it
-- **JOIN**, **GATHER**, and **CONNECT** shaping how a Place inhabits and relates
-  to surrounding physical ground while the Practice and its civic function
-  remain unchanged
-- The same Practice therefore able to receive different spatial expression
-  without creating parallel species-specific Role, Practice, Capacity, or
-  building systems
+- Each completed usable Practice accommodating one active Project
+- Project capacity belonging to individual Practices rather than to an abstract
+  Colony-wide slot total
+- The supporting Practice and the Project's target not needing to be the same
+  Place
+- A Workshop accommodating a Builder Project that establishes a new Residence
+  or Practice at a designated Place
+- A Workshop accommodating a Crafter Project that creates a Tool
+- A Garden accommodating a Gardener Project that converts that Garden for
+  Winter Cultivation
+- Two suitable Practices able to accommodate two Projects concurrently
+- A Practice supplying Project capacity but never advancing a Project without
+  committed Citizens
+- Builder able to conduct the founding Workshop Project without Practice support
+  before the first Workshop is complete, with completion ending that exemption
 
-## 10. The daily life of the Colony
+#### Creating an entry
 
-- Citizen-Days
-- DAWN adjudication
-- Load and Readiness
-- Big and Small Weakness
-- Quiet Equilibrium
+Each Project Queue entry identifies:
 
-## 11. Colony situations and Home MEETs
+- The defined persistent result
+- Its owning Role
+- Its supporting Practice
+- Its target Place or created object where applicable
+- Required material
+- Required Citizen-Days
+- The named Citizens committed to it
 
-- Shortfall becoming situation
-- Global conditions
-- Choice grammar
-- Base Defense
-- Personal consequence at Home
+Project ownership follows the result: new Residence or Practice construction is
+Builder work, Tool creation is Crafter work, and Winter Cultivation conversion
+is Gardener work.
 
-## 12. Resources, production, and construction
+#### Queue operations
 
-- Sustenance and stores
-- Scrap and material transformation
-- Supplies
-- Construction and decay
-- The Construction Queue
+- The player selecting an eligible Project and supporting Practice
+- The player able to reserve required material before commitment
+- The player assigning one or more Citizens of the owning Role
+- The interface showing the resulting loss of Role coverage, Practice support,
+  and passive throughput before confirmation
+- Commitment occupying the Practice's Project capacity and withdrawing the
+  named Citizens' Civic Shares from ordinary work
+- Each committed Citizen contributing one Citizen-Day whenever the shared clock
+  advances through the relevant day
+- DAWN recording accumulated progress
+- Completion creating the persistent result, releasing the supporting Practice,
+  and returning the Citizens to ordinary Role availability
+- A committed Project not being interruptible or cancellable
+- An uncommitted material reservation remaining releasable
 
-## 13. Population and growth
+The Practice continues contributing its situated Practice Strength while
+accommodating a Project. Its support is recalculated from the compatible
+Citizens who remain in ordinary work; any such Citizens may also continue Role
+coverage and passive production.
 
-- Population counts and presence
-- Capacity and overcrowding
-- Wanderers
-- Hearths and Nesting Season
-- Young Citizens
-- Hospitality as growth
+## 3.5 Pressure, Situations, and Home MEETs
 
-## 14. EMBODY
+Pressure does not cause automatic damage. It shows where the Colony may struggle
+when weather, scarcity, danger, disagreement, or another real circumstance tests
+it.
 
-- Access and invitation
-- Practice and Presence
-- Experience families
-- Species embodiment
-- Relationships, care, and memory
+If the Colony can absorb that test through Readiness, ordinary life continues
+and the player receives a brief account of what happened. If the test presents
+meaningful stakes, choice, and consequence, DWELL yields to a Home MEET.
+
+### Bringing Pressure into focus
+
+- Each situation arising from the Colony's current season, conditions, history,
+  and visible vulnerabilities
+- Seasonal state, weather, forecasts, and other environmental circumstances
+  establishing variable background pressure
+- The Colony's current civic vulnerability modifying that background pressure
+  without directly determining MEET frequency
+- Bounded randomness keeping timing uncertain while the world state and civic
+  posture keep it causal
+- A deficiency that has recently shaped a Home MEET being temporarily damped so
+  that its persistence does not generate another MEET every day
+- A continuing deficiency able to return after time has passed, with its depth
+  or duration able to increase the stakes rather than merely increasing event
+  frequency
+- Recently used situation families, Roles, Places, and threatened values being
+  weighted downward so that clusters remain possible without directly
+  duplicating or tightly overlapping one another
+- The most pressured relevant Role shaping what is chiefly at risk
+- A second relevant weakness shaping the collateral stake when one exists
+- Prominent Housing Pressure locating the situation in the affected Residence
+  and Citizens while relevant Role shortfalls shape its civic stakes
+- A situation involving only one relevant Role drawing its collateral stake
+  from an actual material, social, or environmental circumstance
+- Pressure becoming specific to the Citizens, Places, Practices, relationships,
+  or resources involved
+- Relevant Role Readiness and the one Practice Strength of any Practice through
+  which the situation occurs helping determine whether the test remains an
+  ordinary report or requires a Home MEET
+- The player understanding why the Colony is vulnerable without being shown a
+  predictable incident counter
+
+### Telegraph and rebalancing
+
+- Watchkeeping as the Colony's general source of Telegraph
+- A relevant Guest Affordance able to provide bounded, species-specific warning
+  or interpretation without contributing a general Watchkeeper Civic Share
+- Telegraph communicating an observable situation family, approximate
+  likelihood or urgency, likely exposed Roles, and relevant Places without
+  displaying exact probabilities
+- Useful Telegraph arriving before the event check or Impact and giving the
+  player a DWELL opportunity to rebalance
+- Rebalancing able to reassign uncommitted Civic Shares, alter Provisioning
+  targets or reserves, make an available preparation, or knowingly accept the
+  risk
+- Citizens committed to Projects remaining committed and unavailable for that
+  rebalancing
+- Rebalancing able to prevent or delay a Home MEET, reduce its stakes, or change
+  which shortfall shapes it without guaranteeing control over the event
+- Stronger Watchkeeping making warning earlier, clearer, and better localized,
+  with a relevant Guest Affordance able to extend or sharpen it
+- Some events remaining insufficiently observable to Telegraph
+- The Almanac presenting all Telegraph known to the player and providing the
+  functional lens for rebalancing
+- A Community Board improvement mirroring selected known Telegraph and
+  preparation inside DWELL without creating the warning, improving its
+  accuracy, or gating access to the Almanac
+
+### Choosing through Home MEET
+
+- Home MEET presenting the same Colony and Places the player knows through DWELL
+- A Pressure-driven Home MEET ordinarily offering three clear responses:
+  - Commit resources, preparation, or available civic support to protect the
+    primary stake
+  - Make a different commitment to protect the collateral stake
+  - Endure the situation without either commitment and accept the combined
+    consequence
+- Each response making its immediate cost, protected value, and likely
+  consequence understandable before commitment
+- The three-response structure applying to Pressure-driven situations rather
+  than every conversation, ceremony, arrival, or transition at Home
+- A Home MEET consuming world time even when the choice itself is resolved
+  quickly
+
+### Consequence and aftermath
+
+- Weather, flood, predators, human activity, structural failure, shortage, and
+  other dangers remaining Home situations rather than becoming a separate
+  defense mode
+- Roles, Readiness, situated Practice Strength, warning, prepared resources, and
+  relevant Affordances shaping what the Colony can do
+- Consequences able to affect named Citizens, resources, relationships, Places,
+  Practices, and other concrete parts of the persistent world
+- Injury, Fear, displacement, grief, death, or lasting physical change occurring
+  only when supported by the situation and the player's choice
+- Catastrophic loss never occurring unseen merely because the player is Away
+- Resolution updating the Colony and completing the immediate situation
+- A Project entering the Project Queue only when a defined persistent result
+  still needs to be built, restored, adapted, or made civically true
+- That Project belonging to the Role that owns its persistent result
+- Resolved consequences never generating redundant compulsory work
+
+## 3.6 Resources, Production, and Provisioning
+
+### Resources
+
+| Resource | Function |
+|---|---|
+| **Perishable Sustenance** | Green-season food; normally consumed first and vulnerable to spoilage. |
+| **Durable Sustenance** | Preserved food for winter, travel, disruption, and reserves. |
+| **Flexible Scrap** | Material suited to binding, wrapping, weaving, lashing, and sealing. |
+| **Rigid Scrap** | Material suited to bracing, shielding, surfacing, and reinforcement. |
+| **Supplies** | Prepared, expendable capability used during Away or situated need. |
+| **Tools** | Durable functional Items created deliberately through Crafter Projects. |
+
+Resources remain Colony-scale stocks. Scrap does not divide into component
+inventories, and prepared Supplies do not retain individual makers.
+
+### Production and transformation
+
+- Garden with Gardener producing Perishable Sustenance
+- Kitchen with Caretaker preserving Perishable Sustenance as Durable Sustenance
+- Workshop with Crafter preparing non-Remedy Supplies
+- Hearth with Healer preparing Remedy Supplies
+- Each process using the shared Practice-and-Citizen gate and passive-throughput
+  relationship established earlier
+- Well-Placed Places contributing Spatial Alignment to their Practices'
+  throughput
+- Production remaining bounded by available inputs, season, known recipes,
+  targets, and reserves
+- Practices without defined output producing nothing merely because they exist
+
+### Provisioning
+
+- **Prepare:** transforming inputs while requirements permit and stock remains
+  below the player's target
+- **Hold:** suspending transformation while preserving the Role assignment
+- **Unavailable:** the required Practice, Citizen, input, method, or condition
+  being absent
+- Player-set targets preventing automatic overproduction
+- Player-set reserves protecting stock from Provisioning and unrelated Projects
+- Reservations remaining visible and releasable before commitment
+- Provisioning never creating resources from nothing
+
+### Beautification
+
+Beautification is the shared passive civic expression of Roles that do not
+produce Sustenance, transform it, or prepare Supplies.
+
+- Builder, Teacher, Watchkeeper, and Leader as the non-producing Roles that
+  contribute to Beautification
+- Each Citizen sustaining one of those Roles contributing one equal point of
+  Beautification progress at DAWN
+- A Citizen committed to a Project contributing no Beautification progress
+  while committed
+- Every contribution entering one Colony-wide Beautification track rather than
+  a separate track for each Role
+- Reaching a threshold creating one small authored **Frill** appropriate to a
+  contributing Role, the Core Species, a suitable Place, and recent Colony
+  history
+- A completed Frill waiting to appear until Quiet Equilibrium when necessary,
+  then remaining as a persistent part of Home even after equilibrium is lost
+- A Frill able to anchor an EMBODY invitation while Quiet Equilibrium keeps
+  EMBODY open
+- Frills remaining mechanically inert: they create no Load, Readiness,
+  resource, passive output, Project capacity, or Spatial Alignment
+- Well-Placed Practices not accelerating Beautification
+- Exact thresholds remaining a tuning value rather than another player-facing
+  optimization problem
+
+### DAWN accounting
+
+DAWN resolves the day just completed, then establishes the state of the new day.
+No result completed at that DAWN contributes retroactively to the elapsed day.
+
+1. Resolve Sustenance consumption, normally drawing from Perishable Sustenance
+   before Durable Sustenance.
+2. Resolve active preservation and Supply preparation from the remaining
+   eligible stock.
+3. Apply aggregate spoilage to eligible Perishable Sustenance. Perishable stock
+   carries no individual batches, ages, freshness values, or FIFO order, and
+   Durable Sustenance does not decay ordinarily.
+4. Add new passive production. Each process adds its calculated yield to any
+   carried fractional remainder, releases only whole chunks to Colony stock,
+   and retains the new remainder for a later eligible DAWN. New Perishable
+   Sustenance therefore receives one full decision window before becoming
+   eligible to spoil.
+5. Add Beautification progress from the sustaining Citizens who contributed
+   during the elapsed day.
+6. Add committed Citizen-Days, complete eligible Projects, release their
+   supporting Practices, and return their Citizens to ordinary Role
+   availability.
+7. Resolve recovery and other changes in Citizen presence or availability.
+8. Recalculate usable Places, Spatial Alignment, Housing Balance, Role Balance,
+   and Colony Pressure for the new day.
+9. Report meaningful changes, including stock movement, shortages,
+   transformations, Frills, completed Projects, availability, and civic balance.
+
+- Every Citizen creating Sustenance demand, with exact quantities reserved for
+  tuning
+- A Residence or Practice completed at the present DAWN becoming usable during
+  the new day and first contributing passive output at the following DAWN
+- A Citizen whose recovery completes at the present DAWN becoming available
+  during the new day
+
+### Resources and Projects
+
+- Projects drawing only their defined material requirements
+- A planned Project able to reserve some or all required material
+- Commitment protecting that material from unrelated use
+- Building a Practice remaining a Builder Project and creating a Tool remaining
+  a Crafter Project
+- Ordinary structural upkeep remaining part of Builder responsibility
+- Lasting construction, restoration, or adaptation requiring a defined Project
+- Time alone not causing automatic structural decay
+
+## 3.7 Population and Settlement Growth
+
+MEDIAN is a low-population colony builder. Growth adds named lives rather than
+anonymous labor, and every new Citizen brings both civic possibility and new
+responsibility. A mature Colony remains a community of dozens whose absences,
+arrivals, needs, and contributions stay legible.
+
+### Population at Home
+
+- **Colony Roster** counting every living named Citizen who belongs to the
+  Colony, including adults, young Citizens, Guests, Patients, and Citizens who
+  are Away
+- **Home Presence** counting the Roster Citizens physically present at the Home
+  Median
+- **Available Civic Population** counting Home-present adults currently able to
+  sustain Roles or commit Citizen-Days
+- **Dependents and Patients** identifying present Citizens who require support
+  without currently contributing an ordinary Civic Share
+- The interface keeping these counts distinct so that total population never
+  appears to be interchangeable workforce
+- DAWN resolving presence and availability before calculating Role Balance and
+  Practice support
+- A Citizen who is Away, acutely injured, receiving intensive care, or otherwise
+  unavailable remaining a full member of the Roster without contributing a
+  current Home Civic Share
+
+### Capability and obligation
+
+- Each available adult contributing one equal Civic Share regardless of
+  personality, species, prior service, equipment, or Away capability
+- A new available adult therefore adding one possible Civic Share rather than a
+  stronger or weaker worker
+- Every new Core Species Citizen also requiring sufficient Core Residence
+  Capacity, Sustenance, safe access, care, protection, civic integration, and
+  remembrance
+- Population growth increasing relevant Load according to the Colony's actual
+  new obligations
+- Young Citizens and unavailable adults adding responsibility before they add
+  or recover a Civic Share
+- Citizens supported by the Colony continuing to count toward ordinary
+  Sustenance demand while Away
+- Bodily consumption able to use the Body Unit relationships defined for the
+  Core Species without reducing any Citizen's personhood or Roster standing
+
+### Supporting a larger Colony
+
+- Supported Core population depending upon usable Residence Capacity, Stores,
+  routes, care, Readiness, and seasonal preparation rather than one abstract
+  population limit
+- Each Core Residence providing two Body Units of Housing Capacity, or three when
+  Well Placed
+- Rabbit and Squirrel Residences accommodating two or three Citizens, while
+  Mouse Residences accommodate four or six
+- Available Housing Capacity being one visible constraint without guaranteeing
+  that further growth is responsible
+- Planned Core growth requiring sufficient future Residence Capacity and a
+  civic posture capable of absorbing the added Load
+- Emergency hospitality able to exceed ordinary comfort through visible
+  Housing Pressure and a concrete provisional shelter arrangement
+- Temporary refuge and permanent welcome remaining different civic commitments
+- The player receiving a plain-language preview of the changes to Housing
+  Balance, Sustenance, Role Load, care, and available Civic Shares before
+  authorizing Core growth
+- Growth remaining optional even when the Colony could support it
+
+### Three paths of growth
+
+- **Wanderers** adding named Core-Species adults through refuge, rescue, and
+  integration
+- **Nesting** adding a small number of named young Citizens through a rare,
+  seasonal Colony commitment
+- **Guest residency** adding named non-Core Citizens or an explicitly authored
+  collective-bodied household through relationship and hospitality
+- Each path changing the Colony's obligations and history rather than acting as
+  an interchangeable add-population command
+- Population growth resolving principally through Home or Homecoming even when
+  first contact occurs Away
+
+### Wanderers and arrival
+
+- Wanderers as the primary early path for adult population growth
+- Each Wanderer arriving with a Given Name, Citizen Record, prior life, and any
+  relevant injury, Fear, relationship, knowledge, or unfinished circumstance
+- Arrival resolving through MEET, with choices shaped by the Colony's actual
+  ability to offer refuge
+- The player able to welcome the Wanderer permanently, offer temporary refuge,
+  help them continue elsewhere, or refuse
+- Provisional shelter permitting urgent refuge before permanent accommodation
+  is ready while making its added Housing Pressure and other Load visible
+- An accepted and integrated Wanderer becoming an equal Core Citizen and, when
+  present and available, contributing one Civic Share
+- Refusal remaining possible and becoming part of Colony history without every
+  refusal being converted into automatic punishment
+
+### Nesting
+
+- Nesting as a rare, voluntary, Colony-wide seasonal commitment rather than
+  passive population production
+- A suitable season making Nesting available without beginning it automatically
+- Authorization requiring credible future living accommodation, protected
+  Sustenance, a usable Hearth, and sufficient civic support for care, teaching,
+  protection, and any expected health needs
+- Authorization reserving a visible quantity of Sustenance scaled to the
+  expected new Body Units, with the exact multiplier remaining a tuning value
+- One expected Rabbit or Squirrel young counting as one Body Unit for that
+  reservation, and the usual two Mouse littermates together counting as one
+  Body Unit
+- The Nesting reserve remaining protected from Provisioning, unrelated
+  Projects, and discretionary spending once the commitment is authorized
+- The player seeing the temporary commitment and which Role balances will lose
+  Readiness or enter Pressure before authorizing Nesting
+- Normally no more than one successful Nesting commitment resolving during a
+  Colony-wide seasonal window
+- A successful commitment adding a very small number of fully named young
+  Citizens, with species-scale outcomes defined in the Citizens chapters
+- Young Citizens entering the Roster and adding Sustenance, accommodation,
+  Caretaker, Teacher, protection, and possible Healer Load immediately
+- Young Citizens contributing no Civic Share until the Maturity transition
+- Family, Maturity, and the personal lives of young Citizens belonging to Part IV
+  rather than being simulated as Colony production
+
+### Hospitality and Guest residency
+
+- Hospitality expressing the Colony's credible ability to house, sustain, know,
+  and integrate a Guest through actual Places, access, resources, and civic
+  support
+- Guest accommodation following the authored bodily, spatial, safety, habit,
+  and relationship requirements of that Guest species within its own dedicated
+  Place rather than consuming or extending pooled Core Residence Capacity
+- The Guest residence's Well-Placed status being judged by those individual
+  species requirements
+- Guest residency completing only after the promised accommodation and other
+  agreed Terms of Hospitality have become true
+- A welcomed Guest entering the Roster, creating ordinary support and Load, and
+  contributing one Civic Share while present and available
+- Guest residency remaining optional at every Colony Tier
+- Guest identity, accommodation, Affordances, relationships, and the complete
+  path to residency belonging to Chapter 4.6
+
+### Scale and continuity
+
+- Every increase producing named Citizen subjects with Records, obligations, and
+  visible relationships to Home
+- Mouse Colonies able to sustain denser named populations than Rabbit or
+  Squirrel Colonies without treating individual Mice as fractions of Citizens
+- Population bands serving encounter, visual-density, accommodation, Load, and
+  campaign-tuning needs without becoming a player-facing hard ceiling
+- Stability, memory, and chosen ambition defining a complete civic world even
+  when the Colony remains small
+- Population loss changing the Colony's present capacity and obligations without
+  erasing the civic history or Tier it has already achieved
+
+## 3.8 EMBODY
+
+**Colony DWELL is MEDIAN's version of base-building play. EMBODY is MEDIAN's
+version of cosy play.**
+
+EMBODY lets the player live as or be with individual Citizens inside the
+sanctuary created through DWELL. To live as a Citizen is to participate in a
+bounded activity. To be with a Citizen is to accompany their movement, rest,
+relationships, and experience of Home. Rare authored experiences may gather the
+whole Colony without turning its Citizens into one anonymous subject.
+
+### Access and invitation
+
+- Quiet Equilibrium opening EMBODY and its loss closing EMBODY
+- EMBODY remaining strictly Home-only and never becoming available at an Away
+  camp, Stopover, uncontested Node, or other merely calm location
+- The player entering through a present and available Citizen at a safe, usable
+  Place
+- Individual experiences appearing as invitations rather than compulsory tasks
+- An unavailable Citizen or unsafe Place remaining temporarily ineligible
+- A Citizen in active Tharn remaining unavailable for EMBODY
+- The player being free to leave an experience without penalty
+
+### Participation and Presence
+
+EMBODY has two primary forms:
+
+- **Participation:** limited direct involvement in a bounded activity such as
+  running, gathering, carrying, arranging, grooming, or playful movement
+- **Presence:** guided attention to what a Citizen experiences through looking,
+  listening, posture, movement, or repose
+- An experience able to move naturally from Participation into Presence
+- Controls remaining specific to the moment rather than expanding into
+  unrestricted free movement
+- Every experience carrying an authored arrival, sensory or relational
+  development, and natural release
+- The Citizen retaining agency over exact posture, pace, response, and social
+  behavior
+- Participation experiences expressing work already resolved through DWELL
+  rather than producing superior output
+- Cosmetic arrangements or meaningful remembered details able to persist when
+  appropriate
+
+### Experience families
+
+- **Flow Traversal:** safe movement, rhythm, balance, momentum, and confidence
+- **Small Work:** ordinary work felt through small tactile actions
+- **Sensory Repose:** warmth, stillness, listening, breathing, and relief
+- **Social Play:** chasing, teasing, imitation, curiosity, and mutual delight
+- **Comfort and Care:** safety expressed through closeness, grooming, food, rest,
+  and tending
+- **Observation and Watch:** familiar attention to Home without threat-scanning
+  play
+- **Weather Enjoyment:** conditions that create Exposure Away becoming pleasure
+  under shelter
+- **Shared Meal:** the whole Colony gathering through an Open Table Kitchen,
+  with the player accompanying collective ordinary life rather than commanding
+  it
+
+These families may overlap. Shared Meal is available only after Open Table has
+been established; the others require no universal Practice improvement. The
+families organize authored experiences without becoming separate progression
+tracks.
+
+### Species embodiment
+
+- EMBODY translating the Colony's spatial grammar into bodily experience
+- Mouse **JOIN** becoming fitted passage, shared walls, accumulated interior,
+  warmth, and nearby life
+- Rabbit **GATHER** becoming open shared ground, mutual visibility, bounding
+  movement, familiar neighbors, and protected edges
+- Squirrel **CONNECT** becoming height, balance, sway, junctions, alternate
+  routes, and confidence across separation
+- The same Place geometry mattering in both DWELL and EMBODY
+- Species expression arising through bodies, movement, scale, sound, and spatial
+  relationships rather than cosmetic styling alone
+
+### Citizens and relationships
+
+- Most experiences belonging to a particular Citizen in a particular Place,
+  with Shared Meal as the bounded whole-Colony exception
+- Shared Meal retaining every participant as a named Citizen with their own
+  relationships, timing, and response rather than treating the Colony as a
+  crowd unit
+- Other Citizens retaining their own timing and responses rather than behaving
+  as commanded props
+- Play, affection, comfort, imitation, and attention feeling offered by
+  relationships
+- Injury, recovery, age, Fear, memory, and prior events shaping eligible
+  experiences without reducing Citizens to condition displays
+- Care experiences expressing recovery and trust without replacing Caretaker,
+  Healer, or Teacher responsibility
+- Young Citizens participating only in experiences appropriate to their present
+  life stage
+
+### Memory and reward
+
+- The experience itself being the primary reward
+- EMBODY granting no production multiplier, Civic Share, progression
+  currency, or superior Citizen statistic
+- Exposure ebbing through sanctuary and ordinary Home recovery, with EMBODY
+  able to portray that change but never accelerate it
+- EMBODY never clearing Tharn or substituting for the care and recovery that
+  resolves it
+- A moment creating Campaign Memory only when something particular and worth
+  remembering occurs
+- Repeated experiences remaining available for pleasure without manufacturing
+  duplicate historical importance
+- Quiet Equilibrium creating permission for attention rather than converting
+  calm into a spendable resource
+
+### Boundaries
+
+- EMBODY remaining guided and bounded rather than becoming a second traversal
+  game
+- EMBODY having no hard failure, with mistakes creating texture, hesitation,
+  rearrangement, or a gentler finish rather than punishment or repeated retry
+- Flow Traversal emphasizing pleasure and confidence rather than lethal falls,
+  harsh retries, or score pressure
+- Small Work never becoming the required manual method for ordinary production
+- Presence remaining meaningful even when the player's only actions are looking,
+  listening, settling, approaching, or waiting
+- EMBODY never erasing injury, Fear, grief, or other consequence merely by
+  depicting comfort
+- Loss of Quiet Equilibrium closing an active experience safely rather than
+  nesting an urgent Home MEET inside EMBODY
+- The system preserving the distinction between maintaining sanctuary through
+  DWELL and inhabiting it through EMBODY
 
 # PART IV — THE CITIZENS
 
-## 15. Citizenhood and the Citizen Record
+## 4.1 Citizenhood and the Citizen Record
 
 - Equal personhood
 - Identity and presence
 - The common descriptive frame
 - Record fields and legibility
 
-## 16. The three core species
+## 4.2 The three core species
 
 - Mouse
 - Rabbit
@@ -1171,22 +2658,28 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Body units and comparative scale
 - Mechanical traits and mixed parties
 
-## 17. Bonds, Hearths, and the life course
+## 4.3 Bonds, Family, and the Life Course
+
+<!-- Authorial note for later refinement: Hearth is exclusively the civic
+Practice. Family is the provisional relational term and may be refined when this
+chapter is selected. -->
 
 - Bonds and relationships
-- Hearths and lineage
+- Family structure
+- Young Citizens
+- Maturity, aging, and death
 - Growth through experience
 - Distinctions and After-names
 - Departure and memorial continuity
 
-## 18. Exposure, harm, fear, and care
+## 4.4 Exposure, harm, fear, and care
 
 - Personal Exposure
 - Harm and recovery
 - Fear and tharn
 - Death without disposability
 
-## 19. Personal items and Focus
+## 4.5 Personal items and Focus
 
 - Tools
 - Supplies
@@ -1194,16 +2687,17 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Ownership, custody, loss, and succession
 - Focus and chosen intervention
 
-## 20. Guest Citizens
+## 4.6 Guest Citizens
 
 - Difference and equal Citizenship
 - Resident and Expedition Guests
+- Becoming a resident Citizen
 - Recruitment and hospitality
 - Guest Houses
 - Signature functions
 - Collective-bodied households
 
-## 21. Names, Records, and memory
+## 4.7 Names, Records, and memory
 
 - Given Names and After-names
 - Place-name grammar
@@ -1213,15 +2707,16 @@ shared Practice does not appear to belong to the first Role that uses it.
 
 # PART V — AWAY: EXPEDITION AND RETURN
 
-## 22. Leaving Home
+## 5.1 Leaving Home
 
 - Sources of expedition purpose
 - Party selection
 - The Expedition Launcher
 - Legible Home subtraction
+- Partial-day Civic Share subtraction and Launch preview
 - Staging Posts
 
-## 23. RISK: Crossing
+## 5.2 RISK: Crossing
 
 - Party representation
 - Crossing conditions
@@ -1229,7 +2724,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Group result and individual adversity
 - Consequence and turn-back authority
 
-## 24. TRAVEL: Field
+## 5.3 TRAVEL: Field
 
 - Party pace and representation
 - Terrain and distance
@@ -1237,7 +2732,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Field Cards
 - Changing availability
 
-## 25. Nodes in the Field
+## 5.4 Nodes in the Field
 
 - Node families
 - Uncontested Nodes
@@ -1245,7 +2740,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Renewable places
 - Material and relational state
 
-## 26. MEET: consequential situations
+## 5.5 MEET: consequential situations
 
 - Participants and stakes
 - Approaches and Focus
@@ -1254,7 +2749,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Tharn interruption
 - Persistence and aftermath
 
-## 27. Outposts, Stopovers, and Held Reaches
+## 5.6 Outposts, Stopovers, and Held Reaches
 
 - Range and safe destinations
 - Establishing an Outpost
@@ -1262,24 +2757,25 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Active and passive value
 - Off-screen protection
 
-## 28. Return and Homecoming
+## 5.7 Return and Homecoming
 
 - Return Crossing
 - Return pressure
 - Bringing the haul home
 - Homecoming choices
+- Partial-day Civic Share restoration and DAWN reconciliation
 - Records, memory, and restored Home state
 
 # PART VI — THE CAMPAIGN
 
-## 29. The opening campaign
+## 6.1 The opening campaign
 
 - The Founding Escape
 - Tutorial sequence
 - Early Colony development
 - The first expeditions
 
-## 30. Civic progression
+## 6.2 Civic progression
 
 - The four Colony Tiers
 - Population and institutional proofs
@@ -1287,7 +2783,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Recognition MEETs
 - Stable plateaus and optional growth
 
-## 31. Corridor progression
+## 6.3 Corridor progression
 
 - Reaching farther along the Corridor
 - Permissions and Projects
@@ -1295,7 +2791,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Relationships between settlements
 - The Sovereign Network
 
-## 32. Campaign horizons
+## 6.4 Campaign horizons
 
 - The Ancestral Home
 - The Rest-Stop Metropolis
@@ -1304,7 +2800,7 @@ shared Practice does not appear to belong to the first Role that uses it.
 
 # PART VII — PRESENTATION AND DEVELOPMENT BOUNDARY
 
-## 33. Interface and information design
+## 7.1 Interface and information design
 
 - Colony and Field views
 - Ledgers and overlays
@@ -1313,28 +2809,28 @@ shared Practice does not appear to belong to the first Role that uses it.
 - Advisor voice
 - Controls and accessibility
 
-## 34. Art and sound
+## 7.2 Art and sound
 
 - Visual identity
 - The anthropomorphism boundary
 - Animal scale and human infrastructure
 - Environmental and civic sound
 
-## 35. Content-authoring doctrine
+## 7.3 Content-authoring doctrine
 
 - Choice Events and MEET construction
 - Positive canon and illustrative examples
 - Numerical restraint
 - Canonical, provisional, tuning, and open material
 
-## 36. v0.5 scope and explicit deferrals
+## 7.4 v0.5 scope and explicit deferrals
 
 - What this edition defines
 - What remains open
 - Prototype and vertical-slice criteria
 - Later manifestations and later-version work
 
-## 37. Canonical summary
+## 7.5 Canonical summary
 
 # PUBLISHED APPENDICES
 

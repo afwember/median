@@ -9,7 +9,7 @@
 **Status:** Exploratory and non-authoritative
 
 **Bound prose Source:**
-`m051/prose/M051_Source_Residence_Readiness_and_Colony_Pressure_v0_1.md`
+`m051/adopted/prose/M051_Source_Residence_Readiness_and_Colony_Pressure_v0_1.md`
 
 **Bound prose SHA-256:**
 `c3d15344f32f4d2a064f7cf7acbf03c4333e0793ec12e49b9cb8dbe0bbb19835`

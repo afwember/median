@@ -5,7 +5,7 @@
 **Date:** August 8, 2026
 **Status:** Exploratory and non-authoritative
 **Canonical prose Source:**
-`m051/prose/M051_Source_Landscape_Voice_Tolkien_Adams_and_Landscape_Orientation_v0_1.md`
+`m051/adopted/prose/M051_Source_Landscape_Voice_Tolkien_Adams_and_Landscape_Orientation_v0_1.md`
 **Canonical prose SHA-256:**
 `8cbcf84cee1c13baec8be52d92cd1e99172e88e0f8bca7032e5a3f1b5270e081`
 

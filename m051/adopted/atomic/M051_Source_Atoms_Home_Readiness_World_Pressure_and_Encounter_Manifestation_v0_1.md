@@ -5,7 +5,7 @@
 **Date:** August 8, 2026
 **Status:** Exploratory and non-authoritative
 **Bound prose Source:**
-`m051/prose/M051_Source_Home_Readiness_World_Pressure_and_Encounter_Manifestation_v0_1.md`
+`m051/adopted/prose/M051_Source_Home_Readiness_World_Pressure_and_Encounter_Manifestation_v0_1.md`
 **Bound prose SHA-256:**
 `0546ee0a1ccf880bc7a5fec159a86dd8464f04ee1432049cf16dc52b61765c3f`
 

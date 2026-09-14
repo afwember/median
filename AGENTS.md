@@ -16,9 +16,13 @@ and final expression.
 - Eighteen sources produced the frozen 5,382-atom authorial library. Four
   in-scope sources remain later or conditional inputs.
 - The source documents and atom library are evidence, not final canon.
-- MEDIAN v0.5.0 is locked scope. `m051/` is outside it and must not be read,
-  searched, summarized, indexed, or used during m050 work unless Asa separately
-  authorizes a bounded cross-version task.
+- MEDIAN v0.5.0 is locked scope. `m051/` remains outside the registered m050
+  source set and frozen corpus, but its developmental material may be searched,
+  read, and discussed during conversational m050 authoring. It is evidence, not
+  automatic canon: Asa must explicitly adopt an m051 idea before it shapes the
+  m050 GDD. Adopted source material may be organized under `m051/adopted/`, but
+  that location does not itself confer canonical status. Do not restore
+  programmatic ingestion, atomic merging, or reconciliation across versions.
 
 ## Conservation of System
 
@@ -101,7 +105,7 @@ boundary:
 2. Read this contract and the canonical compile state.
 3. Read `STATUS.md` and confirm that it exactly mirrors canonical state.
 4. Confirm a clean worktree and local `HEAD` equal to `origin/main`.
-5. Confirm the active authority and prohibited inputs before acting.
+5. Confirm the active authority and source boundaries before acting.
 
 The frozen corpus manifest does not need to be reread during every chapter
 discussion. Read it completely when the source-library boundary is in question,
@@ -139,7 +143,9 @@ During structure work:
   wording in the context where they matter;
 - preserve source and atom traceability as a writing aid;
 - permit the structure to evolve through explicit author discussion; and
-- defer later or conditional source use until its intended authorial moment.
+- consult m051 developmental evidence when it is useful to the current
+  authorial question, while deferring later or conditional m050 source use until
+  its intended authorial moment.
 
 The working cadence is deliberately small:
 
@@ -164,8 +170,8 @@ shows that it is necessary.
 The active repository has three gates:
 
 1. **Integrity gate:** the guard verifies the frozen source files, corpus hash,
-   5,382 unique atom records, state shape, archive separation, m051 exclusion,
-   and exact STATUS rendering.
+   5,382 unique atom records, state shape, archive separation, m051 separation
+   from the frozen corpus, and exact STATUS rendering.
 2. **Authorial gate:** structure, contradiction resolution, and final prose
    require Asa’s explicit judgment or approval.
 3. **Publication gate:** any control, structure, or prose checkpoint requires a
@@ -173,10 +179,11 @@ The active repository has three gates:
    worktree, and local/remote equality.
 
 Halt for source or corpus drift, a dirty or unsynchronized cold start,
-contradictory authority, an attempted m051 input, uncertainty that would alter
-structure without author discussion, or any proposal to restore retired API or
-reconciliation machinery. Ordinary unresolved content should be surfaced to Asa
-inside the writing process rather than converted into a new workflow.
+contradictory authority, treatment of m051 material as automatic canon or as
+part of the frozen corpus, uncertainty that would alter structure without author
+discussion, or any proposal to restore retired API or reconciliation machinery.
+Ordinary unresolved content should be surfaced to Asa inside the writing process
+rather than converted into a new workflow.
 
 ## STATUS contract
 

@@ -296,7 +296,7 @@ def validate_state(state: dict, errors: list[str]) -> None:
         "atomized_authorial_sources": 18,
         "later_or_conditional_sources": 4,
         "non_atomic_companions": 2,
-        "m051_allowed": False,
+        "m051_allowed": True,
     }:
         errors.append("canonical m050 scope boundary drifted")
     authority = state.get("authority", {})
@@ -391,7 +391,7 @@ def main() -> int:
     print("- retired information-management engine: archived and inactive")
     print("- approved seven-Part GDD spine: present")
     print("- corpus modification and prose authority: absent")
-    print("- m051 input: prohibited")
+    print("- m051 developmental material: consultable and outside the frozen corpus")
     if args.with_tests:
         print("- focused regression suite: pass")
     return 0

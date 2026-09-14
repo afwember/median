@@ -5,7 +5,7 @@
 **Date:** August 8, 2026
 **Status:** Exploratory and non-authoritative
 **Canonical prose Source:**
-`m051/prose/M051_Source_Gull_Expedition_Guest_Proposal_v0_1.md`
+`m051/adopted/prose/M051_Source_Gull_Expedition_Guest_Proposal_v0_1.md`
 **Canonical prose SHA-256:**
 `82c7d341f9ba0c181a8ac922130300c6679ce599b24090f014688d76e873ad88`
 

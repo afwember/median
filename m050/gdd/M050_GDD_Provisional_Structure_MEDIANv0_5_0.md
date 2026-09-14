@@ -36,7 +36,7 @@ Its approved composition sequence is:
 
 The narrative prologue then stops. Part I supplies the world and game overview;
 Part II establishes the Corridor; and detailed gameplay begins at Home in Part
-III. Chapter 6.1 later governs the Founding Escape as playable onboarding.
+III. Chapter 6.2 later governs the Founding Escape as playable onboarding.
 
 # PART I — WHAT MEDIAN IS: SANCTUARY AND EXPOSURE
 
@@ -1329,7 +1329,7 @@ the first Role that uses it.
   passive construction, immunity from weather, or building-durability meter
 - Tool-making remaining Crafter's responsibility even though Tools require
   physical material
-- Guest Affordances able to reveal hidden structural circumstances or open a
+- Guest Signatures able to reveal hidden structural circumstances or open a
   better response without replacing Builder responsibility or performing
   Projects without Citizens
 
@@ -1441,7 +1441,7 @@ the first Role that uses it.
   support
 - Passive production applying only to the defined Perishable Sustenance output
   and not inventing an output for every Gardener activity or Practice
-- Guest Affordances able to alter cultivation circumstances or open a lasting
+- Guest Signatures able to alter cultivation circumstances or open a lasting
   Garden Project without creating superior Gardener coefficients or bypassing
   the Garden-Gardener production gate
 
@@ -1488,7 +1488,7 @@ the first Role that uses it.
   Scrap, or other defined inputs according to known class recipes
 - Output remaining bounded by available ingredients, known recipes, and
   player-set targets and reserves, and never creating Supplies from nothing
-- Crafter producing ordinary non-Remedy Supplies while Remedy Supplies remain
+- Crafter producing Binding, Device, and Offering Supplies while Remedies remain
   Healer's responsibility
 - Prepared Supplies remaining anonymous expedition resources rather than named
   possessions or records of their maker
@@ -1559,11 +1559,12 @@ the first Role that uses it.
 - Crafter not becoming a personal fabrication statistic, generic Project-speed
   bonus, industrial production line, per-bench worker assignment, component
   taxonomy, or source of infinite value from quiet Home time
-- Passive transformation applying only to defined Supply Preparation and not to
-  Tools, Keepsakes, Special Artifacts, or every Crafter activity
+- Passive transformation applying only to defined Binding, Device, and Offering
+  Supply Preparation and not to Tools, Keepsakes, Special Artifacts, or every
+  Crafter activity
 - Tools remaining made for work rather than violence, even when their physical
   functions provide narrow contextual utility during danger
-- Guest Affordances able to reveal material possibilities or open a distinctive
+- Guest Signatures able to reveal material possibilities or open a distinctive
   response without creating superior Crafter coefficients, bypassing recipes,
   or producing Tools outside Projects
 
@@ -1796,7 +1797,7 @@ the first Role that uses it.
   of Remedies without material inputs
 - Passive transformation applying only to defined Remedy Preparation and not
   treating care, recovery, or every Healer activity as produced output
-- Guest Affordances able to reveal a condition, contain aftermath, or open a
+- Guest Signatures able to reveal a condition, contain aftermath, or open a
   distinctive response without creating superior Healer coefficients, erasing
   illness, or replacing ordinary Healing Load
 
@@ -2071,7 +2072,7 @@ the first Role that uses it.
 - Leader not becoming a ruler, commander, mayor, superior class of Citizen,
   wildcard civic support, cross-Role Load reduction, universal Project-speed
   bonus, policy tree, or source of passive production
-- Guest Affordances able to alter communication, attention, or a bounded civic
+- Guest Signatures able to alter communication, attention, or a bounded civic
   response without creating superior Leader coefficients or replacing ordinary
   Leader responsibility
 
@@ -2192,7 +2193,7 @@ meaningful stakes, choice, and consequence, DWELL yields to a Home MEET.
 ### Telegraph and rebalancing
 
 - Watchkeeping as the Colony's general source of Telegraph
-- A relevant Guest Affordance able to provide bounded, species-specific warning
+- A relevant Guest Signature able to provide bounded, species-specific warning
   or interpretation without contributing a general Watchkeeper Civic Share
 - Telegraph communicating an observable situation family, approximate
   likelihood or urgency, likely exposed Roles, and relevant Places without
@@ -2207,7 +2208,7 @@ meaningful stakes, choice, and consequence, DWELL yields to a Home MEET.
 - Rebalancing able to prevent or delay a Home MEET, reduce its stakes, or change
   which shortfall shapes it without guaranteeing control over the event
 - Stronger Watchkeeping making warning earlier, clearer, and better localized,
-  with a relevant Guest Affordance able to extend or sharpen it
+  with a relevant Guest Signature able to extend or sharpen it
 - Some events remaining insufficiently observable to Telegraph
 - The Almanac presenting all Telegraph known to the player and providing the
   functional lens for rebalancing
@@ -2444,8 +2445,8 @@ arrivals, needs, and contributions stay legible.
 ### Wanderers and arrival
 
 - Wanderers as the primary early path for adult population growth
-- Each Wanderer arriving with a Given Name, Citizen Record, prior life, and any
-  relevant injury, Fear, relationship, knowledge, or unfinished circumstance
+- Each Wanderer arriving with a Given Name, Prior-Life Tale, and any relevant
+  injury, Fear, relationship, knowledge, or unfinished circumstance
 - Arrival resolving through MEET, with choices shaped by the Colony's actual
   ability to offer refuge
 - The player able to welcome the Wanderer permanently, offer temporary refuge,
@@ -2461,8 +2462,24 @@ arrivals, needs, and contributions stay legible.
 
 - Nesting as a rare, voluntary, Colony-wide seasonal commitment rather than
   passive population production
-- A suitable season making Nesting available without beginning it automatically
-- Authorization requiring credible future living accommodation, protected
+- A species-appropriate green-season window making Nesting eligible without
+  beginning it automatically
+- Quiet Equilibrium creating the civic room in which particular Citizens may
+  voice a wish to parent without causing that wish or guaranteeing a proposal
+- The first eligible DAWN after the intended campaign interval allowing one
+  authored **Nesting Proposal** to arise from mature, present Core Citizens
+- The prospective parent or parents being selected through their particular
+  relationships, Tales, ages, and circumstances rather than a universal
+  friendship state, pairing score, or player assignment
+- No eligible prospective parent meaning that no proposal arises during that
+  window
+- An active or sufficiently recent Nesting commitment suppressing another
+  proposal for the intended campaign interval
+- The Nesting Proposal becoming a Home MEET in which the named Citizens express
+  their wish and the Colony considers the commitment
+- Colony readiness determining whether the proposal can be supported rather
+  than whether the Citizens may want it
+- The readiness review showing credible future living accommodation, protected
   Sustenance, a usable Hearth, and sufficient civic support for care, teaching,
   protection, and any expected health needs
 - Authorization reserving a visible quantity of Sustenance scaled to the
@@ -2474,6 +2491,10 @@ arrivals, needs, and contributions stay legible.
   Projects, and discretionary spending once the commitment is authorized
 - The player seeing the temporary commitment and which Role balances will lose
   Readiness or enter Pressure before authorizing Nesting
+- The player able to accept, defer within the seasonal window, or refuse the
+  proposal without issuing a reproductive command
+- Deferral or refusal becoming part of the involved Citizens' history without
+  imposing an automatic relationship penalty
 - Normally no more than one successful Nesting commitment resolving during a
   Colony-wide seasonal window
 - A successful commitment adding a very small number of fully named young
@@ -2481,6 +2502,8 @@ arrivals, needs, and contributions stay legible.
 - Young Citizens entering the Roster and adding Sustenance, accommodation,
   Caretaker, Teacher, protection, and possible Healer Load immediately
 - Young Citizens contributing no Civic Share until the Maturity transition
+- Adoption and chosen-family formation following their own authored life events
+  rather than being classified as Nesting or waiting for nesting season
 - Family, Maturity, and the personal lives of young Citizens belonging to Part IV
   rather than being simulated as Colony production
 
@@ -2505,7 +2528,7 @@ arrivals, needs, and contributions stay legible.
 
 ### Scale and continuity
 
-- Every increase producing named Citizens with Records, obligations, and
+- Every increase producing named Citizens with Tales, obligations, and
   visible relationships to Home
 - Mouse Colonies able to sustain denser named populations than Rabbit or
   Squirrel Colonies without treating individual Mice as fractions of Citizens
@@ -2620,7 +2643,7 @@ tracks.
   able to portray that change but never accelerate it
 - EMBODY never clearing Tharn or substituting for the care and recovery that
   resolves it
-- A moment creating Campaign Memory only when something particular and worth
+- A moment entering the Record only when something particular and worth
   remembering occurs
 - Repeated experiences remaining available for pleasure without manufacturing
   duplicate historical importance
@@ -2683,6 +2706,17 @@ Citizens instead of owning or optimizing them.
   identical bodies or capabilities
 - Young, injured, dependent, elderly, non-expedition, Core, and Guest Citizens
   remaining equally complete Citizens
+
+### Individual expression
+
+- Each Citizen distinguished through appearance, voice, temperament, habits,
+  preferences, relationships, possessions, and accumulated history
+- Those qualities shaping dialogue, advice, routines, animation, EMBODY, Focus,
+  and contextual authored responses
+- Individual expression never changing Civic Share, ordinary Home
+  contribution, or hidden aptitude
+- Citizens able to change through experienced events without using personality
+  scores, trait tiers, or an optimization taxonomy
 
 ### Core and Guest Citizens
 
@@ -2977,8 +3011,8 @@ detachable bonus.
 Difference remains visible after welcome. A Guest does not become an honorary
 Mouse, Rabbit, or Squirrel. Their body, senses, habits, communication, spatial
 needs, and way of participating continue to matter. Each Guest species also
-offers the Colony a distinct capability, expressed through one bounded Guest
-Affordance rather than superior general aptitude.
+offers the Colony a distinct capability, expressed through one bounded
+**Signature** rather than superior general aptitude.
 
 Hospitality begins when the Colony encounters an animal, comes to understand
 what living together would require, and chooses whether to make that promise
@@ -2998,7 +3032,7 @@ parenthetically or treated as separate labels.
 Each Expedition Guest contributes one Civic Share through the individual
 Citizen's authored Home Role.
 
-| Species | Guest Affordance | Residence Fit |
+| Species | Signature | Residence Fit |
 |---|---|---|
 | Raccoon | **HANDLE — Latchwork** | dry exterior access |
 | Crow | **HANDLE — Trialwork** | high open perch |
@@ -3012,9 +3046,9 @@ Citizen's authored Home Role.
 #### Resident Guests
 
 Each Resident Guest contributes one Civic Share through its fixed Role. Its
-Guest Affordance remains a distinct species-specific capability.
+Signature remains a distinct species-specific capability.
 
-| Species | Fixed Role | Guest Affordance | Residence Fit |
+| Species | Fixed Role | Signature | Residence Fit |
 |---|---|---|---|
 | Owl | Watchkeeper | **Night Sky-watch** | high listening hollow |
 | Sparrow | Teacher | **SPEAK — Day Call** | concealed social perch |
@@ -3032,7 +3066,7 @@ Guest Affordance remains a distinct species-specific capability.
 ### Shared Guest architecture
 
 Every Guest has full Citizen standing. Their Civic Share supports an ordinary
-Role, while their Guest Affordance provides one bounded capability unique to
+Role, while their Signature provides one bounded capability unique to
 that animal. Residence, relationships, and EMBODY make that difference legible
 as a particular life.
 
@@ -3041,7 +3075,7 @@ as a particular life.
 | Citizen standing | Full | Full |
 | Civic Share while present and available | One | One |
 | Home Role | Individual-authored | Species-fixed |
-| Guest Affordance operates | Away | At Home |
+| Signature operates | Away | At Home |
 | May Launch | Yes | No |
 | Personal Away consequence | Yes | No |
 | Residence, relationships, memory, and EMBODY | Full | Full |
@@ -3049,7 +3083,7 @@ as a particular life.
 #### Civic contribution
 
 - Each present and available adult Guest contributing one ordinary Civic Share
-- Personality, species, Guest Affordance, equipment, and prior history never
+- Personality, species, Signature, equipment, and prior history never
   changing the value of that share
 - An Expedition Guest's Home Role belonging to the particular Citizen
 - A Resident Guest's Home Role being fixed by species
@@ -3059,22 +3093,22 @@ as a particular life.
   ordinary Role support
 - No Guest possessing a hidden aptitude or generally superior productivity
   coefficient; any authored production exception being explicit, situated, and
-  part of that species' single Guest Affordance
+  part of that species' single Signature
 
-#### Guest Affordances
+#### Signatures
 
-- Each Expedition Guest having one bounded Guest Affordance that operates Away
-- Each Resident Guest having one situated Guest Affordance that operates at Home
+- Each Expedition Guest having one bounded Signature that operates Away
+- Each Resident Guest having one situated Signature that operates at Home
 - **Attribution:** the responsible Citizen or household remaining visible
-- **Situation:** the Affordance mattering in one bounded circumstance or
+- **Situation:** the Signature mattering in one bounded circumstance or
   explicitly named Place relationship rather than operating generally across
   the Colony
-- **Restraint:** the Affordance opening or changing a choice or explicitly
+- **Restraint:** the Signature opening or changing a choice or explicitly
   defined Place relationship without automatically solving the whole situation
 - **Species grounding:** the option following from the animal's body, senses,
   behavior, or ecology
 - **Suspension:** absence, injury, season, or Residence condition able to make
-  the Affordance unavailable when relevant
+  the Signature unavailable when relevant
 - Resident life remaining mechanically and expressively complete without Launch
 
 Guest type is not a player toggle, rarity, or civic rank. An authored life event
@@ -3130,7 +3164,7 @@ routine reassignment.
   citizenship
 - The Not-Well-Placed Residence becoming a visible accommodation problem at that
   Place
-- Loss of fit able to suspend the Guest's Affordance when the missing fit is
+- Loss of fit able to suspend the Guest's Signature when the missing fit is
   directly relevant
 - The Guest retaining their Civic Share unless a separate condition makes them
   unavailable
@@ -3141,7 +3175,7 @@ routine reassignment.
 
 ### Life in the Colony
 
-Welcoming a Guest creates an ordinary life, not merely access to an Affordance. A
+Welcoming a Guest creates an ordinary life, not merely access to a Signature. A
 Guest's Residence, Role, routines, relationships, absences, and embodied
 experiences make their membership visible throughout Home.
 
@@ -3168,14 +3202,14 @@ experiences make their membership visible throughout Home.
 - Every Guest having routines grounded in body, Residence Fit, time, season,
   relationships, and civic participation
 - Guests appearing throughout ordinary Colony life rather than only when their
-  Affordance becomes relevant
+  Signature becomes relevant
 - A Guest's fixed or individual Role expressed through visible activity without
   creating site-by-site assignment
 - Residence use, movement, sound, rest, food, conversation, and social habits
   making species difference legible
 - Guest needs creating meaningful situations without becoming a queue of
   personal maintenance chores
-- An Affordance remaining one capability within a larger life rather than the
+- A Signature remaining one capability within a larger life rather than the
   Guest's sole identity
 
 #### EMBODY
@@ -3204,7 +3238,7 @@ experiences make their membership visible throughout Home.
 - Injury, absence, Residence trouble, and relationship change remaining visible
 - Irreversible named loss never occurring off-screen merely because the player
   is attending another Register
-- Records and long-term memory governed by Chapters 4.4–4.7
+- The Record, Tales, and long-term memory governed by Chapter 6.1
 
 ### Collective-bodied Citizens
 
@@ -3218,9 +3252,9 @@ bodies.
 #### One civic subject
 
 - One Roster entry, Guest Residence, Hospitality commitment, fixed
-  Role, Civic Share, Affordance, and continuous identity
+  Role, Civic Share, Signature, and continuous identity
 - Several bodies never multiplying civic contribution, Project support,
-  production, housing demand, or Affordance
+  production, housing demand, or Signature
 - A clear distinction from Mice: two Mice may share one Body Unit but remain two
   complete Citizens; a collective-bodied household is itself one Citizen
 - No additional collective-Citizen types in v0.5
@@ -3262,9 +3296,9 @@ may Launch and participates in the shared Away systems without gaining another
 action economy or carrying the rest of the party through a bodily domain only
 that Guest can use. Their Home Role belongs to the individual Citizen, not the
 species. Guest EMBODY opens at Home during Quiet Equilibrium and creates no
-Resources, progression, or Affordance outcome.
+Resources, progression, or Signature outcome.
 
-#### Raccoon
+#### **Raccoon**
 
 **Animal identity.** Dexterous forepaws, material intelligence, curiosity, and
 familiarity with human refuse make Raccoon the clearest human-object specialist.
@@ -3280,9 +3314,9 @@ Colony. Raccoon can then arrive with found objects without carrying them through
 enclosed Home spaces.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — HANDLE: Latchwork.** Raccoon may directly open or
+**Signature — HANDLE: Latchwork.** Raccoon may directly open or
 manipulate one accessible human-made closure or simple mechanism. Lids, catches,
 caps, knots, tied bags, and similar constructions become possible to handle
 according to how they work.
@@ -3297,7 +3331,7 @@ sensitive forepaws.
 **EMBODY Presence.** Rest among a personal collection while light and Colony
 movement pass the Residence opening.
 
-#### Crow
+#### **Crow**
 
 **Animal identity.** Crows meet the world with close attention, durable memory,
 social intelligence, and opportunistic object use. Flight provides perspective,
@@ -3313,9 +3347,9 @@ Crow recruits one available object to test or act upon another.
 for arrival and departure without an enclosing roof or obstructed flight path.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — HANDLE: Trialwork.** Crow may recruit one available object
+**Signature — HANDLE: Trialwork.** Crow may recruit one available object
 for one plausible test or indirect manipulation. It may probe an opening, draw
 something closer, place a marker, or drop one thing to provoke or measure a
 response.
@@ -3330,7 +3364,7 @@ beak and feet.
 **EMBODY Presence.** Settle on the high perch and turn attention among calls,
 weather, and movement below.
 
-#### Gull
+#### **Gull**
 
 **Animal identity.** Gull inhabits a broad, human-shaped landscape in which
 highways, rooftops, reservoirs, parking lots, storms, and distant feeding
@@ -3346,9 +3380,9 @@ Exposure, or consequence.
 unobstructed approach, landing, and departure through open air.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — READ: Long View.** From an eligible open vantage, Gull
+**Signature — READ: Long View.** From an eligible open vantage, Gull
 reveals situated context about broad geography, weather, water, traffic, human
 activity, or the relationship among distant Places. Long View informs the
 ground party before commitment without resolving the situation itself.
@@ -3364,7 +3398,7 @@ Residence and nearby open landing points.
 **EMBODY Presence.** Rest on the exposed landing while weather and the distant
 human landscape move around Home.
 
-#### Fox
+#### **Fox**
 
 **Animal identity.** Red Fox is substantially larger than most Citizens, led
 strongly by scent, and unmistakable as a predator. Its competence around
@@ -3381,9 +3415,9 @@ boundary. The location gives Red Fox's larger body direct outside access while
 keeping the Residence part of Home.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — HANDLE: Carcass Claim.** At an eligible carcass or roadkill
+**Signature — HANDLE: Carcass Claim.** At an eligible carcass or roadkill
 Node, Red Fox may process suitable matter into the one Supply specified by that
 Node. Carcass Claim is the biological counterpart to RENDER: it produces the
 same authored kind of outcome without requiring a Render Tool.
@@ -3401,7 +3435,7 @@ and disturbed ground.
 **EMBODY Presence.** Curl inside the earth and attend to Home through sound and
 scent from its outer edge.
 
-#### Weasel
+#### **Weasel**
 
 **Animal identity.** A Weasel's narrow body, explosive speed, intense attention,
 and ability to enter confined ground make it an active intercessor. It changes
@@ -3416,9 +3450,9 @@ silently opening a route for the whole party.
 confined space suits Weasel's body while preserving alternate ways in and out.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — INTERCEDE: Drive Off.** Weasel may press a small predator
+**Signature — INTERCEDE: Drive Off.** Weasel may press a small predator
 or aggressive animal away from something vulnerable. Drive Off can redirect
 the threat, hold its attention, or create an interval for escape.
 
@@ -3432,7 +3466,7 @@ through the Residence's alternate exits.
 **EMBODY Presence.** Groom or rest inside the narrow bank while remaining alert
 to movement beyond it.
 
-#### Hedgehog
+#### **Hedgehog**
 
 **Animal identity.** A Hedgehog's deliberate pace, low body, protective spines,
 and vulnerable face and underside create an unusual relationship with danger.
@@ -3449,9 +3483,9 @@ Hedgehog's low, deliberate movement while preserving a usable route into the
 Colony.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — INTERCEDE: Living Cover.** Hedgehog may shelter one injured
+**Signature — INTERCEDE: Living Cover.** Hedgehog may shelter one injured
 or very small Citizen, shield one fragile Cargo stake, or provide cover during
 a withdrawal. Living Cover allows something vulnerable to keep moving when
 ordinary retreat would leave it exposed.
@@ -3466,7 +3500,7 @@ Citizen through protected ground.
 **EMBODY Presence.** Curl within the concealed hedge and gradually relax as
 nearby activity becomes familiar.
 
-#### Snake
+#### **Snake**
 
 **Animal identity.** Limbless movement, scent-led perception, dependence on
 warmth, and expressive stillness distinguish Garter Snake from every other
@@ -3483,9 +3517,9 @@ Garter Snake needs dependable basking warmth with protected space in which to
 withdraw.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — SPEAK: Display.** Garter Snake may use posture, movement,
+**Signature — SPEAK: Display.** Garter Snake may use posture, movement,
 and deliberate stillness to communicate with animals that recognize snake
 display. Display can open PARLEY, YIELD, intimidation, recognition, or mutual
 withdrawal where ordinary speech carries no force.
@@ -3500,7 +3534,7 @@ continuous whole-body movement.
 **EMBODY Presence.** Bask in stillness or coil beside a trusted Citizen who has
 learned not to startle.
 
-#### Mink
+#### **Mink**
 
 **Animal identity.** American Mink belongs as fully to water edges as most
 Citizens belong to dry ground. Its long, powerful body, swimming ability, and
@@ -3516,9 +3550,9 @@ the need to return to dry refuge.
 access with dry refuge above ordinary high water.
 
 **Civic contribution.** One Civic Share through this Citizen's authored Home
-Role; neither body nor Guest Affordance changes its value.
+Role; neither body nor Signature changes its value.
 
-**Guest Affordance — REACH: Water Reach.** American Mink may enter water,
+**Signature — REACH: Water Reach.** American Mink may enter water,
 flooded culverts, drainage channels, or waterlogged spaces that the ordinary
 party cannot safely use. Water Reach allows Mink to inspect, retrieve, or
 rescue within that domain on the party's behalf.
@@ -3540,16 +3574,16 @@ remains at Home rather than Launching. Owl, Sparrow, Toad, Groundhog, Turtle,
 Mole, Bat, Pigeon, Skunk, and Possum are individual Citizens; Fireflies and
 Bumblebees are the two collective-bodied Citizen households. Each individual or
 household constitutes one Body Unit. Guest EMBODY opens during Quiet Equilibrium
-and creates no Resources, progress, production, or Affordance outcome.
+and creates no Resources, progress, production, or Signature outcome.
 
-#### Owl
+#### **Owl**
 
 **Animal identity.** Barred Owl inhabits night through acute hearing, high
 perspective, quiet patience, and a body adapted to darkness. Sound makes distant
 or obscured activity legible long before most Citizens can see its source.
 
 **Body and Citizen form.** Owl is one individual Citizen and one Body Unit. Its
-body shapes visible movement, Residence use, EMBODY, and its Guest Affordance
+body shapes visible movement, Residence use, EMBODY, and its Signature
 without changing its Civic Share.
 
 **Residence.** Build the Residence in a high listening hollow. Barred Owl needs
@@ -3557,7 +3591,7 @@ sheltered rest from which surrounding night sounds remain clear.
 
 **Civic contribution.** One Civic Share through the fixed Watchkeeper Role.
 
-**Guest Affordance — Night Sky-watch.** Night Sky-watch sharpens an existing
+**Signature — Night Sky-watch.** Night Sky-watch sharpens an existing
 nocturnal Telegraph while Owl is present and available and a Watchpost is
 usable. The clearer warning remains qualitative and passes through the ordinary
 Almanac and Community Board presentation.
@@ -3572,7 +3606,7 @@ opening and a nearby listening perch.
 **EMBODY Presence.** Remain in the high hollow while the Colony settles and
 night changes the surrounding soundscape.
 
-#### Sparrow
+#### **Sparrow**
 
 **Animal identity.** Song Sparrow becomes familiar through learned calls,
 seasonal song, and repeated use of social perches. A particular voice can become
@@ -3581,14 +3615,14 @@ alarm.
 
 **Body and Citizen form.** Sparrow is one individual Citizen and one Body Unit.
 Its body shapes visible movement, Residence use, EMBODY, and its Guest
-Affordance without changing its Civic Share.
+Signature without changing its Civic Share.
 
 **Residence.** Build the Residence at a concealed social perch. Song Sparrow
 needs cover while remaining close enough for calls and company.
 
 **Civic contribution.** One Civic Share through the fixed Teacher Role.
 
-**Guest Affordance — SPEAK: Day Call.** Day Call becomes shared civic
+**Signature — SPEAK: Day Call.** Day Call becomes shared civic
 understanding through ordinary life around the Gathering Place. In an eligible
 daylight Home MEET, it opens a SPEAK response through which familiar Citizens
 can understand one shared warning or instruction.
@@ -3602,7 +3636,7 @@ gather material for the concealed nest.
 **EMBODY Presence.** Sit nearby while a particular voice becomes part of the
 Colony's morning.
 
-#### Toad
+#### **Toad**
 
 **Animal identity.** American Toad moves between damp ground, shallow water,
 and dry refuge. Stillness, sensitivity to moisture, and familiarity with runoff
@@ -3610,7 +3644,7 @@ make the changing boundary between water and inhabited ground central to its
 life.
 
 **Body and Citizen form.** Toad is one individual Citizen and one Body Unit. Its
-body shapes visible movement, Residence use, EMBODY, and its Guest Affordance
+body shapes visible movement, Residence use, EMBODY, and its Signature
 without changing its Civic Share.
 
 **Residence.** Build the Residence at a wet edge with dry refuge. American Toad
@@ -3618,7 +3652,7 @@ needs to move easily between damp ground and protected rest.
 
 **Civic contribution.** One Civic Share through the fixed Caretaker Role.
 
-**Guest Affordance — Wet-Ground Care.** During an eligible Garden Home MEET
+**Signature — Wet-Ground Care.** During an eligible Garden Home MEET
 concerning runoff, dampness, or invertebrate pressure, Wet-Ground Care opens a
 Caretaker response that can redirect or contain the immediate problem and
 protect current yield or cultivated continuity when either is already at stake.
@@ -3632,7 +3666,7 @@ feeding movement at dusk.
 **EMBODY Presence.** Wait at the dry refuge while water gathers, passes, and
 recedes around the Residence.
 
-#### Fireflies
+#### **Fireflies**
 
 **Animal identity.** The Firefly Family appears as a small recognizable company
 of lights whose formation, pulse, and route recur together. Coordinated
@@ -3641,7 +3675,7 @@ body.
 
 **Body and Citizen form.** Fireflies are one collective-bodied Citizen and one
 Body Unit. Several visible bodies express one household; they create no
-additional Civic Shares, assignments, inventories, or Affordance uses.
+additional Civic Shares, assignments, inventories, or Signature uses.
 
 **Residence.** Build the Residence in a dark, damp flight space. The Firefly
 Family needs room to circulate together without harsh light overwhelming its
@@ -3649,7 +3683,7 @@ signals.
 
 **Civic contribution.** One Civic Share through the fixed Leader Role.
 
-**Guest Affordance — SPEAK: Lantern Procession.** During an eligible nighttime
+**Signature — SPEAK: Lantern Procession.** During an eligible nighttime
 SPEAK Home MEET, the household's shared light makes faces, gestures, and the
 relationship among participants easier to understand, allowing an eligible
 win-win resolution to become available.
@@ -3663,7 +3697,7 @@ gathering its formation above one familiar part of Home.
 **EMBODY Presence.** Accompany first emergence as separate lights gradually
 assemble outside the dark Residence.
 
-#### Groundhog
+#### **Groundhog**
 
 **Animal identity.** Groundhog combines deep burrowing, upright observation,
 close attention to changing ground, and a life strongly shaped by season. Green
@@ -3672,14 +3706,14 @@ individual cultivated plots.
 
 **Body and Citizen form.** Groundhog is one individual Citizen and one Body
 Unit. Its body shapes visible movement, Residence use, EMBODY, and its Guest
-Affordance without changing its Civic Share.
+Signature without changing its Civic Share.
 
 **Residence.** Build the Residence in deep, well-drained ground. Groundhog needs
 stable earth for a substantial burrow without ordinary waterlogging.
 
 **Civic contribution.** One Civic Share through the fixed Gardener Role.
 
-**Guest Affordance — Seasonal Telegraph.** Seasonal Telegraph sharpens existing
+**Signature — Seasonal Telegraph.** Seasonal Telegraph sharpens existing
 warning of an approaching seasonal or environmental pressure while Groundhog is
 present and available. It identifies the kind of change becoming likely, such
 as hard frost, flood, heat, or disruptive human work, and passes through the
@@ -3695,7 +3729,7 @@ settle into the sun.
 **EMBODY Presence.** Sit beside the burrow while wind, temperature, and growing
 things disclose the season bodily.
 
-#### Turtle
+#### **Turtle**
 
 **Animal identity.** Painted Turtle lives between shallow water, sun-warmed
 surfaces, and the protection carried in its shell. Deliberate movement and
@@ -3711,7 +3745,7 @@ must provide shallow water and safe movement to a sun-warmed basking place.
 
 **Civic contribution.** One Civic Share through the fixed Caretaker Role.
 
-**Guest Affordance — Water Garden Residence.** A Garden satisfying Turtle's
+**Signature — Water Garden Residence.** A Garden satisfying Turtle's
 Residence Fit may incorporate the Residence as an authored exception to
 ordinary Place use. Establishing it still requires an ordinary Builder Project,
 material, and time but consumes no separate Place. The Garden retains its
@@ -3726,7 +3760,7 @@ the host Garden.
 **EMBODY Presence.** Rest half in the water while highway light and Garden
 movement pass across its surface.
 
-#### Bumblebees
+#### **Bumblebees**
 
 **Animal identity.** The Bumblebee Household is known through several visible
 bodies, shared circulation, persistent hum, and repeated return. Collective
@@ -3735,7 +3769,7 @@ single representative bee.
 
 **Body and Citizen form.** Bumblebees are one collective-bodied Citizen and one
 Body Unit. Several visible bodies express one household; they create no
-additional Civic Shares, assignments, inventories, or Affordance uses.
+additional Civic Shares, assignments, inventories, or Signature uses.
 
 **Residence.** Establish the Residence within one completed Garden. The Garden
 must provide a protected nesting cavity with sheltered access to sustained
@@ -3743,7 +3777,7 @@ flowering growth.
 
 **Civic contribution.** One Civic Share through the fixed Gardener Role.
 
-**Guest Affordance — Garden Cohabitation.** The Bumblebee Residence may be
+**Signature — Garden Cohabitation.** The Bumblebee Residence may be
 incorporated into one completed Garden as an authored exception to ordinary
 Place use. Establishing it still requires an ordinary Builder Project, material,
 and time but consumes no separate Place. The Garden retains its ordinary
@@ -3759,7 +3793,7 @@ half-chunk contribution.
 
 **Limits.** Garden Cohabitation affects only the host Garden. It neither assigns
 bees to routes, simulates pollination, modifies every Garden, nor creates a
-second Guest Affordance.
+second Signature.
 
 **EMBODY Activity.** Accompany the household through an impressionistic circuit
 between its protected nest and the host Garden's flowers.
@@ -3767,7 +3801,7 @@ between its protected nest and the host Garden's flowers.
 **EMBODY Presence.** Feel the household's hum and warmth at first emergence or
 remain with it as rising wind draws everyone home.
 
-#### Mole
+#### **Mole**
 
 **Animal identity.** Eastern Mole perceives ground vibration, moving soil,
 hidden voids, and the resistance of material around its body. It knows
@@ -3775,7 +3809,7 @@ constructed Home partly through what lies immediately beneath surfaces other
 Citizens treat as solid.
 
 **Body and Citizen form.** Mole is one individual Citizen and one Body Unit. Its
-body shapes visible movement, Residence use, EMBODY, and its Guest Affordance
+body shapes visible movement, Residence use, EMBODY, and its Signature
 without changing its Civic Share.
 
 **Residence.** Build the Residence in visible, undisturbed soil. Eastern Mole
@@ -3784,7 +3818,7 @@ part of Home.
 
 **Civic contribution.** One Civic Share through the fixed Builder Role.
 
-**Guest Affordance — Subsurface Diagnosis.** When a Home MEET concerns the
+**Signature — Subsurface Diagnosis.** When a Home MEET concerns the
 ground beneath an established Place, Mole identifies the relevant hidden
 physical cause, such as saturated soil, a void, undercutting, frost movement, or
 a buried obstruction. That knowledge may change an existing response or
@@ -3799,7 +3833,7 @@ pause to read vibrations through the ground.
 **EMBODY Presence.** Rest at a familiar mound opening while footsteps, weather,
 and Colony movement travel through the soil.
 
-#### Bat
+#### **Bat**
 
 **Animal identity.** Little Brown Bat navigates through echolocation and local
 flight while remaining sensitive to enclosed air and structural surfaces. Dry
@@ -3815,7 +3849,7 @@ without consuming a separate Place.
 
 **Civic contribution.** One Civic Share through the fixed Builder Role.
 
-**Guest Affordance — Workshop Roost.** A suitable Workshop may incorporate
+**Signature — Workshop Roost.** A suitable Workshop may incorporate
 Bat's high, dry-dark, smoke-free Residence as an authored exception to ordinary
 Place use. Establishing it still requires an ordinary Builder Project,
 material, and time but consumes no separate Place. The Workshop retains its
@@ -3830,7 +3864,7 @@ short dusk circuit through the Workshop aperture.
 **EMBODY Presence.** Remain in the dry-dark roost while sound and changing air
 describe the Workshop and Home beyond it.
 
-#### Pigeon
+#### **Pigeon**
 
 **Animal identity.** Rock Pigeon navigates human structures through landmark
 memory, repeated routes, and social signals exchanged across distance. Ledges,
@@ -3847,7 +3881,7 @@ landing.
 
 **Civic contribution.** One Civic Share through the fixed Leader Role.
 
-**Guest Affordance — Gathering Loft.** A Gathering Place satisfying Pigeon's
+**Signature — Gathering Loft.** A Gathering Place satisfying Pigeon's
 Residence Fit may incorporate the Residence as an authored exception to
 ordinary Place use. Establishing it still requires an ordinary Builder Project,
 material, and time but consumes no separate Place. The Gathering Place retains
@@ -3862,7 +3896,7 @@ Home before returning to the same ledge.
 **EMBODY Presence.** Warm on the Gathering Loft while civic life continues
 below and distant structures mark the horizon.
 
-#### Skunk
+#### **Skunk**
 
 **Animal identity.** Striped Skunk moves deliberately at night and communicates
 warning before resorting to force. Posture, scent, and unmistakable boundary
@@ -3870,7 +3904,7 @@ presence require other Citizens to negotiate proximity rather than assume it.
 
 **Body and Citizen form.** Skunk is one individual Citizen and one Body Unit.
 Its body shapes visible movement, Residence use, EMBODY, and its Guest
-Affordance without changing its Civic Share.
+Signature without changing its Civic Share.
 
 **Residence.** Build the Residence at the downwind Colony boundary. The location
 lets ordinary airflow carry scent away from the inhabited center while
@@ -3878,7 +3912,7 @@ preserving direct outside access.
 
 **Civic contribution.** One Civic Share through the fixed Watchkeeper Role.
 
-**Guest Affordance — SPEAK: Boundary Deterrence.** During an eligible SPEAK Home
+**Signature — SPEAK: Boundary Deterrence.** During an eligible SPEAK Home
 MEET shaped by threatening animal pressure at the Colony boundary, Skunk's
 deliberate warning projects credible toughness and allows a favorable nonviolent
 resolution to become available.
@@ -3892,7 +3926,7 @@ leaves, or groom outside the den.
 **EMBODY Presence.** Rest near the Residence while the Colony's familiar
 activity keeps a respectful lane open.
 
-#### Possum
+#### **Possum**
 
 **Animal identity.** Virginia Opossum is a nocturnal climber and scavenger
 comfortable around remains that other Citizens avoid. Careful handling, bodily
@@ -3909,7 +3943,7 @@ clean center.
 
 **Civic contribution.** One Civic Share through the fixed Healer Role.
 
-**Guest Affordance — Hearth Annex.** A Hearth satisfying Possum's Residence Fit
+**Signature — Hearth Annex.** A Hearth satisfying Possum's Residence Fit
 may incorporate the Residence as an authored exception to ordinary Place use.
 Establishing it still requires an ordinary Builder Project, material, and time
 but consumes no separate Place. The Hearth retains its ordinary improvement
@@ -3948,201 +3982,367 @@ continues nearby.
 
 ## 4.4 Relationships and Family
 
-### Relationships
+Citizens are meant to become friends, relatives, companions, rivals, teachers,
+students, caregivers, and mourners rather than interchangeable units. A
+relationship belongs to the particular Citizens who live it. The game remembers
+that relationship as a qualitative truth, not a position on a universal scale.
 
-- Persistent relationships between particular Citizens
-- Trust, affection, friendship, kinship, mentorship, rivalry, estrangement,
-  grief, and obligation
-- Relationships changing through Home, Away, MEET, EMBODY, and remembered
-  events
-- No universal affection currency
+### Particular relationships
+
+- Relationships persisting between particular Citizens rather than attaching
+  generic social values to a species, Role, Residence, or party
+- Friendship, affection, trust, partnership, kinship, mentorship, rivalry,
+  estrangement, obligation, grief, and other authored relationships able to
+  coexist without forming one progression ladder
+- A relationship able to begin before citizenship through a Prior-Life Tale or
+  arise during the campaign through shared life
+- The same relationship remaining true across Home, Away, and every Register
+  until an experienced event changes it
+- Authored content referring to the particular Citizen or relevant relationship
+  it concerns rather than testing for a universal **Trusted Friend** state
+- No relationship score, affection currency, social rank, or hidden friendship
+  threshold
+
+### Change and social autonomy
+
+- Relationships forming and changing through witnessed choices, shared events,
+  ordinary proximity, care, conflict, absence, return, MEET, and EMBODY
+- The player able to make time, keep promises, offer care, choose responses, and
+  place Citizens in circumstances where a relationship may change
+- Citizens retaining ownership of affection, trust, forgiveness, estrangement,
+  and other social responses
+- No direct command to create a friendship, declare an emotion, end a rivalry,
+  or reconcile Citizens
+- Not every shared activity producing a relationship change
+- A consequential formation, reversal, separation, or reconciliation becoming
+  visible rather than occurring as an unexplained off-screen update
 
 ### Family
 
-- **Family** as the provisional relational term
-- Family remaining wholly separate from Hearth as a civic Practice
-- Birth, adoption, chosen kinship, sustained care, and other authored belonging
-- Family composition not limited to a breeding pair
-- No genetic traits, bloodline score, breeding optimization, or family
-  technology tree
+- **Family** being a set of persistent relationships among particular Citizens,
+  not a separate population unit, household object, or civic institution
+- Family relationships arising through parenthood and birth, siblinghood,
+  adoption, partnership, chosen kinship, sustained care, or another authored
+  recognition of belonging
+- Sustained care becoming family only when the Citizens recognize that
+  relationship through an authored event
+- A family able to cross species, generations, origins, Residences, and Guest or
+  Core status
+- Cohabitation able to express family life without defining who is family
+- A Citizen able to belong within several overlapping family relationships
+- Family remaining wholly separate from Hearth, which is exclusively a Practice
+- Family composition never being limited to a breeding pair or biological
+  descent
+- No Family entity, household score, genetic traits, bloodline score, inherited
+  aptitude, breeding optimization, or family technology tree
 
 ### Relationships in play
 
-- Relationships informing dialogue, Focus, advice, aid, hesitation, and
-  consequence
-- Citizens retaining social autonomy
-- Relationship effects remaining contextual rather than generic stat modifiers
-- Separation, reconciliation, loss, and inheritance
-- Home and Away expressing the same relationships differently
+| Register | Relationship expression |
+|---|---|
+| **DWELL** | Citizens seek company, share routines, advise, avoid, care for, and notice one another throughout ordinary Home life. |
+| **TRAVEL** | Companions converse, disagree, encourage, worry, and reveal how distance or return matters to them. |
+| **RISK** | A relationship may shape hesitation, protection, separation, or whom a Citizen attempts to reach without granting an extra action. |
+| **MEET** | A particular relationship may change the stakes, open a contextual response, or become part of the consequence. |
+| **EMBODY** | Social Play, Care, activity, and Presence allow the player to accompany a relationship without commanding its emotion. |
+
+- Relationships informing dialogue, Focus, advice, aid, hesitation, protection,
+  reunion, and consequence only where the present situation makes them relevant
+- Any mechanical effect being defined by the event or owning system rather than
+  supplied by a universal relationship bonus
+- Family and other relationships providing meaningful stakes without making one
+  party composition, social arrangement, or life history optimal
+- Separation, reconciliation, inheritance, grief, and memorial continuity
+  remaining consequences among particular Citizens
+- Death ending a Citizen's present action without erasing their relationships
+  from surviving Citizens, Tales, or the Record
+- The Citizen view presenting current relationship state from the Almanac and
+  relevant shared history from the Citizen's Tale, as governed by Chapter 6.1
 
 ## 4.5 The Life Course
 
+Every Citizen has an origin, a present life stage, and a possible future. The
+life course makes growth, aging, and loss visible without simulating lifespan as
+a countdown. v0.5 uses only two mechanically distinct stages: **Young** and
+**Adult**.
+
 ### Origins and arrival
 
-- Founders and their shared pre-campaign history
-- Campaign-born Citizens
-- Wanderers and other arrivals
-- Guests' pre-existing lives
-- Citizenship never creating personhood retroactively
+- Founders beginning with shared pre-campaign history and established
+  relationships to one another
+- Campaign-born Citizens entering through a completed Nesting commitment with
+  Given Names and immediate family relationships
+- Adoption and other authored arrivals able to bring a young Citizen into new
+  family relationships without being classified as Nesting
+- Wanderers and Guests arriving with Prior-Life Tales, relationships, and lives
+  that precede their place in the Colony
+- Origin changing what history and relationships accompany a Citizen without
+  creating different grades of civic standing
+- Every arrival becoming legible through the Roster, Almanac, and their Tale at
+  the moment that Citizen enters Colony life
 
 ### Young Citizens
 
-- Named and fully counted from arrival
-- Residence, relationships, needs, and ordinary presence
-- Dependency before Civic Share
-- Age-appropriate DWELL, MEET, and EMBODY participation
-- No Launch before Maturity
+- A young Citizen being fully named and counted from arrival rather than held in
+  an anonymous population pool
+- Each young Citizen having a Residence association, family and other
+  relationships, ordinary needs, and a developing Tale
+- Rabbit and Squirrel young each constituting one Body Unit, while the usual two
+  Mouse littermates constitute one Body Unit without ceasing to be two Citizens
+- Young Citizens adding Sustenance, accommodation, Caretaker, Teacher,
+  protection, and possible Healer Load as defined by Population and Settlement
+  Growth
+- Young Citizens contributing no Civic Share, holding no ordinary Role,
+  supporting no Project, and being unable to Launch
+- Age-appropriate participation in DWELL, Home MEET, family life, and eligible
+  EMBODY experiences
+- Young Citizens being particular lives with futures rather than replacement
+  stock for an absent or dead Citizen
 
 ### Maturity
 
-- Named civic transition rather than experience bar
-- Seasons and authored life events preceding Maturity
-- Civic Share beginning at Maturity
-- Expedition readiness potentially following separately
-- Recognition through family and Colony life
-- Exact timing reserved for tuning
+- **Maturity** as the sole mechanical life-stage transition in v0.5
+- Maturity following sufficient seasons and authored life events, with exact
+  timing reserved for campaign pacing and tuning
+- Time establishing eligibility while the Citizen's relationships, ordinary
+  life, and remembered events give the transition its particular meaning
+- The Maturity event ending Young status and beginning one ordinary Civic Share
+- A newly mature Core Citizen becoming eligible for ordinary Role assignment
+  without receiving a superior aptitude, inherited profession, or training rank
+- Civic Maturity and eligibility to Launch remaining distinct, with expedition
+  requirements governed by Part V
+- Family and the wider Colony recognizing the transition through a visible
+  event at a fitting Place
+- Maturity entering the Record and the Citizen's Tale
+- No experience bar, age-up button, Teacher-speed modifier, stat-training
+  ladder, or grindable shortcut
 
 ### Adulthood and aging
 
-- Changing responsibilities, relationships, capability, and needs
-- Veteran and non-expedition life remaining complete
-- No mandatory retirement conveyor
-- Age never reducing civic dignity
+- Adult being the only post-Maturity functional life stage in v0.5
+- Age continuing as a personal truth expressed through appearance, movement,
+  routine, relationships, responsibility, memory, and changing needs
+- No universal Elder state, age bar, lifespan countdown, accumulating age
+  penalty, or automatic loss of capability
+- An authored life event able to change a particular Citizen's availability,
+  Role participation, expedition eligibility, care needs, or ordinary life when
+  age is genuinely relevant
+- Veteran, disabled, caregiving, and non-expedition adult lives remaining
+  complete forms of citizenship rather than incomplete retirement states
+- Species biology informing authored portrayal without creating automatic
+  expiry or unequal civic worth
+- Age never reducing Citizen standing, family membership, relationship, or the
+  significance of a life
 
 ### Death and continuity
 
-- Death reducing the living Roster
-- Historical belonging remaining
-- Relationships, possessions, Places, and family carrying the absence
-- No routine attrition or replacement logic
-- Young Citizens never framed as replacement stock
-- The Tale closing but remaining accessible
-- Detailed harm procedures governed by the relevant Away or MEET systems
+- Death remaining possible but rare, explicit, and visible rather than arising
+  from routine attrition, an unattended roll, or an old-age timer
+- Detailed causes and harm procedures belonging to the relevant Away, Crossing,
+  or MEET system
+- Death removing the Citizen from the living Roster and ending their present
+  Civic contribution without deleting their historical belonging
+- The death entering the Record while the Citizen's Tale closes and remains
+  accessible
+- Family, other relationships, Keepsakes, possessions, Places, routines, the
+  Record, and Tales carrying the particular absence forward
+- Surviving Citizens able to experience grief, inheritance, changed
+  responsibility, remembrance, or another authored consequence
+- No birth, adoption, arrival, or young Citizen being framed as a mechanical
+  replacement for the person who died
 
 ## 4.6 Personal Items and Focus
 
-### Shared personal inventory
+Personal items help the player know who a Citizen is and remember what has
+happened to them. They remain attached to particular lives without converting
+collective MEET resolution into an individual skill system.
 
-- One Tool box
-- One Supply box
-- One Keepsake box
-- Shared architecture for Core and Guest Citizens
-- Body compatibility expressed through manifestation rather than separate
-  systems
+### Personal identity and Away loadout
+
+| Position | Eligible Citizens | Persistence | Purpose |
+|---|---|---|---|
+| **Keepsake** | Every Citizen | Personally persistent | Carries emotional meaning and one bounded contextual effect. |
+| **Tool** | Launch-eligible Citizens | Persistent; freely reassigned at Home | Supplies one reusable working capability Away. |
+| **Supply** | Launch-eligible Citizens | Assigned for one Expedition; consumed when committed | Supplies one prepared intervention Away. |
+
+- A Citizen able to have no Keepsake without appearing unfinished
+- Tool and Supply positions appearing only for Citizens eligible to prepare for
+  Launch
+- Young Citizens and Resident Guests therefore retaining complete personal
+  identity without displaying inert Away-equipment positions
+- Core Citizens and Expedition Guests following the same Tool, Supply,
+  Keepsake, and Focus rules whenever each position applies
+- Tool or Supply eligibility never creating a higher grade of Citizen
+- Body compatibility expressed through the item's physical manifestation rather
+  than a separate proficiency or species-aptitude system
+- Tools and Keepsakes remaining visible at Home, while their defined mechanical
+  effects belong to Away unless an explicit rule states otherwise
 
 ### Tools
 
-- Persistent working capability
-- Five ordinary classes
-- Specialist Tools
-- Home equipment and reassignment
-- Maintenance, damage, adaptation, and consequential history
+A **Tool** is a persistent named working object held by one Launch-eligible
+Citizen. It provides a narrow reusable capability Away while retaining its own
+material history at Home.
+
+- Five ordinary Tool classes: **Carry**, **Reach**, **Cut**, **Brace**, and
+  **Render**
+- Any Launch-eligible Citizen able to hold any class when its physical form is
+  credible for that body
+- Species, Home Role, prior work, and personality creating no proficiency gate
+  or Tool-effect coefficient
+- Multiple Tools of one class providing redundancy and different possible
+  protagonists without stacking their effect on one Turn
+- The player able to equip, clear, or reassign a Tool freely through the Citizen
+  view while at Home
+- Tool assignment becoming fixed once the Citizen Launches
+- A relevant Tool appearing only after the player chooses an Approach it can
+  credibly affect
+- Selecting that Tool supplying one contextual effect and placing its holder in
+  Focus
+- Selecting a Tool in MEET committing it to the Turn and placing it in hazard
+- The Tool providing its complete effect before any resulting Damage is applied
+- Tool hazard resolving through the MEET's situated consequences rather than a
+  universal damage probability or separate Strain roll
+- A Tool remaining outside that Turn's ordinary Tool hazard when it is not used,
+  unless the situation explicitly threatens carried equipment generally
+- A Damaged Tool remaining with its Citizen but becoming unavailable for the
+  rest of the Expedition
+- Ordinary repair after Homecoming belonging to existing Crafter responsibility
+  rather than requiring a Project
+- Permanent Tool loss or destruction requiring an explicit severe consequence
+- A Carry Tool providing its standing Cargo effect without taking Focus and
+  entering hazard when a MEET or other situation materially stakes that
+  capacity or its carried load
+- Ordinary Tools having no levels, aptitude modifiers, or unique mechanical
+  riders beyond their class
+- **Specialist Tools** providing specific authored capabilities opened through
+  Fine Work rather than numerical upgrades to ordinary Tools
+- A Tool able to be adapted, damaged, repaired, lost, or destroyed through the
+  applicable Project or authored-consequence rule
+- Routine use and reassignment not manufacturing history, while consequential
+  creation, recovery, use, adaptation, damage, repair, loss, or destruction may
+  enter the Tool's record
 
 ### Supplies
 
-- Consumable expedition capability
-- Prepared from Colony stock
-- No individual maker, name, provenance, or Tale
-- Replacement through ordinary Provisioning
+A **Supply** is one anonymous prepared intervention assigned to a
+Launch-eligible Citizen for one Expedition.
+
+- Every Supply being one discrete, body-scaled object that its carrier can
+  physically carry and deploy rather than a kit, bundle, or abstract capacity
+
+The four provisional Supply classes are:
+
+| Supply | Physical form | Direction |
+|---|---|---|
+| **Binding** | One prepared cord, strip, wrap, or fastening | Connect or secure. |
+| **Device** | One small prepared contrivance | Produce one temporary physical or sensory effect. |
+| **Offering** | One prepared morsel or meaningful token | Place something into an encounter with another being. |
+| **Remedy** | One prepared dose, dressing, or poultice | Treat or protect a body. |
+
+- Binding able to tie, tether, wrap, patch, restrain, or fasten by creating one
+  temporary connection
+- Device able to wedge, mark, signal, trigger, screen, or probe through one
+  compact deployed object
+- Offering able to be given, shared, exchanged, placed, promised, or used as
+  bait without compelling another participant to accept or respond as intended
+- Remedy able to clean, soothe, stabilize, or protect against a bodily
+  consequence
+- Crafter preparing Binding, Device, and Offering Supplies while Healer prepares
+  Remedies
+- Each class remaining a functional family rather than dividing into named
+  subtypes, qualities, or separate item records
+- Supplies produced through ordinary Provisioning and drawn from the Colony's
+  prepared stock during Launch
+- Each participating Citizen able to carry at most one Supply
+- Assignment becoming fixed Away, with no transfer or between-MEET loadout
+  management
+- A relevant Supply appearing only after the player chooses an Approach it can
+  credibly affect
+- Committing the Supply providing its stated effect and consuming it whether or
+  not the Approach achieves its intended outcome
+- The authored MEET stating the exact available effect rather than allowing a
+  Supply to become any object or solution the player imagines
+- A Supply able to soften a consequence, preserve an additional stake, extend
+  an achieved result, or enable a credible alternate resolution without
+  replacing the Turn or guaranteeing success
+- Unspent Supplies returning to the prepared Colony pool at Homecoming and all
+  Supply positions then clearing
+- A Supply discarded during TRAVEL leaving play rather than returning Home
+- No individual maker, personal name, provenance, persistent carrier
+  relationship, or Item Tale
 
 ### Keepsakes
 
-- Persistent emotional object
-- Personally rooted custody
-- Bounded contextual effect
-- Empty slots remaining valid
-- Damage, loss, gift, succession, and memorial display
+A **Keepsake** is a persistent emotional object whose meaning belongs to one
+Citizen's life. Every Citizen may have one, but an empty position remains a
+complete and valid life.
+
+- A Keepsake carrying one narrow circumstance in which its personal meaning can
+  matter during an eligible Home or Away MEET
+- The player choosing the Approach before any Keepsake expression appears
+- One relevant Keepsake able to become the Turn's single personal-item
+  expression
+- The holder taking Focus when the Keepsake shapes the Turn
+- The Keepsake able to soften a personal consequence, preserve one personally
+  meaningful stake, or permit a response within the chosen Approach
+- A Keepsake never creating an Approach, adding a Turn, changing the party's
+  general aptitude, or guaranteeing success
+- A Keepsake being present rather than spent, charged, refreshed, or placed on
+  cooldown
+- Home-present young Citizens and Resident Guests able to matter through their
+  Keepsakes in eligible Home MEETs without acquiring an Away loadout
+- Damage, gifting, loss, sacrifice, surrender, succession, replacement, and
+  memorial display occurring only through an explicit consequential event
+- A current Keepsake remaining personally held until such an event changes that
+  relationship
 
 ### Ownership and succession
 
-- Tools transferable
-- Keepsakes relationally meaningful
-- Consequential transfers remembered
-- Death never becoming an inventory-looting transaction
+- Tools being transferable working objects whose present holder and
+  consequential history remain legible
+- Supplies belonging to the current Expedition rather than acquiring permanent
+  personal ownership
+- Keepsakes remaining personally rooted rather than entering a Colony-wide
+  equipment pool
+- A new Keepsake replacing an existing one only through a meaning-making event
+  and player confirmation
+- Gifting, succession, memorial display, or another consequential transfer
+  preserving the relationship and history carried by the object
+- Routine Tool reassignment remaining equipment management rather than a
+  remembered event
+- Death never becoming an inventory-looting transaction; the relevant
+  Homecoming, family, succession, or memorial consequence determines what
+  happens to a Tool or Keepsake
 
 ### Focus
 
-- Approach chosen first
-- Focus identifying the Citizen whom the scene naturally follows
-- Tool, Keepsake, relationship, or authored circumstance drawing Focus
-- Focus governing presentation and possible attribution, not the group's
+**Focus** identifies the Citizen whom the current MEET Turn naturally follows.
+The party still chooses and resolves its Approach collectively; Focus makes one
+particular life visible within that shared action.
+
+1. The MEET presents its valid choices.
+2. The player chooses an Approach.
+3. Relevant Tools, Supplies, Keepsakes, relationships, or authored
+   circumstances become visible.
+4. The player may choose no personal-item expression or one Tool, Supply, or
+   Keepsake expression.
+5. Focus follows from the chosen expression or authored circumstance when one
+   identifies a particular Citizen.
+
+- No direct choose-any-Citizen Focus command
+- A selected Tool or Keepsake placing its holder in Focus, with Supply use
+  following its carrier when the intervention requires a personal actor
+- A relationship or authored circumstance able to establish Focus without an
+  item
+- Collective narration remaining valid when nothing identifies one Citizen
+- Focus governing camera, animation, principal speech or action, resolution
+  language, and possible Tale attribution rather than changing the party's
   decision
-- No extra action, guaranteed success, or manufactured history
-
-## 4.7 Story Systems
-
-### One history, several views
-
-| System | Function |
-|---|---|
-| **Almanac** | What is true now about the Colony and world. |
-| **Citizen Record** | The persistent facts belonging to one Citizen. |
-| **Chronicle** | Selected history of the Colony. |
-| **Tale** | The remembered shape of one Citizen's life. |
-| **Prior-life Tale** | The life an arriving Citizen had before entering the Colony. |
-| **Campaign Memory** | The consequential event history from which records and later references draw. |
-
-### The Almanac
-
-- Authoritative current Colony and world state
-- Current Citizens, Places, resources, relationships, pressures, and known
-  circumstances
-- Always available as an interface lens
-- Community Board providing optional diegetic expression in DWELL
-- No exhaustive simulation diary
-
-### The Citizen Record
-
-- One persistent Record for every Citizen
-- Current identity, species, life stage, location, availability, Role,
-  Residence, relationships, personal consequences, items, and historical
-  recognitions
-- Shared common frame with specialized fields only where relevant
-- Guest-specific fields extending rather than replacing the shared Record
-- Closed Records retained after death
-
-### Given Names
-
-- Every Citizen entering play with an appropriate Given Name
-- Cultural naming conventions
-- Collective household names for the two defined exceptions
-- No serial worker labels or rarity presentation
-
-### Tales and Prior-life Tales
-
-- Every Citizen possessing one Tale
-- Meaningful events entering rather than every mechanical action
-- Founders beginning with shared history
-- Campaign-born Citizens beginning at birth
-- Arrivals bringing Prior-life Tales
-- Relevant truth not hidden merely to manufacture surprise
-- Further detail emerging through trust, relationships, EMBODY, and later events
-
-### Campaign Memory
-
-- Consequential events providing common historical material
-- Home and Away both able to create memory
-- Different systems presenting the same event at different scales
-- Memory supporting later dialogue, relationships, memorials, Frills, and
-  EMBODY
-- No exhaustive event ledger
-
-### Distinctions and After-names
-
-- Distinction as narrow favorable recognition grounded in meaningful conduct
-- After-name as rarer public recognition of durable life history
-- Both able to arise from Home or Away
-- Neither automatic nor selected from a reward list
-- No generic rank, experience level, or required numerical effect
-
-### Chronicle and memorial continuity
-
-- Chronicle preserving selected shared Colony history
-- Tales preserving individual lives
-- Items and Places able to retain related histories
-- Closed Tales remaining readable
-- Memorials, Keepsakes, relationships, empty Places, and future references
-  preserving absence
+- No extra action, hidden contribution, success guarantee, consequence
+  immunity, Focus tally, or Focus progression
+- A Focused moment entering a Tale only when the underlying event already meets
+  the ordinary memory threshold
 
 # PART V — AWAY: EXPEDITION AND RETURN
 
@@ -4207,18 +4407,208 @@ Return and become present again at Home.
 - Bringing the haul home
 - Homecoming choices
 - Partial-day Civic Share restoration and DAWN reconciliation
-- Records, memory, and restored Home state
+- The Record, Campaign Memory, and restored Home state
 
 # PART VI — THE CAMPAIGN
 
-## 6.1 The opening campaign
+## 6.1 Campaign Memory
+
+**Campaign Memory** is the campaign-wide system through which the game retains
+what happened and presents what the Colony remembers. It combines one hidden
+factual Record with written and visual expressions made for the player.
+
+```text
+Record — hidden factual history
+├── Chronicle — selected Colony history
+├── Citizen Tales — history applying to particular Citizens
+├── Item Tales — history applying to particular Items
+└── canon images — the evolving visual record of Citizens and the Colony
+```
+
+- One resolved event able to matter at Colony, Citizen, Item, Place, and
+  relationship scales without being copied into separate competing histories
+- Home and Away contributing to the same Campaign Memory
+- Chronicle, Tales, and canon images selecting and translating established
+  facts without changing what happened
+- Memory supporting later dialogue, relationships, memorials, Frills, MEET,
+  and EMBODY
+- Campaign Memory naming the complete historical architecture rather than one
+  additional event ledger or player-maintained scrapbook
+
+### The Record
+
+The **Record** is the incremental back-end database that grows throughout the
+Colony's life. It is the authoritative factual history of what occurred, not a
+normal player-facing view.
+
+- Each resolved state-changing or authored historical event adding one
+  structured entry rather than rewriting earlier history
+- An entry identifying the relevant time, Place, participants, objects,
+  relationships, decision, outcome, and persistent consequences
+- Home, Away, Return, birth, arrival, Maturity, relationship change, Project
+  completion, recognition, injury, loss, and death all able to write to the
+  same Record
+- The Record retaining machine-readable facts rather than composing narrative
+  prose
+- Routine animation, repeated ambience, interface use, and mechanically empty
+  repetition not generating historical entries
+- The player encountering the Record itself only in debug mode or through an
+  intentionally provided inspector, never as the ordinary history interface
+- An inspector exposing the underlying facts without displacing the Chronicle,
+  Tales, canon images, or Almanac in normal play
+- Recorded facts never being contradicted or silently replaced by a later
+  written or visual rendering
+
+### Back-end selection and presentation
+
+- The back end deciding which Record entries qualify for the Chronicle and each
+  Tale, consolidating related entries, sorting them, and presenting the result
+  to the player
+- Significance, subject, relationship, and chronology guiding that selection
+  without requiring the player to tag, approve, rank, or file events
+- The player able to browse the history presented to them without becoming its
+  editor or archivist
+- Omitted routine detail remaining in the Record when historically relevant
+  rather than being converted into player-facing clutter
+- Every translation remaining traceable to established facts even when several
+  entries are expressed as one passage or image
+
+### The Chronicle
+
+The **Chronicle** is the Colony's in-story translation of selected Record
+entries.
+
+- Chronicle selection favoring events with shared civic, historical, or
+  cultural meaning
+- Several related Record entries able to become one concise Chronicle passage
+- The Chronicle able to name patterns, consequences, and remembered meaning
+  that a raw database entry cannot express
+- Selection and translation able to omit routine detail without inventing an
+  event, participant, relationship, or outcome
+- A later Chronicle passage able to add perspective to earlier history without
+  changing its recorded facts
+- Chronicle material remaining readable as the Colony grows
+
+### Tales and Prior-Life Tales
+
+A **Tale** is a subject-specific translation of selected Record entries. Every
+Citizen and those Items whose histories matter possess one.
+
+- A Citizen's Tale presenting events that apply to that Citizen's life,
+  including origin, family, relationships, Role history, meaningful Home and
+  Away events, injury, recognition, possessions, aging, death, and legacy
+- A Tool's Tale presenting consequential creation, recovery, holders, uses,
+  adaptations, Damage, repair, loss, or destruction while omitting routine use
+  and reassignment
+- A Keepsake's Tale preserving origin, personal meaning, gifting, succession,
+  loss, and the relationships carried through it
+- A Special Artifact able to carry a Tale proportionate to its singular civic
+  history
+- Supplies receiving no Tale because they remain anonymous consumable units
+- Tales translating remembered facts rather than granting progression or
+  inventing unrecorded life events
+- A closed Tale remaining accessible after death, destruction, departure, or
+  another definitive ending
+
+A **Prior-Life Tale** establishes the life a Founder or arriving Citizen had
+before the Colony knew them. When that history becomes known, its established
+facts enter the Record as prior history distinguished from events witnessed
+during the campaign. Material relevant to hospitality, safety, relationship,
+or present capability is not concealed merely to manufacture surprise; further
+detail may emerge through relationship, return, MEET, EMBODY, or contact with
+the Citizen's past.
+
+### Evolving canon images
+
+Campaign Memory has a visual complement: an evolving set of canon images of
+individual Citizens and the Colony. These images let the player see a life and
+a settlement changing rather than receiving that continuity only as text.
+
+- Every Citizen having a canon image that can evolve as established facts about
+  their appearance, life, relationships, possessions, or circumstances change
+- The Colony having a canon image that can evolve with its Places, Practices,
+  season, damage, repair, growth, and other materially visible history
+- The Colony retaining selected earlier canon images as an intentional visual
+  archive of its development
+- Each Citizen presenting only one current canon image in ordinary play
+- Earlier Citizen images remaining retained and accessible through secondary
+  history menus without competing with the current image in the Citizen view
+- Chronicle material and dedicated Colony-history views presenting relevant
+  Colony archival images without asking the player to choose or compose them
+- The back end deciding when a change warrants a new visual presentation and
+  which established details it should express
+- Canon images serving as the visual source material from which the game
+  generates setups for its various in-game presentations
+- A generated setup able to change composition, framing, pose, and immediate
+  context while preserving the identities and established state represented by
+  its source images
+- Images drawing only upon the Record and current canonical state, never
+  inventing a Citizen, relationship, object, Place, condition, or event
+- Visual presentation complementing written memory without replacing the
+  Record as factual authority
+- Whole-Colony moments using a composed civic view rather than an arbitrary
+  fixed lineup of Citizen portraits
+
+### The Almanac
+
+The **Almanac** stands outside Campaign Memory. It presents present state and
+the known, scheduled, forecast, or possible future states and events that bear
+upon current decisions.
+
+- Current Citizens, locations, availability, Roles, relationships, Places,
+  Practices, resources, Projects, civic balances, Pressure, season, weather,
+  traffic, and known world circumstances
+- Scheduled commitments, expected completions, seasonal windows, Telegraphs,
+  and other legible future events
+- Uncertain information remaining visibly uncertain rather than becoming
+  prediction or omniscience
+- A future event leaving the Almanac's prospective view when it resolves,
+  updating present state and adding its factual outcome to the Record
+- The Almanac remaining continuously available as an interface lens, with the
+  Community Board providing optional diegetic expression in DWELL
+- No historical narration, retrospective interpretation, or exhaustive
+  simulation diary
+
+### Given Names
+
+- Every Citizen entering play with an appropriate Given Name
+- Cultural naming conventions
+- Collective household names for the two defined exceptions
+- No serial worker labels or rarity presentation
+- A naming, renaming, or collective-household continuity event entering the
+  Record and appearing wherever the current name is shown
+
+### Distinctions and After-names
+
+- Distinction as narrow favorable recognition grounded in meaningful conduct
+- After-name as rarer public recognition of durable life history
+- Both able to arise from Home or Away
+- Neither automatic nor selected from a reward list
+- No generic rank, experience level, or required numerical effect
+- Recognition entering the Record, appearing in the Citizen's Tale, and
+  entering the Chronicle only when it carries Colony-scale meaning
+
+### Memorial continuity
+
+- Death, departure, destruction, and irreversible loss changing present state
+  without deleting the relevant Record entries
+- Chronicle preserving selected shared history while Tales preserve the shape
+  of particular lives and objects
+- Places, relationships, Keepsakes, memorials, and later events able to refer to
+  the same underlying Record
+- Empty Places and absent routines remaining available as visible historical
+  consequences
+- Memorial continuity preserving particularity rather than converting loss into
+  a generic morale modifier
+
+## 6.2 The opening campaign
 
 - The Founding Escape
 - Tutorial sequence
 - Early Colony development
 - The first expeditions
 
-## 6.2 Civic progression
+## 6.3 Civic progression
 
 - The four Colony Tiers
 - Population and institutional proofs
@@ -4226,7 +4616,7 @@ Return and become present again at Home.
 - Recognition MEETs
 - Stable plateaus and optional growth
 
-## 6.3 Corridor progression
+## 6.4 Corridor progression
 
 - Reaching farther along the Corridor
 - Permissions and Projects
@@ -4234,7 +4624,7 @@ Return and become present again at Home.
 - Relationships between settlements
 - The Sovereign Network
 
-## 6.4 Campaign horizons
+## 6.5 Campaign horizons
 
 - The Ancestral Home
 - The Rest-Stop Metropolis
@@ -4247,7 +4637,7 @@ Return and become present again at Home.
 
 - Colony and Field views
 - Ledgers and overlays
-- Citizen Records
+- Citizen views, Tales, and Chronicle
 - Expedition planning
 - Advisor voice
 - Controls and accessibility
@@ -4280,7 +4670,7 @@ Return and become present again at Home.
 
 - Appendix A — Lexicon and Canonical Usage
 - Appendix B — Names, Place-Names, and Compound Forms
-- Appendix C — Records, Tales, Chronicle, and Memory Schemas
+- Appendix C — Record, Tales, Chronicle, and Campaign Memory Schemas
 - Appendix D — Places, Practices, Projects, and Tier Eligibility
 - Appendix E — Resources, Carry, Supplies, Tools, and Body Units
 - Appendix F — Corridor, Day Band, Traffic, and Environmental Reference

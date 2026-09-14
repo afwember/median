@@ -1067,8 +1067,9 @@ A **Place** is physical ground designated within Home. A Builder designates that
 ground without cost. A vacant designation may be withdrawn freely; committing
 its first Residence or Practice Project establishes the Place permanently. An
 established Place may stand vacant, host one Core Residence, host one Guest
-residence, or host one Practice. Species placement determines how efficiently
-an established use serves the Colony.
+residence, or host one Practice. A Guest species may depart from this default
+only through an explicit authored exception. Species placement determines how
+efficiently an established use serves the Colony.
 
 ### Place uses
 
@@ -1077,6 +1078,8 @@ an established use serves the Colony.
 - A Practice Place taking its functional name from the Practice situated there
   rather than receiving a separate building-type name
 - A Place hosting no more than one Core Residence, Guest residence, or Practice
+  except where a Guest species explicitly permits its Residence to be
+  incorporated into a particular Practice
 - The same Practice retaining one civic function wherever it is placed and
   whichever Core Species builds it
 - An established Place able to remain vacant or carry an unfinished, usable,
@@ -1127,11 +1130,11 @@ an established use serves the Colony.
   Placed
 - Residence contributing no Practice Strength, passive output, or Project
   capacity
-- Guest housing occupying a dedicated Place apart from Core Species Residences
+- Guest housing occupying a dedicated Place apart from Core Species Residences,
+  with any authored Practice-sharing exception defined by the Guest species
 - A Guest residence following its individual species' bodily and spatial housing
   requirements rather than contributing to pooled Core Residence Capacity
-- Guest housing requirements being defined with the Guest species in Chapter
-  4.6
+- Guest Residence Fit being defined with the Guest species in Chapter 4.3
 
 ### Species placement
 
@@ -2486,18 +2489,19 @@ arrivals, needs, and contributions stay legible.
 - Hospitality expressing the Colony's credible ability to house, sustain, know,
   and integrate a Guest through actual Places, access, resources, and civic
   support
-- Guest accommodation following the authored bodily, spatial, safety, habit,
-  and relationship requirements of that Guest species within its own dedicated
-  Place rather than consuming or extending pooled Core Residence Capacity
-- The Guest residence's Well-Placed status being judged by those individual
-  species requirements
+- Guest accommodation following the species' single Residence Fit, ordinarily
+  within its own dedicated Place rather than consuming or extending pooled Core
+  Residence Capacity
+- An authored species exception able to incorporate its Guest Residence into a
+  named Practice as defined in Chapter 4.3
+- The Guest Residence's Well-Placed status being judged by that fit as a whole
 - Guest residency completing only after the promised accommodation and other
   agreed Terms of Hospitality have become true
 - A welcomed Guest entering the Roster, creating ordinary support and Load, and
   contributing one Civic Share while present and available
 - Guest residency remaining optional at every Colony Tier
 - Guest identity, accommodation, Affordances, relationships, and the complete
-  path to residency belonging to Chapter 4.6
+  path to residency belonging to Chapter 4.3
 
 ### Scale and continuity
 
@@ -2695,12 +2699,16 @@ Citizens instead of owning or optimizing them.
 
 - **Body Unit** expressing physical and logistical scale only
 - One Rabbit, one Squirrel, or two Mice constituting one Body Unit
+- Every individual Guest in v0.5 constituting one Body Unit
 - The two collective-bodied Guest households each constituting one Citizen and
   one Body Unit despite their visible multiplicity
+- A single Citizen able to constitute more than one Body Unit only when an
+  explicit species rule says so
 - Body Units able to govern Housing, Sustenance, party composition, Carry, or
   another explicitly bodily system
 - Names, relationships, personal items, harm, memory, and death following
   Citizens rather than Body Units
+- Body Unit value never changing Citizen standing or Civic Share
 - A Body Unit never merging several individual Citizens into one life or
   dividing one Citizen's personhood
 
@@ -2952,62 +2960,990 @@ power.
 
 ## 4.3 Guest Citizens
 
-### Equal citizenship through difference
+MEDIAN's world contains many more animal lives than the Colony's Core Species.
+A **Guest Citizen** is a named non-Core animal welcomed into the Colony through
+relationship and accommodation.
 
-- Guest as origin category rather than civic rank
-- Equal Civic Share, vulnerability, memory, relationship, and consequence
-- Guest bodies, senses, habits, communication, and housing remaining distinct
-- Guest recruitment optional at every Tier
+Kehaar in Richard Adams's *Watership Down* is a central inspiration: a
+conspicuously different outsider whose practical importance opens the way to
+friendship without requiring that difference to disappear.
 
-### Expedition and Resident Guests
+Guest describes a Citizen's origin, not their civic rank. A welcomed Guest
+receives a Residence, belongs to the Roster, contributes one Civic Share when
+available, forms relationships, faces consequence, enters memory, and may be
+experienced through EMBODY. They are never a pet, follower, collectible, or
+detachable bonus.
 
-- **Expedition Guest** defined by one bounded Away Permission
-- **Resident Guest** defined by one situated Home Affordance
-- Both being complete Citizens
-- Resident life not treated as lesser because it cannot Launch
-- Authored transitions between the two possible through life events, never
-  routine reassignment
+Difference remains visible after welcome. A Guest does not become an honorary
+Mouse, Rabbit, or Squirrel. Their body, senses, habits, communication, spatial
+needs, and way of participating continue to matter. Each Guest species also
+offers the Colony a distinct capability, expressed through one bounded Guest
+Affordance rather than superior general aptitude.
 
-### Signature architecture
+Hospitality begins when the Colony encounters an animal, comes to understand
+what living together would require, and chooses whether to make that promise
+real. The player may accept, delay, or refuse those Terms. No Guest is required,
+but every Guest who arrives becomes someone for whom the Colony has deliberately
+made room.
 
-- One ordinary civic contribution
-- One qualitative species Permission or Affordance
-- Expressive difference through body, Residence, routine, sound, relationships,
-  and EMBODY
-- No superior productivity coefficient or stackable passive bonus
+### Guests at a glance
 
-### Roles
+The canonical short name appears in tables, headings, mechanical rules, and
+other reference material. A longer species name may appear naturally in
+descriptive prose for variation. The two forms are never displayed together
+parenthetically or treated as separate labels.
 
-- Resident Guest species having a fixed Guest Practice and Role
-- Expedition Guest Home Roles authored by individual
-- One Civic Share regardless
-- Absence and unavailability remaining visible
+#### Expedition Guests
+
+Each Expedition Guest contributes one Civic Share through the individual
+Citizen's authored Home Role.
+
+| Species | Guest Affordance | Residence Fit |
+|---|---|---|
+| Raccoon | **HANDLE — Latchwork** | dry exterior access |
+| Crow | **HANDLE — Trialwork** | high open perch |
+| Gull | **READ — Long View** | broad open landing |
+| Fox | **HANDLE — Carcass Claim** | drained boundary ground |
+| Weasel | **INTERCEDE — Drive Off** | narrow multi-exit bank |
+| Hedgehog | **INTERCEDE — Living Cover** | concealed hedge |
+| Snake | **SPEAK — Display** | sun-warmed shelter |
+| Mink | **REACH — Water Reach** | safe waterline |
+
+#### Resident Guests
+
+Each Resident Guest contributes one Civic Share through its fixed Role. Its
+Guest Affordance remains a distinct species-specific capability.
+
+| Species | Fixed Role | Guest Affordance | Residence Fit |
+|---|---|---|---|
+| Owl | Watchkeeper | **Night Sky-watch** | high listening hollow |
+| Sparrow | Teacher | **SPEAK — Day Call** | concealed social perch |
+| Toad | Caretaker | **Wet-Ground Care** | wet edge with dry refuge |
+| Fireflies | Leader | **SPEAK — Lantern Procession** | dark damp flight space |
+| Groundhog | Gardener | **Seasonal Telegraph** | deep drained ground |
+| Turtle | Caretaker | **Water Garden Residence** | shallow water and basking |
+| Bumblebees | Gardener | **Garden Cohabitation** | sheltered flower access |
+| Mole | Builder | **Subsurface Diagnosis** | visible undisturbed soil |
+| Bat | Builder | **Workshop Roost** | high dry-dark roost |
+| Pigeon | Leader | **Gathering Loft** | open built ledge |
+| Skunk | Watchkeeper | **SPEAK — Boundary Deterrence** | downwind boundary |
+| Possum | Healer | **Hearth Annex** | ventilated receiving edge |
+
+### Shared Guest architecture
+
+Every Guest has full Citizen standing. Their Civic Share supports an ordinary
+Role, while their Guest Affordance provides one bounded capability unique to
+that animal. Residence, relationships, and EMBODY make that difference legible
+as a particular life.
+
+| Property | Expedition Guest | Resident Guest |
+|---|---|---|
+| Citizen standing | Full | Full |
+| Civic Share while present and available | One | One |
+| Home Role | Individual-authored | Species-fixed |
+| Guest Affordance operates | Away | At Home |
+| May Launch | Yes | No |
+| Personal Away consequence | Yes | No |
+| Residence, relationships, memory, and EMBODY | Full | Full |
+
+#### Civic contribution
+
+- Each present and available adult Guest contributing one ordinary Civic Share
+- Personality, species, Guest Affordance, equipment, and prior history never
+  changing the value of that share
+- An Expedition Guest's Home Role belonging to the particular Citizen
+- A Resident Guest's Home Role being fixed by species
+- The Guest directing their share either to ordinary Role responsibility or an
+  active Project under the same rules as any other Citizen
+- Absence, unavailability, or Project commitment withdrawing that share from
+  ordinary Role support
+- No Guest possessing a hidden aptitude or generally superior productivity
+  coefficient; any authored production exception being explicit, situated, and
+  part of that species' single Guest Affordance
+
+#### Guest Affordances
+
+- Each Expedition Guest having one bounded Guest Affordance that operates Away
+- Each Resident Guest having one situated Guest Affordance that operates at Home
+- **Attribution:** the responsible Citizen or household remaining visible
+- **Situation:** the Affordance mattering in one bounded circumstance or
+  explicitly named Place relationship rather than operating generally across
+  the Colony
+- **Restraint:** the Affordance opening or changing a choice or explicitly
+  defined Place relationship without automatically solving the whole situation
+- **Species grounding:** the option following from the animal's body, senses,
+  behavior, or ecology
+- **Suspension:** absence, injury, season, or Residence condition able to make
+  the Affordance unavailable when relevant
+- Resident life remaining mechanically and expressively complete without Launch
+
+Guest type is not a player toggle, rarity, or civic rank. An authored life event
+may move an Expedition Guest into Resident life, but type never changes through
+routine reassignment.
 
 ### Hospitality and residence
 
-- First MEET
-- Recognition and relationship
-- Terms of Hospitality
-- Guest Residence Project
-- Arrival and civic integration
-- Refusal, delay, and non-arrival
-- Guest accommodation as a dedicated Residence Place
-- Well-Placed status judged against the individual Guest species' requirements
+#### From MEET to arrival
+
+1. The Colony first encounters a named animal in a situation that exists
+   independently of recruitment.
+2. The outcome establishes recognition: a relationship, obligation, promise,
+   shared interest, or unresolved tension.
+3. **Terms of Hospitality** state what continued life together requires. They
+   always include one completed Guest Residence satisfying that species'
+   Residence Fit, plus any explicit relational or safety promise belonging to
+   that Guest. The Residence occupies a dedicated Place unless the species has
+   an authored Practice-sharing exception.
+4. A Builder designates its Place, or uses its named host Practice, and completes
+   or adapts the Residence through an ordinary Builder Project.
+5. Once the Terms are true, Arrival brings the Guest Home, adds them to the
+   Roster, and begins their civic life.
+6. The player may refuse, delay, or fail to fulfill the Terms. This remains a
+   consequential relationship outcome, not failed collection.
+
+#### Guest Residence
+
+- One Guest Residence housing one Guest Citizen or collective-bodied household
+- The Residence ordinarily occupying one dedicated Place, contributing no Core
+  Housing Capacity, and being unable to host a Practice simultaneously
+- A species-specific exception able to incorporate the Guest Residence into one
+  named Practice without creating a general mixed-use Place rule
+- An incorporated Residence still requiring an ordinary Builder Project,
+  appropriate material, and time, while consuming no separate Place
+- The host remaining one Practice with its ordinary improvement rules and
+  one-Project capacity; the Residence adding neither another improvement nor
+  another Project slot
+- Each Guest species having one defining **Residence Fit** judged as a whole
+- A completed Residence being either Well Placed or Not Well Placed according to
+  that fit
+- A completed Well-Placed Guest Residence fulfilling the housing portion of the
+  Terms of Hospitality
+- Core-species architecture able to shape its visual expression without adding
+  a second placement test
+- No separate housing checkboxes, partial fit scores, or cumulative bonuses
+- Further bodily, material, and atmospheric detail remaining descriptive rather
+  than becoming additional requirements
+
+#### Change after arrival
+
+- Later loss of Residence Fit never evicting the Guest or removing their
+  citizenship
+- The Not-Well-Placed Residence becoming a visible accommodation problem at that
+  Place
+- Loss of fit able to suspend the Guest's Affordance when the missing fit is
+  directly relevant
+- The Guest retaining their Civic Share unless a separate condition makes them
+  unavailable
+- Repair or adaptation using ordinary Project rules
+- No separate Guest Housing score, capacity pool, or numeric Load axis
+- A vacated Guest Residence persisting as a Place, or as a physical part of its
+  host Practice, and remaining part of Colony history
+
+### Life in the Colony
+
+Welcoming a Guest creates an ordinary life, not merely access to an Affordance. A
+Guest's Residence, Role, routines, relationships, absences, and embodied
+experiences make their membership visible throughout Home.
+
+#### Role and presence
+
+- A present and available adult Guest contributing one Civic Share through
+  their Home Role
+- Role support remaining Colony-wide rather than assigning the Guest to a
+  particular Practice
+- Resident Guest Roles fixed by species without creating separate Guest
+  Practices
+- Expedition Guest Roles belonging to individual Citizens rather than their
+  species
+- Either type able to sustain ordinary Role responsibility or commit their
+  Civic Share to an eligible Project
+- Launch removing an Expedition Guest's Role support and leaving their
+  Residence visibly unoccupied
+- Resident Guests remaining at Home but able to become unavailable through
+  injury, illness, season, displacement, or another actual condition
+- Absence and unavailability removing contribution without removing citizenship
+
+#### Ordinary Home life
+
+- Every Guest having routines grounded in body, Residence Fit, time, season,
+  relationships, and civic participation
+- Guests appearing throughout ordinary Colony life rather than only when their
+  Affordance becomes relevant
+- A Guest's fixed or individual Role expressed through visible activity without
+  creating site-by-site assignment
+- Residence use, movement, sound, rest, food, conversation, and social habits
+  making species difference legible
+- Guest needs creating meaningful situations without becoming a queue of
+  personal maintenance chores
+- An Affordance remaining one capability within a larger life rather than the
+  Guest's sole identity
+
+#### EMBODY
+
+- Any present and available Guest eligible for Home EMBODY while Quiet
+  Equilibrium is open
+- **Activity** allowing the player to join a bounded species action such as
+  basking, listening, sorting, swimming, tending flowers, tracing a route, or
+  guiding light
+- **Presence** allowing the player simply to accompany a characteristic state
+  such as warm rain, a dark roost, still water, evening flight, scent-reading,
+  or a household waking
+- Control able to use bodily movement, sensory emphasis, guided attention,
+  collective flow, small gestures, or cinematic accompaniment
+- Guest EMBODY not required to reproduce Core-species locomotion or become a
+  traversal challenge
+- The purpose being to understand how a particular friend inhabits Home
+
+#### Relationship and vulnerability
+
+- Every Guest forming particular relationships rather than representing a
+  species stereotype
+- Species difference able to create affection, curiosity, dependence, friction,
+  fear, mentorship, obligation, or shared routine
+- Guests participating in ordinary Home situations and consequences
+- Injury, absence, Residence trouble, and relationship change remaining visible
+- Irreversible named loss never occurring off-screen merely because the player
+  is attending another Register
+- Records and long-term memory governed by Chapters 4.4–4.7
 
 ### Collective-bodied Citizens
 
-- Firefly Family and Bumblebee Household as the closed v0.5 exceptions
-- One Citizen, Record, Roster entry, Residence, Civic Share, and
-  Affordance each
-- Several visible bodies expressing one socially meaningful household
-- No general collective-Citizen rule
+Nearly every MEDIAN Citizen is one named animal. Firefly Family and Bumblebee
+Household are the two closed v0.5 exceptions. For these Guests, the household
+is the smallest living subject the Colony can meaningfully know.
 
-### Guest rosters
+Each household is one Citizen and one Body Unit, represented by several visible
+bodies.
 
-- Expedition Guest species and Permissions
-- Resident Guest species, fixed Roles, Affordances, and Residences
-- Required content fields
-- At least one meaningful Home and EMBODY expression for every Guest
+#### One civic subject
+
+- One Roster entry, Guest Residence, Hospitality commitment, fixed
+  Role, Civic Share, Affordance, and continuous identity
+- Several bodies never multiplying civic contribution, Project support,
+  production, housing demand, or Affordance
+- A clear distinction from Mice: two Mice may share one Body Unit but remain two
+  complete Citizens; a collective-bodied household is itself one Citizen
+- No additional collective-Citizen types in v0.5
+
+#### Visible plurality
+
+- Firefly Family known through its recurring formation, pulse, route, and
+  shared light
+- Bumblebee Household known through circulation, hum, collective activity, and
+  repeated return to its Residence
+- Individual bodies not receiving separate names, Roles, inventories,
+  assignments, or administrative tracking
+- No hidden miniature colony, individual pollination simulation, or raw-body
+  census
+
+#### Continuity and consequence
+
+- Availability and major consequences applying to the household as a whole
+- Visible thinning or changed activity able to express injury, loss, season, or
+  generational change without creating separate Citizens
+- The household contributing either its full Civic Share or none; it never
+  contributes fractional shares
+- The named household persisting through changes in visible membership while
+  its social continuity remains
+- Departure, dissolution, or death requiring an authored and visible event
+  rather than occurring through background simulation
+
+#### EMBODY
+
+Collective-bodied EMBODY treats the household as one coordinated living flow
+rather than selecting a single representative body. Movement, pulse, sound,
+circulation, and shared attention make plurality playable without turning every
+visible animal into another Citizen.
+
+### Expedition Guest profiles
+
+Every Expedition Guest is one named individual Citizen and one Body Unit. Each
+may Launch and participates in the shared Away systems without gaining another
+action economy or carrying the rest of the party through a bodily domain only
+that Guest can use. Their Home Role belongs to the individual Citizen, not the
+species. Guest EMBODY opens at Home during Quiet Equilibrium and creates no
+Resources, progression, or Affordance outcome.
+
+#### Raccoon
+
+**Animal identity.** Dexterous forepaws, material intelligence, curiosity, and
+familiarity with human refuse make Raccoon the clearest human-object specialist.
+Raccoon knows how to open and handle things built for hands unlike its own.
+
+**Body and Citizen form.** Raccoon is a strong climbing quadruped with unusually
+dexterous, sensitive forepaws. It can grasp, turn, sort, and inspect suitable
+objects, while consequential interaction with human-made closures remains
+governed by Latchwork.
+
+**Residence.** Build the Residence where it has dry access from outside the
+Colony. Raccoon can then arrive with found objects without carrying them through
+enclosed Home spaces.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — HANDLE: Latchwork.** Raccoon may directly open or
+manipulate one accessible human-made closure or simple mechanism. Lids, catches,
+caps, knots, tied bags, and similar constructions become possible to handle
+according to how they work.
+
+**Limits.** Latchwork does not reveal contents, identify contamination,
+guarantee useful material, or remove carrying cost. It applies only to an
+accessible closure or mechanism that Raccoon can plausibly manipulate.
+
+**EMBODY Activity.** Handle, turn, inspect, and sort familiar objects with
+sensitive forepaws.
+
+**EMBODY Presence.** Rest among a personal collection while light and Colony
+movement pass the Residence opening.
+
+#### Crow
+
+**Animal identity.** Crows meet the world with close attention, durable memory,
+social intelligence, and opportunistic object use. Flight provides perspective,
+but Crow's defining distinction is experimental curiosity: Crow discovers how
+something may work.
+
+**Body and Citizen form.** Crow uses the shared Flyer bodily grammar while
+manipulating small objects through beak and grasping feet. Flight and object
+handling remain bodily capabilities; Trialwork governs the distinct moment when
+Crow recruits one available object to test or act upon another.
+
+**Residence.** Build the Residence on a high, open perch. Crow needs clear air
+for arrival and departure without an enclosing roof or obstructed flight path.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — HANDLE: Trialwork.** Crow may recruit one available object
+for one plausible test or indirect manipulation. It may probe an opening, draw
+something closer, place a marker, or drop one thing to provoke or measure a
+response.
+
+**Limits.** Trialwork requires one available object and one plausible
+interaction. Crow cannot invent material, manufacture elaborate Tools,
+guarantee the result, or replace Raccoon's direct manipulation of closures.
+
+**EMBODY Activity.** Grasp, place, compare, and rearrange familiar objects with
+beak and feet.
+
+**EMBODY Presence.** Settle on the high perch and turn attention among calls,
+weather, and movement below.
+
+#### Gull
+
+**Animal identity.** Gull inhabits a broad, human-shaped landscape in which
+highways, rooftops, reservoirs, parking lots, storms, and distant feeding
+grounds remain connected. Conspicuous and comfortable in open weather, Gull
+understands what lies beyond the Colony's ordinary horizon.
+
+**Body and Citizen form.** Gull uses the shared Flyer bodily grammar and
+requires broad, open space to launch and land. Flight changes its position and
+viewpoint, but never removes the Citizen from party composition, elapsed time,
+Exposure, or consequence.
+
+**Residence.** Build the Residence at a broad, open landing. Gull needs an
+unobstructed approach, landing, and departure through open air.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — READ: Long View.** From an eligible open vantage, Gull
+reveals situated context about broad geography, weather, water, traffic, human
+activity, or the relationship among distant Places. Long View informs the
+ground party before commitment without resolving the situation itself.
+
+**Limits.** Long View requires an eligible open vantage and may be constrained
+by obstruction, distance, darkness, or weather. It provides neither
+omniscience, exact mapping, future prediction, fast travel, party transport,
+nor a safe Crossing bypass.
+
+**EMBODY Activity.** Face the wind, preen, and make a short circuit between the
+Residence and nearby open landing points.
+
+**EMBODY Presence.** Rest on the exposed landing while weather and the distant
+human landscape move around Home.
+
+#### Fox
+
+**Animal identity.** Red Fox is substantially larger than most Citizens, led
+strongly by scent, and unmistakable as a predator. Its competence around
+carcasses can materially aid the Colony, while its silhouette ensures that
+welcome and instinctive fear must coexist honestly.
+
+**Body and Citizen form.** Red Fox has the largest individual body in the v0.5
+expedition roster but still constitutes one Body Unit. Its size changes which
+openings, shelters, surfaces, and social spaces it can use; it does not increase
+Civic Share or automatically multiply Carry.
+
+**Residence.** Build the Residence on well-drained ground at the Colony
+boundary. The location gives Red Fox's larger body direct outside access while
+keeping the Residence part of Home.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — HANDLE: Carcass Claim.** At an eligible carcass or roadkill
+Node, Red Fox may process suitable matter into the one Supply specified by that
+Node. Carcass Claim is the biological counterpart to RENDER: it produces the
+same authored kind of outcome without requiring a Render Tool.
+
+**Limits.** Carcass Claim consumes the suitable matter and follows ordinary
+Supply-placement rules. It cannot choose an arbitrary Supply, identify
+contamination, guarantee that a carcass is usable, prevent rivals, erase time
+or consequence, or create Resources, Tools, Keepsakes, or Artifacts. Because no
+Tool is used, it makes no Tool Strain check; Red Fox remains personally exposed
+to any authored risk or consequence of the process.
+
+**EMBODY Activity.** Read and retrace the Colony boundary through scent, tracks,
+and disturbed ground.
+
+**EMBODY Presence.** Curl inside the earth and attend to Home through sound and
+scent from its outer edge.
+
+#### Weasel
+
+**Animal identity.** A Weasel's narrow body, explosive speed, intense attention,
+and ability to enter confined ground make it an active intercessor. It changes
+danger by pressing into the space between a threat and something vulnerable.
+
+**Body and Citizen form.** Weasel's long, narrow body supports fast ground
+movement and entry into spaces larger Citizens cannot physically use. Such
+access applies to Weasel alone and may separate it from companions rather than
+silently opening a route for the whole party.
+
+**Residence.** Build the Residence in a narrow bank with more than one exit. The
+confined space suits Weasel's body while preserving alternate ways in and out.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — INTERCEDE: Drive Off.** Weasel may press a small predator
+or aggressive animal away from something vulnerable. Drive Off can redirect
+the threat, hold its attention, or create an interval for escape.
+
+**Limits.** Drive Off applies to one small predator or aggressive animal, not
+every threat or an entire battle. Weasel remains exposed to injury and
+separation, and the threat is redirected rather than automatically defeated.
+
+**EMBODY Activity.** Run a short bank route, inspect its openings, or play
+through the Residence's alternate exits.
+
+**EMBODY Presence.** Groom or rest inside the narrow bank while remaining alert
+to movement beyond it.
+
+#### Hedgehog
+
+**Animal identity.** A Hedgehog's deliberate pace, low body, protective spines,
+and vulnerable face and underside create an unusual relationship with danger.
+Its protection comes through sheltering, escort, and steadfast presence rather
+than speed or aggression.
+
+**Body and Citizen form.** Hedgehog is a low, ground-bound quadruped whose
+spines protect its back and flanks while leaving its face and underside
+vulnerable. The spines shape contact and defensive posture but do not provide
+generic armor or immunity from Exposure.
+
+**Residence.** Build the Residence inside a concealed hedge. The hedge shelters
+Hedgehog's low, deliberate movement while preserving a usable route into the
+Colony.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — INTERCEDE: Living Cover.** Hedgehog may shelter one injured
+or very small Citizen, shield one fragile Cargo stake, or provide cover during
+a withdrawal. Living Cover allows something vulnerable to keep moving when
+ordinary retreat would leave it exposed.
+
+**Limits.** Living Cover protects only one vulnerable Citizen or Cargo stake in
+a bounded movement. Hedgehog cannot shield the whole party, ignore a major
+threat, or escape the danger it enters.
+
+**EMBODY Activity.** Forage beneath leaves or walk slowly beside another
+Citizen through protected ground.
+
+**EMBODY Presence.** Curl within the concealed hedge and gradually relax as
+nearby activity becomes familiar.
+
+#### Snake
+
+**Animal identity.** Limbless movement, scent-led perception, dependence on
+warmth, and expressive stillness distinguish Garter Snake from every other
+Citizen. Its presence also confronts inherited prey fear without asking the
+Colony—or Snake—to pretend that bodily history has vanished.
+
+**Body and Citizen form.** Garter Snake moves through continuous bodily contact
+with the ground, reads scent through tongue and air, and depends upon available
+warmth. Equipment and carried belongings must suit a limbless body rather than
+assuming hands, pockets, or ordinary harnessing.
+
+**Residence.** Build the Residence in a sheltered place warmed by the sun.
+Garter Snake needs dependable basking warmth with protected space in which to
+withdraw.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — SPEAK: Display.** Garter Snake may use posture, movement,
+and deliberate stillness to communicate with animals that recognize snake
+display. Display can open PARLEY, YIELD, intimidation, recognition, or mutual
+withdrawal where ordinary speech carries no force.
+
+**Limits.** Display works only where another animal can perceive and understand
+snake posture. It is neither a venom attack nor universal translation, mind
+control, or guaranteed surrender.
+
+**EMBODY Activity.** Follow warmth or scent across a short route through
+continuous whole-body movement.
+
+**EMBODY Presence.** Bask in stillness or coil beside a trusted Citizen who has
+learned not to startle.
+
+#### Mink
+
+**Animal identity.** American Mink belongs as fully to water edges as most
+Citizens belong to dry ground. Its long, powerful body, swimming ability, and
+familiarity with currents, culverts, and flooded spaces make water a lived
+domain rather than an impassable boundary.
+
+**Body and Citizen form.** American Mink moves on land and swims and dives
+through suitable water. Water competence changes its available movement and
+perception, but does not eliminate cold, current, contamination, separation, or
+the need to return to dry refuge.
+
+**Residence.** Build the Residence at a safe waterline. Mink needs direct water
+access with dry refuge above ordinary high water.
+
+**Civic contribution.** One Civic Share through this Citizen's authored Home
+Role; neither body nor Guest Affordance changes its value.
+
+**Guest Affordance — REACH: Water Reach.** American Mink may enter water,
+flooded culverts, drainage channels, or waterlogged spaces that the ordinary
+party cannot safely use. Water Reach allows Mink to inspect, retrieve, or
+rescue within that domain on the party's behalf.
+
+**Limits.** Water Reach does not ferry the party or eliminate cold, current,
+contamination, separation, or Cargo loss. Mink can enter the waterborne
+situation but cannot guarantee retrieval or rescue.
+
+**EMBODY Activity.** Swim a protected waterline, dive beneath roots, or groom at
+the Residence entrance.
+
+**EMBODY Presence.** Float or rest beside the water while watching Home from its
+surface level.
+
+### Resident Guest profiles
+
+Each Resident Guest contributes one Civic Share through a fixed Home Role and
+remains at Home rather than Launching. Owl, Sparrow, Toad, Groundhog, Turtle,
+Mole, Bat, Pigeon, Skunk, and Possum are individual Citizens; Fireflies and
+Bumblebees are the two collective-bodied Citizen households. Each individual or
+household constitutes one Body Unit. Guest EMBODY opens during Quiet Equilibrium
+and creates no Resources, progress, production, or Affordance outcome.
+
+#### Owl
+
+**Animal identity.** Barred Owl inhabits night through acute hearing, high
+perspective, quiet patience, and a body adapted to darkness. Sound makes distant
+or obscured activity legible long before most Citizens can see its source.
+
+**Body and Citizen form.** Owl is one individual Citizen and one Body Unit. Its
+body shapes visible movement, Residence use, EMBODY, and its Guest Affordance
+without changing its Civic Share.
+
+**Residence.** Build the Residence in a high listening hollow. Barred Owl needs
+sheltered rest from which surrounding night sounds remain clear.
+
+**Civic contribution.** One Civic Share through the fixed Watchkeeper Role.
+
+**Guest Affordance — Night Sky-watch.** Night Sky-watch sharpens an existing
+nocturnal Telegraph while Owl is present and available and a Watchpost is
+usable. The clearer warning remains qualitative and passes through the ordinary
+Almanac and Community Board presentation.
+
+**Limits.** Night Sky-watch creates no new detection channel, probability
+display, Practice Strength, additional Watchkeeper Civic Share, or automatic
+defense.
+
+**EMBODY Activity.** Turn toward sounds across Home and shift between the hollow
+opening and a nearby listening perch.
+
+**EMBODY Presence.** Remain in the high hollow while the Colony settles and
+night changes the surrounding soundscape.
+
+#### Sparrow
+
+**Animal identity.** Song Sparrow becomes familiar through learned calls,
+seasonal song, and repeated use of social perches. A particular voice can become
+part of the Colony's shared understanding without turning every call into an
+alarm.
+
+**Body and Citizen form.** Sparrow is one individual Citizen and one Body Unit.
+Its body shapes visible movement, Residence use, EMBODY, and its Guest
+Affordance without changing its Civic Share.
+
+**Residence.** Build the Residence at a concealed social perch. Song Sparrow
+needs cover while remaining close enough for calls and company.
+
+**Civic contribution.** One Civic Share through the fixed Teacher Role.
+
+**Guest Affordance — SPEAK: Day Call.** Day Call becomes shared civic
+understanding through ordinary life around the Gathering Place. In an eligible
+daylight Home MEET, it opens a SPEAK response through which familiar Citizens
+can understand one shared warning or instruction.
+
+**Limits.** Day Call creates no alert state, production bonus, universal
+translation, or automatic resolution.
+
+**EMBODY Activity.** Sing from familiar perches, bathe in shallow water, or
+gather material for the concealed nest.
+
+**EMBODY Presence.** Sit nearby while a particular voice becomes part of the
+Colony's morning.
+
+#### Toad
+
+**Animal identity.** American Toad moves between damp ground, shallow water,
+and dry refuge. Stillness, sensitivity to moisture, and familiarity with runoff
+make the changing boundary between water and inhabited ground central to its
+life.
+
+**Body and Citizen form.** Toad is one individual Citizen and one Body Unit. Its
+body shapes visible movement, Residence use, EMBODY, and its Guest Affordance
+without changing its Civic Share.
+
+**Residence.** Build the Residence at a wet edge with dry refuge. American Toad
+needs to move easily between damp ground and protected rest.
+
+**Civic contribution.** One Civic Share through the fixed Caretaker Role.
+
+**Guest Affordance — Wet-Ground Care.** During an eligible Garden Home MEET
+concerning runoff, dampness, or invertebrate pressure, Wet-Ground Care opens a
+Caretaker response that can redirect or contain the immediate problem and
+protect current yield or cultivated continuity when either is already at stake.
+
+**Limits.** Wet-Ground Care affects only the present Garden Home MEET and
+changes neither standing yield nor the Garden's ordinary rules.
+
+**EMBODY Activity.** Move through wet leaves, sit in warm rain, or make a small
+feeding movement at dusk.
+
+**EMBODY Presence.** Wait at the dry refuge while water gathers, passes, and
+recedes around the Residence.
+
+#### Fireflies
+
+**Animal identity.** The Firefly Family appears as a small recognizable company
+of lights whose formation, pulse, and route recur together. Coordinated
+illumination makes the family more legible and memorable than any single tiny
+body.
+
+**Body and Citizen form.** Fireflies are one collective-bodied Citizen and one
+Body Unit. Several visible bodies express one household; they create no
+additional Civic Shares, assignments, inventories, or Affordance uses.
+
+**Residence.** Build the Residence in a dark, damp flight space. The Firefly
+Family needs room to circulate together without harsh light overwhelming its
+signals.
+
+**Civic contribution.** One Civic Share through the fixed Leader Role.
+
+**Guest Affordance — SPEAK: Lantern Procession.** During an eligible nighttime
+SPEAK Home MEET, the household's shared light makes faces, gestures, and the
+relationship among participants easier to understand, allowing an eligible
+win-win resolution to become available.
+
+**Limits.** Lantern Procession does not guarantee that resolution, extend the
+workday, illuminate Home generally, or create permanent lighting.
+
+**EMBODY Activity.** Guide the household as a loose constellation, widening or
+gathering its formation above one familiar part of Home.
+
+**EMBODY Presence.** Accompany first emergence as separate lights gradually
+assemble outside the dark Residence.
+
+#### Groundhog
+
+**Animal identity.** Groundhog combines deep burrowing, upright observation,
+close attention to changing ground, and a life strongly shaped by season. Green
+growth is understood through timing and recurrence rather than through
+individual cultivated plots.
+
+**Body and Citizen form.** Groundhog is one individual Citizen and one Body
+Unit. Its body shapes visible movement, Residence use, EMBODY, and its Guest
+Affordance without changing its Civic Share.
+
+**Residence.** Build the Residence in deep, well-drained ground. Groundhog needs
+stable earth for a substantial burrow without ordinary waterlogging.
+
+**Civic contribution.** One Civic Share through the fixed Gardener Role.
+
+**Guest Affordance — Seasonal Telegraph.** Seasonal Telegraph sharpens existing
+warning of an approaching seasonal or environmental pressure while Groundhog is
+present and available. It identifies the kind of change becoming likely, such
+as hard frost, flood, heat, or disruptive human work, and passes through the
+ordinary Almanac and Community Board presentation so the player may rebalance.
+
+**Limits.** Seasonal Telegraph predicts neither exact timing nor severity and
+creates no forecast system, event immunity, or additional Watchkeeper Civic
+Share.
+
+**EMBODY Activity.** Clear the burrow entrance, stand upright at the lookout, or
+settle into the sun.
+
+**EMBODY Presence.** Sit beside the burrow while wind, temperature, and growing
+things disclose the season bodily.
+
+#### Turtle
+
+**Animal identity.** Painted Turtle lives between shallow water, sun-warmed
+surfaces, and the protection carried in its shell. Deliberate movement and
+bodily patience give it a different relationship with urgency, shelter, and the
+passage of time.
+
+**Body and Citizen form.** Turtle is one individual Citizen and one Body Unit.
+Its body shapes visible movement, Residence use, and EMBODY without changing
+its Civic Share.
+
+**Residence.** Establish the Residence within one completed Garden. The Garden
+must provide shallow water and safe movement to a sun-warmed basking place.
+
+**Civic contribution.** One Civic Share through the fixed Caretaker Role.
+
+**Guest Affordance — Water Garden Residence.** A Garden satisfying Turtle's
+Residence Fit may incorporate the Residence as an authored exception to
+ordinary Place use. Establishing it still requires an ordinary Builder Project,
+material, and time but consumes no separate Place. The Garden retains its
+ordinary improvement rules and one-Project capacity.
+
+**Limits.** Water Garden Residence changes only Place use; it adds no yield,
+Practice Strength, or additional capacity.
+
+**EMBODY Activity.** Bask, enter shallow water, and move deliberately through
+the host Garden.
+
+**EMBODY Presence.** Rest half in the water while highway light and Garden
+movement pass across its surface.
+
+#### Bumblebees
+
+**Animal identity.** The Bumblebee Household is known through several visible
+bodies, shared circulation, persistent hum, and repeated return. Collective
+activity makes the household legible as one Citizen without reducing it to a
+single representative bee.
+
+**Body and Citizen form.** Bumblebees are one collective-bodied Citizen and one
+Body Unit. Several visible bodies express one household; they create no
+additional Civic Shares, assignments, inventories, or Affordance uses.
+
+**Residence.** Establish the Residence within one completed Garden. The Garden
+must provide a protected nesting cavity with sheltered access to sustained
+flowering growth.
+
+**Civic contribution.** One Civic Share through the fixed Gardener Role.
+
+**Guest Affordance — Garden Cohabitation.** The Bumblebee Residence may be
+incorporated into one completed Garden as an authored exception to ordinary
+Place use. Establishing it still requires an ordinary Builder Project, material,
+and time but consumes no separate Place. The Garden retains its ordinary
+improvement rules and one-Project capacity.
+
+While the host Garden is usable and the Bumblebee Household is present,
+available, and sustaining Gardener responsibility, that Garden contributes one
+additional half chunk of Perishable Sustenance. The half chunk enters the
+ordinary fractional-throughput cadence and adds to any half chunk earned through
+the Garden's Spatial Alignment. Project commitment or other unavailability
+withdraws both the household's ordinary Gardener contribution and this
+half-chunk contribution.
+
+**Limits.** Garden Cohabitation affects only the host Garden. It neither assigns
+bees to routes, simulates pollination, modifies every Garden, nor creates a
+second Guest Affordance.
+
+**EMBODY Activity.** Accompany the household through an impressionistic circuit
+between its protected nest and the host Garden's flowers.
+
+**EMBODY Presence.** Feel the household's hum and warmth at first emergence or
+remain with it as rising wind draws everyone home.
+
+#### Mole
+
+**Animal identity.** Eastern Mole perceives ground vibration, moving soil,
+hidden voids, and the resistance of material around its body. It knows
+constructed Home partly through what lies immediately beneath surfaces other
+Citizens treat as solid.
+
+**Body and Citizen form.** Mole is one individual Citizen and one Body Unit. Its
+body shapes visible movement, Residence use, EMBODY, and its Guest Affordance
+without changing its Civic Share.
+
+**Residence.** Build the Residence in visible, undisturbed soil. Eastern Mole
+needs workable ground while its entrances and surface mounds remain legible as
+part of Home.
+
+**Civic contribution.** One Civic Share through the fixed Builder Role.
+
+**Guest Affordance — Subsurface Diagnosis.** When a Home MEET concerns the
+ground beneath an established Place, Mole identifies the relevant hidden
+physical cause, such as saturated soil, a void, undercutting, frost movement, or
+a buried obstruction. That knowledge may change an existing response or
+establish the need for an ordinary Builder Project.
+
+**Limits.** Subsurface Diagnosis creates no underground simulation and neither
+excavates, repairs, nor improves the Place automatically.
+
+**EMBODY Activity.** Dig a short visible run, push loose earth into shape, and
+pause to read vibrations through the ground.
+
+**EMBODY Presence.** Rest at a familiar mound opening while footsteps, weather,
+and Colony movement travel through the soil.
+
+#### Bat
+
+**Animal identity.** Little Brown Bat navigates through echolocation and local
+flight while remaining sensitive to enclosed air and structural surfaces. Dry
+darkness is inhabited space rather than an absence of useful sight.
+
+**Body and Citizen form.** Bat is one individual Citizen and one Body Unit. Its
+body shapes visible movement, Residence use, and EMBODY without changing its
+Civic Share.
+
+**Residence.** Build the Residence in a high, dry-dark roost. A suitable
+Workshop may incorporate that protected hanging space and clear flight opening
+without consuming a separate Place.
+
+**Civic contribution.** One Civic Share through the fixed Builder Role.
+
+**Guest Affordance — Workshop Roost.** A suitable Workshop may incorporate
+Bat's high, dry-dark, smoke-free Residence as an authored exception to ordinary
+Place use. Establishing it still requires an ordinary Builder Project,
+material, and time but consumes no separate Place. The Workshop retains its
+ordinary improvement rules and one-Project capacity.
+
+**Limits.** Workshop Roost adds no Practice Strength, passive output, Project
+progress, or additional capacity.
+
+**EMBODY Activity.** Hang and groom, turn toward returning echoes, or make a
+short dusk circuit through the Workshop aperture.
+
+**EMBODY Presence.** Remain in the dry-dark roost while sound and changing air
+describe the Workshop and Home beyond it.
+
+#### Pigeon
+
+**Animal identity.** Rock Pigeon navigates human structures through landmark
+memory, repeated routes, and social signals exchanged across distance. Ledges,
+overpasses, rooftops, and faraway flock sites belong to one familiar inhabited
+geography.
+
+**Body and Citizen form.** Pigeon is one individual Citizen and one Body Unit.
+Its body shapes visible movement, Residence use, and EMBODY without changing
+its Civic Share.
+
+**Residence.** Establish the Residence within one completed Gathering Place.
+The Gathering Place must provide a stable open built ledge with clear air for
+landing.
+
+**Civic contribution.** One Civic Share through the fixed Leader Role.
+
+**Guest Affordance — Gathering Loft.** A Gathering Place satisfying Pigeon's
+Residence Fit may incorporate the Residence as an authored exception to
+ordinary Place use. Establishing it still requires an ordinary Builder Project,
+material, and time but consumes no separate Place. The Gathering Place retains
+its ordinary improvement rules and one-Project capacity.
+
+**Limits.** Gathering Loft changes only Place use; it adds no Practice Strength
+or additional capacity.
+
+**EMBODY Activity.** Dust-bathe, head-bob through the Gathering Place, or circle
+Home before returning to the same ledge.
+
+**EMBODY Presence.** Warm on the Gathering Loft while civic life continues
+below and distant structures mark the horizon.
+
+#### Skunk
+
+**Animal identity.** Striped Skunk moves deliberately at night and communicates
+warning before resorting to force. Posture, scent, and unmistakable boundary
+presence require other Citizens to negotiate proximity rather than assume it.
+
+**Body and Citizen form.** Skunk is one individual Citizen and one Body Unit.
+Its body shapes visible movement, Residence use, EMBODY, and its Guest
+Affordance without changing its Civic Share.
+
+**Residence.** Build the Residence at the downwind Colony boundary. The location
+lets ordinary airflow carry scent away from the inhabited center while
+preserving direct outside access.
+
+**Civic contribution.** One Civic Share through the fixed Watchkeeper Role.
+
+**Guest Affordance — SPEAK: Boundary Deterrence.** During an eligible SPEAK Home
+MEET shaped by threatening animal pressure at the Colony boundary, Skunk's
+deliberate warning projects credible toughness and allows a favorable nonviolent
+resolution to become available.
+
+**Limits.** Boundary Deterrence does not guarantee success or automatic
+defense; it changes only the available SPEAK resolution.
+
+**EMBODY Activity.** Walk the downwind boundary, test the air, root through
+leaves, or groom outside the den.
+
+**EMBODY Presence.** Rest near the Residence while the Colony's familiar
+activity keeps a respectful lane open.
+
+#### Possum
+
+**Animal identity.** Virginia Opossum is a nocturnal climber and scavenger
+comfortable around remains that other Citizens avoid. Careful handling, bodily
+resilience, and profound stillness under danger complicate an outward
+appearance that may initially inspire mistrust.
+
+**Body and Citizen form.** Possum is one individual Citizen and one Body Unit.
+Its body shapes visible movement, Residence use, and EMBODY without changing
+its Civic Share.
+
+**Residence.** Establish the Residence within one completed Hearth. The Hearth
+must provide a ventilated outer annex where Possum can rest apart from its warm,
+clean center.
+
+**Civic contribution.** One Civic Share through the fixed Healer Role.
+
+**Guest Affordance — Hearth Annex.** A Hearth satisfying Possum's Residence Fit
+may incorporate the Residence as an authored exception to ordinary Place use.
+Establishing it still requires an ordinary Builder Project, material, and time
+but consumes no separate Place. The Hearth retains its ordinary improvement
+rules and one-Project capacity.
+
+**Limits.** Hearth Annex changes only Place use; it adds no Remedy Preparation,
+Practice Strength, or additional capacity.
+
+**EMBODY Activity.** Climb through the Hearth Annex, balance with the tail, and
+arrange a sheltered sleeping place.
+
+**EMBODY Presence.** Wake slowly in the ventilated shade while Hearth activity
+continues nearby.
+
+### Departure and continuity
+
+- Injury, aging, relationship, or another authored life event able to change how
+  a Guest participates without reducing Citizen standing
+- Expedition-to-Resident transition possible as an authored life change rather
+  than routine reassignment
+- Departure and death changing the living Roster without erasing relationships,
+  memory, or history
+- A vacant Guest Residence persisting as a Place or part of its host Practice,
+  and remaining available as an absence, memorial, or later adaptation
+
+### Roster boundaries
+
+- Guest recruitment optional at every Tier
+- No Tier, victory condition, or essential system requiring a Guest, particular
+  species, or completed roster
+- Physical accommodation, civic responsibility, and relationship governing
+  hospitality rather than a collectible capacity or rarity system
+- Refusal, delay, non-arrival, departure, and no-Guest play remaining complete
+  campaign outcomes
 - No rarity tiers, collection percentage, or recruit-all reward
 
 ## 4.4 Relationships and Family

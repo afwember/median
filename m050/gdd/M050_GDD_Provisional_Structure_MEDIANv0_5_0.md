@@ -77,101 +77,49 @@ persistent state enacted by this narrative.
 
 ## 1.2 The attachment-forward base builder
 
+`Philosophy.Pillar.AttachmentForward`
+
 ### What attachment means
 
-- Imagined people, places, objects, and histories acquiring durable emotional
-  reality
-- Attachment invited through legibility, contact, care, identity, shared
-  history, credible danger, and return—never demanded or declared for the
-  player
-- The human propensity to form such attachments, demonstrated by long-lived
-  fandoms around worlds such as Middle-earth and *Star Trek*, remembered
-  Pokémon companions, and personally built *Animal Crossing* towns
-- These examples as evidence of attachment behavior, not additional creative
-  influences on MEDIAN
+Attachment begins when imagined people, places, objects, and histories acquire
+durable emotional reality. A work can invite it through legibility, contact,
+care, identity, shared history, credible danger, and return, while leaving the
+player free to decide what matters rather than demanding or declaring
+attachment on their behalf.
 
-### The invented genre
+The human propensity to form such attachments appears in long-lived fandoms
+around worlds such as Middle-earth and *Star Trek*, remembered Pokémon
+companions, and personally built *Animal Crossing* towns. These examples
+demonstrate attachment behavior; they are not additional creative influences on
+MEDIAN.
 
-- Why the term is attachment-forward rather than attachment-first
-- Comparison with production-forward and survival-forward base builders
-- Home as an inhabited social protagonist rather than a machine, defensive
-  apparatus, or disposable platform
-- Progress accumulating around Home rather than consuming or replacing it
+Attachment-forward design asks what a game enables the player to know, value,
+remember, and find worthy of protection. It points the whole design toward
+particularity: a Citizen becomes known, a settlement becomes historically
+specific, and a Place or object acquires meaning through what happened there
+and who was present.
 
-### Cozy conditions and attachment-forward design
+MEDIAN treats Home as an inhabited social protagonist. Production, survival,
+construction, and exploration serve one continuing Colony rather than
+consuming or replacing it. Its four anchors of attachment are **Home, Citizen,
+Place or object, and Memory**.
 
-Cozy and attachment-forward describe different dimensions of design. Cozy
-describes an experiential condition: safety, abundance, softness, familiarity,
-manageable demands, and relief from imminent loss. Such a condition can fill a
-game or exist as a protected interval within a more demanding one. This use
-follows [Project Horseshoe's formulation of
-coziness](https://projecthorseshoe.com/reports/featured/ph17r3.htm) through
-safety, abundance, and softness.
+> **Legibility → competence → stability → attention → attachment**
 
-Attachment-forward design asks what the game enables the player to know,
-value, remember, and find worthy of protection. It orients the whole game
-toward particularity. A Citizen becomes known rather than merely useful; a
-settlement becomes historically specific rather than merely attractive; an
-object matters because of who made, carried, lost, or returned with it; and a
-familiar place accumulates the journeys and lives that passed through it.
+A comprehensible Colony permits competent stewardship. Competence can produce
+Quiet Equilibrium, releasing attention toward ordinary life and EMBODY. That
+attachment then gives weight to departure, Exposure, consequence, Homecoming,
+and the changed life that returns.
 
-MEDIAN deliberately creates cozy conditions. Home can become safe, familiar,
-abundant, and quiet. Citizens eat, rest, work, play, tend one another, and
-inhabit recognizable Places. Quiet Equilibrium releases the player's attention
-from urgent stewardship, and EMBODY turns that released attention toward
-ordinary life.
-
-The complete rhythm also carries particular Citizens out of sanctuary and into
-Exposure, consequence, and Return. Cozy intervals give that rhythm somewhere
-to begin and somewhere worth returning to. Danger gives protection weight when
-its operation is legible, bounded, and causally trustworthy; it changes known
-lives before it threatens to erase them. Security gives the player reason to
-invest, while consequence makes that investment matter.
+Cozy and attachment-forward describe different dimensions. Cozy is an
+experiential condition; attachment-forward is a design direction. MEDIAN's
+quiet belongs to particular lives and follows credible Game Logic.
 
 > **MEDIAN earns its cozy.**
 
-Cozy is one emotional condition within MEDIAN. Attachment makes that condition
-belong to someone, and makes comfort worth protecting.
-
-### Successful stillness: the pleasure of Home
-
-- Success not defined by continual expansion, territorial domination, maximum
-  population, or infinite production
-- Growth serving the capacity of one particular Home to sustain ordinary life
-- Quiet Equilibrium as an earned condition in which nothing urgently needs
-  fixing and the player is free to observe, inhabit, and enjoy the Colony
-- Calm grounded in understandable Game Logic rather than decorative inactivity
-- Continued meaning through relationships, memory, craft, hospitality,
-  exploration, and chosen civic ambition without required conquest
-- Milestones and campaign horizons without a mandatory terminal victory state
-- A Shire-like pleasure in familiar paths, known neighbors, small rituals,
-  accumulated history, and peaceful continued existence
-
-### The four anchors of attachment
-
-- Home
-- Citizen
-- Place or object
-- Memory
-- Systems may strengthen several anchors simultaneously without multiplying
-  attachment categories unnecessarily
-
-### The two attachment chains
-
-- Legibility → Competence → Stability → Attention → Attachment
-- Attachment → Chosen Risk → Consequence → Return → Deeper Attachment
-- The causal relationship between mechanical confidence and released attention
-
-### The player's position
-
-- **Steward** — arranges finite civic attention
-- **Chooser** — decides when sending particular Citizens Away is justified
-- **Witness** — remains present when consequence belongs to a named life
-- **Companion** — accompanies rather than possesses during EMBODY
-- **Rememberer** — preserves what mattered without converting every memory into
-  advantage
-- The player is not principally a commander, mayor, optimizer, or possessed
-  avatar
+Appendix I gives the complete attachment-forward philosophy, its general
+manifestations across systems and media, its relationship to cozy experience,
+and its design protections and acceptance test.
 
 ## 1.3 Global pillars and governing doctrines
 
@@ -345,8 +293,8 @@ design doctrines that protect those pillars across the whole design.
   legible
 - Traversal, observation, ordinary discovery, and changing environmental
   information remaining native to the Field without demanding a separate scene
-- Engagement with a Node or Presence opening MEET when it becomes consequential
-  and requires focused choice
+- Engagement with a Node, animal, or group opening MEET when it becomes
+  consequential and requires focused choice
 - Reaching a Roadway threshold moving the party into RISK, with a completed
   Crossing returning it to the continuous Field on the other side
 - Return using the same geography and accounting for elapsed time, changed
@@ -519,9 +467,9 @@ MEET may begin in either direction:
 - **The player attends:** engaging a consequential Node, opening a known Colony
   situation, preparing to Launch, choosing to Rest, or addressing an available
   relationship.
-- **The situation calls:** World Pressure reaches the Colony, a Presence
-  intercepts the party, an authored event matures, or completed RISK creates a
-  decision on the far side.
+- **The situation calls:** World Pressure reaches the Colony, another animal or
+  group intercepts the party, an authored event matures, or completed RISK
+  creates a decision on the far side.
 
 An urgent situation never ambushes the player inside EMBODY. It ends EMBODY
 eligibility and returns attention to the appropriate Register before MEET
@@ -556,8 +504,8 @@ still available.
 
 Every MEET has one clear **subject**: the particular situation now receiving
 the player's attention. Its subject may be a threatened Place, an encountered
-Presence, a contested Resource, a social exchange, a returning party, or any
-other situated matter that crosses a MEET threshold.
+animal or group, a contested Resource, a social exchange, a returning party,
+or any other situated matter that crosses a MEET threshold.
 
 A MEET ordinarily presents **one to three active stakes**, ordered by their
 importance to the present situation. A stake is something the current response
@@ -579,8 +527,8 @@ Participants appear at the scale the situation requires:
 
 Named Citizens are not added as decorative witnesses. Core Citizens remain
 fractional player characters within the Colony or party rather than autonomous
-agents who may independently refuse the player's command. Non-Citizen
-Presences retain their own aims and agency, but their presence does not by
+agents who may independently refuse the player's command. Non-Citizen animals
+and groups retain their own aims and agency, but their presence does not by
 itself imply conflict.
 
 ### Presentation in the world
@@ -822,9 +770,9 @@ MEET situations have three useful design relationships:
 
 - **Systemic forms:** Launch, Rest, and Homecoming use dedicated procedures
   because they conduct recurring transitions.
-- **Situated decisions:** Home Pressure, Nodes, Presences, Field Cards, RISK
-  aftermath, relationships, and other owning systems may supply a particular
-  condition that crosses a MEET threshold.
+- **Situated decisions:** Home Pressure, Nodes, encountered animals, Field
+  Cards, RISK aftermath, relationships, and other owning systems may supply a
+  particular condition that crosses a MEET threshold.
 - **Choice Events:** authored situations enter through whichever Home or Away
   context owns them and use MEET to present and resolve their content.
 
@@ -909,6 +857,21 @@ and quiet from emptiness.
 - The Sound Walls as hard lateral world boundaries rather than playable zones
 - Shoulders, road edges, drainage, vegetation, and other features situated
   within the playable bands
+
+This simple section contains a lived gradient on either side. The Median
+interior gives way to verge, shoulder, drainage, exposed Staging ground, and the
+Main Roadway. Beyond it, the Roadway-side Margin receives the strongest River
+Spume and most volatile material opportunity; mixed ground occupies the middle;
+and the Sound-Wall-side Margin more readily traps moisture, vegetation, shelter,
+and debris. The ground at the wall's base remains playable while the wall
+itself ends the world laterally.
+
+- Local geometry able to narrow, widen, flood, harden, obscure, or interrupt
+  these tendencies while preserving the cross-sectional relationship
+- A smaller Reach-border road creating a compressed Roadway edge, moving
+  surface, and far-side refuge inside longitudinal Median travel
+- The cross-section remaining physically continuous rather than dividing The
+  Highway into abstract zones or separate maps
 
 ### From Corridor to Reach to Median
 
@@ -1341,7 +1304,7 @@ Founding-biome development may compare three stable views:
 ### The Roadways: barrier and exposure
 
 - Crossing a Roadway being dangerous and consequential enough to occupy an
-  entire game Mode: RISK; this chapter explains why, while its procedures come
+  entire Register: RISK; this chapter explains why, while its procedures come
   later
 - The Main Roadways as large moving barriers between Median and Margins
 - Smaller Reach-border roads as lighter but still consequential moving barriers
@@ -1365,12 +1328,26 @@ Founding-biome development may compare three stable views:
 
 - River Spume as the vehicle-generated turbulence, pressure shifts, and debris
   lift above and beside a Roadway
-- Its character changing with traffic conditions over the course of the day
+- Its character changing with traffic thickness—the present volume and spacing
+  of vehicles—alongside speed, vehicle mix, surface wetness, weather, season,
+  and time of day
+- Dense traffic able to create sustained noise, fumes, moving air, spray, and
+  debris disturbance while thinner high-speed traffic produces separated but
+  forceful pulses
 - Its effects strongest over and immediately beside the Roadway, then
   diminishing across the Margin toward the Sound Walls
-- River Spume materially affecting Crossing, the Field, and Field MEETs within
-  its reach
-- Exact mechanical effects deferred to Away and RISK
+- A Node's actual distance from the Roadway determining how strongly current
+  River Spume enters its atmosphere, legibility, available responses, and
+  possible consequences during MEET
+- Roadway-proximate Nodes carrying an eligible chance for passing traffic to
+  throw or dislodge an object into the situation, with likelihood and character
+  following the present traffic, vehicle mix, weather, surface, season, and
+  human activity
+- A thrown object able to become immediate danger, interruption, material
+  opportunity, or persistent Node change according to what physically arrives
+- River Spume materially affecting Crossing, the Field, and situated MEETs
+  without requiring one universal penalty or separate proximity meter
+- Exact attenuation and thrown-object chances remaining a tuning question
 
 ### The Margins: Abundance and Disturbance
 
@@ -1386,6 +1363,20 @@ Founding-biome development may compare three stable views:
   maintenance, predators, human access, and River Spume
 - The Sound Wall terminating the Margin as a hard world boundary rather than a
   playable zone
+
+### Sound Walls: the sheltered boundary
+
+- Sound Walls making the Corridor's human construction and lateral limit
+  continuously legible
+- Their material, height, joints, damage, drainage, and orientation shaping
+  shade, warmth, wind, echo, vibration, runoff, and enclosure at animal scale
+- Seeds, leaves, litter, water, and blown material collecting at their bases
+  and supporting Nodes or passages where local geometry permits
+- Wall-side growth tending toward greater shelter and stability than
+  Roadway-edge growth while remaining exposed to mowing, maintenance, flood,
+  heat, and contamination
+- Openings, culverts, breaks, and service structures following their actual
+  physical affordances without extending play beyond The Highway
 
 ### Resources Across the Margin
 
@@ -1415,6 +1406,26 @@ Founding-biome development may compare three stable views:
 - These signals providing partial information rather than perfect prediction
   and requiring interpretation through animal experience and folklore
 - Detailed traffic and environmental-state effects deferred to Chapter 2.5
+
+### Human activity as weather
+
+Traffic is the continuous form of a broader relationship: animals experience
+human activity as weather. They seldom see or understand its full cause, but
+they can read rhythm, approach, intensity, direction, residue, and change.
+
+- Traffic, maintenance, mowing, drainage work, litter, lighting, machinery,
+  collisions, and Road Work arriving as large environmental conditions rather
+  than as direct human interaction
+- Repeated schedules and Day Bands allowing broad expectation while actual
+  timing, extent, and local effect remain variable
+- Sound, vibration, moving air, light, runoff, fumes, cut vegetation, displaced
+  matter, and changed access often announcing human activity before its source
+  is visible
+- Human vehicles and machinery remaining fully depictable while human bodies
+  stay outside the frame
+- The animals responding through observation, preparation, shelter, movement,
+  RISK, MEET, and persistent adaptation rather than through a separate
+  human-behavior simulation
 
 ## 2.5 Time, Traffic, and Environmental Change
 
@@ -1528,6 +1539,46 @@ Home and Away use the same clock at the same resolution.
   or blanket environmental penalty
 - Exact season lengths, weather generation, and Sustenance accounting deferred
   to their later system chapters
+
+### World Pressure and Civic Balance
+
+Weather, traffic, River Spume, season, animal activity, and human disturbance
+become **World Pressure** when their present effects bear upon the Colony. They
+do not create one universal environmental score. Each actual circumstance may
+add contextual Load to the Role axes it tests, act through relevant Places and
+Practice Strength, interact with existing Readiness or Pressure, or supply the
+subject of a Home MEET.
+
+- Heavy rain able to test drainage, cultivated ground, Stores, shelter, care,
+  warning, or coordination according to where the water actually goes
+- Wind able to matter through coverings, routes, hanging stores, exposed
+  Practices, and the Citizens who depend upon them
+- Heat, cold, flood, traffic disturbance, predator movement, or human work
+  locating their Load in the civic domains and physical Places genuinely
+  involved
+- Adequate Readiness and situated Practice Strength able to keep an ordinary
+  pressure within routine DWELL, while a consequential shortfall or choice
+  brings it into MEET
+- The same world condition changing TRAVEL reach, Node circumstances, Rest,
+  RISK, or Away MEET for the expedition experiencing it
+
+### Road Work
+
+Road Work is a current but deliberately undeveloped World Pressure family for
+v0.5. It represents active human alteration of The Highway: lane work, barrier
+repair, mowing, drainage clearance, culvert work, resurfacing, temporary
+materials, machinery, and related disturbance.
+
+- Road Work able to change traffic, River Spume, sound, vibration, light,
+  drainage, vegetation, paths, Nodes, Roadway edges, and Crossing conditions
+- Its physical signs able to Telegraph an approaching intervention before
+  Impact
+- Persistence able to leave changed ground, displaced material, obstruction,
+  access, shelter, or a new situated opportunity after the workers depart
+- Particular effects following the event arc and existing World Pressure,
+  TRAVEL, RISK, MEET, and aftermath systems
+- Exact generation, duration, work families, warning language, and mechanical
+  consequences reserved for later authorial development
 
 ### Events Through Time
 
@@ -3250,15 +3301,15 @@ contributions stay legible.
 - **Colony Roster** counting every living named Citizen who belongs to the
   Colony, including adults, young Citizens, Guests, Patients, and Citizens who
   are Away
-- **Home Presence** counting the Roster Citizens physically present at the Home
-  Median
+- **Citizens at Home** counting the Roster Citizens physically present at the
+  Home Median
 - **Available Civic Population** counting Home-present adults currently able to
   sustain Roles or commit Civic Share-Days
 - **Dependents and Patients** identifying present Citizens who require support
   without currently contributing an ordinary Civic Share
 - The interface keeping these counts distinct so that total population never
   appears to be interchangeable workforce
-- DAWN resolving presence and availability before calculating Role Balance and
+- DAWN resolving location and availability before calculating Role Balance and
   Practice support
 - A Citizen who is Away, acutely injured, receiving intensive care, or otherwise
   unavailable remaining a full member of the Roster without contributing a
@@ -3320,7 +3371,7 @@ contributions stay legible.
 ### Wanderers and arrival
 
 - Wanderers as the primary early path for adult population growth
-- Each Wanderer arriving with a Given Name, Prior-Life Tale, and any relevant
+- Each Wanderer arriving with a Given Name, Prior-life Tale, and any relevant
   injury, relationship, knowledge, or unfinished circumstance
 - Arrival resolving through MEET, with choices shaped by the Colony's actual
   ability to offer refuge
@@ -3628,24 +3679,25 @@ shared history cultivate that friendship.
 - A Body Unit never merging several individual Citizens into one life or
   dividing one Citizen's personhood
 
-### Belonging, presence, and availability
+### Belonging, location, and availability
 
 Three separate questions govern a Citizen's current state:
 
 1. **Belonging:** Is this animal a living member of the Colony?
-2. **Presence:** Where are they now?
+2. **Location:** Where are they now?
 3. **Availability:** What can they presently contribute or participate in?
 
 - The Colony Roster answering belonging
-- Home or Away Presence answering location, with current Away position
-  identifying whether a Citizen is traveling, Crossing, at a Node, or stopping
-  at an Outpost
+- A Citizen's location showing **Home** while they are at the Home Median and
+  their current Away position while they are traveling, Crossing, at a Node,
+  or stopping at an Outpost
 - Civic availability answering whether the Citizen can sustain a Role or enter
   a Project
 - Young Citizens, Patients, and other dependents remaining present members
   without an available Civic Share
-- Launch, Project commitment, injury, treatment, or another temporary barrier
-  changing presence or availability without removing citizenship
+- Launch, Homecoming, Project commitment, injury, treatment, or another
+  temporary barrier changing location or availability without removing
+  citizenship
 - Death removing a Citizen from the living Roster without erasing their
   historical belonging
 
@@ -4879,7 +4931,7 @@ its own history and expression.
 - Friendship, affection, trust, partnership, kinship, mentorship, rivalry,
   estrangement, obligation, grief, and other authored relationships able to
   coexist without forming one progression ladder
-- A relationship able to begin before citizenship through a Prior-Life Tale or
+- A relationship able to begin before citizenship through a Prior-life Tale or
   arise during the campaign through shared life
 - The same relationship remaining true across Home, Away, and every Register
   until an experienced event changes it
@@ -4959,7 +5011,7 @@ authored events. v0.5 uses two mechanically distinct stages: **Young** and
   Given Names and immediate family relationships
 - Adoption and other authored arrivals able to bring a young Citizen into new
   family relationships without being classified as Nesting
-- Wanderers and Guests arriving with Prior-Life Tales, relationships, and lives
+- Wanderers and Guests arriving with Prior-life Tales, relationships, and lives
   that precede their place in the Colony
 - Origin changing what history and relationships accompany a Citizen without
   creating different grades of civic standing
@@ -5767,7 +5819,7 @@ content of TRAVEL.
 - Selection reflecting the actual Reach, position, terrain, season, Day Band,
   weather, and persistent world state
 - Candidate families including opportunity, environmental change, passing
-  Presence, and human disturbance
+  animals, and human disturbance
 - A minor card directly changing or revealing the Field without opening a
   decision matrix
 - A consequential card opening MEET with the present party, terrain, stakes,
@@ -6007,23 +6059,23 @@ Each Node may express several overlapping qualities.
 | **Ecological** | Bramble patch, seed fall, insect bloom, water source | Season, abundance, recovery, disturbance |
 | **Material** | Toolbox, litter catch, carcass, construction debris | Contents, condition, depletion, alteration |
 | **Shelter** | Pipe, root pocket, hollow, culvert ledge | Safety, exposure, damage, occupation |
-| **Relational** | Den, Guest camp, claim, meeting landmark | Presence, relationship, terms, prior choices |
+| **Relational** | Den, Guest camp, claim, meeting landmark | Occupant, relationship, terms, prior choices |
 | **Human-made** | Drain, grate, barrier, vehicle cavity, worksite | Configuration, access, activity, hazard |
 
 One Node may have several qualities. A culvert might simultaneously be
 human-made, sheltering, ecological, and occupied.
 
-**Hazard** is a current condition or Presence at a Node rather than a Node
-family. **Memory** is history attached to any Node rather than a separate kind
-of place.
+**Hazard** is a current condition or present animal at a Node rather than a
+Node family. **Memory** is history attached to any Node rather than a separate
+kind of place.
 
 ### Nodes and MEET
 
 - A quiet Node requiring no decision remaining part of TRAVEL
 - A meaningful use, change, claim, opportunity, or danger opening a contextual
   MEET
-- Contest existing only when a Presence or condition opposes what the party is
-  trying to do
+- Contest existing only when another animal, group, or condition opposes what
+  the party is trying to do
 - Contest being a current situation rather than a permanent Node
   classification
 - MEET presenting the choices applicable to the current situation
@@ -6048,8 +6100,8 @@ contract specializes when particular Citizens meet the Field.
 
 ### Situational opposition
 
-Opposition exists when a Presence or condition presently resists what the party
-is trying to do. Contest is a state of that particular situation.
+Opposition exists when an animal, group, or condition presently resists what
+the party is trying to do. Contest is a state of that particular situation.
 
 An unopposed opportunity receives direct contextual responses: gather a
 particular material, provide care, enter shelter, examine visible evidence, or
@@ -6151,8 +6203,9 @@ system that owns it.
   than entering the Colony's stores before Homecoming
 - Injury, Exposure, relationships, and possessions remaining attached to
   the particular Citizens and objects that bear them
-- A changed Node, Presence, resource, claim, or physical feature retaining its
-  actual new state without receiving a generic **cleared** or **completed** tag
+- A changed Node, inhabitant, resource, claim, or physical feature retaining
+  its actual new state without receiving a generic **cleared** or **completed**
+  tag
 - An unresolved situation continuing into another Round only when the changed
   circumstances still meet the MEET threshold
 - A resolved situation returning the player to TRAVEL or the next applicable
@@ -6653,11 +6706,13 @@ Landscape Voice is an immediate presentation ambition: playing MEDIAN should
 sometimes feel like reading a page in a book whose events the player is causing.
 It accompanies and interprets present play as it occurs.
 
-Landscape Voice is MEDIAN's own third-person narrator. Its intended literary
+Landscape Voice is MEDIAN's human third-person narrator. Its intended literary
 feel draws from the landscape-attentive narrators of Richard Adams and J. R. R.
 Tolkien: a voice able to describe country, weather, movement, and simple events
 with clarity and weight. Adams and Tolkien establish critical lineage for an
-original MEDIAN voice.
+original MEDIAN voice. Landscape Voice stands outside the animal community; it
+is distinct from animal speech and from the animal cultural voice that may
+shape Chronicle, Tale, or scene presentation.
 
 ### The playable page
 
@@ -6710,8 +6765,9 @@ original MEDIAN voice.
   actual capabilities or vulnerabilities enter the event
 - Mixed parties remaining together in one narrated landscape rather than
   dividing the passage into competing viewpoints
-- The same narrator describing these bodily relationships without creating
-  separate realities, cognitive limits, or rigid species prose templates
+- The same human narrator describing these bodily relationships without
+  adopting an animal's cultural voice or creating separate realities,
+  cognitive limits, or rigid species prose templates
 
 ### Truth and interpretation
 
@@ -6830,8 +6886,11 @@ entries.
 - A later Chronicle passage able to add perspective to earlier history without
   changing its recorded facts
 - Chronicle material remaining readable as the Colony grows
+- The host Core Species' habits of attention able to shape which concrete
+  relationships the Chronicle emphasizes and how the Colony expresses its
+  shared history
 
-### Tales and Prior-Life Tales
+### Tales and Prior-life Tales
 
 A **Tale** is a subject-specific translation of selected Record entries. Every
 Citizen and those Items whose histories matter possess one.
@@ -6851,8 +6910,10 @@ Citizen and those Items whose histories matter possess one.
   inventing unrecorded life events
 - A closed Tale remaining accessible after death, destruction, departure, or
   another definitive ending
+- A Tale's language able to reflect the subject's Species, body, community,
+  and learned vocabulary while preserving the same recorded facts
 
-A **Prior-Life Tale** establishes the life a Founder or arriving Citizen had
+A **Prior-life Tale** establishes the life a Founder or arriving Citizen had
 before the Colony knew them. When that history becomes known, its established
 facts enter the Record as prior history distinguished from events witnessed
 during the campaign. Material relevant to hospitality, safety, relationship,
@@ -6862,34 +6923,41 @@ the Citizen's past.
 
 ### Evolving canon images
 
-Campaign Memory has a visual complement: an evolving set of canon images of
-individual Citizens and the Colony. These images let the player see a life and
-a settlement changing alongside their written continuity.
+Campaign Memory has a visual complement: evolving canon images of individual
+Citizens and a small, purpose-built canon representation set for the Colony.
+These images let the player see particular lives and a settlement changing
+alongside their written continuity.
 
-- Every Citizen having a canon image that can evolve as established facts about
-  their appearance, life, relationships, possessions, or circumstances change
-- The Colony having a canon image that can evolve with its Places, Practices,
-  season, damage, repair, growth, and other materially visible history
-- The Colony retaining selected earlier canon images as an intentional visual
-  archive of its development
-- Each Citizen presenting only one current canon image in ordinary play
-- Earlier Citizen images remaining retained and accessible through secondary
-  history menus without competing with the current image in the Citizen view
-- Chronicle material and dedicated Colony-history views presenting relevant
-  Colony archival images without asking the player to choose or compose them
+- Every Citizen having exactly one current canon image in ordinary play,
+  amended when an established, materially visible fact about that Citizen
+  changes
+- Earlier Citizen images remaining accessible through secondary history views
+  without competing with the current image in the Citizen panel
+- The Colony having a small current set of complementary canon views where one
+  image cannot establish its spatial form, material construction, and inhabited
+  life clearly enough
+- The Colony retaining selected superseded views as an intentional visual
+  archive of growth, season, damage, repair, and other visible history
 - The back end deciding when a change warrants a new visual presentation and
-  which established details it should express
-- Canon images serving as the visual source material from which the game
-  generates setups for its various in-game presentations
-- A generated setup able to change composition, framing, pose, and immediate
-  context while preserving the identities and established state represented by
-  its source images
-- Images drawing only upon the Record and current canonical state, never
-  inventing a Citizen, relationship, object, Place, condition, or event
-- Visual presentation complementing written memory without replacing the
-  Record as factual authority
+  which established details it must express
+- Every model-assisted image using the relevant existing canon Citizen, Colony,
+  location, and object imagery as mandatory visual source material
+- The Record and current state governing factual truth, the canon imagery
+  governing visual identity and continuity, and the immediate situation
+  governing only the change in composition
+- Canon imagery anchoring dramatic scenes after a resolved MEET, Register
+  transitions and loading images, Citizen information panels, Chronicle and
+  Tale illustrations, Homecoming, and Colony milestones
+- A composed scene changing framing, pose, light, and immediate context while
+  preserving its subjects and established state; it does not replace a canon
+  image unless a separate lasting change warrants and validates that amendment
 - Whole-Colony moments using a composed civic view rather than an arbitrary
   fixed lineup of Citizen portraits
+- Visual presentation complementing written memory while the Record remains
+  factual authority
+
+Appendix C defines how canon images are established, amended, reused, and
+validated without allowing a generative model to author new facts.
 
 ### The Almanac
 
@@ -7037,9 +7105,20 @@ integrity, persistent state, and transition throughout that sequence.
   rather than rank, aptitude, or a permanent claim to leadership
 - One Founder required to take Leader responsibility before the Colony is
   named
-- Colony naming remaining the player's decision, expressed through the Leader
-  on behalf of the founding party
+- Colony naming remaining the player's one direct naming decision, expressed
+  through the Leader on behalf of the founding party
+- The ancestral Colony's established name remaining visible during the naming
+  decision
+- The player assembling the name from curated word, sound, and form lists
+  through approved name patterns, with every available construction remaining
+  inside MEDIAN's cultural and tonal palette
+- Ground, hope, and memory influencing suggestions and component groupings as
+  overlapping meanings a name may embrace
+- The complete assembled name being visible before confirmation, with the
+  player free to exchange components or consider another valid construction
 - Confirmation establishing and naming the one permanent Colony
+- The confirmed name remaining permanent and entering Campaign Memory as part
+  of Founding
 - The new territory opening immediately in ordinary DWELL before its first
   construction commitment
 
@@ -7215,8 +7294,8 @@ eligible for recognition.
 - Rabbit, Squirrel, and ordinary v0.5 Guest Citizens therefore contributing one
   Body Unit each and Mouse Citizens one-half
 - The threshold remaining a measure of lives belonging to the Colony rather
-  than of Home Presence, current Civic Shares, Residence Capacity, or available
-  workers
+  than of their current location, Civic Shares, Residence Capacity, or
+  availability
 
 ### Civic Dedication
 
@@ -7283,8 +7362,8 @@ Home remains the permanent center from which that outward history accumulates.
 - Parties entering new ground through ordinary TRAVEL and Crossings
 - Distance, Exposure, rest cadence, Carry, bodily condition, and the return
   journey determining practical range
-- Physical obstruction or a situated Presence able to constrain passage through
-  the ordinary world and MEET systems
+- Physical obstruction or a situated inhabitant able to constrain passage
+  through the ordinary world and MEET systems
 - Every visited location, encountered Node, established relationship, and
   resolved change persisting as world state
 
@@ -7744,7 +7823,7 @@ returns the player to the same moment.
 - The **map** presenting known continuous geography, the current party position,
   remaining projected reach, discovered Nodes, Outposts, shelter, and
   established world changes
-- The **Roster** and **Citizen view** presenting belonging, Presence,
+- The **Roster** and **Citizen view** presenting belonging, current location,
   availability, body, Role, relationships, possessions, current canon image,
   and access to the Citizen's Tale
 - The **Chronicle** and **Tales** presenting the player-facing selections of
@@ -7912,20 +7991,25 @@ remain consistent across the presentations generated from that image.
 Each Citizen's current canon image anchors their recurring visual identity.
 Species, body, markings, Keepsake, clothing, Maiming, adaptive devices, and
 other persistent distinctions carry from that image into Roster views, MEET
-tableaux, EMBODY, Chronicle presentation, and other generated setups. A lasting
-change to the Citizen updates the current image while earlier images remain
-available through secondary history views.
+tableaux, EMBODY, dramatic aftermaths, Register transitions, Citizen panels,
+Chronicle presentation, and other generated setups. A lasting change to the
+Citizen updates the current image while earlier images remain available
+through secondary history views.
 
-The Colony accumulates archival canon images at meaningful stages of its life.
-These preserve its changing physical form, inhabited Places, material culture,
-season, damage, repair, growth, and remembered occasions. They complement the
-written Record and provide established visual material from which later
-presentations can be composed.
+The Colony uses a small current canon representation set when complementary
+views are needed to establish its spatial form, inhabited Places, material
+culture, and ordinary life. Superseded views enter its visual archive at
+meaningful stages, preserving season, damage, repair, growth, and remembered
+occasions. These images complement the written Record and provide established
+visual material from which later presentations can be composed.
 
 A generated setup interprets current canon images within the actual place and
 state being presented. Register composition, camera, light, posture, and
 participating entities may change while persistent bodies, objects,
 relationships, geography, and consequences remain recognizable.
+In the model-assisted realization, the relevant existing canon imagery is
+mandatory input rather than optional inspiration; Appendix C defines the
+complete reference-and-amend method.
 
 ### Animal scale and human infrastructure
 
@@ -8014,9 +8098,10 @@ species and Citizens. Maiming changes movement sound consistently and
 respectfully. When Tharn strikes, the wider field narrows abruptly around the
 Citizen's breath, pulse, fixation, and immediate peril.
 
-Landscape Voice occupies its own clear narrative register. It can describe
-country, weather, movement, and simple events over the world while remaining
-distinct from Citizen speech and from mechanical notification.
+Landscape Voice occupies its own clear narrative register. Its human narrator
+can describe country, weather, movement, and simple events over the world while
+remaining distinct from Citizen speech, animal cultural expression, and
+mechanical notification.
 
 Music is sparse and adaptive. It may support transitions, Homecoming,
 ceremonial MEETs, wonder, grief, and other authored changes in emotional scale,
@@ -8121,6 +8206,85 @@ A Hyphen-bound form marks one deliberately adopted animal-language word whose
 translation requires several English elements, such as After-name or
 Prior-life Tale. Ordinary compound names follow ordinary prose rather than
 acquiring hyphens as decorative animal flavor.
+
+Species voice arises from selective attention rather than accent, intelligence
+ranking, or rigid syntax. Rabbit expression may first notice what gathers life
+and keeps shared ground safe; Mouse expression what joins, opens, encloses, or
+fails at fine scale; Squirrel expression what connects points across height,
+distance, and motion. Chronicle passages, Tales, dialogue, and scenes may use
+those tendencies to present the same established world through animal culture.
+They change emphasis, comparison, and assumed vocabulary without changing
+facts or constructing separate realities.
+
+An unfamiliar human object may first be expressed through sensed material,
+movement, sound, danger, or use. Repeated familiarity establishes an ordinary
+shared term. MEDIAN's animals retain knowledge of their human-made environment
+rather than rediscovering common fences, drains, vehicles, and structures each
+time they appear.
+
+### Narrative throughout the Concept Sourcebook
+
+Narrative enters the Concept Sourcebook in the form best suited to its present
+work. It makes time, relationship, particularity, decision, consequence, or
+remembered change legible while the surrounding specification remains the
+authoritative account of the game.
+
+1. **Sustained narrative** carries a major sequence whose experience depends
+   upon continuity. The Founding Escape is its primary use. A continuous Away
+   expedition may also thread through Part V so Launch, TRAVEL, RISK, MEET,
+   Return, and Homecoming can be understood as one accumulating journey.
+2. **Recurring lived moments** return to the established story Colonies,
+   Citizens, Places, objects, and relationships at different points in their
+   histories. Each later appearance respects what earlier appearances have
+   made true, allowing familiarity and attachment to accumulate across the
+   book.
+3. **Worked play sequences** show the temporal and causal operation of systems
+   in which player judgment matters. They follow concrete state through
+   available choices and resolution, then return changed facts to their
+   persistent owners.
+4. **Literal game presentations** reproduce Chronicle, Tale, Almanac, MEET,
+   RISK, Community Board, and other game forms when the form itself is being
+   demonstrated. Their language and design express the authority and limits of
+   the actual presentation.
+5. **Narrative-bearing environment and art** use Landscape Voice, captions,
+   recurring geography, visual continuity, and question-bearing physical
+   detail to imply lived history from established canon. Suggestive detail
+   invites attention while rules introduced by the image receive direct
+   expression in their owning prose.
+
+Part openings vary with the transition they perform. Sustained narrative
+appears when a threshold benefits from being lived as a sequence. A full-plate
+Part opening may instead carry one or two sentences of Landscape Voice along
+its lower edge when country, weather, movement, or a simple event gives the
+transition meaning. Another opening may use a recurring Citizen, a game
+presentation, or a silent plate. The seven Parts therefore share a deliberate
+rhythm without repeating one compulsory opening device.
+
+Narrative sits beside the system or experience it illuminates. Clear formulas,
+inventories, comparisons, and fixed relationships favor tables, diagrams, or
+infographics; narrative favors bodily scale, uncertain judgment, sequence,
+recognition, relationship, departure, return, and accumulated history. A
+narrative augment earns space through one of those functions rather than by
+restating adjacent rules.
+
+Ordinary life establishes what danger can change. Work, proximity,
+hospitality, accommodation, rest, observation, small disagreements, and
+familiar routines supply the majority of recurring lived material. Hazard and
+loss gain weight through their effects upon lives and places the reader already
+knows.
+
+The three Core-Species civilizations receive balanced cumulative presence
+across the complete book. Rabbit's sustained role in the Founding Escape is
+answered by strong Mouse and Squirrel presence through later recurring
+moments, worked sequences, art, and examples. Selection follows the needs of
+each passage while book-level review preserves parity.
+
+Narrative augments remain flexible in length, layout, and frequency. Their
+authoring brief identifies the governing section, narrative function, form,
+participants, place and time, incoming state, outgoing state, visual or
+Register relationship, and reason the material improves understanding. The
+Augments Phase assigns those briefs page by page after the Appendices have been
+detailed.
 
 ### Positive canon and illustrative material
 
@@ -8288,6 +8452,14 @@ Chronicle selections, Landscape Voice, and visual setups. A later authoring
 pass may create broader banks and additional examples. The complete Practice
 catalogue will give each Practice at least one improvement.
 
+Appendix development precedes the Augments Phase. Once the Appendices carry
+their intended reference, language, conceptual, manifestation, and market
+treatments, the Augments Phase will map narrative, diagrams, tables,
+infographics, game presentations, partial-page illustration, and full plates
+across the unified book. That pass applies the narrative doctrine in Section
+7.3 and determines the exact placement of each form without reopening the
+systems it explains.
+
 ### Open language and design
 
 **Family** remains the provisional term for the domestic relationship developed
@@ -8373,17 +8545,4351 @@ Across every system, MEDIAN uses one governing movement:
 
 **Sanctuary → Exposure → Consequence → Return → Memory**
 
-# APPENDIX PLAN
+# APPENDICES
 
-The compiled concept book may include the following derived reference
-appendices:
+The Appendices make MEDIAN findable and carry material that usefully describes
+the work from outside its principal game-and-world reading path. They support
+the unified Concept Sourcebook rather than becoming a second GDD or a separate
+technical volume.
 
-- Appendix A — Lexicon and Canonical Usage
-- Appendix B — Names, Place-Names, and Compound Forms
-- Appendix C — Record, Tales, Chronicle, Campaign Memory, and
-  Record-to-Presentation Architecture
-- Appendix D — Places, Practices, Projects, and Tier Eligibility
-- Appendix E — Resources, Carry, Supplies, Tools, and Body Units
-- Appendix F — Corridor, Day Band, Traffic, and Environmental Reference
-- Appendix G — Guest Citizen Contracts and Species Reference
-- Appendix H — Authoring Tables and Content Banks
+Reference Appendices condense, tabulate, and cross-reference rules whose full
+meaning remains established in the main treatment. Conceptual Appendices hold
+essays, translation plans, and contextual analysis that belong outside the
+beam. Every Appendix states current positive m050 design. Superseded mechanics,
+decision history, source reconciliation, implementation contracts, tuning
+registries, QA records, and production metadata remain outside the published
+book.
+
+## Appendix A — Lexicon and Canonical Usage
+
+MEDIAN's written forms carry game meaning. Capitalization, all-caps operators,
+dots, hyphens, and species grammar let the reader distinguish a defined game
+concept, an act of play, a semantic address, a translated animal word, and an
+archetypal animal body.
+
+The chapters introduce that language through play. This Appendix gathers its
+compact forms for reference and supplies concise principal-treatment locations.
+Its final alphabetical Lexicon will include only terms that carry a stable
+MEDIAN meaning in the current book.
+
+### How MEDIAN Writes
+
+| Meaning | Written form | Examples | What the form tells the reader |
+|---|---|---|---|
+| Defined game concept | Initial Caps | Citizen; Place; Body Unit; Quiet Equilibrium | The word or phrase carries a stable MEDIAN definition. |
+| Experiential operator | ALL CAPS | DWELL; TRAVEL; RISK; MEET; EMBODY | The player acts through one of the game's five Registers. |
+| Core-Species spatial operator | ALL CAPS | JOIN; GATHER; CONNECT | A civilization expresses its characteristic relationship to inhabited space. |
+| Semantic address | Dot-delimited UpperCamelCase in code style | `Home.Colony.Practice.Garden`; `Away.Crossing` | An MSID gives one game property a stable address across prose, navigation, and manifestations. |
+| Animal-language word | Hyphen-bound form with one initial capital | After-name; Prior-life Tale | Several English elements translate one deliberately adopted word in an animal language. |
+| Archetypal Core Species | Bare Initial-capped singular with singular agreement | Mouse builds a Manor House. | One representative body expresses the characteristic logic of its species. |
+
+#### Registers and experiential operators
+
+| Register | Mode | Operator | Player relationship |
+|---|---|---|---|
+| Colony | Home | **DWELL** | Sustain, organize, build, and inhabit collective life. |
+| Field | Away | **TRAVEL** | Direct an expedition party through the continuous world. |
+| Crossing | Away | **RISK** | Commit particular bodies to immediate spatial danger. |
+| Encounter | Home or Away | **MEET** | Answer a bounded situation through consequential choice. |
+| Embodiment | Home | **EMBODY** | Live as or remain with a Citizen inside achieved sanctuary. |
+
+#### Core-Species spatial operators
+
+| Core Species | Operator | Civic expression |
+|---|---|---|
+| Mouse | **JOIN** | Adjoining rooms and sheltered edges become one protected inhabited body. |
+| Rabbit | **GATHER** | Places form around open common ground with protective edges and nearby refuge. |
+| Squirrel | **CONNECT** | Anchors and routes become a resilient Web with credible alternate movement. |
+
+An MSID belongs to the game property it identifies. Page number, chapter,
+manifestation, and implementation may change while the semantic address
+persists. The final Lexicon will expose MSIDs as a restrained reference column
+after its term set and the Sourcebook's navigation hierarchy are stable.
+
+> **Typography is part of MEDIAN's semantic system. It tells the reader what
+> kind of meaning a written form carries before the surrounding prose explains
+> that meaning in full.**
+
+### Alphabetical Lexicon
+
+The Lexicon includes terms whose MEDIAN-specific meaning recurs across systems
+or whose exact distinction prevents the game from being misread. Content names
+with a single local use remain in their owning chapter or reference Appendix.
+The treatment pointer leads to the term's principal explanation rather than
+listing every place it appears.
+
+| Term | Concise meaning | Principal treatment |
+|---|---|---|
+| **After-name** | A rare public name earned through a Citizen's durable life history. | § 6.1, Distinctions and After-names |
+| **Almanac** | The continuously available lens for present state and known, scheduled, forecast, or possible future circumstances. It stands outside Campaign Memory. | § 6.1, The Almanac |
+| **Ancestral Home** | The ruined original Colony from which the Founders escaped, preserved as a distant campaign horizon and a place of possible return. | § 6.5, The Ancestral Home |
+| **attachment-forward** | MEDIAN's design direction toward making particular Citizens, Places, objects, and histories knowable, memorable, and worth protecting. | § 1.2, The attachment-forward base builder |
+| **Away** | The outward Mode in which responsibility extends from Home through a particular expedition party. | § 1.4, Home and Away; Part V |
+| **Baseline** | The complete authored realization of a presentation that can be delivered immediately without model assistance. | Appendix C, Two channels and two realizations |
+| **Beautification** | Colony-wide passive progress supplied by civic Roles without a defined material output; its thresholds create persistent, mechanically inert Frills. | § 3.6, Beautification |
+| **Biome** | A recurring environmental grammar of ground, vegetation, water, infrastructure, shelter, exposure, and spatial rhythm from which a Reach is realized. | § 2.3, Biomes and Founding Reaches |
+| **Body Unit** | MEDIAN's normalization layer for aggregate mechanics: one Rabbit, one Squirrel, two Mice, or one v0.5 Guest Citizen ordinarily equals one Body Unit. | § 4.1, Body Units |
+| **Campaign Memory** | The campaign-wide historical architecture combining one hidden factual Record with written and visual expressions made for the player. | § 6.1, Campaign Memory |
+| **Capacity** | The amount available within one Civic Balance axis to answer that axis's Load. | § 3.2, Civic Balance |
+| **Cargo** | Fungible resources carried by an Away party within its shared Carry; personal Tools, Supplies, and Keepsakes occupy their own positions. | § 5.2, Carry and the growing haul |
+| **Carry** | The visible party-wide capacity that holds Cargo and makes the growing haul matter to TRAVEL, RISK, and MEET. | § 5.2, Carry and the growing haul |
+| **Choice Event** | An authored bounded situation that enters its owning context through MEET and uses MEET's shared choice-and-aftermath grammar. | § 1.5, Choice Events |
+| **Citizen** | A named living member of the Colony whose body, relationships, belongings, history, and possible future remain particular across every Register. | § 4.1, Citizenhood |
+| **Civic Balance** | The shared comparison of Capacity and Load within each separate Housing or Role axis, producing Readiness, Covered, or Pressure. | § 3.2, Civic Balance |
+| **Civic Dedication** | A large, escalating commitment of resources incorporated throughout Home to trigger eligible Colony Tier recognition. | § 6.3, Civic Dedication |
+| **Civic Pressure** | The Colony's separate Housing and Role Pressures considered together as a profile rather than summed into one value. | § 3.2, Civic Pressure, World Pressure, and Colony Pressure |
+| **Civic Share** | The Body-Unit-normalized measure of ordinary Home responsibility contributed by an available Citizen through a Role or committed to a Project. | § 3.2, Role Balance |
+| **Colony** | The particular permanent civic settlement at Home: a community, an inhabited built place, and an accumulating history. | § 3.1, Home |
+| **Colony Pressure** | The hidden momentary director calculation that weighs the Civic Pressure profile with current circumstances and recent Home MEET history to influence when a Home situation requires attention. | § 3.2, Civic Pressure, World Pressure, and Colony Pressure |
+| **Colony Tier** | A lasting recognition of the stable scale a Colony has reached, shared mechanically by number and expressed through a Core-Species civic name. | § 6.3, The four Colony Tiers |
+| **Community Board** | The Gathering Place improvement that gives selected information already known to the Colony a persistent shared expression in DWELL. | § 3.4, Community Board |
+| **CONNECT** | Squirrel's spatial operator: anchors and traversable links form a resilient inhabited Web. | § 2.3, Squirrel — CONNECT; § 4.2 |
+| **Core Residence** | A Place used to house Core Citizens, providing Housing Capacity according to its usable and Well-Placed state. | § 3.3, Core Residence |
+| **Core Species** | Mouse, Rabbit, or Squirrel as the civilization chosen for a campaign, shaping spatial expression at Home and the fundamental experience of RISK. | § 4.2, The Three Core Species |
+| **Corridor** | The continuous longitudinal organization of The Highway through successive Reaches. | § 2.2, From Corridor to Reach to Median |
+| **Covered** | The state of a Civic Balance axis whose Capacity exactly equals its Load, producing neither Readiness nor Pressure. | § 3.2, Shared balance grammar |
+| **Crossing** | The concentrated Away Register in which a party traverses a Main Roadway or smaller Reach-border road through RISK. | § 1.4, The Crossing Register; § 5.3 |
+| **DAWN** | The explicit transition that resolves the completed day's accounting, advances the calendar, reports meaningful change, and opens Morning. | § 2.5, DAWN and the Playable Day; § 3.6 |
+| **Day Band** | The sole mechanical unit of world time: Morning, Midday, Evening, or Night. | § 2.5, DAWN and the Playable Day |
+| **Distinction** | Narrow favorable recognition grounded in a Citizen's meaningful conduct. | § 6.1, Distinctions and After-names |
+| **DWELL** | The operator of the Colony Register: understand, build, arrange, and sustain collective life at Home. | § 1.4, The Colony Register; § 3.2 |
+| **EMBODY** | The operator of the Embodiment Register: live as or remain with a particular Citizen inside achieved sanctuary. | § 1.4, The Embodiment Register; § 3.8 |
+| **Encounter** | The cross-modal Register that brings a bounded consequential situation into focused choice. | § 1.4, The Encounter Register; § 1.5 |
+| **Expedition Guest** | A Guest Citizen who may Launch, bears personal Away consequence, and carries one Away Signature and an individually authored Home Role. | § 4.3, Expedition Guests |
+| **Exposure** | A hidden six-step, per-Citizen measure of accumulated life beyond ordinary safety that weights applicable personal consequence toward the serious end of its valid range. | § 5.6, Accumulated Exposure |
+| **expression** | A Tool, Supply, Keepsake, relationship, Signature, civic commitment, or other capability through which a selected MEET response becomes possible or changes. | § 1.5, Responses and expressions |
+| **Field** | The continuous Away Register in which the player directly moves a particular expedition party through the Corridor. | § 1.4, The Field Register; § 5.2 |
+| **Field Card** | An occasional situated interruption between Nodes that keeps the Corridor active without displacing intentional exploration. | § 5.2, Field Cards |
+| **Focus** | The Citizen whose life a MEET Round naturally follows in presentation after the collective response has been committed. | § 1.5, Focus; § 4.6 |
+| **Frill** | A small, persistent, mechanically inert expression of Colony life created when Beautification reaches a threshold. | § 3.6, Beautification |
+| **Game Logic** | MEDIAN's legible and causally trustworthy rules, through which competence and stability release attention for attachment. | § 1.3, Game Logic opens Attachment Space |
+| **GATHER** | Rabbit's spatial operator: Places face and protect open common ground while retaining nearby refuge. | § 2.3, Rabbit — GATHER; § 4.2 |
+| **Guest Citizen** | A named non-Core animal welcomed into the Colony with full civic standing, a Residence, and one bounded species Signature. | § 4.3, Guest Citizens |
+| **Guest Residence** | The dedicated or explicitly incorporated accommodation that satisfies one Guest Citizen's species-specific Residence Fit. | § 4.3, Guest Residence |
+| **Home** | The inward Mode centered upon responsibility for the permanent Colony. | § 1.4, Home and Away; § 3.1 |
+| **Home Median** | The particular geographic median occupied by the Colony; it is geographic shorthand rather than the Colony's name or the Home Mode. | § 2.2, The Colony and the Home Median |
+| **Homecoming** | The state-transition MEET that ends an expedition and reconciles its returned lives, material, relationships, and consequences with Home. | § 5.8, The Homecoming MEET |
+| **The Highway** | The complete physical setting formed by the Corridor's Median, Main Roadways, Margins, Sound Walls, and situated human infrastructure. | § 2.1; § 2.2, The Highway in cross-section |
+| **Housing Balance** | Usable Core Residence Capacity minus the Body-Unit Housing Load created by Core Citizens. | § 3.2, Housing Balance |
+| **Housing Capacity** | The Body Units of Core Citizens that completed usable Core Residences can accommodate. | § 3.2, Housing Balance |
+| **Housing Load** | The Body-Unit housing obligation created by Core Citizens belonging to the Colony. | § 3.2, Housing Balance |
+| **Housing Pressure** | The uncovered Body Units produced when Core Citizen Housing Load exceeds usable Core Residence Capacity. | § 3.2, Housing Balance |
+| **JOIN** | Mouse's spatial operator: adjoining rooms and sheltered edges become one protected inhabited body. | § 2.3, Mouse — JOIN; § 4.2 |
+| **Keepsake** | A persistent emotional object whose meaning and bounded contextual effect belong to one Citizen's life. | § 4.6, Keepsakes |
+| **Landscape Voice** | MEDIAN's human third-person, landscape-attentive narrator, which interprets present play without adopting a named protagonist or an animal cultural voice. | § 5.9, Landscape Voice |
+| **Launch** | The state-transition MEET in which the player selects and commits an eligible expedition party, transferring active operation from Home to Away. | § 5.1, The Launch MEET |
+| **Load** | The gross weight of one civic responsibility, compared only with Capacity belonging to the same Civic Balance axis. | § 3.2, Shared balance grammar |
+| **Maiming** | A lasting bodily change caused by a maiming injury; its accompanying acute Wound may heal while the Maiming remains. | § 5.6, Forms of personal consequence |
+| **Main Roadway** | Either continuous lateral traffic band flanking the Median and separating it from a Margin. | § 2.2, The Highway in cross-section |
+| **MEET** | The operator of the Encounter Register: frame and resolve a bounded consequential situation through contextual choice and aftermath. | § 1.5, MEET |
+| **Median** | The central habitat band that continues through successive Reaches between the two Main Roadways. | § 2.2, From Corridor to Reach to Median |
+| **Mode** | The inward or outward center in which primary life and responsibility are currently situated: Home or Away. | § 1.4, Mode, Register, operator, and view |
+| **Moment Brief** | A bounded projection of current state and relevant Record facts used to realize one truthful narrative or visual presentation. | Appendix C, The Moment Brief |
+| **MSID** | A dot-delimited semantic address that identifies one game property independently of page, chapter, manifestation, or implementation. | Appendix A, How MEDIAN Writes |
+| **Node** | A fixed recognizable place in the Field whose material, ecology, shelter, inhabitants, alteration, or history can matter across visits. | § 5.4, Nodes in the Field |
+| **Operator** | The characteristic action through which the player engages a Register. | § 1.4, Mode, Register, operator, and view |
+| **Outpost** | A persistent Away foothold established within a Reach, providing bounded refuge, Rest, storage, and Colony synchronization while remaining categorically distinct from Home. | § 5.7, Outposts and Stopovers |
+| **Party** | The fixed group of named Citizens committed to one active expedition, ordinarily between one and one-half and three Body Units and always containing more than one animal. | § 5.1, Party scale |
+| **Place** | Designated physical ground within Home that becomes permanent when its first Residence or Practice Project is committed. | § 3.3, Places and Species Placement |
+| **Practice** | The functional use established at a Place through which compatible Roles support situated civic purpose, production, transformation, or Projects. | § 3.4, Roles and Practices |
+| **Practice improvement** | A specific persistent adaptation that adds a capability, response, range, or resilience to one existing Practice without adding another hosted use. | § 3.3, Place development |
+| **Practice Strength** | The situated civic contribution of one completed usable Practice, determined by compatible Role support and Spatial Alignment. | § 3.2, Practice Strength |
+| **Presence** | EMBODY's guided-attention form, in which the player remains with what a Citizen experiences through looking, listening, posture, movement, or repose. | § 3.8, Participation and Presence |
+| **Pressure** | The amount by which Load exceeds Capacity within one Civic Balance axis. | § 3.2, Shared balance grammar |
+| **Project** | Committed deliberate work that makes one defined persistent result true through material, time, Citizens of its owning Role, and ordinarily a supporting Practice. | § 3.4, Project Queue |
+| **Project Queue** | The shared execution layer through which Practices accommodate and committed Citizens advance Projects. | § 3.4, Project Queue |
+| **Provisioning** | Player-directed recurring transformation governed by a defined Practice-and-Citizen process, available inputs, targets, and protected reserves. | § 3.6, Provisioning |
+| **Quiet Equilibrium** | Home's sole tracked condition, active while ordinary obligations are covered and no acute situation demands attention; while active, it opens EMBODY. | § 3.2, Quiet and consequential attention |
+| **Reach** | One comprehensible longitudinal segment of the Corridor, containing its portion of Median, Roadways, and Margins. | § 2.2, From Corridor to Reach to Median |
+| **Readiness** | The surplus produced when Capacity exceeds Load within one Civic Balance axis. | § 3.2, Shared balance grammar |
+| **Record** | The hidden incremental factual database of what has occurred throughout the Colony's life and the authority from which remembered presentations are selected. | § 6.1, The Record |
+| **Register** | A structural form of play, engaged through its characteristic Operator and expressed through an appropriate view or interface. | § 1.4, Mode, Register, operator, and view |
+| **Rehabilitation** | A Healer Project that establishes adapted participation after Maiming without removing the lasting bodily change or its history. | § 3.4, Rehabilitation; § 5.6 |
+| **Residence** | An inhabited use of a Place that accommodates Citizens rather than functioning as a Practice. | § 3.3, Core Residence; § 4.3, Guest Residence |
+| **Residence Fit** | The single species-specific placement requirement by which a Guest Residence is judged as a whole. | § 4.3, Guest Residence |
+| **Resident Guest** | A Guest Citizen whose species-fixed Role and situated Signature operate at Home and who does not Launch. | § 4.3, Resident Guests |
+| **response** | What the Colony or party attempts during a MEET Round before choosing any capability through which to express it. | § 1.5, Responses and expressions |
+| **Rest** | A systemic MEET through which an Away party stops, advances time, resets its travel cadence, and receives the recovery permitted by its location. | § 5.2, Rest, Stopover, and safe range; § 5.7 |
+| **Return** | The party's ordinary physical TRAVEL homeward through the same continuous world after the player turns back. | § 5.8, Turning Homeward |
+| **RISK** | The operator of the Crossing Register: plan, commit, and resolve one complete species-conditioned passage across a Roadway. | § 1.4, The Crossing Register; § 5.3 |
+| **Role** | A standing domain of ordinary Colony responsibility sustained by the Civic Shares of available Citizens. | § 3.4, Roles and Practices |
+| **Role Balance** | The sustaining Civic Shares assigned to one Role minus that Role's current Load. | § 3.2, Role Balance |
+| **Roster** | The complete list of living named Citizens who belong to the Colony, including Citizens who are young, dependent, receiving care, or Away. | § 3.7, Population at Home; § 4.1 |
+| **Round** | One complete MEET decision sequence: Frame, Select, Express, Commit, Focus, and Resolve. | § 1.5, Multiple Rounds |
+| **Signature** | One bounded species-grounded capability through which a Guest Citizen changes an applicable Away response or situated Home relationship. | § 4.3, Signatures |
+| **Spatial Alignment** | The one-unit Practice or Core Residence benefit contributed when a completed usable Place satisfies the Colony's Core-Species placement grammar. | § 3.3, Spatial Alignment |
+| **Staging Post** | The immediate Roadway-edge ground from which a party observes, waits, plans, and commits to a Crossing. | § 5.3, The Staging Post |
+| **Stopover** | The temporary Away state created when a party completes a Rest MEET at its current location. | § 5.7, Refuge, Stopover, and Outpost |
+| **Strained Carry** | Squirrel's optional additional Cargo capacity, whose unsecured burden creates visible Jostle risk after movement. | § 5.2, Squirrel Strained Carry |
+| **Supply** | One anonymous prepared and expendable body-scaled intervention assigned to a Launch-eligible Citizen for one expedition. | § 4.6, Supplies |
+| **Tale** | A subject-specific player-facing translation of selected Record entries belonging to one Citizen or historically meaningful Item. | § 6.1, Tales and Prior-life Tales |
+| **Telegraph** | Observable warning of what may happen while preparation can still alter the stakes. | § 2.5, Events Through Time; § 3.5 |
+| **Terms of Hospitality** | The explicit Residence, relational, and safety commitments the Colony must fulfill before a recognized non-Citizen can arrive as a Guest Citizen. | § 4.3, From MEET to arrival |
+| **Tharn** | An acute bodily shutdown under overwhelming immediate strain that supersedes the current objective and requires Rest before the expedition can continue. | § 5.6, Tharn |
+| **Tool** | A persistent named working object held by one Launch-eligible Citizen that provides one narrow reusable capability Away. | § 4.6, Tools |
+| **TRAVEL** | The operator of the Field Register: directly guide an expedition party through the continuous world beyond Home. | § 1.4, The Field Register; § 5.2 |
+| **Well Placed** | The positive state of a completed usable Place whose relationship to surrounding Home expresses the applicable Core-Species spatial operator or Guest Residence Fit. The adjectival form is **Well-Placed**. | § 3.3, Species placement |
+| **World Pressure** | An externally originating Corridor condition that may add contextual Load, test Readiness, alter ordinary life, or supply a Home situation. | § 3.5, World Pressure |
+| **Wound** | A single named recoverable bodily-injury state that constrains only physically affected actions and doubles new Exposure while unstabilized. | § 5.6, Forms of personal consequence |
+| **Wound Recovery Project** | A Home Healer Project through which one available Hearth and one committed Healer provide a Wounded Citizen with sustained care. | § 5.6, Wound Recovery Projects |
+| **Young Citizen** | A complete Citizen before Maturity who belongs to the Colony, consumes ordinary support, and remains unavailable for Roles, Projects, or Launch. | § 4.5, Young Citizens |
+
+## Appendix B — Names, Place-Names, and Narrative Language
+
+Names express the relationship between particular lives, communities, history,
+and inhabited ground. MEDIAN distributes naming authority deliberately: every
+Citizen arrives with a Given Name, durable history may grant an After-name, the
+world and its inhabitants name particular geography, and the player composes
+the one permanent name of the Colony. The same Appendix defines the distinct
+human and animal voices through which the Sourcebook and theoretical game
+render those lives and places.
+
+### Naming authority
+
+| Subject | Source of its name | Form of player involvement |
+|---|---|---|
+| **Citizen** | An appropriate cultural Given Name arrives with the individual. | The player learns and uses the name. |
+| **Citizen with an After-name** | Durable life history gives rise to rare public recognition. | The player witnesses the history and recognition. |
+| **Collective-bodied Citizen** | One household name identifies the complete civic subject. | The player encounters the household by that name. |
+| **Ancestral Colony** | Its established cultural name belongs to the world before play begins. | The player learns and remembers the name during the Founding Escape. |
+| **Colony** | The founding party names its permanent Home through its first Leader. | The player assembles and confirms one name from curated components. |
+| **Reach, Node, or landmark** | Physical character, local use, inhabitants, discovery, or remembered history gives the place its name. | The player learns the name and may cause the history from which a later name arises. |
+
+### The Colony's one player-composed name
+
+The Founding MEET gives the player one direct act of naming. The first Leader
+speaks for the founding party while the player assembles the Colony's name from
+curated word, sound, and form lists through approved patterns. The ancestral
+Colony's established name is shown beside that act as part of what the Founders
+carry with them.
+
+- Every available component and completed construction belonging to MEDIAN's
+  plain, animal-scale linguistic register
+- Shared lists supplying the broad naming language, with Core-Species culture
+  influencing sounds, forms, weighting, and suggested combinations
+- Ground, hope, and memory functioning as overlapping semantic influences that
+  may appear together within one name
+- The founding location and ancestral Colony supplying additional relevant
+  components
+- A continuation pattern able to carry the complete ancestral name forward,
+  as **Elderbank** becomes **New Elderbank** in the Rabbit story civilization
+- Other approved patterns able to carry one ancestral component into a newly
+  assembled name
+- Ancestral inheritance remaining one available expression of memory while a
+  name may instead arise from the founding ground, forward hope, or several
+  influences together
+- Only combinations that have been authored or validated as complete names
+  appearing in the assembly interface
+- The player able to replace components, move among applicable patterns, and
+  preview the complete written and spoken name before confirmation
+- Confirmation making the name permanent, establishing it throughout the
+  interface and presentation, and entering the naming into Campaign Memory
+- The Colony name identifying the civic Home while the Home Median retains its
+  own geographic name
+
+#### Colony and place-name patterns
+
+Colony and place names assemble from whole words. Four patterns cover the
+current story civilizations and establish the general naming grammar.
+
+| Pattern | Construction | Current examples |
+|---|---|---|
+| **Closed compound** | `[Root][Place form]` | Elderbank; Morningside; Rushbottom; Ashcross; Elmwater |
+| **Open compound** | `[Root or modifier] [Place form]` | Chaff End; Pipe End; Nine Beeches |
+| **Descriptive phrase** | `The [Modifier] [Place form]` | The Long Verge |
+| **Ancestral continuation** | `New [Ancestral name]` | New Elderbank |
+
+- A component able to participate in more than one compatible pattern
+- Closed compounds using authored joining, capitalization, plural, and spelling
+  forms rather than automatic concatenation
+- Open compounds and descriptive phrases retaining approved spacing and any
+  article as part of the pattern
+- Ancestral continuation preserving the complete established name after
+  **New**, while partial inheritance uses one ancestral component through
+  another pattern
+- The assembly interface exposing only complete names validated for their
+  chosen pattern
+- Whole-word construction governing Colony and place names, while curated
+  sound fragments remain available to Citizen-name authoring
+
+### Given Names
+
+- Every Citizen carrying an appropriate Given Name when first encountered
+- Core Citizens drawing from curated cultural banks associated with Mouse,
+  Rabbit, or Squirrel, with species sensibility carried through sound,
+  material, scale, and place
+- Guest Citizens retaining names grounded in their lives and communities when
+  they arrive
+- Fireflies and Bumblebees using their approved household name as the Given
+  Name of one collective-bodied Citizen
+- Name changes occurring only through an authored life event and entering the
+  Record wherever they become true
+
+#### The shared naming register
+
+Citizen names belong to one broad animal vocabulary before species weighting
+shapes them. They favor concrete plants, materials, weather, shapes, sounds,
+places, and small objects: things an animal might perceive, carry, shelter
+within, move through, or remember. Most are one to three clear syllables, plain
+to read aloud, and emotionally open. A Given Name does not predict a Citizen's
+Role, personality, fate, or eventual Tale.
+
+Human-made words remain part of this register because human remnants have
+become animal-scale geography and material. **Thimble**, **Rivet**, **Pipe**,
+and **Lintel** can feel as native to MEDIAN as **Bramble**, **Rowan**, or
+**Moss**.
+
+#### Core-Species Given-Name weighting
+
+The three Core Species share the register without sharing identical emphasis.
+Weighting determines which names surface more readily; it does not make a word
+the exclusive possession of one Species. Names such as **Moss**, **Hazel**, or
+**Reed** may suit more than one culture.
+
+- **Rabbit** names favor low plants, forage, ground texture, shade, small
+  stones, and protected edges. Their frequent cadence is leafy, soft, and often
+  two syllables: **Bramble**, **Fennel**, **Teasel**, **Yarrow**.
+- **Squirrel** names favor trees, wind, direction, tension, fastenings, and
+  suspended forms. They often join a crisp anchor to a sense of air or motion:
+  **Cobb**, **Gale**, **Rivet**, **Rowan**.
+- **Mouse** names favor grain, cloth, joinery, stored material, fitted
+  interiors, and small handled objects. They tend to be compact and tactile,
+  and readily support complementary family names: **Pip**, **Tuck**, **Seam**,
+  **Thimble**.
+
+| Core Species | Current Given-Name bank |
+|---|---|
+| **Rabbit** | Bramble; Briar; Clover; Daisy; Dock; Fennel; Fern; Hazel; Moss; Nutmeg; Pebble; Reed; Sorrel; Teasel; Thistle; Twig; Vetch; Willow; Yarrow |
+| **Squirrel** | Alder; Aspen; Beech; Birch; Cobb; Gale; Gable; Hazel; Keel; Knot; Larch; Latch; Rime; Rivet; Rowan; Spindle; Tassel; Vane; Wick; Windle |
+| **Mouse** | Barley; Bobbin; Bodkin; Bran; Chaff; Crumb; Flax; Fold; Husk; Lath; Lintel; Muslin; Niche; Nook; Oat; Peg; Pip; Pleat; Purl; Rye; Seam; Sheaf; Spool; Stitch; Thimble; Tow; Tuck; Warp; Weft |
+
+These banks include the names of current story Citizens and adjacent names in
+the same register. They establish a productive base rather than a claim that
+every campaign must exhaust or repeat the same roster.
+
+#### Complementary names
+
+Related Citizens may carry names that answer one another without collapsing
+them into a collective identity: **Weft and Warp**, **Spool and Bobbin**,
+**Oat and Rye**, **Pleat and Fold**, **Lintel and Niche**, **Needle and
+Thread**, **Peg and Wedge**, or **Stitch and Seam**. This construction remains
+available wherever it suits a family, but Mouse culture receives it most
+strongly. Mouse multiplicity makes the pattern especially expressive while
+every Mouse remains a complete individual Citizen.
+
+Reviewed compound Given Names, such as **Shadepatch**, may appear as complete
+curated names. Their internal construction is authored rather than freely
+assembled by the player.
+
+#### Guest Given Names
+
+Guest names draw from the same readable register through stronger
+species-specific fields of body, voice, habitat, material, movement, and prior
+community. Guests arrive already named; their names are encountered rather
+than generated by the Colony.
+
+- Bodily or vocal names include **WHOOT**, **Lilt**, and **Velvet**.
+- Habitat or rhythm names include **Stillwater**, **Rootwake**, and
+  **Morrow**.
+- Material or action names include **Latch**, **Slate**, and **Keel**.
+- Collective-bodied Citizens may carry household names such as **The
+  Lanterns** or **The Goldwings**.
+
+### After-names
+
+- After-name as a rare public recognition of durable life history
+- Recognition able to arise from Home or Away through repeated conduct,
+  relationship, rescue, failure, adaptation, service, or another defining
+  experience
+- Most Citizens retaining only their Given Name throughout life
+- An earned After-name persisting in interface, dialogue, Tale, and applicable
+  Chronicle material
+- The recognition functioning through identity, public use, and memory
+- Concrete descriptors and actions able to supply After-name language, while
+  the Citizen's lived history alone determines which meaning becomes true
+- After-name selection arising through the authored event and the Record,
+  rather than player construction or random decorative assignment
+- **Sharpnose** as the current story example: Shadepatch's changed public name
+  follows a defining history rather than predicting it
+
+### Place-names
+
+- A shared curated folk-name grammar producing names that remain homely,
+  concrete, and easy to speak
+- Physical ground, material, flora, water, enclosure, openness, height, sound,
+  weather, animal trace, human infrastructure, use, and history supplying its
+  principal vocabulary
+- Core-Species culture weighting attention without dividing the world into
+  exclusive vocabularies
+- Mouse names tending toward edges, interiors, joins, shelter, and enclosing
+  material
+- Rabbit names tending toward shared ground, breadth, neighborhood, company,
+  and protective boundaries
+- Squirrel names tending toward height, anchors, lines, crossings, direction,
+  and reach
+- A place carrying one current geographic name while its tags separately state
+  functional information such as Biome, Roadway width, or known condition
+- A consequential history able to give a Node or landmark a later remembered
+  name grounded in what occurred there
+
+### Animal language and Hyphen-bound forms
+
+A Hyphen-bound form translates one deliberately adopted animal-language word
+through several English elements. The first element receives an initial
+capital, while the remaining elements follow ordinary prose capitalization.
+
+- **After-name** naming the public identity earned through durable life history
+- **Prior-life Tale** naming the translated account of life before the present
+  Colony knew a Citizen
+- Additional Hyphen-bound forms translating stable animal concepts that
+  genuinely require several English elements
+- Ordinary English compounds and functional names retaining their ordinary
+  prose forms
+
+### Species-influenced animal voice
+
+Animal voice arises through selective attention. The Species share one
+persistent world and remain equally capable of memory, planning, civic life,
+and individual expression, while their bodies and cultures make different
+relationships salient.
+
+- **Rabbit — GATHER:** what gathers life, holds shared ground, carries warning,
+  or keeps familiar cover near
+- **Mouse — JOIN:** what joins, opens, encloses, fits, or fails at fine scale
+- **Squirrel — CONNECT:** what connects points across height, distance,
+  movement, and alternate ways home
+
+One tree therefore remains one tree while a Rabbit may first recognize shared
+warning ground or a forage boundary, a Mouse a textured wall or protected seam,
+and a Squirrel an anchor or branch network. This difference can shape Chronicle
+and Tale prose, animal dialogue, scene writing, inspection text, infographics,
+and environmental art direction.
+
+Species influence governs attention, metaphor, comparison, and assumed
+vocabulary. It creates no accent, rigid sentence pattern, constructed language,
+intelligence hierarchy, compulsory collective grammar, or species-exclusive
+truth. Individual Citizens retain their own voices inside those cultural
+tendencies.
+
+Landscape Voice remains separate. It is the human third-person narrator of
+country, weather, movement, and simple events; species bodies may change which
+physical details matter to a passage without turning that narrator into an
+animal speaker. Chronicle, Tales, dialogue, and scenes are the principal homes
+for animal cultural voice.
+
+### Landscape Voice
+
+Landscape Voice is MEDIAN's human third-person narrator. It attends to country,
+weather, light, distance, animal-scale movement, and simple events, allowing
+the physical world to become briefly literary while remaining continuous with
+what the game presents. Landscape or group movement remains its subject rather
+than a named protagonist's interior voice.
+
+The completed Appendix will define its cadence, sentence scale, sensory
+priorities, treatment of time and direction, relationship to animal bodies,
+use of repetition, degree of interpretive warmth, and boundary with mechanical
+notification. It will acknowledge the literary influences that make an
+attentive human narrator desirable while establishing an original MEDIAN voice
+through fresh examples drawn from different Reaches, Day Bands, seasons, and
+Registers.
+
+Landscape Voice appears sparingly enough to retain weight. A full-plate Part or
+Chapter transition may carry one or two sentences along its lower edge, letting
+the image and language complete one observation together. Longer passages
+belong at major thresholds such as the Founding arrival or another moment when
+movement resolves into newly perceived country.
+
+### Component banks
+
+The final Appendix will supply the curated banks and legal patterns used for
+Core-Species Given Names, the Colony name, and folk place-names. Each bank will
+state its scope, compatible patterns, and a small set of worked names so the
+construction itself guarantees the register.
+
+#### Colony and place-name lexical bank
+
+| Source | Approved components |
+|---|---|
+| **Plants and ground** | Alder; Ash; Beech; Bramble; Briar; Chaff; Clover; Elder; Elm; Fern; Hazel; Moss; Reed; Root; Rowan; Rush; Sedge; Thistle; Thorn; Willow |
+| **Water, weather, and light** | Brook; Creek; Dawn; Dew; Dusk; Mist; Moon; Morning; Pond; Rain; Rill; River; Shade; Spring; Sun; Water; Wind; Winter |
+| **Human trace and material** | Brick; Culvert; Glass; Iron; Pipe; Rail; Stone; Tin; Wall; Wire |
+| **Qualities and relations** | Close; Deep; Far; First; Good; Gray; High; Long; Low; Near; New; Old; Open; Quiet; Small; Still; Twin; Warm |
+| **Place forms** | Bank; Bottom; Bough; Branch; Cross; End; Field; Gap; Grove; Hollow; Ledge; Line; Mouth; Nook; Reach; Rest; Rise; Seam; Side; Span; Verge; Wall; Water; Way |
+
+Compatible plant components may also appear as plural physical features, as
+**Beech** becomes **Beeches** in **Nine Beeches**.
+
+#### Core-Species weighting
+
+The lexical bank is shared. Species weighting shapes which components and
+combinations appear readily while leaving every compatible construction
+available.
+
+| Core Species | Frequently surfaced roots | Frequently surfaced forms |
+|---|---|---|
+| **Mouse** | Chaff; Moss; Pipe; Rush; Sedge; Tin; Wall; Wire | Bottom; End; Mouth; Nook; Seam; Wall |
+| **Rabbit** | Ash; Bramble; Briar; Clover; Elder; Fern; Reed; Willow | Bank; Bottom; Cross; Field; Hollow; Rest; Verge |
+| **Squirrel** | Alder; Ash; Beech; Dawn; Elm; Hazel; Morning; Rowan; Wind | Bough; Branch; Line; Side; Span; Water; Way |
+
+- Weighting applying to suggestions and list order rather than component
+  ownership
+- Compatibility governing the completed construction independently of its
+  source lists
+- The founding Biome, visible ground, and established ancestral name able to
+  raise the weight of components already present in the campaign
+- Ground, hope, and memory tags able to raise related suggestions together
+  without becoming separate naming modes
+
+## Appendix C — Campaign Memory and Record-to-Presentation
+
+Campaign Memory turns the accumulated truth of a campaign into writing and
+imagery the player can encounter, recognize, and remember. The Record remains
+the hidden factual authority. Chronicle, Tales, canon images, and situated
+scenes are selected translations of that authority rather than parallel
+versions of history. The Almanac remains outside Campaign Memory because it
+concerns present and possible future conditions.
+
+This Appendix describes the conceptual presentation architecture of the
+theoretical game. It establishes what each presentation must preserve and how
+the experience behaves when model assistance is absent, late, or invalid; it
+does not specify vendors, services, storage, prompt syntax, or production
+infrastructure.
+
+### One truth, several presentations
+
+A present situation and a remembered event use related but distinct flows.
+
+> **Live:** current state + applicable history → Moment Brief → narrative and
+> visual presentation → player decision → resolved state → Record
+
+> **Historical:** Record → selected Moment Brief → Chronicle, Tale, or visual
+> remembrance
+
+An unresolved possibility may be prepared for presentation, but it is not
+history. Only the outcome actually experienced and committed enters the
+Record. Every later retelling therefore has one factual source even when its
+length, voice, image, or point of emphasis changes.
+
+### The Moment Brief
+
+The **Moment Brief** is the smallest sufficient projection of truth for one
+presentation. It gives either realization channel the facts needed for that
+moment without disclosing the whole Record or inviting the presentation layer
+to infer new canon.
+
+A Moment Brief may identify:
+
+- its origin, time, location, Register, and current conditions
+- the participating Citizens, other entities, relevant relationships, and
+  point of attention
+- persistent bodies, appearances, possessions, Places, and visible state
+- the limited prior history that makes the moment intelligible
+- the selected response, its expressions, and its committed outcome, or the
+  still-open branches when several results are being prepared
+- details that must appear, details that may vary, and details that are
+  prohibited
+- the required narrative voice, presentation purpose, eligibility window, and
+  delivery deadline
+
+The Brief is a derived working object, not a second Record. If it conflicts
+with current state or established history, the Record governs and the Brief is
+invalidated or rebuilt.
+
+### Two channels and two realizations
+
+The same Moment Brief can feed two presentation channels. The **Narrative**
+channel produces written language. The **Image** channel produces a visual
+composition. Each channel has a complete **Baseline** realization and may have
+an enriched **model-assisted** realization.
+
+| | Baseline | Model-assisted |
+|---|---|---|
+| **Narrative** | Authored structures, selected clauses, names, and controlled agreement produce immediate truthful prose. | The bounded Brief is rendered with greater variation and contextual fluency, then validated against its facts and voice. |
+| **Image** | Current canon imagery, authored composition, and designed interface framing provide the required visual presentation. | Mandatory canon reference imagery is transformed into a fresh composition, then validated before display. |
+
+These four labels clarify the architecture in this Appendix; they do not need
+to become badges throughout the Sourcebook or labels exposed to the player.
+Model assistance enriches expression but owns no unique game information. The
+Baseline must remain sufficient to understand the situation, make the decision,
+and receive its consequence.
+
+### Narrative realization
+
+Baseline narrative is assembled from authored structures appropriate to its
+purpose: direct interface language, a Chronicle account, a subject-specific
+Tale, animal dialogue, or Landscape Voice. It remains coherent, grammatical,
+and repeatable without relying upon generated prose.
+
+A model-assisted narrative receives only the Moment Brief and the applicable
+voice constraints. It may choose cadence, emphasis, comparison, and fresh
+phrasing, but it may not invent a Citizen, relationship, possession, action,
+place, cause, result, or remembered event. Its output is checked against the
+Brief before it can become the player's experienced presentation.
+
+Voice follows the subject rather than the production method:
+
+- **Landscape Voice** is the human third-person narrator of country, weather,
+  movement, distance, and simple events.
+- **Chronicle, Tales, animal dialogue, and animal scenes** may express
+  species-influenced attention through GATHER, JOIN, or CONNECT while
+  preserving common facts.
+- **Interface language** states choices, state, and consequence directly.
+
+### Visual realization
+
+#### Reference-and-amend
+
+The generative image system transforms; it does not author. Every
+model-assisted image must use the relevant existing canon Citizen, Colony,
+location, and object imagery as image-to-image reference. Text alone cannot
+stand in for an established visual subject.
+
+Three authorities govern the result:
+
+1. The Record and current game state govern factual truth.
+2. Current canon imagery governs visual identity and continuity.
+3. The Moment Brief governs the immediate composition or exact visible change.
+
+The brief distinguishes features to preserve, features to modify, contextual
+features that may vary, and incidental material that must not be inherited.
+Clothing in a Citizen portrait may establish that Citizen's present clothing;
+an incidental figure in a Colony overview does not establish an unnamed
+Citizen. A label embedded in a concept reference does not become part of the
+world. A visually compelling invention remains invalid if the Record does not
+support it.
+
+#### Current canon imagery
+
+Each Citizen has exactly one current canon image. It establishes that
+Citizen's recognizable body, markings, current Keepsake, clothing, Maiming,
+adaptive devices, and other durable visible distinctions. Earlier versions
+remain in secondary history views rather than competing with the current
+portrait.
+
+The Colony may require a small current **representation set** rather than one
+impossible master image. A principal overview establishes its recognizable
+whole; only the additional spatial, material, or inhabited-life views needed
+to preserve the Colony clearly join that set. The set is needs-based, not a
+mandatory shot list. Superseded views enter the Colony's more readily visible
+visual archive.
+
+The first canon image for a new Citizen is established from that Citizen's
+authored identity, current facts, and clean references for species anatomy,
+scale, and material culture. The first Colony set is established from its Home
+territory, current Places, Core-Species spatial grammar, and construction
+language. Once accepted, these images become the same-subject anchors for
+future work.
+
+#### Canon amendment
+
+A lasting visible change begins with the current canon image, the exact change
+already established in the Record, and any other required references. The
+result is checked before it becomes the new current image. The prior version
+then enters history.
+
+This serial continuity applies to the subject's canon lineage, not to every
+image in which the subject appears. When cumulative image drift becomes
+visible, the system returns to the cleanest earlier same-subject anchor and
+reapplies the complete current state. One Citizen, Colony, or Core-Species
+civilization is never derived from another merely as a shortcut.
+
+#### Moment composition
+
+A moment composition uses current canon imagery to place known subjects into a
+new dramatic or informational arrangement. It may change camera, pose, light,
+expression, weather, and immediate context as the Moment Brief permits. It may
+not change identity or persistent state.
+
+This is the generative realization's central experiential use. Current canon
+imagery can anchor:
+
+- a dramatic scene shown after a MEET has resolved
+- a Register transition or loading image that carries the player between ways
+  of seeing the same continuous world
+- the backplate of a Citizen information panel or another contextual view of a
+  known Citizen
+- a Chronicle or Tale illustration selected from recorded history
+- a Homecoming, completed Project, Colony Tier ceremony, or other civic
+  milestone
+- an EMBODY or ordinary-life presentation grounded in the Citizen and Place
+  actually present
+
+The resulting scene is a truthful presentation of the moment, not a new canon
+portrait. A Citizen's current canon image changes only through a separately
+warranted canon amendment. Every new scene returns to the current canon
+references rather than using the preceding dramatic scene as its visual source.
+
+If every required subject cannot be referenced or preserved reliably, the
+Baseline is used. A whole-Colony moment may be built from the Colony's current
+representation set and the specific Citizens who must be recognizable; it does
+not require an exhaustive portrait lineup.
+
+#### Visual validation
+
+Before a model-assisted image is shown, it is checked for:
+
+- recognizable Citizen identity and correct animal anatomy
+- the required participants and absence of invented participants
+- current clothing, Keepsakes, Tools, Supplies, Wounds, Maiming, and adaptive
+  devices where visible
+- the correct Place, geography, Colony structure, scale, season, time, weather,
+  and resolved consequence
+- composition consistent with the Moment Brief
+- absence of inherited labels, invented objects, false relationships, and
+  unsupported structural change
+- absence of generated text carrying semantic or instructional meaning
+
+A failed candidate leaves both the Record and canon imagery unchanged.
+
+### Predictive preparation and delivery
+
+When a MEET or another bounded situation presents several choices, the game may
+prepare likely narrative or visual realizations while the player deliberates.
+Each candidate remains attached to its branch. Unchosen branches are discarded
+and never enter Campaign Memory.
+
+A Register transition or loading interval is a natural opportunity to finish
+an applicable image, but the player is never made to wait for optional model
+assistance. Every presentation has a deadline. If the enriched realization is
+absent or invalid at that deadline, the game delivers the Baseline cleanly.
+
+A late model-assisted result does not silently replace what the player already
+experienced. When valid, it may later appear as a Chronicle or Tale
+interpretation of the recorded event. The Record retains which realization was
+actually shown so future references do not pretend the player saw something
+else.
+
+### Selection, duration, and memory
+
+Not every presentation becomes a durable remembrance. The back end selects and
+sorts material according to established significance without asking the player
+to curate the Record directly.
+
+- A moment may remain an immediate scene and leave only its factual outcome in
+  the Record.
+- A Citizen- or Item-specific consequence may later appear through a Tale.
+- A Colony-significant event may receive Chronicle treatment.
+- A lasting visible change may amend a Citizen image or the Colony's current
+  representation set and preserve the superseded image in history.
+
+These outcomes can overlap because they answer different questions. Chronicle
+and Tale translate what an event meant; canon imagery preserves and reuses what
+the world and its inhabitants have visibly become.
+
+### Sourcebook demonstration
+
+The completed Appendix should make the architecture legible through one compact
+authority diagram, one readable Moment Brief, and one event shown through its
+Baseline and model-assisted Narrative and Image realizations. A smaller inset
+can show predictive branch preparation, deadline fallback, and later Chronicle
+reuse. Exact page composition belongs to the Augments phase.
+
+## Appendix D — Home Systems Reference
+
+This Appendix gathers the principal Home relationships for quick reference.
+Part III remains the full account of how DWELL and EMBODY feel and why their
+systems exist; this treatment keeps the values, formulas, dependencies, and
+exceptions near one another.
+
+### Home system contour
+
+> Citizens supply Civic Shares → Civic Shares sustain Roles or advance
+> Projects → Places hold Residences and Practices → Residences answer Housing
+> Load → Practices strengthen situated civic response, enable defined
+> production, and accommodate Projects → DAWN resolves the day's accumulated
+> change
+
+Pressure develops where current Capacity does not cover current Load. Quiet
+Equilibrium becomes active when ordinary obligations are covered and no acute
+situation demands attention. It opens EMBODY and permits certain ceremonial or
+reflective moments without becoming a spendable resource.
+
+### Places, uses, and establishment
+
+A Builder designates physical ground as a Place at no cost. The designation is
+freely withdrawable until its first Residence or Practice Project is committed;
+that commitment makes the Place permanent. Completion makes the new use usable.
+
+| Place state | Civic effect |
+|---|---|
+| **Vacant designation** | Reserves no material and supplies no Capacity, Practice Strength, production, or Project capacity. |
+| **Committed establishment** | Permanently establishes the Place, occupies its supporting Practice, and advances through committed Builder Civic Share-Days. |
+| **Unfinished use** | Supplies no Housing Capacity, Practice Strength, passive output, or transformation. |
+| **Completed usable Residence** | Supplies Core Housing Capacity or satisfies the applicable Guest Residence Fit. |
+| **Completed usable Practice** | Supplies situated Practice Strength, participates in any defined production process, and accommodates one active Project. |
+| **Damaged or unusable use** | Retains its Place and history while its unavailable functions cease until restored. |
+
+One established Place ordinarily holds one Core Residence, one Guest Residence,
+or one Practice. A Guest may depart from that rule only through an explicit
+species exception. Practice Places take the names of their Practices rather
+than acquiring separate building-type names.
+
+Every new Residence or Practice is established through a Builder Project. The
+first Workshop is the sole Practice-establishment bootstrap exemption: its
+founding Project still consumes material, time, and committed Builder effort,
+but begins before a supporting Workshop exists. A Place may later change use or
+stand vacant while remaining established ground.
+
+### Spatial Alignment and Residence Capacity
+
+Each completed usable Core Residence or Practice is either Well Placed or Not
+Well Placed according to the Colony's spatial operator: Mouse **JOIN**, Rabbit
+**GATHER**, or Squirrel **CONNECT**. Layout changes can improve or degrade that
+status. The interface previews a committed Project's expected alignment and
+capacity effects.
+
+| Core Residence | Not Well Placed | Well Placed |
+|---|---:|---:|
+| **Housing Capacity** | 2 Body Units | 3 Body Units |
+| **Rabbit or Squirrel Citizens accommodated** | 2 | 3 |
+| **Mouse Citizens accommodated** | 4 | 6 |
+
+Insufficient Housing Capacity creates Housing Pressure while every accepted
+Citizen remains housed in the civic and narrative sense; capacity loss never
+evicts a Citizen. Guest Residences remain outside pooled Core Housing Capacity
+and use the Residence Fit defined for their species.
+
+A Well-Placed Practice contributes one Spatial Alignment point to Practice
+Strength. Where that Practice has defined passive production or transformation,
+it also contributes one-half yield chunk to that process.
+
+### Civic Balance
+
+Every Housing or Role axis resolves independently:
+
+**Balance = Capacity − Load**
+
+**Readiness = max(Balance, 0)**
+
+**Pressure = max(−Balance, 0)**
+
+Positive Balance is Readiness, zero Balance is Covered, and negative Balance is
+Pressure equal to the uncovered Load. An axis with neither Load nor Capacity is
+N/A. Surplus in one axis never conceals a shortfall in another.
+
+| Citizen body | Civic Share while present, adult, and available | Body Unit |
+|---|---:|---:|
+| **Rabbit** | 1 | 1 |
+| **Squirrel** | 1 | 1 |
+| **Mouse** | 0.5 | 0.5 |
+| **Ordinary v0.5 Guest** | 1 | 1 |
+
+**Role Balance = sustaining Civic Shares − Role Load**
+
+**Housing Balance = usable Core Residence Capacity − Core Citizen Housing Load**
+
+Each available Citizen directs their Civic Share either to one ordinary Role
+or to an active Project. A Citizen who is Away, unavailable, assigned elsewhere,
+or committed to a Project supplies no current share to that Role. Body Unit
+normalizes aggregate contribution and obligation without changing citizenship,
+authority, aptitude, or personal worth.
+
+Current Housing and Role Pressures form the **Civic Pressure profile**. Hidden
+Colony Pressure weighs that profile with World Pressure, present circumstances,
+depth and persistence, bounded randomness, and recent Home MEET history. The
+greatest relevant Role shortfall normally supplies a situation's primary civic
+stake; another actual shortfall or situated fact supplies its collateral stake.
+Pressure creates vulnerability and MEET context rather than automatic daily
+damage.
+
+### Practice Strength
+
+Practice Strength expresses the situated civic value of one completed usable
+Practice when a situation meaningfully involves it.
+
+| Compatible ordinary Role support | Not Well Placed | Well Placed |
+|---|---:|---:|
+| **Less than 1 sustaining Civic Share** | 0.5 | 1.5 |
+| **At least 1 sustaining Civic Share** | 1 | 2 |
+
+Compatible Civic Shares aggregate automatically across Citizens and Roles; the
+player creates no link between a Citizen and an individual Practice. One Mouse
+can satisfy a defined process's requirement for an actual sustaining Citizen,
+while full Practice support still requires one aggregate compatible Civic
+Share. A shared Practice carries one Practice Strength for the situation rather
+than multiplying its value by the number of Roles that use it.
+
+### Roles and Practices
+
+| Role | Ordinary responsibility | Practice or Practices | Defined output or passive civic expression | Characteristic deliberate work |
+|---|---|---|---|---|
+| **Builder** | Physical soundness and deliberate transformation of Home | Workshop | Beautification | Establish Residences and Practices; construct or restore Outposts; complete major structural changes |
+| **Gardener** | Cultivation, seasonal yield, and cultivated continuity | Garden | Perishable Sustenance | Restore or adapt cultivated ground; establish Winter Cultivation |
+| **Crafter** | Functional material and Away capability | Workshop | Binding, Device, and Offering Supply preparation | Create Tools, Specialist Tools, and lasting fabrication capabilities |
+| **Caretaker** | Provisioning, nurture, dependency, and ordinary care | Hearth; Kitchen | Perishable-to-Durable preservation through Kitchen | Adapt nurture or provisioning to a persistent need |
+| **Healer** | Injury, illness, recovery, and bodily adaptation | Hearth | Remedy preparation | Conduct Wound Recovery and Rehabilitation Projects |
+| **Teacher** | Teaching, integration, cultural continuity, and social memory | Gathering Place; Hearth | Beautification | Establish a memorial, observance, or lasting cultural understanding |
+| **Watchkeeper** | Timely warning and useful Telegraph | Watchpost | Beautification | Extend or restore warning and signaling capability |
+| **Leader** | Coordination, deliberation, shared commitment, and ceremony | Gathering Place | Beautification | Establish persistent civic agreements or coordinating functions |
+
+Workshop, Hearth, and Gathering Place are shared Practices. Compatible Roles
+draw upon the Practice as circumstances require, but the Practice retains one
+situated strength and one Project slot. Hearth is the civic Practice of healing,
+nurturing, dependency, and recovery; **family** remains a domestic relationship.
+Leader contributes no Hearth support.
+
+Builder, Teacher, Watchkeeper, and Leader Civic Shares sustained in ordinary
+work each add one point to the Colony-wide Beautification track at DAWN. A
+threshold produces one small persistent, mechanically inert Frill. Well-Placed
+Practices and Project-committed Citizens add no Beautification progress.
+
+### Defined Practice improvements
+
+Each current Practice has at least one specific improvement. An improvement
+makes a bounded persistent capability true at one existing Practice through a
+Project owned by the Role that benefits from the result. It adds no generic
+level, Practice Strength, or Project slot.
+
+| Practice | Improvement | Owning Role | Effect |
+|---|---|---|---|
+| **Workshop** | **Fine Work** | Crafter | Opens individually defined Specialist Tool recipes. |
+| **Garden** | **Winter Cultivation** | Gardener | Makes that Garden eligible for winter yield at one-quarter of its normal production. |
+| **Kitchen** | **Open Table** | Caretaker | Opens the whole-Colony Shared Meal EMBODY opportunity. |
+| **Hearth** | **Rehabilitation** | Healer | Allows individualized Rehabilitation Projects after Maiming. |
+| **Watchpost** | **Far Warning** | Watchkeeper | Qualitatively identifies an eligible approaching pressure family early enough to provide another preparation window. |
+| **Gathering Place** | **Community Board** | Leader | Gives selected Almanac information already known to the Colony a persistent shared expression in DWELL. |
+
+The physical Community Board may stand elsewhere within Home while remaining
+the improvement of its Gathering Place. Winter Cultivation, Open Table, Far
+Warning, and Community Board modify only their stated capability. Wound Recovery
+uses an available Hearth and requires no Rehabilitation improvement.
+
+### Passive production and transformation
+
+A process produces zero unless it has at least one completed usable relevant
+Practice and at least one Citizen sustaining its defined Role. Once that gate
+is satisfied:
+
+**Passive Throughput = usable relevant Practices + sustaining Civic Shares +
+(0.5 × Well-Placed relevant Practices)**
+
+| Process | Required Practice | Sustaining Role | Result |
+|---|---|---|---|
+| **Cultivation** | Garden | Gardener | Perishable Sustenance during eligible seasons |
+| **Preservation** | Kitchen | Caretaker | Perishable Sustenance transformed into Durable Sustenance |
+| **Supply Preparation** | Workshop | Crafter | Binding, Device, and Offering Supplies from defined inputs |
+| **Remedy Preparation** | Hearth | Healer | Remedy Supplies from defined inputs |
+
+Each usable Practice and each sustaining Civic Share adds one yield chunk; each
+Well-Placed Practice adds one-half. Project-committed Citizens contribute
+nothing to throughput. Inputs, recipes, seasons, targets, protected reserves,
+and situated modifiers apply after ordinary throughput is calculated and can
+bound the result. The formula creates no output for a Practice without a defined
+process.
+
+Each process carries its own fractional remainder. DAWN releases whole chunks
+and retains the fraction: throughput of 1.5 releases one chunk, then two, then
+one across successive eligible DAWNs.
+
+Provisioning places an eligible transformation in **Prepare**, **Hold**, or
+**Unavailable** state. Player targets prevent automatic overproduction, while
+protected reserves prevent committed inputs from being consumed by unrelated
+Provisioning or Projects.
+
+### Project Queue
+
+Every Project makes one defined persistent result true. Its queue entry records
+the result, owning Role, supporting Practice, target, required material,
+required Civic Share-Days, and named committed Citizens.
+
+- Each completed usable Practice accommodates one active Project.
+- The supporting Practice and Project target may be different Places.
+- The owning Role follows the result: Builder establishes a Practice, Residence,
+  or Outpost; Crafter creates a Tool; Gardener converts a Garden for Winter
+  Cultivation; Healer conducts Wound Recovery.
+- The player may reserve material before commitment and release an uncommitted
+  reservation.
+- Commitment occupies the supporting Practice and withdraws the named Citizens'
+  shares from Role coverage, Practice support, passive throughput, and
+  Beautification as applicable.
+- Each Citizen adds Civic Share-Days equal to their Civic Share as the relevant
+  days pass. Fractional contribution accumulates unseen until DAWN records
+  whole progress.
+- A committed Project cannot be interrupted or cancelled.
+- Completion creates the result, releases the Practice, and returns the Citizens
+  to ordinary availability.
+- The supporting Practice retains its situated Practice Strength while occupied,
+  recalculated from ordinary compatible support that remains.
+
+The founding Workshop Project alone begins without a supporting Practice. A
+Wound Recovery Project alone requires exactly one committed Healer and advances
+one Healer-Day per elapsed day regardless of Body Unit; additional Healers do
+not accelerate biological recovery.
+
+### Population and growth
+
+| Population view | Includes |
+|---|---|
+| **Colony Roster** | Every living named Citizen belonging to the Colony, including young Citizens, Patients, Guests, and Citizens Away |
+| **Citizens at Home** | Roster Citizens physically present at the Home Median |
+| **Available Civic Population** | Home-present adults currently able to sustain Roles or commit to Projects |
+| **Dependents and Patients** | Present Citizens requiring support without a current ordinary Civic Share |
+
+Growth occurs through three distinct relationships:
+
+| Path | Opening | Commitment | Result |
+|---|---|---|---|
+| **Wanderer** | Refuge, rescue, or integration MEET | Permanent welcome or bounded temporary refuge under the Colony's actual conditions | A named Core adult joins the Roster with a Prior-life Tale and their Body-Unit Civic Share when available. |
+| **Nesting** | A rare green-season proposal from particular mature Core Citizens while Quiet Equilibrium creates civic room | Protected Sustenance and visible future accommodation, care, teaching, protection, and Role support | A very small number of named young Citizens enter the Roster and create support needs before contributing Civic Shares at Maturity. |
+| **Guest residency** | Relationship and Terms of Hospitality | The promised Residence Fit, access, support, and other agreed conditions become true | A named Guest or explicitly collective-bodied household joins the Roster under its species profile. |
+
+Every arrival adds a named life, history, Sustenance demand, and actual civic
+obligations. Core Citizens also add Body-Unit-scaled Housing Load; Guest
+Citizens require their species' Residence Fit.
+
+Housing, Sustenance, routes, care, protection, and Role support constrain
+responsible growth without forming one abstract population cap. Emergency
+hospitality may exceed Housing Capacity and make the resulting Pressure visible.
+The player sees the expected change to Housing, Sustenance, Role Load, care, and
+available Civic Shares before authorizing planned growth.
+
+### Colony Tier recognition
+
+Tier number is the common mechanical vocabulary; each Core Species expresses
+that recognized scale through its own civic name.
+
+| Tier | Required living Body Units | Mouse | Rabbit | Squirrel |
+|---|---:|---|---|---|
+| **I** | Founding | **First Rooms** | **Close Commons** | **First Anchors** |
+| **II** | 7 | **Joined House** | **Open Commons** | **Linked Ways** |
+| **III** | 12 | **Manor House** | **Court** | **Living Web** |
+| **IV** | 18 | **Grand Manor** | **Grand Court** | **Grand Web** |
+
+Population is the sole Tier gate. Every living Citizen on the Roster contributes
+their ordinary Body Unit regardless of age, health, or current location. Once
+eligible, recognition additionally requires Quiet Equilibrium, an available
+Home-present Citizen actively sustaining Leader, and the Tier's escalating
+Civic Dedication outside protected reserves.
+
+The player may defer recognition indefinitely. Committing the Dedication
+consumes its resources, advances one Day Band, and opens the Recognition MEET.
+The active Leader conducts the ceremony, with Gathering Place hosting when one
+is available. Recognition proceeds one Tier at a time and remains part of
+Colony history through later contraction, Pressure, or damage. Exact Civic
+Dedication ingredients and quantities belong to the dedicated Items and
+Resources tuning phase. The Dedication occupies no Project Queue slot; its
+material becomes part of the Colony's built fabric, with equal mechanical cost
+and species-specific physical expression.
+
+### DAWN reference order
+
+DAWN closes the elapsed day and establishes the new one:
+
+1. Consume Sustenance, normally Perishable before Durable.
+2. Resolve active preservation and Supply preparation from eligible stock.
+3. Apply aggregate Perishable Sustenance spoilage.
+4. Add new passive production, releasing whole chunks and carrying fractions.
+5. Add Beautification progress and create any earned Frill.
+6. Add Project progress, complete eligible Projects, and release their Practices
+   and Citizens.
+7. Resolve recovery and other changes in Citizen location or availability.
+8. Recalculate usable Places, Spatial Alignment, Housing and Role Balance, and
+   Colony Pressure.
+9. Report meaningful stock, Project, availability, and civic changes.
+
+A Residence or Practice completed at this DAWN becomes usable during the new
+day and first contributes passive output at the following DAWN. A Citizen whose
+recovery completes becomes available during the new day.
+
+## Appendix E — Resources, Items, Carry, and Body Units
+
+MEDIAN distinguishes Colony-scale stocks, party Cargo, and personally tracked
+Items. Body Units allow bodies of different sizes to enter shared civic and
+expedition math while every Tool, Keepsake, Wound, relationship, memory, and
+death remains attached to a particular Citizen.
+
+### Four material layers
+
+| Layer | Unit and ownership | Examples | Where it persists |
+|---|---|---|---|
+| **Colony stock** | Fungible Colony-scale quantity | Sustenance, Scrap, prepared Supplies | Home's shared stores; synchronized Outpost transfers enter the same stock |
+| **Cargo** | Fungible units held within one party-wide Carry capacity | Sustenance or Scrap recovered Away | The expedition until offloaded at an Outpost or reconciled at Homecoming |
+| **Personal Item** | One physically credible object attached to a Citizen or assigned expedition position | Tool, Supply, Keepsake | Its owning or carrying rules rather than Cargo slots |
+| **Singular tracked Item** | Authored, individually persistent object | Special Artifact or another meaning-bearing object | Its current holder, location, state, and possible Item Tale |
+
+Colony stocks and Cargo do not retain makers or individual unit histories.
+Personally or historically meaningful objects remain tracked. A fungible
+resource can become a defined Item through an authored transformation; an Item
+never dissolves into anonymous stock merely because it reaches Home.
+
+### Body Units
+
+**Body Unit** is the normalization layer for aggregate mechanics. **Citizen**
+remains the unit of life.
+
+| Citizen body | Body Units | Civic Share | Ordinary secured Carry contribution |
+|---|---:|---:|---:|
+| **Rabbit** | 1 | 1 | 10 |
+| **Squirrel** | 1 | 1 | 10, plus optional Strained Carry |
+| **Mouse** | 0.5 | 0.5 | 6 per individual Mouse; 12 per Body Unit |
+| **v0.5 Guest** | 1 | 1 | Species-fixed value |
+
+Fireflies and Bumblebees each form one collective-bodied Citizen household and
+one Body Unit despite visible multiplicity. A later species may count as more
+than one Body Unit only through an explicit species rule; no current v0.5
+Citizen does.
+
+Body Units govern:
+
+- Housing Load and Core Residence Capacity
+- Sustenance demand
+- Civic Shares, Role Balance, ordinary Civic Share-Day Project progress, and
+  Beautification contribution
+- party composition and bodily hazard normalization
+- baseline Carry, subject to the explicit Mouse and Guest values
+
+Citizen identity governs:
+
+- name, relationships, family, personal history, and Campaign Memory
+- individual Tool, Supply, and Keepsake positions
+- Role identity and Guest Signature
+- Wound, Maiming, Tharn, Exposure, recovery, and death
+- Focus and personal consequence during MEET
+
+Two Mice therefore equal one Rabbit in aggregate civic scale while remaining
+two complete lives with two sets of relationships and personal Item positions.
+Mouse's greater headcount within the same Body Unit allowance is a deliberate
+advantage in possible Item carriage and a deliberate multiplication of
+particular lives placed at risk.
+
+### Party normalization
+
+An ordinary expedition contains at least one and one-half and no more than
+three Body Units, and always contains more than one actual animal.
+
+| Example | Body Units | Legal ordinary party? |
+|---|---:|---|
+| Three Mice | 1.5 | Yes; the smallest all-Mouse party |
+| One Mouse and one full-Body-Unit Citizen | 1.5 | Yes |
+| Three Rabbits, Squirrels, Expedition Guests, or any full-unit mixture | 3 | Yes; the ordinary maximum |
+| Six Mice | 3 | Yes; six particular Citizens within the same maximum |
+
+Each departing Citizen withdraws the Civic Share supplied by their Body Unit
+from Home. Party membership remains fixed until Homecoming. No ordinary Tool,
+Practice, Colony Tier, or Outpost improvement raises the three-Body-Unit limit.
+
+### Resource and production categories
+
+| Resource | Principal function | Ordinary source or transformation |
+|---|---|---|
+| **Perishable Sustenance** | Immediate and green-season food; vulnerable to aggregate spoilage | Garden and Gardener production; eligible Field recovery |
+| **Durable Sustenance** | Preserved food for winter, disruption, and protected reserves | Kitchen and Caretaker preservation of Perishable Sustenance |
+| **Flexible Scrap** | Binding, wrapping, weaving, lashing, sealing, and suitable construction | Field recovery and authored exchange or consequence |
+| **Rigid Scrap** | Bracing, shielding, surfacing, reinforcement, and suitable construction | Field recovery and authored exchange or consequence |
+| **Supplies** | Prepared expendable interventions for Away or situated need | Crafter or Healer Provisioning from defined inputs |
+| **Tools** | Durable personal working capability Away | Crafter Projects at a usable Workshop |
+
+Perishable Sustenance is normally consumed before Durable Sustenance. Scrap
+does not divide into component inventories. Production, Provisioning, and
+Projects draw only their defined inputs, and protected reserves remain outside
+unrelated automatic use.
+
+Perishable Sustenance, Durable Sustenance, and Scrap remain fungible stocks.
+Prepared Supplies remain stock until Launch assigns one to a Citizen's
+expedition position. A completed Tool enters personal Item tracking when its
+Crafter Project creates it. Supply and Tool therefore belong to the material
+economy without remaining anonymous Colony stock throughout their use.
+
+Ordinary food is abstracted during Away. Away Citizens continue to count toward
+the Colony's Body-Unit-scaled Sustenance demand. Food recovered in the Field is
+Cargo for Home rather than a ration position, hunger meter, or separate
+expedition resource.
+
+### Resource flow
+
+> Field recovery or exchange → party Cargo → Outpost Colony sync or Homecoming
+> → Colony stock → consumption, Provisioning, reservation, or Project
+> commitment
+
+The party never sends ordinary Cargo directly to Home from arbitrary Field
+ground. A completed Outpost can transfer offloaded fungible Cargo into the one
+Colony stock through Colony sync, immediately freeing Carry. Homecoming
+automatically transfers remaining Cargo into that same stock.
+
+Reserved Project material remains part of Colony stock but unavailable to
+unrelated use. Commitment protects and consumes it according to the Project.
+Provisioning uses player-set targets and reserves so recurring transformation
+does not exhaust material intended for ordinary life or deliberate work.
+
+### Personal Item positions
+
+| Position | Eligible Citizens | Persistence | Capacity |
+|---|---|---|---:|
+| **Keepsake** | Every Citizen | Personally persistent | 0 or 1 |
+| **Tool** | Launch-eligible Citizens | Persistent and freely reassigned at Home | 0 or 1 |
+| **Supply** | Launch-eligible Citizens | Assigned for one expedition and consumed when committed | 0 or 1 |
+
+Young Citizens and Resident Guests retain complete identity and may hold a
+Keepsake without displaying unused Away-equipment positions. Core Citizens and
+Expedition Guests use the same applicable positions. Body compatibility changes
+the item's credible physical form rather than creating proficiency ratings.
+
+Tools, Supplies, and Keepsakes occupy their own positions and consume no Cargo
+slots. Artifacts and other singular meaning-bearing objects require secured
+carriage when they travel but retain their own identity rather than becoming
+fungible Cargo.
+
+### Tools
+
+A Tool is one persistent, named, body-scaled working object held by a
+Launch-eligible Citizen. The five ordinary classes are **Carry**, **Reach**,
+**Cut**, **Brace**, and **Render**.
+
+- Any Launch-eligible Citizen may hold any Tool whose form is credible for that
+  body.
+- Role, Species, personality, and prior service create no proficiency gate or
+  effect coefficient.
+- A Tool supplies one narrow, reusable contextual capability rather than a
+  general bonus.
+- Relevant Tools appear after the player chooses a MEET response; the player
+  may select one personal-Item expression for the Round.
+- A selected Tool supplies its full effect, places its holder in Focus, and
+  enters the Round's situated hazard.
+- Multiple Tools of one class provide redundancy and possible protagonists
+  rather than stacking upon one Round.
+- A Carry Tool provides its standing Cargo effect and enters hazard when the
+  capacity or carried load is materially at stake.
+- A Damaged Tool remains with its Citizen but is unavailable for the remainder
+  of the expedition. Ordinary repair after Homecoming belongs to Crafter
+  responsibility; a new persistent capability requires a Project.
+- Fine Work opens specifically authored Specialist Tools rather than numerical
+  levels for ordinary Tools.
+
+Routine use and reassignment create no history by themselves. Consequential
+creation, recovery, use, adaptation, damage, repair, loss, or destruction may
+enter the Tool's record.
+
+### Supplies
+
+A Supply is one anonymous, unitary, body-scaled object prepared for a single
+intervention and assigned to one Launch-eligible Citizen for one expedition.
+It is something an animal can physically carry and deploy, rather than a kit,
+bundle, or abstract charge.
+
+The present Supply-class names remain provisional until the dedicated Items and
+Resources tuning phase.
+
+| Supply | Physical form | Direction | Prepared by |
+|---|---|---|---|
+| **Binding** | One cord, strip, wrap, or fastening | Connect or secure | Crafter |
+| **Device** | One small contrivance | Produce one temporary physical or sensory effect | Crafter |
+| **Offering** | One morsel or meaningful token | Place something into an encounter with another being | Crafter |
+| **Remedy** | One dose, dressing, or poultice | Treat or protect a body | Healer |
+
+- Binding may create one temporary tie, tether, wrap, patch, restraint, or
+  fastening.
+- Device may wedge, mark, signal, trigger, screen, or probe through one compact
+  deployed object.
+- Offering may be given, shared, exchanged, placed, promised, or used as bait;
+  it never compels acceptance or the intended response.
+- Remedy may clean, soothe, stabilize, or protect. It can stabilize a Wound
+  through Homecoming, lessen one defined immediate physical effect, contain the
+  acute Wound accompanying Maiming, or express PARLEY through applicable care.
+  It does not relieve Tharn.
+
+The authored MEET states a Supply's exact applicable effect. Committing it
+provides that effect and consumes the Supply regardless of the overall outcome.
+It may soften consequence, preserve a stake, extend an achieved result, or
+enable a credible alternative without replacing the Round or guaranteeing
+success.
+
+Supplies carry no personal name, maker, quality tier, provenance, or Tale.
+Unspent Supplies return to the prepared Colony pool at Homecoming and all
+expedition Supply positions clear. A Supply discarded during TRAVEL leaves
+play.
+
+### Keepsakes and singular Items
+
+A Keepsake is a persistent emotional object rooted in one Citizen's life. Its
+position may remain empty without making that life incomplete.
+
+- One narrow personal circumstance can make the Keepsake relevant during an
+  eligible Home or Away MEET.
+- A selected Keepsake becomes the Round's one personal-Item expression and
+  places its holder in Focus.
+- Its meaning may soften a personal consequence, preserve a meaningful stake,
+  or permit a response within the chosen Approach.
+- A Keepsake is present rather than spent, charged, refreshed, or cooled down.
+- Damage, gifting, loss, sacrifice, surrender, succession, replacement, and
+  memorial display require an explicit consequential event.
+
+A Special Artifact or another singular tracked Item can retain a holder,
+location, visible state, history, and Item Tale without becoming a standard
+loadout position. Meaning-bearing Items return, transfer, or receive memorial
+disposition through the event and relationships involved; death never turns a
+Citizen's possessions into anonymous loot.
+
+### Items within MEET
+
+MEET preserves collective decision while allowing one object and one Citizen to
+become particular.
+
+1. The player chooses a valid response.
+2. Relevant Tools, Supplies, Keepsakes, relationships, and authored
+   circumstances appear.
+3. The player chooses no personal-Item expression or one Tool, Supply, or
+   Keepsake expression.
+4. The chosen expression establishes its effect, bearer, Focus, and applicable
+   stake.
+
+A Guest Signature is a bodily capability rather than an Item and may coexist
+with the active Item when its circumstances apply. No Item provides an
+unspecified bonus, extra Round, success guarantee, or immunity from consequence.
+
+### Secured Carry
+
+Carry is one visible party-wide capacity for fungible Cargo. Personal Item
+positions remain separate.
+
+**Secured Carry = (10 × Rabbit Body Units) + (10 × Squirrel Body Units) +
+(6 × individual Mice) + Expedition Guest Carry + applicable Carry Tool effects**
+
+| Expedition Guest | Secured Carry |
+|---|---:|
+| **Raccoon** | 12 |
+| **Crow** | 9 |
+| **Gull** | 9 |
+| **Fox** | 12 |
+| **Weasel** | 10 |
+| **Hedgehog** | 8 |
+| **Snake** | 6 |
+| **Mink** | 10 |
+
+Current and maximum Carry remain visible. Added Cargo contracts projected
+TRAVEL reach and can become a situated RISK or MEET stake. The Field expresses
+that burden through reduced reachable ground rather than another Load score.
+Whenever capacity or consequence requires it, the player chooses what to take,
+leave, protect, offload, or abandon.
+
+### Squirrel Strained Carry
+
+Each Squirrel Body Unit supplies ten optional Strained Carry slots beyond
+secured Carry. This is one shared capacity representing precarious mouth,
+cheek, and exterior carriage.
+
+**Maximum Strained Carry = 10 × Squirrel Body Units**
+
+Only fungible Cargo may enter it. Artifacts, Keepsakes, and other singular
+objects require secured carriage. Strained Cargo contracts projected reach and
+enters situated danger like the rest of the haul.
+
+After a Day Band in which the party materially moved while carrying Strained
+Cargo, each Squirrel makes one visible Jostle check:
+
+**Jostle chance = 10% × (current Strained Cargo ÷ maximum Strained Carry)**
+
+A successful check immediately loses one randomly selected Strained Cargo unit.
+The fill proportion recalculates after each loss. No check occurs while the
+capacity is empty or the party did not travel. When RISK or MEET already
+resolves danger to Strained Cargo for that Band, its consequence replaces the
+ordinary Jostle checks.
+
+### Homecoming and persistence
+
+Homecoming reconciles layers according to what they are:
+
+- remaining Cargo enters Colony stock and clears from Carry
+- unspent Supplies return to the prepared pool and their positions clear
+- spent or discarded Supplies remain gone
+- Tools, Keepsakes, Artifacts, and other tracked Items retain their holders,
+  states, and histories
+- damaged Tools enter ordinary Crafter repair
+- a deceased Citizen's meaning-bearing possessions receive their disposition
+  through relationship, succession, or memorial context
+
+An Outpost Colony sync transfers fungible Cargo only. Personal and singular
+Items remain with their holders until Homecoming or another explicit event
+changes them.
+
+### Current tuning boundary
+
+The architecture above is current m050 design. A dedicated conceptual tuning
+phase will set Node yields, recurring costs, Carry burden, major recipes,
+Sustenance demand and spoilage, Supply and Tool costs, Outpost and Place costs,
+Project material requirements, Civic Dedications, and the final Supply-class
+names as one connected economy. Tuning may change quantities and provisional
+labels while preserving the distinctions among stock, Cargo, personal Items,
+Body Units, and particular Citizen consequence.
+
+## Appendix F — The Highway and Living World Reference
+
+This Appendix gathers the persistent physical and environmental world in which
+Home and Away occur. It treats The Highway as one living system: Corridor
+geometry, Biomes, Sound Walls, traffic, human activity, weather, Nodes, and the
+World Pressure they create. Appendix G separately gathers the actions Citizens
+take within that world.
+
+### Corridor geometry
+
+The Highway is one persistent world organized longitudinally as the Corridor.
+Its cross-section is:
+
+> **Sound Wall ‖ Margin | Main Roadway | Median | Main Roadway | Margin ‖
+> Sound Wall**
+
+| Term | Reference meaning |
+|---|---|
+| **Corridor** | The continuous longitudinal organization of The Highway, extending beyond the presently known Reaches |
+| **Reach** | One comprehensible segment containing its portion of Median, both Main Roadways, and both Margins |
+| **Median** | The central habitat band continuing through successive Reaches |
+| **Main Roadway** | One of the two broad lateral traffic bands separating Median from Margin |
+| **Margin** | The inhabited band between a Main Roadway and its hard Sound Wall boundary |
+| **Sound Wall** | The lateral limit of playable ground |
+| **Home Median** | The particular geographic median occupied by the Colony; the Colony retains its own proper name |
+
+Upcorridor and downcorridor movement proceeds longitudinally through the
+Median. A smaller road may cross the Median at a Reach border. Transverse
+movement between Median and Margin crosses a Main Roadway. Both road scales use
+RISK, with width, traffic, visibility, surface, weather, River Spume, and
+far-side refuge determining the particular Crossing.
+
+### The world in cross-section
+
+The simple cross-section names the major bands; play occurs within their
+animal-scale detail. From the Corridor's center toward either outer boundary,
+the ground ordinarily reads as:
+
+| Cross-sectional position | Physical character and use |
+|---|---|
+| **Median interior** | Soil, vegetation, water, drainage, shelter, paths, Nodes, and the possibility of permanent Home |
+| **Median Roadway edge** | Verge, shoulder, drainage, exposed sightline, deposited material, and possible Staging Post ground |
+| **Main Roadway** | Moving traffic surface and the full Crossing threshold |
+| **Roadway-side Margin** | Strong River Spume, volatile material opportunity, disturbance, and exposed Nodes |
+| **Middle Margin** | Mixed vegetation, infrastructure, runoff, shelter, animal activity, and scattered material |
+| **Sound-Wall-side Margin** | Greater shelter, trapped moisture and debris, denser vegetation, and living-resource Nodes |
+| **Sound Wall** | Hard lateral boundary whose base, shade, runoff, sound, and accumulated material remain part of the playable Margin |
+
+The same sequence mirrors on the other side of the Median. Actual Reaches bend,
+narrow, widen, flood, harden, or interrupt these tendencies without losing the
+underlying relationship. A smaller Reach-border road creates a compressed
+version of Roadway edge, moving surface, and far-side refuge within
+longitudinal travel.
+
+### Sound Walls
+
+Sound Walls terminate the Margins and make the Corridor's human construction
+continuously legible. The ground at their base remains playable; the wall
+itself is a hard boundary rather than another territory beyond The Highway.
+
+- Wall material, height, joints, damage, drainage, and orientation shaping
+  shade, warmth, wind, echo, vibration, runoff, and animal-scale enclosure
+- Seeds, leaves, litter, water, and blown material accumulating at the base and
+  supporting sheltered Nodes or passages where the actual place permits them
+- Sound-Wall-side vegetation tending toward greater stability than Roadway-edge
+  growth while remaining subject to mowing, maintenance, flooding, heat, and
+  contamination
+- The wall giving reliable lateral orientation even when dense vegetation or
+  complex infrastructure obscures the larger Corridor
+- Openings, culverts, breaks, and service structures functioning only according
+  to their actual geometry, without turning the far side of the wall into a
+  playable expansion zone
+- Human work upon or beside a Sound Wall entering the same traffic-as-weather
+  and World Pressure systems as other maintenance
+
+### Environmental bands
+
+| Band | Character | Typical opportunities and pressures |
+|---|---|---|
+| **Median** | Relative sanctuary with soil, vegetation, drainage, cover, and reduced human access | Colony life, longitudinal travel, local Nodes, flood, scarcity, predators, and maintenance |
+| **Roadway** | Moving barrier of pavement, traffic, heat, noise, vibration, fumes, water, and exposed distance | Crossing, deposited material, River Spume, immediate bodily danger |
+| **Margin** | Abundant but disturbed ground between Roadway and Sound Wall | Sustenance, insects, water, shelter, Scrap, wreckage, contamination, mowing, predators, flooding, and human access |
+
+Margin resources follow a broad tendency rather than rigid zoning. Vegetation
+and Perishable Sustenance become more common toward sheltered Sound Wall edges;
+Flexible and Rigid Scrap become more common near Roadways, debris deposits, and
+wreckage. Natural features can occur throughout. A wrecked car may be terrain,
+shelter, landmark, hazard, and major Node at once.
+
+**River Spume** is the vehicle-generated turbulence, pressure change, and debris
+lift above and beside a Roadway. Its force follows current traffic and is
+strongest on and immediately beside the road, diminishing across the Margin.
+
+### Biome reference
+
+A Biome is a recurring environmental grammar. A Reach realizes that grammar as
+one particular arrangement with its own Nodes, history, conditions, and
+landmarks. Founding compatibility belongs to local topology; no Biome is
+exclusive to one Species.
+
+| # | Biome | Primary identity | Founding relationship |
+|---:|---|---|---|
+| 1 | **Rootbank Meadow** | Grass, eroded banks, exposed roots, hollows, and sheltered clearings | Rabbit |
+| 2 | **Bramble Hollow** | Dense thorn and vine cover, narrow passages, and protected openings | Rabbit |
+| 3 | **Culvert Garden** | Drainage infrastructure, wet soil, raised banks, stone, and seasonal flow | Mouse |
+| 4 | **Concrete Trench** | Retaining faces, hard seams, broken slabs, runoff, heat, and shade lines | Mouse |
+| 5 | **Wooded Median** | Trunks, canopy, roots, fallen branches, shade, and broken visibility | Squirrel |
+| 6 | **Rock Cut** | Shelves, fissures, ledges, sparse trees, height change, and gaps | Squirrel |
+| 7 | **Thin Grass Ribbon** | Narrow exposed ground, long sightlines, wind, and road proximity | Corridor |
+| 8 | **Creek Split** | A longitudinal stream dividing banks, islands, and crossing places | Corridor |
+| 9 | **Pond Hollow** | Standing water, reeds, saturated ground, insects, and changing margins | Corridor |
+| 10 | **Interchange Expanse** | Broad disorienting ground among diverging roads and scattered infrastructure | Corridor |
+| 11 | **Overpass Shadow** | Columns, beams, recesses, echo, vibration, drainage, and artificial shade | Unusual Corridor |
+| 12 | **Abandoned Works** | Gravel, pipe, rebar, cut earth, incomplete drainage, and interrupted construction | Unusual Corridor |
+
+The founding pool pairs Culvert Garden and Concrete Trench for Mouse, Rootbank
+Meadow and Bramble Hollow for Rabbit, and Wooded Median and Rock Cut for
+Squirrel. Starting contents may vary while the topology that makes JOIN,
+GATHER, or CONNECT legible remains stable.
+
+### Shared time
+
+One world clock governs Home and Away:
+
+> **DAWN → Morning → Midday → Evening → Night → DAWN**
+
+Morning, Midday, Evening, and Night are the four playable Day Bands. DAWN is the
+explicit accounting and calendar transition. Meaningful action, movement, and
+duration advance time; inspection, reading, planning, and camera movement
+leave it paused. Time changes the same light, weather, traffic, Colony state,
+Nodes, and Field conditions whichever Mode currently holds attention.
+
+| Register or context | Time relationship |
+|---|---|
+| **DWELL** | A normal Home commitment advances to the next Day Band. |
+| **TRAVEL** | Direct movement consumes projected spatial reach within the current Band; exhaustion advances the Band. |
+| **RISK** | Crossing uses the current Band and its traffic without adding another duration to the arrival movement. |
+| **MEET** | Presentation has no universal cost; the selected action supplies its time. Rest and Homecoming each advance one Band. |
+| **EMBODY** | Ordinary life remains within the current Band. |
+
+Day Band is the sole mechanical world-time unit. TRAVEL uses no Time Mark,
+action-point allowance, or hidden half-Band.
+
+### Human activity as weather
+
+Animals experience traffic and the broader field of human activity as weather:
+large recurring conditions that can be anticipated in kind, sensed through
+their effects, and never controlled. Traffic is its continuous expression;
+maintenance, mowing, machinery, drainage work, litter, collisions, lighting,
+and Road Work provide episodic fronts and disturbances.
+
+- Day Band and season supplying recognizable rhythms without fixing the actual
+  moment or local intensity
+- Sound, vibration, air displacement, light, fumes, water, cut vegetation,
+  debris, and changed access often arriving before the animals can perceive a
+  cause
+- Human bodies remaining outside the frame while vehicles, machinery,
+  materials, and environmental effects remain fully present
+- Traffic and work changing physical state through the same persistent world
+  rather than arriving as detached encounter modifiers
+
+### Traffic
+
+Each Day Band produces variable traffic from a broadly predictable weighted
+range. Traffic **thickness** describes how continuously vehicles occupy the
+Roadway through their present volume and spacing; speed, pulse, vehicle mixture,
+visibility, noise, weather, and disruption give that thickness its particular
+character. One named state may become active when its threshold is reached:
+
+| Day Band | Eligible special traffic state |
+|---|---|
+| **Morning** | **Morning Rush** |
+| **Midday** | **Midday Window** |
+| **Evening** | **Evening Rush** |
+| **Night** | **Night Velocity** |
+
+The state modifies the realized traffic pattern rather than replacing it. That
+pattern belongs to the world and is not rerolled when RISK opens. Waiting may
+offer different traffic by advancing one Day Band and also changing light,
+weather, party condition, and the remaining return margin.
+
+Season alters daylight, surface temperature, precipitation, vegetation,
+visibility, human schedules, vehicle mixture, roadside work, and loose material.
+Time of day and season therefore influence traffic without turning either into
+a deterministic timetable.
+
+### River Spume
+
+River Spume is the atmospheric reach of the moving Roadway: turbulence,
+pressure change, spray, grit, fumes, noise, vibration, and lifted debris created
+by passing vehicles.
+
+- Increasing traffic thickness tending toward sustained atmospheric pressure,
+  while thinner high-speed traffic can create separated forceful pulses
+- Speed, spacing, vehicle size and mixture, surface wetness, wind, precipitation,
+  season, and Day Band changing its present expression
+- Strength peaking over and immediately beside the Roadway and diminishing with
+  actual distance across the Margin
+- Roadway-proximate Nodes receiving stronger effects upon audibility,
+  visibility, scent, footing, loose material, available responses, and
+  consequence during MEET
+- Nodes near enough to passing traffic carrying a situated chance for a thrown
+  or dislodged object, scaled by present traffic and conditions
+- The arriving object able to create atmospheric interruption, immediate
+  danger, material opportunity, or persistent Node change
+- Distance operating through the Node's physical position rather than a second
+  proximity score or universal penalty band
+
+### Weather and World Pressure
+
+Season accumulates change across vegetation, animal activity, resources, Node
+recovery, shelter, and civic need. Weather acts through particular ground:
+rain, wind, heat, cold, flood, frost, and snow alter what can be reached, used,
+heard, seen, protected, or sustained.
+
+At Home, a present environmental condition becomes World Pressure by adding
+contextual Load, testing relevant Readiness and Practice Strength, or supplying
+the subject of a MEET. It remains attached to the actual Places, Roles, and
+lives affected rather than becoming one pooled weather score. Away, the same
+condition changes TRAVEL, Nodes, Rest, RISK, MEET, and physical consequence.
+
+Environmental and human events use **Telegraph → Impact → Persistence →
+Aftermath**. A phase opens MEET only when the Colony or party has a meaningful
+choice; otherwise it changes or reports persistent world state directly.
+
+### Road Work
+
+Road Work is an acknowledged but undeveloped World Pressure family in v0.5. It
+includes active lane and barrier work, resurfacing, mowing, drainage and culvert
+clearance, temporary material, machinery, and related maintenance.
+
+- Telegraph appearing through markings, equipment, cut vegetation, altered
+  traffic, staged material, sound, light, vibration, or unusual human schedule
+- Impact able to redirect traffic and River Spume or alter a Roadway edge,
+  drainage feature, passage, Node, Sound Wall, or part of Home
+- Persistence and Aftermath able to leave obstruction, access, shelter,
+  displaced material, changed water, damaged ground, or a new opportunity
+- Existing World Pressure, TRAVEL, RISK, MEET, and persistent-state rules
+  carrying its effects
+- Exact work families, generation, duration, warnings, and mechanical outcomes
+  remaining for later authorial development
+
+### Persistent places and Nodes
+
+A Node is a fixed, recognizable Field location whose ecology, material,
+shelter, inhabitants, alteration, or history can matter across visits.
+
+| Quality | Examples | Persistent state |
+|---|---|---|
+| **Ecological** | Bramble, seed fall, insect bloom, water source | Season, abundance, recovery, disturbance |
+| **Material** | Toolbox, litter catch, carcass, construction debris | Contents, condition, depletion, alteration |
+| **Shelter** | Pipe, root pocket, hollow, culvert ledge | Safety, exposure, damage, occupation |
+| **Relational** | Den, Guest camp, claim, meeting landmark | Occupant, relationship, terms, prior choices |
+| **Human-made** | Drain, grate, barrier, vehicle cavity, worksite | Configuration, access, activity, hazard |
+
+A Node may carry several qualities. Hazard is a present condition, and history
+attaches directly rather than creating a separate Memory type. Renewal,
+depletion, occupation, and alteration follow the Node's actual ecology and
+world state.
+
+### Current world-development boundary
+
+Exact traffic generation and thresholds, River Spume effects and thrown-object
+chances, season lengths, weather generation, Node renewal and yields, Road Work
+content, and broader event frequency remain assigned to later authorial and
+conceptual tuning. Current design establishes their relationships, causal
+inputs, persistent world effects, and points of contact with Civic Balance and
+Citizen activity.
+
+## Appendix G — Citizen Activities and Expedition Reference
+
+This Appendix gathers what Citizens and the player do within the world defined
+by Appendix F. It follows the expedition from Launch through direct TRAVEL,
+Rest, RISK, MEET, bodily consequence, Outposts, Return, and Homecoming.
+
+### Expedition contour
+
+> **Launch MEET → TRAVEL → Node, Rest, or RISK as encountered → contextual
+> MEET where consequence requires choice → physical Return → Homecoming MEET
+> → DWELL**
+
+The Launch MEET selects a legal party from mechanically eligible Citizens,
+shows the exact subtraction from Home, assigns prepared Supplies, and commits
+the one active expedition. Party size, Body Units, Items, and Carry are
+tabulated in Appendix E.
+
+An active expedition keeps Away under player operation until Homecoming. The
+player may inspect Home through established information lenses, while ordinary
+DWELL construction, reassignment, Project commitment, and another Launch remain
+closed. The party never travels, activates a Node, crosses, or decides
+autonomously. Home's clock-bound systems continue, and a Home situation that
+crosses the MEET threshold may briefly take focus before operation returns to
+the party's exact persistent position.
+
+### TRAVEL and projected reach
+
+TRAVEL presents the Field from above and lets the player directly drive one
+compact party figure through animal-scale continuous geography. Every Citizen
+remains individually inspectable even though destination, movement, elapsed
+time, and Carry are party-level facts.
+
+Each Day Band begins with a projected **travel span**. Terrain, weather, Cargo,
+bodily state, Rabbit composition, and pushing determine how much actual ground
+the party can cover. Path length—including detours and backtracking—consumes
+that span. Pausing movement preserves the party's position and remaining reach;
+exhausting it advances the world to the next Day Band.
+
+The Field shows reachable ground rather than exposing a second movement
+currency. Grade, surface, cover, drainage, obstruction, shelter, and exposure
+make paths meaningfully different. Changed physical passages alter later reach
+through their actual geography rather than through a route-progression system.
+
+Rabbit bodies modify normal travel span on the absolute three-Body-Unit scale:
+
+**Rabbit TRAVEL multiplier = 1 + (Rabbit Body Units ÷ 3)**
+
+| Rabbit Body Units | Normal travel span |
+|---:|---:|
+| 0 | 1× |
+| 1 | 1⅓× |
+| 2 | 1⅔× |
+| 3 | 2× |
+
+The multiplier increases distance within one Day Band. It adds no time, Carry,
+MEET Round, or RISK action. Non-Rabbit party members impose no slowest-member
+penalty. Carry and Squirrel Strained Carry follow Appendix E.
+
+### Travel cadence and Rest
+
+A rested party receives three traveled Day Bands at normal reach, then may push
+through three more at declining reach:
+
+| Traveled Band since Rest | Projected-reach multiplier |
+|---:|---:|
+| 1–3 | 1× |
+| 4 | ¾× |
+| 5 | ½× |
+| 6 | ¼× |
+| 7 | TRAVEL unavailable until Rest |
+
+A Band counts when it ends after material travel, including when another action
+advances time before the span is exhausted. MEET and Node work neither count as
+TRAVEL nor reset cadence unless their resolved action explicitly supplies Rest.
+Pushing reduces reach while Jostle and situated risk continue normally; it
+creates no generic Fatigue state or automatic Wound or Exposure.
+
+A Rest MEET may begin wherever the party can physically stop. Completion
+advances one Day Band, resets travel cadence, stabilizes each current Wound for
+the next three traveled Bands and their resolved situations, ends Tharn, and
+creates a Stopover at that location. Open ground, weather, disturbance, and
+available shelter determine contextual consequences. Natural refuge improves
+those circumstances; a usable Outpost provides the reliable effects specified
+below.
+
+### Field Cards
+
+Field Cards are occasional situated interruptions between Nodes:
+
+- one 10% check follows each exhausted travel span
+- at most one card occurs in a Day Band
+- no check occurs when RISK or another consequential MEET has already occupied
+  that Band
+- after a card occurs, the next two otherwise-eligible exhausted spans are
+  ineligible
+- selection follows actual Reach, position, terrain, season, Day Band, weather,
+  and persistent state
+- a minor card changes or reveals the Field directly; a consequential card
+  opens MEET
+
+Nodes remain the primary intentional Away content: **Nodes are the meal; cards
+are the weather.**
+
+### Engaging Nodes
+
+Appendix F defines Nodes as persistent world locations. TRAVEL reveals and
+carries the party among them.
+
+- A quiet Node remaining part of TRAVEL without requiring a decision
+- Brief uncontested use able to resolve within the Day Band that reached it
+- Work that genuinely occupies time advancing the next Band
+- Meaningful use, opposition, danger, change, or opportunity opening contextual
+  MEET
+- The outcome changing the Node, party, relationship, Cargo, or world directly
+- Material left behind becoming part of an authored Node change or being
+  abandoned rather than creating a free Cargo cache on arbitrary ground
+
+### RISK and Crossing
+
+RISK begins at the selected **Staging Post**, the immediate Roadway-edge ground
+from which the party observes current traffic, Day Band, weather, River Spume,
+Cargo, and far-side refuge. The player may plan and commit, wait one Day Band,
+or resume TRAVEL away from the road.
+
+Its operative view is schematic and loosely backplated by the actual Staging
+Post angle from the animals' side of the Roadway. The backplate preserves place,
+traffic, weather, and danger while the species-specific schematic makes the
+complete proposed passage legible.
+
+Every Crossing follows:
+
+> **Plan → Commit → Continuous Run → Resolve → Continue**
+
+| Core Species | Question | Planning | Continuous Run |
+|---|---|---|---|
+| **Rabbit** | When does the Roadway open? | Select a represented traffic window, broad line, and far-side refuge. | One uninterrupted sprint. |
+| **Mouse** | Where can continuity be made? | Connect three to six body-credible pavement features. | One chained scurry. |
+| **Squirrel** | How can movement flow through traffic? | Set a trajectory, one or two redirects, and a far-side anchor. | One vector run. |
+
+The Colony's Core Species supplies the RISK grammar for the whole party.
+Land-bound Guests act through their real bodies within it. Crow and Gull alone
+use the parallel Flyer expression: they share the Crossing commitment and time,
+resolve flight through River Spume, weather, visibility, launch, and landing,
+and may receive a different visible outcome from the ground party.
+
+Commit is the final strategic input. The Roadway then remains in motion while
+the complete plan resolves without steering, reaction prompts, or mid-road
+MEET. Every committed Crossing brings the entire party to the far side. Group
+passage resolves first; delay, Exposure, separation, Cargo loss, Wound,
+Maiming, Tharn, or rarer valid consequences apply afterward. Any new decision
+opens from the far side.
+
+Adversity follows Body Units rather than headcount. RISK selects no additional
+targets merely because a Mouse party contains more Citizens. One causal result
+may create connected effects while avoiding duplicate charges for the same
+danger.
+
+### Return Crossing
+
+At a homeward Staging Post, the player reads current conditions and crosses now
+or waits. Present traffic, weather, visibility, River Spume, Cargo, traveled
+Bands since Rest, party bodies, and applicable Signatures select one of two
+presentations:
+
+- **Automatic Return:** the ordinary procedure; hidden adjudication produces a
+  clean crossing or a bounded penalty such as delay, Exposure, eligible Cargo
+  loss, or Wound.
+- **Full RISK:** an uncommon procedure opened when current conditions can
+  support Maiming, Tharn, death, or the complete RISK consequence range.
+
+Both carry the whole party continuously to the homeward side and show any
+penalty only after it is clear of traffic.
+
+### Away MEET
+
+Unopposed situations present their concrete contextual actions directly.
+Contested Away MEET always displays five response families in this order:
+
+| Family | Direction |
+|---|---|
+| **CONTEST** | Overcome, resist, hold, seize, protect, or endure directly |
+| **EVADE** | Bypass, escape, hide, distract, or use terrain |
+| **PARLEY** | Ask, offer, trade, bargain, persuade, deceive, or invoke relationship |
+| **YIELD** | Concede one stake, claim, possession, priority, or cost to preserve another |
+| **WITHDRAW** | End the party's participation and leave the objective or situation |
+
+Each active family contains one concrete response for the current Round.
+Inactive families remain in place, greyed with one concise knowable reason.
+Tools, Supplies, Keepsakes, relationships, and Guest Signatures already present
+may make a response available or change how it operates. The provisional choice
+shows its exact expressions before Commit.
+
+The party's shared result resolves before personal consequence:
+
+1. Resolve what the party achieves, prevents, accepts, or leaves unfinished.
+2. Identify Citizens causally exposed by what they used, carried, protected,
+   confronted, or were already suffering.
+3. Assign consequence directly when one bearer is clear; otherwise select
+   randomly among the equally exposed causal set.
+4. Show cause, bearer, and continuing effect immediately.
+
+One principal personal consequence ordinarily follows a Round. Focus may make
+the same Citizen prominent but never causes or redirects harm. The changed
+party, Node, relationship, object, and world state persist after MEET.
+
+### Exposure
+
+Exposure is a hidden per-Citizen measure from 0 through 6. It weights applicable
+personal consequence toward the serious end of the range already supported by
+the situation; it neither selects the causal target nor expands that range.
+
+- A Citizen's first RISK of an expedition sets Exposure to at least 1 after the
+  Crossing resolves. This floor is not a gain and receives no Wound multiplier.
+- A circumstance that explicitly creates Exposure ordinarily adds one step.
+- One cause supplies at most one base gain across its connected resolution.
+- An unstabilized Wound doubles a normal one-step Exposure gain to two. A Wound
+  created by that same incident does not double its linked gain.
+- Exposure caps at 6 and creates no standing penalty to movement, Carry,
+  response availability, Civic Share, control, or aptitude.
+
+RISK first resolves Crossing consequence from the plan, bodies, traffic, and
+environment without pre-existing Exposure or Wound weighting. Any Exposure
+awarded by that resolved Crossing then enters ordinary persistence, including
+the doubling of a normal gain when the Citizen already had an unstabilized
+Wound.
+
+When genuine uncertainty remains after situation and causal target are known:
+
+**Exposure escalation chance = 10% × current Exposure**
+
+One hidden check may move the selected Citizen's result one position toward the
+serious end of the situation's ordered valid range. No check occurs when the
+result is already determined or already most serious. Exposure is neither
+consumed nor checked again for linked effects.
+
+The interface communicates Exposure through body, behavior, voice, narration,
+and context rather than a number or named ladder.
+
+### Personal consequences
+
+| Consequence | Persistence and effect |
+|---|---|
+| **Wound** | One binary, named recoverable injury. It limits only physically affected actions and doubles new Exposure while unstabilized. |
+| **Maiming** | A lasting bodily change caused by a maiming injury. The incident also creates one acute Wound; recovery may clear that Wound while Maiming remains. |
+| **Tharn** | Acute bodily shutdown during immediate danger. It supersedes the former objective and makes securing the Citizen and Rest mandatory. |
+| **Death** | A rare final outcome available only when an explicitly severe situation made fatal stakes legible before Commit. |
+
+A new Wound result upon a Wounded Citizen changes the injury description and
+sets remaining recovery to the greater current or authored one-to-three
+Healer-Day requirement. It creates no second Wound. Maiming enters adaptation
+and possible Rehabilitation after its acute Wound follows ordinary recovery.
+
+Remedy may stabilize a Wound through Homecoming, lessen one defined immediate
+physical effect, or contain the acute Wound accompanying Maiming. Rest
+stabilization lasts through the next three traveled Bands and their resolved
+situations. Remedy can also enter PARLEY through credible offered care. It
+never relieves Tharn.
+
+### Tharn reference
+
+Tharn occurs only when the immediate event can credibly produce shutdown.
+Exposure and an unstabilized Wound increase susceptibility without causing it
+independently. When Tharn lies within the event's valid range outside RISK:
+
+**Tharn escalation chance = min(80%, 10% × (Exposure + 2 if Wounded and
+unstabilized))**
+
+RISK may produce Tharn from an adequately severe Crossing but is exempt from
+pre-existing Exposure and Wound weighting.
+
+The possibility of Tharn is never labeled, previewed, or given a probability.
+The player sees only the actual situation and observable Citizen state. When it
+strikes, the game names it and changes the MEET's subject immediately. YIELD
+and WITHDRAW ordinarily remain available to secure the struck Citizen; another
+family remains active only when it directly enables rescue or departure. The
+party always retains the Citizen.
+
+While Tharn persists, the party cannot activate another Node, enter RISK, or
+resume an expedition objective. One completed Rest MEET ends it without
+reducing Exposure or clearing Wound or Maiming.
+
+### Exposure recovery
+
+| Recovery context | Effect |
+|---|---|
+| **Ordinary Rest** | Ends Tharn, resets travel cadence, and stabilizes Wound for the next three traveled Bands; Exposure reduction depends upon place and outcome. |
+| **Usable Outpost Rest** | Supplies ordinary Rest effects and removes one Exposure step, but never the final Away step. |
+| **Home at DAWN** | Removes up to three Exposure steps from each Home-present Citizen, to a minimum of 0. |
+
+Maximum Exposure therefore returns to baseline across two Home DAWNs: 6 to 3,
+then 3 to 0. Relaunch preserves any remainder. Exposure recovery never clears
+Wound or Maiming. Home Wound Recovery uses the Hearth, one committed Healer,
+and the one-to-three Healer-Day Project defined in Appendix D.
+
+### Outposts and Stopovers
+
+A Stopover is the temporary Away state created by a completed Rest MEET. A
+natural refuge can improve that Rest. An Outpost is persistent uninhabited Away
+infrastructure that makes one known stopping place reliable.
+
+The Colony establishes or restores an Outpost through a remote Builder Project
+in the ordinary Home Project Queue:
+
+- the target is an eligible location already found and identified
+- one usable Workshop supplies Project capacity
+- named Builder Citizens, required material, and Civic Share-Days are committed
+  at Home
+- routine construction travel and labor remain abstracted into that civic
+  commitment, creating no Away party, Exposure, or personal consequence
+- completion at DAWN establishes the Outpost and releases the Workshop and
+  Builders
+
+An Outpost has no stationed Citizens, routine upkeep, specialization, upgrade,
+or Tier in v0.5. Explicit visible events alone can damage or destroy it. A
+damaged Outpost persists physically but loses protected Rest, Exposure
+reduction, and Cargo transfer until a remote Builder restoration Project
+completes.
+
+A Rest MEET at a usable Outpost:
+
+- advances one Day Band and resets travel cadence
+- ends Tharn and stabilizes Wound for the next three traveled Bands
+- removes one Exposure step from each resting Citizen without removing the
+  final Away step
+- protects ordinary sleep from exposed-ground consequences
+- permits any amount of fungible Cargo to enter Colony stock through abstract
+  Colony sync, immediately freeing party Carry
+
+The party remains Away. Tools, Supplies, Keepsakes, Artifacts, and other tracked
+Items remain with their holders. Outpost Rest supplies no Healer-Days, clears
+no Wound, removes no Maiming, and creates no second Home.
+
+### Return and Homecoming
+
+The player turns homeward through ordinary TRAVEL. Time, terrain, Carry,
+Exposure, bodily state, Nodes, Rest, MEET, and Return Crossings continue to
+govern the same physical journey. Clearing the last Roadway returns the party
+to the Home Median; it still travels the remaining ground to the Colony.
+
+Arrival opens Homecoming after every expedition. Homecoming advances one Day
+Band and follows:
+
+> **Frame → Recognize and receive → Reconcile → Continue**
+
+Recognition presents the named lives that returned, anyone absent, visible
+change, and the Colony that receives them before totals. Reconciliation then:
+
+- transfers remaining Cargo into Colony stock
+- returns unspent Supplies and clears their expedition positions
+- preserves spent Supplies, Item damage or loss, discoveries, relationships,
+  Wound, Maiming, Exposure, death, and every other resolved Away fact
+- restores each eligible returning Citizen's standing Role contribution and
+  recalculates Civic Balance, Practice support, production, and Home state
+- offers an available Wound Recovery Project through Hearth and Healer when
+  applicable
+- opens only Care, Allocation, Guest, succession, memorial, or other choices
+  whose alternatives produce materially different persistent results
+
+A routine Homecoming remains brief and warm. Consequential return expands
+around its actual concerns without rerolling or grading the expedition. When
+reconciliation completes, the expedition ends and DWELL resumes. Quiet
+Equilibrium and EMBODY return only when the Colony's actual resulting state
+supports them.
+
+### Current activity-tuning boundary
+
+Base travel distances, Crossing adjudication, contextual Rest consequences,
+personal-consequence distributions, Wound recovery requirements, and related
+activity pacing remain subject to their dedicated conceptual tuning work.
+Tuning may alter those quantities while preserving the single Day-Band clock,
+direct TRAVEL, species-distinct RISK, six-step Exposure system, causal personal
+consequence, bounded Rest, and Homecoming reconciliation defined here.
+
+## Appendix H — Citizens and Species Reference
+
+MEDIAN's civilization remains small enough for every Citizen to stay a
+particular life. Species changes body, spatial understanding, capability, and
+the shape of play while preserving equal civic and historical standing.
+
+### Shared Citizen architecture
+
+| Aspect | Reference rule |
+|---|---|
+| **Citizen** | One named member of the Colony with a body, relationships, belongings, history, present circumstances, and possible future |
+| **Fractional player character** | Each Citizen carries part of the continuity, agency, attachment, and consequence ordinarily concentrated in one player character |
+| **Belonging** | The living Roster records who belongs to the Colony |
+| **Location** | Each Citizen is at Home or at one current Away position |
+| **Availability** | A present adult Citizen contributes when available; age, injury, treatment, absence, or another actual condition may temporarily suspend contribution |
+| **Civic Share** | The normalized contribution supplied by the Citizen's Body Unit while present, adult, and available |
+| **Individual continuity** | Names, relationships, Tools, Supplies, Keepsakes, Wounds, Maiming, memory, and death follow particular Citizens |
+| **Cross-Register truth** | A change in DWELL, EMBODY, TRAVEL, RISK, or MEET remains true in every other Register |
+
+Individual appearance, voice, temperament, habits, preferences, relationships,
+and history shape expression without creating hidden aptitude or productivity
+tiers. Core and Guest Citizens use the same underlying architecture of
+citizenship, consequence, and memory.
+
+### Core Species
+
+Mouse, Rabbit, and Squirrel are complete playable civilizations. Each supplies
+one bodily scale, one characteristic understanding of inhabited space, and one
+distinct Away advantage. The comparisons below rotate their order so reference
+layout implies no hierarchy among them.
+
+The illustrative maxim is: **Mouse Builds a Manor House, Rabbit Builds a
+Cul-De-Sac, Squirrel Builds a Web.** It describes three civilizational shapes;
+Residence and Practice retain their shared functional names.
+
+#### Body, civic scale, and Residence
+
+| Core Species | Animal expression | Body Unit and Civic Share | Core Residence | Well-Placed Residence |
+|---|---|---:|---:|---:|
+| **Mouse** | Quick heartbeat and speed of thought; close attention to scent, sound, touch, edges, and nearby movement | 0.5 per Mouse | 4 Mice | 6 Mice |
+| **Rabbit** | Vigilant stillness, broad attention, explosive ground movement, and decisive refuge-seeking | 1 | 2 Rabbits | 3 Rabbits |
+| **Squirrel** | Grasp, balance, climbing, leaping, and continuous judgment between present foothold and next movement | 1 | 2 Squirrels | 3 Squirrels |
+
+Two individual Mice equal one Body Unit while remaining two complete Citizens.
+Each keeps a name, relationships, personal positions for one Tool, one Supply,
+and one Keepsake, and their own exposure to consequence. Aggregate Home systems
+therefore treat two Mice as equivalent to one Rabbit or Squirrel while personal
+life continues at the animal level.
+
+#### Home and spatial expression
+
+| Core Species | Operator | Colony shape | A Place is Well Placed when… | Characteristic growth |
+|---|---|---|---|---|
+| **Rabbit** | **GATHER** | Places face protected open common ground with mutual visibility and nearby refuge | it forms, faces, or preserves that common space while retaining protective edges and a quick way to cover | complete one protected court or green, then bud another neighborhood around new common space |
+| **Squirrel** | **CONNECT** | Places become nodes in a branching, redundant Web of anchors and traversable links | it participates securely in the network with credible onward movement and an alternative if one route fails | add or reinforce nodes, bridge gaps, and turn fragile routes into resilient connections |
+| **Mouse** | **JOIN** | Adjoining rooms, sheltered edges, shared boundaries, and accumulated interior become one inhabited fabric | it directly adjoins the protected inhabited fabric without requiring a passage between the spaces | add chambers, pockets, and sheltered edges beside what is already inhabited |
+
+The operator judges both Residence and Practice Places. A completed usable
+Place contributes its ordinary function in either placement state; Well-Placed
+status adds the defined Housing or Practice benefit. Later physical change may
+alter that state while the Place and its history persist.
+
+#### Away expression
+
+| Core Species | Party advantage | Secured Carry | Crossing question and commitment | Characteristic player decision |
+|---|---|---:|---|---|
+| **Squirrel** | Each Squirrel Body Unit adds 10 optional Strained Carry beyond secured capacity; moved Strained Cargo receives the visible proportional Jostle check | 10 per Squirrel | **How can movement flow through traffic?** Set one vector trajectory, one or two redirects, and a far-side anchor; then resolve one continuous run | whether a larger possible return justifies carrying an inherently precarious haul |
+| **Mouse** | Each Mouse carries 6 secured slots, giving a full Body Unit 12 instead of the ordinary 10; greater headcount also provides more personal Item positions | 6 per Mouse; 12 per Body Unit | **Where can continuity be made?** Join three to six body-credible pavement features; then resolve one continuous scurry | which particular Citizens, relationships, capabilities, and risks to include in the larger party roster |
+| **Rabbit** | Each Rabbit Body Unit adds one-third normal TRAVEL span, reaching double progress with three Rabbit Body Units | 10 per Rabbit | **When does the Roadway open?** Choose a traffic window, broad line, and far-side refuge; then resolve one uninterrupted sprint | how to use the larger practical itinerary created by greater movement |
+
+An ordinary party contains one and one-half to three Body Units and at least two
+actual animals. Species effects follow the bodies physically present: mixed
+parties receive Rabbit movement and Squirrel Strained Carry in proportion to
+their actual Body Units, while every individual Mouse supplies its six secured
+Carry and personal Item positions. Adversity remains normalized by Body Unit so
+a larger Mouse headcount creates no extra hazard selections.
+
+### Guest Citizens
+
+A Guest is a named non-Core animal welcomed through relationship and
+accommodation. Welcome grants full civic rank, a place in the Roster, one Body
+Unit and Civic Share in v0.5, a Residence satisfying one species-specific Fit,
+ordinary relationships and memory, and one bounded Signature that makes bodily
+difference useful and visible.
+
+#### Names and reference usage
+
+Each Guest species has a **canonical short name** for headings, tables, labels,
+and rules. Descriptive prose may use that name or the listed prose form. Where
+the present design has established no separate long form, prose retains the
+short name rather than supplying an unapproved taxonomic distinction.
+
+| Short name | Prose form | Short name | Prose form |
+|---|---|---|---|
+| Raccoon | Raccoon | Owl | Barred Owl |
+| Crow | Crow | Sparrow | Song Sparrow |
+| Gull | Gull | Toad | American Toad |
+| Fox | Red Fox | Fireflies | Firefly Family |
+| Weasel | Weasel | Groundhog | Groundhog |
+| Hedgehog | Hedgehog | Turtle | Painted Turtle |
+| Snake | Garter Snake | Bumblebees | Bumblebee Household |
+| Mink | American Mink | Mole | Eastern Mole |
+|  |  | Bat | Little Brown Bat |
+|  |  | Pigeon | Rock Pigeon |
+|  |  | Skunk | Striped Skunk |
+|  |  | Possum | Opossum or Virginia Opossum |
+
+#### Shared Guest types
+
+| Property | Expedition Guest | Resident Guest |
+|---|---|---|
+| Citizen standing | Full | Full |
+| Body Unit and Civic Share | 1 | 1 |
+| Home Role | Authored for the individual Citizen | Fixed by species |
+| Signature operates | Away | At Home |
+| Launch | Eligible | Home-resident |
+| Personal Away consequence | Applies normally | Arises through applicable Home events |
+| Residence, relationships, memory, and EMBODY | Full | Full |
+
+An Expedition Guest's departure withdraws their Civic Share from Home like any
+other departing Citizen. A Resident Guest may sustain their fixed Role or
+commit their share to an eligible Project. Their Signature remains one situated
+capability within a complete civic and personal life.
+
+#### Expedition Guest roster
+
+Every Expedition Guest is one individual Citizen. Carry remains secured party
+capacity; Snake's limbless body creates the sole low outlier. Crow and Gull are
+the only Guests with the shared parallel Flyer expression in RISK.
+
+| Guest | Home Role | Secured Carry | Away Signature | Residence Fit | Citizen form |
+|---|---|---:|---|---|---|
+| **Raccoon** | Authored per Citizen | 12 | **HANDLE — Latchwork:** directly manipulate one accessible human-made closure or simple mechanism | dry exterior access | Individual |
+| **Crow** | Authored per Citizen | 9 | **HANDLE — Trialwork:** recruit one available object for one plausible test or indirect manipulation | high open perch | Individual; Flyer |
+| **Gull** | Authored per Citizen | 9 | **READ — Long View:** reveal situated context about broad geography, weather, water, traffic, or distant activity before commitment | broad open landing | Individual; Flyer |
+| **Fox** | Authored per Citizen | 12 | **HANDLE — Carcass Claim:** process suitable matter at an eligible carcass Node into its specified Supply, as the biological counterpart to RENDER | drained boundary ground | Individual |
+| **Weasel** | Authored per Citizen | 10 | **INTERCEDE — Drive Off:** press one small predator or aggressive animal away from something vulnerable | narrow multi-exit bank | Individual |
+| **Hedgehog** | Authored per Citizen | 8 | **INTERCEDE — Living Cover:** shelter one injured or very small Citizen, one fragile Cargo stake, or one bounded withdrawal | concealed hedge | Individual |
+| **Snake** | Authored per Citizen | 6 | **SPEAK — Display:** use recognized posture, movement, and stillness to open a fitting social response | sun-warmed shelter | Individual |
+| **Mink** | Authored per Citizen | 10 | **REACH — Water Reach:** enter suitable water, flooded culverts, drainage channels, or waterlogged spaces on the party's behalf | safe waterline | Individual |
+
+#### Resident Guest roster
+
+Resident Signatures operate through Home situations, relationships, or one
+named Practice relationship. Fireflies and Bumblebees are the complete v0.5
+collective-bodied set: each visible household is one Citizen, one Body Unit,
+one Civic Share, one Roster entry, and one continuous subject of consequence.
+
+| Guest | Fixed Role | Home Signature | Residence Fit | Citizen form |
+|---|---|---|---|---|
+| **Owl** | Watchkeeper | **Night Sky-watch:** sharpen one existing nocturnal Telegraph while Owl is available and a Watchpost is usable | high listening hollow | Individual |
+| **Sparrow** | Teacher | **SPEAK — Day Call:** use learned calls and social voice to improve understanding in an eligible Home SPEAK situation | concealed social perch | Individual |
+| **Toad** | Caretaker | **Wet-Ground Care:** open a Caretaker response during an eligible Garden Home MEET concerning runoff, dampness, or invertebrate pressure | wet edge with dry refuge | Individual |
+| **Fireflies** | Leader | **SPEAK — Lantern Procession:** coordinated light makes participants easier to understand and opens an eligible win-win response during a nighttime Home MEET | dark damp flight space | Collective-bodied household |
+| **Groundhog** | Gardener | **Seasonal Telegraph:** make an approaching seasonal change legible early enough for civic response | deep drained ground | Individual |
+| **Turtle** | Caretaker | **Water Garden Residence:** incorporate one suitable Guest Residence into a completed Garden | shallow water and basking | Individual |
+| **Bumblebees** | Gardener | **Garden Cohabitation:** incorporate the household Residence into one Garden and add its bounded yield benefit while the household sustains Gardener responsibility | sheltered flower access | Collective-bodied household |
+| **Mole** | Builder | **Subsurface Diagnosis:** reveal the practical condition beneath one visible Place or proposed Place when hidden ground matters | visible undisturbed soil | Individual |
+| **Bat** | Builder | **Workshop Roost:** incorporate one suitable Guest Residence into a completed Workshop | high dry-dark roost | Individual |
+| **Pigeon** | Leader | **Gathering Loft:** incorporate one suitable Guest Residence into a completed Gathering Place | open built ledge | Individual |
+| **Skunk** | Watchkeeper | **SPEAK — Boundary Deterrence:** open a favorable nonviolent response in an eligible threatening-animal Home MEET | downwind boundary | Individual |
+| **Possum** | Healer | **Hearth Annex:** incorporate one suitable Guest Residence into a completed Hearth | ventilated receiving edge | Individual |
+
+#### Residence and Practice-sharing exceptions
+
+One completed Guest Residence ordinarily occupies one dedicated Place and
+houses one Guest Citizen or collective-bodied household. It uses one simple
+Residence Fit judged as a whole. A Well-Placed Residence fulfills the housing
+portion of the Guest's Terms of Hospitality; later loss of fit creates a
+visible accommodation problem while citizenship endures.
+
+Five Resident Signatures provide explicit Practice-sharing exceptions:
+
+| Guest | Host Practice | Incorporated Residence effect |
+|---|---|---|
+| **Turtle** | Garden | Uses no separate Place and adds no yield, Practice Strength, or capacity |
+| **Bumblebees** | Garden | Uses no separate Place; while the Garden is usable and the household is present, available, and sustaining Gardener responsibility, adds 0.5 Perishable Sustenance to that Garden's ordinary fractional-throughput cadence |
+| **Bat** | Workshop | Uses no separate Place and adds no Practice Strength, passive output, Project progress, or capacity |
+| **Pigeon** | Gathering Place | Uses no separate Place and adds no Practice Strength or capacity |
+| **Possum** | Hearth | Uses no separate Place and adds no Remedy Preparation, Practice Strength, or capacity |
+
+Each incorporated Residence still requires an ordinary Builder Project,
+material, time, and its complete Residence Fit. The host remains one Practice
+with its normal improvement rules and one-Project capacity. These five authored
+exceptions establish no general mixed-use Place rule.
+
+### Species difference in ordinary life
+
+Species remains visible between mechanical interventions. Bodies determine
+movement, posture, spatial use, rest, equipment expression, and EMBODY;
+Residence, sound, activity, season, and relationship shape recurring Colony
+presence. Song, calls, hum, flight, scent, water movement, digging, nocturnal
+activity, and other species-grounded expressions may enter the Colony's sound
+bed and visible routine without becoming additional bonuses or meters.
+
+Every Guest forms individual relationships and accumulates their own history.
+Their Signature makes one ecological capability legible, while ordinary civic
+life, vulnerability, friendship, and memory keep that capability from becoming
+their entire identity.
+
+### Scope and extension
+
+- Every current individual Guest remaining one Body Unit; a later larger or
+  smaller value requiring an explicit species rule
+- Fireflies and Bumblebees remaining the only collective-bodied Citizen types
+  in v0.5
+- Resident Guests remaining Home-resident and Expedition Guests retaining
+  individual-authored Home Roles
+- Guest Residence Fits remaining one whole requirement rather than an
+  additional housing score or checklist
+- Core-Species advantages changing campaign texture while preserving shared
+  civic output and collective action
+- Exact species content, tuning, presentation, and future Guest additions able
+  to expand from this common architecture without changing Citizen standing
+
+## Appendix I — Attachment-Forward Design
+
+`Philosophy.Pillar.AttachmentForward`
+
+Attachment-forward design is an orientation toward making imagined people,
+places, objects, relationships, and histories emotionally durable.
+
+It asks:
+
+> **What does this work enable someone to know, value, remember, and become
+> unwilling to lose?**
+
+A fictional person may become companionable enough to be remembered with
+something like the texture of a friend. A fictional place may become familiar
+enough to be missed. An object may matter because of who made it, carried it,
+repaired it, or left it behind. A remembered event may change how everything
+around it is understood.
+
+These attachments cannot be commanded. A work cannot instruct its audience to
+love a character or declare a place meaningful on their behalf. It can create
+the conditions in which attachment becomes possible: legibility, continuity,
+repeated contact, successful care, recognizable identity, shared history,
+credible danger, consequence, and return.
+
+Attachment-forward design deliberately creates those conditions.
+
+### A direction rather than a promised response
+
+The word **forward** names the direction in which the design points. It does
+not guarantee that attachment will occur, determine what a player will value,
+or prescribe an approved emotional response.
+
+Different players may form attachments to different subjects. One may care
+most about a particular character. Another may become invested in a settlement,
+a familiar landscape, a handmade object, or a history that emerged through
+play. Some may appreciate the design without developing strong personal
+attachment at all.
+
+The design succeeds by allowing particularity to accumulate and remain
+perceptible. It gives people enough continuity and freedom to decide what
+matters to them.
+
+Attachment-forward is therefore neither a genre nor a tone. It can inform
+strategy, simulation, role-playing, adventure, survival, management, narrative,
+or contemplative design. It can coexist with humor, warmth, grief, danger,
+difficulty, or calm.
+
+### Three design orientations
+
+Production-forward, survival-forward, and attachment-forward design may share
+many of the same mechanics. The distinction is the purpose those mechanics
+serve when priorities conflict.
+
+| Orientation | The designed subject is primarily understood as… | Successful play tends toward… |
+|---|---|---|
+| **Production-forward** | A machine or process that transforms inputs into increasingly valuable outputs | Efficiency, acceleration, expansion, mastery, and replacement |
+| **Survival-forward** | A vulnerable system resisting scarcity, entropy, or hostile conditions | Continued existence, recovery, security, and the postponement of collapse |
+| **Attachment-forward** | A particular world inhabited by particular lives and accumulated history | Stability, familiarity, durable meaning, and chosen risk on behalf of what matters |
+
+A single work may use all three orientations. A settlement can require
+productive competence and credible survival while still being designed
+primarily to become known and valued as a particular home.
+
+Attachment-forward design changes the hierarchy of purpose. Production
+supports continuity. Survival protects particularity. Progress deepens or
+extends an existing world rather than continually replacing it with more
+efficient content.
+
+### The four anchors of attachment
+
+Attachment commonly forms around four kinds of subject.
+
+| Anchor | What acquires particularity | Common manifestations |
+|---|---|---|
+| **Person** | A recognizable life with a body, behavior, relationships, belongings, history, vulnerability, and possible future | Named characters, recurring companions, distinct habits, personal choices, visible change, persistent relationships |
+| **Place** | Somewhere known through use, movement, habitation, alteration, and return | Homes, settlements, rooms, paths, landmarks, neighborhoods, repeated viewpoints, spatial history |
+| **Object** | A material thing carrying use, provenance, association, and consequence | Personal equipment, gifts, repaired possessions, handmade things, inherited objects, items carried through important events |
+| **Memory** | An event or condition whose persistence changes the meaning of the present | Records, stories, scars, memorials, altered environments, recurring dialogue, images, rituals, remembered absences |
+
+Relationships pass through all four anchors. A person may be remembered through
+a place. An object may preserve a relationship. A place may become significant
+because of what happened there. A memory may alter how a familiar person or
+object is perceived.
+
+Strong attachment-forward design lets these associations accumulate without
+requiring every one to become a formal bonus.
+
+### The attachment chain
+
+Attachment depends upon comprehensible interaction with a persistent subject.
+
+> **Legibility → competence → stability → attention → attachment**
+
+**Legibility** allows someone to understand what exists and what is happening.
+
+**Competence** allows them to act with reasonable confidence and recognize the
+relationship between decision and result.
+
+**Stability** creates intervals in which immediate operational demands no
+longer consume all available attention.
+
+**Attention** can then move from controlling the system toward noticing its
+inhabitants, details, histories, and ordinary rhythms.
+
+**Attachment** may form as those particulars become familiar and personally
+significant.
+
+Repeated contact operates throughout this sequence. A person, place, or object
+must usually remain present long enough to become known.
+
+Once attachment exists, it changes the meaning of subsequent decisions:
+
+> **Attachment → chosen risk → consequence → return → deeper
+> attachment**
+
+Risk becomes more significant when something particular is at stake.
+Consequence becomes more meaningful when it changes an already known subject.
+Return allows the changed person, object, or understanding to re-enter a
+familiar context.
+
+This cycle can deepen attachment without requiring continual escalation. A
+small return to a familiar place may matter more than the discovery of a larger
+but interchangeable one.
+
+### How attachment-forward design manifests
+
+Attachment-forward design is visible in the relationships among systems,
+presentation, persistence, and pacing. It is rarely created by one feature.
+
+#### Legible continuing subjects
+
+The work gives the audience recognizable subjects whose continuity can be
+followed.
+
+A population remains comprehensible enough for individual absences to matter.
+A home retains a stable physical identity. An object remains the same object
+after being used, damaged, repaired, or transferred. A history remains
+accessible enough to inform the present.
+
+The audience should be able to answer questions such as:
+
+- Who is this?
+- Where do they belong?
+- What has changed?
+- What happened here?
+- Who carried this?
+- Why does this matter now?
+
+#### Particularity rather than categorical variation
+
+Procedural variation can produce abundance without producing attachment. A
+thousand randomized residents may remain interchangeable if none can be
+recognized across time.
+
+Particularity requires persistent distinctions. These distinctions may include
+appearance, voice, habits, relationships, location, possessions, authorship,
+prior events, or visible consequences. Their purpose is to make one subject
+distinguishable from another and one history distinguishable from a reset
+state.
+
+Statistical uniqueness alone is insufficient. A character with a rare
+numerical combination may still feel generic. A mechanically ordinary
+character may become irreplaceable through accumulated association.
+
+#### Continuity through change
+
+Persistence becomes emotionally meaningful when a subject can change without
+becoming a different disposable instance.
+
+A place may expand while retaining its earlier rooms. An object may show
+repair. A character may age, recover, acquire a disability, alter a
+relationship, or assume a new responsibility. The present should contain
+legible evidence of the past.
+
+Change gives continuity shape. Continuity gives change weight.
+
+#### Meaningful dependence and care
+
+Care becomes credible when the subject has understandable needs and when the
+audience's actions materially affect what happens.
+
+This does not require converting affection into a currency. The player may
+care because care is strategically relevant, but they must also be allowed to
+care because someone or somewhere has become particular.
+
+The strongest systems make practical responsibility and emotional attention
+reinforce one another without becoming identical. Supplying shelter may be
+necessary. Choosing to linger, remember, accompany, or preserve may remain
+voluntary.
+
+#### Successful stillness
+
+Continual instability can prevent attachment by keeping attention fixed on
+emergency response. A system that always deteriorates may be engaging as
+survival pressure while leaving little space for familiarity or observation.
+
+Attachment-forward design therefore benefits from achievable stability.
+Competent play can produce a period in which ordinary life proceeds without
+constant correction. Stillness becomes evidence that the system is working.
+
+This does not mean nothing happens. It means the audience can attend to
+activity whose importance is not limited to crisis resolution: routine, play,
+conversation, craftsmanship, rest, environmental change, or companionship.
+
+#### Credible consequence
+
+Consequence gives protection, preparation, and return weight. It works best
+when it is causally legible and proportionate to the situation.
+
+The audience should understand:
+
+- What was at stake
+- What choice was made
+- Who or what became exposed
+- Why the consequence followed
+- What changed afterward
+- How that change persists
+
+Arbitrary loss discourages attachment because investment becomes irrational.
+Total safety can make protection decorative because nothing meaningful can
+change. Attachment-forward design occupies the middle: enough continuity to
+encourage investment and enough consequence for that investment to matter.
+
+#### Return and recontextualization
+
+Return is one of the strongest attachment structures.
+
+A person leaves a familiar place and later re-enters it changed. An object
+comes back carrying new provenance. A discovery alters how an old location is
+understood. A home receives the consequences of an outside experience.
+
+The emotional force lies in comparison between the remembered state and the
+present one. Return makes change legible because the audience already knows
+what is being returned to.
+
+#### Memory without compulsory reward
+
+Memory systems can preserve meaningful events without converting every event
+into an advantage.
+
+A scar, journal entry, altered room, archived image, relationship change, or
+remembered line may matter through interpretation alone. Mechanical
+consequences remain appropriate where the event genuinely changes future
+possibilities, but universal rewards can turn remembrance into another
+optimization routine.
+
+Some memories should change play. Others should change meaning.
+
+#### Presentation as continuity
+
+Attachment can also manifest through visual, auditory, spatial, and linguistic
+continuity.
+
+A character's appearance may evolve while remaining recognizable. A settlement
+may be depicted repeatedly from related viewpoints. A familiar sound may
+return after an absence. A record may place an old and current image in
+relation. A recurring phrase may acquire new meaning through context.
+
+Presentation should help the audience recognize continuity rather than merely
+deliver novelty.
+
+### Systemic attachment and expressive texture
+
+Attachment-forward design needs both working systems and non-instrumental
+expression.
+
+A substantial repeatable system must perform genuine design work. It should
+alter what can be understood, chosen, prepared, risked, protected, built,
+carried, restored, remembered, or otherwise made consequential.
+
+This does not require every expressive moment to produce a reward.
+Environmental detail, ordinary behavior, affection, humor, beauty, and quiet
+presence may exist without instrumental output. Their value may be perceptual
+or emotional.
+
+The distinction concerns the demand placed upon attention:
+
+- A passing detail may remain texture.
+- A recurring presentation may establish familiarity.
+- A persistent fact may enrich identity.
+- A formal system must transform understanding, choice, state, or consequence.
+
+Sentiment unsupported by credible logic can feel ornamental. Logic that never
+releases attention leaves no room for sentiment.
+
+### Attachment-forward is not the same as cozy
+
+Cozy and attachment-forward describe different dimensions of design.
+
+**Cozy** commonly describes an experiential condition: safety, softness,
+abundance, manageable demands, comforting repetition, and relief from imminent
+loss. It primarily asks:
+
+> **How does this experience feel?**
+
+**Attachment-forward** describes a design direction. It asks:
+
+> **What does this experience allow someone to know, value, remember, and
+> become unwilling to lose?**
+
+A work can be cozy without producing deep attachment. It may offer gentle
+activity, pleasant company, reassuring abundance, and an attractive
+environment while allowing every inhabitant, object, and location to remain
+interchangeable.
+
+A work can also be strongly attachment-forward while containing uncertainty,
+grief, danger, difficult decisions, and permanent change.
+
+Attachment-forward is therefore not an intensified form of coziness. It is an
+orientation toward particularity.
+
+#### Cozy conditions can support attachment
+
+Safety and softness can create the attention needed for familiarity. Repeated
+domestic routines can make people and places recognizable. Relief from pressure
+can give the audience time to observe details that urgent play would obscure.
+
+Cozy conditions are especially valuable when they feel connected to a
+particular place or relationship. Comfort becomes more meaningful when the
+audience understands whose comfort it is, how it was created, and what history
+it contains.
+
+#### Danger can also support attachment
+
+Danger is not inherently opposed to attachment. Selective danger can reveal
+what already matters.
+
+The purpose of danger in an attachment-forward design is not to establish
+seriousness through cruelty. It gives weight to protection, preparation,
+absence, and return. Consequence should ordinarily change lives before erasing
+them, allowing experience to remain visible in the people and world that
+continue.
+
+If nothing meaningful can change, safety may become decorative. If loss is
+constant or arbitrary, attachment becomes unreasonable. The design needs enough
+security for emotional investment and enough trusted consequence for that
+investment to matter.
+
+#### Cozy is a state; attachment-forward is a direction
+
+| Dimension | Primary concern |
+|---|---|
+| **Cozy condition** | Whether the present experience feels safe, familiar, restorative, abundant, or gently occupied |
+| **Attachment-forward direction** | Whether particular people, places, objects, and histories become increasingly knowable, memorable, and worth protecting |
+
+Either may exist without the other. They become especially powerful together
+when comfort belongs to a recognizable person or place and has been established
+through credible effort.
+
+MEDIAN offers one illustration. Its Home can become warm, abundant, familiar,
+and quiet, while departure exposes particular Citizens to an active and
+dangerous outside world. Its intended emotional rhythm is:
+
+> **Sanctuary → departure → exposure → consequence → return**
+
+Cozy conditions occupy an important place inside that rhythm. They are the
+ordinary life made possible by successful stewardship and the condition to
+which changed Citizens return.
+
+> **MEDIAN earns its cozy.**
+
+The phrase describes a particular application of the wider philosophy: comfort
+gains meaning because it has a history, belongs to someone, and remains worth
+protecting.
+
+### Manifestation across media
+
+Attachment-forward design has no mandatory interface. Its principles must be
+translated into forms native to each medium.
+
+| Medium | Characteristic attachment opportunities |
+|---|---|
+| **Simulation and videogames** | Persistent state, visible habitation, spatial familiarity, recurring behavior, direct consequence, evolving appearance, revisitation, and systemic return |
+| **Tabletop role-playing** | Shared authorship, performed voice, recurring relationships, ritual, negotiated memory, player-created history, and continuity across changing protagonists |
+| **Board games** | Physical construction, inhabited arrangements, visible absence, repeated handling of named pieces, persistent campaign records, and tactile return |
+| **Card games** | Singular cards accumulating association, personal stacks or sleeves preserving change, tableau history, recurring combinations, and remembered draws |
+| **Mobile games** | Brief intimate visits, portrait-scale character attention, tactile interaction, personal archives, and player-controlled return without coercive scheduling |
+| **Books and sourcebooks** | Recurring characters and locations, maps, cross-references, marginal memory, visual continuity, narrative examples, and cumulative understanding through rereading |
+
+Translation should preserve relationships rather than reproduce features
+literally. A videogame's persistent simulated settlement might become a Colony
+sheet in a role-playing game, a modular physical arrangement in a board game,
+or a recurring illustrated location in a book.
+
+The test is whether the translated form still allows something particular to
+be known, changed, remembered, and revisited.
+
+### Design protections
+
+Attachment-forward work benefits from several protections:
+
+- Keep important populations within emotional comprehension.
+- Give recurring subjects stable identities across change.
+- Let places accumulate rather than continually replacing them.
+- Make important state legible without reducing every personal truth to a
+  number.
+- Provide enough stability for observation and familiarity.
+- Connect consequences to understandable causes.
+- Let danger change subjects before routinely erasing them.
+- Preserve the history of objects and places where that history matters.
+- Allow memory to persist without requiring a reward.
+- Keep care from becoming solely an optimization economy.
+- Avoid measuring affection as proof that attachment occurred.
+- Let the audience choose what becomes important.
+- Translate attachment relationships across media rather than copying
+  interfaces.
+- Use novelty to deepen an existing world as well as to introduce new content.
+
+### Acceptance test
+
+An attachment-forward design should support affirmative answers to these
+questions:
+
+1. Can the audience identify particular people, places, or objects rather than
+   knowing only their functions?
+2. Do those subjects remain recognizable across time and change?
+3. Can the audience understand why the present state exists?
+4. Does competent participation create enough stability for attention to move
+   beyond operation?
+5. Can ordinary activity matter without always producing a reward?
+6. Does absence become noticeable because a particular presence was previously
+   established?
+7. Do important consequences follow intelligible causes?
+8. Does return reveal what changed?
+9. Can history alter meaning without always becoming a modifier?
+10. Does growth deepen or extend what already matters?
+11. Can the audience care without being instructed, scored, or rewarded for
+    caring?
+12. Would the loss or transformation of a subject feel specific because the
+    work previously allowed its identity to accumulate?
+
+Attachment-forward design succeeds when a system, world, or work stops feeling
+interchangeable.
+
+It becomes this place, this object, this history, and these lives.
+
+### References
+
+- [Project Horseshoe, *Coziness in Games: An Exploration of Safety, Softness,
+  and Satisfied
+  Needs*](https://projecthorseshoe.com/reports/featured/ph17r3.htm)
+- [Wholesome Games, *About*](https://wholesomegames.com/)
+
+## Appendix J — Manifestations: MEDIAN in Other Forms
+
+A **Manifestation** is an authored translation of MEDIAN's world, relationships,
+and dramatic rhythm into a particular medium. Each form chooses the scale,
+pace, controls, abstraction, and persistence native to its experience while
+remaining recognizably MEDIAN.
+
+The desktop and console game is the primary full-spectrum Manifestation and the
+principal subject of this Concept Sourcebook. Tabletop role-playing, spatial
+board game, cooperative fixed-content card game, and standalone mobile forms
+are independent prospective works. The plans below define why each form should
+exist and what its medium can contribute; later prototypes determine their
+exact procedures.
+
+> **A Manifestation succeeds when the player recognizes the same sanctuary,
+> the same exposure, and the same particular friends even when almost none of
+> the controls are shared.**
+
+### Translation doctrine
+
+MEDIAN translates through relationships rather than feature count. A new form
+preserves what a system means to the player, then finds the procedure by which
+its own medium can create that meaning.
+
+A computer simulation may represent Home as an operating spatial Colony. A
+role-playing game may hold the same civic life on one shared Colony sheet. A
+board game may express it through an inhabited arrangement of Places and named
+pieces. A card game may make it a persistent tableau. A mobile game may compress
+it into a living illustrated posture viewed through brief, deliberate visits.
+
+Each form may choose its own camera, action economy, mathematics, and number of
+separate interfaces while preserving the relationships that make MEDIAN
+significant. Translation should therefore ask:
+
+- What does this element allow the player to understand or choose?
+- Which particular lives, Places, objects, or histories does it make visible?
+- What does its absence, failure, or change mean?
+- What can this medium make more immediate than another one can?
+- Does the translated form still produce sanctuary, exposure, consequence,
+  return, and accumulated attachment?
+
+The full-spectrum computer game supplies MEDIAN's world architecture,
+terminology, ecology, and dramatic relationships. It does not dictate the
+literal mechanics of the other forms. A tabletop game should feel physically
+and socially native to a table; a mobile game should feel deliberately made for
+a handheld screen. Fidelity is measured by recognition of MEDIAN's underlying
+relationships rather than by the number of replicated features.
+
+Each form inherits the current v0.5 meaning of every named system. Its section
+records the medium-specific carrier, deliberate compression, or explicit
+translation. Later prototypes may change a procedure or value only by naming
+what they replace and preserving the relationship that justified it; silence
+does not revive an earlier mechanic or create a new one.
+
+### Cross-Manifestation invariants
+
+Every Manifestation preserves the following qualities as far as its medium
+permits.
+
+#### One continuing Home
+
+One particular Home remains the center of consequence and return. Growth adds
+to its physical or remembered history rather than replacing it with an
+anonymous superior base. The player should learn what belongs there, recognize
+what changes, and understand why returning matters.
+
+#### Named Citizens and comprehensible population
+
+Citizens remain particular lives rather than replenishable units. Population
+stays small enough for names, relationships, absences, Wounds, Maiming, death,
+and remembered acts to remain comprehensible. Body Unit equivalence may
+normalize scale while preserving each Citizen's complete identity.
+
+#### Home and Away
+
+Home develops collective capability and ordinary life. Away exposes and changes
+particular Citizens. Sending someone outward subtracts a known presence from
+Home, and Homecoming brings material, bodily, relational, and remembered
+consequences back into the continuing community.
+
+> **Home grows the Colony. Away grows and hazards Citizens. Homecoming makes
+> each answer the other.**
+
+#### Achieved sanctuary
+
+Sanctuary rests upon credible material and civic support. Competent stewardship
+can create successful stillness in which the player is free to attend to
+ordinary life. Quiet remains a meaningful result rather than a gap awaiting the
+next compulsory failure.
+
+#### Consequence without disposability
+
+Danger changes lives before it routinely erases them. Wound, Maiming, Tharn,
+loss, altered relationships, changed capability, and death remain attached to
+particular causes and particular lives. Consequence persists without turning
+Citizens into consumable inputs.
+
+#### Species as bodily and spatial identity
+
+Mouse **JOIN**, Rabbit **GATHER**, and Squirrel **CONNECT** remain different
+ways of inhabiting space and understanding movement. Their bodies change Home,
+TRAVEL, and RISK rather than functioning as cosmetic skins over one shared
+experience.
+
+#### The active highway world
+
+The highway remains barrier, climate, resource edge, soundscape, ecological
+organizer, and civilizational fact. Traffic and human activity continue around
+the animals. The median is inhabited ground inside an operating human world,
+not scenery placed behind an otherwise generic animal settlement.
+
+#### MEET as situational grammar
+
+MEET remains the means by which a bounded consequential situation becomes
+available for decision or important state transition. Its presentation may be
+a screen, conversation, card, table procedure, or authored scene, while its
+subject remains a concrete situation with relevant participants, known facts,
+stakes, choices, and persistent outcomes.
+
+#### Persistent memory
+
+The history of Citizens, Places, objects, and the community survives the event
+that created it. Each medium may use a database, written record, marked sheet,
+card sleeve, image archive, or shared narration. Memory can change meaning
+without every remembered fact becoming a mechanical reward.
+
+#### Attachment-forward purpose
+
+Production, survival, and progression support the increasing particularity of
+Home and its lives. Care retains practical consequence without becoming only a
+buff economy. The form gives the player someone and somewhere worth returning
+to.
+
+### Register translation
+
+The five Registers are canonical player relationships with the world. Each
+Manifestation gives their dramatic functions a medium-native form and may
+merge their procedures or represent one without a separate control layer.
+
+| Register | Operator | Dramatic function | Possible translations |
+|---|---|---|---|
+| **Colony** | **DWELL** | Sustain, understand, and shape collective Home life | Spatial simulation, Colony sheet, modular board, shared tableau, or compact posture view |
+| **Field** | **TRAVEL** | Move a particular party through extended inhabited territory | Direct movement, narrated journey, map procedure, tile movement, card progression, or short touch sequence |
+| **Crossing** | **RISK** | Observe, plan, and commit inside immediate Roadway danger | Schematic simulation, brief table ritual, traffic puzzle, card resolution, or finite tactile sequence |
+| **Encounter** | **MEET** | Resolve a bounded situation or consequential transition | Choice interface, framed conversation, encounter card, shared decision matrix, or authored scene |
+| **Embodiment** | **EMBODY** | Experience a particular life within achieved Home sanctuary | Direct control, guided scene, physical prompt, tactile vignette, illustration, or quiet shared narration |
+
+A borrowed visual composition does not change Register identity. A Crossing
+remains RISK when a board represents it through lane pieces; a Home situation
+remains MEET when a role-playing group resolves it through conversation. The
+governing question is the relationship through which the player acts.
+
+### What may change by medium
+
+| May change | Must remain recognizable |
+|---|---|
+| Camera, spoken description, board, cards, portrait screen, or illustrated page | The distinction between collective Colony posture and individual Citizen consequence |
+| Real-time, turn-based, scene-based, scenario-based, or short-session pacing | Preparation, departure, exposure, consequence, Homecoming, and renewed Home life |
+| Exact number of separately presented Registers | The dramatic work performed by DWELL, TRAVEL, RISK, MEET, and EMBODY |
+| Simulation formulas, dice, cards, physical placement, timing, or touch | Legible choice followed by trusted persistent consequence |
+| Construction detail and spatial scale | Species-specific habitation and one continuing Home |
+| Solo, cooperative, facilitated, or shared-author play | Responsibility for particular lives rather than ownership of disposable units |
+| Campaign length and save procedure | Accumulated history around recognizable Citizens, Places, and objects |
+| Database, written sheet, sleeves, tokens, narration, or images | A Record from which meaningful memory and current truth can be recovered |
+
+Translation may compress several systems into one procedure when their
+relationship remains legible. It may also expand a moment that the medium can
+express with unusual force. A physical game may make a Citizen's departure a
+literal empty space. A role-playing game may give a relationship more spoken
+complexity. A handheld game may make animal-scale motion intimate through
+touch. Medium-specific strength justifies difference.
+
+### The shared dramatic cycle
+
+Every Manifestation should be able to express the following movement, whether
+across one session, several scenes, or an extended campaign:
+
+1. Home establishes a legible material and civic posture.
+2. Need, ambition, relationship, season, or World Pressure creates a reason to
+   act.
+3. Particular Citizens become committed to a Project, situation, or departure.
+4. TRAVEL, RISK, and MEET carry action through the relevant circumstances.
+5. Exposure and consequence accumulate around causal participants.
+6. Return and Homecoming reconcile what was gained, spent, changed, lost, or
+   learned with the continuing Home.
+7. Competent DWELL may restore Quiet Equilibrium.
+8. EMBODY or its medium-specific analogue allows ordinary life to be
+   experienced within that achieved quiet.
+9. The Record preserves what became true, while selected memory gives that
+   history an intelligible form.
+
+The cycle is a dramatic relationship rather than a mandatory phase order.
+Home MEET may interrupt quiet; an entire session may remain within the Colony;
+an Away sequence may contain several situations before return. Each variation
+still draws meaning from the relationship between sanctuary, particular risk,
+consequence, and return.
+
+### The five Manifestations
+
+| Manifestation | Canonical role | Native strength | Present design depth |
+|---|---|---|---|
+| **Desktop and console computer game** | Primary full-spectrum expression and subject of the Concept Sourcebook | One persistent spatial world containing all five Registers and both scales of simulation | Complete provisional v0.5 concept specification |
+| **Tabletop role-playing game** | Colony-centered shared campaign | Authored voice, relationships, folklore, negotiation, consequence, and continuity across changing viewpoints | Concept architecture leading toward a later playable prototype |
+| **Spatial board game** | Tactile Colony and bounded scenario form | Physical construction, species geometry, visible civic absence, shared stewardship, and return | Concept architecture leading toward a later paper prototype |
+| **Cooperative fixed-content card game** | Persistent physical corridor campaign | Evolving tableau, singular Citizen cards, traffic and situation relationships, and accumulated physical history | Concept architecture leading toward a later card prototype |
+| **Standalone mobile game** | Intimate pocket-scale single-player form | Brief stewardship, portrait-scale Citizen attention, tactile Crossing and EMBODY, and player-controlled return | Concept architecture leading toward a later interaction prototype |
+
+The primary Manifestation holds MEDIAN's complete systemic and spatial ambition.
+The other four should reveal qualities their media can express more directly.
+Their value lies in becoming distinct works rather than reduced replicas of the
+computer game.
+
+### Desktop and console computer game
+
+#### Canonical role
+
+The desktop and console computer game is MEDIAN's primary full-spectrum
+Manifestation. It is the form imagined throughout the main body of this
+Concept Sourcebook and the reference from which the other Manifestations
+identify what they preserve, compress, or reinterpret.
+
+This primacy is architectural rather than commercial. The present work makes a
+theoretical game's world, systems, and player relationships intelligible.
+Production planning and functioning software lie beyond its scope.
+
+The computer form provides the broadest simultaneous expression of MEDIAN:
+
+- One persistent Home whose terrain, Places, Practices, Citizens, and history
+  remain visually present
+- One continuous Field extending through Reaches, Margins, Roadways, Nodes,
+  Outposts, and authored special zones
+- Active traffic, weather, season, River Spume, human activity, and ecological
+  change
+- Colony-wide civic simulation at Home and individual bodily consequence Away
+- Five distinct Register presentations within one continuous world
+- Campaign Memory joined to evolving canon images of Citizens and the Colony
+
+#### Native spatial expression
+
+The computer game can let spatial identity remain active at several scales at
+once. A Place exists within terrain, participates in Mouse **JOIN**, Rabbit
+**GATHER**, or Squirrel **CONNECT**, holds a Residence or Practice, carries its
+physical condition and history, and remains visible as Citizens move around
+it. The same world can then open outward into direct Field movement, the
+schematic danger of Crossing, a framed MEET, or animal-scale EMBODY.
+
+Every Colony is depicted above ground and remains visually readable despite
+the partial conflict with literal animal ecology. Burrows, hollows, sheltered
+interiors, and embedded spaces use open faces, cutaways, terraces, lifted
+roofs, and other legible constructions so the player can understand one
+inhabited whole. Ecological truth governs animal bodies and needs while visual
+access governs the representation of Home.
+
+Mouse, Rabbit, and Squirrel Colonies should be distinguishable from their
+spatial forms before labels are read. Their architecture expresses the same
+civic systems through joined interior, gathered common ground, or connected
+Web rather than through cosmetic replacement sets.
+
+#### Register presentations
+
+| Register | Computer-game presentation |
+|---|---|
+| **Colony / DWELL** | An isometric living model of Home with free rotation, slide, and zoom. The player designates Places, reads Civic Balance, commits Citizens, manages Projects, and observes ordinary life. |
+| **Field / TRAVEL** | A top-down direct-drive landscape in which the player moves the Party icon through continuous terrain. Distance advances the shared Day Band, with Rabbit bodies extending travel span. |
+| **Crossing / RISK** | A schematic, species-shaped planning view backplated by the actual Staging Post, Roadway, traffic, weather, and two sides involved. Observation and planning lead to one irreversible Commit and continuous resolution. |
+| **Encounter / MEET** | A presentational situational matrix showing participants, place, known facts, stakes, and applicable responses. A contested Away MEET always shows all five families in canonical order and greys unavailable ones; other MEETs show relevant unavailable responses only when their absence matters. Costs, causal affordances, and likely directions remain legible before Commit. |
+| **Embodiment / EMBODY** | A close animal-scale experience of one present Citizen's activity or Presence within Home. It opens through Quiet Equilibrium and uses direct control, guided attention, or cinematic accompaniment appropriate to the body involved. |
+
+Launch, Stopover, and Homecoming use MEET to focus important state transitions.
+They remain procedures within the Home–Away cycle rather than additional
+Registers.
+
+#### One world under changing attention
+
+Home and the active Expedition continue within one shared Day Band clock. The
+player operates one Mode at a time. Launch makes Away operational until
+Homecoming; Home remains inspectable through its established information
+lenses, while ordinary DWELL commitments wait.
+
+Opening Home information at a safe Away decision point pauses the Party at its
+current position. It accumulates no hidden movement, RISK, Node engagement,
+Exposure, or personal consequence. While Away remains active, Home resolves its
+predictable systems at Dawn. A consequential Home situation may interrupt
+through MEET, then return operation to the Party's persistent Field position.
+
+This asymmetry keeps Home alive without demanding simultaneous operation and
+keeps named Citizens Away subject to observed, committed decisions.
+
+#### Record and presentation
+
+The computer form can maintain a complete hidden Record while presenting only
+the selections meaningful to the player. The Chronicle and Tales translate
+historical selections; the Almanac and Community Board present current and
+anticipated state; Citizen panels, Home views, Homecoming, and generated scenes
+serve their own focused uses.
+
+Canon Citizen images remain identity anchors. Canon Colony images preserve
+major archival states. Image-to-image generation may place those established
+subjects into dramatic MEET outcomes, Register transitions, loading
+compositions, memories, and information panels while preserving continuity of
+appearance and place.
+
+This capacity is part of the computer Manifestation's attachment-forward
+strength: simulation, interface, narration, sound, and evolving imagery can all
+refer to the same persistent lives.
+
+#### Acceptance boundary
+
+The computer Manifestation succeeds when its Registers feel different without
+feeling disconnected, when species changes the structure of Home and Away, and
+when the player can move between civic scale and personal scale without losing
+continuity. Its breadth serves one central outcome: the player understands the
+Colony well enough that departure matters and return changes somewhere already
+known.
+
+The Sourcebook specifies that conceptual whole. Implementation architecture,
+engine selection, asset budgets, performance targets, production schedules,
+platform certification, accessibility implementation, and exact interface
+engineering belong to later production work.
+
+### Tabletop role-playing game
+
+#### Canonical pitch
+
+The MEDIAN tabletop role-playing game is a Colony-centered campaign in which
+each player normally inhabits one principal Citizen at a time while the Colony
+remains the group's shared and continuing character. The table creates MEDIAN
+through spoken description, conversation, shared records, simple physical
+procedures, and the accumulated consequences of play.
+
+One Citizen's life may end or cease to be a player's principal viewpoint. The
+player's participation continues through another existing Citizen within the
+same inhabited community. Attention changes; the Colony and its memory endure.
+
+The form should be playable with ordinary dice, tokens, pencils, shared sheets,
+and a small number of printable cards, strips, or tables. Its native strength
+lies in authored voice, relationship, folklore, negotiation, and the ability of
+a group to remember the same event differently while preserving what actually
+became true.
+
+#### The players, their Citizens, and the Guide
+
+Each player begins with one principal Citizen. They speak, decide, and accept
+personal consequence through that life while participating in shared decisions
+about Home and the Colony. Their Citizen is neither a private economic engine
+nor the only life at the table that may matter to them.
+
+The wider Roster contains named Citizens with existing Roles, relationships,
+possessions, histories, and possible futures. Players may voice or temporarily
+inhabit these Citizens when the situation calls for it. A durable change of
+principal viewpoint takes up someone already situated within the community
+rather than introducing an unconnected replacement.
+
+One participant ordinarily serves as **Guide**. The Guide:
+
+- Presents the landscape, weather, traffic, animals, and human activity
+- Keeps hidden information and the parts of Exposure that remain illegible
+- Frames MEET around concrete participants, facts, stakes, and circumstances
+- Portrays recurring non-player Citizens without treating them as disposable
+  content
+- Maintains causal clarity between choice and consequence
+- Helps the group distinguish the factual Record from Chronicle, Tale,
+  interpretation, and folklore
+
+The Guide represents the world rather than opposing the players. Prepared
+situations, seasonal conditions, traffic procedures, Node prompts, and World
+Pressure should carry enough structure that the Guide can concentrate on
+clarity, consequence, and living presence instead of inventing an adversarial
+challenge economy.
+
+#### Citizen Record
+
+Each principal Citizen uses a compact record of one continuing life.
+
+| Field | Function |
+|---|---|
+| **Name and species** | Establishes identity and bodily scale |
+| **Appearance and expression** | Preserves recognizable physical and behavioral particularity |
+| **Home Role** | Records the Citizen's present civic responsibility without introducing a personal productivity rating |
+| **Relationships** | Shows the particular lives through which trust, obligation, friction, care, and memory operate |
+| **Tool, Supply, and Keepsake** | Holds the same bounded personal Item positions used by the primary Manifestation |
+| **Location and availability** | Distinguishes belonging from present place and current ability to contribute |
+| **Exposure** | Records the hidden or Guide-held accumulating Away burden |
+| **Wound and Maiming** | Preserves specific bodily consequence and recovery state |
+| **Tale** | Presents selected events from the factual Record that concern this Citizen |
+
+Personality appears through portrayal, relationship, habit, choice, and
+accumulated history rather than ranked traits or a hidden Home aptitude. Species
+supplies bodily and spatial difference; equipment and circumstance supply
+specific affordance.
+
+A Rabbit or Squirrel contributes one Body Unit and one Civic Share. A Mouse
+contributes one-half Body Unit and one-half Civic Share while retaining six
+personal Carry; two Mice restore the standard civic and bodily unit. Every
+individual retains their own Items, relationships, Exposure, Wound, Maiming,
+and consequences.
+
+#### Colony record
+
+The shared Colony record is the campaign's continuing civic character. It
+contains or points to:
+
+- The Home terrain and current arrangement of Places
+- Mouse JOIN, Rabbit GATHER, or Squirrel CONNECT
+- Residences, Practices, improvements, and their placement states
+- The Roster, current Roles, Civic Shares, location, and availability
+- Housing; separate Role Load, coverage, Readiness, and Pressure; World
+  Pressure; and Quiet Equilibrium
+- Projects, Stores, usable Tools, Supplies, Keepsakes, and Artifacts
+- Season, known Field, Nodes, Outposts, and relevant current World state
+- Guest relationships and Terms of Hospitality
+- The factual Record and the group's authored Chronicle
+
+A map, diagram, tokens, and tables may divide this information across several
+physical objects. Together they describe one Home rather than a collection of
+private player holdings.
+
+#### Session rhythm
+
+A session may remain entirely at Home, follow one complete expedition, or end
+at a stable decision point within a longer arc. The ordinary full cycle is:
+
+1. **Dawn:** resolve routine production, Project progress, healing, season, and
+   the current civic posture.
+2. **DWELL:** decide Roles, Projects, preparation, hospitality, and the needs or
+   ambitions that deserve attention.
+3. **Launch:** choose particular Citizens and Items, then make their absence
+   from Home explicit.
+4. **TRAVEL:** carry the Party through a limited number of meaningful landscape
+   movements and Day Bands.
+5. **RISK:** use a brief dedicated procedure whenever the Party must cross an
+   active Roadway.
+6. **MEET:** answer the bounded situations that arise at Home or Away.
+7. **Homecoming:** reconcile returning lives, Cargo, Items, relationships,
+   injuries, Guests, and memories with Home.
+8. **Quiet and memory:** when Quiet Equilibrium permits, attend to ordinary life
+   and express selected Record through Chronicle or Tale.
+
+This rhythm organizes attention without forcing every session through every
+step. The Colony remains central even when play spends substantial time with an
+Away Party.
+
+#### Resolution architecture
+
+Tabletop resolution preserves the distinction between collective outcome and
+personal consequence. The group first determines what its action accomplishes,
+prevents, accepts, or leaves unfinished. Personal consequence then follows the
+Citizen or Citizens causally exposed by what they attempted, carried,
+protected, confronted, or were already suffering.
+
+The eventual resolution engine should use a small reusable grammar rather than
+a separate subsystem for every activity. Tools, Supplies, relationships,
+species bodies, Guest Signatures, Places, and preparation change available
+action or consequence through the circumstances in which they actually matter.
+
+Exact dice, cards, target values, probabilities, and resource quantities remain
+prototype questions. Any adopted method must preserve:
+
+- Legible stakes before commitment
+- Meaningful uncertainty after the players choose
+- Collective accomplishment resolved before personal consequence
+- Causal selection of exposed Citizens
+- Body Unit normalization where party composition or hazard scale requires it
+- Persistent results applied to the shared world and Record
+- Space for YIELD or WITHDRAW when preservation matters more than the initial
+  objective
+
+#### MEET at the table
+
+The Guide frames MEET by naming the participants, place, known facts, stakes,
+and immediate pressure. Players describe what their Citizens attempt rather
+than selecting from a literal interface.
+
+The five contested response families remain an authoring and interpretation
+grammar:
+
+| Family | Tabletop use |
+|---|---|
+| **CONTEST** | Overcome, resist, hold, seize, protect, or endure directly |
+| **EVADE** | Bypass, escape, hide, distract, or exploit terrain |
+| **PARLEY** | Ask, offer, trade, persuade, deceive, or invoke relationship |
+| **YIELD** | Concede one value, claim, possession, priority, or cost to preserve another |
+| **WITHDRAW** | End participation and leave the objective or situation |
+
+Players remain free to propose a concrete action in their own words. The Guide
+uses the families to clarify its direction, identify relevant affordances, and
+keep one situational grammar across danger, hospitality, care, opportunity,
+ceremony, aftermath, and conflict. Unopposed situations present their natural
+actions directly. Each applicable Round permits at most one active Item
+expression; relationships and Guest Signatures remain contextual affordances.
+
+A MEET may contain several Rounds when the situation materially changes.
+Focus identifies the Citizen whose contribution most defines a Round. When two
+Citizens equally claim Focus, resolve the clash randomly. Focus changes
+presentation and memory; causal exposure continues to determine consequence.
+
+#### Crossing as a tabletop ritual
+
+RISK should feel brief, committed, and physically unlike ordinary TRAVEL. A
+small lane strip, traffic cards, moving markers, sound cues, or timed reveal may
+make the Roadway readable without attempting real-time simulation.
+
+Before Commit, the table observes conditions and constructs the species-shaped
+plan:
+
+- Rabbit selects a traffic opening, broad line, and far-side refuge.
+- Mouse joins a short chain of body-credible pavement features.
+- Squirrel establishes a vector, limited redirects, and a far-side anchor.
+
+Gull and Crow may substitute their defined Crossing experiences. No other
+Guest changes the Core-Species RISK experience in v0.5.
+
+Commit ends planning. The chosen procedure then resolves the whole Crossing
+continuously and places the Party on the far side before applying delay,
+Exposure, separation, Cargo loss, Wound, Maiming, Tharn, death, or another valid
+consequence. The tabletop procedure should produce concentrated attention and a
+clear remembered event rather than extended tactical lane combat.
+
+#### TRAVEL, Rest, and Homecoming at the table
+
+TRAVEL moves the Party through continuous mapped or described Field. An
+ordinary Party contains 1.5 to 3 Body Units and more than one actual animal.
+Distance advances Day Bands; Rabbit Parties cover proportionally more ground,
+Mouse Parties retain their greater Item allowance, and Squirrel Parties use
+Strained Carry. Guest Carry and Signatures apply only through their defined
+bodies and circumstances.
+
+A rested Party receives three Day Bands at normal reach. It may push through
+Bands 4–6 at three-quarters, one-half, and one-quarter reach; Band 7 remains
+unavailable until Rest. A completed Rest MEET advances one Day Band, resets
+travel cadence, stabilizes Wound through the next three TRAVEL Bands, ends
+Tharn, and creates a Stopover. Natural shelter improves its circumstances. An
+Outpost also removes one Exposure step and permits Cargo transfer through
+Colony synchronization; it never removes a Citizen's final Away Exposure step.
+
+Launch makes Away operational until Homecoming. The table may consult the
+Colony record while the Party travels, and the Guide continues predictable Home
+state at Dawn. A consequential Home MEET may interrupt; ordinary DWELL choices
+resume after Homecoming.
+
+Homecoming is a state-changing MEET. It reconciles returning Citizens, Cargo,
+Items, Wound, Maiming, Guests, relationships, discoveries, care, civic
+reassignment, and memory with the continuing Home. Return reaches an actual
+Place and community rather than ending as an inventory update.
+
+#### Exposure, Wound, and Tharn
+
+Exposure is a hidden six-step individual burden. The first RISK affecting a
+Citizen sets it to one; later RISK, extended travel, pushing beyond ordinary
+Rest, and other defined causes may raise it. Players receive bodily and
+behavioral signs while the exact step and escalation chance remain with the
+Guide or a concealed physical procedure.
+
+An unstabilized Wound doubles subsequent Exposure accumulation. Remedy
+stabilizes that Wound through Homecoming without healing it; Rest supplies the
+shorter stabilization above. Remedy may enter an applicable situational
+response or PARLEY and has no effect on Tharn.
+
+Tharn enters only through a capable triggering event; accumulated Exposure and
+an unstabilized Wound make the hidden result easier to reach. RISK remains
+exempt from that pre-existing weighting. When Tharn strikes, the current
+objective gives way to securing the Citizen and reaching Rest. The Party cannot
+activate another Node or undertake Crossing until Rest ends it. The
+interruption should feel shocking, relational, and immediately consequential
+rather than like a disclosed status threshold.
+
+At Home, each Dawn removes up to three Exposure steps, so maximum Exposure
+drains over two Dawns. A Wound Recovery Project requires one completed usable
+and available Hearth and exactly one named Citizen committed as Healer. The
+Patient remains the target rather than a committed worker; completion clears
+the binary Wound and leaves any lasting Maiming intact.
+
+Exact dice, cards, and concealed-chance procedures remain part of later
+prototype work.
+
+#### DWELL and EMBODY at the table
+
+DWELL remains active play. The group designates Places, establishes Residences
+and Practices through Builder Projects, assigns finite Civic Shares, chooses
+Projects, reads the separate civic pressures, prepares Items, and decides which
+absences Home can bear. Named Citizens remain visible within those collective
+decisions.
+
+Completed Practices contribute current Practice Strength according to
+compatible Role support and placement. A production process yields zero until
+one usable relevant Practice and one sustaining Citizen are both present;
+thereafter it uses the shared relationship of usable Practices plus sustaining
+Civic Shares plus one-half for each Well-Placed Practice. Fractional results
+accumulate within the process and release only as whole chunks at Dawn.
+
+Species placement is drawn or mapped closely enough for Mouse **JOIN**, Rabbit
+**GATHER**, and Squirrel **CONNECT** to determine Well-Placed Residence and
+Practice states. The tabletop form may simplify geometry, but it preserves the
+Housing, Practice Strength, and Spatial Alignment consequences that make those
+relationships matter.
+
+Builder designates ground without cost; a Builder Project establishes its first
+Residence or Practice, with the first Workshop retaining its sole bootstrap
+exception. Each completed usable Practice accommodates one active Project.
+
+When the Colony reaches Quiet Equilibrium, the group may enter a brief
+non-instrumental Home scene through one present Citizen. A player may describe
+an ordinary activity, sensory experience, moment of play, shared routine,
+craft, rest, or companionship; another player or the Guide may supply the
+surrounding world and other Citizens.
+
+This is the tabletop analogue of EMBODY. It requires no roll and supplies no
+exclusive bonus. It lets the table experience what competent stewardship made
+possible. A distinctive moment may enter Campaign Memory, while most ordinary
+life remains free to pass without archival obligation.
+
+#### Campaign Memory at the table
+
+The Guide and campaign procedure maintain one factual Record of changed state.
+At appropriate breaks, they sort and present relevant selections through the
+Colony's Chronicle and individual Tales. The table supplies voice,
+interpretation, and remembered emphasis rather than deciding which facts became
+true. Different Citizens may understand or narrate the same event differently
+while the underlying outcome remains stable.
+
+Written entries, maps, removable tags, sketches, images, family relations,
+object histories, and recurring phrases may all carry memory. The record should
+remain light enough to preserve play while making the Colony more particular
+over time.
+
+#### Design boundary
+
+The tabletop Manifestation should make relationships, speech, folklore,
+collective responsibility, and remembered consequence more expressive than
+software can predetermine. Its central risk is heroic drift: an Away Party can
+easily become a conventional band of adventurers for whom Home is only a place
+to resupply.
+
+The Colony therefore remains mechanically necessary and emotionally present.
+Every expedition begins with visible civic subtraction, occurs within the
+highway's ecology, and ends by making Home answer what happened. The game
+changes principal viewpoints while preserving one shared community rather than
+building a sequence of replaceable heroes.
+
+### Spatial board game
+
+#### Canonical pitch
+
+The MEDIAN spatial board game is a cooperative game of building, inhabiting,
+and protecting one small animal Colony through a bounded story. Players create
+a species-shaped Home from physical pieces, sustain it with named Citizens,
+send a particular Party into the highway world, and receive those same lives
+and their consequences at Homecoming.
+
+Its central object is the Colony on the table. Places acquire uses and history;
+Citizen figures make ordinary responsibility visible; an expedition leaves
+recognizable vacancies behind. By the end of play, the group should be able to
+read the Home they made, remember who left it, and describe what their return
+changed.
+
+The form is designed for one to four players and one emotionally complete
+scenario in an evening. A short linked Chronicle may preserve the Colony
+between scenarios, while each individual scenario still reaches a meaningful
+Homecoming and aftermath.
+
+> **The Colony becomes worth protecting because the players have physically
+> built it, staffed it with particular friends, and watched their absence leave
+> visible holes.**
+
+#### The board's native strength
+
+The board game makes MEDIAN's relationships tangible. Its primary actions are
+placing, joining, gathering, connecting, occupying, committing, carrying,
+crossing, returning, and remembering. Cards may carry situations and records,
+but the decisive state remains the inhabited spatial arrangement at the center
+of the table.
+
+A compact modular layout gives each scale a clear physical home:
+
+- The central **Home** terrain holds designated Places, completed Residences
+  and Practices, Projects, Stores, and Citizen figures.
+- Species construction pieces make Mouse **JOIN**, Rabbit **GATHER**, or
+  Squirrel **CONNECT** perceptible through geometry.
+- Two bordering Roadway strips situate Home inside the highway and can become
+  the active surface for RISK.
+- Reach and Margin pieces extend the world only as far as the present
+  Expedition requires.
+- Citizen records and the Colony record preserve state that cannot be read
+  directly from position.
+- A quiet Chronicle edge receives the few changes worth carrying into another
+  scenario.
+
+The physical Colony remains above ground and completely legible. Rooms,
+hollows, courts, platforms, covered passages, and sheltered ground use open
+faces and representational cutaways so every Citizen and civic use remains
+visible at the table.
+
+#### Three construction grammars
+
+Each Core Species requires a different physical test for good placement. The
+species are identifiable from an unoccupied Colony layout before any labels or
+bonuses are read.
+
+| Core Species | Physical vocabulary | Spatial operator | Tabletop expression |
+|---|---|---|---|
+| **Mouse** | Interlocking rooms, wings, shared walls, doors, sleeves, and covered adjacency | **JOIN** | New Places become part of a continuous inhabited body. Contact and enclosure reveal which Places are Well Placed. |
+| **Rabbit** | Common-ground centers, protective edges, outward growth, and inward-facing Place pieces | **GATHER** | Places define and preserve open common space. Mutual visibility and neighborhood scale reveal which Places are Well Placed. |
+| **Squirrel** | Separate nodes, anchors, branches, bridges, cords, and alternate connections | **CONNECT** | Places remain distinct but reachable through a credible Web. Redundancy, elevation, and alternate ways through reveal which Places are Well Placed. |
+
+These grammars transact through the current Place rules. A Builder may
+designate physical ground without cost. The first Project at that designation
+establishes the Place, and its completion supplies one Residence or one
+Practice. A Well-Placed Core Residence holds three Body Units rather than two;
+a Well-Placed Practice gains its current Spatial Alignment contribution.
+
+The board should communicate those results through fit, orientation, completed
+openings, visible connections, or covered alignment marks wherever possible.
+Arithmetic confirms a spatial relationship the players can already see.
+
+Guest residences use dedicated Place pieces or overlays shaped by their own
+housing requirements. An authored Guest exception, such as Bumblebees living
+within a Garden, changes the physical arrangement directly rather than
+creating a general mixed-use rule.
+
+#### Named Citizens and shared stewardship
+
+Every Citizen remains an individual figure paired with a compact record. Mouse
+Citizens remain individually named even though two Mice together equal one
+standard Body Unit. Their half Civic Shares, six Carry apiece, relationships,
+and personal consequences remain attached to the separate Citizens.
+
+| Physical element | Information it carries |
+|---|---|
+| **Citizen figure** | Identity, current location, ordinary Role presence, Project commitment, or physical absence from Home |
+| **Citizen record** | Portrait, species, relationship cues, Role, Tool, Supply, Keepsake, Exposure, Wound, Maiming, and Tale-relevant changes |
+| **Place piece** | Ground, hosted Residence or Practice, physical state, placement relationship, and the hosted Practice's one accommodated Project where applicable |
+| **Colony board** | Population, Housing, separate Role Load and coverage, Stores, season, Quiet Equilibrium, and current civic circumstances |
+| **Field pieces** | The limited Reaches, Margins, Roadways, Nodes, Outposts, and special zones presently relevant |
+| **Situation material** | MEET participants, known facts, stakes, ordered options, costs, and persistent outcomes |
+
+Players jointly steward the Colony and direct its Citizens. Turn custody may
+rotate for clarity, but it creates no private ownership of a Citizen, Place,
+Role, or resource. A Citizen is a fractional player character within the
+shared game: particular enough to speak through and care about, yet governed
+by the same collective authorship as the Colony.
+
+Cooperation should keep each participant engaged without adding asymmetric
+offices or a second layer of civic titles. Practical table responsibilities—
+reading the current situation, moving traffic, maintaining the Record, or
+handling the active Party—may rotate as facilitation only.
+
+#### Scenario form
+
+An authored scenario establishes a Home site, season, starting Colony,
+immediate civic posture, outward need or ambition, and a developing source of
+World Pressure. These facts create one coherent situation rather than a point
+target. The Colony may begin established, begin at founding scale, or inherit
+specific history from a short linked Chronicle.
+
+A useful first scale is five to seven Dawns, usually containing one principal
+Expedition and at most one brief additional departure. This is a prototype
+target rather than a fixed law; the durable requirement is that DWELL,
+departure, exposure, and Homecoming all receive enough space to matter within
+one evening.
+
+The scenario closes by asking what became true:
+
+- Does the Colony remain a viable Home?
+- How did it answer the need, ambition, or pressure that defined this story?
+- Which Citizens, Places, objects, and relationships returned or remained
+  changed?
+- What does the Colony now remember?
+
+The answers form an outcome and an aftermath without converting the Colony's
+life into a victory-point total. A difficult ending can preserve the Colony,
+the surviving Citizens, and the truth of what they endured for future linked
+play.
+
+#### DWELL as physical civic posture
+
+At Dawn, ordinary production, transformation, Project progress, healing,
+seasonal change, and due consequences resolve together. The players then read
+Home as one posture and make a small number of consequential commitments.
+
+Citizen figures assigned to ordinary Roles contribute their current Civic
+Shares against that Role's Load. Citizens placed on a Project withdraw those
+shares from Role coverage, compatible Practice support, and passive
+throughput. Completed Practices contribute their situated Practice Strength;
+they remain unable to perform work without the Citizens required by the
+applicable system.
+
+Where a Role and Practice define passive production, the physical records use
+the shared formula:
+
+**Passive Throughput = usable relevant Practices + sustaining Civic Shares +
+(0.5 × Well-Placed relevant Practices)**
+
+The Practice-and-Citizen gate remains visible: if either side is absent,
+throughput is zero. Fractional production carries forward privately on the
+relevant process and releases only whole yield chunks at Dawn.
+
+Housing, Practice Strength, and Role coverage remain distinct. A displaced or
+poorly placed Residence changes Housing Pressure; a Role deficit identifies a
+civic vulnerability; a Practice can strengthen a situated response without
+erasing standing Load. Physical adjacency should help the group understand
+these relationships without pretending they are one combined score.
+
+Colony Pressure works through concealed or partially revealed situation
+material rather than a public incident meter. Separate Role and Housing
+shortfalls, World Pressure, repeated deficiency, recent MEET history, and
+bounded variation determine which situation becomes urgent. The board may
+telegraph risk through the Community Board, Almanac, Watchkeeping, and Guest
+Signatures while withholding the exact next event.
+
+When ordinary obligations are covered and no acute situation demands
+attention, Quiet Equilibrium becomes present. The completed spatial Colony
+should then look calm because its responsibilities are actually sustained, not
+because the scenario has paused its rules.
+
+#### Projects and visible opportunity cost
+
+Projects use named Citizens, appropriate material, a receiving Place where one
+is required, and an amount of progress calibrated during prototyping. Every
+new Residence or Practice is established through a Builder Project after
+designation; the first Workshop retains its sole bootstrap exception. Tools
+are Crafter Projects, Winter Cultivation is a Gardener Project, and other
+lasting changes retain their owning Roles.
+
+Each completed Practice may accommodate one active Project. The Project piece
+sits directly with that Practice or its receiving Place, keeping capacity and
+purpose visible. Moving a Citizen from ordinary Role responsibility onto the
+Project makes both the desired change and its immediate civic cost legible at
+once.
+
+The board therefore treats growth as a rearrangement of particular lives, not
+as an abstract construction action. The Workshop does not advance by itself,
+and adding a second Citizen to the work means choosing whose ordinary
+responsibility is left less covered.
+
+#### Departure, TRAVEL, and RISK
+
+Launch physically subtracts the chosen Citizens from Home. Their figures leave
+Roles, Practices, or Projects and assemble as one Party of 1.5 to 3 Body Units
+and more than one actual animal beside the Home board. The changed civic posture
+stays visible throughout the Expedition.
+
+Launch keeps Away operational until Homecoming. Home remains inspectable and
+continues its predictable Dawn systems; a consequential Home MEET may interrupt,
+while ordinary DWELL commitments wait for the Party's return.
+
+TRAVEL uses a compact top-down arrangement of Reach and Margin pieces. The
+Party moves through continuous nearby ground; distance advances Day Bands, and
+Rabbit Parties express their greater Field movement through the amount of
+ground crossed before that advance. Mouse Parties retain their greater Item
+allowance, while Squirrel Parties use Strained Carry. Guest Carry and
+Signatures enter only through their defined bodies and circumstances. Nodes and
+Outposts remain places in the continuous world.
+
+A rested Party receives three Day Bands at normal reach. It may push through
+Bands 4–6 at three-quarters, one-half, and one-quarter reach; Band 7 remains
+unavailable until Rest. A completed Rest MEET advances one Day Band, resets
+travel cadence, stabilizes Wound through the next three TRAVEL Bands, ends
+Tharn, and creates a Stopover. Natural shelter improves its circumstances. An
+Outpost also removes one Exposure step and permits Cargo transfer through Colony
+synchronization; it cannot remove the final Away Exposure step.
+
+RISK temporarily makes a Roadway strip the center of attention. Visible
+traffic, weather, Spume, carried load, party composition, and the selected
+species plan establish the Crossing. Mouse JOINs pavement features into a
+chain, Rabbit GATHERs the party around openings and refuges, and Squirrel
+CONNECTs a crossing vector and far-side anchor. Gull and Crow may replace that
+Core-Species experience only through their defined Guest Signatures.
+
+Observation and planning end at one clear Commit. Resolution carries the
+entire Party to the far side and then applies delay, Exposure, immediate
+jostled Item loss, Wound, Maiming, Tharn, death, or another valid consequence.
+No Party remains stranded between lanes, and no Crossing expands into a
+tactical road battle. The physical procedure earns its place by producing a
+few minutes of concentrated, irreversible attention.
+
+The first RISK to affect a Citizen sets their Exposure to one. Further RISK,
+extended travel, pushing beyond ordinary Rest, Wound, and other defined causes
+may raise it through a concealed six-step track. An unstabilized Wound doubles
+further Exposure accumulation; Remedy stabilizes it for the remainder of the
+Expedition.
+Accumulated Exposure and an unstabilized Wound may make Tharn more likely when
+a valid triggering event occurs; RISK remains exempt from that pre-existing
+weighting. The game never highlights the possibility in advance.
+
+#### MEET at the board
+
+MEET frames each consequential situation with participants, location, known
+facts, stakes, and ordered choices. A contested Away MEET always shows all five
+response families in canonical order, with unavailable families visibly
+inactive and accompanied by a concise reason grounded in known facts. Other
+MEETs retain a relevant unavailable response only when its absence matters and
+omit irrelevant choices. Tools, Supplies, Guest Signatures, relationships,
+species, place, and circumstance may make additional actions available or
+alter their prospects. Each Round permits at most one active Item expression.
+
+Contested situations use **CONTEST**, **EVADE**, **PARLEY**, **YIELD**, and
+**WITHDRAW** as their stable response families. Other MEETs present the
+specific actions appropriate to care, discovery, hospitality, ceremony,
+Launch, Stopover, or Homecoming. A situation may continue across several
+Rounds when its facts or stakes change. Focus identifies which Citizen most
+shaped a Round, with an unresolved clash settled randomly.
+
+The board game may express uncertainty through cards, dice, tokens, or a
+combination chosen during prototyping. The chosen method must keep the
+available facts and causal affordances legible before Commit, then attach
+consequence to the Citizens, Places, Items, or relationships actually exposed
+by the choice.
+
+If Tharn strikes, saving the affected Citizen displaces the current objective.
+The Party yields or withdraws and seeks Rest; it cannot activate another Node
+or undertake another Crossing while that Citizen remains Tharn. Remedy cannot
+ease Tharn. Only Rest can do so.
+
+#### Homecoming, quiet, and Campaign Memory
+
+Homecoming returns figures to the edge of the Colony before any Citizen
+resumes ordinary work. One state-changing MEET receives the whole Expedition:
+carried gains and losses enter Stores, Items return or remain absent, Wounded
+and Maimed Citizens seek available care, Guests receive a civic answer,
+relationships respond, and Exposure begins to drain. A Citizen at maximum
+Exposure loses up to three steps each Dawn and therefore requires two days at
+Home to return to zero.
+
+A Wound Recovery Project requires one completed usable Hearth not already
+committed to the care of Young, another Wounded Citizen, Rehabilitation, or
+another Project, together with exactly one named Citizen committed as Healer.
+The Patient remains its target rather than a committed worker. Completion
+clears Wound while preserving any accompanying Maiming.
+
+The same physical vacancy that marked departure is therefore answered by a
+particular return. A returning Citizen may occupy their former responsibility,
+need a Hearth, bring a new capability, or leave that part of the board changed
+for the rest of the scenario.
+
+When Quiet Equilibrium is present, the group may choose one available Citizen
+for a brief non-scoring EMBODY vignette prompted by the actual Colony layout.
+A Mouse may pass through familiar joined rooms, a Rabbit cross open common
+ground toward a friend, or a Squirrel traverse a now-safe loop of the Web. The
+players attend to ordinary activity, companionship, sensation, or play without
+receiving a resource or tactical advantage.
+
+The factual Colony Record preserves what changed. Selected events may enter a
+short Chronicle or a Citizen's Tale through sleeves, removable tags, erasable
+records, or reproducible sheets. Persistent play carries forward particular
+lives and their Home while keeping every physical component recoverable.
+
+#### Separation from the card game
+
+Both physical Manifestations may use cards. Their distinction lies in where
+the game state lives.
+
+| Dimension | Spatial board game | Fixed-content card game |
+|---|---|---|
+| **Principal subject** | One inhabited spatial Colony | One evolving Colony-and-corridor tableau |
+| **Primary manipulation** | Place geometry, Citizen figures, connections, common ground, Roadway strips, and limited Field pieces | Citizen, Place, Reach, Traffic, situation, Item, and memory cards in persistent relationships |
+| **Species expression** | Different construction pieces and physical placement tests | Different card relationships, keywords, and tableau rules |
+| **Emotional strength** | Visible habitation, vacancy, collective construction, and tactile return | Singular cards accumulating physical state and history across a longer campaign |
+| **Scenario emphasis** | One Home, one pressure arc, and a complete evening | Corridor development and stronger campaign persistence across scenarios |
+
+The board game can include cards for Citizens, situations, traffic, and memory
+without becoming the card game. Its decisive truth remains visible in the
+shape of Home and in the presence or absence of named figures upon it.
+
+#### Product and design boundaries
+
+The complete board game uses fixed, disclosed content and supports its full
+scenario without an app, blind purchases, collectible rarity, component
+destruction, or premium-exclusive rules. Optional expansions add complete
+species, sites, Citizens, or scenarios without correcting an intentionally
+incomplete core set. Solo play stewards the same shared Colony rather than
+adding a competing automated player.
+
+Exact action cadence, component counts, scenario duration, progress costs,
+randomizer, and campaign storage require physical prototyping. The first proof
+should test the Manifestation's distinctive claim with one species, one
+legible Colony, a small named Roster, one pressure arc, one principal
+Expedition, one Crossing, and a full Homecoming before attempting content
+breadth.
+
+The Manifestation is sound when players can identify the Core Species from the
+unoccupied layout, understand the civic cost of removing a Citizen, complete
+Crossing without tactical sprawl, reach real Quiet Equilibrium, and finish by
+naming at least two Citizens and explaining how Home changed around them.
+
+### Cooperative fixed-content card game
+
+#### Canonical pitch
+
+The MEDIAN card game is a cooperative campaign of one Colony and its widening
+highway world, expressed through a persistent physical tableau. Singular
+Citizen cards inhabit Home, depart into Field, acquire Items and consequences,
+and return with histories that remain physically attached to them. Place,
+traffic, Node, situation, and memory cards let the table grow into a readable
+cross-section of the corridor over several linked stories.
+
+Each scenario provides a complete Home–Away–Homecoming arc. Campaign play lets
+the same Colony, Citizens, Places, objects, known world, and Record accumulate
+across those arcs. The card is therefore both a rules object and a durable
+carrier of particularity.
+
+> **The table makes the corridor physically legible while the campaign makes
+> each Citizen increasingly irreplaceable.**
+
+#### Why cards
+
+Cards excel at holding a named subject together with changing relationships.
+A Citizen portrait can remain constant while a Role marker, Tool, Supply,
+Keepsake, Exposure sleeve, Wound overlay, Tale entry, or relationship card
+changes what surrounds it. A Garden can retain the memory of its placement and
+improvement. A familiar Reach can re-enter play with altered Nodes, season, or
+traffic. The same components become more meaningful because the group has seen
+what happened through them before.
+
+The decisive state of this Manifestation lives in card relationships:
+
+- Which Citizens are present at Home, committed to Projects, or assembled in
+  the active Party
+- Which Residences and Practices occupy established Places, and whether their
+  card relationships make them Well Placed
+- Which Field cards have become known and how the current Party is positioned
+  among them
+- Which Items accompany a Citizen, remain in Stores, or were lost
+- Which factual changes persist on Citizen, Place, Colony, and world records
+- Which selections of that Record have entered Chronicle or Tale
+
+The card form can represent a longer known corridor and a deeper campaign
+archive than the spatial board game while occupying a compact table. Its
+Home remains readable, but its greater strength lies in persistent card state
+rather than architectural model-making.
+
+#### Fixed content and living combinations
+
+**Fixed content** describes the product, not the order of play. Every card in a
+set is disclosed and intentionally authored. Shuffling, uncertain draws,
+scenario assembly, alternate setup, and emergent card relationships may still
+create variation during play.
+
+The core set forms a complete game. Optional expansions may add a fully
+described species, Colony, biome, Guest group, scenario sequence, or body of
+world material. They extend the possible combinations without selling power,
+identity, or mechanical completeness through scarcity.
+
+Named Citizens appear once within a campaign state. Alternate presentation may
+offer another portrait or historical view of the same Citizen, but it never
+creates several optimized copies of one life for deck construction. The player
+does not build a stronger collection by acquiring rarer Citizens.
+
+#### The corridor tableau
+
+The ordinary table presents the highway as an ecological cross-section and a
+longitudinal world at once.
+
+- A central **Home Median** tableau contains the Colony's established Places,
+  Residences, Practices, active Projects, Stores, and present Citizens.
+- Compact **Roadway** rows border Home and carry Traffic, River Spume, weather,
+  and Road Work when those systems matter.
+- **Margin** and **Reach** cards continue beyond or along the Roadways, revealing
+  nearby ground, Nodes, Outposts, and authored special zones.
+- The active **Party** occupies a distinct travel row that points to its current
+  Field card without erasing the geography already known.
+- The **Almanac** presents current and anticipated state beside the tableau.
+- **Chronicle** and Tale material remains close enough to inform play without
+  crowding current state.
+
+The layout may fold or compress for a smaller table, but Home, Roadway, Margin,
+and Reach retain their relationships. The highway is an operating presence
+through the arrangement rather than a generic hazard deck detached from place.
+
+New Field cards are revealed as the Party enters ground that was previously
+unknown. Returning through known ground reuses its existing cards and current
+state. Exploration changes what the Colony can understand and revisit while
+preserving that existing geography.
+
+#### Card families
+
+| Card family | Durable function |
+|---|---|
+| **Citizen** | One named life, canon portrait, species, Role, relationships, location, availability, Item positions, Exposure, Wound, Maiming, and Tale-relevant change |
+| **Place** | Persistent Home ground, hosted Residence or Practice, placement relationship, physical state, improvement, and applicable Project capacity |
+| **Role and Civic** | Eight equal civic responsibilities, Body-Unit-normalized Civic Shares, separate Load and coverage, Housing, and Readiness |
+| **Project** | A defined lasting change, owning Role, receiving Practice or Place, committed Citizens, required material, and progress |
+| **Field** | Reach, Margin, Roadway relationship, biome, terrain, season, Node, Outpost, or authored zone |
+| **Traffic and World** | Traffic thickness, human activity, Spume, weather, Road Work, seasonal pressure, and situated environmental change |
+| **MEET** | Participants, place, known facts, stakes, ordered response positions, contextual actions, and persistent results |
+| **Item** | One Tool, Supply, Keepsake, Artifact, Cargo object, or other graspable and transferable thing |
+| **Memory** | Factual Record inserts, Chronicle selections, Citizen Tale selections, and remembered history attached to Places or Items |
+
+Cards may be double-sided, sleeved, tucked, overlapped, rotated, or joined by
+removable markers. Their state must remain readable and recoverable. A campaign
+records consequence through durable arrangement rather than permanent damage
+to the components.
+
+#### Citizen cards as identity anchors
+
+The Citizen card is the Manifestation's strongest attachment object. Its canon
+image, name, species, body scale, expression, and current facts establish one
+recognizable life. The card remains the same whether the Citizen is sustaining
+Home, working on a Project, travelling in a Party, recovering at Hearth, or
+appearing in a remembered event.
+
+A Citizen's current state may be divided between the main card and a small
+personal stack:
+
+- A Role or Project marker identifies current Civic Share commitment.
+- Tool, Supply, and Keepsake cards occupy bounded positions rather than forming
+  an unrestricted equipment engine.
+- Relationship cards or shared markers connect particular Citizens without
+  converting friendship into a universal modifier.
+- Exposure uses a concealed six-step sleeve, dial, edge track, or removable
+  marker whose qualitative signs remain player-facing.
+- Wound and Maiming remain binary, causally specific states.
+- Tale inserts select relevant facts from the campaign Record.
+
+Mouse Citizens remain singular cards and contribute one-half Civic Share each.
+Two Mice form one standard Body Unit for normalized Colony and party scale, but
+their six Carry each, Items, relationships, Exposure, and consequences remain
+separate. Rabbit and Squirrel Citizens contribute one standard Body Unit and
+one full Civic Share each.
+
+Cards remain jointly governed. Players may handle different Citizens or areas
+of the tableau to distribute attention, but no participant owns a private
+economy or an exclusive personal deck. The Colony and active Party are shared
+responsibilities.
+
+#### Home as a card system
+
+Home uses compact card relationships rather than imitating the board game's
+free-form model. Scenario and species materials define the legal vocabulary by
+which Place cards express Mouse **JOIN**, Rabbit **GATHER**, or Squirrel
+**CONNECT**.
+
+- Mouse Places may share marked edges, enclosure groups, or adjacency chains.
+- Rabbit Places may face or surround a persistent card representing open common
+  ground.
+- Squirrel Places may connect through bridge, branch, anchor, and alternate-link
+  cards.
+
+These relationships determine Well-Placed status and may change as Home grows.
+They carry the current effects: a Well-Placed Core Residence supports three
+Body Units instead of two, and a Well-Placed Practice gains Spatial Alignment
+for Practice Strength and any defined passive throughput.
+
+A vacant Place begins as designated ground. Its first Residence or Practice
+Project establishes the Place permanently; the completed use may be printed on
+a card placed over it, revealed by flipping it, or added as a persistent tuck.
+The first Workshop preserves its sole bootstrap exemption. Later development
+changes the particular Place rather than replacing it with a generic higher-
+tier copy.
+
+Citizen markers or tucked cards show their ordinary Role commitments. Project
+cards sit with the one completed Practice that accommodates them and visibly
+receive their committed Citizens. Those Citizens cease to counter ordinary
+Role Load, support compatible Practices, or contribute to passive production.
+
+The current production relationship remains common across the form:
+
+**Passive Throughput = usable relevant Practices + sustaining Civic Shares +
+(0.5 × Well-Placed relevant Practices)**
+
+The output is zero until at least one usable relevant Practice and one Citizen
+sustaining its defined production Role are both present. Fractional output
+accumulates on that process and releases only whole chunks at Dawn.
+
+Housing, the eight separate Role balances, Practice Strength, Stores, and
+Projects remain distinct card states. Their relationships may be summarized on
+one Colony aid, but they do not collapse into a single efficiency value.
+
+#### Scenario and campaign rhythm
+
+A scenario should ordinarily resolve in roughly one to two hours and follow a
+complete dramatic problem. A linked campaign may contain several scenarios
+whose exact number is set by its authored arc. Standalone and return scenarios
+may begin from prepared Colony states; campaign scenarios begin from the state
+the group actually preserved.
+
+The common rhythm is:
+
+1. **Dawn:** resolve production, transformation, Projects, healing, Exposure
+   recovery, season, and due world state.
+2. **DWELL:** read separate civic pressures, sustain Roles, choose Projects,
+   prepare Items, and decide which absences Home can bear.
+3. **Launch:** assemble the available Citizens and Items into one Party and
+   expose the vacancies left at Home.
+4. **TRAVEL:** move through known or newly revealed Field cards as distance
+   advances Day Bands.
+5. **RISK:** read and cross an active Roadway through the Party's Core-Species
+   experience or a defined Gull or Crow substitution.
+6. **MEET:** resolve bounded situations at Home or Away through the same
+   legible response grammar.
+7. **Homecoming:** return changed Citizens and material consequences to the
+   continuing Colony.
+8. **Memory:** preserve factual change and select the parts that become
+   Chronicle or Tale.
+
+Not every scenario requires equal time in each Register. A civic story may
+remain mostly at Home, while a discovery story may extend the Field tableau.
+Every scenario remains answerable to the Colony whose Citizens and capacities
+made it possible.
+
+#### Pressure and Home MEET
+
+Situation decks or packets combine present World Pressure with the Colony's
+actual civic posture. Housing Pressure and the separate Role Pressures remain
+legible, while the exact next MEET is protected from deterministic prediction.
+Scenario state, season, shortfall depth and persistence, bounded variation, and
+recent MEET history determine which eligible situation enters play.
+
+The most prominent relevant Role shortfall shapes the primary civic stake. A
+second relevant shortfall, or the actual Citizen, Place, Practice,
+relationship, resource, or environmental circumstance involved, supplies the
+collateral stake. Repeated deficiencies and closely clustered situations are
+smoothed through deck construction, cooldown markers, recent-history checks,
+or another compact campaign procedure.
+
+The Community Board and Almanac may reveal approaching circumstances,
+Watchkeeping, Guest Signatures, and likely areas of vulnerability without
+identifying the next result. Pressure creates credible situations rather than
+automatic daily damage.
+
+A contested Away MEET keeps all five response families in canonical order.
+Active choices carry their current text; unavailable families turn to a muted
+face or receive a translucent cover that states the known reason while
+retaining their place. Other MEETs retain a relevant unavailable response only
+when its absence matters and omit irrelevant choices. Each Round permits at
+most one active Item expression.
+
+Those families are **CONTEST**, **EVADE**, **PARLEY**, **YIELD**, and
+**WITHDRAW**. A situation may continue through several Rounds as its facts and
+stakes change. Focus identifies the Citizen whose contribution defines each
+applicable Round; a true Focus clash resolves randomly.
+
+#### TRAVEL, RISK, and Away consequence
+
+The active Party row carries its Citizen and Item cards together. An ordinary
+Party contains 1.5 to 3 Body Units and more than one actual animal. Removing
+those Citizens from Home reveals the Role, Practice support, production, and
+Project commitments they no longer sustain. Mouse Parties carry more Items,
+Rabbit Parties travel farther per Day Band, and Squirrel Parties manage
+Strained Carry through their defined bodily rule.
+
+Launch keeps Away operational until Homecoming. Home remains readable in the
+tableau and continues its predictable Dawn systems; a consequential Home MEET
+may interrupt, while ordinary DWELL commitments wait for return.
+
+TRAVEL moves the Party between adjacent Field cards under a common distance
+allowance. A Day Band advances after the relevant amount of movement rather
+than after a fixed number of card actions. A rested Party receives three Day
+Bands at normal reach, then may push through Bands 4–6 at three-quarters,
+one-half, and one-quarter reach; Band 7 remains unavailable until Rest. A
+completed Rest MEET advances one Day Band, resets travel cadence, stabilizes
+Wound through the next three TRAVEL Bands, ends Tharn, and creates a Stopover.
+Natural shelter improves its circumstances. At an Outpost, Rest also removes
+one Exposure step and offers abstracted Carry storage and Colony
+synchronization; the final Away Exposure step remains.
+
+RISK uses a compact traffic row, traffic packet, or layered Roadway card. The
+players observe traffic thickness, weather, Spume, time of day, carried load,
+and available species affordances, then commit to one plan. The physical
+resolution may sequence several traffic cards without adding another choice or
+correction. The Party completes the Crossing as one continuous act and arrives
+on the far side before penalties are applied. Gull and Crow may substitute
+their defined Crossing experiences; no other Guest changes the Core-Species
+RISK experience in v0.5.
+
+The first RISK affecting a Citizen sets Exposure to one. Later RISK, extended
+travel, and defined circumstances raise it along the six-step track. An
+unstabilized Wound doubles further Exposure accumulation. Remedy stabilizes the
+Wound through Homecoming and may also serve its defined MEET and PARLEY uses;
+it does not remove the Wound or erase Maiming.
+
+Tharn remains absent from visible risk summaries. A valid event may trigger it;
+accumulated Exposure and an unstabilized Wound make that hidden result easier
+to reach, while RISK remains exempt from the pre-existing weighting. When Tharn
+strikes, the current objective gives way to saving the Citizen and reaching
+Rest. The Party cannot activate another Node or undertake another Crossing
+until Rest has ended the state, and Remedy provides no relief from it.
+
+#### Homecoming and persistent memory
+
+Homecoming reassembles the two halves of the tableau through a state-changing
+MEET. Returning Citizen cards first gather at the edge of Home. The group then
+reconciles Cargo and Items, Wound and Maiming, care, Guests, changed
+relationships, new improvement opportunities, discoveries, absences, and the
+present civic posture before returning anyone to ordinary responsibility.
+
+Exposure loses up to three steps at each Home Dawn; a Citizen returning at
+maximum therefore requires two days to reach zero. A Wound Recovery Project
+requires one completed usable Hearth not already committed to the care of
+Young, another Wounded Citizen, Rehabilitation, or another Project, together
+with exactly one named Citizen committed as Healer. The Patient remains its
+target rather than a committed worker. Completion clears Wound, preserves any
+accompanying Maiming, and retains the distinction between returning and being
+fully restored.
+
+The hidden factual Record grows through removable campaign inserts, a Colony
+sheet, or an indexed log. The Chronicle translates selected Colony events;
+each Citizen's Tale presents the selections that concern that life. Place and
+Item histories may remain attached to their own cards. Players can recover old
+facts when needed without exposing the whole backend Record as the ordinary
+play surface.
+
+Canon Citizen art anchors identity across the campaign. Sleeve inserts,
+portrait overlays, or newly authored scene cards may show later circumstances
+while the principal image remains recognizable. The card game cannot generate
+new scenes dynamically, but it can use a prepared family of current-spec
+images to let one known Citizen appear at Home, in danger, in memory, and after
+change.
+
+Quiet Equilibrium permits a brief EMBODY analogue through an available Citizen
+and the actual Home tableau. A prompt may invite the group to attend to a
+sensory detail, ordinary practice, shared activity, or companionship. It
+provides no score or exclusive resource; a memorable instance may enter the
+Record while most quiet remains uncollected.
+
+#### Product and design boundaries
+
+The card game is cooperative, app-independent, replayable, and complete within
+its disclosed core set. It uses no randomized retail packs, rarity ladder,
+chase cards, speculative aftermarket, destructive campaign requirement, or
+premium-exclusive rules. Alternate art remains an aesthetic choice and never
+the carrier of superior power.
+
+The game may ask players to construct a scenario deck, organize a situation
+packet, or combine known card modules. It does not ask each participant to buy
+or optimize a private deck. Scarcity belongs inside the Colony's material
+world, not in access to the design.
+
+Exact card dimensions, play-surface compression, draw structure, probability
+engine, campaign length, component count, and numerical tuning remain matters
+for later physical prototyping. The first proof should establish four things:
+the corridor is readable at an ordinary table; Citizen cards remain singular
+rather than interchangeable; Home and Away can coexist without excessive
+state handling; and one scenario reaches an emotionally complete Homecoming.
+
+This Manifestation is successful when the layout reads as MEDIAN's corridor,
+the players feel the absence of the particular cards they send Away, persistent
+state makes familiar cards more meaningful over time, and the campaign's
+strongest reason to continue is curiosity and care for the Colony rather than
+the acquisition of stronger cards.
+
+### Standalone mobile game
+
+#### Canonical pitch
+
+The MEDIAN mobile game is a premium, single-player Manifestation designed for
+portrait touch screens. It offers brief acts of stewardship, deliberate
+expeditions, finite bursts of Roadway danger, close attention to named
+Citizens, and tactile EMBODY within one persistent Colony. The player decides
+when the world advances and how long a visit lasts.
+
+The form concentrates MEDIAN around intimacy and return. A player may read one
+Dawn and make a consequential Home decision in several minutes, follow an Away
+Party through a longer self-contained sequence, or enter a quiet animal-scale
+moment without first clearing a list of chores.
+
+> **A player can protect a small community for five minutes, risk a friend for
+> fifteen, or simply run a safe bridge with a Squirrel—and the game will still
+> be there when they choose to return.**
+
+#### Native scale and posture
+
+The phone is a small, personal window rather than a reduced desktop monitor.
+Portrait composition favors one spatial subject, one group of Citizens, or one
+decision at a time. Depth comes from continuity between those views rather than
+from keeping the whole simulation visible simultaneously.
+
+The mobile form preserves:
+
+- One persistent Home with species-specific placement, civic posture, named
+  Citizens, Projects, and history
+- One continuous Field navigated through direct movement
+- Species-shaped RISK presented as a finite schematic commitment
+- MEET as the principal situational decision view
+- Home-only EMBODY as an intimate use of touch, motion, sound, and haptics
+- Campaign Memory built from the same factual world and recognizable canon
+  identities
+
+The player operates one Mode at a time. Launch keeps Away operational until
+Homecoming, while Home remains inspectable through its established information
+lenses. Opening those views at a stable decision point pauses the Party without
+hidden movement, Exposure, RISK, or personal consequence; it does not reopen
+ordinary DWELL commitments. Home resolves its predictable systems as the
+shared clock reaches Dawn, and a consequential Home MEET may interrupt before
+returning operation to the Party. The phone never asks the player to operate
+two live Modes at once.
+
+#### Player-owned time
+
+Real-world absence produces no Colony time. Closing the game freezes the
+current safe decision point; opening it resumes from that truth. Production,
+Projects, healing, seasons, Pressure, Away movement, and relationships advance
+through in-game Dawns, distance, decisions, and events.
+
+Mobile play can support several natural session lengths without turning them
+into obligations:
+
+| Visit | Approximate shape | Appropriate content |
+|---|---|---|
+| **Home visit** | Several minutes | Read Dawn, answer a pending MEET, adjust a Role posture, begin or reconsider a Project, inspect a Citizen, or observe Home |
+| **Expedition passage** | Ten to twenty minutes | Launch, one or more Day Bands of direct TRAVEL, a Node or Crossing, MEET, Stopover, or a stable Field pause |
+| **EMBODY moment** | One to five minutes | Animal-scale movement, small Practice, companionship, sensory attention, play, or rest within Quiet Equilibrium |
+| **Extended play** | As long as the player chooses | Several Dawns, a complete Expedition, Homecoming, or a sustained period of Colony development |
+
+These are ergonomic rhythms rather than rewards or schedules. The game creates
+no daily sequence that must be completed, no benefit for returning at a fixed
+real-world interval, and no simulated neglect while the application is closed.
+
+#### Mobile Register presentations
+
+| Register | Portrait mobile expression |
+|---|---|
+| **Colony / DWELL** | A living illustrated Home explored through pan, pinch, rotation where useful, and focused Place or Citizen sheets. Civic information appears in layers tied to the visible Colony. |
+| **Field / TRAVEL** | A top-down direct-drive landscape. The player steers or drags the Party icon through terrain while distance advances the Day Band. |
+| **Crossing / RISK** | A portrait schematic of Roadway, traffic, weather, Party, and far side. Touch establishes the species plan; Commit begins one continuous resolution. |
+| **Encounter / MEET** | A staged portrait decision showing the relevant participants, location, known facts, stakes, and consistently ordered options without requiring navigation among screens. |
+| **Embodiment / EMBODY** | A close tactile experience through one present Citizen, using direct movement, touch, tilt, haptics, sound, or quiet observation according to the activity and body. |
+
+Register transitions may use current canon imagery of the involved Citizen,
+Party, Place, or Colony as loading compositions and dramatic bridges. The
+change in presentation should feel like moving attention through one world,
+not opening unrelated mobile features.
+
+#### DWELL in the hand
+
+Home appears as a living, entirely visible above-ground diorama. The portrait
+screen frames a portion at useful scale while pan and zoom preserve the whole.
+Cutaways, terraces, open faces, and lifted coverings make interiors readable.
+Citizens move through the spaces they actually inhabit, and tapping one follows
+that particular life rather than selecting an anonymous labor unit.
+
+The spatial operators remain structural:
+
+- Mouse Homes accumulate through **JOIN**, with adjacency, shared enclosure,
+  and continuous interior made legible in close stacked views.
+- Rabbit Homes organize through **GATHER**, with open common space kept visible
+  even when the portrait frame focuses on one edge or household.
+- Squirrel Homes develop through **CONNECT**, with vertical navigation,
+  anchors, bridges, and alternate paths naturally suited to portrait height.
+
+The player designates ground through Builder, establishes each Residence or
+Practice through its Builder Project, and sees prospective placement before
+commitment. The interface previews Well-Placed status, Housing Capacity, and
+the effect of a proposed change on existing Places. The first Workshop retains
+its sole bootstrap exemption. Each completed usable Practice accommodates one
+active Project.
+
+Civic Balance appears as a short readable posture rather than a dashboard of
+alerts. The Home view can answer three successive questions:
+
+1. What Load presently rests on the Colony?
+2. Which Roles cover it, and where are the meaningful shortfalls or Readiness?
+3. Which Citizens and Practices make that answer true?
+
+Citizen portraits show current Role or Project commitment. A Mouse contributes
+one-half Civic Share; a Rabbit or Squirrel contributes one full share. Project
+commitment withdraws the same share from ordinary coverage, Practice support,
+and defined passive production. The player may open the exact separate Role,
+Housing, Practice Strength, and throughput values when needed without making
+them the visual subject of ordinary Home life.
+
+Defined passive production retains the Practice-and-Citizen gate and the
+shared relationship of usable Practices plus sustaining Civic Shares plus one-
+half for each Well-Placed Practice. The interface may explain the result in
+plain language while preserving its exact accounting underneath.
+
+At Dawn, routine production and transformation release whole yield chunks,
+including accumulated fractional throughput. Projects advance, available care
+resolves, and seasonal or civic circumstances update. A concise report explains
+what the Colony handled and surfaces only those situations that require MEET.
+
+#### Pressure without notification pressure
+
+World Pressure and the Colony's separate civic vulnerabilities operate wholly
+inside play. Weather, season, traffic, River Spume, human activity, Housing
+Pressure, and Role shortfalls may make a Home situation eligible. Persistence,
+recent MEET history, and bounded variation keep deficiencies from creating
+repetitive alerts.
+
+The Community Board and Almanac provide the principal readable lens.
+Watchkeeping and relevant Guest Signatures may improve forecasts or reveal a
+likely area of concern. These signals help an attentive player rebalance while
+preserving uncertainty about the exact situation and its timing.
+
+The operating system's notification layer has no role in this pressure model.
+Colony need appears when the player is present and chooses to advance the game,
+never as a demand issued into real life.
+
+#### Launch and direct TRAVEL
+
+Launch is a compact state-changing MEET. It shows only Citizens currently
+available to depart. The player selects a Party of 1.5 to 3 Body Units and more
+than one actual animal, then chooses the bounded Tools, Supplies, Keepsakes,
+and other Items they can carry. The Home preview updates as each Citizen leaves
+so the cost in Civic Shares, Role coverage, compatible Practice support,
+Project progress, and ordinary production remains visible.
+
+After departure, the phone turns into a top-down Field view. The player moves
+the Party icon directly with drag, touch destination, virtual direction, or an
+equivalent accessible control. Terrain, passages, barriers, waterways,
+vegetation, Roadways, Reaches, Margins, Nodes, Outposts, and special zones exist
+in continuous space. The Party explores an unpredictable outside world rather
+than selecting from a prepared itinerary.
+
+Distance advances the Day Band. Rabbit Parties travel proportionally farther
+before that change; Mouse Parties preserve their greater Item allowance; and
+Squirrel Parties express their bodily movement and Strained Carry through the
+current shared rules. Expedition Guests generally carry eight to twelve, with
+Snake remaining the six-Carry outlier.
+
+The player may stop at any safe decision point and inspect Home. The Party
+holds its position until Away play resumes. A rested Party receives three Day
+Bands at normal reach, then may push through Bands 4–6 at three-quarters,
+one-half, and one-quarter reach; Band 7 remains unavailable until Rest. A
+completed Rest MEET advances one Day Band, resets travel cadence, stabilizes
+Wound through the next three TRAVEL Bands, ends Tharn, and creates a Stopover.
+Natural shelter improves its circumstances. At a built Outpost, Rest also
+removes one Exposure step and enables abstracted Carry storage and Colony
+synchronization without creating another Home; it never removes the final Away
+Exposure step.
+
+#### Tactile RISK
+
+Entering a Staging Post changes the phone into the RISK schematic. The actual
+location remains as the backplate: Roadway width, traffic thickness, weather,
+Spume, sight lines, near-side cover, and far-side ground remain recognizable.
+The Party appears on the lower or left side of the portrait composition and the
+opposing Roadway condition occupies the space ahead.
+
+Touch expresses observation and species planning:
+
+- A Mouse plan joins body-credible pavement features, edges, and refuges into a
+  short chain.
+- A Rabbit plan identifies traffic openings, broad movement, grouping, and
+  far-side refuge.
+- A Squirrel plan connects a vector, limited redirects, and a far-side anchor.
+- Gull or Crow may substitute their defined crossing experience when present
+  and chosen.
+
+The player may inspect visible traffic, change the plan, reconsider carried
+load, or wait before committing. **Commit** begins one continuous Crossing.
+Resolution requires no reaction input or mid-Crossing correction. Touch,
+motion, haptics, and sound express the committed plan and its unfolding
+consequences; timing assistance, pause, cue amplification, and slower
+presentation preserve readability and accessibility.
+
+The complete Party reaches the far side before consequence is applied. Delay,
+Exposure, immediate jostled Item loss, separation after arrival, Wound,
+Maiming, Tharn, death, or another authored result follows causally from the
+Crossing. The sequence is finite, never an endless runner or a score chase.
+
+#### Exposure, Wound, and Tharn
+
+Exposure is a six-step individual state. The first RISK affecting a Citizen
+sets it to one. Continued danger, extended travel, pushing beyond ordinary
+Rest, Wound, and other defined circumstances may raise it. An unstabilized
+Wound doubles further Exposure accumulation. Remedy stabilizes it through
+Homecoming; Rest supplies the shorter stabilization above.
+
+The mobile interface makes Exposure's present effects legible through Citizen
+posture, animation, sound, and qualitative readiness while keeping the exact
+step hidden. It never identifies a coming Tharn check. Accumulated Exposure and
+an unstabilized Wound make Tharn easier to trigger only when an eligible event
+occurs; RISK remains exempt from that pre-existing weighting. An observant
+player may sense the danger without seeing it highlighted.
+
+If Tharn strikes, the current MEET or objective turns toward saving the Citizen
+and yielding or withdrawing. The Party cannot activate another Node or
+undertake another Crossing with that Citizen until Rest ends Tharn. Remedy has
+no effect upon it.
+
+#### MEET on one screen
+
+MEET is mobile's principal decision presentation. One portrait composition
+shows the participants or entities involved, actual location, known facts,
+stakes, and actions together. Player subjects appear consistently on one side
+and the other party, circumstance, or threatened state on the other. The image
+is openly schematic and presentational while remaining grounded in the current
+world.
+
+Contested MEET always preserves the ordered positions of **CONTEST**,
+**EVADE**, **PARLEY**, **YIELD**, and **WITHDRAW**. All remain visible; inactive
+responses are muted in place and state a concise reason grounded in known
+facts. Tapping an active response reveals its concrete action, contributing
+Citizens, relevant Item expression or Guest Signature, cost, uncertainty, and
+the outcomes the player can presently understand before Commit. Each Round
+permits at most one active Item expression.
+
+Other MEETs use the same single-screen discipline with actions particular to
+care, hospitality, discovery, ceremony, Launch, Stopover, or Homecoming. A
+situation may continue through several Rounds as facts and stakes change.
+Focus marks the Citizen whose contribution defines the Round; a true Focus
+clash resolves randomly.
+
+The player can leave most unresolved MEETs at their decision point and resume
+later. State-changing commitments, RISK resolution, and other short continuous
+sequences conclude before suspension so the saved state remains intelligible.
+
+#### Homecoming and Campaign Memory
+
+Homecoming is a full MEET rather than a compact rewards screen. The mobile
+composition reconnects the returning Party with the visible Colony and moves
+through reception, carried gains and losses, Items, Wound and Maiming, care,
+Guest arrival, relationship response, discovery, new Practice possibilities,
+and civic reassignment.
+
+Exposure loses up to three steps at each Home Dawn; a Citizen returning at
+maximum therefore requires two days to reach zero. A Wound Recovery Project
+requires one completed usable Hearth not already committed to the care of
+Young, another Wounded Citizen, Rehabilitation, or another Project, together
+with exactly one named Citizen committed as Healer. The Patient is the
+Project's target rather than a committed worker. Return restores presence
+immediately while full recovery follows the applicable Home systems.
+
+The Record remains the hidden incremental account of what became true. The
+Chronicle presents selected Colony history; each Citizen's Tale presents the
+selections relevant to that life; the Almanac remains the separate view of
+current and anticipated states and events. Backend sorting prepares those
+views for the player rather than asking them to maintain a journal.
+
+Portrait scale makes canon Citizen images especially important. One current
+identity image anchors each Citizen, while older images remain available deeper
+in Campaign Memory. Canon Colony images preserve major archival states.
+Image-to-image scene generation may use those mandatory identity sources to
+render MEET aftermaths, Register transitions, loading plates, memories, and
+Citizen information backplates without allowing a new scene to redesign the
+subject it depicts. A complete authored image library remains a viable
+non-generative baseline.
+
+#### EMBODY as the native intimacy
+
+Mobile may express EMBODY more directly than any other Manifestation. Quiet
+Equilibrium opens an animal-scale view through any present available Citizen;
+the player chooses the moment and activity rather than receiving a daily task.
+
+| EMBODY family | Touch-first expression |
+|---|---|
+| **Movement and play** | Run a Squirrel bridge, bound through Rabbit common ground, or scamper across joined Mouse adjacency through direct gesture and gentle haptic rhythm. |
+| **Small Practice** | Tend an already established Garden, sort seeds, move pantry objects, arrange bedding, or participate in ordinary work whose civic outcome has already been resolved by DWELL. |
+| **Presence** | Turn toward River sounds, listen to rain from shelter, bask on warm brick, watch traffic light move across a wall, or settle into a familiar Place. |
+| **Companionship** | Groom, share Sustenance, sit beside a recovering friend, join play, or be present with the whole Colony when Open Table makes that possible. |
+
+EMBODY creates no exclusive yield, improvement, recovery multiplier, or
+progression reward. Its touch interaction exists to make a body, place,
+relationship, and achieved safety available for attention. A distinctive
+moment may enter Campaign Memory; most ordinary life can remain ephemeral.
+
+#### Complete and non-coercive product
+
+The mobile Manifestation is a complete premium game. It contains no energy
+meter, paid construction wait, real-world harvest timer, daily-login streak,
+absence punishment, gacha Citizen, rarity ladder, loot box, revive
+advertisement, interruption advertising, or paid relief from Colony need.
+
+Optional expansions are fixed-content and clearly described. Save data remains
+usable offline for ordinary play. Any network or generative-image feature adds
+presentation without owning the Colony's canonical state or making continued
+access to purchased play contingent upon a service.
+
+Exact gesture vocabulary, screen density, accessible alternatives, suspension
+rules, device performance, and session tuning require interaction prototypes.
+The first proof should join one compact DWELL posture, one direct-drive Field
+passage, one species-specific RISK, one multi-Round MEET, one Homecoming, and
+one tactile EMBODY moment through the same named Citizens.
+
+The Manifestation succeeds when closing it for a week feels harmless, reopening
+it feels like returning to a familiar book, a short visit can contain one real
+decision without manufactured urgency, and extended play remains deep enough
+to make Homecoming matter.
+
+## Appendix K — Market Position and Comparative Landscape
+
+- The Concept Sourcebook's product position and MEDIAN's cumulative
+  distinctiveness
+- Current neighbors, structural ancestors, creative influences, audience
+  intersections, resemblance risks, and positioning language
+- Durable comparison separated from a visibly dated and freshly verified
+  market-status account
+
+# END MATTER
+
+Bibliography and endnotes, index, credits and colophon, version information,
+and the End Plate remain distinct end matter rather than numbered Appendices.

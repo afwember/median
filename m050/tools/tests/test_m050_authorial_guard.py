@@ -22,7 +22,7 @@ def test_authorial_structure_repository_passes() -> None:
     assert errors == []
 
 
-def test_provisional_structure_preserves_approved_spine() -> None:
+def test_provisional_first_draft_preserves_approved_spine() -> None:
     errors: list[str] = []
     guard.validate_gdd_structure(errors)
     assert errors == []
@@ -34,4 +34,4 @@ def test_status_stays_on_direct_authorial_surface() -> None:
     for retired_surface in ("SPEND", "PROVIDER", "TRANCHE", "WORKER"):
         assert retired_surface not in rendered
     assert "Direct authorial GDD creation" in rendered
-    assert "provisional GDD structure" in rendered
+    assert "provisional first draft" in rendered.lower()

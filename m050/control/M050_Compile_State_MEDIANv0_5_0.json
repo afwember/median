@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
-  "status": "AUTHORIAL_GDD_STRUCTURE_ACTIVE",
-  "updated": "2026-09-14T10:15:36-04:00",
+  "status": "AUTHORIAL_GDD_FIRST_DRAFT_COMPLETE",
+  "updated": "2026-09-14T20:54:32-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -28,12 +28,12 @@
     "role": "historical extraction, triage, rewrite, mapping, reconciliation, provider and spend evidence only"
   },
   "authorial_gdd": {
-    "status": "STRUCTURE_IN_PROGRESS",
+    "status": "PROVISIONAL_FIRST_DRAFT_COMPLETE",
     "output_root": "m050/gdd",
-    "structure_status": "PROVISIONAL_SEVEN_PART_SPINE_APPROVED",
+    "structure_status": "PROVISIONAL_SEVEN_PART_FIRST_DRAFT_COMPLETE",
     "structure_path": "m050/gdd/M050_GDD_Provisional_Structure_MEDIANv0_5_0.md",
     "composition_status": "NOT_STARTED",
-    "coverage_status": "NOT_STARTED"
+    "coverage_status": "PROVISIONAL_FIRST_DRAFT_COMPLETE"
   },
   "authority": {
     "repository_writes_authorized": true,
@@ -42,13 +42,13 @@
     "compiled_prose_authorized": false
   },
   "dashboard": {
-    "status": "ACTIVE — provisional GDD structure",
-    "phase": "Direct authorial GDD creation",
+    "status": "PROVISIONALLY COMPLETE — first-draft GDD",
+    "phase": "Direct authorial GDD creation — provisional first draft complete",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
-    "progress": "Seven-Part spine, Parts I–IV, Chapters 5.1–5.4, and Chapter 6.1 approved",
-    "now": "Beginning Chapter 5.5 — MEET: consequential situations",
-    "next": "Asa and the Compile Supervisor refine Chapter 5.5",
-    "updated_human": "September 14, 2026 at 10:15:36 AM EDT"
+    "progress": "Seven-Part MEDIAN v0.5.0 GDD provisionally complete as a first draft",
+    "now": "Provisional first draft complete and published for whole-document assessment",
+    "next": "Asa and the Compile Supervisor assess the full first draft",
+    "updated_human": "September 14, 2026 at 8:54:32 PM EDT"
   },
-  "next_possible_transition": "Authorial approval of the Chapter 5.5 provisional structure."
+  "next_possible_transition": "Authorial selection of a bounded whole-draft assessment or revision."
 }

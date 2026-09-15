@@ -286,7 +286,7 @@ def validate_state(state: dict, errors: list[str]) -> None:
         errors.append("canonical state shape drifted")
     if state.get("schema_version") != STATE_SCHEMA:
         errors.append("canonical state schema is invalid")
-    if state.get("status") != "AUTHORIAL_GDD_STRUCTURE_ACTIVE":
+    if state.get("status") != "AUTHORIAL_GDD_FIRST_DRAFT_COMPLETE":
         errors.append("canonical direct-authorial phase is invalid")
     scope = state.get("scope", {})
     if scope != {
@@ -314,18 +314,18 @@ def validate_state(state: dict, errors: list[str]) -> None:
         errors.append("information-management system is not retired")
     gdd = state.get("authorial_gdd", {})
     if gdd != {
-        "status": "STRUCTURE_IN_PROGRESS",
+        "status": "PROVISIONAL_FIRST_DRAFT_COMPLETE",
         "output_root": "m050/gdd",
-        "structure_status": "PROVISIONAL_SEVEN_PART_SPINE_APPROVED",
+        "structure_status": "PROVISIONAL_SEVEN_PART_FIRST_DRAFT_COMPLETE",
         "structure_path": GDD_STRUCTURE.relative_to(ROOT).as_posix(),
         "composition_status": "NOT_STARTED",
-        "coverage_status": "NOT_STARTED",
+        "coverage_status": "PROVISIONAL_FIRST_DRAFT_COMPLETE",
     }:
         errors.append("authorial GDD structure boundary drifted")
     validate_gdd_structure(errors)
     dashboard = state.get("dashboard", {})
-    if dashboard.get("status") != "ACTIVE — provisional GDD structure":
-        errors.append("dashboard does not name the active structure boundary")
+    if dashboard.get("status") != "PROVISIONALLY COMPLETE — first-draft GDD":
+        errors.append("dashboard does not name the first-draft boundary")
     validate_timestamp(state, errors)
     try:
         rendered = STATUS.read_text(encoding="utf-8")
@@ -341,6 +341,10 @@ def validate_gdd_structure(errors: list[str]) -> None:
         errors.append("canonical provisional GDD structure is missing")
         return
     text = GDD_STRUCTURE.read_text(encoding="utf-8")
+    if "## Provisional First Draft" not in text or (
+        "**Status:** Provisionally complete first draft." not in text
+    ):
+        errors.append("provisional GDD does not declare the completed first-draft boundary")
     found = tuple(line for line in text.splitlines() if line.startswith("# PART "))
     if found != APPROVED_PART_HEADINGS:
         errors.append("provisional GDD structure does not preserve the approved seven-Part spine")
@@ -389,7 +393,7 @@ def main() -> int:
     print(f"- frozen authorial source library: {atom_count:,} atoms across {source_count} sources")
     print(f"- frozen source files: {EXPECTED_FROZEN_FILES}")
     print("- retired information-management engine: archived and inactive")
-    print("- approved seven-Part GDD spine: present")
+    print("- provisional seven-Part GDD first draft: complete")
     print("- corpus modification and prose authority: absent")
     print("- m051 developmental material: consultable and outside the frozen corpus")
     if args.with_tests:

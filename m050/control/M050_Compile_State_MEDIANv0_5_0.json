@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
   "status": "AUTHORIAL_GDD_FIRST_DRAFT_COMPLETE",
-  "updated": "2026-09-14T20:54:32-04:00",
+  "updated": "2026-09-14T21:12:35-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -46,9 +46,9 @@
     "phase": "Direct authorial GDD creation — provisional first draft complete",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
     "progress": "Seven-Part MEDIAN v0.5.0 GDD provisionally complete as a first draft",
-    "now": "Provisional first draft complete and published for whole-document assessment",
-    "next": "Asa and the Compile Supervisor assess the full first draft",
-    "updated_human": "September 14, 2026 at 8:54:32 PM EDT"
+    "now": "Whole-draft assessment has integrated the twelve-biome Corridor vocabulary and classified Leader evidence as incorporated",
+    "next": "Continue bounded first-draft assessment; develop the Record-to-Presentation appendix when selected",
+    "updated_human": "September 14, 2026 at 9:12:35 PM EDT"
   },
-  "next_possible_transition": "Authorial selection of a bounded whole-draft assessment or revision."
+  "next_possible_transition": "Authorial selection of the next bounded whole-draft revision or Record-to-Presentation appendix development."
 }

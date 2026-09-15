@@ -806,9 +806,9 @@ scale. Its spaces mean different things to different bodies, its conditions
 change over time, and much of it must be discovered before it can be
 understood.
 
-The Part proceeds from world to geography to habitation and change. Chapter 2.1
-supplies the establishing view; Chapters 2.2–2.4 bring its spatial, ecological,
-temporal, and consequential layers into focus.
+The Part proceeds from world to geography, biome, habitation, and change.
+Chapter 2.1 supplies the establishing view; Chapters 2.2–2.5 bring its spatial,
+environmental, ecological, temporal, and consequential layers into focus.
 
 ## 2.1 A World at Animal Scale
 
@@ -913,7 +913,374 @@ and quiet from emptiness.
 - An Outpost remaining categorically distinct from The Colony
 - Node interaction and Outpost functions deferred to Away
 
-## 2.3 The Ecology of The Highway
+## 2.3 Biomes and Founding Reaches
+
+Biomes give the continuous Corridor a recurring environmental vocabulary. Each
+one describes a broad grammar of ground, vegetation, water, exposure,
+infrastructure, spatial rhythm, shelter, and obstruction. A Reach realizes that
+grammar as one particular place with its own arrangement, history, landmarks,
+and present conditions.
+
+A **founding Reach** is a curated occurrence whose local topology makes the
+selected Core Species' spatial grammar immediately legible. Species selection
+chooses a compatible founding site within the shared world; the terrain retains
+the same identity when another species later encounters it.
+
+> **Randomize the contents of the starting territory, not the spatial grammar
+> that makes the species meaningful.**
+
+### One world, species-relative fit
+
+- Every biome remaining available to Mouse, Rabbit, Squirrel, Guests, and other
+  animals throughout the Corridor
+- Founding compatibility belonging to the particular site's topology rather
+  than exclusive biome ownership
+- The same biome able to serve as a founding Reach in one campaign and an
+  ordinary Corridor Reach in another
+- Species changing which features become useful, safe, connective, exposed, or
+  worthy of attention while the physical place remains shared
+- A biome establishing environmental identity without prescribing every Node,
+  Place, resource, event, or local arrangement within a Reach
+
+### Species-relative founding requirements
+
+#### Mouse — JOIN
+
+A Mouse founding Reach supplies edges, enclosure, seams, cavities, or
+infrastructure capable of becoming one protected inhabited body. Expansion can
+proceed from room to wing to connected second house.
+
+- Continuous or joinable boundaries
+- Sheltered low-level circulation
+- Opportunities to thicken an inhabited envelope
+- Legible distinctions among dry interior, exposed exterior, and protected
+  transition
+- Enough adjacency for growth to increase connection rather than scatter rooms
+  into detached buildings
+- Bridges supporting an already coherent fabric instead of substituting for
+  contact between otherwise unrelated clusters
+
+#### Rabbit — GATHER
+
+A Rabbit founding Reach supplies cover, several plausible household refuges,
+common safe ground, and multiple ways back into concealment. Expansion can
+proceed from one complete court to a daughter court and eventual connection
+between social centers.
+
+- Shared clearing or court
+- Household-scale refuge around its perimeter
+- Brush, banks, roots, deadfall, or other protective edges
+- More than one retreat path
+- Room for communal life at an intimate rather than monumental scale
+- Common ground whose safety arises from surrounding terrain and nearby cover
+
+#### Squirrel — CONNECT
+
+A Squirrel founding Reach supplies meaningful separation: multiple anchors,
+differences in height, gaps, interrupted surfaces, or structures that become
+useful through connection. Expansion can proceed from first reach to
+reinforcement and then to a resilient network of loops.
+
+- Several nodes rather than one dominant central structure
+- Vertical and horizontal movement
+- Trunks, branches, ledges, posts, cables, bridges, runs, or comparable route
+  opportunities
+- Alternate paths able to emerge as the Colony develops
+- Continuity expressed through the network itself
+- Central trees or towers serving as anchors within a larger web of choices
+
+### The twelve biome grammars
+
+| # | Biome | Primary environmental identity | Founding relationship |
+|---:|---|---|---|
+| 1 | **Rootbank Meadow** | Grass, eroded banks, exposed roots, shallow hollows, and sheltered clearings | Rabbit |
+| 2 | **Bramble Hollow** | Dense thorn and vine cover organized around narrow passages and protected openings | Rabbit |
+| 3 | **Culvert Garden** | Drainage infrastructure, wet soil, raised banks, stone, and seasonal flow | Mouse |
+| 4 | **Concrete Trench** | Retaining faces, hard seams, broken slabs, runoff channels, heat, and shade lines | Mouse |
+| 5 | **Wooded Median** | Trunks, canopy, roots, fallen branches, shade, and interrupted visibility | Squirrel |
+| 6 | **Rock Cut** | Shelves, fissures, ledges, sparse trees, height changes, and natural gaps | Squirrel |
+| 7 | **Thin Grass Ribbon** | Narrow exposed ground, long sightlines, wind, and road proximity | Corridor |
+| 8 | **Creek Split** | A persistent longitudinal stream dividing banks, islands, and crossings | Corridor |
+| 9 | **Pond Hollow** | Standing water, reeds, saturated ground, seasonal margins, and concealed approaches | Corridor |
+| 10 | **Interchange Expanse** | Broad, disorienting territory among diverging roads and scattered infrastructure | Corridor |
+| 11 | **Overpass Shadow** | Columns, beams, abutments, dry recesses, echo, vibration, and artificial shade | Unusual Corridor |
+| 12 | **Abandoned Works** | Incomplete drainage, gravel beds, pipe, rebar, cut earth, and interrupted construction | Unusual Corridor |
+
+The six Core-Species relationships define the founding pool. The remaining six
+broaden the country encountered through exploration. Every biome can later
+support traversal, Nodes, MEETs, Outposts, and possible habitation by any
+species when the particular site permits them.
+
+### Rootbank Meadow
+
+Rootbank Meadow is broad enough to read as open country but broken by low
+rises, erosion cuts, exposed roots, shallow banks, grass clumps, and irregular
+shrub cover. Visible common ground alternates with immediate refuge. A strong
+founding instance contains a modest central clearing bounded on several sides
+by banks or roots, creating household-scale pockets without separating them
+from one another.
+
+- Rabbit recognizes a legible first court whose social meaning emerges through
+  shelters, household edges, paths, stores, and communal Practices. Later
+  growth may establish a daughter court behind another bank or root mass.
+- Mouse reads root seams, low hollows, and fallen material as fragmented shelter
+  opportunities.
+- Squirrel reads shrubs, roots, posts, and low branches as a shallow network
+  with limited vertical reach.
+- The visual grammar preserves irregular cover, multiple escape paths, and
+  terrain-led growth rather than a manicured or symmetrical village green.
+
+### Bramble Hollow
+
+Bramble Hollow is dominated by honeysuckle, thorn, deadfall, leaf litter,
+interwoven stems, narrow animal runs, and pockets where cover opens
+unexpectedly. Short visibility makes the Reach feel larger from within; its
+central contrast lies between dense cover and small spaces of remarkable
+safety.
+
+- Rabbit makes a community from protected openings, with several household
+  refuges facing one shared interior.
+- Growth clears and tends passages while retaining the thicket's boundary and
+  concealment. A daughter court may form beyond a dense screen through several
+  protected approaches.
+- Mouse reads the lower stem mesh as covered micro-runs, seed traps, and
+  temporary wall texture.
+- Squirrel reads upper bramble and deadfall as a secondary network leading
+  toward stronger anchors.
+- The visual grammar keeps the thicket spatially legible while allowing
+  habitation to appear partly discovered within it.
+
+### Culvert Garden
+
+Culvert Garden centers upon a drainage mouth or connected drainage structure,
+a narrow flow or seasonal trickle, damp soil, raised dry banks, stone, sedges,
+volunteer plants, and material deposited by runoff. Staining, debris lines, and
+scoured ground disclose flood history and distinguish ordinary flow from
+high-water refuge.
+
+- Mouse can incorporate the culvert directly into JOIN. Development may occupy
+  banks, rim, structure, and attached rooms while maintaining protected
+  internal circulation.
+- The water leaves meaningful dry ground, so enclosure and connection remain
+  player decisions rather than a predetermined facade.
+- Rabbit reads the culvert as severe-weather shelter, hard boundary, escape
+  mouth, and potentially dangerous deep pocket.
+- Squirrel reads it as low understructure requiring connections upward to
+  stronger anchors.
+- The visual grammar preserves credible flood pressure, open buildable banks,
+  and the culvert's role as an active environmental organ.
+
+### Concrete Trench
+
+Concrete Trench is a depressed or heavily hardened Median of retaining faces,
+seams, drainage slots, broken slab, exposed aggregate, narrow soil pockets,
+reflected heat, sudden shade, and concentrated runoff. Opportunistic vegetation
+leaves the engineered human scale continuously visible.
+
+- Continuous walls and slab edges give Mouse a powerful JOIN grammar. Chambers
+  accrete against seams, beneath lips, within drainage voids, and along
+  protected runs.
+- Rabbit finds shade and hard boundaries alongside limited digging,
+  channelized escape, and sparse concealment.
+- Squirrel finds climbable faces, seams, ledges, and occasional infrastructure
+  anchors with fewer living connections.
+- Live traffic, maintenance traces, drainage, salt, and heat keep the Reach
+  recognizably modern rather than ruinous or monumental.
+
+### Wooded Median
+
+Wooded Median contains mature or closely spaced trees, saplings, canopy breaks,
+roots, fallen branches, leaf litter, shade, and limited long sightlines. Traffic
+remains perceptible through noise, vehicle flashes, barriers, and openings
+between trunks.
+
+- Several trees or large branches provide Squirrel's initial nodes.
+- Colony growth establishes provisional reaches, reinforces them, introduces
+  vertical separation, and creates alternate paths and loops.
+- Mouse reads roots, litter, fallen bark, and trunk bases as low cover and
+  fragmented enclosure.
+- Rabbit reads root pockets, deadfall, and brush clearings as refuge while dense
+  trunks complicate shared ground.
+- The founding composition preserves several viable anchors and keeps bridges
+  dependent upon credible destinations rather than presenting one dominant
+  tree as a complete settlement.
+
+### Rock Cut
+
+Rock Cut is formed by layered stone, fissures, shelves, narrow channels,
+elevation changes, sparse vegetation, occasional wind-shaped trees, and abrupt
+gaps. Its usable but incomplete spatial islands make height and separation
+immediately visible.
+
+- Ledges become Squirrel nodes; branches, roots, posts, and constructed runs
+  connect them into a traversable Colony.
+- Several plausible alignments preserve player agency and make redundancy an
+  achieved quality.
+- Mouse finds excellent individual shelter in fissures and undercuts while
+  facing difficulty joining them.
+- Rabbit finds refuge in shelves and pockets while shared courts may remain
+  constrained or exposed.
+- Road, barrier, drainage, and regional vegetation keep the scale rooted in a
+  highway cutting rather than mountain country.
+
+### Thin Grass Ribbon
+
+Thin Grass Ribbon is a narrow Reach of low vegetation, few substantial objects,
+strong wind, long sightlines, and constant awareness of both roads. A lone
+shrub, damaged delineator, tire fragment, shallow depression, or weed-thick
+drainage seam gains unusual importance because so little interrupts the ground.
+
+- The biome tests Exposure, observation, distance, and the value of slight
+  cover.
+- Mouse searches for scarce continuous low edges.
+- Rabbit finds feeding ground and long warning distance paired with broad
+  exposure.
+- Squirrel encounters isolated anchors and fragile connections with little
+  vertical redundancy.
+- Sparse terrain retains clear navigation structure and road proximity without
+  acquiring decorative clutter.
+
+### Creek Split
+
+Creek Split contains a persistent longitudinal stream organizing the whole
+Reach into parallel banks, intermittent islands, crossing places, undercut
+edges, deposits, and seasonal high-water paths.
+
+- The creek creates neighboring territories whose local connections change
+  with rain, erosion, obstruction, and seasonal flow.
+- Mouse seeks bank seams, roots, deposited material, and protected crossings
+  while water interrupts JOIN.
+- Rabbit reads parallel banks as cover systems linked by a limited number of
+  safe crossing places.
+- Squirrel treats banks and islands as nodes where branches or infrastructure
+  may span the channel.
+- The stream remains small enough to belong inside the Median and continuous
+  enough to shape the entire Reach.
+
+### Pond Hollow
+
+Pond Hollow is a low basin of standing water, reeds, saturated margins,
+seasonal mud, insects, amphibian life, concealed approaches, and temporarily
+usable dry ground. Its shape and accessibility change more readily than its
+identity.
+
+- Water margin, uncertain footing, concealment, contamination, and strong
+  ecological presence shape exploration and local MEETs.
+- Mouse finds rich edge material and shelter pockets while moisture threatens
+  low interiors.
+- Rabbit finds cover and feeding opportunities while requiring dependable dry
+  refuge and escape ground.
+- Squirrel uses reeds, shrubs, posts, and overhanging branches as a network
+  above difficult terrain.
+- Runoff, barriers, litter drift, and culvert influence preserve the Hollow's
+  Corridor origin and distinguish ordinary wetland from flood event.
+
+### Interchange Expanse
+
+Interchange Expanse is an unusually broad Reach formed where Roadways divide,
+merge, curve, or cross nearby. Scattered infrastructure, irregular barriers,
+long conflicting sightlines, isolated vegetation clusters, and several
+apparent directions of travel make orientation its defining challenge.
+
+- Mouse sees widely separated shelter seams and a difficult problem of
+  protected continuity.
+- Rabbit sees potential courts of cover separated by extensive open ground.
+- Squirrel sees many possible anchors whose distance makes early connections
+  fragile.
+- Diverging highway geometry explains the breadth and keeps animal-scale
+  navigation legible.
+- **The Interchange** described in Chapter 6.5 is a singular authored campaign
+  horizon occupying an exceptional Interchange Expanse; the biome name denotes
+  the broader environmental grammar rather than that one destination.
+
+### Overpass Shadow
+
+Overpass Shadow lies beneath an overhead roadway or associated bridge
+structure. Columns, beams, abutments, ledges, expansion joints, drainage
+stains, protected dead spaces, echo, vibration, artificial shade, and sharp
+light boundaries create a distinct architectural climate within the Corridor.
+
+- Mouse reads abutment seams, drainage recesses, protected bases, and debris
+  chambers as enclosure.
+- Rabbit reads broad shade and sheltered edges alongside echo, hard ground, and
+  potentially trapping boundaries.
+- Squirrel reads columns, beams, joints, signs, and ledges as an artificial
+  canopy.
+- Active traffic overhead, modern materials, scale, vibration, and water
+  staining keep the Reach continuous with the living Highway.
+
+### Abandoned Works
+
+Abandoned Works is an interrupted highway project reclaimed partly by weather
+and ecology: incomplete drainage, gravel beds, stacked or scattered pipe,
+rebar cages, cut earth, temporary barriers, erosion-control fabric, broken
+pallets, and machinery fragments. Animal life has had time to inhabit it while
+the unfinished human intention remains legible.
+
+- Mouse sees prefabricated chambers and joinable material separated by unsafe
+  open work ground.
+- Rabbit sees earth cuts, fabric-covered banks, pipe shadows, and pockets of
+  returning vegetation.
+- Squirrel sees rebar, fencing, posts, stacked pipe, and temporary structures
+  as a precarious artificial network.
+- Dense material opportunity coexists with unstable shelter, blocked movement,
+  sharp boundaries, and hidden voids.
+- Local abandonment remains distinct from the active Highway and the broader
+  inhabited world.
+
+### Founding roster and opening selection
+
+Each Core Species receives two contrasting founding expressions of the same
+spatial grammar.
+
+| Species | Founding biome A | Founding biome B | Contrast expressed |
+|---|---|---|---|
+| Mouse | Culvert Garden | Concrete Trench | One dominant infrastructural organ versus continuous hardened edges |
+| Rabbit | Rootbank Meadow | Bramble Hollow | Open ground made safe versus concealment made communal |
+| Squirrel | Wooded Median | Rock Cut | Living canopy network versus connections across exposed separation |
+
+- The Founding Escape delivering the selected Core Species to one compatible
+  founding Reach within the shared Corridor
+- The selection method—direct player choice, bounded random selection, or
+  authored presentation—remaining open for later authorial decision
+- Starting contents, immediately available Nodes, minor resources, weather,
+  and local details able to vary while the species-defining spatial grammar
+  remains stable
+- Both founding choices for one species required to produce materially
+  different Colonies while preserving JOIN, GATHER, or CONNECT
+- A founding biome remaining an ordinary part of the shared world when another
+  species encounters it later
+
+### Visual and spatial tests
+
+Biome presentation establishes an inhabitable piece of highway country before
+the Colony fills it. Each Reach makes the relationship among carriageways,
+barriers, Median direction, terrain, water, vegetation, infrastructure,
+animal-scale paths, refuge, exposure, and several plausible Places readable.
+
+Founding-biome development may compare three stable views:
+
+1. **Before Founding:** the territory showing why exhausted Founders recognize
+   its potential.
+2. **Early Colony:** a small settlement whose species grammar is already
+   visible while much of the Reach remains available.
+3. **Developed Colony:** growth that strengthens the same grammar and leaves the
+   original terrain materially recognizable.
+
+- Mouse images making the physical joins and protected circulation traceable
+- Rabbit images making shared safe ground, participating households, protective
+  edges, and alternate refuge paths traceable
+- Squirrel images making distinct nodes, connective runs, network weakness,
+  and future loops traceable
+- Roads or their immediate Corridor context remaining visible enough to prevent
+  generic pastoral or fantasy-land drift
+- Animal scale, navigable space, irregular settlement form, fixed landmarks,
+  and undecided buildable areas remaining consistent across development views
+- At least one founding biome eventually shown as an unchanged uncolonized
+  Reach attended to by another Core Species, demonstrating one world
+  interpreted through different bodies
+
+## 2.4 The Ecology of The Highway
 
 ### Shared ecology
 
@@ -957,7 +1324,7 @@ and quiet from emptiness.
   activity, and traffic rhythm of The Highway
 - Those changing traffic conditions contextualizing phenomena such as River
   Spume
-- Detailed time and traffic systems deferred to Chapter 2.4
+- Detailed time and traffic systems deferred to Chapter 2.5
 
 ### River Spume
 
@@ -1012,9 +1379,9 @@ and quiet from emptiness.
   unusual silence signaling changed conditions before their causes are visible
 - These signals providing partial information rather than perfect prediction
   and requiring interpretation through animal experience and folklore
-- Detailed traffic and environmental-state effects deferred to Chapter 2.4
+- Detailed traffic and environmental-state effects deferred to Chapter 2.5
 
-## 2.4 Time, Traffic, and Environmental Change
+## 2.5 Time, Traffic, and Environmental Change
 
 Time makes the Corridor legible, dangerous, and alive. One clock runs beneath
 Home and Away. Light, traffic, season, weather, and human disturbance change
@@ -6622,6 +6989,8 @@ integrity, persistent state, and transition throughout that sequence.
 
 - Reach 5 providing unfamiliar ground capable of sustaining the selected Core
   Species
+- Reach 5 realizing one of that Core Species' two founding-biome relationships
+  from Chapter 2.3 while remaining part of the shared Corridor
 - Landscape Voice entering after the final Crossing, when the world becomes
   spacious and perceptible again
 - The passage ending on the simple recognition that it feels good here
@@ -7976,7 +8345,8 @@ appendices:
 
 - Appendix A — Lexicon and Canonical Usage
 - Appendix B — Names, Place-Names, and Compound Forms
-- Appendix C — Record, Tales, Chronicle, and Campaign Memory Schemas
+- Appendix C — Record, Tales, Chronicle, Campaign Memory, and
+  Record-to-Presentation Architecture
 - Appendix D — Places, Practices, Projects, and Tier Eligibility
 - Appendix E — Resources, Carry, Supplies, Tools, and Body Units
 - Appendix F — Corridor, Day Band, Traffic, and Environmental Reference

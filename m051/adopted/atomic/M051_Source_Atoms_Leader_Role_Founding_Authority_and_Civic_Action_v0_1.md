@@ -5,7 +5,7 @@
 **Date:** August 9, 2026
 **Status:** Exploratory and non-authoritative
 **Canonical prose Source:**
-`m051/prose/M051_Source_Leader_Role_Founding_Authority_and_Civic_Action_v0_1.md`
+`m051/adopted/prose/M051_Source_Leader_Role_Founding_Authority_and_Civic_Action_v0_1.md`
 **Canonical prose SHA-256:**
 `7f589947f11e993d855c54f1380e537ae6c5dff5f022ccf8331a19ffbbec20bd`
 

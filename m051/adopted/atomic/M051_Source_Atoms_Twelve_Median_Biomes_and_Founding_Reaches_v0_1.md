@@ -9,7 +9,7 @@
 **Status:** Working, exploratory, and non-authoritative
 
 **Bound prose Source:**
-`m051/prose/M051_Source_Twelve_Median_Biomes_and_Founding_Reaches_v0_1.md`
+`m051/adopted/prose/M051_Source_Twelve_Median_Biomes_and_Founding_Reaches_v0_1.md`
 
 **Bound prose SHA-256:**
 `d005eb3dfac85e165a767fbcea3f97a0aa74db3d072becfdbbe0e7ad9cd1ef64`

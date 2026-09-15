@@ -98,6 +98,41 @@ persistent state enacted by this narrative.
   apparatus, or disposable platform
 - Progress accumulating around Home rather than consuming or replacing it
 
+### Cozy conditions and attachment-forward design
+
+Cozy and attachment-forward describe different dimensions of design. Cozy
+describes an experiential condition: safety, abundance, softness, familiarity,
+manageable demands, and relief from imminent loss. Such a condition can fill a
+game or exist as a protected interval within a more demanding one. This use
+follows [Project Horseshoe's formulation of
+coziness](https://projecthorseshoe.com/reports/featured/ph17r3.htm) through
+safety, abundance, and softness.
+
+Attachment-forward design asks what the game enables the player to know,
+value, remember, and find worthy of protection. It orients the whole game
+toward particularity. A Citizen becomes known rather than merely useful; a
+settlement becomes historically specific rather than merely attractive; an
+object matters because of who made, carried, lost, or returned with it; and a
+familiar place accumulates the journeys and lives that passed through it.
+
+MEDIAN deliberately creates cozy conditions. Home can become safe, familiar,
+abundant, and quiet. Citizens eat, rest, work, play, tend one another, and
+inhabit recognizable Places. Quiet Equilibrium releases the player's attention
+from urgent stewardship, and EMBODY turns that released attention toward
+ordinary life.
+
+The complete rhythm also carries particular Citizens out of sanctuary and into
+Exposure, consequence, and Return. Cozy intervals give that rhythm somewhere
+to begin and somewhere worth returning to. Danger gives protection weight when
+its operation is legible, bounded, and causally trustworthy; it changes known
+lives before it threatens to erase them. Security gives the player reason to
+invest, while consequence makes that investment matter.
+
+> **MEDIAN earns its cozy.**
+
+Cozy is one emotional condition within MEDIAN. Attachment makes that condition
+belong to someone, and makes comfort worth protecting.
+
 ### Successful stillness: the pleasure of Home
 
 - Success not defined by continual expansion, territorial domination, maximum
@@ -3382,7 +3417,7 @@ contributions stay legible.
 ## 3.8 EMBODY
 
 **Colony DWELL is MEDIAN's version of base-building play. EMBODY is MEDIAN's
-version of cosy play.**
+version of cozy play.**
 
 EMBODY lets the player live as or be with individual Citizens inside the
 sanctuary created through DWELL. To live as a Citizen is to participate in a

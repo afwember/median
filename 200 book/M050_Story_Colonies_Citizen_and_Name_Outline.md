@@ -161,9 +161,10 @@ have actually built.
   old Home.
 - **Keepsake:** None. Sharpnose deliberately carried nothing away.
 - **Established history:** Shadepatch is the Given Name. **Sharpnose** is a rare
-  After-name earned through a consequential early MEET. The exact event will be
-  authored through the current MEET and Campaign Memory grammar rather than
-  inherited from an obsolete encounter treatment.
+  After-name earned after locating Fennel inside a flooded culvert when water,
+  traffic, and obscured sight concealed the trapped Rabbit. The Colony confers
+  the name later through a Gathering Place observance, following the current
+  MEET and Campaign Memory grammar.
 
 ## Later Core Citizens
 
@@ -192,7 +193,7 @@ by Chapter 4.3.
 | **Slate** | Crow; Expedition | Tier IV | Teacher | HANDLE — Trialwork | high open perch | Slate tests the world with found objects and then turns remembered trials into lessons. Solitary flights remain part of life without making Slate a remote scouting service. |
 | **Bracken** | Fox; Expedition | Tier IV | Caretaker | HANDLE — Carcass Claim | drained boundary ground | Bracken's careful work with difficult remains earns practical trust while the bodily unease of living beside a predator remains honest and particular. |
 | **Sable** | Skunk; Resident | Tier IV | Watchkeeper | SPEAK — Boundary Deterrence | downwind boundary | Sable projects calm physical certainty during threatened SPEAK situations and becomes associated with the changing wind around the Colony boundary. |
-| **The Lanterns** | Firefly Family; Resident collective | Tier IV | Leader | SPEAK — Lantern Procession | dark damp flight space | A recurring formation, pulse, and route make the family recognizable as one Citizen. Their light clarifies faces and gestures during eligible night MEETs without becoming general illumination. |
+| **The Lanterns** | Firefly Family; Resident collective | Tier IV | Leader | SPEAK — Lantern Procession | dark damp flight space | A recurring formation, pulse, and route make the family recognizable as one Citizen. Their light clarifies faces and gestures during eligible night MEETs without becoming general illumination. After becoming familiar through ordinary Colony nights, the Lanterns conduct New Elderbank's Grand Court Recognition MEET as its active Leader. |
 
 # II. Morningside
 
@@ -200,6 +201,7 @@ by Chapter 4.3.
 
 - **Core Species:** Squirrel
 - **Home Reach:** Elmwater
+- **Biome:** Wooded Median shaped by a narrow drainage run
 - **Colony:** Morningside
 - **Lost ancestral Home:** Nine Beeches
 - **Spatial expression:** CONNECT through redundant anchors and ways
@@ -257,8 +259,9 @@ should reach and how much redundancy must be preserved before it extends.
   resents being asked to use only the safest line.
 - **Keepsake:** A bent brass screw worked free at Nine Beeches.
 - **Established history:** Cobb served among Morningside's first Builders and
-  made its earliest connections physically credible. The work creates no
-  hidden Builder aptitude.
+  made its earliest connections physically credible. Cobb later changes to
+  Leader and conducts the Grand Web Recognition MEET. Neither history creates
+  a hidden aptitude.
 
 ### Gale
 
@@ -274,7 +277,8 @@ should reach and how much redundancy must be preserved before it extends.
 - **Relationships:** Rowan sees possibility in Gale's observations. Cobb sees
   risks that Gale has not yet agreed to count. Gale belongs fully to both
   friendships while keeping part of the escape unspoken.
-- **Keepsake:** A length of fishing line found during the Founding Escape.
+- **Keepsake:** A length of fishing line found during the first quiet
+  inspection of Elmwater after the final montage Crossing.
 - **Established history:** Gale was the only Founder to look back toward Nine
   Beeches. That remembered act shapes later Watchkeeper responsibility and Away
   participation without granting superior perception.
@@ -302,7 +306,7 @@ should reach and how much redundancy must be preserved before it extends.
 | **Keel** | Gull; Expedition | Tier IV | Leader | READ — Long View | broad open landing | Keel is conspicuous, loud, comfortable in open weather, and oriented toward the relationship among highways, rooftops, water, and distant ground. Keel is the current Gull exemplar. |
 | **Stillwater** | Turtle; Resident | Tier IV | Caretaker | Water Garden Residence | shallow water and basking | Stillwater establishes a patient rhythm between shallow water, basking, and Colony company, making the Water Garden visibly inhabited rather than merely useful. |
 | **The Goldwings** | Bumblebee Household; Resident collective | Tier IV | Gardener | Garden Cohabitation | sheltered flower access | The household is known by circulation, hum, and repeated return. Its incorporated Garden Residence saves a Place and modestly strengthens that Garden without multiplying Citizens or simulating pollination. |
-| **Gable** | Pigeon; Resident | Tier IV | Leader | Gathering Loft | open built ledge | Gable brings a social familiarity with built ledges and gatherings. The loft opens a whole-Colony EMBODY opportunity without becoming a correspondence or external-society system. |
+| **Gable** | Pigeon; Resident | Tier IV | Leader | Gathering Loft | open built ledge | Gable brings a social familiarity with built ledges and gatherings. The incorporated loft makes that life visible within the Gathering Place without adding Practice Strength, correspondence, or an external-society system. |
 
 # III. Rushbottom
 
@@ -356,7 +360,9 @@ Hospitality.
   destroyed and became important because there was no moment to put it down.
 - **Established history:** Barley received Focus during Rushbottom's Chaos MEET,
   became its first Leader, and began the remembered count of Chaff End. The
-  hidden Record and later Chronicle—not the Almanac—carry that history.
+  hidden Record and later Chronicle—not the Almanac—carry that history. Barley
+  later conducts the Grand Manor Recognition MEET, preserving uncertainty
+  wherever the remembered count remains incomplete.
 
 ### Thimble
 
@@ -436,7 +442,7 @@ Body Unit together without becoming one household subject.
 | **Bran** | Tier II | A Wanderer whose description of an unknown Reach proves unusually accurate. Bran becomes trusted through verifiable observation rather than a knowledge statistic. |
 | **Nook** | Tier II | A Wanderer who arrives alone. Rushbottom searches for a missing companion because of Weft and Warp's history and discovers that no second traveler exists. |
 | **Sheaf and Bodkin** | Tier III | Littermates. Sheaf remembers birthdays and ordinary care; Bodkin becomes a Crafter remembered for making the Stores' first dependable seal. |
-| **Muslin and Crumb** | Tier III | Littermates. Muslin enters Healer responsibility; Crumb prefers Garden work and has twice returned from Away after Tharn, with each event remaining particular rather than cumulative resistance. |
+| **Muslin and Crumb** | Tier III | Littermates. Muslin enters Healer responsibility; Crumb prefers Garden work. During Crumb's first Tharn event, Muslin is present but cannot reason or heal a littermate out of the state; the party must protect Crumb, withdraw, and Rest. A later recurrence remains a separate event rather than cumulative resistance. |
 | **Spool and Bobbin** | Tier III | Littermates whose names invite confusion but whose rhythms do not: Spool talks while working, and Bobbin becomes quiet whenever concentration deepens. |
 | **Oat and Rye** | Tier IV | Littermates who differ over whether familiar rooms should be preserved or adapted, giving Grand Manor growth a relationship rather than a pure expansion problem. |
 | **Pleat and Fold** | Tier IV | Littermates. Pleat arranges shared material into repeatable order; Fold improvises with what remains and leaves visible evidence of every revision. |
@@ -452,7 +458,7 @@ Body Unit together without becoming one household subject.
 | **Sedge** | Snake; Expedition | Tier III | Teacher | SPEAK — Display | sun-warmed shelter | Sedge's arrival requires Rushbottom to announce movement near the warm shelter and learn that stillness can be deliberate speech rather than threat. |
 | **Rill** | Weasel; Expedition | Tier III | Watchkeeper | INTERCEDE — Drive Off | narrow multi-exit bank | Fast, intense, and frequently scratched, Rill patrols beyond comfortable boundaries. Citizenship keeps the predator–prey relationship particular rather than pretending it vanished. |
 | **Marl** | Mole; Resident | Tier IV | Builder | Subsurface Diagnosis | visible undisturbed soil | Fresh mounds and unseen movement initially unsettle a Colony built around visible adjacency. Marl makes hidden ground understandable while the Residence remains strategically visible. |
-| **Morrow** | Possum; Resident | Tier IV | Healer | Hearth Annex | ventilated receiving edge | Morrow receives difficult Homecomings with calm bodily competence. The Hearth Annex makes amelioration available through EMBODY when the usable Hearth has room, without adding another healing meter. |
+| **Morrow** | Possum; Resident | Tier IV | Healer | Hearth Annex | ventilated receiving edge | Morrow receives difficult Homecomings with calm bodily competence. The incorporated Residence can participate in care and EMBODY while lasting amelioration remains governed by the Hearth's Rehabilitation improvement. |
 
 # Book-wide continuity use
 

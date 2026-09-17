@@ -171,6 +171,25 @@ Every composite page remains subject to single-page screen reading. It carries
 its own heading, premise, semantic labels, and conclusion; no visual or textual
 relationship depends upon an adjacent page being visible.
 
+### 3.8 Paired narrative and system exploration
+
+When a sequence crosses several systems or carries unusual emotional weight,
+development may realize the same exact situation twice before its augment is
+briefed: once as continuous original narrative and once as an explicit
+mechanical state ledger. The narrative pass tests whether particular lives,
+choices, place, consequence, and return cohere as experience. The simulation
+pass tests whether time, Civic Balance, Stores, Carry, availability, bodily
+state, and every other participating rule produce that experience without
+contradiction or invisible subsidy.
+
+Neither exploration becomes canon, tuning, or printed Sourcebook content by
+existing. A useful discovery returns to authorial discussion and its canonical
+home before an augment relies upon it. Use the method selectively for
+high-interdependence situations rather than assigning one narrative and one
+ledger to every Chapter. The Gale–Alder–Reed expedition is the first preserved
+example; later candidates should earn the same depth through a real design
+question.
+
 ## 4. Augment vocabulary
 
 ### 4.1 Designed prose page
@@ -939,11 +958,11 @@ into a system key or a search puzzle.
 | **Narrative function** | None; this is the governing civic grammar used by later Home systems and situations |
 | **Narrative treatment** | Intentionally none. Named Citizens and one Colony state would turn the general balance grammar into a misleading fixed example |
 | **Register** | DWELL, with MEET and EMBODY consequences located but not dramatized |
-| **Subjects** | Housing; Builder, Gardener, Crafter, Caretaker, Healer, Teacher, Watchkeeper, and Leader; Civic Shares; Capacity; Load; Readiness; Covered; Pressure; N/A; Practice Strength; World Pressure; Quiet Equilibrium |
+| **Subjects** | Housing; Builder, Gardener, Crafter, Caretaker, Teacher, Watchkeeper, and Leader; Civic Shares; Capacity; Load; Readiness; Covered; Pressure; N/A; Practice Strength; World Pressure; Quiet Equilibrium |
 | **Incoming state** | `AUG-3.2-01` has shown the legible Colony upon which DWELL acts |
 | **Outgoing state** | The reader can read a separate civic profile, follow one Share into Role support or a Project, and understand how vulnerability becomes situated attention without a master Colony score |
 | **Canon inputs** | Chapter 3.2 Civic Balance, Housing, Role, Practice Strength, Project, passive-production, Pressure, and Quiet Equilibrium rules |
-| **Semantic content** | Nine independent rows: Housing plus eight Roles; Capacity compared with full Load; surplus as Readiness, equality as Covered, shortfall as Pressure, and absent obligation as N/A; Rabbit and Squirrel one-Share bodies and two distinct Mouse half-Shares; one available Share directed either to ordinary Role work or an active Project; Project commitment withdrawing that Share from Role coverage, Practice support, and passive throughput; Practice Strength situated outside the profile; World Pressure testing relevant axes; hidden Colony Pressure leading only meaningful vulnerability into MEET; Quiet Equilibrium opening EMBODY when ordinary obligations are covered and no acute situation remains |
+| **Semantic content** | Eight independent rows: Housing plus seven Roles; Capacity compared with full Load; surplus as Readiness, equality as Covered, shortfall as Pressure, and absent obligation as N/A; Rabbit and Squirrel one-Share bodies and two distinct Mouse half-Shares; one available Share directed either to ordinary Role work or an active Project; Project commitment withdrawing that Share from Role coverage, Practice support, and passive throughput; a Wounded Citizen adding Patient Load equal to Body Unit without becoming a Project or removing another Citizen from Capacity; Practice Strength situated outside the profile; World Pressure testing relevant axes; hidden Colony Pressure leading only meaningful vulnerability into MEET; Quiet Equilibrium opening EMBODY when ordinary obligations are covered and no acute situation remains |
 | **Asset lineage** | New editable diagram and typography; no historical meter or dashboard controls its form |
 | **Cross-reference** | Chapters 3.4–3.8, 4.2, and 6.7; Appendices D and F |
 | **Priority** | Essential |
@@ -1011,51 +1030,51 @@ construction or placement rules.
 
 #### 3.4 Roles and Practices
 
-##### `AUG-3.4-01` — Eight Roles, Six Practices
+##### `AUG-3.4-01` — Seven Roles, Six Practices
 
 | Field | Approved mapping |
 |---|---|
 | **GDD location** | Opening of Chapter 3.4, before the individual Role entries |
 | **Reader task** | See the complete civic vocabulary and every Role-to-Practice relationship before reading the Roles in detail |
 | **Augment form** | One-page editable relationship map and canonical listing |
-| **Working subject** | **Eight Roles, Six Practices** |
+| **Working subject** | **Seven Roles, Six Practices** |
 | **Scale** | One full page at the Chapter opening |
 | **Narrative function** | None; this is the Chapter's reference field |
 | **Narrative treatment** | Intentionally none. Named Citizens would imply fixed aptitude or permanent Role ownership where the system defines civic responsibilities any available Citizen may sustain |
 | **Register** | DWELL reference |
-| **Subjects** | Builder, Gardener, Crafter, Caretaker, Healer, Teacher, Watchkeeper, and Leader; Workshop, Garden, Hearth, Kitchen, Gathering Place, and Watchpost |
+| **Subjects** | Builder, Gardener, Crafter, Caretaker, Teacher, Watchkeeper, and Leader; Workshop, Garden, Hearth, Storehouse, Gathering Place, and Watchpost |
 | **Incoming state** | Chapter 3.3 has established the Places in which civic Practices exist |
-| **Outgoing state** | The reader knows all eight Roles, all six Practices, the approved Role order, and which Practices are shared before encountering any individual entry |
+| **Outgoing state** | The reader knows all seven Roles, all six Practices, the approved Role order, and which Practices are shared before encountering any individual entry |
 | **Canon inputs** | Chapter 3.4 Role-and-Practice table and Shared Practices section |
-| **Semantic content** | Roles in approved order: Builder, Gardener, Crafter, Caretaker, Healer, Teacher, Watchkeeper, Leader; Workshop linked to Builder and Crafter; Garden to Gardener; Hearth to Caretaker, Healer, and Teacher; Kitchen to Caretaker; Gathering Place to Teacher and Leader; Watchpost to Watchkeeper; Family remaining outside the Practice map; Leader carrying no Hearth relationship |
+| **Semantic content** | Roles in approved order: Builder, Gardener, Crafter, Caretaker, Teacher, Watchkeeper, Leader; Workshop linked to Builder and Crafter; Garden to Gardener; Hearth to Caretaker and Teacher; Storehouse to Caretaker; Gathering Place to Teacher and Leader; Watchpost to Watchkeeper; Family remaining outside the Practice map; Leader carrying no Hearth relationship; Stores remaining one pooled state rather than a seventh Practice or a set of local inventories |
 | **Asset lineage** | New editable type, rules, and restrained symbols; no historical Role chart governs its form |
 | **Cross-reference** | Chapters 3.2, 3.3, and 3.6; Appendix D |
 | **Priority** | Essential |
 | **Approval state** | Approved |
 | **Acceptance test** | The complete lists precede every Role entry; shared Practices remain single Practices with several compatible Roles; no Practice becomes a profession or assignment slot; Family is not represented as a Practice; and Leader has no Hearth connection |
 
-##### `AUG-3.4-02` — Eight Responsibilities
+##### `AUG-3.4-02` — Seven Responsibilities
 
 | Field | Approved mapping |
 |---|---|
-| **GDD location** | Chapter 3.4, the eight individual Role entries |
+| **GDD location** | Chapter 3.4, the seven individual Role entries |
 | **Reader task** | Compare the Roles consistently while retaining the particular work, vulnerability, limits, Projects, and improvements that distinguish each one |
-| **Augment form** | Repeating designed-entry architecture using editable prose, small diagrams, rules, and symbols rather than eight separate illustrations |
-| **Working subject** | **Eight Responsibilities** |
+| **Augment form** | Repeating designed-entry architecture using editable prose, small diagrams, rules, and symbols rather than seven separate illustrations |
+| **Working subject** | **Seven Responsibilities** |
 | **Scale** | The complete Role-entry sequence; exact pagination follows prose measure |
-| **Narrative function** | None; the entries define civic responsibility rather than dramatize eight incidents |
-| **Narrative treatment** | Intentionally none. Artificially assigning the recurring cast across all eight Roles would create unnecessary story canon and turn a comparative civic chapter into a contrived workday |
+| **Narrative function** | None; the entries define civic responsibility rather than dramatize seven incidents |
+| **Narrative treatment** | Intentionally none. Artificially assigning the recurring cast across all seven Roles would create unnecessary story canon and turn a comparative civic chapter into a contrived workday |
 | **Register** | DWELL reference, with Projects, MEET vulnerability, and EMBODY consequences located where relevant |
-| **Subjects** | The eight Roles in approved order and their ordinary contributions, related Practices, characteristic Projects, vulnerabilities, improvements, and explicit limits |
+| **Subjects** | The seven Roles in approved order and their ordinary contributions, related Practices, characteristic Projects, vulnerabilities, improvements, and explicit limits |
 | **Incoming state** | `AUG-3.4-01` has supplied the complete vocabulary and shared-Practice relationships |
 | **Outgoing state** | The reader can distinguish what each Role is responsible for, what ordinary coverage means, when a Project is warranted, what shortfall exposes, and which adjacent system the Role does not replace |
-| **Canon inputs** | All eight Chapter 3.4 Role entries, including first Workshop, Winter Cultivation, Fine Work, Open Table, Rehabilitation, Far Warning, and Community Board |
+| **Canon inputs** | All seven Chapter 3.4 Role entries, including first Workshop, Winter Cultivation, Fine Work, Rehabilitation, Far Warning, and Community Board |
 | **Semantic content** | A stable entry order: civic responsibility; ordinary contribution; related Practice or Practices; characteristic Projects; situated vulnerability; named improvement or special rule where present; boundary statements only where necessary to prevent a likely system conflation. Shared Practices use the same visual identity in every compatible entry. Improvements remain changes to particular Places rather than Role levels |
 | **Asset lineage** | Typography-led page architecture with a restrained canonical symbol set; no required artwork |
 | **Cross-reference** | Chapters 3.5, 3.6, and 3.8; Chapters 4.2–4.3; Appendix D |
 | **Priority** | Essential |
 | **Approval state** | Approved |
-| **Acceptance test** | All eight entries receive comparable specificity without forced equal length; Roles read as responsibilities rather than character classes, skill trees, or productivity traits; ordinary work remains distinct from Projects; shared-Practice identities persist; and repeated layout improves comparison without making every entry formulaic prose |
+| **Acceptance test** | All seven entries receive comparable specificity without forced equal length; Roles read as responsibilities rather than character classes, skill trees, or productivity traits; ordinary work remains distinct from Projects; shared-Practice identities persist; and repeated layout improves comparison without making every entry formulaic prose |
 
 ##### `AUG-3.4-03` — Work That Continues / Work That Changes
 
@@ -1073,15 +1092,15 @@ construction or placement rules.
 | **Incoming state** | The Role entries have established which responsibility owns each lasting result |
 | **Outgoing state** | The reader can preview the civic cost of commitment, distinguish support from target, follow progress to completion, and understand how deliberate change temporarily reduces ordinary coverage |
 | **Canon inputs** | Chapter 3.4 Shared Practices and Project Queue; Chapter 3.2 Civic Share and commitment rules; current first-Workshop exception |
-| **Semantic content** | Left field: available Citizens sustain ordinary Role coverage, compatible Practice Strength, and any defined passive work. Right field: choose a persistent result, supporting Practice, material, and named Citizens of the owning Role; preview lost Role coverage, Practice support, and passive throughput; Commit occupies one Project slot and withdraws those Civic Shares; Civic Share-Days accumulate; DAWN records whole progress; committed work cannot be cancelled or interrupted; completion makes the result true, releases the Practice, and returns Citizens to ordinary availability. Worked example: a Workshop supports Builder Citizens establishing a Garden at another Place. Supporting Practice and target remain distinct. Builder's first Workshop is the sole bootstrap exception |
+| **Semantic content** | Left field: available Citizens sustain ordinary Role coverage, compatible Practice Strength, and any defined passive work. Right field: choose a persistent result, supporting Practice, material, and named Citizens of the owning Role; preview lost Role coverage, Practice support, and passive throughput; Commit occupies one Project slot and withdraws those Civic Shares; Civic Share-Days accumulate; DAWN records whole progress; committed work cannot be cancelled or interrupted; completion makes the result true, releases the Practice, and returns Citizens to ordinary availability. Worked example: a Workshop supports Builder Citizens establishing a Garden at another Place. Supporting Practice and target remain distinct. Builder's first Workshop is the sole bootstrap exception. One restrained boundary callout distinguishes ordinary Wound recovery—Patient Load plus Hearth occupancy—from the Queue, while retaining Rehabilitation as a persistent Caretaker Project |
 | **Asset lineage** | New editable diagram and typography; no historical queue mockup controls its form |
 | **Cross-reference** | Chapters 3.2, 3.3, 3.6, 4.6, 5.7, and 6.4; Appendix D |
 | **Priority** | Essential |
 | **Approval state** | Approved |
-| **Acceptance test** | Practices provide capacity but perform no labor; every Project has named committed Citizens; the owning Role follows the intended result; supporting Practice and target may differ; opportunity cost is visible before Commit; fractional progress is not awarded before DAWN records a whole amount; cancellation and interruption are absent; and the diagram does not reproduce the passive-production formula reserved for Chapter 3.6 |
+| **Acceptance test** | Practices provide capacity but perform no labor; every Project has named committed Citizens; the owning Role follows the intended result; supporting Practice and target may differ; opportunity cost is visible before Commit; fractional progress is not awarded before DAWN records a whole amount; cancellation and interruption are absent; Wound recovery never appears as a Project; and the diagram does not reproduce the passive-production formula reserved for Chapter 3.6 |
 
 These three treatments keep the Chapter's hierarchy legible: the opening map
-supplies the whole civic vocabulary, the entry architecture preserves eight
+supplies the whole civic vocabulary, the entry architecture preserves seven
 distinct responsibilities, and the closing spread explains how ordinary work
 becomes deliberate lasting change. Passive-production arithmetic remains in
 Chapter 3.6, where production and transformation can be treated together.
@@ -1157,7 +1176,7 @@ deliberate asset-brief decision, not missing system logic.
 | **Incoming state** | Chapter 3.4 has established compatible Roles and Practices; Chapter 3.5 has shown those resources and strengths entering a situated response |
 | **Outgoing state** | The reader can calculate ordinary passive throughput, identify every gate and later bound, understand fractional accumulation, and distinguish passive transformation from deliberate Tool creation |
 | **Canon inputs** | Chapter 3.6 Resources, Production and transformation, and Provisioning; Appendix D passive-production reference; current Supply and Tool definitions |
-| **Semantic content** | Six concise resource definitions; four aligned process rows: Garden plus Gardener produces Perishable Sustenance, Kitchen plus Caretaker preserves it as Durable Sustenance, Workshop plus Crafter prepares Binding, Device, and Offering Supplies, and Hearth plus Healer prepares Remedy Supplies. A process produces zero without at least one usable relevant Practice and one Citizen sustaining its Role. Once open: **Throughput = usable relevant Practices + sustaining Civic Shares + (0.5 × Well-Placed relevant Practices)**. Each additional Practice and sustaining Share contributes additively; Project-committed Citizens contribute nothing; inputs, season, recipes, targets, reserves, and situated modifiers apply afterward and may bound the result. Each process retains its own fractional remainder; a 1.5 example releases **1 → 2 → 1** across successive eligible DAWNs. Provisioning uses **Prepare**, **Hold**, and explanatory **Unavailable** states; targets limit production and protected reserves prevent unrelated use. Tools branch to Crafter Projects and never appear as passive output |
+| **Semantic content** | Six concise resource definitions; three aligned process rows: Garden plus Gardener produces Perishable Sustenance; Workshop plus Crafter prepares Binding, Device, and Offering Supplies; Storehouse plus Caretaker creates one shared Provisioning throughput allocated between Perishable-to-Durable Preservation and Remedy Preparation. A process produces zero without at least one usable relevant Practice and one Citizen sustaining its Role. Once open: **Throughput = usable relevant Practices + sustaining Civic Shares + (0.5 × Well-Placed relevant Practices)**. Each additional Practice and sustaining Share contributes additively; Project-committed Citizens contribute nothing; inputs, season, recipes, targets, reserves, and situated modifiers apply afterward and may bound the result. Cultivation and Supply Preparation each retain their own fractional remainder; Caretaker Provisioning retains one shared remainder rather than duplicating it across its two outputs. A 1.5 example releases **1 → 2 → 1** across successive eligible DAWNs. Provisioning uses **Prepare**, **Hold**, and explanatory **Unavailable** states; targets limit production and protected reserves prevent unrelated use. Tools branch to Crafter Projects and never appear as passive output. A compact inset distinguishes pooled Stores from their visible Storehouse manifestation and shows that selecting any Storehouse opens the same Resources screen |
 | **Asset lineage** | New editable diagram, tables, and typography; no historical economy dashboard controls its form |
 | **Cross-reference** | Chapters 3.3, 3.4, 4.6, and 5.1; Appendices D and E |
 | **Priority** | Essential |
@@ -1177,15 +1196,15 @@ deliberate asset-brief decision, not missing system logic.
 | **Narrative treatment** | Intentionally none. A particular DAWN would obscure which operations are universal and which results depend upon one campaign state |
 | **Register** | World clock and DWELL accounting boundary |
 | **Subjects** | Sustenance consumption; transformation; spoilage; passive production; Beautification and Frills; Project progress; recovery and availability; Place and Civic Balance recalculation; meaningful report |
-| **Incoming state** | A playable day has elapsed with its Citizens, Practices, Projects, stocks, and conditions in their final pre-DAWN state |
+| **Incoming state** | A playable day has elapsed with its Citizens, Practices, Projects, Stores, and conditions in their final pre-DAWN state |
 | **Outgoing state** | Whole results have been released, new availability has become true, fractions remain carried, civic state is recalculated, and the new playable day begins |
 | **Canon inputs** | Chapter 3.6 DAWN accounting and Beautification; Appendix D DAWN reference order and Frill rules |
-| **Semantic content** | Ordered sequence: consume **one Sustenance per total resident Body Unit**, including Citizens Away and normally Perishable before Durable; resolve active preservation and Supply preparation; apply aggregate Perishable spoilage; add passive production and release whole chunks; add Beautification and create any earned Frill; add Project progress and complete eligible Projects; resolve recovery and Citizen availability; recalculate usable Places, Spatial Alignment, Housing and Role Balance, and Colony Pressure; report meaningful changes. Body Units are totaled before demand is calculated, so two Mice create the same ordinary daily demand as one Rabbit or Squirrel. Fractions remain behind the scenes. A Residence or Practice completed now is usable in the new day and first contributes passive output at the following DAWN. The subordinate Beautification path shows ordinary Builder, Teacher, Watchkeeper, and Leader Civic Shares contributing while Project-bound Citizens and Well-Placed Practices add nothing; an unspecified threshold creates one small authored, persistent, mechanically inert Frill during Quiet Equilibrium, which may invite EMBODY |
+| **Semantic content** | Ordered sequence: consume **one Sustenance per total resident Body Unit**, including Citizens Away and normally Perishable before Durable; resolve active preservation and Supply preparation; apply aggregate Perishable spoilage; add passive production and release whole chunks; add Beautification and create any earned Frill; add Project progress and complete eligible Projects; resolve recovery and Citizen availability; recalculate usable Places, Spatial Alignment, Housing and Role Balance, and Colony Pressure; report meaningful changes. Body Units are totaled before demand is calculated, so two Mice create the same ordinary daily demand as one Rabbit or Squirrel. Fractions remain behind the scenes. At the recovery step, each Home-present Wounded Citizen occupying a usable Hearth records exactly one Recovery Day; no fractional Recovery Day or named Caretaker contribution exists, and completion releases the Patient Load and Hearth. A Residence or Practice completed now is usable in the new day and first contributes passive output at the following DAWN. The subordinate Beautification path shows ordinary Builder, Teacher, Watchkeeper, and Leader Civic Shares contributing while Project-bound Citizens and Well-Placed Practices add nothing; an unspecified threshold creates one small authored, persistent, mechanically inert Frill during Quiet Equilibrium, which may invite EMBODY |
 | **Asset lineage** | New editable sequence and typography; no clock dial, economy meter, or production UI mockup is required |
 | **Cross-reference** | Chapters 2.5, 3.2, 3.4, 3.7, and 3.8; Appendix D |
 | **Priority** | Essential |
 | **Approval state** | Approved |
-| **Acceptance test** | The accounting order is complete and unambiguous; the one-Sustenance-per-resident-Body-Unit baseline is visible and includes Citizens Away; spoilage precedes new passive production; whole awards occur only at DAWN while fractions persist; completion affects the new day without retroactive production; Beautification remains outside material production and optimization; Frills provide no bonus; and exact thresholds, spoilage, situated modifiers, and wider economy balance remain reserved for tuning |
+| **Acceptance test** | The accounting order is complete and unambiguous; the one-Sustenance-per-resident-Body-Unit baseline is visible and includes Citizens Away; spoilage precedes new passive production; whole awards occur only at DAWN while ordinary production fractions persist; Wound recovery advances by one discrete eligible Recovery Day rather than fractional Share contribution; completion affects the new day without retroactive production; Beautification remains outside material production and optimization; Frills provide no bonus; and exact thresholds, spoilage, situated modifiers, and wider economy balance remain reserved for tuning |
 
 The production spread explains what may flow. The DAWN page explains when that
 flow becomes state. Together they preserve a small economy without requiring a
@@ -1257,16 +1276,16 @@ future responsibilities while keeping every arrival particular.
 | **Narrative function** | None; the following Gale sequence supplies the particular experience |
 | **Narrative treatment** | Intentionally none. The diagram protects the complete access grammar before one Species and experience family embody it |
 | **Register** | EMBODY entered from DWELL and returning to DWELL |
-| **Subjects** | Quiet Equilibrium; present and available Citizen; safe usable Place; invitation; Participation; Presence; the eight experience families; natural release; safe closure |
+| **Subjects** | Quiet Equilibrium; present and available Citizen; safe usable Place; invitation; Participation; Presence; the seven experience families; Open Table as exceptional collective Presence; natural release; safe closure |
 | **Incoming state** | DWELL has established a credible sanctuary and Quiet Equilibrium is present |
 | **Outgoing state** | The reader can identify an eligible invitation, distinguish the two primary forms, and understand how ordinary departure or renewed urgency returns attention to DWELL or MEET |
 | **Canon inputs** | Chapter 3.8 Access and invitation, Participation and Presence, Experience families, Memory and reward, and Boundaries; Chapter 7.1 EMBODY presentation |
-| **Semantic content** | **Quiet Equilibrium + present available Citizen + safe usable Place → invitation → Participation and/or Presence → natural release → DWELL**. Flow Traversal, Small Work, Sensory Repose, Social Play, Comfort and Care, Observation and Watch, Weather Enjoyment, and Shared Meal form a non-progressive family field; Shared Meal alone requires Open Table. Entry closes the DWELL view toward the Citizen and settles ordinarily into close third person. Controls remain specific to the moment; the Citizen retains exact posture, pace, response, and social behavior. The player may leave without penalty. Loss of Quiet Equilibrium closes the experience safely before an urgent situation opens MEET. Tharn, unavailability, an unsafe Place, or Away calm never opens EMBODY. The experience itself is the reward; there is no output multiplier, Civic Share, currency, score, failure loop, or automatic memory record |
+| **Semantic content** | The ordinary path reads **Quiet Equilibrium + present available Citizen + safe usable Place → invitation → Participation and/or Presence → natural release → DWELL**. Flow Traversal, Small Work, Sensory Repose, Social Play, Comfort and Care, Observation and Watch, and Weather Enjoyment form a non-progressive family field. Open Table is not another family: it is rare large-cast Presence entered through an eligible gathering rather than a Citizen and may contain several families simultaneously. Home and Quiet Equilibrium remain its general EMBODY gate; its additional access condition is an explicit placeholder. Ordinary entry closes the DWELL view toward the Citizen and settles ordinarily into close third person. Open Table instead settles into guided, animal-scale collective observation without giving the player a Citizen body. Controls and attention remain specific to the moment. The player may leave without penalty. Loss of Quiet Equilibrium closes the experience safely before an urgent situation opens MEET. Tharn, unavailability, an unsafe Place, or Away calm never opens EMBODY. The experience itself is the reward; there is no output multiplier, Civic Share, currency, score, failure loop, or automatic memory record |
 | **Asset lineage** | New editable diagram and typography; no minigame selector or activity menu controls its form |
 | **Cross-reference** | Chapters 1.4, 3.1, 3.2, and 7.1; Appendix I |
 | **Priority** | Essential |
 | **Approval state** | Approved |
-| **Acceptance test** | Quiet Equilibrium remains permission rather than currency; access is Home-only and Citizen-specific; Participation and Presence may flow into one another; the eight families do not become tracks; Shared Meal retains its Open Table gate; closure under urgency remains safe; and EMBODY offers neither required chores nor mechanical superiority |
+| **Acceptance test** | Quiet Equilibrium remains permission rather than currency; ordinary access stays Home-only and Citizen-specific; Open Table is the explicit gathering-entry exception and its additional gate remains visibly unresolved; Participation and Presence may flow into one another; the seven families do not become tracks; collective Presence never grants control of a Citizen; closure under urgency remains safe; and EMBODY offers neither required chores nor mechanical superiority |
 
 ##### `AUG-3.8-02` — With Gale
 
@@ -1295,29 +1314,29 @@ future responsibilities while keeping every arrival particular.
 
 | Field | Approved mapping |
 |---|---|
-| **GDD location** | Chapter 3.8, Shared Meal and Citizens and relationships |
-| **Reader task** | See how EMBODY can widen from one Citizen's invitation to a rare whole-Colony experience without dissolving particular lives into a crowd |
+| **GDD location** | Chapter 3.8, Participation and Presence and Citizens and relationships |
+| **Reader task** | See how Presence can widen from intimate small-cast attention to a rare village-scale gathering without dissolving particular lives into a crowd |
 | **Augment form** | Partial-page narrative illustration with a brief worked example; not an interior full-page plate |
 | **Working subject** | **Open Table at New Elderbank** |
-| **Scale** | One substantial partial-page field placed with the Shared Meal prose |
+| **Scale** | One substantial partial-page field placed with the Open Table prose |
 | **Narrative function** | Rabbit continuity, ordinary companionship, collective recognition, and a quiet close to Part III |
-| **Narrative treatment** | Recurring lived moment. A selected New Elderbank state gathers through an established Open Table; every visible participant remains a known individual with their own timing, relation, posture, and response |
-| **Register** | EMBODY — Shared Meal |
-| **Subjects** | New Elderbank; the selected full Colony roster for that moment; its Open Table Kitchen; Rabbit common space; any Guest Citizens already resident at the chosen Tier |
-| **Incoming state** | New Elderbank is in Quiet Equilibrium, Open Table has been established in one Kitchen, and the selected roster is present and available for the authored invitation |
+| **Narrative treatment** | Recurring lived moment. A selected New Elderbank state gathers at village-festival scale; every visible participant remains a known individual with their own timing, relation, posture, and response |
+| **Register** | EMBODY — collective Presence |
+| **Subjects** | New Elderbank; a selected large cast drawn from the present Colony roster; Rabbit common space; any Guest Citizens resident and present at the chosen Tier; several simultaneous small activities rather than one central performance |
+| **Incoming state** | New Elderbank is in Quiet Equilibrium, the eventual additional Open Table access gate has been satisfied, and the selected gathering is present and safe. The exact additional gate remains a deliberate placeholder until authorially resolved |
 | **Outgoing state** | The gathering releases back into ordinary DWELL life; no civic problem, Guest Term, injury, disagreement, grief, or Pressure has been mechanically erased, though particular interaction may enter memory if genuinely worth recording |
-| **Canon inputs** | Current New Elderbank Tier rosters, Citizen identities, relationships, injuries, Guest histories, and canon images; current Open Table and Shared Meal rules; Rabbit GATHER spatial expression |
-| **Semantic content** | The player accompanies collective ordinary life rather than commanding the gathering. Food, service, conversation, quiet, observance, teasing, care, and species-specific common space may coexist. Every participant remains a named Citizen rather than a whole-Colony unit. Shared Meal consumes ordinary Sustenance and supplies no Feast reward, morale effect, Pressure relief, healing, relationship score, or guaranteed Chronicle entry. The experience may portray comfort around lasting Wound, Maiming, grief, or changed capability without ameliorating it mechanically |
+| **Canon inputs** | Current New Elderbank Tier rosters, Citizen identities, relationships, injuries, Guest histories, and canon images; current Open Table and Presence rules; Rabbit GATHER spatial expression |
+| **Semantic content** | Open Table enters through the gathering rather than a Citizen. The player inhabits no participant and guides attention among a large cast, simultaneous groups, and animal-scale details without returning to DWELL's operational view. Food, races, conversation, quiet, observance, teasing, care, rest, and species-specific common space may coexist, with a shared meal remaining one possible activity rather than the governing mechanic. Every visible participant remains a named Citizen rather than a whole-Colony unit. The gathering supplies no Feast reward, morale effect, Pressure relief, healing, relationship score, or guaranteed Chronicle entry. It may portray comfort around lasting Wound, Maiming, grief, or changed capability without ameliorating it mechanically |
 | **Asset lineage** | New current-spec scene derived mandatorily from the selected New Elderbank Colony image and canon images for every identifiable attendee; no generic Rabbit banquet or historical cast may substitute |
-| **Cross-reference** | Chapters 3.4, 4.4–4.5, and 6.1; Appendix H New Elderbank history |
+| **Cross-reference** | Chapters 4.4–4.5 and 6.1; Appendix H New Elderbank history |
 | **Priority** | High value |
-| **Approval state** | Approved direction; exact Tier, attending roster, social occasion, time, weather, and remembered detail remain an explicit asset-brief decision |
-| **Acceptance test** | Open Table is visibly prerequisite; the gathering remains EMBODY rather than ceremony MEET; the whole Colony never becomes a crowd statistic; Rabbit common space supports rather than homogenizes interaction; ordinary companionship is sufficient subject; persistent conditions remain true afterward; and the scene does not occupy a full interior plate |
+| **Approval state** | Approved direction; exact access gate, Tier, attending roster, social occasion, time, weather, and remembered detail remain explicit later decisions |
+| **Acceptance test** | The gathering remains EMBODY Presence rather than Participation, DWELL, cutscene, or ceremony MEET; no Citizen becomes the player's body; the large cast never becomes a crowd statistic; Rabbit common space supports rather than homogenizes interaction; several small activities coexist without one compulsory center; persistent conditions remain true afterward; and the scene does not occupy a full interior plate |
 
 The access diagram defines EMBODY, Gale demonstrates its ordinary individual
-form, and Open Table shows its exceptional collective breadth. Their sequence
-lets Part III end by inhabiting the sanctuary whose civic and material logic
-the Part has established.
+form, and Open Table shows Presence at exceptional collective breadth. Their
+sequence lets Part III end by inhabiting the sanctuary whose civic and material
+logic the Part has established.
 
 #### Part III horizontal audit
 
@@ -2118,17 +2137,17 @@ become a diagram of a condition.
 | **Working subject** | **The Wound Heals; the Maiming Remains** |
 | **Scale** | One autonomous landscape page; Fennel's present life holds more visual weight than the injury event |
 | **Narrative function** | Give the rules an embodied Rabbit history while establishing Fennel as a continuing Citizen rather than an example whose purpose ends with rescue |
-| **Narrative treatment** | Authored Story Colony history. Shadepatch finds Fennel inside a flooded culvert; Fennel returns with one acute Wound and a lasting hind-leg Maiming. Remedy stabilizes the Wound through Homecoming, and later Hearth-and-Healer care clears it while the Maiming remains part of Fennel's visible life |
+| **Narrative treatment** | Authored Story Colony history. Shadepatch finds Fennel inside a flooded culvert; Fennel returns with one acute Wound and a lasting hind-leg Maiming. Remedy stabilizes the Wound through Homecoming, and later Hearth-and-Caretaker care clears it while the Maiming remains part of Fennel's visible life |
 | **Register** | Historical Away MEET aftermath, Homecoming reference, and present Home life |
-| **Subjects** | Fennel; Shadepatch, later called Sharpnose; the flooded culvert; one Remedy; an available Hearth and committed Healer; Fennel's current adaptive movement and equipment where canonically established |
+| **Subjects** | Fennel; Shadepatch, later called Sharpnose; the flooded culvert; one Remedy; an available Hearth; the resulting Caretaker Balance; Fennel's current adaptive movement and equipment where canonically established |
 | **Incoming state** | Fennel is trapped in a flooded culvert when Shadepatch locates the concealed Citizen; neither injury result has yet been resolved |
 | **Outgoing state** | Fennel belongs to New Elderbank as a continuing Citizen whose acute Wound has healed and whose hind-leg Maiming, adaptations, relationships, work, and ordinary preferences persist |
 | **Canon inputs** | Chapter 5.6; Chapters 3.7, 4.1, 4.4, 4.6, and 5.8; Appendix D Wound Recovery and Rehabilitation; Appendix E Remedy; Appendix H New Elderbank history; current Fennel and Shadepatch/Sharpnose canon imagery |
-| **Semantic content** | The causal timeline reads **maiming incident → one acute named Wound + one lasting Maiming → Remedy stabilization through Homecoming → one-to-three-Healer-Day Wound Recovery Project at an available Hearth → Wound clears while Maiming remains → adaptation and optional individualized Rehabilitation address lived capability without erasing history**. Remedy stabilizes rather than heals and contains rather than removes the acute Wound accompanying Maiming. A later Wound would change the one existing Wound description and preserve the greater current or authored recovery requirement rather than stack another Wound. The rescue inset names the rescuer **Shadepatch** because the After-name has not yet been conferred; a restrained later note explains that the Colony's subsequent observance recognizes the act through **Sharpnose**. Fennel's principal image shows current ordinary life, relationship, work, and bodily adaptation without heroicizing pain or restoring an unmaimed body after recovery |
+| **Semantic content** | The causal timeline reads **maiming incident → one acute named Wound + one lasting Maiming → Remedy stabilization through Homecoming → Body-Unit-scaled Patient Load + one available Hearth for one to three Recovery Days at Home → Wound clears while Maiming remains → adaptation and optional individualized Rehabilitation address lived capability without erasing history**. Wound recovery is ordinary Caretaker work: it enters no Project Queue, consumes no material, and commits no named Caretaker. The Patient Load remains in Caretaker Balance until the Wound clears; an uncovered amount becomes ordinary Caretaker Pressure without pausing an occupied Hearth's recovery clock. Remedy stabilizes rather than heals and contains rather than removes the acute Wound accompanying Maiming. A later Wound would change the one existing Wound description and preserve the greater current or authored recovery requirement rather than stack another Wound. The rescue inset names the rescuer **Shadepatch** because the After-name has not yet been conferred; a restrained later note explains that the Colony's subsequent observance recognizes the act through **Sharpnose**. Fennel's principal image shows current ordinary life, relationship, work, and bodily adaptation without heroicizing pain or restoring an unmaimed body after recovery |
 | **Asset lineage** | Reference-and-amend manifest rows 69, 159, and 160 for the flooded-culvert and Sharpnose history only after replacing the obsolete wildcat event, chronology, anatomy, and cast. Fennel requires a current canon-grounded present-life image rather than a generic injured Rabbit plate |
 | **Cross-reference** | Chapters 4.1, 4.4, 4.6, 5.8, and 6.1; Appendices D, E, and H; `AUG-5.6-01` |
 | **Priority** | Essential |
-| **Approval state** | Approved; Fennel's exact current Role, adaptive equipment, present activity, Wound name, recovery duration, Remedy bearer, and Healer remain to be fixed against the coordinated Story Colony state and asset brief |
+| **Approval state** | Approved; Fennel's exact current Role, adaptive equipment, present activity, Wound name, recovery duration, Remedy bearer, and receiving Hearth remain to be fixed against the coordinated Story Colony state and asset brief |
 | **Acceptance test** | The page never treats Wound and Maiming as tiers; only one Wound exists; Remedy does not heal; Home care does not erase Maiming; Shadepatch/Sharpnose chronology is correct; Fennel remains recognizable before and after lasting change; and the page's dominant image concerns a valued current life rather than bodily damage |
 
 ##### `AUG-5.6-03` — Tharn Changes the Subject
@@ -2147,7 +2166,7 @@ become a diagram of a condition.
 | **Incoming state** | The three-Mouse, one-and-one-half-Body-Unit party is inside a consequential MEET; Crumb's accumulated Exposure and any applicable Wound state remain hidden; the interface contains no Tharn warning, icon, probability, option label, or visual foreshadowing |
 | **Outgoing state** | The party retains Crumb, yields or withdraws from the original situation, and completes the required Rest at a known Rushbottom Outpost; Tharn ends, the former objective remains abandoned, and the bounded case history closes |
 | **Canon inputs** | Chapter 5.6 and Chapter 7.1 sound and presentation rules; Appendix G Tharn and Rest procedure; Appendix H Rushbottom history; current Crumb, Muslin, and Sheaf canon imagery |
-| **Semantic content** | The narrow before-frame is fully ordinary and carries no coded warning. The triggering event itself must credibly support shutdown; accumulated Exposure and an unstabilized Wound may increase susceptibility but never cause Tharn without that event. After resolution, the game explicitly names **Tharn** and changes the MEET's subject from its former stakes to securing Crumb. YIELD and WITHDRAW ordinarily remain; another family remains active only if its concrete response directly enables rescue or departure. Focus, framing, audio, and animation narrow around Crumb's breath, pulse, fixation, and immediate peril without converting Tharn into a meter or reaction minigame. Muslin's Healer responsibility and any carried Remedy provide no cure; Remedy cannot relieve Tharn. The party always retains Crumb. One completed Rest MEET is required before another Node, RISK, or former objective becomes available. A concise closing strip confirms that the party reaches its known Outpost and completes that Rest: Tharn ends, while Rest does not itself clear Exposure, Wound, or Maiming and the former objective remains abandoned. Chapter 5.7 explains the full Outpost transaction through the continuing Morningside expedition rather than extending this case study |
+| **Semantic content** | The narrow before-frame is fully ordinary and carries no coded warning. The triggering event itself must credibly support shutdown; accumulated Exposure and an unstabilized Wound may increase susceptibility but never cause Tharn without that event. After resolution, the game explicitly names **Tharn** and changes the MEET's subject from its former stakes to securing Crumb. YIELD and WITHDRAW ordinarily remain; another family remains active only if its concrete response directly enables rescue or departure. Focus, framing, audio, and animation narrow around Crumb's breath, pulse, fixation, and immediate peril without converting Tharn into a meter or reaction minigame. Muslin's Caretaker responsibility and any carried Remedy provide no cure; Remedy cannot relieve Tharn. The party always retains Crumb. One completed Rest MEET is required before another Node, RISK, or former objective becomes available. A concise closing strip confirms that the party reaches its known Outpost and completes that Rest: Tharn ends, while Rest does not itself clear Exposure, Wound, or Maiming and the former objective remains abandoned. Chapter 5.7 explains the full Outpost transaction through the continuing Morningside expedition rather than extending this case study |
 | **Asset lineage** | Reference-and-amend manifest row 108. Preserve the shocking visual contraction and rescue-centered interruption; replace its anonymous cast, any warning or trigger language, exposed meter, obsolete Fear grammar, and former recovery rule with Crumb, Muslin, Sheaf, current Mouse scale, and Rest-only relief |
 | **Cross-reference** | Chapters 1.5, 4.1, 5.2, 5.5, 5.7, and 7.1; Appendices G and H |
 | **Priority** | Essential |
@@ -2181,9 +2200,9 @@ that makes one such state reliable.
 | **Register** | Unopposed contextual Rest MEET returning to TRAVEL |
 | **Subjects** | Gale, Alder, Reed, their exact current bodily and Item states, remaining Cargo, Morningside's first completed Outpost, and the present Day Band |
 | **Incoming state** | The party has completed the Chapter 5.5 MEET; Reed owns one unstabilized Wound; Gale's Offering is spent; Alder's Brace Tool remains usable; recovered Scrap and any earlier fungible Cargo occupy Carry; hidden Exposure and traveled-Band cadence remain current |
-| **Outgoing state** | One Day Band has advanced; travel cadence is reset; Reed's Wound is stabilized for three traveled Bands and their situations; Outpost relief has reduced each Citizen's Exposure by one without removing the final Away step; selected fungible Cargo has entered Colony stock; the party remains Away and is ready to turn homeward through ordinary TRAVEL |
+| **Outgoing state** | One Day Band has advanced; travel cadence is reset; Reed's Wound is stabilized for three traveled Bands and their situations; Outpost relief has reduced each Citizen's Exposure by one without removing the final Away step; selected fungible Cargo has entered Stores; the party remains Away and is ready to turn homeward through ordinary TRAVEL |
 | **Canon inputs** | Chapter 5.7; Chapters 5.2, 5.5, 5.6, and 5.8; Appendix E Cargo and Item rules; Appendix G Rest, Stopover, Outpost, Wound, and Exposure rules; the exact party state from `AUG-5.5-02` |
-| **Semantic content** | The unopposed MEET offers only concrete current actions rather than the contested five-family strip. Completing Rest advances one Band, resets cadence, ends Tharn when present, and stabilizes Wound for the next three traveled Bands and their situations; Reed's Wound supplies the actual worked stabilization. Because the refuge is a usable Outpost, it also removes one hidden Exposure step from each resting Citizen without removing the last Away step and protects ordinary sleep from exposed-ground consequence. The player may move any selected amount of fungible Cargo into Colony stock through abstract Colony sync, immediately freeing Carry; the worked party transfers part of its fungible Cargo and retains a bounded remainder for Homecoming. No physical logistics subsystem, stationed Citizen, or return trip is created. Gale's spent Offering remains spent; Alder's Tool, Gale's Keepsake, unspent Supplies, and other personal or singular Items remain with their holders. Rest supplies no Healer-Days, does not clear Reed's Wound, removes no Maiming, and does not retrospectively change the prior MEET. A compact comparison distinguishes **completed Rest on exposed ground → temporary Stopover**, **completed Rest in natural refuge → contextually improved temporary Stopover**, and **completed Rest at usable Outpost → reliable protected Stopover with its defined additional effects** |
+| **Semantic content** | The unopposed MEET offers only concrete current actions rather than the contested five-family strip. Completing Rest advances one Band, resets cadence, ends Tharn when present, and stabilizes Wound for the next three traveled Bands and their situations; Reed's Wound supplies the actual worked stabilization. Because the refuge is a usable Outpost, it also removes one hidden Exposure step from each resting Citizen without removing the last Away step and protects ordinary sleep from exposed-ground consequence. The player may move any selected amount of fungible Cargo into Stores through abstract Colony sync, immediately freeing Carry; the worked party transfers part of its fungible Cargo and retains a bounded remainder for Homecoming. No physical logistics subsystem, stationed Citizen, or return trip is created. Gale's spent Offering remains spent; Alder's Tool, Gale's Keepsake, unspent Supplies, and other personal or singular Items remain with their holders. Rest supplies no Recovery Days, does not clear Reed's Wound, removes no Maiming, and does not retrospectively change the prior MEET. A compact comparison distinguishes **completed Rest on exposed ground → temporary Stopover**, **completed Rest in natural refuge → contextually improved temporary Stopover**, and **completed Rest at usable Outpost → reliable protected Stopover with its defined additional effects** |
 | **Asset lineage** | New current-spec Rest presentation and modest Morningside Outpost environment using mandatory Gale, Alder, Reed, and Morningside references. Rest Stop Metropolis imagery at manifest rows 62, 98, and 156 is excluded: the Metropolis is a special zone rather than Colony infrastructure |
 | **Cross-reference** | Chapters 5.2, 5.5, 5.6, and 5.8; Appendices E, F, and G; `AUG-5.5-02` and `AUG-5.7-02` |
 | **Priority** | Essential |
@@ -2206,7 +2225,7 @@ that makes one such state reliable.
 | **Incoming state** | The reader has experienced one usable Outpost from an Away party's perspective without yet seeing how it became true |
 | **Outgoing state** | The reader can follow Outpost establishment and restoration from Home commitment to persistent Away result without expecting construction micromanagement, stationed Citizens, or an upgrade ladder |
 | **Canon inputs** | Chapter 5.7; Chapters 3.6 and 3.7; Appendix D Project Queue and Builder rules; Appendix F world persistence; Appendix G Outpost effects |
-| **Semantic content** | The governing sequence reads **known eligible site → ordinary Home Project Queue → one usable Workshop + named Builders + required material + Civic Share-Days → completion at DAWN → persistent Outpost**. Routine construction travel and labor are absorbed into the civic commitment: Builders and Workshop capacity leave ordinary Home availability, but no separately managed Away party, Exposure, Crossing, or personal-consequence sequence is created. Completion releases Workshop and Builders. The Outpost remains uninhabited and persistent between visits. Explicit visible events alone can damage or destroy it; damage leaves the physical shelter present while removing protected Rest, Exposure reduction, and Cargo transfer until the remote Builder restoration Project completes. The current form has no routine upkeep, specialization, upgrade, Tier, stationed Citizen, passive production, Healer service, or independent civic identity. Exact material and Share-Day values remain deferred to the dedicated Items and Resources tuning phase |
+| **Semantic content** | The governing sequence reads **known eligible site → ordinary Home Project Queue → one usable Workshop + named Builders + required material + Civic Share-Days → completion at DAWN → persistent Outpost**. Routine construction travel and labor are absorbed into the civic commitment: Builders and Workshop capacity leave ordinary Home availability, but no separately managed Away party, Exposure, Crossing, or personal-consequence sequence is created. Completion releases Workshop and Builders. The Outpost remains uninhabited and persistent between visits. Explicit visible events alone can damage or destroy it; damage leaves the physical shelter present while removing protected Rest, Exposure reduction, and Cargo transfer until the remote Builder restoration Project completes. The current form has no routine upkeep, specialization, upgrade, Tier, stationed Citizen, passive production, wound-recovery service, or independent civic identity. Exact material and Share-Day values remain deferred to the dedicated Items and Resources tuning phase |
 | **Asset lineage** | New brief. The archive contains no current Outpost depiction suitable for intact use or straightforward reskinning. The new image must show modest animal-scale refuge and storage affordance without resembling a Colony, staffed frontier fort, Metropolis venue, or miniature human logistics depot |
 | **Cross-reference** | Chapters 2.2, 3.6, 3.7, 5.2, and 6.4; Appendices D, F, and G; `AUG-5.7-01` |
 | **Priority** | Essential |
@@ -2239,7 +2258,7 @@ one state-changing reception page.
 | **Narrative treatment** | Literal game text and worked-play continuation. The player turns the same party toward Home by driving it through the Field; no separate Return control changes the world's operation |
 | **Register** | TRAVEL with a Return Crossing through RISK procedure and final approach to Home |
 | **Subjects** | Gale, Alder, Reed, the Morningside Outpost, actual return country, final Roadway Staging Post, Home Median, and Tier III Morningside |
-| **Incoming state** | The party has completed Outpost Rest; Reed's Wound is stabilized for the defined remaining span; hidden Exposure has received bounded Outpost relief; part of the fungible Cargo has entered Colony stock; remaining Cargo and every personal or singular Item stay with the party |
+| **Incoming state** | The party has completed Outpost Rest; Reed's Wound is stabilized for the defined remaining span; hidden Exposure has received bounded Outpost relief; part of the fungible Cargo has entered Stores; remaining Cargo and every personal or singular Item stay with the party |
 | **Outgoing state** | The party has crossed the final Roadway, traveled the remaining Home Median ground, and reached Morningside with its actual Citizens, Wound, Items, remaining Cargo, spent and unspent Supplies, relationships, discoveries, and hidden Exposure intact; Homecoming is ready to Frame |
 | **Canon inputs** | Chapter 5.8; Chapters 5.2, 5.3, 5.6, and 5.7; Appendix G TRAVEL, Return Crossing, and Homecoming boundary; the exact state established across `AUG-5.1-01` through `AUG-5.7-01` |
 | **Semantic content** | Turning homeward occurs through the next player-directed movement toward Home. Terrain, Day Bands, projected reach, burden, bodily state, Nodes, Rest, Field Cards, MEET, and Crossings continue unchanged. The main screen shows one current homeward heading and position without a drawn route, waypoint chain, return timer, expected arrival, or autonomous march. A chronological strip—not a geographic path—shows **leave Stopover → ordinary TRAVEL → homeward Staging Post → Automatic Return or Full RISK from actual conditions → complete Crossing → ordinary TRAVEL across the Home Median → reach the Colony**. The worked return uses the applicable current Return Crossing procedure and brings the whole party to the far side before any bounded penalty; no one is trapped mid-road. Clearing the Roadway does not trigger Homecoming or transfer Cargo. The party must still reach Morningside under direct control. No Landscape Voice passage is assigned here; Chapter 5.9 owns that treatment and Homecoming remains free of it |
@@ -2261,16 +2280,16 @@ one state-changing reception page.
 | **Narrative function** | Complete the Gale–Alder–Reed expedition, make Reed's continuing Wound a civic fact, and return the reader to the Home that departure altered |
 | **Narrative treatment** | Literal game text and worked-play culmination. Tier III Morningside receives the same three Citizens who left; their current bodies, belongings, losses, material return, and relationships enter the scene before any aggregate account |
 | **Register** | State-changing Homecoming MEET resolving to DWELL |
-| **Subjects** | Gale, Alder, Reed; the exact Tier III Morningside state and receiving Citizens; remaining Cargo; Gale's spent Offering and fishing-line Keepsake; Alder's usable Brace Tool; Reed's stabilized Wound; unspent Supplies; current Roles, Residences, Practices, and available Hearth-and-Healer care |
+| **Subjects** | Gale, Alder, Reed; the exact Tier III Morningside state and receiving Citizens; remaining Cargo; Gale's spent Offering and fishing-line Keepsake; Alder's usable Brace Tool; Reed's stabilized Wound; unspent Supplies; current Roles, Residences, Practices, and available Hearth capacity and Caretaker Balance |
 | **Incoming state** | The party has physically reached Morningside; the expedition remains active; no Cargo, Supply, bodily, civic, relational, or memory fact has yet been reconciled at Home |
-| **Outgoing state** | Homecoming has advanced one Day Band and ended the expedition; remaining Cargo is in Colony stock; unspent Supplies have returned to the prepared pool and all expedition Supply positions are clear; every spent, damaged, lost, bodily, relational, discovery, and memory fact persists; eligible Role contribution and Home systems are recalculated; the actual Care decision is resolved; DWELL resumes |
+| **Outgoing state** | Homecoming has advanced one Day Band and ended the expedition; remaining Cargo is in Stores; unspent Supplies have returned to the prepared pool and all expedition Supply positions are clear; every spent, damaged, lost, bodily, relational, discovery, and memory fact persists; eligible Role contribution and Home systems are recalculated; the actual care allocation is reconciled; DWELL resumes |
 | **Canon inputs** | Chapter 5.8; Chapters 3.5–3.7, 4.1, 4.6, 5.1, 5.5–5.7, and 6.1; Appendices D, E, G, and H; the exact continuous expedition state; current Morningside Colony and Citizen canon imagery |
-| **Semantic content** | The sequence reads **Frame → Recognize and receive → Reconcile → Continue**. Recognition and reception form one phase: Gale, Alder, and Reed are named; anyone absent would be shown; Reed's visible Wound, actual Item states, remaining Cargo, and the current receiving Colony appear before totals. Reconciliation automatically transfers remaining fungible Cargo; returns every unspent Supply; clears all expedition Supply positions; preserves Gale's consumed Offering, Alder's Tool state, Keepsakes, discoveries, relationships, Reed's Wound and stabilization state, hidden Exposure, and every other resolved Away fact; restores eligible standing Role contribution; and recalculates Civic Balance, Practice support, production, Projects, and Home state. Homecoming does not itself erase Exposure; Home recovery begins through its DAWN rule. Because Reed is Wounded and the worked Morningside state provides one available Hearth and eligible Healer, one real Care decision opens: begin the defined Wound Recovery Project now or defer it without blocking Homecoming. The worked result may commit care once the exact Healer and duration are fixed. No Allocation, Guest, succession, memorial, or other menu appears without an actual material alternative. The Record receives resolved facts; backend Campaign Memory selection later determines Chronicle and Tale presentation without asking the player to curate it here. Completion ends the expedition and returns control to DWELL; Quiet Equilibrium and EMBODY depend upon the resulting Colony state rather than Homecoming ceremony |
+| **Semantic content** | The sequence reads **Frame → Recognize and receive → Reconcile → Continue**. Recognition and reception form one phase: Gale, Alder, and Reed are named; anyone absent would be shown; Reed's visible Wound, actual Item states, remaining Cargo, and the current receiving Colony appear before totals. Reconciliation automatically transfers remaining fungible Cargo; returns every unspent Supply; clears all expedition Supply positions; preserves Gale's consumed Offering, Alder's Tool state, Keepsakes, discoveries, relationships, Reed's Wound and stabilization state, hidden Exposure, and every other resolved Away fact; restores eligible standing Role contribution; and recalculates Civic Balance, Practice support, production, Projects, and Home state. Homecoming does not itself erase Exposure; Home recovery begins through its DAWN rule. Reed adds one Patient Load to Caretaker Balance. Because the worked Morningside state has exactly one valid unoccupied Hearth for one Wounded Citizen, Reed occupies it automatically and no empty Care menu appears. The Hearth will record one Recovery Day at each eligible Home DAWN; no named Caretaker is committed and Storehouse Provisioning remains unchanged. A Care decision would open only if several Patients or existing intensive Hearth uses created materially different allocations. No Allocation, Guest, succession, memorial, or other menu appears without an actual material alternative. The Record receives resolved facts; backend Campaign Memory selection later determines Chronicle and Tale presentation without asking the player to curate it here. Completion ends the expedition and returns control to DWELL; Quiet Equilibrium and EMBODY depend upon the resulting Colony state rather than Homecoming ceremony |
 | **Asset lineage** | Reference-and-amend manifest row 11. Preserve the Colony-edge arrival, recognizable returning party, receiving Home, and emotional compression; replace the old Rushbottom cast, outcome panel, resource categories, portrait meters, reception score, advisor line, and option strip with the exact Morningside state-transition grammar. Existing Morningside and Citizen imagery is mandatory |
 | **Cross-reference** | Chapters 1.4, 1.5, 3.5–3.8, 4.1, 5.1, 5.6, 6.1, and 7.1; Appendices D, E, G, and H; `AUG-1.5-02` and `AUG-5.8-01` |
 | **Priority** | Essential |
-| **Approval state** | Approved through the continuous-expedition decision; exact receiving Citizens, Cargo, unspent Supplies, Healer, Wound Recovery duration and decision, Civic Balance result, Day Band, and interface composition remain for the coordinated asset brief |
-| **Acceptance test** | The same party that launched is visibly received; named lives and visible change precede totals; recognition and reception are one phase; every fact reconciles once to its actual owner; Reed's Wound persists into a genuine optional Care decision; Homecoming advances time and ends the expedition without grading it; no mission report, score, loot screen, universal allocation menu, player-curated memory, or Landscape Voice passage appears; and DWELL resumes from the Colony's actual changed state |
+| **Approval state** | Approved through the continuous-expedition decision; exact receiving Citizens, Cargo, unspent Supplies, Recovery-Day requirement, Civic Balance result, Day Band, and interface composition remain for the coordinated asset brief |
+| **Acceptance test** | The same party that launched is visibly received; named lives and visible change precede totals; recognition and reception are one phase; every fact reconciles once to its actual owner; Reed's Wound becomes Patient Load and Hearth occupancy without a Project or named Caretaker commitment; the worked single valid allocation resolves automatically while genuine competing allocations would open Care; Homecoming advances time and ends the expedition without grading it; no mission report, score, loot screen, universal allocation menu, player-curated memory, or Landscape Voice passage appears; and DWELL resumes from the Colony's actual changed state |
 
 The expedition spine therefore closes where it began:
 
@@ -2321,8 +2340,9 @@ before Launch, reduced by the party's real departure, advanced through DAWN
 while attention is Away, and reconciled through Homecoming and recovery. The
 first numerical exercise established the daily baseline of one Sustenance per
 resident Body Unit, including Citizens Away. Its other quantities—including
-stock levels, Practice counts, yields, spoilage, Cargo, Project duration, and
-individual rolls—remain hypotheses rather than canon or final tuning.
+resource levels in Stores, Practice counts, yields, spoilage, Cargo, Project
+duration, and individual rolls—remain hypotheses rather than canon or final
+tuning.
 
 The complete narrative, Story-Canon context, current-baseline ledger, and
 earlier procedural transcript are preserved in
@@ -2337,74 +2357,927 @@ holds together, not force the Sourcebook to print a complete accounting log.
 
 ### 6.7 Part VI — The Campaign
 
-#### Part threshold
+Part VI widens the timescale from one expedition to the history accumulated by
+a continuing Colony. Its opening should make duration perceptible before
+explaining how the game stores or presents it. Because Part V has followed
+Morningside closely, this threshold returns the book decisively to Mouse life
+and lets Rushbottom carry the first campaign-scale image.
 
-- Shift from one journey to accumulated history and continuing horizons.
+#### Part threshold — `AUG-P6-TH-01`
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Boundary between Part V and Part VI; supports Chapter 6.1, `Narrative.Memory`, and Appendix H's Rushbottom history |
+| **Reader task** | Feel the difference between one consequential journey and a civilization dense with accumulated lives, structures, absences, repairs, and remembered origins |
+| **Augment form** | Wordless Part plate |
+| **Working subject** | **After the Names Are Read** — internal production title only; Tier IV Rushbottom at the close of its Grand Manor Recognition |
+| **Scale** | Full page at the Part threshold |
+| **Narrative function** | Temporal expansion, recognition, continuity, and atmosphere |
+| **Narrative treatment** | Narrative-bearing environment. The gathered Colony beginning to disperse through its joined Home carries the aftermath without caption or narrated explanation |
+| **Register** | DWELL-adjacent civic scene rather than literal interface presentation |
+| **Subjects** | Tier IV Rushbottom; Barley as the active Leader; a lived assembly drawn from its Mouse and Guest Citizens; the above-ground joined Grand Manor; active Roadways and wet Pipe End ground |
+| **Incoming state** | Editorially, the reader has followed one Morningside expedition through Homecoming and seen how one journey changes particular lives. Within the depicted campaign, Rushbottom has reached eighteen living Body Units, Quiet Equilibrium, an available Leader, and committed its Grand Manor Civic Dedication |
+| **Outgoing state** | The reader enters Part VI with the sense that a campaign is a duration inhabited by many remembered lives; no additional game fact is created beyond the established Recognition aftermath |
+| **Canon inputs** | Chapters 6.1 and 6.3; Appendix H's complete Rushbottom history; current Rushbottom Colony representation set and canon images for every identifiable Citizen; archive rows 91, 100, and 101 as composition and density references only |
+| **Semantic content** | None on the plate. The next page carries Part and Chapter identification and begins the Campaign Memory explanation |
+| **Asset lineage** | New current-canon image-to-image composition. Preserve the archive family's dense Mouse adjacency and visible ordinary life while rebuilding the Colony, population, Practices, Guest presence, and recognition moment to v0.5 truth |
+| **Cross-reference** | Chapters 3.1, 3.7, 6.1, and 6.3; Appendices C and H |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The image reads first as a mature, inhabited Mouse civilization and then rewards inspection with accumulated repair, extension, age, Guest presence, and repeated use; Rushbottom remains entirely above ground and visible; the Roadways remain materially present; the scene is neither an exhaustive portrait lineup nor a generic crowd; and the plate contains no title, caption, Landscape Voice, interface text, or generated lettering |
 
 #### 6.1 Campaign Memory
 
-- Diagram Record, Chronicle, Tale, canon images, and Almanac without conflating
-  present state with remembered history.
-- Develop literal examples only after the information relationship is clear.
+Chapter 6.1 first establishes authority and information flow, then lets the
+reader inspect one event in its actual player-facing forms. The two tasks stay
+on separate self-sufficient pages: the first prevents Chronicle, Tales, canon
+images, and Almanac from becoming a decorative collage; the second prevents
+the architecture from remaining an abstract database diagram.
+
+##### AUG-6.1-01 — One Truth, Several Presentations
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.1; `Narrative.Memory`; Appendix C Campaign Memory reference and one-truth/several-presentations flow |
+| **Reader task** | Distinguish the hidden Record from Chronicle, Citizen and Item Tales, evolving canon images, and the present-and-future Almanac while understanding that every remembered presentation answers to one resolved history |
+| **Augment form** | Full-page infographic with one authority-flow diagram and one exact event moving through it |
+| **Working subject** | **One Truth, Several Presentations** — Rushbottom's Grand Manor Recognition as the worked event |
+| **Scale** | One complete landscape page |
+| **Narrative function** | Teaching through one particular civic event rather than a generic schema |
+| **Narrative treatment** | Intentionally none beyond concise literal labels and factual event fragments. `AUG-6.1-02` carries the written memory |
+| **Register** | Reference architecture sourced by a state-changing Home MEET |
+| **Subjects** | Rushbottom; Barley; the Grand Manor Recognition; the Colony's Chronicle and canon representation; Barley's Citizen Tale; Barley's bottle-cap Keepsake as a present but unchanged Item; the Almanac before and after resolution |
+| **Incoming state** | The Almanac presents eighteen living Body Units, Quiet Equilibrium, an available Home-present Leader, the committed Civic Dedication, and an available Recognition MEET while the Colony remains a Manor House |
+| **Outgoing state** | Commit resolves one Recognition event; Rushbottom becomes Grand Manor; consumed time and material update current state; one structured factual event enters the Record; affected player-facing histories and the Colony's current representation become eligible for selection or amendment |
+| **Canon inputs** | Chapter 6.1; Chapter 6.3 Recognition; Appendix C; Appendix H Rushbottom through Grand Manor; Barley's current identity and bottle-cap Keepsake; current and superseded Rushbottom canon views |
+| **Semantic content** | A left-to-right live flow reads **Almanac state and eligible possibility → Recognition MEET → resolved event → current state + one Record entry**. The historical branch then reads **Record → Chronicle selection / Barley Tale selection / Colony canon-image amendment**, while Citizen or Item histories untouched by the event remain unchanged. A return line shows the Almanac now presenting current Grand Manor state while remaining outside Campaign Memory. Compact labels distinguish factual authority, subject selection, written interpretation, visual continuity, and present or prospective information. The player performs the Recognition choice but does not tag, file, rank, approve, or write its memory outputs |
+| **Asset lineage** | New editable infographic using restrained current Rushbottom image fragments or cutouts only where they improve recognition. All arrows, labels, facts, and interface text remain production typography; generated imagery carries no instructional language |
+| **Cross-reference** | Chapters 1.5, 3.5, 4.1, 6.3, and 7.3; Appendices C and H; `AUG-6.1-02` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The Recognition enters the Record exactly once; Chronicle, Tale, and image are legible as selections or amendments rather than competing histories; the Almanac is unmistakably current/prospective and outside memory; the unchanged Keepsake demonstrates subject relevance without becoming a second lesson; no player-curation workflow appears; and the entire authority relationship can be understood on this page alone |
+
+##### AUG-6.1-02 — The Count at Grand Manor
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.1's Chronicle, Tales, Prior-life Tale, canon-image, and Almanac distinctions; `Narrative.Memory`; Appendix H Rushbottom |
+| **Reader task** | Experience how one established event can be expressed at civic, personal, and visual scales without changing its facts or making the player author the account |
+| **Augment form** | One composite page combining literal Chronicle and Citizen Tale presentations with a compact Colony canon-image succession |
+| **Working subject** | **The Count at Grand Manor** — the same resolved Rushbottom Recognition used by `AUG-6.1-01` |
+| **Scale** | One landscape page following the authority infographic; each page remains independently intelligible in single-page scroll reading |
+| **Narrative function** | Recognition, continuity, and demonstration of scale-specific remembered voice |
+| **Narrative treatment** | Literal game text. One concise Chronicle passage remembers the civic event; one concise Barley Tale passage connects known Chaff End history, Founding leadership, and the later Recognition; a visual-history panel places the superseded Manor House view beside the new current Grand Manor representation. This is Mouse animal voice shaped by JOIN, not Landscape Voice |
+| **Register** | Chronicle and Citizen Tale interfaces with canon-image history |
+| **Subjects** | Barley; Rushbottom; its living Citizens; the names remembered from Chaff End and the uncertainty that remains; the Manor House and Grand Manor Colony states; Barley's bottle-cap Keepsake as continuing visible identity rather than a newly changed Item history |
+| **Incoming state** | The event and authority flow are completely established by `AUG-6.1-01`; Barley's known Prior-life Tale precedes Rushbottom, and the campaign Record already contains Founding and the Colony's intervening history |
+| **Outgoing state** | None. These presentations select and interpret the resolved history without adding another event, changing the current image again, or deciding what the Colony did after Recognition |
+| **Canon inputs** | Current Chapter 6.1 and Appendix C rules; Appendix H Rushbottom Founding and Grand Manor history; Barley's current Citizen identity and canon image; current and superseded Rushbottom representation set; present naming and Mouse-language specifications in Appendix B |
+| **Semantic content** | The Chronicle passage names Rushbottom's Recognition, Barley's leadership, the living Colony, the remembered Chaff End names, preserved uncertainty, and the new civic title at Colony scale. Barley's Tale selects the same event through one life: prior knowledge at Chaff End, Focus and first leadership at Founding, the continuing discipline of counting, and leadership at Grand Manor Recognition. A narrow factual rail identifies the shared Record facts both passages must preserve. The image succession labels the earlier Manor House view as historical and Grand Manor as current. A restrained note identifies the bottle-cap Keepsake as still present and unchanged, so its Item Tale receives no new event merely because it appears in the scene. Exact remembered names or totals absent from current canon are neither reconstructed nor invented |
+| **Asset lineage** | New composite layout and original bounded game text. Remake archive rows 91, 100, and 101 only through current Rushbottom canon; use the accepted current representation set as mandatory source imagery. All prose and labels remain editable |
+| **Cross-reference** | Chapters 3.7, 4.1, 6.3, and 7.3; Appendices B, C, and H; `AUG-P6-TH-01` and `AUG-6.1-01` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | Chronicle and Tale differ recognizably in scale and attention while agreeing on every shared fact; Barley's Prior-life Tale remains distinguished from witnessed campaign history; the Colony image changes only because the established Tier change is materially visible; no obsolete Chaff End population, three-Founder opening, underground Colony, invented name list, player filing task, or Landscape Voice enters the page; and the treatment remains moving enough to explain why the architecture exists |
 
 #### 6.2 The opening campaign
 
-- Map the playable Founding Escape, Founding MEET, naming, Leadership,
-  Workshop bootstrap, Residence shortfall, Garden choice, early Node, first
-  Guest, Launch, and Homecoming.
-- Keep this mechanical map distinct from Part 0's literary sequence.
+Chapter 6.2 explains how the game authors its beginning without retelling Part
+0. The Rabbit Founding Escape supplies the principal visual continuity, while
+the mechanical account remains true for the selected Core Species and makes
+the Mouse opening exception exact. The augment sequence separates four
+questions: what remains playable during the escape, how ground becomes Home,
+how the three species reach equal opening scale, and where the tutorial yields
+to ordinary campaign choice.
+
+##### AUG-6.2-01 — The Escape Is Playable
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.2, opening-campaign mechanical sequence; `Architecture.Register`; Part 0 Founding Escape |
+| **Reader task** | Understand how DWELL, EMBODY, MEET, TRAVEL, RISK, montage, and Landscape Voice form one directed opening without collapsing into either an unplayable cinematic or an unrestricted ordinary campaign |
+| **Augment form** | Full-page sequence infographic using a small number of connected scene frames, Register labels, player-action labels, and persistent-state markers |
+| **Working subject** | **The Escape Is Playable** — the Founding Escape from Reach 4 flash-forward through arrival in Reach 5 |
+| **Scale** | One complete landscape page. The sequence may use two horizontal movements within the page but cannot depend on an adjacent spread |
+| **Narrative function** | Mechanical interpretation of the sustained Part 0 narrative rather than another telling of it |
+| **Narrative treatment** | Literal game fragments and narrative-bearing scene continuity. No new continuous prose; reuse the established Part 0 moments and imagery once those assets exist |
+| **Register** | DWELL → EMBODY → MEET → TRAVEL → RISK, returning to TRAVEL before the Founding MEET mapped separately in `AUG-6.2-02` |
+| **Subjects** | The selected Core-Species Founders; their ancestral Colony; the Chaos event; Reaches 1–5; four Reach-border Crossings; the final promising ground. The principal illustrated continuity uses Bramble, Twig, and Shadepatch because Rabbit carries Part 0 |
+| **Incoming state** | A mature ancestral Home exists in ordinary calm; the future Founders are present Citizens; the player has not yet established the permanent Colony that the campaign will follow |
+| **Outgoing state** | The Founders stand in the selected Reach 5 founding Biome at hidden Exposure 6; the ancestral Home is lost; one Founder carries Focus from the Chaos MEET; the promising ground is physically present but has not yet become Home |
+| **Canon inputs** | Chapter 6.2's ten-step sequence; Parts 0 and V Register doctrine; current Founder identities and ancestral Colony names for all three Story Civilizations; chosen-species Crossing grammar; current world cross-section and Reach-border road rules |
+| **Semantic content** | The connected sequence identifies **Reach 4 flash-forward → guided ancestral DWELL → short observational EMBODY lesson → Chaos state-transition MEET → directly controlled flight in TRAVEL → first playable RISK Crossing → authored movement-and-Crossing montage through Reaches 2–4 → final montage Crossing into Reach 5 → playable inspection of promising ground**. Each beat states what the player can do, what authorship constrains, and which fact persists. Four real Crossings are counted. The first playable Crossing visibly carries its protected consequence range: fatality, Maiming, and Tharn are unavailable. The diagram exposes the authored accumulation to Exposure 6 for the reader without implying that the player sees an Exposure meter. The Reach 4 composition appears first and gains chronological meaning when the montage returns to it. Landscape Voice waits for `AUG-6.2-02` and remains presentation rather than a sixth Register |
+| **Asset lineage** | Reuse or crop the eventual Part 0 Founding Escape assets rather than commissioning a second incompatible escape. Interface frames, arrows, Register names, player-agency labels, and state markers remain editable production elements. Archive row 81 supplies sequence rhythm only, not current cast, geography, chronology, or mechanics |
+| **Cross-reference** | Part 0; Chapters 1.4, 2.3, 5.2–5.3, and 6.2; Appendices F, G, and H; `AUG-6.2-02` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The reader can identify every Register transition, every directly playable interval, every authored compression, all four Crossings, the Focus carry-forward, and the hidden Exposure result; the opening still feels like one flight; no ordinary Register is redefined for tutorial use; and the page does not compete with Part 0 by rewriting its narrative |
+
+##### AUG-6.2-02 — Make Home
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.2, promising ground and Founding; Colony naming in Appendix B; `Home.Colony` and `Narrative.Memory` |
+| **Reader task** | Understand the precise state transition by which inspected Field ground becomes the campaign's one permanent Home, and see Leadership and the Colony name introduced as civic acts rather than setup-form fields |
+| **Augment form** | One composite literal game sequence: promising ground in TRAVEL, earned Landscape Voice, Founding MEET, Leader-and-name assembly, and the first ordinary DWELL frame |
+| **Working subject** | **Make Home** — New Elderbank's Founding at Ashcross as the principal worked presentation |
+| **Scale** | One landscape page composed from one dominant Founding MEET and three smaller before/commit/after states |
+| **Narrative function** | Threshold, recognition, and transformation |
+| **Narrative treatment** | Literal game text plus one short original Landscape Voice passage grounded in the exact Reach 5 terrain. No retrospective Chronicle prose appears because the event is still being lived |
+| **Register** | TRAVEL → state-transition MEET → DWELL |
+| **Subjects** | Bramble, Twig, and Shadepatch; the selected Ashcross founding ground; Elderbank as the visible ancestral name; Bramble as the Focus-derived default Leader; the player-assembled name New Elderbank in the Story-Civilization example |
+| **Incoming state** | The party has completed the final Crossing, entered Reach 5 at Exposure 6, and regained direct TRAVEL control. Focus from the Chaos MEET still belongs to Bramble. The ground satisfies the selected Rabbit founding-Biome relationship but is not yet Home |
+| **Outgoing state** | Commit to **Make Home** establishes the permanent Home territory, one active Leader, the permanent player-composed Colony name, its Founding Record event, and ordinary DWELL before the first construction commitment |
+| **Canon inputs** | Chapter 6.2; Appendix B's constrained Colony-name assembly; Appendix C Campaign Memory; Bramble, Twig, and Shadepatch canon identities; current Ashcross and New Elderbank founding imagery; Rabbit GATHER and founding-Biome rules |
+| **Semantic content** | The first state lets the player inspect terrain and the exhausted Founders. A brief Landscape Voice passage attends to air, quiet, ground, vegetation, and bodily relief without announcing hidden safety or deciding the choice. The state-transition MEET presents **Make Home** as the consequential Commit. The next panel shows Bramble preselected as Leader because Bramble carried Focus, while Twig and Shadepatch remain valid player choices; one Founder must sustain Leader before the name is spoken. The naming field keeps **Elderbank** visibly present and assembles the new name from curated, species-influenced word, sound, and form lists through permitted patterns; semantic palettes influence suggestions without restricting meaning. Confirmation makes the full name permanent. The final frame changes to ordinary DWELL on the same recognizable ground with the Founders, provisional Stores cache, and no completed Place or Practice |
+| **Asset lineage** | Reuse the final Part 0 arrival ground and the current Founder images as mandatory input; transform the same geography through interface state rather than replacing it with an unrelated Colony vista. Every name component, option, label, and Landscape Voice line remains editable typography |
+| **Cross-reference** | Part 0 ending; Chapters 1.5, 3.1, 3.4, and 6.1–6.2; Appendices A–C and H; `AUG-6.2-01` and `AUG-6.2-03` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The exact ground survives all three presentations; Landscape Voice prepares attention without founding the Colony; Commit, Leader selection, and naming each have distinct authority; the old Colony name remains visible; the naming palette constrains available language without prescribing meaning; Focus supplies a default rather than removing choice; and the resulting DWELL state contains only facts the Founding transition established |
+
+##### AUG-6.2-03 — Three Foundings, One Civic Scale
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.2, early Colony development; Body Units, Civic Balance, Stores, Project Queue, and Story-Civilization openings |
+| **Reader task** | Compare how Mouse, Rabbit, and Squirrel openings reach the same three-Body-Unit civic scale while preserving different numbers of individual lives, construction participation, spatial expression, and campaign flavor |
+| **Augment form** | Full-page comparative infographic with three species columns feeding one common early-development sequence |
+| **Working subject** | **Three Foundings, One Civic Scale** — Rushbottom, New Elderbank, and Morningside from Founding through the first post-Workshop strategic choice |
+| **Scale** | One complete landscape page |
+| **Narrative function** | Recognition of six Mouse lives as particular Citizens while teaching parity and the first genuine civic choice |
+| **Narrative treatment** | One compact worked state change for Weft and Warp's arrival; otherwise concise labels, exact portraits, Colony fragments, and mechanical comparison rather than a second opening narrative |
+| **Register** | Home MEET and DWELL reference |
+| **Subjects** | Barley, Thimble, Pip, Husk, Weft, and Warp at Rushbottom; Bramble, Twig, and Shadepatch at New Elderbank; Rowan, Cobb, and Gale at Morningside; each Colony's provisional cache, first Builder commitment, Workshop, and Residence-or-Garden choice |
+| **Incoming state** | Each Colony has just completed its Founding transition. Rabbit and Squirrel each have three one-Body-Unit Founders. Mouse has four half-Body-Unit Founders until an immediate authored Home MEET introduces Weft and Warp |
+| **Outgoing state** | Each opening has three resident Body Units, six named Mouse Citizens or three named Rabbit/Squirrel Citizens, three Body Units of Housing Pressure, one visible provisional Stores cache, and the same ordinary path into Workshop capacity and the first Residence-or-Garden decision |
+| **Canon inputs** | Chapter 6.2; Chapters 3.3–3.6; Appendices D, E, and H; every named Founder's current identity; Weft and Warp; current founding states for Rushbottom, New Elderbank, and Morningside |
+| **Semantic content** | The three opening equations read **Rabbit: 3 Citizens × 1 Body Unit = 3**, **Squirrel: 3 × 1 = 3**, and **Mouse: 4 × 0.5 = 2; Weft + Warp add 1; 6 Citizens = 3 Body Units**. Weft and Warp enter as two complete Wanderer Citizens with distinct histories through the authored post-Founding Home MEET; their arrival creates no general rule for later Wanderers. All Founders begin at Exposure 6, recover to 3 at the first Home DAWN and 0 at the second, and consume the normal one Sustenance per resident Body Unit per day. A fixed reserve appears as pooled Stores in one provisional cache and supports the first Workshop plus either one Residence or one Garden. Three Body Units of Housing Pressure introduce Civic Balance. The tutorial directs one Rabbit or Squirrel toward Builder and suggests Thimble plus Husk as two Mouse Builders; one Mouse remains legal but supplies only one-half Civic Share-Day. The first Workshop alone receives the bootstrap exemption. Completion opens the ordinary Project Queue and the first strategic fork: Residence answers Housing Pressure; Garden begins passive Sustenance; the unchosen need remains visible. Storehouse remains an ordinary later Project and the founding cache supplies neither Practice Strength nor Provisioning |
+| **Asset lineage** | New editable infographic using mandatory current portraits and small current-canon founding-ground fragments. No generated image may contain arithmetic, names, labels, or rules text. The Mouse column may draw compositional atmosphere from archive rows 192 and 193 only after restoring all four Founders and treating Weft and Warp as subsequent arrivals |
+| **Cross-reference** | Chapters 3.2–3.6 and 4.2; Chapter 6.2; Appendices D, E, and H; `AUG-3.5-02`, `AUG-6.2-02`, and `AUG-6.2-04` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The comparison makes mechanical parity immediate without pairing or anonymizing Mice; all twelve opening Citizens remain individually legible; the Mouse arrival is clearly authored rather than a universal rule; Exposure recovery, Sustenance demand, Housing Pressure, Workshop bootstrap, and the first project fork agree across the three openings; and no exact untuned project cost or material quantity is invented |
+
+##### AUG-6.2-04 — The Opening Lets Go
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.2, first expeditions and release into open play; `Architecture.Cycle.HomeAwayReturn` |
+| **Reader task** | Distinguish the opening campaign's few authored assurances from the ordinary choices and consequences that already belong to the player |
+| **Augment form** | Compact system diagram integrated into a designed prose page, reusing reduced fragments of existing Launch, TRAVEL or Node, Guest, and Homecoming presentations rather than commissioning another complete interface family |
+| **Working subject** | **The Opening Lets Go** — first strategic Project choice through the first ordinary Homecoming |
+| **Scale** | Partial-page dominant diagram within one Chapter page; it does not require a full-page infographic |
+| **Narrative function** | Release, orientation, and boundary-setting rather than a new Story-Colony episode |
+| **Narrative treatment** | Intentionally none. Part 0 has carried the opening narrative, and Part V already supplies the complete worked expedition. This treatment shows where authored onboarding ends |
+| **Register** | DWELL → Launch MEET → TRAVEL, with possible RISK and Node MEET → Homecoming MEET → DWELL |
+| **Subjects** | The selected opening Colony and first legal expedition; Home Median and first Margin opportunity; one early Sustenance or Contested Node; one Guest-species appearance; the receiving Colony at first Homecoming |
+| **Incoming state** | The first Workshop exists, the player has chosen Residence or Garden as the next civic answer, and the Colony now has enough legible structure to form an ordinary Launch without a prescribed destination or hidden promised reward |
+| **Outgoing state** | The first Homecoming has recognized and reconciled the actual journey, returned control to changed DWELL, and released the campaign into ordinary play without another tutorial state |
+| **Canon inputs** | Chapter 6.2; Chapters 5.1–5.8; Appendices G and H; approved Launch, Node, Guest, and Homecoming augment families already mapped elsewhere |
+| **Semantic content** | A single progression distinguishes authored conditions from player decisions. **Authored:** the Home Median may contain Sustenance and minor Scrap Nodes; if the first encountered Node is on the Home Median it may be uncontested Sustenance; if the first encountered Node is in a Margin it is Contested; at least one Guest species appears within the first four post-Founding MEETs without requiring adoption; the first Homecoming uses the complete ordinary reconciliation. **Player-directed:** party, visible Items, departure timing, Home subtraction accepted, Home Median exploration or Crossing toward a Margin, Node engagement, MEET response, continued travel, turning homeward, and what actually returns. The first Launch reveals no unseen Node and prescribes no solution. A final boundary marks the first Homecoming as completion of onboarding, not completion or grading of a mission |
+| **Asset lineage** | Reuse reduced, exact fragments from `AUG-5.1-01`, the applicable Node and Guest mappings, and `AUG-5.8-01`; no additional full Launch or Homecoming mockup is required. Diagram arrows, authored/player labels, and exception text remain editable |
+| **Cross-reference** | Chapters 1.3–1.5, 3.5, 4.3, and 5.1–5.8; Appendices G and H; `AUG-6.2-03` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | Every early exception is visible and bounded; every ordinary decision remains genuinely player-directed; the Guest appearance is neither an automatic adoption nor a fourth fixed event; the first expedition uses normal Launch, travel, Node, RISK, MEET, return, and Homecoming rules; no new UI mockup is created where an approved exact fragment suffices; and open play begins from the state the journey actually produced |
+
+#### Development follow-up — opening-campaign parity test
+
+The opening campaign is a strong future candidate for the paired narrative and
+system exploration method. Before its coordinated asset brief or final economy
+tuning, instantiate Mouse, Rabbit, and Squirrel openings from Founding through
+first Homecoming against the same current rules: one Sustenance per resident
+Body Unit per day, Exposure 6 recovery, the fixed reserve, provisional cache,
+Housing Pressure, Workshop bootstrap, Residence-or-Garden choice, Role
+subtraction at Launch, and ordinary Homecoming reconciliation. Use comparable
+player choices where comparison is meaningful without erasing body, party, or
+Species differences.
+
+The Mouse opening merits the accompanying narrative realization: four Founders
+receiving Weft and Warp, building through half Civic Shares, and sending a
+first legal party should reveal whether six individually particular lives feel
+like parity rather than multiplication. The ledgers and narrative remain
+development evidence until authorial discussion adopts any discovery; no
+provisional resource amount, duration, dialogue, or outcome becomes canon by
+appearing in the exercise.
 
 #### 6.3 Civic progression
 
-- Compare Species-specific Tier names, population gates, Quiet Equilibrium,
-  Leader ceremony, material dedication, Practice improvements, and the
-  optional Tier IV horizon.
+Chapter 6.3 must make civic progression legible without turning the campaign
+into an upgrade ladder. Three treatments separate the scale already reached,
+the deliberate act by which that scale is recognized, and the other kinds of
+persistent development that remain independent of Tier. Mouse, Rabbit, and
+Squirrel receive equal visual weight in the comparative page. The sustained
+worked history then moves to Morningside: Part VI has opened with Rushbottom
+and Chapter 6.2 principally follows New Elderbank, so a Squirrel Recognition
+completes the rotation without forcing species symmetry into every page.
+
+##### AUG-6.3-01 — One Scale, Three Civic Forms
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.3's four Colony Tiers and population eligibility; Appendix D Tier reference; Appendix H Story Civilizations |
+| **Reader task** | Read the four common mechanical scales, their Body-Unit thresholds, and the three Core Species' civic names and physical expressions without interpreting Tier as a population cap, building level, or unlock tree |
+| **Augment form** | Full-page comparative infographic with one common four-Tier scale and three equally weighted civilization sequences |
+| **Working subject** | **One Scale, Three Civic Forms** — Rushbottom, New Elderbank, and Morningside at the moments their four recognized civic forms become true |
+| **Scale** | One complete landscape page; every Tier and Species must remain readable without an adjacent spread |
+| **Narrative function** | Long-duration recognition, parity, and difference through accumulated inhabited form |
+| **Narrative treatment** | Intentionally no continuous prose. Exact Story-Civilization snapshots make the comparison particular, while concise labels identify them as examples rather than prescribed campaign schedules |
+| **Register** | Campaign reference grounded in successive DWELL states, not a literal upgrade interface |
+| **Subjects** | Rushbottom as First Rooms, Joined House, Manor House, and Grand Manor; New Elderbank as Close Commons, Open Commons, Court, and Grand Court; Morningside as First Anchors, Linked Ways, Living Web, and Grand Web; their current-canon ground and representative lived populations |
+| **Incoming state** | Chapter 6.2 has established all three Colonies at the same three-Body-Unit Founding scale through different numbers of complete individual Citizens |
+| **Outgoing state** | The reader can translate a common Tier number or Body-Unit threshold into each Species' own civic language and can recognize Tier IV as optional grand ambition rather than the mandatory end of play |
+| **Canon inputs** | Chapter 6.3; Appendix D Colony Tier recognition; Appendix H's exact Story-Civilization Tier snapshots and rosters; current Species spatial grammars; current and superseded Colony canon-image sets |
+| **Semantic content** | A common scale establishes **Tier I: Founding**, **Tier II: 7 living Body Units**, **Tier III: 12**, and **Tier IV: 18**. Concise interpretive captions distinguish the founded Home, the Colony able to prepare beyond its next immediate need, the mature and durable Home able to endure and choose, and optional grand ambition; these meanings are recognitions of scale, never additional eligibility tests. The three equal sequences name **First Rooms → Joined House → Manor House → Grand Manor**, **Close Commons → Open Commons → Court → Grand Court**, and **First Anchors → Linked Ways → Living Web → Grand Web**. Story examples show Rushbottom's **6 / 12 / 20 / 30 named Citizen subjects** and New Elderbank's and Morningside's **3 / 7 / 12 / 18 named Citizens** at those recognitions while retaining the shared **3 / 7 / 12 / 18 Body-Unit** scale. Every Mouse remains separately depicted and named; collective-bodied Guests remain single Citizens. A narrow eligibility rail states that every living Roster Citizen contributes their ordinary Body Unit regardless of age, health, availability, or current location and that population alone creates Tier eligibility. The Colony views accumulate inhabited specificity rather than simply becoming larger silhouettes. Tier names describe recognized civic form and historical scale; no stat increase, content unlock, population ceiling, or required roster composition follows from the diagram |
+| **Asset lineage** | New editable comparative composition built from mandatory current Colony representations and Citizen references. Existing Tier and growth artwork may supply composition, material, or same-ground continuity only after current-canon reconstruction; stale labels, populations, buried architecture, and implied level-up effects do not survive. All names, thresholds, and counts remain production typography |
+| **Cross-reference** | Chapters 2.3, 3.2–3.4, 3.7, and 6.2–6.4; Appendices D and H; `AUG-6.2-03` and `AUG-6.3-02` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | All twelve civic names and all four thresholds are exact; the Species receive equal area and dignity; Mouse numerical presence reads as many particular lives rather than duplicated tokens; Story-Civilization rosters are clearly examples rather than mandatory schedules; population is the sole eligibility gate; Tier IV is visibly optional; and no tier supplies a bonus, unlock, cap, downgrade, or victory state |
+
+##### AUG-6.3-02 — Before the Grand Web
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.3's deferral, Quiet Equilibrium, Leader, Civic Dedication, Recognition MEET, and historical persistence rules; Appendix H Morningside through Grand Web |
+| **Reader task** | Distinguish becoming population-eligible from choosing when the Colony is ready to recognize that scale, then follow the exact civic transaction from deferral through ceremony and persistent history |
+| **Augment form** | One designed narrative-and-mechanics page combining a half-page lived scene, a compact eligibility-to-recognition state strip, and a bounded literal Recognition-MEET fragment |
+| **Working subject** | **Before the Grand Web** — Morningside reaches eighteen Body Units, chooses one more connection before recognition, and later conducts the Grand Web ceremony |
+| **Scale** | One self-contained landscape page; the narrative scene dominates, while mechanics and interface remain integrated rather than forming a separate full-page mockup |
+| **Narrative function** | Demonstrate that recognition names a judgment about a particular Home rather than rewarding automatic accumulation |
+| **Narrative treatment** | Two short original animal-voice passages derived directly from the fixed Morningside account: Rowan favors proceeding, Cobb asks what the most prominent connection leaves behind, and Spindle identifies another line; after the player's chosen work and restored civic calm, Cobb conducts Recognition. This is Squirrel civic voice shaped by REACH, not Landscape Voice |
+| **Register** | DWELL and ordinary Project commitment leading to a state-transition Recognition MEET and returning to changed DWELL |
+| **Subjects** | Rowan, Cobb, Spindle, the selected additional Morningside connection, the living Tier IV Roster and whichever Citizens are Home-present for the ceremony, the Grand Web Civic Dedication, and the resulting recognized Colony |
+| **Incoming state** | Morningside has eighteen living Body Units and is therefore eligible for Tier IV. The Civic Dedication has not been committed; the player remains free to recognize now when the other conditions are met or to defer indefinitely |
+| **Outgoing state** | The elected Builder work is complete; Quiet Equilibrium has returned; Cobb is an available Home-present Leader; the player commits the Civic Dedication; one Day Band advances; the Recognition MEET names Morningside a Grand Web; and that recognized Tier enters Campaign Memory as permanent history |
+| **Canon inputs** | Chapter 6.3; Chapter 1.5 state-transition MEET grammar; Appendix D Recognition reference; Appendix H Morningside Grand Web history; Rowan, Cobb, Spindle, and current Morningside identities and canon imagery |
+| **Semantic content** | The state strip reads **18 living Body Units → eligible possibility → player may defer → chosen ordinary Builder Project → Quiet Equilibrium + available Home-present Leader + uncommitted Civic Dedication outside reserves → Commit Recognition → consume Dedication + advance one Day Band → Recognition MEET → Grand Web current state and Record fact**. Rowan, Cobb, and Spindle frame a real player decision; no Citizen independently vetoes or commands it. The additional connection is an ordinary chosen Project and never appears as a universal or hidden Tier requirement. Committing Recognition occupies no Project Queue slot. A Gathering Place hosts when available but is not another gate. Civic material becomes strengthened anchors, landings, primary ways, alternate lines, and sheltered connections throughout the existing Home without remaining in Stores or creating Capacity, Practice Strength, another Place, or a numerical Tier bonus. Cobb is the selected active Leader in this history; a concise general note states that any equally eligible Focus clash resolves randomly. The Recognition MEET uses the shortened state-transition grammar **Frame → Reconcile → Continue**. Later contraction, Pressure, or damage can alter Morningside but cannot revoke Grand Web history |
+| **Asset lineage** | New current-spec narrative composition and small editable interface fragment using mandatory Morningside, Rowan, Cobb, and Spindle references. Do not commission another generic full MEET template or duplicate `AUG-6.1-01`'s memory architecture. Existing Squirrel Colony artwork may inform elevation, connection, and scale only after the exact Home and cast are rebuilt |
+| **Cross-reference** | Chapters 1.5, 3.2–3.4, 6.1, and 6.4; Appendices C, D, and H; `AUG-6.1-01`, `AUG-6.3-01`, and `AUG-6.3-03` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | Population eligibility and ceremony readiness are visibly distinct; deferral has no penalty or countdown; the Citizens' arguments illuminate rather than usurp the player's choice; the extra line never becomes a universal gate; Dedication is a resource sink and civic transaction rather than a Project; the Day Band cost and active Leader are explicit; the MEET is presentational rather than a second decision tree; no untuned recipe is invented; and recognized Tier persists without making the Colony invulnerable |
+
+##### AUG-6.3-03 — Many Changes, No Upgrade Tree
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Closing of Chapter 6.3 and transition into Chapter 6.4; Tier independence from Practice improvement and Corridor development |
+| **Reader task** | Separate recognized civic scale from functional improvement and geographic reach, and understand why a campaign can pursue, defer, reorder, or stop one form of development without freezing the others |
+| **Augment form** | Compact relational diagram integrated into a designed prose-and-reference page; partial-page rather than a full-page infographic |
+| **Working subject** | **Many Changes, No Upgrade Tree** |
+| **Scale** | One dominant diagram occupying roughly half a landscape page, with explanatory prose and one or two small persistent-object illustrations around it |
+| **Narrative function** | Conceptual clarification and forward transition; no new campaign incident |
+| **Narrative treatment** | Intentionally none. `AUG-6.3-02` supplies the particular lived history; this page protects the general architecture from a familiar but incorrect technology-tree reading |
+| **Register** | Cross-system campaign reference |
+| **Subjects** | Colony Tier Recognition; ordinary Place, Residence, and Practice Projects; one bounded Practice improvement such as Winter Cultivation; Outpost and relationship-based Corridor development; Campaign Memory |
+| **Incoming state** | The reader has seen Morningside choose additional work before an optional Tier IV ceremony and has seen Recognition become permanent history |
+| **Outgoing state** | Chapter 6.4 can discuss outward Corridor history without implying that Colony Tier grants range, Outposts, improved Practices, or new MEET content |
+| **Canon inputs** | Chapters 3.3–3.4, 6.3, and 6.4; Appendix D Practice-improvement and Tier reference; Appendices F and G Corridor and Outpost reference |
+| **Semantic content** | Three independent lines share campaign time but no unlock arrows. **Recognized scale:** living Body Units create eligibility; the required civic conditions and the player's voluntary Dedication commitment permit ceremony; Recognition produces a permanent Tier name and history. **Situated capability:** a need and ordinary Project requirements may improve one particular Practice; Winter Cultivation remains available on its own terms before, during, after, or without the next Tier recognition. **Practical range:** expeditions, relationships, natural refuges, and Outposts make more of the existing Corridor usable; Chapter 6.4 governs that history. Ordinary construction continues across all three. Civic Dedication is never spendable technology currency, Practice improvements are not Tier rewards, Outposts have no Tier, and no Tier grants expedition distance. Tier IV is optional; reaching it neither ends the campaign nor completes other forms of development. Later population contraction leaves recognized Tier history intact while current civic conditions continue to change normally |
+| **Asset lineage** | Entirely editable production diagram with restrained current Place, improved Practice, Outpost, and recognized-Colony cutouts only where they clarify object identity. No generated image carries arrows, dependency claims, or instructional text |
+| **Cross-reference** | Chapters 3.3–3.4 and 6.1–6.4; Appendices D, F, and G; `AUG-3.3-01`, `AUG-3.4-03`, `AUG-5.7-02`, and `AUG-6.3-02` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The page cannot be read as a technology tree; Winter Cultivation or another Practice improvement remains independent of Tier; Tier supplies no travel range or content unlock; Corridor development remains continuous world history rather than a separate score; Tier IV is optional and nonterminal; contraction does not erase recognition; and each persistent change retains one canonical owning system |
 
 #### 6.4 Corridor progression
 
-- Show continuing outward movement without Routes, stationed Outpost Citizens,
-  or a mandatory campaign ladder.
+Chapter 6.4 shows a world becoming known, revisitable, and practically
+accessible without turning geography into a ladder. Its two pages move from
+the campaign-scale map to one particular place across repeated visits. The
+first page explains accumulated reach without redrawing TRAVEL or Outpost
+mechanics already established in Part V. The second makes persistence lived:
+the same ground can hold ecology, material, an agreement, depletion, recovery,
+and recognition at once.
+
+##### AUG-6.4-01 — The Same World, More Known
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.4's continuous Corridor, practical range, accumulated outward history, Outpost chain, map, Almanac, and independence from Colony Tier; Appendices F and G |
+| **Reader task** | Understand Corridor progression as facts accumulated within one always-continuous world rather than territory acquisition, route unlocking, or a second campaign score |
+| **Augment form** | Full-page campaign-map infographic built around one longitudinal top-down Corridor base and three chronological states of the same geography |
+| **Working subject** | **The Same World, More Known** — one representative later New Elderbank campaign centered on Ashcross and extending through adjoining Reaches and Margins |
+| **Scale** | One complete landscape page; the full causal relationship must remain readable without an adjacent spread |
+| **Narrative function** | Temporal accumulation, orientation, and recognition of familiar country |
+| **Narrative treatment** | Intentionally no continuous prose. Short literal map and Almanac fragments identify discovered, changed, and presently knowable facts without inventing another Story-Colony episode |
+| **Register** | Campaign map and Almanac reference grounded in ordinary TRAVEL, RISK, MEET, Rest, and Home Projects rather than a new progression interface |
+| **Subjects** | New Elderbank as the permanent Home center; several continuous Reaches and both Margins; known Staging Posts, Nodes, one natural refuge, one usable Outpost, one changed Node, and one particular relationship; the active Roadways between them |
+| **Incoming state** | The entire Corridor physically exists. The Colony knows Home, its immediate ground, and only the farther facts actually established through observation, travel, or known report |
+| **Outgoing state** | The same map has accumulated reliable places, present Node states, a usable foothold, and particular social history while every intervening stretch and Crossing remains physical and every future expedition still begins at Home |
+| **Canon inputs** | Chapter 6.4; Chapter 2 Corridor geometry and persistent world; Chapters 5.2, 5.4, and 5.7; Appendix F Corridor, time, environment, Road Work, and Node state; Appendix G projected reach, Rest, Node, Outpost, Return, and bodily-state rules; current Ashcross and New Elderbank geography where established |
+| **Semantic content** | One unchanged basemap carries three dated information states: **near ground known**, **farther places visited**, and **country made ordinarily usable**. The first records Home, directly observed ground, and a few known Staging Posts or Nodes. The second adds actual discoveries, a natural refuge, a particular encounter relationship, and changed Node state. The third adds a completed Outpost and later depletion, recovery, damage, occupation, or alteration where the worked places support it. No travel line connects the marks: Outposts form a useful geographic chain only because direct TRAVEL and every intervening Crossing still join their real positions. A side rail states that practical range is recalculated from current distance, terrain, weather, travel cadence, Carry, party bodies, Exposure, Wound or other bodily state, physical obstruction, refuge, Outposts, and the necessary return; it is never stored as a territory radius. The map presents spatial facts and current place state. The Almanac presents known current, scheduled, forecast, or possible conditions such as recovery, damage, weather, or Road Work without becoming Campaign Memory. Unvisited ground is neither acquired nor level-locked. A small independent-scale note confirms that Colony Tier supplies no geographic range and that useful Corridor history can precede or continue beyond any Tier recognition |
+| **Asset lineage** | New editable campaign-map composition using the current world cross-section and Ashcross ground as authority. Reuse reduced exact symbols or visual fragments from `AUG-5.2-02`, `AUG-5.7-01`, and `AUG-5.7-02` rather than commissioning another TRAVEL or Outpost interface. Historical corridor diagrams may inform longitudinal readability only; hub chains, route vectors, ownership zones, frontier tiers, and network scores are discarded |
+| **Cross-reference** | Chapters 2.1–2.5, 5.2, 5.4, 5.7, 6.1, and 6.3–6.5; Appendices C, F, and G; `AUG-5.2-02`, `AUG-5.7-02`, and `AUG-6.3-03` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | All three states depict one continuous geography; accumulated marks are facts rather than claimed territory; no Route, waypoint chain, adjacency bonus, fog ladder, fixed range radius, teleport, Outpost network score, or Tier gate appears; the Outpost remains uninhabited; practical range remains current and derived; the map and Almanac retain distinct authority; and later familiarity never erases the return journey |
+
+##### AUG-6.4-02 — The Bramble, Three Times
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.4's revisitable change, relational access, Node depletion and recovery, and particular rather than universal social standing; Appendix F Persistent Places and Nodes; Appendix G Engaging Nodes and Away MEET |
+| **Reader task** | See one recognizable Node retain ecological and relational history across several visits while each current state still produces its own choices and limits |
+| **Augment form** | One designed narrative-and-mechanics page with three views of the identical Node, concise scene text, reduced current-spec MEET fragments, and small map/Almanac state amendments |
+| **Working subject** | **The Bramble, Three Times** — Teasel, Yarrow, and Burdock revisit one Sound-Wall-side bramble Node and the Raccoon whose claim first made it Contested |
+| **Scale** | One self-contained landscape page. The repeated physical landmark governs composition; interface and prose occupy subordinate fields around it |
+| **Narrative function** | Familiarity, particular relationship, ecological time, and recognition of less-common continuing Citizens |
+| **Narrative treatment** | Three short original New Elderbank scene fragments shaped by GATHER, alternating literal game text with restrained animal speech or action. No Landscape Voice appears. The sequence is a current-rules worked example of a possible campaign state, not a mandatory event in Appendix H's fixed New Elderbank chronology |
+| **Register** | Repeated TRAVEL and contextual Node MEET across separate expeditions, with map and Almanac updates between visits |
+| **Subjects** | Teasel and the continuing reality of a forefoot Maiming; Yarrow; Burdock as Hedgehog Expedition Guest; one physically exact bramble Node; one unaffiliated Raccoon counterpart; its actual seasonal abundance and claim |
+| **Incoming state** | The Node is a recognizable but unvisited ecological and relational place. The present party reaches it through ordinary travel; neither New Elderbank nor these Citizens possess prior standing there |
+| **Outgoing state** | The Node retains the established agreement, its current depleted or recovered abundance, the involved animals, and the exact visit history. The relationship changes a later applicable response without becoming general New Elderbank reputation or guaranteed access elsewhere |
+| **Canon inputs** | Chapter 6.4; Chapters 1.5, 4.1, 4.3, 5.4, and 5.5; Appendices F, G, and H; current Teasel, Yarrow, and Burdock identities, bodies, Items, and canon imagery; current contested-MEET and relationship rules |
+| **Semantic content** | **First visit — Contested:** the party finds the Raccoon's active claim and enters the fixed five-family contested display. A committed PARLEY establishes one physically specific gathering agreement and its actual cost or term; the exact expression remains for the asset brief rather than silently assigning an Item. The Node records the counterpart, involved Citizens, agreement, and reduced abundance. **Second visit — Depleted:** the same ground and Raccoon are recognizable, but present ecology supplies no harvest merely because the relationship persists. The map reports the depleted state; the Almanac may present a bounded seasonal recovery prospect only if it is known. **Third visit — Recovered:** actual seasonal recovery restores abundance. The existing relationship changes the concrete PARLEY response and likely direction when the involved Raccoon and applicable history are present; it neither removes MEET nor guarantees the result. A narrow contrast states that another occupant, venue, or Node receives no automatic benefit from this history. Teasel's altered gait remains visible without becoming immunity or a special modifier; Burdock's Signature appears only if the current response actually makes Living Cover relevant. The Node never receives a generic cleared, completed, allied, or farmed state. Cargo, time, and any later consequence continue through their owning systems without provisional yield numbers |
+| **Asset lineage** | Reference and remake the durable composition of legacy berry-bush and contested-resource encounters only at the level of animal-scale confrontation around one abundant landmark. Replace the anonymous or obsolete cast, rigid option set, portrait meters, resource labels, and old consequences with the current Citizens, exact Node, current five-family MEET grammar, and editable production text. All three views use the same generated base geography amended for season, use, and present bodies |
+| **Cross-reference** | Chapters 1.5, 2.4, 4.3, 5.4–5.5, and 6.1; Appendices C, F, G, and H; `AUG-6.4-01` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The landmark is unmistakably the same Node three times; ecology and relationship remain separate persistent facts; depletion blocks material gain without deleting trust; recovery follows the world's conditions rather than a visible reset timer; the later response changes only through applicable participants and history; no reputation meter or universal Colony access appears; the less-common Citizens remain particular; and no fixed yield, Item expenditure, or unapproved Story-Colony event is smuggled into canon |
+
+#### Development follow-up — accumulated-Corridor campaign test
+
+Before the coordinated Chapter 6.4 asset brief, use the paired narrative and
+mechanical-simulation method to instantiate the three bramble visits and one
+intervening Outpost Project from a single exact New Elderbank state. Track the
+actual Home subtraction, parties, Day Bands, Crossings, travel cadence,
+Exposure, Carry and Cargo, Node abundance, relationship facts, returns, Home
+reconciliation, Builder commitment, and later practical range. The exercise
+should test whether the world feels progressively familiar without acquiring
+Routes or a progression score, and whether the map and Almanac can present the
+result without duplicating Campaign Memory.
+
+The simulation is diagnostic evidence. Resource quantities, Node yields,
+recovery intervals, Project requirements, exact dialogue, and MEET outcomes
+remain provisional until separately adopted; appearance in the ledger or
+narrative does not make them canonical tuning.
 
 #### 6.5 Campaign horizons
 
-- Locate Metropolis, Interchange, Ancestral Home, special zones, continuing
-  Guests, improvements, and story-civilization Tier histories.
-- Decide where story-colony horizontal slices belong in body versus Appendix.
+Chapter 6.5 gives the campaign's farthest authored territories their own civic
+and emotional identities without converting them into a mandatory sequence of
+special levels. Its full-page comparison serves as the Chapter opening, so no
+separate decorative Chapter plate is required. A Remembrance history then
+returns the Rabbit book-spine to Elderbank, while a literal comparative page
+shows why the Interchange and Rest-Stop Metropolis both remain Away territories
+despite their radically different forms of plurality.
+
+The complete Story-Civilization horizontal slices remain in Appendix H. Core
+uses recurring Citizens and bounded excerpts from those histories where a
+specific horizon becomes lived play; it does not repeat all three Tier
+chronologies at the campaign climax.
+
+##### AUG-6.5-01 — Three Horizons
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.5's Ancestral Home, Interchange, Rest-Stop Metropolis, ordinary Away access, continuing availability, and absence of a formal victory condition |
+| **Reader task** | Distinguish the three canonical horizons by their civic condition and play promise while understanding that all remain optional territories reached through ordinary Corridor systems |
+| **Augment form** | Full-page Chapter-opening infographic with three equally weighted illustrated territories, one common Away-system foundation, and concise contrast fields |
+| **Working subject** | **Three Horizons** — society lost, plurality in immediate circumstance, and plurality gathered into a lasting city |
+| **Scale** | One complete landscape page; it supplies the Chapter's opening visual scale without becoming a decorative plate |
+| **Narrative function** | Anticipation, civic contrast, and expansion of campaign possibility |
+| **Narrative treatment** | Narrative-bearing environments with no continuous scene. Elderbank supplies the worked Ancestral Home image because Rabbit carries Part 0; the Interchange and Metropolis remain inhabited environmental portraits rather than anonymous diagrams |
+| **Register** | Comparative campaign reference grounded in TRAVEL, RISK, contextual MEET, persistent Nodes, Rest, and ordinary expedition state |
+| **Subjects** | The ruined Elderbank territory; the singular authored Interchange occupying an exceptional Interchange Expanse; the Rest-Stop Metropolis and several of its stable specialist venues; restrained animal presence sufficient to establish life and scale |
+| **Incoming state** | Chapter 6.4 has established practical range and accumulated Corridor history without a progression ladder. None of the three horizons is presumed reached, ordered, or required |
+| **Outgoing state** | The reader can recognize each horizon's distinct civic proposition, content density, and emotional direction before entering the worked Ancestral return and the Interchange–Metropolis play comparison |
+| **Canon inputs** | Chapter 6.5; Chapters 2.3, 5.2–5.7, and 6.4; Appendices F and G; Part 0 Elderbank ground and current ancestral-history rules; present Interchange and Metropolis definitions |
+| **Semantic content** | A shared foundation states that every horizon is a large persistent Field territory reached at whatever current practical range permits; each uses ordinary direct TRAVEL, RISK, Nodes, MEET, relationships, bodily consequence, Rest, Return, and Campaign Memory. **Ancestral Home — society lost:** a total wreck carrying specialist Nodes, remains, hazards, traces, opportunities, possible Remembrance, and a low-frequency possibility of one lone escapee. **Interchange — plurality in immediate circumstance:** ramps, barriers, underpasses, pillars, drains, camps, local claims, temporary arrangements, dense Guest encounters, unusual Items and Resources, favors, grudges, shelters, and frequent use of all five contested response families. **Rest-Stop Metropolis — plurality gathered into a lasting city:** stable markets, shelters, workshops, gathering places, specialist venues, substantial Stopover, trade, craft, information, hospitality, and situated Practice-improvement understanding. A boundary rail states that the Ancestral Home never replaces the new Colony, the Interchange acquires no governing society layer or universal safety, and the Metropolis remains navigated and participated in rather than managed through DWELL. No horizon is tied to a Colony Tier, no order among them is mandatory, the Corridor continues beyond them, and none constitutes victory or campaign completion |
+| **Asset lineage** | Three current-spec environmental remakes. The Ancestral image must derive from the exact Part 0 Elderbank representation and show the same ground after destruction rather than a generic ruin. Manifest rows 230, 242, and 244 may inform exceptional Interchange breadth and scattered infrastructure but not a three-Species settlement comparison. Rest-Stop Metropolis rows 62, 98, and 156 may inform density, venue legibility, and market atmosphere only after obsolete society, scale, cast, labels, and mechanics are removed. Every heading and instructional distinction remains production typography |
+| **Cross-reference** | Part 0; Chapters 2.3, 5.2–5.7, and 6.1–6.5; Appendices B, C, F, G, and H; `AUG-6.4-01`, `AUG-6.5-02`, and `AUG-6.5-03` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The three fields receive equal conceptual and visual weight; every territory remains continuous with the ordinary Corridor; Elderbank is recognizable as the lost Home rather than post-apocalyptic scenery; the Interchange feels socially dense without acquiring a government or faction system; the Metropolis feels civic without becoming DWELL or a second Colony; the lone escapee remains only a low-frequency possibility; and no Tier gate, Special Journey command, prescribed order, terminal destination, or victory condition appears |
+
+##### AUG-6.5-02 — The Place Where the Lesson Was
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.5, Ancestral Home and Remembrance MEET; Part 0's ancestral lesson; Chapter 6.1 Campaign Memory; Appendix H New Elderbank history |
+| **Reader task** | Experience an optional return as a collision between present bodies, inherited story, and recognizable destroyed ground—not as completion of a recovery mission or restoration of the old Home |
+| **Augment form** | One designed narrative-and-interface page combining a dominant ruin scene, one short Landscape Voice passage, a bounded Remembrance MEET, and a concise resolved-history strip |
+| **Working subject** | **The Place Where the Lesson Was** — Bramble returns to the remains of Elderbank with Daisy and Burdock |
+| **Scale** | One self-contained landscape page; the altered ancestral ground dominates while MEET and memory presentation remain integrated around it |
+| **Narrative function** | Return, intergenerational memory, grief without closure, and renewed attachment to the Home that now exists |
+| **Narrative treatment** | One brief Landscape Voice passage locates the party in the changed physical country. Original Rabbit animal voice shaped by GATHER then carries Bramble and Daisy's exchange; Burdock remains a particular present companion rather than an explanatory outsider. Exact lesson language is newly authored from current Appendix B principles and never recovered from stale Laws text. The sequence is a current-rules worked example of a possible campaign state, not a mandatory event in New Elderbank's fixed Appendix H chronology |
+| **Register** | Ordinary TRAVEL reaches one specialist ruin Node; a contextual Remembrance MEET resolves; the party remains Away in the Ancestral Home territory |
+| **Subjects** | Bramble; Daisy, for whom Elderbank is inherited rather than lived history; Burdock as Hedgehog Expedition Guest; the exact former lesson ground first seen intact in Part 0; Bramble's bootlace Keepsake present but not automatically activated |
+| **Incoming state** | The expedition has physically reached Elderbank through ordinary Corridor travel. Bramble's Prior-life Tale includes the intact lesson and Founding Escape; Daisy knows Elderbank through family and Colony history; Burdock has no borrowed memory of it |
+| **Outgoing state** | One resolved act of remembrance enters the Record and may be selected into the involved Citizen Tales or Chronicle. Elderbank remains ruined Field territory, the party remains Away, and New Elderbank remains the sole Home |
+| **Canon inputs** | Part 0's exact ancestral-Colony sequence and eventual imagery; Chapters 1.5, 5.4–5.5, 6.1, and 6.5; Appendices B, C, G, and H; current Bramble, Daisy, Burdock, Elderbank, bootlace, and relationship continuity |
+| **Semantic content** | The same camera logic and enduring landmarks used for the intact Part 0 lesson make the ruined location recognizable before a label explains it. Landscape Voice describes only present terrain, light, material, sound, and movement. The Remembrance MEET frames the physical place, the three present Citizens, Bramble's established history, Daisy's inherited connection, and the immediate choices the actual remains support. Its contextual responses may include attending to what survives, searching a bounded part of the site, recovering an eligible particular object if one is truly present, speaking or withholding established memory, leaving the ground undisturbed, or withdrawing; the asset brief authors only materially distinct responses supported by the final site. The worked resolution has Bramble tell Daisy what was taught there in language grounded in current canon, while Daisy's response makes the distance between inheritance and recollection legible. Burdock witnesses without certifying either account. Bramble's Keepsake may inform recognition while remaining inactive unless the committed response explicitly uses or stakes it. Resolution writes one event, not a restored past, universal truth, quest completion, or emotional cure. The low-frequency lone-escapee possibility receives no warning, probability, silhouette, or forced appearance on this page and would open its own encounter if actually selected |
+| **Asset lineage** | Mandatory image-to-image continuity from the final Part 0 ancestral lesson artwork and canon Citizen images. Rebuild the same animal-scale ground after destruction through persistent landmarks, changed grade, broken material, regrowth, and active human infrastructure at distance. Do not use a generic ruin, flashback montage, sepia memory treatment, visible ghost, or generated text. All MEET labels, dialogue, narration, and memory facts remain editable |
+| **Cross-reference** | Part 0; Chapters 1.5, 4.4–4.5, 5.4–5.5, 6.1, and 6.5; Appendices B, C, G, and H; `AUG-6.1-02` and `AUG-6.5-01` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The ruined place is unmistakably the location shown intact in Part 0; Landscape Voice knows only the present world; Bramble remembers, Daisy inherits, and Burdock witnesses without their perspectives collapsing; the MEET contains real choices supported by the site; no stale Law is quoted; no object is invented merely to create loot; the Keepsake remains governed by Item rules; the lone escapee is neither promised nor foreshadowed; the party remains Away; and the event deepens New Elderbank rather than replacing it |
+
+##### AUG-6.5-03 — Crossroads and City
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 6.5, Interchange and Rest-Stop Metropolis; the first question of both territories as TRAVEL rather than DWELL; situated relationships and improvement discovery |
+| **Reader task** | Compare two socially dense Away territories through the same player operation and understand how local present arrangements differ from dependable civic venues without creating a second settlement-management game |
+| **Augment form** | One autonomous comparison page with two equal top-down direct-drive territory fragments, literal TRAVEL and Node presentation, and compact MEET or venue callouts |
+| **Working subject** | **Crossroads and City** — one Rushbottom expedition reads the Interchange and Rest-Stop Metropolis through the same Away grammar |
+| **Scale** | One complete landscape page; each half is independently readable, and no comparison depends upon an adjacent spread |
+| **Narrative function** | Discovery, Mouse-scale movement through plurality, and recognition of several forms of animal society without formalizing a social simulation |
+| **Narrative treatment** | Literal interface text and restrained scene fragments using Bran, Nook, and Rill. No transaction or relationship is resolved, so the comparison does not fix a new event in Rushbottom history. The same recognizable party supplies bodily scale and continuity across both hypothetical visits |
+| **Register** | Direct-drive top-down TRAVEL with contextual Node and MEET entry in both territories; neither side uses DWELL |
+| **Subjects** | Bran and Nook as Mouse Citizens; Rill as Weasel Expedition Guest; the singular Interchange's ramps, pillars, shelters, temporary camps, claims, and varied animals; Metropolis streets or passages, stable specialist venues, residents, visitors, and substantial Stopover |
+| **Incoming state** | The party has reached each territory through ordinary continuous travel in its respective illustrative state. Its Citizens, Items, Carry, Exposure, Day Band, and return obligation remain ordinary expedition facts |
+| **Outgoing state** | The reader can navigate either territory conceptually, identify where MEET begins, and distinguish temporary local arrangements from lasting venues without expecting to build, command, inhabit, or administer either place |
+| **Canon inputs** | Chapters 1.4–1.5, 5.2, 5.4–5.7, and 6.5; Appendices D, F, G, and H; current Bran, Nook, Rill, Rushbottom, Interchange, Metropolis, Guest, relationship, and Practice-improvement rules |
+| **Semantic content** | Both halves preserve the same party icon, direct movement, current Day Band, known ground, Node engagement, and contextual transition into MEET. **Interchange:** orientation is difficult; camps, territorial claims, opportunistic exchanges, shelters, predators, information, obligations, and unusual material remain distributed and local. Regulars may recognize particular Citizens, but no map-wide disposition, faction, law, market authority, or safety state emerges. Every contested response family can become useful in actual situations. **Metropolis:** stable specialist venues act as persistent Nodes connected by traversable Field; dependable markets, shelters, workshops, gathering places, information, hospitality, and a substantial Stopover make return visits intelligible. A specific resident or venue may reveal one Practice-improvement possibility through direct contact, making that Project available at Home without creating a Knowledge track or city research tree. Selecting a venue moves the party to or engages its actual location; it does not open a detached shop, quest, or management layer. Relationships remain attached to involved residents and venues on both sides. The party remains Away, time and bodily state continue, and departure occurs through ordinary TRAVEL and eventual physical Return |
+| **Asset lineage** | Two current-spec remakes joined by one exact interface grammar. Interchange-remnant rows 230, 242, and 244 may inform breadth, scattered infrastructure, and animal-scale discontinuity only. Metropolis rows 62, 98, and 156 and legacy market-exchange compositions may inform spatial density and readable venue variety while all obsolete labels, humanoid commercial staging, currencies, faction systems, and menu assumptions are removed. Bran, Nook, and Rill canon images are mandatory references; interface typography remains editable |
+| **Cross-reference** | Chapters 1.4–1.5, 3.3–3.4, 5.2, 5.4–5.7, and 6.3–6.5; Appendices D, F, G, and H; `AUG-6.5-01` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | Both territories unmistakably use TRAVEL rather than DWELL; the same ordinary expedition facts remain live; the Interchange is dense without receiving a formal society, faction, or reputation layer; the Metropolis is stable without becoming a player Colony, hub menu, shop screen, or civic-management mode; venues remain physical Nodes; improvement discovery remains direct and particular; the party can always leave only through ordinary travel; and neither horizon becomes safer or more authoritative merely because it is socially complex |
+
+#### Post–Part VI authorial checkpoint — deferred
+
+Do not resolve or propagate the following questions while mapping the remaining
+Part VI Chapters. Reopen them together after the Part VI augment pass is
+complete:
+
+1. **Open Table and Gathering Place.** Consider whether Open Table should
+   become a Gathering Place improvement rather than retain an independent
+   placeholder access gate. This is a design question, not a current rule.
+2. **Teacher and Leader.** Discuss whether Teacher should fold into Leader.
+   Test the related developmental sequence provisionally proposed for a Citizen
+   entering through Nesting: an initially enlarged Sustenance allotment and
+   Caretaker Load for an authored number of days; then Leader Load for an
+   authored number of days; then Adult status, the end of development Load, and
+   the beginning of Civic Share contribution. Review every present Teacher
+   responsibility, Practice relationship, Guest Role, and opening-campaign
+   dependency before adopting or rejecting the fold.
+
+3. **UI mockup manifest.** After the preceding authorial questions are
+   resolved, create one derived manifest covering every mockup required by the
+   approved Augments map. At minimum, identify its Map ID, interface or
+   Register, exact worked state, subjects, scale, annotation requirement,
+   current-canon inputs, legacy-layout lineage, remake/new status, and
+   production state. The manifest inventories approved requirements; it does
+   not become another source of interface canon.
+4. **The three campaign-unique locations.** Schedule a dedicated development
+   pass on the Ancestral Home, the Interchange, and the Rest-Stop Metropolis.
+   Treat each location separately before testing the three as a set. Establish
+   its physical extent and internal geography, recurring Nodes and MEET
+   substance, inhabitants and social conditions, hazards and affordances,
+   persistence across visits, distinctive discoveries and returns, audiovisual
+   identity, and relationship to ordinary Corridor play. Then test their
+   contrast, practical campaign timing, repeated-play value, and total content
+   burden. Preserve their current foundations: all three remain continuous
+   Away territories reached through ordinary travel; the Ancestral Home is a
+   lost society rather than a replacement Home, the Interchange has no
+   governing society layer, and the Metropolis remains a navigated civic place
+   rather than DWELL or a second player Colony. This pass may revise or deepen
+   Chapter 6.5 and its Augments, but the present map does not prejudge those
+   later design decisions.
 
 ### 6.8 Part VII — Presentation and Development Boundary
 
-#### Part threshold
+Part VII makes the theoretical game's presentation contract explicit. It turns
+from the world's campaign possibilities toward the means by which that world
+becomes visible, operable, audible, and authorable, while remaining a Concept
+Sourcebook rather than an implementation specification. The threshold therefore
+lets the completed world speak first: one wordless Squirrel image embodies the
+visual doctrine before Chapter 7.1 names any interface rule.
 
-- Make presentation itself visible as part of the theoretical game's design.
+#### Part threshold — `AUG-P7-TH-01`
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Boundary between Part VI and Part VII; supports Chapters 7.1 and 7.2 and restores Squirrel visual weight after Chapter 6.5's Rabbit and Mouse worked material |
+| **Reader task** | Feel that legibility, scale, atmosphere, material culture, and particular bodies belong to one composed world before examining the interface and art doctrines that preserve them |
+| **Augment form** | Wordless Part plate |
+| **Working subject** | **The Web in Rain** — internal production title only; Tier IV Morningside held in one wet early-morning view |
+| **Scale** | Full page at the Part threshold |
+| **Narrative function** | Re-entry into the lived world, species balance, atmosphere, and preparation for the Sourcebook's explicit account of presentation |
+| **Narrative treatment** | Narrative-bearing environment. Rime and Spindle occupy ordinary late-generation Squirrel life while Stillwater, the Goldwings, and Gable make incorporated Guest presence visible without forming a cast lineup or staging a new canonical incident |
+| **Register** | Presentation-adjacent Colony view rather than a literal DWELL screenshot or interface state |
+| **Subjects** | Tier IV Morningside as Grand Web; Rime; Spindle; Stillwater at the Water Garden; the Goldwings around sheltered flower access; Gable at the Gathering Loft; wet Elmwater ground; active Roadways beyond the Colony |
+| **Incoming state** | Part VI has expanded one Colony campaign toward its broadest authored horizons. The reader has seen the world accumulate history but has not yet examined the design contract by which that history is made readable |
+| **Outgoing state** | The reader enters Part VII already holding its visual proposition: one strategically legible, materially grounded, inhabited animal world remains primary beneath every later interface explanation |
+| **Canon inputs** | Chapters 3.1–3.3, 4.1–4.3, and 7.1–7.2; Appendix H Morningside identity and Tier IV roster; current Morningside, Rime, Spindle, Stillwater, Goldwings, and Gable canon imagery |
+| **Semantic content** | None on the plate. Part and Chapter identification begin on the following page |
+| **Asset lineage** | New current-canon image-to-image composition. Manifest row 106 may inform its unusually strong textless Squirrel construction composition; rows 235 and 255 preserve Morningside's stream geography and increasing Web density. Rebuild every Colony structure, Citizen, Guest Residence, material, and Tier fact to current canon rather than allowing the generic legacy cast to become Story history |
+| **Cross-reference** | Chapters 3.1–3.3, 4.2–4.3, 6.3, and 7.1–7.2; Appendix H |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The plate reads first as a beautiful inhabited Squirrel civilization; every operationally important structure remains above ground and visually coherent; strategic transparency feels like a composed view rather than exposed ecology; wet materials, Roadways, animal scale, Core and Guest bodies, and accumulated care all remain legible; the Citizens participate in ordinary life rather than pose; and the page carries no title, caption, interface, generated lettering, diagram, or production annotation |
 
 #### 7.1 Interface and information design
 
-- Compare the five Register presentations and shared interface grammar.
-- Map visible/private information, selection/Commit, lenses, active Mode, and
-  accessibility.
+Chapter 7.1 compares the five Registers at presentation depth without creating
+five redundant new mockups. It reuses the exact body assets already planned for
+DWELL, TRAVEL, RISK, MEET, and EMBODY, arranging reduced views and editable
+annotations around four distinct reader questions: how attention changes by
+Register, how reversible selection becomes consequential commitment, how the
+game separates known and private state, and how one active operator moves
+between Away play and Home information.
+
+Every composition remains self-contained for single-page landscape reading.
+The sourcebook images are fixed flat illustrations of theoretical interfaces;
+camera arrows, control notation, and state transitions describe the imagined
+application without pretending that a printed page itself moves.
+
+##### `AUG-7.1-01` — Five Registers, Five Forms of Attention
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 7.1, presentation by Register; Chapter 1.4's one-world architecture at detailed visual depth |
+| **Reader task** | Recognize each Register immediately by camera, composition, operative question, input, time behavior, and return path while seeing the same persistent world beneath all five |
+| **Augment form** | Full-page comparative interface atlas built from five reduced literal presentation specimens and one shared world-state rail |
+| **Working subject** | **Five Registers, Five Forms of Attention** — DWELL, TRAVEL, RISK, MEET, and EMBODY in canonical order |
+| **Scale** | One complete landscape page. Each specimen remains large enough to communicate its governing composition, while the complete mockups continue to live in their owning Chapters |
+| **Narrative function** | Recognition and synthesis rather than a new campaign event |
+| **Narrative treatment** | Intentionally none. The specimens retain their already-established named lives and places, but their purpose here is comparative presentation rather than another narrative sequence |
+| **Register** | DWELL; TRAVEL; RISK; MEET; EMBODY |
+| **Subjects** | Reduced derivatives of `AUG-3.2-01`, `AUG-5.2-01`, the three `AUG-5.3` Core RISK screens, `AUG-1.5-01`, and `AUG-3.8-02`; a restrained Open Table inset acknowledges EMBODY's collective-Presence expression without giving it equal weight to the ordinary case |
+| **Incoming state** | Chapter 1.4 has established the topology and one Morningside journey has demonstrated transitions. The reader has since encountered each Register inside its governing system |
+| **Outgoing state** | The reader can identify the presentation and player operation of any Register before Chapter 7.1 turns to their shared action and information grammar |
+| **Canon inputs** | Chapters 1.4–1.5, 3.2, 3.8, 5.2–5.5, and 7.1; all approved owning augment records; current exact interface and camera descriptions |
+| **Semantic content** | Each specimen receives the same five concise annotations: **world subject**, **view**, **player operation**, **time behavior**, and **exit or return**. **DWELL:** the Colony as one elevated isometric-style inhabited arrangement, theoretically supporting free rotation, slide, and zoom; direct stewardship through Citizens, Places, Practices, Projects, Stores, and Civic Balance. **TRAVEL:** stable top-down direct drive of one animated party figure through continuous Field, with distance and the next Day-Band boundary accumulating during movement. **RISK:** the actual Staging Post backplate surrounding a species-shaped planning schematic; the field contains three miniature operational centers so Rabbit timing, Mouse continuity, and Squirrel flow remain distinct rather than implying one universal Crossing display. **MEET:** present scene and decision matrix at its owning Place, player-aligned subject left, answering subject right, stakes and contextual responses below. **EMBODY:** intimate animal-scale ordinary Presence through one available Citizen, with Open Table identified separately as observational collective Presence. A common foundation names the persistent Citizens, objects, locations, time, and consequences that survive every change of presentation; MEET visibly remains available in both Home and Away rather than occupying a third Mode |
+| **Asset lineage** | Recompose approved current-spec assets rather than generating five new scenes. Interface labels and comparison fields remain editable. Historical Register diagrams at manifest rows 220–226 may inform only the desire for comparison; their circular state-machine grammar and obsolete views do not survive |
+| **Cross-reference** | Chapters 1.4–1.5, 3.2, 3.8, 5.2–5.5, and 7.1; Appendices F and G; `AUG-1.4-01` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | The Registers appear in the approved order with EMBODY last; their camera and operator differences remain immediately visible; RISK retains all three Core expressions without consuming three more full mockups; MEET remains cross-modal; Open Table remains observational; every specimen can be traced to its full owning asset; the common state reads as continuous rather than copied; and no printed still is mistaken for an animated or freely navigable page |
+
+##### `AUG-7.1-02` — Read, Select, Commit
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 7.1, shared interface grammar, selection and Commit, in-scene resolution, controls, and accessibility |
+| **Reader task** | Understand the common boundary between reversible understanding and world-changing action, including the meaningful variations by Register and the accessibility standards that protect deliberation |
+| **Augment form** | Typography-led full-page action-grammar diagram using a small set of exact interface fragments and one integrated accessibility standard |
+| **Working subject** | **Read → Select → Commit → Resolve Here** |
+| **Scale** | One complete landscape page; the shared sequence dominates, while Register variations and access settings occupy subordinate but fully readable fields |
+| **Narrative function** | Mechanical synthesis without a new story event |
+| **Narrative treatment** | Intentionally none. Small fragments reuse already-mapped Project, TRAVEL, RISK, MEET, and EMBODY states without resolving them differently |
+| **Register** | Shared interface grammar across all five Registers |
+| **Subjects** | An existing DWELL Project preview from `AUG-3.4-03`; direct movement from `AUG-5.2-01`; the Squirrel plan from `AUG-5.3-03`; a provisional response from `AUG-5.5-01`; bounded ordinary Presence from `AUG-3.8-02` |
+| **Incoming state** | `AUG-7.1-01` has distinguished the five presentations. Each selected fragment begins before its irreversible boundary |
+| **Outgoing state** | No worked world state changes on this reference page. The reader understands when time is paused, what can be revised, what Commit fixes, and where resolution becomes visible |
+| **Canon inputs** | Chapter 7.1; Chapters 1.5, 3.3–3.4, 3.8, 5.2–5.5; approved exact augment records for every reused fragment |
+| **Semantic content** | The central grammar reads **inspect or navigate → provisionally select → expose immediate cost and affected subjects → revise or Commit → resolve in the present scene → retain the changed facts**. Inspection, interface navigation, and provisional selection pause time. Commit uses one clear grammar and adds no second confirmation when action and consequence are already unmistakable. Resolution remains where it occurred rather than moving to a grade, loot, or reward screen. Five variation rails keep the grammar honest: DWELL commits civic assignments or persistent work; direct TRAVEL is continuous input whose actual distance advances the Day Band without requiring a Commit for every movement; RISK Commit closes planning and begins one uninterrupted Run; MEET Commit resolves a Round, assigns Focus afterward, and retains changed facts for any later Round; EMBODY uses bounded activity controls and permits departure without penalty rather than treating ordinary movement as strategic commitment. State-transition MEETs preserve the shared boundary through their fitted procedures. The integrated access standard fixes fully remappable equivalent inputs, untimed inspection and decisions, readable stepped traffic during RISK planning, no reaction input during the Continuous Run, non-precision DWELL camera control, bounded EMBODY control, and adjustable text scale, contrast, captions, interface density, camera motion, shake, flashing, and transition intensity. Text, shape, position, and icon carry important facts alongside color. These changes alter access and presentation while preserving the same authored decision and world state |
+| **Asset lineage** | Entirely editable diagram and production typography, using cropped current assets only as evidence. It creates no additional canonical interface state and no generated image carries instructional text |
+| **Cross-reference** | Chapters 1.5, 3.3–3.4, 3.8, 5.2–5.5, and 7.1; Appendix G; `AUG-1.5-02` and `AUG-5.3-04` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | Selection remains reversible and Commit consequential; direct TRAVEL remains the deliberate continuous-movement exception; RISK contains no reaction challenge; MEET Focus cannot influence the choice that precedes it; EMBODY departure remains free; resolution stays in the world; no redundant confirmation, reward screen, success grade, or abstract input test appears; and every access provision preserves rather than simplifies the governing decision |
+
+##### `AUG-7.1-03` — Known, Expressed, Kept Private
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 7.1, visible and private state, relevance filtering, information lenses, hidden Record, and one authoritative presentation for each fact |
+| **Reader task** | Distinguish actionable known information, experienced evidence of private calculation, hidden factual authority, and the player-facing lenses that select from established state |
+| **Augment form** | Full-page information hierarchy with three state bands, subject-to-view routes, and several exact interface fragments rather than a fictional all-purpose dashboard |
+| **Working subject** | **Known, Expressed, Kept Private** |
+| **Scale** | One complete landscape page, organized for top-to-bottom reading without an adjacent spread |
+| **Narrative function** | None; this is the Chapter's information-authority reference |
+| **Narrative treatment** | Intentionally none. Named Citizen and Place fragments may appear only to keep information attached to real subjects rather than generic data widgets |
+| **Register** | Cross-register information design |
+| **Subjects** | Civic Shares, Role Load, Readiness, Role Balance, Housing Balance, known Telegraphs, Colony Pressure, Exposure, fractional contribution, the Record, Almanac, Map, Roster, Citizen view, Chronicle, Tales, and canon images; Launch eligibility and one provisional MEET response as relevance examples |
+| **Incoming state** | The reader understands the five presentations and the common Commit boundary but has not yet seen a single hierarchy explaining why some exact values appear, some conditions are communicated indirectly, and some facts remain backend authority |
+| **Outgoing state** | The reader can place every major information class in its intended presentation and recognize omission or indirect expression as deliberate design rather than missing simulation |
+| **Canon inputs** | Chapters 3.5–3.7, 4.1, 5.1, 5.4–5.6, 6.1, and 7.1; Appendices C, D, E, and G; `AUG-6.1-01` |
+| **Semantic content** | **Known and actionable:** Civic Shares, Role Load, Readiness, Role Balance, Housing Balance, known Telegraphs, party state, Carry, bodily conditions, and other facts needed for an actual choice receive legible contextual or inspected presentation. **Expressed through lived evidence:** the exact Colony Pressure and Exposure calculations remain private while their known causes, Telegraphs, bodily behavior, rest need, Wound, Tharn, and resolved consequences remain perceptible without a one-to-one hidden-tier code. Fractional production and Project contributions also remain unseen until a whole result is awarded at DAWN, with the remainder retained. **Hidden factual authority:** the Record stores what happened; Chronicle, Tales, current canon images, and other player-facing memory select from it without becoming rival records, while the Almanac remains current and prospective rather than historical. Subject-to-view routes connect visible Citizens, Places, Nodes, and Items to contextual inspection; broader lenses provide Almanac, Map, Roster and Citizen view, and Chronicle and Tales without discarding current camera, location, or provisional choice. Each fact receives one functional presentation instead of parallel ledgers. A relevance field shows that Launch contains only eligible Citizens; Core Citizens offer no refusal state; ordinary MEETs show authored applicable responses; a relevant unavailable response remains greyed in place only when its absence matters and can be explained from known facts; irrelevant responses remain absent; and Tools, Supplies, Keepsakes, relationships, and Signatures appear only after the provisional response makes them applicable. Focus resolves after Commit and randomizes equally qualified claims without becoming pre-choice advice |
+| **Asset lineage** | New editable information diagram reusing small exact fragments from the Almanac, Map, Citizen view, MEET, Launch, and Campaign Memory assets. It must not invent a master dashboard, exposed backend table, universal status bar, or duplicate ledger merely to visualize the architecture |
+| **Cross-reference** | Chapters 3.5–3.7, 4.1, 5.1, 5.4–5.6, 6.1, and 7.1; Appendices C, D, E, and G; `AUG-6.1-01` |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | Every exact actionable fact needed for choice is available; Pressure and Exposure never become exposed meters or exact probability; lived expression does not become a deterministic cipher for hidden state; fractional accumulation remains unseen until whole DAWN award; Record and Almanac retain different authority; response filtering follows relevance rather than personality refusal; and no new universal dashboard or parallel source of truth appears |
+
+##### `AUG-7.1-04` — The Colony While They Are Away
+
+| Field | Approved mapping |
+|---|---|
+| **GDD location** | Chapter 7.1, information lenses and active attention; Home and Away as operationally exclusive and informationally permeable |
+| **Reader task** | Understand how the player inspects Home while operating one Away expedition, how DAWN and a consequential Home MEET temporarily redirect attention, and how the exact party state waits without autonomous action |
+| **Augment form** | One autonomous interface-and-time sequence built around a dominant TRAVEL frame, a read-only Home inspection inset, a DAWN accounting interruption, a possible Home MEET branch, and the later Homecoming transfer |
+| **Working subject** | **The Colony While They Are Away** — Morningside and the continuing Gale–Alder–Reed expedition |
+| **Scale** | One complete landscape page; the party's actual Field position remains the visual anchor through every temporary change of attention |
+| **Narrative function** | Continuity and reassurance that Home and expedition remain one causal game rather than simultaneous autonomous stories |
+| **Narrative treatment** | Worked play using the already-established Morningside vertical-slice state. It authors no new incident: the Home MEET is shown as a conditional branch, not as an event added to Morningside history |
+| **Register** | Active Away TRAVEL; informational Home inspection; DAWN reporting; conditional Home MEET; eventual Homecoming MEET and restored DWELL |
+| **Subjects** | Gale, Alder, and Reed at the exact post-Launch state established by `AUG-5.1-02` and `AUG-5.2-01`; Tier III Morningside; the corresponding Almanac, Map, Roster, and civic state; one schematic consequential Home-MEET possibility |
+| **Incoming state** | Launch has committed Gale, Alder, and Reed as the one active expedition, recalculated Morningside without their present Civic Shares, and placed operation in TRAVEL at one exact Field position |
+| **Outgoing state** | The reference sequence changes no campaign fact. It ends by showing the later rule boundary: physical Return and Homecoming restore ordinary DWELL operation only after the party actually reaches Home |
+| **Canon inputs** | Chapters 1.4, 2.5, 3.5–3.6, 5.1–5.2, 5.8, and 7.1; the Morningside vertical slice; approved Launch, TRAVEL, DAWN, Home Pressure, and Homecoming mappings |
+| **Semantic content** | The dominant frame marks **Away operation active**. Opening Home presents current known Colony state for inspection while time is paused; it does not activate DWELL, permit construction, Role assignment, Project commitment, or a second Launch. Gale, Alder, and Reed remain at the exact Field position with their current Day Band, Carry, Items, Exposure, bodily state, and unresolved opportunities; they never move, rest, interact, choose, or encounter content autonomously while attention is elsewhere. Returning attention restores the same TRAVEL position and camera. When DAWN arrives through elapsed world time, the interface first reports Morningside's completed whole accounting, retained remainders, consumption, Projects, and any newly actionable condition, then restores the party. A consequential Home situation may temporarily take focus as MEET from its owning Home context and then return to the unchanged party position with the Home result retained. Ordinary predictable Colony life requires no repeated interruption. The Map, Almanac, Roster, Citizen views, Chronicle, and Tales remain available according to their information authority across the sequence. Only the party's physical homeward TRAVEL and Homecoming MEET end Away operation and restore DWELL |
+| **Asset lineage** | Recompose exact existing assets: `AUG-5.1-02` for post-departure Morningside state, `AUG-5.2-01` for the party's Field position, `AUG-3.6-02` for DAWN, `AUG-3.5-02` for the possibility of a consequential Home MEET, and `AUG-5.8-02` for the final transfer. All attention arrows, active-operation labels, and permission boundaries remain editable; no new full interface mockup is commissioned |
+| **Cross-reference** | Chapters 1.4, 2.5, 3.5–3.6, 5.1–5.2, 5.8, and 7.1; Appendices C, D, F, and G; the Morningside vertical slice |
+| **Priority** | Essential |
+| **Approval state** | Approved |
+| **Acceptance test** | Exactly one operational context is active; Home remains inspectable without becoming DWELL; no second expedition can Launch; the party performs no autonomous action and returns at its exact position and state; DAWN accounting precedes restoration of party attention; only consequential Home MEET interrupts ordinary Away operation; its result persists; information lenses remain accessible without becoming operations; and Homecoming, rather than a menu switch, restores DWELL |
+
+These four treatments carry Chapter 7.1's designed work. The later derived UI
+mockup manifest will inventory their reused and newly required interface assets;
+it will not alter this Chapter's design claims.
 
 #### 7.2 Art and sound
 
-- Establish strategic transparency, animal bodies, material culture, canon
-  image continuity, human scale, weather, environmental sound, and sparse
-  music.
+Chapter 7.2 treats art and sound as information-bearing parts of the game
+world. Its four pages move from the shared material identity to strategic
+transparency and bodies, then to canon-image continuity and the audible
+Corridor. The Chapter reuses established Story-Colony and Citizen imagery as
+evidence wherever possible; its purpose is to define a coherent art doctrine,
+not to create a second gallery beside the book's narrative and system images.
+
+##### `AUG-7.2-01` — One Material World
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.2, visual identity, Home and Field contrast, animal scale, human infrastructure, weather, and night |
+| **Reader task** | Recognize MEDIAN's grounded stylized realism as one continuous material world whose emotional temperature changes through habitation, scale, weather, light, and danger |
+| **Augment form** | Full-page annotated art-direction composition with one dominant continuous Rushbottom landscape and several exact material and light details |
+| **Working subject** | **One Material World** — Tier III Rushbottom at Pipe End and its adjoining Field during a wet Evening |
+| **Scale** | One complete landscape page. The environment remains dominant; annotations occupy restrained margins and lower fields |
+| **Narrative function** | Atmosphere, Mouse visual weight, and recognition that Home warmth is made from the same difficult world encountered outside it |
+| **Narrative treatment** | Narrative-bearing environment without a new incident. Named Citizens may be visible in ordinary life, but no one becomes the protagonist of the art-direction page |
+| **Register** | World presentation spanning a DWELL-adjacent Home view and the physically continuous Field rather than a literal split-screen interface |
+| **Subjects** | Tier III Rushbottom; above-ground joined Mouse rooms; wet Pipe End ground; one adjoining Margin; active Roadways; shelter, runoff, vegetation, concrete, metal, road light, and animal-scale material culture |
+| **Incoming state** | The Part VII threshold has shown Morningside as an inhabited composed world. Chapter 7.1 has explained how interfaces preserve that world across Registers |
+| **Outgoing state** | The reader can identify the visual materials, scale anchors, emotional contrast, and night-weather behavior that all later art must preserve |
+| **Canon inputs** | Chapters 2.1–2.5, 3.1–3.3, and 7.2; Appendix F; Appendix H Rushbottom through Tier III; current Rushbottom and Pipe End imagery |
+| **Semantic content** | One continuous view binds fur, grass, root, bark, mud, rain, cloth, paper, plastic, rubber, wire, rust, drainage metal, concrete, asphalt, lane paint, reflected lamps, and moving vehicles. A restrained annotation field identifies **grounded stylization**, **animal scale**, **accumulated habitation**, **strategic warmth**, **Field exposure**, and **human magnitude** in the actual image rather than as detached swatches. Rushbottom's inhabited light, fitted joins, shared access, repairs, stored matter, and ordinary activity make Home warm; the adjoining Field uses colder openness, obscured sight, exposed movement, and Roadway force without becoming colorless or grim. Night retains highway identity through headlight wash, brake-light red, reflective surfaces, distant windows, wet asphalt, and uneven darkness. Giants remain off-frame while vehicles, maintenance, runoff, litter, vibration, and disturbance make human activity materially present |
+| **Asset lineage** | New current-spec composition using mandatory Rushbottom references. Archive rows 91, 100, and 101 may supply density and joined-room lineage only after current Tier, cast, Practices, above-ground visibility, Storehouse, and Pipe End geography are restored. Existing world and weather images may provide material details but cannot replace the coherent dominant scene |
+| **Cross-reference** | Chapters 2.1–2.5, 3.1–3.3, 4.2, and 7.1–7.2; Appendices F and H |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | Home and Field unmistakably belong to one physical world; warmth comes from habitation rather than a fantasy filter; Mouse rooms remain above ground and ecologically credible within strategic transparency; animals remain small beside complete human infrastructure; night still reads as highway country; tenderness and danger coexist; and no medieval village, miniature human warehouse, armored-adventurer culture, giant human figure, or decorative weather overlay displaces MEDIAN's material identity |
+
+##### `AUG-7.2-02` — Visible Without Being Exposed
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.2, strategic transparency, species-grounded bodies, selective clothing, material culture, civic grandeur, and the three Storehouse expressions |
+| **Reader task** | Understand how the game keeps Colony life operationally readable while preserving shelter in the fiction, and how bodies and made objects remain animal rather than miniature-human costumes |
+| **Augment form** | One designed art-bible page with a dominant annotated DWELL crop, three compact Storehouse studies, and a bodily-expression rail |
+| **Working subject** | **Visible Without Being Exposed** |
+| **Scale** | One complete landscape page; strategic transparency occupies the main field, with bodies and material culture integrated around it rather than separated into a character catalogue |
+| **Narrative function** | None beyond the ordinary inhabited life already present in the reused scenes |
+| **Narrative treatment** | Intentionally none. Current canon Citizens provide bodily examples without acquiring a new event or posing as generic species models |
+| **Register** | DWELL presentation with RISK and EMBODY bodily-reference insets |
+| **Subjects** | Current Morningside DWELL geography; representative current Rabbit, Mouse, Squirrel, Crow or Gull, and Maimed Citizen imagery; Rabbit GATHER, Mouse JOIN, and Squirrel CONNECT Storehouse expressions; selected Keepsakes, wraps, tools, weather coverings, and adaptive devices |
+| **Incoming state** | `AUG-7.2-01` has established the common visual world. The reader now needs the presentational conventions that make inhabited shelter and particular bodies legible within it |
+| **Outgoing state** | The reader can distinguish strategic transparency from fictional exposure, anthropomorphic character from human bodily substitution, and accumulated civic care from militarized or uniformed progression |
+| **Canon inputs** | Chapters 3.2–3.4, 4.1–4.3, 5.3, and 7.2; Appendices D, E, and H; approved DWELL, Core-Species, Guest, Maiming, and Storehouse mappings |
+| **Semantic content** | The dominant Colony image identifies roof fading, omitted near wall, thinned foliage, clarified overlap, and readable circulation as presentational choices that reveal rooms, paths, Citizens, Places, Practices, Projects, and civic relationships while the fiction continues to treat those spaces as sheltered. A body rail shows ears, head, stance, gait, stillness, scale, and relation to others leading expression; faces support rather than replace them. Grounded Crossings return land animals to four-foot movement, while Crow and Gull retain their parallel Flyer expression. Clothing remains selective and body-revealing; Role may affect what is at hand without becoming a uniform. Keepsakes, adaptive devices, and lasting Maiming remain specific to the Citizen. Material culture remakes natural matter and Corridor debris through selection, fit, repair, binding, and repeated use. Civic advancement improves care, ornament, adaptation, and finish rather than producing weapons, armor, or adventurer loadouts. Three small Storehouse studies preserve one pooled Stores state while showing Mouse fitted caches and cupboards, Rabbit protected common access, and Squirrel distributed secure holdings along reachable anchors. Particular baskets, shelves, wrappings, and caches may become MEET stakes without becoming separate inventories |
+| **Asset lineage** | Reuse exact current imagery from `AUG-3.2-01`, `AUG-4.2-01`, `AUG-4.3-02`, `AUG-5.3-01` through `03`, and the eventual Storehouse assets. Editorial masks, cut lines, labels, and material callouts remain editable and cannot be baked into generated imagery |
+| **Cross-reference** | Chapters 3.2–3.4, 4.1–4.3, 5.3, and 7.2; Appendices D, E, and H |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | Open presentation never implies an unsheltered Colony; every body remains species-grounded and individually recognizable; grounded animals cross on four feet; Flyers alone use the parallel expression; clothing, Tools, Keepsakes, and adaptive devices preserve rather than conceal anatomy; Storehouses express all three civic forms while opening the same pooled Stores state; and advancement reads as accumulated care rather than militarization or human miniaturization |
+
+##### `AUG-7.2-03` — One Citizen, Many Scenes
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.2, Citizen canon-image continuity, lasting change, current and superseded images, and reference-and-amend scene generation; Appendix C |
+| **Reader task** | See how one recognizable Citizen survives changes of Register, composition, light, posture, company, injury history, and time without becoming a merely similar regenerated animal |
+| **Augment form** | Full-page visual-continuity diagram built from one authoritative current Citizen image, several scene derivatives, one earlier historical image, and editable persistent-fact callouts |
+| **Working subject** | **One Citizen, Many Scenes** — Fennel after Wound recovery and with the lasting hind-leg Maiming established in Chapter 5.6 |
+| **Scale** | One complete landscape page; Fennel's current ordinary-life image is the visual anchor, while derivative scenes remain smaller and subordinate |
+| **Narrative function** | Recognition, bodily continuity, and reinforcement that a lasting changed life continues beyond its injury scene |
+| **Narrative treatment** | Existing Story history only. The page reuses Fennel's rescue, recovery, and present-life states without adding another incident or defining an unapproved future |
+| **Register** | Roster and Citizen view; MEET; EMBODY; aftermath or transition; Chronicle or Tale image use |
+| **Subjects** | Fennel; current markings, body proportions, hind-leg Maiming, adaptive equipment once fixed, clothing, Keepsake if any, and relationships already established; Shadepatch or Sharpnose only where the existing rescue history requires that presence |
+| **Incoming state** | `AUG-5.6-02` has separated the healed Wound from the lasting Maiming and established Fennel as a continuing Citizen. Appendix C holds the full image method |
+| **Outgoing state** | The reader understands which visual facts remain invariant, which scene properties may change, when the current canon image must be amended, and why earlier truthful images remain available as history |
+| **Canon inputs** | Chapters 4.1, 5.6, 6.1, and 7.2; Appendix C; Appendix H New Elderbank and Fennel history; `AUG-5.6-02`; every approved current Fennel image |
+| **Semantic content** | A central current image anchors species, body, markings, Maiming, adaptive device, clothing, Keepsake, and other persistent distinctions. Derivative scenes may change composition, light, weather, posture, activity, participants, and Register framing only through mandatory use of the relevant current canon references. Roster, MEET, EMBODY, aftermath, transition, Chronicle, and Citizen panels must all preserve the same Fennel. A lasting change creates an amended current representation; it does not overwrite the earlier image that truthfully depicts an earlier state. The rescue image therefore remains secondary history while present-life imagery governs new scenes. Colony images follow the same principle at settlement scale through meaningful growth, damage, repair, season, and occasion. Labels distinguish **reference**, **permitted scene variation**, **persistent fact**, **amendment trigger**, **current image**, and **historical image** without pretending that the player curates any of them |
+| **Asset lineage** | Use the accepted canon image set as mandatory source imagery. Generate or remake only the scene derivatives needed by already-approved Augments; generated lettering and semantic labels remain prohibited. Appendix C retains the complete production procedure and archive-access rules |
+| **Cross-reference** | Chapters 4.1, 5.6, 6.1, and 7.2; Appendices C and H; `AUG-5.6-02` and `AUG-6.1-01` |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | Fennel is unmistakably the same individual in every scene; present life dominates rescue imagery; the healed Wound never reappears as current injury; the Maiming and approved adaptation remain consistent without defining the whole personality; variations obey current references; lasting change updates rather than replaces history; Colony continuity follows the same rule; and no player-facing image-management workflow appears |
+
+##### `AUG-7.2-04` — The Corridor Is Heard
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.2, animal scale, traffic sound, River Spume, Home and Field soundscapes, individual bodily sound, Tharn contraction, Landscape Voice, and sparse adaptive music |
+| **Reader task** | Understand sound as spatial and mechanical information that reveals the Corridor while remaining accessible through aligned visual presentation |
+| **Augment form** | Full-page illustrated soundscape cross-section with editable layered bands, directional notation, correlated visual cues, and two restrained exception insets |
+| **Working subject** | **The Corridor Is Heard** |
+| **Scale** | One complete landscape page. The principal cross-section moves from sheltered Home through Field to a Staging Post and Roadway; Tharn and music occupy subordinate insets |
+| **Narrative function** | Sensory synthesis and restoration of the highway's constant physical presence after the visual-system pages |
+| **Narrative treatment** | Narrative-bearing environment without dialogue or a resolved event. Existing current locations and Citizen cutouts supply scale rather than a new Story-Colony history |
+| **Register** | DWELL, TRAVEL, RISK, and a brief Tharn-state MEET contraction; Landscape Voice remains narration rather than a Register |
+| **Subjects** | One representative Home edge; shelter; work and conversation; vegetation, water, insects, animals, drainage, and human activity in Field; Staging Post; Roadway traffic; River Spume; representative Core and Guest movement sounds; one Tharn sound-field inset |
+| **Incoming state** | The preceding pages have established what the Corridor looks like, how shelter is made readable, and how particular bodies remain visually continuous |
+| **Outgoing state** | The reader can identify what sound communicates, where it originates, how it changes by distance and Register, and how narration and music yield to the audible world |
+| **Canon inputs** | Chapters 2.4–2.5, 3.5, 5.3, 5.6, and 7.1–7.2; Appendix F Traffic and River Spume; Appendix G RISK and Tharn; `AUG-2.4-02`, `AUG-2.5-02`, and the three Core RISK screens |
+| **Semantic content** | Traffic layers direction, density, rhythm, mixture, approach, and mass; River Spume gives displaced air and debris aligned visible form. Home sound combines species movement, conversation, work, teaching, weather, shelter resonance, Roadway presence, and Guest vocal life. Quiet Equilibrium makes smaller civic detail perceptible rather than silencing the Corridor. Field opens into vegetation, water, insects, animals, drainage, and human activity. RISK brings traffic close enough for vehicle type and gaps to become readable by ear as well as sight. Footfall, breath, fur or feathers against material, carried objects, calls, and adaptive devices distinguish bodies and individuals; Maiming changes movement sound consistently. The Tharn inset narrows the wider field around breath, pulse, fixation, and immediate peril without becoming an audio warning before resolution. Every important cue receives aligned motion, shape, texture, text, icon, caption, or haptic concept. A separate narration rail keeps Landscape Voice human and environmental, distinct from animal speech and mechanical notification. Music appears sparsely at transition, Homecoming, ceremony, wonder, or grief, follows what has become perceptible, and recedes before it can reveal concealed danger |
+| **Asset lineage** | New editable sound diagram using reduced current imagery from the living cross-section, traffic-weather, Home, TRAVEL, RISK, and Tharn assets. No waveform, meter, or decorative equalizer becomes a player-facing mechanic; audio examples may be developed later but are not required to make this Sourcebook page complete |
+| **Cross-reference** | Chapters 2.4–2.5, 3.5, 5.3, 5.6, 5.9, and 7.1–7.2; Appendices B, F, and G |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | Sound communicates real location, motion, scale, and condition; traffic remains directional weather rather than generic roar; River Spume is visible as well as audible; Home contains road noise; RISK gains no reaction test; Tharn receives no warning cue; bodily difference remains respectful and consistent; every necessary audio fact has an accessible aligned form; Landscape Voice, animal speech, notification, and music remain distinct; and music never announces concealed danger |
 
 #### 7.3 Content-authoring doctrine
 
-- Diagram the movement from established state to situated content and back to
-  persistent consequence.
-- Include MEET construction, particularity test, narrative forms, precision,
-  and Landscape Orientation where diagrams improve use.
+Chapter 7.3 shows how authoritative systems become particular content and how
+resolved content returns to authoritative state. Its pages use already-mapped
+examples as worked evidence. They expose authoring judgment without inventing
+an in-game content editor, procedural-writing interface, or second canon
+registry.
+
+##### `AUG-7.3-01` — World, Situation, World
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.3's governing doctrine: established state becomes a concrete situation through its owning system and returns as persistent consequence |
+| **Reader task** | Trace a complete authored situation from existing facts through physical particularization, Register presentation, player judgment, resolution, and return to the correct state owners |
+| **Augment form** | Full-page authoring-flow infographic using the two-Round Morningside wire Node from Chapter 5.5 as its exact worked example |
+| **Working subject** | **World → Situation → World** |
+| **Scale** | One complete landscape page; the universal flow forms the main line and the Morningside case travels directly beneath it |
+| **Narrative function** | Reveals how one already-known episode was built without retelling or changing it |
+| **Narrative treatment** | Worked-play analysis of `AUG-5.5-01` and `AUG-5.5-02`. No dialogue, outcome, cost, or relationship is added beyond that approved illustrative state |
+| **Register** | Cross-system authoring flow culminating in Away MEET and returning to TRAVEL and persistent state |
+| **Subjects** | The actual Node and Raccoon claim; Gale, Alder, and Reed; Day Band and conditions; party Items and Reed's Signature; the two committed responses; Node, Cargo, Item, Wound, relationship, Exposure, and Record ownership |
+| **Incoming state** | Every fact needed by the worked Node already belongs to the world, party, Citizens, objects, relationship history, or clock before content authoring begins |
+| **Outgoing state** | The resolved facts return to those same owners; the situation creates no universal subsystem and TRAVEL resumes from the changed Node |
+| **Canon inputs** | Chapters 1.5, 4.6, 5.4–5.6, 6.1, and 7.3; Appendices C, E, F, and G; `AUG-5.5-01` and `AUG-5.5-02` |
+| **Semantic content** | The main flow reads **established state → owning system → exact geography, bodies, material, time, and circumstance → credible affordances → appropriate Register → provisional player choice → Commit and causal resolution → changed facts returned to their owners → eligible Campaign Memory selection**. The worked line identifies which facts existed before the party arrived, which authoring choices made the situation particular, why EVADE and later PARLEY were materially distinct, how Tool, Offering, and Signature attached only to applicable responses, and where each aftermath fact went. A side gate distinguishes a bounded authored expression of an existing species, Guest, Place, object, or event from a proposed universal mechanic, which requires an explicit design decision in its owning section. Candidate image, prose, or interaction never outranks established state merely by making an attractive scene |
+| **Asset lineage** | Entirely editable infographic reusing the exact Chapter 5.5 scene, interface fragments, and aftermath facts. No additional generated scene or simulated authoring tool is required |
+| **Cross-reference** | Chapters 1.5, 4.6, 5.4–5.6, 6.1, and 7.3; Appendices C, E, F, and G; `AUG-5.5-01` and `AUG-5.5-02` |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | Every input fact has an authoritative owner; particularization changes presentation and available affordance without silently adding a mechanic; player choice remains real; shared result precedes causal personal consequence; every changed fact returns to exactly one owner; Campaign Memory remains selective presentation after resolution; and the worked example agrees with its Chapter 5.5 form in every detail |
+
+##### `AUG-7.3-02` — The Particularity Test
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.3, constructing a MEET, materially different choices, multiple Rounds, state-transition reconciliation, names and species-shaped attention, and the particularity test |
+| **Reader task** | Understand the authoring questions that make a MEET belong to its actual species, place, time, condition, bodies, objects, and history rather than merely carrying MEDIAN terminology |
+| **Augment form** | One designed MEET-authoring worksheet applied to `AUG-3.5-02`, with concise comparison rails for contested Away and state-transition forms |
+| **Working subject** | **The Particularity Test** — Water at Rushbottom as an authored Home situation |
+| **Scale** | One complete landscape page. The Rushbottom case occupies the main field; general checks and form variations remain in marginal rails |
+| **Narrative function** | Re-examines an established Mouse crisis as an authoring construction without resolving its still-open exact outcome |
+| **Narrative treatment** | Worked authoring analysis only. The page preserves the approved incoming state and provisional choices of `AUG-3.5-02` and adds no canonical consequence |
+| **Register** | Home MEET arising from Colony Pressure, with comparison to contested Away MEET and state-transition MEET |
+| **Subjects** | Rushbottom; heavy runoff; the threatened Garden and Joined House; present Citizens and civic commitments; Wet-Ground Care where applicable; the owning Pressure and current Day Band |
+| **Incoming state** | The qualitative Telegraph, Rushbottom's physical joined form, current Civic Balance, actual weather, and vulnerable Places already exist before the Home MEET is authored |
+| **Outgoing state** | No choice is committed. The reader can reproduce the eight construction questions and test whether a candidate MEET genuinely depends upon its particulars |
+| **Canon inputs** | Chapters 1.5, 3.5, 4.2, and 7.3; Appendices B, D, and G; `AUG-3.5-02`; `AUG-G-MEET-01` for interface anatomy only |
+| **Semantic content** | Eight numbered prompts mirror the doctrine: **owner and eligibility; concrete subject; Place or Node, Day Band, conditions, participants, and known uncertainty; one to three present stakes; materially different responses; exact response-level objects, relationships, Signatures, or civic commitments; shared result before causal personal consequence; changed-fact ownership and credible continuation**. The Rushbottom application shows how Mouse JOIN, low adjoining rooms, runoff, the Garden, the Joined House, actual Caretaker expression, current civic capacity, and known weather alter the choices and costs. The particularity test then asks what changes if species, place, time, or condition changes; at least one must materially affect response, cost, or consequence. An ordinary decision retains at least two genuine courses. A later Round exists only when commitment changes but does not close the situation. A comparison rail preserves the fixed contested Away order **CONTEST → EVADE → PARLEY → YIELD → WITHDRAW**, while state transitions earn MEET through reconciliation of persistent facts rather than imitation of that strip. Names and animal voice follow concrete perception: Mouse tendencies toward edges, interiors, joins, and shelter can shape labels and speech without excluding other vocabulary or changing facts, intelligence, accent, or syntax |
+| **Asset lineage** | Reuse the exact Rushbottom state and MEET composition from `AUG-3.5-02`, adding only editable authoring annotations. Appendix G's annotated MEET remains an interface reference and is not duplicated here |
+| **Cross-reference** | Chapters 1.5, 3.5, 4.2, and 7.3; Appendices B, D, and G; `AUG-3.5-02` and `AUG-G-MEET-01` |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | The worked MEET depends materially on Rushbottom and its present conditions; all eight questions are answerable; choices differ in action and consequence rather than wording; objects and Signatures attach only where applicable; later Rounds and state transitions remain distinct; cultural perception influences language without becoming an exclusive vocabulary; and no outcome is canonized merely to complete the worksheet |
+
+##### `AUG-7.3-03` — Narrative Beside the Rule
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.3, narrative throughout the Concept Sourcebook, variation among narrative forms, book-wide species balance, and narrative authority |
+| **Reader task** | Distinguish five legitimate narrative treatments by the work each performs, the authority it carries, and the reason it earns space beside specification |
+| **Augment form** | Full-page editorial comparison using short approved fragments, reduced existing art, and an authority-and-function matrix |
+| **Working subject** | **Narrative Beside the Rule** |
+| **Scale** | One complete landscape page; five equal conceptual fields remain readable independently in single-page view |
+| **Narrative function** | Meta-narrative synthesis using the book's accumulated examples rather than another story |
+| **Narrative treatment** | The page compares **sustained narrative**, **recurring lived moments**, **worked play sequence**, **literal game presentation**, and **narrative-bearing art and environment** through already-approved examples |
+| **Register** | Editorial Sourcebook presentation rather than a game Register |
+| **Subjects** | Part 0 Founding Escape; `AUG-6.4-02` The Bramble, Three Times; the Gale expedition and Chapter 5.5 worked play; `AUG-6.1-02` The Count at Grand Manor; `AUG-P7-TH-01` The Web in Rain and other silent or Landscape-Voice-bearing plates |
+| **Incoming state** | The reader has experienced all five treatments across the book but has not yet seen why their difference is deliberate rather than inconsistent presentation |
+| **Outgoing state** | The reader can identify the correct narrative form for sequence, familiarity, mechanics, interface teaching, or atmosphere and can distinguish illustrative example from adopted canon |
+| **Canon inputs** | Part 0; Chapters 1.2, 5.5, 5.9, 6.1, 6.4, and 7.3; Appendix H; the approved Narrative Augment specification and all cited augment records |
+| **Semantic content** | Each field states **what it carries**, **why prose or image is needed**, **what factual authority it has**, and **how it returns the reader to specification**. Sustained narrative earns room through dependent sequence; recurring lived moments through recognition and accumulated relationship; worked play through judgment, resolution, and persistent change; literal game presentation through the form itself; narrative-bearing art and environment through bodily scale, place, mood, and visible history. A rhythm rail confirms that Part openings choose among narrative, recurring Citizen, interface, Landscape Voice, or silence instead of repeating one formula. Ordinary work, proximity, care, hospitality, rest, disagreement, observation, and routine remain necessary because they establish what danger can change. Rabbit's Part 0 prominence is balanced through strong Mouse and Squirrel examples elsewhere. A compact authority line distinguishes fixed Story history, current-rules illustrative play, literal presentation, and candidate material awaiting adoption; attractive prose or art never promotes itself into canon |
+| **Asset lineage** | Reuse only already-approved prose fragments and visual derivatives, preserving their original typography and authority labels. The page requires editorial composition rather than new generated art |
+| **Cross-reference** | Part 0; Chapters 1.2, 5.5, 5.9, 6.1, 6.4, and 7.3; Appendices C, H, and I |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | All five forms remain distinct; no detachable Tale-Panel formula returns; narrative always has a stated function beside its governing system; quiet and silence remain valid; species distribution is visible without imposing a quota on each page; illustrative material cannot silently become Story canon; and the page demonstrates accumulated familiarity rather than merely asserting attachment |
+
+##### `AUG-7.3-04` — Landscape Orientation
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.3's seven-step Landscape Orientation method; connection among specification, cross-section, animal-scale perception, affordance, image, Landscape Voice, and authority |
+| **Reader task** | Follow one physical location from governing world state through exact observation and bodily reading into candidate movement, situation, image, and narration without allowing those candidates to outrank canon |
+| **Augment form** | Full-page worked Landscape Orientation sheet using the exact Rock Cut geography already established by Chapter 2.3 and `AUG-2.3-03` |
+| **Working subject** | **Landscape Orientation: Rock Cut** |
+| **Scale** | One complete landscape page with one dominant exact cross-section, one animal-scale observation cone, and a seven-step authored derivation |
+| **Narrative function** | Makes landscape itself an active source of situated play and prose while returning to a familiar Squirrel place |
+| **Narrative treatment** | One short candidate Landscape Voice passage and several candidate affordance phrases may appear, clearly marked illustrative until separately adopted. No new Morningside event enters Story history |
+| **Register** | World and authoring reference potentially yielding TRAVEL, Node, MEET, RISK approach, EMBODY view, or narrative-bearing environment according to the derived situation |
+| **Subjects** | The current Rock Cut grade, material, vegetation, drainage, light, weather, sound, visibility, Sound Walls, Roadways, and human infrastructure; one animal-scale Squirrel observation point; current established Morningside geography where applicable |
+| **Incoming state** | Chapter 2.3 and `AUG-2.3-03` already own the physical ground and its persistent Colony history. No new affordance or event has authority merely because this authoring exercise can imagine it |
+| **Outgoing state** | The page produces a bounded set of candidate movements, choices, situations, images, and narration, each checked against its governing specification and clearly separated from adopted additions or exceptions |
+| **Canon inputs** | Chapters 2.1–2.5, 5.2, 5.4, 5.9, and 7.3; Appendices B, F, and G; `AUG-2.3-03` and `AUG-5.9-01` |
+| **Semantic content** | The numbered method reads **1. governing specification and current state; 2. exact cross-section of grade, material, vegetation, drainage, light, weather, sound, visibility, and human infrastructure; 3. animal-scale observation point; 4. visible, concealed, reachable, useful, dangerous, familiar, and unknown facts; 5. those facts read through the bodies, species, purposes, and histories present; 6. candidate movement, choices, situations, images, and Landscape Voice; 7. check against governing specification and obtain authority for any addition or exception**. The worked sheet makes the observation cone physical rather than omniscient and lets terrain shape perception before language. Several bodily readings may be noted, but none changes the underlying ground. The candidate Landscape Voice remains human narration of present country, weather, movement, and simple event; it names no private thought, hidden hazard, future consequence, or mechanical truth unavailable to the player. A final authority gate distinguishes observation of an established affordance from invention requiring adoption |
+| **Asset lineage** | Reuse the exact remade Rock Cut base from `AUG-2.3-03`, adding only editable cross-section, visibility, affordance, and prose annotations. The Landscape Voice text remains production typography and no generated image carries labels |
+| **Cross-reference** | Chapters 2.1–2.5, 5.2, 5.4, 5.9, and 7.3; Appendices B, F, and G; `AUG-2.3-03` and `AUG-5.9-01` |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | The location remains physically exact and previously authoritative; the observation point is genuinely animal-scale and bounded; perception follows bodies and purpose without changing facts; candidates arise from credible affordance; Landscape Voice remains a human environmental narrator; hidden state and private thought stay concealed; every addition or exception encounters an explicit authority gate; and the page teaches a repeatable method without becoming an automated content generator |
+
+Names and animal language close the Chapter through a compact Appendix B
+cross-reference and examples already present in `AUG-7.3-02`; they do not
+require another naming-bank infographic. Canon and precision close through the
+GDD's existing four-state **Canonical / Provisional / Tuning / Open** table and
+positive-canon prose, typeset as an ordinary designed reference field rather
+than assigned another Augment ID or lifecycle diagram.
 
 #### 7.4 v0.5 scope and explicit deferrals
 
-- Present the Concept Sourcebook completion boundary cleanly.
-- Keep tuning and later work visible without making the book read as unfinished.
+Chapter 7.4 states what kind of completion v0.5 represents. It distinguishes a
+coherent Concept Sourcebook from a software-production specification, and an
+adopted system relationship from a quantity still awaiting tuning. Its two
+pages make later work legible without turning the close of the book into a
+backlog, roadmap, or apology for incompleteness. Internal production history—
+including the order in which Appendices and Augments were developed—does not
+belong in the reader-facing treatment.
+
+##### `AUG-7.4-01` — Complete at This Scale
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.4, v0.5 scope, Concept Sourcebook identity, later content, explicit open questions, and manifestation boundary |
+| **Reader task** | Understand precisely what MEDIAN v0.5 establishes, what remains adjustable inside it, what later authorship may expand, and what belongs to a separate translated manifestation |
+| **Augment form** | Typography-led autonomous scope page with four clearly unequal fields and a concise opening statement; no artwork required |
+| **Working subject** | **Complete at This Scale** |
+| **Scale** | One complete landscape page because the completion boundary must remain visible as a whole; this is a designed reference page rather than a full-page infographic or structural plate |
+| **Narrative function** | None. The page establishes confidence and interpretive precision at the end of the main body |
+| **Narrative treatment** | Intentionally none |
+| **Register** | Concept Sourcebook editorial presentation |
+| **Subjects** | The unified v0.5 game concept; adopted relationships; bounded tuning; later content banks; explicitly open questions; primary desktop-and-console manifestation; tabletop, card, and mobile translations |
+| **Incoming state** | Chapters 1–7.3 have made the game imaginable at systemic, experiential, presentational, and authoring depth. The reader now needs to know which apparent edges are deliberate boundaries rather than omissions |
+| **Outgoing state** | The reader can treat v0.5 as a coherent concept while correctly withholding false precision from tuning values, open questions, later content volume, and separately designed manifestations |
+| **Canon inputs** | Chapter 7.4; the canonical/provisional/tuning/open doctrine in Chapter 7.3; Appendices J and K where manifestation and market context are retained; every explicitly open question in its owning section |
+| **Semantic content** | A short opening statement defines MEDIAN v0.5 as a **Concept Sourcebook for a theoretical game**: complete enough to imagine, examine, discuss, and develop further, without claiming executable software, an implementation schedule, final production values, or exhaustive content. Four fields then preserve different kinds of authority. **Established here:** the attachment-forward proposition; one persistent Home-and-Away world; five Registers; Corridor, Colony, Citizen, expedition, decision, progression, memory, interface, art, sound, and authoring systems; and the relationships joining them. **Tunable within the concept:** marked quantities, ranges, chances, durations, frequencies, thresholds, and economic rates whose adjustment does not alter their owning relationship. **Expandable through authorship:** additional MEETs, Places, Nodes, improvements, names, histories, Tales, Chronicle selections, Landscape Voice, and visual situations that obey the established systems; content volume is not mistaken for a missing mechanic. **Separate translations:** tabletop roleplaying, cooperative fixed-content card, and standalone mobile possibilities derived from the same world but designed for the strengths of another form. A small, visually distinct note preserves genuine open matters in their owning sections—including **Family** terminology—without aggregating them into a second authority list. The desktop-and-console computer game remains the primary full-spectrum manifestation |
+| **Asset lineage** | Entirely editable typography, hierarchy, rules, and restrained canonical icons. It should not borrow a backlog board, software roadmap, progress bar, release checklist, or production-status dashboard as its visual grammar |
+| **Cross-reference** | Chapters 1.1–1.4, 7.3–7.5; Appendices J and K |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | The page makes v0.5 feel complete rather than abandoned; Concept Sourcebook and production specification remain distinct; established relationships cannot be mistaken for tuning suggestions; tunable quantities cannot be mistaken for settled precision; later content remains expansion rather than repair; open questions retain their owning homes; translations do not compete with the primary computer-game conception; and no internal workflow, repository state, production sequence, promise, schedule, or false executable claim enters the reader-facing book |
+
+##### `AUG-7.4-02` — One Economy, Tuned Together
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.4, dedicated Items and Resources tuning phase and the smaller bounded timing, cadence, threshold, and probability questions |
+| **Reader task** | See why material values cannot be responsibly finalized one at a time, which relationships already constrain their tuning, and which secondary quantities can be tested afterward without reopening the game's architecture |
+| **Augment form** | Full-page dependency infographic with one central material circuit, three Core-Species stress tests, and a subordinate bounded-tuning rail |
+| **Working subject** | **One Economy, Tuned Together** |
+| **Scale** | One complete landscape page. The central dependency map requires simultaneous visibility; each branch remains readable in single-page view |
+| **Narrative function** | None; the page turns a deferral into an intelligible design commitment rather than dramatizing it |
+| **Narrative treatment** | Intentionally none. Named Citizens or Story-Colony figures may appear only as scale references in test examples, not as participants in a new event |
+| **Register** | Cross-system design reference spanning DWELL, TRAVEL, RISK, MEET, and DAWN accounting |
+| **Subjects** | Acquisition; passive production; transformation; preservation; pooled Stores; Sustenance consumption; construction and restoration; Items and Supplies; Carry and Jostle; expedition duration; Outposts; Civic Share-Days and opportunity cost; Mouse, Rabbit, and Squirrel campaign differences |
+| **Incoming state** | `AUG-7.4-01` has distinguished adopted relationships from provisional quantities. The reader now needs to see why the largest tuning field is one connected problem |
+| **Outgoing state** | No value is finalized. The reader understands the testing order, conservation questions, and parity criteria that a later tuning phase must satisfy |
+| **Canon inputs** | Chapters 3.3–3.7, 4.3–4.6, 5.1–5.8, 6.2–6.4, and 7.4; Appendices D, E, F, and G; the current one-Sustenance-per-capita-per-Day simulation premise as tuning evidence rather than canon |
+| **Semantic content** | The central circuit reads **world acquisition and civic production → pooled Stores → preservation or transformation → daily consumption, construction, Items, Outposts, restoration, and ceremonial material sinks → depleted Stores and renewed expedition need**. Civic Share-Days join the circuit as opportunity cost: work committed to one Project, Practice, or material task is unavailable elsewhere. Carry converts stored abundance into bodily load; Jostle and hazard place that load at risk; expedition length and terrain convert movement into Sustenance drain and Exposure; Cargo returned through Homecoming changes the next domestic state. The map fixes those relationships while leaving acquisition yields, Carry allotments, recurring drains, Project costs, Item costs, Outpost costs, preservation rates, production rates, renewal, and Supply-class names explicitly tunable. Three stress-test paths ask whether Mouse's half Body Unit and greater Item use, Rabbit's doubled Field movement, and Squirrel's strained ten Carry create different but comparably viable campaigns without changing equal per-Body-Unit civic contribution. A subordinate rail groups later bounded tests—population and maturation timing, housing multipliers, World Pressure cadence and Telegraphs, season and weather timing, traffic thresholds, Node renewal, and marked probabilities or durations—under their existing owners rather than feeding them all into a universal balance score. The page states the governing tuning principle: **quantities may change; adopted system relationships remain** |
+| **Asset lineage** | New editable diagram assembled from the canonical resource, Body Unit, Carry, expedition, DAWN, and Project symbols already used in Appendices D–G. Any numeric examples remain visibly labeled test values and cannot migrate into ordinary rules typography |
+| **Cross-reference** | Chapters 3.3–3.7, 4.3–4.6, 5.1–5.8, 6.2–6.4, and 7.4; Appendices D–G; the Gale expedition vertical slice |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | The economy reads as one connected conservation problem; acquisition, production, consumption, construction, Carry, journey cost, and opportunity cost cannot be tuned in isolation; current relationships remain fixed while quantities remain visibly unsettled; Core-Species difference is tested against civic parity rather than erased; the one-Sustenance simulation premise remains evidence only; secondary tuning retains distinct system owners; and the page offers neither arbitrary final numbers nor a universal balance meter |
 
 #### 7.5 Canonical summary
 
-- Decide whether the final body summary is typographic, diagrammatic, or paired
-  with a restrained concluding image before the Appendices.
+Chapter 7.5 closes the principal reading path with one canonical synthesis. It
+does not repeat the preceding Chapter summaries, introduce another story, or
+attempt an illustrated feature inventory. A single full-page infographic makes
+the game's governing movement visible and lets the final body prose end on the
+Colony's capacity to become enough. The Appendices then reopen the work as
+reference.
+
+##### `AUG-7.5-01` — Sanctuary, Exposure, Consequence, Return, Memory
+
+| Field | Proposed mapping |
+|---|---|
+| **GDD location** | Chapter 7.5, complete canonical summary and final governing movement of the v0.5 body |
+| **Reader task** | Hold MEDIAN as one coherent game whose Colony, Citizens, world, Registers, decisions, consequences, and memory deepen one another |
+| **Augment form** | Full-page canonical synthesis infographic combining a dominant five-part movement, one persistent Home-and-Away world, and concise attached system propositions |
+| **Working subject** | **Sanctuary → Exposure → Consequence → Return → Memory** |
+| **Scale** | One complete landscape page and the final page of the main body before the Appendices threshold |
+| **Narrative function** | Closure through recognition of the whole rather than through one more authored incident |
+| **Narrative treatment** | Intentionally no new narrative. Small current-canon environmental or Citizen fragments may support recognition, but the page remains a synthesis rather than a montage of protagonists |
+| **Register** | Whole-game conceptual view spanning DWELL, TRAVEL, RISK, MEET, and EMBODY without reducing them to a circular menu |
+| **Subjects** | One permanent Home; named Citizens; Colony systems and Quiet Equilibrium; the continuous Corridor; one Away party; bodily consequence; Homecoming; Campaign Memory; Core-Species difference and Guest citizenship; open-ended campaign horizons |
+| **Incoming state** | The full body has established the world, Colony, Citizens, Away play, campaign horizons, presentation, authoring doctrine, and the exact scope of v0.5 |
+| **Outgoing state** | The reader enters the Appendices with a stable mental model of the whole game and a reason to seek exact reference without mistaking reference detail for the central proposition |
+| **Canon inputs** | The complete seven-Part GDD, especially Chapters 1.1–1.4, 3.1–3.8, 4.1–4.6, 5.1–5.9, 6.1–6.5, and 7.1–7.5; Appendices serve only as later reference and do not supply new summary claims |
+| **Semantic content** | The dominant movement is linear enough to preserve departure and return but recursive enough to show deepening history. **Sanctuary:** DWELL, named lives, civic work, Places, Practices, Stores, Quiet Equilibrium, and EMBODY make Home capable of being known. **Exposure:** TRAVEL takes one actual party into continuous Field; Carry, terrain, weather, traffic, Nodes, and Roadways make movement bodily. **Consequence:** RISK and MEET turn preparation and judgment into collective resolution whose costs and changes belong to particular Citizens, objects, relationships, and Places. **Return:** Homecoming receives Citizens, Cargo, Guests, injury, changed capability, obligation, and knowledge into the Colony rather than clearing an expedition score. **Memory:** Record, Chronicle, Tales, canon images, and altered Home preserve what the campaign has become, changing the meaning of later sanctuary and later chosen risk. One persistent-world band beneath the movement keeps Home and Away geographically and causally continuous. Five restrained attached propositions carry the rest of the summary: **credible Game Logic earns attachment; Home grows through civic shares and spatially distinct species construction; Body Units preserve civic parity while bodies change play; Guests become full Citizens with bounded Signatures; campaign horizons invite growth without prescribing victory**. The five Registers remain forms of attention within this world, not five separate games. The closing prose rests beside rather than inside the diagram: **The Colony can grow, endure, remember, and become enough.** |
+| **Asset lineage** | Primarily editable diagram, typography, and restrained current-canon fragments drawn from already-approved body assets. It commissions no new full artwork, does not replace the later End Plate, and carries no generated lettering |
+| **Cross-reference** | Chapters 1.1–1.4, 3.1–3.8, 4.1–4.6, 5.1–5.9, 6.1–6.5, and 7.1–7.5; Appendices A–K |
+| **Priority** | Essential |
+| **Approval state** | Proposed for authorial review |
+| **Acceptance test** | The five-part movement remains the dominant reading; Home and Away remain one persistent world; every Register and major system can be located without turning the page into a feature inventory; Citizens rather than resources carry consequence; Homecoming and Memory remain materially distinct; Core-Species parity and difference coexist; Guests remain Citizens rather than modifiers; the campaign remains open-ended; no victory loop, software roadmap, final artwork plate, or new canon appears; and the last body sentence is “The Colony can grow, endure, remember, and become enough.” |
 
 ### 6.9 Appendices
 

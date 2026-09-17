@@ -1013,7 +1013,7 @@ accumulated over weeks or months of voluntary return.
 The player opens the game after ten days away. No time penalty has accumulated.
 Home resumes at a rainy morning Page.
 
-Holding on the Kitchen reveals that its roof is dripping. Holding on a young
+Holding on the Storehouse reveals that its roof is dripping. Holding on a young
 Citizen reveals that she is watching a Groundhog Guest preparing to leave.
 Holding near the Road reveals a bright piece of waterproof material caught
 against the verge.
@@ -1022,7 +1022,7 @@ The player follows the young Citizen and the Groundhog toward it. At the
 Roadway, the phone rotates. They wait through the vibration of two passing
 trucks, retrieve the material, and return.
 
-Back in portrait view, the player places it over the Kitchen. The Page closes
+Back in portrait view, the player places it over the Storehouse. The Page closes
 on the two animals sheltering beneath the newly patched roof while rain
 continues along both Roads.
 

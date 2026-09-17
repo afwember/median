@@ -1744,7 +1744,7 @@ single Colony-wide deficit.
 Squirrels, and v0.5 Guests contribute one; Mice contribute one-half. It measures
 aggregate responsibility rather than aptitude, authority, or personal worth.
 Growth adds Role Load through more lives, dependencies, inhabited ground,
-Practices, routes, and stores. Only present, available Citizens sustaining that
+Practices, routes, and Stores. Only present, available Citizens sustaining that
 Role answer its Load.
 
 #### Housing Balance
@@ -1766,7 +1766,7 @@ immunity from events or consequence.
 #### Capacity and materials
 
 Civic Capacity answers ordinary responsibility without continuously consuming
-stock. Resources instead enable Projects, preparation, recovery, and protected
+Stores. Resources instead enable Projects, preparation, recovery, and protected
 stakes during MEET; they cannot purchase exemption from Load or replace
 sustaining Citizens.
 
@@ -1882,9 +1882,11 @@ Metropolis may reveal a specific improvement. The possibility becomes directly
 available rather than entering a Knowledge track; MEET presents it when a
 meaningful choice is needed, and the appropriate Role's Project makes it real.
 An improvement changes one Place and adds a specific capability, response,
-range, or resilience rather than a generic level. Every Practice supports at
-least one such improvement. Winter Cultivation, for example, adapts one Garden
-for limited winter production without changing every Garden.
+range, or resilience rather than a generic level. A Practice gains an
+improvement only where a real capability warrants it; the system does not
+manufacture improvements to make the Practice list symmetric. Winter
+Cultivation, for example, adapts one Garden for limited winter production
+without changing every Garden.
 
 ## 3.4 Roles and Practices
 
@@ -1896,19 +1898,18 @@ Shares from ordinary responsibility, Practice support, and passive output.
 
 ### Roles and their Practices
 
-Each Role is first established through its civic responsibility, ordinary
-contribution, related Practices, characteristic Projects, vulnerabilities, and
-limits. Shared Practices appear under every Role that uses them and are
-identified together after the Role entries so that none appears to belong to
-the first Role that uses it.
+MEDIAN has seven standing Roles. Each is first established through its civic
+responsibility, ordinary contribution, related Practices, characteristic
+Projects, vulnerabilities, and limits. Shared Practices appear under every
+Role that uses them and are identified together after the Role entries so that
+none appears to belong to the first Role that uses it.
 
 | Role | Practices |
 |---|---|
 | **Builder** | Workshop |
 | **Gardener** | Garden |
 | **Crafter** | Workshop |
-| **Caretaker** | Hearth; Kitchen |
-| **Healer** | Hearth |
+| **Caretaker** | Hearth; Storehouse |
 | **Teacher** | Gathering Place; Hearth |
 | **Watchkeeper** | Watchpost |
 | **Leader** | Gathering Place |
@@ -1999,10 +2000,10 @@ work; Citizens still perform it.
 
 **Supply Preparation** passively converts available inputs into Binding,
 Device, and Offering Supplies through the shared Practice-and-Citizen rule.
-Recipes, stock, targets, and reserves bound the result; Remedies belong to
-Healer. These prepared Supplies remain anonymous expedition resources rather
-than named possessions. A Crafter committed to a Project leaves both ordinary
-Readiness and Supply Preparation.
+Recipes, Stores, targets, and reserves bound the result; Caretaker
+Provisioning prepares Remedies separately. These prepared Supplies remain
+anonymous expedition resources rather than named possessions. A Crafter
+committed to a Project leaves both ordinary Readiness and Supply Preparation.
 
 #### Tools and Crafter Projects
 
@@ -2030,102 +2031,112 @@ Crafter responsibility.
 
 ### Caretaker
 
-Caretaker carries responsibility for receiving, provisioning, nurturing, and
-preserving ordinary life. Its Civic Shares cover ordinary responsibility
-across Hearth and Kitchen without assignment to either Practice.
+Caretaker carries responsibility for receiving, provisioning, nurture,
+dependency, medical readiness, recovery, and the preservation of ordinary
+life. Its Civic Shares sustain one civic responsibility across **Hearth** and
+**Storehouse** without assignment to individual Practices.
 
-#### Hearth
+#### Hearth: care of lives
 
 **Hearth** is the foundational shared Practice of nurture, dependency, and
 recovery—not a family unit. Caretakers use it to feed, settle, clean, and
-comfort vulnerable Citizens; receive injured or exhausted returnees; care for
-young Citizens and Patients; and help displaced or newly arrived lives enter
-ordinary life. Hearth draws on Caretaker, Healer, and Teacher Readiness as its
-actual needs require.
+comfort vulnerable Citizens; diagnose and stabilize injury; manage illness;
+receive injured or exhausted returnees; care for young Citizens and Patients;
+guide recovery; and help displaced or newly arrived lives enter ordinary life.
+Teacher Readiness joins the same Hearth when learning, integration, or a young
+Citizen's needs require it.
 
-#### Kitchen
+Named Patients, incapacity, treatment, and recovery remain individually
+legible while Load and Readiness remain Colony-scale. A Colony without a
+Patient or relevant health circumstance carries no automatic medical Load.
+A Wounded Citizen at Home adds temporary Patient Load equal to that Citizen's
+Body Unit. The obligation enters Caretaker Load once and remains there until
+the Wound clears; when Capacity does not cover it, the difference is ordinary
+Caretaker Pressure rather than a separate injury penalty. The Patient's own
+unavailability remains individually true throughout recovery.
 
-**Kitchen** is the later Practice dedicated to preservation and Provisioning.
-Through the shared Practice-and-Citizen rule, it preserves Perishable
-Sustenance as Durable Sustenance and supports reserves, seasonal preparation,
-and family provisioning. Available food, known methods, targets, and reserves
-bound the result. A Project-committed Caretaker leaves this work. Kitchen needs
-no bootstrap exception because Caretaking already exists through Hearth.
+#### Storehouse: care of Stores
 
-#### Receiving and Projects
+The Colony's **Stores** form one pooled resource state. A **Storehouse** is the
+later Caretaker Practice that gives those resources a physical presence in
+DWELL and supports their receiving, ordering, protection, and transformation.
+Selecting any Storehouse opens the same globally available Resources screen;
+multiple Storehouses never divide Stores into local inventories.
+
+Storehouse supports one shared **Caretaker Provisioning** process. Its
+throughput is allocated between preserving Perishable Sustenance as Durable
+Sustenance and preparing Remedy Supplies from defined inputs. Known methods,
+targets, protected reserves, and available inputs bound both outputs. The same
+Caretaker Civic Share cannot supply full Preservation and full Remedy
+Preparation simultaneously. A Project-committed Caretaker leaves ordinary
+care and reduces this shared throughput.
+
+Before the first Storehouse is completed, the Founders' carried Stores remain
+in one visible provisional cache and in the globally accessible Resources
+screen. The cache provides no Provisioning throughput or Practice Strength.
+Establishing the first Storehouse uses the ordinary Project Queue after the
+first Workshop; it receives no second bootstrap exception.
+
+If one of several Storehouses becomes unusable, its Practice Strength and
+throughput cease. Pooled Stores remain available through the Resources screen
+unless an explicit event spoils, destroys, isolates, or otherwise changes the
+resources themselves.
+
+#### Receiving, recovery, and Projects
 
 Receiving remains Caretaker work rather than a separate Practice. Homecoming,
 hospitality, displacement, and aftermath may bring Citizens, Patients, Guests,
-food, material, or threatened reserves into Hearth, Kitchen, Residence, or
-MEET. Their visible caches and pantries remain expressions of abstract Colony
-Stock, not a Stores Practice. Caretaker Projects create lasting changes to
-care, preservation, resettlement, or seasonal preparation; routine receiving,
-stock movement, preservation, and target changes remain ordinary work.
+Wanderers, food, Scrap, Supplies, or threatened reserves into Hearth,
+Storehouse, Residence, or MEET as the situation requires.
 
-#### Open Table
+Ordinary Caretaker work receives, diagnoses, stabilizes, treats, preserves,
+prepares, orders, and guides recovery. Projects make a persistent result true:
+adapting Hearth or Storehouse, restoring displaced or contaminated care,
+establishing a lasting preservation or treatment capability, completing
+individualized Rehabilitation, resettling displaced lives, or making durable
+seasonal preparation. Immediate treatment, Wound recovery, routine receiving
+and movement of Stores, ordinary Provisioning, and target changes remain
+ordinary work.
 
-**Open Table** is a Kitchen improvement that opens Shared Meal, a rare
-whole-Colony EMBODY opportunity during Quiet Equilibrium. Food, service,
-conversation, and species-specific common space may reflect Homecomings,
-recovery, observance, grief, or celebration. Shared Meal uses ordinary
-Sustenance and supplies no separate Feast reward; gathering together does not
-resolve Guest Terms, injury, disagreement, or civic Pressure.
+#### Wound Recovery and Rehabilitation
 
-A Caretaker shortfall makes Home vulnerable to spoilage, disordered reserves,
-crowding, displacement, failed receiving, unmet dependency, family disruption,
-and poor winter preparation. MEET situates consequence without inflicting
-automatic daily harm. Caretaker neither replaces Healer or Teacher nor owns
-Hearth exclusively. Resident Signatures may change how a particular threat is
-understood or received without replacing Caretaker responsibility.
+Wound recovery is ordinary Caretaker work rather than a Project. It enters no
+Project Queue, reserves no material, and commits no named Caretaker. One
+Wounded Citizen occupies one usable Hearth for an authored requirement of one
+to three **Recovery Days**. That Hearth must be free of another Wounded Citizen,
+an active Young-care commitment, and any other intensive use that already
+occupies it. While recovery occupies the Hearth, it cannot support another
+Wounded Citizen, Young-care commitment, or Hearth Project, though it retains
+ordinary Practice Strength. If several Citizens could claim limited Hearths, a
+Care MEET makes the allocation; when only one valid allocation exists, it
+occurs without an empty choice.
 
-### Healer
-
-Healer carries responsibility for medical readiness, particular Patients,
-recovery, and the bodily aftermath of exposure. **Hearth** is Healer's primary
-Practice: shared civic ground through which treatment and recovery return a
-named life to ordinary Colony life.
-
-#### Care through Hearth
-
-Hearth is the Practice of care and nurture rather than a family unit. It draws
-on Healer Readiness for injury, illness, exposure, rehabilitation, and bodily
-aftermath, with Caretaker and Teacher support entering as actual needs require.
-Named Patients, incapacity, and recovery remain individually legible even
-though Load and Readiness are Colony-scale. Without a relevant need, the Role
-creates no automatic Healing Load.
-
-#### Remedy Preparation
-
-**Remedy Preparation** passively transforms Sustenance and Flexible Scrap into
-Remedy Supplies through the shared Practice-and-Citizen rule. Inputs, recipes,
-targets, and reserves bound the result. Caretaker and Teacher support may
-strengthen Hearth without counting as Healers for Remedy production. A Healer
-committed to a Project leaves ordinary care, Readiness, and preparation.
-
-#### Healer Projects
-
-Ordinary Healer work diagnoses, stabilizes, treats, guides recovery, and
-receives the bodily aftermath of Homecoming or MEET. Projects instead create a
-lasting care capability, adapt Hearth, restore displaced or contaminated care,
-recover a named Citizen from Wound, or establish a lasting rehabilitation
-change. Immediate treatment and field stabilization remain ordinary care.
-
-#### Rehabilitation
+Each Home DAWN records one Recovery Day for a Home-present Wounded Citizen
+occupying a Hearth. No fractional Recovery Day accumulates. Additional
+Hearths or Caretakers cannot accelerate the biological interval. Caretaker
+Pressure may create situated vulnerability or a Care MEET, but it does not by
+itself stop an occupied Hearth's recovery clock. Without an available Hearth,
+the Wound and its Patient Load persist and no Recovery Day advances.
+Completion clears the Wound and its Patient Load and releases the Hearth while
+leaving any Maiming and its history true. Remedy stabilization neither removes
+nor shortens this Home requirement.
 
 **Rehabilitation** improves one Hearth for one individualized Project at a
 time. Protected movement space, bodily supports, and sustained care may help a
 Maimed Citizen establish an adapted way to move, work, communicate, or
 eventually Launch. It does not promise restoration, erase Maiming or history,
-or accelerate ordinary recovery. Caretaker and Teacher may support the named
-Citizen's needs; Leader contributes none. Wound Recovery requires an available
-Hearth but not this improvement.
+or accelerate Wound recovery. Teacher may support the named Citizen's needs;
+Leader contributes none. Wound recovery requires an available Hearth but not
+this improvement.
 
-A Healer shortfall makes Home vulnerable to delayed recovery, untreated injury
-or illness, exhausted care, inadequate Remedies, contamination, and clustered
-Patient need. MEET or Homecoming locates the consequence in a particular
-Patient or Hearth rather than spreading anonymous damage. Guest Signatures may
-reveal a condition, contain aftermath, or open a response, but they do not
-erase illness or replace ordinary Healing Load.
+A Caretaker shortfall makes Home vulnerable to spoilage, disordered or
+inaccessible Stores, crowding, displacement, failed receiving, unmet
+dependency, family disruption, delayed recovery, untreated injury or illness,
+exhausted care, inadequate Remedies, contamination, clustered Patient need,
+and poor winter preparation. MEET or Homecoming locates consequence in the
+actual Citizen, Storehouse, Hearth, family, or reserve rather than inflicting
+anonymous daily harm. Guest Signatures may reveal a condition, contain
+aftermath, or open a response without replacing Caretaker responsibility.
 
 ### Teacher
 
@@ -2253,10 +2264,11 @@ alter communication or a bounded response without replacing leadership.
 ### Shared Practices
 
 **Workshop**, **Hearth**, and **Gathering Place** are shared Practices that
-compatible Roles draw upon as circumstances require. Hearth sustains healing,
-nurture, dependency, and recovery through Caretaker, Healer, or Teacher
-Readiness without creating a Hearth-specific Role. **Family** remains a
-domestic relationship, separate from Hearth.
+compatible Roles draw upon as circumstances require. Hearth sustains treatment,
+nurture, dependency, recovery, learning, and integration through Caretaker or
+Teacher Readiness without creating a Hearth-specific Role. **Family** remains a
+domestic relationship, separate from Hearth. Storehouse is Caretaker's
+resource-facing Practice rather than a shared inventory divided among Places.
 
 ### Project Queue
 
@@ -2277,7 +2289,7 @@ committed Citizens. Builder's first-Workshop exception is the sole bootstrap.
 The player chooses a persistent result, its supporting Practice, material, and
 named Citizens of the Role that owns the result. Establishing a Residence,
 Practice, or Outpost belongs to Builder; creating a Tool belongs to Crafter;
-Winter Cultivation belongs to Gardener; Wound Recovery belongs to Healer.
+Winter Cultivation belongs to Gardener; Rehabilitation belongs to Caretaker.
 
 #### Queue operations
 
@@ -2289,6 +2301,10 @@ progress. A committed Project cannot be cancelled or interrupted. Completion
 makes the result true, releases the Practice, and returns its Citizens to
 ordinary availability. The Practice retains whatever situated strength its
 remaining compatible support provides while the Project proceeds.
+
+Wound recovery never enters the Project Queue. Its Patient Load, Hearth
+occupancy, and Recovery Days follow the ordinary-care rule above while Projects
+remain reserved for persistent changes such as Rehabilitation.
 
 ## 3.5 Pressure, Situations, and Home MEETs
 
@@ -2379,14 +2395,16 @@ Project follows only when a persistent result genuinely remains to be made.
 | **Supplies** | Prepared, expendable capability used during Away or situated need. |
 | **Tools** | Durable functional Items created deliberately through Crafter Projects. |
 
-Resources remain Colony-scale stocks. Scrap does not divide into component
-inventories, and prepared Supplies do not retain individual makers.
+Resources remain pooled Colony-scale **Stores**. Scrap does not divide into
+component inventories, Storehouses do not create local stockpiles, and prepared
+Supplies do not retain individual makers.
 
 ### Production and transformation
 
-Garden and Gardener produce Perishable Sustenance; Kitchen and Caretaker
-preserve it; Workshop and Crafter prepare non-Remedy Supplies; Hearth and
-Healer prepare Remedies. Each process follows the shared
+Garden and Gardener produce Perishable Sustenance; Workshop and Crafter prepare
+Binding, Device, and Offering Supplies; Storehouse and Caretaker supply one
+shared Provisioning throughput allocated between Perishable-to-Durable
+preservation and Remedy Preparation. Each process follows its defined
 Practice-and-Citizen gate, gains from good placement, and remains bounded by
 inputs, season, recipes, targets, and reserves. Other Practices produce nothing
 merely because they exist.
@@ -2395,9 +2413,11 @@ merely because they exist.
 
 The player sets each eligible transformation to **Prepare** or **Hold**;
 **Unavailable** explains a missing Practice, Citizen, input, method, or
-condition. Targets prevent automatic overproduction, reserves protect stock
+condition. Targets prevent automatic overproduction, reserves protect Stores
 from unrelated use, and uncommitted reservations remain visible and releasable.
-Provisioning only transforms resources that exist.
+Caretaker Provisioning divides one available throughput between Preservation
+and Remedy Preparation rather than counting Storehouse or Caretaker support
+twice. Provisioning only transforms resources that exist.
 
 ### Beautification
 
@@ -2431,7 +2451,7 @@ two Mice therefore create the same daily demand as one Rabbit or Squirrel.
 ### Resources and Projects
 
 Projects draw only their defined material and may reserve it before commitment.
-Commitment protects that stock. Builder establishes Practices; Crafter creates
+Commitment protects those Stores. Builder establishes Practices; Crafter creates
 Tools; lasting restoration or adaptation follows its owning Role. Ordinary
 upkeep remains covered responsibility, so time alone causes no structural
 decay.
@@ -2530,23 +2550,32 @@ Tier.
 **Colony DWELL is MEDIAN's version of base-building play. EMBODY is MEDIAN's
 version of cozy play.**
 
-EMBODY lets the player live as or be with individual Citizens inside the
-sanctuary created through DWELL. To live as a Citizen is to participate in a
-bounded activity. To be with a Citizen is to accompany their movement, rest,
-relationships, and experience of Home. Rare authored experiences may gather
-the whole Colony while preserving every Citizen as an individual.
+EMBODY lets the player live as a Citizen or remain present with Citizens inside
+the sanctuary created through DWELL. Participation gives the player bounded
+direct involvement through one Citizen. Presence gives the player guided,
+animal-scale attention without taking control of a Citizen. Most experiences
+remain intimate and small-cast. Open Table exceptionally widens Presence to a
+village-scale gathering while preserving every Citizen as an individual.
 
 ### Access and invitation
 
 - Quiet Equilibrium opening EMBODY and its loss closing EMBODY
 - EMBODY remaining strictly Home-only and never becoming available at an Away
   camp, Stopover, uncontested Node, or other merely calm location
-- The player entering through a present and available Citizen at a safe, usable
-  Place
+- Ordinary EMBODY experiences entering through a present and available Citizen
+  at a safe, usable Place
+- Open Table entering through an eligible gathering rather than through one
+  Citizen
 - Individual experiences appearing as invitations rather than compulsory tasks
 - An unavailable Citizen or unsafe Place remaining temporarily ineligible
 - A Citizen in active Tharn remaining unavailable for EMBODY
 - The player being free to leave an experience without penalty
+
+> **Open Table access gate — placeholder.** Home and Quiet Equilibrium supply
+> the general EMBODY gate. The additional campaign, civic, or authored condition
+> that makes an Open Table gathering available remains to be determined. That
+> future condition will not attach Open Table to a Practice, fixed Place, or
+> particular Citizen.
 
 ### Participation and Presence
 
@@ -2554,8 +2583,8 @@ EMBODY has two primary forms:
 
 - **Participation:** limited direct involvement in a bounded activity such as
   running, gathering, carrying, arranging, grooming, or playful movement
-- **Presence:** guided attention to what a Citizen experiences through looking,
-  listening, posture, movement, or repose
+- **Presence:** guided observation through looking, listening, movement,
+  attention, or repose, ordinarily remaining with one Citizen and a small cast
 - An experience able to move naturally from Participation into Presence
 - Controls remaining specific to the moment rather than expanding into
   unrestricted free movement
@@ -2567,6 +2596,10 @@ EMBODY has two primary forms:
   rather than producing superior output
 - Cosmetic arrangements or meaningful remembered details able to persist when
   appropriate
+
+**Open Table** is the exceptional large-cast expression of Presence. It enters
+through the gathering itself: no Citizen becomes the player's acting body, and
+attention may move among several simultaneous groups and activities.
 
 ### Experience families
 
@@ -2580,14 +2613,13 @@ EMBODY has two primary forms:
   play
 - **Weather Enjoyment:** conditions that create Exposure Away becoming pleasure
   under shelter
-- **Shared Meal:** the whole Colony gathering through an Open Table Kitchen,
-  with the player accompanying collective ordinary life rather than commanding
-  it
 
-These families may overlap. Shared Meal is available only after Open Table has
-been established; the others require no universal Practice improvement. The
-families organize authored experiences without becoming separate progression
-tracks.
+These families may overlap. Open Table is a scale and presentation of Presence
+rather than another experience family: a village-festival gathering may hold
+Social Play, Comfort and Care, Observation, food, races, conversation,
+observance, and quiet simultaneously. A shared meal may help gather the cast
+without defining the form. The families organize authored experiences without
+becoming separate progression tracks.
 
 ### Species embodiment
 
@@ -2604,19 +2636,19 @@ tracks.
 
 ### Citizens and relationships
 
-- Most experiences belonging to a particular Citizen in a particular Place,
-  with Shared Meal as the bounded whole-Colony exception
-- Shared Meal retaining every participant as a named Citizen with their own
-  relationships, timing, and response rather than treating the Colony as a
-  crowd unit
+- Most experiences belonging to a particular Citizen in a particular Place and
+  remaining small-cast
+- Open Table forming the bounded large-cast exception, with every visible
+  participant remaining a named Citizen with their own relationships, timing,
+  attention, and response rather than becoming a crowd unit
 - Other Citizens retaining their own timing and responses rather than behaving
   as commanded props
 - Play, affection, comfort, imitation, and attention feeling offered by
   relationships
 - Injury, recovery, age, memory, and prior events shaping eligible
   experiences without reducing Citizens to condition displays
-- Care experiences expressing recovery and trust without replacing Caretaker,
-  Healer, or Teacher responsibility
+- Care experiences expressing recovery and trust without replacing Caretaker
+  or Teacher responsibility
 - Young Citizens participating only in experiences appropriate to their present
   life stage
 
@@ -2647,6 +2679,9 @@ tracks.
 - Small Work never becoming the required manual method for ordinary production
 - Presence remaining meaningful even when the player's only actions are looking,
   listening, settling, approaching, or waiting
+- Open Table remaining guided, bounded, and animal-scale while allowing the
+  player's attention to move among simultaneous groups without inhabiting any
+  participant
 - EMBODY never erasing injury, grief, or other consequence merely by
   depicting comfort
 - Loss of Quiet Equilibrium closing an active experience safely rather than
@@ -2814,7 +2849,7 @@ sustain the fixed Role shown below.
 | **Bat** | Builder | **Workshop Roost** | high dry-dark roost |
 | **Pigeon** | Leader | **Gathering Loft** | open built ledge |
 | **Skunk** | Watchkeeper | **SPEAK — Boundary Deterrence** | downwind boundary |
-| **Possum** | Healer | **Hearth Annex** | ventilated receiving edge |
+| **Possum** | Caretaker | **Hearth Annex** | ventilated receiving edge |
 
 ### Hospitality and Guest life
 
@@ -2976,9 +3011,10 @@ favorable nonviolent response during an eligible threatening-animal Home MEET.
 
 #### **Possum**
 
-Possum sustains Healer from a ventilated outer annex of a Hearth. **Hearth
+Possum sustains Caretaker from a ventilated outer annex of a Hearth. **Hearth
 Annex** incorporates the Residence through an ordinary Builder Project without
-another Place, Remedy Preparation, Practice Strength, or capacity.
+another Place or any Caretaker Provisioning, Practice Strength, or capacity
+beyond Possum's ordinary Civic Share.
 
 Guest recruitment remains optional at every Tier. No victory condition or
 essential system requires a Guest, a particular species, or a complete roster.
@@ -3077,7 +3113,7 @@ and assigned to one Launch-eligible Citizen for an Expedition.
 | **Binding** | Connect or secure with one cord, strip, wrap, or fastening. | Crafter |
 | **Device** | Produce one temporary physical or sensory effect through a small contrivance. | Crafter |
 | **Offering** | Place one morsel or meaningful token into an encounter. | Crafter |
-| **Remedy** | Treat, protect, or stabilize a body with one dose, dressing, or poultice. | Healer |
+| **Remedy** | Treat, protect, or stabilize a body with one dose, dressing, or poultice. | Caretaker |
 
 The authored MEET states the exact available effect. Commitment consumes the
 Supply whether or not the chosen response achieves its intended outcome. A
@@ -3395,8 +3431,9 @@ persistence, including doubling when an earlier unstabilized Wound applies.
 | **Death** | A rare final outcome available only when severe fatal stakes were legible before Commit. |
 
 A later Wound changes the existing injury description and retains the greater
-current or authored one-to-three-Healer-Day recovery requirement; Citizens do
-not accumulate multiple Wounds. Remedy may stabilize a Wound through
+of its current remaining recovery and the new authored requirement; Citizens
+do not accumulate multiple Wounds. Every authored requirement remains within
+one to three Recovery Days. Remedy may stabilize a Wound through
 Homecoming, lessen an immediate effect, contain the Wound accompanying Maiming,
 or express care through PARLEY. Rest stabilization lasts through the next three
 traveled Bands and their situations.
@@ -3419,7 +3456,7 @@ Usable Outpost Rest removes one Exposure step but never the final step Away.
 At Home, each DAWN removes up to three steps, so maximum Exposure falls from 6
 to 3 and then 0 over two Dawns. Wound, Maiming, and Exposure recover through
 their separate procedures. Appendices D and G contain the full bodily
-consequence, recovery, Wound Project, and Tharn reference.
+consequence, Home recovery, and Tharn reference.
 
 ## 5.7 Outposts and Stopovers
 
@@ -3442,7 +3479,7 @@ routine upkeep, specialization, upgrade, or Tier in v0.5.
 A Rest MEET at a usable Outpost advances one Band, resets travel cadence, ends
 Tharn, stabilizes Wounds for three traveled Bands, removes one Exposure step
 without removing the final Away step, and protects ordinary sleep from exposed
-ground. The player may also move any fungible Cargo into Colony stock through
+ground. The player may also move any fungible Cargo into Stores through
 abstract Colony sync, immediately freeing Carry. Personal and singular Items
 remain with their holders. The party remains Away, and the Outpost never
 becomes another Home. Appendix G provides the full Outpost and Stopover
@@ -3470,8 +3507,10 @@ recalculates Civic Balance and Home systems.
 
 Most facts reconcile automatically. Care, Allocation, Guest, succession,
 memorial, or another choice opens only when its alternatives create materially
-different persistent results. An available Hearth and Healer may receive a
-Wound Recovery Project; deferral never prevents Homecoming itself. Exposure
+different persistent results. A returning Wounded Citizen adds Patient Load
+and occupies an available Hearth automatically when only one valid allocation
+exists. Competing Patients or occupied Hearths open a Care choice; lack of a
+Hearth postpones Recovery Days but never prevents Homecoming itself. Exposure
 begins its Home recovery rather than disappearing at the boundary.
 
 A routine Homecoming is brief and warm. A consequential return expands around
@@ -3701,6 +3740,13 @@ reserve supports the initial three-Body-Unit recovery and contains material for
 the first Workshop followed by either one Residence or one Garden; the player
 may choose which unmet need remains consequential.
 
+Those carried resources begin as pooled Stores in a visible provisional cache
+on the founding ground. Selecting the cache or using the global menu opens the
+same Resources screen. The cache supplies no Practice Strength or Caretaker
+Provisioning. After the first Workshop exists, the Colony may establish an
+ordinary Storehouse Project; until then, the cache preserves resource access
+without becoming another bootstrap exception.
+
 Immediately after **Make Home**, the Mouse opening introduces two named
 Wanderers through an authored Home MEET. They join as complete Citizens with
 their own relationships and Tales, bringing six Mice to the same three-Body-Unit
@@ -3916,7 +3962,7 @@ Focus resolves after Commit, randomly among equally qualified Citizens.
 DWELL is an elevated, isometric-style operational view of the Colony, with
 free rotation, spatial sliding, and continuous zoom. Every Core Colony and
 every operationally relevant part of its life remain above ground and visible:
-Citizens, rooms, Places, Practices, Projects, paths, stores, common space, and
+Citizens, rooms, Places, Practices, Projects, paths, Stores, common space, and
 Civic Balance can be understood as one inhabited arrangement. The camera may
 clarify overlaps while preserving the implied physical Place.
 
@@ -3926,6 +3972,11 @@ lives without leaving collective stewardship. Mouse preserves the feeling of
 interior life through dense above-ground rooms, shared walls, joined edges,
 covered links, and accumulated shelter rather than a separate underground
 layer.
+
+A Storehouse gives pooled Stores a visible Home presence. Selecting any
+Storehouse opens the globally available Resources screen; several Storehouses
+never create separate inventories. Before the first is established, the same
+screen remains available through the founding cache and global interface.
 
 #### TRAVEL
 
@@ -3982,19 +4033,23 @@ consideration, though ambient motion may continue without changing state.
 
 #### EMBODY
 
-EMBODY enters through one present and available Citizen in a safe, usable part
-of Home. The DWELL view closes toward that Citizen and settles into an intimate
-frame, ordinarily close third person, that can move between participating as
-the Citizen and remaining with them. Operational summaries recede while the
-Citizen, immediate Place, weather, movement, sound, touch, and nearby
-relationships carry the experience.
+Ordinary EMBODY enters through one present and available Citizen in a safe,
+usable part of Home. The DWELL view closes toward that Citizen and settles into
+an intimate frame, ordinarily close third person, that can move between
+participating as the Citizen and remaining with them. Operational summaries
+recede while the Citizen, immediate Place, weather, movement, sound, touch, and
+nearby relationships carry the experience.
 
 Controls are bounded to the activity. The Citizen retains their particular
 posture, pace, response, and social behavior; other Citizens remain named
-inhabitants rather than controllable scenery. Open Table can widen this
-intimacy to the whole Colony. Departure returns to DWELL without penalty. Loss
-of Quiet Equilibrium ends the experience safely and lets an urgent situation
-open MEET from its owning Register.
+inhabitants rather than controllable scenery. Open Table instead enters through
+an eligible gathering and settles into guided collective Presence at animal
+scale. The player inhabits no Citizen and may direct attention among a large
+cast and several simultaneous activities without returning to DWELL's
+operational view. Its additional access gate remains deliberately unresolved.
+Departure returns to DWELL without penalty. Loss of Quiet Equilibrium ends the
+experience safely and lets an urgent situation open MEET from its owning
+Register.
 
 ### Information lenses and active attention
 
@@ -4085,6 +4140,14 @@ protect without obscuring fur, feathers, markings, posture, or Keepsakes. Role
 may affect what is at hand without becoming a uniform. Civic advancement
 improves selection, fit, repair, adaptation, and ornament; grandeur comes from
 accumulated care rather than weapons, armor, or adventurer loadouts.
+
+Storehouse follows the same civic function without becoming a miniature human
+warehouse. Mouse JOIN integrates fitted cupboards, caches, and receiving edges
+into adjoining rooms; Rabbit GATHER makes provisions legible around protected
+common access; Squirrel CONNECT distributes secure holdings along linked,
+reachable anchors. In every form, the Practice visibly receives and tends the
+single pooled Stores state. Particular baskets, shelves, wrappings, and caches
+may become MEET stakes without implying item-by-item simulation.
 
 Each Citizen's current canon image anchors species, body, markings, Keepsake,
 clothing, Maiming, adaptive devices, and other persistent distinctions across
@@ -4317,8 +4380,8 @@ frequencies.
 
 The first draft establishes representative MEETs, Places, Nodes, improvements,
 histories, names, Tales, Chronicle selections, Landscape Voice, and visual
-setups. Later authoring can expand those banks; every Practice will receive at
-least one improvement.
+setups. Later authoring can expand those banks; a Practice receives another
+improvement only when a real capability warrants it.
 
 Appendix development precedes the Augments Phase, which will map narrative,
 tables, diagrams, infographics, literal game presentations, illustration, and
@@ -4345,15 +4408,21 @@ The game holds one persistent world across Home and Away. DWELL builds and
 sustains the Colony; TRAVEL directly guides one party through the Field; RISK
 expresses Crossing differently for Mouse, Rabbit, and Squirrel; MEET presents
 situated decisions and consequential transitions; EMBODY lets the player live
-as or be with one Citizen when Quiet Equilibrium releases attention from
-urgent stewardship.
+as or be with Citizens when Quiet Equilibrium releases attention from urgent
+stewardship, ordinarily through one small-cast invitation and exceptionally
+through Open Table's collective Presence.
 
 Home grows through Builder-designated Places, Residences, Practices, Projects,
 and Citizen Civic Shares. Roles answer current Load; Readiness reveals civic
-ability to answer it, and positive Load becomes Pressure. Completed Practices
+ability to answer it, and uncovered Load becomes Pressure. Completed Practices
 provide durable strength while Role support enables their fullest civic and
 productive use. Placement makes species preference spatially meaningful, and
 Projects turn chosen shares toward lasting change.
+
+Caretaker joins the care of lives through Hearth with the care of pooled Stores
+through Storehouse. Storehouses make resources physically legible without
+partitioning them, while one shared Provisioning pool forces real choice between
+Preservation and Remedy Preparation.
 
 Mouse JOINs protected interiors, Rabbit GATHERs around open common ground, and
 Squirrel CONNECTs a branching Web. Body Units preserve civic parity while
@@ -4511,7 +4580,7 @@ listing every place it appears.
 | **Day Band** | The sole mechanical unit of world time: Morning, Midday, Evening, or Night. | § 2.5, DAWN and the Playable Day |
 | **Distinction** | Narrow favorable recognition grounded in a Citizen's meaningful conduct. | § 6.1, Distinctions and After-names |
 | **DWELL** | The operator of the Colony Register: understand, build, arrange, and sustain collective life at Home. | § 1.4, The Colony Register; § 3.2 |
-| **EMBODY** | The operator of the Embodiment Register: live as or remain with a particular Citizen inside achieved sanctuary. | § 1.4, The Embodiment Register; § 3.8 |
+| **EMBODY** | The operator of the Embodiment Register: participate as a Citizen or remain present with Citizens inside achieved sanctuary. | § 1.4, The Embodiment Register; § 3.8 |
 | **Encounter** | The cross-modal Register that brings a bounded consequential situation into focused choice. | § 1.4, The Encounter Register; § 1.5 |
 | **Expedition Guest** | A Guest Citizen who may Launch, bears personal Away consequence, and carries one Away Signature and an individually authored Home Role. | § 4.3, Expedition Guests |
 | **Exposure** | A hidden six-step, per-Citizen measure of accumulated life beyond ordinary safety that weights applicable personal consequence toward the serious end of its valid range. | § 5.6, Accumulated Exposure |
@@ -4545,14 +4614,16 @@ listing every place it appears.
 | **Moment Brief** | A bounded projection of current state and relevant Record facts used to realize one truthful narrative or visual presentation. | Appendix C, The Moment Brief |
 | **MSID** | A dot-delimited semantic address that identifies one game property independently of page, chapter, manifestation, or implementation. | Appendix A, How MEDIAN Writes |
 | **Node** | A fixed recognizable place in the Field whose material, ecology, shelter, inhabitants, alteration, or history can matter across visits. | § 5.4, Nodes in the Field |
+| **Open Table** | A rare large-cast Presence experience entered through a Colony gathering rather than an individual Citizen; its additional access gate remains provisional. | § 3.8, Participation and Presence |
 | **Operator** | The characteristic action through which the player engages a Register. | § 1.4, Mode, Register, operator, and view |
 | **Outpost** | A persistent Away foothold established within a Reach, providing bounded refuge, Rest, storage, and Colony synchronization while remaining categorically distinct from Home. | § 5.7, Outposts and Stopovers |
 | **Party** | The fixed group of named Citizens committed to one active expedition, ordinarily between one and one-half and three Body Units and always containing more than one animal. | § 5.1, Party scale |
+| **Patient Load** | Temporary Body-Unit-scaled Caretaker Load created by a Wounded Citizen at Home until that Wound clears. | § 3.4, Wound Recovery and Rehabilitation |
 | **Place** | Designated physical ground within Home that becomes permanent when its first Residence or Practice Project is committed. | § 3.3, Places and Species Placement |
 | **Practice** | The functional use established at a Place through which compatible Roles support situated civic purpose, production, transformation, or Projects. | § 3.4, Roles and Practices |
 | **Practice improvement** | A specific persistent adaptation that adds a capability, response, range, or resilience to one existing Practice without adding another hosted use. | § 3.3, Place development |
 | **Practice Strength** | The situated civic contribution of one completed usable Practice, determined by compatible Role support and Spatial Alignment. | § 3.2, Practice Strength |
-| **Presence** | EMBODY's guided-attention form, in which the player remains with what a Citizen experiences through looking, listening, posture, movement, or repose. | § 3.8, Participation and Presence |
+| **Presence** | EMBODY's guided-observation form, ordinarily remaining with one Citizen and a small cast; Open Table exceptionally widens it to a Colony gathering. | § 3.8, Participation and Presence |
 | **Pressure** | The amount by which Load exceeds Capacity within one Civic Balance axis. | § 3.2, Shared balance grammar |
 | **Project** | Committed deliberate work that makes one defined persistent result true through material, time, Citizens of its owning Role, and ordinarily a supporting Practice. | § 3.4, Project Queue |
 | **Project Queue** | The shared execution layer through which Practices accommodate and committed Citizens advance Projects. | § 3.4, Project Queue |
@@ -4561,8 +4632,9 @@ listing every place it appears.
 | **Reach** | One comprehensible longitudinal segment of the Corridor, containing its portion of Median, Roadways, and Margins. | § 2.2, From Corridor to Reach to Median |
 | **Readiness** | The surplus produced when Capacity exceeds Load within one Civic Balance axis. | § 3.2, Shared balance grammar |
 | **Record** | The hidden incremental factual database of what has occurred throughout the Colony's life and the authority from which remembered presentations are selected. | § 6.1, The Record |
+| **Recovery Day** | One Home-DAWN step of biological progress recorded for a Home-present Wounded Citizen occupying an available Hearth. | § 3.4, Wound Recovery and Rehabilitation |
 | **Register** | A structural form of play, engaged through its characteristic Operator and expressed through an appropriate view or interface. | § 1.4, Mode, Register, operator, and view |
-| **Rehabilitation** | A Healer Project that establishes adapted participation after Maiming without removing the lasting bodily change or its history. | § 3.4, Rehabilitation; § 5.6 |
+| **Rehabilitation** | A Caretaker Project that establishes adapted participation after Maiming without removing the lasting bodily change or its history. | § 3.4, Wound Recovery and Rehabilitation; § 5.6 |
 | **Residence** | An inhabited use of a Place that accommodates Citizens rather than functioning as a Practice. | § 3.3, Core Residence; § 4.3, Guest Residence |
 | **Residence Fit** | The single species-specific placement requirement by which a Guest Residence is judged as a whole. | § 4.3, Guest Residence |
 | **Resident Guest** | A Guest Citizen whose species-fixed Role and situated Signature operate at Home and who does not Launch. | § 4.3, Resident Guests |
@@ -4578,6 +4650,8 @@ listing every place it appears.
 | **Spatial Alignment** | The one-unit Practice or Core Residence benefit contributed when a completed usable Place satisfies the Colony's Core-Species placement grammar. | § 3.3, Spatial Alignment |
 | **Staging Post** | The immediate Roadway-edge ground from which a party observes, waits, plans, and commits to a Crossing. | § 5.3, The Staging Post |
 | **Stopover** | The temporary Away state created when a party completes a Rest MEET at its current location. | § 5.7, Refuge, Stopover, and Outpost |
+| **Storehouse** | The Caretaker Practice that gives pooled Stores a physical DWELL presence and supports their receiving, protection, and transformation without creating a local inventory. | § 3.4, Storehouse: care of Stores |
+| **Stores** | The Colony's one pooled state of fungible resources and prepared Supplies, accessible globally and physically manifested through its provisional founding cache or Storehouses. | § 3.4, Storehouse: care of Stores; Appendix E |
 | **Strained Carry** | Squirrel's optional additional Cargo capacity, whose unsecured burden creates visible Jostle risk after movement. | § 5.2, Squirrel Strained Carry |
 | **Supply** | One anonymous prepared and expendable body-scaled intervention assigned to a Launch-eligible Citizen for one expedition. | § 4.6, Supplies |
 | **Tale** | A subject-specific player-facing translation of selected Record entries belonging to one Citizen or historically meaningful Item. | § 6.1, Tales and Prior-life Tales |
@@ -4589,7 +4663,7 @@ listing every place it appears.
 | **Well Placed** | The positive state of a completed usable Place whose relationship to surrounding Home expresses the applicable Core-Species spatial operator or Guest Residence Fit. The adjectival form is **Well-Placed**. | § 3.3, Species placement |
 | **World Pressure** | An externally originating Corridor condition that may add contextual Load, test Readiness, alter ordinary life, or supply a Home situation. | § 3.5, World Pressure |
 | **Wound** | A single named recoverable bodily-injury state that constrains only physically affected actions and doubles new Exposure while unstabilized. | § 5.6, Forms of personal consequence |
-| **Wound Recovery Project** | A Home Healer Project through which one available Hearth and one committed Healer provide a Wounded Citizen with sustained care. | § 5.6, Wound Recovery Projects |
+| **Wound recovery** | Ordinary Home care in which a Wounded Citizen adds Body-Unit-scaled Patient Load and occupies one available Hearth for one to three Recovery Days without entering the Project Queue. | § 3.4, Wound Recovery and Rehabilitation; § 5.6 |
 | **Young Citizen** | A complete Citizen before Maturity who belongs to the Colony, consumes ordinary support, and remains unavailable for Roles, Projects, or Launch. | § 4.5, Young Citizens |
 
 ## Appendix B — Names, Place-Names, and Narrative Language
@@ -4894,7 +4968,7 @@ without creating different mechanics for the three civilizations.
 | **1 · Passage** | A Roadway must be observed, a passage planned, and the Crossing committed. Present conditions may permit passage; they never owe it. | *“Join one edge to the next. Open ground joins itself to nothing.”* | *“Wait for the gap. The gap is given, not owed.”* | *“Choose the landing before the leap. The air owes no branch.”* |
 | **2 · Place** | Where a Place stands and how well it fits its inhabitants affect what it can support. | *“A room takes its strength from what it joins.”* | *“A place keeps best when it faces the common ground.”* | *“A place holds by the ways that reach it.”* |
 | **3 · Growth** | Expansion adds particular responsibilities that the Colony's Citizens must sustain. | *“Every new room adds a seam to tend.”* | *“Every wider court asks more of the company.”* | *“Every farther branch draws upon the whole web.”* |
-| **4 · Common Store** | Fungible resources enter shared Colony stocks; personal Items remain particular objects with holders and histories. | *“What enters the rooms feeds the rooms.”* | *“A hoard in one belly is a store the winter never sees.”* | *“What one branch keeps does not winter the web.”* |
+| **4 · Common Stores** | Fungible resources enter pooled Stores; personal Items remain particular objects with holders and histories. | *“What enters the rooms feeds the rooms.”* | *“A hoard in one belly is a store the winter never sees.”* | *“What one branch keeps does not winter the web.”* |
 | **5 · Return** | Away consequences remain attached to the Citizens, Items, and Cargo that experience them and return through Homecoming and Campaign Memory. | *“Count every name that leaves. Count every change that returns.”* | *“Whoever returns brings the road into the company.”* | *“Every returning traveler adds their journey to the web.”* |
 
 These expressions are canon for the three story civilizations rather than an
@@ -5630,13 +5704,16 @@ than multiplying its value by the number of Roles that use it.
 
 `Home.Colony.Role` · `Home.Colony.Practice`
 
+Seven standing Roles define the civic axes below. A Citizen may be called a
+healer, cook, gardener, or another ordinary description in prose; only the
+capitalized Role names create mechanical responsibility.
+
 | Role | Ordinary responsibility | Practice or Practices | Defined output or passive civic expression | Characteristic deliberate work |
 |---|---|---|---|---|
 | **Builder** | Physical soundness and deliberate transformation of Home | Workshop | Beautification | Establish Residences and Practices; construct or restore Outposts; complete major structural changes |
 | **Gardener** | Cultivation, seasonal yield, and cultivated continuity | Garden | Perishable Sustenance | Restore or adapt cultivated ground; establish Winter Cultivation |
 | **Crafter** | Functional material and Away capability | Workshop | Binding, Device, and Offering Supply preparation | Create Tools, Specialist Tools, and lasting fabrication capabilities |
-| **Caretaker** | Provisioning, nurture, dependency, and ordinary care | Hearth; Kitchen | Perishable-to-Durable preservation through Kitchen | Adapt nurture or provisioning to a persistent need |
-| **Healer** | Injury, illness, recovery, and bodily adaptation | Hearth | Remedy preparation | Conduct Wound Recovery and Rehabilitation Projects |
+| **Caretaker** | Receiving, provisioning, nurture, dependency, medical readiness, recovery, and preservation | Hearth; Storehouse | Shared Preservation and Remedy Preparation throughput through Storehouse | Conduct Rehabilitation; adapt care, receiving, or Provisioning to persistent need |
 | **Teacher** | Teaching, integration, cultural continuity, and social memory | Gathering Place; Hearth | Beautification | Establish a memorial, observance, or lasting cultural understanding |
 | **Watchkeeper** | Timely warning and useful Telegraph | Watchpost | Beautification | Extend or restore warning and signaling capability |
 | **Leader** | Coordination, deliberation, shared commitment, and ceremony | Gathering Place | Beautification | Establish persistent civic agreements or coordinating functions |
@@ -5735,7 +5812,8 @@ working methods, preparing bounded Supplies, preserving usable material, and
 making credible substitutions under ordinary pressure. Supply Preparation is
 the defined passive transformation described below. It converts available
 inputs into Binding, Device, and Offering Supplies according to known recipes,
-targets, and reserves. Remedies remain Healer's responsibility. Prepared
+targets, and reserves. Remedies remain Caretaker's responsibility through the
+shared Storehouse Provisioning pool. Prepared
 Supplies are anonymous expedition resources rather than named possessions or
 records of their maker.
 
@@ -5767,99 +5845,103 @@ Projects.
 
 #### Caretaker
 
-Caretaker owns receiving, provisioning, nurture, dependency, and the
-preservation of ordinary life. Hearth supports feeding, settling, cleaning,
-comfort, vulnerable Citizens, young Citizens, Patients between specialized
-care, injured or exhausted returnees, and displaced or newly arrived lives.
-Hearth draws on Caretaker, Healer, and Teacher Readiness according to need and
-belongs exclusively to none of them.
+Caretaker owns receiving, provisioning, nurture, dependency, medical readiness,
+recovery, bodily adaptation, and the preservation of ordinary life. This is one
+Role axis. Each concrete obligation enters Caretaker Load once even when it
+touches food, dependency, injury, and receiving at the same time.
 
-Kitchen is the later Practice dedicated to preservation and Provisioning. It
-supports Perishable-to-Durable preservation, ordinary Sustenance preparation,
-protected and organized reserves, family provisioning, seasonal preparation,
-and recovery from disrupted provisions. Preservation follows the gate and
-throughput rule below and remains bounded by Perishable Sustenance, known
-methods, targets, and reserves. Kitchen needs no founding exemption because
-Hearth already supports Caretaker before Kitchen is established.
+Hearth is the Caretaker's life-facing Practice. It supports feeding, settling,
+cleaning, comfort, diagnosis, stabilization, illness care, young Citizens,
+Patients, injured or exhausted returnees, and displaced or newly arrived lives.
+Teacher may use the same Hearth when learning, integration, or a young
+Citizen's needs require it; the Practice belongs exclusively to neither Role.
+A Colony without dependents, Patients, or another relevant care circumstance
+carries no automatic medical Load. Named Patients, incapacity, treatment, and
+recovery remain individually legible while Load and Readiness remain
+Colony-scale.
 
-Herbal or cultural knowledge may qualify or modify preservation, but it never
-replaces the required usable Kitchen or sustaining Caretaker.
+Storehouse is the Caretaker's resource-facing Practice. The Colony's
+**Stores** form one pooled resource state; Storehouse is its visible physical
+manifestation in DWELL and the Place through which resources are received,
+ordered, protected, preserved, and prepared. Selecting any Storehouse opens the
+same globally available Resources screen. Several Storehouses add their normal
+Practice and throughput contributions but never partition Stores or acquire
+local inventories.
+
+If a Storehouse becomes unusable, its Practice Strength and production
+contribution cease. Existing Stores remain pooled and accessible unless the
+event explicitly spoils, destroys, isolates, or changes them. Before the first
+Storehouse, Founding resources occupy one visible provisional cache; selecting
+it opens the same Resources screen, but it provides no Practice Strength or
+Provisioning. The first Storehouse follows the ordinary Project rule after the
+founding Workshop and receives no bootstrap exception.
+
+Caretaker Provisioning is one process with one throughput pool. The player
+allocates it between **Preservation**, which converts Perishable Sustenance to
+Durable Sustenance, and **Remedy Preparation**, which converts defined
+Sustenance and Flexible Scrap into Remedy Supplies. Both require a usable
+Storehouse, a sustaining Caretaker, known methods, available inputs, and an
+active target. Each Caretaker Share and Storehouse contribution enters the
+shared pool once rather than generating full throughput independently for both
+outputs. Herbal or cultural knowledge may qualify a method or modify a
+situation but never replaces that gate.
 
 Receiving remains a Caretaker responsibility rather than another Practice.
-Homecoming, hospitality, displacement, and aftermath may require the Colony to
-receive Citizens, Patients, Guests or Wanderers, ordinary material, food,
-threatened reserves, or questionable goods through Hearth, Kitchen, Residence,
-Homecoming, or MEET as the situation requires. Colony Stock remains an
-abstract civic inventory even when represented by pantries, caches, Residence
-stores, or protected holdings; there is no Stores Practice.
+Homecoming, hospitality, displacement, and aftermath may bring Citizens,
+Patients, Guests, Wanderers, Sustenance, Scrap, Supplies, or threatened Stores
+through Hearth, Storehouse, Residence, Homecoming, or MEET as the situation
+requires. Immediate receiving, diagnosis, stabilization, triage, routine
+preservation, ordinary movement of Stores, and target changes remain ordinary
+work.
 
-Caretaker Projects adapt Kitchen or Hearth to a lasting need; establish a new
-preservation function; reorganize reserves after permanent loss or growth;
-complete lasting resettlement; or create durable seasonal preparation beyond
-ordinary Provisioning. Evacuation, immediate receiving, routine preservation,
-ordinary stock movement, and target changes remain ordinary transactions.
+Caretaker Projects adapt Hearth or Storehouse to a lasting need; establish a
+durable treatment, preservation, or receiving capability; restore displaced or
+contaminated care; reorganize provisions after permanent loss or growth;
+complete resettlement; or establish an individualized rehabilitation change.
+Other Roles may support a persistent change without taking its purpose from
+Caretaker. Recovering from a Wound is ordinary work and never becomes a
+Project merely because it lasts several days.
 
-Open Table is established in one Kitchen through a Caretaker Project. While
-Quiet Equilibrium keeps EMBODY available, the improved Kitchen opens Shared
-Meal, a rare whole-Colony EMBODY opportunity shaped by arrivals, Homecomings,
-recovery, observance, grief, celebration, and recent shared history. It uses
-ordinary Colony Sustenance, creates no Feast resource or economic reward, and
-does not resolve Guest Terms, disagreement, injury, or civic Pressure. Open
-Table adds no preservation throughput, Practice Strength, or Project capacity.
+A Wounded Citizen at Home creates Patient Load equal to that Citizen's Body
+Unit: ordinarily one for a Rabbit, Squirrel, or one-Body-Unit Guest and one-half
+for an individual Mouse. That Load remains within the ordinary Caretaker axis
+until the Wound clears. It is never transferred to another ledger or charged a
+second time. If the resulting Load exceeds Capacity, the excess is Caretaker
+Pressure; the Wound does not acquire a separate Pressure rule.
 
-Caretaker shortfall creates vulnerability to spoilage, inaccessible or
-disordered reserves, crowding, displacement, failed receiving, unmet
-dependency, family disruption, and insufficient winter preparation. MEET
-situates consequence rather than applying anonymous daily harm. Caretaker
-neither replaces Healer or Teacher nor owns Hearth, and its Civic Shares
-support ordinary responsibility across Hearth and Kitchen without
-Practice-specific assignment. Resident Signatures may affect the reading or
-reception of a particular threat without replacing Caretaker responsibility.
+Recovery requires one usable Hearth not already occupied by another Wounded
+Citizen, an active Young-care commitment, or another intensive Hearth use. The
+Citizen occupies it without consuming a Project Queue entry or committing a
+named Caretaker. The occupied Hearth retains ordinary Practice Strength but
+cannot support another Wounded Citizen, Young-care commitment, or Hearth
+Project. Each Home DAWN records one of the authored one to three Recovery Days.
+Additional Caretakers and Hearths cannot accelerate that clock, and Caretaker
+Pressure alone does not pause it. If no Hearth is available, the Patient Load
+and Wound persist while Recovery Days wait. Completion clears the Wound and
+Patient Load, releases the Hearth, and leaves any Maiming and its history true.
+Remedy stabilization changes none of this timing.
 
-#### Healer
-
-Healer owns medical readiness, particular Patients, recovery, and the bodily
-aftermath of exposure. Hearth is Healer's primary Practice. It draws on Healer
-Readiness when injury, illness, exposure, rehabilitation, or bodily aftermath
-requires specialized care; Caretaker and Teacher may support the same Hearth
-without counting as Healers. A Colony without Patients or relevant health
-pressure carries no automatic Healing Load. Named Patients, incapacity,
-treatment, and recovery remain individually legible while Load and Readiness
-remain Colony-scale.
-
-Covered Healer Load includes diagnosis, cleaning and stabilizing injury,
-managing illness, guiding recovery, preparing Remedies, and receiving the
-bodily aftermath of Homecoming or Home MEET. Adequate Readiness supports
-credible recovery over time without erasing Wound, Maiming, incapacity, or the
-history attached to a named life. Remedy Preparation follows the passive gate
-and throughput rule below, consumes defined Sustenance and Flexible Scrap, and
-remains distinct from Crafter's non-Remedy Supplies.
-
-Healer Projects adapt Hearth to a lasting need; establish durable treatment or
-recovery capability; restore care after persistent contamination or
-displacement; recover a named Citizen from Wound; or complete a lasting
-rehabilitation change. Immediate treatment, field stabilization, triage,
-Remedy Preparation, and care that does not recover Wound remain ordinary work.
-Other Roles may support the persistent change without taking its purpose from
-Healer.
-
-Rehabilitation is established in one Hearth through a Healer Project. That
+Rehabilitation is established in one Hearth through a Caretaker Project. That
 Hearth can host one individualized Rehabilitation Project at a time, providing
 protected movement space, bodily supports, and sustained care through which a
 named Citizen may establish an adapted way to move, work, communicate, or
 eventually Launch. Rehabilitation guarantees neither restoration of former
-capability nor erasure of Maiming or history and does not accelerate ordinary
-recovery. Caretaker and Teacher Readiness contribute when the Citizen's needs
-require them; Leader contributes none. Wound Recovery needs an available
-Hearth but not the Rehabilitation improvement.
+capability nor erasure of Maiming or history and does not accelerate Wound
+recovery. Teacher Readiness contributes when the Citizen's needs require it;
+Leader contributes none. Wound recovery needs an available Hearth but not the
+Rehabilitation improvement.
 
-Healer shortfall creates vulnerability to delayed recovery, untreated injury
-or illness, exhausted care, inadequate Remedies, contamination, and clustered
-Patient need. Consequence appears through MEET, Homecoming, a particular
-Patient, or the actual Hearth and ground under pressure rather than anonymous
-daily damage. Guest Signatures may reveal a condition, contain aftermath, or
-open an option, but they neither change Healer coefficients nor erase illness
-or ordinary Healing Load.
+Caretaker shortfall creates vulnerability to spoilage, inaccessible or
+disordered Stores, crowding, displacement, failed receiving, unmet dependency,
+family disruption, delayed recovery, untreated injury or illness, exhausted
+care, inadequate Remedies, contamination, clustered Patient need, and
+insufficient winter preparation. Consequence appears through MEET,
+Homecoming, a particular Citizen, or the actual Hearth, Storehouse, family, and
+ground under pressure rather than anonymous daily harm. Resident Signatures
+may reveal a condition, contain aftermath, or open a response without changing
+Caretaker coefficients or replacing Caretaker responsibility. A Citizen may be
+described naturally as a healer in Tale or dialogue, but that identity creates
+no additional Role, aptitude, or production channel.
 
 #### Teacher
 
@@ -5867,7 +5949,7 @@ Teacher owns the teaching of young Citizens, newcomer integration, practical
 and cultural transmission, and social memory. Gathering Place is Teacher's
 primary public Practice and is shared with Leader. Hearth draws on Teacher
 Readiness when nurture, dependency, early learning, or recovery requires it;
-compatible Caretaker and Healer support does not count as Teacher support.
+compatible Caretaker support does not count as Teacher support.
 
 Gathering Place can support lessons, interpretation of Laws and Sayings,
 storytelling, observances, memorials, After-name recognition, Maturity,
@@ -5987,7 +6069,9 @@ Workshop, Hearth, and Gathering Place are shared Practices. Compatible Roles
 draw upon the Practice as circumstances require, but the Practice retains one
 situated strength and one Project slot. Hearth is the civic Practice of healing,
 nurturing, dependency, and recovery; **family** remains a domestic relationship.
-Leader contributes no Hearth support.
+Caretaker and Teacher are its compatible Roles; Leader contributes no Hearth
+support. Storehouse remains Caretaker's resource-facing Practice and exposes one
+pooled Stores state rather than a Place-specific inventory.
 
 Builder, Teacher, Watchkeeper, and Leader Civic Shares sustained in ordinary
 work each add one point to the Colony-wide Beautification track at DAWN. A
@@ -6000,24 +6084,24 @@ problem.
 
 `Home.Colony.Practice.Improvement`
 
-Each current Practice has at least one specific improvement. An improvement
-makes a bounded persistent capability true at one existing Practice through a
+The table records currently defined Practice improvements. An improvement makes
+a bounded persistent capability true at one existing Practice through a
 Project owned by the Role that benefits from the result. It adds no generic
-level, Practice Strength, or Project slot.
+level, Practice Strength, or Project slot; a Practice does not acquire an
+improvement merely to complete a symmetric list.
 
 | Practice | Improvement | Owning Role | Effect |
 |---|---|---|---|
 | **Workshop** | **Fine Work** | Crafter | Opens individually defined Specialist Tool recipes. |
 | **Garden** | **Winter Cultivation** | Gardener | Makes that Garden eligible for winter yield at one-quarter of its normal production. |
-| **Kitchen** | **Open Table** | Caretaker | Opens the whole-Colony Shared Meal EMBODY opportunity. |
-| **Hearth** | **Rehabilitation** | Healer | Allows individualized Rehabilitation Projects after Maiming. |
+| **Hearth** | **Rehabilitation** | Caretaker | Allows individualized Rehabilitation Projects after Maiming. |
 | **Watchpost** | **Far Warning** | Watchkeeper | Qualitatively identifies an eligible approaching pressure family early enough to provide another preparation window. |
 | **Gathering Place** | **Community Board** | Leader | Gives selected Almanac information already known to the Colony a persistent shared expression in DWELL. |
 
 The physical Community Board may stand elsewhere within Home while remaining
-the improvement of its Gathering Place. Winter Cultivation, Open Table, Far
-Warning, and Community Board modify only their stated capability. Wound Recovery
-uses an available Hearth and requires no Rehabilitation improvement.
+the improvement of its Gathering Place. Winter Cultivation, Far Warning, and
+Community Board modify only their stated capability. Wound recovery uses an
+available Hearth and requires no Rehabilitation improvement.
 
 ### Passive production and transformation
 
@@ -6033,9 +6117,8 @@ is satisfied:
 | Process | Required Practice | Sustaining Role | Result |
 |---|---|---|---|
 | **Cultivation** | Garden | Gardener | Perishable Sustenance during eligible seasons |
-| **Preservation** | Kitchen | Caretaker | Perishable Sustenance transformed into Durable Sustenance |
+| **Caretaker Provisioning** | Storehouse | Caretaker | Shared throughput allocated between Preservation and Remedy Preparation |
 | **Supply Preparation** | Workshop | Crafter | Binding, Device, and Offering Supplies from defined inputs |
-| **Remedy Preparation** | Hearth | Healer | Remedy Supplies from defined inputs |
 
 Each usable Practice and each sustaining Civic Share adds one yield chunk; each
 Well-Placed Practice adds one-half. Project-committed Citizens contribute
@@ -6044,14 +6127,24 @@ and situated modifiers apply after ordinary throughput is calculated and can
 bound the result. The formula creates no output for a Practice without a defined
 process.
 
-Each process carries its own fractional remainder. DAWN releases whole chunks
-and retains the fraction: throughput of 1.5 releases one chunk, then two, then
-one across successive eligible DAWNs.
+Caretaker Provisioning calculates once from usable Storehouses and sustaining
+Caretaker Shares. The player allocates that total between **Preservation** and
+**Remedy Preparation**. Preservation consumes Perishable Sustenance and creates
+Durable Sustenance; Remedy Preparation consumes its defined Sustenance and
+Flexible Scrap inputs and creates Remedy Supplies. A Storehouse or Caretaker
+contribution cannot be counted again for the other output.
 
-Provisioning places an eligible transformation in **Prepare**, **Hold**, or
-**Unavailable** state. Player targets prevent automatic overproduction, while
-protected reserves prevent committed inputs from being consumed by unrelated
-Provisioning or Projects.
+Each process carries its own fractional remainder. Caretaker Provisioning has
+one shared remainder, assigned with its current output allocation rather than
+duplicated between Preservation and Remedy Preparation. DAWN releases whole
+chunks and retains the fraction: throughput of 1.5 releases one chunk, then two,
+then one across successive eligible DAWNs.
+
+Provisioning places each eligible output in **Prepare**, **Hold**, or
+**Unavailable** state. When both Caretaker outputs are prepared, the player
+sets their share of the one available throughput. Player targets prevent
+automatic overproduction, while protected reserves prevent committed inputs
+from being consumed by unrelated Provisioning or Projects.
 
 ### Project Queue
 
@@ -6065,7 +6158,7 @@ required Civic Share-Days, and named committed Citizens.
 - The supporting Practice and Project target may be different Places.
 - The owning Role follows the result: Builder establishes a Practice, Residence,
   or Outpost; Crafter creates a Tool; Gardener converts a Garden for Winter
-  Cultivation; Healer conducts Wound Recovery.
+  Cultivation; Caretaker conducts Rehabilitation.
 - The player may reserve material before commitment and release an uncommitted
   reservation.
 - Commitment occupies the supporting Practice and withdraws the named Citizens'
@@ -6080,10 +6173,11 @@ required Civic Share-Days, and named committed Citizens.
 - The supporting Practice retains its situated Practice Strength while occupied,
   recalculated from ordinary compatible support that remains.
 
-The founding Workshop Project alone begins without a supporting Practice. A
-Wound Recovery Project alone requires exactly one committed Healer and advances
-one Healer-Day per elapsed day regardless of Body Unit; additional Healers do
-not accelerate biological recovery.
+The founding Workshop Project alone begins without a supporting Practice.
+Wound recovery is ordinary time-bound care rather than a Project and creates
+no queue entry, Citizen commitment, or Civic Share-Day exception. An occupied
+Hearth remains unavailable to support another Project until recovery releases
+it.
 
 ### Population and growth
 
@@ -6181,16 +6275,18 @@ DAWN closes the elapsed day and establishes the new one:
 
 1. Consume one Sustenance per total resident Body Unit, normally Perishable
    before Durable; Citizens Away remain included in resident demand.
-2. Resolve active preservation and Supply preparation from eligible stock.
+2. Resolve active Caretaker Provisioning and Crafter Supply Preparation from
+   eligible Stores.
 3. Apply aggregate Perishable Sustenance spoilage.
 4. Add new passive production, releasing whole chunks and carrying fractions.
 5. Add Beautification progress and create any earned Frill.
 6. Add Project progress, complete eligible Projects, and release their Practices
    and Citizens.
-7. Resolve recovery and other changes in Citizen location or availability.
+7. Advance eligible Recovery Days and resolve other changes in Citizen location
+   or availability.
 8. Recalculate usable Places, Spatial Alignment, Housing and Role Balance, and
    Colony Pressure.
-9. Report meaningful stock, Project, availability, and civic changes.
+9. Report meaningful Stores, Project, availability, and civic changes.
 
 A Residence or Practice completed at this DAWN becomes usable during the new
 day and first contributes passive output at the following DAWN. A Citizen whose
@@ -6203,7 +6299,7 @@ eligible to spoil.
 
 `Architecture.MaterialEconomy` · `Architecture.Scale.BodyUnit`
 
-MEDIAN distinguishes Colony-scale stocks, party Cargo, and personally tracked
+MEDIAN distinguishes Colony-scale Stores, party Cargo, and personally tracked
 Items. Body Units allow bodies of different sizes to enter shared civic and
 expedition math while every Tool, Keepsake, Wound, relationship, memory, and
 death remains attached to a particular Citizen.
@@ -6214,15 +6310,15 @@ death remains attached to a particular Citizen.
 
 | Layer | Unit and ownership | Examples | Where it persists |
 |---|---|---|---|
-| **Colony stock** | Fungible Colony-scale quantity | Sustenance, Scrap, prepared Supplies | Home's shared stores; synchronized Outpost transfers enter the same stock |
+| **Stores** | Fungible Colony-scale quantity | Sustenance, Scrap, prepared Supplies | Home's one pooled resource state; synchronized Outpost transfers enter the same Stores |
 | **Cargo** | Fungible units held within one party-wide Carry capacity | Sustenance or Scrap recovered Away | The expedition until offloaded at an Outpost or reconciled at Homecoming |
 | **Personal Item** | One physically credible object attached to a Citizen or assigned expedition position | Tool, Supply, Keepsake | Its owning or carrying rules rather than Cargo slots |
 | **Singular tracked Item** | Authored, individually persistent object | Special Artifact or another meaning-bearing object | Its current holder, location, state, and possible Item Tale |
 
-Colony stocks and Cargo do not retain makers or individual unit histories.
+Stores and Cargo do not retain makers or individual unit histories.
 Personally or historically meaningful objects remain tracked. A fungible
 resource can become a defined Item through an authored transformation; an Item
-never dissolves into anonymous stock merely because it reaches Home.
+never dissolves into anonymous Stores merely because it reaches Home.
 
 ### Body Units
 
@@ -6291,10 +6387,10 @@ Practice, Colony Tier, or Outpost improvement raises the three-Body-Unit limit.
 | Resource | Principal function | Ordinary source or transformation |
 |---|---|---|
 | **Perishable Sustenance** | Immediate and green-season food; vulnerable to aggregate spoilage | Garden and Gardener production; eligible Field recovery |
-| **Durable Sustenance** | Preserved food for winter, disruption, and protected reserves | Kitchen and Caretaker preservation of Perishable Sustenance |
+| **Durable Sustenance** | Preserved food for winter, disruption, and protected reserves | Storehouse and Caretaker preservation of Perishable Sustenance |
 | **Flexible Scrap** | Binding, wrapping, weaving, lashing, sealing, and suitable construction | Field recovery and authored exchange or consequence |
 | **Rigid Scrap** | Bracing, shielding, surfacing, reinforcement, and suitable construction | Field recovery and authored exchange or consequence |
-| **Supplies** | Prepared expendable interventions for Away or situated need | Crafter or Healer Provisioning from defined inputs |
+| **Supplies** | Prepared expendable interventions for Away or situated need | Crafter or Caretaker Provisioning from defined inputs |
 | **Tools** | Durable personal working capability Away | Crafter Projects at a usable Workshop |
 
 Perishable Sustenance is normally consumed before Durable Sustenance. Scrap
@@ -6302,15 +6398,36 @@ does not divide into component inventories. Production, Provisioning, and
 Projects draw only their defined inputs, and protected reserves remain outside
 unrelated automatic use.
 
-Perishable Sustenance spoils only as one aggregate stock; it carries no
-individual batches, ages, freshness values, or FIFO order. Durable Sustenance
-does not decay ordinarily.
+Perishable Sustenance spoils only as one aggregate quantity within Stores; it
+carries no individual batches, ages, freshness values, or FIFO order. Durable
+Sustenance does not decay ordinarily.
 
-Perishable Sustenance, Durable Sustenance, and Scrap remain fungible stocks.
-Prepared Supplies remain stock until Launch assigns one to a Citizen's
+Perishable Sustenance, Durable Sustenance, and Scrap remain fungible Stores.
+Prepared Supplies remain in Stores until Launch assigns one to a Citizen's
 expedition position. A completed Tool enters personal Item tracking when its
 Crafter Project creates it. Supply and Tool therefore belong to the material
-economy without remaining anonymous Colony stock throughout their use.
+economy without remaining anonymous Stores throughout their use.
+
+### Stores and Storehouses
+
+`Home.Colony.Stores` · `Home.Colony.Practice.Storehouse`
+
+The Colony's Stores form one globally accessible pooled state. Storehouse is
+the Caretaker Practice that makes that state physically legible in DWELL and
+supports its receiving, protection, and transformation. Selecting any
+Storehouse opens the same Resources screen available through the global
+interface.
+
+- Several Storehouses never create separate inventories, transfer orders, or
+  storage-capacity simulation.
+- Each usable Storehouse contributes normally to Practice Strength and
+  Caretaker Provisioning; a damaged one contributes neither until restored.
+- Resources already in Stores remain pooled when a Storehouse becomes unusable
+  unless an explicit event destroys, spoils, isolates, or changes them.
+- Visible baskets, caches, pantries, and protected holdings express current
+  Stores and may become situated MEET stakes without becoming itemized piles.
+- Before the first Storehouse, one visible founding cache opens the same
+  Resources screen but supplies no Practice or Provisioning benefit.
 
 Ordinary food is abstracted during Away. Away Citizens continue to count toward
 the Colony's demand of one Sustenance per total resident Body Unit per day.
@@ -6324,15 +6441,15 @@ expedition resource.
 `Architecture.MaterialEconomy.Flow`
 
 > Field recovery or exchange → party Cargo → Outpost Colony sync or Homecoming
-> → Colony stock → consumption, Provisioning, reservation, or Project
+> → Stores → consumption, Provisioning, reservation, or Project
 > commitment
 
 The party never sends ordinary Cargo directly to Home from arbitrary Field
 ground. A completed Outpost can transfer offloaded fungible Cargo into the one
-Colony stock through Colony sync, immediately freeing Carry. Homecoming
-automatically transfers remaining Cargo into that same stock.
+pooled Stores state through Colony sync, immediately freeing Carry. Homecoming
+automatically transfers remaining Cargo into the same pooled Stores.
 
-Reserved Project material remains part of Colony stock but unavailable to
+Reserved Project material remains part of Stores but unavailable to
 unrelated use. Commitment protects and consumes it according to the Project.
 Provisioning uses player-set targets and reserves so recurring transformation
 does not exhaust material intended for ordinary life or deliberate work.
@@ -6406,7 +6523,12 @@ Resources tuning phase.
 | **Binding** | One cord, strip, wrap, or fastening | Connect or secure | Crafter |
 | **Device** | One small contrivance | Produce one temporary physical or sensory effect | Crafter |
 | **Offering** | One morsel or meaningful token | Place something into an encounter with another being | Crafter |
-| **Remedy** | One dose, dressing, or poultice | Treat or protect a body | Healer |
+| **Remedy** | One dose, dressing, or poultice | Treat or protect a body | Caretaker |
+
+Binding, Device, and Offering use Crafter Supply Preparation. Remedy uses the
+same Storehouse-and-Caretaker Provisioning pool as Preservation, so preparing
+one output can reduce the throughput available to the other. All four enter
+pooled Stores until Launch assigns them to particular Citizens.
 
 - Binding may create one temporary tie, tether, wrap, patch, restraint, or
   fastening.
@@ -6532,7 +6654,7 @@ ordinary Jostle checks.
 
 Homecoming reconciles layers according to what they are:
 
-- remaining Cargo enters Colony stock and clears from Carry
+- remaining Cargo enters Stores and clears from Carry
 - unspent Supplies return to the prepared pool and their positions clear
 - spent or discarded Supplies remain gone
 - Tools, Keepsakes, Artifacts, and other tracked Items retain their holders,
@@ -6556,7 +6678,7 @@ costs, Project material requirements, Civic Dedications, and the final
 Supply-class names as one connected economy. The daily baseline remains one
 Sustenance per resident Body Unit; tuning may establish situated modifiers and
 change other quantities or provisional labels while preserving the
-distinctions among stock, Cargo, personal Items, Body Units, and particular
+distinctions among Stores, Cargo, personal Items, Body Units, and particular
 Citizen consequence.
 
 ## Appendix F — The Highway and Living World Reference
@@ -7511,15 +7633,44 @@ and context rather than a number or named ladder.
 | **Death** | A rare final outcome available only when an explicitly severe situation made fatal stakes legible before Commit. |
 
 A new Wound result upon a Wounded Citizen changes the injury description and
-sets remaining recovery to the greater current or authored one-to-three
-Healer-Day requirement. It creates no second Wound. Maiming enters adaptation
-and possible Rehabilitation after its acute Wound follows ordinary recovery.
+sets remaining recovery to the greater of its current remainder and the new
+authored requirement. Every such requirement remains within one to three
+Recovery Days. It creates no second Wound. Maiming enters adaptation and
+possible Rehabilitation after its acute Wound follows ordinary recovery.
 
 Remedy may stabilize a Wound through Homecoming, lessen one defined immediate
 physical effect, or contain the acute Wound accompanying Maiming. Rest
 stabilization lasts through the next three traveled Bands and their resolved
 situations. Remedy can also enter PARLEY through credible offered care. It
 never relieves Tharn.
+
+### Wound recovery
+
+`Citizen.Condition.Wound.Recovery`
+
+A Citizen who becomes Wounded at Home, or returns Wounded through Homecoming,
+adds Patient Load equal to that Citizen's Body Unit. A Wounded Rabbit,
+Squirrel, or one-Body-Unit Guest therefore adds one Caretaker Load; one Mouse
+adds one-half. The Load remains on the Caretaker axis until the Wound clears
+and becomes Pressure only to the extent that it is uncovered. Neither Remedy
+nor the recovery procedure charges a second civic cost for the same injury.
+
+One Home-present Wounded Citizen may occupy one usable Hearth that is free of
+another Wounded Citizen, an active Young-care commitment, and a Hearth-supported
+Project. Home assigns the Hearth automatically when only one valid allocation
+exists. Competing Patients or intensive Hearth uses open a Care MEET; absence
+of an available Hearth leaves every Wound and Patient Load true without
+preventing Homecoming or another state transition.
+
+Each Home DAWN records one Recovery Day for each eligible occupied Hearth. A
+Wound requires one to three Recovery Days as authored when the injury occurs.
+No fractional Recovery Day accumulates, no named Caretaker is committed, and
+additional Caretakers or Hearths cannot accelerate the interval. Caretaker
+Pressure may create a situated Care MEET but does not automatically pause an
+occupied Hearth's clock. Completion clears the Wound and Patient Load and
+releases the Hearth; Maiming and its history remain. Wound recovery enters no
+Project Queue, while later individualized Rehabilitation remains a Caretaker
+Project.
 
 ### Tharn reference
 
@@ -7558,8 +7709,7 @@ reducing Exposure or clearing Wound or Maiming.
 
 Maximum Exposure therefore returns to baseline across two Home DAWNs: 6 to 3,
 then 3 to 0. Relaunch preserves any remainder. Exposure recovery never clears
-Wound or Maiming. Home Wound Recovery uses the Hearth, one committed Healer,
-and the one-to-three Healer-Day Project defined in Appendix D.
+Wound or Maiming. Wound recovery at Home follows the separate procedure above.
 
 ### Outposts and Stopovers
 
@@ -7594,11 +7744,11 @@ A Rest MEET at a usable Outpost:
 - removes one Exposure step from each resting Citizen without removing the
   final Away step
 - protects ordinary sleep from exposed-ground consequences
-- permits any amount of fungible Cargo to enter Colony stock through abstract
+- permits any amount of fungible Cargo to enter Stores through abstract
   Colony sync, immediately freeing party Carry
 
 The party remains Away. Tools, Supplies, Keepsakes, Artifacts, and other tracked
-Items remain with their holders. Outpost Rest supplies no Healer-Days, clears
+Items remain with their holders. Outpost Rest supplies no Recovery Days, clears
 no Wound, removes no Maiming, and creates no second Home.
 
 ### Return and Homecoming
@@ -7618,14 +7768,14 @@ Band and follows:
 Recognition presents the named lives that returned, anyone absent, visible
 change, and the Colony that receives them before totals. Reconciliation then:
 
-- transfers remaining Cargo into Colony stock
+- transfers remaining Cargo into Stores
 - returns unspent Supplies and clears their expedition positions
 - preserves spent Supplies, Item damage or loss, discoveries, relationships,
   Wound, Maiming, Exposure, death, and every other resolved Away fact
 - restores each eligible returning Citizen's standing Role contribution and
   recalculates Civic Balance, Practice support, production, and Home state
-- offers an available Wound Recovery Project through Hearth and Healer when
-  applicable
+- adds each Wounded returnee's Patient Load and assigns an available Hearth when
+  only one valid care allocation exists
 - opens only Care, Allocation, Guest, succession, memorial, or other choices
   whose alternatives produce materially different persistent results
 
@@ -7859,7 +8009,7 @@ one Civic Share, one Roster entry, and one continuous subject of consequence.
 | **Bat** | Builder | **Workshop Roost:** incorporate one suitable Guest Residence into a completed Workshop | high dry-dark roost | Individual |
 | **Pigeon** | Leader | **Gathering Loft:** incorporate one suitable Guest Residence into a completed Gathering Place | open built ledge | Individual |
 | **Skunk** | Watchkeeper | **SPEAK — Boundary Deterrence:** open a favorable nonviolent response in an eligible threatening-animal Home MEET | downwind boundary | Individual |
-| **Possum** | Healer | **Hearth Annex:** incorporate one suitable Guest Residence into a completed Hearth | ventilated receiving edge | Individual |
+| **Possum** | Caretaker | **Hearth Annex:** incorporate one suitable Guest Residence into a completed Hearth | ventilated receiving edge | Individual |
 
 ### Expedition Guest profiles
 
@@ -8518,7 +8668,7 @@ its Civic Share.
 must provide a ventilated outer annex where Possum can rest apart from its warm,
 clean center.
 
-**Civic contribution.** One Civic Share through the fixed Healer Role.
+**Civic contribution.** One Civic Share through the fixed Caretaker Role.
 
 **Signature — Hearth Annex.** A Hearth satisfying Possum's Residence Fit
 may incorporate the Residence as an authored exception to ordinary Place use.
@@ -8526,8 +8676,9 @@ Establishing it still requires an ordinary Builder Project, material, and time
 but consumes no separate Place. The Hearth retains its ordinary improvement
 rules and one-Project capacity.
 
-**Limits.** Hearth Annex changes only Place use; it adds no Remedy Preparation,
-Practice Strength, or additional capacity.
+**Limits.** Hearth Annex changes only Place use. Beyond Possum's ordinary
+Caretaker Share, it adds no Caretaker Provisioning, Practice Strength, or
+additional capacity.
 
 **EMBODY Activity.** Climb through the Hearth Annex, balance with the tail, and
 arrange a sheltered sleeping place.
@@ -8554,7 +8705,7 @@ Five Resident Signatures provide explicit Practice-sharing exceptions:
 | **Bumblebees** | Garden | Uses no separate Place; while the Garden is usable and the household is present, available, and sustaining Gardener responsibility, adds 0.5 Perishable Sustenance to that Garden's ordinary fractional-throughput cadence |
 | **Bat** | Workshop | Uses no separate Place and adds no Practice Strength, passive output, Project progress, or capacity |
 | **Pigeon** | Gathering Place | Uses no separate Place and adds no Practice Strength or capacity |
-| **Possum** | Hearth | Uses no separate Place and adds no Remedy Preparation, Practice Strength, or capacity |
+| **Possum** | Hearth | Uses no separate Place and, beyond Possum's ordinary Caretaker Share, adds no Caretaker Provisioning, Practice Strength, or capacity |
 
 Each incorporated Residence still requires an ordinary Builder Project,
 material, time, and its complete Residence Fit. The host remains one Practice
@@ -8731,9 +8882,10 @@ authored events. v0.5 uses two mechanically distinct stages: **Young** and
   relationships, ordinary needs, and a developing Tale
 - Rabbit and Squirrel young each constituting one Body Unit, while the usual two
   Mouse littermates constitute one Body Unit without ceasing to be two Citizens
-- Young Citizens adding Sustenance, accommodation, Caretaker, Teacher,
-  protection, and possible Healer Load as defined by Population and Settlement
-  Growth
+- Young Citizens adding Sustenance, accommodation, Caretaker, Teacher, and
+  protection obligations as defined by Population and Settlement Growth; one
+  concrete dependency enters Caretaker Load once even when it involves bodily
+  care
 - Young Citizens contributing no Civic Share, holding no ordinary Role,
   supporting no Project, and being unable to Launch
 - Age-appropriate participation in DWELL, Home MEET, family life, and eligible
@@ -8887,7 +9039,8 @@ calls settled.
 Shadepatch later detects Fennel inside a flooded culvert when traffic, water,
 and obscured sight conceal the trapped Rabbit. Fennel returns with a Wound and
 a lasting hind-leg Maiming. Remedy stabilizes the Wound during the return; an
-available Hearth and committed Healer carry recovery forward after Homecoming.
+available Hearth receives Fennel after Homecoming while the Wound's Patient
+Load enters ordinary Caretaker Balance.
 At a later Gathering Place observance, the Colony recognizes Shadepatch's act
 with the After-name **Sharpnose**. The delay turns the name into civic memory
 rather than an immediate reward.
@@ -8912,10 +9065,11 @@ a generation for whom the Founding Escape is established history.
 
 Rootwake makes seasonal change legible through the Groundhog's Seasonal
 Telegraph. Burdock carries Hedgehog Living Cover into expeditions and sustains
-Healer at Home. Winter Cultivation, Rehabilitation, Open Table, and Community
-Board arise from particular needs rather than an upgrade checklist. The first
-Outpost extends practical range while drawing its Builder commitment and
-Workshop capacity from Home.
+Caretaker at Home. Winter Cultivation, Rehabilitation, and Community Board arise
+from particular needs rather than an upgrade checklist. A later Open Table
+gathering brings the widening Court into collective Presence without belonging
+to a Practice or fixed Place. The first Outpost extends practical range while
+drawing its Builder commitment and Workshop capacity from Home.
 
 Expansion also creates Load. An ambitious departure can withdraw the Civic
 Shares that kept an ordinary responsibility covered, allowing a Home MEET to
@@ -9944,7 +10098,7 @@ accumulated over weeks or months of voluntary return.
 The player opens the game after ten days away. No time penalty has accumulated.
 Home resumes at a rainy morning Page.
 
-Holding on the Kitchen reveals that its roof is dripping. Holding on a young
+Holding on the Storehouse reveals that its roof is dripping. Holding on a young
 Citizen reveals that she is watching a Groundhog Guest preparing to leave.
 Holding near the Road reveals a bright piece of waterproof material caught
 against the verge.
@@ -9953,7 +10107,7 @@ The player follows the young Citizen and the Groundhog toward it. At the
 Roadway, the phone rotates. They wait through the vibration of two passing
 trucks, retrieve the material, and return.
 
-Back in portrait view, the player places it over the Kitchen. The Page closes
+Back in portrait view, the player places it over the Storehouse. The Page closes
 on the two animals sheltering beneath the newly patched roof while rain
 continues along both Roads.
 

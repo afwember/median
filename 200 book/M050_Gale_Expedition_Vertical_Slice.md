@@ -20,7 +20,7 @@ This document holds four views of the same expeditionary subject:
 The Morningside history in Section 2 reproduces current Story Canon. The daily
 Sustenance baseline in Section 3 is also current: **one Sustenance per total
 resident Body Unit, including Citizens Away**. The expedition's exact incident,
-the simulation's stocks, Places, Role assignments, Loads, yields, spoilage,
+the simulation's Stores, Places, Role assignments, Loads, yields, spoilage,
 rolls, Wound duration, and other quantities remain provisional until adopted
 elsewhere. Section 4 is reference, not a second authority; Section 3 supersedes
 it wherever their precision differs.
@@ -521,15 +521,16 @@ facts are identified; unadopted tuning assumptions remain plainly provisional.
 | Preservation recipe | 1 Perishable → 1 Durable |
 | Non-Remedy Supply recipe | 1 Flexible Scrap → 1 Supply |
 | Aggregate Perishable spoilage | 10%, rounded down |
-| Kitchen Durable target | 104 |
+| Storehouse Durable target | 104 |
 | Supply targets | Binding 4; Device 3; Offering 3 |
 | Remedy target | 4 |
 | Beautification threshold | 24 points |
-| Reed's Wound Recovery | 3 Healer-Days |
+| Reed's Wound recovery | 3 Recovery Days |
 | World condition | Mild green season; no active World Pressure |
 
-Kitchen Preservation and Workshop Supply Preparation are set to **Prepare**.
-Remedy Preparation is set to **Hold**.
+Caretaker Provisioning is allocated to **Preservation**, which is set to
+**Prepare**. Workshop Supply Preparation is also set to **Prepare**. The other
+Caretaker Provisioning output, Remedy Preparation, is set to **Hold**.
 
 ## 3.2 Tier III Morningside
 
@@ -547,7 +548,7 @@ provisional but follow their established identities.
 | Wick | Squirrel, colony-born | Gardener | Treats Morningside's inhabited ground as ordinary living country |
 | Vane | Squirrel | Crafter | Studies fastening behavior under wind and water |
 | Lilt | Sparrow Resident Guest | Teacher | Established canonical Home Role |
-| Larch | Squirrel Wanderer | Healer | Provisional; experience of a failed Colony informs bodily and civic care |
+| Larch | Squirrel Wanderer | Caretaker | Provisional; experience of a failed Colony informs bodily and civic care |
 | Alder | Squirrel, colony-born | Builder | Prefers low, reliable connections |
 | Rivet | Squirrel Wanderer | Crafter | Examines human-made fragments and joins |
 | Reed | Mink Expedition Guest | Builder | Established canonical Home Role |
@@ -558,8 +559,7 @@ provisional but follow their established identities.
 | Builder | Cobb, Alder, Reed | 3 |
 | Gardener | Wick | 1 |
 | Crafter | Vane, Rivet, Latch | 3 |
-| Caretaker | Tassel | 1 |
-| Healer | Larch | 1 |
+| Caretaker | Tassel, Larch | 2 |
 | Teacher | Lilt | 1 |
 | Watchkeeper | Gale | 1 |
 | Leader | Rowan | 1 |
@@ -594,7 +594,7 @@ Departure does not release or erase Reed's Residence.
 | Guest Residences | 3 | All satisfy Residence Fit |
 | Workshops | 2 | Both Well Placed |
 | Gardens | 8 | Six Well Placed; two Not Well Placed |
-| Kitchen | 1 | Well Placed |
+| Storehouse | 1 | Well Placed |
 | Hearth | 1 | Well Placed |
 | Gathering Place | 1 | Well Placed |
 | Watchpost | 1 | Well Placed |
@@ -612,9 +612,8 @@ current extent and circumstances.
 |---|---|---:|---:|---:|---|
 | Builder | Twenty Home Places, connected ways, drainage, and one Outpost | 3 | 2 | +1 | Readiness 1 |
 | Gardener | Eight active Gardens in green season | 1 | 1 | 0 | Covered |
-| Crafter | Two Workshops, Tools, and prepared Supply stock | 3 | 2 | +1 | Readiness 1 |
-| Caretaker | Twelve Citizens, stores, Kitchen, and receiving responsibilities | 1 | 1 | 0 | Covered |
-| Healer | No current Patient or acute medical need | 1 | 0 | — | N/A |
+| Crafter | Two Workshops, Tools, and prepared Supplies in Stores | 3 | 2 | +1 | Readiness 1 |
+| Caretaker | Twelve Citizens, Stores, Storehouse, receiving, and ordinary care | 2 | 1 | +1 | Readiness 1 |
 | Teacher | Guest integration and current cultural transmission | 1 | 1 | 0 | Covered |
 | Watchkeeper | Roadway, water, weather, and Home approaches | 1 | 1 | 0 | Covered |
 | Leader | Current civic coordination and expedition decision | 1 | 1 | 0 | Covered |
@@ -631,8 +630,8 @@ support pool can be shown.
 |---|---:|
 | Workshops | 3 Builder + 3 Crafter = 6 |
 | Gardens | 1 Gardener |
-| Kitchen | 1 Caretaker |
-| Hearth | 1 Caretaker + 1 Healer + 1 Teacher = 3 |
+| Storehouse | 2 Caretakers |
+| Hearth | 2 Caretakers + 1 Teacher = 3 |
 | Gathering Place | 1 Teacher + 1 Leader = 2 |
 | Watchpost | 1 Watchkeeper |
 
@@ -645,14 +644,19 @@ support pool can be shown.
 = 12 Perishable Sustenance per day
 ```
 
-### Preservation
+### Caretaker Provisioning
 
 ```text
-1 usable Kitchen
-+ 1 sustaining Caretaker Share
-+ 0.5 × 1 Well-Placed Kitchen
-= 2.5 Preservation per day
+1 usable Storehouse
++ 2 sustaining Caretaker Shares
++ 0.5 × 1 Well-Placed Storehouse
+= 3.5 shared Provisioning per day
 ```
+
+The player allocates this one pool between Preservation and Remedy
+Preparation. Preservation is set to Prepare and Remedy Preparation to Hold, so
+all currently usable throughput may flow to Preservation. Storehouse and
+Caretaker support are counted once rather than repeated for each output.
 
 ### Supply Preparation
 
@@ -664,17 +668,6 @@ support pool can be shown.
 ```
 
 Actual output remains target- and input-limited.
-
-### Remedy Preparation
-
-```text
-1 usable Hearth
-+ 1 sustaining Healer Share
-+ 0.5 × 1 Well-Placed Hearth
-= 2.5 Remedy Preparation per day
-```
-
-It is currently set to Hold.
 
 ### Beautification
 
@@ -689,7 +682,7 @@ Starting Beautification progress is provisionally **4 / 24**.
 
 ## 3.5 Starting Stores
 
-| Stock | Starting quantity |
+| Resource | Starting quantity |
 |---|---:|
 | Perishable Sustenance | 72 |
 | Durable Sustenance | 96 |
@@ -765,7 +758,7 @@ Cobb Builder 1 + Vane/Rivet/Latch Crafter 3 = 4
 ```
 
 Watchpost support falls from one Share to zero. Production remains unchanged
-because no Gardener, Caretaker, Crafter, or Healer departed. Beautification
+because no Gardener, Caretaker, or Crafter departed. Beautification
 falls from six to:
 
 ```text
@@ -873,12 +866,13 @@ Durable: 96
 
 ### 2. Resolve transformations
 
-Kitchen throughput is 2.5. It releases two whole Preservation units and
-carries 0.5.
+The shared Caretaker Provisioning pool is 3.5. With Preservation set to
+Prepare and Remedy Preparation set to Hold, it releases three whole
+Preservation units and carries 0.5.
 
 ```text
-Perishable: 60 − 2 = 58
-Durable: 96 + 2 = 98
+Perishable: 60 − 3 = 57
+Durable: 96 + 3 = 99
 Preservation remainder: 0.5
 ```
 
@@ -892,20 +886,20 @@ Binding: 3 + 1 = 4
 Offering: 2 + 1 = 3
 ```
 
-The expedition Offering has been replaced in Colony stock, while Gale's
+The expedition Offering has been replaced in Stores, while Gale's
 personal Supply position remains empty. Remedy Preparation remains on Hold.
 
 ### 3. Spoilage
 
 ```text
-floor(58 × 10%) = 5 spoiled
-Perishable: 58 − 5 = 53
+floor(57 × 10%) = 5 spoiled
+Perishable: 57 − 5 = 52
 ```
 
 ### 4. Passive production
 
 ```text
-Perishable: 53 + 12 Cultivation = 65
+Perishable: 52 + 12 Cultivation = 64
 ```
 
 ### 5. Beautification
@@ -932,10 +926,10 @@ daily damage.
 
 ### Stores after first DAWN
 
-| Stock | Quantity |
+| Resource | Quantity |
 |---|---:|
-| Perishable | 65 |
-| Durable | 98 |
+| Perishable | 64 |
+| Durable | 99 |
 | Flexible Scrap | 22 |
 | Rigid Scrap | 30 |
 | Binding | 4 |
@@ -1027,16 +1021,16 @@ The party is still Away on the Home Median.
 ### Sustenance
 
 ```text
-Perishable: 65 − 12 = 53
+Perishable: 64 − 12 = 52
 ```
 
 ### Preservation
 
-The previous 0.5 remainder plus 2.5 throughput releases three:
+The previous 0.5 remainder plus 3.5 throughput releases four:
 
 ```text
-Perishable: 53 − 3 = 50
-Durable: 98 + 3 = 101
+Perishable: 52 − 4 = 48
+Durable: 99 + 4 = 103
 Preservation remainder: 0
 ```
 
@@ -1047,9 +1041,9 @@ All current targets are met. No Scrap is consumed.
 ### Spoilage and Cultivation
 
 ```text
-floor(50 × 10%) = 5 spoiled
-Perishable: 50 − 5 = 45
-Perishable: 45 + 12 Cultivation = 57
+floor(48 × 10%) = 4 spoiled
+Perishable: 48 − 4 = 44
+Perishable: 44 + 12 Cultivation = 56
 ```
 
 ### Beautification
@@ -1071,10 +1065,10 @@ automatically.
 
 ### Stores after second DAWN
 
-| Stock | Quantity |
+| Resource | Quantity |
 |---|---:|
-| Perishable | 57 |
-| Durable | 101 |
+| Perishable | 56 |
+| Durable | 103 |
 | Flexible Scrap | 48 |
 | Rigid Scrap | 30 |
 | Binding | 4 |
@@ -1129,7 +1123,7 @@ Gale's Offering remains spent. Colony Offering remains 3 because Home prepared
 one replacement at the first DAWN. All three expedition Supply positions
 clear.
 
-### Civic return before care commitment
+### Civic return and Patient Load
 
 Gale and Alder become immediately eligible for ordinary Role contribution.
 Reed's specific Wound prevents ordinary Builder work in this hypothetical
@@ -1141,42 +1135,42 @@ case. Reed returns Home but does not yet restore a Builder Share.
 | Watchkeeper | Gale = 1 | 1 | Covered |
 | Crafter | 3 | 2 | Readiness 1 |
 | Gardener | 1 | 1 | Covered |
-| Caretaker | 1 | 1 | Covered |
+| Caretaker | Tassel + Larch = 2 | Ordinary Load 1 + Reed Patient Load 1 = 2 | Covered |
 | Teacher | 1 | 1 | Covered |
 | Leader | 1 | 1 | Covered |
-| Healer | Larch = 1 | Reed Patient Load 1 | Covered |
 
 Builder and Watchkeeper Pressure resolve immediately.
 
-### Wound Recovery choice
+### Wound recovery begins
 
-The player begins Reed's Wound Recovery Project.
+Reed's Wound creates one Patient Load because Reed is one Body Unit.
+Morningside has one usable Hearth with no other Wounded Citizen, active
+Young-care commitment, or intensive use occupying it. Reed therefore occupies
+that Hearth automatically. Only one valid allocation exists, so Homecoming
+opens no empty Care choice.
 
 | Field | Value |
 |---|---|
 | Result | Clear Reed's recoverable Wound |
-| Owning Role | Healer |
-| Supporting Practice | Hearth |
 | Patient | Reed |
-| Committed Citizen | Larch |
-| Duration | 3 Healer-Days |
-| Material | None assumed for this exercise |
+| Patient Load | 1 Caretaker Load |
+| Occupied Practice | Hearth |
+| Duration | 3 Recovery Days |
 | Started | Midday, Day Three |
 
-Larch's Civic Share leaves ordinary Healer coverage and Remedy Preparation.
-For this simulation, Reed's continuing bodily need remains Healer Load 1 while
-Larch is Project-committed:
+Recovery is ordinary Caretaker work. It creates no Project, reserves no
+material, and commits neither Tassel nor Larch. Reed's obligation remains in
+ordinary Caretaker Load until the Wound clears:
 
 ```text
-Healer Capacity 0 − Healer Load 1 = Pressure 1
+Caretaker Capacity 2 − Caretaker Load 2 = Covered
 ```
 
-This remains a design question: a Patient inside Wound Recovery may instead
-leave ordinary Load while the Colony loses Healer Readiness against additional
-need. The latter is cleaner; the former creates more civic tension.
-
-The Hearth retains situated physical strength while its Project slot is
-occupied.
+The Patient Load replaces Morningside's former Caretaker Readiness with exact
+coverage. Both Caretakers remain active, so Storehouse Provisioning retains
+its full throughput. The Hearth's recovery occupancy is visible and prevents
+another Wounded Citizen, Young-care commitment, or Hearth-supported Project,
+but creates no Project Queue entry and removes no Caretaker Share from Capacity.
 
 ### State after Homecoming
 
@@ -1185,10 +1179,11 @@ occupied.
 | Gale | Home | Watchkeeper active | Exposure 1 |
 | Alder | Home | Builder active | Exposure 1 |
 | Reed | Home | Builder Share unavailable | Exposure 1; Wounded |
-| Larch | Home | Committed to Project | Ordinary Healer Share unavailable |
+| Larch | Home | Caretaker active | Available; sustaining ordinary care |
 
-Civic Pressure now contains only Healer Pressure 1. Quiet Equilibrium remains
-inactive.
+No Civic Pressure remains. Quiet Equilibrium still depends on whether the
+active recovery constitutes an acute situation requiring attention; balance
+alone neither forbids nor declares it.
 
 ## 3.13 Partial-day accounting after Homecoming
 
@@ -1217,38 +1212,50 @@ Total:
 ```
 
 At DAWN, four whole points release and 0.5 remains hidden. Reed contributes
-none. Larch is Project-committed and contributes no Beautification.
+none. Caretaker does not contribute Beautification.
 
-### Wound Recovery contribution
+### Caretaker Provisioning for Day Three
 
-Larch supplies three quarters of one Healer-Day:
+Both Caretakers sustain the Storehouse throughout the day:
 
 ```text
-0.75 Healer-Day accumulated
+3.5 throughput × 1 day = 3.5
 ```
 
-No whole Healer-Day is yet awarded.
+Reed's Patient Load consumes Morningside's Caretaker Readiness but commits no
+named Caretaker and removes no sustaining Share. The day therefore supplies
+3.5 shared Provisioning throughput. Preservation remains its active allocation;
+Remedy Preparation remains on Hold.
+
+### Wound recovery state
+
+Recovery Days are discrete Home-DAWN steps rather than Civic Share-Day
+contributions. Reed occupies the Hearth from Midday onward; no fractional
+Recovery Day accumulates before DAWN.
 
 ## 3.14 Third DAWN: first DAWN after Homecoming
 
 ### 1. Sustenance consumption
 
 ```text
-Perishable: 57 − 12 = 45
+Perishable: 56 − 12 = 44
 ```
 
 ### 2. Preservation
 
-Throughput 2.5 releases two and retains 0.5:
+Day Three supplies 3.5 throughput, but the Durable target permits only one
+Preservation output:
 
 ```text
-Perishable: 45 − 2 = 43
-Durable: 101 + 2 = 103
-Preservation remainder: 0.5
+Perishable: 44 − 1 = 43
+Durable: 103 + 1 = 104
+Shared fractional remainder: 0.5
 ```
 
-Supply Preparation is target-blocked. Remedy Preparation is unavailable
-because Larch is Project-committed.
+Two unused whole chunks are target-blocked rather than banked. Supply Preparation
+is likewise target-blocked. Remedy Preparation remains available through
+the Caretakers and Storehouse but is on Hold and already at its target after
+the returned Remedy was reconciled.
 
 ### 3–4. Spoilage and Cultivation
 
@@ -1269,14 +1276,18 @@ Hidden remainder: 0.5
 
 ### 6. Project progress
 
+No Project is active. Reed's recovery creates no Project Queue entry.
+
+### 7. Recovery and Exposure
+
+Reed occupies a usable Hearth at the first Home DAWN after Homecoming:
+
 ```text
-Reed Recovery: 0 / 3 complete
-Hidden Healer-Day remainder: 0.75
+Recovery: 1 / 3 Recovery Days
 ```
 
-### 7. Exposure recovery
-
-Each returning Citizen loses up to three Exposure:
+The Wound, its one Patient Load, and Reed's Builder unavailability remain.
+Each returning Citizen then loses up to three Exposure:
 
 | Citizen | Before | After |
 |---|---:|---:|
@@ -1290,16 +1301,17 @@ Reed's Wound remains.
 
 - Builder: Covered at 2/2.
 - Watchkeeper: Covered at 1/1.
-- Healer: Pressure 1 while Larch remains committed.
+- Caretaker: Covered at 2/2, including Reed's one Patient Load.
 - Reed remains unavailable for Builder work.
-- Quiet Equilibrium remains inactive.
+- No Role Pressure remains; Quiet Equilibrium still depends on the active
+  situation rather than Balance alone.
 
 ### Stores after third DAWN
 
-| Stock | Quantity |
+| Resource | Quantity |
 |---|---:|
 | Perishable | 51 |
-| Durable | 103 |
+| Durable | 104 |
 | Flexible Scrap | 58 |
 | Rigid Scrap | 30 |
 | Binding | 5 |
@@ -1315,13 +1327,15 @@ Sustenance and production:
 
 ```text
 Consume: 51 − 12 = 39 Perishable
-Preserve 1 to reach the Durable target:
-  Perishable: 39 − 1 = 38
-  Durable: 103 + 1 = 104
-Spoilage: floor(38 × 10%) = 3
-  Perishable: 38 − 3 = 35
-Cultivation: 35 + 12 = 47 Perishable
+Durable target met; no Preservation output
+Spoilage: floor(39 × 10%) = 3
+  Perishable: 39 − 3 = 36
+Cultivation: 36 + 12 = 48 Perishable
 ```
+
+The 0.5 shared Provisioning remainder remains held while Preservation is
+target-blocked and Remedy Preparation is on Hold; no new throughput accrues to
+either output.
 
 Beautification:
 
@@ -1334,10 +1348,7 @@ Progress: 19 / 24
 Recovery:
 
 ```text
-0.75 + 1 full day = 1.75
-Award 1 Healer-Day
-Project: 1 / 3
-Remainder: 0.75
+Recovery: 2 / 3 Recovery Days
 ```
 
 Exposure remains zero.
@@ -1345,10 +1356,10 @@ Exposure remains zero.
 ### Fifth DAWN
 
 ```text
-Consume: 47 − 12 = 35 Perishable
+Consume: 48 − 12 = 36 Perishable
 Durable target met; no Preservation output
-Spoilage: floor(35 × 10%) = 3
-Perishable: 35 − 3 + 12 Cultivation = 44
+Spoilage: floor(36 × 10%) = 3
+Perishable: 36 − 3 + 12 Cultivation = 45
 Durable: 104
 ```
 
@@ -1366,38 +1377,31 @@ Remainder: 0.5
 The Frill may become visible during the next suitable Quiet interval rather
 than at the instant accounting completes.
 
-Recovery reaches 2 / 3 with a 0.75 remainder. Healer Pressure persists.
+Recovery reaches 3 / 3. Reed's Wound and its one Patient Load clear, the Hearth
+is released, and the accompanying Maiming—if this incident had produced
+one—would remain. Reed becomes available for ordinary Builder work during the
+new day. Caretaker Balance returns to Readiness 1 at 2 Capacity against 1 Load.
+Quiet Equilibrium becomes available at this recalculation if no other acute
+situation persists.
 
 ### Sixth DAWN
 
 ```text
-Consume: 44 − 12 = 32 Perishable
+Consume: 45 − 12 = 33 Perishable
 Durable target met; no Preservation output
-Spoilage: floor(32 × 10%) = 3
-Perishable: 32 − 3 + 12 Cultivation = 41
+Spoilage: floor(33 × 10%) = 3
+Perishable: 33 − 3 + 12 Cultivation = 42
 Durable: 104
 ```
 
-Beautification releases five points, leaves the track at 5 / 24, and retains
-the 0.5 remainder.
+Reed has contributed ordinary Builder work throughout the day following the
+Fifth DAWN. Beautification therefore receives six current points; with the 0.5
+remainder it releases six, leaves the new track at 6 / 24, and retains the 0.5
+remainder.
 
-Recovery:
-
-```text
-Project: 3 / 3
-Reed's Wound clears
-Larch is released
-Hearth Project slot is released
-Unused fractional excess expires with the completed Project
-```
-
-Availability changes:
-
-- Reed resumes Builder contribution.
-- Larch resumes ordinary Healer contribution.
-- Remedy Preparation becomes eligible during the new day and could first
-  release output at the following DAWN.
-- Healer Load caused by Reed's Wound disappears.
+Both Caretakers have sustained ordinary care and Storehouse Provisioning
+throughout recovery. Remedy Preparation remains eligible whenever its state,
+target, and inputs permit it.
 
 Final Civic Balance:
 
@@ -1406,13 +1410,12 @@ Final Civic Balance:
 | Builder | 3 | 2 | Readiness 1 |
 | Gardener | 1 | 1 | Covered |
 | Crafter | 3 | 2 | Readiness 1 |
-| Caretaker | 1 | 1 | Covered |
-| Healer | 1 | 0 | N/A |
+| Caretaker | 2 | 1 | Readiness 1 |
 | Teacher | 1 | 1 | Covered |
 | Watchkeeper | 1 | 1 | Covered |
 | Leader | 1 | 1 | Covered |
 
-Quiet Equilibrium returns.
+Quiet Equilibrium remains available.
 
 ## 3.16 Complete resource ledger
 
@@ -1420,14 +1423,14 @@ Quiet Equilibrium returns.
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Before Launch | 72 | 96 | 24 | 30 | 4 | 3 | 3 | 4 | 0 |
 | After Launch assignment | 72 | 96 | 24 | 30 | 3 | 3 | 2 | 3 | 0 |
-| First DAWN | 65 | 98 | 22 | 30 | 4 | 3 | 3 | 3 | 36 |
-| Outpost transfer | 65 | 98 | 48 | 30 | 4 | 3 | 3 | 3 | 10 |
-| Second DAWN | 57 | 101 | 48 | 30 | 4 | 3 | 3 | 3 | 10 |
-| Homecoming | 57 | 101 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Third DAWN | 51 | 103 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Fourth DAWN | 47 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Fifth DAWN | 44 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Sixth DAWN | 41 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
+| First DAWN | 64 | 99 | 22 | 30 | 4 | 3 | 3 | 3 | 36 |
+| Outpost transfer | 64 | 99 | 48 | 30 | 4 | 3 | 3 | 3 | 10 |
+| Second DAWN | 56 | 103 | 48 | 30 | 4 | 3 | 3 | 3 | 10 |
+| Homecoming | 56 | 103 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
+| Third DAWN | 51 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
+| Fourth DAWN | 48 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
+| Fifth DAWN | 45 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
+| Sixth DAWN | 42 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
 
 ## 3.17 Net result
 
@@ -1449,12 +1452,12 @@ Quiet Equilibrium returns.
 Starting total Sustenance: 168
 Sustenance consumed: 6 × 12 = 72
 Cultivation produced: 6 × 12 = 72
-Spoilage: 5 + 5 + 4 + 3 + 3 + 3 = 23
-Final total Sustenance: 168 − 72 + 72 − 23 = 145
+Spoilage: 5 + 4 + 4 + 3 + 3 + 3 = 22
+Final total Sustenance: 168 − 72 + 72 − 22 = 146
 ```
 
 Preservation changes Perishable into Durable without changing total food.
-Under this deliberately invented 10% spoilage assumption, the Colony loses 23
+Under this deliberately invented 10% spoilage assumption, the Colony loses 22
 net Sustenance while gaining 36 Flexible Scrap. Without spoilage, its ordinary
 Cultivation exactly matches its ordinary daily demand.
 
@@ -1472,7 +1475,8 @@ A competent Tier III Colony can sustain ordinary life. Reserves and
 Preservation then answer spoilage, winter, disrupted production, Guests,
 Projects, and Pressure instead of constantly subsidizing an extreme structural
 deficit. The original two-per-Body-Unit pass ended at 89 Sustenance; reducing
-the baseline to one ends the same six-DAWN exercise at 145.
+the baseline to one, together with the integrated Caretaker Provisioning model,
+ends this six-DAWN exercise at 146.
 
 ### Role concentration makes Launch meaningful
 
@@ -1482,7 +1486,7 @@ vulnerability Home accepts, rather than merely choosing “strong” travelers.
 
 ### Outpost transfer behaves cleanly
 
-The selected 26 Cargo becomes Stores stock. No local cache, transport fiction,
+The selected 26 Cargo enters pooled Stores. No local cache, transport fiction,
 stationed Citizen, or interface ceremony is required.
 
 ### Supply skinning appears robust
@@ -1497,18 +1501,21 @@ Alder's smooth hardwood Brace can brace a root, prop a loose covering, hold a
 gap, resist movement, or support another authored response. The object remains
 the same; only its situated use changes.
 
-### Wound Recovery exposes one unresolved accounting question
+### Wound recovery is already represented by Caretaker Load
 
-This simulation keeps Reed's Patient need as Healer Load while Larch is
-committed to recovering Reed, producing Healer Pressure 1. That may double-count
-the same need. Later design should choose explicitly between:
+Reed's Wound raises ordinary Caretaker Load from one to two while Reed occupies
+the available Hearth:
 
-1. the Patient remaining ordinary Healer Load while the Project occupies the
-   Healer; or
-2. commitment moving that Patient out of ordinary Load while the Colony loses
-   Healer Readiness against any additional need.
+```text
+Capacity 2 − Load 2 = Covered
+```
 
-The second is cleaner; the first creates more civic tension.
+That one balance change is the civic cost. Recovery needs time and a Hearth but
+does not also remove a Caretaker from Capacity, consume a Project slot, or
+reduce Storehouse Provisioning. Morningside loses its former Caretaker
+Readiness without manufacturing a second charge for the same Wound. Had
+Capacity been only one, the uncovered Patient Load would have become one
+Caretaker Pressure while the occupied Hearth's recovery clock continued.
 
 ### Strained Carry may be forgiving
 
@@ -1857,16 +1864,14 @@ Combined Scrap received by Morningside equals Scrap transferred at the Outpost
 plus Scrap carried through Homecoming. No Cargo remains attached to the ended
 expedition.
 
-### Conditional Care decision
+### Care reconciliation
 
-Morningside has one available Hearth, one eligible Healer, and Reed present
-with one Wound. Homecoming therefore offers a real decision: begin Reed's Wound
-Recovery Project or defer care.
-
-For this expedition, the player begins Wound Recovery. Reed becomes the named
-Patient; one Healer is committed; one Hearth becomes occupied; and recovery
-advances by one Healer-Day per elapsed day. Additional Healers would not
-accelerate it. Reed retains the Wound until the Project completes.
+Morningside has one usable unoccupied Hearth and Reed is its only Wounded
+Citizen. Homecoming therefore assigns Reed to that Hearth without presenting
+an empty Care choice. Reed adds one Patient Load to ordinary Caretaker Balance;
+no named Caretaker is committed and no Project is created. The next eligible
+Home DAWN records the first of three Recovery Days. Reed retains the Wound and
+its Builder unavailability until the third Recovery Day clears it.
 
 ### Continue
 
@@ -1886,8 +1891,8 @@ Homecoming completes:
 |---|---|
 | Gale | Home; Exposure 1; Fishing-line Keepsake retained; Offering spent |
 | Alder | Home; Exposure 1; Brace Tool retained and usable |
-| Reed | Home; Exposure 1; one stabilized Wound; Wound Recovery begun |
-| Morningside | Eligible Civic Shares restored; recovered Scrap in Stores; Healer and Hearth committed to Reed's recovery |
+| Reed | Home; Exposure 1; one stabilized Wound; occupying one Hearth for recovery |
+| Morningside | Eligible Civic Shares restored; recovered Scrap in Stores; Caretaker Load increased by one; one Hearth occupied; no Caretaker or Project committed |
 | Raccoon | Offering and authored wire share received; prior encounter established |
 | Node | Wire removed from current and divided; encounter history retained |
 | Record | Launch, Crossing, encounter, Offering expenditure, Wound, bargain, Rest, Cargo transfers, Return, and Homecoming recorded |
@@ -1896,7 +1901,7 @@ At the next Home DAWN:
 
 - each returning Citizen loses up to three Exposure, taking these three from 1
   to 0;
-- Reed's Wound Recovery gains the elapsed Healer-Day contribution;
+- Reed records the first of three Recovery Days;
 - eligible hidden fractional civic contributions award only completed integer
   amounts; and
 - every remainder carries forward under its governing rule.
@@ -1912,10 +1917,10 @@ transfers, relationships, places, and history that changed.
 
 The document deliberately leaves these matters open for subsequent discussion:
 
-- whether a Patient in Wound Recovery also remains ordinary Healer Load;
 - exact resource and Supply recipes;
 - exact Perishable spoilage behavior;
-- exact Wound Recovery duration and material cost;
+- exact Wound recovery requirements within the adopted one-to-three-Recovery-Day range
+  and rare Hearth-allocation edge cases;
 - exact Strained Carry and Jostle tuning;
 - the complete pre-existing relationship among Gale, Alder, and Reed;
 - whether this expedition becomes fixed Story Canon, a representative campaign

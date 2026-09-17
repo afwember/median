@@ -2421,8 +2421,12 @@ whole passive yields, advances Beautification and Projects, resolves recovery,
 then recalculates Places and Civic Balance before reporting meaningful change.
 Fractional contributions remain accumulated behind the scenes. Completed
 Residences, Practices, and recoveries become available in the new day; newly
-usable production first yields at the following DAWN. Sustenance demand scales
-by Body Unit, with its exact quantity reserved for tuning.
+usable production first yields at the following DAWN.
+
+Daily Sustenance demand is **one Sustenance per total resident Body Unit**.
+Citizens Away remain resident and continue to count, so departure cannot reduce
+the Colony's obligation. Body Units are totaled before demand is calculated:
+two Mice therefore create the same daily demand as one Rabbit or Squirrel.
 
 ### Resources and Projects
 
@@ -6175,7 +6179,8 @@ and species-specific physical expression.
 
 DAWN closes the elapsed day and establishes the new one:
 
-1. Consume Sustenance, normally Perishable before Durable.
+1. Consume one Sustenance per total resident Body Unit, normally Perishable
+   before Durable; Citizens Away remain included in resident demand.
 2. Resolve active preservation and Supply preparation from eligible stock.
 3. Apply aggregate Perishable Sustenance spoilage.
 4. Add new passive production, releasing whole chunks and carrying fractions.
@@ -6308,7 +6313,9 @@ Crafter Project creates it. Supply and Tool therefore belong to the material
 economy without remaining anonymous Colony stock throughout their use.
 
 Ordinary food is abstracted during Away. Away Citizens continue to count toward
-the Colony's Body-Unit-scaled Sustenance demand. Food recovered in the Field is
+the Colony's demand of one Sustenance per total resident Body Unit per day.
+Body Units are summed before demand is calculated, preserving Mouse parity
+rather than charging by individual headcount. Food recovered in the Field is
 Cargo for Home rather than a ration position, hunger meter, or separate
 expedition resource.
 
@@ -6544,11 +6551,13 @@ changes them.
 
 The architecture above is current m050 design. A dedicated conceptual tuning
 phase will set Node yields, recurring costs, Carry burden, major recipes,
-Sustenance demand and spoilage, Supply and Tool costs, Outpost and Place costs,
-Project material requirements, Civic Dedications, and the final Supply-class
-names as one connected economy. Tuning may change quantities and provisional
-labels while preserving the distinctions among stock, Cargo, personal Items,
-Body Units, and particular Citizen consequence.
+Sustenance balance and spoilage, Supply and Tool costs, Outpost and Place
+costs, Project material requirements, Civic Dedications, and the final
+Supply-class names as one connected economy. The daily baseline remains one
+Sustenance per resident Body Unit; tuning may establish situated modifiers and
+change other quantities or provisional labels while preserving the
+distinctions among stock, Cargo, personal Items, Body Units, and particular
+Citizen consequence.
 
 ## Appendix F — The Highway and Living World Reference
 

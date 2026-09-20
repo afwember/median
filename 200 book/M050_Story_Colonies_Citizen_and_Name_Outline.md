@@ -15,6 +15,14 @@ accumulating histories. An event shown here is true of that story civilization;
 it demonstrates a possible campaign without requiring every player campaign to
 repeat it.
 
+These civilizations are Sourcebook narrative subjects rather than fixed game
+content. Their Colony and ancestral-Home names, named Citizens, Places,
+relationships, possessions, and authored histories do not appear as a
+prewritten campaign in the game. The game generates the player's ancestral
+Colony, Founders, later Citizens, permanent Home name, Places, and continuing
+history through the governing systems. The story civilizations show what that
+kind of generated campaign can become.
+
 This document governs the identities and continuity of those recurring
 narrative subjects. The GDD governs all mechanics. A biography, Role history,
 Guest Signature, Residence, Tier recognition, or other story fact never changes
@@ -118,8 +126,9 @@ have actually built.
 - **Keepsake:** A knotted bootlace formerly used to measure passages at
   Elderbank.
 - **Established history:** Bramble received Focus during New Elderbank's Chaos
-  MEET, served as its first Leader at Founding, and later became its first
-  Teacher. The change in Role is civic history, not aptitude progression.
+  MEET, served as its first Leader at Founding, and later made teaching, Laws
+  and Sayings, and shared memory the center of that Leader responsibility. The
+  change in responsibility is civic history, not aptitude progression.
 
 ### Twig
 
@@ -190,7 +199,7 @@ by Chapter 4.3.
 | **WHOOT** | Owl; Resident | Tier II | Watchkeeper | Night Sky-watch | high listening hollow | A permanently weakened wing makes full flight unreliable. WHOOT becomes known through patient listening rather than patrol and hears the night as a layered civic place. |
 | **Rootwake** | Groundhog; Resident | Tier III | Gardener | Seasonal Telegraph | deep drained ground | Rootwake changes ordinary routines before weather or human disturbance makes the reason obvious and dislikes construction that treats occupied earth as empty. |
 | **Burdock** | Hedgehog; Expedition | Tier III | Caretaker | INTERCEDE — Living Cover | concealed hedge | First known while sheltering an injured animal, Burdock refuses to leave vulnerable company behind and moves at a pace that makes hurried Citizens notice whom they are abandoning. |
-| **Slate** | Crow; Expedition | Tier IV | Teacher | HANDLE — Trialwork | high open perch | Slate tests the world with found objects and then turns remembered trials into lessons. Solitary flights remain part of life without making Slate a remote scouting service. |
+| **Slate** | Crow; Expedition | Tier IV | Leader | HANDLE — Trialwork | high open perch | Slate tests the world with found objects and then turns remembered trials into lessons. Solitary flights remain part of life without making Slate a remote scouting service. |
 | **Bracken** | Fox; Expedition | Tier IV | Caretaker | HANDLE — Carcass Claim | drained boundary ground | Bracken's careful work with difficult remains earns practical trust while the bodily unease of living beside a predator remains honest and particular. |
 | **Sable** | Skunk; Resident | Tier IV | Watchkeeper | SPEAK — Boundary Deterrence | downwind boundary | Sable projects calm physical certainty during threatened SPEAK situations and becomes associated with the changing wind around the Colony boundary. |
 | **The Lanterns** | Firefly Family; Resident collective | Tier IV | Leader | SPEAK — Lantern Procession | dark damp flight space | A recurring formation, pulse, and route make the family recognizable as one Citizen. Their light clarifies faces and gestures during eligible night MEETs without becoming general illumination. After becoming familiar through ordinary Colony nights, the Lanterns conduct New Elderbank's Grand Court Recognition MEET as its active Leader. |
@@ -300,7 +309,7 @@ should reach and how much redundancy must be preserved before it extends.
 
 | Citizen | Species and type | First present by | Home Role | Signature | Residence Fit | Identity anchor |
 |---|---|---|---|---|---|---|
-| **Lilt** | Sparrow; Resident | Tier II | Teacher | SPEAK — Day Call | concealed social perch | Lilt's repeated calls become part of Morningside's morning understanding. Individual song remains a familiar voice rather than a generic morale effect. |
+| **Lilt** | Sparrow; Resident | Tier II | Leader | SPEAK — Day Call | concealed social perch | Lilt's repeated calls become part of Morningside's morning understanding. Individual song remains a familiar voice rather than a generic morale effect. |
 | **Reed** | Mink; Expedition | Tier III | Builder | REACH — Water Reach | safe waterline | First known through a rescue in moving runoff, Reed accepts water as ordinary terrain while remaining subject to cold, current, separation, and consequence. |
 | **Latch** | Raccoon; Expedition | Tier III | Crafter | HANDLE — Latchwork | dry exterior access | Latch keeps a row of carefully cleaned objects that have no evident use and habitually tests a closure before deciding whether its contents are desirable. |
 | **Keel** | Gull; Expedition | Tier IV | Leader | READ — Long View | broad open landing | Keel is conspicuous, loud, comfortable in open weather, and oriented toward the relationship among highways, rooftops, water, and distant ground. Keel is the current Gull exemplar. |
@@ -455,7 +464,7 @@ Body Unit together without becoming one household subject.
 |---|---|---|---|---|---|---|
 | **Sump** | Toad; Resident | Tier II | Caretaker | Wet-Ground Care | wet edge with dry refuge | Sump already inhabits Pipe End when the Mice arrive, repeatedly using one dry refuge above the runoff. Citizenship follows relationship and fulfilled hospitality rather than discovery or automatic annexation. |
 | **Velvet** | Bat; Resident | Tier II | Builder | Workshop Roost | high dry-dark roost | Velvet's dusk departures and silent returns become ordinary through repetition. The roost's relationship to the Workshop makes dry, dark structural life visible without creating a decay system. |
-| **Sedge** | Snake; Expedition | Tier III | Teacher | SPEAK — Display | sun-warmed shelter | Sedge's arrival requires Rushbottom to announce movement near the warm shelter and learn that stillness can be deliberate speech rather than threat. |
+| **Sedge** | Snake; Expedition | Tier III | Leader | SPEAK — Display | sun-warmed shelter | Sedge's arrival requires Rushbottom to announce movement near the warm shelter and learn that stillness can be deliberate speech rather than threat. |
 | **Rill** | Weasel; Expedition | Tier III | Watchkeeper | INTERCEDE — Drive Off | narrow multi-exit bank | Fast, intense, and frequently scratched, Rill patrols beyond comfortable boundaries. Citizenship keeps the predator–prey relationship particular rather than pretending it vanished. |
 | **Marl** | Mole; Resident | Tier IV | Builder | Subsurface Diagnosis | visible undisturbed soil | Fresh mounds and unseen movement initially unsettle a Colony built around visible adjacency. Marl makes hidden ground understandable while the Residence remains strategically visible. |
 | **Morrow** | Possum; Resident | Tier IV | Caretaker | Hearth Annex | ventilated receiving edge | Morrow receives difficult Homecomings with calm bodily competence. The incorporated Residence can participate in care and EMBODY while lasting amelioration remains governed by the Hearth's Rehabilitation improvement. |

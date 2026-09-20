@@ -447,7 +447,7 @@ Tassel arrives with a cheerful account whose harmless details change in every
 telling. Wick is born into a Colony where the Web is ordinary ground and Nine
 Beeches inherited history. Vane's Crafter practice attends to wind, water, and
 the behavior of fastenings. Lilt's Sparrow calls become familiar before the
-Colony provides a concealed social perch and welcomes a new Teacher.
+Colony provides a concealed social perch and welcomes a new Leader.
 
 Early construction extends more quickly than it reinforces. During a
 heavy-wind Home MEET, one prominent connection becomes unusable while a modest
@@ -547,7 +547,7 @@ provisional but follow their established identities.
 | Tassel | Squirrel Wanderer | Caretaker | Attentive to stores and ordinary provision |
 | Wick | Squirrel, colony-born | Gardener | Treats Morningside's inhabited ground as ordinary living country |
 | Vane | Squirrel | Crafter | Studies fastening behavior under wind and water |
-| Lilt | Sparrow Resident Guest | Teacher | Established canonical Home Role |
+| Lilt | Sparrow Resident Guest | Leader | Established canonical Home Role |
 | Larch | Squirrel Wanderer | Caretaker | Provisional; experience of a failed Colony informs bodily and civic care |
 | Alder | Squirrel, colony-born | Builder | Prefers low, reliable connections |
 | Rivet | Squirrel Wanderer | Crafter | Examines human-made fragments and joins |
@@ -560,9 +560,8 @@ provisional but follow their established identities.
 | Gardener | Wick | 1 |
 | Crafter | Vane, Rivet, Latch | 3 |
 | Caretaker | Tassel, Larch | 2 |
-| Teacher | Lilt | 1 |
 | Watchkeeper | Gale | 1 |
-| Leader | Rowan | 1 |
+| Leader | Rowan, Lilt | 2 |
 | **Total** | **12 Citizens** | **12 Shares** |
 
 ### Housing
@@ -614,9 +613,8 @@ current extent and circumstances.
 | Gardener | Eight active Gardens in green season | 1 | 1 | 0 | Covered |
 | Crafter | Two Workshops, Tools, and prepared Supplies in Stores | 3 | 2 | +1 | Readiness 1 |
 | Caretaker | Twelve Citizens, Stores, Storehouse, receiving, and ordinary care | 2 | 1 | +1 | Readiness 1 |
-| Teacher | Guest integration and current cultural transmission | 1 | 1 | 0 | Covered |
 | Watchkeeper | Roadway, water, weather, and Home approaches | 1 | 1 | 0 | Covered |
-| Leader | Current civic coordination and expedition decision | 1 | 1 | 0 | Covered |
+| Leader | Guest integration, cultural transmission, civic coordination, and expedition decision | 2 | 2 | 0 | Covered |
 
 Every actual obligation is covered. There is no acute situation. Morningside
 begins in **Quiet Equilibrium**.
@@ -631,8 +629,8 @@ support pool can be shown.
 | Workshops | 3 Builder + 3 Crafter = 6 |
 | Gardens | 1 Gardener |
 | Storehouse | 2 Caretakers |
-| Hearth | 2 Caretakers + 1 Teacher = 3 |
-| Gathering Place | 1 Teacher + 1 Leader = 2 |
+| Hearth | 2 Caretakers |
+| Gathering Place | 2 Leaders |
 | Watchpost | 1 Watchkeeper |
 
 ### Cultivation
@@ -671,10 +669,10 @@ Actual output remains target- and input-limited.
 
 ### Beautification
 
-Ordinary Builder, Teacher, Watchkeeper, and Leader Shares contribute:
+Ordinary Builder, Watchkeeper, and Leader Shares contribute:
 
 ```text
-Builders 3 + Teacher 1 + Watchkeeper 1 + Leader 1
+Builders 3 + Watchkeeper 1 + Leaders 2
 = 6 Beautification per complete day
 ```
 
@@ -762,7 +760,7 @@ because no Gardener, Caretaker, or Crafter departed. Beautification
 falls from six to:
 
 ```text
-Cobb Builder 1 + Lilt Teacher 1 + Rowan Leader 1
+Cobb Builder 1 + Lilt/Rowan Leaders 2
 = 3 per complete Away day
 ```
 
@@ -1136,8 +1134,7 @@ case. Reed returns Home but does not yet restore a Builder Share.
 | Crafter | 3 | 2 | Readiness 1 |
 | Gardener | 1 | 1 | Covered |
 | Caretaker | Tassel + Larch = 2 | Ordinary Load 1 + Reed Patient Load 1 = 2 | Covered |
-| Teacher | 1 | 1 | Covered |
-| Leader | 1 | 1 | Covered |
+| Leader | 2 | 2 | Covered |
 
 Builder and Watchkeeper Pressure resolve immediately.
 
@@ -1411,9 +1408,8 @@ Final Civic Balance:
 | Gardener | 1 | 1 | Covered |
 | Crafter | 3 | 2 | Readiness 1 |
 | Caretaker | 2 | 1 | Readiness 1 |
-| Teacher | 1 | 1 | Covered |
 | Watchkeeper | 1 | 1 | Covered |
-| Leader | 1 | 1 | Covered |
+| Leader | 2 | 2 | Covered |
 
 Quiet Equilibrium remains available.
 
@@ -1644,7 +1640,9 @@ Worked result:
 | Alder | 1 | No |
 | Reed | 1 | No |
 
-TRAVEL resumes from the actual far-side position.
+A brief far-side TRAVEL tableau reverses the Staging Post angle and shows the
+whole party clear of traffic. It applies the clean result without opening
+MEET, then direct movement resumes from the actual far-side position.
 
 ## 4.4 Node engagement
 
@@ -1800,8 +1798,8 @@ remains usable. Every unspent Supply and personal Item remains with its holder.
 
 There is no Return command. The player directly drives the party toward
 Morningside through ordinary TRAVEL. Terrain, projected reach, Carry, Day
-Bands, cadence, Nodes, Field Cards, MEET, bodily state, and Reed's temporary
-stabilization span remain active.
+Bands, cadence, Nodes, situated interruptions, MEET, bodily state, and Reed's
+temporary stabilization span remain active.
 
 The party reaches the homeward Staging Post.
 
@@ -1817,8 +1815,9 @@ produces a clean Automatic Return.
 4. No bounded penalty is generated.
 
 No Citizen is stranded mid-Roadway. Reed's Wound remains stabilized and
-present. Exposure remains 1 for each Citizen. Ordinary TRAVEL resumes inside
-the Home Median.
+present. Exposure remains 1 for each Citizen. A brief Home-side TRAVEL tableau
+shows the complete party and clean result from the reverse Staging Post angle;
+ordinary direct movement then resumes inside the Home Median.
 
 ## 4.11 Reach Morningside
 

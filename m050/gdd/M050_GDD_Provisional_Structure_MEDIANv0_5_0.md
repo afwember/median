@@ -27,6 +27,12 @@ told here as an uninterrupted literary narrative, following animal-scale
 experience from Home's destruction through the Crossings to the discovery of
 promising ground in Reach 5. It ends when the party chooses to make Home there.
 
+The Sourcebook tells that narrative through its recurring Rabbit story
+civilization. Elderbank, Bramble, Twig, Shadepatch, and every other named
+subject in the account are illustrative continuity created for this book, not
+fixed game content. The game generates an equivalent ancestral Colony,
+Founders, names, Places, particulars, and new permanent Home for each campaign.
+
 Chapter 6.2 specifies the player control, Registers, RISK, transitions, and
 persistent state enacted by this narrative.
 
@@ -468,8 +474,7 @@ MEET may begin in either direction:
   situation, preparing to Launch, choosing to Rest, or addressing an available
   relationship.
 - **The situation calls:** World Pressure reaches the Colony, another animal or
-  group intercepts the party, an authored event matures, or completed RISK
-  creates a decision on the far side.
+  group intercepts the party, or an authored event matures.
 
 An urgent situation never ambushes the player inside EMBODY. It ends EMBODY
 eligibility and returns attention to the appropriate Register before MEET
@@ -770,8 +775,8 @@ MEET situations have three useful design relationships:
 
 - **Systemic forms:** Launch, Rest, and Homecoming use dedicated procedures
   because they conduct recurring transitions.
-- **Situated decisions:** Home Pressure, Nodes, encountered animals, Field
-  Cards, RISK aftermath, relationships, and other owning systems may supply a
+- **Situated decisions:** Home Pressure, Nodes, encountered animals, bounded
+  TRAVEL interruptions, relationships, and other owning systems may supply a
   particular condition that crosses a MEET threshold.
 - **Choice Events:** authored situations enter through whichever Home or Away
   context owns them and use MEET to present and resolve their content.
@@ -1009,6 +1014,20 @@ broaden the country encountered through exploration. Every biome can later
 support traversal, Nodes, MEETs, Outposts, and possible habitation by any
 species when the particular site permits them.
 
+### Landmark Reaches
+
+A **Landmark Reach** gives one whole Median Reach an exceptional generated or
+authored identity. It remains part of the continuous Corridor and uses ordinary
+TRAVEL, RISK, Nodes, MEET, Rest, Return, and persistence, but its geography and
+Node slate are composed as one recognizable place rather than drawn from the
+ordinary Reach mixture.
+
+Landmark Reach is a spatial and content category, not a quest tier or separate
+map. An Interchange may generate as a recurring Corridor Landmark Reach. The
+Ancestral Home generates once at its opening-established position and is much
+more heavily authored from that campaign's old Colony. Rest-Stop Metropolis is
+developed separately as a persistent civic destination.
+
 ### Rootbank Meadow
 
 Rootbank Meadow is broad enough to read as open country but broken by low
@@ -1187,9 +1206,25 @@ apparent directions of travel make orientation its defining challenge.
   fragile.
 - Diverging highway geometry explains the breadth and keeps animal-scale
   navigation legible.
-- **The Interchange** described in Chapter 6.5 is a singular authored campaign
-  horizon occupying an exceptional Interchange Expanse; the biome name denotes
-  the broader environmental grammar rather than that one destination.
+- An **Interchange** can generate in the Corridor as a Landmark Reach whose
+  entire ground is crisscrossed by Roadways. Some roads meet the animals at
+  Crossing ground level; elevated Roadways belong to vistas and backplates
+  without creating another traversable layer, while a below-grade road may
+  form an impassable interior boundary.
+- An Interchange has no formal Margins. At the longitudinal Reach-border
+  Crossing, ordinary Median and Margin ground may simply give way to
+  Interchange Field without diegetic explanation, just as adjacent Reach
+  biomes already change. Actual distance from the nearest ground-level Roadway
+  preserves River Spume and Roadway-proximity effects.
+- Interchanges are lush with Nodes: many renewable Resource Nodes and a smaller
+  authored situation set arise from divided ground, accumulated debris,
+  drainage, shelter, traffic, and unusually varied animal movement.
+- A legible through-path requires one ground-level Crossing; richer optional
+  grounds may require additional TRAVEL or Crossings. All use ordinary Staging
+  Posts and RISK.
+- The Ancestral Home is a different Landmark Reach. Its TRAVEL layout draws on
+  this multi-Roadway grammar, while its heavily authored Node slate instead
+  reconstructs the generated old Colony.
 
 ### Overpass Shadow
 
@@ -1898,7 +1933,7 @@ Shares from ordinary responsibility, Practice support, and passive output.
 
 ### Roles and their Practices
 
-MEDIAN has seven standing Roles. Each is first established through its civic
+MEDIAN has six standing Roles. Each is first established through its civic
 responsibility, ordinary contribution, related Practices, characteristic
 Projects, vulnerabilities, and limits. Shared Practices appear under every
 Role that uses them and are identified together after the Role entries so that
@@ -1910,7 +1945,6 @@ none appears to belong to the first Role that uses it.
 | **Gardener** | Garden |
 | **Crafter** | Workshop |
 | **Caretaker** | Hearth; Storehouse |
-| **Teacher** | Gathering Place; Hearth |
 | **Watchkeeper** | Watchpost |
 | **Leader** | Gathering Place |
 
@@ -2043,8 +2077,9 @@ recovery—not a family unit. Caretakers use it to feed, settle, clean, and
 comfort vulnerable Citizens; diagnose and stabilize injury; manage illness;
 receive injured or exhausted returnees; care for young Citizens and Patients;
 guide recovery; and help displaced or newly arrived lives enter ordinary life.
-Teacher Readiness joins the same Hearth when learning, integration, or a young
-Citizen's needs require it.
+Young Citizens' bodily dependency remains Caretaker work at Hearth. Their later
+learning and integration create Leader Load through Gathering Place and
+ordinary Colony life rather than a second Hearth responsibility.
 
 Named Patients, incapacity, treatment, and recovery remain individually
 legible while Load and Readiness remain Colony-scale. A Colony without a
@@ -2125,9 +2160,10 @@ nor shortens this Home requirement.
 time. Protected movement space, bodily supports, and sustained care may help a
 Maimed Citizen establish an adapted way to move, work, communicate, or
 eventually Launch. It does not promise restoration, erase Maiming or history,
-or accelerate Wound recovery. Teacher may support the named Citizen's needs;
-Leader contributes none. Wound recovery requires an available Hearth but not
-this improvement.
+or accelerate Wound recovery. A separate civic or cultural consequence may
+create Leader work, but it never becomes Hearth support or part of the
+Rehabilitation gate. Wound recovery requires an available Hearth but not this
+improvement.
 
 A Caretaker shortfall makes Home vulnerable to spoilage, disordered or
 inaccessible Stores, crowding, displacement, failed receiving, unmet
@@ -2137,38 +2173,6 @@ and poor winter preparation. MEET or Homecoming locates consequence in the
 actual Citizen, Storehouse, Hearth, family, or reserve rather than inflicting
 anonymous daily harm. Guest Signatures may reveal a condition, contain
 aftermath, or open a response without replacing Caretaker responsibility.
-
-### Teacher
-
-Teacher carries responsibility for young Citizens, newcomer integration,
-practical and cultural transmission, and social memory. **Gathering Place** is
-Teacher's primary public Practice and is shared with Leader. **Hearth** draws
-on Teacher Readiness when nurture, early learning, dependency, or recovery
-requires it.
-
-#### Teaching through Gathering Place and Hearth
-
-Gathering Place supports lessons, Laws and Sayings, storytelling, observances,
-memorials, Maturity, arrivals, After-names, and the recounting of Chronicle
-material. Hearth supports teaching when care and learning are inseparable.
-Ordinary Teacher work helps practical knowledge and consequential experience
-become shared understanding. Teaching Load arises from actual lives and
-transitions; the Role's existence and ordinary Chronicle or Tale continuity
-create none by themselves.
-
-#### Teacher Projects
-
-Teacher Projects make a lasting cultural or educational fact true: integrating
-a consequential discovery, creating a memorial or observance, adapting
-Gathering Place, or carrying a major transition into ordinary life. Routine
-lessons, stories, interpretation, Maturity, and welcome remain ordinary work.
-
-A Teacher shortfall makes Home vulnerable to failed integration, interrupted
-transmission, neglected grief or memorial duty, lost shared meaning, and unmet
-needs among young Citizens. MEET situates that consequence without deleting
-known facts or halting Maturity. Teacher has no passive output, research
-progression, or Maturity-speed bonus; Guest knowledge may enter communal life
-through teaching without changing Teacher contribution.
 
 ### Watchkeeper
 
@@ -2219,16 +2223,19 @@ replacing ordinary watch.
 
 ### Leader
 
-Leader coordinates civic decisions, makes competing commitments legible,
-buffers social strain, and enables deliberate Colony-scale action. **Gathering
-Place** is Leader's sole Practice and is shared with Teacher. Leader supplies no
-Hearth support.
+Leader carries responsibility for the Colony's shared meaning and shared
+action: coordination, deliberation, agreement, hospitality, integration,
+practical and cultural transmission, social memory, observance, ceremony, and
+the civic recognition of major transitions. **Gathering Place** is Leader's
+sole Practice. Leader supplies no Hearth support.
 
 #### Gathering Place
 
 Gathering Place is recognized common ground where Citizens interpret shared
-life and make consequential choices together. Tier recognition, collective
-deliberation, ceremony, and dispute resolution may occur there through MEET.
+life and make consequential choices together. Lessons, Laws and Sayings,
+storytelling, newcomer integration, memorials, Maturity, arrivals, After-names,
+Tier recognition, collective deliberation, ceremony, and dispute resolution
+may occur there through MEET or ordinary life.
 
 #### Community Board
 
@@ -2238,37 +2245,63 @@ Its physical board may stand elsewhere in Home while remaining part of that
 Practice. It neither discovers nor improves information and gates no civic
 decision; the Almanac remains available without it.
 
+#### Open Table
+
+**Open Table** improves one Gathering Place for rare large-cast Presence. A
+Leader Project establishes protected common use, several simultaneous points
+of attention, and safe access suited to the Colony's actual bodies and spatial
+form; no literal human table is required. Completion makes an Open Table
+invitation eligible but never launches one automatically.
+
+An invitation still requires Home, Quiet Equilibrium, a safe usable improved
+Gathering Place, a present eligible gathering, and an authored occasion. No
+particular Citizen or active Leader is required after completion. Several Open
+Table improvements never stack or create a capacity score; the actual
+gathering owns the invitation. A shared meal may be present without becoming a
+resource cost or the definition of the experience.
+
 #### Standing responsibility
 
 Leader Load arises from actual coordination, dispute, hospitality, agreement,
-emergency, transition, or shared commitment. Without such a need, an unstaffed
-Leader Role creates no Pressure. Adequate Readiness helps the Colony choose and
-act without guaranteeing agreement, removing sacrifice, or replacing the Role
-that owns a material problem. Leadership remains responsibility among equals,
-not rank or command.
+emergency, transition, practical or cultural transmission, newcomer
+integration, memorial duty, young-Citizen learning, or another shared
+commitment. Without such a need, an unstaffed Leader Role creates no Pressure.
+Adequate Readiness helps the Colony understand, choose, and act without
+guaranteeing agreement, removing sacrifice, or replacing the Role that owns a
+material problem. Leadership remains responsibility among equals, not rank,
+command, official doctrine, or universal social competence.
 
 #### Leader Projects
 
 Leader Projects establish a lasting civic agreement, signal, communication
-function, Gathering Place adaptation, Community Board, or Tier-defining
-change. Ordinary deliberation, dispute handling, information display, and
-Tier-recognition ceremony remain civic transactions rather than Projects.
+function, Gathering Place adaptation, Community Board, memorial, observance,
+integrated consequential discovery, or Tier-defining change. Ordinary lessons,
+storytelling, welcome, interpretation, deliberation, dispute handling,
+information display, Maturity, and Tier-recognition ceremony remain civic
+transactions rather than Projects.
 
 A Leader shortfall makes Home vulnerable to delayed decisions, unresolved
-disagreement, uneven sacrifice, failed coordination, and social strain. MEET
-locates that consequence in a real decision, relationship, or shared pressure
-without removing player agency or making one Citizen sovereign. Leader is not
-wildcard Role support and produces no passive output. Guest Signatures may
-alter communication or a bounded response without replacing leadership.
+disagreement, uneven sacrifice, failed coordination, social strain, failed
+newcomer integration, interrupted practical or cultural transmission,
+neglected grief or memorial duty, lost shared meaning, and unmet learning needs
+among young Citizens. MEET locates that consequence in a real Citizen,
+decision, relationship, Gathering Place, memorial, transition, or shared
+pressure without deleting known facts, halting Maturity automatically,
+removing player agency, or making one Citizen sovereign. Leader is not wildcard
+Role support and produces no passive output, research progression, culture
+currency, or Maturity-speed bonus. Guest knowledge may enter communal life
+through leadership without changing Leader contribution.
 
 ### Shared Practices
 
-**Workshop**, **Hearth**, and **Gathering Place** are shared Practices that
-compatible Roles draw upon as circumstances require. Hearth sustains treatment,
-nurture, dependency, recovery, learning, and integration through Caretaker or
-Teacher Readiness without creating a Hearth-specific Role. **Family** remains a
-domestic relationship, separate from Hearth. Storehouse is Caretaker's
-resource-facing Practice rather than a shared inventory divided among Places.
+**Workshop** is shared by Builder and Crafter. **Hearth** and **Storehouse** are
+Caretaker Practices; **Gathering Place** is Leader's Practice. A Practice may
+host several kinds of ordinary life without acquiring another compatible Role.
+Hearth sustains treatment, nurture, bodily dependency, and recovery through
+Caretaker Readiness. Learning, integration, and shared meaning belong to Leader
+through Gathering Place and ordinary Colony life. **Family** remains a domestic
+relationship, separate from Hearth. Storehouse is Caretaker's resource-facing
+Practice rather than a shared inventory divided among Places.
 
 ### Project Queue
 
@@ -2421,8 +2454,8 @@ twice. Provisioning only transforms resources that exist.
 
 ### Beautification
 
-Beautification is the shared passive civic expression of Builder, Teacher,
-Watchkeeper, and Leader effort.
+Beautification is the shared passive civic expression of Builder, Watchkeeper,
+and Leader effort.
 
 Their ordinary Civic Shares fill one Colony-wide track at DAWN; Project-bound
 Citizens do not contribute. A threshold creates a small authored **Frill**
@@ -2516,15 +2549,26 @@ population production. During Quiet Equilibrium, particular mature Citizens
 may voice a wish to parent through an authored **Nesting Proposal** shaped by
 their relationships, Tales, ages, and circumstances. The player never assigns
 parents. A Home MEET asks whether the Colony can promise future accommodation,
-protected Sustenance, Hearth, care, teaching, and protection, and shows the
+protected Sustenance, Hearth, Caretaker support, Leader support, and protection,
+and shows the
 Pressure that commitment may create. The player may accept, defer, or refuse
 without commanding reproduction or receiving an automatic relationship
 penalty.
 
 Success adds a very small number of fully named young Citizens. They create
 care and material obligations immediately but contribute no Civic Share until
-Maturity. Adoption and chosen family arise through their own authored lives,
-outside the seasonal Nesting procedure.
+Maturity. **Young** remains one mechanical life stage but contains two
+sequential civic-support spans. During the **Dependency span**, each new Body
+Unit creates an enlarged Sustenance requirement, Caretaker Load, and an
+intensive Hearth commitment. During the later **Learning span**, Sustenance
+settles to the ordinary requirement, the Caretaker development Load and Hearth
+commitment end, and Leader Load begins as the young Citizen enters practical,
+cultural, and shared civic life. DAWN advances the current span; coverage
+determines Pressure and situated consequence rather than accelerating or
+halting the interval automatically. Exact Sustenance addition and span lengths
+belong to tuning. Completion opens Maturity, ends development Load, and begins
+the Citizen's ordinary Body-Unit Civic Share. Adoption and chosen family arise
+through their own authored lives, outside the seasonal Nesting procedure.
 
 ### Hospitality and Guest residency
 
@@ -2571,11 +2615,10 @@ village-scale gathering while preserving every Citizen as an individual.
 - A Citizen in active Tharn remaining unavailable for EMBODY
 - The player being free to leave an experience without penalty
 
-> **Open Table access gate — placeholder.** Home and Quiet Equilibrium supply
-> the general EMBODY gate. The additional campaign, civic, or authored condition
-> that makes an Open Table gathering available remains to be determined. That
-> future condition will not attach Open Table to a Practice, fixed Place, or
-> particular Citizen.
+Open Table additionally requires a safe usable Gathering Place carrying the
+**Open Table** improvement and a present authored gathering. The improvement
+makes invitations eligible rather than automatic; no particular Citizen or
+active Leader becomes an entry requirement.
 
 ### Participation and Presence
 
@@ -2648,7 +2691,7 @@ becoming separate progression tracks.
 - Injury, recovery, age, memory, and prior events shaping eligible
   experiences without reducing Citizens to condition displays
 - Care experiences expressing recovery and trust without replacing Caretaker
-  or Teacher responsibility
+  or Leader responsibility
 - Young Citizens participating only in experiences appropriate to their present
   life stage
 
@@ -2839,7 +2882,7 @@ sustain the fixed Role shown below.
 | Resident Guest | Role | Home Signature | Residence Fit |
 |---|---|---|---|
 | **Owl** | Watchkeeper | **Night Sky-watch** | high listening hollow |
-| **Sparrow** | Teacher | **SPEAK — Day Call** | concealed social perch |
+| **Sparrow** | Leader | **SPEAK — Day Call** | concealed social perch |
 | **Toad** | Caretaker | **Wet-Ground Care** | wet edge with dry refuge |
 | **Fireflies** | Leader | **SPEAK — Lantern Procession** | dark damp flight space |
 | **Groundhog** | Gardener | **Seasonal Telegraph** | deep drained ground |
@@ -2948,7 +2991,7 @@ available and a Watchpost is usable.
 
 #### **Sparrow**
 
-Song Sparrow lives at a concealed social perch and sustains Teacher. **SPEAK —
+Song Sparrow lives at a concealed social perch and sustains Leader. **SPEAK —
 Day Call** turns one familiar daylight warning or instruction into shared
 understanding during an eligible Home MEET.
 
@@ -3283,7 +3326,7 @@ Ordinary food remains abstracted Away: travelers continue to count toward Home
 Sustenance demand, while recovered food is Cargo for return rather than a ration
 meter.
 
-### Travel cadence, Rest, and Field Cards
+### Travel cadence, Rest, and situated interruptions
 
 A rested party receives three traveled Day Bands at normal reach, then may push
 through three more:
@@ -3303,14 +3346,15 @@ Stopover. Ground, shelter, weather, and disturbance determine the consequences;
 a **natural refuge** may improve them, and a usable Outpost supplies its defined
 protections.
 
-**Field Cards** are occasional situated interruptions between Nodes. One 10% check
-follows an otherwise eligible exhausted travel span, at most once per Band. A
-card suppresses the next two eligible checks, and no check occurs in a Band
-already occupied by RISK or another consequential MEET. Actual terrain,
-season, time, weather, and world state choose the content: minor cards alter or
-reveal the Field directly, while consequential cards open MEET. **Nodes are the
-meal; cards are the weather.** Appendix G provides the exact TRAVEL, Rest, and
-Field Card procedures.
+Occasional situated interruptions keep travel responsive to the country between
+Nodes. One 10% check follows an otherwise eligible exhausted travel span, at
+most once per Band. An interruption suppresses the next two eligible checks,
+and no check occurs in a Band already occupied by RISK or another consequential
+MEET. Actual terrain, season, time, weather, and world state choose the content.
+A minor interruption changes or reveals the Field directly within TRAVEL; only
+a consequential choice opens MEET. Nodes remain the primary intentional Away
+content. Appendix G provides the exact TRAVEL, Rest, and interruption
+procedures.
 
 ## 5.3 RISK: Crossing
 
@@ -3342,8 +3386,11 @@ The Roadway never pauses for steering, reaction prompts, or a mid-road MEET.
 Every committed Crossing brings the whole party fully to the far side; group
 passage resolves first, then delay, Exposure, separation, Cargo loss, Wound,
 Maiming, Tharn, death, or another valid consequence applies. Adversity follows
-Body Units rather than Mouse headcount. Any resulting decision opens from the
-far side.
+Body Units rather than Mouse headcount. RISK then gives way to a brief far-side
+TRAVEL tableau: the party and applied consequences appear from the reverse of
+the Staging Post angle before direct movement resumes from the actual arrival
+ground. The tableau is not a MEET. A later situated decision opens MEET only
+when it independently crosses the ordinary threshold.
 
 Road Work may close a Staging Post or alter the ordinary RISK conditions across
 its multi-Reach footprint. Work that changes after Commit still lets the Run
@@ -3353,8 +3400,9 @@ procedure.
 
 A homeward Staging Post ordinarily uses **Automatic Return**: current
 conditions produce a clean passage or bounded penalty after the party reaches
-the homeward side. Conditions able to support Maiming, Tharn, death, or the
-complete consequence range invoke **Full RISK** instead.
+the homeward side and the far-side TRAVEL tableau appears. Conditions able to
+support Maiming, Tharn, death, or the complete consequence range invoke **Full
+RISK** instead.
 
 ## 5.4 Nodes in the Field
 
@@ -3445,12 +3493,14 @@ alone. Outside RISK, the hidden escalation chance is:
 **Tharn escalation chance = min(80%, 10% × (Exposure + 2 if Wounded and
 unstabilized))**
 
-The game never previews or labels the possibility. When Tharn strikes, the
-MEET's subject becomes securing that Citizen and withdrawing or yielding;
-another response remains only when it directly enables rescue. The party keeps
-the Citizen and cannot activate another Node, enter RISK, or resume the former
-objective until one completed Rest MEET ends Tharn. Remedy has no effect upon
-it.
+The game never previews or labels the possibility. When Tharn strikes during
+MEET, the triggering Round resolves, the current MEET remains open, and its
+next Round is reskinned around securing that Citizen and withdrawing or
+yielding. Another response remains only when it directly enables rescue. When
+RISK produces Tharn, the far-side TRAVEL tableau names it after complete
+passage; no rescue MEET opens. In either case the party keeps the Citizen and
+cannot activate another Node, enter RISK, or resume the former objective until
+one completed Rest MEET ends Tharn. Remedy has no effect upon it.
 
 Usable Outpost Rest removes one Exposure step but never the final step Away.
 At Home, each DAWN removes up to three steps, so maximum Exposure falls from 6
@@ -3676,6 +3726,12 @@ The opening campaign mechanically enacts the Founding Escape narrated in Part
 MEDIAN's ordinary Registers into a directed **cut sequence** whose looking,
 movement, selection, and first Crossing remain playable.
 
+Part 0's named Rabbit account is the Sourcebook's illustration of this
+structure. Actual play generates the selected Species' ancestral Colony,
+Founders, names, Places, and remembered particulars before presenting the same
+mechanical sequence; none of the Story-Civilization subjects is a prewritten
+campaign character or location.
+
 ### Mechanical sequence
 
 1. **Reach 4 flash-forward.** Open wordlessly on the exhausted Founders running
@@ -3684,7 +3740,7 @@ movement, selection, and first Crossing remain playable.
 2. **Ancestral Colony — guided DWELL.** Let the player inspect a grand inhabited
    expression of the chosen Core Species while reserving lasting management for
    the Colony they will found.
-3. **A lesson — short EMBODY.** A future Founder observes a Teacher conducting
+3. **A lesson — short EMBODY.** A future Founder observes a Leader conducting
    a lesson for young Citizens at the Gathering Place.
 4. **Chaos — state-transition MEET.** Animal-scale vibration, sound, dust,
    obscured sight, and failing ground destroy the old Home and bring the
@@ -3843,43 +3899,84 @@ reference.
 
 ## 6.5 Campaign horizons
 
-Campaign horizons are large authored Field territories reached through ordinary
-Corridor expeditions at whatever Tier practical range permits. Their Nodes and
-MEETs use the normal Away Registers and persistent world state. Three canonical
-horizons give the Corridor its broadest civic contrasts:
+Campaign horizons and Landmark Reaches are large distinctive Field territories
+reached through ordinary Corridor expeditions whenever practical range
+permits. Their Nodes and MEETs use the normal Away Registers and persistent
+world state. Three important forms give the Corridor its broadest contrasts:
 
-- **The Ancestral Home:** society lost
-- **The Interchange:** plurality organized through immediate circumstance
+- **The Ancestral Home:** one generated and heavily authored lost society
+- **Interchanges:** recurring Corridor abundance and plurality organized by
+  crisscrossing Roadways and immediate circumstance
 - **The Rest-Stop Metropolis:** plurality gathered into a lasting city
 
 ### The Ancestral Home
 
-The total wreck from which the Founders escaped remains a revisitable territory
-of specialist Nodes, particular remains, hazards, traces, and opportunities.
-Its campaign value is recovery, recognition, and reckoning: learning what
-became of the old Colony and deciding how its surviving history enters the new
-one. A low-frequency encounter may reveal one lone escapee still hiding there.
+Every campaign generates its own ancestral Colony for the Founding Escape:
+its name, Founders, Places, civic arrangement, material culture, and remembered
+particulars belong to that campaign. The selected Core Species shapes this
+generation without selecting a fixed Colony. Elderbank, Nine Beeches, Chaff
+End, and all of their named Citizens and Places are Sourcebook illustrations
+only; none is fixed game content.
 
-A returning Founder or authored Wanderer escapee may open a Remembrance MEET
-through their lived connection to a place, loss, relationship, possession, or
-memory. The result may enter Campaign Memory. The new Colony remains Home; the
-Ancestral Home is an optional horizon of return.
+The Ancestral Home generates once at the location established by the Founding
+Escape, some ways down the Corridor from permanent Home. It fills its Median
+Reach rather than forming one ruin icon inside generic terrain. Its physical
+TRAVEL layout uses the Interchange's broad multi-Roadway grammar: several roads
+may divide or cross the Reach, some at Crossing ground level and others
+overhead or otherwise illustrative. Dedicated Interchange design will
+establish that reusable geometry.
 
-### The Interchange
+Its Node slate is deliberately different. Specialist remains derive from the
+actual opening Colony, while authored story-Node functions bind to compatible
+campaign Places, paths, objects, Citizens, relationships, and memories.
+Present Resources, shelter, inhabitants, and hazards remain possible, but the
+Reach does not use an ordinary random Node and encounter mix or inherit the
+Interchange's emphasis on renewable abundance.
 
-Ramps, barriers, underpasses, pillars, drains, embankments, and adjoining
-Roadways create an emergent crossroads: an anarchistic analogue to Metropolis
-held together by present circumstance rather than a single community.
+The old Colony is neither a ruin dungeon nor a restoration opportunity. Its
+campaign value lies in exploration, recovery, recognition, and reckoning while
+the present territory remains materially alive. A returning Founder or
+authored Wanderer escapee may open a Remembrance MEET through lived connection
+to an exact place, loss, relationship, possession, or memory. A low-frequency
+encounter may reveal one lone escapee. Neither possibility is advertised in
+advance. The result may enter Campaign Memory; the new Colony remains the sole
+Home.
+
+An Outpost may occupy one suitable sheltered site, extending practical range
+without converting the old Colony into an annex or replacement Home.
+
+### Interchanges
+
+Interchanges can autogenerate elsewhere in the Corridor as Landmark Reaches.
+Ramps, barriers, underpasses, pillars, drains, embankments, divided grades, and
+adjoining Roadways create several connected grounds. Some Roadways require
+Crossing at ground level. Elevated Roadways remain decorative infrastructure
+expressed through Staging Post vistas, TRAVEL composition, and Node MEET
+backplates. A below-grade Roadway may form an impassable interior boundary.
+
+Formal Margins disappear at the longitudinal Crossing into the Interchange.
+The whole non-road Reach functions as Roadway-influenced Field, with actual
+distance from the nearest ground-level Roadway preserving River Spume and
+proximity effects. Ordinary Median and Margin geography resumes in the next
+Reach without requiring an in-world explanation for the transition.
+
+The shortest legible passage through the Reach requires one ground-level
+Crossing. Richer optional grounds may demand additional movement or Crossings;
+a generator may contrast one direct difficult Crossing with a longer path
+through two narrower roads. This remains direct-drive TRAVEL and ordinary RISK,
+not a route-planning layer.
+
+Interchanges are lush with persistent Nodes. Many renewable Resource Nodes and
+a smaller authored situation set arise from divided ground, accumulated
+material, drainage, shelter, traffic weather, and varied animal movement.
 Travelers, regulars, scavengers, temporary camps, territorial animals, and
 predators meet in unusual variety. Claims, exchanges, warnings, favors,
 grudges, shelters, and agreements remain local and particular.
 
-The Interchange offers dense Guest encounters, unusual Items and Resources,
-information, obligation, and situations in which every MEET response family
-finds regular use. Familiar relationships change later encounters without
-creating universal safety. An Outpost may occupy one suitable sheltered site,
-extending practical range while leaving the wider territory under its many
-local arrangements.
+Familiar relationships change later encounters without creating universal
+safety, a governing society, or a map-wide reputation. An Outpost may occupy
+one suitable sheltered site while leaving the wider Reach under its many local
+arrangements.
 
 ### The Rest-Stop Metropolis
 
@@ -3895,7 +3992,7 @@ how particular residents and venues receive the party. Metropolis may visually
 echo DWELL, but Home is shaped by the player while the city is learned through
 navigation and participation.
 
-All three horizons and the Corridor beyond remain available as continuing
+All three forms and the Corridor beyond remain available as continuing
 sources of exploration, relationship, and change. MEDIAN v0.5 has no formal
 victory condition.
 
@@ -4011,8 +4108,10 @@ Land-bound Guests remain within the Core Species grammar, constrained by their
 actual bodies. Crow and Gull flight is a parallel Flyer expression in the same
 Crossing. Commit closes planning and animates one uninterrupted Continuous
 Run, with no mid-Crossing input. Resolution carries the whole party to the far
-side, applies visible consequences there, and returns to TRAVEL unless the
-result opens MEET.
+side, then returns to TRAVEL through a brief reverse-angle arrival tableau that
+applies and displays bounded consequences before direct movement resumes. The
+tableau is not a MEET; a later situation opens MEET only through the ordinary
+threshold.
 
 #### MEET
 
@@ -4046,7 +4145,8 @@ inhabitants rather than controllable scenery. Open Table instead enters through
 an eligible gathering and settles into guided collective Presence at animal
 scale. The player inhabits no Citizen and may direct attention among a large
 cast and several simultaneous activities without returning to DWELL's
-operational view. Its additional access gate remains deliberately unresolved.
+operational view. It requires a safe usable Gathering Place carrying the Open
+Table improvement and a present authored gathering.
 Departure returns to DWELL without penalty. Loss of Quiet Equilibrium ends the
 experience safely and lets an urgent situation open MEET from its owning
 Register.
@@ -4451,8 +4551,8 @@ and remembrance deepen one another.
 
 The Founding Escape chains the five Registers into flight from an ancestral
 Colony and the choice to found a new Home. Population Tiers, Practice
-improvements, Guests, Outposts, the Metropolis, the Interchange, and the
-Ancestral Home offer horizons rather than a mandatory victory sequence. The
+improvements, Guests, Outposts, the Metropolis, Interchanges, and the Ancestral
+Home offer horizons rather than a mandatory victory sequence. The
 Colony can grow, endure, remember, and become enough.
 
 Across every system, MEDIAN follows one movement:
@@ -4549,7 +4649,7 @@ listing every place it appears.
 |---|---|---|
 | **After-name** | A rare public name earned through a Citizen's durable life history. | § 6.1, Distinctions and After-names |
 | **Almanac** | The continuously available lens for present state and known, scheduled, forecast, or possible future circumstances. It stands outside Campaign Memory. | § 6.1, The Almanac |
-| **Ancestral Home** | The ruined original Colony from which the Founders escaped, preserved as a distant campaign horizon and a place of possible return. | § 6.5, The Ancestral Home |
+| **Ancestral Home** | The once-per-campaign Landmark Reach containing the generated original Colony from which the Founders escaped; its Interchange-like TRAVEL geometry carries a heavily authored slate of persistent remains and story Nodes. | § 6.5, The Ancestral Home |
 | **attachment-forward** | MEDIAN's design direction toward making particular Citizens, Places, objects, and histories knowable, memorable, and worth protecting. | § 1.2, The attachment-forward base builder |
 | **Away** | The outward Mode in which responsibility extends from Home through a particular expedition party. | § 1.4, Home and Away; Part V |
 | **Baseline** | The complete authored realization of a presentation that can be delivered immediately without model assistance. | Appendix C, Two channels and two realizations |
@@ -4586,7 +4686,6 @@ listing every place it appears.
 | **Exposure** | A hidden six-step, per-Citizen measure of accumulated life beyond ordinary safety that weights applicable personal consequence toward the serious end of its valid range. | § 5.6, Accumulated Exposure |
 | **expression** | A Tool, Supply, Keepsake, relationship, Signature, civic commitment, or other capability through which a selected MEET response becomes possible or changes. | § 1.5, Responses and expressions |
 | **Field** | The continuous Away Register in which the player directly moves a particular expedition party through the Corridor. | § 1.4, The Field Register; § 5.2 |
-| **Field Card** | An occasional situated interruption between Nodes that keeps the Corridor active without displacing intentional exploration. | § 5.2, Field Cards |
 | **Focus** | The Citizen whose life a MEET Round naturally follows in presentation after the collective response has been committed. | § 1.5, Focus; § 4.6 |
 | **Frill** | A small, persistent, mechanically inert expression of Colony life created when Beautification reaches a threshold. | § 3.6, Beautification |
 | **Game Logic** | MEDIAN's legible and causally trustworthy rules, through which competence and stability release attention for attachment. | § 1.3, Game Logic opens Attachment Space |
@@ -4603,6 +4702,7 @@ listing every place it appears.
 | **Housing Pressure** | The uncovered Body Units produced when Core Citizen Housing Load exceeds usable Core Residence Capacity. | § 3.2, Housing Balance |
 | **JOIN** | Mouse's spatial operator: adjoining rooms and sheltered edges become one protected inhabited body. | § 2.3, Mouse — JOIN; § 4.2 |
 | **Keepsake** | A persistent emotional object whose meaning and bounded contextual effect belong to one Citizen's life. | § 4.6, Keepsakes |
+| **Landmark Reach** | A whole Median Reach given one exceptional generated or authored geography and Node slate while remaining part of ordinary continuous Corridor play. | § 2.3, Landmark Reaches |
 | **Landscape Voice** | MEDIAN's human third-person, landscape-attentive narrator, which interprets present play without adopting a named protagonist or an animal cultural voice. | § 5.9, Landscape Voice |
 | **Launch** | The state-transition MEET in which the player selects and commits an eligible expedition party, transferring active operation from Home to Away. | § 5.1, The Launch MEET |
 | **Load** | The gross weight of one civic responsibility, compared only with Capacity belonging to the same Civic Balance axis. | § 3.2, Shared balance grammar |
@@ -4614,7 +4714,7 @@ listing every place it appears.
 | **Moment Brief** | A bounded projection of current state and relevant Record facts used to realize one truthful narrative or visual presentation. | Appendix C, The Moment Brief |
 | **MSID** | A dot-delimited semantic address that identifies one game property independently of page, chapter, manifestation, or implementation. | Appendix A, How MEDIAN Writes |
 | **Node** | A fixed recognizable place in the Field whose material, ecology, shelter, inhabitants, alteration, or history can matter across visits. | § 5.4, Nodes in the Field |
-| **Open Table** | A rare large-cast Presence experience entered through a Colony gathering rather than an individual Citizen; its additional access gate remains provisional. | § 3.8, Participation and Presence |
+| **Open Table** | A rare large-cast Presence experience entered through an authored gathering at a safe usable Gathering Place carrying the Open Table improvement rather than through an individual Citizen. | § 3.8, Participation and Presence |
 | **Operator** | The characteristic action through which the player engages a Register. | § 1.4, Mode, Register, operator, and view |
 | **Outpost** | A persistent Away foothold established within a Reach, providing bounded refuge, Rest, storage, and Colony synchronization while remaining categorically distinct from Home. | § 5.7, Outposts and Stopovers |
 | **Party** | The fixed group of named Citizens committed to one active expedition, ordinarily between one and one-half and three Body Units and always containing more than one animal. | § 5.1, Party scale |
@@ -4949,7 +5049,7 @@ elsewhere in this document.
 
 No current mechanic reads, scores, gates, unlocks, modifies, or resolves
 through a Law or Saying. A Citizen does not gain an effect by knowing one, a
-Teacher does not create a numerical benefit by reciting one, and a situation
+Leader does not create a numerical benefit by reciting one, and a situation
 does not become eligible because one applies. Future mechanical integration
 requires separate authorial adoption. The owning system always governs when a
 cultural expression is incomplete, figurative, locally phrased, or mistaken.
@@ -5704,7 +5804,7 @@ than multiplying its value by the number of Roles that use it.
 
 `Home.Colony.Role` · `Home.Colony.Practice`
 
-Seven standing Roles define the civic axes below. A Citizen may be called a
+Six standing Roles define the civic axes below. A Citizen may be called a
 healer, cook, gardener, or another ordinary description in prose; only the
 capitalized Role names create mechanical responsibility.
 
@@ -5714,9 +5814,8 @@ capitalized Role names create mechanical responsibility.
 | **Gardener** | Cultivation, seasonal yield, and cultivated continuity | Garden | Perishable Sustenance | Restore or adapt cultivated ground; establish Winter Cultivation |
 | **Crafter** | Functional material and Away capability | Workshop | Binding, Device, and Offering Supply preparation | Create Tools, Specialist Tools, and lasting fabrication capabilities |
 | **Caretaker** | Receiving, provisioning, nurture, dependency, medical readiness, recovery, and preservation | Hearth; Storehouse | Shared Preservation and Remedy Preparation throughput through Storehouse | Conduct Rehabilitation; adapt care, receiving, or Provisioning to persistent need |
-| **Teacher** | Teaching, integration, cultural continuity, and social memory | Gathering Place; Hearth | Beautification | Establish a memorial, observance, or lasting cultural understanding |
 | **Watchkeeper** | Timely warning and useful Telegraph | Watchpost | Beautification | Extend or restore warning and signaling capability |
-| **Leader** | Coordination, deliberation, shared commitment, and ceremony | Gathering Place | Beautification | Establish persistent civic agreements or coordinating functions |
+| **Leader** | Shared meaning and shared action: coordination, teaching, integration, cultural continuity, deliberation, commitment, and ceremony | Gathering Place | Beautification | Establish persistent civic agreements, memorials, observances, cultural understanding, or coordinating functions |
 
 #### Builder
 
@@ -5853,8 +5952,9 @@ touches food, dependency, injury, and receiving at the same time.
 Hearth is the Caretaker's life-facing Practice. It supports feeding, settling,
 cleaning, comfort, diagnosis, stabilization, illness care, young Citizens,
 Patients, injured or exhausted returnees, and displaced or newly arrived lives.
-Teacher may use the same Hearth when learning, integration, or a young
-Citizen's needs require it; the Practice belongs exclusively to neither Role.
+Learning, integration, and cultural transition may concern the same Citizens,
+but they create Leader work through Gathering Place and ordinary Colony life
+rather than another compatible Hearth Role.
 A Colony without dependents, Patients, or another relevant care circumstance
 carries no automatic medical Load. Named Patients, incapacity, treatment, and
 recovery remain individually legible while Load and Readiness remain
@@ -5927,9 +6027,9 @@ protected movement space, bodily supports, and sustained care through which a
 named Citizen may establish an adapted way to move, work, communicate, or
 eventually Launch. Rehabilitation guarantees neither restoration of former
 capability nor erasure of Maiming or history and does not accelerate Wound
-recovery. Teacher Readiness contributes when the Citizen's needs require it;
-Leader contributes none. Wound recovery needs an available Hearth but not the
-Rehabilitation improvement.
+recovery. A separate civic or cultural consequence may create Leader work, but
+it never supplies Hearth support or changes the Rehabilitation gate. Wound
+recovery needs an available Hearth but not the Rehabilitation improvement.
 
 Caretaker shortfall creates vulnerability to spoilage, inaccessible or
 disordered Stores, crowding, displacement, failed receiving, unmet dependency,
@@ -5942,42 +6042,6 @@ may reveal a condition, contain aftermath, or open a response without changing
 Caretaker coefficients or replacing Caretaker responsibility. A Citizen may be
 described naturally as a healer in Tale or dialogue, but that identity creates
 no additional Role, aptitude, or production channel.
-
-#### Teacher
-
-Teacher owns the teaching of young Citizens, newcomer integration, practical
-and cultural transmission, and social memory. Gathering Place is Teacher's
-primary public Practice and is shared with Leader. Hearth draws on Teacher
-Readiness when nurture, dependency, early learning, or recovery requires it;
-compatible Caretaker support does not count as Teacher support.
-
-Gathering Place can support lessons, interpretation of Laws and Sayings,
-storytelling, observances, memorials, After-name recognition, Maturity,
-arrival, and the recounting of Chronicle material. Covered Teacher Load
-includes practical transmission, cultural interpretation, newcomer
-integration, accompaniment of young Citizens, memorial continuity, and
-helping consequential experience become shared understanding. A Colony with
-no young Citizens, newcomers, lessons, grief, or practical or cultural
-transition carries no automatic Teaching Load. Ordinary Chronicle and Tale
-continuity carries no itemized labor charge.
-
-Teacher Projects integrate a consequential discovery into communal
-understanding; create a lasting memorial or observance; adapt Gathering Place
-to a newly understood need; or carry a major cultural transition into ordinary
-life. Routine lessons, storytelling, record consultation, interpretation,
-Maturity, and ordinary newcomer welcome remain ordinary civic life. Builder or
-Leader may support a lasting change without taking its teaching purpose from
-Teacher.
-
-Teacher shortfall creates vulnerability to failed newcomer integration,
-interrupted practical transmission, lost shared meaning, neglected grief or
-memorial duty, and unmet needs among young Citizens. MEET situates the
-consequence in a Citizen, Gathering Place, Hearth, memorial, observance, or
-transition. Shortfall does not delete known facts, erase the Record, or halt
-Maturity automatically. Teacher has no passive production or transformation,
-research progression, culture currency, or Maturity-speed bonus. Guest
-knowledge may enter communal life through teaching without changing Teacher
-coefficients.
 
 #### Watchkeeper
 
@@ -6024,28 +6088,36 @@ ordinary Watchkeeper responsibility.
 
 #### Leader
 
-Leader owns coordination, legible competing commitments, social strain, and
-deliberate Colony-scale action. Gathering Place is Leader's sole Practice and
-is shared with Teacher. It supports collective interpretation, major
-deliberation, Tier recognition, civic ceremonies, and dispute resolution.
-Leader supplies no Hearth support.
+Leader owns the Colony's shared meaning and shared action: coordination,
+deliberation, agreement, hospitality, newcomer integration, practical and
+cultural transmission, social memory, observance, ceremony, and deliberate
+Colony-scale action. Gathering Place is Leader's sole Practice. It supports
+lessons, Laws and Sayings, storytelling, memorials, After-name recognition,
+Maturity, arrivals, collective interpretation, major deliberation, Tier
+recognition, civic ceremonies, and dispute resolution. Leader supplies no
+Hearth support.
 
 Leader Load arises from actual coordination, dispute, hospitality, agreement,
-emergency, transition, or other shared commitment; an unstaffed Leader Role
-creates no Pressure when no such Load exists. Covered Leader Load includes
-coordination, deliberation, dispute handling, emergency orientation,
-communicating commitments, receiving civic claims, and keeping unequal burdens
-collectively intelligible. Adequate Readiness neither guarantees agreement nor
-removes sacrifice or the need for the Role that owns a material problem.
-Leadership remains civic responsibility among equals rather than rank,
-command, or ownership of Colony decisions.
+emergency, transition, practical or cultural transmission, newcomer
+integration, memorial duty, young-Citizen learning, or another shared
+commitment; an unstaffed Leader Role creates no Pressure when no such Load
+exists. Covered Leader Load includes teaching, cultural interpretation,
+integration, memorial continuity, coordination, deliberation, dispute handling,
+emergency orientation, communicating commitments, receiving civic claims, and
+keeping unequal burdens collectively intelligible. Adequate Readiness neither
+guarantees agreement nor removes sacrifice or the need for the Role that owns
+a material problem. Leadership remains civic responsibility among equals
+rather than rank, command, official doctrine, or ownership of Colony decisions.
 
 Leader Projects adapt Gathering Place to a lasting civic need, establish its
-Community Board, create a durable agreement, signal, or communication
-function, or support a Tier-defining civic change. Ordinary coordination,
-dispute handling, emergency deliberation, information display, and the
-Tier-recognition ceremony remain ordinary civic transactions. Other Roles may
-support a lasting change without taking its coordinating purpose from Leader.
+Community Board or Open Table, integrate a consequential discovery into shared
+understanding, create a lasting memorial or observance, establish a durable
+agreement, signal, or communication function, or support a Tier-defining civic
+change. Ordinary lessons, storytelling, record consultation, interpretation,
+welcome, Maturity, coordination, dispute handling, emergency deliberation,
+information display, and Tier recognition remain ordinary civic life. Other
+Roles may support a lasting change without taking its civic purpose from
+Leader.
 
 Community Board is established in one Gathering Place through a Leader
 Project. It gives selected information already known to the Colony persistent
@@ -6055,25 +6127,41 @@ Board detects, forecasts, improves, or decides nothing, gates no ordinary
 civic function, and adds no Practice Strength, Readiness, Project capacity, or
 forecast accuracy.
 
+Open Table is established in one Gathering Place through a Leader Project. It
+creates protected common use, several simultaneous points of attention, and
+safe access suited to the Colony's actual bodies and spatial form. During Quiet
+Equilibrium, a safe usable improved Gathering Place and a present authored
+gathering may invite Open Table's large-cast Presence. Completion makes the
+invitation eligible rather than automatic; no particular Citizen or active
+Leader is required. Several Open Table improvements neither stack nor create a
+capacity score. A shared meal may be present without defining the form or
+creating a resource cost.
+
 Leader shortfall creates vulnerability to delayed decisions, unresolved
-disagreement, uneven sacrifice, failed coordination, social strain, and an
-inability to mobilize around shared pressure. MEET situates the consequence in
-a civic decision, Gathering Place, Community Board, relationship, or shared
-pressure. Leader is neither ruler nor wildcard support and provides no
-cross-Role Load reduction, Project-speed bonus, policy tree, or passive
-production. Guest Signatures may alter communication, attention, or a bounded
-response without changing Leader coefficients or replacing Leader
-responsibility.
+disagreement, uneven sacrifice, failed coordination, social strain, failed
+newcomer integration, interrupted practical or cultural transmission,
+neglected grief or memorial duty, lost shared meaning, unmet learning needs
+among young Citizens, and inability to mobilize around shared pressure. MEET
+situates the consequence in an actual Citizen, civic decision, Gathering
+Place, memorial, transition, relationship, or shared pressure. Shortfall does
+not delete known facts, erase the Record, or halt Maturity automatically.
+Leader is neither ruler nor wildcard support and provides no cross-Role Load
+reduction, Project-speed bonus, policy tree, passive production, research
+progression, culture currency, or Maturity-speed bonus. Guest knowledge and
+Signatures may enter communal life or alter a bounded response without changing
+Leader coefficients or replacing Leader responsibility.
 
-Workshop, Hearth, and Gathering Place are shared Practices. Compatible Roles
-draw upon the Practice as circumstances require, but the Practice retains one
-situated strength and one Project slot. Hearth is the civic Practice of healing,
-nurturing, dependency, and recovery; **family** remains a domestic relationship.
-Caretaker and Teacher are its compatible Roles; Leader contributes no Hearth
-support. Storehouse remains Caretaker's resource-facing Practice and exposes one
-pooled Stores state rather than a Place-specific inventory.
+Workshop is shared by Builder and Crafter. Hearth and Storehouse are Caretaker
+Practices; Gathering Place is Leader's Practice. A Practice may host several
+kinds of ordinary life without acquiring another compatible Role, and it
+retains one situated strength and one Project slot. Hearth is the civic
+Practice of healing, nurturing, bodily dependency, and recovery; **family**
+remains a domestic relationship. Learning, integration, and shared meaning
+belong to Leader through Gathering Place and ordinary Colony life. Storehouse
+remains Caretaker's resource-facing Practice and exposes one pooled Stores
+state rather than a Place-specific inventory.
 
-Builder, Teacher, Watchkeeper, and Leader Civic Shares sustained in ordinary
+Builder, Watchkeeper, and Leader Civic Shares sustained in ordinary
 work each add one point to the Colony-wide Beautification track at DAWN. A
 threshold produces one small persistent, mechanically inert Frill. Well-Placed
 Practices and Project-committed Citizens add no Beautification progress.
@@ -6097,11 +6185,12 @@ improvement merely to complete a symmetric list.
 | **Hearth** | **Rehabilitation** | Caretaker | Allows individualized Rehabilitation Projects after Maiming. |
 | **Watchpost** | **Far Warning** | Watchkeeper | Qualitatively identifies an eligible approaching pressure family early enough to provide another preparation window. |
 | **Gathering Place** | **Community Board** | Leader | Gives selected Almanac information already known to the Colony a persistent shared expression in DWELL. |
+| **Gathering Place** | **Open Table** | Leader | Makes a present authored gathering eligible for rare large-cast Presence during Quiet Equilibrium. |
 
 The physical Community Board may stand elsewhere within Home while remaining
-the improvement of its Gathering Place. Winter Cultivation, Far Warning, and
-Community Board modify only their stated capability. Wound recovery uses an
-available Hearth and requires no Rehabilitation improvement.
+the improvement of its Gathering Place. Winter Cultivation, Far Warning,
+Community Board, and Open Table modify only their stated capability. Wound
+recovery uses an available Hearth and requires no Rehabilitation improvement.
 
 ### Passive production and transformation
 
@@ -6195,7 +6284,7 @@ Growth occurs through three distinct relationships:
 | Path | Opening | Commitment | Result |
 |---|---|---|---|
 | **Wanderer** | Refuge, rescue, or integration MEET | Permanent welcome or bounded temporary refuge under the Colony's actual conditions | A named Core adult joins the Roster with a Prior-life Tale and their Body-Unit Civic Share when available. |
-| **Nesting** | A rare green-season proposal from particular mature Core Citizens while Quiet Equilibrium creates civic room | Protected Sustenance and visible future accommodation, care, teaching, protection, and Role support | A very small number of named young Citizens enter the Roster and create support needs before contributing Civic Shares at Maturity. |
+| **Nesting** | A rare green-season proposal from particular mature Core Citizens while Quiet Equilibrium creates civic room | Protected Sustenance and visible future accommodation, Caretaker support, Leader support, protection, and Role capacity | A very small number of named young Citizens enter the Roster, move through Dependency and Learning spans, and create support needs before contributing Civic Shares at Maturity. |
 | **Guest residency** | Relationship and Terms of Hospitality | The promised Residence Fit, access, support, and other agreed conditions become true | A named Guest or explicitly collective-bodied household joins the Roster under its species profile. |
 
 Every arrival adds a named life, history, Sustenance demand, and actual civic
@@ -6221,8 +6310,8 @@ Nesting commitment suppresses another proposal for the intended interval.
 
 The proposal enters Home MEET. The readiness review concerns whether the Colony
 can support the commitment—not whether the Citizens may desire it—and shows
-future accommodation, protected Sustenance, usable Hearth, care, teaching,
-protection, health needs, and the Role balances likely to lose Readiness or
+future accommodation, protected Sustenance, usable Hearth, Caretaker and Leader
+support, protection, health needs, and the Role balances likely to lose Readiness or
 enter Pressure. Authorization protects a visible Sustenance reserve scaled to
 the expected new Body Units: one expected Rabbit or Squirrel young counts as
 one Body Unit, while the usual two Mouse littermates together count as one.
@@ -6236,6 +6325,18 @@ window. Success adds a very small number of fully named young Citizens, who
 create ordinary needs immediately and contribute no Civic Share until Maturity.
 Adoption and chosen-family formation follow their own authored events rather
 than the Nesting procedure or season.
+
+Young remains one mechanical life stage with two sequential civic-support
+spans. During **Dependency**, each new Body Unit carries an enlarged Sustenance
+requirement, creates Caretaker Load, and occupies one intensive Hearth
+commitment. During **Learning**, Sustenance returns to the ordinary
+Body-Unit requirement, the Caretaker development Load and Hearth commitment
+end, and Leader Load begins. Each DAWN advances the current span regardless of
+additional staffing; coverage governs Pressure and situated consequence rather
+than speed. Exact added Sustenance and Day counts remain tuning values. At the
+end of Learning, a visible Maturity event ends Young status and development
+Load, begins the Citizen's ordinary Civic Share, and opens normal Role
+eligibility.
 
 ### Colony Tier recognition
 
@@ -7439,25 +7540,25 @@ available shelter determine contextual consequences. Natural refuge improves
 those circumstances; a usable Outpost provides the reliable effects specified
 below.
 
-### Field Cards
+### Situated travel interruptions
 
-`Away.Field.Card`
+`Away.Travel.Interruption`
 
-Field Cards are occasional situated interruptions between Nodes:
+Occasional situated interruptions occur between Nodes without becoming a
+named card, deck, or separate content system:
 
-- one 10% check follows each exhausted travel span
-- at most one card occurs in a Day Band
+- one 10% check follows each otherwise-eligible exhausted travel span
+- at most one interruption occurs in a Day Band
 - no check occurs when RISK or another consequential MEET has already occupied
   that Band
-- after a card occurs, the next two otherwise-eligible exhausted spans are
+- after an interruption occurs, the next two otherwise-eligible exhausted spans are
   ineligible
 - selection follows actual Reach, position, terrain, season, Day Band, weather,
   and persistent state
-- a minor card changes or reveals the Field directly; a consequential card
-  opens MEET
+- a minor interruption changes or reveals the Field directly within TRAVEL; a
+  consequential choice opens MEET
 
-Nodes remain the primary intentional Away content: **Nodes are the meal; cards
-are the weather.**
+Nodes remain the primary intentional Away content.
 
 ### Engaging Nodes
 
@@ -7509,8 +7610,11 @@ Commit is the final strategic input. The Roadway then remains in motion while
 the complete plan resolves without steering, reaction prompts, or mid-road
 MEET. Every committed Crossing brings the entire party to the far side. Group
 passage resolves first; delay, Exposure, separation, Cargo loss, Wound,
-Maiming, Tharn, or rarer valid consequences apply afterward. Any new decision
-opens from the far side.
+Maiming, Tharn, or rarer valid consequences apply afterward. A brief far-side
+TRAVEL tableau reverses the Staging Post angle, shows the arrived party, and
+applies the bounded result before direct movement resumes from the actual
+ground. It is not a MEET. A later situated decision opens MEET only when it
+independently crosses the ordinary threshold.
 
 Adversity follows Body Units rather than headcount. RISK selects no additional
 targets merely because a Mouse party contains more Citizens. One causal result
@@ -7532,8 +7636,10 @@ presentations:
 - **Full RISK:** an uncommon procedure opened when current conditions can
   support Maiming, Tharn, death, or the complete RISK consequence range.
 
-Both carry the whole party continuously to the homeward side and show any
-penalty only after it is clear of traffic.
+Both carry the whole party continuously to the homeward side. A brief
+reverse-angle TRAVEL tableau shows the complete arrival and applies any bounded
+penalty only after the party is clear of traffic; direct movement then resumes
+from that ground without automatically opening MEET.
 
 ### Away MEET
 
@@ -7684,14 +7790,16 @@ independently. When Tharn lies within the event's valid range outside RISK:
 unstabilized))**
 
 RISK may produce Tharn from an adequately severe Crossing but is exempt from
-pre-existing Exposure and Wound weighting.
+pre-existing Exposure and Wound weighting. The complete party first reaches
+the far side; the TRAVEL arrival tableau then names Tharn and applies its
+restriction without opening a rescue MEET.
 
 The possibility of Tharn is never labeled, previewed, or given a probability.
 The player sees only the actual situation and observable Citizen state. When it
-strikes, the game names it and changes the MEET's subject immediately. YIELD
-and WITHDRAW ordinarily remain available to secure the struck Citizen; another
-family remains active only when it directly enables rescue or departure. The
-party always retains the Citizen.
+strikes during MEET, the triggering Round resolves and the current MEET remains
+open. Its next Round is reskinned around securing the struck Citizen. YIELD and
+WITHDRAW ordinarily remain available; another family remains active only when
+it directly enables rescue or departure. The party always retains the Citizen.
 
 While Tharn persists, the party cannot activate another Node, enter RISK, or
 resume an expedition objective. One completed Rest MEET ends it without
@@ -7999,7 +8107,7 @@ one Civic Share, one Roster entry, and one continuous subject of consequence.
 | Guest | Fixed Role | Home Signature | Residence Fit | Citizen form |
 |---|---|---|---|---|
 | **Owl** | Watchkeeper | **Night Sky-watch:** sharpen one existing nocturnal Telegraph while Owl is available and a Watchpost is usable | high listening hollow | Individual |
-| **Sparrow** | Teacher | **SPEAK — Day Call:** use learned calls and social voice to improve understanding in an eligible Home SPEAK situation | concealed social perch | Individual |
+| **Sparrow** | Leader | **SPEAK — Day Call:** use learned calls and social voice to improve understanding in an eligible Home SPEAK situation | concealed social perch | Individual |
 | **Toad** | Caretaker | **Wet-Ground Care:** open a Caretaker response during an eligible Garden Home MEET concerning runoff, dampness, or invertebrate pressure | wet edge with dry refuge | Individual |
 | **Fireflies** | Leader | **SPEAK — Lantern Procession:** coordinated light makes participants easier to understand and opens an eligible win-win response during a nighttime Home MEET | dark damp flight space | Collective-bodied household |
 | **Groundhog** | Gardener | **Seasonal Telegraph:** make an approaching seasonal change legible early enough for civic response | deep drained ground | Individual |
@@ -8347,7 +8455,7 @@ Signature without changing its Civic Share.
 **Residence.** Build the Residence at a concealed social perch. Song Sparrow
 needs cover while remaining close enough for calls and company.
 
-**Civic contribution.** One Civic Share through the fixed Teacher Role.
+**Civic contribution.** One Civic Share through the fixed Leader Role.
 
 **Signature — SPEAK: Day Call.** Day Call becomes shared civic
 understanding through ordinary life around the Gathering Place. In an eligible
@@ -8882,10 +8990,12 @@ authored events. v0.5 uses two mechanically distinct stages: **Young** and
   relationships, ordinary needs, and a developing Tale
 - Rabbit and Squirrel young each constituting one Body Unit, while the usual two
   Mouse littermates constitute one Body Unit without ceasing to be two Citizens
-- Young Citizens adding Sustenance, accommodation, Caretaker, Teacher, and
+- Young Citizens adding Sustenance, accommodation, Caretaker, Leader, and
   protection obligations as defined by Population and Settlement Growth; one
-  concrete dependency enters Caretaker Load once even when it involves bodily
-  care
+  concrete need enters one Role Load rather than being charged to both
+- Young remaining one life stage while passing first through a Dependency span
+  with enlarged Sustenance, Caretaker Load, and intensive Hearth commitment,
+  then through a Learning span with ordinary Sustenance and Leader Load
 - Young Citizens contributing no Civic Share, holding no ordinary Role,
   supporting no Project, and being unable to Launch
 - Age-appropriate participation in DWELL, Home MEET, family life, and eligible
@@ -8896,10 +9006,10 @@ authored events. v0.5 uses two mechanically distinct stages: **Young** and
 #### Maturity
 
 - **Maturity** as the sole mechanical life-stage transition in v0.5
-- Maturity following sufficient seasons and authored life events, with exact
-  timing reserved for campaign pacing and tuning
-- Time establishing eligibility while the Citizen's relationships, ordinary
-  life, and remembered events give the transition its particular meaning
+- Maturity following completion of the DAWN-counted Dependency and Learning
+  spans, whose exact durations remain reserved for campaign pacing and tuning
+- Relationships, ordinary life, and remembered events giving the timed
+  transition its particular meaning without accelerating it
 - The Maturity event ending Young status and beginning the ordinary Civic Share
   supplied by that Citizen's Body Unit
 - A newly mature Core Citizen becoming eligible for ordinary Role assignment
@@ -8909,7 +9019,7 @@ authored events. v0.5 uses two mechanically distinct stages: **Young** and
 - Family and the wider Colony recognizing the transition through a visible
   event at a fitting Place
 - Maturity entering the Record and the Citizen's Tale
-- No experience bar, age-up button, Teacher-speed modifier, stat-training
+- No experience bar, age-up button, Leader-speed modifier, stat-training
   ladder, or grindable shortcut
 
 #### Adulthood and aging
@@ -8971,8 +9081,10 @@ authored events. v0.5 uses two mechanically distinct stages: **Young** and
 The Sourcebook follows three continuous story civilizations across the full
 shape of MEDIAN. New Elderbank, Rushbottom, and Morningside recur through the
 same Citizens, relationships, Places, possessions, injuries, and accumulated
-history. Each account is one authored campaign rather than a required player
-sequence.
+history. These are Sourcebook illustrations, not prewritten campaigns included
+in the game: their Colony and ancestral names, Citizens, Places, possessions,
+and exact histories never replace campaign generation. Each account shows one
+possible result of the systems rather than a required player sequence.
 
 Together they form a horizontal slice. Their events make Home, Away, MEET,
 species difference, civic growth, consequence, and Campaign Memory concrete
@@ -9032,9 +9144,10 @@ presence. Familiarity precedes welcome.
 Four arrivals bring New Elderbank to seven Body Units over several seasons.
 Nutmeg comes from the direction of Elderbank with a fiercely held version of
 the old Colony's Laws. The account neither confirms nor erases the Founders'
-memories. It changes Bramble's eventual work as the Colony's first Teacher and
-makes Sharpnose the companion most willing to dispute what either survivor
-calls settled.
+memories. It changes Bramble's work from emergency coordination to teaching,
+Laws and Sayings, and the interpretation of shared memory within the Leader
+Role, and makes Sharpnose the companion most willing to dispute what either
+survivor calls settled.
 
 Shadepatch later detects Fennel inside a flooded culvert when traffic, water,
 and obscured sight conceal the trapped Rabbit. Fennel returns with a Wound and
@@ -9053,8 +9166,9 @@ Telegraphs through Night Sky-watch.
 
 At seven Body Units, Quiet Equilibrium, an active Leader, and the Civic
 Dedication allow the Recognition MEET to name New Elderbank an **Open
-Commons**. Bramble's later move from founding Leader to Teacher becomes civic
-history rather than progression in aptitude.
+Commons**. Bramble's movement from founding command to teaching and cultural
+memory changes the kind of leadership the Colony asks for; it is civic history
+rather than progression in aptitude.
 
 ##### Court
 
@@ -9169,9 +9283,11 @@ predator's body into particular civic relationship with the Mouse Colony.
 Crumb's first Tharn becomes Rushbottom's defining Away crisis. Accumulated
 Exposure and a triggering event make it possible without making the danger
 explicit beforehand. When Tharn strikes, Muslin cannot reason or heal a
-littermate out of the state. The party protects Crumb, yields the active MEET,
-and withdraws. Remedy provides no answer. Rest at a completed Outpost allows
-recovery before the party can activate another Node or attempt a Crossing.
+littermate out of the state. The triggering Round resolves; the next Round of
+the same MEET is reskinned around protecting Crumb, yielding the former
+subject, and withdrawing. Remedy provides no answer. Rest at a completed
+Outpost allows recovery before the party can activate another Node or attempt
+a Crossing.
 
 The event enters Crumb's Tale as shared history rather than a resolved status
 line. It also shows why Rushbottom's greater number of Citizens is an
@@ -9247,7 +9363,7 @@ Tassel arrives with a cheerful account whose harmless details change in every
 telling. Wick is born into a Colony where the Web is ordinary ground and Nine
 Beeches inherited history. Vane's Crafter practice attends to wind, water, and
 the behavior of fastenings. Lilt's Sparrow calls become familiar before the
-Colony provides a concealed social perch and welcomes a new Teacher.
+Colony provides a concealed social perch and welcomes a new Leader.
 
 Early construction extends more quickly than it reinforces. During a heavy-wind
 Home MEET, one prominent connection becomes unusable while a modest alternate

@@ -3966,12 +3966,24 @@ a generator may contrast one direct difficult Crossing with a longer path
 through two narrower roads. This remains direct-drive TRAVEL and ordinary RISK,
 not a route-planning layer.
 
-Interchanges are lush with persistent Nodes. Many renewable Resource Nodes and
-a smaller authored situation set arise from divided ground, accumulated
-material, drainage, shelter, traffic weather, and varied animal movement.
+Interchanges are lush with persistent Nodes. Programmatic Sustenance and Scrap
+Nodes occur more frequently than in ordinary Reaches, while a separately
+determined higher percentage of those Resource Nodes are Contested. Exact
+density and contest percentages remain tuning.
+
+A bank of approximately ten to fifteen authored Interchange Story MEET forms
+provides a separate content layer. Each generated Interchange selects three to
+six compatible forms without replacement and installs each selected form once
+as a particular persistent situation fitted to the actual geography, Nodes,
+and inhabitants. Selection does not guarantee immediate discovery; a form may
+remain dormant until eligible. It never rerolls as a fresh copy on later
+visits, although its participants, relationships, Node, and aftermath may
+continue to develop through ordinary rules.
+
 Travelers, regulars, scavengers, temporary camps, territorial animals, and
 predators meet in unusual variety. Claims, exchanges, warnings, favors,
-grudges, shelters, and agreements remain local and particular.
+grudges, shelters, and agreements remain local and particular. Story MEET
+content is independent of the programmatic Resource-Node contest percentage.
 
 Familiar relationships change later encounters without creating universal
 safety, a governing society, or a map-wide reputation. An Outpost may occupy
@@ -3981,10 +3993,17 @@ arrangements.
 ### The Rest-Stop Metropolis
 
 The Metropolis is a large persistent Field territory experienced through
-TRAVEL. Markets, shelters, workshops, gathering places, and other venues form a
-living network of specialist Nodes. Arrival, important transactions,
-hospitality, consequential encounters, and departure use MEET; a substantial
-Stopover offers rest and Exposure relief while the expedition remains Away.
+TRAVEL. Every Node is unique to that particular civic territory. Markets,
+shelters, workshops, gathering places, gardens, refuse sites, and other venues
+form a living network of authored specialist Nodes rather than drawing from
+the ordinary programmatic Resource-Node generator. Sustenance, Scrap, trade,
+shelter, and other resource opportunities belong to those particular places.
+
+Rest-Stop Metropolis has no programmatic Contested percentage. This does not
+prohibit authored opposition, bargaining, incompatible claims, or other
+consequential city MEETs. Arrival, important transactions, hospitality,
+consequential encounters, and departure use MEET; a substantial Stopover
+offers rest and Exposure relief while the expedition remains Away.
 
 Dependable venues support trade, shelter, specialized craft, information,
 Guest encounters, and Practice-improvement understanding. Relationships change

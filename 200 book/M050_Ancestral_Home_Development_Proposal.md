@@ -114,8 +114,15 @@ The territory combines three sources of persistent Node content:
   relationships established in the opening Colony; and
 - authored story Nodes whose roles are filled by compatible generated
   particulars in this campaign; and
-- a more limited present-tense set of Resources, shelter, inhabitants, and
-  hazards supported by the current physical ground.
+- an elevated present-tense set of programmatic Sustenance and Scrap Nodes,
+  together with shelter, inhabitants, and hazards supported by the current
+  physical ground.
+
+Landmark Reach resource abundance remains separate from contest and story
+content. The Ancestral Home assigns Contested state to a much lower percentage
+of its programmatic Resource Nodes than an ordinary Reach or standard
+Interchange. Its generated remains and authored story functions remain the
+territory's defining content despite the abundant present-tense Resources.
 
 The Reach is generated as a coherent place and persists. It does not roll a
 fresh field of unrelated generic Nodes whenever the party enters. The

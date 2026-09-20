@@ -202,10 +202,17 @@ throw, accumulated debris, drainage outlets, wet hollows, sheltered
 understructure, isolated vegetation, seed and insect concentrations, wreckage,
 wind-caught material, animal camps, territorial shelter, and warning ground.
 
+Landmark Reach generation separates three independent axes: programmatic
+Resource-Node density, the share of those Resource Nodes that are Contested,
+and the authored Story MEET forms installed in the territory. Greater resource
+abundance does not itself create more stories or determine whether another
+animal claims a Node.
+
 ### Renewable generated Nodes
 
-Most Interchange abundance comes from generated Resource Nodes fitted to the
-actual ground:
+Most Interchange abundance comes from programmatic Resource Nodes fitted to
+the actual ground. Both Sustenance and Scrap Nodes occur more frequently than
+in ordinary Reaches:
 
 - Sustenance and living plant material;
 - insects and water-related opportunities;
@@ -217,7 +224,19 @@ The Nodes persist. They renew, deplete, change, or remain absent through their
 existing owners and intervals rather than rerolling whenever the party enters.
 Exact abundance and renewal belong to the later economy and Node-tuning phase.
 
-### Authored situation Nodes
+### Programmatic contest profile
+
+A standard Interchange assigns Contested state to a higher percentage of its
+programmatic Resource Nodes than an ordinary Reach. The Ancestral Home uses a
+much lower percentage, preserving present animal claims without turning return
+into a succession of territorial conflicts. Rest-Stop Metropolis uses no
+programmatic Contested percentage at all.
+
+This profile governs programmatic Resource Nodes only. It does not determine
+whether an authored Story MEET contains opposition, bargaining, incompatible
+claims, or another answering participant. Exact percentages remain tuning.
+
+### Authored Story MEET forms
 
 A smaller authored layer makes Interchange play recognizable without creating
 one fixed story:
@@ -231,9 +250,18 @@ one fixed story:
 - an unusual object whose ground requires a particular Crossing; or
 - a place where several kinds of traveler converge.
 
-These are authored situation forms instantiated through generated geography.
-They do not form a mandatory sequence, completion list, or universal
-Interchange history.
+The complete Interchange bank should contain approximately ten to fifteen
+authored Story MEET forms. Each generated Interchange selects three to six
+compatible forms without replacement and installs each selected form once as
+a particular persistent situation fitted to its actual geography, Nodes, and
+inhabitants. A selected form may remain dormant until its eligibility is met;
+selection does not guarantee immediate discovery or resolution.
+
+The installed situation does not reroll as a fresh copy on later visits. Its
+Node, participants, relationships, and aftermath persist and may support later
+developments through ordinary world and MEET rules. The forms therefore do not
+create a mandatory sequence, completion list, or universal Interchange
+history. The exact bank remains the next authorial task.
 
 ## Present animal plurality
 
@@ -251,6 +279,12 @@ The contrast with Metropolis is structural:
 
 > Metropolis organizes plurality through durable civic places. Interchange
 > organizes plurality through immediate place, need, and relationship.
+
+Every Rest-Stop Metropolis Node is unique to that particular civic territory.
+Its Sustenance, Scrap, trade, shelter, and other resource opportunities belong
+to those authored venues and places rather than to the ordinary programmatic
+Resource-Node generator. The absence of programmatic Contested Nodes does not
+prevent authored city MEETs from containing consequential disagreement.
 
 ## Persistence and repeated visits
 

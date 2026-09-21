@@ -281,14 +281,19 @@ resetting its facts. A Founder remembers. A later-born Citizen inherits. A
 Guest witnesses. A Wanderer escapee may remember another portion or version.
 None borrows another's memory merely by joining the party.
 
-## Rest, Outposts, and repeated access
+## Stopover, Outposts, and repeated access
 
-The territory uses ordinary Rest and Stopover rules. It receives no inherent
-safe center. A natural refuge may exist where the physical ground supports one.
-An Outpost remains possible only at an ordinarily eligible known site and
-through the normal remote Builder Project; it should sit near or at the edge
-of the ruined territory rather than converting the old Colony's civic center
-into a managed annex.
+A Stopover anywhere within the Ancestral Home is uninterrupted. This removes
+only the regular-Field chance that sleep is interrupted by a situated MEET: it
+does not make the territory a safe center or grant automatic Exposure relief
+or Cargo transfer. The locked Stopover screen still depicts the party's actual
+ground, shelter, weather, and bodily state. A natural refuge may improve those
+conditions where the physical ground supports one. An Outpost remains possible
+only at an ordinarily eligible known site and through the normal remote Builder
+Project; it should sit near or at the edge of the ruined territory rather than
+converting the old Colony's civic center into a managed annex. A usable Outpost
+adds its ordinary Stopover effects, including bounded Exposure relief and the
+option to drain fungible Cargo from Carry into Colony Stores.
 
 This is an art-direction and content preference, not a new prohibition. The
 existing geography and Outpost eligibility rules remain authoritative.
@@ -364,7 +369,7 @@ clearly illustrative continuity.
 No Tier unlocks the Ancestral Home. Its position is physically
 established by the opening, while practical access emerges from the Colony's
 ability to bear distance, ordinary Crossings, the Ancestral Reach's internal
-Roadways, Stores demand, party subtraction, Rest needs, and return.
+Roadways, Stores demand, party subtraction, Stopover needs, and return.
 The horizon should usually become plausible after the player has learned
 ordinary expeditions well enough for the return to feel chosen rather than
 tutorial-directed.

@@ -42,7 +42,7 @@ registry, or new content-generation system.
 | **Home — Story** | A particular authored civic, relational, ceremonial, or personal situation occurs at Home without being generated principally by Civic Balance or a Functional transaction. |
 | **Away — Contested** | Another animal, group, or answering force holds a materially opposed claim. The fixed five-family contested display applies. |
 | **Away — Uncontested** | The party faces a consequential choice without an answering claimant. Concrete contextual actions replace the five-family display. |
-| **Away — Story** | A bounded authored Away situation changes or exceeds ordinary Node use: Rest and Stopover, Remembrance, unusual Field incidents, horizon encounters, and other particular events. Weather may modify any Away situation but never owns an Away MEET. |
+| **Away — Story** | A bounded authored Away situation changes or exceeds ordinary Node use: Remembrance, unusual Field incidents, horizon encounters, and other particular events. Weather may modify any Away situation but never owns an Away MEET. Stopover is a separate committed sleep screen and opens MEET only if a regular-Field interruption creates an actual decision. |
 
 The primary class follows where the choice is owned and presented. A larger
 event can therefore supply more than one class: Road Work may create Civic
@@ -180,7 +180,6 @@ the current expedition.
 
 | Family or incident | Source | Function and boundary |
 |---|---|---|
-| **Rest and Stopover** | Systemic Away function expressed through MEET | The party chooses to stop on its actual ground. Completion advances one Day Band, resets cadence, ends Tharn, stabilizes Wound, and creates a Stopover. Shelter, natural refuge, or Outpost modifies the result. |
 | **Rest-Stop Metropolis encounters** | Authored campaign horizon | Arrival, venue use, hospitality, transactions, consequential contact, and departure occur through situated MEET while the city remains Away and is navigated through TRAVEL. |
 | **Consequential situated interruption** | Bounded interruption during TRAVEL | Current terrain, season, time, weather, and world state select a situation between Nodes. Minor content remains a direct TRAVEL change; only a consequential choice opens MEET. The procedure has no player-facing card, deck, or named event family. |
 | **Remembrance** | Eligible Founder or authored Wanderer escapee at an exact remains Node within the Ancestral Home Landmark Reach | Present ground and lived history support a consequential act of memory. It is not a universal sixth response or interaction marker. |
@@ -193,7 +192,6 @@ the current expedition.
 | ID | Form | Eligibility and subject | Procedure / response grammar | Recurrence and aftermath | Canon location |
 |---|---|---|---|---|---|
 | `MEET-SYS-01` | **Launch** | The player initiates departure from DWELL with an eligible party and no other active expedition. Subject: the Colony committing particular Citizens and prepared belongings to Away. | State-transition MEET. Select party and Supplies; inspect Home subtraction; Commit transfers operation to TRAVEL. It does not forecast unseen Nodes or later encounters. | Available whenever the legal expedition conditions recur. Party membership and Supply assignment remain fixed until Homecoming. | §§ 5.1; Appendix G, Launch |
-| `MEET-SYS-02` | **Rest** | An Away party can physically stop at its current ground. Subject: stopping here, under these exact shelter, weather, disturbance, bodily, and time conditions. | Unopposed contextual actions rather than the contested five-family strip. Completion advances one Day Band, resets cadence, ends Tharn, and stabilizes Wound for the defined span. Natural refuge and usable Outpost add their own situated effects. | Repeatable when physically possible. Completion creates a Stopover; the party remains Away. | §§ 5.2, 5.7; Appendix G, Rest and Stopover |
 | `MEET-SYS-03` | **Homecoming** | The active party physically reaches the Colony after Return. Subject: Home receiving these particular changed lives and facts. | Shortened state transition: **Frame → Recognize and receive → Reconcile → Allocate only if materially necessary → Continue**. | Ends every expedition, advances one Day Band, transfers remaining Cargo and Supplies, restores eligible civic contribution, preserves all resolved consequences, and returns to DWELL. | § 5.8; Appendix G, Homecoming |
 | `MEET-SYS-04` | **Founding / Make Home** | The opening party reaches and inspects valid promising ground after the Founding Escape. Subject: making this ground the campaign's permanent Home. | State-transition MEET. Commit **Make Home**; sustain one Leader; assemble and confirm the permanent Colony name; establish the Founding Record event. | Once per campaign. Returns to the first ordinary DWELL state. | § 6.2; Appendix B naming; Appendix C memory |
 | `MEET-SYS-05` | **Tier Recognition** | Population eligibility exists; Quiet Equilibrium, an available Home-present Leader, and uncommitted Civic Dedication make ceremony possible. Subject: recognizing the Colony's chosen civic scale. | Shortened state-transition grammar. The player may defer indefinitely. Commit consumes Dedication, advances one Day Band, and conducts Recognition. | Up to three post-Founding recognitions per campaign if the player chooses them. Recognized Tier enters permanent history without conferring an upgrade bundle. | § 6.3; Appendix D, Tier Recognition |
@@ -235,10 +233,10 @@ Two consequential presentations remain outside the encounter inventory:
   Round resolves; the next Round of that same MEET is reskinned around securing
   the struck Citizen and yielding or withdrawing. No second MEET is spawned.
   Remedy cannot relieve Tharn, the party retains the Citizen, and a completed
-  Rest remains necessary before another Node or Crossing.
+  Stopover remains necessary before another Node or Crossing.
 - **Tharn from RISK** appears only after the whole party reaches the far side.
   The TRAVEL arrival tableau names the state and applies its restrictions; no
-  rescue MEET opens. Direct travel toward a place where Rest can complete
+  rescue MEET opens. Direct travel toward a place where Stopover can complete
   remains available.
 
 ## E. Early-campaign authored constraints
@@ -279,7 +277,7 @@ events whose established resolution depends upon MEET are included.
 | `MEET-STORY-R04` | New Elderbank | **Fennel in the flooded culvert** | Away rescue MEET and later Homecoming/care consequences | Sharpnose finds Fennel; Fennel returns with one Wound and lasting hind-leg Maiming; Remedy stabilizes the Wound. |
 | `MEET-STORY-R05` | New Elderbank | **Tier Recognitions** | Recognition MEETs at Open Commons, Court, and Grand Court | The Grand Court Recognition occurs at night with the Lanterns as active Leader. Earlier exact ceremony content remains less developed. |
 | `MEET-STORY-M01` | Rushbottom | **Chaos, Founding, and immediate welcome** | Opening MEETs | Barley gains Focus and first Leadership; Weft and Warp join immediately after Founding as separate complete Citizens. |
-| `MEET-STORY-M02` | Rushbottom | **Crumb's first Tharn** | The next Round of the existing Away MEET is abruptly reskinned | The triggering Round resolves; the party protects Crumb, yields the active subject, withdraws, and completes Rest at an Outpost; Remedy has no effect. |
+| `MEET-STORY-M02` | Rushbottom | **Crumb's first Tharn** | The next Round of the existing Away MEET is abruptly reskinned | The triggering Round resolves; the party protects Crumb, yields the active subject, withdraws, and completes Stopover at an Outpost; Remedy has no effect. |
 | `MEET-STORY-M03` | Rushbottom | **Tier Recognitions** | Recognition MEETs at Joined House, Manor House, and Grand Manor | Barley conducts Grand Manor Recognition; living and remembered Chaff End names are read while uncertainty is preserved. |
 | `MEET-STORY-S01` | Morningside | **Chaos and Founding** | Opening MEETs | Rowan gains Focus and first Leadership; the trio founds Morningside at Elmwater. |
 | `MEET-STORY-S02` | Morningside | **Heavy wind and the failed prominent connection** | Authored Home Story Encounter whose responses and consequences read current Civic Balance | One connection becomes unusable while an alternate preserves access, materially strengthening Cobb's argument for redundancy. |
@@ -292,7 +290,7 @@ events whose established resolution depends upon MEET are included.
 | `MEET-EX-01` | **Contested Rushbottom Node teaching screen** | Pre-Commit contested Away anatomy, inactive options, expression visibility | Augment worked state; exact incident still open and not fixed history. |
 | `MEET-EX-02` | **Water at Rushbottom** | Weather/World Pressure becoming a Home MEET | Approved worked play and asset direction; not yet established as fixed Rushbottom history. |
 | `MEET-EX-03` | **Rain-swollen Elmwater outfall** | Two-Round contested Away MEET with Brace Tool, Mink Water Reach, Offering, Focus, Wound, Cargo, and Node aftermath | Approved Gale expedition vertical slice and Augment spine. Treat as illustrative unless separately adopted into Morningside's fixed history. |
-| `MEET-EX-04` | **A Place to Stop** | Rest MEET at a usable Morningside Outpost | Same illustrative Gale expedition continuity. |
+| `MEET-EX-04` | **A Place to Stop** | Locked Stopover screen at a usable Morningside Outpost | Same illustrative Gale expedition continuity; sleeping is not MEET. |
 | `MEET-EX-05` | **The Colony Receives Them** | Complete Homecoming reconciliation with one automatic valid Hearth allocation | Same illustrative Gale expedition continuity. |
 | `MEET-EX-06` | **Drainage clearance at New Elderbank** | Full Road Work thread including Home protection choices and Twig's once-per-campaign recurrence | Explicitly illustrative staging of canonical Road Work rules, not fixed Story history. |
 | `MEET-EX-07` | **Barrier repair** | Shorter Road Work episode centered on access and information | Illustrative contrast, not fixed history. |
@@ -317,9 +315,10 @@ than silently filled here.
    arrival need visibly distinct situations.
 4. **Situated interruptions that warrant MEET:** the procedure exists, but the
    current corpus does not yet establish a bounded representative content set.
-5. **Natural-refuge Rest:** the rules distinguish it from exposed ground and
-   Outpost Rest, while the Sourcebook spine presently works only the Outpost
-   case in detail.
+5. **Regular-Field Stopover interruption:** sleeping itself is not MEET, but a
+   situated interruption may open one. The authored situation bank still needs
+   to distinguish exposed ground from a natural refuge without making either a
+   second sleep procedure.
 6. **Landmark Reach situation banks:** Ancestral Home, generated Interchanges,
    and Metropolis each promise dense but different MEET substance. Their
    dedicated granular development is active.

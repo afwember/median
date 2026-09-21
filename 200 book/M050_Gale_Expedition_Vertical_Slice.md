@@ -312,9 +312,9 @@ No Citizen lived there. No fire burned, and no attendant came out to receive
 them. Yet the place held because Morningside had spent material, Workshop
 capacity, and Builder commitment to make it hold.
 
-That night they chose Rest.
+That night they committed to Stopover.
 
-The decision consumed time. It was not a pause taken outside the world.
+The Stopover consumed time. It was not a pause taken outside the world.
 
 They settled Reed where the Wound could remain still. The injury was cleaned
 and bound through ordinary expedition care. By morning, Reed could travel
@@ -941,8 +941,8 @@ daily damage.
 | Day Band | Party action |
 |---|---|
 | Morning | TRAVEL, traveled Band 3, from Node to Outpost |
-| Midday | Complete Outpost Rest MEET |
-| Evening | Homeward TRAVEL, first traveled Band after Rest |
+| Midday | Complete uninterrupted Outpost Stopover |
+| Evening | Homeward TRAVEL, first traveled Band after Stopover |
 | Night | Automatic Return Crossing |
 
 ### Morning Jostle
@@ -966,9 +966,9 @@ Visible illustrative rolls:
 
 Reed makes no Jostle check. Cargo remains 36.
 
-### Outpost Rest
+### Outpost Stopover
 
-Rest:
+The uninterrupted Stopover:
 
 - advances one Day Band;
 - resets travel cadence;
@@ -1078,7 +1078,7 @@ automatically.
 ## 3.11 Day Three: Homecoming
 
 During Morning, the party travels from its persistent Home-Median position to
-Morningside. It has completed two traveled Bands since Rest, so Reed's
+Morningside. It has completed two traveled Bands since Stopover, so Reed's
 stabilization remains valid.
 
 The party reaches the Colony during Morning. Homecoming advances the clock into
@@ -1586,7 +1586,7 @@ Persistent state includes:
 
 - exact Field position;
 - current Day Band and remaining projected reach;
-- travel cadence since the last Rest;
+- travel cadence since the last Stopover;
 - 30 secured Carry plus available Squirrel Strained Carry;
 - each Citizen's Items and bodily state;
 - Gale, Alder, and Reed remaining individually inspectable; and
@@ -1759,20 +1759,21 @@ Party membership remains fixed. Scrap occupies shared Cargo and contracts
 projected TRAVEL reach qualitatively. No new mission or required destination is
 created. The player chooses to travel toward Morningside's known Outpost.
 
-## 4.8 Outpost Rest
+## 4.8 Outpost Stopover
 
-The party reaches a usable Morningside Outpost and remains Away. An unopposed
-contextual Rest MEET opens. Its actions concern the actual situation rather
-than using the contested five-family strip.
+The party reaches a usable Morningside Outpost and remains Away. The locked
+Stopover screen opens with a static DWELL-like view of the party inhabiting the
+exact Outpost ground. Sleeping contains no response selection and is not MEET;
+informational overlays account for the elapsed Band and resolved effects.
 
-Rest:
+Stopover:
 
 - advances one Day Band;
 - resets travel cadence;
 - ends Tharn if present, although none is present here;
 - stabilizes Reed's Wound for the next three traveled Bands and their
   situations;
-- removes one Exposure step from each Citizen because the Rest occurs at a
+- removes one Exposure step from each Citizen because the Stopover occurs at a
   usable Outpost; and
 - cannot remove the final Exposure step while a Citizen remains Away.
 
@@ -1894,7 +1895,7 @@ Homecoming completes:
 | Morningside | Eligible Civic Shares restored; recovered Scrap in Stores; Caretaker Load increased by one; one Hearth occupied; no Caretaker or Project committed |
 | Raccoon | Offering and authored wire share received; prior encounter established |
 | Node | Wire removed from current and divided; encounter history retained |
-| Record | Launch, Crossing, encounter, Offering expenditure, Wound, bargain, Rest, Cargo transfers, Return, and Homecoming recorded |
+| Record | Launch, Crossing, encounter, Offering expenditure, Wound, bargain, Stopover, Cargo transfers, Return, and Homecoming recorded |
 
 At the next Home DAWN:
 

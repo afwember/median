@@ -360,8 +360,9 @@ design doctrines that protect those pillars across the whole design.
   a situation already present in the persistent world.
 - Routine activity remains within its owning Register until it crosses the
   decision or state-transition threshold.
-- Choice Events use MEET without forming a separate system. Launch, Rest, and
-  Homecoming use dedicated systemic forms.
+- Choice Events use MEET without forming a separate system. Launch and
+  Homecoming use dedicated systemic forms; Stopover is a separate committed
+  sleep screen rather than MEET.
 - A simple Field example is: **TRAVEL → engage a consequential Node → MEET →
   consequence → return to TRAVEL.**
 - Chapter 1.5 defines the complete MEET contract.
@@ -471,8 +472,7 @@ reconcile the world as one event.
 MEET may begin in either direction:
 
 - **The player attends:** engaging a consequential Node, opening a known Colony
-  situation, preparing to Launch, choosing to Rest, or addressing an available
-  relationship.
+  situation, preparing to Launch, or addressing an available relationship.
 - **The situation calls:** World Pressure reaches the Colony, another animal or
   group intercepts the party, or an authored event matures.
 
@@ -765,16 +765,19 @@ MEET supplies the shared presentation, commitment, Focus, resolution, and
 aftermath grammar through which that content is played. Choice Events do not
 form a separate event system or Register.
 
-Launch, Rest, Homecoming, and other systemic MEET forms are not Choice Events
-unless an authored situation specifically modifies them. Their subject and
-procedure arise from the transition or system they already serve.
+Launch, Homecoming, and other systemic MEET forms are not Choice Events unless
+an authored situation specifically modifies them. Their subject and procedure
+arise from the transition or system they already serve. Stopover remains
+outside MEET unless a regular-Field sleeping interruption opens a separate
+situated decision.
 
 ### MEET design relationships
 
 MEET situations have three useful design relationships:
 
-- **Systemic forms:** Launch, Rest, and Homecoming use dedicated procedures
-  because they conduct recurring transitions.
+- **Systemic forms:** Launch and Homecoming use dedicated MEET procedures
+  because they conduct recurring transitions. Stopover uses its own locked
+  informational screen because sleeping contains no decision.
 - **Situated decisions:** Home Pressure, Nodes, encountered animals, bounded
   TRAVEL interruptions, relationships, and other owning systems may supply a
   particular condition that crosses a MEET threshold.
@@ -1018,7 +1021,7 @@ species when the particular site permits them.
 
 A **Landmark Reach** gives one whole Median Reach an exceptional generated or
 authored identity. It remains part of the continuous Corridor and uses ordinary
-TRAVEL, RISK, Nodes, MEET, Rest, Return, and persistence, but its geography and
+TRAVEL, RISK, Nodes, MEET, Stopover, Return, and persistence, but its geography and
 Node slate are composed as one recognizable place rather than drawn from the
 ordinary Reach mixture.
 
@@ -1508,12 +1511,13 @@ Home and Away use the same clock at the same resolution.
 |---|---|
 | **DWELL** | General Colony activity remains within the current Day Band. A normal Home Commitment advances the world to the next band. |
 | **TRAVEL** | Direct movement consumes the current Band's projected reach. Exhausting that travel span advances one Day Band, with Rabbit bodies and present conditions determining its extent. |
-| **MEET** | Time follows the action or situation being resolved; opening the decision matrix has no universal cost of its own. A completed Rest MEET or Homecoming advances one Day Band. |
+| **MEET** | Time follows the action or situation being resolved; opening the decision matrix has no universal cost of its own. Homecoming advances one Day Band. |
 | **RISK** | Crossing uses the current Day Band and traffic without adding another duration to the movement that brought the party there. |
 | **EMBODY** | Ordinary life occurs within the current Day Band without becoming a time-payment action. |
 
 - Colony conditions, Node conditions, MEET presentation, traffic, and the Field
   changing together when the Day Band changes
+- A completed Stopover advancing one Day Band outside MEET
 - The resolution changing between Home and Away while the chronology does not
 
 ### Traffic: Pattern, Threshold, and State
@@ -1594,7 +1598,7 @@ subject of a Home MEET.
 - Adequate Readiness and situated Practice Strength able to keep an ordinary
   pressure within routine DWELL, while a consequential shortfall or choice
   brings it into MEET
-- The same world condition changing TRAVEL reach, Node circumstances, Rest,
+- The same world condition changing TRAVEL reach, Node circumstances, Stopover,
   RISK, or Away MEET for the expedition experiencing it
 
 ### Road Work
@@ -3204,8 +3208,9 @@ their material, bodily, relational, and remembered consequences to the Colony.
 **TRAVEL is the Away mirror of DWELL.** It is the open Register for guiding a
 particular party through the continuous Field. RISK temporarily takes focus
 when a Roadway must be crossed, while MEET presents consequential situations
-wherever bounded choice is useful. Launch, Rest, and Homecoming are dedicated
-MEETs fitted to departure, temporary refuge, and return.
+wherever bounded choice is useful. Launch and Homecoming are dedicated MEETs
+fitted to departure and return. Stopover is the separate locked sleep screen
+used wherever the party commits to sleep.
 
 ## 5.1 Leaving Home
 
@@ -3326,25 +3331,32 @@ Ordinary food remains abstracted Away: travelers continue to count toward Home
 Sustenance demand, while recovered food is Cargo for return rather than a ration
 meter.
 
-### Travel cadence, Rest, and situated interruptions
+### Travel cadence, Stopover, and situated interruptions
 
 A rested party receives three traveled Day Bands at normal reach, then may push
 through three more:
 
-| Traveled Band since Rest | Projected reach |
+| Traveled Band since Stopover | Projected reach |
 |---:|---:|
 | 1–3 | 1× |
 | 4 | ¾× |
 | 5 | ½× |
 | 6 | ¼× |
-| 7 | unavailable until Rest |
+| 7 | unavailable until Stopover |
 
-A Rest MEET may begin wherever the party can physically stop. Completion
-advances one Band, resets cadence, ends Tharn, stabilizes current Wounds through
-the next three traveled Bands and their resolved situations, and creates a
-Stopover. Ground, shelter, weather, and disturbance determine the consequences;
-a **natural refuge** may improve them, and a usable Outpost supplies its defined
-protections.
+A party may commit to **Stopover** wherever it can physically sleep. The
+Stopover screen is a locked, static DWELL-like view of the party inhabiting
+that exact ground for sleep, with informational overlays for Day accounting,
+cadence, bodily state, and applicable place effects. Sleeping contains no
+decision and is not MEET. Completion advances one Band, resets cadence, ends
+Tharn, and stabilizes current Wounds through the next three traveled Bands and
+their resolved situations.
+
+Stopover at a usable Outpost, within the Ancestral Home, or within Rest-Stop
+Metropolis is uninterrupted. Stopover in regular Field carries a chance of a
+separate situated MEET during the sleeping interval. Ground, shelter, weather,
+and disturbance shape that possible situation; a natural refuge may improve
+the party's circumstances without converting sleep into a decision screen.
 
 Occasional situated interruptions keep travel responsive to the country between
 Nodes. One 10% check follows an otherwise eligible exhausted travel span, at
@@ -3353,7 +3365,7 @@ and no check occurs in a Band already occupied by RISK or another consequential
 MEET. Actual terrain, season, time, weather, and world state choose the content.
 A minor interruption changes or reveals the Field directly within TRAVEL; only
 a consequential choice opens MEET. Nodes remain the primary intentional Away
-content. Appendix G provides the exact TRAVEL, Rest, and interruption
+content. Appendix G provides the exact TRAVEL, Stopover, and interruption
 procedures.
 
 ## 5.3 RISK: Crossing
@@ -3475,7 +3487,7 @@ persistence, including doubling when an earlier unstabilized Wound applies.
 |---|---|
 | **Wound** | One binary, named recoverable injury; it limits only affected actions and doubles new Exposure while unstabilized. |
 | **Maiming** | A lasting bodily change accompanied by one acute Wound; the Wound may heal while the Maiming remains. |
-| **Tharn** | Acute shutdown during immediate danger; securing the Citizen and Rest replace the former objective. |
+| **Tharn** | Acute shutdown during immediate danger; securing the Citizen and completing Stopover replace the former objective. |
 | **Death** | A rare final outcome available only when severe fatal stakes were legible before Commit. |
 
 A later Wound changes the existing injury description and retains the greater
@@ -3483,7 +3495,7 @@ of its current remaining recovery and the new authored requirement; Citizens
 do not accumulate multiple Wounds. Every authored requirement remains within
 one to three Recovery Days. Remedy may stabilize a Wound through
 Homecoming, lessen an immediate effect, contain the Wound accompanying Maiming,
-or express care through PARLEY. Rest stabilization lasts through the next three
+or express care through PARLEY. Stopover stabilization lasts through the next three
 traveled Bands and their situations.
 
 Tharn occurs only when an immediate event can credibly produce shutdown.
@@ -3500,9 +3512,9 @@ yielding. Another response remains only when it directly enables rescue. When
 RISK produces Tharn, the far-side TRAVEL tableau names it after complete
 passage; no rescue MEET opens. In either case the party keeps the Citizen and
 cannot activate another Node, enter RISK, or resume the former objective until
-one completed Rest MEET ends Tharn. Remedy has no effect upon it.
+one completed Stopover ends Tharn. Remedy has no effect upon it.
 
-Usable Outpost Rest removes one Exposure step but never the final step Away.
+Usable Outpost Stopover removes one Exposure step but never the final step Away.
 At Home, each DAWN removes up to three steps, so maximum Exposure falls from 6
 to 3 and then 0 over two Dawns. Wound, Maiming, and Exposure recover through
 their separate procedures. Appendices D and G contain the full bodily
@@ -3510,9 +3522,11 @@ consequence, Home recovery, and Tharn reference.
 
 ## 5.7 Outposts and Stopovers
 
-A **Stopover** is the temporary Away state created by a completed Rest MEET. A
-natural refuge can improve its circumstances; an **Outpost** is persistent,
-uninhabited Away infrastructure that makes one eligible known stop reliable.
+A **Stopover** is the committed Away action and locked screen through which the
+party sleeps at its current location. Its static DWELL-like view shows the
+party and actual ground while Day-accounting overlays resolve the elapsed
+Band and known effects. An **Outpost** is persistent, uninhabited Away
+infrastructure that makes one eligible known Stopover reliable.
 
 The Colony establishes or restores an Outpost through the ordinary Home
 Project Queue. One usable Workshop supplies capacity while named Builders,
@@ -3522,23 +3536,23 @@ Exposure, or personal consequence. Completion at DAWN establishes the remote
 structure and releases the Workshop and Builders.
 
 Explicit visible events alone damage or destroy an Outpost. Damage leaves a
-persistent physical shelter but removes protected Rest, Exposure reduction,
+persistent physical shelter but removes protected Stopover, Exposure reduction,
 and Cargo transfer until restoration. Outposts have no stationed Citizens,
 routine upkeep, specialization, upgrade, or Tier in v0.5.
 
-A Rest MEET at a usable Outpost advances one Band, resets travel cadence, ends
-Tharn, stabilizes Wounds for three traveled Bands, removes one Exposure step
-without removing the final Away step, and protects ordinary sleep from exposed
-ground. The player may also move any fungible Cargo into Stores through
-abstract Colony sync, immediately freeing Carry. Personal and singular Items
-remain with their holders. The party remains Away, and the Outpost never
-becomes another Home. Appendix G provides the full Outpost and Stopover
-reference.
+A Stopover at a usable Outpost is uninterrupted. It advances one Band, resets
+travel cadence, ends Tharn, stabilizes Wounds for three traveled Bands, removes
+one Exposure step without removing the final Away step, and protects ordinary
+sleep from exposed-ground consequences. The player may drain any fungible
+Cargo from Carry into Stores through abstract Colony sync, immediately freeing
+that Carry. Personal and singular Items remain with their holders. The party
+remains Away, and the Outpost never becomes another Home. Appendix G provides
+the full Outpost and Stopover reference.
 
 ## 5.8 Return and Homecoming
 
 The player turns homeward through ordinary TRAVEL. Terrain, time, burden,
-bodily state, Nodes, Rest, MEET, and Return Crossings continue through the same
+bodily state, Nodes, Stopover, MEET, and Return Crossings continue through the same
 physical world. Clearing the final Roadway returns the party to the Home Median;
 Homecoming begins only when it reaches the Colony itself.
 
@@ -3877,7 +3891,7 @@ experienced, and made practically accessible. Reaches and Margins exist from
 the beginning; ordinary TRAVEL, RISK, MEET, relationships, and Outpost Projects
 accumulate an outward history from the permanent center of Home.
 
-Distance, Exposure, Rest cadence, Carry, bodily state, physical obstruction,
+Distance, Exposure, Stopover cadence, Carry, bodily state, physical obstruction,
 and the necessary return determine practical range. Natural refuges and
 Outposts make longer travel credible while every intervening path and Crossing
 remains continuous. Several Outposts may form a useful geographic chain without
@@ -4135,6 +4149,14 @@ engagement opens MEET. A Roadway occupies the approaching edge before its
 Staging Post takes focus and RISK begins. Inspection and resolved encounters
 return the party to its exact Field position and remaining span.
 
+Committing to sleep opens the **Stopover screen**, not another Register or a
+MEET. The camera locks into a static DWELL-like composition of the party and
+its exact Field location while informational overlays show Day accounting,
+cadence reset, bodily-state effects, and any place-specific protection or
+transfer. Completion returns to TRAVEL at that same position. A regular-Field
+interruption may open a separate MEET; Stopover at a usable Outpost, the
+Ancestral Home, or Rest-Stop Metropolis is uninterrupted.
+
 #### RISK
 
 RISK is a species-shaped Crossing schematic grounded by the party's actual
@@ -4171,8 +4193,9 @@ Provisional selection expands a response in place to show applicable objects,
 relationships, Signatures, costs, and likely direction. Commit resolves
 through the staged figures, sound, animation, speech, and Focus. A later Round
 retains place and participants while changed facts replace those resolved.
-Launch, Rest, Homecoming, Recognition, and other state transitions use the same
-grammar with procedures fitted to their subjects. Time pauses for
+Launch, Homecoming, Recognition, and other MEET state transitions use the same
+grammar with procedures fitted to their subjects. Stopover instead uses its
+locked static sleep view. Time pauses for
 consideration, though ambient motion may continue without changing state.
 
 #### EMBODY
@@ -4577,7 +4600,7 @@ bodies, residences, routines, and bounded Signatures.
 
 Away carries particular lives through Reaches, Margins, Roadways, Nodes,
 Outposts, weather, traffic, and other animals. Carry creates bodily constraint;
-Exposure, Wound, Maiming, and Tharn make consequence personal. Rest and
+Exposure, Wound, Maiming, and Tharn make consequence personal. Stopover and
 Outposts offer partial relief. Homecoming receives the returning Citizens,
 Cargo, Guests, injuries, relationships, civic availability, and memory into
 Home.
@@ -4761,7 +4784,7 @@ listing every place it appears.
 | **Node** | A fixed recognizable place in the Field whose material, ecology, shelter, inhabitants, alteration, or history can matter across visits. | § 5.4, Nodes in the Field |
 | **Open Table** | A rare large-cast Presence experience entered through an authored gathering at a safe usable Gathering Place carrying the Open Table improvement rather than through an individual Citizen. | § 3.8, Participation and Presence |
 | **Operator** | The characteristic action through which the player engages a Register. | § 1.4, Mode, Register, operator, and view |
-| **Outpost** | A persistent Away foothold established within a Reach, providing bounded refuge, Rest, storage, and Colony synchronization while remaining categorically distinct from Home. | § 5.7, Outposts and Stopovers |
+| **Outpost** | A persistent Away foothold established within a Reach, providing bounded refuge, uninterrupted Stopover, storage, and Colony synchronization while remaining categorically distinct from Home. | § 5.7, Outposts and Stopovers |
 | **Party** | The fixed group of named Citizens committed to one active expedition, ordinarily between one and one-half and three Body Units and always containing more than one animal. | § 5.1, Party scale |
 | **Patient Load** | Temporary Body-Unit-scaled Caretaker Load created by a Wounded Citizen at Home until that Wound clears. | § 3.4, Wound Recovery and Rehabilitation |
 | **Place** | Designated physical ground within Home that becomes permanent when its first Residence or Practice Project is committed. | § 3.3, Places and Species Placement |
@@ -4784,7 +4807,6 @@ listing every place it appears.
 | **Residence Fit** | The single species-specific placement requirement by which a Guest Residence is judged as a whole. | § 4.3, Guest Residence |
 | **Resident Guest** | A Guest Citizen whose species-fixed Role and situated Signature operate at Home and who does not Launch. | § 4.3, Resident Guests |
 | **response** | What the Colony or party attempts during a MEET Round before choosing any capability through which to express it. | § 1.5, Responses and expressions |
-| **Rest** | A systemic MEET through which an Away party stops, advances time, resets its travel cadence, and receives the recovery permitted by its location. | § 5.2, Rest, Stopover, and safe range; § 5.7 |
 | **Return** | The party's ordinary physical TRAVEL homeward through the same continuous world after the player turns back. | § 5.8, Turning Homeward |
 | **RISK** | The operator of the Crossing Register: plan, commit, and resolve one complete species-conditioned passage across a Roadway. | § 1.4, The Crossing Register; § 5.3 |
 | **Role** | A standing domain of ordinary Colony responsibility sustained by the Civic Shares of available Citizens. | § 3.4, Roles and Practices |
@@ -4794,7 +4816,7 @@ listing every place it appears.
 | **Signature** | One bounded species-grounded capability through which a Guest Citizen changes an applicable Away response or situated Home relationship. | § 4.3, Signatures |
 | **Spatial Alignment** | The one-unit Practice or Core Residence benefit contributed when a completed usable Place satisfies the Colony's Core-Species placement grammar. | § 3.3, Spatial Alignment |
 | **Staging Post** | The immediate Roadway-edge ground from which a party observes, waits, plans, and commits to a Crossing. | § 5.3, The Staging Post |
-| **Stopover** | The temporary Away state created when a party completes a Rest MEET at its current location. | § 5.7, Refuge, Stopover, and Outpost |
+| **Stopover** | The committed Away sleep action and locked static screen through which the party advances time, resets travel cadence, and receives effects permitted by its exact location. | § 5.2, Travel cadence and Stopover; § 5.7, Outposts and Stopovers |
 | **Storehouse** | The Caretaker Practice that gives pooled Stores a physical DWELL presence and supports their receiving, protection, and transformation without creating a local inventory. | § 3.4, Storehouse: care of Stores |
 | **Stores** | The Colony's one pooled state of fungible resources and prepared Supplies, accessible globally and physically manifested through its provisional founding cache or Storehouses. | § 3.4, Storehouse: care of Stores; Appendix E |
 | **Strained Carry** | Squirrel's optional additional Cargo capacity, whose unsecured burden creates visible Jostle risk after movement. | § 5.2, Squirrel Strained Carry |
@@ -4802,7 +4824,7 @@ listing every place it appears.
 | **Tale** | A subject-specific player-facing translation of selected Record entries belonging to one Citizen or historically meaningful Item. | § 6.1, Tales and Prior-life Tales |
 | **Telegraph** | Observable warning of what may happen while preparation can still alter the stakes. | § 2.5, Events Through Time; § 3.5 |
 | **Terms of Hospitality** | The explicit Residence, relational, and safety commitments the Colony must fulfill before a recognized non-Citizen can arrive as a Guest Citizen. | § 4.3, From MEET to arrival |
-| **Tharn** | An acute bodily shutdown under overwhelming immediate strain that supersedes the current objective and requires Rest before the expedition can continue. | § 5.6, Tharn |
+| **Tharn** | An acute bodily shutdown under overwhelming immediate strain that supersedes the current objective and requires a completed Stopover before the expedition can continue. | § 5.6, Tharn |
 | **Tool** | A persistent named working object held by one Launch-eligible Citizen that provides one narrow reusable capability Away. | § 4.6, Tools |
 | **TRAVEL** | The operator of the Field Register: directly guide an expedition party through the continuous world beyond Home. | § 1.4, The Field Register; § 5.2 |
 | **Well Placed** | The positive state of a completed usable Place whose relationship to surrounding Home expresses the applicable Core-Species spatial operator or Guest Residence Fit. The adjectival form is **Well-Placed**. | § 3.3, Species placement |
@@ -6988,7 +7010,8 @@ Nodes, and Field conditions whichever Mode currently holds attention.
 | **DWELL** | A normal Home commitment advances to the next Day Band. |
 | **TRAVEL** | Direct movement consumes projected spatial reach within the current Band; exhaustion advances the Band. |
 | **RISK** | Crossing uses the current Band and its traffic without adding another duration to the arrival movement. |
-| **MEET** | Presentation has no universal cost; the selected action supplies its time. Rest and Homecoming each advance one Band. |
+| **MEET** | Presentation has no universal cost; the selected action supplies its time. Homecoming advances one Band. |
+| **Stopover** | The committed sleep screen advances one Band when completed. |
 | **EMBODY** | Ordinary life remains within the current Band. |
 
 Day Band is the sole mechanical world-time unit. TRAVEL uses no Time Mark,
@@ -7078,7 +7101,7 @@ At Home, a present environmental condition becomes World Pressure by adding
 contextual Load, testing relevant Readiness and Practice Strength, or supplying
 the subject of a MEET. It remains attached to the actual Places, Roles, and
 lives affected rather than becoming one pooled weather score. Away, the same
-condition changes TRAVEL, Nodes, Rest, RISK, MEET, and physical consequence.
+condition changes TRAVEL, Nodes, Stopover, RISK, MEET, and physical consequence.
 
 Environmental and human events use **Telegraph → Impact → Persistence →
 Aftermath**. A phase opens MEET only when the Colony or party has a meaningful
@@ -7356,13 +7379,13 @@ with Civic Balance and Citizen activity.
 
 This Appendix gathers what Citizens and the player do within the world defined
 by Appendix F. It follows the expedition from Launch through direct TRAVEL,
-Rest, RISK, MEET, bodily consequence, Outposts, Return, and Homecoming.
+Stopover, RISK, MEET, bodily consequence, Outposts, Return, and Homecoming.
 
 ### Expedition contour
 
 `Architecture.Cycle.HomeAwayReturn`
 
-> **Launch MEET → TRAVEL → Node, Rest, or RISK as encountered → contextual
+> **Launch MEET → TRAVEL → Node, Stopover, or RISK as encountered → contextual
 > MEET where consequence requires choice → physical Return → Homecoming MEET
 > → DWELL**
 
@@ -7566,34 +7589,41 @@ The multiplier increases distance within one Day Band. It adds no time, Carry,
 MEET Round, or RISK action. Non-Rabbit party members impose no slowest-member
 penalty. Carry and Squirrel Strained Carry follow Appendix E.
 
-### Travel cadence and Rest
+### Travel cadence and Stopover
 
-`Away.Field.TravelCadence` · `Away.Encounter.Rest`
+`Away.Field.TravelCadence` · `Away.Stopover`
 
 A rested party receives three traveled Day Bands at normal reach, then may push
 through three more at declining reach:
 
-| Traveled Band since Rest | Projected-reach multiplier |
+| Traveled Band since Stopover | Projected-reach multiplier |
 |---:|---:|
 | 1–3 | 1× |
 | 4 | ¾× |
 | 5 | ½× |
 | 6 | ¼× |
-| 7 | TRAVEL unavailable until Rest |
+| 7 | TRAVEL unavailable until Stopover |
 
 A Band counts when it ends after material travel, including when another action
 advances time before the span is exhausted. MEET and Node work neither count as
-TRAVEL nor reset cadence unless their resolved action explicitly supplies Rest.
+TRAVEL nor reset cadence; Stopover resets cadence.
 Pushing reduces reach while Jostle and situated risk continue normally; it
 creates no generic Fatigue state or automatic Wound or Exposure.
 
-A Rest MEET may begin wherever the party can physically stop. Completion
-advances one Day Band, resets travel cadence, stabilizes each current Wound for
-the next three traveled Bands and their resolved situations, ends Tharn, and
-creates a Stopover at that location. Open ground, weather, disturbance, and
-available shelter determine contextual consequences. Natural refuge improves
-those circumstances; a usable Outpost provides the reliable effects specified
-below.
+A party may commit to Stopover wherever it can physically sleep. The locked
+Stopover screen uses a static DWELL-like view of the party inhabiting its exact
+location for sleep. Informational overlays present Day accounting, cadence,
+bodily state, and applicable place effects; no response selection appears.
+Completion advances one Day Band, resets travel cadence, stabilizes each
+current Wound for the next three traveled Bands and their resolved situations,
+and ends Tharn.
+
+Stopover at a usable Outpost, within the Ancestral Home, or within Rest-Stop
+Metropolis is uninterrupted. Stopover in regular Field carries a chance of a
+separate situated MEET during the sleeping interval. Open ground, weather,
+disturbance, and available shelter determine that possible situation. Natural
+refuge improves the context; a usable Outpost provides the reliable effects
+specified below.
 
 ### Situated travel interruptions
 
@@ -7682,7 +7712,7 @@ danger.
 
 At a homeward Staging Post, the player reads current conditions and crosses now
 or waits. Present traffic, weather, visibility, River Spume, Cargo, traveled
-Bands since Rest, party bodies, and applicable Signatures select one of two
+Bands since Stopover, party bodies, and applicable Signatures select one of two
 presentations:
 
 - **Automatic Return:** the ordinary procedure; hidden adjudication produces a
@@ -7790,7 +7820,7 @@ and context rather than a number or named ladder.
 |---|---|
 | **Wound** | One binary, named recoverable injury. It limits only physically affected actions and doubles new Exposure while unstabilized. |
 | **Maiming** | A lasting bodily change caused by a maiming injury. The incident also creates one acute Wound; recovery may clear that Wound while Maiming remains. |
-| **Tharn** | Acute bodily shutdown during immediate danger. It supersedes the former objective and makes securing the Citizen and Rest mandatory. |
+| **Tharn** | Acute bodily shutdown during immediate danger. It supersedes the former objective and makes securing the Citizen and completing Stopover mandatory. |
 | **Death** | A rare final outcome available only when an explicitly severe situation made fatal stakes legible before Commit. |
 
 A new Wound result upon a Wounded Citizen changes the injury description and
@@ -7800,7 +7830,7 @@ Recovery Days. It creates no second Wound. Maiming enters adaptation and
 possible Rehabilitation after its acute Wound follows ordinary recovery.
 
 Remedy may stabilize a Wound through Homecoming, lessen one defined immediate
-physical effect, or contain the acute Wound accompanying Maiming. Rest
+physical effect, or contain the acute Wound accompanying Maiming. Stopover
 stabilization lasts through the next three traveled Bands and their resolved
 situations. Remedy can also enter PARLEY through credible offered care. It
 never relieves Tharn.
@@ -7857,7 +7887,7 @@ WITHDRAW ordinarily remain available; another family remains active only when
 it directly enables rescue or departure. The party always retains the Citizen.
 
 While Tharn persists, the party cannot activate another Node, enter RISK, or
-resume an expedition objective. One completed Rest MEET ends it without
+resume an expedition objective. One completed Stopover ends it without
 reducing Exposure or clearing Wound or Maiming.
 
 ### Exposure recovery
@@ -7866,8 +7896,8 @@ reducing Exposure or clearing Wound or Maiming.
 
 | Recovery context | Effect |
 |---|---|
-| **Ordinary Rest** | Ends Tharn, resets travel cadence, and stabilizes Wound for the next three traveled Bands; Exposure reduction depends upon place and outcome. |
-| **Usable Outpost Rest** | Supplies ordinary Rest effects and removes one Exposure step, but never the final Away step. |
+| **Ordinary Stopover** | Ends Tharn, resets travel cadence, and stabilizes Wound for the next three traveled Bands; Exposure reduction depends upon place and outcome. |
+| **Usable Outpost Stopover** | Supplies ordinary Stopover effects and removes one Exposure step, but never the final Away step. |
 | **Home at DAWN** | Removes up to three Exposure steps from each Home-present Citizen, to a minimum of 0. |
 
 Maximum Exposure therefore returns to baseline across two Home DAWNs: 6 to 3,
@@ -7876,11 +7906,12 @@ Wound or Maiming. Wound recovery at Home follows the separate procedure above.
 
 ### Outposts and Stopovers
 
-`World.Outpost` · `Away.Encounter.Stopover`
+`World.Outpost` · `Away.Stopover`
 
-A Stopover is the temporary Away state created by a completed Rest MEET. A
-natural refuge can improve that Rest. An Outpost is persistent uninhabited Away
-infrastructure that makes one known stopping place reliable.
+A Stopover is the committed Away action and locked static screen through which
+the party sleeps at its current location. A natural refuge can improve its
+circumstances. An Outpost is persistent uninhabited Away infrastructure that
+makes one known Stopover reliable.
 
 The Colony establishes or restores an Outpost through a remote Builder Project
 in the ordinary Home Project Queue:
@@ -7896,30 +7927,30 @@ in the ordinary Home Project Queue:
 
 An Outpost has no stationed Citizens, routine upkeep, specialization, upgrade,
 or Tier in v0.5. Explicit visible events alone can damage or destroy it. A
-damaged Outpost persists physically but loses protected Rest, Exposure
+damaged Outpost persists physically but loses protected Stopover, Exposure
 reduction, and Cargo transfer until a remote Builder restoration Project
 completes.
 
-A Rest MEET at a usable Outpost:
+A Stopover at a usable Outpost is uninterrupted and:
 
 - advances one Day Band and resets travel cadence
 - ends Tharn and stabilizes Wound for the next three traveled Bands
 - removes one Exposure step from each resting Citizen without removing the
   final Away step
 - protects ordinary sleep from exposed-ground consequences
-- permits any amount of fungible Cargo to enter Stores through abstract
-  Colony sync, immediately freeing party Carry
+- permits the party to drain any amount of fungible Cargo from Carry into
+  Stores through abstract Colony sync, immediately freeing that Carry
 
 The party remains Away. Tools, Supplies, Keepsakes, Artifacts, and other tracked
-Items remain with their holders. Outpost Rest supplies no Recovery Days, clears
-no Wound, removes no Maiming, and creates no second Home.
+Items remain with their holders. Outpost Stopover supplies no Recovery Days,
+clears no Wound, removes no Maiming, and creates no second Home.
 
 ### Return and Homecoming
 
 `Home.Encounter.Homecoming`
 
 The player turns homeward through ordinary TRAVEL. Time, terrain, Carry,
-Exposure, bodily state, Nodes, Rest, MEET, and Return Crossings continue to
+Exposure, bodily state, Nodes, Stopover, MEET, and Return Crossings continue to
 govern the same physical journey. Clearing the last Roadway returns the party
 to the Home Median; it still travels the remaining ground to the Colony.
 
@@ -7952,12 +7983,12 @@ supports them.
 
 `Away.Expedition`
 
-Base travel distances, Crossing adjudication, contextual Rest consequences,
+Base travel distances, Crossing adjudication, contextual Stopover consequences,
 personal-consequence distributions, Wound recovery requirements, and related
 activity pacing remain subject to their dedicated conceptual tuning work.
 Tuning may alter those quantities while preserving the single Day-Band clock,
 direct TRAVEL, species-distinct RISK, six-step Exposure system, causal personal
-consequence, bounded Rest, and Homecoming reconciliation defined here.
+consequence, bounded Stopover, and Homecoming reconciliation defined here.
 
 ## Appendix H — Citizens and Species Reference
 
@@ -9340,7 +9371,7 @@ Exposure and a triggering event make it possible without making the danger
 explicit beforehand. When Tharn strikes, Muslin cannot reason or heal a
 littermate out of the state. The triggering Round resolves; the next Round of
 the same MEET is reskinned around protecting Crumb, yielding the former
-subject, and withdrawing. Remedy provides no answer. Rest at a completed
+subject, and withdrawing. Remedy provides no answer. Stopover at a completed
 Outpost allows recovery before the party can activate another Node or attempt
 a Crossing.
 

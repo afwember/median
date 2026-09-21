@@ -262,28 +262,31 @@ reference wherever a named subject appears.
   triggering-Round frame and short withdrawal handoff.
 - **Annotation requirement:** none inside the game beyond the now-explicit word
   **Tharn**; Sourcebook text explains the concealed susceptibility externally.
-- **Current-canon inputs:** Tharn, Rest-only relief, Mouse scale, current Story
+- **Current-canon inputs:** Tharn, Stopover-only relief, Mouse scale, current Story
   identities, and no visible pre-strike probability or warning.
 - **Legacy lineage:** reference-and-amend archive row 108, retaining only the
   shocking contraction and rescue-centered interruption.
 - **Disposition / state:** **remake; asset brief required.** Exact incident and
   withdrawal response remain to author.
 
-### UI-12 — Rest MEET at an Outpost
+### UI-12 — Stopover screen at an Outpost
 
 - **Map ID:** `AUG-5.7-01`
-- **Interface / Register:** unopposed contextual Rest MEET returning to TRAVEL
-- **Exact worked state:** Gale, Alder, and Reed choose Rest at Morningside's
+- **Interface / Register:** locked static Stopover screen within Away, returning
+  to TRAVEL; neither MEET nor another Register
+- **Exact worked state:** Gale, Alder, and Reed commit to Stopover at Morningside's
   first Outpost; Reed's Wound stabilizes, cadence resets, one Band advances,
   bounded Cargo enters Stores, and the party remains Away.
 - **Subjects:** continuous party, exact bodily and Item states, selected Cargo,
   current Day Band, and modest uninhabited Outpost.
-- **Scale:** dominant literal MEET and reconciliation on one page.
-- **Annotation requirement:** compact comparison of exposed-ground, natural-
-  refuge, and usable-Outpost Stopovers.
-- **Current-canon inputs:** Rest, Stopover, Outpost, Wound stabilization,
+- **Scale:** dominant locked DWELL-like view and Day-accounting overlays on one
+  page.
+- **Annotation requirement:** compact comparison of regular-Field Stopover
+  interruption chance with uninterrupted Outpost, Ancestral Home, and
+  Rest-Stop Metropolis Stopovers.
+- **Current-canon inputs:** Stopover, Outpost, Wound stabilization,
   hidden Exposure relief, Cargo sync, and vertical-slice accounting.
-- **Legacy lineage:** new current-spec presentation; Rest Stop Metropolis art
+- **Legacy lineage:** new current-spec presentation; Rest-Stop Metropolis art
   is expressly excluded as infrastructure lineage.
 - **Disposition / state:** **new; coordinated asset brief required.** Exact
   Outpost, Cargo, transfer, and Day Band remain.

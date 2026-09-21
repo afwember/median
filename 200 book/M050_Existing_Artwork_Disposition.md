@@ -177,7 +177,7 @@ its coin exchange introduces a currency premise absent from current canon.
 | 99 | Road Work | Preserve the before/during/after event scale; rebuild around current short-run reach closure, Crossing effect, MEET takeover, landscape transformation, and remembrance opportunity |
 | 103, 150, 151, 165, 166 | Three spatial civilizations | Strong comparative visual premise; Mouse undergroundness, old capacities, and old species mechanics require a current remake |
 | 105, 154, 155 | Squirrel civilization and Founders | Rebuild from Rowan, Cobb, and Gale's current bodies, Keepsakes, and established timing—especially Gale acquiring fishing line after the montage |
-| 108 | Tharn | Preserve the shocking visual and rescue-centered interruption; replace the former meter, telegraphing, and trigger language with current hidden susceptibility and Rest-only recovery |
+| 108 | Tharn | Preserve the shocking visual and rescue-centered interruption; replace the former meter, telegraphing, and trigger language with current hidden susceptibility and Stopover-only recovery |
 | 192, 193 | Rushbottom before Founding | Add all four fleeing Mouse Founders and preserve Sump as the prior Pipe End inhabitant |
 | 246 | Room on the ledge | Replace non-roster Ember with a current Morningside Citizen or Guest and preserve the welcome-through-Place composition |
 | 247 | Serviceberry relay | Reframe through current ordinary work or passive production without reviving a separate cache/relay system |

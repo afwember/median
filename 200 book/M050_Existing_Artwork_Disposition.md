@@ -47,10 +47,11 @@ Rows 51, 68, 144, and 146 are alternatives, not a recommendation to repeat the
 same Crossing subject four times. Pagination should select the strongest aspect
 and tonal fit.
 
-### 2.2 Current-development candidates requiring explicit m050 adoption
+### 2.2 Candidates requiring explicit m050 adoption
 
 | Manifest row | Filename | Best present use | Canon check before adoption |
 |---:|---|---|---|
+| 94 | `v044-NewEldRendering.jpg` | **Provisional candidate for New Elderbank's canonical exterior form** | Retain the protected central Court, court-facing shelters, neighbor sightlines, inhabited warmth, vegetative enclosure, and active-Roadway context. Edit and develop it against current Ashcross geography, the exact selected Tier and cast, GATHER logic, above-ground operational readability, and the matched Part 0 arrival camera before any final canon promotion. Remove the burned-in title; repeated round doors, fencing, generic costumes, and every depicted Place remain under scrutiny rather than adopted facts. Row 93 remains the principal spatial check and row 241 a grounded material check, not competing canonical exteriors |
 | 197 | `v051-Rushbottom Tier 0 A.png` | Pipe End before Founding | Confirm this as the unbuilt Home Reach with Sump already present |
 | 198 | `v051-Rushbottom Tier 0 B.png` | Sump or culvert ecological reference | Confirm that the more photographic treatment belongs in the book's visual register |
 | 208 | `v051-Rushbottom Tier 3 - Evening.png` | **Provisional candidate for Rushbottom's canonical exterior form** | Retain the accumulated mound-and-culvert silhouette, joined inhabited density, wet Pipe End ground, warm interior light, and active Roadways. Edit and develop it against current Tier III geography, cast, Sump placement, above-ground JOIN logic, and strategic-transparency needs before any final canon promotion. Its doors, windows, ladders, lamps, and pitched roofs are accepted anthropologic domestic cues; found metal must remain Corridor material rather than armor, fortification, or forged-fantasy “metal medievalism” |
@@ -131,7 +132,7 @@ its coin exchange introduces a currency premise absent from current canon.
 
 | Manifest row(s) | Existing asset | Remake destination | Required correction |
 |---:|---|---|---|
-| 92, 94 | New Elderbank views | `AUG-P1-TH-01`, mature New Elderbank matched to Part 0 arrival | Rebuild against current New Elderbank, its Tier, cast, Practices, and the selected arrival camera |
+| 92, 94 | New Elderbank views | `AUG-P1-TH-01`, mature New Elderbank matched to Part 0 arrival | Develop the provisional row 94 exterior-form candidate against current New Elderbank, its Tier, cast, Practices, and the selected arrival camera; use row 92 only for supporting GATHER and daughter-court logic |
 | 220–226 | Home-and-Away diagrams | `AUG-1.4-01`, one world, two Modes, five Registers | Replace the circular state-machine implication with current topology, operator, transitions, and EMBODY placement |
 | 9, 10, 18 | Contested and uncontested Node MEETs | `AUG-1.5-01`, current contested Mouse MEET | Preserve scene primacy; replace all response order, meters, portraits, labels, and obsolete mechanics |
 | 11 | Expedition Homecoming | `AUG-1.5-02` inset and later Chapter 5.8 treatment | Rebuild as a state-transition MEET with current reconciliation and allocation grammar |

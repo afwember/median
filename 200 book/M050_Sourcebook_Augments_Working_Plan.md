@@ -358,10 +358,10 @@ or full-page explanatory form.
 | **Outgoing state** | The same overlooked ground is recognizable as a mature, inhabited Home between active highways |
 | **Canon inputs** | Approved Part 0 arrival composition; current New Elderbank Colony imagery; canon references for every identifiable Citizen selected for the scene |
 | **Semantic content** | None on the plate; the following designed page carries the Part and Chapter titles and any useful Landscape Voice |
-| **Asset lineage** | Remake the durable “Colony Between Two Highways” concept against current New Elderbank canon |
+| **Asset lineage** | Remake the durable “Colony Between Two Highways” concept through the provisional New Elderbank exterior-form candidate in artwork-manifest row 94, `v044-NewEldRendering.jpg`. Preserve the protected central Court, court-facing shelters, neighbor sightlines, inhabited warmth, vegetative enclosure, and active-Roadway context while rebuilding the exact Ashcross ground, selected Tier, cast, Practices, and matched Part 0 arrival camera. Row 93 remains the principal spatial check and row 241 a grounded material check rather than competing canonical exteriors; the burned-in title and incidental architecture, fencing, costumes, population, and Places carry no authority |
 | **Cross-reference** | Chapters 1.1, 3.1, and 6.2; Appendix H story-civilization material |
 | **Priority** | Essential |
-| **Approval state** | Approved direction; exact Tier, Citizen cast, time, weather, and camera match remain to be briefed |
+| **Approval state** | Approved direction with row 94 provisionally promoted as the canonical exterior-form candidate; final canon promotion, exact Tier, Citizen cast, architecture, time, weather, and camera match remain to be briefed and scrutinized |
 | **Acceptance test** | The terrain reads as the place just reached in Part 0, the transformation reads immediately, the highway retains its magnitude, the Colony feels inhabited rather than decorative, and the plate contains no words |
 
 **Balance consequence.** Rabbit appropriately carries this bridge from Part 0.

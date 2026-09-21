@@ -180,7 +180,7 @@ the current expedition.
 
 | Family or incident | Source | Function and boundary |
 |---|---|---|
-| **Rest-Stop Metropolis encounters** | Authored campaign horizon | Arrival, venue use, hospitality, transactions, consequential contact, and departure occur through situated MEET while the city remains Away and is navigated through TRAVEL. |
+| **Rest-Stop Metropolis encounters** | Authored campaign horizon | Arrival, hospitality, consequential contact, and departure may use situated MEET while the city remains Away and is navigated through TRAVEL. Routine visible service transactions remain at their authored Nodes; bargaining, relationship, incompatible terms, or another consequential choice crosses into MEET. |
 | **Consequential situated interruption** | Bounded interruption during TRAVEL | Current terrain, season, time, weather, and world state select a situation between Nodes. Minor content remains a direct TRAVEL change; only a consequential choice opens MEET. The procedure has no player-facing card, deck, or named event family. |
 | **Remembrance** | Eligible Founder or authored Wanderer escapee at an exact remains Node within the Ancestral Home Landmark Reach | Present ground and lived history support a consequential act of memory. It is not a universal sixth response or interaction marker. |
 | **Lone ancestral escapee** | Low-frequency authored possibility | A credible present situation may reveal one hiding survivor. No icon, warning, promise, search meter, or automatic adoption. Exact recurrence remains deferred with horizon development. |

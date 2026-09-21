@@ -3148,7 +3148,10 @@ after the player chooses a MEET response; selecting it supplies one narrow
 reusable capability, places its holder in Focus, and exposes it to that Round's
 situated hazard. Multiple Tools create redundancy and possible protagonists
 rather than a stacking bonus. Damage can suspend a Tool until ordinary Crafter
-repair, while Fine Work can open specifically authored **Specialist Tools**.
+repair, while Fine Work can open specifically authored **Specialist Tools**. A
+Citizen may discard a held Tool whenever the player chooses, permanently
+freeing that Tool position unless an explicit recipient or transaction takes
+the object.
 
 ### Supplies
 
@@ -4058,6 +4061,25 @@ Guest encounters, and Practice-improvement understanding. Relationships change
 how particular residents and venues receive the party. Metropolis may visually
 echo DWELL, but Home is shaped by the player while the city is learned through
 navigation and participation.
+
+Three authored venue forms establish the present service foundation:
+
+| Authored Node | Service and boundary |
+|---|---|
+| **Tool repair and trade venue** | Repairs a damaged Tool or makes an ordinary new Tool from ingredients supplied in party Cargo. A Citizen needs an empty Tool position to receive a new Tool and may discard a held Tool to free it; the discarded Tool leaves play unless the authored transaction explicitly accepts it. The party supplies the ordinary Tool recipe plus one additional Resource unit of a type already used by that recipe, chosen by the venue. Because ordinary Tool repair is covered work at Home, Metropolis repair instead costs one materially relevant Resource unit chosen by the venue. |
+| **Resource shopkeeper venue** | Offers a particular visible stock of Resources for barter against the party's actual Cargo. Stock, accepted exchange, resident, relationship, and later availability belong to this persistent Node. No currency, universal price list, or detached shop inventory is created. |
+| **Food-preservation venue** | Converts **3 Perishable Sustenance into 2 Durable Sustenance** within party Cargo. This is the ordinary one-for-one Colony transformation for two output units plus one additional Perishable unit as the Metropolis service premium. |
+
+The general rule is: **a service duplicated at Home and Rest-Stop Metropolis
+uses its ordinary Colony recipe plus one additional Resource unit.** The
+additional unit must be a Resource type already used by the underlying recipe
+and is chosen by the authored venue. When the Home service is ordinarily
+covered work with no material recipe, as with ordinary Tool repair, the venue
+chooses one materially credible Resource as its cost. A service unique to the
+Metropolis has authored terms of its own. Routine visible transactions resolve
+at their Nodes; bargaining, relationship, incompatible terms, or another
+consequential choice may open MEET. All inputs and outputs belong to party
+Cargo or the involved Citizen's Item position, never remote Colony Stores.
 
 All three forms and the Corridor beyond remain available as continuing
 sources of exploration, relationship, and change. MEDIAN v0.5 has no formal
@@ -6673,6 +6695,9 @@ Launch-eligible Citizen. The five ordinary classes are **Carry**, **Reach**,
 
 - Any Launch-eligible Citizen may hold any Tool whose form is credible for that
   body.
+- A Citizen may discard a held Tool whenever the player chooses. Unless an
+  explicit recipient or transaction takes it, the Tool leaves play and its
+  position becomes empty.
 - Role, Species, personality, and prior service create no proficiency gate or
   effect coefficient.
 - A Tool supplies one narrow, reusable contextual capability rather than a
@@ -6685,9 +6710,12 @@ Launch-eligible Citizen. The five ordinary classes are **Carry**, **Reach**,
   rather than stacking upon one Round.
 - A Carry Tool provides its standing Cargo effect and enters hazard when the
   capacity or carried load is materially at stake.
-- A Damaged Tool remains with its Citizen but is unavailable for the remainder
-  of the expedition. Ordinary repair after Homecoming belongs to Crafter
-  responsibility; a new persistent capability requires a Project.
+- A Damaged Tool remains with its Citizen but is unavailable until repaired.
+  Ordinary repair after Homecoming belongs to covered Crafter responsibility;
+  an authored Rest-Stop Metropolis venue may instead repair it for the city
+  service premium. A new persistent capability ordinarily requires a Project,
+  while the authored Metropolis Tool venue can make an ordinary Tool from the
+  party-supplied recipe and premium.
 - Fine Work opens specifically authored Specialist Tools rather than numerical
   levels for ordinary Tools.
 
@@ -6859,6 +6887,13 @@ An Outpost Colony sync accepts only fungible Cargo into Stores. In the opposite
 direction, any empty party Supply position may choose one available prepared
 Supply from the full Colony stock. Personal and singular Items otherwise remain
 with their holders until Homecoming or another explicit event changes them.
+
+Rest-Stop Metropolis services draw from party Cargo rather than Colony Stores.
+When they duplicate a Colony service, they consume the ordinary recipe plus one
+additional Resource unit of a type already present in that recipe, chosen by
+the authored venue. A covered Home service with no material recipe instead
+costs one materially relevant Resource at the Metropolis. The established
+preservation exchange is **3 Perishable Sustenance → 2 Durable Sustenance**.
 
 ### Current tuning boundary
 

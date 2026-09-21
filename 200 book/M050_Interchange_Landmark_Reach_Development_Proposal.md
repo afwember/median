@@ -314,6 +314,11 @@ Its Sustenance, Scrap, trade, shelter, and other resource opportunities belong
 to those authored venues and places rather than to the ordinary programmatic
 Resource-Node generator. The absence of programmatic Contested Nodes does not
 prevent authored city MEETs from containing consequential disagreement.
+Its current service foundation includes distinct authored Nodes for Tool repair
+and trade, Resource barter, and food preservation. Services duplicated at Home
+cost the ordinary Colony recipe plus one additional recipe-relevant Resource at
+the Metropolis; exact transactions use party Cargo and Item positions rather
+than Colony Stores or a city currency.
 
 ## Persistence and repeated visits
 

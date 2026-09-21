@@ -3966,10 +3966,18 @@ a generator may contrast one direct difficult Crossing with a longer path
 through two narrower roads. This remains direct-drive TRAVEL and ordinary RISK,
 not a route-planning layer.
 
-Interchanges are lush with persistent Nodes. Programmatic Sustenance and Scrap
-Nodes occur more frequently than in ordinary Reaches, while a separately
+Interchanges are lush with persistent Nodes. Programmatic **Perishable
+Sustenance**, **Durable Sustenance**, **Rigid Scrap**, and **Flexible Scrap**
+Nodes all occur more frequently than in ordinary Reaches, while a separately
 determined higher percentage of those Resource Nodes are Contested. Exact
 density and contest percentages remain tuning.
+
+Each Node retains a concrete world-facing material identity suited to its
+ground, such as berry bushes, seed concentrations, discarded food, wire,
+cloth, plastic, wood, or metal. Recovery assigns its yield to one of the four
+existing fungible categories. By entry into the Colony's pooled Stores,
+equivalent units no longer retain separate source identities. Interchange
+generation creates no additional resource class or currency.
 
 Twelve authored Interchange Story MEET forms provide a separate content layer:
 **Divided Plenty**, **The Throwing Place**, **The Fallen Load**, **The Unusual
@@ -6518,11 +6526,17 @@ Practice, Colony Tier, or Outpost improvement raises the three-Body-Unit limit.
 | Resource | Principal function | Ordinary source or transformation |
 |---|---|---|
 | **Perishable Sustenance** | Immediate and green-season food; vulnerable to aggregate spoilage | Garden and Gardener production; eligible Field recovery |
-| **Durable Sustenance** | Preserved food for winter, disruption, and protected reserves | Storehouse and Caretaker preservation of Perishable Sustenance |
+| **Durable Sustenance** | Preserved food for winter, disruption, and protected reserves | Storehouse and Caretaker preservation of Perishable Sustenance; eligible Field recovery |
 | **Flexible Scrap** | Binding, wrapping, weaving, lashing, sealing, and suitable construction | Field recovery and authored exchange or consequence |
 | **Rigid Scrap** | Bracing, shielding, surfacing, reinforcement, and suitable construction | Field recovery and authored exchange or consequence |
 | **Supplies** | Prepared expendable interventions for Away or situated need | Crafter or Caretaker Provisioning from defined inputs |
 | **Tools** | Durable personal working capability Away | Crafter Projects at a usable Workshop |
+
+Resource Nodes use concrete world-facing names for what actually grows,
+collects, or has been discarded there. Berry bushes, seed stores, dried food,
+cloth, wire, wood, plastic, and metal may therefore appear as different Nodes
+while yielding one of the four fungible resource categories. Once those units
+enter pooled Stores, equivalent sources are not tracked separately.
 
 Perishable Sustenance is normally consumed before Durable Sustenance. Scrap
 does not divide into component inventories. Production, Provisioning, and

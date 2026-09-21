@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
   "status": "AUTHORIAL_GDD_FIRST_DRAFT_COMPLETE",
-  "updated": "2026-09-20T20:09:40-04:00",
+  "updated": "2026-09-20T20:35:25-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -46,9 +46,9 @@
     "phase": "Direct authorial GDD creation — provisional first draft complete",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
     "progress": "Seven-Part MEDIAN v0.5.0 GDD provisionally complete as a first draft",
-    "now": "The Interchange Story MEET bank contains twelve adopted forms spanning material abundance, habitation and claim, animal convergence, and environmental change; each Interchange installs three to six forms once, with at least one animal-centered and one infrastructure- or ecology-centered form, while resource density and programmatic contest remain independent axes",
-    "next": "Develop the Interchange programmatic Sustenance and Scrap Node slate through granular authorial review; then complete the dedicated Rest-Stop Metropolis and three-Landmark comparative passes before returning to paused Sourcebook Augments production",
-    "updated_human": "September 20, 2026 at 8:09:40 PM EDT"
+    "now": "All four fungible resource categories—Perishable Sustenance, Durable Sustenance, Rigid Scrap, and Flexible Scrap—occur more frequently as programmatic Interchange Nodes; each Node keeps a concrete world-facing material identity while recovered units normalize into the existing pooled Stores categories",
+    "next": "Develop the concrete Interchange programmatic Resource-Node form slate through granular authorial review; then complete the dedicated Rest-Stop Metropolis and three-Landmark comparative passes before returning to paused Sourcebook Augments production",
+    "updated_human": "September 20, 2026 at 8:35:25 PM EDT"
   },
-  "next_possible_transition": "Develop the Interchange programmatic Sustenance and Scrap Node slate through granular authorial review; then complete the dedicated Rest-Stop Metropolis and three-Landmark comparative passes before returning to paused Sourcebook Augments production."
+  "next_possible_transition": "Develop the concrete Interchange programmatic Resource-Node form slate through granular authorial review; then complete the dedicated Rest-Stop Metropolis and three-Landmark comparative passes before returning to paused Sourcebook Augments production."
 }

@@ -211,14 +211,24 @@ animal claims a Node.
 ### Renewable generated Nodes
 
 Most Interchange abundance comes from programmatic Resource Nodes fitted to
-the actual ground. Both Sustenance and Scrap Nodes occur more frequently than
-in ordinary Reaches:
+the actual ground. All four fungible resource categories occur more frequently
+than in ordinary Reaches:
 
-- Sustenance and living plant material;
-- insects and water-related opportunities;
-- recurring debris deposits and minor Scrap;
-- shelter and temporary refuge conditions; and
-- other renewable or replenishing resources already supported by Node rules.
+- **Perishable Sustenance**;
+- **Durable Sustenance**;
+- **Rigid Scrap**; and
+- **Flexible Scrap**.
+
+The world-facing Node retains a concrete material identity appropriate to its
+ground: berry bushes, seed concentrations, discarded food, wire, cloth,
+plastic, wood, metal, or another authored source. Recovery assigns the yield
+to its applicable resource category. By the time it enters the Colony's pooled
+Stores, one unit from a berry bush is simply one unit of Perishable Sustenance,
+and equivalent materials no longer retain separate source inventories.
+
+Interchange generation creates no fifth resource class and no
+Interchange-specific currency. Shelter, water, insects, and other conditions
+may shape a Node or situation without becoming additional fungible Stores.
 
 The Nodes persist. They renew, deplete, change, or remain absent through their
 existing owners and intervals rather than rerolling whenever the party enters.

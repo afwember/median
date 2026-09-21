@@ -53,6 +53,7 @@ and tonal fit.
 |---:|---|---|---|
 | 197 | `v051-Rushbottom Tier 0 A.png` | Pipe End before Founding | Confirm this as the unbuilt Home Reach with Sump already present |
 | 198 | `v051-Rushbottom Tier 0 B.png` | Sump or culvert ecological reference | Confirm that the more photographic treatment belongs in the book's visual register |
+| 208 | `v051-Rushbottom Tier 3 - Evening.png` | **Provisional candidate for Rushbottom's canonical exterior form** | Retain the accumulated mound-and-culvert silhouette, joined inhabited density, wet Pipe End ground, warm interior light, and active Roadways. Edit and develop it against current Tier III geography, cast, Sump placement, above-ground JOIN logic, and strategic-transparency needs before any final canon promotion. Its doors, windows, ladders, lamps, and pitched roofs are accepted anthropologic domestic cues; found metal must remain Corridor material rather than armor, fortification, or forged-fantasy “metal medievalism” |
 | 211 | `v051-Rushbottom Tier 3 - Watchtower view.png` | Animal-scale Corridor or Mouse observation | Use as a generic viewpoint rather than as the four-Founder arrival |
 | 229 | `v051-tier3-rushbottom-drainage-swale-dense-study-v001.png` | Mouse member of the Drainage Swale comparison | Treat as a possible Mouse colony, not necessarily canonical Pipe End Rushbottom |
 | 230 | `v051-tier3-rushbottom-interchange-remnant-detailed-study-v001.png` | Mouse member of the Interchange Remnant comparison | Treat as a possible Mouse colony, not necessarily canonical Pipe End Rushbottom |
@@ -210,7 +211,7 @@ This section closes the audit around every manifest region not elevated above.
 | 161 | Reference only | Old three-species copy and values are superseded |
 | 169–190 | Reference only | v0.4.6 layout, contents, market, and manifestation pages remain book-design lineage rather than current content |
 | 196 | Reference only | Duplicate thumbnail derivative of row 91 |
-| 199–200, 205–210, 212–213 | Reference or reskin source | Useful Rushbottom progression studies, but only one selected Colony lineage can become visual canon; do not mix these states intact with row 191 |
+| 199–200, 205–207, 209–210, 212–213 | Reference or reskin source | Useful variants within the mound-and-culvert family provisionally represented by row 208. They may support weather, lighting, close-view, street-level, and growth development, but none becomes a second canonical exterior or contributes depicted facts automatically |
 | 203 | Reference only | Storm image may inform a remake; the displayed encounter interface is obsolete |
 | 214–219 | Reference only | Iterative Rushbottom studies superseded by the corrective row 191; retain for development history and isolated composition ideas |
 | 227–228 | Reference only | Biome contact sheets guide selection; their component scenes, not the sheets, are candidates |

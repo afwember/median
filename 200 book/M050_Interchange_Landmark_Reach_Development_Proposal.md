@@ -1,12 +1,12 @@
-# MEDIAN v0.5.0 — Interchange Landmark Reach Development
+# MEDIAN v0.5.0 — Interchange Expanse Landmark Reach Development
 
 Status: adopted physical, systemic, Resource-Node, and Story-MEET foundation;
 remaining questions are deferred tuning or later presentation work
 
-Purpose: define the recurring generated Interchange Landmark Reach without
+Purpose: define the recurring generated Interchange Expanse Landmark Reach without
 creating a separate map, Register, Crossing system, or society layer
 
-Authority: the Landmark Reach category, Reach-wide Interchange identity,
+Authority: the Landmark Reach category, Reach-wide Interchange Expanse identity,
 Margin disappearance, Roadway presentation hierarchy, ordinary RISK use,
 renewable Node abundance, local animal plurality, and persistent-world
 boundaries below are adopted, together with the four-category Resource-Node
@@ -20,15 +20,20 @@ An ordinary Reach preserves a stable cross-sectional relationship:
 
 > Sound Wall ‖ Margin | Main Roadway | Median | Main Roadway | Margin ‖ Sound Wall
 
-An Interchange Landmark Reach disrupts that relationship. Main Roadways divide,
-curve, merge, rise, descend, and cross. The playable animal ground becomes a
-braid of connected vegetated and infrastructural remnants rather than one
-obvious central strip.
+The ordinary **Interchange** biome preserves this exact geography. Ramps,
+overpasses, pillars, barriers, and nearby merging or diverging traffic give it
+visual identity without adding playable Roadways or removing its Margins. The
+**Interchange Expanse** developed here is the distinct Landmark Reach form.
 
-The Interchange remains part of the continuous Corridor. Its upcorridor and
+An Interchange Expanse Landmark Reach disrupts that relationship. Main
+Roadways divide, curve, merge, rise, descend, and cross. The playable animal
+ground becomes a braid of connected vegetated and infrastructural remnants
+rather than one obvious central strip.
+
+The Expanse remains part of the continuous Corridor. Its upcorridor and
 downcorridor ends join ordinary neighboring Reaches through their normal
 longitudinal borders. At the Reach-border Crossing, the incoming Median and
-Margins may simply give way to Interchange ground. MEDIAN already allows
+Margins may simply give way to Expanse ground. MEDIAN already allows
 adjacent Reach biomes to change without a diegetic explanation; disappearance
 of the formal Margins requires no special event, geological account, or player
 warning.
@@ -43,13 +48,13 @@ Inside the Landmark Reach:
 - drainage, barriers, shelter, vegetation, grade, and accumulated material
   establish local differences; and
 - the ordinary Median–Roadway–Margin organization resumes beyond the
-  Interchange at the next longitudinal boundary.
+  Expanse at the next longitudinal boundary.
 
 This is a bounded geographic exception rather than a new universal zone model.
 
 ## Bounded roadway-layout library
 
-Interchange generation begins from a small authored library rather than
+Interchange Expanse generation begins from a small authored library rather than
 inventing unconstrained road geometry. Four basic arrangements are sufficient
 for the v0.5 concept: **Diamond**, **Clover**, **Stack**, and **Fork**. Each may
 be rotated or reflected before biome, grade, shelter, drainage, Node, and
@@ -58,7 +63,7 @@ regular arrangement makes those transformations materially different.
 
 The library is deliberately small. A normal campaign is unlikely to encounter
 more than two realizations: the once-per-campaign Ancestral Home, whose physical
-layout draws from this grammar, and perhaps one generated Interchange elsewhere
+layout draws from this grammar, and perhaps one generated Interchange Expanse elsewhere
 in the Corridor. Four transformable bases therefore provide recognizable
 variation without requiring a procedural road-engine or a false promise of
 infinite geometry.
@@ -97,7 +102,7 @@ Two diagonal ground-level Roadways form an X whose crossing lies below the
 center of the Reach. Two separate elevated carriageways pass across the upper
 portion. The surface X creates four large grounds and makes the lower junction
 an unavoidable orientation fact; the overhead pair supplies shade, columns,
-traffic presence, and Interchange identity without becoming another route.
+traffic presence, and Interchange Expanse identity without becoming another route.
 
 ### Transformation and skinning
 
@@ -132,9 +137,9 @@ The ordinary-Reach study is the scale control. At the full Reach scale, both
 human carriageways read as comparatively narrow bands while the central Median
 and both Margins provide much larger animal interiors. Its stable sequence
 remains Sound Wall, Margin, Main Roadway, Median, Main Roadway, Margin, Sound
-Wall. Interchange templates may dissolve that sequence, but should preserve
-the same disparity of scale: Roadways are enormous hazards at animal scale
-without consuming most of the map's playable ground.
+Wall. Interchange Expanse templates may dissolve that sequence, but should
+preserve the same disparity of scale: Roadways are enormous hazards at animal
+scale without consuming most of the map's playable ground.
 
 Incidental route marks, crossing ticks, lane counts, deck details, exact
 proportions, or title placement in any study carry no authority. Production
@@ -145,14 +150,14 @@ slates are complete.
 
 ### Ground-level Roadways
 
-Ground-level Roadways are the mechanically important Interchange roads. They
-physically divide playable ground. Reaching an actual edge establishes a
-Staging Post; committing passage opens ordinary RISK.
+Ground-level Roadways are the mechanically important Interchange Expanse
+roads. They physically divide playable ground. Reaching an actual edge
+establishes a Staging Post; committing passage opens ordinary RISK.
 
 Local geometry may produce a broad main traffic band, a narrower ramp, merging
 or diverging traffic, a curved line with poor sight, several lane groups, or a
 barrier or drainage feature between moving surfaces. These facts alter the
-particular Crossing conditions without creating an Interchange-specific RISK
+particular Crossing conditions without creating an Expanse-specific RISK
 procedure.
 
 ### Elevated Roadways
@@ -174,7 +179,7 @@ RISK.
 
 ## Passage through the Reach
 
-Every generated Interchange retains a legible upcorridor-to-downcorridor
+Every generated Interchange Expanse retains a legible upcorridor-to-downcorridor
 passage. The shortest ordinary passage requires one consequential ground-level
 Crossing. Richer optional ground may require additional travel or Crossings.
 
@@ -198,8 +203,9 @@ generated ground also exposes a reachable ground-level traffic surface.
 
 ## Node abundance
 
-Interchanges are unusually lush with persistent Nodes because ecological and
-material edges overlap throughout the Reach. Likely grounds include Roadway
+Interchange Expanses are unusually lush with persistent Nodes because
+ecological and material edges overlap throughout the Reach. Likely grounds
+include Roadway
 throw, accumulated debris, drainage outlets, wet hollows, sheltered
 understructure, isolated vegetation, seed and insect concentrations, wreckage,
 wind-caught material, animal camps, territorial shelter, and warning ground.
@@ -212,7 +218,7 @@ animal claims a Node.
 
 ### Renewable generated Nodes
 
-Most Interchange abundance comes from programmatic Resource Nodes fitted to
+Most Interchange Expanse abundance comes from programmatic Resource Nodes fitted to
 the actual ground. All four fungible resource categories occur more frequently
 than in ordinary Reaches:
 
@@ -236,8 +242,8 @@ yield one to three resource categories. Their yield is not divided evenly:
 one category is primary, with smaller secondary or tertiary yields where
 present. Exact quantities and proportions remain tuning.
 
-Interchange generation creates no fifth resource class and no
-Interchange-specific currency. Shelter, water, insects, and other conditions
+Interchange Expanse generation creates no fifth resource class and no
+Expanse-specific currency. Shelter, water, insects, and other conditions
 may shape a Node or situation without becoming additional fungible Stores.
 
 The Nodes persist. They renew, deplete, change, or remain absent through their
@@ -246,7 +252,7 @@ Exact abundance and renewal belong to the later economy and Node-tuning phase.
 
 ### Programmatic contest profile
 
-A standard Interchange assigns Contested state to a higher percentage of its
+A standard Interchange Expanse assigns Contested state to a higher percentage of its
 programmatic Resource Nodes than an ordinary Reach. The Ancestral Home uses a
 much lower percentage, preserving present animal claims without turning return
 into a succession of territorial conflicts. Rest-Stop Metropolis uses no
@@ -258,7 +264,7 @@ claims, or another answering participant. Exact percentages remain tuning.
 
 ### Authored Story MEET forms
 
-A smaller authored layer makes Interchange play recognizable without creating
+A smaller authored layer makes Interchange Expanse play recognizable without creating
 one fixed story. The adopted bank contains twelve Story MEET forms:
 
 | Form | Authored premise |
@@ -276,7 +282,7 @@ one fixed story. The adopted bank contains twelve Story MEET forms:
 | **Changed Drainage** | Water has begun moving Sustenance, debris, shelter conditions, or danger from one ground fragment into another, affecting present inhabitants. |
 | **The Brief Truce** | Traffic, weather, a predator, or human activity forces animals who would normally avoid or oppose one another into temporary shared shelter. |
 
-Each generated Interchange selects three to six compatible forms without
+Each generated Interchange Expanse selects three to six compatible forms without
 replacement and installs each selected form once as a particular persistent
 situation fitted to its actual geography, Nodes, and inhabitants. Every
 selected set includes at least one animal-centered form and at least one
@@ -288,25 +294,25 @@ does not guarantee immediate discovery or resolution.
 The installed situation does not reroll as a fresh copy on later visits. Its
 Node, participants, relationships, and aftermath persist and may support later
 developments through ordinary world and MEET rules. The forms therefore do not
-create a mandatory sequence, completion list, or universal Interchange
+create a mandatory sequence, completion list, or universal Interchange Expanse
 history. No form guarantees a Guest, reward, safe refuge, or favorable
 resolution.
 
 ## Present animal plurality
 
-The Interchange's Resources, shelters, divided grounds, and travel lines
+The Interchange Expanse's Resources, shelters, divided grounds, and travel lines
 support unusual animal variety. Travelers, regulars, scavengers, temporary
 camps, territorial animals, Guests, and predators can all appear. Their claims,
 exchanges, warnings, favors, grudges, shelters, and agreements remain attached
 to particular animals and exact Nodes.
 
-An Interchange has no governing society, faction map, universal reputation,
+An Interchange Expanse has no governing society, faction map, universal reputation,
 settlement-wide disposition, or authority controlling the whole Reach. One
 camp may become familiar while the next Node remains Contested.
 
 The contrast with Metropolis is structural:
 
-> Metropolis organizes plurality through durable civic places. Interchange
+> Metropolis organizes plurality through durable civic places. Interchange Expanse
 > organizes plurality through immediate place, need, and relationship.
 
 Every Rest-Stop Metropolis Node is unique to that particular civic territory.
@@ -324,7 +330,7 @@ positions rather than Colony Stores or a city currency.
 
 ## Persistence and repeated visits
 
-A generated Interchange persists as one geographic object:
+A generated Interchange Expanse persists as one geographic object:
 
 - its Roadways and ground divisions remain fixed unless a resolved world event
   changes them;
@@ -336,27 +342,28 @@ A generated Interchange persists as one geographic object:
   and
 - an Outpost may occupy eligible ground without domesticating the Reach.
 
-Interchanges remain useful across repeated expeditions because renewable
-abundance, changing occupation, weather, traffic, and particular relationships
-alter the same persistent geography.
+Interchange Expanses remain useful across repeated expeditions because
+renewable abundance, changing occupation, weather, traffic, and particular
+relationships alter the same persistent geography.
 
 ## Relationship to Ancestral Home
 
-Ancestral Home and Interchange are separate Landmark Reach types. The
-Ancestral Home borrows the Interchange's broad physical TRAVEL grammar:
+Ancestral Home and Interchange Expanse are separate Landmark Reach types. The
+Ancestral Home borrows the Expanse's broad physical TRAVEL grammar:
 multiple Roadways can divide one Median Reach, ground-level roads create RISK,
 elevated roads strengthen vistas and backplates, and below-grade roads can form
 interior boundaries.
 
 Its content grammar is different. Ancestral Home generates once and devotes its
 Node slate primarily to remains and authored story functions derived from the
-actual old Colony. Interchanges may generate elsewhere and emphasize renewable
-Resources, varied current inhabitants, and a smaller authored situation set.
+actual old Colony. Interchange Expanses may generate elsewhere and emphasize
+renewable Resources, varied current inhabitants, and a smaller authored
+situation set.
 
 ## Conservation of System
 
-Interchange adds one Landmark Reach realization, not another operating layer.
-It uses:
+Interchange Expanse adds one Landmark Reach realization, not another operating
+layer. It uses:
 
 - direct-drive TRAVEL;
 - ordinary Field ground;
@@ -372,7 +379,7 @@ screen, faction system, reputation layer, or renewable-resource currency.
 
 ## Deferred tuning and presentation questions
 
-- How frequently can Interchange Landmark Reaches occur in one Corridor?
+- How frequently can Interchange Expanse Landmark Reaches occur in one Corridor?
 - How dense can renewable Nodes become before abundance weakens expedition
   choice or the broader economy?
 - Does a variable-category Node preserve its exact mix across renewal, or can

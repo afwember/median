@@ -8,7 +8,7 @@ Landmark Reach
 
 Authority: the generated ancestral Colony, Landmark Reach category,
 Reach-wide identity, Sourcebook-only status of named story subjects, and
-Interchange-like TRAVEL geometry are adopted. This document develops their
+Interchange Expanse-like TRAVEL geometry are adopted. This document develops their
 still-open realization for granular discussion; proposals not yet adopted
 here do not independently amend the GDD.
 
@@ -30,8 +30,8 @@ The resulting **Ancestral Home** is generated once at its opening-established
 position some ways down the Corridor. It occupies an entire distinctive Median
 Reach reached through ordinary travel when the new Colony can practically
 support the expedition. Its physical TRAVEL layout uses the same crisscrossed,
-multi-Roadway grammar as an Interchange Landmark Reach, but it is not itself an
-ordinary generated Interchange. Its Node slate is much more heavily authored:
+multi-Roadway grammar as an Interchange Expanse Landmark Reach, but it is not
+itself an ordinary generated Expanse. Its Node slate is much more heavily authored:
 specialist Nodes and story situations arise from the generated remains of the
 actual old Colony rather than from the ordinary Node and encounter mix.
 
@@ -67,14 +67,14 @@ place in the continuous Corridor; returning means physically travelling back
 through the intervening Reaches and Crossings.
 
 The whole Reach strongly reflects the lost Colony and the forces that destroyed
-it. Its TRAVEL layout is built from the same broad grammar as an Interchange:
+it. Its TRAVEL layout is built from the same broad grammar as an Interchange Expanse:
 several Roadways may cross or divide the Median. Ground-level Roadways require
 ordinary Crossing; elevated roads strengthen Staging Post vistas and Node MEET
 backplates while remaining decorative; and a below-grade road may become an
 impassable interior boundary. Ramps, barriers, embankments, pillars, drains,
 divided grades, debris, vegetation, altered water, and animal paths create
 several connected grounds. This shared geometry does not merge the two
-Landmark Reaches. Ancestral Home applies the reusable Interchange travel
+Landmark Reaches. Ancestral Home applies the reusable Interchange Expanse travel
 grammar to its own authored history.
 
 Within the territory, direct-drive TRAVEL replaces the opening's guided DWELL.
@@ -121,7 +121,7 @@ The territory combines three sources of persistent Node content:
 Landmark Reach resource abundance remains separate from contest and story
 content. The Ancestral Home assigns Contested state to a much lower percentage
 of its programmatic Resource Nodes than an ordinary Reach or standard
-Interchange. Its generated remains and authored story functions remain the
+Interchange Expanse. Its generated remains and authored story functions remain the
 territory's defining content despite the abundant present-tense Resources.
 
 The Reach is generated as a coherent place and persists. It does not roll a
@@ -397,7 +397,7 @@ should imply:
 - one complete Landmark Reach derived from its intact opening Colony and
   transformed through the shared multi-Roadway TRAVEL grammar;
 - one or more internal ground-level Crossing hazards and additional overhead
-  or illustrative Roadways fitted by the Interchange design pass;
+  or illustrative Roadways fitted by the Interchange Expanse design pass;
 - four to six persistent specialist Nodes, including first recognition,
   former civic ground, catastrophe scar, shelter, and changed living ground;
 - a small set of present-condition MEETs reusable only where their concrete
@@ -417,14 +417,14 @@ table.
    Species shapes those results without selecting one fixed lost society.
 2. Elderbank, Nine Beeches, Chaff End, their named Citizens, and their Places
    are Sourcebook illustrations only and never fixed game content.
-3. Ancestral Home and Interchange are separate Landmark Reach types. The
+3. Ancestral Home and Interchange Expanse are separate Landmark Reach types. The
    Ancestral Home is generated once at the position established by the opening;
-   Interchanges may generate elsewhere in the Corridor.
+   Interchange Expanses may generate elsewhere in the Corridor.
 4. It is navigated through ordinary TRAVEL and persistent Nodes; the former
    Colony supplies no DWELL functions.
-5. Its physical TRAVEL layout uses the Interchange's multi-Roadway grammar,
+5. Its physical TRAVEL layout uses the Interchange Expanse's multi-Roadway grammar,
    including ground-level Crossing hazards and overhead or illustrative roads,
-   without sharing the Interchange's Node-generation emphasis.
+   without sharing the Interchange Expanse's Node-generation emphasis.
 6. Its Node slate emphasizes generated remains and authored story-Node
    functions bound to the campaign's actual old Colony. Current Resources and
    encounters remain subordinate to that identity.
@@ -450,7 +450,7 @@ table.
 
 - Which minimum opening facts must be retained so generation can later produce
   convincing recognizable remains without fixing the old Colony's layout?
-- Which Interchange geometries can the Ancestral Home reuse while preserving a
+- Which Interchange Expanse geometries can the Ancestral Home reuse while preserving a
   traversable, recognizable old Colony?
 - How are authored story-Node functions bound to generated Places, objects,
   and histories without making every campaign follow one ruin sequence?

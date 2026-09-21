@@ -158,8 +158,8 @@ remain authored from the situation.
 |---|---|---|---|
 | **Contested Node claim** | A persistent Node holds a Resource, object, shelter, access point, or territory claimed by another animal or group | Who uses, keeps, divides, protects, abandons, or changes the present thing | Node state, Cargo, relationship, claimant, bodily consequence, and visit history persist. |
 | **Margin Node contest** | Bush, thrown object, scattered wreckage, wrecked car, water, shelter, or living Resource in a Margin | High-opportunity ground shaped by Roadway disturbance, River Spume, contamination, cover, and animal use | Margin does not guarantee contest generally; the first Margin Node in the authored opening does. |
-| **Encountered animal or group in opposition** | TRAVEL, Node, venue, relationship, Interchange, or Metropolis | Territorial claim, exchange under incompatible terms, warning, obstruction, threat, or competing recovery | Recognition and relationship remain local to the involved animals and place. |
-| **Contested special-territory situation** | Interchange, Ancestral Home, Rest-Stop Metropolis, or active Road Work footprint | The territory supplies unusual participants and stakes without changing the five-family grammar | The ordinary persistent world owns the aftermath; no separate faction or quest system appears. |
+| **Encountered animal or group in opposition** | TRAVEL, Node, venue, relationship, Interchange Expanse, or Metropolis | Territorial claim, exchange under incompatible terms, warning, obstruction, threat, or competing recovery | Recognition and relationship remain local to the involved animals and place. |
+| **Contested special-territory situation** | Interchange Expanse, Ancestral Home, Rest-Stop Metropolis, or active Road Work footprint | The territory supplies unusual participants and stakes without changing the five-family grammar | The ordinary persistent world owns the aftermath; no separate faction or quest system appears. |
 
 #### Away — Uncontested Encounters
 
@@ -296,7 +296,7 @@ events whose established resolution depends upon MEET are included.
 | `MEET-EX-07` | **Barrier repair** | Shorter Road Work episode centered on access and information | Illustrative contrast, not fixed history. |
 | `MEET-EX-08` | **Before the Grand Web** | Deferral, ordinary Project, Civic Dedication, and Recognition | Closely based on fixed Morningside history; the exact interface wording remains an Augment treatment. |
 | `MEET-EX-09` | **The Place Where the Lesson Was** | Ancestral Remembrance with Bramble, Daisy, and Burdock | Approved possible campaign state, expressly not mandatory New Elderbank chronology. |
-| `MEET-EX-10` | **Crossroads and City** | Interchange and Metropolis Node/MEET entry through ordinary TRAVEL | Comparative hypothetical visit; no resolved Rushbottom event is fixed. |
+| `MEET-EX-10` | **Crossroads and City** | Interchange Expanse and Metropolis Node/MEET entry through ordinary TRAVEL | Comparative hypothetical visit; no resolved Rushbottom event is fixed. |
 
 ## I. Content families implied but not yet sufficiently authored
 
@@ -319,7 +319,7 @@ than silently filled here.
    situated interruption may open one. The authored situation bank still needs
    to distinguish exposed ground from a natural refuge without making either a
    second sleep procedure.
-6. **Landmark Reach situation banks:** Ancestral Home, generated Interchanges,
+6. **Landmark Reach situation banks:** Ancestral Home, generated Interchange Expanses,
    and Metropolis each promise dense but different MEET substance. Their
    dedicated granular development is active.
 

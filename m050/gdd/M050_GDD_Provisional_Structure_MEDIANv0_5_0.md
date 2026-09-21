@@ -919,6 +919,30 @@ itself ends the world laterally.
 - An Outpost remaining categorically distinct from The Colony
 - Node interaction and Outpost functions deferred to Away
 
+### Ordinary and Landmark Reaches
+
+An ordinary Reach realizes one biome through the Corridor's standard
+cross-section: one Median between two Main Roadways and their two Margins. A
+**Landmark Reach** instead gives one whole Reach an exceptional generated or
+authored geography and Node slate. It remains continuous Corridor territory
+and uses ordinary TRAVEL, RISK, Nodes, MEET, Stopover, Return, and persistence;
+it is neither a separate map, a quest tier, nor a required progression gate.
+
+Biome and Landmark identity are different layers. The ordinary **Interchange**
+biome retains the standard cross-section while using ramps, overpasses,
+pillars, barriers, and merging-road vistas as environmental identity. The
+**Interchange Expanse** Landmark Reach transforms the playable geography
+itself through multiple Roadways and exceptional breadth.
+
+| Landmark Reach | World-body distinction |
+|---|---|
+| **Ancestral Home** | One campaign-generated lost society at its opening-established position, with multi-Roadway geography and a Node slate derived from the actual ancestral Colony. |
+| **Interchange Expanse** | A recurring generated multi-Roadway territory whose exceptional divided ground supports unusual abundance and plurality. |
+| **Rest-Stop Metropolis** | One persistent authored civic territory whose unique venues and animal society form its Node slate. |
+
+Part VI gives their full campaign treatment: generation, Nodes, Story MEETs,
+services, relationships, repeated visits, and long-horizon meaning.
+
 ## 2.3 Biomes and Founding Reaches
 
 Biomes give the continuous Corridor a recurring environmental vocabulary. Each
@@ -1008,7 +1032,7 @@ reinforcement and then to a resilient network of loops.
 | 7 | **Thin Grass Ribbon** | Narrow exposed ground, long sightlines, wind, and road proximity | Corridor |
 | 8 | **Creek Split** | A persistent longitudinal stream dividing banks, islands, and crossings | Corridor |
 | 9 | **Pond Hollow** | Standing water, reeds, saturated ground, seasonal margins, and concealed approaches | Corridor |
-| 10 | **Interchange Expanse** | Broad, disorienting territory among diverging roads and scattered infrastructure | Corridor |
+| 10 | **Interchange** | Standard Median and Margins visually shaped by ramps, overpasses, pillars, barriers, and nearby merging roads | Corridor |
 | 11 | **Overpass Shadow** | Columns, beams, abutments, dry recesses, echo, vibration, and artificial shade | Unusual Corridor |
 | 12 | **Abandoned Works** | Incomplete drainage, gravel beds, pipe, rebar, cut earth, and interrupted construction | Unusual Corridor |
 
@@ -1016,20 +1040,6 @@ The six Core-Species relationships define the founding pool. The remaining six
 broaden the country encountered through exploration. Every biome can later
 support traversal, Nodes, MEETs, Outposts, and possible habitation by any
 species when the particular site permits them.
-
-### Landmark Reaches
-
-A **Landmark Reach** gives one whole Median Reach an exceptional generated or
-authored identity. It remains part of the continuous Corridor and uses ordinary
-TRAVEL, RISK, Nodes, MEET, Stopover, Return, and persistence, but its geography and
-Node slate are composed as one recognizable place rather than drawn from the
-ordinary Reach mixture.
-
-Landmark Reach is a spatial and content category, not a quest tier or separate
-map. An Interchange may generate as a recurring Corridor Landmark Reach. The
-Ancestral Home generates once at its opening-established position and is much
-more heavily authored from that campaign's old Colony. Rest-Stop Metropolis is
-developed separately as a persistent civic destination.
 
 ### Rootbank Meadow
 
@@ -1195,39 +1205,29 @@ identity.
 - Runoff, barriers, litter drift, and culvert influence preserve the Hollow's
   Corridor origin and distinguish ordinary wetland from flood event.
 
-### Interchange Expanse
+### Interchange
 
-Interchange Expanse is an unusually broad Reach formed where Roadways divide,
-merge, curve, or cross nearby. Scattered infrastructure, irregular barriers,
-long conflicting sightlines, isolated vegetation clusters, and several
-apparent directions of travel make orientation its defining challenge.
+The ordinary Interchange biome retains the Corridor's standard geography: one
+Median, two Main Roadways, and two Margins. Its identity comes from the larger
+highway junction visible around that ground—ramps, elevated decks, merging or
+diverging carriageways, pillars, abutments, barriers, shadows, drainage, and
+long infrastructural sightlines—without placing additional Roadways across the
+playable Reach.
 
-- Mouse sees widely separated shelter seams and a difficult problem of
-  protected continuity.
-- Rabbit sees potential courts of cover separated by extensive open ground.
-- Squirrel sees many possible anchors whose distance makes early connections
-  fragile.
-- Diverging highway geometry explains the breadth and keeps animal-scale
-  navigation legible.
-- An **Interchange** can generate in the Corridor as a Landmark Reach whose
-  entire ground is crisscrossed by Roadways. Some roads meet the animals at
-  Crossing ground level; elevated Roadways belong to vistas and backplates
-  without creating another traversable layer, while a below-grade road may
-  form an impassable interior boundary.
-- An Interchange has no formal Margins. At the longitudinal Reach-border
-  Crossing, ordinary Median and Margin ground may simply give way to
-  Interchange Field without diegetic explanation, just as adjacent Reach
-  biomes already change. Actual distance from the nearest ground-level Roadway
-  preserves River Spume and Roadway-proximity effects.
-- Interchanges are lush with Nodes: many renewable Resource Nodes and a smaller
-  authored situation set arise from divided ground, accumulated debris,
-  drainage, shelter, traffic, and unusually varied animal movement.
-- A legible through-path requires one ground-level Crossing; richer optional
-  grounds may require additional TRAVEL or Crossings. All use ordinary Staging
-  Posts and RISK.
-- The Ancestral Home is a different Landmark Reach. Its TRAVEL layout draws on
-  this multi-Roadway grammar, while its heavily authored Node slate instead
-  reconstructs the generated old Colony.
+- Mouse finds seams, recesses, drainage edges, and protected infrastructure
+  within otherwise ordinary Median and Margin ground.
+- Rabbit reads scattered cover against broad junction vistas while retaining
+  the usual relationship between Median refuge and richer Margins.
+- Squirrel finds pillars, posts, trees, rails, and overhead structures as
+  strong visual and connective anchors.
+- Elevated roads, ramps, and distant merging traffic shape vistas and Node
+  backplates but create no additional traversable layer or Crossing.
+- The two Main Roadways retain ordinary River Spume, Staging Post, and RISK
+  relationships; both formal Margins remain present.
+- The **Interchange Expanse** is the separate Landmark Reach realization. It
+  changes the whole Reach's geography through multiple Roadways, exceptional
+  breadth, divided playable ground, abundant Nodes, and its dedicated Story
+  grammar.
 
 ### Overpass Shadow
 
@@ -3933,16 +3933,17 @@ Dedication gives recovered material a major Home use without making exploration
 compulsory. Appendices F and G provide the exact world, Outpost, and expedition
 reference.
 
-## 6.5 Campaign horizons
+## 6.5 Landmark Reaches in the Campaign
 
-Campaign horizons and Landmark Reaches are large distinctive Field territories
-reached through ordinary Corridor expeditions whenever practical range
-permits. Their Nodes and MEETs use the normal Away Registers and persistent
-world state. Three important forms give the Corridor its broadest contrasts:
+Part II establishes Landmark Reaches as exceptional whole-Reach identities
+within the continuous Corridor. In campaign play they are reached through
+ordinary expeditions whenever practical range permits. Their Nodes and MEETs
+use the normal Away Registers and persistent world state. Three forms give the
+Corridor its broadest long-horizon contrasts:
 
 - **The Ancestral Home:** one generated and heavily authored lost society
-- **Interchanges:** recurring Corridor abundance and plurality organized by
-  crisscrossing Roadways and immediate circumstance
+- **Interchange Expanses:** recurring Corridor abundance and plurality
+  organized by crisscrossing Roadways and immediate circumstance
 - **The Rest-Stop Metropolis:** plurality gathered into a lasting city
 
 ### The Ancestral Home
@@ -3957,17 +3958,16 @@ only; none is fixed game content.
 The Ancestral Home generates once at the location established by the Founding
 Escape, some ways down the Corridor from permanent Home. It fills its Median
 Reach rather than forming one ruin icon inside generic terrain. Its physical
-TRAVEL layout uses the Interchange's broad multi-Roadway grammar: several roads
-may divide or cross the Reach, some at Crossing ground level and others
-overhead or otherwise illustrative. Dedicated Interchange design will
-establish that reusable geometry.
+TRAVEL layout uses the Interchange Expanse's broad multi-Roadway grammar:
+several roads may divide or cross the Reach, some at Crossing ground level and
+others overhead or otherwise illustrative.
 
 Its Node slate is deliberately different. Specialist remains derive from the
 actual opening Colony, while authored story-Node functions bind to compatible
 campaign Places, paths, objects, Citizens, relationships, and memories.
 Present Resources, shelter, inhabitants, and hazards remain possible, but the
 Reach does not use an ordinary random Node and encounter mix or inherit the
-Interchange's emphasis on renewable abundance.
+Interchange Expanse's emphasis on renewable abundance.
 
 The old Colony is neither a ruin dungeon nor a restoration opportunity. Its
 campaign value lies in exploration, recovery, recognition, and reckoning while
@@ -3981,16 +3981,19 @@ Home.
 An Outpost may occupy one suitable sheltered site, extending practical range
 without converting the old Colony into an annex or replacement Home.
 
-### Interchanges
+### Interchange Expanses
 
-Interchanges can autogenerate elsewhere in the Corridor as Landmark Reaches.
+Interchange Expanses can autogenerate elsewhere in the Corridor as Landmark
+Reaches. Unlike the ordinary Interchange biome, each Expanse changes the
+playable Reach's cross-section itself.
+
 Ramps, barriers, underpasses, pillars, drains, embankments, divided grades, and
 adjoining Roadways create several connected grounds. Some Roadways require
 Crossing at ground level. Elevated Roadways remain decorative infrastructure
 expressed through Staging Post vistas, TRAVEL composition, and Node MEET
 backplates. A below-grade Roadway may form an impassable interior boundary.
 
-Formal Margins disappear at the longitudinal Crossing into the Interchange.
+Formal Margins disappear at the longitudinal Crossing into the Expanse.
 The whole non-road Reach functions as Roadway-influenced Field, with actual
 distance from the nearest ground-level Roadway preserving River Spume and
 proximity effects. Ordinary Median and Margin geography resumes in the next
@@ -4002,7 +4005,7 @@ a generator may contrast one direct difficult Crossing with a longer path
 through two narrower roads. This remains direct-drive TRAVEL and ordinary RISK,
 not a route-planning layer.
 
-Interchanges are lush with persistent Nodes. Programmatic **Perishable
+Interchange Expanses are lush with persistent Nodes. Programmatic **Perishable
 Sustenance**, **Durable Sustenance**, **Rigid Scrap**, and **Flexible Scrap**
 Nodes all occur more frequently than in ordinary Reaches, while a separately
 determined higher percentage of those Resource Nodes are Contested. Exact
@@ -4012,9 +4015,9 @@ Each Node retains a concrete world-facing material identity suited to its
 ground, such as berry bushes, seed concentrations, discarded food, wire,
 cloth, plastic, wood, or metal. Recovery assigns its yield to the applicable
 one or more of the four existing fungible categories. By entry into the
-Colony's pooled Stores,
-equivalent units no longer retain separate source identities. Interchange
-generation creates no additional resource class or currency.
+Colony's pooled Stores, equivalent units no longer retain separate source
+identities. Interchange Expanse generation creates no additional resource
+class or currency.
 
 A Resource Node may be single-category, such as a berry bush, or
 variable-category, such as a trash pile. Variable Nodes commonly yield one to
@@ -4022,7 +4025,7 @@ three categories and do not divide their yield evenly: one category is
 primary, with smaller secondary or tertiary yields where present. Exact
 quantities and proportions remain tuning.
 
-Twelve authored Interchange Story MEET forms provide a separate content layer:
+Twelve authored Interchange Expanse Story MEET forms provide a separate content layer:
 **Divided Plenty**, **The Throwing Place**, **The Fallen Load**, **The Unusual
 Object**, **Occupied Refuge**, **Camp in Transition**, **The Spanning Claim**,
 **Underpass Meeting Ground**, **Converging Travelers**, **The Isolated
@@ -4031,7 +4034,7 @@ material abundance, habitation and territorial use, animal convergence, and
 environmental change without making those editorial distinctions into
 player-facing categories.
 
-Each generated Interchange selects three to six compatible forms without
+Each generated Interchange Expanse selects three to six compatible forms without
 replacement and installs each selected form once as a particular persistent
 situation fitted to the actual geography, Nodes, and inhabitants. Every
 selected set includes at least one animal-centered form and at least one
@@ -4662,8 +4665,8 @@ and remembrance deepen one another.
 
 The Founding Escape chains the five Registers into flight from an ancestral
 Colony and the choice to found a new Home. Population Tiers, Practice
-improvements, Guests, Outposts, the Metropolis, Interchanges, and the Ancestral
-Home offer horizons rather than a mandatory victory sequence. The
+improvements, Guests, Outposts, the Metropolis, Interchange Expanses, and the
+Ancestral Home offer horizons rather than a mandatory victory sequence. The
 Colony can grow, endure, remember, and become enough.
 
 Across every system, MEDIAN follows one movement:
@@ -4760,7 +4763,7 @@ listing every place it appears.
 |---|---|---|
 | **After-name** | A rare public name earned through a Citizen's durable life history. | § 6.1, Distinctions and After-names |
 | **Almanac** | The continuously available lens for present state and known, scheduled, forecast, or possible future circumstances. It stands outside Campaign Memory. | § 6.1, The Almanac |
-| **Ancestral Home** | The once-per-campaign Landmark Reach containing the generated original Colony from which the Founders escaped; its Interchange-like TRAVEL geometry carries a heavily authored slate of persistent remains and story Nodes. | § 6.5, The Ancestral Home |
+| **Ancestral Home** | The once-per-campaign Landmark Reach containing the generated original Colony from which the Founders escaped; its Interchange Expanse-like TRAVEL geometry carries a heavily authored slate of persistent remains and story Nodes. | § 6.5, The Ancestral Home |
 | **attachment-forward** | MEDIAN's design direction toward making particular Citizens, Places, objects, and histories knowable, memorable, and worth protecting. | § 1.2, The attachment-forward base builder |
 | **Away** | The outward Mode in which responsibility extends from Home through a particular expedition party. | § 1.4, Home and Away; Part V |
 | **Baseline** | The complete authored realization of a presentation that can be delivered immediately without model assistance. | Appendix C, Two channels and two realizations |
@@ -4811,9 +4814,11 @@ listing every place it appears.
 | **Housing Capacity** | The Body Units of Core Citizens that completed usable Core Residences can accommodate. | § 3.2, Housing Balance |
 | **Housing Load** | The Body-Unit housing obligation created by Core Citizens belonging to the Colony. | § 3.2, Housing Balance |
 | **Housing Pressure** | The uncovered Body Units produced when Core Citizen Housing Load exceeds usable Core Residence Capacity. | § 3.2, Housing Balance |
+| **Interchange** | An ordinary Corridor Biome retaining one Median, two Main Roadways, and two Margins while surrounding ramps, overpasses, pillars, barriers, and merging-road vistas supply its environmental identity. | § 2.3, Interchange |
+| **Interchange Expanse** | A recurring generated Landmark Reach whose exceptional multi-Roadway geography, divided ground, abundant Nodes, and authored Story forms distinguish it from the ordinary Interchange Biome. | § 2.2, Ordinary and Landmark Reaches; § 6.5, Interchange Expanses |
 | **JOIN** | Mouse's spatial operator: adjoining rooms and sheltered edges become one protected inhabited body. | § 2.3, Mouse — JOIN; § 4.2 |
 | **Keepsake** | A persistent emotional object whose meaning and bounded contextual effect belong to one Citizen's life. | § 4.6, Keepsakes |
-| **Landmark Reach** | A whole Median Reach given one exceptional generated or authored geography and Node slate while remaining part of ordinary continuous Corridor play. | § 2.3, Landmark Reaches |
+| **Landmark Reach** | A whole Median Reach given one exceptional generated or authored geography and Node slate while remaining part of ordinary continuous Corridor play. | § 2.2, Ordinary and Landmark Reaches |
 | **Landscape Voice** | MEDIAN's human third-person, landscape-attentive narrator, which interprets present play without adopting a named protagonist or an animal cultural voice. | § 5.9, Landscape Voice |
 | **Launch** | The state-transition MEET in which the player selects and commits an eligible expedition party, transferring active operation from Home to Away. | § 5.1, The Launch MEET |
 | **Load** | The gross weight of one civic responsibility, compared only with Capacity belonging to the same Civic Balance axis. | § 3.2, Shared balance grammar |
@@ -7047,9 +7052,14 @@ exclusive to one Species.
 | 7 | **Thin Grass Ribbon** | Narrow exposed ground, long sightlines, wind, and road proximity | Corridor |
 | 8 | **Creek Split** | A longitudinal stream dividing banks, islands, and crossing places | Corridor |
 | 9 | **Pond Hollow** | Standing water, reeds, saturated ground, insects, and changing margins | Corridor |
-| 10 | **Interchange Expanse** | Broad disorienting ground among diverging roads and scattered infrastructure | Corridor |
+| 10 | **Interchange** | Standard Median and Margins beneath and beside ramps, overpasses, pillars, barriers, and nearby merging roads | Corridor |
 | 11 | **Overpass Shadow** | Columns, beams, recesses, echo, vibration, drainage, and artificial shade | Unusual Corridor |
 | 12 | **Abandoned Works** | Gravel, pipe, rebar, cut earth, incomplete drainage, and interrupted construction | Unusual Corridor |
+
+The **Interchange** in this table is an ordinary Biome with the standard
+Median–Roadway–Margin cross-section. **Interchange Expanse** is a Landmark
+Reach category rather than a thirteenth Biome; §§ 2.2 and 6.5 own its world
+definition and campaign treatment.
 
 The founding pool pairs Culvert Garden and Concrete Trench for Mouse, Rootbank
 Meadow and Bramble Hollow for Rabbit, and Wooded Median and Rock Cut for

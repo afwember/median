@@ -3019,26 +3019,13 @@ not to create a second gallery beside the book's narrative and system images.
 
 ##### `AUG-7.2-02` — Visible Without Being Exposed
 
-| Field | Proposed mapping |
-|---|---|
-| **GDD location** | Chapter 7.2, strategic transparency, species-grounded bodies, selective clothing, material culture, civic grandeur, and the three Storehouse expressions |
-| **Reader task** | Understand how the game keeps Colony life operationally readable while preserving shelter in the fiction, and how bodies and made objects remain animal rather than miniature-human costumes |
-| **Augment form** | One designed art-bible page with a dominant annotated DWELL crop, three compact Storehouse studies, and a bodily-expression rail |
-| **Working subject** | **Visible Without Being Exposed** |
-| **Scale** | One complete landscape page; strategic transparency occupies the main field, with bodies and material culture integrated around it rather than separated into a character catalogue |
-| **Narrative function** | None beyond the ordinary inhabited life already present in the reused scenes |
-| **Narrative treatment** | Intentionally none. Current canon Citizens provide bodily examples without acquiring a new event or posing as generic species models |
-| **Register** | DWELL presentation with RISK and EMBODY bodily-reference insets |
-| **Subjects** | Current Morningside DWELL geography; representative current Rabbit, Mouse, Squirrel, Crow or Gull, and Maimed Citizen imagery; Rabbit GATHER, Mouse JOIN, and Squirrel CONNECT Storehouse expressions; selected Keepsakes, wraps, tools, weather coverings, and adaptive devices |
-| **Incoming state** | `AUG-7.2-01` has established the common visual world. The reader now needs the presentational conventions that make inhabited shelter and particular bodies legible within it |
-| **Outgoing state** | The reader can distinguish strategic transparency from fictional exposure, anthropomorphic character from human bodily substitution, and accumulated civic care from militarized or uniformed progression |
-| **Canon inputs** | Chapters 3.2–3.4, 4.1–4.3, 5.3, and 7.2; Appendices D, E, and H; approved DWELL, Core-Species, Guest, Maiming, and Storehouse mappings |
-| **Semantic content** | The dominant Colony image identifies roof fading, omitted near wall, thinned foliage, clarified overlap, and readable circulation as presentational choices that reveal rooms, paths, Citizens, Places, Practices, Projects, and civic relationships while the fiction continues to treat those spaces as sheltered. A body rail shows ears, head, stance, gait, stillness, scale, and relation to others leading expression; faces support rather than replace them. Grounded Crossings return land animals to four-foot movement, while Crow and Gull retain their parallel Flyer expression. Clothing remains selective and body-revealing; Role may affect what is at hand without becoming a uniform. Keepsakes, adaptive devices, and lasting Maiming remain specific to the Citizen. Material culture remakes natural matter and Corridor debris through selection, fit, repair, binding, and repeated use. Civic advancement improves care, ornament, adaptation, and finish rather than producing weapons, armor, or adventurer loadouts. Three small Storehouse studies preserve one pooled Stores state while showing Mouse fitted caches and cupboards, Rabbit protected common access, and Squirrel distributed secure holdings along reachable anchors. Particular baskets, shelves, wrappings, and caches may become MEET stakes without becoming separate inventories |
-| **Asset lineage** | Reuse exact current imagery from `AUG-3.2-01`, `AUG-4.2-01`, `AUG-4.3-02`, `AUG-5.3-01` through `03`, and the eventual Storehouse assets. Editorial masks, cut lines, labels, and material callouts remain editable and cannot be baked into generated imagery |
-| **Cross-reference** | Chapters 3.2–3.4, 4.1–4.3, 5.3, and 7.2; Appendices D, E, and H |
-| **Priority** | Essential |
-| **Approval state** | Proposed for authorial review |
-| **Acceptance test** | Open presentation never implies an unsheltered Colony; every body remains species-grounded and individually recognizable; grounded animals cross on four feet; Flyers alone use the parallel expression; clothing, Tools, Keepsakes, and adaptive devices preserve rather than conceal anatomy; Storehouses express all three civic forms while opening the same pooled Stores state; and advancement reads as accumulated care rather than militarization or human miniaturization |
+**Purpose-only placeholder.** Show how MEDIAN makes sheltered Colony life
+operationally legible without implying physical exposure, while keeping bodies,
+clothing, carried objects, adaptive devices, and made environments grounded in
+particular animal forms rather than miniature-human, uniformed, or militarized
+substitution. The page layout, comparative examples, subjects, and asset
+construction remain deferred to the later drawing and coordinated asset-brief
+phase after the applicable Canon images are locked.
 
 ##### `AUG-7.2-03` — One Citizen, Many Scenes
 

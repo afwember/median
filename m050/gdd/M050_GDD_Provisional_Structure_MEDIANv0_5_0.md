@@ -4062,13 +4062,14 @@ how particular residents and venues receive the party. Metropolis may visually
 echo DWELL, but Home is shaped by the player while the city is learned through
 navigation and participation.
 
-Three authored venue forms establish the present service foundation:
+Four authored venue forms establish the present service foundation:
 
 | Authored Node | Service and boundary |
 |---|---|
 | **Tool repair and trade venue** | Repairs a damaged Tool or makes an ordinary new Tool from ingredients supplied in party Cargo. A Citizen needs an empty Tool position to receive a new Tool and may discard a held Tool to free it; the discarded Tool leaves play unless the authored transaction explicitly accepts it. The party supplies the ordinary Tool recipe plus one additional Resource unit of a type already used by that recipe, chosen by the venue. Because ordinary Tool repair is covered work at Home, Metropolis repair instead costs one materially relevant Resource unit chosen by the venue. |
 | **Resource shopkeeper venue** | Offers a particular visible stock of Resources for barter against the party's actual Cargo. Stock, accepted exchange, resident, relationship, and later availability belong to this persistent Node. No currency, universal price list, or detached shop inventory is created. |
 | **Food-preservation venue** | Converts **3 Perishable Sustenance into 2 Durable Sustenance** within party Cargo. This is the ordinary one-for-one Colony transformation for two output units plus one additional Perishable unit as the Metropolis service premium. |
+| **Scrap-transformer venue** | Converts either **3 Flexible Scrap into 2 Rigid Scrap** or **3 Rigid Scrap into 2 Flexible Scrap** within party Cargo. No equivalent transformation exists at Home; the three-for-two loss is the unique service's complete authored cost rather than a Colony recipe plus premium. |
 
 The general rule is: **a service duplicated at Home and Rest-Stop Metropolis
 uses its ordinary Colony recipe plus one additional Resource unit.** The
@@ -6894,6 +6895,8 @@ additional Resource unit of a type already present in that recipe, chosen by
 the authored venue. A covered Home service with no material recipe instead
 costs one materially relevant Resource at the Metropolis. The established
 preservation exchange is **3 Perishable Sustenance → 2 Durable Sustenance**.
+The Metropolis-only Scrap transformation is bidirectional: **3 Flexible Scrap →
+2 Rigid Scrap** or **3 Rigid Scrap → 2 Flexible Scrap**.
 
 ### Current tuning boundary
 

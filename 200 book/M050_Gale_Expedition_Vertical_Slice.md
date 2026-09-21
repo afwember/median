@@ -329,9 +329,9 @@ Yet no animal had to wake at every movement in the grass.
 They placed part of the recovered Scrap in the Outpost's marked dry storage.
 The remainder stayed with the party. Through the Outpost's Colony
 synchronization, Gale replenished the empty Supply position with another
-Offering—the same class assigned at Launch—and one prepared Offering left
-Stores. Alder's brace remained usable. The fishing line stayed wound against
-Gale's chest.
+Offering chosen from the full prepared Colony stock, and one prepared Offering
+left Stores. Alder's brace remained usable. The fishing line stayed wound
+against Gale's chest.
 
 At morning they turned toward Home.
 
@@ -1002,19 +1002,20 @@ Unused secured capacity: 20
 
 Travel reach is no longer affected by Strained Carry.
 
-### Outpost Supply replenishment
+### Outpost Supply selection
 
-Gale's Supply position is empty, and Offering was its Launch-assigned class.
-The player replenishes it from prepared Stores:
+Gale's Supply position is empty. The player chooses one Offering from the full
+prepared Colony Stores:
 
 ```text
 Colony Offering: 3 − 1 = 2
 Gale Offering: 0 → 1
 ```
 
-Alder's unspent Binding and Reed's unspent Remedy do not change. No Citizen
-may add a position, fill one left unassigned at Launch, or exchange Supply
-classes.
+Alder's unspent Binding and Reed's unspent Remedy occupy their positions and do
+not change. Any empty position could choose any available prepared Supply
+class, including a position left empty at Launch. No Citizen may exchange an
+occupied Supply or add another position.
 
 ### Return Crossing
 
@@ -1052,7 +1053,7 @@ Preservation remainder: 0
 
 ### Supply Preparation
 
-The Outpost replenishment left the Offering target one below its prepared
+The Outpost Supply selection left the Offering target one below its prepared
 level. Workshop throughput replaces it at the hypothetical one-Flexible recipe:
 
 ```text
@@ -1447,7 +1448,7 @@ Quiet Equilibrium remains available.
 | After Launch assignment | 72 | 96 | 24 | 30 | 3 | 3 | 2 | 3 | 0 |
 | First DAWN | 64 | 99 | 22 | 30 | 4 | 3 | 3 | 3 | 36 |
 | Outpost transfer | 64 | 99 | 48 | 30 | 4 | 3 | 3 | 3 | 10 |
-| Outpost Supply replenishment | 64 | 99 | 48 | 30 | 4 | 3 | 2 | 3 | 10 |
+| Outpost Supply selection | 64 | 99 | 48 | 30 | 4 | 3 | 2 | 3 | 10 |
 | Second DAWN | 56 | 103 | 47 | 30 | 4 | 3 | 3 | 3 | 10 |
 | Homecoming | 56 | 103 | 57 | 30 | 5 | 3 | 4 | 4 | 0 |
 | Third DAWN | 51 | 104 | 57 | 30 | 5 | 3 | 4 | 4 | 0 |
@@ -1461,7 +1462,7 @@ Quiet Equilibrium remains available.
 
 - Flexible Scrap gained: **36**.
 - Offering Supplies consumed: **1**.
-- Offering Supplies replenished at Outpost: **1**.
+- Offering Supplies selected from Stores at Outpost: **1**.
 - Binding and Remedy returned unused.
 - Tools damaged or lost: **0**.
 - Cargo lost to Jostle or Crossing: **0**.
@@ -1820,12 +1821,12 @@ Stores update without an event, local cache, courier, Outpost inventory, or
 explanatory narrative. A bounded remainder stays in party Cargo for
 Homecoming.
 
-Gale's Supply position is empty, and Offering was its Launch-assigned class.
-The player draws one prepared Offering from Stores into that position. The
-prepared unit leaves Stores. Alder's Binding and Reed's Remedy remain unspent
-and unchanged. A position left unassigned at Launch could not be filled, no
-Citizen could exchange Supply classes or add a position, and no other Item
-could be replaced this way.
+Gale's Supply position is empty. The player chooses one prepared Offering from
+the full Colony Stores and places it in that position. The prepared unit leaves
+Stores. Alder's Binding and Reed's Remedy remain unspent and occupy their
+positions. Any empty Supply position could choose any available prepared class,
+including one left empty at Launch; an occupied position cannot be exchanged,
+no Citizen can add a position, and no other Item can be replaced this way.
 
 The Cargo and Supply selections are logistical Outpost transactions; they do
 not make sleeping a decision or turn Stopover into MEET. The party remains
@@ -1933,7 +1934,7 @@ Homecoming completes:
 | Morningside | Eligible Civic Shares restored; recovered Scrap in Stores; Caretaker Load increased by one; one Hearth occupied; no Caretaker or Project committed |
 | Raccoon | Offering and authored wire share received; prior encounter established |
 | Node | Wire removed from current and divided; encounter history retained |
-| Record | Launch, Crossing, encounter, Offering expenditure, Wound, bargain, Stopover, Cargo transfer, Supply replenishment, Return, and Homecoming recorded |
+| Record | Launch, Crossing, encounter, Offering expenditure, Wound, bargain, Stopover, Cargo transfer, Supply selection, Return, and Homecoming recorded |
 
 At the next Home DAWN:
 

@@ -294,7 +294,8 @@ Project; it should sit near or at the edge of the ruined territory rather than
 converting the old Colony's civic center into a managed annex. A usable Outpost
 adds its ordinary Stopover effects, including bounded Exposure relief and the
 options to drain fungible Cargo from Carry into Colony Stores and replenish a
-spent Supply position from prepared Stores with its Launch-assigned class.
+Citizen's empty Supply position by choosing from the full prepared Colony
+stock.
 
 This is an art-direction and content preference, not a new prohibition. The
 existing geography and Outpost eligibility rules remain authoritative.

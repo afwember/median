@@ -327,8 +327,11 @@ sleep. The Roadway could still be heard. Wind entered through small openings.
 Yet no animal had to wake at every movement in the grass.
 
 They placed part of the recovered Scrap in the Outpost's marked dry storage.
-The remainder stayed with the party. Gale's Offering remained spent. Alder's
-brace remained usable. The fishing line stayed wound against Gale's chest.
+The remainder stayed with the party. Through the Outpost's Colony
+synchronization, Gale replenished the empty Supply position with another
+Offering—the same class assigned at Launch—and one prepared Offering left
+Stores. Alder's brace remained usable. The fishing line stayed wound against
+Gale's chest.
 
 At morning they turned toward Home.
 
@@ -363,18 +366,19 @@ The Colony received the travelers before it received their goods.
 
 Gale was named first. Alder followed. Reed came last, moving carefully but
 under their own strength. Those waiting saw the Wound before the Scrap. They
-saw the empty place where Gale's Offering had been carried, the brace still at
-Alder's side, the fishing line against Gale's chest, and the dirt and water
-dried into every coat.
+saw Gale's unspent replacement Offering, the brace still at Alder's side, the
+fishing line against Gale's chest, and the dirt and water dried into every
+coat.
 
 Only after the three had been recognized did Morningside count what had
 returned.
 
-The remaining Scrap entered the stores. Unspent Supplies were taken back into
-the prepared pool. Expedition positions were cleared. The Offering remained
-gone because it had been given. Reed's Wound remained because arriving Home
-did not make it otherwise. Work, Role support, and Civic Balance changed again
-as three Citizens became present.
+The remaining Scrap entered the stores. Unspent Supplies, including Gale's
+replacement Offering, were taken back into the prepared pool. Expedition
+positions were cleared. Gale's first Offering remained gone because it had
+been given. Reed's Wound remained because arriving Home did not make it
+otherwise. Work, Role support, and Civic Balance changed again as three
+Citizens became present.
 
 A Hearth was available. Care could begin at once.
 
@@ -998,6 +1002,20 @@ Unused secured capacity: 20
 
 Travel reach is no longer affected by Strained Carry.
 
+### Outpost Supply replenishment
+
+Gale's Supply position is empty, and Offering was its Launch-assigned class.
+The player replenishes it from prepared Stores:
+
+```text
+Colony Offering: 3 − 1 = 2
+Gale Offering: 0 → 1
+```
+
+Alder's unspent Binding and Reed's unspent Remedy do not change. No Citizen
+may add a position, fill one left unassigned at Launch, or exchange Supply
+classes.
+
 ### Return Crossing
 
 Current conditions permit **Automatic Return**. Hidden adjudication produces a
@@ -1034,7 +1052,13 @@ Preservation remainder: 0
 
 ### Supply Preparation
 
-All current targets are met. No Scrap is consumed.
+The Outpost replenishment left the Offering target one below its prepared
+level. Workshop throughput replaces it at the hypothetical one-Flexible recipe:
+
+```text
+Flexible Scrap: 48 − 1 = 47
+Offering: 2 + 1 = 3
+```
 
 ### Spoilage and Cultivation
 
@@ -1067,7 +1091,7 @@ automatically.
 |---|---:|
 | Perishable | 56 |
 | Durable | 103 |
-| Flexible Scrap | 48 |
+| Flexible Scrap | 47 |
 | Rigid Scrap | 30 |
 | Binding | 4 |
 | Device | 3 |
@@ -1093,7 +1117,7 @@ Morningside receives:
 - Gale, uninjured;
 - Alder, uninjured;
 - Reed, with one stabilized left-forelimb Wound;
-- Gale's empty Supply position;
+- Gale's unspent replacement Offering;
 - Alder's usable Brace Tool;
 - ten Flexible Scrap in Cargo;
 - Alder's unused Binding; and
@@ -1103,7 +1127,7 @@ Morningside receives:
 
 ```text
 Party Flexible Cargo: 10 → 0
-Colony Flexible Scrap: 48 + 10 = 58
+Colony Flexible Scrap: 47 + 10 = 57
 
 26 Flexible transferred at Outpost
 + 10 Flexible at Homecoming
@@ -1115,11 +1139,13 @@ Unspent Supplies return:
 ```text
 Binding: 4 + 1 = 5
 Remedy: 3 + 1 = 4
+Offering: 3 + 1 = 4
 ```
 
-Gale's Offering remains spent. Colony Offering remains 3 because Home prepared
-one replacement at the first DAWN. All three expedition Supply positions
-clear.
+Gale's original Offering remains spent. Home prepared one replacement at the
+first DAWN; that Offering left Stores at the Outpost and returned unspent at
+Homecoming. Ordinary Supply Preparation restored the Stores target again at
+the second DAWN. All three expedition Supply positions clear.
 
 ### Civic return and Patient Load
 
@@ -1309,11 +1335,11 @@ Reed's Wound remains.
 |---|---:|
 | Perishable | 51 |
 | Durable | 104 |
-| Flexible Scrap | 58 |
+| Flexible Scrap | 57 |
 | Rigid Scrap | 30 |
 | Binding | 5 |
 | Device | 3 |
-| Offering | 3 |
+| Offering | 4 |
 | Remedy | 4 |
 
 ## 3.15 Recovery continuation
@@ -1421,12 +1447,13 @@ Quiet Equilibrium remains available.
 | After Launch assignment | 72 | 96 | 24 | 30 | 3 | 3 | 2 | 3 | 0 |
 | First DAWN | 64 | 99 | 22 | 30 | 4 | 3 | 3 | 3 | 36 |
 | Outpost transfer | 64 | 99 | 48 | 30 | 4 | 3 | 3 | 3 | 10 |
-| Second DAWN | 56 | 103 | 48 | 30 | 4 | 3 | 3 | 3 | 10 |
-| Homecoming | 56 | 103 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Third DAWN | 51 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Fourth DAWN | 48 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Fifth DAWN | 45 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
-| Sixth DAWN | 42 | 104 | 58 | 30 | 5 | 3 | 3 | 4 | 0 |
+| Outpost Supply replenishment | 64 | 99 | 48 | 30 | 4 | 3 | 2 | 3 | 10 |
+| Second DAWN | 56 | 103 | 47 | 30 | 4 | 3 | 3 | 3 | 10 |
+| Homecoming | 56 | 103 | 57 | 30 | 5 | 3 | 4 | 4 | 0 |
+| Third DAWN | 51 | 104 | 57 | 30 | 5 | 3 | 4 | 4 | 0 |
+| Fourth DAWN | 48 | 104 | 57 | 30 | 5 | 3 | 4 | 4 | 0 |
+| Fifth DAWN | 45 | 104 | 57 | 30 | 5 | 3 | 4 | 4 | 0 |
+| Sixth DAWN | 42 | 104 | 57 | 30 | 5 | 3 | 4 | 4 | 0 |
 
 ## 3.17 Net result
 
@@ -1434,6 +1461,7 @@ Quiet Equilibrium remains available.
 
 - Flexible Scrap gained: **36**.
 - Offering Supplies consumed: **1**.
+- Offering Supplies replenished at Outpost: **1**.
 - Binding and Remedy returned unused.
 - Tools damaged or lost: **0**.
 - Cargo lost to Jostle or Crossing: **0**.
@@ -1792,8 +1820,17 @@ Stores update without an event, local cache, courier, Outpost inventory, or
 explanatory narrative. A bounded remainder stays in party Cargo for
 Homecoming.
 
-The party remains Away. Gale's Offering remains spent. Alder's Brace Tool
-remains usable. Every unspent Supply and personal Item remains with its holder.
+Gale's Supply position is empty, and Offering was its Launch-assigned class.
+The player draws one prepared Offering from Stores into that position. The
+prepared unit leaves Stores. Alder's Binding and Reed's Remedy remain unspent
+and unchanged. A position left unassigned at Launch could not be filled, no
+Citizen could exchange Supply classes or add a position, and no other Item
+could be replaced this way.
+
+The Cargo and Supply selections are logistical Outpost transactions; they do
+not make sleeping a decision or turn Stopover into MEET. The party remains
+Away. Alder's Brace Tool remains usable, and every personal Item remains with
+its holder.
 
 ## 4.9 Turn homeward
 
@@ -1834,8 +1871,9 @@ Homecoming advances one Day Band and follows:
 
 ### Frame
 
-The system presents Gale, Alder, Reed, Reed's Wound, Gale's consumed Offering,
-Gale's fishing-line Keepsake, Alder's usable Brace Tool, remaining Cargo,
+The system presents Gale, Alder, Reed, Reed's Wound, Gale's expended original
+Offering and unspent Outpost replacement, Gale's fishing-line Keepsake,
+Alder's usable Brace Tool, remaining Cargo,
 unspent Supplies, current hidden state, and Morningside's actual receiving
 condition.
 
@@ -1889,13 +1927,13 @@ Homecoming completes:
 
 | Owner | Final persistent state |
 |---|---|
-| Gale | Home; Exposure 1; Fishing-line Keepsake retained; Offering spent |
+| Gale | Home; Exposure 1; Fishing-line Keepsake retained; original Offering spent; unspent replacement returned to Stores |
 | Alder | Home; Exposure 1; Brace Tool retained and usable |
 | Reed | Home; Exposure 1; one stabilized Wound; occupying one Hearth for recovery |
 | Morningside | Eligible Civic Shares restored; recovered Scrap in Stores; Caretaker Load increased by one; one Hearth occupied; no Caretaker or Project committed |
 | Raccoon | Offering and authored wire share received; prior encounter established |
 | Node | Wire removed from current and divided; encounter history retained |
-| Record | Launch, Crossing, encounter, Offering expenditure, Wound, bargain, Stopover, Cargo transfers, Return, and Homecoming recorded |
+| Record | Launch, Crossing, encounter, Offering expenditure, Wound, bargain, Stopover, Cargo transfer, Supply replenishment, Return, and Homecoming recorded |
 
 At the next Home DAWN:
 

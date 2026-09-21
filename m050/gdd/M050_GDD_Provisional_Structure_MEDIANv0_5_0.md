@@ -3167,7 +3167,11 @@ Supply whether or not the chosen response achieves its intended outcome. A
 Remedy may stabilize a Wound through Homecoming, lessen one defined immediate
 effect, contain the acute Wound accompanying Maiming, or express PARLEY through
 care; it cannot relieve Tharn. Unspent Supplies return to the Colony pool at
-Homecoming and their positions clear.
+Homecoming and their positions clear. At a usable Outpost, an empty Supply
+position may draw one prepared Supply of the same class assigned to that
+Citizen at Launch from Stores. This consumes the prepared unit from Stores but
+does not open an unassigned position, exchange Supply classes, or alter the
+expedition's original loadout.
 
 ### Keepsakes
 
@@ -3239,9 +3243,10 @@ before Commit fixes the party and begins TRAVEL.
 
 An ordinary party contains one and one-half to three Body Units and at least
 two actual animals. Rabbit, Squirrel, and each v0.5 Expedition Guest occupy one
-Body Unit; Mouse occupies one-half. Party membership and Supply assignment then
-remain fixed until Homecoming, and the one active expedition begins TRAVEL
-through the Home Median.
+Body Unit; Mouse occupies one-half. Party membership and the class assigned to
+each Supply position then remain fixed until Homecoming. A usable Outpost may
+replenish a spent position only with that same Launch-assigned class. The one
+active expedition begins TRAVEL through the Home Median.
 
 ### Home subtraction and elapsed contribution
 
@@ -3537,17 +3542,22 @@ structure and releases the Workshop and Builders.
 
 Explicit visible events alone damage or destroy an Outpost. Damage leaves a
 persistent physical shelter but removes protected Stopover, Exposure reduction,
-and Cargo transfer until restoration. Outposts have no stationed Citizens,
-routine upkeep, specialization, upgrade, or Tier in v0.5.
+Cargo transfer, and Supply replenishment until restoration. Outposts have no
+stationed Citizens, routine upkeep, specialization, upgrade, or Tier in v0.5.
 
 A Stopover at a usable Outpost is uninterrupted. It advances one Band, resets
 travel cadence, ends Tharn, stabilizes Wounds for three traveled Bands, removes
 one Exposure step without removing the final Away step, and protects ordinary
 sleep from exposed-ground consequences. The player may drain any fungible
 Cargo from Carry into Stores through abstract Colony sync, immediately freeing
-that Carry. Personal and singular Items remain with their holders. The party
-remains Away, and the Outpost never becomes another Home. Appendix G provides
-the full Outpost and Stopover reference.
+that Carry. The same sync may replenish an empty Supply position from prepared
+Stores only with the Supply class originally assigned to that Citizen at
+Launch. Replenishment consumes one prepared Supply; it cannot fill a position
+left unassigned at Launch, exchange classes, add a position, or replace a Tool,
+Keepsake, or other Item. These logistical selections do not make sleeping a
+decision or turn Stopover into MEET. The party remains Away, and the Outpost
+never becomes another Home. Appendix G provides the full Outpost and Stopover
+reference.
 
 ## 5.8 Return and Homecoming
 
@@ -4784,7 +4794,7 @@ listing every place it appears.
 | **Node** | A fixed recognizable place in the Field whose material, ecology, shelter, inhabitants, alteration, or history can matter across visits. | § 5.4, Nodes in the Field |
 | **Open Table** | A rare large-cast Presence experience entered through an authored gathering at a safe usable Gathering Place carrying the Open Table improvement rather than through an individual Citizen. | § 3.8, Participation and Presence |
 | **Operator** | The characteristic action through which the player engages a Register. | § 1.4, Mode, Register, operator, and view |
-| **Outpost** | A persistent Away foothold established within a Reach, providing bounded refuge, uninterrupted Stopover, storage, and Colony synchronization while remaining categorically distinct from Home. | § 5.7, Outposts and Stopovers |
+| **Outpost** | A persistent Away foothold established within a Reach, providing bounded refuge, uninterrupted Stopover, Cargo transfer, and same-class Supply replenishment through Colony synchronization while remaining categorically distinct from Home. | § 5.7, Outposts and Stopovers |
 | **Party** | The fixed group of named Citizens committed to one active expedition, ordinarily between one and one-half and three Body Units and always containing more than one animal. | § 5.1, Party scale |
 | **Patient Load** | Temporary Body-Unit-scaled Caretaker Load created by a Wounded Citizen at Home until that Wound clears. | § 3.4, Wound Recovery and Rehabilitation |
 | **Place** | Designated physical ground within Home that becomes permanent when its first Residence or Practice Project is committed. | § 3.3, Places and Species Placement |
@@ -6478,7 +6488,7 @@ death remains attached to a particular Citizen.
 
 | Layer | Unit and ownership | Examples | Where it persists |
 |---|---|---|---|
-| **Stores** | Fungible Colony-scale quantity | Sustenance, Scrap, prepared Supplies | Home's one pooled resource state; synchronized Outpost transfers enter the same Stores |
+| **Stores** | Fungible Colony-scale quantity | Sustenance, Scrap, prepared Supplies | Home's one pooled resource state; synchronized Outpost Cargo transfers enter it, and same-class Supply replenishment draws from it |
 | **Cargo** | Fungible units held within one party-wide Carry capacity | Sustenance or Scrap recovered Away | The expedition until offloaded at an Outpost or reconciled at Homecoming |
 | **Personal Item** | One physically credible object attached to a Citizen or assigned expedition position | Tool, Supply, Keepsake | Its owning or carrying rules rather than Cargo slots |
 | **Singular tracked Item** | Authored, individually persistent object | Special Artifact or another meaning-bearing object | Its current holder, location, state, and possible Item Tale |
@@ -6622,6 +6632,9 @@ expedition resource.
 > → Stores → consumption, Provisioning, reservation, or Project
 > commitment
 
+> Prepared Stores → usable Outpost Colony sync → empty Supply position of the
+> same class assigned at Launch
+
 The party never sends ordinary Cargo directly to Home from arbitrary Field
 ground. A completed Outpost can transfer offloaded fungible Cargo into the one
 pooled Stores state through Colony sync, immediately freeing Carry. Homecoming
@@ -6726,9 +6739,12 @@ enable a credible alternative without replacing the Round or guaranteeing
 success.
 
 Supplies carry no personal name, maker, quality tier, provenance, or Tale.
-Unspent Supplies return to the prepared Colony pool at Homecoming and all
-expedition Supply positions clear. A Supply discarded during TRAVEL leaves
-play.
+At a usable Outpost, an empty Supply position may draw one prepared Supply of
+the same class assigned to that Citizen at Launch from Stores. The prepared
+unit leaves Stores; a position unassigned at Launch remains empty, and the
+player cannot exchange classes or add another position. Unspent Supplies
+return to the prepared Colony pool at Homecoming and all expedition Supply
+positions clear. A Supply discarded during TRAVEL leaves play.
 
 ### Keepsakes and singular Items
 
@@ -6841,9 +6857,10 @@ Homecoming reconciles layers according to what they are:
 - a deceased Citizen's meaning-bearing possessions receive their disposition
   through relationship, succession, or memorial context
 
-An Outpost Colony sync transfers fungible Cargo only. Personal and singular
-Items remain with their holders until Homecoming or another explicit event
-changes them.
+An Outpost Colony sync accepts only fungible Cargo into Stores. In the opposite
+direction it may send only a prepared Supply matching an empty position's
+Launch-assigned class. Personal and singular Items otherwise remain with their
+holders until Homecoming or another explicit event changes them.
 
 ### Current tuning boundary
 
@@ -7476,8 +7493,9 @@ remain undisclosed.
 - Carry contribution, bodily state, and relevant known facts remaining legible
 - The player able to revise the party, proceed, or withdraw without time
   advancing
-- Confirmation fixing party membership and Supply assignment, transitioning
-  directly into Away, and beginning TRAVEL
+- Confirmation fixing party membership and each Supply position's assigned
+  class, transitioning directly into Away, and beginning TRAVEL; a usable
+  Outpost may later refill only a spent position with that same class
 - Confirmation making this the one active expedition and keeping Away under
   player operation until Homecoming completes
 - The party beginning its journey through the Home Median
@@ -7928,8 +7946,8 @@ in the ordinary Home Project Queue:
 An Outpost has no stationed Citizens, routine upkeep, specialization, upgrade,
 or Tier in v0.5. Explicit visible events alone can damage or destroy it. A
 damaged Outpost persists physically but loses protected Stopover, Exposure
-reduction, and Cargo transfer until a remote Builder restoration Project
-completes.
+reduction, Cargo transfer, and Supply replenishment until a remote Builder
+restoration Project completes.
 
 A Stopover at a usable Outpost is uninterrupted and:
 
@@ -7940,10 +7958,15 @@ A Stopover at a usable Outpost is uninterrupted and:
 - protects ordinary sleep from exposed-ground consequences
 - permits the party to drain any amount of fungible Cargo from Carry into
   Stores through abstract Colony sync, immediately freeing that Carry
+- permits an empty Supply position to draw one prepared Supply of its
+  Launch-assigned class from Stores, consuming that prepared unit
 
-The party remains Away. Tools, Supplies, Keepsakes, Artifacts, and other tracked
-Items remain with their holders. Outpost Stopover supplies no Recovery Days,
-clears no Wound, removes no Maiming, and creates no second Home.
+An unassigned Supply position remains empty; replenishment cannot exchange
+classes, add a position, or replace another Item. Cargo and Supply selections
+do not make sleeping a decision or turn Stopover into MEET. The party remains
+Away. Tools, Keepsakes, Artifacts, and other tracked Items remain with their
+holders. Outpost Stopover supplies no Recovery Days, clears no Wound, removes
+no Maiming, and creates no second Home.
 
 ### Return and Homecoming
 

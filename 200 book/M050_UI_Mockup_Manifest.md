@@ -276,20 +276,23 @@ reference wherever a named subject appears.
   to TRAVEL; neither MEET nor another Register
 - **Exact worked state:** Gale, Alder, and Reed commit to Stopover at Morningside's
   first Outpost; Reed's Wound stabilizes, cadence resets, one Band advances,
-  bounded Cargo enters Stores, and the party remains Away.
-- **Subjects:** continuous party, exact bodily and Item states, selected Cargo,
-  current Day Band, and modest uninhabited Outpost.
+  bounded Cargo enters Stores, Gale's spent Offering position draws one
+  prepared Offering from Stores, and the party remains Away.
+- **Subjects:** continuous party, exact bodily and Item states, original Supply
+  assignments, selected Cargo, prepared Stores, current Day Band, and modest
+  uninhabited Outpost.
 - **Scale:** dominant locked DWELL-like view and Day-accounting overlays on one
   page.
 - **Annotation requirement:** compact comparison of regular-Field Stopover
   interruption chance with uninterrupted Outpost, Ancestral Home, and
   Rest-Stop Metropolis Stopovers.
 - **Current-canon inputs:** Stopover, Outpost, Wound stabilization,
-  hidden Exposure relief, Cargo sync, and vertical-slice accounting.
+  hidden Exposure relief, Cargo sync, same-class Supply replenishment, and
+  vertical-slice accounting.
 - **Legacy lineage:** new current-spec presentation; Rest-Stop Metropolis art
   is expressly excluded as infrastructure lineage.
 - **Disposition / state:** **new; coordinated asset brief required.** Exact
-  Outpost, Cargo, transfer, and Day Band remain.
+  Outpost, Cargo transfer, Supply replenishment, and Day Band remain.
 
 ### UI-13 — Homeward TRAVEL
 

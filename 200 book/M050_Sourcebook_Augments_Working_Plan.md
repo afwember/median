@@ -4,7 +4,7 @@
 
 | Field | Current state |
 |---|---|
-| **Status** | Active granular plan; Part I has completed its first mapping pass. |
+| **Status** | Active granular plan; Parts I–VI and Part VII §7.1 have completed their current mapping review. Part VII §7.2 is the next authorial boundary. |
 | **Basis** | The compressed provisional first draft of the MEDIAN v0.5.0 GDD and its Appendices. |
 | **Purpose** | Plan how prose, information design, narrative, game presentations, and artwork become one designed Concept Sourcebook. |
 | **Authority** | Companion production plan only. The GDD owns game design and canonical prose. This plan may place or demonstrate canon but cannot create it. |
@@ -2816,24 +2816,21 @@ The UI work has now been derived into
 presentation, derivative state, editorial reuse, small unowned fragment, and
 its production dependency without becoming another source of interface canon.
 
-The remaining work is:
+The post-Augments development detour is complete:
 
-1. **The three Landmark Reach forms.** **Active through granular authorial
-   review.** Develop Ancestral Home, Interchange Expanse, and Rest-Stop Metropolis
-   separately before testing their shared category and contrast. Establish
-   its physical extent and internal geography, recurring Nodes and MEET
-   substance, inhabitants and social conditions, hazards and affordances,
-   persistence across visits, distinctive discoveries and returns, audiovisual
-   identity, and relationship to ordinary Corridor play. Then test their
-   contrast, practical campaign timing, repeated-play value, and total content
-   burden. Preserve their current foundations: all remain continuous Away
-   territories reached through ordinary travel; the Ancestral Home is a
-   generated lost society with Interchange Expanse-like TRAVEL geometry and a
-   heavily authored Colony-remains Node slate; Interchange Expanses can
-   autogenerate as lush, renewable, multi-Roadway Reaches without a governing
-   society layer; and the
-   Metropolis remains a navigated civic place rather than DWELL or a second
-   player Colony.
+1. **The three Landmark Reach forms.** **Complete.** Ancestral Home,
+   Interchange Expanse, and Rest-Stop Metropolis now have distinct physical,
+   systemic, Node, MEET, persistence, service, and campaign identities. Part II
+   owns their concise world-body definition; Chapter 6.5 owns their full
+   campaign treatment. The ordinary Interchange Biome remains distinct from
+   the Interchange Expanse Landmark Reach.
+
+Granular Augments review now resumes at Part VII §7.2. Later work remains in
+the existing production sequence: complete Part VII review; map Appendices
+A–K; map Part 0, Front Matter, Cover, colophon, and End Plate; run the balance
+audits; establish pagination and page rhythm; approve the production slate;
+write asset briefs; prototype the page system; and then produce and integrate
+the approved augments.
 
 ### 6.8 Part VII — Presentation and Development Boundary
 

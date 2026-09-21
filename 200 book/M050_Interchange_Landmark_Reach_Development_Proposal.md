@@ -1,7 +1,7 @@
 # MEDIAN v0.5.0 — Interchange Landmark Reach Development
 
-Status: adopted physical and systemic foundation; Node and situation content
-remain under granular authorial development
+Status: adopted physical, systemic, Resource-Node, and Story-MEET foundation;
+remaining questions are deferred tuning or later presentation work
 
 Purpose: define the recurring generated Interchange Landmark Reach without
 creating a separate map, Register, Crossing system, or society layer
@@ -9,8 +9,10 @@ creating a separate map, Register, Crossing system, or society layer
 Authority: the Landmark Reach category, Reach-wide Interchange identity,
 Margin disappearance, Roadway presentation hierarchy, ordinary RISK use,
 renewable Node abundance, local animal plurality, and persistent-world
-boundaries below are adopted. Exact frequencies, quantities, layouts, and
-content banks remain tuning or later authorship.
+boundaries below are adopted, together with the four-category Resource-Node
+grammar and twelve-form Story MEET bank. Exact frequencies, quantities,
+renewal composition, layout proportions, and presentation remain tuning or
+later authorship.
 
 ## Governing shape
 
@@ -361,16 +363,18 @@ It uses:
 It creates no new Register, Crossing procedure, Margin score, route-planning
 screen, faction system, reputation layer, or renewable-resource currency.
 
-## Open development questions
+## Deferred tuning and presentation questions
 
 - How frequently can Interchange Landmark Reaches occur in one Corridor?
-- Which authored situation forms are essential for v0.5 representation?
 - How dense can renewable Nodes become before abundance weakens expedition
   choice or the broader economy?
+- Does a variable-category Node preserve its exact mix across renewal, or can
+  later recovery express a changed dominant and secondary composition?
 - Which natural refuges or Outpost sites can appear without supplying a
   guaranteed safe center?
 - How should the map and Staging Post vista keep the chosen through-path
   legible amid elevated Roadways and divided ground?
 
-These questions tune or author the adopted structure rather than reopening its
-system boundaries.
+These questions are not required to define the current v0.5 Landmark Reach.
+They remain valid later tuning and presentation work and do not reopen its
+adopted system boundaries.

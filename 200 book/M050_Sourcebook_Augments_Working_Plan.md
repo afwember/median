@@ -2986,7 +2986,7 @@ not to create a second gallery beside the book's narrative and system images.
 
 ##### `AUG-7.2-01` — One Material World
 
-| Field | Proposed mapping |
+| Field | Approved mapping |
 |---|---|
 | **GDD location** | Chapter 7.2, visual identity, Home and Field contrast, animal scale, human infrastructure, weather, and night |
 | **Reader task** | Recognize MEDIAN's grounded stylized realism as one continuous material world whose emotional temperature changes through habitation, scale, weather, light, and danger |
@@ -2999,12 +2999,12 @@ not to create a second gallery beside the book's narrative and system images.
 | **Subjects** | Tier III Rushbottom; above-ground joined Mouse rooms; wet Pipe End ground; one adjoining Margin; active Roadways; shelter, runoff, vegetation, concrete, metal, road light, and animal-scale material culture |
 | **Incoming state** | The Part VII threshold has shown Morningside as an inhabited composed world. Chapter 7.1 has explained how interfaces preserve that world across Registers |
 | **Outgoing state** | The reader can identify the visual materials, scale anchors, emotional contrast, and night-weather behavior that all later art must preserve |
-| **Canon inputs** | Chapters 2.1–2.5, 3.1–3.3, and 7.2; Appendix F; Appendix H Rushbottom through Tier III; current Rushbottom and Pipe End imagery |
+| **Canon inputs** | Chapters 2.1–2.5, 3.1–3.3, and 7.2; Appendix F; Appendix H Rushbottom through Tier III; any Rushbottom and Pipe End visual evidence selected through later authorial review |
 | **Semantic content** | One continuous view binds fur, grass, root, bark, mud, rain, cloth, paper, plastic, rubber, wire, rust, drainage metal, concrete, asphalt, lane paint, reflected lamps, and moving vehicles. A restrained annotation field identifies **grounded stylization**, **animal scale**, **accumulated habitation**, **strategic warmth**, **Field exposure**, and **human magnitude** in the actual image rather than as detached swatches. Rushbottom's inhabited light, fitted joins, shared access, repairs, stored matter, and ordinary activity make Home warm; the adjoining Field uses colder openness, obscured sight, exposed movement, and Roadway force without becoming colorless or grim. Night retains highway identity through headlight wash, brake-light red, reflective surfaces, distant windows, wet asphalt, and uneven darkness. Giants remain off-frame while vehicles, maintenance, runoff, litter, vibration, and disturbance make human activity materially present |
-| **Asset lineage** | New current-spec composition using mandatory Rushbottom references. Archive rows 91, 100, and 101 may supply density and joined-room lineage only after current Tier, cast, Practices, above-ground visibility, Storehouse, and Pipe End geography are restored. Existing world and weather images may provide material details but cannot replace the coherent dominant scene |
+| **Asset lineage** | New current-spec composition. Existing Rushbottom and Pipe End imagery, archive rows 91, 100, and 101, and other world or weather images are candidate evidence only: none automatically controls the camera, architecture, spatial organization, or material realization. Exact retained lineage must be discussed and approved during the asset brief. Any identifiable named Citizen still requires that Citizen's canonical identity image as a reference |
 | **Cross-reference** | Chapters 2.1–2.5, 3.1–3.3, 4.2, and 7.1–7.2; Appendices F and H |
 | **Priority** | Essential |
-| **Approval state** | Proposed for authorial review |
+| **Approval state** | Approved direction; exact cast, camera, architectural realization, annotations, and image lineage remain for granular asset-brief discussion |
 | **Acceptance test** | Home and Field unmistakably belong to one physical world; warmth comes from habitation rather than a fantasy filter; Mouse rooms remain above ground and ecologically credible within strategic transparency; animals remain small beside complete human infrastructure; night still reads as highway country; tenderness and danger coexist; and no medieval village, miniature human warehouse, armored-adventurer culture, giant human figure, or decorative weather overlay displaces MEDIAN's material identity |
 
 ##### `AUG-7.2-02` — Visible Without Being Exposed

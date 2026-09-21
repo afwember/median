@@ -239,29 +239,38 @@ claims, or another answering participant. Exact percentages remain tuning.
 ### Authored Story MEET forms
 
 A smaller authored layer makes Interchange play recognizable without creating
-one fixed story:
+one fixed story. The adopted bank contains twelve Story MEET forms:
 
-- a concentration of material divided by a ramp;
-- a culvert or shelter occupied by another animal;
-- material repeatedly thrown from one traffic stream;
-- a meeting ground beneath an overpass;
-- a territorial claim spanning several ground fragments;
-- a camp whose occupants or condition change across visits;
-- an unusual object whose ground requires a particular Crossing; or
-- a place where several kinds of traveler converge.
+| Form | Authored premise |
+|---|---|
+| **Divided Plenty** | One valuable concentration spans ground fragments separated by a ramp or Roadway. Accessing or changing one side affects what remains available on the other. |
+| **The Throwing Place** | Traffic repeatedly casts material onto one recognizable ground. Particular animals have learned its rhythm, use, and dangers. |
+| **The Fallen Load** | A recent spill or large deposit creates temporary abundance, danger, and several incompatible immediate needs. |
+| **The Unusual Object** | A singular human object cannot be treated as ordinary Scrap. Moving, opening, altering, sharing, or leaving it produces different persistent outcomes. |
+| **Occupied Refuge** | A strategically important culvert, hollow, or understructure shelter is already used by a particular animal or group. |
+| **Camp in Transition** | A temporary camp has been abandoned, is being dismantled, has changed occupants, or is awaiting someone whose return remains uncertain. |
+| **The Spanning Claim** | One animal or group treats several road-separated grounds as one territory, while the party encounters only one part of that claim at first. |
+| **Underpass Meeting Ground** | A sheltered place is repeatedly used for exchange, warning, negotiation, or mutual observation by otherwise separate travelers. |
+| **Converging Travelers** | Several animals arrive from different Corridor directions with intersecting information, needs, burdens, or claims. |
+| **The Isolated Animal** | Traffic geometry, damaged passage, runoff, or a changed barrier has separated an animal from companions, shelter, or necessary ground. |
+| **Changed Drainage** | Water has begun moving Sustenance, debris, shelter conditions, or danger from one ground fragment into another, affecting present inhabitants. |
+| **The Brief Truce** | Traffic, weather, a predator, or human activity forces animals who would normally avoid or oppose one another into temporary shared shelter. |
 
-The complete Interchange bank should contain approximately ten to fifteen
-authored Story MEET forms. Each generated Interchange selects three to six
-compatible forms without replacement and installs each selected form once as
-a particular persistent situation fitted to its actual geography, Nodes, and
-inhabitants. A selected form may remain dormant until its eligibility is met;
-selection does not guarantee immediate discovery or resolution.
+Each generated Interchange selects three to six compatible forms without
+replacement and installs each selected form once as a particular persistent
+situation fitted to its actual geography, Nodes, and inhabitants. Every
+selected set includes at least one animal-centered form and at least one
+infrastructure- or ecology-centered form. These are editorial coverage
+distinctions rather than player-facing categories or a new generation layer.
+A selected form may remain dormant until its eligibility is met; selection
+does not guarantee immediate discovery or resolution.
 
 The installed situation does not reroll as a fresh copy on later visits. Its
 Node, participants, relationships, and aftermath persist and may support later
 developments through ordinary world and MEET rules. The forms therefore do not
 create a mandatory sequence, completion list, or universal Interchange
-history. The exact bank remains the next authorial task.
+history. No form guarantees a Guest, reward, safe refuge, or favorable
+resolution.
 
 ## Present animal plurality
 

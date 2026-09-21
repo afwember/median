@@ -3971,14 +3971,25 @@ Nodes occur more frequently than in ordinary Reaches, while a separately
 determined higher percentage of those Resource Nodes are Contested. Exact
 density and contest percentages remain tuning.
 
-A bank of approximately ten to fifteen authored Interchange Story MEET forms
-provides a separate content layer. Each generated Interchange selects three to
-six compatible forms without replacement and installs each selected form once
-as a particular persistent situation fitted to the actual geography, Nodes,
-and inhabitants. Selection does not guarantee immediate discovery; a form may
-remain dormant until eligible. It never rerolls as a fresh copy on later
-visits, although its participants, relationships, Node, and aftermath may
-continue to develop through ordinary rules.
+Twelve authored Interchange Story MEET forms provide a separate content layer:
+**Divided Plenty**, **The Throwing Place**, **The Fallen Load**, **The Unusual
+Object**, **Occupied Refuge**, **Camp in Transition**, **The Spanning Claim**,
+**Underpass Meeting Ground**, **Converging Travelers**, **The Isolated
+Animal**, **Changed Drainage**, and **The Brief Truce**. Together they cover
+material abundance, habitation and territorial use, animal convergence, and
+environmental change without making those editorial distinctions into
+player-facing categories.
+
+Each generated Interchange selects three to six compatible forms without
+replacement and installs each selected form once as a particular persistent
+situation fitted to the actual geography, Nodes, and inhabitants. Every
+selected set includes at least one animal-centered form and at least one
+infrastructure- or ecology-centered form. Selection does not guarantee
+immediate discovery; a form may remain dormant until eligible. It never
+rerolls as a fresh copy on later visits, although its participants,
+relationships, Node, and aftermath may continue to develop through ordinary
+rules. No form guarantees a Guest, reward, safe refuge, or favorable
+resolution.
 
 Travelers, regulars, scavengers, temporary camps, territorial animals, and
 predators meet in unusual variety. Claims, exchanges, warnings, favors,

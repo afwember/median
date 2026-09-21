@@ -314,6 +314,16 @@ minimum useful footprint and whether an augment must dominate; it does not
 reserve the rest of a page unless the record explicitly calls for a full plate
 or full-page explanatory form.
 
+The present Augments review is a **layout-definition phase**. Approval fixes a
+page's purpose, hierarchy, footprint, dominant and subordinate fields, and the
+relationships among prose, diagrams, interface fragments, and imagery. A
+Canon input or Asset lineage field may identify a required dependency or a
+provisional representation candidate, but it does not yet approve an exact
+crop, cast, camera, scene merge, image-to-image reference set, or edit plan.
+Those specifics are merged into coordinated asset briefs only after the
+applicable Citizen, Colony, object, and environment Canon images have been
+locked.
+
 ## 6. Master book map
 
 ### 6.1 Front Matter

@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
   "status": "AUTHORIAL_GDD_FIRST_DRAFT_COMPLETE",
-  "updated": "2026-09-21T16:35:33-04:00",
+  "updated": "2026-09-21T16:57:12-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -46,9 +46,9 @@
     "phase": "Direct authorial GDD creation — provisional first draft complete",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
     "progress": "Seven-Part MEDIAN v0.5.0 GDD provisionally complete as a first draft",
-    "now": "AUG-7.2-02 — Visible Without Being Exposed is reduced to a purpose-only placeholder: it will show operationally legible shelter and species-grounded bodies and material culture without miniature-human, uniformed, or militarized substitution; its layout, examples, subjects, and asset construction remain deferred until the applicable Canon images are locked",
-    "next": "Continue granular Part VII §7.2 Art and Sound review with AUG-7.2-03 — One Citizen, Many Scenes, keeping the current phase at purpose and intended-layout level and deferring actual drawing and Canon-image integration; after Part VII, continue the established production sequence",
-    "updated_human": "September 21, 2026 at 4:35:33 PM EDT"
+    "now": "AUG-7.2-03 now presents a provisional literal Citizen UI panel: a large current Citizen rendering at left, present-state information and personal Item positions at right, and a visibly separate party Carry field when Away; the Citizen is selected at generation time, while Fennel's longitudinal image-to-image journey is reserved for later Appendix C development",
+    "next": "Continue granular Part VII §7.2 Art and Sound review with AUG-7.2-04 — The Corridor Is Heard, keeping the current phase at purpose and intended-layout level and deferring actual asset construction; after Part VII, continue the established production sequence",
+    "updated_human": "September 21, 2026 at 4:57:12 PM EDT"
   },
-  "next_possible_transition": "Continue granular Part VII §7.2 Art and Sound review with AUG-7.2-03 — One Citizen, Many Scenes, keeping the current phase at purpose and intended-layout level and deferring actual drawing and Canon-image integration; after Part VII, continue the established production sequence."
+  "next_possible_transition": "Continue granular Part VII §7.2 Art and Sound review with AUG-7.2-04 — The Corridor Is Heard, keeping the current phase at purpose and intended-layout level and deferring actual asset construction; after Part VII, continue the established production sequence."
 }

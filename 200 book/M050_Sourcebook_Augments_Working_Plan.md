@@ -3027,28 +3027,28 @@ substitution. The page layout, comparative examples, subjects, and asset
 construction remain deferred to the later drawing and coordinated asset-brief
 phase after the applicable Canon images are locked.
 
-##### `AUG-7.2-03` — One Citizen, Many Scenes
+##### `AUG-7.2-03` — Citizen UI Panel
 
 | Field | Proposed mapping |
 |---|---|
-| **GDD location** | Chapter 7.2, Citizen canon-image continuity, lasting change, current and superseded images, and reference-and-amend scene generation; Appendix C |
-| **Reader task** | See how one recognizable Citizen survives changes of Register, composition, light, posture, company, injury history, and time without becoming a merely similar regenerated animal |
-| **Augment form** | Full-page visual-continuity diagram built from one authoritative current Citizen image, several scene derivatives, one earlier historical image, and editable persistent-fact callouts |
-| **Working subject** | **One Citizen, Many Scenes** — Fennel after Wound recovery and with the lasting hind-leg Maiming established in Chapter 5.6 |
-| **Scale** | One complete landscape page; Fennel's current ordinary-life image is the visual anchor, while derivative scenes remain smaller and subordinate |
-| **Narrative function** | Recognition, bodily continuity, and reinforcement that a lasting changed life continues beyond its injury scene |
-| **Narrative treatment** | Existing Story history only. The page reuses Fennel's rescue, recovery, and present-life states without adding another incident or defining an unapproved future |
-| **Register** | Roster and Citizen view; MEET; EMBODY; aftermath or transition; Chronicle or Tale image use |
-| **Subjects** | Fennel; current markings, body proportions, hind-leg Maiming, adaptive equipment once fixed, clothing, Keepsake if any, and relationships already established; Shadepatch or Sharpnose only where the existing rescue history requires that presence |
-| **Incoming state** | `AUG-5.6-02` has separated the healed Wound from the lasting Maiming and established Fennel as a continuing Citizen. Appendix C holds the full image method |
-| **Outgoing state** | The reader understands which visual facts remain invariant, which scene properties may change, when the current canon image must be amended, and why earlier truthful images remain available as history |
-| **Canon inputs** | Chapters 4.1, 5.6, 6.1, and 7.2; Appendix C; Appendix H New Elderbank and Fennel history; `AUG-5.6-02`; every approved current Fennel image |
-| **Semantic content** | A central current image anchors species, body, markings, Maiming, adaptive device, clothing, Keepsake, and other persistent distinctions. Derivative scenes may change composition, light, weather, posture, activity, participants, and Register framing only through mandatory use of the relevant current canon references. Roster, MEET, EMBODY, aftermath, transition, Chronicle, and Citizen panels must all preserve the same Fennel. A lasting change creates an amended current representation; it does not overwrite the earlier image that truthfully depicts an earlier state. The rescue image therefore remains secondary history while present-life imagery governs new scenes. Colony images follow the same principle at settlement scale through meaningful growth, damage, repair, season, and occasion. Labels distinguish **reference**, **permitted scene variation**, **persistent fact**, **amendment trigger**, **current image**, and **historical image** without pretending that the player curates any of them |
-| **Asset lineage** | Use the accepted canon image set as mandatory source imagery. Generate or remake only the scene derivatives needed by already-approved Augments; generated lettering and semantic labels remain prohibited. Appendix C retains the complete production procedure and archive-access rules |
-| **Cross-reference** | Chapters 4.1, 5.6, 6.1, and 7.2; Appendices C and H; `AUG-5.6-02` and `AUG-6.1-01` |
+| **GDD location** | Chapter 7.2, current canon imagery and its player-facing use in the Citizen view |
+| **Reader task** | See how a recognizable current Citizen rendering grounds the information, personal Items, bodily state, and Away context through which the player understands that life |
+| **Augment form** | Provisional full-page literal Citizen UI panel |
+| **Working subject** | **Citizen UI Panel**; the particular Citizen is selected at generation time rather than fixed in this plan |
+| **Scale** | One complete landscape page; provisionally, a large current rendering of the Citizen occupies the left half while information and interactive positions occupy the right |
+| **Narrative function** | Recognition and particularity within ordinary player-facing inspection rather than a new event or longitudinal biography |
+| **Narrative treatment** | No new incident. The selected Citizen's current state is presented truthfully at generation time |
+| **Register** | Citizen view, with a provisional Away-state variation |
+| **Subjects** | One current named Citizen chosen at generation time; identity and present-state information; personal Tool, Supply, and Keepsake positions where applicable; bodily condition; location and availability; Away condition; and visibly separate party-level Carry when Away |
+| **Incoming state** | The preceding pages have established MEDIAN's common visual world and the continuity of species-grounded bodies and material culture |
+| **Outgoing state** | The reader understands that canon imagery serves a normal player-facing view of one continuing life rather than existing only as production reference |
+| **Canon inputs** | Chapters 4.1, 4.6, 5.1–5.2, 6.1, and 7.2; Appendices C and E; the selected Citizen's approved current canon image and current state at generation time |
+| **Semantic content** | The large rendering gives the Citizen visual priority over the interface apparatus. The information field presents current identity and state without aptitude scores, personality meters, approval bars, rarity, productivity rankings, or RPG-style attributes. Personal Tool, Supply, and Keepsake positions remain distinct from fungible Cargo. In an Away presentation, shared party Carry appears as a clearly separate party-level field rather than as property or inventory belonging to the inspected Citizen |
+| **Asset lineage** | Use the selected Citizen's accepted current canon image as mandatory source imagery. Exact Citizen, information hierarchy, slot forms, typography, Away-state treatment, and final rendering remain for the later coordinated asset brief and generation phase |
+| **Cross-reference** | Chapters 4.1, 4.6, 5.1–5.2, 6.1, and 7.2; Appendices C and E; `AUG-4.1-02` |
 | **Priority** | Essential |
-| **Approval state** | Proposed for authorial review |
-| **Acceptance test** | Fennel is unmistakably the same individual in every scene; present life dominates rescue imagery; the healed Wound never reappears as current injury; the Maiming and approved adaptation remain consistent without defining the whole personality; variations obey current references; lasting change updates rather than replaces history; Colony continuity follows the same rule; and no player-facing image-management workflow appears |
+| **Approval state** | Approved direction; exact Citizen is deliberately deferred to generation time and the detailed interface remains provisional |
+| **Acceptance test** | The Citizen remains the dominant recognizable subject; the panel reads as a view of one current life rather than a character-build sheet; persistent state is legible without personality or productivity ratings; personal Items remain distinct from shared party Carry; and no player-facing image-management workflow appears |
 
 ##### `AUG-7.2-04` — The Corridor Is Heard
 
@@ -3288,6 +3288,11 @@ relieve density.
 
 - Build the full Record → selection → Chronicle/Tale/image presentation flow.
 - Map canon-image reference-and-amend requirements and visual archive access.
+- Develop Fennel's established journey as the later worked image-to-image
+  reference-and-amend example: preserve the truthful earlier state, establish
+  the lasting hind-leg Maiming and any approved adaptation in the amended
+  current canon image, and derive later present-life moments from that current
+  image without allowing the injury to become Fennel's whole identity.
 
 #### Appendix D — Home Systems Reference
 

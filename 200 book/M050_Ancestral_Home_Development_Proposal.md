@@ -284,15 +284,16 @@ None borrows another's memory merely by joining the party.
 ## Stopover, Outposts, and repeated access
 
 A Stopover anywhere within the Ancestral Home is uninterrupted. This removes
-only the regular-Field chance that sleep is interrupted by a situated MEET: it
-does not make the territory a safe center or grant automatic Exposure relief
-or Cargo transfer. The locked Stopover screen still depicts the party's actual
-ground, shelter, weather, and bodily state. A natural refuge may improve those
-conditions where the physical ground supports one. An Outpost remains possible
+the regular-Field chance that sleep is interrupted by a situated MEET and
+therefore guarantees the ordinary one-step Exposure relief, without making the
+territory a safe center or granting Cargo transfer. The locked Stopover screen
+still depicts the party's actual ground, shelter, weather, and bodily state. A
+natural refuge may improve those conditions where the physical ground supports
+one. An Outpost remains possible
 only at an ordinarily eligible known site and through the normal remote Builder
 Project; it should sit near or at the edge of the ruined territory rather than
 converting the old Colony's civic center into a managed annex. A usable Outpost
-adds its ordinary Stopover effects, including bounded Exposure relief and the
+adds its protected two-step Exposure relief and the
 options to drain fungible Cargo from Carry into Colony Stores and replenish a
 Citizen's empty Supply position by choosing from the full prepared Colony
 stock.

@@ -3364,6 +3364,13 @@ Metropolis is uninterrupted. Stopover in regular Field carries a chance of a
 separate situated MEET during the sleeping interval. Ground, shelter, weather,
 and disturbance shape that possible situation; a natural refuge may improve
 the party's circumstances without converting sleep into a decision screen.
+An uninterrupted ordinary Stopover removes up to one Exposure step from each
+Citizen, while an interrupted Field Stopover grants no Exposure relief. The
+interruption does not cancel the Stopover's elapsed Band, cadence reset, Tharn
+ending, or Wound stabilization. A usable Outpost or Rest-Stop Metropolis
+removes up to two Exposure steps instead. No Stopover removes the final Away
+step; Ancestral Home sleep is uninterrupted but receives only the ordinary
+one-step relief.
 
 Occasional situated interruptions keep travel responsive to the country between
 Nodes. One 10% check follows an otherwise eligible exhausted travel span, at
@@ -3519,12 +3526,16 @@ yielding. Another response remains only when it directly enables rescue. When
 RISK produces Tharn, the far-side TRAVEL tableau names it after complete
 passage; no rescue MEET opens. In either case the party keeps the Citizen and
 cannot activate another Node, enter RISK, or resume the former objective until
-one completed Stopover ends Tharn. Remedy has no effect upon it.
+one completed Stopover ends Tharn. Any Exposure relief follows the Stopover's
+location and whether sleep was interrupted. Remedy has no effect upon Tharn.
 
-Usable Outpost Stopover removes one Exposure step but never the final step Away.
-At Home, each DAWN removes up to three steps, so maximum Exposure falls from 6
-to 3 and then 0 over two Dawns. Wound, Maiming, and Exposure recover through
-their separate procedures. Appendices D and G contain the full bodily
+An uninterrupted ordinary Stopover removes up to one Exposure step; a usable
+Outpost or Rest-Stop Metropolis removes up to two. No Stopover removes the final
+step Away. At Home, each DAWN removes up to three steps, so maximum Exposure
+falls from 6 to 3 and then 0 over two Dawns. Exposure is not presented as a
+domestic pressure or recovery meter: after Homecoming it recedes through hidden
+DAWN accounting into the calm of DWELL. Wound, Maiming, and Exposure recover
+through their separate procedures. Appendices D and G contain the full bodily
 consequence, Home recovery, and Tharn reference.
 
 ## 5.7 Outposts and Stopovers
@@ -3549,8 +3560,8 @@ stationed Citizens, routine upkeep, specialization, upgrade, or Tier in v0.5.
 
 A Stopover at a usable Outpost is uninterrupted. It advances one Band, resets
 travel cadence, ends Tharn, stabilizes Wounds for three traveled Bands, removes
-one Exposure step without removing the final Away step, and protects ordinary
-sleep from exposed-ground consequences. The player may drain any fungible
+up to two Exposure steps without removing the final Away step, and protects
+ordinary sleep from exposed-ground consequences. The player may drain any fungible
 Cargo from Carry into Stores through abstract Colony sync, immediately freeing
 that Carry. The same sync lets any Citizen with an empty Supply position choose
 one available prepared Supply of any class from Colony Stores. The selected
@@ -4053,8 +4064,9 @@ shelter, and other resource opportunities belong to those particular places.
 Rest-Stop Metropolis has no programmatic Contested percentage. This does not
 prohibit authored opposition, bargaining, incompatible claims, or other
 consequential city MEETs. Arrival, important transactions, hospitality,
-consequential encounters, and departure use MEET; a substantial Stopover
-offers rest and Exposure relief while the expedition remains Away.
+consequential encounters, and departure use MEET; its uninterrupted substantial
+Stopover removes up to two Exposure steps from each Citizen without removing
+the final Away step.
 
 Dependable venues support trade, shelter, specialized craft, information,
 Guest encounters, and Practice-improvement understanding. Relationships change
@@ -7942,8 +7954,9 @@ WITHDRAW ordinarily remain available; another family remains active only when
 it directly enables rescue or departure. The party always retains the Citizen.
 
 While Tharn persists, the party cannot activate another Node, enter RISK, or
-resume an expedition objective. One completed Stopover ends it without
-reducing Exposure or clearing Wound or Maiming.
+resume an expedition objective. One completed Stopover ends it without clearing
+Wound or Maiming; any Exposure relief follows the Stopover's location and
+whether sleep was interrupted.
 
 ### Exposure recovery
 
@@ -7951,13 +7964,18 @@ reducing Exposure or clearing Wound or Maiming.
 
 | Recovery context | Effect |
 |---|---|
-| **Ordinary Stopover** | Ends Tharn, resets travel cadence, and stabilizes Wound for the next three traveled Bands; Exposure reduction depends upon place and outcome. |
-| **Usable Outpost Stopover** | Supplies ordinary Stopover effects and removes one Exposure step, but never the final Away step. |
+| **Uninterrupted ordinary Stopover** | Ends Tharn, resets travel cadence, stabilizes Wound for the next three traveled Bands, and removes up to one Exposure step without removing the final Away step. Ancestral Home sleep always receives this uninterrupted ordinary relief. |
+| **Interrupted Field Stopover** | Supplies the elapsed Band, cadence reset, Tharn ending, and Wound stabilization after its separate situated MEET, but removes no Exposure. |
+| **Usable Outpost or Rest-Stop Metropolis Stopover** | Is uninterrupted, supplies ordinary Stopover effects, and removes up to two Exposure steps, but never the final Away step. |
 | **Home at DAWN** | Removes up to three Exposure steps from each Home-present Citizen, to a minimum of 0. |
 
 Maximum Exposure therefore returns to baseline across two Home DAWNs: 6 to 3,
 then 3 to 0. Relaunch preserves any remainder. Exposure recovery never clears
 Wound or Maiming. Wound recovery at Home follows the separate procedure above.
+Exposure has no distinct domestic manifestation: after Homecoming its hidden
+recovery disappears into ordinary DWELL calm rather than becoming a Home meter
+or activity. Exposure gain and sleep-interruption tuning must leave meaningful
+room for ordinary one-step and protected two-step relief during expedition play.
 
 ### Outposts and Stopovers
 
@@ -7990,8 +8008,8 @@ A Stopover at a usable Outpost is uninterrupted and:
 
 - advances one Day Band and resets travel cadence
 - ends Tharn and stabilizes Wound for the next three traveled Bands
-- removes one Exposure step from each resting Citizen without removing the
-  final Away step
+- removes up to two Exposure steps from each resting Citizen without removing
+  the final Away step
 - protects ordinary sleep from exposed-ground consequences
 - permits the party to drain any amount of fungible Cargo from Carry into
   Stores through abstract Colony sync, immediately freeing that Carry

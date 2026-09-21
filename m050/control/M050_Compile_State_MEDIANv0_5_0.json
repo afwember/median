@@ -1,7 +1,7 @@
 {
   "schema_version": "M050-COMPILE-STATE-3.0",
   "status": "AUTHORIAL_GDD_FIRST_DRAFT_COMPLETE",
-  "updated": "2026-09-21T01:16:00-04:00",
+  "updated": "2026-09-21T13:52:29-04:00",
   "scope": {
     "version": "MEDIAN v0.5.0",
     "registered_sources": 24,
@@ -46,9 +46,9 @@
     "phase": "Direct authorial GDD creation — provisional first draft complete",
     "source": "Frozen 5,382-atom authorial source library across 18 sources",
     "progress": "Seven-Part MEDIAN v0.5.0 GDD provisionally complete as a first draft",
-    "now": "Rest-Stop Metropolis service activity belongs to particular authored physical Nodes: a Tool venue repairs damaged Tools and provides ordinary new Tools from party-supplied recipes, a shopkeeper offers a persistent particular Resource stock for barter, a preservation venue converts 3 Perishable Sustenance into 2 Durable Sustenance, and a Metropolis-only Scrap transformer converts 3 Flexible Scrap into 2 Rigid Scrap or 3 Rigid Scrap into 2 Flexible Scrap; any service duplicated at Home costs its ordinary Colony recipe plus one additional recipe-relevant Resource selected by the venue, while a covered service with no material recipe costs one materially credible Resource; Tool replacement requires an empty position but a Citizen may discard the held Tool, all transactions use party Cargo or the involved Item position rather than remote Colony Stores, and no currency or generic shop layer is introduced",
-    "next": "Continue Rest-Stop Metropolis through granular authorial review by resolving the exact Exposure benefit of its substantial uninterrupted Stopover and any remaining hospitality or venue-topology questions; then complete the three-Landmark comparative pass before returning to paused Sourcebook Augments production",
-    "updated_human": "September 21, 2026 at 1:16:00 AM EDT"
+    "now": "Exposure relief now belongs to successful sleep across Away play: an uninterrupted ordinary Stopover removes up to one Exposure step, a Field sleep interrupted by MEET removes none while retaining the other completed Stopover accounting, and a usable Outpost or Rest-Stop Metropolis removes up to two; Ancestral Home sleep is uninterrupted but receives ordinary one-step relief, and no Stopover removes the final Away step; Exposure and interruption tuning must leave room for this relief to matter, while after Homecoming hidden Exposure recovery has no distinct domestic manifestation and recedes into the calm of DWELL",
+    "next": "Complete the bounded Rest-Stop Metropolis review through any remaining hospitality or venue-topology questions, then close the three-Landmark comparative pass and return to paused Sourcebook Augments production",
+    "updated_human": "September 21, 2026 at 1:52:29 PM EDT"
   },
-  "next_possible_transition": "Continue Rest-Stop Metropolis through granular authorial review by resolving the exact Exposure benefit of its substantial uninterrupted Stopover and any remaining hospitality or venue-topology questions; then complete the three-Landmark comparative pass before returning to paused Sourcebook Augments production."
+  "next_possible_transition": "Complete the bounded Rest-Stop Metropolis review through any remaining hospitality or venue-topology questions, then close the three-Landmark comparative pass and return to paused Sourcebook Augments production."
 }

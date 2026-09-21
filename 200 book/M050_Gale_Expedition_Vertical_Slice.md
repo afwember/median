@@ -977,8 +977,8 @@ The uninterrupted Stopover:
 - advances one Day Band;
 - resets travel cadence;
 - stabilizes Reed's Wound for three traveled Bands and their situations; and
-- removes one Exposure step from each Citizen without removing the final Away
-  step.
+- removes up to two Exposure steps from each Citizen without removing the final
+  Away step.
 
 Because each Citizen has Exposure 1, each remains at Exposure 1. Reed remains
 Wounded but stabilized.
@@ -1802,8 +1802,8 @@ Stopover:
 - ends Tharn if present, although none is present here;
 - stabilizes Reed's Wound for the next three traveled Bands and their
   situations;
-- removes one Exposure step from each Citizen because the Stopover occurs at a
-  usable Outpost; and
+- removes up to two Exposure steps from each Citizen because the Stopover occurs
+  at a usable Outpost; and
 - cannot remove the final Exposure step while a Citizen remains Away.
 
 Because all three Citizens entered with Exposure 1, each remains at 1. Reed

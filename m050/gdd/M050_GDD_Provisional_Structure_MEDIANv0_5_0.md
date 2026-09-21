@@ -3974,10 +3974,17 @@ density and contest percentages remain tuning.
 
 Each Node retains a concrete world-facing material identity suited to its
 ground, such as berry bushes, seed concentrations, discarded food, wire,
-cloth, plastic, wood, or metal. Recovery assigns its yield to one of the four
-existing fungible categories. By entry into the Colony's pooled Stores,
+cloth, plastic, wood, or metal. Recovery assigns its yield to the applicable
+one or more of the four existing fungible categories. By entry into the
+Colony's pooled Stores,
 equivalent units no longer retain separate source identities. Interchange
 generation creates no additional resource class or currency.
+
+A Resource Node may be single-category, such as a berry bush, or
+variable-category, such as a trash pile. Variable Nodes commonly yield one to
+three categories and do not divide their yield evenly: one category is
+primary, with smaller secondary or tertiary yields where present. Exact
+quantities and proportions remain tuning.
 
 Twelve authored Interchange Story MEET forms provide a separate content layer:
 **Divided Plenty**, **The Throwing Place**, **The Fallen Load**, **The Unusual
@@ -6535,8 +6542,12 @@ Practice, Colony Tier, or Outpost improvement raises the three-Body-Unit limit.
 Resource Nodes use concrete world-facing names for what actually grows,
 collects, or has been discarded there. Berry bushes, seed stores, dried food,
 cloth, wire, wood, plastic, and metal may therefore appear as different Nodes
-while yielding one of the four fungible resource categories. Once those units
-enter pooled Stores, equivalent sources are not tracked separately.
+while yielding the four fungible resource categories. A Node may be
+single-category or variable-category. Variable Nodes commonly yield one to
+three categories, with one primary yield and smaller secondary or tertiary
+yields rather than an even split. Once those units enter pooled Stores,
+equivalent sources are not tracked separately. Exact quantities and
+proportions remain tuning.
 
 Perishable Sustenance is normally consumed before Durable Sustenance. Scrap
 does not divide into component inventories. Production, Provisioning, and

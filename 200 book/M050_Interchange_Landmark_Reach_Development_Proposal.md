@@ -222,9 +222,17 @@ than in ordinary Reaches:
 The world-facing Node retains a concrete material identity appropriate to its
 ground: berry bushes, seed concentrations, discarded food, wire, cloth,
 plastic, wood, metal, or another authored source. Recovery assigns the yield
-to its applicable resource category. By the time it enters the Colony's pooled
-Stores, one unit from a berry bush is simply one unit of Perishable Sustenance,
-and equivalent materials no longer retain separate source inventories.
+to its applicable resource category or categories. By the time it enters the
+Colony's pooled Stores, one unit from a berry bush is simply one unit of
+Perishable Sustenance, and equivalent materials no longer retain separate
+source inventories.
+
+A concrete Node may be **single-category**, such as a berry bush yielding only
+Perishable Sustenance, or **variable-category**, such as a trash pile
+containing several kinds of recoverable material. Variable Nodes commonly
+yield one to three resource categories. Their yield is not divided evenly:
+one category is primary, with smaller secondary or tertiary yields where
+present. Exact quantities and proportions remain tuning.
 
 Interchange generation creates no fifth resource class and no
 Interchange-specific currency. Shelter, water, insects, and other conditions
